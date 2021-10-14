@@ -96,6 +96,7 @@ Keystone API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
+
 - Authenticate.keystone
 - KeystoneBasic.add_and_remove_user_role
 - KeystoneBasic.create_add_and_list_user_roles
@@ -133,6 +134,7 @@ Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
+
 - Authenticate.validate_glance
 - GlanceImages.create_and_delete_image
 - GlanceImages.create_and_list_image
@@ -171,6 +173,7 @@ Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
+
 - Authenticate.validate_cinder
 - CinderVolumes.create_and_delete_snapshot
 - CinderVolumes.create_and_delete_volume
@@ -203,6 +206,7 @@ Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
+
 - SwiftObjects.create_container_and_object_then_list_objects
 - SwiftObjects.list_objects_in_containers
 - SwiftObjects.create_container_and_object_then_download_object
@@ -281,6 +285,7 @@ Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
+
 - Authenticate.validate_neutron
 - NeutronNetworks.create_and_delete_networks
 - NeutronNetworks.create_and_delete_ports
@@ -370,6 +375,7 @@ Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
+
 - Authenticate.validate_nova
 - NovaServers.boot_and_live_migrate_server
 - NovaServers.boot_server_attach_created_volume_and_live_migrate
@@ -411,6 +417,7 @@ Heat API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
+
 - Authenticate.validate_heat
 - HeatStacks.create_update_delete_stack
 - HeatStacks.create_check_delete_stack
@@ -429,7 +436,8 @@ in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck
 to perform OpenStack API benchmarking.
 
 Here are the Rally-based test cases proposed by
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby)
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby):
+
 - [rally_full](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
   Functest scenarios iterating 10 times the mainline Rally scenarios
 - [rally_jobs](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_jobs_cntt-run-5/rally_jobs_cntt/rally_jobs_cntt.html):
@@ -620,6 +628,7 @@ of 0%) proposed in
 
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby)
 offers two benchmarking dataplane test cases leveraging on:
+
 - [VMTP](http://vmtp.readthedocs.io/en/latest)
 - [Shaker](http://pyshaker.readthedocs.io/en/latest/)
 
@@ -683,6 +692,7 @@ Here are all results per scenario:
 Here are the
 [scenarios](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-shaker-run-8/shaker/report.json)
 executed by Shaker:
+
 - OpenStack L2
 - OpenStack L3 East-West
 - OpenStack L3 North-South
@@ -723,11 +733,13 @@ platforms meet Network Functions Virtualization requirements.
 [Functest VNF](https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml?h=stable%2Fwallaby)
 offers 5 test cases which automatically onboard and test the following 3
 opensource VNFs:
+
 - [Clearwater IMS](https://clearwater.readthedocs.io/en/stable/)
 - [VyOS vRouter](https://www.vyos.io/)
 - [OpenAirInterface vEPC](https://www.openairinterface.org/)
 
 Here are the full list of orchestrators used for all these deployments:
+
 - [Cloudify](https://cloudify.co/)
 - [Heat](https://wiki.openstack.org/wiki/Heat)
 - [Juju](https://jaas.ai/)

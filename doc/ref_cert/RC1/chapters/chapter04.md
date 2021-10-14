@@ -5,6 +5,7 @@
 ## Introduction
 
 Define the purpose of the chapter which is to:
+
 - Identify Framework Needs, Goals, and Dependencies
 - Define Opensource Integration (OVP, Functest, CVC, others)
 - Provide Automation Toolchain (list, topology, flow)
@@ -29,6 +30,7 @@ to the interoperability programs such as
 [OPNFV Verification Program](https://www.opnfv.org/verification) which select
 a small subset of Functional tests passing in many different
 opensource software combinations:
+
 - tests are skipped if an optional support is missing (e.g.
   [Barbican](https://docs.openstack.org/barbican/latest/) or networking
   features such as
@@ -41,6 +43,7 @@ opensource software combinations:
 It should be noted that
 [the RefStack lists](https://refstack.openstack.org/#/guidelines) are included
 as they are in Functest in the next 3 dedicated testcases:
+
 - refstack_compute (OpenStack Powered Compute)
 - refstack_object (OpenStack Powered Object Storage)
 - refstack_platform (OpenStack Powered Platform)
@@ -115,6 +118,7 @@ And VNFs automatically deployed and tested :
 
 Functest should be considered as a whole as it meets multiple objectives about
 the reference implementation:
+
 - verify all APIs (services, advances, features, etc.) exposed by the reference
   implementation
 - compare the reference implementation and local deployments from a functional
@@ -124,10 +128,12 @@ It's worth mentioning that Functest already takes into account the first Anuket
 [profiles](https://git.opnfv.org/functest/tree/functest/ci/config_patch.yaml#n2).
 Anuket should simply add the next Functest inputs according the reference
 implementation:
+
 - [Functest inputs](https://github.com/opnfv/functest/blob/stable/iruya/functest/utils/env.py#L17)
 - [tempest specific configuration](https://github.com/opnfv/functest/blob/stable/iruya/functest/opnfv_tests/openstack/tempest/custom_tests/tempest_conf.yaml)
 
 Additional links:
+
 - [Homepage](https://functest.readthedocs.io/en/stable-iruya/)
 - [Run Alpine Functest containers (Iruya)](https://wiki.opnfv.org/pages/viewpage.action?pageId=35291769)
 - [Deploy your own Functest CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004)
@@ -138,10 +144,12 @@ Additional links:
 ### Bottlenecks
 
 ### Test Tools
+
 1. Shaker:  https://pyshaker.readthedocs.io/en/latest/ (The distributed data-plane testing tool built for OpenStack)
 2. Sonubuoy: https://sonobuoy.io/ It is a diagnostic tool that makes it easier to understand the state of a Kubernetes cluster by running a set of plugins (including Kubernetes conformance tests) in an accessible and non-destructive manner.
 
 ### Scenario Descriptor File (SDF)
+
 As defined by Anuket, Scenario Descriptor File's (SDF) will be utilized to relay information from the Scenario Designer (or Test Manager), to Release Managers, CI Pipeline Owners, and Installer Agents, to define test scenario content, and specifications.
 
 SDF's will contain, but not limited to, the following Metadata, Components, Deployment Options, Deployment Tools, and Hardware prerequistes:
@@ -172,6 +180,7 @@ proposed in CIRV tree.
 
 Please note the next two points depending on the GNU/Linux distributions and
 the network settings:
+
 - SELinux: you may have to add -\-system-site-packages when creating the
   virtualenv ("Aborting, target uses selinux but python bindings
   (libselinux-python) aren't installed!")
@@ -194,6 +203,7 @@ ansible-playbook functest-src/ansible/site.cntt.yml
 
 Here is the default Functest tree as proposed in
 [Functest Wallaby](https://wiki.anuket.io/display/HOME/Functest+Wallaby):
+
 - /home/opnfv/functest/openstack.creds
 - /home/opnfv/functest/images
 
@@ -204,6 +214,7 @@ You may have to modify a few Functest env vars according to the SUT (see env in
 [Functest Wallaby](https://wiki.anuket.io/display/HOME/Functest+Wallaby)).
 Be free to modify functest-src/ansible/host_vars/127.0.0.1 at your convenience
 and then to reconfigure the toolchain:
+
 ```bash
 ansible-playbook functest-src/ansible/site.cntt.yml
 ```
@@ -220,6 +231,7 @@ functest-wallaby-zip's console. Be free to download it and then to send it to
 any reviewer committee.
 
 To clean your working dir:
+
 ```bash
 deactivate
 rm -rf functest-src functest

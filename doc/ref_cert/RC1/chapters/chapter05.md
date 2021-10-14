@@ -63,16 +63,16 @@ Now VNF is ready and *Telco Operators* can start consume it.
 ### Profiles Reference
 
 The NFV Infrastructure (NFVI) is the totality of all hardware and software components
- which build up the environment in which VNFs are deployed, managed and executed.
- It is, therefore, inevitable that different VNFs would require different
- capabilities and have different expectations from it. So one of the main targets of
- Anuket is to define an agnostic NFVI and removes any dependencies between
- VNFs and deployed Infrastructure (NFVI) and offer NFVI to VNFs in an abstracted way
- with defined capabilities and metrics. This would help operators to host their
- Telco Workload (VNF) with different traffic types, behaviour and from any vendor
- on a unified consistent Infrastructure. so as part of VNF Conformance, its
- important to certify the VNF based on profiled defined in
- [reference model](../../../ref_model/chapters/chapter02.md).
+which build up the environment in which VNFs are deployed, managed and executed.
+It is, therefore, inevitable that different VNFs would require different
+capabilities and have different expectations from it. So one of the main targets of
+Anuket is to define an agnostic NFVI and removes any dependencies between
+VNFs and deployed Infrastructure (NFVI) and offer NFVI to VNFs in an abstracted way
+with defined capabilities and metrics. This would help operators to host their
+Telco Workload (VNF) with different traffic types, behaviour and from any vendor
+on a unified consistent Infrastructure. so as part of VNF Conformance, its
+important to certify the VNF based on profiled defined in
+[reference model](../../../ref_model/chapters/chapter02.md).
 
 In [reference model](../../../ref_model/chapters/chapter02.md), following
 NFVi profiles are proposed as reference:
@@ -302,11 +302,13 @@ integrated system for consuming.
 -   Portal contains links to Conformance badge(s) received.
 
 ### 5Test Artifact management
+
 As part of testing various binaries, configurations, images, scripts ,etc would
 be used during test cases building or execution and
 Version artifact supports such as VNF CSAR.
 
 ### Test Scenario management
+
 Allow to create repeatable scenario includes test cases, artifacts and profiles.
 
 It helps to create dynamic testing scenario development and testing from the
@@ -314,6 +316,7 @@ existing test cases and flows along with required artifacts and profiles.
 It allows to run repeated testing with one or different profiles.
 
 ### Test Profile management
+
 For every test case execution needs to be configured with required environments
 and predefined test input parameter values. This is provided by means of profile
 
@@ -353,6 +356,7 @@ validation and performance.
 * gRPC
 
 ### Deliverables
+
 Platform should be able to get deployed in both container and cloud environments.
 so following model deliverables would enable it:
 
@@ -407,7 +411,7 @@ Note: The four category testing can be gradually supported and in the future, wi
 
 ### Interaction Type
 
-- Descrive the types of Interactions: Extended Topology, Complex (Akraino), Functional, HA, Fault, Interoperability
+- Describe the types of Interactions: Extended Topology, Complex (Akraino), Functional, HA, Fault, Interoperability
 
 ### Performance Profiles
 
@@ -454,7 +458,8 @@ the badging:
 ### VNF Test Cases
 
 #### Compliance test cases
- Currently, there VNFs can be packaged as HEAT templates or in a CSAR file using TOSCA and OVP has supported the VNF compliance test cases(compliance check based on TOSCA using ETSI SOL004 & SOL001；OpenStack HOT using ONAP VNFREQS；GSMA profile), all the OVP supported test case can be found in the following two link:
+
+Currently, there VNFs can be packaged as HEAT templates or in a CSAR file using TOSCA and OVP has supported the VNF compliance test cases(compliance check based on TOSCA using ETSI SOL004 & SOL001；OpenStack HOT using ONAP VNFREQS；GSMA profile), all the OVP supported test case can be found in the following two link:
 
 |  Test Cases |   Link|
 | ------------ | ------------ |
@@ -466,24 +471,29 @@ Above compliance test cases defination can be found https://github.com/onap/vnfs
  In order to adapt Anuket specification, more compliance test case will be added here.
 
 #### Verification test cases
+
 In general， the VNF Manager, in collaboration with the NFV Orchestrator, the VIM and the EM, is responsible for managing a VNF's lifecycle. The lifecycle phases are listed below：
-  • VNF on-boarding, it refers to VNF package onboarding to service/resouce Orchestrator
-  • VNF instantiation, once the VNF is instantiated,  its associated VNFCs have been successfully instantiated and have been allocated necessary NFVI resources
-  • VNF scaling/updating, it means the VNF can scale or update by allocating more or less NFVI resources
-  • VNF termination, any NFVI resources consumed by the VNF can be cleaned up and released.
+
+- VNF on-boarding, it refers to VNF package onboarding to service/resouce Orchestrator
+- VNF instantiation, once the VNF is instantiated,  its associated VNFCs have been successfully instantiated and have been allocated necessary NFVI resources-
+- VNF scaling/updating, it means the VNF can scale or update by allocating more or less NFVI resources
+- VNF termination, any NFVI resources consumed by the VNF can be cleaned up and released.
 
  OVP has also supported the lifecycle test case:https://wiki.lfnetworking.org/display/LN/VNF+Validation+Minimum+Viable+Product?src=contextnavpagetreemode
 
 
 #### Validation Test cases
+
 From the current situation of operators, there are usually corresponding functional test specifications for each types of VNFs. Therefore, different types of VNFs have different functional test cases. Normally, functional tests for VNFs require the cooperation of surrounding VNFs. Or use the instruments to simulate the functions of surrounding VNFs for testing.
 Therefore, different test cases need to be defined according to different types of VNFs
 
 #### Performance Test cases
+
 This is the same as what described in validation test cases，the performance test cases need to be defined according to different types of VNFs.
 Combined with the classification of VNF, according to the protocol level that VNF operates, it can include:
-  • VNF data plane benchmarking, like forwarding Performance Benchmarking,Long duration traffic testing, low misrouting and so on.
-  • VNF control plane benchmarking, like throughput
-  • VNF user plane benchmarking, like Packet Loss,Latency, Packet Delay
+
+- VNF data plane benchmarking, like forwarding Performance Benchmarking,Long duration traffic testing, low misrouting and so on.
+- VNF control plane benchmarking, like throughput
+- VNF user plane benchmarking, like Packet Loss,Latency, Packet Delay
 
  ETSI spec has also defined the testing method http://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/001/01.01.01_60/gs_nfv-tst001v010101p.pdf
