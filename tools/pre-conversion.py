@@ -1,10 +1,23 @@
 #!/bin/python3
+####
+# Copyright 2021 Nokia
+# Licensed under the Apache License 2.0
+# SPDX-License-Identifier: Apache-2.0
+####
+# A script to mass modify Anuket specification md files before converting them to rst. 
+# TODO:
+#  - Remove `[<< Back](../)`-s 
+#  - Doublechec which raw html-s can be removed of converted to markdown. 
+#    In case of complete converision is not possible, like in case of images
+#    with scaling. These should be handled in a post conversion script.  
 
-import logging
+
 import argparse
 import glob
+import logging
 import os
 import re
+
 
 def main():
     logging.basicConfig(
@@ -22,33 +35,35 @@ def main():
     if args.debug:
         logger.setLevel(logging.DEBUG)
         logger.debug("Debug logging is ON")
-    fileList = glob.glob(args.directory + '*.md')
+    filePattern = "{}/*.md".format(args.directory)
+    logger.info("File pattern is {}".format(filePattern))
+    fileList = glob.glob(filePattern)
     for filename in fileList:
-        logger.info("Filename is " + filename)
+        logger.info("Filename is {}".format(filename))
         if re.match(".*-mod.md", filename):
             logger.debug("Mod file found, deleting it.")
             os.remove(filename)
             continue
         filenameNew = filename.replace(".md", "-mod.md")
-        logger.debug("Modified filename is " + filenameNew)
+        logger.debug("Modified filename is {}".format(filenameNew))
         if os.path.exists(filenameNew):
-            logger.debug("Removing " + filenameNew)
+            logger.debug("Removing {}".format(filenameNew))
             os.remove(filenameNew)
         fIn = open(filename, 'r')
         fOut = open(filenameNew, 'w')
         lineNumber = 0
         state = {}
         for line in fIn:
-            #logger.debug("Line is " + line)
+            #logger.debug("Line is {}".format(line))
             lineNumber = lineNumber + 1
             state["line"] = line
             if re.match("## Table of Contents", line):
-                #logger.info(" " + str(lineNumber) + " ToC found")
+                #logger.info(" {%d}: ToC found".format(lineNumber))
                 state["in-toc"] = True
                 continue
 
             if ("in-toc" in state) and state["in-toc"]:
-                #logger.debug(" " + str(lineNumber) + " state in-toc")
+                #logger.debug(" {%d} state in-toc".format(lineNumber))
                 if re.match('^\s+$', line):
                     if ("content-after-toc" in state) and state["content-after-toc"]:
                         # In some cases thre is an empty line just after the ToC header, so

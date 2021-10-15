@@ -1,4 +1,9 @@
 #!/bin/bash
+####
+# Copyright 2021 Nokia
+# Licensed under the Apache License 2.0
+# SPDX-License-Identifier: Apache-2.0
+####
 # A simple script to convert md files of a directory to rst.
 # Pre-requisits:
 #  - pandoc
