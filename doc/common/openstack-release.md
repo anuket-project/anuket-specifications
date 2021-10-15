@@ -1,6 +1,6 @@
 # Anuket OpenStack Baseline Release Selection
 
-This section specifies policies for the selection of the next Anuket OpenStack baseline release and the number of releases that the Anuket specifications shall support:
+This section specifies policies for the selection of the next Anuket OpenStack baseline release and the number of releases that the Anuket shall support:
 -	criteria for the triggering of the next baseline selection
 -	criteria to use in choosing the next OpenStack release, and
 -	the number of OpenStack releases to be supported by Anuket specifications
@@ -10,7 +10,7 @@ The selection of a new OpenStack baseline release will be associated with a new 
 ## Triggering Events for next release selection
 This section specifies events that may trigger the selection of the next OpenStack release.
 -	Complete change in architecture: OpenStack, OpenStack Service or major API change of an OpenStack RA-1 required service
--	New OpenStack features, services or projects needed by Anuket-compliant workloads
+-	New OpenStack features, services or projects workloads targeted for Anuket compliant cloud infrastructure
 -	Major Security Fix (not fixed through a patch; OpenStack or OS) that affect APIs
 -	Current Anuket [OpenStack release]( https://releases.openstack.org/) entered “[Extended Maintenance]( https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases)” phase approximately 18 months ago
 
