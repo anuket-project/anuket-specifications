@@ -69,9 +69,11 @@ Conformance methodologies to be implemented, from a process perspective include:
 In order to begin the Conformance process, the Cloud Infrastructure needs to be
 validated and expected to be in a required state. This state would be
 determined by running tests as described in RI. Once the target Cloud
-Infrastructure passes these tests, it would become a candidate for the Cloud Infrastructure Conformance. If the Cloud Infrastructure fails the tests, it
+Infrastructure passes these tests, it would become a candidate for the Cloud
+Infrastructure Conformance. If the Cloud Infrastructure fails the tests, it
 will not be moved to the next workflow for Conformance. The Cloud
-Infrastructure+VNF conformance consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally
+Infrastructure+VNF conformance consist of a three part process for Compliance,
+Validation, and Performance. Adherence to Security standards are equally
 important and addressed in
 [Chapter 7 of Reference Model](../../../ref_model/chapters/chapter07.md).
 
