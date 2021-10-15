@@ -1,23 +1,18 @@
+<<<<<<< HEAD
 # 1. Overview
 
 ![State](../figures/bogo_dfp.png) <!-- width="35" -->
+=======
+# Overview
+<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
+>>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)
 
-## Table of Contents
-* [1.1 Introduction](#1.1)
-    * [1.1.1 About the Kubernetes Reference Implementation](#1.1.1)
-    * [1.1.2 Structure of the document](#1.1.2)
-    * [1.1.3 Terminology](#1.1.3)
-* [1.2 Scope](#1.2)
-* [1.3 Relationship to other communities](#1.4)
-* [1.4 Reference Implementation Approach](#1.3)
-    * [1.4.1 Infrastructure Provisioning](#1.3.1)
-    * [1.4.2 Kubernetes Provisioning](#1.3.2)
 
 <a name="1.1"></a>
-## 1.1 Introduction
+## Introduction
 
 <a name="1.1.1"></a>
-### 1.1.1 About the Kubernetes Reference Implementation
+### About the Kubernetes Reference Implementation
 
 This document includes the requirements and deployment details of the Kubernetes-based Reference Implementation (RI2). This RI will conform to the architecture specification as defined in the [Kubernetes Based Reference Architecture (RA2)](../../../ref_arch/kubernetes/README.md), including alignment with the principles and requirements of the [Reference Model](../../../ref_model/README.md).
 
@@ -28,17 +23,17 @@ The RI will be used as follows:
 In order to promote the quick deployment of the RI and avoid duplicating effort across communities, the RI community works closely with CNCF TUG, the Anuket Assured program, ONAP and TIP communities.
 
 <a name="1.1.2"></a>
-### 1.1.2 Structure of the document
+### Structure of the document
 
 The document first consolidates the requirements that need to be addressed by this RI in [Chapter 2](./chapter02.md). [Chapter 3](./chapter03.md) then details the requirements that need to be met in order for anyone to be able to install the RI, whether that be into a community lab, their own corporate or personal lab or some other environment such as CNF Testbed or a public cloud provider. An operational runbook is documented in [Chapter 4](./chapter04.md) to aid the deployment of the RI into a chosen environment and includes step-by-step instructions for a selection of installers as well as steps on how to validate the deployment. Finally, [Chapter 5](./chapter05.md) is a placeholder to allow the documentation of any gaps found during the development of this document and the associated artifacts.
 
 <a name="1.1.3"></a>
-### 1.1.3 Terminology
+### Terminology
 
 Terminology in this document will follow [CNTT Terminology](../../../common/glossary.md).
 
 <a name="1.2"></a>
-## 1.2 Scope
+## Scope
 
 The scope of this document is as follows:
 1. To generate ecosystem requirements for the establishment of the RI, including labs, tooling, installers, releases and automation requirements
@@ -50,7 +45,7 @@ The scope of this document is as follows:
 
 
 <a name="1.3"></a>
-## 1.3 Relationship to other communities and workstreams
+## Relationship to other communities and workstreams
 
 The main communities involved in driving requirements and development of this RI are:
 
@@ -77,7 +72,7 @@ The following figure gives an overview of the relationship of the communities in
 ![Relationship of communities](../figures/ri2-ch01-relationship_of_communities.png)
 
 <a name="1.4"></a>
-## 1.4 Reference Implementation Approach
+## Reference Implementation Approach
 
 The approach this RI will take is to separate out the deployment in to two layers:
 1. Automation of the infrastructure on which the RI will be installed (i.e. networks, storage, servers, etc.)
@@ -88,7 +83,7 @@ Meaning, initially, the RI is not looking to have a single installer that can bo
 The following subsections provide an overview of the provisioning stages as they are currently planned. However, that's not to say full end-to-end installers aren't welcome, but if used we must be clear on the limitations and compromises made when we document them in [Chapter 4](./chapter04.md).
 
 <a name="1.4.1"></a>
-### 1.4.1 Infrastructure Provisioning
+### Infrastructure Provisioning
 The RI should be deployable on different infrastructures. Specifically, the following deployment scenarios are in scope of the RI:
 
 - **Deployment on bare-metal hosts**
@@ -104,7 +99,7 @@ While all three deployment scenarios are in scope of RI2, the initial implementa
 
 
 <a name="1.4.2"></a>
-### 1.4.2 Kubernetes Provisioning
+### Kubernetes Provisioning
 
 For provisioning Kubernetes in the Reference Implementation, existing open source tools should be used to set up the cluster. The goal is to cover the requirements listed in the Kubernetes Based Reference Architecture (RA2), but due to the scope this will be done through multiple iterations, starting with a subset of requirements and expanding the deployment over time.
 

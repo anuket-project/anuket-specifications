@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 5. Gap Analysis and Development
 
 ![State](../figures/bogo_ifo.png) <!-- width="35" -->
@@ -23,3 +24,23 @@
 
 <a name="5.4"></a>
 ## 5.4 Development Efforts
+=======
+# Gap Analysis and Development
+<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+
+
+<a name="5.1"></a>
+## Introduction
+
+
+<a name="5.2"></a>
+## Gap Analysis
+
+
+<a name="5.3"></a>
+## Proposals and Resolution
+
+
+<a name="5.4"></a>
+## Development Efforts
+>>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)

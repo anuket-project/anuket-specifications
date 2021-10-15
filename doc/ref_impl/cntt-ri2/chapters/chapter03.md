@@ -1,17 +1,17 @@
+<<<<<<< HEAD
 # 3. Lab Requirements
 
 ![State](../figures/bogo_lsf.png) <!-- width="35" -->
+=======
+# Requirements for Labs
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
+>>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)
 
-## Table of Contents
-* [3.1 Introduction](#3.1)
-* [3.2 Access and Connectivity](#3.2)
-* [3.3 Infrastructure Requirements](#3.3)
-* [3.4 Software Requirements](#3.4)
 
 
 
 <a name="3.1"></a>
-## 3.1 Introduction
+## Introduction
 
 The purpose of this chapter is to list and describe the requirements on labs used to deploy and run the RI2. Overall, the RI2 serves the following purposes which guide the definition of requirements in this chapter:
 
@@ -30,13 +30,13 @@ In addition, lab environments must meet specific requirements on hardware resour
 
 
 <a name="3.2"></a>
-## 3.2 Access and Connectivity
+## Access and Connectivity
 
 This section describes the access and connectivity requirements for labs used to deploy an RI.
 
 
 <a name="3.2.1"></a>
-### 3.2.1 Lab Access
+### Lab Access
 
 The requirements on and means of accessing a given lab differ per hosting organization and use case:
 
@@ -50,7 +50,7 @@ For all community-focused activities, access to the respective lab infrastructur
 
 
 <a name="3.2.2"></a>
-### 3.2.2 Connectivity
+### Connectivity
 
 The network topology should provide at least 2 networks with preallocated IP addressing schemes for the out-of-band management network and the Public network. The Public network must be able to reach / access the public Internet, preferably directly or via an enterprise proxy. IPv4 as well as IPv6 addresses must be available. At least 1 network interface must be capable of performing PXE boot and that network must be available to both the jump / test host and each physical or virtual server.
 
@@ -58,7 +58,7 @@ The network fabric shall comprise redundant layer 2 connectivity between hosts. 
 
 
 <a name="3.3"></a>
-## 3.3 Infrastructure Requirements
+## Infrastructure Requirements
 
 The requirements on infrastructure hardware used to deploy and run the RI2 are as follows:
 
@@ -99,7 +99,7 @@ A virtual jump / test host can be a VM with the following specifications:
 
 
 <a name="3.4"></a>
-## 3.4 Software Requirements
+## Software Requirements
 
 The following section describes requirements on the installer software of the RI2 and the validation scripts.
 

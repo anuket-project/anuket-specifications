@@ -1,37 +1,34 @@
+<<<<<<< HEAD
 # 4. Operational Runbook
 
 ![State](../figures/bogo_sdc.png) <!-- width="35" -->
+=======
+# Operational Runbook
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+>>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)
 
-## Table of Contents
-* [4.1 Introduction](#4.1)
-* [4.2 Prerequisites](#4.2)
-* [4.3 Installation of the Reference Implementation](#4.3)
-  * [4.3.1 Host Provisioning](#4.3.1)
-  * [4.3.2 Kubernetes Provisioning](#4.3.2)
-* [4.4 Validation of the Reference Implementation](#4.4)
-* [4.5 Automation Tooling](#4.5)
 
 <a name="4.1"></a>
-## 4.1 Introduction
+## Introduction
 
 This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The entire deployment has been tested in Anuket Labs as a part of the [Anuket Kuberef project](https://wiki.anuket.io/display/HOME/Kuberef), that aims to deliver RI-2 based on RA-2 specifications. The Kuberef project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop and test against. Currently, Kuberef supports deployments on both baremetal, as well as pre-provisioned infrastructure (for e.g. offered by baremetal providers like Equinix Metal, etc.).
 
 The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. Host provisioning is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage, etc. This stage can be skipped when using preprovisioned hardware, infrastructure providers, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
 
 <a name="4.2"></a>
-## 4.2 Prerequisites
+## Prerequisites
 
 You need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be deployed. Please refer to [Chapter 3](./chapter03.md) for detailed information on the server and network specifications.
 
 <a name="4.3"></a>
-## 4.3 Installation of the Reference Implementation
+## Installation of the Reference Implementation
 
 This section describes how to get started with RI-2 deployment via [Kuberef](https://gerrit.opnfv.org/gerrit/q/project:kuberef).
 
 For the host provisioning stage, the [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) hosted by Nordix Foundation is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://networkbuilders.intel.com/intel-technologies/container-experience-kits) is being used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v21.08) (version v21.08).
 
 <a name="4.3.1"></a>
-### 4.3.1 Installation on Bare Metal Infratructure
+### Installation on Bare Metal Infratructure
 
 Start by cloning the Kuberef repository. Before you are able to run the installer some prerequisites must be installed. Details and installation steps can be found in `docs/release/installation/deployment-guide.rst`. 
 
@@ -145,10 +142,10 @@ The list of allocatable resources will vary depending on the configuration, but 
 }
 ```
 
-### 4.3.2 [Placeholder for other Deployment Scenarios]
+### [Placeholder for other Deployment Scenarios]
 
 <a name="4.4"></a>
-## 4.4 Validation of the Reference Implementation
+## Validation of the Reference Implementation
 
 In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of test cases specified in RC-2 should be executed. A selection of these test cases is documented in [RC-2 Chapter 2](../../../ref_cert/RC2/chapters/chapter02.md).
 
@@ -157,6 +154,6 @@ Currently, Kuberef is validated by running the RC-2 testsuite in GitLab. This RC
 For deploying your own RC-2 toolchain, please refer to the steps mentioned in [RC-2 Kubernetes Testing Cookbook](../../../ref_cert/RC2/chapters/chapter03.md).
 
 <a name="4.5"></a>
-## 4.5 Automation Tooling
+## Automation Tooling
 
 > Describe the automation tooling used and any specific configurations needed.
