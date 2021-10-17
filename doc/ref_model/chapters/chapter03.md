@@ -32,6 +32,10 @@
   * [3.5.6 Time Sensitive Networking](#3.5.6)
   * [3.5.7 Kubernetes Networking Semantics](#3.5.7)
 * [3.6 Storage](#3.6)
+  * [3.6.1 Introduction](#3.6.1)
+  * [3.6.2 Storage Implementation Stereotypes](#3.6.2)
+  * [3.6.3 Storage for Tenant Consumptiom](#3.6.3)
+  * [3.6.4 Storage Scenarios and Architecture Fit](#3.6.4)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
   * [3.8.1 Types of Accelerators](#3.8.1)
@@ -618,34 +622,47 @@ Kubernetes does currently not in itself support multi networks, pod multi networ
 <a name="3.6.1"></a>
 ### 3.6.1 Introduction
 
-The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted VNF applications and the platform management. Each of:
-- underlying compute host boot and virtual machine hosting,
-- control plane configuration and management plane storage for fault and performance management and automation, capacity management and reporting and
-- tenant application and VNF storage needs
-have common and specific needs for storage in terms of performance, capacity and consumption models.
+The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted VNF applications and the platform management.
+Each of:
+* underlying compute host boot and virtual machine hosting,
+* control plane configuration and management plane storage for fault and performance management and automation, capacity management and reporting and
+* tenant application and VNF storage needs
+Have common and specific needs for storage in terms of performance, capacity and consumption models.
 
 The combination of common and diverse needs in conjunction with difference in hosting environments (from large data-centres to small edge deployments) has resulted in proliferation of storage technologies and architectures for its deployment. To address this the "Reference Model" outlines a "General Cloud Storage Model" (see Figure 3-14 - "General Cloud Storage Model"). The model will be used to outline the different types of storage technologoies and how these can be used to meet need for:
-- Provision of dedicated storage systems,
-- Multi-tenanated cloud storage,
-- Control and Management Plane storage needs,
-- Across both large Data Center and Small Edge deployments which could be implementing either Reference Architecture #1 or Reference Architecture #2 or a hybrid of these.
+* Provision of dedicated storage systems,
+* Multi-tenanated cloud storage,
+* Control and Management Plane storage needs,
+* Across both large Data Center and Small Edge deployments which could be implementing either Reference Architecture #1 or Reference Architecture #2 or a hybrid of these.
 
-The objectives is to provide guideance to architects and immplementors in establishing storage solutions for Cloud Infrastructure.
-
-<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-model-01.png" alt="General Cloud Storage Model" Title="General Cloud Storage Model" width="45%"/></p>
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-model-01.png" alt="General Cloud Storage Model" Title="General Cloud Storage Model" width="100%"/></p>
 <p align ="center"><b>Figure 3-14:</b> General Cloud Storage Model</p>
 
-Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). 
-
+Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). The objective of the model and set of stereotypes and perspectives is to provide guideance to architects and immplementors in establishing storage solutions for Cloud Infrastructure.
+ 
 <a name="3.6.2"></a>
 ### 3.6.2 Storage Implementation Stereotypes
 
+The follow set of storage implementations outline some of the most prevalent stereotypical storage implementations.
+
+The first of these are for Data Centre Storage cases, with stereotypes of:
+* Dedicated storage appliance - is is able to provide network based storage via iSCSI, NFS/CIFS with potentially virtual NFS capability which allows establishment of storage tenancies each having there own virtual storage servcies which are exposed on their own network,
+* Software defined storage - which is able to provide simillar to the dedicated storage appliance, but is provided as software solution on top of hyper-converged infrastructure.
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-appliance-sterotype-01.png" alt="Storage Appliance Stereotype" Title="Storage Appliance Stereotype" width="100%"/></p>
+<p align ="center"><b>Figure 3-15:</b> Storage Appliance Stereotype</p>
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-software-defined-sterotype-01.png" alt="Softwar Defined Storage Stereotype" Title="Software Defined Stereotype" width="100%"/></p>
+<p align ="center"><b>Figure 3-16:</b> Software Defined Stereotype</p>
+
+Both of these stereotypes can be used to support very broad storage needs from: machines boot (via iSCSI), to provision of storage to Cloud Platform Control and Management Plane, Platform Native - Hypervisor Attached and Container Persistence storage and Application/VNF managed Network storage.
+To provide this though requires connectivity within the both Cloud Infrastructure Underlay and Tenant Overlay Networks.
 
 <a name="3.6.3"></a>
-### 3.6.3 Storage for Tenant Consumptiom
+### 3.6.3 Storage for Tenant Consumptio
 
 As a tenant within hosted Cloud Infrastructure storage is made available for consumption through a number of models. A simplified view of this is provided in the following illustrative model:
-<p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="45%"/></p>
+<p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="50%"/></p>
 <p align ="center"><b>Figure 3-15:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
 
 Where:
@@ -679,6 +696,10 @@ The following principles apply to Storage scope for the Reference Model, Referen
 * Operationally Amenable: The storage must be amenable to consistent set of operational processes for: Non-Disruptive Capacity Expansion and Contraction, Backup/Restoration and Archive and Performance Management. Where applicable (examples are: Backup/Restoration/Archive) these processes should also be able to be provided to tenants for their own delegated management.
 * Security Policy Amenable: The storage sub-systems must be amenable to policy based security controls covering areas such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management Security Policy Override, Secure Erase on Device Removal and others
 * Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
+
+<a name="3.6.4"></a>
+### 3.6.4 Storage Scenarios and Architecture Fit
+
 
 
 <a name="3.7"></a>
