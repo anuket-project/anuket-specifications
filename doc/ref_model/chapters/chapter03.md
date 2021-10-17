@@ -614,10 +614,39 @@ Kubernetes does currently not in itself support multi networks, pod multi networ
 
 <a name="3.6"></a>
 ## 3.6 Storage
-The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted VNF applications and the platform management.
-Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). A simplified view of this is provided in the following illustrative model:
+
+<a name="3.6.1"></a>
+### 3.6.1 Introduction
+
+The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted VNF applications and the platform management. Each of:
+- underlying compute host boot and virtual machine hosting,
+- control plane configuration and management plane storage for fault and performance management and automation, capacity management and reporting and
+- tenant application and VNF storage needs
+have common and specific needs for storage in terms of performance, capacity and consumption models.
+
+The combination of common and diverse needs in conjunction with difference in hosting environments (from large data-centres to small edge deployments) has resulted in proliferation of storage technologies and architectures for its deployment. To address this the "Reference Model" outlines a "General Cloud Storage Model" (see Figure 3-14 - "General Cloud Storage Model"). The model will be used to outline the different types of storage technologoies and how these can be used to meet need for:
+- Provision of dedicated storage systems,
+- Multi-tenanated cloud storage,
+- Control and Management Plane storage needs,
+- Across both large Data Center and Small Edge deployments which could be implementing either Reference Architecture #1 or Reference Architecture #2 or a hybrid of these.
+
+The objectives is to provide guideance to architects and immplementors in establishing storage solutions for Cloud Infrastructure.
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-model-01.png" alt="General Cloud Storage Model" Title="General Cloud Storage Model" width="45%"/></p>
+<p align ="center"><b>Figure 3-14:</b> General Cloud Storage Model</p>
+
+Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). 
+
+<a name="3.6.2"></a>
+### 3.6.2 Storage Implementation Stereotypes
+
+
+<a name="3.6.3"></a>
+### 3.6.3 Storage for Tenant Consumptiom
+
+As a tenant within hosted Cloud Infrastructure storage is made available for consumption through a number of models. A simplified view of this is provided in the following illustrative model:
 <p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="45%"/></p>
-<p align ="center"><b>Figure 3-14:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
+<p align ="center"><b>Figure 3-15:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
 
 Where:
 * (Comparative) Cost - is monetary value / unit of end user storage capacity 
