@@ -700,7 +700,7 @@ The following principles apply to Storage scope for the Reference Model, Referen
 <a name="3.6.4"></a>
 ### 3.6.4 Storage Scenarios and Architecture Fit
 
-
+Placeholder - provide storage stereotype and placement summary, with key NFR considerations.
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
