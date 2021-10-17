@@ -13,6 +13,7 @@
   * [7.4.2 Platform ‘back-end’ access security](#7.4.2)
   * [7.4.3 Platform ‘front-end’ access security](#7.4.3)
   * [7.4.4 Infrastructure as a Code security](#7.4.4)
+  * [7.4.5 Security of Production and Non-production Environments](#7.4.5)
 * [7.5 Workload Security - Vendor Responsibility](#7.5)
   * [7.5.1 Software Hardening](#7.5.1)
   * [7.5.2 Port Protection](#7.5.2)
@@ -248,6 +249,22 @@ The framework identifies the following five distinct stages:
 5.	Continuous monitoring and runtime defence
 
 Triggers and checkpoints define transitions within stages. When designing DevSecOps security processes, one needs to keep in mind, that when a trigger condition is met, one or more security activities are activated. The outcomes of those security activities need to determine whether the requirements of the process checkpoint are satisfied. If the outcome of the security activities meets the requirements, the next set of security activities are performed as the process transitions to the next checkpoint, or, alternatively, to the next stage if the checkpoint is the last one in the current stage. If, on the other hand, the outcome of the security activities does not meet the requirements, then the process should not be allowed to advance to the next checkpoint. Tables 7-9 to 7-13 in Section 7.9 define the IaaC security activities presented as security requirements mapped to particular stages and trigger points.
+
+<a name="7.4.5"></a>
+### 7.4.5 Security of Production and Non-production Environments
+Telecommunications operators often focus their security efforts on the production environments actively used by their customers and/or their employees. This is of course critical because a breach of such systems can seriously damage the company and its customers. In addition, production systems often contain the most valuable data, making them attractive targets for intruders. But an insecure software development or testing environment can also create real problems because they may leave a company open to corporate espionage, sabotage by competitors, and theft of sensitive data.
+
+Many of the security best practices apply in both production and non-production environments. But securing a software development and testing environments may require a different emphasis because such environments present some additional challenges: 
+
+*	Rapid pace of change in complex environments often necessary for agile, sometimes experimental development and testing practices, e.g., in the DevOps type of developments.
+*	Transition to Production, requiring hardening the developed software by incorporating the required internal and external protections that were not in place during development, if not done properly, may lead to some of the development shortcuts to be left in production code.
+*	Use of real-world data in non-production environments, often necessary for proper development and testing, may lead to insecure management of sensitive data.
+
+To address these additional challenges, decisive actions need to be taken, such as:
+
+*	Serious consideration of the security and privacy of development and test environments.
+*	Rigorous review of code prior to submitting it to Production to remove any leftover development vulnerabilities, e.g., hardcoded keys and logins or other security/privacy stubs.
+*	Securing of real-world sensitive data in case it is necessary to use such data in non-production environments.
 
 <a name="7.5"></a>
 ## 7.5 Workload Security - Vendor Responsibility
