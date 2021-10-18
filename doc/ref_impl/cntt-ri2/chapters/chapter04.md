@@ -4,8 +4,12 @@
 ![State](../figures/bogo_sdc.png) <!-- width="35" -->
 =======
 # Operational Runbook
+<<<<<<< HEAD
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 >>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)
+=======
+![Scope](../figures/bogo_sdc.png)
+>>>>>>> 339390ea ([RI2] replacing HTML tags with markdown)
 
 
 <a name="4.1"></a>

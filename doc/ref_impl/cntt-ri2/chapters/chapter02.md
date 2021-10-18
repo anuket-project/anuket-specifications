@@ -4,8 +4,12 @@
 ![State](../figures/bogo_ifo.png)
 =======
 # Reference Implementation Requirements
+<<<<<<< HEAD
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 >>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)
+=======
+![Scope](../figures/bogo_ifo.png)
+>>>>>>> 339390ea ([RI2] replacing HTML tags with markdown)
 
 
 ## Introduction

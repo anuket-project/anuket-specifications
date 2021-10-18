@@ -4,10 +4,14 @@
 ![State](../figures/bogo_lsf.png) <!-- width="35" -->
 =======
 # Requirements for Labs
+<<<<<<< HEAD
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 >>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)
 
 
+=======
+[!Scope](../figures/bogo_lsf.png)
+>>>>>>> 339390ea ([RI2] replacing HTML tags with markdown)
 
 
 <a name="3.1"></a>
@@ -21,7 +25,7 @@ The purpose of this chapter is to list and describe the requirements on labs use
 
 As a result of these, RI2 must be deployable in different lab environments:
 
-1. internal development labs of software vendors, operators and 3<sup>rd</sup> party test labs
+1. internal development labs of software vendors, operators and 3rd party test labs
 1. public community labs (e.g. Anuket (formerly OPNFV))
 1. resources hosted by cloud infrastructure providers (e.g. [Equinix Metal](https://metal.equinix.com/))
 
@@ -44,9 +48,9 @@ The requirements on and means of accessing a given lab differ per hosting organi
 
 * Access to lab resources hosted by **public cloud providers** is managed by the cloud provider.
 
-* Access to **internal development and test labs** of software vendors, operators and 3<sup>rd</sup> party test labs is managed by the corresponding entity and not expected to be available to community members outside of the respective organization.
+* Access to **internal development and test labs** of software vendors, operators and 3rd party test labs is managed by the corresponding entity and not expected to be available to community members outside of the respective organization.
 
-For all community-focused activities, access to the respective lab infrastructure must be made available to community members through an application process, irrespective of whether the infrastructure is hosted in Anuket labs, 3<sup>rd</sup> party labs or public cloud infrastructure.
+For all community-focused activities, access to the respective lab infrastructure must be made available to community members through an application process, irrespective of whether the infrastructure is hosted in Anuket labs, 3rd party labs or public cloud infrastructure.
 
 
 <a name="3.2.2"></a>

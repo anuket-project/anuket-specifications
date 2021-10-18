@@ -4,8 +4,12 @@
 ![State](../figures/bogo_dfp.png) <!-- width="35" -->
 =======
 # Overview
+<<<<<<< HEAD
 <p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
 >>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)
+=======
+![Scope](../figures/bogo_dfp.png)
+>>>>>>> 339390ea ([RI2] replacing HTML tags with markdown)
 
 
 <a name="1.1"></a>
@@ -70,6 +74,10 @@ The main communities involved in driving requirements and development of this RI
 The following figure gives an overview of the relationship of the communities involved.
 
 ![Relationship of communities](../figures/ri2-ch01-relationship_of_communities.png)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 339390ea ([RI2] replacing HTML tags with markdown)
 
 <a name="1.4"></a>
 ## Reference Implementation Approach

@@ -26,7 +26,7 @@
 ## 5.4 Development Efforts
 =======
 # Gap Analysis and Development
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+![Scope](../figures/bogo_ifo.png)
 
 
 <a name="5.1"></a>
