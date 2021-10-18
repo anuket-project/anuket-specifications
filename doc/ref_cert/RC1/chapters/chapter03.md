@@ -1,29 +1,8 @@
-# 3. Cloud Infrastructure Test Cases and Traceability to Requirements
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+# Cloud Infrastructure Test Cases and Traceability to Requirements
 
-## Table of Contents
-* [3.1 Introduction](#3.1)
-* [3.2 Selection Criteria](#3.2)
-* [3.3 Traceability Matrix](#3.3)
-  * [3.3.1 Architecture and OpenStack Based](#3.3.1)
-  * [3.3.2 Infrastructure](#3.3.2)
-  * [3.3.3 VIM](#3.3.3)
-  * [3.3.4 Interfaces & APIs](#3.3.4)
-  * [3.3.5 Dashboard](#3.3.5)
-  * [3.3.6 OpenStack API benchmarking](#3.3.6)
-  * [3.3.7 Dataplane Benchmarking](#3.3.7)
-  * [3.3.8 Opensource VNF onboarding and testing](#3.3.8)
-  * [3.3.9 Tenants](#3.3.9)
-  * [3.3.10 LCM](#3.3.10)
-  * [3.3.11 Assurance](#3.3.11)
-  * [3.3.12 Security](#3.3.12)
-  * [3.3.13 Resilience](#3.3.13)
-  * [3.3.14 Bare-metal validations](#3.3.14)
-* [3.4 Test Cases Traceability to Requirements](#3.4)
-  * [3.4.1 Test Cases Traceability](#3.4.1)
+![Scope](../figures/bogo_ifo.png)
 
-<a name="3.1"></a>
-## 3.1 Introduction
+## Introduction
 
 The scope of this chapter is to identify and list down test cases based on requirements defined in [Reference Architecture-1 (RA-1)](../../../ref_arch/openstack/README.md). This will serve as traceability between test cases and requirements.
 
@@ -35,12 +14,10 @@ Note that each requirement may have one or more test cases associated with it.
 
 **may**: Test cases that are marked as may are considered optional. The same applies to may not.
 
-<a name="3.2"></a>
-## 3.2 Selection Criteria
+## Selection Criteria
 > Test cases below are selected based on available test cases in open-source tools like FuncTest etc.
 
-<a name="3.3"></a>
-## 3.3 Traceability Matrix
+## Traceability Matrix
 
 The following is a Requirements Traceability Matrix (RTM) mapping Test Case, and/or Test Case Coverage, to RM and RA-1 requirements (config and deployment).
 
@@ -48,17 +25,13 @@ The RTM contains RM config (i.e. .conf) requirements listed “per profile”, f
 
 For detailed information on RM & RA-1 NFVI and VNF requirements, please refer to [RI-1 Chapter 3](../../../ref_impl/cntt-ri/chapters/chapter03.md).
 
-<a name="3.3.1"></a>
-### 3.3.1 Architecture and OpenStack Requirements
+### Architecture and OpenStack Requirements
 
-<a name="3.3.2"></a>
-### 3.3.2 Infrastructure
+### Infrastructure
 
-<a name="3.3.3"></a>
-### 3.3.3 VIM
+### VIM
 
-<a name="3.3.4"></a>
-### 3.3.4 Interfaces & APIs
+### Interfaces & APIs
 
 The [OpenStack Gates](https://opendev.org/openstack/devstack-gate) verify all
 changes proposed mostly by running thousands of Tempest tests completed by
@@ -98,7 +71,7 @@ selected by Anuket:
 | Rally OpenStack         | 2.1.0   |
 | Tempest                 | 27.0.0  |
 
-#### 3.3.4.1 Identity - Keystone
+#### Identity - Keystone
 
 Keystone API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
@@ -136,7 +109,7 @@ Here are the mainline tasks integrated in
 - KeystoneBasic.create_and_list_users
 - KeystoneBasic.create_tenant_with_users
 
-#### 3.3.4.2 Image - Glance
+#### Image - Glance
 
 Glance API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
@@ -166,7 +139,7 @@ Here are the mainline tasks integrated in
 - GlanceImages.list_images
 - GlanceImages.create_image_and_boot_instances
 
-#### 3.3.4.3 Block Storage - Cinder
+#### Block Storage - Cinder
 
 Cinder API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
@@ -210,7 +183,7 @@ Here are the mainline tasks integrated in
 - Quotas.cinder_update_and_delete
 - Quotas.cinder_update
 
-#### 3.3.4.4 Object Storage - Swift
+#### Object Storage - Swift
 
 Swift API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
@@ -236,7 +209,7 @@ Here are the mainline tasks integrated in
 - SwiftObjects.create_container_and_object_then_delete_all
 - SwiftObjects.list_and_download_objects_in_containers
 
-#### 3.3.4.5 Networking - Neutron
+#### Networking - Neutron
 
 Neutron API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
@@ -322,7 +295,7 @@ Here are the mainline tasks integrated in
 - NeutronNetworks.set_and_clear_router_gateway
 - Quotas.neutron_update
 
-#### 3.3.4.6 Compute - Nova
+#### Compute - Nova
 
 Nova API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
@@ -410,7 +383,7 @@ Here are the mainline tasks integrated in
 - NovaServerGroups.create_and_delete_server_group
 - Quotas.nova_update
 
-#### 3.3.4.7 Orchestration - Heat
+#### Orchestration - Heat
 
 Heat API is covered in the OpenStack Gates via
 [heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin) as
@@ -444,15 +417,13 @@ Here are the mainline tasks integrated in
 - HeatStacks.create_suspend_resume_delete_stack
 - HeatStacks.list_stacks_and_resources
 
-<a name="3.3.5"></a>
-### 3.3.5 Dashboard
+### Dashboard
 
 Horizon is covered in the OpenStack Gates via
 [tempest-horizon](https://github.com/openstack/tempest-horizon) as integrated
 in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck/testcases.yaml?h=stable%2Fwallaby).
 
-<a name="3.3.6"></a>
-### 3.3.6 OpenStack API benchmarking
+### OpenStack API benchmarking
 
 [Rally](https://opendev.org/openstack/rally) is tool and framework that allows
 to perform OpenStack API benchmarking.
@@ -470,7 +441,7 @@ which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby)
 
-#### 3.3.6.1 Identity - Keystone
+#### Identity - Keystone
 
 [Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
@@ -489,7 +460,7 @@ of 0%) proposed in
 | KeystoneBasic.create_and_list_users           | 10         |
 | KeystoneBasic.create_tenant_with_users        | 10         |
 
-#### 3.3.6.2 Image - Glance
+#### Image - Glance
 
 [Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
@@ -505,7 +476,7 @@ of 0%) proposed in
 | GlanceImages.create_and_get_image            | 10         |
 | GlanceImages.create_and_update_image         | 10         |
 
-#### 3.3.6.3 Block Storage - Cinder
+#### Block Storage - Cinder
 
 [Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
@@ -535,7 +506,7 @@ of 0%) proposed in
 | Quotas.cinder_update_and_delete                               | 10         |
 | Quotas.cinder_update                                          | 10         |
 
-#### 3.3.6.4 Object Storage - Swift
+#### Object Storage - Swift
 
 [Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
@@ -547,7 +518,7 @@ of 0%) proposed in
 | SwiftObjects.create_container_and_object_then_delete_all      | 10         |
 | SwiftObjects.list_and_download_objects_in_containers          | 10         |
 
-#### 3.3.6.5 Networking - Neutron
+#### Networking - Neutron
 
 [Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
@@ -595,7 +566,7 @@ of 0%) proposed in
 | NeutronTrunks.create_and_list_trunks       | 4          |
 | Quotas.neutron_update                      | 40         |
 
-#### 3.3.6.6 Compute - Nova
+#### Compute - Nova
 
 [Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
@@ -631,7 +602,7 @@ of 0%) proposed in
 | NovaServerGroups.create_and_list_server_groups                 | 10         |
 | Quotas.nova_update                                             | 10         |
 
-#### 3.3.6.7 Orchestration - Heat
+#### Orchestration - Heat
 
 [Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
@@ -645,8 +616,7 @@ of 0%) proposed in
 | HeatStacks.create_suspend_resume_delete_stack | 10         |
 | HeatStacks.list_stacks_and_resources          | 10         |
 
-<a name="3.3.7"></a>
-### 3.3.7 Dataplane benchmarking
+### Dataplane benchmarking
 
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby)
 offers two benchmarking dataplane test cases leveraging on:
@@ -670,7 +640,7 @@ asked for an update of the default SLA proposed in
 
 On top of this dataplane benchmarking described in VMTP & Shaker, we need to integrate testing as described in [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf). This type of testing is better suited to measure the networking capabilities of a compute node. The [rapid scripts](https://wiki.opnfv.org/display/SAM/Rapid+scripting) in conjunction with the [PROX tool](https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840) offers an open source implementation for this type of testing.
 
-### 3.3.7.1 VMTP
+#### VMTP
 
 Here are the
 [scenarios](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-vmtp-run-8/vmtp/vmtp.json)
@@ -708,7 +678,7 @@ Here are all results per scenario:
 | TCP      | 65536    | rtt_ms           |
 | TCP      | 65536    | throughput_kbps  |
 
-### 3.3.7.2 Shaker
+#### Shaker
 
 Here are the
 [scenarios](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-shaker-run-8/shaker/report.json)
@@ -735,7 +705,7 @@ Here are all samples:
 | TCP            | retransmits            |
 | UDP            | packets (pps)          |
 
-### 3.3.7.3 PROX
+#### PROX
 
 The generator used with the rapid scripts is PROX with a specific generator configuration file.
 When multiple flows are requested, the generator starts randomizing bits in the source and destination UDP ports.
@@ -746,8 +716,7 @@ All throughput benchmarking is done by a generator sending packets to a reflecto
 The VMs or containers use only 1 vNIC for incoming and outgoing traffic. Multiple queues can be used.
 Multiple VMs or containers can be deployed prior to running any tests. This allows to use generator-reflector pairs on the same or different compute nodes, on the same or different NUMA nodes.
 
-<a name="3.3.8"></a>
-### 3.3.8 Opensource VNF onboarding and testing
+### Opensource VNF onboarding and testing
 
 Running opensource VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualization requirements.
@@ -767,29 +736,21 @@ The VNF are covered by upstream tests when possible (see
 [clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)) and
 by Functest VNF tests in the other cases.
 
-<a name="3.3.9"></a>
-### 3.3.9 Tenants
+### Tenants
 
-<a name="3.3.10"></a>
-### 3.3.10 LCM
+### LCM
 
-<a name="3.3.11"></a>
-### 3.3.11 Assurance
+### Assurance
 
-<a name="3.3.12"></a>
-### 3.3.12 Security
+### Security
 
-<a name="3.3.13"></a>
-### 3.3.13 Resilience
+### Resilience
 
-<a name="3.3.14"></a>
-### 3.3.14 Bare-metal validations
+### Bare-metal validations
 
-<a name="3.4"></a>
-## 3.4 Test Cases Traceability to Requirements
+## Test Cases Traceability to Requirements
 
-<a name="3.4.1"></a>
-### 3.4.1 RM/RA-1 Requirements
+### RM/RA-1 Requirements
 
 According to [RC1 Chapter04](chapter04.md)
 the following test cases must pass as they are for Anuket NFVI
@@ -815,8 +776,7 @@ Conformance:
 | opnfv/functest-vnf:wallaby               | vyos_vrouter          | PASS     |
 | opnfv/functest-vnf:wallaby               | juju_epc              | PASS     |
 
-<a name="3.4.2"></a>
-### 3.4.2 TC Mapping to Requirements
+### TC Mapping to Requirements
 
 | test case             | requirements                                                             |
 |-----------------------|--------------------------------------------------------------------------|

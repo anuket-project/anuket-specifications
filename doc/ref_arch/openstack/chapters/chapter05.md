@@ -18,14 +18,14 @@ implementations that **get certified by RC** can be considered as Anuket RA Conf
 The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and a
 consolidated view of these and other APIs that are of interest.
 
-OpenStack is a multi-project framework composed of services evolving independently. It is not enough to rely only on the
+OpenStack is a multi-project framework composed of independently evolving services. It is not enough to rely only on the
 OpenStack release to characterise the capabilities supported by these services. Regarding OpenStack services APIs,
-an "API version" is associated to each OpenStack service.
+an "API version" is associated with each OpenStack service.
 In addition to major API versions, some OpenStack services (Nova, Glance, Keystone, Cinder...) support microversions.
-The microversions allow to introduce new features over time.
+The microversions allow new features to be introduced over time.
 In this chapter, the **major version** and **microversion** are specified per service.
-The mentioned microversion is the minimal microversion that supports the features requested for Anuket.
-For the purpose of conformance tests, this chapter also identifies the set of the features, offered by a service, that are mandatory for Anuket compliant implementation.
+The specified microversion is the minimal microversion that supports the features requested for this RA.
+For the purpose of conformance tests, this chapter also identifies the set of features, offered by a service, that are mandatory for Anuket compliant implementation.
 
 <a name="5.2"></a>
 ## 5.2. Core OpenStack Services APIs
@@ -286,21 +286,20 @@ This section illustrates some of the Interfaces provided by OpenStack; the exhau
 at https://docs.openstack.org/api-ref/.
 
 OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs
-directly using the HTTP or REST library, or they can use one of the many programming language specific cloud
-libraries.
+directly using the HTTP or REST library, or they can use one of the many cloud specific programming language libraries.
 
 **APIs**
 
 | **OpenStack Service** | Link for API list                                    | **API Version** | **Maximal API Microversion** |
 |-----------------------|------------------------------------------------------|-----------------|------------------------------|
-| Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | v3              | 3.13                         |
-| Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.79                         |
+| Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | v3              | 3.14                         |
+| Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.88                         |
 | Networking: Neutron   | https://docs.openstack.org/api-ref/network/v2/       | v2.0            |                              |
 | Image: Glance         | https://docs.openstack.org/api-ref/image/v2/         | v2              | 2.9                          |
-| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/ | v3              | 3.59                         |
+| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/ | v3              | 3.64                         |
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1              |                              |
 | Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.36                         |
-| Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              |                              |
+| Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              | 2021-04-06 (template)                             |
 <!--
 | Acceleration: Cyborg  | https://docs.openstack.org/api-ref/accelerator/v2/ | v2    |
 -->

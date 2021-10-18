@@ -1,34 +1,17 @@
-[<< Back](../)
+# OpenStack-based cloud infrastructure Testing Cookbook
 
-# 4. OpenStack-based cloud infrastructure Testing Cookbook
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+![Scope](../figures/bogo_ifo.png)
 
-## Table of Contents
-* [4.1 Introduction](#4.1)
-* [4.2 Relevant Community Projects and Initiatives](#4.2)
-   * [4.2.1 Functest](#4.2.1)
-   * [4.2.2 Yardstick](#4.2.2)
-   * [4.2.3 Bottlenecks](#4.2.3)
-   * [4.2.4 Test Tools](#4.2.4)
-   * [4.2.5 Scenario Descriptor File (SDF)](#4.2.5)
-* [4.3 OpenStack Testing Cookbook](#4.3)
-  * [4.3.1 OpenStack API testing configuration](#4.3.1)
-  * [4.3.2 Run OpenStack Testing](#4.3.2)
-
-<a name="4.1"></a>
-## 4.1 Introduction
+## Introduction
 
 Define the purpose of the chapter which is to:
 - Identify Framework Needs, Goals, and Dependencies
 - Define Opensource Integration (OVP, Functest, CVC, others)
 - Provide Automation Toolchain (list, topology, flow)
 
+## Relevant Community Projects and Initiatives
 
-<a name="4.2"></a>
-## 4.2 Relevant Community Projects and Initiatives
-
-<a name="4.2.1"></a>
-### 4.2.1 Functest
+### Functest
 
 [Functest](https://functest.readthedocs.io/en/stable-iruya/) was initially
 created to verify OPNFV Installers and Scenarios and then to publish fair,
@@ -150,19 +133,15 @@ Additional links:
 - [Deploy your own Functest CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004)
 - [Functest gates](https://build.opnfv.org/ci/view/functest/)
 
-<a name="4.2.2"></a>
-### 4.2.2 Yardstick
+### Yardstick
 
-<a name="4.2.3"></a>
-### 4.2.3 Bottlenecks
+### Bottlenecks
 
-<a name="4.2.4"></a>
-### 4.2.4 Test Tools
+### Test Tools
 1. Shaker:  https://pyshaker.readthedocs.io/en/latest/ (The distributed data-plane testing tool built for OpenStack)
 2. Sonubuoy: https://sonobuoy.io/ It is a diagnostic tool that makes it easier to understand the state of a Kubernetes cluster by running a set of plugins (including Kubernetes conformance tests) in an accessible and non-destructive manner.
 
-<a name="4.2.5"></a>
-### 4.2.5 Scenario Descriptor File (SDF)
+### Scenario Descriptor File (SDF)
 As defined by Anuket, Scenario Descriptor File's (SDF) will be utilized to relay information from the Scenario Designer (or Test Manager), to Release Managers, CI Pipeline Owners, and Installer Agents, to define test scenario content, and specifications.
 
 SDF's will contain, but not limited to, the following Metadata, Components, Deployment Options, Deployment Tools, and Hardware prerequistes:
@@ -184,8 +163,7 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
   - Supporting installers.
   - Valid options per installer.
 
-<a name="4.3"></a>
-## 4.3 OpenStack Testing Cookbook
+## OpenStack Testing Cookbook
 
 At the time of writing, the CI description file is hosted in Functest and only
 runs the containers listed in RM/RA-1 Requirements. It will be completed by the
@@ -212,8 +190,7 @@ git clone https://gerrit.opnfv.org/gerrit/functest functest-src
 ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
-<a name="4.3.1"></a>
-### 4.3.1 OpenStack API testing configuration
+### OpenStack API testing configuration
 
 Here is the default Functest tree as proposed in
 [Functest Wallaby](https://wiki.anuket.io/display/HOME/Functest+Wallaby):
@@ -231,8 +208,7 @@ and then to reconfigure the toolchain:
 ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
-<a name="4.3.2"></a>
-### 4.3.2 Run OpenStack Testing
+### Run Anuket OpenStack Testing
 
 Open http://127.0.0.1:8080/job/functest-wallaby-daily/ in a web browser, login
 as admin/admin and click on "Build with Parameters" (keep the default build_tag

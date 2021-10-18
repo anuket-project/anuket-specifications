@@ -1,5 +1,6 @@
-# 2. Kubernetes Test Cases and Requirements Traceability
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+# Kubernetes Test Cases and Requirements Traceability
+
+![Scope](../figures/bogo_ifo.png)
 
 ## Introduction
 

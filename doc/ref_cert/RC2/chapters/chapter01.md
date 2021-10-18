@@ -1,14 +1,6 @@
-# 1. Introduction
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+# Introduction
 
-## Table of Contents
-
-* [1.1 Introduction](#1.1)
-* [1.2 RC2 End User Requirements](#1.2)
-* [1.3 Scope](#1.3)
-* [1.4 Guidlines](#1.4)
-* [1.5 Conformance Methodologies](#1.5)
-* [1.6 Reading Guide and Usage](#1.6)
+![Scope](../figures/bogo_ifo.png)
 
 ## Executive Summary
 
@@ -25,15 +17,13 @@ In summary, **Conformance** testing will be performed as part of cloud infrastru
 
 **All Terms utilized throughout this chapter are intended to align with LFN Complinace and Verification Committee (CVC) definitions, and their use through CVC documentation, guidelines, and standards.**
 
-<a name="1.1"></a>
-## 1.1 Introduction
+## Introduction
 
 **Document Purpose**
 
 This chapter includes tracability from requirements to test cases and a test case execution framework to ensure Kubernetes infrastructure meets the design, feature, and capability expectations of the Reference Model (RM) and RA2. Ultimately, RC2 will reduce the amount of time and cost it takes each operator to on-board and maintain cloud infrastructure and CNFs.
 
-<a name="1.2"></a>
-## 1.2 RC2 End User Requirements
+## RC2 End User Requirements
 
 Telcom service providers / operators are the primary intended audience for RC2 results. Specifically those selecting infrastructure and network function technologies to use in their network. The RC2 result artefact(s) should be clear and provide confidence to the service provider that the test results meet the requirements *they have.*
 
@@ -57,8 +47,7 @@ Vendors/Developers are a secondary audience. They should be able to clearly see 
 * Failures should provide additional content to inform the user where or how the requirement was violated without having to read the test
 * Expected preconditions and environment requirements for any test tooling must be defined
 
-<a name="1.3"></a>
-## 1.3 Scope
+## Scope
 
 This document covers aspects of conformance for both Kubernetes based cloud infrastructure and workloads. The document will cover the following topics:
 
@@ -73,8 +62,7 @@ This document covers aspects of conformance for both Kubernetes based cloud infr
 - VNFM/NFVO, like ONAP, is not used in the process flow for infrastructure verifications or validations
 - Upgrades to workloads, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope
 
-<a name="1.4"></a>
-## 1.4 Guidelines
+## Guidelines
 
 The objectives of the Reference Conformance for cloud infrastrucute is to verify implementations against the reference architecture which satisfies infrastructure needs for workloads. The objectives of the Reference Conformance for workloads is to verify workload implementations consume resources and behave as expected against the reference architecture.
 
@@ -88,15 +76,13 @@ These guidlines will drive RC2 deliverables:
 
 - Should/may conformance criteria, which may or may not be testable, provide recommendations or best-practices for functional operability and/or performance behavior. These criteria and associated tests can be very useful for developing, evaluating or deploying a cloud infrastructure but are not critical to a commercially significant badging program.
 
-<a name="1.5"></a>
-## 1.5 Conformance Methodologies
+## Conformance Methodologies
 
 The RC2 test suite will provide validation to ensure workloads can interoperate with the RA2 conformant infrastructure. Upstream projects will define features/capabilities, test scenarios, and test cases to be executed. 3rd Party test platforms may also be leveraged if desired.
 
 **Dependencies** infrastructure and workload validation will rely upon test harnesses, test tools, and test suites provided by upstream projects, including OPNFV and CNF conformance. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the conformance process may change, but test parity is required if new test suites are added in place of older, stale projects.
 
-<a name="1.6"></a>
-## 1.6 Reading Guide and Usage
+## Reading Guide and Usage
 
 RC2 focuses on testing of Kubernetes based cloud infrastructure thus the chapter structure is designed to facilitate this by matching test cases to requirements and building test cookbooks. If you are looking for requirements or the reasons behind them, please refer to the RA2. Chapters 2 and 3 cover Kubernetes infrastructure conformance while 4 and 5 cover CNF conformance.
 

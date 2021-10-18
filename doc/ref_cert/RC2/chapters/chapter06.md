@@ -1,3 +1,1 @@
-# 6. Gap Analysis and Development
-
-## Table of Contents
+# Gap Analysis and Development

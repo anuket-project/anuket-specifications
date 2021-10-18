@@ -30,12 +30,13 @@
     * [3.5.4.3 Example of IaaS and CaaS Virtualization Infrastructure Instances on a Shared HW Infrastructure With SDN](#3.5.4.3)
   * [3.5.5 Service Function Chaining](#3.5.5)
   * [3.5.6 Time Sensitive Networking](#3.5.6)
-  * [3.5.7 Networking Semantics](#3.5.7)
+  * [3.5.7 Kubernetes Networking Semantics](#3.5.7)
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
   * [3.8.1 Types of Accelerators](#3.8.1)
   * [3.8.2 Infrastructure and Application Level Acceleration](#3.8.2)
+    * [3.8.2.1 Example of O-RAN Acceleration Abstraction Layer Interface](#3.8.2.1)
   * [3.8.3 Workload Placement](#3.8.3)
   * [3.8.4 CPU Instructions](#3.8.4)
   * [3.8.5 Fixed Function Accelerators](#3.8.5)
@@ -599,10 +600,17 @@ SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommen
 SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY.
 
 <a name="3.5.7"></a>
-### 3.5.7 Networking Semantics
-OpenStack Neutron provides “network connectivity as a service” between interface devices; it implements the OpenStack Networking API. It manages virtual networking and access to physical networks. Neutron provides actual layer 2 connectivity to compute instances and supports subnets. A subnet is attached to a network and describes an IP network; a subnet has a CIDR and a gateway IP address. Neutron supports dedicated static IP addresses or DHCP, and Floating IP addresses for dynamic traffic rerouting. These and other capabilities, including support for SDN, allow, for example, the instantiation of network services such as L3aaS and LBaaS and their interconnection. Networking APIs and other networking capabilities can be added through the use of the ML2 plugin.
+### 3.5.7 Kubernetes Networking Semantics
+The support for traditional network orchestration is non existent in Kubernetes as it is foremost a Platform as a Service (PaaS) environment and not an Infrastructure as a Service (Iaas) component. There is no network orchestration API, like Neutron in OpenStack, and there is no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then connect them all together as can be done using Neutron.
 
-Kubernetes networking can be divided into two parts, built-in network functionality available through the pod's mandatory primary interface and network functionality available through the pod's optional secondary interfaces. Kubernetes currently only allows for one network, the cluster network, and one network attachment for each pod. All pods and containers have an eth0 interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as VRFs and additional routes and routing tables inside the pod network namespace. The support for traditional network orchestration is non-existent in Kubernetes, there is no network orchestration API and there is no way to create L2 networks. Multi networks, pod multi-network attachments, or network orchestration is supported by using a [Container Network Interface](https://github.com/containernetworking/cni) multiplexer such as [Multus](https://github.com/k8snetworkplumbingwg/multus-cni). The [Network Plumbing Working Group](https://github.com/k8snetworkplumbingwg/community) has produced the [Kubernetes Network Custom Resource Definition De-facto Standard](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit). This document describes how secondary networks can be defined and attached to pods.
+Kubernetes networking can be divided into two parts, built in network functionality available through the pod's mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
+
+#### Built in Kubernetes Network Functionality 
+Kubernetes currently only allows for one network, the *cluster* network, and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing tables inside the pod network namespace.
+
+#### Multiple Networks and Advanced Configurations
+Kubernetes does currently not in itself support multi networks, pod multi network attachments or network orchestration. This is supported by using a [*Container Network Interface*](https://github.com/containernetworking/cni) multiplexer such as [Multus](https://github.com/k8snetworkplumbingwg/multus-cni). The [*Network Plumbing Working Group*](https://github.com/k8snetworkplumbingwg/community) has produced the [Kubernetes Network Custom Resource Definition De-facto Standard](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit). This document describes how secondary networks can be defined and attached to pods.
+
 
 <a name="3.6"></a>
 ## 3.6 Storage
@@ -690,7 +698,7 @@ Accelerator technologies can be categorized depending on where they are realized
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
 
-Figure 3-18 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
+Figure 3-17 gives examples for the Hardware Accelerators shown in Figure 3-15 (the [Sample reference model realization](#3.7) diagram).
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
 
@@ -712,6 +720,20 @@ Preferably, Application or Infrastructure acceleration can take benefit from und
 - For Linux IO virtualization: VirtIO
 - For Network Functions using DPDK libraries: Crypto Device, EthDev, Event Device and Base Band Device
 - For O-RAN Network functions: O-RAN Acceleration Abstraction Layer Interface.
+
+<a name="3.8.2.1"></a>
+### 3.8.2.1 Example of O-RAN Acceleration Abstraction Layer Interface
+
+O-RAN Alliance’s Cloudification and Orchestration Workgroup (WG6) defines the Acceleration Abstraction Layer (AAL), an application-level interface, as the recommended way of decoupling software vendors’ network functions from the different hardware accelerator implementations.
+
+<p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram_AAL.png" alt="AAL Interface in RM Realization Diagram" Title="AAL Interface in RM Realization Diagram" width="65%"/></p>
+
+<p align="center"><b>Figure 3-18:</b> AAL Interface in RM Realization Diagram</p>
+
+The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” (O-RAN.WG6.AAL-GAnP-v01.00, November 2020, available to the public upon agreement to the O-RAN Alliance Adopter License, from [https://www.o-ran.org](https://www.o-ran.org)):
+-	Describes the functions conveyed over the AAL interface, including configuration and management functions.
+-	Identifies the requirements as well as general procedures and operations.
+-	Introduces the initial set of the O-DU/O-CU AAL profiles.
 
 <a name="3.8.3"></a>
 ### 3.8.3 Workload Placement
@@ -754,7 +776,7 @@ There are two main types of Smart NICs that can accelerate network functions in-
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
 
-<p align="center"><b>Figure 3-18:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+<p align="center"><b>Figure 3-19:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
 
 
 #### 3.8.7.1 Simple SmartNIC
