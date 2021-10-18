@@ -608,7 +608,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.mon.001 | The Prod-Platform and PreProd-Platform  **must** provide logs and these logs must be regularly monitored for events of interest. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved. | |
+| req.sec.mon.001 | The Prod-Platform and NonProd-Platform  **must** provide logs and these logs must be regularly monitored for events of interest. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved. | |
 | req.sec.mon.002 | Security logs **must** be time synchronised for the Prod-Platform and NonProd-Platform. |  |
 | req.sec.mon.003 | The Prod-Platform and NonProd-Platform **must** log all changes to time server source, time, date and time zones. |  |
 | req.sec.mon.004 | The Prod-Platform and NonProd-Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest. |  |
