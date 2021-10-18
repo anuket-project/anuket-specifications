@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 5. Gap Analysis and Development
 
 ![State](../figures/bogo_ifo.png) <!-- width="35" -->
@@ -27,16 +28,26 @@
 =======
 # Gap Analysis and Development
 ![Scope](../figures/bogo_ifo.png)
+=======
+Gap Analysis and Development
+============================
+>>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
+|Scope|
 
-<a name="5.1"></a>
-## Introduction
+Introduction
+------------
 
+Gap Analysis
+------------
 
-<a name="5.2"></a>
-## Gap Analysis
+Proposals and Resolution
+------------------------
 
+Development Efforts
+-------------------
 
+<<<<<<< HEAD
 <a name="5.3"></a>
 ## Proposals and Resolution
 
@@ -44,3 +55,6 @@
 <a name="5.4"></a>
 ## Development Efforts
 >>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)
+=======
+.. |Scope| image:: ../figures/bogo_ifo.png
+>>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
