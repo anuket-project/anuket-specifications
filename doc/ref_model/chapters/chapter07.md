@@ -629,9 +629,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.019 | The Prod-Platform’s and NonProd-Platform’s components **must not** include any authentication credentials, e.g., password, in any logs, even if encrypted. | | 
 | req.sec.mon.020 | The Prod-Platform’s and NonProd-Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
 | req.sec.mon.021 | The Prod-Platform  **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until the external loggin system becomes available | |
-| req.sec.mon.022 | The NonProd-Platform must provide logs and these logs must be regularly monitored for events of interest. The logs must contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved | |
-| req.sec.mon.023 | Security logs must be time synchronised for the NonProd-Platform | |
-| req.sec.mon.024 | The NonProd-Platform must log all changes to time server source, time, date and time zones | |
+| req.sec.mon.022 | ** To be removed as duplicate of req.sec.mon.001**  | |
+| req.sec.mon.023 | ** To be removed as duplicate of req.sec.mon.002**| |
+| req.sec.mon.024 | ** To be removed as duplicate of req.sec.mon.003** | |
 | req.sec.mon.025 | The NonProd-Platform should secure and protect Audit logs (containing sensitive information) both in-transit and at rest | |
 | req.sec.mon.026 | The NonProd-Platform should Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly | |
 | req.sec.mon.027 | The NonProd-Platform should Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions | |
