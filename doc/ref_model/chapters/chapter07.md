@@ -626,7 +626,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.016 | The Prod-Platform and NonProd-Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
 | req.sec.mon.017 | The Prod-Platform and NonProd-Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
 | req.sec.mon.018 | The Prod-Platform, starting from initialization, **must** collect and analyse logs to identify security events, and store these events in an external system. | |
-| req.sec.mon.019 | The Prod-Platform’s and NonProd-Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
+| req.sec.mon.019 | The Prod-Platform’s and NonProd-Platform’s components **must not** include any authentication credentials, e.g., password, in any logs, even if encrypted. | | 
 | req.sec.mon.020 | The Prod-Platform’s and NonProd-Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
 | req.sec.mon.021 | The Prod-Platform  **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until the external loggin system becomes available | |
 | req.sec.mon.022 | The NonProd-Platform must provide logs and these logs must be regularly monitored for events of interest. The logs must contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved | |
