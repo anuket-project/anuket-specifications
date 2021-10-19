@@ -636,6 +636,11 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.026 | The NonProd-Platform should Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly | |
 | req.sec.mon.027 | The NonProd-Platform should Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions | |
 | req.sec.mon.028 | The NonProd-Platform should Monitor and Audit security parameter configurations for compliance with defined security policies | |
+| req.sec.mon.029 | The NonProd-Platform should Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly | |
+| req.sec.mon.030 | The NonProd-Platform should Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly | |
+| req.sec.mon.031 | The NonProd-Platform should Monitor and Audit Traffic patterns and volumes to prevent malware download attempts | |
+| req.sec.mon.032 | The NonProd-Platform’s logging system may support the storage of security audit logs for a configurable period of time | |
+| req.sec.mon.033 | The NonProd-Platform may store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful | |
 
 <p align="center"><b>Table 7-7:</b> Monitoring and security audit requirements</p>
 
