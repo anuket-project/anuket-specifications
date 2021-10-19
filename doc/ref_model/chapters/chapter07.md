@@ -256,18 +256,8 @@ Telecommunications operators often focus their security efforts on the productio
 
 Security is about mitigating risk. If operators do not have the same level of security regime in their non-production environments compared to production, then an additional level of risk may be introduced. Especially if such non-production environments accept outside connections (for example for suppliers or partners, which is quite normal in complex telco ecosystems), there is a real need to monitor security of these non-production environments. The gold standard then is to implement the same security policies in production and non-production infrastructure, which would reduce risk and typically simplify operations by using the same control tools and processes. However, for many practical reasons some of the security monitoring rules may differ. As an example, if a company maintains a separate, isolated environment for infrastructure software development experimentation, the configuration monitoring rules may be relaxed in comparison with the production environment, where such experimentation is not allowed. Therefore, in this document, when dealing with such dilemma, the focus has been placed on those non-production security requirements that must be on the same level as in the production environment (typically of **must** type), leaving relaxed requirements (typically of **should** or **may**) in cases there is no such necessity, see Sec. 7.9.7.  
  
+In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered to be Infrastructure as a Code (IaaC). This fact implies that many aspects of code related security automatically apply to IaaC. Security aspects of IaaC in the telco context is discussed in the previous Section 7.4.4 "Infrastructure as a Code", which introduces the relevant framework for security automation and programmatic execution and monitoring of security controls. Organisations need to identify which of the stages or activities within these stages should be performed within the non-production versus production environments. This mapping will then dictate which security activities defined for particular stages and triggers (e.g, vulnerability tests, patch testing, penetration tests) are mandatory, and which can be left as  discretionary.  
 
-Many of the security best practices apply in both production and non-production environments. But securing a software development and testing environments may require a different emphasis because such environments present some additional challenges: 
-
-*	Rapid pace of change in complex environments often necessary for agile, sometimes experimental development and testing practices, e.g., in the DevOps type of developments.
-*	Transition to Production, requiring hardening the developed software by incorporating the required internal and external protections that were not in place during development, if not done properly, may lead to some of the development shortcuts to be left in production code.
-*	Use of real-world data in non-production environments, often necessary for proper development and testing, may lead to insecure management of sensitive data.
-
-To address these additional challenges, decisive actions need to be taken, such as:
-
-*	Serious consideration of the security and privacy of development and test environments.
-*	Rigorous review of code prior to submitting it to Production to remove any leftover development vulnerabilities, e.g., hardcoded keys and logins or other security/privacy stubs.
-*	Securing of real-world sensitive data in case it is necessary to use such data in non-production environments.
 
 <a name="7.5"></a>
 ## 7.5 Workload Security - Vendor Responsibility
