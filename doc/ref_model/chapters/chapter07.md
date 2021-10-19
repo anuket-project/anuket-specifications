@@ -604,12 +604,12 @@ Security certification should encompass the following elements:
 <a name="7.9.7"></a>
 ### 7.9.7. Monitoring and Security Audit
 
-The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action. We distinguish between requirements for Production Platform (Prod-Platform) and Non-production Platform (NonProd-Platform) as some of the requirements will differ.
+The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action. We distinguish between requirements for Production Platform (Prod-Platform) and Non-production Platform (NonProd-Platform) as some of the requirements will differ.
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
 | req.sec.mon.001 | The Prod-Platform and NonProd-Platform  **must** provide logs and these logs must be regularly monitored for events of interest. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved. | |
-| req.sec.mon.002 | Security logs **must** be time synchronised for the Prod-Platform and NonProd-Platform. |  |
+| req.sec.mon.002 | Security logs **must** be time synchronised for the Prod-Platform as well as for the NonProd-Platform. |  |
 | req.sec.mon.003 | The Prod-Platform and NonProd-Platform **must** log all changes to time server source, time, date and time zones. |  |
 | req.sec.mon.004 | The Prod-Platform and NonProd-Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest. |  |
 | req.sec.mon.005 | The Prod-Platform and NonProd-Platform  **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly. | |
