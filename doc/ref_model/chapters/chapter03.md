@@ -34,7 +34,7 @@
 * [3.6 Storage](#3.6)
   * [3.6.1 Introduction](#3.6.1)
   * [3.6.2 Storage Implementation Stereotypes](#3.6.2)
-  * [3.6.3 Storage for Tenant Consumptiom](#3.6.3)
+  * [3.6.3 Storage for Tenant Consumption](#3.6.3)
   * [3.6.4 Storage Scenarios and Architecture Fit](#3.6.4)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
@@ -630,7 +630,7 @@ Each of:
 have common and specific needs for storage in terms of performance, capacity and consumption models.
 
 The combination of common but diverse needs in conjunction with the differences in the hosting environments (from large data-centres to small edge deployments) has resulted in the proliferation of storage technologies and their deployment architectures. To address this the "Reference Model" outlines a "General Cloud Storage Model" (see Figure 3-14 - "General Cloud Storage Model"). The model will outline the different types of storage technologies and how they can be used to meet the need for:
-* Provision of dedicated storage systems,
+* Providing storage via dedicated storage systems,
 * multi-tenant cloud storage,
 * Control and Management Plane storage needs,
 across both large data-centres and small edge deployments; the model can then be used for implementing Reference Architectures.
@@ -646,8 +646,8 @@ Storage is multi-faceted and so can be classified based on its: cost, performanc
 The following set of storage implementations outline some of the most prevalent stereotypical storage implementations.
 
 The first of these are for Data Centre Storage cases, with stereotypes of:
-* Dedicated storage appliance - is is able to provide network based storage via iSCSI, NFS/CIFS with potentially virtual NFS capability which allows establishment of storage tenancies each having there own virtual storage servcies which are exposed on their own network,
-* Software defined storage - which is able to provide similar capabilities as the dedicated storage appliance but is provided as a software solution on top of a hyper-converged infrastructure.
+* Dedicated storage appliance (Figure 3-15) - that provide network based storage via iSCSI (2), NFS/CIFS (3) with potentially virtual NFS (4) capability. Haveing virtual network software (4) allows establishment of storage tenancies, where storage tenancy have their own virtual storage servcies which are exposed on their own network,
+* Software defined storage (Figure 3-16) - which is able to provide similar capabilities as the dedicated storage appliance (see (3),(4) & (5) in diagram). In this case this is provided as a software solution on top of a hyper-converged infrastructure.
 
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-appliance-sterotype-01.png" alt="Storage Appliance Stereotype" Title="Storage Appliance Stereotype" width="100%"/></p>
 <p align ="center"><b>Figure 3-15:</b> Storage Appliance Stereotype</p>
@@ -655,13 +655,13 @@ The first of these are for Data Centre Storage cases, with stereotypes of:
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-software-defined-sterotype-01.png" alt="Softwar Defined Storage Stereotype" Title="Software Defined Stereotype" width="100%"/></p>
 <p align ="center"><b>Figure 3-16:</b> Software Defined Stereotype</p>
 
-Both of these stereotypes can be used to support very broad storage needs from: machines boot (via iSCSI), to provision of storage to Cloud Platform Control and Management Plane, Platform Native - Hypervisor Attached and Container Persistence storage and Application/VNF managed Network storage.
-To provide this though requires connectivity within the both Cloud Infrastructure Underlay and Tenant Overlay Networks.
+Both of these stereotypes can be used to support very broad storage needs from: machine boot (via iSCSI), providing storage to the Cloud Platform Control and Management Plane, Platform Native (viz., Hypervisor Attached and Container Persistence storage, as defined in section "3.6.3 Storage for Tenant Consumption) and Application/VNF managed network storage.
+To provide this requires connectivity within Cloud Infrastructure Underlay and Tenant Overlay Networks.
 
 <a name="3.6.3"></a>
 ### 3.6.3 Storage for Tenant Consumption
 
-As a tenant within hosted Cloud Infrastructure storage is made available for consumption through a number of models. A simplified view of this is provided in the following illustrative model:
+Storage is made avaiable for tenant consumption through a number of models. A simplified view of this is provided in the following illustrative model.
 <p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="50%"/></p>
 <p align ="center"><b>Figure 3-15:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
 
