@@ -622,7 +622,7 @@ Kubernetes does currently not in itself support multi networks, pod multi networ
 <a name="3.6.1"></a>
 ### 3.6.1 Introduction
 
-The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted VNF applications and the platform management.
+The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted applications and the platform management.
 Each of:
 * underlying compute host boot and virtual machine hosting,
 * control plane configuration and management plane storage for fault and performance management and automation, capacity management and reporting and
