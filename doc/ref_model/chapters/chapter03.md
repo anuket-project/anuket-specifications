@@ -703,13 +703,17 @@ In cloud infrastructure the storage types may manifest in various ways with subs
 ### 3.6.4 Storage Scenarios and Architecture Fit
 
 The storage model and stereotypical usage scenarios are used to illustrate the key storage uses cases and there appliability to support storage across needs across a range of cloud deployments. This set of storage uses cases is summarised on the following tables including how the stereotypes can support the Anuket Reference Architectures the key areas for consideration in such a deployment scenario.
--
 
-| Use Case | Stereotype | Boot | Control | Mgt | Hypervisor Attached (RA-1) | Container Persistent (RA-2) | Within | Cross | External | vNFS | Object | Specific | Group |
+| Use Case | Stereotype | Infra/Ctrl/Mgt ||| Tenant / User ||||||| Considerations ||
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| | | Boot | Ctrl | Mgt | Platform Native || Shared |||| Object | Specific | Group |
+| | | | | | Hypervisor Attached (RA-1) | Container Persistent (RA-2) | Within | Cross | Ext | vNFS | | | |
 | Data-centre Storage | Dedicated Network Storage Appliance | Yes | Yes | Yes | Yes | Yes | Optional | Optional | Optional | Optional | | | 1. Can support RA 1 & 2 from single instance<br>2. Can support Live Migraton within/across Availability Zones (RA 1)<br>3. Can support full range of Shared Storage use cases<br>4. Can support performance tiers |
 | | Dedicated Software Defined Storage | Optional | Optional | Optional | Yes | Yes | Optional | Optional | Optional | Optional | Optional | | |
-
+| Small data-centre | Small Software Defined Storage | Optional | Optional | Optional | Yes | Yes | Optional | Optional | Optional | Optional | Optional | | |
+| Edge Cloud | Edge Cloud for VNF/CNF | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional | | |
+| | Edge Cloud for Apps | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional | | |
+| | Edge Cloud for Content Mgt | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional | | |
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
