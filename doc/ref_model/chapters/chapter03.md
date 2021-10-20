@@ -646,7 +646,7 @@ Storage is multi-faceted and so can be classified based on its: cost, performanc
 The following set of storage implementations outline some of the most prevalent stereotypical storage implementations.
 
 The first of these are for Data Centre Storage cases, with stereotypes of:
-* Dedicated storage appliance (Figure 3-15) - that provide network based storage via iSCSI (2), NFS/CIFS (3) with potentially virtual NFS (4) capability. Haveing virtual network software (4) allows establishment of storage tenancies, where storage tenancy have their own virtual storage servcies which are exposed on their own network,
+* Dedicated storage appliance (Figure 3-15) - that provide network based storage via iSCSI (2), NFS/CIFS (3) with potentially virtual NFS (4) capability. Having virtual network software (4) allows the establishment of storage tenancies, where storage tenancy have their own virtual storage services which are exposed on their own network,
 * Software defined storage (Figure 3-16) - which is able to provide similar capabilities as the dedicated storage appliance (see (3),(4) & (5) in diagram). In this case this is provided as a software solution on top of a hyper-converged infrastructure.
 
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-appliance-sterotype-01.png" alt="Storage Appliance Stereotype" Title="Storage Appliance Stereotype" width="100%"/></p>
