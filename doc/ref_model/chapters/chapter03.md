@@ -643,7 +643,7 @@ Storage is multi-faceted and so can be classified based on its: cost, performanc
 <a name="3.6.2"></a>
 ### 3.6.2 Storage Implementation Stereotypes
 
-The follow set of storage implementations outline some of the most prevalent stereotypical storage implementations.
+The following set of storage implementations outline some of the most prevalent stereotypical storage implementations.
 
 The first of these are for Data Centre Storage cases, with stereotypes of:
 * Dedicated storage appliance - is is able to provide network based storage via iSCSI, NFS/CIFS with potentially virtual NFS capability which allows establishment of storage tenancies each having there own virtual storage servcies which are exposed on their own network,
