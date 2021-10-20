@@ -32,12 +32,14 @@ This chapter includes process flow, logistics, and requirements which must be sa
 Perform NFVI+VNF Verification and Validations using Anuket reference architecture, leveraging the existing Anuket and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 **Test Methodology**
+
 - Verification test to make sure if the OpenStack services have been deployed and configured correctly
 - Manifest Verifications (Termed Compliance by CVC) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the RM and RA.
 - Empirical Validation with Reference Golden VNFs (Termed Validation by CVC) will ensure the NFVI runs with a set of VNF Families, or Classes, to mimic production-like VNF connectivity, for the purposes of interoperability checks.
 - Candidate VNF Validation (Termed Validation & Performance by CVC) will ensure complete interoperablity of VNF behaviour on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
 
 **Different Distributions**
+
 The three step methodology described above of verifying Manifest compliance, executing Empirical Golden VNF transactions, and performing Interoperability Testing is the same validation process regardless of the Distribution used to establish a cloud topology, and the components and services used in the client software stack.  
 
 ### Terminology
@@ -59,6 +61,7 @@ This document covers the realisation aspects of conformance of both NFVI and VNF
 - Identify development efforts needed to address any gaps identified.
 
 **Not in Scope**
+
 - Functional testing / validation of the application provided by the VNF is outside the scope of this work.
 - ONAP is not used in the process flow for NFVI verifications, or validations.
 - Upgrades to VNFs, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope.
@@ -103,6 +106,7 @@ Perform VNF interoperability verifications against an implementation of Anuket r
 
 **Assumptions** NFVI+VNF testing will be considered **Testable** if the follow
 qualifiers are present in a test execution, and subsequent result:
+
 * Ability to perform Conformance, or Verification of Artifacts to ensure
   designs (RM/RA/RI) are delivered per specification
 * Ability to Control (or manipulate), manifestations of RM/RA/RI for the
@@ -128,6 +132,7 @@ is required if new test suites are added in place of older, stale projects.
 ![Instance Type](../figures/RC_NFVI_VNF_Instance_Type_25Nov2019.jpg)
 
 **NFVI+VNF Instance Type:**
+
 * Standard compute flavours to be tested are defined in
   [chapter 4.2.1](../../../ref_model/chapters/chapter04.md#4.2.1)
 * Performance profiles come in the form of Basic, Network Intensive, and

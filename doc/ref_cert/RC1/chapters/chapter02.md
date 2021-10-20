@@ -2,128 +2,172 @@
 
 ![Scope](../figures/bogo_ifo.png)
 
-## Synopsis:
-This chapter mainly covers the overall requirement for Reference Conformance test. The Conformance tests are conducted on NFVI and VNF level. Conformance on NFVI makes sure the SUT follows RM & RA requirement, and conformance on VNF makes sure VNF can be deployed and sufficiently working on the NFVI that has passed the conformance test.
+## Synopsis
 
-<!---Verification will be used to indicate conformance to design requirement specifications. Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.--->
+This chapter mainly covers the overall requirement for the Reference
+Conformance test. The Conformance tests are conducted on the Cloud
+Infrastructure and VNF level. Conformance on the Cloud Infrastructure makes
+sure the SUT follows RM & RA requirements, and conformance on VNF makes sure
+that the VNF can be deployed and sufficiently work on the Cloud Infrastructure
+that has passed the conformance test.
 
-<!---Validations is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.--->
-
-All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards. This chapter will outline the Requirements, Process, and Automation, needed to deliver NFVI conformance.
+All Terms utilized throughout this chapter are intended to align with CVC
+definitions, and their use through CVC documentation, guidelines, and
+standards. This chapter will outline the Requirements, Process, and Automation,
+needed to deliver the Cloud Infrastructure conformance.
 
 ## Introduction
-NFVI (Network Functions Virtualization Infrastructure) refers to the physical and virtual resources (compute, storage and network) on which virtual network functions (VNFs) are deployed. Due to differentiation of API and under layer configuration and capability matrix, cross vendor VNF deployment on NFVI becomes hard to predict, and requires huge amount of cross vendor interoperability tests. With combined effort from operators and vendors, define RA and RM, to make sure to consolidate the under layer configuration, capability and API, so as to provide the upper layer VNF with a 'common cloud infrastructure'. Based on this, Anuket also provides RC for conformance test of SUT against RA & RM requirements. SUT passes the conformance test will be identified as NFVI that can fit into the common requirements.
+
+The Cloud Infrastructure refers to the physical and virtual resources (compute,
+storage and network) on which virtual network functions (VNFs) are deployed.
+Due to the differences in the API and under-layer configuration and capability
+matrix,  multiple vendor VNF deployments on the shared Cloud Infrastructure
+becomes hard to predict, and requires s amount of cross vendor interoperability
+tests. With the combined effort from operators and vendors, define the RA and
+RM, that standardises the under layer configuration, capability and API, so as
+to provide the upper layer VNF with a 'common cloud infrastructure'. Based on
+this, Anuket also provides RC for conformance tests of SUT against RA & RM
+requirements. SUT passes the conformance test will be identified as NFVI that
+can fit into the common requirements.
 
 In the meantime, RC also provides conformance test for VNF. The intention is to make sure VNF that passes RC test cases can be deployed on any NFVI which also passes RC without any conformance and interoperability issue.
 
 ## Methodology
-The NFVI is consumed or used by VNFs via APIs exposed by Virtualised Infrastructure Manager (VIM). The resources created by VIM on the NFVI use the underlying physical hardware (compute, storage and network) either directly or indirectly. Anuket recommends RA1 to be used as a reference architecture for NFVI conformance. This  would provide a set of standard interfaces to create resources on NFVI. Below step by step process illustrates the NFVI conformance methodology:
-* SUT (Anuket RI1 or commercial NFVI) is deployed on hardware for conformance test.
-* A set of tests run on SUT to determine the SUT readiness for conformance process.
-* Golden KPIs are taken as a reference.
-* A set of tests are run on the SUT (target for conformance).
-* KPIs obtained from the SUT are collected and submitted to conformance portal.
-* The SUT KPIs are reviewed and compared with Golden KPIs to determine if the conformance badge is to be provided to SUT or not.
+
+The Cloud Infrastructure is consumed or used by VNFs via APIs exposed by
+Virtualised Infrastructure Manager (VIM). The resources created by VIM on the
+NFVI use the underlying physical hardware (compute, storage and network) either
+directly or indirectly. Anuket recommends RA1 to be used as a reference
+architecture for the Cloud Infrastructure conformance. This would provide a set
+of standard interfaces to create resources on the Cloud Infrastructure. Below
+step by step process illustrates the NFVI conformance methodology:
+
+- SUT (Anuket RI1 or commercial NFVI) is deployed on hardware for conformance test.
+- A set of tests run on SUT to determine the SUT readiness for conformance process.
+- Golden KPIs are taken as a reference.
+- A set of tests are run on the SUT (target for conformance).
+- KPIs obtained from the SUT are collected and submitted to conformance portal.
+- The SUT KPIs are reviewed and compared with Golden KPIs to determine if the conformance badge is to be provided to SUT or not.
 
 Based on a NFVI passing RC test and getting the conformance badge, VNF conformance test can be further conducted. Such test will leverage existing Anuket Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 ![Conformance Methodology](../figures/RC_CertificationMethodology.jpg)
 
 Conformance methodologies to be implemented, from a process perspective include:
-* Engineering package validations will be performed against targeted infrastructure/architecture.
-* Configuration settings/features/capabilities will be baseline.
-* Entrance Criteria Guidelines will be satisfied prior to RC test (i.e. Supplier needs to submit/agree/conform)
-  * Conform to Anuket RM
-  * Conform to Anuket RA
-  * Submit standard documentation
-  * Adhere to security compliance
-* Exit Criteria Guidelines will be satisfied prior to issuance of Anuket compliance badges.
-* Verification decisions will be based on data. Test harness is compatible, or conforms to testing against standard interfaces and services.
-* Leverage test harnesses from existing open source projects where practical, and applicable.
+
+- Engineering package validations will be performed against targeted infrastructure/architecture.
+- Configuration settings/features/capabilities will be baseline.
+- Entrance Criteria Guidelines will be satisfied prior to RC test (i.e. Supplier needs to submit/agree/conform)
+  - Conform to Anuket RM
+  - Conform to Anuket RA
+  - Submit standard documentation
+  - Adhere to security compliance
+- Exit Criteria Guidelines will be satisfied prior to issuance of Anuket compliance badges.
+- Verification decisions will be based on data. Test harness is compatible, or conforms to testing against standard interfaces and services.
+- Leverage test harnesses from existing open source projects where practical, and applicable.
 
 ## Conformance Strategy & Vehicle
-In order to begin the Conformance process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in RI. Once the target NFVI passes these tests, it would become a candidate for NFVI Conformance. If NFVI fails the tests, it will not be move to next workflow for Conformance. NFVI+VNF conformance consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally important and addressed in [Chapter 7 of Reference Model](../../../ref_model/chapters/chapter07.md).
+
+In order to begin the Conformance process, the Cloud Infrastructure needs to be
+validated and expected to be in a required state. This state would be
+determined by running tests as described in RI. Once the target Cloud
+Infrastructure passes these tests, it would become a candidate for the Cloud
+Infrastructure Conformance. If the Cloud Infrastructure fails the tests, it
+will not be moved to the next workflow for Conformance. The Cloud
+Infrastructure+VNF conformance consist of a three part process for Compliance,
+Validation, and Performance. Adherence to Security standards are equally
+important and addressed in
+[Chapter 7 of Reference Model](../../../ref_model/chapters/chapter07.md).
 
 The three part conformance process includes NFVI Manifest conformance, Empirical Baseline measurements against targeted VNF families, and Candidate VNF validation. More specifically,
-* NFVI conformance: NFVI is the SUT, ensuring NFVI is compliant with specs of RM and RA accomplished with Manifest test
-* Empirical Validation with Reference VNF (Validation): NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement
-* Candidate VNF Conformance (Validation & Performance): VNF is the SUT, ensuring VNFs operate with RM and RA leveraging VVP/CVP/VFN SDK Test Suites
-* Security: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks (Refer to Chapter 7 Security for additional test/verification details)
+
+- NFVI conformance: NFVI is the SUT, ensuring NFVI is compliant with specs of RM and RA accomplished with Manifest test
+- Empirical Validation with Reference VNF (Validation): NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement
+- Candidate VNF Conformance (Validation & Performance): VNF is the SUT, ensuring VNFs operate with RM and RA leveraging VVP/CVP/VFN SDK Test Suites
+- Security: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks (Refer to Chapter 7 Security for additional test/verification details)
 Validations are performed against an Infrastructure Profile Catalog, VNF performance profile, and targeted VNF class or family for baseline measurements.
 
 The Infrastructure Profile Catalog contains the following attributes:
 
-* Profile is a collection of (limited) options offered by the infrastructure to the VNF
-  * Capabilities
-  * Metrics
-  * Compute flavors
-  * Interface options
-  * Storage extensions
-  * Acceleration capabilities
-* Profiles are offered to VNFs as an instance types with predefined compute flavors.
-  * A particular set of options is an instance type
-  * Compute flavors: .tiny, .small etc as defined in [RM §4.2.1.1](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
-* NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. Details for each of these profiles can be found in [RM §2.3](../../../ref_model/chapters/chapter02.md#2.3).
+- Profile is a collection of (limited) options offered by the infrastructure to the VNF
+  - Capabilities
+  - Metrics
+  - Compute flavors
+  - Interface options
+  - Storage extensions
+  - Acceleration capabilities
+- Profiles are offered to VNFs as an instance types with predefined compute flavors.
+  - A particular set of options is an instance type
+  - Compute flavors: .tiny, .small etc as defined in [RM §4.2.1.1](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
+- NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. Details for each of these profiles can be found in [RM §2.3](../../../ref_model/chapters/chapter02.md#2.3).
 
 ![NFVI Profiles](../../../figures/RM-ch04-node-profiles.png)
 
 ## Profiles Reference
+
 Different vendors have different types of VNFs to serve different use-cases. A VNF like Broadband Network Gateway (BNG) would require high networking throughput whereas a VNF like Mobility Management Entity (MME) would require high computing performance. As such, BNG would require high KPI values for network throughput and MME would require high CPU performance KPIs like Index Score, Instructions Per Second (IPS) etc. The target NFVI to cater these needs would have different characteristics. Depending on VNF's requirements, the NFVI can be categorized into below profiles:
-* Basic (B) profile for standard computing and
-* Network intensive (N) profile offering predictable computing performance along with low latency and high networking throughput
+
+- Basic (B) profile for standard computing and
+- Network intensive (N) profile offering predictable computing performance along with low latency and high networking throughput
 Similarly, different NFVI vendors may specialize in different hardware profiles and some may specialize in both VNFs and NFVI.
 
 To cater to different needs from multiple NFVI vendors, Anuket allows different types of NFVI Conformance based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
- * Certify Vendor NFVI Hardware solution: This allows for Conformance of only NFVI.
- * Certify Vendor NFVI Hardware and Software Solution: This allows for Conformance for NFVI running a particular VNF.
+ - Certify Vendor NFVI Hardware solution: This allows for Conformance of only NFVI.
+ - Certify Vendor NFVI Hardware and Software Solution: This allows for Conformance for NFVI running a particular VNF.
 
 ## Compliance, Verification, and Conformance
+
 The below set of steps define the compliance, verification and Conformance process for NFVI
-* Based on VNF's requirements, NFVI profile is selected - B, N
-* NFVI readiness is checked for Conformance.
-* The test VNFs are on-boarded using automation scripts on the NFVI.
-* VNF on-boarding is validated by running functional tests to ensure that the on-boarding is successful.
-* VNF performance tests are executed and NFVI KPIs are recorded during the tests.
-* KPI comparison is run to compare NFVI KPIs with Golden KPIs, which serve as a reference for NFVI Conformance.
-* If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a Conformance badge.
-* If NFVI KPIs do not meet Golden KPIs, no Conformance is provided.
+
+- Based on VNF's requirements, the Cloud Infrastructure profile is selected -
+  B, N
+- The Cloud Infrastructure readiness is checked for Conformance.
+- The test VNFs are on-boarded using automation scripts on the NFVI.
+- VNF on-boarding is validated by running functional tests to ensure that the on-boarding is successful.
+- VNF performance tests are executed and NFVI KPIs are recorded during the tests.
+- KPI comparison is run to compare NFVI KPIs with Golden KPIs, which serve as a reference for NFVI Conformance.
+- If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a Conformance badge.
+- If NFVI KPIs do not meet Golden KPIs, no Conformance is provided.
 
 ![Reference NFVI Profiles Implementation](../figures/RC_Ref_NFVI_Profiles.jpg)
 
 ## Entry & Exit Criteria
+
 **Entry criteria**: Before entering into NFVI Conformance, NFVI needs to
 satisfy the following requirements as entry pass:
-* Design & Requirements
-  * Design, Configuration, Features, SLAs, and Capability documentation
+
+- Design & Requirements
+  - Design, Configuration, Features, SLAs, and Capability documentation
     complete
-  * Users stories / Adherence to Anuket Model principles and guidelines
-  * Chosen Reference Architecture matches the Architecture from the
+  - Users stories / Adherence to Anuket Model principles and guidelines
+  - Chosen Reference Architecture matches the Architecture from the
     product catalog
-* Environment
-  * Lab assets/resources and respective software revision levels are specified,
+- Environment
+  - Lab assets/resources and respective software revision levels are specified,
     with confirmation of compatibility across external systems
-  * Tenant needs identified
-  * All connectivity, network, image, VMs, delivered with successful pairwise
+  - Tenant needs identified
+  - All connectivity, network, image, VMs, delivered with successful pairwise
     tests
-  * Lab instrumented for proper monitoring
-  * Lab needs to be setup according to RA1/RA2 as defined by Anuket specifications and should be
+  - Lab instrumented for proper monitoring
+  - Lab needs to be setup according to RA1/RA2 as defined by Anuket specifications and should be
     in the NFVI required state.
-* Planning & Delivery
-  * Kickoff / Acceptance Criteria reviews performed
-  * Delivery commitments, timelines, and cadence accepted
-  * Confirm backward compatibility across software/flavor revision levels
-* Data/VNFs/Security
-  * Images, Heat Templates, Preload Sheets available
-  * Images uploaded to tenant space
-  * External system test data needs identified
-  * Owners (NFVI, VNF, PTL, etc) documented
-  * Security Compliance Satisfied (Refer to Anuket specification Chapter XXXX Security for
+- Planning & Delivery
+  - Kickoff / Acceptance Criteria reviews performed
+  - Delivery commitments, timelines, and cadence accepted
+  - Confirm backward compatibility across software/flavor revision levels
+- Data/VNFs/Security
+  - Images, Heat Templates, Preload Sheets available
+  - Images uploaded to tenant space
+  - External system test data needs identified
+  - Owners (NFVI, VNF, PTL, etc) documented
+  - Security Compliance Satisfied (Refer to Anuket specification Chapter XXXX Security for
     additional tests, scans, and vulnerabilities validations)
 
 **Exit criteria**: NFVI Conformance testing should complete with following
 exit criteria:
-* All mandatory test cases should pass.
-* Test results collated, centralized, and normalized, with a final report
+
+- All mandatory test cases should pass.
+- Test results collated, centralized, and normalized, with a final report
   generated showing status of the test scenario/case (e.g. Pass, Fail, Skip,
   Measurement Success/Fail, etc), along with trace-ability to a functional, or
   non-functional, requirement.
@@ -131,14 +175,21 @@ exit criteria:
 ## Framework Requirements
 
 The NFVI Conformance framework deals with the process of testing NFVI in below three areas:
-* Compliance: The NFVI needs to comply to Anuket RA1/RA2.
-* Validation: Validation deals with the ability of NFVI to respond to Cloud APIs and interfaces.
-* Performance: Performance deals with running tests on NFVI depending on the NFVI profile and collecting KPIs.
 
-The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI Conformance. If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a Conformance badge. If NFVI KPIs do not meet Golden KPIs, no Conformance badge is provided.
+- Compliance: The Cloud Infrastructure needs to comply to Anuket RA1/RA2.
+- Validation: Validation deals with the ability of NFVI to respond to Cloud APIs and interfaces.
+- Performance: Performance deals with running tests on NFVI depending on the NFVI profile and collecting KPIs.
+
+The Cloud Infrastructure KPIs are compared with Golden KPIs, which serve as a
+reference for the Cloud Infrastructure Conformance. If the Cloud Infrastructure
+KPIs meet Golden KPIs, The Cloud Infrastructure is certified and granted a
+Conformance badge. If the Cloud Infrastructure KPIs do not meet Golden KPIs, no
+Conformance badge is provided.
 
 ### Best Practices (General)
+
 The NFVI Conformance framework will be guided by the following core principles:
+
 -   Implementing, and adhering to, Standardized Test Methodology / flow, Test Plan, and Test Case Suites, which promotes scalability using repeatable processes.
 -   Integration with Automated Tool-Chains, such as XTesting or Dovetail, for continuous deployment, validation, and centralization of test harnesses and results visualization.
 - Alliance and execution of OVP flows and methodologies, which supports common structures for code, artifact generation and repository, Conformance criteria, etc.)
@@ -148,10 +199,13 @@ The NFVI Conformance framework will be guided by the following core principles:
 -   Add test cases from operators, which operators already tested in their environment
 
 ### Testing
+
 Testing for NFVI Conformance falls under three broad categories - Compliance, Validation and Performance. Target NFVI for Conformance needs to pass all these tests in order to obtain the Conformance badge.
 
 #### Test Categories
+
 The following five test categories have been identified as **minimal testing required** to verify NFVI interoperability to satisfy the needs of VNF developer teams.
+
  1. Baremetal validation: To validate control and compute nodes hardware
  2. VNF Interoperability: After VNFs are on-boarded, Openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc. would be validated.
  3. Compute components: Validate VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has L2 and L3 connectivity.
@@ -174,7 +228,9 @@ The following **Optional Test Categories** which can be considered by the Operat
  - PM/KPI/Service Assurance Testing
 
 #### Test Harnesses
-In addition to General Best Practices for NFVI Conformance, the following Quality Engineering (QE) standards will be applied when defining and delivering test scenarios for Conformance:  
+
+In addition to General Best Practices for NFVI Conformance, the following Quality Engineering (QE) standards will be applied when defining and delivering test scenarios for Conformance:
+
 1.  Standardized test methodologies / flows capturing requirements from RA's, goals and scenarios for test execution, and normalizing test results.
 2.  Establishing, and leveraging, working test-beds which can be referenced in subsequent test scenario designs.  
 3.  Leveraging standardized cloud-based facilities such as storage, IAM, etc.
@@ -205,6 +261,7 @@ In addition to General Best Practices for NFVI Conformance, the following Qualit
  - Portal contains links to Conformance badge(s) received.
 
 ### Badging
+
 **Defined**.  _Badging_ refers to the granting of a Conformance badge by the OVP to Suppliers/Testers of Anuket NFVI upon demonstration the testing performed confirms:
 
  - NFVI adheres to Anuket RA/RM requirements.
@@ -225,7 +282,8 @@ The below figure shows the targeted badge for NFVI.
 |Results Reporting|Published of Test Results into centralized and common repository and reporting portal|Normalized Results per Standards|
 |Release Notes|Supplier provides concluding remarks, links to artifacts, and demonstration of having met exit criteria for testing|Release Notes
 
-**Conformance Process**.  
+**Conformance Process**
+
 Conformance and issuance of NFVI badges will be as follows:
  - NFVI supplier utilizes, or installs a target RM/RA-x in a RI lab.
  - Required artifacts are submitted/supplied to the OVP, demonstrating proper Lab Installation, Compliance, Validation, Performance, and Release of Results & Known Issues.
@@ -254,13 +312,13 @@ In addition, for test cases targeting the NFVI compliance program, the following
 
 The compliance and Conformance program intends to validate four different types of requirements and system properties:
 
-* API compliance: This is the most relevant type of test case, validating the functional correctness of the system under test. API compliance test cases exercise only the specific well-defined APIs described in the reference architecture (see [Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md)).
+- API compliance: This is the most relevant type of test case, validating the functional correctness of the system under test. API compliance test cases exercise only the specific well-defined APIs described in the reference architecture (see [Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md)).
 
-* Performance: Test cases covering this type of requirement measure specific performance characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
+- Performance: Test cases covering this type of requirement measure specific performance characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
 
-* Resilience: Test cases covering this type of requirement measure specific resilience characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
+- Resilience: Test cases covering this type of requirement measure specific resilience characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
 
-* Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to Anuket hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
+- Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to Anuket hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
 
 The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section [NFVI Test Cases Requirements](chapter02.md#28-nfvi-test-cases-requirements).
 
@@ -268,8 +326,8 @@ The extend to which these different types of requirements are included in the co
 
 Section [Infrastructure Profiles Catalogue](../../../ref_model/chapters/chapter04.md#42-infrastructure-profiles-catalogue) of the reference model defines two software profiles, targeting two different use cases:
 
-* Basic
-* Network intensive
+- Basic
+- Network intensive
 
 The test cases selected for validating compliance of the two profiles must cover the functional and non-functional requirements as listed in Section [Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#425-instance-capabilities-mapping) and Section [Instance Performance Measurement Mapping](../../../ref_model/chapters/chapter04.md#426-instance-performance-measurement-mapping) of the reference model.
 
@@ -312,7 +370,6 @@ For example, if you have a disk that is capable of doing a 100 IOPS, it means th
 
 Additional factors to consider when measuring IOPS:
 
-
 - Take into consideration the percentage of Input (write) vs. Output (reads) operations, as Writes can be more resource intensive.
 - Determine if Reads were performed from Cache, as this may (will) result in faster performance, and faster IOPS.
 - Confirm the storage types (Physical, RAID), as storage arrays with linear, or sequential reading/writing may (will) be slower.
@@ -334,6 +391,7 @@ The NFVI performance measurements aim at assessing the performance of a given NF
 They should allow validating the performance of any software and/or hardware NFVI implementation as described in Reference Model.
 
 Of course, they can also be used for other purposes, such as:
+
 - fine tuning of software and/or hardware NFVI configuration (e.g., the number of cores dedicated to the DPDK vSwitch)
 - comparing the performances of different software or hardware technologies (e.g., DPDK vSwitch vs hardware-offloaded vSwitch)
 - assessing the performance impact of specific features (e.g., with or without encapsulation)
@@ -412,6 +470,7 @@ The different possible test cases are defined by each of the 3 following test tr
 - **Test traffic processing by NFVI**
 
   Different processing complexity applicable to the traffic crossing the NFVI should be considered, including especially (but not exhaustively):
+
   - ***L2 processing*** (Ethernet switching), possibly including VLAN tagging/mapping and encapsulation (e.g., VXLAN)
   - ***L3 processing*** (IP routing), possibly including L2 processing
   - ***L4 stateful processing*** (e.g., FW, NAT, SFC), also including L3 processing
@@ -476,6 +535,7 @@ The following table proposed a possible optimized matrix model of the test cases
 |                     | infra.nfvi.perf.003 | n/a (1)        | n/a (1)        | ?              | ?              | ?             | 200kfps        |
 
 *Table notes*:
+
 - Values are only indicative (see "Metrics Baseline" below)
 - L2/L3/L4 refers to network processing layer
   - L2 for Ethernet switching
@@ -505,6 +565,7 @@ Metric (MVP): vnf.nfvi.perf.006 and infra.nfvi.perf.004,008
 The compute performance metrics are vnf.nfvi.perf.007 and infra.nfvi.perf.004,009.
 
 For normalized results, the compute performance test requires all of the possible vCPUs available for running workloads to execute workloads. You need to start as many VMs as needed to force all of the possible CPUs on the node to run a workload. In this case, the result is normalized:
+
 - to the number of vCPU, for the vCPU capacity measurements (vnf.nfvi.perf.007)
 - to the number of physical core usable by VNFs, for the physical core capacity and compute energy efficiency measurements infra.nfvi.perf.004,009)
 
