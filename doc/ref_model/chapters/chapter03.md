@@ -652,7 +652,7 @@ The first of these are for Data Centre Storage cases, with stereotypes of:
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-appliance-sterotype-01.png" alt="Storage Appliance Stereotype" Title="Storage Appliance Stereotype" width="100%"/></p>
 <p align ="center"><b>Figure 3-15:</b> Storage Appliance Stereotype</p>
 
-<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-software-defined-sterotype-01.png" alt="Softwar Defined Storage Stereotype" Title="Software Defined Stereotype" width="100%"/></p>
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-software-defined-sterotype-01.png" alt="Software Defined Storage Stereotype" Title="Software Defined Storage Stereotype" width="100%"/></p>
 <p align ="center"><b>Figure 3-16:</b> Software Defined Stereotype</p>
 
 Both of these stereotypes can be used to support very broad storage needs from: machine boot (via iSCSI), providing storage to the Cloud Platform Control and Management Plane, Platform Native (viz., Hypervisor Attached and Container Persistence storage, as defined in section "3.6.3 Storage for Tenant Consumption) and Application/VNF managed network storage.
