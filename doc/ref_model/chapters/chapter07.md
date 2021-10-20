@@ -13,6 +13,7 @@
   * [7.4.2 Platform ‘back-end’ access security](#7.4.2)
   * [7.4.3 Platform ‘front-end’ access security](#7.4.3)
   * [7.4.4 Infrastructure as a Code security](#7.4.4)
+  * [7.4.5 Security of Production and Non-production Environments](#7.4.5)
 * [7.5 Workload Security - Vendor Responsibility](#7.5)
   * [7.5.1 Software Hardening](#7.5.1)
   * [7.5.2 Port Protection](#7.5.2)
@@ -248,6 +249,15 @@ The framework identifies the following five distinct stages:
 5.	Continuous monitoring and runtime defence
 
 Triggers and checkpoints define transitions within stages. When designing DevSecOps security processes, one needs to keep in mind, that when a trigger condition is met, one or more security activities are activated. The outcomes of those security activities need to determine whether the requirements of the process checkpoint are satisfied. If the outcome of the security activities meets the requirements, the next set of security activities are performed as the process transitions to the next checkpoint, or, alternatively, to the next stage if the checkpoint is the last one in the current stage. If, on the other hand, the outcome of the security activities does not meet the requirements, then the process should not be allowed to advance to the next checkpoint. Tables 7-9 to 7-13 in Section 7.9 define the IaaC security activities presented as security requirements mapped to particular stages and trigger points.
+
+<a name="7.4.5"></a>
+### 7.4.5 Security of Production and Non-production Environments
+Telecommunications operators often focus their security efforts on the production environments actively used by their customers and/or their employees. This is of course critical because a breach of such systems can seriously damage the company and its customers. In addition, production systems often contain the most valuable data, making them attractive targets for intruders. But an insecure non-production (development, testing) environment can also create real problems because they may leave a company open to corporate espionage, sabotage by competitors, and theft of sensitive data.
+
+Security is about mitigating risk. If operators do not have the same level of security regime in their non-production environments compared to production, then an additional level of risk may be introduced. Especially if such non-production environments accept outside connections (for example for suppliers or partners, which is quite normal in complex telco ecosystems), there is a real need to monitor security of these non-production environments. The gold standard then is to implement the same security policies in production and non-production infrastructure, which would reduce risk and typically simplify operations by using the same control tools and processes. However, for many practical reasons some of the security monitoring rules may differ. As an example, if a company maintains a separate, isolated environment for infrastructure software development experimentation, the configuration monitoring rules may be relaxed in comparison with the production environment, where such experimentation is not allowed. Therefore, in this document, when dealing with such dilemma, the focus has been placed on those non-production security requirements that must be on the same level as in the production environment (typically of **must** type), leaving relaxed requirements (typically of **should** or **may**) in cases there is no such necessity, see Sec. 7.9.7.  
+ 
+In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered to be Infrastructure as a Code (IaaC). This fact implies that many aspects of code related security automatically apply to IaaC. Security aspects of IaaC in the telco context is discussed in the previous Section 7.4.4 "Infrastructure as a Code", which introduces the relevant framework for security automation and programmatic execution and monitoring of security controls. Organisations need to identify which of the stages or activities within these stages should be performed within the non-production versus production environments. This mapping will then dictate which security activities defined for particular stages and triggers (e.g, vulnerability tests, patch testing, penetration tests) are mandatory, and which can be left as  discretionary.  
+
 
 <a name="7.5"></a>
 ## 7.5 Workload Security - Vendor Responsibility
