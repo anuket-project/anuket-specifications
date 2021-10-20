@@ -631,7 +631,7 @@ have common and specific needs for storage in terms of performance, capacity and
 
 The combination of common but diverse needs in conjunction with the differences in the hosting environments (from large data-centres to small edge deployments) has resulted in the proliferation of storage technologies and their deployment architectures. To address this the "Reference Model" outlines a "General Cloud Storage Model" (see Figure 3-14 - "General Cloud Storage Model"). The model will outline the different types of storage technologies and how they can be used to meet the need for:
 * Provision of dedicated storage systems,
-* Multi-tenanated cloud storage,
+* multi-tenant cloud storage,
 * Control and Management Plane storage needs,
 * Across both large Data Center and Small Edge deployments which could be implementing either Reference Architecture #1 or Reference Architecture #2 or a hybrid of these.
 
