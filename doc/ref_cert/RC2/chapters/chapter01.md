@@ -30,6 +30,7 @@ Telcom service providers / operators are the primary intended audience for RC2 r
 Vendors/Developers are a secondary audience. They should be able to clearly see the mapping from a specific test result (pass or fail) to the requirement.
 
 ### Operator/SP Test Result Requirements
+
 * Clickable links from test cases to requirements
 * Pass, Fail, or Skipped for every test
 * Reason for failures
@@ -42,6 +43,7 @@ Vendors/Developers are a secondary audience. They should be able to clearly see 
 * Testing tools must produce machine-readable result formats
 
 ### Vendor Test Result Requirements
+
 * Clear mapping between requirements and test results
 * Enable clear tracability to know which requirements have and haven’t been covered and track changes over time
 * Failures should provide additional content to inform the user where or how the requirement was violated without having to read the test
@@ -57,6 +59,7 @@ This document covers aspects of conformance for both Kubernetes based cloud infr
 - Analysis to identify where the gaps are in the industry for implementing conformance test objectives (tooling, methods, process, etc)
 
 **Not in Scope**
+
 - Functional testing / validation of the application provided by the workload is outside the scope of this work
 - Testing to confirm anything not in RM or RA2 requirements
 - VNFM/NFVO, like ONAP, is not used in the process flow for infrastructure verifications or validations

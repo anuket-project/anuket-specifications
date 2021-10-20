@@ -11,11 +11,13 @@ proposed in a shared tree.
 internet access, GNU/Linux as Operating System and asks for a few
 dependencies as described in
 [Deploy your own Xtesting CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004):
+
 - python-virtualenv
 - git
 
 Please note the next two points depending on the GNU/Linux distributions and
 the network settings:
+
 - SELinux: you may have to add -\-system-site-packages when creating the
   virtualenv ("Aborting, target uses selinux but python bindings
   (libselinux-python) aren't installed!")
@@ -23,6 +25,7 @@ the network settings:
   https://docs.docker.com/config/daemon/systemd/#httphttps-proxy
 
 To deploy your own CI toolchain running Anuket Compliance:
+
 ```bash
 virtualenv functest-kubernetes --system-site-packages
 . functest-kubernetes/bin/activate
@@ -53,6 +56,7 @@ functest-kubernetes-v1.22-zip's console. Be free to download it and then to send
 it to any reviewer committee.
 
 To clean your working dir:
+
 ```bash
 deactivate
 rm -rf functest-kubernetes-src functest-kubernetes
