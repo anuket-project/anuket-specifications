@@ -659,7 +659,7 @@ Both of these stereotypes can be used to support very broad storage needs from: 
 To provide this though requires connectivity within the both Cloud Infrastructure Underlay and Tenant Overlay Networks.
 
 <a name="3.6.3"></a>
-### 3.6.3 Storage for Tenant Consumptio
+### 3.6.3 Storage for Tenant Consumption
 
 As a tenant within hosted Cloud Infrastructure storage is made available for consumption through a number of models. A simplified view of this is provided in the following illustrative model:
 <p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="50%"/></p>
