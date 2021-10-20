@@ -647,7 +647,7 @@ The follow set of storage implementations outline some of the most prevalent ste
 
 The first of these are for Data Centre Storage cases, with stereotypes of:
 * Dedicated storage appliance - is is able to provide network based storage via iSCSI, NFS/CIFS with potentially virtual NFS capability which allows establishment of storage tenancies each having there own virtual storage servcies which are exposed on their own network,
-* Software defined storage - which is able to provide simillar to the dedicated storage appliance, but is provided as software solution on top of hyper-converged infrastructure.
+* Software defined storage - which is able to provide similar capabilities as the dedicated storage appliance but is provided as a software solution on top of a hyper-converged infrastructure.
 
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-appliance-sterotype-01.png" alt="Storage Appliance Stereotype" Title="Storage Appliance Stereotype" width="100%"/></p>
 <p align ="center"><b>Figure 3-15:</b> Storage Appliance Stereotype</p>
