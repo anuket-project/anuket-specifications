@@ -627,12 +627,14 @@ Each of:
 * underlying compute host boot and virtual machine hosting,
 * control plane configuration and management plane storage for fault and performance management and automation, capacity management and reporting and
 * tenant application and VNF storage needs
+
 have common and specific needs for storage in terms of performance, capacity and consumption models.
 
 The combination of common but diverse needs in conjunction with the differences in the hosting environments (from large data-centres to small edge deployments) has resulted in the proliferation of storage technologies and their deployment architectures. To address this the "Reference Model" outlines a "General Cloud Storage Model" (see Figure 3-14 - "General Cloud Storage Model"). The model will outline the different types of storage technologies and how they can be used to meet the need for:
 * Providing storage via dedicated storage systems,
 * multi-tenant cloud storage,
 * Control and Management Plane storage needs,
+
 across both large data-centres and small edge deployments; the model can then be used for implementing Reference Architectures.
 
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-model-01.png" alt="General Cloud Storage Model" Title="General Cloud Storage Model" width="100%"/></p>
