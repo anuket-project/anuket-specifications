@@ -633,7 +633,7 @@ The combination of common but diverse needs in conjunction with the differences 
 * Provision of dedicated storage systems,
 * multi-tenant cloud storage,
 * Control and Management Plane storage needs,
-* Across both large Data Center and Small Edge deployments which could be implementing either Reference Architecture #1 or Reference Architecture #2 or a hybrid of these.
+across both large data-centres and small edge deployments; the model can then be used for implementing Reference Architectures.
 
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-model-01.png" alt="General Cloud Storage Model" Title="General Cloud Storage Model" width="100%"/></p>
 <p align ="center"><b>Figure 3-14:</b> General Cloud Storage Model</p>
