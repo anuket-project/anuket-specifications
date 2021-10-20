@@ -629,7 +629,7 @@ Each of:
 * tenant application and VNF storage needs
 have common and specific needs for storage in terms of performance, capacity and consumption models.
 
-The combination of common and diverse needs in conjunction with difference in hosting environments (from large data-centres to small edge deployments) has resulted in proliferation of storage technologies and architectures for its deployment. To address this the "Reference Model" outlines a "General Cloud Storage Model" (see Figure 3-14 - "General Cloud Storage Model"). The model will be used to outline the different types of storage technologoies and how these can be used to meet need for:
+The combination of common but diverse needs in conjunction with the differences in the hosting environments (from large data-centres to small edge deployments) has resulted in the proliferation of storage technologies and their deployment architectures. To address this the "Reference Model" outlines a "General Cloud Storage Model" (see Figure 3-14 - "General Cloud Storage Model"). The model will outline the different types of storage technologies and how they can be used to meet the need for:
 * Provision of dedicated storage systems,
 * Multi-tenanated cloud storage,
 * Control and Management Plane storage needs,
