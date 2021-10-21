@@ -54,7 +54,7 @@ following Features tabs defined here.
 | Feature:[StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)          |               | Should creating a working zookeeper cluster |
 | Feature:StatefulUpgrade      |               | Stateful upgrade should maintain a functioning cluster |
 | Feature:[SuspendJob](https://kubernetes.io/docs/concepts/workloads/controllers/job/)|               | Should not create pods when created in suspend state |
-| Feature:TaintEviction        |               | All pods on the unreachable node should be marked as NotReady upon the node turn NotReady AND all pods should be evicted after eviction timeout passes |
+| Feature:[TaintEviction](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#taint-based-evictions)|               | All pods on the unreachable node should be marked as NotReady upon the node turn NotReady AND all pods should be evicted after eviction timeout passes |
 | Feature:[TTLAfterFinished](https://kubernetes.io/docs/concepts/workloads/controllers/ttlafterfinished/)| X             | Job should be deleted once it finishes after TTL seconds |
 
 <a name="6.4"></a>
