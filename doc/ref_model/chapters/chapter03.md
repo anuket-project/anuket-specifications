@@ -702,31 +702,48 @@ In cloud infrastructure the storage types may manifest in various ways with subs
 <a name="3.6.4"></a>
 ### 3.6.4 Storage Scenarios and Architecture Fit
 
-The storage model and stereotypical usage scenarios are used to illustrate the key storage uses cases and there appliability to support storage across needs across a range of cloud deployments. This set of storage uses cases is summarised on the following tables including how the stereotypes can support the Anuket Reference Architectures the key areas for consideration in such a deployment scenario.
+The storage model and stereotypical usage scenarios are used to illustrate the key storage uses cases and there appliability to support storage across needs across a range of cloud deployments. This set of storage uses cases is summarised on the following tables including how the stereotypes can support the Anuket Reference Architectures, follwed by the key areas for consideration in such a deployment scenario. The structure of table is:
+ * Use Case - what the the storage use case covered
+ * Sterotype - which of defined stereotypes is used
+ * Infra / Ctrl / Mgt - is the storage stereotype able to support the: Infrastructure, Control Plane and Management Plane Needs
+ * Tenant / User - is the storage sterotype able to support Teneant / User Plane neeeds including: Platform Native, Shared Storage & Object Storage (as per section - "3.6.3 Storage for Tenant Consumption")
 
-| Use Case | Stereotype | Infra/Ctrl/Mgt ||| Tenant / User ||||||
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| | | Boot | Ctrl | Mgt | Platform Native || Shared |||| Object |
-| | | | | | Hypervisor Attached (RA-1) | Container Persistent (RA-2) | Within | Cross | Ext | vNFS | |
-| Data-centre Storage | Dedicated Network Storage Appliance | Yes | Yes | Yes | Yes | Yes | Optional | Optional | Optional | Optional |
-| | Dedicated Software Defined Storage | Optional | Optional | Optional | Yes | Yes | Optional | Optional | Optional | Optional | Optional |
-| Small data-centre | Small Software Defined Storage | Optional | Optional | Optional | Yes | Yes | Optional | Optional | Optional | Optional | Optional |
-| Edge Cloud | Edge Cloud for VNF/CNF | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional |
-| | Edge Cloud for Apps | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional |
-| | Edge Cloud for Content Mgt | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional |
+Where:
+ * "Y" - Yes and almost allows provided
+ * "O" - Optional and readily accommodated
+ * "N" - No, not available
+ * "NA" - Not Applicable for this Use Case / Stereotype
+ 
+
+| | | | | | Tenant / User | | | | | | |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| | | Infra / Ctrl / Mgt | | | Platform Native | | Shared | | | | |
+| Use Case | Stereotype | Boot | Ctrl | Mgt | Hypervisor Attached | Container Persistent | Within | Cross | Ext | vNFS | Object |
+| Data-centre Storage | Dedicated Network Storage Appliance | Y | Y | Y | Y | Y | O | O | O | O | O |
+| | Dedicated Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
+| | Traditional SAN | Y | Y | Y | N | N | N | N | N | N | N |
+| Small data-centre | Small Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
+| Edge Cloud | Edge Cloud for VNF/CNF | NA | O | NA | Y | Y | O | O | O | O | O |
+| | Edge Cloud for Apps | NA | O | NA | Y | Y | O | O | O | O | O |
+| | Edge Cloud for Content Mgt | NA | O | NA | Y | Y | O | O | O | O | O |
 
 The storage sub-system will be a foundational part of any Cloud Infrastructure. As such indentifying needs and considerations that will to be addressed for the deployment of this are very important to ensure solution can meet functional and perforamnce needs and to avoid having to do signifiant rework of the storage solution and its likley ripple through impact on broader Cloud Infrasturcture. To guide build and deployment of Storage solution the following considerations are provided for the various Use Cases and Stereotypes outlined in the summary table.
 
-* Data-centre Storage - in data-centre goal is provide a storage that has flexiblity to meet multiple needs. This means that the Storage should be able to meet needs of:
+* Data-centre Storage - in data-centre the goal is to provide a storage capability that has flexiblity to meet needs of:
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control), 
   * Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation) and
   * Cloud Infastructure Tenant / User Plane, 
-    * Areas of Consideration:
+  * General Areas of Consideration:
      1. Can storage support RA 1 & 2 from single instance? Noting that if you wish to have single storage instance providing storage across multiple Availability Zones within the same data-centre then this needs to be factored into the underlay network design.
      2. Can storage support Live Migraton within and across Availability Zones (RA 1) and how does Cloud Infrastruture solution support migration of Virtual Machine between Availability Zones in general ?
      3. Can storage support full range of Shared Storage use cases: including ability to control how network exposed Share Storage is visible: Within Tenancy, Across Tenancy (noting that a Tenancy can operate across Availability Zones) and Externally.
      4. Can support alternate performance tiers to allow tenant selection of best Cost/Performance option. 
-
+  * Specific Areas of Consideration:
+    1. Dedicated Software Defined Storage:
+      * Need to establish the physical disk data layout / encoding scheme, which could be include choice of replication / mirroring of data aross multiple storage hosts vs. CRC based redudancy manaegment encoding (such as "erasure encoding"). This typically has performance / cost implication as replication has lower performance impact, but consumes much larger number of physical disks, also having three times replication may provide greater data security, but consumes more disk backend network bandwidth than two times replication.
+      * In general with Software Defined Storage solution it is not desirable to use hardware RAID controllers, as this impacts the scope of recovery on failure as the failed devices replacement can only be managed within the RAID volume that disk is part of. With Software Defined Storage failure recovering can be managed within the host that the disk failed in, but also across phyiscal storage hosts.
+     2. Dedicated Software Defined Storage:
+       * Macro choice is made based on vendor / model selection and configuration choices available
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
