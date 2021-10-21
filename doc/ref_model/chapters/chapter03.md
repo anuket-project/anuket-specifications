@@ -709,7 +709,7 @@ The storage model and stereotypical usage scenarios are used to illustrate the k
  * Tenant / User - is the storage sterotype able to support Teneant / User Plane neeeds including: Platform Native, Shared Storage & Object Storage (as per section - "3.6.3 Storage for Tenant Consumption")
 
 Where:
- * "Y" - Yes and almost allows provided
+ * "Y" - Yes and almost always provided
  * "O" - Optional and readily accommodated
  * "N" - No, not available
  * "NA" - Not Applicable for this Use Case / Stereotype
