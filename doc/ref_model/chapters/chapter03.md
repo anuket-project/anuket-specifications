@@ -784,7 +784,7 @@ The General Storage Model illustrates that at the bottom of any storage solution
  * Infrastructure platform underlay network for Control Plan and Platform Native - Hypervisor Attached and Container Runtime Managed
  * Tenant / User overlay network for Shared Storage and Object Storage
  
- While there are new storage technologies being made available and onging trend toward use of flash for all physical storage needs the core storage architecture for Cloud Infrastructure is likely to remain consistent with defined model for sometime.
+While there are new storage technologies being made available and onging trend toward use of flash for all physical storage needs, the core storage architecture for Cloud Infrastructure is likely to remain consistent with network based consumption model, as decribed through the stereotypes, for sometime. 
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
