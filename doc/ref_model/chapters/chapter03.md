@@ -704,16 +704,29 @@ In cloud infrastructure the storage types may manifest in various ways with subs
 
 The storage model and stereotypical usage scenarios are used to illustrate the key storage uses cases and there appliability to support storage across needs across a range of cloud deployments. This set of storage uses cases is summarised on the following tables including how the stereotypes can support the Anuket Reference Architectures the key areas for consideration in such a deployment scenario.
 
-| Use Case | Stereotype | Infra/Ctrl/Mgt ||| Tenant / User ||||||| Considerations ||
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| | | Boot | Ctrl | Mgt | Platform Native || Shared |||| Object | Specific | Group |
-| | | | | | Hypervisor Attached (RA-1) | Container Persistent (RA-2) | Within | Cross | Ext | vNFS | | | |
-| Data-centre Storage | Dedicated Network Storage Appliance | Yes | Yes | Yes | Yes | Yes | Optional | Optional | Optional | Optional | | | 1. Can support RA 1 & 2 from single instance<br>2. Can support Live Migraton within/across Availability Zones (RA 1)<br>3. Can support full range of Shared Storage use cases<br>4. Can support performance tiers |
-| | Dedicated Software Defined Storage | Optional | Optional | Optional | Yes | Yes | Optional | Optional | Optional | Optional | Optional | | |
-| Small data-centre | Small Software Defined Storage | Optional | Optional | Optional | Yes | Yes | Optional | Optional | Optional | Optional | Optional | | |
-| Edge Cloud | Edge Cloud for VNF/CNF | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional | | |
-| | Edge Cloud for Apps | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional | | |
-| | Edge Cloud for Content Mgt | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional | | |
+| Use Case | Stereotype | Infra/Ctrl/Mgt ||| Tenant / User ||||||
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| | | Boot | Ctrl | Mgt | Platform Native || Shared |||| Object |
+| | | | | | Hypervisor Attached (RA-1) | Container Persistent (RA-2) | Within | Cross | Ext | vNFS | |
+| Data-centre Storage | Dedicated Network Storage Appliance | Yes | Yes | Yes | Yes | Yes | Optional | Optional | Optional | Optional |
+| | Dedicated Software Defined Storage | Optional | Optional | Optional | Yes | Yes | Optional | Optional | Optional | Optional | Optional |
+| Small data-centre | Small Software Defined Storage | Optional | Optional | Optional | Yes | Yes | Optional | Optional | Optional | Optional | Optional |
+| Edge Cloud | Edge Cloud for VNF/CNF | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional |
+| | Edge Cloud for Apps | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional |
+| | Edge Cloud for Content Mgt | NA | Optional | NA | Yes | Yes | Optional | Optional | Optional | Optional | Optional |
+
+The storage sub-system will be a foundational part of any Cloud Infrastructure. As such indentifying needs and considerations that will to be addressed for the deployment of this are very important to ensure solution can meet functional and perforamnce needs and to avoid having to do signifiant rework of the storage solution and its likley ripple through impact on broader Cloud Infrasturcture. To guide build and deployment of Storage solution the following considerations are provided for the various Use Cases and Stereotypes outlined in the summary table.
+
+* Data-centre Storage - in data-centre goal is provide a storage that has flexiblity to meet multiple needs. This means that the Storage should be able to meet needs of:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control), 
+  * Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation) and
+  * Cloud Infastructure Tenant / User Plane, 
+    * Areas of Consideration:
+     1. Can storage support RA 1 & 2 from single instance? Noting that if you wish to have single storage instance providing storage across multiple Availability Zones within the same data-centre then this needs to be factored into the underlay network design.
+     2. Can storage support Live Migraton within and across Availability Zones (RA 1) and how does Cloud Infrastruture solution support migration of Virtual Machine between Availability Zones in general ?
+     3. Can storage support full range of Shared Storage use cases: including ability to control how network exposed Share Storage is visible: Within Tenancy, Across Tenancy (noting that a Tenancy can operate across Availability Zones) and Externally.
+     4. Can support alternate performance tiers to allow tenant selection of best Cost/Performance option. 
+
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
