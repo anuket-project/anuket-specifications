@@ -683,10 +683,10 @@ Where:
 * Performance - is defined by IOPS / Latency / Throughput as typically each of these increases with successive generations of storage
 * Capacity - consumption needs are represented by width of the: Ultra High Performance, Enterprise Transactional, Value and Capacity storage options.
 * Storage Types - is how the storage is accessed and used, where:
-  * Platform Native = is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF  boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
-  * Shared Storage = is storage this accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
-  * Object Storage = is storage that is accessed via API interfaces (the most common example being HTTP restful services API), which support get/put of structured objects; and
-  * Archival = is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting legal requirements or other historical recording where the storage mechanism may go through multiple stages before landing at rest.
+  * Platform Native - is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF  boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
+  * Shared Storage - is storage this accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
+  * Object Storage - is storage that is accessed via API interfaces (the most common example being HTTP restful services API), which support get/put of structured objects; and
+  * Archival - is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting legal requirements or other historical recording where the storage mechanism may go through multiple stages before landing at rest.
 
 The storage model provides a relatively simple way for the storage consumer to specify / select their storage needs. This is shown in the following table which highlights key attributes and features of the storage classes and "epic use cases" for common usage patterns.
 
@@ -724,8 +724,8 @@ Where:
 | | Traditional SAN | Y | Y | Y | N | N | N | N | N | N | N |
 | Satelite data-centre Storage | Small Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
 | Edge Cloud | Edge Cloud for VNF/CNF Storage | NA | O | NA | Y | Y | O | O | O | O | O |
-| | Edge Cloud for Apps Storage | NA | O | NA | Y | Y | O | O | O | O | O |
-| | Edge Cloud for Content Mgt Storage | NA | O | NA | Y | Y | O | O | O | O | O |
+| | Edge Cloud for Apps Storage | NA | O | NA | Y | Y | O | O | O | O | Y |
+| | Edge Cloud for Content Mgt Storage | NA | O | NA | Y | Y | O | O | O | O | Y |
 
 The storage sub-system will be a foundational part of any Cloud Infrastructure. As such indentifying needs and considerations that will to be addressed for the deployment of this are very important to ensure solution can meet functional and perforamnce needs and to avoid having to do signifiant rework of the storage solution and its likley ripple through impact on broader Cloud Infrasturcture. To guide build and deployment of Storage solution the following considerations are provided for the various Use Cases and Stereotypes outlined in the summary table.
 
@@ -773,12 +773,18 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
 
 * Edge Cloud for Content Storage - this edge case if to support deployment of media content cache at edge. This is very common Content Distribution Network use case. The only storage needs are those required to support:
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
-  * Cloud Infastructure Tenant / User Plane - Media Content
+  * Cloud Infastructure Tenant / User Plane - Media Content and 
   * General Areas of Consideration:
     1. Consuming and exposing Object storage through Tenant application
     2. Use Embedded NFS for Control and Tenant Storage Needs
   * Specific Areas of Consideration:
     1. Embedded NFS Storage:
+
+The General Storage Model illustrates that at the bottom of any storage solution there is always the physical storage layer and a storage operating system of some sort. In Cloud Infrastructure enviroment what is generally consumed is some form of network storage which can be provided by the:
+ * Infrastructure platform underlay network for Control Plan and Platform Native - Hypervisor Attached and Container Runtime Managed
+ * Tenant / User overlay network for Shared Storage and Object Storage
+ 
+ While there are new storage technologies being made available and onging trend toward use of flash for all physical storage needs the core storage architecture for Cloud Infrastructure is likely to remain consistent with defined model for sometime.
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
