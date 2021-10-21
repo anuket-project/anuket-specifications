@@ -735,15 +735,19 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
   * Cloud Infastructure Tenant / User Plane, 
   * General Areas of Consideration:
      1. Can storage support RA 1 & 2 from single instance? Noting that if you wish to have single storage instance providing storage across multiple Availability Zones within the same data-centre then this needs to be factored into the underlay network design.
-     2. Can storage support Live Migraton within and across Availability Zones (RA 1) and how does Cloud Infrastruture solution support migration of Virtual Machine between Availability Zones in general ?
+     2. Can storage support Live Migration / Multi-Attach within and across Availability Zones (RA 1) and how does Cloud Infrastruture solution support migration of Virtual Machine between Availability Zones in general ?
      3. Can storage support full range of Shared Storage use cases: including ability to control how network exposed Share Storage is visible: Within Tenancy, Across Tenancy (noting that a Tenancy can operate across Availability Zones) and Externally.
      4. Can support alternate performance tiers to allow tenant selection of best Cost/Performance option. 
   * Specific Areas of Consideration:
     1. Dedicated Software Defined Storage:
       * Need to establish the physical disk data layout / encoding scheme, which could be include choice of replication / mirroring of data aross multiple storage hosts vs. CRC based redudancy manaegment encoding (such as "erasure encoding"). This typically has performance / cost implication as replication has lower performance impact, but consumes much larger number of physical disks, also having three times replication may provide greater data security, but consumes more disk backend network bandwidth than two times replication.
       * In general with Software Defined Storage solution it is not desirable to use hardware RAID controllers, as this impacts the scope of recovery on failure as the failed devices replacement can only be managed within the RAID volume that disk is part of. With Software Defined Storage failure recovering can be managed within the host that the disk failed in, but also across phyiscal storage hosts.
-     2. Dedicated Software Defined Storage:
-       * Macro choice is made based on vendor / model selection and configuration choices available
+      * Can storage be consumed optimally irrespective of whether this is at Control, Management or Tenant / User Plane. Example is iSCSI / NFS, which while available and providing lowest common denominotor does not provide best performance that can be achieved if storage is consumed using provided OS layer driver (example is RADOS driver in Ceph case).
+    2. Dedicated Software Defined Storage:
+      * Macro choice is made based on vendor / model selection and configuration choices available
+    3. Traditional SAN:
+      * This is generally made available via FC-AL / SCSI connectivity and hence has need for very specific connectivity and to provide type of features required for Cloud Infrasturcture would need to be "front ended" which other gateway to provide more readily consumed Network Storage capability. This is often the case in current deployments where SAN is used as back end to NFS/CIFS Gateway to provide on going life of existing investment. This would only be acceptable with use of more recent SAN devices which relie of SAS/SATA disk for physical storage.
+
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
