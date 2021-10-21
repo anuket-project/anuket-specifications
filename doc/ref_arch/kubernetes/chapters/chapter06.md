@@ -39,9 +39,7 @@ A feature can be in Alpha, Beta or GA stage:
 
 The policy for RA2 to include Kubernetes features as mandatory is:
 
-```
-A feature is mandatory when it's either in Beta or GA stage, and it can be traced to a RA2 component level specification or requirement (chapter 4 of this document).
-```
+> Only features that are either in Beta or GA stage can be made mandatory, subject to RA2 requirements.
 
 A list of feature gates is available [here](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/#feature-gates).
 
@@ -53,9 +51,7 @@ Different API versions indicate different levels of stability and support. An AP
 
 The policy for RA2 to include Kubernetes APIs as mandatory is:
 
-```
-An API is mandatory when its version is either  Beta or Stable, and it can be traced to a RA2 component level specification or requirement (chapter 4 of this document).
-```
+> Only APIs that are either in Beta or Stable stage can be made mandatory, subject to RA2 requirements.
 
 The Kubernetes API reference is available here.
 
