@@ -53,7 +53,7 @@ The policy for RA2 to include Kubernetes APIs as mandatory is:
 
 > Only APIs that are either in Beta or Stable stage can be made mandatory, subject to RA2 requirements.
 
-The Kubernetes API reference is available here.
+The Kubernetes API reference is available [here](https://kubernetes.io/docs/reference/kubernetes-api/).
 
 The list of API groups that are mandatory is:
 
