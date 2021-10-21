@@ -703,7 +703,7 @@ In cloud infrastructure the storage types may manifest in various ways with subs
 ### 3.6.4 Storage Scenarios and Architecture Fit
 
 The storage model and stereotypical usage scenarios are used to illustrate the key storage uses cases and there appliability to support storage across needs across a range of cloud deployments. This set of storage uses cases is summarised on the following tables including how the stereotypes can support the Anuket Reference Architectures, follwed by the key areas for consideration in such a deployment scenario. The structure of table is:
- * Use Case - what the the storage use case covered
+ * Use Case - what is the target storage use case being covered (large data-centre, small data-centre, standalone cloud, edge etc.)
  * Sterotype - which of defined stereotypes is used
  * Infra / Ctrl / Mgt - is the storage stereotype able to support the: Infrastructure, Control Plane and Management Plane Needs
  * Tenant / User - is the storage sterotype able to support Teneant / User Plane neeeds including: Platform Native, Shared Storage & Object Storage (as per section - "3.6.3 Storage for Tenant Consumption")
@@ -723,6 +723,7 @@ Where:
 | | Dedicated Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
 | | Traditional SAN | Y | Y | Y | N | N | N | N | N | N | N |
 | Satelite data-centre Storage | Small Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
+| Small data-centre Storage | Converged Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
 | Edge Cloud | Edge Cloud for VNF/CNF Storage | NA | O | NA | Y | Y | O | O | O | O | O |
 | | Edge Cloud for Apps Storage | NA | O | NA | Y | Y | O | O | O | O | Y |
 | | Edge Cloud for Content Mgt Storage | NA | O | NA | Y | Y | O | O | O | O | Y |
@@ -761,6 +762,20 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
        * Leverage same technology as "Dedicated Software Defined Storage" scenarios, but avoid / limit Infrastructure boot and Management Plane support and Network Storage support
        * Avoid having dedicated storage instance per cluster / availability zone
        * Resilience through rapid rebuild (N + 1 failure scenario)
+
+* Small Data-centre Storage - the small data-centre storage deployment is used in case where have software defined storage and virtual machine / container hosting running on converged infrastructure footprint with aim of reducing overall size of platform. This solution would then be standalone Infrastructure Cloud platform. This storage solution would need to support:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
+  * Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation) and
+  * Cloud Infastructure Tenant / User Plane,
+  * General Areas of Consideration:
+     1. To maintain small footprint likely to serve maximum of two clusters / availability zones.
+     2. If target workload requires Shared Storage, then this would need to part of provided solution.
+     3. With large capacity flash (15 - 30 TB / device) the solution can hold signficant storage capacilty, but need to carefully consider data loss prevention needs.
+   * Specific Areas of Consideration:
+     1. Converged Software Defined Storage:
+       * Leverage same technology as "Dedicated Software Defined Storage" scenarios, but running with converged infrastructure. For capacilty needs have three hosts provisioned for storage and the rest for virtual infrastructure and storage control and management and tenant workload hosting.
+       * If solution needs to host two clusters / availability zones then have storage storage instance as sharable across these.
+       * Resilience through rapid rebuild (N + 0 or N + 1)
 
 * Edge Cloud for VNF/CNF Storage - this edge case if to support deployment of VNF / CNF at edge. The only storage needs are those required to support:
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
