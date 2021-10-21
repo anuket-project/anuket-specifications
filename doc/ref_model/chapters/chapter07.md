@@ -622,7 +622,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.012 | The Prod-Platform and NonProd-Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | |
 | req.sec.mon.013 | The Prod-Platform and NonProd-Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | |
 | req.sec.mon.014 | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
-| req.sec.mon.015 | The Monitoring systems **should not** impact IAAS, PAAS, and SAAS SLAs including availability SLAs. |  |
+| req.sec.mon.015 | The Monitoring systems **should not** impact IaaS, PaaS, and SaaS SLAs including availability SLAs. |  |
 | req.sec.mon.016 | The Prod-Platform and NonProd-Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. |  |
 | req.sec.mon.017 | The Prod-Platform and NonProd-Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
 | req.sec.mon.018 | The Prod-Platform and NonProd-Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
