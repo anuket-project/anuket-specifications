@@ -612,7 +612,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.002 |  The logs **must** be regularly monitored for events of interest.  | |
 | req.sec.mon.003 | Security logs **must** be time synchronised for the Prod-Platform as well as for the NonProd-Platform. |  |
 | req.sec.mon.004 | The Prod-Platform and NonProd-Platform **must** log all changes to time server source, time, date and time zones. |  |
-| req.sec.mon.005 | The Prod-Platform and NonProd-Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest. |  |
+| req.sec.mon.005 | The Prod-Platform and NonProd-Platform **must** secure and protect all logs (containing sensitive information) both in-transit and at rest. |  |
 | req.sec.mon.006 | The Prod-Platform and NonProd-Platform  **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly. | |
 | req.sec.mon.007 | The Prod-Platform and NonProd-Platform  **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actons. |  |
 | req.sec.mon.008 | The Prod-Platform  **must** Monitor and Audit security parameter configurations for compliance with defined security policies. | |
