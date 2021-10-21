@@ -6,7 +6,6 @@
 ####
 # A script to mass modify Anuket specification md files before converting them to rst. 
 # TODO:
-#  - Remove `[<< Back](../)`-s 
 #  - Doublechec which raw html-s can be removed of converted to markdown. 
 #    In case of complete converision is not possible, like in case of images
 #    with scaling. These should be handled in a post conversion script.  
@@ -38,12 +37,14 @@ def main():
     filePattern = "{}/*.md".format(args.directory)
     logger.info("File pattern is {}".format(filePattern))
     fileList = glob.glob(filePattern)
-    for filename in fileList:
+    for filename in sorted(fileList):
         logger.info("Filename is {}".format(filename))
         if re.match(".*-mod.md", filename):
             logger.debug("Mod file found, deleting it.")
             os.remove(filename)
-            continue
+            fileList.pop(fileList.index(filename))
+    for filename in sorted(fileList):
+        logger.info("Filename is {}".format(filename))
         filenameNew = filename.replace(".md", "-mod.md")
         logger.debug("Modified filename is {}".format(filenameNew))
         if os.path.exists(filenameNew):
@@ -57,28 +58,32 @@ def main():
             #logger.debug("Line is {}".format(line))
             lineNumber = lineNumber + 1
             state["line"] = line
-            if re.match("## Table of Contents", line):
-                #logger.info(" {%d}: ToC found".format(lineNumber))
-                state["in-toc"] = True
-                continue
 
             if ("in-toc" in state) and state["in-toc"]:
                 #logger.debug(" {%d} state in-toc".format(lineNumber))
                 if re.match('^\s+$', line):
                     if ("content-after-toc" in state) and state["content-after-toc"]:
-                        # In some cases thre is an empty line just after the ToC header, so
+                        # In some cases there is an empty line just after the ToC header, so
                         # we expect to have some content before the new line what indicates the 
                         # end of ToC
                         del state["in-toc"]
                 else:
                     state["content-after-toc"] = True
                     continue
-            # ## 7.2 Gap analysis
-            elif (re.match("^#+\s+[0-9A-Z\.]+\s+", line)):
-                #logger.debug("Header line: " + line)
-                result = re.sub(r"(^#+\s+)([0-9A-Z\.]+\s)", r"\1", line)
-                #logger.debug("Headerless: '" + result)
-                state["line"] = result
+            else:
+                # ## 7.2 Gap analysis
+                if (re.match("^#+\s+[0-9A-Z\.]+\s+", line)):
+                    #logger.debug("Header line: " + line)
+                    result = re.sub(r"(^#+\s+)([0-9A-Z\.]+\s)", r"\1", line)
+                    #logger.debug("Headerless: '" + result)
+                    state["line"] = result
+                if re.match("## Table of Contents", line):
+                    #logger.info(" {%d}: ToC found".format(lineNumber))
+                    state["in-toc"] = True
+                    continue
+                # [<< Back](../../kubernetes)
+                if re.match("\[<<\s+Back\]", line):
+                    state["line"] = ""
             #logger.debug("Out line is " + state["line"])
             print(state["line"], file = fOut, end = "")
         
