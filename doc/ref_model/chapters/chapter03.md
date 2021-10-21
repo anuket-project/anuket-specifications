@@ -722,10 +722,10 @@ Where:
 | Data-centre Storage | Dedicated Network Storage Appliance | Y | Y | Y | Y | Y | O | O | O | O | O |
 | | Dedicated Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
 | | Traditional SAN | Y | Y | Y | N | N | N | N | N | N | N |
-| Small data-centre | Small Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
-| Edge Cloud | Edge Cloud for VNF/CNF | NA | O | NA | Y | Y | O | O | O | O | O |
-| | Edge Cloud for Apps | NA | O | NA | Y | Y | O | O | O | O | O |
-| | Edge Cloud for Content Mgt | NA | O | NA | Y | Y | O | O | O | O | O |
+| Satelite data-centre Storage | Small Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
+| Edge Cloud | Edge Cloud for VNF/CNF Storage | NA | O | NA | Y | Y | O | O | O | O | O |
+| | Edge Cloud for Apps Storage | NA | O | NA | Y | Y | O | O | O | O | O |
+| | Edge Cloud for Content Mgt Storage | NA | O | NA | Y | Y | O | O | O | O | O |
 
 The storage sub-system will be a foundational part of any Cloud Infrastructure. As such indentifying needs and considerations that will to be addressed for the deployment of this are very important to ensure solution can meet functional and perforamnce needs and to avoid having to do signifiant rework of the storage solution and its likley ripple through impact on broader Cloud Infrasturcture. To guide build and deployment of Storage solution the following considerations are provided for the various Use Cases and Stereotypes outlined in the summary table.
 
@@ -734,9 +734,9 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
   * Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation) and
   * Cloud Infastructure Tenant / User Plane, 
   * General Areas of Consideration:
-     1. Can storage support RA 1 & 2 from single instance? Noting that if you wish to have single storage instance providing storage across multiple Availability Zones within the same data-centre then this needs to be factored into the underlay network design.
-     2. Can storage support Live Migration / Multi-Attach within and across Availability Zones (RA 1) and how does Cloud Infrastruture solution support migration of Virtual Machine between Availability Zones in general ?
-     3. Can storage support full range of Shared Storage use cases: including ability to control how network exposed Share Storage is visible: Within Tenancy, Across Tenancy (noting that a Tenancy can operate across Availability Zones) and Externally.
+     1. Can storage support RA 1 & 2 from single instance? Noting that if you wish to have single storage instance providing storage across multiple clusters / availability zones within the same data-centre then this needs to be factored into the underlay network design.
+     2. Can storage support Live Migration / Multi-Attach within and across Availability Zones (RA 1) and how does Cloud Infrastruture solution support migration of Virtual Machine between availability zones in general ?
+     3. Can storage support full range of Shared Storage use cases: including ability to control how network exposed Share Storage is visible: Within Tenancy, Across Tenancy (noting that a Tenancy can operate across availability zones) and Externally.
      4. Can support alternate performance tiers to allow tenant selection of best Cost/Performance option. 
   * Specific Areas of Consideration:
     1. Dedicated Software Defined Storage:
@@ -748,6 +748,37 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
     3. Traditional SAN:
       * This is generally made available via FC-AL / SCSI connectivity and hence has need for very specific connectivity and to provide type of features required for Cloud Infrasturcture would need to be "front ended" which other gateway to provide more readily consumed Network Storage capability. This is often the case in current deployments where SAN is used as back end to NFS/CIFS Gateway to provide on going life of existing investment. This would only be acceptable with use of more recent SAN devices which relie of SAS/SATA disk for physical storage.
 
+
+* Satelite Data-centre Storage - the satelite data-centre is a smaller regional deployment which has will have connectivity to and utilise resources available from main Data-centre and as such is more likely needed to support:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
+  * Cloud Infastructure Tenant / User Plane,
+  * General Areas of Consideration:
+     1. Is there need to support multiple availability zones, typically a Satelite deployment will be smaller in scale.
+     2. Can Shared Storage establishment be avoided by using capabilities provided large Data-Centre Storage ?
+     3. Can very large capacity storage needs to moved to larger Data-Centre Storage capabilities ?
+   * Specific Areas of Consideration:
+     1. Small Software Defined Storage:
+       * Leverage same technology as "Dedicated Software Defined Storage" scenarios, but avoid / limit Infrastructure boot and Management Plane support and Network Storage support
+       * Avoid having dedicated storage instance per cluster / availability zone
+       * Resilience through rapid rebuild (N + 1 failure scenario)
+
+* Edge Cloud for VNF/CNF Storage - this edge case if to support deployment of VNF / CNF at edge. The only storage needs are those required to support:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
+  * Cloud Infastructure Tenant / User Plane - very limited configuration storage
+
+* Edge Cloud for App Storage - this edge case if to support deployment of application at edge. The only storage needs are those required to support:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
+  * Cloud Infastructure Tenant / User Plane - very limited configuration storage
+
+
+* Edge Cloud for Content Storage - this edge case if to support deployment of media content cache at edge. This is very common Content Distribution Network use case. The only storage needs are those required to support:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
+  * Cloud Infastructure Tenant / User Plane - Media Content
+  * General Areas of Consideration:
+    1. Consuming and exposing Object storage through Tenant application
+    2. Use Embedded NFS for Control and Tenant Storage Needs
+  * Specific Areas of Consideration:
+    1. Embedded NFS Storage:
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
