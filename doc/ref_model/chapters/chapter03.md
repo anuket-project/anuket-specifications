@@ -730,7 +730,7 @@ Where:
 
 The storage sub-system is a foundational part of any Cloud Infrastructure. As such it is important to identify the Infrastructure Cloud storage needs, based on target tenant use cases, at inception. This will allow for the right set of considerations to be addressed for the deployment. This is essential to ensure solution can meet functional and perforamnce needs and to avoid need for signifiant rework of the storage solution and its likley ripple through impact on broader Cloud Infrasturcture. To guide build and deployment of Storage solution the following considerations are provided for the various Use Cases and Stereotypes outlined in the summary table.
 
-* Data-centre Storage - in data-centre the goal is to provide a storage capability that has flexibility to meet needs of:
+* Data-centre Storage - in data-centre the goal is to provide a storage capability that has the flexibility to meet the needs of:
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control), 
   * Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation) and
   * Cloud Infastructure Tenant / User Plane, 
