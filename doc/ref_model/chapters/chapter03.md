@@ -773,7 +773,7 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
      3. With large capacity flash (15 - 30 TB / device) the solution can hold signficant storage capacilty, but need to carefully consider data loss prevention needs.
    * Specific Areas of Consideration:
      1. Converged Software Defined Storage:
-       * Leverage same technology as "Dedicated Software Defined Storage" scenarios, but running with converged infrastructure. For capacilty needs have three hosts provisioned for storage and the rest for virtual infrastructure and storage control and management and tenant workload hosting.
+       * Leverage same technology as "Dedicated Software-Defined Storage" scenarios, but on converged infrastructure. To meet capacity needs provision three hosts for storage and the rest for virtual infrastructure and storage control and management and tenant workload hosting.
        * If solution needs to host two clusters / availability zones then have storage storage instance as sharable across these.
        * Resilience through rapid rebuild (N + 0 or N + 1)
 
