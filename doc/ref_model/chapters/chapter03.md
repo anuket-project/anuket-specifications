@@ -756,7 +756,7 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
   * General Areas of Consideration:
      1. Is there need to support multiple availability zones, typically a Satelite deployment will be smaller in scale.
      2. Can Shared Storage establishment be avoided by using capabilities provided large Data-Centre Storage ?
-     3. Can very large capacity storage needs to moved to larger Data-Centre Storage capabilities ?
+     3. Can very large capacity storage needs be moved to larger Data-Centre Storage capabilities?
    * Specific Areas of Consideration:
      1. Small Software Defined Storage:
        * Leverage same technology as "Dedicated Software Defined Storage" scenarios, but avoid / limit Infrastructure boot and Management Plane support and Network Storage support
