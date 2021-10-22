@@ -777,7 +777,7 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
        * If solution needs to host two clusters / availability zones then have storage storage instance as sharable across these.
        * Resilience through rapid rebuild (N + 0 or N + 1)
 
-* Edge Cloud for VNF/CNF Storage - this edge case if to support deployment of VNF / CNF at edge. The only storage needs are those required to support:
+* Edge Cloud for VNF/CNF Storage - this edge case is to support the deployment of VNF / CNF at the edge. The only storage needs are those required to support:
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
   * Cloud Infastructure Tenant / User Plane - very limited configuration storage
 
