@@ -736,7 +736,7 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
   * Cloud Infastructure Tenant / User Plane, 
   * General Areas of Consideration:
      1. Can storage support RA 1 & 2 from single instance? Noting that if you wish to have single storage instance providing storage across multiple clusters / availability zones within the same data-centre then this needs to be factored into the underlay network design.
-     2. Can storage support Live Migration / Multi-Attach within and across Availability Zones (RA 1) and how does Cloud Infrastruture solution support migration of Virtual Machine between availability zones in general ?
+     2. Can the storage system support Live Migration / Multi-Attach within and across Availability Zones (RA 1) and how does the Cloud Infrastructure solution support migration of Virtual Machines between availability zones in general?
      3. Can storage support full range of Shared Storage use cases: including ability to control how network exposed Share Storage is visible: Within Tenancy, Across Tenancy (noting that a Tenancy can operate across availability zones) and Externally.
      4. Can support alternate performance tiers to allow tenant selection of best Cost/Performance option. 
   * Specific Areas of Consideration:
