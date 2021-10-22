@@ -6,10 +6,10 @@
 ####
 # A script to mass modify Anuket specification md files before converting them to rst. 
 # TODO:
-#  - Doublechec which raw html-s can be removed of converted to markdown. 
+#  - Doublecheck which raw html-s can be removed of converted to markdown. 
 #    In case of complete converision is not possible, like in case of images
-#    with scaling. These should be handled in a post conversion script.  
-
+#    with scaling. These should be handled in a post conversion script.
+#  - Handle multiline images
 
 import argparse
 import glob
@@ -84,6 +84,22 @@ def main():
                 # [<< Back](../../kubernetes)
                 if re.match("\[<<\s+Back\]", line):
                     state["line"] = ""
+                # <p align="center"><img src="./figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
+                if re.match(".*<img .*", line):
+                    logger.debug("{} Image found {}".format(lineNumber, line))
+                    m = re.search('.*src="(.*?)"\s.*', line)
+                    src = m.group(1)
+                    logger.debug(" Image src: {}".format(src))
+                    m = re.search('.*[tT]itle="(.*?)".*', line)
+                    if m:
+                        title = m.group(1)
+                        logger.debug(" Image title: {}".format(title))
+                    m = re.search('.*width="(.*?)".*', line)
+                    if m:
+                        width = m.group(1)
+                        logger.debug(" Image width: {}".format(width))
+                        comment = '<!-- width="{}" -->'.format(width)
+                    state["line"] = '![{}]({}) {}\n'.format(title, src, comment)
             #logger.debug("Out line is " + state["line"])
             print(state["line"], file = fOut, end = "")
         
