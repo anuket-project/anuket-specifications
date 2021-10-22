@@ -728,7 +728,7 @@ Where:
 | | Edge Cloud for Apps Storage | NA | O | NA | Y | Y | O | O | O | O | Y |
 | | Edge Cloud for Content Mgt Storage | NA | O | NA | Y | Y | O | O | O | O | Y |
 
-The storage sub-system is a foundational part of any Cloud Infrastructure. As such it is important to identify the Infrastructure Cloud storage needs, based on target tenant use cases, at inception. This will allow for the right set of considerations to be addressed for the deployment. This is essential to ensure solution can meet functional and perforamnce needs and to avoid need for signifiant rework of the storage solution and its likley ripple through impact on broader Cloud Infrasturcture. To guide build and deployment of Storage solution the following considerations are provided for the various Use Cases and Stereotypes outlined in the summary table.
+The storage sub-system is a foundational part of any Cloud Infrastructure. As such it is important to identify the Infrastructure Cloud storage needs, based on target tenant use cases, at inception. This will allow for the right set of considerations to be addressed for the deployment. This is essential to ensure the solution can meet functional and performance needs and to avoid the need for significant rework of the storage solution and its likely ripple through impact on the broader Cloud Infrastructure. To guide the build and deployment of the Storage solution the following considerations are provided for the various Use Cases and Stereotypes outlined in the summary table.
 
 * Data-centre Storage - in data-centre the goal is to provide a storage capability that has the flexibility to meet the needs of:
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control), 
