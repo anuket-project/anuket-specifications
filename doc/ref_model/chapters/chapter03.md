@@ -774,7 +774,7 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
    * Specific Areas of Consideration:
      1. Converged Software Defined Storage:
        * Leverage same technology as "Dedicated Software-Defined Storage" scenarios, but on converged infrastructure. To meet capacity needs provision three hosts for storage and the rest for virtual infrastructure and storage control and management and tenant workload hosting.
-       * If solution needs to host two clusters / availability zones then have storage storage instance as sharable across these.
+       * If the solution needs to host two clusters / availability zones then have sharable storage instances.
        * Resilience through rapid rebuild (N + 0 or N + 1)
 
 * Edge Cloud for VNF/CNF Storage - this edge case is to support the deployment of VNF / CNF at the edge. The only storage needs are those required to support:
