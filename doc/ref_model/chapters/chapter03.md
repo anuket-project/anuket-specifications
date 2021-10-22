@@ -763,7 +763,7 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
        * Avoid having dedicated storage instance per cluster / availability zone
        * Resilience through rapid rebuild (N + 1 failure scenario)
 
-* Small Data-centre Storage - the small data-centre storage deployment is used in case where have software defined storage and virtual machine / container hosting running on converged infrastructure footprint with aim of reducing overall size of platform. This solution would then be standalone Infrastructure Cloud platform. This storage solution would need to support:
+* Small Data-centre Storage - the small data-centre storage deployment is used in cases where software-defined storage and virtual machine / container hosting are running on a converged infrastructure footprint with the aim of reducing the overall size of the platform. This solution is then a standalone Infrastructure Cloud platform. This storage solution would need to support:
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
   * Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation) and
   * Cloud Infastructure Tenant / User Plane,
