@@ -702,7 +702,7 @@ In cloud infrastructure the storage types may manifest in various ways with subs
 <a name="3.6.4"></a>
 ### 3.6.4 Storage Scenarios and Architecture Fit
 
-The storage model and stereotypical usage scenarios are used to illustrate the key storage uses cases and there appliability to support storage across needs across a range of cloud deployments. This set of storage uses cases is summarised on the following tables including how the stereotypes can support the Anuket Reference Architectures, follwed by the key areas for consideration in such a deployment scenario. The structure of table is:
+The storage model and stereotypical usage scenarios illustrate the key storage uses cases and their applicability to support storage needs from across a range of cloud deployments. This set of storage uses cases is summarised in the following tables, including how the stereotypes can support the Anuket Reference Architectures, followed by the key areas for consideration in such a deployment scenario. The structure of the table is:
  * Use Case - what is the target storage use case being covered (large data-centre, small data-centre, standalone cloud, edge etc.)
  * Sterotype - which of defined stereotypes is used
  * Infra / Ctrl / Mgt - is the storage stereotype able to support the: Infrastructure, Control Plane and Management Plane Needs
