@@ -750,7 +750,7 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
       * This is generally made available via FC-AL / SCSI connectivity and hence has need for very specific connectivity and to provide type of features required for Cloud Infrasturcture would need to be "front ended" which other gateway to provide more readily consumed Network Storage capability. This is often the case in current deployments where SAN is used as back end to NFS/CIFS Gateway to provide on going life of existing investment. This would only be acceptable with use of more recent SAN devices which rely on SAS/SATA disk for physical storage.
 
 
-* Satelite Data-centre Storage - the satelite data-centre is a smaller regional deployment which has will have connectivity to and utilise resources available from main Data-centre and as such is more likely needed to support:
+* Satelite Data-centre Storage - the satelite data-centre is a smaller regional deployment which has connectivity to and utilises resources available from the main Data-centre and as such is more likely needed to support:
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
   * Cloud Infastructure Tenant / User Plane,
   * General Areas of Consideration:
