@@ -741,13 +741,13 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
      4. Can the storage system support alternate performance tiers to allow tenant selection of best Cost/Performance option. 
   * Specific Areas of Consideration:
     1. Dedicated Software Defined Storage:
-      * Need to establish the physical disk data layout / encoding scheme, which could be include choice of replication / mirroring of data across multiple storage hosts vs. CRC based redundancy management encoding (such as "erasure encoding"). This typically has performance / cost implication as replication has lower performance impact, but consumes much larger number of physical disks, also having three times replication may provide greater data security, but consumes more disk backend network bandwidth than two times replication.
-      * In general with Software Defined Storage solution it is not desirable to use hardware RAID controllers, as this impacts the scope of recovery on failure as the failed devices replacement can only be managed within the RAID volume that disk is part of. With Software Defined Storage failure recovering can be managed within the host that the disk failed in, but also across phyiscal storage hosts.
-      * Can storage be consumed optimally irrespective of whether this is at Control, Management or Tenant / User Plane. Example is iSCSI / NFS, which while available and providing lowest common denominotor does not provide best performance that can be achieved if storage is consumed using provided OS layer driver (example is RADOS driver in Ceph case).
+      * Need to establish the physical disk data layout / encoding scheme choice, options could be: replication / mirroring of data across multiple storage hosts or CRC-based redundancy management encoding (such as "erasure encoding"). This typically has performance / cost implications as replication has a lower performance impact, but consumes larger number of physical disks. If using replication then increasing the number of replicas provide greater data loss prevention, but consumes more disk system backend network bandwidth, with bandwidth need proportional to number of replicas.
+      * In general with Software Defined Storage solution it is not desirable to use hardware RAID controllers, as this impacts the scope of recovery on failure as the failed device replacement can only be managed within the RAID volume that disk is part of. With Software Defined Storage failure recovering can be managed within the host that the disk failed in, but also across phyiscal storage hosts.
+      * Can storage be consumed optimally irrespective of whether this is at Control, Management or Tenant / User Plane. Example is iSCSI / NFS, which while available and providing a common technical capability, it does not provide best performance that can be achieved. This is best achieved using provided OS layer driver that matches the particular software defined storage implementation (example is using RADOS driver in Ceph case vs. Ceph ability to expose iSCSI).
     2. Dedicated Software Defined Storage:
       * Macro choice is made based on vendor / model selection and configuration choices available
     3. Traditional SAN:
-      * This is generally made available via FC-AL / SCSI connectivity and hence has need for very specific connectivity and to provide type of features required for Cloud Infrasturcture would need to be "front ended" which other gateway to provide more readily consumed Network Storage capability. This is often the case in current deployments where SAN is used as back end to NFS/CIFS Gateway to provide on going life of existing investment. This would only be acceptable with use of more recent SAN devices which rely on SAS/SATA disk for physical storage.
+      * This is generally made available via FC-AL / SCSI connectivity and hence has q need for very specific connectivity. To provide type of features required for Cloud Infrasturcture a SAN needs to be "front-ended" which other gateway/s to provide more readily consumed Network Storage capability. This is often seen with current deployments where SAN is used as back end to a NFS/CIFS Gateway. This provide on going life of existing investment and would only be acceptable with use of more recent SAN chassis devices which rely on SAS/SATA disks for physical storage.
 
 
 * Satelite Data-centre Storage - the satelite data-centre is a smaller regional deployment which has connectivity to and utilises resources available from the main Data-centre and as such is more likely needed to support:
@@ -755,7 +755,7 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
   * Cloud Infastructure Tenant / User Plane,
   * General Areas of Consideration:
      1. Is there need to support multiple availability zones, typically a Satelite deployment will be smaller in scale.
-     2. Can Shared Storage establishment be avoided by using capabilities provided large Data-Centre Storage ?
+     2. Can Shared Storage establishment be avoided by using capabilities provided by large Data-Centre Storage?
      3. Can very large capacity storage needs be moved to larger Data-Centre Storage capabilities?
    * Specific Areas of Consideration:
      1. Small Software Defined Storage:
