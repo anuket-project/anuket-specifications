@@ -786,7 +786,7 @@ The storage sub-system will be a foundational part of any Cloud Infrastructure. 
   * Cloud Infastructure Tenant / User Plane - very limited configuration storage
 
 
-* Edge Cloud for Content Storage - this edge case if to support deployment of media content cache at edge. This is very common Content Distribution Network use case. The only storage needs are those required to support:
+* Edge Cloud for Content Storage - this edge case is to support the deployment of media content cache at the edge. This is a very common Content Distribution Network use case. The only storage needs are those required to support:
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
   * Cloud Infastructure Tenant / User Plane - Media Content and 
   * General Areas of Consideration:
