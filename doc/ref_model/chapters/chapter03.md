@@ -728,7 +728,7 @@ Where:
 | | Edge Cloud for Apps Storage | NA | O | NA | Y | Y | O | O | O | O | Y |
 | | Edge Cloud for Content Mgt Storage | NA | O | NA | Y | Y | O | O | O | O | Y |
 
-The storage sub-system is a foundational part of any Cloud Infrastructure. As such it is important to identify the Infrastructure Cloud storage needs, based on target tenant use cases, at inception. This will allow for the right set of considerations to be addressed for the deployment. This is essential to ensure the solution can meet functional and performance needs and to avoid the need for significant rework of the storage solution and its likely ripple through impact on the broader Cloud Infrastructure. To guide the build and deployment of the Storage solution the following considerations are provided for the various Use Cases and Stereotypes outlined in the summary table.
+The storage sub-system is a foundational part of any Cloud Infrastructure, as such it is important to identify the storage needs, based on target tenant use cases, at inception. This will allow the right set of considerations to be addressed for the deployment. A set of typical considerations is provided for various use cases to meet functional and performance needs and to avoid the need for signifiant rework of the storage solution and its likely ripple through impact on the broader Cloud Infrastructure. The considerations will help to guide the build and deployment of the Storage solution for the various Use Cases and Stereotypes outlined in the summary table.
 
 * Data-centre Storage - in data-centre the goal is to provide a storage capability that has the flexibility to meet the needs of:
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control), 
@@ -737,13 +737,13 @@ The storage sub-system is a foundational part of any Cloud Infrastructure. As su
   * General Areas of Consideration:
      1. Can storage support Virtual Machine (RA-1) & Container (RA-2) Hosting cases from single instance? Noting that if you wish to have single storage instance providing storage across multiple clusters / availability zones within the same data-centre then this needs to be factored into the underlay network design.
      2. Can the storage system support Live Migration / Multi-Attach within and across Availability Zones (applicable to Virtual Machine hosting (RA-1)) and how does the Cloud Infrastructure solution support migration of Virtual Machines between availability zones in general?
-     3. Can the storage system support the full range of Shared File Storage use cases: including the ability to control how network exposed Share File Storage is visible: Within Tenancy, Across Tenancy (noting that a Tenancy can operate across availability zones) and Externally.
-     4. Can the storage system support alternate performance tiers to allow tenant selection of best Cost/Performance option. 
+     3. Can the storage system support the full range of Shared File Storage use cases: including the ability to control how network exposed Share File Storage is visible: Within Tenancy, Across Tenancy (noting that a Tenancy can operate across availability zones) and Externally?
+     4. Can the storage system support alternate performance tiers to allow tenant selection of best Cost/Performance option?
   * Specific Areas of Consideration:
     1. Dedicated Software Defined Storage:
       * Need to establish the physical disk data layout / encoding scheme choice, options could be: replication / mirroring of data across multiple storage hosts or CRC-based redundancy management encoding (such as "erasure encoding"). This typically has performance / cost implications as replication has a lower performance impact, but consumes larger number of physical disks. If using replication then increasing the number of replicas provide greater data loss prevention, but consumes more disk system backend network bandwidth, with bandwidth need proportional to number of replicas.
       * In general with Software Defined Storage solution it is not desirable to use hardware RAID controllers, as this impacts the scope of recovery on failure as the failed device replacement can only be managed within the RAID volume that disk is part of. With Software Defined Storage failure recovering can be managed within the host that the disk failed in, but also across phyiscal storage hosts.
-      * Can storage be consumed optimally irrespective of whether this is at Control, Management or Tenant / User Plane. Example is iSCSI / NFS, which while available and providing a common technical capability, it does not provide best performance that can be achieved. This is best achieved using provided OS layer driver that matches the particular software defined storage implementation (example is using RADOS driver in Ceph case vs. Ceph ability to expose iSCSI).
+      * Can storage be consumed optimally irrespective of whether this is at Control, Management or Tenant / User Plane? Example is iSCSI / NFS, which while available and providing a common technical capability, it does not provide best performance that can be achieved. This is best achieved using provided OS layer driver that matches the particular software defined storage implementation (example is using RADOS driver in Ceph case vs. Ceph ability to expose iSCSI).
     2. Dedicated Software Defined Storage:
       * Macro choice is made based on vendor / model selection and configuration choices available
     3. Traditional SAN:
@@ -754,8 +754,8 @@ The storage sub-system is a foundational part of any Cloud Infrastructure. As su
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
   * Cloud Infastructure Tenant / User Plane,
   * General Areas of Consideration:
-     1. Is there need to support multiple availability zones, typically a Satelite deployment will be smaller in scale.
-     2. Can Shared Storage establishment be avoided by using capabilities provided by large Data-Centre Storage?
+     1. Is there need to support multiple clusters / availability zones at same site? If so then use "Data-Centre Storage" use case, otherwise consider how can put Virtual Machine & Container Hosting control plan and Storage control plan on same set of host to reduce footprint.
+     2. Can Shared File Storage establishment be avoided by using capabilities provided by large Data-Centre Storage?
      3. Can very large capacity storage needs be moved to larger Data-Centre Storage capabilities?
    * Specific Areas of Consideration:
      1. Small Software Defined Storage:
@@ -768,9 +768,9 @@ The storage sub-system is a foundational part of any Cloud Infrastructure. As su
   * Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation) and
   * Cloud Infastructure Tenant / User Plane,
   * General Areas of Consideration:
-     1. To maintain small footprint likely to serve maximum of two clusters / availability zones.
-     2. If target workload requires Shared Storage, then this would need to part of provided solution.
-     3. With large capacity flash (15 - 30 TB / device) the solution can hold signficant storage capacilty, but need to carefully consider data loss prevention needs.
+     1. Is there need to support multiple clusters / availability zones at same site? Follow guidance as per "Satelite Data-centre Storage" use case (1).
+     2. Is Shared File Storage required? Check sharing scope carefully as fully virtualised vNFS solution adds complexity and increases resources needs.
+     3. Is there need for large local capacity ? With large capacity flash (15 - 30 TB / device) the solution can hold signficant storage capacilty, but need to carefully consider data loss prevention needs and impact on rebuilt / recovery times.
    * Specific Areas of Consideration:
      1. Converged Software Defined Storage:
        * Leverage same technology as "Dedicated Software-Defined Storage" scenarios, but on converged infrastructure. To meet capacity needs provision three hosts for storage and the rest for virtual infrastructure and storage control and management and tenant workload hosting.
