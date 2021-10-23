@@ -659,7 +659,7 @@ The following principles apply to Storage scope for the Reference Model, Referen
 The following set of storage implementations outline some of the most prevalent stereotypical storage implementations.
 
 The first of these are for Data Centre Storage cases, with stereotypes of:
-* Dedicated storage appliance (Figure 3-15) - that provide network based storage via iSCSI (2), NFS/CIFS (3) with potentially virtual NFS (4) capability. Having virtual network software (4) allows the establishment of storage tenancies, where storage tenancy have their own virtual storage services which are exposed on their own network,
+* Dedicated storage appliance (Figure 3-15) - that provide network based storage via iSCSI (2), NFS/CIFS (3) with potentially virtual NAS (vNAS) (4) capability. Having virtual network software (4) allows the establishment of storage tenancies, where storage tenancy have their own virtual storage services which are exposed on their own network,
 * Software defined storage (Figure 3-16) - which is able to provide similar capabilities as the dedicated storage appliance (see (3),(4) & (5) in diagram). In this case this is provided as a software solution on top of a hyper-converged infrastructure.
 
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-appliance-sterotype-01.png" alt="Storage Appliance Stereotype" Title="Storage Appliance Stereotype" width="100%"/></p>
@@ -669,14 +669,14 @@ The first of these are for Data Centre Storage cases, with stereotypes of:
 <p align ="center"><b>Figure 3-16:</b> Software Defined Storage Stereotype</p>
 
 Both of these stereotypes can be used to support very broad storage needs from: machine boot (via iSCSI), providing storage to the Cloud Platform Control and Management Plane, Platform Native (viz., Hypervisor Attached and Container Persistence storage, as defined in section "3.6.3 Storage for Tenant Consumption) and Application/VNF managed network storage.
-To provide this requires connectivity within Cloud Infrastructure Underlay and Tenant Overlay Networks.
+To provide this requires connectivity within Cloud Infrastructure Underlay and Tenant Overlay Networks. Each of the defined stereotype uses physical Block storage for boot (Physical Layer - Block Consumption -> OS File Systems Exposure (1) on diagrams). This is primary use case for use of in chassis physical storage, that is not being used for consumption and exposure as network based storage. 
 
 <a name="3.6.3"></a>
 ### 3.6.3 Storage for Tenant Consumption
 
 Storage is made avaiable for tenant consumption through a number of models. A simplified view of this is provided in the following illustrative model.
 <p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="50%"/></p>
-<p align ="center"><b>Figure 3-15:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
+<p align ="center"><b>Figure 3-16:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
 
 Where:
 * (Comparative) Cost - is monetary value / unit of end user storage capacity 
@@ -693,11 +693,23 @@ The storage model provides a relatively simple way for the storage consumer to s
 | Storage Type | Consumption Model | Performance & Capacity | Cost | Infrastructure Strategy | Use Case |
 |---|---|---|---|---|---|
 | Platform Native | Managed by the VIM / Hypervisor and attached as part of VNF/CNF start up via VNF Descriptor<br />Volumes shareability across VNF/CNF instances is determined by platform and storage capabilities | Ultra High Performance & Very High Performance<br />Capacity: 10GB - 5TB<br />"Tier 1" | High to Very High | Always part of VIM deployment<br />Storage is directly next to vCPU<br />Can support highest performance use cases<br />Always available to support VNF/CNF boot/startup | Boot/Start VNF/CNF<br />Live Migrate Workload within and across VIMs |
-| Shared File Storage | Access via Network File System<br />Concurrent consumption across multiple VNF/CNFs<br />Sharing can be constrained to tenancy, cross tenancy and externally accessible | Enterprise Transactional Performance (real time transaction processing)<br />Capacity: 5GB - 100TB<br />Selectable "Tier 1" to "Tier 3" | High - Mid | Leverage existing capabilities<br />Only build if needed (not needed by many data plan VNF/CNFs)<br />If needed for Edge deployment then aim to unify with "Platform Native" deployment | VNF/CNF's able to share the same file content |
+| Shared File Storage | Access via Network File System<br />Concurrent consumption across multiple VNF/CNFs<br />Sharing can be constrained to tenancy, cross tenancy and externally accessible | Enterprise Transactional Performance (real time transaction processing)<br />Capacity: 5GB - 100TB<br />Selectable "Tier 1" to "Tier 3" | High - Mid | Leverage existing capabilities<br />Only build if needed (not needed by many data plan VNF/CNFs)<br />If needed for Edge deployment then aim to unify with "Platform Native" deployment | VNF/CNF's able to share the same file content | 
 | Object Storage | Consumed via HTTP/S restful services<br />Provided by serving application which manages storage needs<br />Location Independent | Highly distributable and scalable | High to Mid | Primarily tenant application responsibility | Cloud Native Geo-Distributed VNF/CNFs |
 | Capacity | Typically accessed as per "Shared Storage" but will likely have additional storage stages<br />Not suitable for real time processing | Very low transactional performance<br />Need throughput to accommodate large data flow<br />"Tier 3" | Low | Use cheapest storage available that meets capacity & security needs | Archival storage for tenant/platform backup/restore<br />DR |
 
-In cloud infrastructure the storage types may manifest in various ways with substantive variations in the architecture models being used. Examples include storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking) and in chassis storage to support hypervisor and container host OS/Runtime.  For the provision of a shared resource platform it is not desirable to use "in chassis storage" for anything other than in the storage devices for platform hypervisor / OS boot or for the hosts providing the storage sub-systems deployment itself.  This is due to difficulty in resulting operational management (see principles section "3.6.1 Introduction" - "Operationally Amenable" above). For cloud based storage "Ephemeral" storage (hypervisor attached or container images which are disposed when VNF/CNF is stopped) is often distinguished from other persistent storage, however this is a behaviour variation that is managed via the VNF descriptor rather than a specific Storage Type. Storage also follows the alignment of separated virtual and physical resources of Virtual Infrastructure Layer and HW Infrastructure Layer. Reasons for such alignment are described more in Section 3.5.
+In section "3.6.2 Storage Implementation Stereotypes" the General Cloud Storage Model is used to illustrated the provision of storoage. The model can also be used to illustrate the consumption of storage for use by Tenants (see below for "Platform Native" stereotypes):
+* Platform Native - Hypervisor Attached Consumption Stereotype (Figure 3-17) - where hypervisor consumes Software Defined Storage via Network (RA-1 - Cinder backend (2)) and the Block Image is attached to Virtual Machine (RAW or QCOW file within File System), which is used for boot and expsoure to virtual machine OS as Block Storage (3). The virtual machine OS in turn consumes this for use by Tenant Appliaction via File System,
+* Platform Native - Container Persistent Consumption Stereotype (Figure 3-18) - is simpler case with Container Runtime consuming Software Defined Storage (via RADOS backend (2)) and exposes this to Container as a file system mount (3).
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-hypervisor-attached-stereotype-01.png" alt="Platform Native - Hypervisor Attached Consumption Stereotype" Title="Platform Native - Hypervisor Attached Consumption Stereotype" width="100%"/></p>
+<p align ="center"><b>Figure 3-17:</b> Platform Native - Hypervisor Attached Consumption Stereotype</p>
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-container-persistent-stereotype-01.png" alt="Platform Native - Container Persistent Consumption Stereotype" Title="Platform Native - Container Persistent Consumption Stereotype" width="100%"/></p>
+<p align ="center"><b>Figure 3-18:</b> Platform Native - Container Persistent Consumption Stereotype</p>
+
+Note that a sterotype for Network File Storage consumption is not illustrated as this is simply managed by the Tenant Application by doing a file systems mount.
+
+In cloud infrastructure the storage types may manifest in various ways with substantive variations in the architecture models being used. Examples of this are provided in section "3.6.2 Storage Implementation Stereotypes", which stereotypes for "Dedicated Storage Appliance" and "Software Defined Storage". In the consumption case, again there is use of in chassis storage to support hypervisor and container host OS/Runtime boot, not for Tenant / User Plane storage consumption.
 
 <a name="3.6.4"></a>
 ### 3.6.4 Storage Scenarios and Architecture Fit
@@ -718,7 +730,7 @@ Where:
 | | | | | | Tenant / User | | | | | | |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | | | Infra / Ctrl / Mgt | | | Platform Native | | Shared File | | | | Object |
-| Use Case | Stereotype | Boot | Ctrl | Mgt | Hypervisor Attached | Container Persistent | Within | Cross | Ext | vNFS | Object |
+| Use Case | Stereotype | Boot | Ctrl | Mgt | Hypervisor Attached | Container Persistent | Within | Cross | Ext | vNAS | Object |
 | Data-centre Storage | Dedicated Network Storage Appliance | Y | Y | Y | Y | Y | O | O | O | O | O |
 | | Dedicated Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
 | | Traditional SAN | Y | Y | Y | N | N | N | N | N | N | N |
@@ -738,7 +750,7 @@ The storage sub-system is a foundational part of any Cloud Infrastructure, as su
      1. Can storage support Virtual Machine (RA-1) & Container (RA-2) Hosting cases from single instance? Noting that if you wish to have single storage instance providing storage across multiple clusters / availability zones within the same data-centre then this needs to be factored into the underlay network design.
      2. Can the storage system support Live Migration / Multi-Attach within and across Availability Zones (applicable to Virtual Machine hosting (RA-1)) and how does the Cloud Infrastructure solution support migration of Virtual Machines between availability zones in general?
      3. Can the storage system support the full range of Shared File Storage use cases: including the ability to control how network exposed Share File Storage is visible: Within Tenancy, Across Tenancy (noting that a Tenancy can operate across availability zones) and Externally?
-     4. Can the storage system support alternate performance tiers to allow tenant selection of best Cost/Performance option?
+     4. Can the storage system support alternate performance tiers to allow tenant selection of best Cost/Performance option? For very high performance provision it is relativity easy to meet throuhput requirements by using higer bandwith NICs, while achieving very low latency targets requires careful planning of underlay storage VLAN / switch networking.
   * Specific Areas of Consideration:
     1. Dedicated Software Defined Storage:
       * Need to establish the physical disk data layout / encoding scheme choice, options could be: replication / mirroring of data across multiple storage hosts or CRC-based redundancy management encoding (such as "erasure encoding"). This typically has performance / cost implications as replication has a lower performance impact, but consumes larger number of physical disks. If using replication then increasing the number of replicas provide greater data loss prevention, but consumes more disk system backend network bandwidth, with bandwidth need proportional to number of replicas.
@@ -747,7 +759,7 @@ The storage sub-system is a foundational part of any Cloud Infrastructure, as su
     2. Dedicated Software Defined Storage:
       * Macro choice is made based on vendor / model selection and configuration choices available
     3. Traditional SAN:
-      * This is generally made available via FC-AL / SCSI connectivity and hence has q need for very specific connectivity. To provide type of features required for Cloud Infrasturcture a SAN needs to be "front-ended" which other gateway/s to provide more readily consumed Network Storage capability. This is often seen with current deployments where SAN is used as back end to a NFS/CIFS Gateway. This provide on going life of existing investment and would only be acceptable with use of more recent SAN chassis devices which rely on SAS/SATA disks for physical storage.
+      * This is generally made available via FC-AL / SCSI connectivity and hence has q need for very specific connectivity. To provide type of features required for Cloud Infrasturcture a SAN needs to be "front-ended" which other gateway/s to provide more readily consumed Network Storage capability. This is often seen with current deployments where SAN is used as back end to a NFS/CIFS (NAS) Gateway. This provide on going life of existing investment and would only be acceptable with use of more recent SAN chassis devices which rely on SAS/SATA disks for physical storage.
 
 
 * Satelite Data-centre Storage - the satelite data-centre is a smaller regional deployment which has connectivity to and utilises resources available from the main Data-centre and as such is more likely needed to support:
@@ -798,7 +810,13 @@ The storage sub-system is a foundational part of any Cloud Infrastructure, as su
 The General Storage Model illustrates that at the bottom of any storage solution there is always the physical storage layer and a storage operating system of some sort. In Cloud Infrastructure enviroment what is generally consumed is some form of network storage which can be provided by the:
  * Infrastructure platform underlay network for Control Plan and Platform Native - Hypervisor Attached and Container Runtime Managed
  * Tenant / User overlay network for Shared File Storage and Object Storage
- 
+
+In general for the provision of storage as shared resource it is not desirable to use "in chassis storage" for anything other than in the storage devices for platform hypervisor / OS boot or for the hosts providing the storage sub-systems deployment itself. This is due to difficulty in resulting operational management (see principles section "3.6.1 Introduction" - "Operationally Amenable" above).
+
+For cloud based storage "Ephemeral" storage (hypervisor attached or container images which are disposed when VNF/CNF is stopped) is often distinguished from other persistent storage, however this is a behaviour variation that is managed via the VNF descriptor rather than a specific Storage Type.
+
+Storage also follows the alignment of separated virtual and physical resources of Virtual Infrastructure Layer and HW Infrastructure Layer. Reasons for such alignment are described more in Section 3.5.
+
 While there are new storage technologies being made available and a trend towards the use of flash for all physical storage needs, for the near future, the core storage architecture for Cloud Infrastructure is likely to remain consistent with the network-based consumption model, as described through the stereotypes. 
 
 <a name="3.7"></a>
