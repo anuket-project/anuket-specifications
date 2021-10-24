@@ -668,15 +668,24 @@ The first of these are for Data Centre Storage cases, with stereotypes of:
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-software-defined-sterotype-01.png" alt="Software Defined Storage Stereotype" Title="Software Defined Storage Stereotype" width="100%"/></p>
 <p align ="center"><b>Figure 3-16:</b> Software Defined Storage Stereotype</p>
 
-Both of these stereotypes can be used to support very broad storage needs from: machine boot (via iSCSI), providing storage to the Cloud Platform Control and Management Plane, Platform Native (viz., Hypervisor Attached and Container Persistence storage, as defined in section "3.6.3 Storage for Tenant Consumption) and Application/VNF managed network storage.
-To provide this requires connectivity within Cloud Infrastructure Underlay and Tenant Overlay Networks. Each of the defined stereotype uses physical Block storage for boot (Physical Layer - Block Consumption -> OS File Systems Exposure (1) on diagrams). This is primary use case for use of in chassis physical storage, that is not being used for consumption and exposure as network based storage. 
+Both of these stereotypes can be used to support very broad storage needs from: machine boot (via iSCSI), providing storage to the Cloud Platform Control and Management Plane, Platform Native (viz., Hypervisor Attached and Container Persistence storage, as defined in section "3.6.3 Storage for Tenant Consumption) and Application/VNF managed network storage. To provide this requires connectivity within Cloud Infrastructure Underlay and Tenant Overlay Networks.
+
+Successful management of Infrastructure Cloud requires high levels of automation, including the ability rapidly standup new storage and hosting infrastructure. This is managed through Infrastruture Automation, which provides tools to support the establishment of the Cloud Infrastrucure. A typical part of this is to use PXE boot process to manage the deployment of initial images to physical hosts and the simillar approach is used for "Bare Metal-as-a-Service" provisioning. The storage stereotyoe that cover this use case is:
+* Infrastructure Automation - PXE Boot Server (Figure 3-17) - this provide a cache of boot images (stored in local storage) (2) which are then conditionally served up as PXE boot images (3). The PXE boot server is part of the Infrastructure Automation tooling and can run within bootstrap management hosting in data-centre or within routing / switch layer for edge. As this is part of Infrastucture Automation tooling it is aware of provisioning status of physical infrastructure and will server specific images based on this or even not respond to PXE boot requests for hosts which have already been provisioned are considered "in service".
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-infrastructure-automation-pxe-server-sterotype-01.png" alt="Infrastructure Automation - PXE Boot Server Stereotype" Title="Infrastructure Automation - PXE Boot Server Stereotype"" width="100%"/></p>
+<p align ="center"><b>Figure 3-17:</b> Infrastructure Automation - PXE Boot Server Stereotype"</p>
+
+To provided PXE boot service to underlying resource hosts these have to connected to same network as NIC that is configured for PXE boot. This same mechanism can also be used to provision tenanat virtual machines, which are connected to virtual NIC which is connected to equivalent "Infrastructure Automation - PXE Server" capabilities which could be provided as part of tennat consumable boot infrastructure services.
+ 
+For each of the defined stereotypes, the storage service uses physical Block storage for boot (Physical Layer - Block Consumption -> OS File Systems Exposure (1) on diagrams). This is primary use case for use of in chassis physical storage, that is not being used for consumption and exposure as network based storage. The caching of PXE boot images is also a one where use of physical in chassis storage is used as the boot infrastructure itself is used to establish the storage solution and hence is not available to serve this function.
 
 <a name="3.6.3"></a>
 ### 3.6.3 Storage for Tenant Consumption
 
 Storage is made avaiable for tenant consumption through a number of models. A simplified view of this is provided in the following illustrative model.
 <p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="50%"/></p>
-<p align ="center"><b>Figure 3-16:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
+<p align ="center"><b>Figure 3-18:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
 
 Where:
 * (Comparative) Cost - is monetary value / unit of end user storage capacity 
@@ -698,14 +707,14 @@ The storage model provides a relatively simple way for the storage consumer to s
 | Capacity | Typically accessed as per "Shared Storage" but will likely have additional storage stages<br />Not suitable for real time processing | Very low transactional performance<br />Need throughput to accommodate large data flow<br />"Tier 3" | Low | Use cheapest storage available that meets capacity & security needs | Archival storage for tenant/platform backup/restore<br />DR |
 
 In section "3.6.2 Storage Implementation Stereotypes" the General Cloud Storage Model is used to illustrated the provision of storoage. The model can also be used to illustrate the consumption of storage for use by Tenants (see below for "Platform Native" stereotypes):
-* Platform Native - Hypervisor Attached Consumption Stereotype (Figure 3-17) - where hypervisor consumes Software Defined Storage via Network (RA-1 - Cinder backend (2)) and the Block Image is attached to Virtual Machine (RAW or QCOW file within File System), which is used for boot and expsoure to virtual machine OS as Block Storage (3). The virtual machine OS in turn consumes this for use by Tenant Appliaction via File System,
-* Platform Native - Container Persistent Consumption Stereotype (Figure 3-18) - is simpler case with Container Runtime consuming Software Defined Storage (via RADOS backend (2)) and exposes this to Container as a file system mount (3).
+* Platform Native - Hypervisor Attached Consumption Stereotype (Figure 3-19) - where hypervisor consumes Software Defined Storage via Network (RA-1 - Cinder backend (2)) and the Block Image is attached to Virtual Machine (RAW or QCOW file within File System), which is used for boot and expsoure to virtual machine OS as Block Storage (3). The virtual machine OS in turn consumes this for use by Tenant Appliaction via File System,
+* Platform Native - Container Persistent Consumption Stereotype (Figure 3-20) - is simpler case with Container Runtime consuming Software Defined Storage (via RADOS backend (2)) and exposes this to Container as a file system mount (3).
 
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-hypervisor-attached-stereotype-01.png" alt="Platform Native - Hypervisor Attached Consumption Stereotype" Title="Platform Native - Hypervisor Attached Consumption Stereotype" width="100%"/></p>
-<p align ="center"><b>Figure 3-17:</b> Platform Native - Hypervisor Attached Consumption Stereotype</p>
+<p align ="center"><b>Figure 3-19:</b> Platform Native - Hypervisor Attached Consumption Stereotype</p>
 
 <p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-container-persistent-stereotype-01.png" alt="Platform Native - Container Persistent Consumption Stereotype" Title="Platform Native - Container Persistent Consumption Stereotype" width="100%"/></p>
-<p align ="center"><b>Figure 3-18:</b> Platform Native - Container Persistent Consumption Stereotype</p>
+<p align ="center"><b>Figure 3-20:</b> Platform Native - Container Persistent Consumption Stereotype</p>
 
 Note that a sterotype for Network File Storage consumption is not illustrated as this is simply managed by the Tenant Application by doing a file systems mount.
 
