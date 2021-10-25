@@ -768,7 +768,7 @@ The storage sub-system is a foundational part of any Cloud Infrastructure, as su
     2. Dedicated Software Defined Storage:
       * Macro choice is made based on vendor / model selection and configuration choices available
     3. Traditional SAN:
-      * This is generally made available via FC-AL / SCSI connectivity and hence has q need for very specific connectivity. To provide type of features required for Cloud Infrasturcture a SAN needs to be "front-ended" which other gateway/s to provide more readily consumed Network Storage capability. This is often seen with current deployments where SAN is used as back end to a NFS/CIFS (NAS) Gateway. This provide on going life of existing investment and would only be acceptable with use of more recent SAN chassis devices which rely on SAS/SATA disks for physical storage.
+      * This is generally made available via FC-AL / SCSI connectivity and hence has a need for very specific connectivity. To provide type of features required for Cloud Infrastructure a SAN needs to be "front-ended" which other gateway/s to provide more readily consumed Network Storage capability. This is often seen with current deployments where SAN is used as back end to a NFS/CIFS (NAS) Gateway. This provide on going life of existing investment and would only be acceptable with use of more recent SAN chassis devices which rely on SAS/SATA disks for physical storage.
 
 
 * Satelite Data-centre Storage - the satelite data-centre is a smaller regional deployment which has connectivity to and utilises resources available from the main Data-centre and as such is more likely needed to support:
