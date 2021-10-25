@@ -224,10 +224,8 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.gen.008 | Hardening | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities. | [RA-1 6.3.1.5 "Patches"](./chapter06.md#6315-patches), [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm)  |
 | sec.gen.009 | Hardening | The Platform **must** support software integrity protection and verification. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
 | sec.gen.010 | Hardening | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know ([Controlled Access Based on the Need to Know](https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/)). | [RA-1 6.3.3.3 "Confidentiality and Integrity of tenant data"](./chapter06.md#6333-confidentiality-and-integrity-of-tenant-data-secmon012-and-secmon013) |
-| sec.gen.011 | Hardening | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors). |  |
 | sec.gen.012 | Hardening | The Operator **must** ensure that only authorised actors have physical access to the underlying infrastructure. | This requirement’s verification goes beyond Anuket testing scope  |
 | sec.gen.013 | Hardening | The Platform **must** ensure that only authorised actors have logical access to the underlying infrastructure. | [RA-1 6.3.1.2 "System Access"](./chapter06.md#6312-system-access) |
-| sec.gen.014 | Hardening | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
 | sec.gen.015 | Hardening | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 
 <p align="center"><b>Table 2-6:</b> Reference Model Requirements - System Hardening Requirements</p>
@@ -249,13 +247,11 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.sys.011 | Access | The Platform **must not** reuse the same authentication credentials (e.g., key pairs) on different Platform components (e.g., different hosts, or different services). | [RA-1 6.3.1.2 "System Access"](./chapter06.md#6312-system-access) |
 | sec.sys.012 | Access | The Platform **must** protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component (e.g., in OpenStack Barbican) |  |
 | sec.sys.013 | Access | The Platform **must** generate secrets dynamically as and when needed. |  |
-| sec.sys.014 | Access | The Platform **should** use Linux Security Modules such as SELinux to control access to resources. |  |
 | sec.sys.015 | Access | The Platform **must not** contain back door entries (unpublished access points, APIs, etc.). |  |
 | sec.sys.016 | Access | Login access to the Platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. Note: Hardened jump servers isolated from external networks are recommended | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 | sec.sys.017 | Access | The Platform **must** provide the capability of using digital certificates that comply with X.509 standards issued by a trusted Certification Authority. | [RA-1 6.3.3.1 "Confidentiality and Integrity of communications"](./chapter06.md#6331-confidentiality-and-integrity-of-communications) |
 | sec.sys.018 | Access | The Platform **must** provide the capability of allowing certificate renewal and revocation. |  |
 | sec.sys.019 | Access | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
-| sec.sys.020 | Access | The Cloud Infrastructure architecture **should** rely on Zero Trust principles to build a secure by design environment, Zero Trust Architecture (ZTA) described in NIST SP 800-207. |  |
 
 <p align="center"><b>Table 2-7:</b> Reference Model Requirements - Platform and Access Requirements</p>
 
@@ -264,14 +260,12 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
 | sec.ci.001 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data at rest and in transit. | [RA-1 6.3.3 "Confidentiality and Integrity"](./chapter06.md#633-confidentiality-and-integrity) |
-| sec.ci.002 | Confidentiality/Integrity | The Platform **should** support self-encrypting storage devices. |   |
 | sec.ci.003 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data related metadata. |   |
 | sec.ci.004 | Confidentiality | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). |   |
 | sec.ci.005 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). |   |
 | sec.ci.006 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of workload resource utilisation (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). |  |
 | sec.ci.007 | Confidentiality/Integrity | The Platform **must not** allow Memory Inspection by any actor other than the authorised actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and for secure monitoring services. Administrative access must be managed using Platform Identity Lifecycle Management.  |  |
 | sec.ci.008 | Confidentiality | The Cloud Infrastructure **must** support tenant networks segregation. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
-| sec.ci.009 | Confidentiality/Integrity | For sensitive data encryption, the key management service **should** leverage a Hardware Security Module to manage and protect cryptographic keys. |   |
 
 <p align="center"><b>Table 2-8:</b> Reference Model Requirements: Confidentiality and Integrity Requirements</p>
 
@@ -301,8 +295,6 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.img.006 | Image | Image Registries **must** only be accessible over networks that enforce authentication, integrity and confidentiality. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration) |
 | sec.img.007 | Image | Image registries **must** be clear of vulnerable and out of date versions. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security)  |
 | sec.img.008 | Image | Images **must not** include any secrets. Secrets include passwords, cloud provider credentials, SSH keys, TLS certificate keys, etc. |  |
-| sec.img.009 | Image | CIS Hardened Images **should** be used whenever possible. |  |
-| sec.img.010 | Image | Minimalist base images **should** be used whenever possible. |  |
 
 <p align="center"><b>Table 2-10:</b> Reference Model Requirements - Image Security Requirements</p>
 
@@ -313,7 +305,6 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.lcm.001 | LCM | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |  
 | sec.lcm.002 | LCM | The Cloud Operator **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 | sec.lcm.003 | LCM | The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |  
-| sec.lcm.004 | LCM | The Cloud Operator **should** support automated templated approved changes. | |
 | sec.lcm.005 | LCM | Platform **must** provide logs and these logs must be monitored for anomalous behaviour. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |
 | sec.lcm.006 | LCM | The Platform **must** verify the integrity of all Resource management requests. | [RA-1 6.3.3.3 "Confidentiality and Integrity of tenant data"](./chapter06.md#6333-confidentiality-and-integrity-of-tenant-data-secmon012-and-secmon013) |
 | sec.lcm.007 | LCM | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information. |  |
@@ -344,9 +335,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.011 | Monitoring/Audit | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
 | sec.mon.012 | Monitoring/Audit | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | [RA-1 6.3.3.3 "Confidentiality and Integrity of tenant data"](./chapter06.md#6333-confidentiality-and-integrity-of-tenant-data-secmon012-and-secmon013) |
 | sec.mon.013 | Monitoring | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
-| sec.mon.014 | Monitoring | The Monitoring systems **should not** impact IAAS, PAAS, and SAAS SLAs including availability SLAs. |  |
 | sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit)  |
-| sec.mon.016 | Monitoring | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
 | sec.mon.017 | Audit | The Platform **must** audit systems for any missing security patches and take appropriate actions. | [RA-1 6.3.1.5 "Patches"](./chapter06.md#6315-patches) |
 | sec.mon.018 | Monitoring | The Platform, starting from initialisation, **must** collect and analyse logs to identify security events, and store these events in an external system. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
 | sec.mon.019 | Monitoring | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | [RA-1 6.3.7.2 "What to Log"](./chapter06.md#6372-what-to-log--what-not-to-log) |
@@ -363,29 +352,16 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.oss.002 | Software | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open-source code part of Cloud Infrastructure and workloads software, https://cve.mitre.org/ |  |
 | sec.oss.003 | Software | Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the [CVSS (Common Vulnerability Scoring System](https://www.first.org/cvss/) to know a vulnerability score and its associated rate (low, medium, high, or critical). | |
 | sec.oss.004 | Software | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open-source content. |  |
-| sec.oss.005 | Software | A [Software Bill of Materials (SBOM)](https://www.ntia.gov/SBOM) **should** be provided or build, and maintained to identify the software components and their origins. |  | 
-
 
 <p align="center"><b>Table 2-13:</b> Reference Model Requirements - Open-Source Software Security Requirements</p>
 
 #### 2.2.6.9. IaaC security (source [RM7.9.9](../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements))
-
-**Secure Design and Architecture Stage Requirements**
-
- Ref # | sub-category | Description |  Traceability |
-|---------|---------------|----------------|------------|
-| sec.arch.001 | IaaC | Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger. It may be done manually or using tools like open source OWASP Threat Dragon. |  |
-| sec.arch.002 | IaaC | Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger, typically done manually by internal or independent assessors. |   |
 
 **Secure Code Stage Requirements**
 
 | Ref # | sub-category | Description |  Traceability |
 |---------|---------------|----------------|------------|
 | sec.code.001 | IaaC | SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code for software vulnerabilities and gaps against best practices. Example: open source OWASP range of tools.|  |
-| sec.code.002 | IaaC | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code or compiled code for software components with known vulnerabilities. Example: open source OWASP range of tools.  | |
-| sec.code.003 |IaaC |  Source Code Review **should** be performed continuously during Secure Coding stage, typically done manually.  | |
-| sec.code.004 |IaaC |  Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. On the local machine: through the IDE or integrated test suites; triggered on completion of coding be developer. | |
-| sec.code.005 |IaaC | SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. Continuous delivery pre-deployment: scanning prior to deployment. | |
 
 <p align="center"><b>Table 2-14:</b> Reference Model Requirements: IaaC Security Requirements, Secure Code Stage </p>
 
@@ -393,12 +369,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |---------|---------------|----------------|------------|
-| sec.bld.001 | IaaC | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger, example: open source OWASP range of tools. | |
-| sec.bld.002 | IaaC | SCA – Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger, example: open source OWASP range of tools. | |
-| sec.bld.003 | IaaC | Container and Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger, example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |  |
-| sec.bld.004 | IaaC | DAST – Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. Security testing that analyses a running application by exercising application functionality and detecting vulnerabilities based on application behaviour and response, example: OWASP ZAP. | |
-| sec.bld.005 | IaaC | Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program, example: GitLab Open Sources Protocol Fuzzer Community Edition. | |
-| sec.bld.006 | IaaC | IAST – Interactive Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. Software component deployed with an application that assesses application behaviour and detects presence of vulnerabilities on an application being exercised in realistic testing scenarios,example:  Contrast Community Edition. | |
+| sec.bld.003 | IaaC | Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger, example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |  |
 
 <p align="center"><b>Table 2-15:</b> Reference Model Requirements - IaaC Security Requirements, Continuous Build, Integration and Testing Stage </p>
 
@@ -408,7 +379,6 @@ The Platform is assumed to provide configurable alerting and notification capabi
 |---------|---------------|----------------|------------|
 | sec.del.001 | IaaC | Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. Example: GitLab uses the open source Clair engine for container image scanning.|  |
 | sec.del.002 | IaaC | Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. Code Signing provides authentication to assure that downloaded files are form the publisher named on the certificate.  |  |
-| sec.del.003 | IaaC | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage, example: GitLab uses the open source Clair engine for container scanning.  | |
 | sec.del.004 | IaaC | Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Instantiate Infrastructure trigger. The vulnerability scanning system is deployed on the cloud platform to detect security vulnerabilities of specified components through scanning and to provide timely security protection. Example: OWASP Zed Attack Proxy (ZAP). |  |
 
 <p align="center"><b>Table 2-16:</b> Reference Model Requirements - IaaC Security Requirements, Continuous Delivery and Deployment Stage</p>
@@ -418,9 +388,6 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | Ref # | sub-category | Description |  Traceability |
 |---------|---------------|----------------|------------|
 | sec.run.001 | IaaC | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage. Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|  |
-| sec.run.002 | IaaC | RASP – Runtime Application Self-Protection **should** be continuously applied during the Runtime Defence and Monitoring stage. Security technology deployed within the target application in production for detecting, alerting, and blocking attacks.  | |
-| sec.run.003 | IaaC | Application testing and Fuzzing **should** be continuously applied during the Runtime Defence and Monitoring stage. Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program, example: GitLab Open Sources Protocol Fuzzer Community Edition.  | |
-| sec.run.004 | IaaC | Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage, typically done manually. | |
 
 <p align="center"><b>Table 2-17:</b> Reference Model Requirements - IaaC Security Requirements, Runtime Defence and Monitoring Stage</p>
 
@@ -428,17 +395,6 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |---------|---------------|----------------|------------|
-| sec.std.001 | Standards | The Cloud Operator **should** comply with Center for Internet Security CIS Controls, Center for Internet Security - [https://www.cisecurity.org/](https://www.cisecurity.org/) | |
-| sec.std.002 | Standards | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version), Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) | |
-| sec.std.003 | Standards | The Platform and Workloads **should** follow the guidance in the [OWASP Cheat Sheet Series (OCSS)](https://github.com/OWASP/CheatSheetSeries)  Standards, Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) | |
-| sec.std.004 | Standards | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/). |  |
-| sec.std.005 | Standards | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/. |  |
-| sec.std.006 | Standards | The Cloud Operator, Platform and Workloads **should** utilize the [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document). |  |
-| sec.std.007 | Standards | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in [ISO/IEC 27001](  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en). ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs). | |
-| sec.std.008 | Standards | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified [ISO/IEC 27002:2013 (or latest)](  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en). | |
-| sec.std.009 | Standards | The Cloud Operator, and Platform **should** implement the [ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques]( https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en), ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity. | |
-| sec.std.010 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management. ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. | |
-| sec.std.011 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity  ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity. |  |
 | sec.std.012 | Standards | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16); International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. | |
 
 <p align="center"><b>Table 2-18:</b> Reference Model Requirements: Cloud Infrastructure Security Requirements</p>
@@ -533,8 +489,8 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |----|----------|-------------|-------------|
-| lcm.gen.01	| General | The Architecture must support zero downtime of running workloads when the number of compute hosts and/or the storage capacity is being expanded or unused capacity is being removed. | |
-| lcm.adp.02 | Automated deployment | The Architecture must support upgrades of software, provided by the cloud provider, so that the running workloads are not impacted (viz., hitless upgrades). Please note that this means that the existing data plane services should not fail (go down). | |
+| lcm.gen.01	| General | The Architecture **must** support zero downtime of running workloads when the number of compute hosts and/or the storage capacity is being expanded or unused capacity is being removed. | |
+| lcm.adp.02 | Automated deployment | The Architecture **must** support upgrades of software, provided by the cloud provider, so that the running workloads are not impacted (viz., hitless upgrades). Please note that this means that the existing data plane services should not fail (go down). | |
 
 <p align="center"><b>Table 2-24:</b> LCM Requirements</p>
 
@@ -688,6 +644,8 @@ This section is left blank for future use.
 
 | Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
+| sec.img.009 | Image | CIS Hardened Images **should** be used whenever possible. |  |
+| sec.img.010 | Image | Minimalist base images **should** be used whenever possible. |  |
 
 <p align="center"><b>Table 2-37:</b> Image Security Recommendations</p>
 
@@ -714,7 +672,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
-| sec.oss.004 | Software | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. Inventory of software components | https://www.ntia.gov/SBOM. | 
+| sec.oss.005 | Software | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. Inventory of software components | https://www.ntia.gov/SBOM. | 
 
 <p align="center"><b>Table 2-40:</b> Open-Source Software Security Recommendations</p>
 
@@ -774,15 +732,15 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Notes |
 |---------|---------------|----------------|------------|
-| sec.std.001 | Standards | The Cloud Operator **should** comply with Center for Internet Security CIS Controls ([https://www.cisecurity.org/](https://www.cisecurity.org/)); Center for Internet Security - [https://www.cisecurity.org/](https://www.cisecurity.org/) | |
-| sec.std.002 | Standards | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/).  Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) | |
-| sec.std.003 | Standards | The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries. Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) | |
-| sec.std.004 | Standards | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/) |  |
-| sec.std.005 | Standards | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/ |  |
-| sec.std.006  | Standards | The Cloud Operator, Platform and Workloads **should** utilise the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document |  |
-| sec.std.007 | Standards | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en; ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) | |
-| sec.std.008 | Standards | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en | |
-| sec.std.009 | Standards | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en; ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity | |
+| sec.std.001 | Standards | The Cloud Operator **should** comply with [Center for Internet Security CIS Controls](https://www.cisecurity.org/) | |
+| sec.std.002 | Standards | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version)- CSA, [Cloud Security Alliance](https://cloudsecurityalliance.org/) | |
+| sec.std.003 | Standards | The Platform and Workloads **should** follow the guidance in the [OWASP Cheat Sheet Series (OCSS)]( https://github.com/OWASP/CheatSheetSeries)- OWASP, [Open Web Application Security Project](https://www.owasp.org) | |
+| sec.std.004 | Standards | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the [OWASP Top Ten Security Risks](https://owasp.org/www-project-top-ten/) |  |
+| sec.std.005 | Standards | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the [OWASP Software Maturity Model (SAMM)](https://owaspsamm.org/blog/2019/12/20/version2-community-release/) |  |
+| sec.std.006  | Standards | The Cloud Operator, Platform and Workloads **should** utilise the [OWASP Web Security Testing Guide]( https://github.com/OWASP/wstg/tree/master/document) |  |
+| sec.std.007 | Standards | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in [ISO/IEC 27001]( https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en); ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) | |
+| sec.std.008 | Standards | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified [ISO/IEC 27002:2013 (or latest)](https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en) | |
+| sec.std.009 | Standards | The Cloud Operator, and Platform **should** implement the [ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques](https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en); ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity | |
 | sec.std.010 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management; ISO/IEC 27035 is the international Standard for incident management | |
 | sec.std.011 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity; ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity | |
 
