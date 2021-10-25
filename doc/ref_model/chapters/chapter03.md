@@ -678,7 +678,7 @@ Successful management of Cloud Infrastructure requires high levels of automation
 
 To provided PXE boot service to underlying resource hosts these have to connected to same network as NIC that is configured for PXE boot. This same mechanism can also be used to provision tenanat virtual machines, which are connected to virtual NIC which is connected to equivalent "Infrastructure Automation - PXE Server" capabilities which could be provided as part of tennat consumable boot infrastructure services.
  
-For each of the defined stereotypes, the storage service uses physical Block storage for boot (Physical Layer - Block Consumption -> OS File Systems Exposure (1) on diagrams). This is primary use case for use of in chassis physical storage, that is not being used for consumption and exposure as network based storage. The caching of PXE boot images is also a one where use of physical in chassis storage is used as the boot infrastructure itself is used to establish the storage solution and hence is not available to serve this function.
+For each of the defined stereotypes, the storage service uses physical Block storage for boot (Physical Layer - Block Consumption -> OS File Systems Exposure (1) on diagrams). This is the primary use case for use of in chassis physical storage, that is not being used for consumption and exposure as network-based storage. The caching of PXE boot images is also one where the use of physical in chassis storage is used as the boot infrastructure itself is used to establish the storage solution and hence is not available to serve this function.
 
 <a name="3.6.3"></a>
 ### 3.6.3 Storage for Tenant Consumption
