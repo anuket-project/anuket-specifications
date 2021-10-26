@@ -68,7 +68,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | e.cap.005 | Max storage that can be attached / mounted to VM by the Cloud Infrastructure | Up to 16TB<sup>1</sup> | Up to 16TB<sup>1</sup> | |
 | e.cap.006/ infra.com.cfg.003 | CPU pinning support | Not required | Must support | |
 | e.cap.007/ infra.com.cfg.002 | NUMA support | Not required | Must support | |
-| e.cap.018/ infra.com.cfg.005 | Simultaneous Multithreading (SMT) enabled | Not required | Must support | |
+| e.cap.018/ infra.com.cfg.005 | Simultaneous Multithreading (SMT) enabled | Must support | Optional | |
 | i.cap.018/ infra.com.cfg.004 | Huge Pages configured | Not required | Must support | |
 
 <p align="center"><b>Table 2-1a:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Capabilities</p>
@@ -163,7 +163,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | infra.hw.cpu.cfg.001 | Minimum number of CPU (Sockets) | 2 | 2 | |
 | infra.hw.cpu.cfg.002 | Minimum number of Cores per CPU | 20 | 20 | |
 | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support | |
-| infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP) | Must support | Must support | |
+| infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP) | Must support | Optional | |
 | infra.hw.stg.hdd.cfg.001 | Local Storage HDD | *No requirement specified* | *No requirement specified* | |
 | infra.hw.stg.ssd.cfg.002 | Local Storage SSD | Should support | Should support | |
 | infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | 4 | |
