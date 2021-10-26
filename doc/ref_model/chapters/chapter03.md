@@ -727,7 +727,7 @@ The storage model and stereotypical usage scenarios illustrate the key storage u
  * Use Case - what is the target storage use case being covered (large data-centre, small data-centre, standalone cloud, edge etc.)
  * Sterotype - which of defined stereotypes is used
  * Infra / Ctrl / Mgt - is the storage stereotype able to support the: Infrastructure, Control Plane and Management Plane Needs
- * Tenant / User - is the storage sterotype able to support Teneant / User Plane neeeds including: Platform Native, Shared File Storage & Object Storage (as per section - "3.6.3 Storage for Tenant Consumption")
+ * Tenant / User - is the storage stereotype able to support Tenant / User Plane needs including: Platform Native, Shared File Storage & Object Storage (as per section - "3.6.3 Storage for Tenant Consumption")
 
 Where:
  * "Y" - Yes and almost always provided
