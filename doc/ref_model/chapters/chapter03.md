@@ -775,7 +775,7 @@ The storage sub-system is a foundational part of any Cloud Infrastructure, as su
   * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
   * Cloud Infastructure Tenant / User Plane,
   * General Areas of Consideration:
-     1. Is there need to support multiple clusters / availability zones at same site? If so then use "Data-Centre Storage" use case, otherwise consider how can put Virtual Machine & Container Hosting control plan and Storage control plan on same set of host to reduce footprint.
+     1. Is there a need to support multiple clusters / availability zones at the same site? If so then use "Data-Centre Storage" use case, otherwise, consider how to put Virtual Machine & Container Hosting control plane and Storage control plane on the same set of hosts to reduce footprint.
      2. Can Shared File Storage establishment be avoided by using capabilities provided by large Data-Centre Storage?
      3. Can very large capacity storage needs be moved to larger Data-Centre Storage capabilities?
    * Specific Areas of Consideration:
