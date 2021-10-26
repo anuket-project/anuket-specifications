@@ -357,7 +357,7 @@ The high-performance profile (H) is intended to be used for workloads that requi
 | e.cap.007 | NUMA alignment  | No | Yes | |
 | e.cap.013 | SR-IOV over PCI-PT  | No   | Yes | |
 | i.cap.018 | Huge page support  | No  | Yes | Internal performance capabilities as per Table 4-7. |
-| e.cap.018 | Simultaneous Multithreading (SMT) | Yes | Yes | |
+| e.cap.018 | Simultaneous Multithreading (SMT) | Yes | Optional | |
 | e.cap.019 | vSwitch Optimisation (DPDK) | No | Yes| DPDK doesn't have to be used if some other network acceleration method is being utilised |
 | e.cap.020 | CPU Architecture | \<value> | \<value> | Values such as x64, ARM, etc. |
 | e.cap.021 | Host Operating System (OS) | \<value> | \<value> | Values such as a specific Linux version, Windows version, etc. |
