@@ -71,7 +71,7 @@ bmra:
 #        pci: "0000:ab:00.0"      # PCI ID of the device (bus:device.function)
 #        pci_type c6xx            # PCI driver ID [dh895xcc,c6xx,c3xxx,d15xx,200xx,c4xxx]
 #        vfs: 4                   # Number of VFs to be created for PCI ID
-  runtime: docker # 'docker' and 'containerd' supported
+  runtime: docker                 # Supports 'docker' and 'containerd' runtimes
   features:
     sriov:
       enable: true                # Enable SR-IOV
