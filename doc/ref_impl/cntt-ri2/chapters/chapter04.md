@@ -69,9 +69,9 @@ bmra:
 #    qat:                         # Only uncomment if QAT is enabled
 #      - name: crypto01           # QAT device name
 #        pci: "0000:ab:00.0"      # PCI ID of the device (bus:device.function)
-#        mod_type: qat_c62x       # Kernel module [qat_dh895xcc,qat_c62x,qat_c3xxx,qat_200xx,qat_c4xxx,qat_d15xx]
 #        pci_type c6xx            # PCI driver ID [dh895xcc,c6xx,c3xxx,d15xx,200xx,c4xxx]
 #        vfs: 4                   # Number of VFs to be created for PCI ID
+  runtime: docker # 'docker' and 'containerd' supported
   features:
     sriov:
       enable: true                # Enable SR-IOV
@@ -82,8 +82,7 @@ bmra:
     hugepages:
       enable: true                # Enable hugepages
       default: 2M                 # Default hugepage size [2M, 1G]
-      hugepages_1G: 0             # Number of 1G hugepages to allocate
-      hugepages_2M: 10240         # Number of 2M hugepages to allocate
+      amount: 10240               # Amount of default size hugepages to allocate
     isolcpus:
       enable: true                # Enable CPU isolation in the host
       autogenerate: true          # Automatically generate list of CPUs to isolate
