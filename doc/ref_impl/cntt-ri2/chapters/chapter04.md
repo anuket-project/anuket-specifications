@@ -29,7 +29,7 @@ You need one physical server acting as a jump server along with minimum of two a
 
 This section describes how to get started with RI-2 deployment via [Kuberef](https://gerrit.opnfv.org/gerrit/q/project:kuberef).
 
-For the host provisioning stage, the [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) hosted by Nordix Foundation is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) is being used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v21.03) (version v21.03).
+For the host provisioning stage, the [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) hosted by Nordix Foundation is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://networkbuilders.intel.com/intel-technologies/container-experience-kits) is being used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v21.08) (version v21.08).
 
 <a name="4.3.1"></a>
 ### 4.3.1 Installation on Bare Metal Infratructure
@@ -109,7 +109,7 @@ References for the above features:
 * [CPU Manager for Kubernetes](https://github.com/intel/CPU-Manager-for-Kubernetes)
 * [SR-IOV Network device plugin for Kubernetes](https://github.com/intel/sriov-network-device-plugin)
 * [Intel Device Plugins for Kubernetes](https://github.com/intel/intel-device-plugins-for-kubernetes)
-* [Telemtry Aware Scheduling](https://github.com/intel/telemetry-aware-scheduling)
+* [Telemtry Aware Scheduling](https://github.com/intel/platform-aware-scheduling/tree/master/telemetry-aware-scheduling)
 
 Additional settings are available in the BMRA templates located in `playbooks/roles/bmra-config/templates`. Changing these might have unexpected results and should generally not be done.
 
