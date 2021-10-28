@@ -68,6 +68,6 @@ By default, the Kubernetes scheduler will run pods belonging to any namespace on
 
 When tenants do not belong to the same trust domain, or the requirements on the cluster setup and configuration are irreconciliable, Hard Multitenancy must be implemented by creating multiple Kubernetes clusters for each tenant or group of compatible tenants.
 
-All the default design decision for Kubernetes clusters apply in this case, and no special segregation or capacity management is required to be setup within the clusters as it is occupied only by a single tenant at a time.
+All the default design decision for Kubernetes clusters apply in this case, and no special segregation or capacity management is required to be setup within the clusters.
 
 From an operational perspective, the increased computational and operational overhead and the Cluster LCM (incl. Cluster provisioning automation) are the most impactful aspects.
