@@ -160,7 +160,7 @@ than being something an individual Kubernetes Cluster could offer.
 
 ## 4.7 Service meshes
 
-Application service meshes are not in scope for the architecture. The service mesh is a dedicated infrastructure layer for handling service-to-service communication, it is recommended to secure service-to-service communications within a cluster and to reduce the attack surface. The benefits of the service mesh framework are described in [5.4.3](./chapter05.md#543-use-transport-layer-security-and-service-mesh). In addition to securing communications, the use of service mesh extends Kubernetes capabilities regarding observability and reliability.
+Application service meshes are not in scope for the architecture. The service mesh is a dedicated infrastructure layer for handling service-to-service communication, and it is recommended to secure service-to-service communications within a cluster and to reduce the attack surface. The benefits of the service mesh framework are described in [5.4.3](./chapter05.md#543-use-transport-layer-security-and-service-mesh). In addition to securing communications, the use of service mesh extends Kubernetes capabilities regarding observability and reliability.
 
 Network service mesh specifications are handled in section [4.5 Networking solutions](#45-networking-solutions).
 
