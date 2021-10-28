@@ -230,7 +230,7 @@ The APIs for these OpenStack services are listed in [Chapter 5: Interfaces and A
 #### 3.3.1.4 Cloud Workload Services
 This section describes the core set of services and service components needed to run workloads; instances (such as VMs), their networks and storage are referred to as the “Compute Node Services” (a.k.a. user or data plane services). Contrast this with the Controller nodes which host OpenStack services used for cloud administration and management. The Compute Node Services include virtualisation, hypervisor instance creation/deletion, networking and storage services; some of these activities include RabbitMQ queues in the control plane including the scheduling, networking and cinder volume creation/attachment.
 *	Compute, Storage, Network services:
-    - Nova Compute service: nova-compute (creating/deleting instances)
+    - Nova Compute service: nova-compute (creating/deleting servers (a.k.a. instances))
     -	Neutron Networking service: neutron-l2-agent (manage local Open vSwitch (OVS) configuration), VXLAN
     -	Local Storage (Ephemeral, Root, etc.)
     -	Attached Storage (using Local drivers)
