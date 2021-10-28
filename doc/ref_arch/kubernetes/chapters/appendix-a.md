@@ -60,13 +60,13 @@ To manage access control, the Kubernetes RBAC must be configured with rules to a
 
 In order to prevent (or allow) network traffic between Pods belonging to different Namespaces, `NetworkPolicy` must be created as well.
 
-Resource quotas enable the cluster administrator to allocate CPU and Memory to each Namespace, limiting the amount of resources the objects belonging to that Namespace can consume. This may be configured in order to ensure that all tenants use no more that the resources they are assigned.
+Resource quotas enable the cluster administrator to allocate CPU and Memory to each Namespace, limiting the amount of resources the objects belonging to that Namespace can consume. This may be configured in order to ensure that all tenants use no more than the resources they are assigned.
 
-By default, the Kubernetes scheduler will run pods belonging to any namespace on any cluster node. If it is required that pods from different tenants are run on different hosts, affinity rules can be created by using selecting the desired Node Labels on the Pod definition. Alternatively, Node taints can be used to reserve certain nodes for a predefined tenant.
+By default, the Kubernetes scheduler will run pods belonging to any namespace on any cluster node. If it is required that pods from different tenants are run on different hosts, then affinity rules should be created by using the desired Node Labels on the Pod definition. Alternatively, Node taints can be used to reserve certain nodes for a predefined tenant.
 
 ### A.3.2 Hard Multitenancy with dedicated Kubernetes clusters per tenant
 
-When tenants do not belong to the same trust domain, or the requirements on the cluster setup and configuration are inconciliable, Hard Multitenancy must be implemented by creating multiple Kubernetes clusters for each tenant or group of tenants.
+When tenants do not belong to the same trust domain, or the requirements on the cluster setup and configuration are irreconciliable, Hard Multitenancy must be implemented by creating multiple Kubernetes clusters for each tenant or group of compatible tenants.
 
 All the default design decision for Kubernetes clusters apply in this case, and no special segregation or capacity management is required to be setup within the clusters as it is occupied only by a single tenant at a time.
 
