@@ -146,7 +146,7 @@ A virtual machine and container can consume storage through a number of means. T
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity and behaviours. The set of selectable attributes includes:
  * Storage class: Block, File, Object.
- * Retention Policy - persistent (storage volume / data) is persistent across stop/start of workload, ephemeral - there is no data retention across stop/start events for the workload.
+ * Retention Policy - persistent (storage volume / data) is persistent across stop/start of workload; ephemeral storage - there is no data retention across stop/start events for the workload.
  * Underlying physical device type (HDD, SSD, etc.).
  * Performance characteristic - defined as: Latency, IOPS (Input/Output Operations per second), and throughput.
  * Enhanced features - set of selectable features such as: auto-replicate, encryption, snap-shot support.
