@@ -1,7 +1,6 @@
 [<< Back](../../openstack)
 
 # 6. Security
-<p align="right"><img src="../figures/bogo_lsf.png" alt="Lots of SME feedback" title="Bogo: Lots of SME feedback" width="35%"/></p>
 
 ## Table of Contents
 * [6.1 Introduction](#6.1)
