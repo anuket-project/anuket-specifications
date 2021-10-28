@@ -1,7 +1,6 @@
 [<< Back](../../openstack)
 
 # 8. Gaps, Innovation, and Development
-<p align="right"><img src="../figures/bogo_dfp.png" alt="Dickering over the final points" title="Bogo: Dickering over the final points" width="35%"/></p>
 
 ## Table of Contents
 * [8.1 Introduction](#8.1)
