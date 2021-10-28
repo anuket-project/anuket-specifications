@@ -142,7 +142,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <a name="3.2.1.3"></a>
 #### 3.2.1.3 Virtual Storage
 
-A virtual machine and container can consume storage throug a number of means. These include storage that is managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and are connected via cloud infrastructure underlay network and Shared File Storage and Object storage which are connected via the tenant / user overlay network. The details of the tenant storage consumption model are covered in section "3.6.3 Storage for Tenant Consumption".
+A virtual machine and container can consume storage through a number of means. These include storage that is managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and Shared File Storage, and the Object storage which is connected via the tenant / user overlay network. The details of the tenant storage consumption model are covered in section "3.6.3 Storage for Tenant Consumption".
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capaccity and behaviors. The set of selectable attributes includes:
  * Storage class: Block, File, Object,
