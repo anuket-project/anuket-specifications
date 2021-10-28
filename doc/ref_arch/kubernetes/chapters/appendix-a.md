@@ -9,9 +9,9 @@
 - [Appendix A - Guidance For workload isolation (Multitenancy) with Kubernetes for application vendors](#appendix-a---guidance-for-workload-isolation-multitenancy-with-kubernetes-for-application-vendors)
   - [A.1 Overview](#a1-overview)
   - [A.2 Solution Areas](#a2-solution-areas)
-  - [A.3 Multitenancy Models for CNFs](#a3-multitenancy-models-for-cnfs)
-    - [A.3.1 Soft Multitenancy with Kubernetes Namespaces](#a31-soft-multitenancy-with-kubernetes-namespaces)
-    - [A.3.2 Hard Multitenancy with dedicated Kubernetes clusters](#a32-hard-multitenancy-with-dedicated-kubernetes-clusters)
+  - [A.3 Multitenancy Models](#a3-multitenancy-models)
+    - [A.3.1 Soft Multitenancy with Kubernetes Namespaces per tenant](#a31-soft-multitenancy-with-kubernetes-namespaces-per-tenant)
+    - [A.3.2 Hard Multitenancy with dedicated Kubernetes clusters per tenant](#a32-hard-multitenancy-with-dedicated-kubernetes-clusters-per-tenant)
 
 ## A.1 Overview
 
@@ -41,18 +41,18 @@ The scope is to identify the solution area which is needed to secure the CNF wor
 6. RBAC and secrets Management for CNF Workload
 7. Separate Isolated view of Logging, Monitoring, Alerting and Tracing for CNF Workloads
 
-## A.3 Multitenancy Models for CNFs
+## A.3 Multitenancy Models
 
 Solution Models :
 
-1. **Soft Multitenancy**: Separate Kubernetes Namespace per CNF within a Single Kubernetes Cluster. The same Kubernetes Cluster and its control plane are being shared between multiple tenants.
-2. **Hard Multitenancy**: Separate Kubernetes Cluster per CNF.
+1. **Soft Multitenancy**: Separate Kubernetes Namespace per tenant within a Single Kubernetes Cluster. The same Kubernetes Cluster and its control plane are being shared between multiple tenants.
+2. **Hard Multitenancy**: Separate Kubernetes Cluster per tenant.
 The Kubernetes Clusters can be created using Baremetal Nodes or Virtual Machines, either on Private or Public Cloud.
 The workloads do not share the same resources and Clusters are isolated.
 
-### A.3.1 Soft Multitenancy with Kubernetes Namespaces
+### A.3.1 Soft Multitenancy with Kubernetes Namespaces per tenant
 
-Soft multitenancy with Namespaces can be implemented, resulting in a multi-tenant cluster - where multiple trusted workloads share a cluster and its control plane.
+Soft multitenancy with Namespaces per tenant can be implemented, resulting in a multi-tenant cluster - where multiple trusted workloads share a cluster and its control plane.
 This is mainly recommended to reduce management overhead when the tenants belong to the same trust domain, and have the same Cluster configuration requirements (incl. release, add-ons, etc.).
 
 The tenants will share the cluster control plane and API, including all add-ons, extensions, CNIs, CSIs, and any Custom Resources and Controllers.
@@ -65,7 +65,7 @@ Resource quotas enable the cluster administrator to allocate CPU and Memory to e
 
 By default, the Kubernetes scheduler will run pods belonging to any namespace on any cluster node. If it is required that pods from different tenants are run on different hosts, affinity rules can be created by using selecting the desired Node Labels on the Pod definition. Alternatively, Node taints can be used to reserve certain nodes for a predefined tenant.
 
-### A.3.2 Hard Multitenancy with dedicated Kubernetes clusters
+### A.3.2 Hard Multitenancy with dedicated Kubernetes clusters per tenant
 
 When tenants do not belong to the same trust domain, or the requirements on the cluster setup and configuration are inconciliable, Hard Multitenancy must be implemented by creating multiple Kubernetes clusters for each tenant or group of tenants.
 
