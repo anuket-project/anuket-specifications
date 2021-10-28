@@ -487,7 +487,7 @@ Note, the number of virtual network interfaces, aka vNICs, associated with a vir
 <a name="4.2.6"></a>
 ###  4.2.6 Storage Extensions 
 
-Persistent storage is associated with workloads via Storage Extensions. The storage qualities specificed by the Storage Extension pertain to "Platform Native - Hypevisor Attached" and "Platform Native - Container Persisteent" storage types (as defined in section "3.6.3 Storage for Tenant Consumption". The size of an extension can be specified explicitly in increments of 100GB, ranging from a minimum of 100GB to a maximum of 16TB. Extensions are configured with the required performance category, as per Table 4-15. Multiple persistent Storage Extensions can be attached to virtual compute instances.
+Persistent storage is associated with workloads via Storage Extensions. The storage qualities specificed by the Storage Extension pertain to "Platform Native - Hypevisor Attached" and "Platform Native - Container Persisteent" storage types (as defined in section "3.6.3 Storage for Tenant Consumption"). The size of an extension can be specified explicitly in increments of 100GB, ranging from a minimum of 100GB to a maximum of 16TB. Extensions are configured with the required performance category, as per Table 4-15. Multiple persistent Storage Extensions can be attached to virtual compute instances.
 
 >_*Note:*_ This specification uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
 
