@@ -149,7 +149,7 @@ In managing the provision of virtual storage the tenant should be able to reques
  * Retention Policy - persistent (storage volume / data) is persistent across stop/start of workload; ephemeral storage - there is no data retention across stop/start events for the workload.
  * Underlying physical device type (HDD, SSD, etc.).
  * Performance characteristic - defined as: Latency, IOPS (Input/Output Operations per second), and throughput.
- * Enhanced features - set of selectable features such as: auto-replicate, encryption, snap-shot support.
+ * Enhanced features - set of selectable features such as: auto-replicate, encryption, snapshot support.
 
 Note that approximate numeric ranges for the qualitative values used above are given in the 
 [Storage Extensions](./chapter04.md#4.2.6) section.
