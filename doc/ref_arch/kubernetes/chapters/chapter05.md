@@ -19,7 +19,7 @@
       ports](#541-control-network-access-to-sensitive-ports)
     - [5.4.2 Controlling access to the Kubernetes
       API](#542-controlling-access-to-the-kubernetes-api)
-    - [5.4.3 Use Transport Layer Security](#543-use-transport-layer-security)
+    - [5.4.3 Use Transport Layer Security and Service Mesh](#543-use-transport-layer-security-and-service-mesh)
     - [5.4.4 API Authentication, API
       Authorisation](#544-api-authentication-api-authorisation)
     - [5.4.5 Restrict access to etcd and encrypt contents within
@@ -221,7 +221,7 @@ API server except from trusted networks.
 The Kubernetes platform is controlled using APIs, which are the first items to be secured in order to defend against attackers.
 Controlling who has access and what actions they are allowed to perform is the primary concern. 
 
-### 5.4.3 Use Transport Layer Security
+### 5.4.3 Use Transport Layer Security and Service Mesh
 Communication in the cluster between services should be handled using TLS,
 encrypting all traffic by default. Kubernetes expects that all API communication 
 in the cluster is encrypted by default with TLS, and the majority of installation methods 
@@ -233,6 +233,13 @@ component to identify potentially unsecured traffic.
 Advances in network technology, such as the service mesh, have led to the
 creation of products like LinkerD and Istio which can enable TLS by default
 while providing extra telemetry information on transactions between services.
+The service mesh is a mesh of layer 7 proxies handling service-to-service communications. 
+The service mesh architecture consists of data plane components, made up of network proxies paired with each micro-service, 
+and control plane components providing proxies configuration, managing TLS certificates and policies.
+The two documents, [NIST SP 800-204A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf) 
+(Building Secure Microservices-based Applications Using Service-Mesh Architecture) and 
+[NIST SP 800-204B]( https://csrc.nist.gov/publications/detail/sp/800-204b/final) 
+(Attribute-based Access Control for Microservices-based Applications Using a Service Mesh) provide guidance to deploy service mesh.
 
 ### 5.4.4 API Authentication, API Authorisation
 Secure all connections to a Kubernetes Cluster. Adopt the following security
