@@ -1,7 +1,6 @@
 [<< Back](../../openstack)
 
 # 3. Cloud Infrastructure Architecture - OpenStack
-<p align="right"><img src="../figures/bogo_com.png" alt="Complete" title="Bogo: Complete" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
