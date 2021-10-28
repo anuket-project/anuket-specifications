@@ -1,7 +1,6 @@
 [<< Back](../../openstack)
 
 # 2. Architecture Requirements
-<p align="right"><img src="../figures/bogo_dfp.png" alt="Dickering over the final points" title="Bogo: Dickering over the final points" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
@@ -61,11 +60,11 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
 |---|---|---|---|---|
-| e.cap.001 | Max number of vCPU that can be assigned to a single VM by the Cloud Infrastructure | At least 16 | At least 16 | |
-| e.cap.002 | Max memory that can be assigned to a single VM by the Cloud Infrastructure | at least 32 GB | at least 32 GB | |
-| e.cap.003 | Max storage that can be assigned to a single VM by the Cloud Infrastructure | at least 320 GB | at least 320 GB | |
-| e.cap.004 | Max number of connection points that can be assigned to a single VM by the Cloud Infrastructure | 6 | 6 | |
-| e.cap.005 | Max storage that can be attached / mounted to VM by the Cloud Infrastructure | Up to 16TB<sup>1</sup> | Up to 16TB<sup>1</sup> | |
+| e.cap.001 | Max number of vCPU that can be assigned to a single instance by the Cloud Infrastructure | At least 16 | At least 16 | |
+| e.cap.002 | Max memory that can be assigned to a single instance by the Cloud Infrastructure | at least 32 GB | at least 32 GB | |
+| e.cap.003 | Max storage that can be assigned to a single instance by the Cloud Infrastructure | at least 320 GB | at least 320 GB | |
+| e.cap.004 | Max number of connection points that can be assigned to a single instance by the Cloud Infrastructure | 6 | 6 | |
+| e.cap.005 | Max storage that can be attached / mounted to an instance by the Cloud Infrastructure | Up to 16TB<sup>1</sup> | Up to 16TB<sup>1</sup> | |
 | e.cap.006/ infra.com.cfg.003 | CPU pinning support | Not required | Must support | |
 | e.cap.007/ infra.com.cfg.002 | NUMA support | Not required | Must support | |
 | e.cap.018/ infra.com.cfg.005 | Simultaneous Multithreading (SMT) enabled | Must support | Optional | |
@@ -105,7 +104,7 @@ The features and configuration requirements related to virtual networking for th
 
 <p align="center"><b>Table 2-2a:</b> Reference Model Requirements - Virtual Networking</p>
 
-The required number of connection points to a VM is described in `e.cap.004` [above](#2.2.1).  The table below specifies the required bandwidth of those connection points.
+The required number of connection points to an instance is described in `e.cap.004` [above](#2.2.1).  The table below specifies the required bandwidth of those connection points.
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
 |---|---|---|---|---|
@@ -422,16 +421,16 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |----|--------------|---------------------|-----------|
-| inf.com.01 | Compute | The Architecture **must** provide compute resources for VM instances. | [RA-1 3.3.1.4 "Cloud Workload Services"](./chapter03.md#3314-cloud-workload-services) |
+| inf.com.01 | Compute | The Architecture **must** provide compute resources for instances. | [RA-1 3.3.1.4 "Cloud Workload Services"](./chapter03.md#3314-cloud-workload-services) |
 | inf.com.04 | Compute | The Architecture **must** be able to support multiple CPU type options to support various infrastructure profiles (Basic and High Performance).| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
 | inf.com.05 | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
-| inf.com.06 | Compute | The Architecture **must** support CPU Pinning of the vCPUs of VM instance.| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
+| inf.com.06 | Compute | The Architecture **must** support CPU Pinning of the vCPUs of an instance.| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
 | inf.com.07 | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Basic and High Performance).| [RA-1 3.3.3. "Host aggregates providing resource pooling"](./chapter03.md#333-host-aggregates-providing-resource-pooling) |
 | inf.com.08 | Compute | The Architecture **must** support allocating certain number of host cores for all non-tenant workloads such as for OpenStack services. SMT threads can be allocated to individual OpenStack services or their components. | [Dedicating host cores to certain workloads (e.g., OpenStack services)](https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set). Please see example, ["Configuring libvirt compute nodes for CPU pinning"](https://docs.openstack.org/nova/latest/admin/cpu-topologies.html) |
 | inf.com.09 | Compute | The Architecture **must** ensure that the host cores assigned to non-tenant and tenant workloads are SMT aware: that is, a host core and its associated SMT threads are either all assigned to non-tenant workloads or all assigned to tenant workloads. | Achieved through configuring the "cpu_dedicated_set" and "cpu_shared_set" parameters in nova.conf correctly. |
-| inf.stg.01 | Storage | The Architecture **must** provide remote (not directly attached to the host) Block storage for VM Instances. | [RA-1 3.4.2.3. "Storage"](./chapter03.md#3423-storage) |
-| inf.stg.02 | Storage | The Architecture **must** provide Object storage for VM Instances. Operators **may** choose not to implement Object Storage but must be cognizant of the risk of "Compliant VNFs" failing in their environment. | OpenStack Swift Service ([RA-1 4.3.1.4 "Swift"](./chapter04.md#4314-swift)) |
-| inf.ntw.01 | Network | The Architecture **must** provide virtual network interfaces to VM instances. | [RA-1 5.2.5. "Neutron" ](./chapter05.md#525-neutron) |
+| inf.stg.01 | Storage | The Architecture **must** provide remote (not directly attached to the host) Block storage for Instances. | [RA-1 3.4.2.3. "Storage"](./chapter03.md#3423-storage) |
+| inf.stg.02 | Storage | The Architecture **must** provide Object storage for Instances. Operators **may** choose not to implement Object Storage but must be cognizant of the risk of "Compliant VNFs" failing in their environment. | OpenStack Swift Service ([RA-1 4.3.1.4 "Swift"](./chapter04.md#4314-swift)) |
+| inf.ntw.01 | Network | The Architecture **must** provide virtual network interfaces to instances. | [RA-1 5.2.5. "Neutron" ](./chapter05.md#525-neutron) |
 | inf.ntw.02 | Network | The Architecture **must** include capabilities for integrating SDN controllers to support provisioning of network services, from the OpenStack Neutron service, such as networking of VTEPs to the Border Edge based VRFs. | [RA-1 3.2.5. "Virtual Networking – 3rd party SDN solution"](./chapter03.md#325-virtual-networking--3rd-party-sdn-solution) |
 | inf.ntw.03 | Network | The Architecture **must** support low latency and high throughput traffic needs. | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
 | inf.ntw.05 | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve). | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
@@ -531,7 +530,7 @@ The requirements listed in this section are optional, and are not required in or
 | inf.com.03 | Compute | The Architecture **should** support Symmetric Multiprocessing with shared memory access as well as Simultaneous Multithreading. | |
 | inf.stg.08 | Storage | The Architecture **should** allow use of externally provided large archival storage for its Backup / Restore / Archival needs. | |
 | inf.stg.09 | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. | |
-| inf.stg.10 | Storage | The Architecture **should** provide local Block storage for VM Instances. | [RA-1 "Virtual Storage"](./chapter03.md#323-virtual-storage) |
+| inf.stg.10 | Storage | The Architecture **should** provide local Block storage for Instances. | [RA-1 "Virtual Storage"](./chapter03.md#323-virtual-storage) |
 | inf.ntw.04 | Network | The Architecture **should** support service function chaining. |  |
 | inf.ntw.06 | Network | The Architecture **should** support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently. | |
 | inf.ntw.08 | Network | The Cloud Infrastructure Network Fabric **should** embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems. | |
