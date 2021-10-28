@@ -61,7 +61,7 @@ The following sections detail the Cloud Infrastructure Software Profile capabili
 | infra.com.cfg.002 | NUMA alignment | Yes/No | Support of NUMA at the Host OS and virtualisation layers, in addition to hardware. | `e.cap.007` |
 | infra.com.cfg.003 | CPU pinning | Yes/No | Binds a vCPU to a physical core or SMT thread. Configured in OS and virtualisation layers.| `e.cap.006` |
 | infra.com.cfg.004 | Huge Pages | Yes/No | Ability to manage huge pages of memory. Configured in OS and virtualisation layers. | `i.cap.018` |
-| infra.com.cfg.005 | Simultaneous Multithreading (SMT) | Yes/No | Allows multiple execution threads to be executed on a single physical CPU core. Configured in OS, in addition to the hardware. | `e.cap.018` |
+| infra.com.cfg.005 | Simultaneous Multithreading (SMT) | Yes/No/Optional | Allows multiple execution threads to be executed on a single physical CPU core. Configured in OS, in addition to the hardware. | `e.cap.018` |
 
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
@@ -173,7 +173,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 | infra.com.cfg.002 | NUMA alignment         | Yes/No | N     | Y                 |  
 | infra.com.cfg.003 | CPU pinning            | Yes/No | N     | Y                 |  
 | infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 | 
-| infra.com.cfg.005 | Simultaneous Multithreading (SMT) | Yes/No | N  | Y         |  
+| infra.com.cfg.005 | Simultaneous Multithreading (SMT) | Yes/No/Optional | Y  | Optional  |  
 
 <p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of Cloud Infrastructure Profiles.</p>
 
@@ -278,7 +278,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | infra.hw.cpu.cfg.001 | Minimum number of CPU sockets  | Specifies the minimum number of populated CPU sockets within each host<sup>*</sup> | 2 | 2 |
 | infra.hw.cpu.cfg.002 | Minimum number of cores per CPU  | Specifies the number of cores needed per CPU<sup>*</sup> | 20 | 20 |
 | infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment enabled and BIOS configured to enable NUMA | N | Y |
-| infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | SMT enabled that allows each core to work multiple streams of data simultaneously  | Y | Y |
+| infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | SMT enabled that allows each core to work multiple streams of data simultaneously  | Y | Optional |
 > <sup>*</sup> Please note that these specifications are for general purpose servers normally located in large data centres. Servers for specialised use with the data centres or other locations, such as at edge sites, are likely to have different specifications.
 <p align="center"><b>Table 5-14:</b> Minimum sizing and capability configurations for general purpose servers.</p>
 
