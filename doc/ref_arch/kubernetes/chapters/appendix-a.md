@@ -8,8 +8,9 @@
 
 - [Appendix A - Guidance For workload isolation (Multitenancy) with Kubernetes for application vendors](#appendix-a---guidance-for-workload-isolation-multitenancy-with-kubernetes-for-application-vendors)
   - [A.1 Overview](#a1-overview)
-  - [A.2 Multitenancy Models for CNFs](#a2-multitenancy-models-for-cnfs)
-  - [A.3 Solution Areas](#a3-solution-areas)
+  - [A.2 Solution Areas](#a2-solution-areas)
+  - [A.3 Multitenancy Models for CNFs](#a3-multitenancy-models-for-cnfs)
+    - [A.3.1 Soft Multitenancy with Kubernetes Namespaces](#a31-soft-multitenancy-with-kubernetes-namespaces)
 
 ## A.1 Overview
 
@@ -27,16 +28,7 @@ Use cases:
 1. Two CNFs which are in the same trust domain (e.g.: they are from the same vendor) are running in a container infrastructure
 2. Two CNFs which are in different trust domains (e.g.: they are from different vendors) are running in a container infrastructure
 
-## A.2 Multitenancy Models for CNFs
-
-Solution Models :
-
-1. **Soft Multitenancy**: Separate Kubernetes Namespace per CNF within a Single Kubernetes Cluster. The same Kubernetes Cluster and its resources are being shared between multiple tenants.
-2. **Hard Multitenancy**: Separate Kubernetes Cluster per CNF.
-The Kubernetes Clusters can be created using Baremetal Nodes or Virtual Machines, either on Private or Public Cloud.
-The workloads do not share the same resources and Clusters are isolated.
-
-## A.3 Solution Areas
+## A.2 Solution Areas
 
 The scope is to identify the solution area which is needed to secure the CNF workloads. Securing the platform might happen as part of it but not directly the focus or objective here.
 
@@ -47,3 +39,27 @@ The scope is to identify the solution area which is needed to secure the CNF wor
 5. Separate Storage Backend for each CNF Workloads
 6. RBAC and secrets Management for CNF Workload
 7. Separate Isolated view of Logging, Monitoring, Alerting and Tracing for CNF Workloads
+
+## A.3 Multitenancy Models for CNFs
+
+Solution Models :
+
+1. **Soft Multitenancy**: Separate Kubernetes Namespace per CNF within a Single Kubernetes Cluster. The same Kubernetes Cluster and its control plane are being shared between multiple tenants.
+2. **Hard Multitenancy**: Separate Kubernetes Cluster per CNF.
+The Kubernetes Clusters can be created using Baremetal Nodes or Virtual Machines, either on Private or Public Cloud.
+The workloads do not share the same resources and Clusters are isolated.
+
+### A.3.1 Soft Multitenancy with Kubernetes Namespaces
+
+Soft multitenancy with Namespaces can be implemented, resulting in a multi-tenant cluster - where multiple trusted workloads share a cluster and its control plane.
+This is mainly recommended to reduce management overhead when the tenants belong to the same trust domain, and have the same Cluster configuration requirements (incl. release, add-ons, etc.).
+
+The tenants will share the cluster control plane and API, including all add-ons, extensions, CNIs, CSIs, and any Custom Resources and Controllers.
+
+To manage access control, the Kubernetes RBAC must be configured with rules to allow specific tenants to access only the objects within their own Namespace, using a `Role` Object to group the resources within a namespace, and a `RoleBinding` Object to assign it to a user or a group of users within a Namespace.
+
+In order to prevent (or allow) network traffic between Pods belonging to different Namespaces, `NetworkPolicy` must be created as well.
+
+Resource quotas enable the cluster administrator to allocate CPU and Memory to each Namespace, limiting the amount of resources the objects belonging to that Namespace can consume. This may be configured in order to ensure that all tenants use no more that the resources they are assigned.
+
+By default, the Kubernetes scheduler will run pods belonging to any namespace on any cluster node. If it is required that pods from different tenants are run on different hosts, affinity rules can be created by using selecting the desired Node Labels on the Pod definition. Alternatively, Node taints can be used to reserve certain nodes for a predefined tenant.
