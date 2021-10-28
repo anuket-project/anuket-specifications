@@ -234,7 +234,7 @@ Advances in network technology, such as the service mesh, have led to the
 creation of products like LinkerD and Istio which can enable TLS by default
 while providing extra telemetry information on transactions between services.
 The service mesh is a mesh of layer 7 proxies handling service-to-service communications. 
-The service mesh architecture consists of data plane components, made up of network proxies paired with each micro-service, 
+The service mesh architecture consists of data plane components made up of network proxies paired with each micro-service, 
 and control plane components providing proxies configuration, managing TLS certificates and policies.
 The two documents, [NIST SP 800-204A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf) 
 (Building Secure Microservices-based Applications Using Service-Mesh Architecture) and 
