@@ -142,13 +142,15 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <a name="3.2.1.3"></a>
 #### 3.2.1.3 Virtual Storage
 
-A workload can request storage based on data retaining policy (persistent or ephemeral storage), different types of storage (HDD, SSD, etc.) and storage size.
-Persistent storage outlives the compute instance whereas ephemeral storage is linked to compute instance lifecycle.
+A virtual machine and container can consume storage through a number of means. These include storage that is managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and Shared File Storage, and the Object storage which is connected via the tenant / user overlay network. The details of the tenant storage consumption model are covered in section "3.6.3 Storage for Tenant Consumption".
 
-There are multiple storage performance attributes, such as latency, IOPS (Input/Output Operations per second), and throughput. For example, a workload may require one of its storage devices to provide low latency, high IOPS and very large/huge storage size (terabytes of data).
-Low Latency storage is for workloads which have strong constraints on the time to access the storage.
-High IOPS oriented storage is for workloads requiring lots of read/write actions.
-Large size storage is for workloads that need lots of volume without strong performance constraints.
+In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity and behaviours. The set of selectable attributes includes:
+ * Storage class: Block, File, Object.
+ * Retention Policy - persistent (storage volume / data) is persistent across stop/start of workload; ephemeral storage - there is no data retention across stop/start events for the workload.
+ * Underlying physical device type (HDD, SSD, etc.).
+ * Performance characteristic - defined as: Latency, IOPS (Input/Output Operations per second), and throughput.
+ * Enhanced features - set of selectable features such as: auto-replicate, encryption, snapshot support.
+
 Note that approximate numeric ranges for the qualitative values used above are given in the 
 [Storage Extensions](./chapter04.md#4.2.6) section.
 
@@ -157,7 +159,7 @@ Storage resources have the following attributes, with metric definitions that su
 | Attribute                | Description                                                                                    |
 |--------------------------|------------------------------------------------------------------------------------------------|
 | `name`                   | name of storage resources                                                                      |
-| `data retaining policy`  | persistent or ephemeral                                                                        |
+| `data retention policy`  | persistent or ephemeral                                                                        |
 | `performance`            | Read and Write Latency, The average amount of time to perform a R/W operation, in milliseconds |
 |                          | Read and Write IOPS, The average rate of performing R/W in IO operations per second            |
 |                          | Read and Write Throughput, The average rate of performing R/W operations in Bytes per second   |
