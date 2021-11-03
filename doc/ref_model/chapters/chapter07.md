@@ -421,7 +421,7 @@ A transparent software supply chain offers benefits for vulnerabilities remediat
 
 [SPDX](https://spdx.dev/) is an open-source machine-readable format developed under the umbrella of the Linux Foundation. The [SPDX specification 2.2](https://spdx.dev/specifications/) has been published as the standard ISO/IEC 5962:2021. It provides a language for communicating the data, licenses, copyrights, and security information associated with software components. With the SPDX specification 2.2, multiple file formats are available: YAML, JSON, RDF/XML, tag:value flat text, and xlss spreadsheets.
 
-[SWID Tags](https://nvd.nist.gov/products/swid) is an international XML-based standard used by commercial software publishers, it has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID tags: primary, patch, corpus, and supplemental to describe a software component.
+[SWID Tags](https://nvd.nist.gov/products/swid) is an international XML-based standard used by commercial software publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID tags: primary, patch, corpus, and supplemental to describe a software component.
 
 For both formats, SPDX and SWID Tags, tools are available. 
 
