@@ -1,5 +1,7 @@
 # CNF Test Cases and Requirements Traceability
 
+![Scope](../figures/bogo_ifo.png)
+
 ## Introduction
 
 The scope of this chapter is to identify and list test cases based on requirements defined in [Reference Architecture-2 (RA-2)](../../../ref_arch/kubernetes/README.md). This will serve as traceability between test cases and requirements for Kubernetes platform interoperability.

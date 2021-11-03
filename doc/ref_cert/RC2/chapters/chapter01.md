@@ -1,6 +1,6 @@
-# Introduction
+﻿# Introduction
 
-![Scope](../figures/bogo_ifo.png)
+![Scope](../figures/bogo_lsf.png)
 
 ## Executive Summary
 
@@ -15,17 +15,17 @@ In summary, **Conformance** testing will be performed as part of cloud infrastru
 - **Verification** is performed using reviews (e.g., manifests) to ensure that the cloud infrastructure or workload is delivered as per implementation specifications.
 - **Validation** confirms the infrastructure or workload meet the expected or desired behaviour by means of automated testing.
 
-**All Terms utilized throughout this chapter are intended to align with LFN Complinace and Verification Committee (CVC) definitions, and their use through CVC documentation, guidelines, and standards.**
+**All Terms utilized throughout this chapter are intended to align with LFN Compliance and Verification Committee (CVC) definitions, and their use through CVC documentation, guidelines, and standards.**
 
 ## Introduction
 
 **Document Purpose**
 
-This chapter includes tracability from requirements to test cases and a test case execution framework to ensure Kubernetes infrastructure meets the design, feature, and capability expectations of the Reference Model (RM) and RA2. Ultimately, RC2 will reduce the amount of time and cost it takes each operator to on-board and maintain cloud infrastructure and CNFs.
+This chapter includes traceability from requirements to test cases and a test case execution framework to ensure Kubernetes infrastructure meets the design, feature, and capability expectations of the Reference Model (RM) and RA2. Ultimately, RC2 will reduce the amount of time and cost it takes each operator to on-board and maintain cloud infrastructure and CNFs.
 
 ## RC2 End User Requirements
 
-Telcom service providers / operators are the primary intended audience for RC2 results. Specifically those selecting infrastructure and network function technologies to use in their network. The RC2 result artefact(s) should be clear and provide confidence to the service provider that the test results meet the requirements *they have.*
+Telecommunication service providers / operators are the primary intended audience for RC2 results. Specifically those selecting infrastructure and network function technologies to use in their network. The RC2 result artifact(s) should be clear and provide confidence to the service provider that the test results meet the requirements *they have.*
 
 Vendors/Developers are a secondary audience. They should be able to clearly see the mapping from a specific test result (pass or fail) to the requirement.
 
@@ -35,7 +35,7 @@ Vendors/Developers are a secondary audience. They should be able to clearly see 
 * Pass, Fail, or Skipped for every test
 * Reason for failures
 * Reason for skipping
-* Format supporting clickable links (eg. HTML)
+* Format supporting clickable links (e.g., HTML)
 * Provide a stable set of point-in-time requirements and tests to achieve conformance
 * Testing tools allow users to select between validation of mandatory and optional requirements
 * Enable clear tracability with versioning to know which requirements have and haven’t been covered and track changes over time
@@ -67,13 +67,13 @@ This document covers aspects of conformance for both Kubernetes based cloud infr
 
 ## Guidelines
 
-The objectives of the Reference Conformance for cloud infrastrucute is to verify implementations against the reference architecture which satisfies infrastructure needs for workloads. The objectives of the Reference Conformance for workloads is to verify workload implementations consume resources and behave as expected against the reference architecture.
+The objectives of the Reference Conformance for cloud infrastructure is to verify implementations against the reference architecture which satisfies infrastructure needs for workloads. The objectives of the Reference Conformance for workloads is to verify workload implementations consume resources and behave as expected against the reference architecture.
 
-These guidlines will drive RC2 deliverables:
+These guidelines will drive RC2 deliverables:
 
 - RC2 requirements are completely derived from RM and RA2 which specify infrastructure capabilities including compute, memory, storage, resource capabilities, performance optimization capabilities, and monitoring capabilities.
 
-- Requirements in the RM and RAs that are performance related may not have minimum perfromance criteria identified but where feasible will have tests with metrics to show relevant capabilities are present and working as expected.
+- Requirements in the RM and RAs that are performance related may not have minimum performance criteria identified but where feasible will have tests with metrics to show relevant capabilities are present and working as expected.
 
 - Must/shall conformance criteria are testable as pass/fail and/or reporting of quantitative test results. This will ensure infrastructures and workloads meet minimum thresholds of functional operability and/or performance behavior. This is the focus of RC2 since it is what will drive a commercially significant badging program.
 
@@ -89,6 +89,6 @@ The RC2 test suite will provide validation to ensure workloads can interoperate 
 
 RC2 focuses on testing of Kubernetes based cloud infrastructure thus the chapter structure is designed to facilitate this by matching test cases to requirements and building test cookbooks. If you are looking for requirements or the reasons behind them, please refer to the RA2. Chapters 2 and 3 cover Kubernetes infrastructure conformance while 4 and 5 cover CNF conformance.
 
-Chapter 2 takes the requirements from the RA2 and matches them to upstream test cases. This will cover how specific test cases map to requirements and the overall coverage of requirements with test cases. Chatper 3 outlines how these test cases can be integrated together into an automated toolchain to test conformance of the Kubernetes infrastructure.
+Chapter 2 takes the requirements from the RA2 and matches them to upstream test cases. This will cover how specific test cases map to requirements and the overall coverage of requirements with test cases. Chapter 3 outlines how these test cases can be integrated together into an automated toolchain to test conformance of the Kubernetes infrastructure.
 
 Similarly, Chapter 4 maps test cases map to requirements for CNFs and Chapter 5 builds a testing cookbook. Chapter 6 encompasses any gaps in the Reference Conformance 2.
