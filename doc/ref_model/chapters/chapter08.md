@@ -168,10 +168,7 @@ When the CSP is actings as:
 - consumer then the typical consideration is total cost of ownership as the consumption is to usually to support internal business operations: BSS/OSS systems.
 - provider of cloud services, through operation of their own cloud or reselling of cloud services, then typical consideration is margin (cost to offer services vs income received).
 
-These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a Multi-Cloud environment. The following table provides a summary of the needs for Multi-Cloud and classes of applicable technologies, and the standards that are available to meet these needs and of the applicable Anuket Reference Architectures. 
-
-Add Summary Table here!!
-
+These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a Multi-Cloud environment. 
 
 <a name="8.2.5"></a>
 ### 8.2.5 Aspects of Multi-Cloud Security
