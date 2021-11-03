@@ -170,7 +170,13 @@ When the CSP is actings as:
 
 These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a Multi-Cloud environment. The following table provides a summary of the needs for Multi-Cloud and classes of applicable technologies, and the standards that are available to meet these needs and of the applicable Anuket Reference Architectures. 
 
-Add Summary Table here!!
+| | | | Manage | | | | | |
+|---|---|---|---|---|---|---|---|---|
+| Scope | Standard / Technology | Type | Account | Connectivity | Resource | App / VNF / CNF | Transactions / Conversations | Stereotypes |
+| All | OASIS TOSCA | Industry Consortium | N | Y | N | Y | N | |
+| | Apache JClouds | Open Source | N | N | Y | Y | N | API Brokerage |
+| | Canonical MAAS/JuJu | Vendor | N | N | Y | Y | N | Mulit-Cloud Provisioning |
+| | AirShip | | | N | N | Y | Y | N | |
 
 
 <a name="8.2.5"></a>
