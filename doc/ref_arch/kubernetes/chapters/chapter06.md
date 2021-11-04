@@ -66,19 +66,19 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | authentication.k8s.io        | v1                   |
 | authorization.k8s.io         | v1                   |
 | autoscaling                  | v1, v2beta2, v2beta1 |
-| batch                        | v1, v1beta1          |
+| batch                        | v1                   |
 | certificates.k8s.io          | v1                   |
 | coordination.k8s.io          | v1                   |
 | core                         | v1                   |
-| discovery.k8s.io             | v1, v1beta1          |
-| events.k8s.io                | v1, v1beta1          |
+| discovery.k8s.io             | v1                   |
+| events.k8s.io                | v1                   |
 | flowcontrol.apiserver.k8s.io | v1beta1              |
 | networking.k8s.io            | v1                   |
-| node.k8s.io                  | v1, v1beta1          |
-| policy                       | v1, v1beta1          |
+| node.k8s.io                  | v1                   |
+| policy                       | v1                   |
 | rbac.authorization.k8s.io    | v1                   |
 | scheduling.k8s.io            | v1                   |
-| storage.k8s.io               | v1, v1beta1          |
+| storage.k8s.io               | v1                   |
 
 ## 6.2 [API Machinery Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-api-machinery)
 
