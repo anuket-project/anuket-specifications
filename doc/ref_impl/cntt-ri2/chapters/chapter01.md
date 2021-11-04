@@ -25,7 +25,7 @@ The RI will be used as follows:
 * To develop the Reference Conformance (RC) document, which will document the tests that can be run against the RI or any Vendor Implementation (VI) to check conformance with the Kubernetes RA.
 * By software vendors to be able to install Kubernetes platforms in their own environments in order to develop against the RI
 
-In order to promote the quick deployment of the RI and avoid duplicating effort across communities, the RI community works closely with CNCF TUG, Anuket Assured, ONAP and TIP communities.
+In order to promote the quick deployment of the RI and avoid duplicating effort across communities, the RI community works closely with CNCF TUG, the Anuket Assured program, ONAP and TIP communities.
 
 <a name="1.1.2"></a>
 ### 1.1.2 Structure of the document
@@ -63,7 +63,7 @@ The main communities involved in driving requirements and development of this RI
 - **Anuket Functest**
   - The **Functest** project integrates available test tools and test cases from across the open source ecosystem into a single framework. In particular, it allows to run the test cases selected by the RC2 workstream and outputs a test result package for submission to the Anuket Assured program.
 
-- **Compliance and Verification Committee & Anuket Assured**
+- **Compliance and Verification Committee & Anuket Assured program**
   - The Compliance and Verification Committee governs the Anuket Assured program which owns the definition of the end-to-end framework (tooling, process, tests, review, badging) used to verify conformance of a cloud native infrastructure implementation with the RA2 specifications.
 
 - **CNCF - CNF Conformance, Kubernetes, etc.**
