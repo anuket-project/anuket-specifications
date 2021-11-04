@@ -1,6 +1,6 @@
 ﻿# 1. Overview
 
-![State](../figures/bogo_dfp.png)
+![State](../figures/bogo_dfp.png) <!-- width="35" -->
 
 ## Table of Contents
 * [1.1 Introduction](#1.1)

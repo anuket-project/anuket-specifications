@@ -1,6 +1,6 @@
 ﻿# 4. Operational Runbook
 
-![State](../figures/bogo_sdc.png)
+![State](../figures/bogo_sdc.png) <!-- width="35" -->
 
 ## Table of Contents
 * [4.1 Introduction](#4.1)

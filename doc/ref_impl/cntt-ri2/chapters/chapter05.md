@@ -1,6 +1,7 @@
 # 5. Gap Analysis and Development
 
-![State](../figures/bogo_ifo.png)
+![State](../figures/bogo_ifo.png) <!-- width="35" -->
+
 
 ## Table of Contents
 * [5.1 Introduction](#5.1)

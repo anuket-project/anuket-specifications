@@ -1,6 +1,6 @@
 ﻿# 3. Requirements for Labs
 
-![State](../figures/bogo_lsf.png)
+![State](../figures/bogo_lsf.png) <!-- width="35" -->
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
