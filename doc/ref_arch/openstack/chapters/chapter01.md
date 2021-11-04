@@ -1,7 +1,6 @@
 [<< Back](../../openstack)
 
 # 1. Introduction
-<p align="right"><img src="../figures/bogo_com.png" alt="Complete" title="Bogo: Complete" width="35%"/></p>
 
 ## Table of Contents
 * [1.1 Overview](#1.1)
