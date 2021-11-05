@@ -24,7 +24,7 @@ interpreted as described in [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 | RA2 Section | RA2 Reference  | Specification | Requirement for Basic Profile | Requirement for Network Intensive Profile | RI2 Traceability |
 |---|---|---|---|---|---|
-|[4.2 Kubernetes Node](../../../ref_arch/kubernetes/chapters/chapter04.md#42-kubernetes-node)|`ra2.ch.001`|Huge Pages|Must support|Must support|[4.3.1](./chapter04.md#431-installation-on-bare-metal-infratructure)|
+|[4.2 Kubernetes Node](../../../ref_arch/kubernetes/chapters/chapter04.md#42-kubernetes-node)|`ra2.ch.001`|Huge pages|Must support|Must support|[4.3.1](./chapter04.md#431-installation-on-bare-metal-infratructure)|
 |[4.2 Kubernetes Node](../../../ref_arch/kubernetes/chapters/chapter04.md#42-kubernetes-node)|`ra2.ch.002`|SR-IOV Capable NICs|Not required|Must support|[3.3](./chapter03.md#33-infrastructure-requirements)|
 |[4.2 Kubernetes Node](../../../ref_arch/kubernetes/chapters/chapter04.md#42-kubernetes-node)|`ra2.ch.003`|SR-IOV Virtual Functions|Not required|Must support|[4.3.1](./chapter04.md#431-installation-on-bare-metal-infratructure)|
 |[4.2 Kubernetes Node](../../../ref_arch/kubernetes/chapters/chapter04.md#42-kubernetes-node)|`ra2.ch.004`|CPU Simultaneous Multi-Threading (SMT)|True|True|[3.3](./chapter03.md#33-infrastructure-requirements)|
