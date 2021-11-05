@@ -188,7 +188,7 @@ Pod and workloads | Description
 [DaemonSet:](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) | A Daemon set ensures that the correct nodes run a copy of a Pod.
 [Job:](https://kubernetes.io/docs/concepts/workloads/controllers/job/) | A Job represent a task, it creates one or more Pods and will continue to retry until the expected number of successful completions is reached.
 [CronJob:](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) | A CronJob manages time-based Jobs, namely: once at a specified point in time and repeatedly at a specified point in time
-[StatefulSet:](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) | StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage. 
+[StatefulSet:](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) | StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage.
 
 
 
@@ -205,13 +205,13 @@ Kubernetes [CPU Manager](https://kubernetes.io/docs/tasks/administer-cluster/cpu
 
 #### 3.2.1.3 Memory and Huge Pages Resources Management
 
-The Reference Model requires the support of Huge Pages in i.cap.018 which is supported by upstream Kubernetes ([documentation](https://kubernetes.io/docs/tasks/manage-hugepages/scheduling-hugepages/)).
+The Reference Model requires the support of huge pages in i.cap.018 which is supported by upstream Kubernetes ([documentation](https://kubernetes.io/docs/tasks/manage-hugepages/scheduling-hugepages/)).
 
-For proper mapping of Huge Pages to scheduled pods, both need to have Huge Pages enabled in the operating system (configured in kernel and mounted with correct permissions) and kubelet configuration. Multiple sizes of Huge Pages can be enabled like 2 MiB and 1 GiB.
+For proper mapping of huge pages to scheduled pods, both need to have huge pages enabled in the operating system (configured in kernel and mounted with correct permissions) and kubelet configuration. Multiple sizes of huge pages can be enabled like 2 MiB and 1 GiB.
 
-For some applications, Huge Pages
+For some applications, huge pages
 should be allocated to account for consideration of the underlying HW topology.
-[The Memory Manager](https://kubernetes.io/docs/tasks/administer-cluster/memory-manager/) (added to Kubernetes v1.21 as alpha feature) enables the feature of guaranteed memory and Huge Pages allocation for pods in the Guaranteed QoS class. The Memory Manager feeds the Topology Manager with hints for most suitable NUMA affinity.
+[The Memory Manager](https://kubernetes.io/docs/tasks/administer-cluster/memory-manager/) (added to Kubernetes v1.21 as alpha feature) enables the feature of guaranteed memory and huge pages allocation for pods in the Guaranteed QoS class. The Memory Manager feeds the Topology Manager with hints for most suitable NUMA affinity.
 
 
 #### 3.2.1.4 Hardware Topology Management
@@ -220,7 +220,7 @@ Scheduling pods across NUMA boundaries can result in lower performance and highe
 
 Kubernetes supports Topology policy per node as beta feature ([documentation](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/)) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
 
-If case that memory or Huge Pages are not considered by the Topology Manager, it can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
+If case that memory or huge pages are not considered by the Topology Manager, it can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
 
 
 #### 3.2.1.5 Node Feature Discovery
@@ -264,8 +264,8 @@ Non-resilient applications are sensitive to platform impairments on Compute like
 | 1 | Compute | Networking (dataplane) | No | CPU Manager |
 | 2 | Compute | Networking (dataplane) | CPU instructions | CPU Manager, NFD |
 | 3 | Compute | Networking (dataplane) | Fixed function acceleration, Firmware-programmable network adapters or SmartNICs | CPU Manager, Device Plugin |
-| 4 | Networking (dataplane) | | No, or Fixed function acceleration, Firmware-programmable network adapters or SmartNICs  | Huge Pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin |
-| 5 | Networking (dataplane) | | CPU instructions | Huge Pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin; NFD |
+| 4 | Networking (dataplane) | | No, or Fixed function acceleration, Firmware-programmable network adapters or SmartNICs  | Huge pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin |
+| 5 | Networking (dataplane) | | CPU instructions | Huge pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin; NFD |
 
 <p align="center"><b>Table 3-1:</b> Categories of applications, requirements for scheduling pods and Kubernetes features</p>
 
@@ -374,7 +374,7 @@ This can include connectivity to underlay networks via accelerated hardware devi
 - **Device Plugin**: this is a Kubernetes extension that allows for the management
 and advertisement of vendor hardware devices. In particular, devices such as
 FPGA, SR-IOV NICs, SmartNICs, etc. can be made available to Pods by using Device Plugins.
-Note that alignment of these devices, CPU topology and Huge Pages will need the use
+Note that alignment of these devices, CPU topology and huge pages will need the use
 of the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
 - **External / Application Load Balancing**: As Kubernetes Ingress, Egress and
 Services have no support for all the protocols needed in telecommunication
@@ -450,7 +450,7 @@ Kubernetes networking can be divided into two parts, built in network functional
 
 
 <a name="3.2.2.1.1"></a>
-#### 3.2.2.1.1 Built in Kubernetes Network Functionality 
+#### 3.2.2.1.1 Built in Kubernetes Network Functionality
 Kubernetes currently only allows for one network, the *cluster* network, and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing tables inside the pod network namespace.
 
 The basic semantics of Kubernetes, and the information found in manifests, defines the connectivity rules and behavior without any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW services and network policies for them that are not location aware and therefore can be executed more or less anywhere.
@@ -468,14 +468,14 @@ Example: The manifests for service *my-service* and the *deployment* with the fo
 
 Service:
 ```
-apiVersion: v1 
-kind: Service 
-metadata: 
+apiVersion: v1
+kind: Service
+metadata:
         name: my-service
-        spec: 
+        spec:
                 selector:		
-                        app: my-app	
-                ports: 
+                        app: my-app
+                ports:
                         - protocol: TCP
                                 port: 123
 ```
@@ -498,7 +498,7 @@ spec:
                                         - name: my-app
                                           image: my-app-1.2.3
                                           ports:        
-                                          - containerPort: 123 
+                                          - containerPort: 123
 ```
 
 This is all that is needed to deploy 4 pods/containers that are fronted by a service that performes load balancing. The *Deployment* will ensure that there are always four pods of type *my-app* available. the *Deployment* is responsible for the full lifecycle management of the pods, this includes in service update/upgrade.
@@ -652,7 +652,7 @@ Two ways to add custom resources are:
 
 A [custom controller](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers) is a control loop that watches a custom resource for changes and tries to keep the current state of the resource in sync with the desired state.
 
-[Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) combines custom resources and custom controllers. Operators are software extensions to Kubernetes that capture operational knowledge and automate usage of custom resources to manage applications, their components and cloud infrastructure. 
+[Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) combines custom resources and custom controllers. Operators are software extensions to Kubernetes that capture operational knowledge and automate usage of custom resources to manage applications, their components and cloud infrastructure.
 Operators can have different capability levels. As per repository [OperatorHub.io](https://operatorhub.io/), an operator can have different capability levels ([picture](https://operatorhub.io/static/images/capability-level-diagram.svg)):
 * Basic install: Automated application provisioning and configuration management.
 * Seamless upgrades: Patch and minor version upgrades supported.
