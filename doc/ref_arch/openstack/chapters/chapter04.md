@@ -126,7 +126,7 @@ This section specifies the compute node configurations to support the Basic and 
 
 The Reference Model specifies the Basic (B) and High-Performance (H) profile types. The Reference Model also provides a choice of network acceleration capabilities utilising, for example, DPDK and SR-IOV technologies. Table 4-2 lists a few simple examples of profile extensions and some of their capabilities.
 
-| Profile Extensions | Description | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge Pages | Data Traffic |
+| Profile Extensions | Description | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge pages | Data Traffic |
 |----|----|----|----|----|----|----|----|
 | B1 | Basic Profile<br>No CPU over-subscription profile extension | 1:1 | Y | N | N | N | OVS-kernel |
 | B4 | Basic Profile<br>4x CPU over-subscription profile extension | 4:1 | Y | N | N | N | OVS-kernel |
@@ -155,7 +155,7 @@ A number of capabilities need to be enabled in the BIOS (such as NUMA and SMT); 
 | Layer | Description |
 |-------------|--|
 | Cloud infrastructure | Important is placement of NICs to get NUMA-balanced system (balancing the I/O, memory, and storage across both sockets), and configuration of NIC features. Server BIOS and Host OS kernel command line settings are described in [DPDK release notes](http://doc.dpdk.org/guides/rel_notes/) and [DPDK performance reports](http://core.dpdk.org/perf-reports/). Disabling power settings (like Intel Turbo Boost Technology) brings stable performance results, although understanding if and when they benefit workloads and enabling them can achieve better performance results. |
-| Workload | DPDK uses core affinity along with 1G or 2M Huge Pages, NUMA settings (to avoid crossing inteconnect between CPUs), and DPDK Poll Mode Drivers (PMD, on reserved cores) to get the best performance. DPDK versions xx.11 are Long-Term Support maintained stable release with back-ported bug fixes for a two-year period. |
+| Workload | DPDK uses core affinity along with 1G or 2M huge pages, NUMA settings (to avoid crossing inteconnect between CPUs), and DPDK Poll Mode Drivers (PMD, on reserved cores) to get the best performance. DPDK versions xx.11 are Long-Term Support maintained stable release with back-ported bug fixes for a two-year period. |
 
 -	Sizing rules
 
@@ -286,7 +286,7 @@ Let us refer to the data traffic networking configuration of Figure 4-1 to be pa
 | CPU Pinning | BIOS | Disable | Disable |
 | SMT  | BIOS | Enable | Enable |
 | NUMA | BIOS | Disable | Disable |
-| Huge Pages  | BIOS | No | No |
+| Huge pages  | BIOS | No | No |
 | Profile Extensions | | B1 | B4 |
 <p align="center"><b>Table 4-3: Configuration of Basic Flavor Capabilities</b></p>
 
@@ -317,7 +317,7 @@ The above examples of host networking configurations for the B1 and B4 Profile E
 | NUMA | BIOS, Operating System, Hypervisor and OpenStack Nova Scheduler | Enable | Enable | Enable |
 | CPU Pinning (requires NUMA) | OpenStack Nova Scheduler | Enable | Enable | Enable |
 | SMT  | BIOS | Enable | Enable | Enable |
-| Huge Pages  | BIOS | Yes | Yes | Yes |
+| Huge pages  | BIOS | Yes | Yes | Yes |
 
 <p align="center"><b>Table 4-4: Configuration of High Performance Flavor Capabilities</b></p>
 
@@ -604,7 +604,7 @@ Accelerators can be of type:
 * Software: dpdk/spdk, pmem, …
 * Hardware (device types): FPGA, GPU, ARM SoC, NVMe SSD, CCIX based Caches, …
 
-The [Cyborg architecture](https://docs.openstack.org/cyborg/latest/user/architecture.html) consists of the cyborg-api, cyborg-conductor, cyborg-db, cyborg-agent, and generic device type drivers. cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes. cyborg-agent, which runs on compute nodes, interacts with generic device type drivers on those nodes. These generic device type drivers are an abstraction of the vendor specific drivers; there is a generic device type driver for each device type (see above for list of some of the device types). The current list of the supported vendor drivers is listed under "[Driver Support](https://docs.openstack.org/cyborg/latest/reference/support-matrix.html)". 
+The [Cyborg architecture](https://docs.openstack.org/cyborg/latest/user/architecture.html) consists of the cyborg-api, cyborg-conductor, cyborg-db, cyborg-agent, and generic device type drivers. cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes. cyborg-agent, which runs on compute nodes, interacts with generic device type drivers on those nodes. These generic device type drivers are an abstraction of the vendor specific drivers; there is a generic device type driver for each device type (see above for list of some of the device types). The current list of the supported vendor drivers is listed under "[Driver Support](https://docs.openstack.org/cyborg/latest/reference/support-matrix.html)".
 
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services
@@ -630,7 +630,7 @@ Reference Model Chapter 4 and  5 provide information about the Cloud Infrastruct
 | CPU allocation ratio (custom extra_specs) | infra.com.cfg.001| In flavor create or flavor set <br>--property cpu_allocation_ratio=4.0 | In flavor create or flavor set <br>--property cpu_allocation_ratio=1.0 |
 | NUMA Awareness | infra.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<integer range of 0 to #numa_nodes – 1><br>To restrict an instance's vCPUs to a single host NUMA node, specify: --property hw:numa_nodes=1<br>Some compute intensive* workloads with highly sensitive memory latency or bandwidth requirements, the instance may benefit from spreading across multiple NUMA nodes: --property hw:numa_nodes=2   |
 | CPU Pinning | infra.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate><br>Use "isolate" thread policy for very high compute intensive workloads that require that each vCPU be placed on a different physical core |
-| Huge Pages | infra.com.cfg.004| | --property hw:mem_page_size=<small \|large \| size> |
+| Huge pages | infra.com.cfg.004| | --property hw:mem_page_size=<small \|large \| size> |
 | SMT | infra.com.cfg.005 | | In flavor create or flavor set specify <br> --property hw:cpu_threads=<integer #threads (usually 1 or 2)> |
 | OVS-DPDK | infra.net.acc.cfg.001| | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large |
 | Local Storage SSD | infra.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required |
