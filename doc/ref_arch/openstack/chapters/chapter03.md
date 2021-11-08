@@ -203,7 +203,7 @@ Functional requirements of this node include:
 -	Grow / Shrink resources
 
 #### 3.3.1.3 Cloud Controller Services
-The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model (RM) Virtual Infrastructure Manager [Reference Model Chapter 3.2.2 Virtual Infrastructure Manager](../../../ref_model/chapters/chapter03.md#322").
+The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The table below also maps the OpenStack core services to the Reference Model (RM) Virtual Infrastructure Manager [Reference Model Chapter 3.2.2 Virtual Infrastructure Manager](../../../ref_model/chapters/chapter03.md#322").
 
 | RM Management Software| Service| Description| Required / Optional| Deployed on Controller Nodes| Deployed on Compute Nodes |
 |-----------------------|-------------|----------------------|----------------|-----------|---------|
@@ -240,7 +240,7 @@ This section describes the core set of services and service components needed to
 In Keystone v1 and v2 (both deprecated), the term "tenant" was used in OpenStack. With Keystone v3, the term "project" got adopted and both the terms became interchangeable.  According to [OpenStack glossary](https://docs.openstack.org/doc-contrib-guide/common/glossary.html), Projects represent the base unit of resources (compute, storage and network) in OpenStack, in that all assigned resources in OpenStack are owned by a specific project.
 OpenStack offers multi-tenancy by means of resource (compute, network and storage)separation via projects. OpenStack offers ways to share virtual resources between projects while maintaining logical separation. As an example, traffic separation is provided by creating different VLAN ids for neutron networks of different projects. As another example, if host separation is needed, nova scheduler offers AggregateMultiTenancyIsolation scheduler filter to separate projects in host aggregates. Thus, if a host in an aggregate is configured for a particular project, only the instances from that project are placed on the host. Overall, tenant isolation ensures that the resources of a project are not affected by resources of another project.
 
-This document uses the term "project" when referring to OpenStack services and “tenant” ([RM Section 3.2.1]((../../../ref_model/chapters/chapter03.md#321")) to represent an independently manageable logical pool of resources.
+This document uses the term "project" when referring to OpenStack services and “tenant” ([RM Section 3.2.1](../../../ref_model/chapters/chapter03.md#321")) to represent an independently manageable logical pool of resources.
 
 <a name="3.3.3"></a>
 ### 3.3.3. Cloud partitioning: Host Aggregates, Availability Zones
@@ -312,7 +312,7 @@ Most cloud storage architectures incorporate a number of clustered storage nodes
 <a name="3.5"></a>
 ## 3.5. Cloud Topology
 
-A telco cloud will typically be deployed in multiple locations (“sites”) of varying size and capabilities (HVAC, for example); or looking at this in the context of OpenStack, multiple clouds (i.e. OpenStack end-points) will be deployed that do not rely on each other, by design; each cloud consists of a set of resources isolated from resources of the other clouds. The application layer must span such end-points in order to provide the required service SLA.  Irrespective of the nature of the deployment characteristics (e.g. number of racks, number of hosts, etc.), the intent of the architecture would be to allow VNFs to be deployed in these sites without major changes.  
+A telco cloud will typically be deployed in multiple locations (“sites”) of varying size and capabilities (HVAC, for example); or looking at this in the context of OpenStack, multiple clouds (i.e. OpenStack end-points) will be deployed that do not rely on each other, by design; each cloud consists of a set of resources isolated from resources of the other clouds. The application layer must span such end-points in order to provide the required service SLA.  Irrespective of the nature of the deployment characteristics (e.g., number of racks, number of hosts), the intent of the architecture would be to allow VNFs to be deployed in these sites without major changes.  
 
 Some examples of such topologies include:
 - Large data centre capable of hosting potentially thousands of servers and the networking to support them
@@ -322,9 +322,9 @@ Some examples of such topologies include:
 In order to provide the expected availability for any given service, a number of different OpenStack deployment topologies can be considered.  This section explores the main options and highlights the characteristics of each.  Ultimately the decision rests with the operator to achieve specific availability target taking into account use case, data centre capabilities, economics and risks.
 
 Availability of any single OpenStack cloud is dependent on a number of factors including:
--	environmental – dual connected power and PDUs, redundant cooling, rack distribution etc.
+-	environmental – dual connected power and PDUs, redundant cooling, rack distribution, etc.
 -	resilient network fabric – ToR (leaf), spine, overlay networking, underlay networking etc.  It is assumed that all network components are designed to be fault tolerant and all OpenStack controllers, computes and storage are dual-homed to alternate leaf switches.
--	controller nodes setup in-line with the vendor recommendation (e.g. min 3 physical nodes)
+-	controller nodes setup in-line with the vendor recommendation (e.g., min 3 physical nodes)
 -	network nodes (where applicable)
 - backend storage nodes setup for highly availablility based on quorum (aligned with vendor implementation)
 -	compute nodes sized to handle the entire workload following local failure scenario
@@ -350,13 +350,13 @@ Assumptions and conventions:
 
 #### 3.5.2.1. Topology 1	- Local Redundancy
 
-Under normal operation this deployment can handle a single failure of a controller node or storage node without any impact to the service.   If a compute node fails the application layer (often the VNFM) would need to restart workloads on a spare compute node of similar capability i.e., cloud may need to be provided with n+1 capacity.  In the case of an active/active application deployed to separate compute nodes (with hypervisor anti-affinity) there would be no service impact.  
+Under normal operation this deployment can handle a single failure of a controller node or storage node without any impact to the service. If a compute node fails the application layer (often the VNFM) would need to restart workloads on a spare compute node of similar capability i.e., cloud may need to be provided with n+1 capacity. In the case of an active/active application deployed to separate compute nodes (with hypervisor anti-affinity) there would be no service impact.  
 
 *Important to consider:*
 
--	Where possible servers should be distributed and cabled to reduce the impact of any failure e.g. PDU, rack failure.   Because each operator has individual site constraints this document will not propose a standard rack layout.
+-	Where possible servers should be distributed and cabled to reduce the impact of any failure e.g., PDU, rack failure. Because each operator has individual site constraints this document will not propose a standard rack layout.
 -	During maintenance of the control plane, whilst the data (forwarding) plane remains unaffected, the control plane API may not be available and some applications may be relying on it during normal application operation for example for scaling. Additionally if the upgrade involves updating OpenStack services on the compute nodes care needs to be taken.  OVS-kernel networking operations may also be impacted during this time.
--	During maintenance of storage (e.g. ceph) there is an increased risk of a service-impacting failure so it is generally recommended to deploy at least one more server than the minimum required for redundancy.
+-	During maintenance of storage (e.g., ceph) there is an increased risk of a service-impacting failure, so it is generally recommended to deploy at least one more server than the minimum required for redundancy.
 
 #### 3.5.2.2. Topology 2	- Regional Redundancy
 
