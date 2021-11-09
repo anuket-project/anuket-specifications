@@ -305,48 +305,50 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 ## 2.3 Kubernetes Architecture Requirements
 
-The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised resources and a software management system. In the virtualised world, the Cloud Infrastructure consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  The Cloud Infrastructure Management component is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management.
-
-Now consider the containerisation equivalent, references to "Architecture" in this chapter refer to the Cloud Infrastructure Hardware (e.g. physical resources), Cloud Infrastructure Software (e.g. Hypervisor (optional), Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
-
 The requirements in this section are to be delivered in addition to those in [section 2.2](#2.2), and have been created to support the Principles defined in [Chapter 1 of this Reference Architecture](./chapter01.md).
 
-| Ref # | Category | Sub-category | Description | Specification Reference |
+The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised resources and a software management system.
+
+In virtualisation platforms, the Cloud Infrastructure consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  The Cloud Infrastructure Management component is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management.
+
+With regards to containerisation platforms, the scope of the following Architecture requirements include the Cloud Infrastructure Hardware (e.g. physical resources), Cloud Infrastructure Software (e.g. Hypervisor (optional), Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
+
+| Reference | Category | Sub-category | Description | Specification Reference |
 |---|---|---|---|---|
-| `req.gen.cnt.02` | General | Cloud nativeness | The Architecture **must** support immutable infrastructure. |[ra2.ch.017](chapter04.md#42-kubernetes-node)|
-| `req.gen.cnt.03` | General | Cloud nativeness | The Architecture **must** run conformant Kubernetes as defined by the [CNCF](https://github.com/cncf/k8s-conformance). |[ra2.k8s.001](chapter04.md#43-kubernetes)|
-| `req.gen.cnt.04` | General | Cloud nativeness | The Architecture **must** support clearly defined abstraction layers. | |
-| `req.gen.cnt.05` | General | Cloud nativeness | The Architecture **should** support configuration of all components in an automated manner using openly published API definitions. ||
-| `req.gen.scl.01` | General | Scalability | The Architecture **should** support policy driven horizontal auto-scaling of workloads. | |
-| `req.gen.rsl.01` | General | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |[ra2.k8s.004](chapter04.md#43-kubernetes)|
-| `req.gen.rsl.02` | General | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to `req.gen.rsl.01`. |[ra2.k8s.002](chapter04.md#43-kubernetes)<br>[ra2.k8s.003](chapter04.md#43-kubernetes)|
-| `req.gen.avl.01` | General | Availability | The Architecture **must** provide High Availability for Kubernetes components. |[ra2.k8s.002](chapter04.md#43-kubernetes)<br>[ra2.k8s.003](chapter04.md#43-kubernetes)<br>[ra2.k8s.004](chapter04.md#43-kubernetes)|
-| `req.gen.ost.01` | General | Openness | The Architecture **should** embrace open-based standards and technologies. |[ra2.crt.001](chapter04.md#44-container-runtimes)<br>[ra2.crt.002](chapter04.md#44-container-runtimes)<br>[ra2.ntw.002](chapter04.md#45-networking-solutions)<br>[ra2.ntw.006](chapter04.md#45-networking-solutions)<br>[ra2.ntw.007](chapter04.md#45-networking-solutions)|
-| `req.inf.com.01` | Infrastructure | Compute | The Architecture **must** provide compute resources for Pods.  |[ra2.k8s.004](chapter04.md#43-kubernetes)|
-| `req.inf.stg.01` | Infrastructure | Storage | The Architecture **must** support the ability for an operator to choose whether or not to deploy persistent storage for Pods. |[ra2.stg.004](chapter04.md#46-storage-components)|
-| `req.inf.ntw.01` | Infrastructure | Network | The Architecture **must** support network resiliency on the Kubernetes nodes. | |
-| `req.inf.ntw.02` | Infrastructure | Network | The Architecture **must** support fully redundant network connectivity to the Kubernetes nodes, leveraging multiple network connections. | |
-| `req.inf.ntw.03` | Infrastructure | Network | The networking solution **should** be able to be centrally administrated and configured. |[ra2.ntw.001](chapter04.md#45-networking-solutions)<br>[ra2.ntw.004](chapter04.md#45-networking-solutions) |
-| `req.inf.ntw.04` | Infrastructure | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. |[ra2.ch.007](chapter04.md#42-kubernetes-node)<br>[ra2.k8s.010](chapter04.md#43-kubernetes)|
-| `req.inf.ntw.05` | Infrastructure | Network | The Architecture **must** support capabilities for integrating SDN controllers. | |
-| `req.inf.ntw.06` | Infrastructure | Network | The Architecture **must**  support more than one networking solution. |[ra2.ntw.005](chapter04.md#45-networking-solutions)<br>[ra2.ntw.007](chapter04.md#45-networking-solutions) |
-| `req.inf.ntw.07` | Infrastructure | Network | The Architecture **must** support the ability for an operator to choose whether or not to deploy more than one networking solution. |[ra2.ntw.005](chapter04.md#45-networking-solutions)|
-| `req.inf.ntw.08` | Infrastructure | Network | The Architecture **must**  provide a default network which implements the Kubernetes network model. |[ra2.ntw.002](chapter04.md#45-networking-solutions)  |
-| `req.inf.ntw.09` | Infrastructure | Network | The networking solution **must not** interfere with or cause interference to any interface or network it does not own. | |
-| `req.inf.ntw.10` | Infrastructure | Network | The Architecture **must** support Cluster wide coordination of IP address assignment. | |
-| `req.inf.ntw.13` | Infrastructure | Network | The platform **must** allow specifying multiple separate IP pools. Tenants are required to select at least one IP pool that is different from the control infrastructure IP pool or other tenant IP pools. | |
-| `req.inf.ntw.14` | Infrastructure | Network | The platform **must** allow NATless traffic (i.e. exposing the pod IP address directly to the outside), allowing source and destination IP addresses to be preserved in the traffic headers from workloads to external networks. This is needed e.g. for signaling applications, using SIP and Diameter protocols.|[ra2.ntw.011](chapter04.md#45-networking-solutions)|
-| `req.inf.ntw.15` | Infrastructure | Network | The platform **must** support LoadBalancer [Publishing Service (ServiceType)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)||
-| `req.inf.ntw.16` | Infrastructure | Network | The platform **must** support [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).||
-| `req.inf.ntw.17` | Infrastructure | Network | The platform **should** support NodePort [Publishing Service (ServiceTypes)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types).||
-| `req.inf.ntw.18` | Infrastructure | Network | The platform **should** support ExternalName [Publishing Service (ServiceTypes)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types).||
-| `req.inf.vir.01` | Infrastructure | Virtual Infrastructure | The Architecture **must** support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |[ra2.ch.005](chapter04.md#42-kubernetes-node)<br>[ra2.ch.011](chapter04.md#42-kubernetes-node)|
-| `req.inf.phy.01`  | Infrastructure |  Physical Infrastructure | The Architecture **must** support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server.| ra2.ch.008 |
-| `req.kcm.gen.01` | Kubernetes Cluster | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes Cluster. | |
-| `req.kcm.gen.02` | Kubernetes Cluster | General | The Architecture **must** enable workload resiliency. |[ra2.k8s.004](chapter04.md#43-kubernetes)|
-| `req.int.api.01` | API | General | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |For Networking: <ul><li>[ra2.ntw.001](chapter04.md#45-networking-solutions)<li>[ra2.ntw.008](chapter04.md#45-networking-solutions)<li>[ra2.app.006](chapter04.md#49-kubernetes-workloads)</ul><br>Compute/storage not yet met. |
-| `req.int.api.02` | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. |[ra2.pkg.001](chapter04.md#48-kubernetes-application-package-manager)|
-| `req.int.api.03` | API | General | The Architecture **must** support stable features in its APIs. ||
-| `req.int.api.04` | API | General | The Architecture **must** support limited backward compatibility in its APIs. Support for the whole API must not be dropped, but the schema or other details can change. ||
+| gen.cnt.02 | General | Cloud nativeness | The Architecture **must** support immutable infrastructure. |[ra2.ch.017](chapter04.md#42-kubernetes-node)|
+| gen.cnt.03 | General | Cloud nativeness | The Architecture **must** run conformant Kubernetes as defined by the [CNCF](https://github.com/cncf/k8s-conformance). |[ra2.k8s.001](chapter04.md#43-kubernetes)|
+| gen.cnt.04 | General | Cloud nativeness | The Architecture **must** support clearly defined abstraction layers. | |
+| gen.cnt.05 | General | Cloud nativeness | The Architecture **should** support configuration of all components in an automated manner using openly published API definitions. ||
+| gen.scl.01 | General | Scalability | The Architecture **should** support policy driven horizontal auto-scaling of workloads. | |
+| gen.rsl.01 | General | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |[ra2.k8s.004](chapter04.md#43-kubernetes)|
+| gen.rsl.02 | General | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to gen.rsl.01. |[ra2.k8s.002](chapter04.md#43-kubernetes)<br>[ra2.k8s.003](chapter04.md#43-kubernetes)|
+| gen.avl.01 | General | Availability | The Architecture **must** provide High Availability for Kubernetes components. |[ra2.k8s.002](chapter04.md#43-kubernetes)<br>[ra2.k8s.003](chapter04.md#43-kubernetes)<br>[ra2.k8s.004](chapter04.md#43-kubernetes)|
+| gen.ost.01 | General | Openness | The Architecture **should** embrace open-based standards and technologies. |[ra2.crt.001](chapter04.md#44-container-runtimes)<br>[ra2.crt.002](chapter04.md#44-container-runtimes)<br>[ra2.ntw.002](chapter04.md#45-networking-solutions)<br>[ra2.ntw.006](chapter04.md#45-networking-solutions)<br>[ra2.ntw.007](chapter04.md#45-networking-solutions)|
+| inf.com.01 | Infrastructure | Compute | The Architecture **must** provide compute resources for Pods.  |[ra2.k8s.004](chapter04.md#43-kubernetes)|
+| inf.stg.01 | Infrastructure | Storage | The Architecture **must** support the ability for an operator to choose whether or not to deploy persistent storage for Pods. |[ra2.stg.004](chapter04.md#46-storage-components)|
+| inf.ntw.01 | Infrastructure | Network | The Architecture **must** support network resiliency on the Kubernetes nodes. | |
+| inf.ntw.02 | Infrastructure | Network | The Architecture **must** support fully redundant network connectivity to the Kubernetes nodes, leveraging multiple network connections. | |
+| inf.ntw.03 | Infrastructure | Network | The networking solution **should** be able to be centrally administrated and configured. |[ra2.ntw.001](chapter04.md#45-networking-solutions)<br>[ra2.ntw.004](chapter04.md#45-networking-solutions) |
+| inf.ntw.04 | Infrastructure | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. |[ra2.ch.007](chapter04.md#42-kubernetes-node)<br>[ra2.k8s.010](chapter04.md#43-kubernetes)|
+| inf.ntw.05 | Infrastructure | Network | The Architecture **must** support capabilities for integrating SDN controllers. | |
+| inf.ntw.06 | Infrastructure | Network | The Architecture **must**  support more than one networking solution. |[ra2.ntw.005](chapter04.md#45-networking-solutions)<br>[ra2.ntw.007](chapter04.md#45-networking-solutions) |
+| inf.ntw.07 | Infrastructure | Network | The Architecture **must** support the ability for an operator to choose whether or not to deploy more than one networking solution. |[ra2.ntw.005](chapter04.md#45-networking-solutions)|
+| inf.ntw.08 | Infrastructure | Network | The Architecture **must**  provide a default network which implements the Kubernetes network model. |[ra2.ntw.002](chapter04.md#45-networking-solutions)  |
+| inf.ntw.09 | Infrastructure | Network | The networking solution **must not** interfere with or cause interference to any interface or network it does not own. | |
+| inf.ntw.10 | Infrastructure | Network | The Architecture **must** support Cluster wide coordination of IP address assignment. | |
+| inf.ntw.13 | Infrastructure | Network | The platform **must** allow specifying multiple separate IP pools. Tenants are required to select at least one IP pool that is different from the control infrastructure IP pool or other tenant IP pools. | |
+| inf.ntw.14 | Infrastructure | Network | The platform **must** allow NATless traffic (i.e. exposing the pod IP address directly to the outside), allowing source and destination IP addresses to be preserved in the traffic headers from workloads to external networks. This is needed e.g. for signaling applications, using SIP and Diameter protocols.|[ra2.ntw.011](chapter04.md#45-networking-solutions)|
+| inf.ntw.15 | Infrastructure | Network | The platform **must** support LoadBalancer [Publishing Service (ServiceType)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)||
+| inf.ntw.16 | Infrastructure | Network | The platform **must** support [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).||
+| inf.ntw.17 | Infrastructure | Network | The platform **should** support NodePort [Publishing Service (ServiceTypes)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types).||
+| inf.ntw.18 | Infrastructure | Network | The platform **should** support ExternalName [Publishing Service (ServiceTypes)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types).||
+| inf.vir.01 | Infrastructure | Virtual Infrastructure | The Architecture **must** support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |[ra2.ch.005](chapter04.md#42-kubernetes-node)<br>[ra2.ch.011](chapter04.md#42-kubernetes-node)|
+| inf.phy.01  | Infrastructure |  Physical Infrastructure | The Architecture **must** support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server.| ra2.ch.008 |
+| kcm.gen.01 | Kubernetes Cluster | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes Cluster. | |
+| kcm.gen.02 | Kubernetes Cluster | General | The Architecture **must** enable workload resiliency. |[ra2.k8s.004](chapter04.md#43-kubernetes)|
+| int.api.01 | API | General | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |For Networking: <ul><li>[ra2.ntw.001](chapter04.md#45-networking-solutions)<li>[ra2.ntw.008](chapter04.md#45-networking-solutions)<li>[ra2.app.006](chapter04.md#49-kubernetes-workloads)</ul><br>Compute/storage not yet met. |
+| int.api.02 | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. |[ra2.pkg.001](chapter04.md#48-kubernetes-application-package-manager)|
+| int.api.03 | API | General | The Architecture **must** support stable features in its APIs. ||
+| int.api.04 | API | General | The Architecture **must** support limited backward compatibility in its APIs. Support for the whole API must not be dropped, but the schema or other details can change. ||
 
 <p align="center"><b>Table 2-7:</b> Kubernetes Architecture Requirements</p>
