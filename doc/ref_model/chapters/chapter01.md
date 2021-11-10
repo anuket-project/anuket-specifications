@@ -66,7 +66,7 @@ This document specifies:
 
 - **Conformance and verification**:
   - **Conformance programs**: These define the requirements for verification and validation programs for both the cloud infrastructure and workloads.
-  - **Test framework**: Provides inout into test suites to allow conformance of cloud infrastructure and workloads.
+  - **Test framework**: Provides input into test suites to allow conformance of cloud infrastructure and workloads.
 
 <a name="1.3"></a>
 ## 1.3 Principles
