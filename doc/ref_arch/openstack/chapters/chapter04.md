@@ -38,7 +38,7 @@ This chapter delves deeper into the capabilities of these different resources an
 <a name="4.2.1"></a>
 ### 4.2.1 Virtualisation
 In OpenStack, KVM is configured as the default hypervisor for compute nodes.
-- Configuration: [OpenStack](https://docs.openstack.org/nova/wallaby/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
+- Configuration: [OpenStack](https://docs.openstack.org/nova/wallaby/admin/configuration/hypervisor-kvm.html) specifies the steps/instructions to configure KVM:
   - Enable KVM based hardware virtualisation in BIOS. OpenStack provides instructions on how to enable hardware virtualisation for different hardware platforms (x86, Power)
     - QEMU is similar to KVM in that both are libvirt controlled, have the same feature set and utilise compatible virtual machine images
   -	Configure Compute backing storage
@@ -175,7 +175,6 @@ A number of capabilities need to be enabled in the BIOS (such as NUMA and SMT); 
 |---------------|------------|------------|------------|
 | # of VMs per node (vCPU) | (s*c*t*o)/v | 4*(s*c*t)/v | (s*c*t)/v|  
 | # of VMs per node (RAM) | rt/ri | rt/ri | rt/ri |  
-| | | | |  
 | Max # of VMs per node|  | min(4*(s*c*t)/v, rt/ri)| min((s*c*t)/v, rt/ri)|  
 
 
@@ -224,7 +223,7 @@ This section specifies the compute node configurations to support profiles and f
 
 The Cloud Infrastructure Hardware (or simply “host”) profile and configuration parameters are utilised in the reference architecture to define different hardware profiles; these are used to configure the BIOS settings on a physical server and configure utility software (such as Operating System and Hypervisor).
 
-An OpenStack flavor defines the characteristics (“capabilities”) of a srever (viz., VMs or instances) that will be deployed on hosts assigned a host-profile. A many to many relationship exists between flavors and host profiles. Multiple flavors can be defined with overlapping capability specifications with only slight variations that servers of these flavor types can be hosted on similary configured (host profile) compute hosts. Similarly, a server can be specified with a flavor that allows it to be hosted on, say, a host configured as per the Basic profile or a host configured as per the High-Performance profile. Please note that workloads that specify a server flavor so as to be hosted on a host configured as per the High-Performance profile, may not be able to run (adequately with expected performance) on a host configured as per the Basic profile.
+An OpenStack flavor defines the characteristics (“capabilities”) of a server (viz., VMs or instances) that will be deployed on hosts assigned a host-profile. A many to many relationship exists between flavors and host profiles. Multiple flavors can be defined with overlapping capability specifications with only slight variations that servers of these flavor types can be hosted on similary configured (host profile) compute hosts. Similarly, a server can be specified with a flavor that allows it to be hosted on, say, a host configured as per the Basic profile or a host configured as per the High-Performance profile. Please note that workloads that specify a server flavor so as to be hosted on a host configured as per the High-Performance profile, may not be able to run (adequately with expected performance) on a host configured as per the Basic profile.
 
 A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Host profiles are immutable and hence when a configuration needs to be changed, a new host profile is created.
 
@@ -642,7 +641,7 @@ The flavor create command and the mandatory and optional configuration parameter
 
 <a name="4.4.2"></a>
 ### 4.4.2. Logical segregation and high availability
-To Ensure Logical segregation and high availability, the architecture will rely on the following principles:
+To ensure logical segregation and high availability, the architecture will rely on the following principles:
 -	Availability zone: provide resiliency and fault tolerance for VNF deployments, by means of physical hosting distribution of compute nodes in separate racks with separate power supply, in the same or different DC room
 -	Affinity-groups: allow tenants to make sure that VNFC instances are on the same compute node or are on different compute nodes.
 
