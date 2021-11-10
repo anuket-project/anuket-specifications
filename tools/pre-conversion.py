@@ -84,22 +84,46 @@ def main():
                 # [<< Back](../../kubernetes)
                 if re.match("\[<<\s+Back\]", line):
                     state["line"] = ""
+                # <a name="A.2"></a>
+                if re.match("<a name", line):
+                    state["line"] = ""
                 # <p align="center"><img src="./figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
-                if re.match(".*<img .*", line):
+                # <p align="center"><img src="./figures/tech_ws_dependencies.png" alt="CNTT WS Dependencies" title="CNTT WS Dependencies
+                # " width="100%"/>
+                if re.match(".*<img .*", line) or ("in-img" in state and state["in-img"]):
                     logger.debug("{} Image found {}".format(lineNumber, line))
+                    state["in-img"] = True
                     m = re.search('.*src="(.*?)"\s.*', line)
-                    src = m.group(1)
-                    logger.debug(" Image src: {}".format(src))
+                    if m:
+                        state["img-src"] = m.group(1)
+                        logger.debug(" Image src: {}".format(state["img-src"]))
                     m = re.search('.*[tT]itle="(.*?)".*', line)
                     if m:
-                        title = m.group(1)
-                        logger.debug(" Image title: {}".format(title))
+                        state["img-title"] = m.group(1)
+                        logger.debug(" Image title: {}".format(state["img-title"]))
                     m = re.search('.*width="(.*?)".*', line)
                     if m:
-                        width = m.group(1)
-                        logger.debug(" Image width: {}".format(width))
-                        comment = '<!-- width="{}" -->'.format(width)
-                    state["line"] = '![{}]({}) {}\n'.format(title, src, comment)
+                        state["img-width"] = m.group(1)
+                        logger.debug(" Image width: {}".format(state["img-width"]))
+                    m = re.search('.*/>.*', line)
+                    if m:
+                        logger.debug("{} Image end".format(lineNumber))
+                        if "img-width" in state and state["img-width"]:
+                            comment = '<!-- width="{}" -->'.format(state["img-width"])
+                            del state["img-width"]
+                        if "img-title" in state and state["img-title"]:
+                            title = state["img-title"]
+                            del state["img-title"]
+                        state["line"] = '![{}]({}) {}\n'.format(title, state["img-src"], comment)
+                        del state["img-src"]
+                        del state["in-img"]
+                    if not "line" in state:
+                        continue
+                #<b>Figure 1-1:</b>
+                if re.match(".*<b>.*</b>.*", line):
+                    m = re.search("^(.*)<b>(.*)</b>(.*)$", line)
+                    state["line"] = "{}**{}**{}".format(m.group(1), m.group(2), m.group(3))
+                #<p align="center">
             #logger.debug("Out line is " + state["line"])
             print(state["line"], file = fOut, end = "")
         

@@ -24,10 +24,11 @@ then
     exit 1;
 fi
 
-for filename in $1/*.md; do
+for filename in $1/*mod.md; do
     [ -e "$filename" ] || continue
     echo "Converting $filename."
-    pandoc -f gfm $filename --from markdown --to rst -s -o ${filename%.md}.rst
+    pandoc -f gfm $filename --from gfm --to rst -s -o ${filename//\-mod\.md/\.rst}
 done
+
 
 
