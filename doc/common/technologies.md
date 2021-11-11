@@ -6,8 +6,8 @@
 * [SmartNICs](#SmartNICs)
 * [Acceleration Cards](#Acceleration-Cards)
 * [FPGA](#FPGA)
-* [GPUs/NPUs](#GPUs-NPUs)
-* [EPA/NFD](#EPA-NFD)
+* [GPUs/NPUs](#GPUsNPUs)
+* [EPA/NFD](#EPANFD)
 
 
 ## IO Virtualisation
