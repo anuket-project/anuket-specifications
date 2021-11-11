@@ -2,10 +2,10 @@
 # Anuket Project Technical Policies and Transition Plan
 
 ## Table of Contents
-* [Anuket Project Policies for Managing Non-Conforming Technologies ]
-  * [Feature Availability]
-  * [Current Anuket Project Policies]
-* [Anuket Project Technical Transition Plan ] 
+* [Anuket Project Policies for Managing Non-Conforming Technologies](#Anuket-Project-Policies-for-Managing-Non-Conforming-Technologies)
+  * [Feature Availability](#Feature-Availability)
+  * [Current Anuket Project Policies](#Current-Anuket-Project-Policies)
+* [Anuket Project Technical Transition Plan](#Anuket-Project-Technical-Transition-Plan)
 
 
 ## Anuket Project Policies for Managing Non-Conforming Technologies
