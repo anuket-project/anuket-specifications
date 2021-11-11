@@ -23,7 +23,7 @@ Anuket Project [Introduction](chapter00.md).
 
 
 ## Use Cases
-The Anuket Project addresses a wide range of use cases from the Core to the Edge of the network. Different use cases supported by the Anuket Project specifications are described in [here](./usecases.md).
+The Anuket Project addresses a wide range of use cases from the Core to the Edge of the network. Different use cases supported by the Anuket Project specifications are described in [here](../ref_model/chapters/chapter02.md#22-use-cases).
 
 
 ## Roadmap and Releases
