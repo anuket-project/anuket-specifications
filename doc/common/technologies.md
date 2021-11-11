@@ -2,12 +2,12 @@
 # Anuket Project Relevant Technologies
 
 ## Table of Contents
-* [IO Virtualisation]
-* [SmartNICs]
-* [Acceleration Cards]
-* [FPGA]
-* [GPUs/NPUs]
-* [EPA/NFD]
+* [IO Virtualisation](#IO-Virtualisation)
+* [SmartNICs](#SmartNICs)
+* [Acceleration Cards](#Acceleration Cards)
+* [FPGA](#FPGA)
+* [GPUs/NPUs](#GPUs/NPUs)
+* [EPA/NFD](#EPA/NFD)
 
 
 ## IO Virtualisation
