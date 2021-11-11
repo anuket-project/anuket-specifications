@@ -2,13 +2,12 @@
 # Anuket Project
 
 ## Table of Contents
-* [Introduction](#1.0)
-* [Approach](#4.0)
-* [Use Cases](#5.0)
-* [Roadmap and Releases](#6.0)
-* [CNTT Technical Policies and Transition Plan](#7.0)
-* [Other Policies](#9.0)
-* [Relevant Technologies](#8.0)
+* [Introduction](#Introduction)
+* [Use Cases](#Use-Cases)
+* [Roadmap and Releases](#Roadmap-and-Releases)
+* [Anuket Project Technical Policies and Transition Plan](#Anuket-Project-Technical-Policies-and-Transition-Plan)
+* [Other Policies](#Other-Policies)
+* [Relevant Technologies](#Relevant-Technologies)
 
 ## Available Specifications
 * [Reference Model](../ref_model)
