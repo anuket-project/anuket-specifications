@@ -4,7 +4,7 @@
 ## Table of Contents
 * [IO Virtualisation](#IO-Virtualisation)
 * [SmartNICs](#SmartNICs)
-* [Acceleration Cards](#Acceleration Cards)
+* [Acceleration Cards](#Acceleration-Cards)
 * [FPGA](#FPGA)
 * [GPUs/NPUs](#GPUs/NPUs)
 * [EPA/NFD](#EPA/NFD)
