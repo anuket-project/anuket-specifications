@@ -2,13 +2,13 @@
 # Roadmap
 
 ## Table of Contents
- * [Overview]
- * [Roadmap]
-   * [High Level Roadmap]
-   * [Detailed Roadmap]
-   * [Detailed Milestones]
- * [Dependencies between various Workstreams ]
- * [Dependencies with Industry Communities]
+ * [Overview](#Overview)
+ * [Roadmap](#Roadmap])
+   * [High Level Roadmap](#High-Level-Roadmap)
+   * [Detailed Roadmap](#Detailed-Roadmap)
+   * [Detailed Milestones](#Detailed-Milestones)
+ * [Dependencies between various Workstreams](#Dependencies-between-various-Workstreams)
+ * [Dependencies with Industry Communities](#Dependencies-with-Industry-Communities)
 
 
 ## Overview
@@ -48,7 +48,6 @@ A Version:
   
 
 ## Roadmap
-
 
 ### High Level Roadmap
 <p align="center"><img src="./figures/cntt_roadmap.png" alt="scope" title="Roadmap" width="100%"/></p>
