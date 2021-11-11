@@ -1,5 +1,5 @@
 [<< Back](https://cntt-n.github.io/CNTT/)
-# Cloud iNfrastructure Telco Taskforce
+# Anuket Project
 
 ## Table of Contents
 * [Overview](#1.0)
@@ -73,7 +73,7 @@ In conclusion, to serve the stated objective of building a common cloud infrastr
 
 
 <a name="2.0"></a>
-# Principles
+# Anuket General Principles
 
 Any specifications created within the Anuket project **must** conform to the following principles:
 
