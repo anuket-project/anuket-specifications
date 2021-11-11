@@ -655,7 +655,7 @@ The following principles apply to Storage scope for the Reference Model, Referen
 * Security Policy Amenable: The storage sub-systems must be amenable to policy based security controls covering areas such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management Security Policy Override, Secure Erase on Device Removal and others
 * Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
  
-The above principles should be understood as storage specific specialisations of the overall principles applied across all sections of this document, see [Anuket Principles](../../common/chapter00.md#2.0).
+The above principles should be understood as storage specific specialisations of the [Anuket General Principles](../../common/chapter00.md#2.0).
 
 <a name="3.6.2"></a>
 ### 3.6.2 Storage Implementation Stereotypes
