@@ -720,7 +720,7 @@ In section "3.6.2 Storage Implementation Stereotypes" the General Cloud Storage 
 
 Note that a sterotype for Network File Storage consumption is not illustrated as this is simply managed by the Tenant Application by doing a file systems mount.
 
-In cloud infrastructure, the storage types may manifest in various ways with substantive variations in the architecture models being used. Examples of this are provided in section "3.6.2 Storage Implementation Stereotypes", with stereotypes for "Dedicated Storage Appliance" and "Software Defined Storage". In the consumption case, again there is use of in chassis storage to support hypervisor and container host OS/Runtime boot, not for Tenant / User Plane storage consumption.
+In cloud infrastructure, the storage types may manifest in various ways with substantive variations in the architecture models being used. Examples of this are provided in section "3.6.2 Storage Implementation Stereotypes", with stereotypes for "Dedicated Storage Appliance" and "Software Defined Storage". In the consumption case, again there is use of in-chassis storage to support hypervisor and container host OS/Runtime boot, not for Tenant / User Plane storage consumption.
 
 <a name="3.6.4"></a>
 ### 3.6.4 Storage Scenarios and Architecture Fit
