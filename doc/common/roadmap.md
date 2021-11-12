@@ -2,17 +2,18 @@
 # Roadmap
 
 ## Table of Contents
- * [Overview]
- * [Roadmap]
-   * [High Level Roadmap]
-   * [Detailed Roadmap]
-   * [Detailed Milestones]
- * [Dependencies between various Workstreams ]
- * [Dependencies with Industry Communities]
+
+ * [Overview](#Overview)
+ * [Roadmap](#Roadmap])
+   * [High Level Roadmap](#High-Level-Roadmap)
+   * [Detailed Roadmap](#Detailed-Roadmap)
+   * [Detailed Milestones](#Detailed-Milestones)
+ * [Dependencies between various Workstreams](#Dependencies-between-various-Workstreams)
+ * [Dependencies with Industry Communities](#Dependencies-with-Industry-Communities)
 
 
 ## Overview
-* The activities of the Anuket Project community are articulated around [Workstreams (WS)](#workstream), [Milestones](#2.3) and [Releases](#release).
+* The activities of the Anuket Project community are articulated around [Projects](#project) (sub-projects of Anuket Project sometimes also referred to as Workstreams (WS)), [Milestones](#2.3) and [Releases](#release).
 * The Anuket Project is embracing simultaneous delivery model, meaning that all contributing projects have to follow the cadence and intermediate milestones.
 * Each Anuket Project release is the only delivery vehicle and is common for all projects.
 * The Anuket Project current release plan is available [here](https://wiki.anuket.io/display/HOME/Releases).
@@ -23,8 +24,8 @@
 
 **Definitions**
 
-<a name="workstream"></a>
-A project is:
+<a name="project"></a>
+A project (aka WS) is:
   * Long term endeavour setup to deliver features across multiple releases as shown in [Releases Home](https://wiki.anuket.io/display/HOME/Releases+Home)
   * Led by leads/co-leads, contributors and committers with expertise in the relevant areas
   * Scripted and documented in repositories
@@ -48,7 +49,6 @@ A Version:
   
 
 ## Roadmap
-
 
 ### High Level Roadmap
 <p align="center"><img src="./figures/cntt_roadmap.png" alt="scope" title="Roadmap" width="100%"/></p>

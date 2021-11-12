@@ -633,7 +633,7 @@ Each of:
 have common and specific needs for storage in terms of performance, capacity and consumption models.
 
 The combination of common but diverse needs in conjunction with the differences in the hosting environments (from large data-centres to small edge deployments) has resulted in the proliferation of storage technologies and their deployment architectures. To address this the "Reference Model" outlines a "General Cloud Storage Model" (see Figure 3-14 - "General Cloud Storage Model"). The model will outline the different types of storage technologies and how they can be used to meet the need for:
-* Providing storage via dedicated storage systems,
+* providing storage via dedicated storage systems,
 * multi-tenant cloud storage,
 * Control and Management Plane storage needs,
 
@@ -720,7 +720,7 @@ In section "3.6.2 Storage Implementation Stereotypes" the General Cloud Storage 
 
 Note that a sterotype for Network File Storage consumption is not illustrated as this is simply managed by the Tenant Application by doing a file systems mount.
 
-In cloud infrastructure, the storage types may manifest in various ways with substantive variations in the architecture models being used. Examples of this are provided in section "3.6.2 Storage Implementation Stereotypes", with stereotypes for "Dedicated Storage Appliance" and "Software Defined Storage". In the consumption case, again there is use of in chassis storage to support hypervisor and container host OS/Runtime boot, not for Tenant / User Plane storage consumption.
+In cloud infrastructure, the storage types may manifest in various ways with substantive variations in the architecture models being used. Examples of this are provided in section "3.6.2 Storage Implementation Stereotypes", with stereotypes for "Dedicated Storage Appliance" and "Software Defined Storage". In the consumption case, again there is use of in-chassis storage to support hypervisor and container host OS/Runtime boot, not for Tenant / User Plane storage consumption.
 
 <a name="3.6.4"></a>
 ### 3.6.4 Storage Scenarios and Architecture Fit
