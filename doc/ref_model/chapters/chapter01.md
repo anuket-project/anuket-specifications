@@ -60,13 +60,13 @@ This document specifies:
   - **Cloud Infrastructure capabilities & metrics**: A set of cloud infrastructure capabilities and metrics required to perform telco scale network functions and satisfy their performance criterion.
   - **Infrastructure profiles catalogue**: A catalogue of standard infrastructure software and hardware configurations, referred to as profiles; these profiles abstract the infrastructure for the workloads. Only a few profiles, with well-defined characteristics, can meet the operational and performance requirements of all workloads.
 
-- Cloud Infrastructure Software and Hardware profiles:
+- **Cloud Infrastructure Software and Hardware profiles**:
   - **Cloud Infrastructure software profiles**: These software profiles are components of the corresponding infrastructure profiles within the infrastructure profiles catalogue, and specify the host infrastructure software configurations.
   - **Cloud Infrastructure hardware profiles**: These hardware profiles are components of the corresponding infrastructure profiles within the infrastructure profiles catalogue, and specify the host infrastructure hardware configurations.
 
-- Conformance and verification
+- **Conformance and verification**:
   - **Conformance programs**: These define the requirements for verification and validation programs for both the cloud infrastructure and workloads.
-  - **Test framework**: Provides test suites to allow conformance of cloud infrastructure and workloads.
+  - **Test framework**: This document provides input into test suites to allow conformance of cloud infrastructure and workloads.
 
 <a name="1.3"></a>
 ## 1.3 Principles

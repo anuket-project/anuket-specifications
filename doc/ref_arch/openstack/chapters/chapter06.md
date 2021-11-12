@@ -21,7 +21,7 @@ This guide is intended to provide basic security requirements to architects who 
 <a name="6.2"></a>
 ## 6.2 Security Requirements
 
-Chapter 2 gathers all requirements and recommendations regarding security topics developed in this chapter.
+Chapter 2 ([section 2.2.6](./chapter02.md#226-cloud-infrastructure-security-requirements) and [section 2.4.8](./chapters/chapter02.md#248-security-recommendations)) gathers all requirements and recommendations regarding security topics developed in this chapter.
 
 <a name="6.3"></a>
 ## 6.3 Cloud Infrastructure and VIM Security
@@ -108,7 +108,7 @@ The [OpenStack Identity service (Keystone)](https://docs.openstack.org/security-
 OpenStack Keystone can work with an Identity service that your enterprise may already have, such as LDAP with Active Directory.  In those cases, the recommendation is to integrate Keystone with the cloud provider's Identity Services.  
 
 #### 6.3.2.2 Authentication
-Authentication is the first line of defense for any real-world implementation of OpenStack.  At its core, authentication is the process of confirming the user logging in is who they claim to be.  OpenStack Keystone supports multiple methods of authentication, such as username/password, LDAP, and others.  For more details, please refer to [OpenStack Authentication Methods](https://docs.openstack.org/security-guide/identity/authentication-methods.html).
+Authentication is the first line of defence for any real-world implementation of OpenStack.  At its core, authentication is the process of confirming the user logging in is who they claim to be.  OpenStack Keystone supports multiple methods of authentication, such as username/password, LDAP, and others.  For more details, please refer to [OpenStack Authentication Methods](https://docs.openstack.org/security-guide/identity/authentication-methods.html).
 
 Limiting the number of repeated failed login attempts (configurable) reduces the risk of unauthorised access via password guessing (Bruce force attack) - sec.mon.006. The restriction on the number of consecutive failed login attempts ("lockout_failure_attempts") and any actions post such access attempts (such as locking the account where the "lockout_duration" is left unspecified) should abide by the operator's policies. For example, an operator may restrict the number of consecutive failed login attempts to 3 ("lockout_failure_attempts = 3") and lock the account preventing any further access and where the account is unlocked by getting necessary approvals.  
 
@@ -240,7 +240,7 @@ It is recommended to rely on Barbican, as the key manager service of OpenStack.
 
 OpenStack segregates its infrastructure (sec.ci.008) (for example, hosts) by Regions, Host Aggregates and Availability Zones (AZ). Workloads can also be segregated by server groups (affinity and non-affinity groups) (sec.sys.008). These options support the workloads placement requirement (sec.wl.001, sec.wl.004).
 
-Separation of non-production and production workloads, or by workload category (for example, payment card information, healthcare, etc.) requires separation through server groups (for example, Regions, AZs) but also requires network and storage segregation as in Regions, but also AZs if engineered to do so. Thus, the separation of these workloads is handled through placement of workloads in separate AZs and/or Regions (sec.wl.005 and sec.wl.006).
+Separation of non-production and production workloads, or by workload category (for example, payment card information, healthcare, etc.) requires separation through server groups (for example, Regions, AZs), but also requires network and storage segregation as in Regions. Thus, the separation of these workloads is handled through placement of workloads in separate AZs and/or Regions (sec.wl.005 and sec.wl.006).
 
 Regions also support the sec.wl.004 requirement for separation by Location (for example, country).
 
