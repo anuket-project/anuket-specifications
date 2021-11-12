@@ -25,11 +25,11 @@
 <a name="4.1"></a>
 ## 4.1 Capabilities and Performance Measurements
 
-This section describes and uniquely identifies the Capabilities provided directly by the Infrastructure, as well as Performance Measurements (PMs) generated directly by the Infrastructure (i.e. without the use of external instrumentation).
+This section describes and uniquely identifies the Capabilities provided directly by the Infrastructure, as well as Performance Measurements (PMs) generated directly by the Infrastructure (i.e., without the use of external instrumentation).
 
 The Capability and PM identifiers conform to the following schema:
 
-**a.b.c** (Ex. "e.pm.001")  
+**a.b.c** (E.g., "e.pm.001")  
 a = Scope <(e)xternal | (i)nternal | (t)hird_party_instrumentation>  
 b = Type <(cap) capability | (man) management | (pm) performance | (man-pm)>  
 c = Serial Number  
@@ -39,7 +39,7 @@ c = Serial Number
 
 The following pertains to the context of Cloud Infrastructure Resources, Capabilities and Performance Measurements (PMs) as discussed within this chapter.
 
-**Exposed:** Refers to any object (e.g., resource discovery/configuration/consumption, platform telemetry, Interface, etc.) that exists in or pertains to, the domain of the Cloud Infrastructure and is made visible (aka “Exposed”) to a workload. When an object is exposed to a given workload, the scope of visibility within a given workload is at the discretion of the specific workload’s designer. From an Infra perspective, the Infra-resident object is simply being exposed to one or more virtual environments (i.e. Workloads). It is then the responsibility of the kernel or supervisor/executive within the VM to control how, when and where the object is further exposed within the VM, with regard to permissions, security, etc. As the object(s) originate with the Infra, they are by definition visible within that domain.
+**Exposed:** Refers to any object (e.g., resource discovery/configuration/consumption, platform telemetry, interface, etc.) that exists in or pertains to, the domain of the Cloud Infrastructure and is made visible (aka “Exposed”) to a workload. When an object is exposed to a given workload, the scope of visibility within a given workload is at the discretion of the specific workload’s designer. From an Infra perspective, the Infra-resident object is simply being exposed to one or more virtual environments (i.e., workloads). It is then the responsibility of the kernel or supervisor/executive within the VM to control how, when and where the object is further exposed within the VM, with regard to permissions, security, etc. As the object(s) originate with the Infra, they are by definition visible within that domain.
 
 **Internal:** Effectively the opposite of Exposed; objects Internal to the Cloud Infrastructure, which are exclusively available for use by the Cloud Infrastructure and components within the Cloud Infrastructure.
 
@@ -48,7 +48,7 @@ The following pertains to the context of Cloud Infrastructure Resources, Capabil
 
 As illustrated in the figure above, objects designated as "Internal" are only visible within the area inside the blue oval (the Cloud Infrastructure), and only when the entity accessing the object has the appropriate permissions. Whereas objects designated as "Exposed" are potentially visible from both the area within the green oval (the Workload), as well as from within the Cloud Infrastructure, again provided the entity accessing the object has appropriate permissions.
 
-Note: The figure above indicates the areas from where the objects are <i>visible</i>. It is not intended to indicate where the objects are <i>instantiated</i>. For example, the virtual resources are instantiated within the Cloud Infrastructure (the blue area), but are Exposed, and therefore are <i>visible</i> to the Workload, within the green area.
+Note: The figure above indicates the areas from where the objects are _visible_. It is not intended to indicate where the objects are _instantiated_. For example, the virtual resources are instantiated within the Cloud Infrastructure (the blue area), but are Exposed, and therefore are _visible_ to the Workload, within the green area.
 
 <a name="4.1.2"></a>
 ### 4.1.2 Exposed Infrastructure Capabilities
@@ -70,7 +70,7 @@ This section describes a set of explicit Cloud Infrastructure capabilities and p
 | e.cap.002 | RAM Size                               | MB     | Max memory in MB that can be assigned to a single VM or Pod by the Cloud Infrastructure <sup>2)</sup>  |
 | e.cap.003 | Total per-instance (ephemeral) storage | GB     | Max storage in GB that can be assigned to a single VM or Pod by the Cloud Infrastructure                |
 | e.cap.004 | # Connection points                    | number | Max number of connection points that can be assigned to a single VM or Pod by the Cloud Infrastructure          |
-| e.cap.005 | Total external (persistent) storage    | GB     | Max storage in GB that can be attached / mounted to VM or Pod by the Cloud Infrastructure                |
+| e.cap.005 | Total external (persistent) storage    | GB     | Max storage in GB that can be attached/mounted to VM or Pod by the Cloud Infrastructure                |
 
 <p align="center"><b>Table 4-1:</b> Exposed Resource Capabilities of Cloud Infrastructure</p>
 
@@ -96,11 +96,11 @@ This section describes a set of explicit Cloud Infrastructure capabilities and p
 | e.cap.013 | SR-IOV over PCI-PT                        | Yes/No | Traditional SR-IOV. These Capabilities generally require hardware-dependent drivers be injected into workloads |
 | e.cap.014 | GPU/NPU                                   | Yes/No | Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads |
 | e.cap.015 | SmartNIC                                  | Yes/No | Network Acceleration |
-| e.cap.016 | FPGA/other Acceleration H/W               | Yes/No | These Capabilities generally require hardware-dependent drivers be injected into workloads |
+| e.cap.016 | FPGA/other Acceleration HW               | Yes/No | These Capabilities generally require hardware-dependent drivers be injected into workloads |
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of Cloud Infrastructure</p>
 
-Enhanced Cache Management is a compute performance enhancer that applies a cache management policy to the socket hosting a given virtual compute instance, provided the associated physical CPU microarchitecture supports it. Cache management policy can be used to specify the static allocation of cache resources to cores within a socket. The "Equal" policy distributes the available cache resources equally across all of the physical cores in the socket. The "eXpanded" policy provides additional resources to the core pinned to a workload that has the "X" attribute applied. The "Lean" attribute can be applied to workloads which do not realize significant benefit from a marginal cache size increase and are hence willing to relinquish unneeded resources.
+Enhanced Cache Management is a compute performance enhancer that applies a cache management policy to the socket hosting a given virtual compute instance, provided the associated physical CPU microarchitecture supports it. Cache management policy can be used to specify the static allocation of cache resources to cores within a socket. The "Equal" policy distributes the available cache resources equally across all of the physical cores in the socket. The "eXpanded" policy provides additional resources to the core pinned to a workload that has the "X" attribute applied. The "Lean" attribute can be applied to workloads which do not realise significant benefit from a marginal cache size increase and are hence willing to relinquish unneeded resources.
 
 In addition to static allocation, an advanced Reference Architecture implementation can implement dynamic cache management control policies, operating with tight (~ms) or standard (10s of seconds) control loop response times, thereby achieving higher overall performance for the socket.
 
@@ -140,7 +140,7 @@ The following table of exposed Performance Measurements shows PMs per VM or Pod,
 <a name="4.1.4"></a>
 ### 4.1.4 Internal Infrastructure Capabilities
 
-This section covers a list of implicit Cloud Infrastructure capabilities and measurements that define a Cloud Infrastructure. These capabilities and metrics determine how the Cloud Infrastructure behaves internally. They are hidden from workloads (i.e. workloads may not know about them) but they will impact the overall performance and capabilities of a given Cloud Infrastructure solution.
+This section covers a list of implicit Cloud Infrastructure capabilities and measurements that define a Cloud Infrastructure. These capabilities and metrics determine how the Cloud Infrastructure behaves internally. They are hidden from workloads (i.e., workloads may not know about them) but they will impact the overall performance and capabilities of a given Cloud Infrastructure solution.
 
 >_**Note**:  It is expected that implicit Cloud Infrastructure capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
@@ -194,8 +194,8 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 |----------|--------------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | i.pm.001 | Host CPU usage                             | nanoseconds | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.2.1 [5] clause 6, processor usage metric (Cloud Infrastructure internal).           |
 | i.pm.002 | Virtual compute resource (vCPU) usage         | nanoseconds | Per VM or Pod.  It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean vCPU usage and Peak vCPU usage (Cloud Infrastructure external). |
-| i.pm.003 | Host CPU utilization                       | %           | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.2.1 [5] clause 6, processor usage metric (Cloud Infrastructure internal).           |
-| i.pm.004 | Virtual compute resource (vCPU) utilization   | %           | Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean vCPU usage and Peak vCPU usage (Cloud Infrastructure external). |
+| i.pm.003 | Host CPU utilisation                       | %           | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.2.1 [5] clause 6, processor usage metric (Cloud Infrastructure internal).           |
+| i.pm.004 | Virtual compute resource (vCPU) utilisation   | %           | Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean vCPU usage and Peak vCPU usage (Cloud Infrastructure external). |
 | i.pm.005 | Measurement of external storage IOPS       | Yes/No      |                                                                                                                                                                                                                             |
 | i.pm.006 | Measurement of external storage throughput | Yes/No      |                                                                                                                                                                                                                             |
 | i.pm.007 | Available external storage capacity        | Yes/No      |                                                                                                                                                                                                                             |
@@ -280,7 +280,7 @@ The following table of requirements are derived from the VNF/CNF applications, C
 | Ref       | Acceleration/Offload API Capability | Unit   | Definition/Notes                                                                            |
 |-----------|--------------------------------------------|--------|---------------------------------------------------------------------------------------------|
 | e.api.001 | VNF/CNF usage of Accelerator standard i/f                           | Yes/No | VNF/CNF shall use abstracted standardised interfaces to the Acceleration/Offload functions. This would enable use of HW and SW implementations of the accelerated/offloaded functions from multiple vendors in the Cloud Infrastructure.                        |
-| e.api.002 | Virtualisation Infrastructure SW usage of Accelerator standard i/f  | Yes/No | Virtualisation Infrastructure SW shall use abstracted standardised interfaces to the HW-Acceleration/Offload function  enabling multiple HW and SW implementations in the HW Infrastructure Layer of the accelerated functions from multiple vendors  |
+| e.api.002 | Virtualisation Infrastructure SW usage of Accelerator standard i/f  | Yes/No | Virtualisation Infrastructure SW shall use abstracted standardised interfaces to the HW-Acceleration/Offload function  enabling multiple HW and SW implementations in the HW Infrastructure Layer of the accelerated functions from multiple vendors.  |
 | e.api.003 | Accelerators offering standard i/f to HW Infra Layer                | Yes/No | Acceleration/Offload functions shall offer abstracted standardised interfaces for the Virtualisation Infrastructure and VNF/CNF applications.                                                                                                             |
 | e.api.004 | Accelerators offering virtualised functions                         | Yes/No | Acceleration/Offload functions for VNFs/CNFs should be virtualised to allow multiple VNFs/CNFs to use the same Acceleration/Offload instance.                                                                                                 |
 | e.api.005 | VNF/CNF Accelerator management functions access rights              | Yes/No | VNF/CNF management functions shall be able to request Acceleration/Offload invocation without requiring elevated access rights.                                                                                                                       |
@@ -310,8 +310,8 @@ The availability of these two (2) profiles will facilitate and accelerate worklo
 The justification for defining these two profiles and a set of extensible profile-extensions was provided in Section [2.4 Profiles, Profile Extensions & Flavours](./chapter02.md#24-profiles--flavours) and includes:
 
 * Workloads can be deployed by requesting compute hosts configured as per a specific profile (Basic or High Performance)
-* Profile extensions allow a more granular compute host configuration for the workload (e.g. GPU, high, speed network, Edge deployment)
-* Cloud infrastructure "scattering" is minimized
+* Profile extensions allow a more granular compute host configuration for the workload (e.g., GPU, high, speed network, Edge deployment)
+* Cloud infrastructure "scattering" is minimised
 * Workload development and testing optimisation by using pre-defined and commonly supported (telco operators) profiles and extensions
 * Better usage of Cloud Objects (Memory; Processor; Network; Storage)
 
@@ -358,7 +358,7 @@ The high-performance profile (H) is intended to be used for workloads that requi
 | e.cap.013 | SR-IOV over PCI-PT  | No   | Yes | |
 | i.cap.018 | Huge page support  | No  | Yes | Internal performance capabilities as per Table 4-7. |
 | e.cap.018 | Simultaneous Multithreading (SMT) | Yes | Optional | |
-| e.cap.019 | vSwitch Optimisation (DPDK) | No | Yes| DPDK doesn't have to be used if some other network acceleration method is being utilised |
+| e.cap.019 | vSwitch Optimisation (DPDK) | No | Yes| DPDK doesn't have to be used if some other network acceleration method is being utilised. |
 | e.cap.020 | CPU Architecture | \<value> | \<value> | Values such as x64, ARM, etc. |
 | e.cap.021 | Host Operating System (OS) | \<value> | \<value> | Values such as a specific Linux version, Windows version, etc. |
 | e.cap.022 | Virtualisation Infrastructure Layer<sup>1</sup> | \<value> | \<value> | Values such as KVM, Hyper-V, Kubernetes, etc. when relevant, depending on technology. |
@@ -374,7 +374,7 @@ Profile Extensions represent small deviations from or further qualification of t
 | Profile Extension Name | Mnemonic | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
 |----|----|----|----|----|----|
 | Compute Intensive High-performance CPU | compute-high-perf-cpu | ❌ | ✅ | Nodes that have predictable computing performance and higher clock speeds. | May use vanilla VIM/K8S scheduling instead. |
-| Storage Intensive High-performance storage | storage-high-perf | ❌ | ✅ | Nodes that have low storage latency and/or high storage IOPS |  |
+| Storage Intensive High-performance storage | storage-high-perf | ❌ | ✅ | Nodes that have low storage latency and/or high storage IOPS. |  |
 | Compute Intensive High memory | compute-high-memory | ❌ | ✅ | Nodes that have high amounts of RAM. | May use vanilla VIM/K8S scheduling instead. |
 | Compute Intensive GPU | compute-gpu | ❌ | ✅ | For Compute Intensive workloads that requires GPU compute resource on the node | May use Node Feature Discovery. |
 | Network Intensive | high-speed-network | ❌ | ✅ | Nodes configured to support SR-IOV. |  |
@@ -383,10 +383,10 @@ Profile Extensions represent small deviations from or further qualification of t
 | Low Latency - Edge Sites | low-latency-edge | ✅ | ✅ | Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
 | Very Low Latency - Edge Sites | very-low-latency-edge | ✅ | ✅ | Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
 | Ultra Low Latency - Edge Sites | ultra-low-latency-edge | ✅ | ✅ | Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
-| Fixed function accelerator | compute-ffa | ❌ | ✅ | Labels a host/node that includes a consumable fixed function accelerator (non-programmable, e.g. Crypto, vRAN-specific adapter). |  |
-| Firmware-programmable adapter | compute-firmware programmable | ❌ | ✅ | Labels a host/node that includes a consumable Firmware-programmable adapter (e.g. Network/storage adapter). |  |
+| Fixed function accelerator | compute-ffa | ❌ | ✅ | Labels a host/node that includes a consumable fixed function accelerator (non-programmable, e.g., Crypto, vRAN-specific adapter). |  |
+| Firmware-programmable adapter | compute-firmware programmable | ❌ | ✅ | Labels a host/node that includes a consumable Firmware-programmable adapter (e.g., Network/storage adapter). |  |
 | SmartNIC enabled | network-smartnic | ❌ | ✅ | Labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure. |  |
-| SmartSwitch enabled | network-smartswitch | ❌ | ✅ | Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch |  |
+| SmartSwitch enabled | network-smartswitch | ❌ | ✅ | Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch. |  |
 
 
 <a name="4.2.4"></a>
@@ -408,10 +408,10 @@ Workload Flavour sizing consists of the following:
 
 | Element | Mnemonic | Description |
 |-----|----|-----|
-| cpu | c | Number of virtual compute resources (vCPUs) |
+| cpu | c | Number of virtual compute resources (vCPUs). |
 | memory | r | Virtual resource instance memory in megabytes. |
 | storage - ephemeral | e | Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br>The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
-| storage - persistent | d | Specifies the disk size of persistent storage |
+| storage - persistent | d | Specifies the disk size of persistent storage. |
 
 <p align="center"><b>Table 4-12:</b> Workload Flavour Geometry Specification.</p>
 
@@ -464,9 +464,9 @@ Table 4-13: Resource Flavours (complete list of Workload Capabilities) Specifica
 ### 4.2.5 Virtual Network Interface Specifications
 
 
-The virtual network interface specifications extend a Flavour customization with network interface(s), with an associated bandwidth, and are identified by the literal, “n”, followed by the interface bandwidth (in Gbps). Multiple network interfaces can be specified by repeating the “n” option.
+The virtual network interface specifications extend a Flavour customisation with network interface(s), with an associated bandwidth, and are identified by the literal, “n”, followed by the interface bandwidth (in Gbps). Multiple network interfaces can be specified by repeating the “n” option.
 
-Virtual interfaces may be of an Access type, and thereby untagged, or may be of a Trunk type, with one or more 802.1Q tagged logical interfaces. Note, tagged interfaces are encapsulated by the Overlay, such that tenant isolation (i.e. security) is maintained, irrespective of the tag value(s) applied by the workload.  
+Virtual interfaces may be of an Access type, and thereby untagged, or may be of a Trunk type, with one or more 802.1Q tagged logical interfaces. Note, tagged interfaces are encapsulated by the Overlay, such that tenant isolation (i.e., security) is maintained, irrespective of the tag value(s) applied by the workload.  
 
 Note, the number of virtual network interfaces, aka vNICs, associated with a virtual compute instance, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base Flavour.
 ```

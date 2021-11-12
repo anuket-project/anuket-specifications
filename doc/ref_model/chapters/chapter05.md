@@ -19,7 +19,7 @@
   * [5.4.3 Network Resources.](#5.4.3)
 
 
-A profile [RM Section 2.4](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#24-profiles--flavours) specifies the configuration of a cloud infrastructure node (host or server); [profile extensions](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#242-profile-extensions-specialisations) may specify additional configuration. Workloads utilise profiles to describe the configuration of nodes on which they can be hosted to execute on. Workload Flavours provide a mechanism to specify the VM or Pod sizing information to host the workload.  Depending on the requirements of the workloads, a VM or a Pod will be deployed as per the specified Flavour information on a node configured as per the specified Profile. Not only do the nodes (the hardware) have to be configured but some of the capabilities also need to be configured in the software layers (such as Operating System and Virtualisation Software). Thus, a Profile can be defined in terms of configuration needed in the software layers, the Cloud Infrastructure Software Profile, and the hardware, the Cloud Infrastructure Hardware Profile.
+A profile [RM Section 2.4](chapter02.md#24-profiles--flavours) specifies the configuration of a Cloud Infrastructure node (host or server); [profile extensions](chapter02.md#242-profile-extensions-specialisations) may specify additional configuration. Workloads utilise profiles to describe the configuration of nodes on which they can be hosted to execute on. Workload Flavours provide a mechanism to specify the VM or Pod sizing information to host the workload.  Depending on the requirements of the workloads, a VM or a Pod will be deployed as per the specified Flavour information on a node configured as per the specified Profile. Not only do the nodes (the hardware) have to be configured but some of the capabilities also need to be configured in the software layers (such as Operating System and Virtualisation Software). Thus, a Profile can be defined in terms of configuration needed in the software layers, the Cloud Infrastructure Software Profile, and the hardware, the Cloud Infrastructure Hardware Profile.
 
 <a name="5.1"></a>
 ## 5.1 Cloud Infrastructure Software profile description
@@ -33,8 +33,8 @@ Cloud Infrastructure Software layer is composed of 2 layers, **Figure 5-1**:
 
 | Ref | Cloud Infrastructure Software | Type | Definition/Notes | Capabilities Reference <sup>1</sup> |
 |-----|-------------------------------|------|------------------|-----------------------------------|
-| infra.sw.001 | Host Operating System |	<value> |	Values such as Ubuntu20.04, Windows 10 Release #, etc. | `e.cap.021` |
-| infra.sw.001 | Virtualisation Infrastructure Layer |	<value> |	Values such as KVM, Hyper-V, Kubernetes, etc. | `e.cap.022` |
+| infra.sw.001 | Host Operating System |	\<value> |	Values such as Ubuntu20.04, Windows 10 Release #, etc. | `e.cap.021` |
+| infra.sw.002 | Virtualisation Infrastructure Layer |	\<value> |	Values such as KVM, Hyper-V, Kubernetes, etc. | `e.cap.022` |
 ><sup>1</sup> Reference to the capabilities defined in [Chapter 4](./chapter04.md).
 
 For a host (compute node or physical server), the virtualisation layer is an abstraction layer between hardware components (compute, storage, and network resources) and virtual resources allocated to a VM or a Pod. **Figure 5-2** represents the virtual resources (virtual compute, virtual network, and virtual storage) allocated to a VM or a Pod and managed by the Cloud Infrastructure Manager.
@@ -57,7 +57,7 @@ The following sections detail the Cloud Infrastructure Software Profile capabili
 
 | Reference         | Feature                | Type   | Description | Capabilities Reference |
 |-------------------|--------------|--------|--------------------|---------|
-| infra.com.cfg.001 | CPU allocation ratio | Value  | Number of virtual cores per physical core. | `i.cap.016` |
+| infra.com.cfg.001 | CPU allocation ratio | \<value>  | Number of virtual cores per physical core. | `i.cap.016` |
 | infra.com.cfg.002 | NUMA alignment | Yes/No | Support of NUMA at the Host OS and virtualisation layers, in addition to hardware. | `e.cap.007` |
 | infra.com.cfg.003 | CPU pinning | Yes/No | Binds a vCPU to a physical core or SMT thread. Configured in OS and virtualisation layers.| `e.cap.006` |
 | infra.com.cfg.004 | Huge Pages | Yes/No | Ability to manage huge pages of memory. Configured in OS and virtualisation layers. | `i.cap.018` |
@@ -68,11 +68,11 @@ The following sections detail the Cloud Infrastructure Software Profile capabili
 
 | Reference        | Feature | Type  | Description | Capabilities Reference |
 |-------------|----------------|----------------|-----------------------|---------
-| infra.com.acc.cfg.001 |	IPSec Acceleration |	Yes/No |	IPSec Acceleration | `e.cap.008` |
-| infra.com.acc.cfg.002 |	Transcoding Acceleration |	Yes/No |	Transcoding Acceleration | `e.cap.010 	` |
-| infra.com.acc.cfg.003 |	Programmable Acceleration |	Yes/No |	Programmable Acceleration | `e.cap.011` |
-| infra.com.acc.cfg.004 |	GPU |	Yes/No |	Hardware coprocessor. | `e.cap.014` |
-| infra.com.acc.cfg.005 |	FPGA/other Acceleration H/W |	Yes/No |	Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads. | `e.cap.016` |
+| infra.com.acc.cfg.001 |	IPSec Acceleration |	Yes/No/Optional |	IPSec Acceleration | `e.cap.008` |
+| infra.com.acc.cfg.002 |	Transcoding Acceleration |	Yes/No/Optional  |	Transcoding Acceleration | `e.cap.010 	` |
+| infra.com.acc.cfg.003 |	Programmable Acceleration |	Yes/No/Optional  |	Programmable Acceleration | `e.cap.011` |
+| infra.com.acc.cfg.004 |	GPU |	Yes/No/Optional  |	Hardware coprocessor | `e.cap.014` |
+| infra.com.acc.cfg.005 |	FPGA/other Acceleration H/W |	Yes/No/Optional  |	Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads. | `e.cap.016` |
   
 <p align="center"><b>Table 5-2:</b> Virtual Compute Acceleration features.</p>
 
@@ -169,7 +169,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 | Reference         | Feature                | Type   | Basic | High Performance  | 
 |-------------------|------------------------|--------|-------|-------------------|
-| infra.com.cfg.001 | CPU allocation ratio   | value  | N:1   | 1:1               |   
+| infra.com.cfg.001 | CPU allocation ratio   | \<value> | N:1   | 1:1               |   
 | infra.com.cfg.002 | NUMA alignment         | Yes/No | N     | Y                 |  
 | infra.com.cfg.003 | CPU pinning            | Yes/No | N     | Y                 |  
 | infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 | 
@@ -180,13 +180,13 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 **Table 5-9** lists the features related to compute acceleration for the High Performance profile. The table also lists the applicable [Profile-Extensions](./chapter04.md#423-profile-extensions) and Extra Specs that may need to be specified.
 
-| Reference             | Feature                            | Type | Profile-Extensions | Profile Extra Specs |
-|-----------------------|------------------------------------|------|-------|-------------------|
-| infra.com.acc.cfg.001 | IPSec Acceleration | Yes/No | Compute Intensive GPU | |
-| infra.com.acc.cfg.002 | Transcoding Acceleration | Yes/No | Compute Intensive GPU | Video Transcoding |
-| infra.com.acc.cfg.003 | Programmable Acceleration | Yes/No |	Firmware-programmable adapter | Accelerator |
-| infra.com.acc.cfg.004 | GPU | Yes/No | Compute Intensive GPU | |
-| infra.com.acc.cfg.005 | FPGA/other Acceleration H/W | Yes/No | Firmware-programmable adapter | |
+| Reference             | Feature                            | Profile-Extensions | Profile Extra Specs |
+|-----------------------|------------------------------------|-------|-------------------|
+| infra.com.acc.cfg.001 | IPSec Acceleration | Compute Intensive GPU | |
+| infra.com.acc.cfg.002 | Transcoding Acceleration | Compute Intensive GPU | Video Transcoding |
+| infra.com.acc.cfg.003 | Programmable Acceleration |	Firmware-programmable adapter | Accelerator |
+| infra.com.acc.cfg.004 | GPU | Compute Intensive GPU | |
+| infra.com.acc.cfg.005 | FPGA/other Acceleration H/W | Firmware-programmable adapter | |
 
 <p align="center"><b>Table 5-9:</b> Virtual Compute Acceleration features.</p>
 
@@ -234,9 +234,9 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 | Reference             | Feature                       | Type                       | Basic | High Performance       |
 |-----------------------|-------------------------------|----------------------------|-------|------------------------|
 | infra.net.acc.cfg.001 | vSwitch optimisation (DPDK)   | Yes/No and SW Optimisation | N     | Y                      |
-| infra.net.acc.cfg.002 | SmartNIC (for HW Offload)     | Yes/No                     | N     | Optional               |
-| infra.net.acc.cfg.003 | Crypto acceleration           | Yes/No                     | N     | Optional               |
-| infra.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No                     | N     | Optional               |
+| infra.net.acc.cfg.002 | SmartNIC (for HW Offload)     | Yes/No/Optional            | N     | Optional               |
+| infra.net.acc.cfg.003 | Crypto acceleration           | Yes/No/Optional            | N     | Optional               |
+| infra.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No/Optional            | N     | Optional               |
 
 <p align="center"><b>Table 5-13:</b> Virtual Networking Acceleration features.</p>
 
@@ -258,7 +258,7 @@ A given host can only be assigned a single host profile; a host profile can be a
 
 | Ref | Cloud Infrastructure Resource | Type | Definition/Notes | Capabilities Reference  |
 |-----|-------------------------------|------|------------------|-------------------------|
-| infra.hw.001 | CPU Architecture |	<value> |	Values such as x64, ARM, etc. | `e.cap.020` |
+| infra.hw.001 | CPU Architecture |	\<value> |	Values such as x64, ARM, etc. | `e.cap.020` |
 
 The host profile properties are specified in the following sub-sections. The following diagram (**Figure 5-5**) pictorially represents a high-level abstraction of a physical server (host).
 

@@ -21,6 +21,8 @@
 | 5.0               | 29th Jan 2021         | Elbrus Release             |
 | 5.1               | 8th March 2021        | Kali Release work started  |
 | 6.0               | 1 July 2021           | Kali Release work finished |
+| 6.1               | 1 July 2021           | Lakelse Release work started |
+| 7.0               | 7 December 2021       | Lakelse Release work finished |
 
 ## Overall Status
 

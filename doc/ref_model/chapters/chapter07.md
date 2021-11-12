@@ -169,7 +169,7 @@ The platform supports the workload, and in effect controls access to the workloa
 <a name="7.4.1.1"></a>
 #### 7.4.1.1 The high-level functions of these different access controls
 
-* **MGNT ACCESS CONTROLS** - Platform access to workloads for service management. Typically all management and control-plane traffic is encrypted.
+* **MGMT ACCESS CONTROLS** - Platform access to workloads for service management. Typically all management and control-plane traffic is encrypted.
 * **DATA ACCESS CONTROLS** - Control of east-west traffic between workloads, and control of north-south traffic between the NF and other platform services such as front-end carriage networks and platform services. Inherently strong separation between tenants is mandatory.
 * **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
 * **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as (Two-Factor Authentication) 2FA, and using technologies such as Role-Based Access Control (RBAC) and encryption. Application Programming Interface (API) gateways may be required for automated/script-driven processes.
@@ -235,7 +235,7 @@ The platform supports the workload, and in effect controls access to the workloa
 
 <a name="7.4.4"></a>
 ### 7.4.4 Infrastructure as a Code security
-Infrastructure as a Code (IaaC) (or equivalently called Infrastructure as Code IaC) refers to the software used for the declarative management of cloud infrastructure resources. In order to dynamically address user requirements, release features incrementally, and deliver at a faster pace, DevSecOps teams utilize best practices including continuous integration and continuous delivery and integrate information security controls and scanning tools into these processes, with the aim of providing timely and meaningful feedback including identifying vulnerabilities and security policy violations. With  this automated security testing and analysis capabilities it will be of critical value to detecting vulnerabilities early and maintaining a consistent security policy.
+Infrastructure as a Code (IaaC) (or equivalently called Infrastructure as Code IaC) refers to the software used for the declarative management of cloud infrastructure resources. In order to dynamically address user requirements, release features incrementally, and deliver at a faster pace, DevSecOps teams utilise best practices including continuous integration and continuous delivery and integrate information security controls and scanning tools into these processes, with the aim of providing timely and meaningful feedback including identifying vulnerabilities and security policy violations. With  this automated security testing and analysis capabilities it will be of critical value to detecting vulnerabilities early and maintaining a consistent security policy.
 
 Because of the extremely high complexity of modern telco cloud infrastructures, even minor IaaC code changes may lead to disproportionate and sometime disastrous downstream security and privacy impacts. Therefore, integration of security testing into the IaaC software development pipeline requires security activities to be automated using security tools and integrated  with the native DevOps and DevSecOps tools and procedures.
 
@@ -268,9 +268,9 @@ In the context of the contemporary telecommunication technology, the cloud infra
 * No hard-coded credentials or clear text passwords in code and images. Software must support configurable, or industry standard, password complexity rules.
 * Software should be independent of the infrastructure platform (no OS point release dependencies to patch).
 * Software must be code signed and all individual sub-components are assessed and verified for EULA (End-user License Agreement) violations.
-* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc.).
-* Software should support recognized encryption standards and encryption should be decoupled from software.
-* Software should have support for configurable banners to display authorized use criteria/policy.
+* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, penetration testing/scan findings, etc.).
+* Software should support recognised encryption standards and encryption should be decoupled from software.
+* Software should have support for configurable banners to display authorised use criteria/policy.
 
 <a name="7.5.2"></a>
 ### 7.5.2 Port Protection
@@ -337,7 +337,7 @@ Recommended practice to set network security policies following the principle of
 <a name="7.6.4"></a>
 ### 7.6.4 Volume Encryption
 
-Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Encryption functions rely on a Cloud Infrastructure internal key management service. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure. The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
+Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Encryption functions rely on a Cloud Infrastructure internal key management service. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure. The TPM (Trusted Platform Module) module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
 
 For sensitive data encryption, when data sovereignty is required, an external Hardware Security Module (HSM) should be integrated in order to protect the cryptographic keys. A HSM is a physical device which manages and stores secrets. Usage of a HSM strengthens the secrets security. For 5G services, GSMA FASG strongly recommends the implementation of a HSM to secure the storage of UICC (Universal Integrated Circuit Card) credentials.
 
@@ -409,7 +409,7 @@ Zero Trust principles should also be applied to cloud-native applications. With 
 <a name="7.7"></a>
 ## 7.7 Open Source Software Security 
 
-Software supply chain safety is crucial and can be a complex task in virtualised and containerized environments. Open source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components can also be composed of open source code. The proportion of open source code to an application source code can vary. It can be partial or total, visible or not. Open source code can be upstream code coming directly from open source public repositories or code within a commercial application or network function. To ensure the security of the whole system, all software and hardware components must reach the same level of security by following best security practices including secure lifecycle management. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party Components” provides a detailed risk management approach.
+Software supply chain safety is crucial and can be a complex task in virtualised and containerised environments. Open source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components can also be composed of open source code. The proportion of open source code to an application source code can vary. It can be partial or total, visible or not. Open source code can be upstream code coming directly from open source public repositories or code within a commercial application or network function. To ensure the security of the whole system, all software and hardware components must reach the same level of security by following best security practices including secure lifecycle management. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party Components” provides a detailed risk management approach.
 
 To secure software code, the following methods must be applied:
 

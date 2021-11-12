@@ -1,5 +1,5 @@
 [<< Back](https://cntt-n.github.io/CNTT/)
-# Cloud iNfrastructure Telco Taskforce
+# Anuket Project
 
 ## Table of Contents
 * [Overview](#1.0)
@@ -7,13 +7,17 @@
     * [Problem Statement](#1.2)
     * [Project Goals and Purpose](#1.3)
     * [Common Cloud Infrastructure Benefits](#1.4)
-* [Principles](#2.0)
+* [Anuket General Principles](#2.0)
+  * [Functional Scope](#3.1)
+  * [Overall Principles](#2.1)
+  * [Requirements Principles](#2.2)
+  * [Architectural Principles](#2.3)
 * [Scope](#3.0)
   * [Functional Scope](#3.1)
   * [Out of Scope Components](#3.2)
   * [Specification Types](#3.3)
   * [Relationship to other industry projects](#3.4)
- * [Abbreviations](#4.0)
+* [Abbreviations](#4.0)
 * [References](#5.0)
 
 <a name="1.0"></a>
@@ -43,7 +47,7 @@ To put this effort into perspective, over the past few years, the telecom indust
 <a name="1.3"></a>
 ## Project Goals and Purpose
 
-The goal of the task force is to develop a robust infrastructure model and a limited discrete set of architectures built on that model that can be validated for use across the entire member community. The community, which is made up of a cross section of global operators and supporting vendors alike, was created to support the development, deployment and management of NFV applications faster and more easily.  
+The goal of the project is to develop a robust infrastructure model and a limited discrete set of architectures built on that model that can be validated for use across the entire member community. The community, which is made up of a cross section of global operators and supporting vendors alike, was created to support the development, deployment and management of NFV applications faster and more easily.  
 
 All of this had led to a growing awareness of the need to develop more open models and validation mechanisms to bring the most value to telco operators as well as vendors, by agreeing on a standard set of infrastructure profiles to use for the underlying infrastructure to support VNF/CNF applications across the industry and telecom community at large. To achieve this goal, the cloud environment needs to be fully abstracted via APIs and other mechanisms to the VNFs/CNFs so that both developers of the VNF/CNF applications and the operators managing the environments can benefit from the flexibility that the disaggregation of the underlying infrastructure offers.
 
@@ -73,7 +77,7 @@ In conclusion, to serve the stated objective of building a common cloud infrastr
 
 
 <a name="2.0"></a>
-# Principles
+# Anuket General Principles
 
 Any specifications created within the Anuket project **must** conform to the following principles:
 
@@ -86,7 +90,7 @@ Any specifications created within the Anuket project **must** conform to the fol
       - Focus on the commonalities of the features over the perceived differences. Seek an approach that allows small differences to be handled at either the low-level design or implementation stage. For example, assume the use of existing common APIs over new ones.
 
     - **Create an additional Architecture only when incompatible elements are unavoidable:**
-      - Creating additional Architectures is limited to when incompatible elements are desired by Taskforce members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to community consensus, such that one Architecture would be KVM-based and the other would be ESXi-based.
+      - Creating additional Architectures is limited to when incompatible elements are desired by the Anuket Project members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to community consensus, such that one Architecture would be KVM-based and the other would be ESXi-based.
 
         >*Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, the infrastructure architecture designers might implement the Architecture as described in the reference document, however when there is a potential for incompatibility for particular component, they would select their preferred option from one of the relevant annexes. For example, if one member wanted to use Software-Defined storage (SDS) as CEPH, and another member wanted to use Storage Attached Network(SAN), assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the CEPH implementation and one annex for the SAN implementation.
 
