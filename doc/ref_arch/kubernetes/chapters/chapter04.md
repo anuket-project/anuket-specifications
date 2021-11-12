@@ -1,9 +1,11 @@
 [<< Back](../../kubernetes)
 
 # 4. Component Level Architecture
+
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents <!-- omit in toc -->
+
 - [4. Component Level Architecture](#4-component-level-architecture)
   - [4.1 Introduction](#41-introduction)
   - [4.2 Kubernetes Node](#42-kubernetes-node)
@@ -148,6 +150,7 @@ Architecture they must be implemented as per the following specifications:
 <p align="center"><b>Table 4-6:</b> Storage Solution Specifications</p>
 
 A note on object storage:
+
 - This Reference Architecture does not include any specifications for object
 storage, as this is neither a native Kubernetes object, nor something that is
 required by CSI drivers.  Object storage is an application-level requirement
@@ -155,7 +158,6 @@ that would ordinarily be provided by a highly scalable service offering rather
 than being something an individual Kubernetes Cluster could offer.  
 
 > Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if applicable) and req.sec.zon.03 (data encryption at rest).
-
 
 ## 4.7 Service meshes
 
@@ -191,7 +193,6 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.app.008`|Infrastructure dependency|Workloads must not rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue). |TBD|N/A|
 |`ra2.app.009`|Device plugins|Workload descriptors must use the resources advertised by the device plugins to indicate their need for an FPGA, SR-IOV or other acceleration device.|TBD|N/A|
 |`ra2.app.010`|Node Feature Discovery (NFD)|Workload descriptors must use the labels advertised by [Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) to indicate which node software of hardware features they need.|TBD|N/A|
-
 
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
