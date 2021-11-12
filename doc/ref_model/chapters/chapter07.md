@@ -268,7 +268,7 @@ In the context of the contemporary telecommunication technology, the cloud infra
 * No hard-coded credentials or clear text passwords in code and images. Software must support configurable, or industry standard, password complexity rules.
 * Software should be independent of the infrastructure platform (no OS point release dependencies to patch).
 * Software must be code signed and all individual sub-components are assessed and verified for EULA (End-user License Agreement) violations.
-* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc.).
+* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, penetration testing/scan findings, etc.).
 * Software should support recognized encryption standards and encryption should be decoupled from software.
 * Software should have support for configurable banners to display authorized use criteria/policy.
 
