@@ -105,7 +105,7 @@ Each track follows the industry driven standards in the Reference Model as depic
 
 The Anuket Project is collaboratively working with other standard bodies and open source communities such as: 
 - CNCF
-- ETSI NFV ISG
+- ETSI ISG NFV
 - ETSI ISG MEC
 - MEF
 - ONAP
