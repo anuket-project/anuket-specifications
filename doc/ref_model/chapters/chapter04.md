@@ -264,13 +264,13 @@ Table 4-10 shows performance measurement capabilities.
 <p align="center"><b>Table 4-11:</b> Cloud Infrastructure management Resource Management Measurements</p>
 
 <a name="4.1.7"></a>
-### 4.1.7 Acceleration/Offload API Requirements 
+### 4.1.7 Acceleration/Offload API Requirements
 HW Accelerators and Offload functions with abstracted interfaces are preferred and can functionally be interchanged, but their characteristics might vary. It is also likely that the CNFs/VNFs and the Cloud Infrastructure will have certification requirements for the implementations.  An SW implementation of these functions is also often needed to have the same abstracted interfaces for the deployment situations when there are no more HW Accelerator or Offload functions available.
- 
+
 For Accelerators and Offload functions with externally exposed differences in their capabilities or management functionality these differences must be clear through the management API either explicit for the differing functions or implicit through the use of a unique APIs.
- 
+
 Regardless of exposed or internal different capabilities and characteristics, the operators generally require a choice of multiple implementations also for Accelerators and Offload function realisation, which drive the need for ease of portability in between implementations and vendors.
- 
+
 The following table of requirements are derived from the VNF/CNF applications, Cloud Infrastructure and Telco Operators needs to have multiple realisations of HW Acceleration and Offload functions that can also be implemented through SW when no special hardware is available. These requirements should be adopted in Reference Architectures to ensure that the different implementations on the market are as aligned as possible in their interfaces and that HW Acceleration and Offload functions get an efficient ecosystem of accelerators that compete on their technical merits and not through obscure or proprietary interfaces.
 
 **Table 4-12** shows Acceleration/Offload API Capabilities.
@@ -346,7 +346,7 @@ Hardware resources configured as per the Basic profile (B) such that they are on
 <a name="4.2.1.2"></a>
 #### 4.2.1.2 High Performance Profile
 
-The high-performance profile (H) is intended to be used for workloads that require predictable performance, high network throughput requirements and/or low network latency. To satisfy predictable performance needs, NUMA alignment, CPU pinning, and Huge pages are enabled. For obvious reasons, the high-performance profile doesn’t support over-subscription.
+The high-performance profile (H) is intended to be used for workloads that require predictable performance, high network throughput requirements and/or low network latency. To satisfy predictable performance needs, NUMA alignment, CPU pinning, and huge pages are enabled. For obvious reasons, the high-performance profile doesn’t support over-subscription.
 
 <a name="4.2.2"></a>
 ### 4.2.2 Profiles Specifications & Capability Mapping
@@ -392,13 +392,13 @@ Profile Extensions represent small deviations from or further qualification of t
 <a name="4.2.4"></a>
 ### 4.2.4 Workload Flavours and Other Capabilities Specifications
 
-The workload requests a set of resource capabilities needed by it, including its components, to run successfully. 
-The GSMA document OPG.02 "Operator Platform Technical Requirements" [34] defines "Resource Flavour" as this set of capabilities. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources needed (workload flavour), and extra specifications for workload placement; as defined in [Section 4.2 Profiles and Workload Flavours](#4.2) above. 
+The workload requests a set of resource capabilities needed by it, including its components, to run successfully.
+The GSMA document OPG.02 "Operator Platform Technical Requirements" [34] defines "Resource Flavour" as this set of capabilities. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources needed (workload flavour), and extra specifications for workload placement; as defined in [Section 4.2 Profiles and Workload Flavours](#4.2) above.
 
 This section provides details of the capabilities that need to be provided in a resource request. The [profiles](#4.2.1), the [profile specifications](#4.2.2) and the [profile extensions](#4.2.3) specify the infrastructure (hardware and software) configuration. In a resource request they need to be augmented with workload specific capabilities and configurations, including the [sizing of requested resource](#4.2.4.1), extra specifications related to the placement of the workload  [section 4.2.4.2](#4.2.4.2), network [section 4.2.5](#4.2.5) and storage extensions [section 4.2.6](#4.2.6).
 
 <a name="4.2.4.1"></a>
-#### 4.2.4.1 Workload Flavours Geometry (Sizing) 
+#### 4.2.4.1 Workload Flavours Geometry (Sizing)
 
 Workload Flavours (sometimes also referred to as “compute flavours”) are sizing specifications beyond the capabilities specified by node profiles. Workload flavours represent the compute, memory, storage, and network resource sizing templates used in requesting resources on a host that is conformant with the profiles and profile extensions. The workload flavour specifies the requested resource’s (VM, container) compute, memory and storage characteristics. Workload Flavours can also specify different storage resources such as ephemeral storage, swap disk, network speed, and storage IOPs.
 
@@ -485,7 +485,7 @@ Note, the number of virtual network interfaces, aka vNICs, associated with a vir
 <p align="center"><b>Table 4-14:</b> Virtual Network Interface Specification Examples</p>
 
 <a name="4.2.6"></a>
-###  4.2.6 Storage Extensions 
+###  4.2.6 Storage Extensions
 
 Persistent storage is associated with workloads via Storage Extensions. The storage qualities specified by the Storage Extension pertain to "Platform Native - Hypervisor Attached" and "Platform Native - Container Persistent" storage types (as defined in section "3.6.3 Storage for Tenant Consumption"). The size of an extension can be specified explicitly in [increments of 100GB](./chapter04.md#426-storage-extensions), ranging from a minimum of 100GB to a maximum of 16TB. Extensions are configured with the required performance category, as per [Table 4-15](./chapter04.md#426-storage-extensions),. Multiple persistent Storage Extensions can be attached to virtual compute instances.
 
@@ -502,5 +502,3 @@ Persistent storage is associated with workloads via Storage Extensions. The stor
 <p align="center"><b>Table 4-15:</b> Storage Extensions</p>
 
 >_*Note:*_ Performance is based on a block size of 256KB or larger.
-
-
