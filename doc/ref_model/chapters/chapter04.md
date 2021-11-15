@@ -59,7 +59,7 @@ This section describes a set of exposed Cloud Infrastructure capabilities and pe
 
 #### 4.1.2.1 Exposed Resource Capabilities
 
-**Table 4-1** below shows resource capabilities of the Cloud Infrastructure avaiiable to workloads.
+**Table 4-1** below shows resource capabilities of the Cloud Infrastructure available to workloads.
 
 <a name="Table4-1"></a>
 
