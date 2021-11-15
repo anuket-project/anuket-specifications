@@ -134,17 +134,17 @@ Architecture they must be implemented as per the following specifications:
 
 ## 4.6 Storage components
 
-In order for the storage solution(s) to be conformant with the Reference
+In order for the storage solutions to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
-|`ra2.stg.001`| Ephemeral Storage | An implementation must support ephemeral storage, for the unpacked container images to be stored and executed from, as a directory in the filesystem on the worker node on which the container is running. <br>See the [Container runtimes](#4.4) section above for more information on how this meets the requirement for ephemeral storage for containers. ||
+|`ra2.stg.001`| Ephemeral Storage | An implementation must support ephemeral storage, for the unpacked container images to be stored and executed from, as a directory in the filesystem on the worker node on which the container is running. <br>See the [Container runtimes](#44-container-runtimes) section above for more information on how this meets the requirement for ephemeral storage for containers. ||
 |`ra2.stg.002`| Kubernetes Volumes | An implementation may attach additional storage to containers using Kubernetes Volumes. ||
-|`ra2.stg.003`| Kubernetes Volumes | An implementation may use Volume Plugins (see `ra2.stg.005` below) to allow the use of a storage protocol (e.g. iSCSI, NFS) or management API (e.g. Cinder, EBS) for the attaching and mounting of storage into a Pod. ||
+|`ra2.stg.003`| Kubernetes Volumes | An implementation may use Volume Plugins (see `ra2.stg.005` below) to allow the use of a storage protocol (e.g., iSCSI, NFS) or management API (e.g., Cinder, EBS) for the attaching and mounting of storage into a Pod. ||
 |`ra2.stg.004`| Persistent Volumes | An implementation may support Kubernetes Persistent Volumes (PV) to provide persistent storage for Pods.<br>Persistent Volumes exist independent of the lifecycle of containers and/or pods. |[req.inf.stg.01](chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.stg.005`| Storage Volume Types | An implementation must support the following Volume types: `emptyDir`, `ConfigMap`, `Secret` and `PersistentVolumeClaim`. Other Volume plugins may be supported to allow for the use of a range of backend storage systems. ||
-|`ra2.stg.006`| Container Storage Interface (CSI) | An implementation may support the Container Storage Interface (CSI), an Out-of-tree plugin.<br>In order to support CSI, the  feature gates `CSIDriverRegistry` and `CSINodeInfo` must be enabled.<br>The implementation must use a CSI driver (a full list of CSI drivers can be found [here](https://kubernetes-csi.github.io/docs/drivers.html)). <br>An implementation may support ephemeral storage through a CSI-compatible volume plugin in which case the `CSIInlineVolume` feature gate must be enabled.<br>An implementation may support Persistent Volumes through a CSI-compatible volume plugin in which case  the `CSIPersistentVolume` feature gate must be enabled. | |
+|`ra2.stg.006`| Container Storage Interface (CSI) | An implementation may support the Container Storage Interface (CSI), an Out-of-tree plugin.<br> In order to support CSI, the  feature gates `CSIDriverRegistry` and `CSINodeInfo` must be enabled.<br>The implementation must use a CSI driver (a full list of CSI drivers can be found [here](https://kubernetes-csi.github.io/docs/drivers.html)). <br>An implementation may support ephemeral storage through a CSI-compatible volume plugin in which case the `CSIInlineVolume` feature gate must be enabled.<br>An implementation may support Persistent Volumes through a CSI-compatible volume plugin in which case  the `CSIPersistentVolume` feature gate must be enabled. | |
 |`ra2.stg.007`|  | An implementation should use Kubernetes Storage Classes to support automation and the separation of concerns between providers of a service and consumers of the service. | |
 
 <p align="center"><b>Table 4-6:</b> Storage Solution Specifications</p>
@@ -155,26 +155,26 @@ A note on object storage:
 storage, as this is neither a native Kubernetes object, nor something that is
 required by CSI drivers.  Object storage is an application-level requirement
 that would ordinarily be provided by a highly scalable service offering rather
-than being something an individual Kubernetes Cluster could offer.  
+than being something an individual Kubernetes cluster could offer.  
 
 > Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if applicable) and req.sec.zon.03 (data encryption at rest).
 
 ## 4.7 Service meshes
 
-Application service meshes are not in scope for the architecture. The service mesh is a dedicated infrastructure layer for handling service-to-service communication, and it is recommended to secure service-to-service communications within a cluster and to reduce the attack surface. The benefits of the service mesh framework are described in [5.4.3](./chapter05.md#543-use-transport-layer-security-and-service-mesh). In addition to securing communications, the use of service mesh extends Kubernetes capabilities regarding observability and reliability.
+Application service meshes are not in scope for the architecture. The service mesh is a dedicated infrastructure layer for handling service-to-service communication, and it is recommended to secure service-to-service communications within a cluster and to reduce the attack surface. The benefits of the service mesh framework are described in [5.4.3](./chapter05.md#543-use-transport-layer-security-and-service-mesh). In addition to securing communications, the use of a service mesh extends Kubernetes capabilities regarding observability and reliability.
 
 Network service mesh specifications are handled in section [4.5 Networking solutions](#45-networking-solutions).
 
 ## 4.8 Kubernetes Application package manager
 
-In order for the storage solution(s) to be conformant with the Reference
+In order for the application package managers to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
-|`ra2.pkg.001`|API-based package management|A package manager must use the Kubernetes APIs to manage application artefacts. Cluster-side components such as Tiller are not supported.|[req.int.api.02](./chapter02.md#23-kubernetes-architecture-requirements)||
+|`ra2.pkg.001`|API-based package management| A package manager must use the Kubernetes APIs to manage application artifacts. Cluster-side components such as Tiller are not supported. | [req.int.api.02](./chapter02.md#23-kubernetes-architecture-requirements) ||
 
-<p align="center"><b>Table 4-7:</b> Kubernetes Application Package Management Specifications</p>
+<p align="center"><b>Table 4-7:</b> Kubernetes Application Package Manager Specifications</p>
 
 ## 4.9 Kubernetes workloads
 
@@ -183,19 +183,19 @@ Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
-|`ra2.app.001`|[Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md) Parameter Group (OCI Spec)|Specifies the container's root filesystem.|TBD|N/A|
-|`ra2.app.002`|[Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts) Parameter Group (OCI Spec)|Specifies additional mounts beyond root|TBD|N/A|
-|`ra2.app.003`|[Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process) Parameter Group (OCI Spec)|Specifies the container process|TBD|N/A|
-|`ra2.app.004`|[Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname) Parameter Group (OCI Spec)|Specifies the container's hostname as seen by processes running inside the container|TBD|N/A|
-|`ra2.app.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user) Parameter Group (OCI Spec)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD|N/A|
-|`ra2.app.006`|Consumption of additional, non-default connection points|The workload must request additional non-default connection points through the use of workload annotations or resource requests and limits within the container spec passed to the Kubernetes API Server.|[req.int.api.01](chapter02.md#23-kubernetes-architecture-requirements)|N/A|
-|`ra2.app.007`|Host Volumes|Workloads should not use `hostPath` volumes, as [Pods with identical configuration (such as created from a PodTemplate) may behave differently on different nodes due to different files on the nodes.](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath)|[req.kcm.gen.02](chapter02.md#23-kubernetes-architecture-requirements)|N/A|
-|`ra2.app.008`|Infrastructure dependency|Workloads must not rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue). |TBD|N/A|
-|`ra2.app.009`|Device plugins|Workload descriptors must use the resources advertised by the device plugins to indicate their need for an FPGA, SR-IOV or other acceleration device.|TBD|N/A|
-|`ra2.app.010`|Node Feature Discovery (NFD)|Workload descriptors must use the labels advertised by [Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) to indicate which node software of hardware features they need.|TBD|N/A|
+|`ra2.app.001`| [Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md) Parameter Group (OCI Spec) | Specifies the container's root filesystem. | TBD | N/A |
+|`ra2.app.002`| [Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts) Parameter Group (OCI Spec) | Specifies additional mounts beyond root. | TBD | N/A |
+|`ra2.app.003`| [Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process) Parameter Group (OCI Spec) | Specifies the container process. | TBD | N/A |
+|`ra2.app.004`| [Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname) Parameter Group (OCI Spec) | Specifies the container's hostname as seen by processes running inside the container. | TBD | N/A |
+|`ra2.app.005`| [User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user) Parameter Group (OCI Spec) | User for the process is a platform-specific structure that allows specific control over which user the process runs as. | TBD | N/A |
+|`ra2.app.006`| Consumption of additional, non-default connection points | The workload must request additional non-default connection points through the use of workload annotations or resource requests and limits within the container spec passed to the Kubernetes API Server. | [req.int.api.01](chapter02.md#23-kubernetes-architecture-requirements) | N/A |
+|`ra2.app.007`| Host Volumes | Workloads should not use `hostPath` volumes, as [Pods with identical configuration](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath) (such as those created from a PodTemplate) may behave differently on different nodes due to different files on the nodes. | [req.kcm.gen.02](chapter02.md#23-kubernetes-architecture-requirements). | N/A |
+|`ra2.app.008`| Infrastructure dependency | Workloads must not rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue). | TBD | N/A |
+|`ra2.app.009`| Device plugins | Workload descriptors must use the resources advertised by the device plugins to indicate their need for an FPGA, SR-IOV or other acceleration device. | TBD | N/A |
+|`ra2.app.010`| Node Feature Discovery (NFD)|Workload descriptors must use the labels advertised by [Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) to indicate which node software of hardware features they need. | TBD | N/A |
 
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
 ## 4.10 Additional required components
 
-> This chapter should list any additional components needed to provide the services defined in Chapter 3.2 (e.g: Prometheus)
+> This chapter should list any additional components needed to provide the services defined in Chapter 3.2 (e.g., Prometheus)
