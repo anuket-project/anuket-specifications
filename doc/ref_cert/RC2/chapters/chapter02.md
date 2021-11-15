@@ -1,6 +1,6 @@
 # Kubernetes Test Cases and Requirements Traceability
 
-![Scope](../figures/bogo_ifo.png)
+![Scope](../figures/bogo_lsf.png)
 
 ## Introduction
 
