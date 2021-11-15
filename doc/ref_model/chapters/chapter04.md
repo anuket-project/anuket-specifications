@@ -265,11 +265,11 @@ Table 4-10 shows performance measurement capabilities.
 
 ### 4.1.7 Acceleration/Offload API Requirements 
 HW Accelerators and Offload functions with abstracted interfaces are preferred and can functionally be interchanged, but their characteristics might vary. It is also likely that the CNFs/VNFs and the Cloud Infrastructure will have certification requirements for the implementations.  A SW implementation of these functions is also often needed to have the same abstracted interfaces for the deployment situations when there are no more HW Accelerator or Offload resources available.
- 
+
 For Accelerators and Offload functions with externally exposed differences in their capabilities or management functionality these differences must be clear through the management API either explicit for the differing functions or implicit through the use of a unique APIs.
  
 Regardless of the exposed or internal capabilities and characteristics, the operators generally require a choice of implementations for Accelerators and Offload function realisation, and, thus, the need for ease of portability between implementations and vendors.
- 
+
 The following table of requirements are derived from the VNF/CNF applications, Cloud Infrastructure and Telco Operators needs to have multiple realisations of HW Acceleration and Offload functions that can also be implemented through SW when no special hardware is available. These requirements should be adopted in Reference Architectures to ensure that the different implementations on the market are as aligned as possible in their interfaces and that HW Acceleration and Offload functions get an efficient ecosystem of accelerators that compete on their technical merits and not through obscure or proprietary interfaces.
 
 **Table 4-12** shows Acceleration/Offload API Capabilities.
@@ -345,7 +345,7 @@ Hardware resources configured as per the Basic profile (B) such that they are on
 
 #### 4.2.1.2 High Performance Profile
 
-The high-performance profile (H) is intended to be used for workloads that require predictable performance, high network throughput requirements and/or low network latency. To satisfy predictable performance needs, NUMA alignment, CPU pinning, and Huge pages are enabled. For obvious reasons, the high-performance profile doesn’t support over-subscription.
+The high-performance profile (H) is intended to be used for workloads that require predictable performance, high network throughput requirements and/or low network latency. To satisfy predictable performance needs, NUMA alignment, CPU pinning, and huge pages are enabled. For obvious reasons, the high-performance profile doesn’t support over-subscription.
 
 
 ### 4.2.2 Profiles Specifications & Capability Mapping
@@ -391,13 +391,15 @@ Profile Extensions represent small deviations from or further qualification of t
 
 ### 4.2.4 Workload Flavours and Other Capabilities Specifications
 
+
 The workload requests a set of resource capabilities needed by it, including its components, to run successfully. 
 The GSMA document OPG.02 "Operator Platform Technical Requirements" [34] defines "Resource Flavour" as this set of capabilities. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources needed (workload flavour), and extra specifications for workload placement; as defined in [Section 4.2 Profiles and Workload Flavours](#42-profiles-and-workload-flavours) above. 
 
 This section provides details of the capabilities that need to be provided in a resource request. The [profiles](#421-profiles), the [profile specifications](#422-profiles-specifications--capability-mapping) and the [profile extensions](#423-profile-extensions) specify the infrastructure (hardware and software) configuration. In a resource request they need to be augmented with workload specific capabilities and configurations, including the [sizing of requested resource](#4241-workload-flavours-geometry-sizing), extra specifications including those related to the placement of the workload  [section 4.2.4.2](#4242-workloads-extra-capabilities-specifications), virtual network [section 4.2.5](#425-virtual-network-interface-specifications) and storage extensions [section 4.2.6](#426-storage-extensions).
 
 
-#### 4.2.4.1 Workload Flavours Geometry (Sizing) 
+#### 4.2.4.1 Workload Flavours Geometry (Sizing)
+
 
 Workload Flavours (sometimes also referred to as “compute flavours”) are sizing specifications beyond the capabilities specified by node profiles. Workload flavours represent the compute, memory, storage, and network resource sizing templates used in requesting resources on a host that is conformant with the profiles and profile extensions. The workload flavour specifies the requested resource’s (VM, container) compute, memory and storage characteristics. Workload Flavours can also specify different storage resources such as ephemeral storage, swap disk, network speed, and storage IOPs.
 
@@ -500,5 +502,3 @@ Persistent storage is associated with workloads via Storage Extensions. The stor
 <p align="center"><b>Table 4-15:</b> Storage Extensions</p>
 
 >_*Note:*_ Performance is based on a block size of 256KB or larger.
-
-
