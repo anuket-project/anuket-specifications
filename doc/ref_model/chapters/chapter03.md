@@ -844,7 +844,7 @@ The following diagram presents an example of the realization of the reference mo
 
 <p align="center"><img src="../figures/ch03-model-realization-diagram-2.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>
 
-<p align="center"><b>Figure 3-15:</b> Reference model realization example</p>
+<p align="center"><b>Figure 3-21:</b> Reference model realization example</p>
 
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 3.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.5) of this Reference Model document.
@@ -852,9 +852,9 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 <a name="3.8"></a>
 ## 3.8 Hardware Acceleration Abstraction
 
-The purpose of a HW Accelerator is to either Accelerate the execution of an application or to Offload functions from the generic CPU to make the application and/or Cloud Infrastructure more efficient from one or more aspects.
+The purpose of a Hardware Accelerator is to either Accelerate the execution of an application or to Offload functions from the generic CPU to make the application and/or Cloud Infrastructure more efficient from one or more aspects.
 
-Hardware Accelerators are often used in Telco Clouds for many reasons. Some applications require an HW Accelerator to perform tasks that a generic CPU cannot perform fast enough, with enough timing accuracy, or handle the traffic that must be kept in a single context. Other applications could be satisfied with a generic CPU performance in some deployment cases, whilst being inefficient in other situations. The Cloud Infrastructure might also benefit from specialised accelerated HW devices to perform its tasks with less power, space, or cost than a generic CPU.
+Hardware Accelerators are often used in Telco Clouds for many reasons. Some applications require an Hardware Accelerator to perform tasks that a generic CPU cannot perform fast enough, with enough timing accuracy, or handle the traffic that must be kept in a single context. Other applications could be satisfied with a generic CPU performance in some deployment cases, whilst being inefficient in other situations. The Cloud Infrastructure might also benefit from specialised accelerated HW devices to perform its tasks with less power, space, or cost than a generic CPU.
  
 The Accelerators are specialized resources and generally not expected to exist in large quantities, which makes it important that these limited HW Accelerators are carefully assigned to where they can be best used most of the time. In general, this requires that there be software-based alternative functions that can be used for the occasions when HW Accelerators can not be assigned to accelerate or offload applications or Cloud Infrastructure tasks.
  
@@ -877,17 +877,17 @@ Accelerator technologies can be categorized depending on where they are realized
 
 <p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
 
-<p align="center"><b>Figure 3-16:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+<p align="center"><b>Figure 3-22:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
 
 
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
 
-Figure 3-17 gives examples for the Hardware Accelerators shown in Figure 3-15 (the [Sample reference model realization](#3.7) diagram).
+Figure 3-23 gives examples for the Hardware Accelerators shown in Figure 3-21 (the [Sample reference model realization](#3.7) diagram).
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
 
-<p align="center"><b>Figure 3-17:</b> Hardware Acceleration in RM Realization Diagram</p>
+<p align="center"><b>Figure 3-23:</b> Hardware Acceleration in RM Realization Diagram</p>
 
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
@@ -913,7 +913,7 @@ O-RAN Alliance’s Cloudification and Orchestration Workgroup (WG6) defines the 
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram_AAL.png" alt="AAL Interface in RM Realization Diagram" Title="AAL Interface in RM Realization Diagram" width="65%"/></p>
 
-<p align="center"><b>Figure 3-18:</b> AAL Interface in RM Realization Diagram</p>
+<p align="center"><b>Figure 3-24:</b> AAL Interface in RM Realization Diagram</p>
 
 The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” (O-RAN.WG6.AAL-GAnP-v01.00, November 2020, available to the public upon agreement to the O-RAN Alliance Adopter License, from [https://www.o-ran.org](https://www.o-ran.org)):
 -	Describes the functions conveyed over the AAL interface, including configuration and management functions.
@@ -961,7 +961,7 @@ There are two main types of Smart NICs that can accelerate network functions in-
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
 
-<p align="center"><b>Figure 3-19:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+<p align="center"><b>Figure 3-25:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
 
 
 #### 3.8.7.1 Simple SmartNIC
