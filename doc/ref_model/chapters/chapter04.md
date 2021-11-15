@@ -204,7 +204,7 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 
 ### 4.1.5 Cloud Infrastructure Management Capabilities
 
-The Cloud Infrastructure Manager (CIM) is responsible for controlling and managing the Cloud Infrastructure compute, storage, and network resources. Resources are dybamically allocated based on workload requirements. This section covers the list of capabilities offered by the CIM to workloads or service orchestrator.
+The Cloud Infrastructure Manager (CIM) is responsible for controlling and managing the Cloud Infrastructure compute, storage, and network resources. Resources are dynamically allocated based on workload requirements. This section covers the list of capabilities offered by the CIM to workloads or service orchestrator.
 
 Table 4-9 shows capabilities related to resources allocation.
 
