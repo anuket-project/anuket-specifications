@@ -1,7 +1,6 @@
-[<< Back](../)
+﻿# 4. Operational Runbook
 
-# 4. Operational Runbook
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+![State](../figures/bogo_sdc.png) <!-- width="35" -->
 
 ## Table of Contents
 * [4.1 Introduction](#4.1)
@@ -17,7 +16,7 @@
 
 This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The entire deployment has been tested in Anuket Labs as a part of the [Anuket Kuberef project](https://wiki.anuket.io/display/HOME/Kuberef), that aims to deliver RI-2 based on RA-2 specifications. The Kuberef project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop and test against. Currently, Kuberef supports deployments on both baremetal, as well as pre-provisioned infrastructure (for e.g. offered by baremetal providers like Equinix Metal, etc.).
 
-The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. Host provisioning is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage, etc. This stage can be skipped when using pre-provisioned hardware, infrastructure providers, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
+The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. Host provisioning is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage, etc. This stage can be skipped when using preprovisioned hardware, infrastructure providers, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
 
 <a name="4.2"></a>
 ## 4.2 Prerequisites
@@ -113,7 +112,7 @@ References for the above features:
 
 Additional settings are available in the BMRA templates located in `playbooks/roles/bmra-config/templates`. Changing these might have unexpected results and should generally not be done.
 
-You will also have to modify environmental variables defined in `deploy.env` to match your setup. For deploying Kuberef on pre-provisioned infrastructure, set `deployment_type=k8s`.
+You will also have to modify environmental variables defined in `deploy.env` to match your setup. For deploying Kuberef on preprovisioned infrastructure, set `deployment_type=k8s`.
 
 Once ready, issue the following command to initiate the deployment
 
