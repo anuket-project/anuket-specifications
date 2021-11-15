@@ -4,7 +4,7 @@
 This is OpenStack based Reference Architecture (RA-1)
 
 ## Release Information
-**Bundle: 6_**
+**Bundle: _6_**
 
 **Version: _0_**
 
