@@ -123,7 +123,7 @@ _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 Virtual Compute
-A virtual machine or a container/pod is used by a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and, since it will need to communicate with other communication partners, it is assumed that the networks have been provisioned in advance.
+A virtual machine or a container/pod capable of hosting the application components of workloads (VNFs/CNFs) of the Tenant. A virtual compute therefore requires a tenant execution context and, since it will need to communicate with other communication partners, it is assumed that the networks have been provisioned in advance.
 
 _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
@@ -142,7 +142,10 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <a name="3.2.1.3"></a>
 #### 3.2.1.3 Virtual Storage
 
-A virtual machine and container can consume storage through a number of means. These include storage that is managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and Shared File Storage, and the Object storage which is connected via the tenant / user overlay network. The details of the tenant storage consumption model are covered in section "3.6.3 Storage for Tenant Consumption".
+A virtual machine and container can consume storage through a number of means. These include storage that is:
+ - managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and
+ - Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
+The details of the tenant storage consumption model are covered in section ["3.6.3 Storage for Tenant Consumption"](#3.6.3).
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity and behaviours. The set of selectable attributes includes:
  * Storage class: Block, File, Object.
@@ -171,11 +174,11 @@ Storage resources have the following attributes, with metric definitions that su
 
 <a name="3.2.1.4"></a>
 #### 3.2.1.4 Virtual Network
-This topic is currently covered in [Network](#3.5) section.
+This topic is covered in [Network](#3.5) section.
 
 <a name="3.2.1.5"></a>
 #### 3.2.1.5 Availability Zone
-An availability zone is a logical pool of physical resources (e.g. compute, block storage, and network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase its fault-tolerance.
+An availability zone is a logical pool of physical resources (e.g. compute, block storage, and network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase the workloads fault-tolerance.
 
 As a logical group with operator-specified criteria, the only mandatory attribute for an Availability Zone is the name.
 
@@ -188,7 +191,7 @@ As a logical group with operator-specified criteria, the only mandatory attribut
 
 <a name="3.2.2"></a>
 ### 3.2.2 Virtual Infrastructure Manager
-The virtual infrastructure manager allows to:
+The virtual infrastructure manager allows:
 
 * setup, manage and delete tenants,
 * setup, manage and delete user- and service-accounts,
@@ -217,8 +220,8 @@ The virtual infrastructure manager allows to:
 * **Storage Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware storage resources
 
 * **Network Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware network resources
-<a name="3.3"></a>
 
+<a name="3.3"></a>
 ## 3.3 Hardware Infrastructure Layer
 
 <a name="3.3.1"></a>
@@ -228,12 +231,14 @@ Compute, Storage and Network resources serve as the foundation of the cloud infr
 <p align="center"><img src="../figures/ch03-model-hardware-resources.png" alt="Cloud Infrastructure Hardware Resources" Title="Cloud Infrastructure Hardware Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-4:</b> Cloud Infrastructure Hardware Resources</p>
 
-In managed Hardware Infrastructure systems, these consumable Compute, Storage and Network resources can be provisioned through operator commands or through software APIs.  There is a need to distinguish between these consumable resources, that are treated as leased resources, from the actual physical hardware resources that are installed in the data centre. For this purpose, the hardware resource layer is conceptually split into a Logical Resource Layer that surfaces the consumable resources to the software layer above, and the Physical Resource Layer that is operated and managed by the Data Centre Operations team from the Hardware Infrastructure Management functions perspective.
+In managed Hardware Infrastructure systems, these consumable Compute, Storage and Network resources can be provisioned through operator commands or through software APIs.  There is a need to distinguish between these consumable resources, that are treated as leased resources, from the actual physical hardware resources that are installed in the data centre. For this purpose, the hardware resource layer is conceptually split into a Logical Resource Layer that surfaces the consumable resources to the software layer above, and the Physical Resource Layer that is operated and managed by the Cloud Infrastructure Providers Operations team from the Hardware Infrastructure Management functions perspective.
 
-Some installations might use a cluster of managed switches or storage components controlled by a Switch Fabric controller and/or a Storage Fabric controller acting as an appliance system. These systems should be federated with the HW Infrastructure Management system over some API to facilitate exchange of configuration intent, status and telemetry information allowing the HW Infrastructure Management and Management stack to automate Cloud Infrastructure operations. These appliance systems normally also have their own Equipment Management APIs and procedures for the hardware installation and maintenance staff.
+Some installations might use a cluster of managed switches or storage components controlled by a Switch Fabric controller and/or a Storage Fabric controller acting as an appliance system. These systems should be federated with the HW Infrastructure Management system over some API to facilitate exchange of configuration intent, status and telemetry information allowing the Hardware Infrastructure Management and Management stack to automate Cloud Infrastructure operations. These appliance systems normally also have their own Equipment Management APIs and procedures for the hardware installation and maintenance staff.
 
-An example could be a  Cloud Infrastructure stack federated with a commercial Switch Fabric where the Cloud Infrastructure shall be able to "send" networking configuration intent to the Switch Fabric and the Switch Fabric shall be able to "send" status and telemetry information to the Cloud Infrastructure e.g. Port/Link Status and packet counters of many sorts. The word "send" is a very lose definition of getting a message across to the other side, and could be implemented in many different ways.
-This allows HW Infrastructure Management and Cloud Infrastructure management stack to have network automation that includes the switches that are controlled by the federated Switch Fabric. This would be a rather normal case for Operators  that have a separate Networking Department that owns and runs the Switch Fabric separately from the Data Centre.
+An example could be a  Cloud Infrastructure stack federated with a commercial Switch Fabric where the Cloud Infrastructure shall be able to "send" networking configuration intent to the Switch Fabric and the Switch Fabric shall be able to "send" (see note below) status and telemetry information to the Cloud Infrastructure e.g. Port/Link Status and packet counters of many sorts.
+This allows Hardware Infrastructure Management and Cloud Infrastructure management stack to have network automation that includes the switches that are controlled by the federated Switch Fabric. This would be a rather normal case for Operators  that have a separate Networking Department that owns and runs the Switch Fabric separately from the Data Centre.
+
+NOTE: The word "send" is a very lose definition of getting a message across to the other side, and could be implemented in many different ways.
 
 <a name="3.3.1.1"></a>
 #### 3.3.1.1 Hardware Acceleration Resources
