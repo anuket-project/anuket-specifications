@@ -117,7 +117,7 @@ Depending on the tool used for provisioning, there are likely configuration para
 - Host information (IPs for SSH)
 - Cluster information (Master/worker node distribution and datastore)
 - CPU isolation (Kernel)
-- Memory allocation (Hugepages)
+- Memory allocation (huge pages)
 - Network interfaces (PFs/VFs and drivers)
 - Additional Kubernetes features (device plugins, CNIs)
 
