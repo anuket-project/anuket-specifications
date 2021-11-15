@@ -236,8 +236,6 @@ The High Performance profile can specify extensions for hardware offloading; ple
 
 Based on the infrastructure deployed at the edge, Table 8-3 specifies the [Infrastructure Profile features and requirements](./chapter05.md) that would need to be relaxed.
 
-**Table 8-3. TEC Exceptions to [Infrastructure Profile features and requirements](./chapter05.md)**
-
 | Reference | Feature | Description | As Specified in RM Chapter 05| | Exception for Edge | |
 |----|----|----|----|----|----|----|
 | | | | **Basic Type** | **High Performance** | **Basic Type** | **High Performance** |
@@ -247,6 +245,8 @@ Based on the infrastructure deployed at the edge, Table 8-3 specifies the [Infra
 | infra.hw.cpu.cfg.002 | Minimum Number of cores per CPU | This determines the number of cores needed per CPU. | 20 | 20 | 1 | 1 |
 | infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment support and BIOS configured to enable NUMA | N | Y | N | Y<sup>*</sup> |
 
+<p align="center"><b>Table 8-4. TEC Exceptions to Infrastructure Profile features and requirements</b></p>
+
 <sup>*</sup> immaterial if the number of CPU sockets (infra.hw.cpu.cfg.001) is 1
 
 Please note that none of the listed parameters form part of a typical OpenStack flavour except that the vCPU and memory requirements of a flavour cannot exceed the available hardware capacity.
@@ -255,8 +255,6 @@ Please note that none of the listed parameters form part of a typical OpenStack 
 ### 8.3.4  Telco Edge Cloud: Platform Services Deployment
 This section characterises the hardware capabilities for different edge deployments and the Platform services that run on the infrastructure. Please note, that the Platform services are containerised to save resources, and benefit from intrinsic availability and auto-scaling capabilities.
 
-**Table 8-4. Characteristics of Infrastructure nodes**
-
 | | Platform Services | | | | | | | | Storage | | | | Network Services | | |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |  | Identity | Image | Placement | Compute | Networking | Message Queue | DB Server | | Ephemeral | Persistent Block | Persistent Object | | Management | Underlay (Provider) | Overlay |
@@ -264,6 +262,7 @@ This section characterises the hardware capabilities for different edge deployme
 | Workload Nodes<br>(Compute) |  |  |  | &#9989; | &#9989; |  |  | | &#9989; | &#9989; | &#9989; | | &#9989; | &#9989; | &#9989; |
 | Storage Nodes |  |  |  |  |  |  |  | | | &#9989; | &#9989; | | &#9989; | &#9989; | &#9989; |
 
+<p align="center"><b>Table 8-5. Characteristics of Infrastructure nodes</b></p>
 
 Depending on the facility capabilities, deployments at the edge may be similar to one of the following:
 - Small footprint edge device
@@ -275,12 +274,11 @@ Depending on the facility capabilities, deployments at the edge may be similar t
 <a name="8.3.5"></a>
 ### 8.3.5 Comparison of Deployment Topologies and Edge terms
 
-
-**Table 8-5. Comparison of Deployment Topologies**
-
 | This Specification | Compute | Storage | Networking | RTT | Security | Scalability | Elasticity | Resiliency | Preferred Workload Architecture | Upgrades |  | OpenStack | OPNFV Edge | Edge Glossary | GSMA |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Regional Data Centre (DC)<br><br>Fixed | 1000's<br><br>Standardised<br><br>>1 CPU<br><br>>20 cores/CPU | 10's EB<br><br>Standardised<br><br>HDD and NVMe<br><br>Permanence | >100 Gbps<br><br>Standardised | ~100 ms | Highly Secure | Horizontal and unlimited scaling | Rapid spin up and down | Infrastructure architected for resiliency<br><br>Redundancy for FT and HA | Microservices based<br><br>Stateless<br><br>Hosted on Containers |  <br><br>Firmware: When required<br><br>Platform SW: CD |  | Central Data Centre |  |  |  
 | Metro Data Centres<br>Fixed | 10's to 100's<br><br>Standardised<br><br>>1 CPU<br><br>>20 cores/CPU | 100's PB<br><br>Standardised<br><br>NVMe on PCIe<br><br>Permanence | > 100 Gbps<br><br>Standardised | ~10 ms | Highly Secure | Horizontal but limited scaling | Rapid spin up and down | Infrastructure architected for some level of resiliency<br><br>Redundancy for limited FT and HA | Microservices based<br><br>Stateless<br><br>Hosted on Containers |  <br><br>Firmware: When required<br><br>Platform SW: CD |  | Edge Site | Large Edge | Aggregation Edge |  
 | Edge<br>Fixed / Mobile | 10's<br><br>Some Variability<br><br>>=1 CPU<br><br>>10 cores/CPU | 100 TB<br><br>Standardised<br><br>NVMe on PCIe<br><br>Permanence / Ephemeral | 50 Gbps<br><br>Standardised | ~5 ms | Low Level of Trust | Horizontal but highly constrained scaling, if any | Rapid spin up (when possible) and down | Applications designed for resiliency against infra failures<br><br>No or highly limited redundancy | Microservices based<br><br>Stateless<br><br>Hosted on Containers |  <br><br>Firmware: When required<br><br>Platform SW: CD |  | Far Edge Site | Medium Edge | Access Edge / Aggregation Edge |  
 | Mini-/Micro-Edge<br>Mobile / Fixed | 1's<br><br>High Variability<br><br>Harsh Environments<br><br>1 CPU<br><br>>2 cores/CPU | 10's GB<br><br>NVMe<br><br>Ephemeral<br><br>Caching | 10 Gbps<br><br>Connectivity not Guaranteed | <2 ms<br><br>Located in network proximity of EUD/IoT | Untrusted | Limited Vertical Scaling (resizing) | Constrained | Applications designed for resiliency against infra failures<br><br>No or highly limited redundancy | Microservices based or monolithic<br><br>Stateless or Stateful<br><br>Hosted on Containers or VMs<br><br><br>Subject to QoS, adaptive to resource availability, viz. reduce resource consumption as they saturate |  <br> <br><br>Platform  |  | Fog Computing (Mostly deprecated terminology)<br><br>Extreme Edge<br><br>Far Edge | Small Edge | Access Edge |
+
+<p align="center"><b>Table 8-6. Comparison of Deployment Topologies</b></p>
