@@ -198,8 +198,8 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | Feature:Flexvolumes                   |               |                                |
 | Feature:GKELocalSSD                   |               |                                |
 | Feature:VolumeSnapshotDataSource      |               |                                |
-| Feature:Volumes                       |               |                                |
+| Feature:Volumes                       | X             |                                |
 | Feature:vsphere                       |               |                                |
 | Feature:Windows                       |               |                                |
-| NodeFeature:EphemeralStorage          |               |                                |
+| NodeFeature:EphemeralStorage          | X             |                                |
 | NodeFeature:FSGroup                   | X             |                                |
