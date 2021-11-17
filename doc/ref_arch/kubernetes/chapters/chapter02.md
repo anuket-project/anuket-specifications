@@ -29,7 +29,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## 2.2 Reference Model Requirements
 
-The tables below contain the requirements from the Reference Model to cover the Basic and High-Performance profiles.  The table also includes a reference to the specification from [Chapter 04 - Component Level Architecture](./chapter04.md) and from [Chapter 05 - Security Guidance](/chapter05.md) to ensure traceability.
+The tables below contain the requirements from the Reference Model to cover the Basic and High-Performance profiles.  The table also includes a reference to the specification from [Chapter 04 - Component Level Architecture](./chapter04.md) and from [Chapter 05 - Security Guidance](/chapter05.md) to ensure traceability. If the related Specification does not exist, the reference will read "N/A" (and in bold "**N/A**" for mandatory requirements).
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
 
