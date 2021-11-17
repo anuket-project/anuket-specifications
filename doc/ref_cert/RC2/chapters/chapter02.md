@@ -428,7 +428,7 @@ The following software versions are considered to verify Kubernetes v1.22
 
 The following test case must pass as they are for Reference Conformance:
 
-| container                                     | test case                | criteria | requirements                          |
+| container                                     | test suite                | criteria | requirements                          |
 |-----------------------------------------------|--------------------------|:--------:|---------------------------------------|
 | opnfv/functest-kubernetes-smoke:v1.22         | xrally_kubernetes        | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.22         | k8s_conformance          | PASS     | Kubernetes API testing                |
