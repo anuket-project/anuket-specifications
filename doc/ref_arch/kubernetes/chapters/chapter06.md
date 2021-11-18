@@ -114,7 +114,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | None                                   | X             | Kubernetes mainstream features |
 | Feature:[BoundServiceAccountTokenVolume](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/1205-bound-service-account-tokens/README.md)|               | ServiceAccount admission controller migration master upgrade should maintain a functioning cluster |
 | Feature:NodeAuthenticator              | X             | The kubelet's main port 10250 should reject requests with no credentials |
-| Feature:NodeAuthorizer                 | X             | Setting a non-existent configmap should exit with the Forbidden error, not a NotFound error |
+| Feature:NodeAuthorizer                 | X             | Setting existing and non-existent attributes should exit with the Forbidden error, not a NotFound error |
 | Feature:PodSecurityPolicy              |               | Should enforce the restricted policy.PodSecurityPolicy |
 | NodeFeature:FSGroup                    | X             | ServiceAccounts should set ownership and permission when RunAsUser or FsGroup is present |
 
