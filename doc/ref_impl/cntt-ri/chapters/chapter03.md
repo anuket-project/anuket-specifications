@@ -92,7 +92,7 @@ This profile is the global settings for the whole Cloud Infrastructure, which me
 | CPU allocation ratio  | 4:1 | 1:1  |
 | NUMA awareness | N | Y |
 | CPU pinning capability | N | Y |
-| Huge Pages | N | Y |
+| Huge pages | N | Y |
 | Catalogue storage Types | Y  | Y  |
 | Storage Block | Y | Y |
 | Storage Object | Y | Y |
