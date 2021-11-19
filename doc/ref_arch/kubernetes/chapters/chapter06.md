@@ -66,19 +66,19 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | authentication.k8s.io        | v1                   |
 | authorization.k8s.io         | v1                   |
 | autoscaling                  | v1, v2beta2, v2beta1 |
-| batch                        | v1, v1beta1          |
+| batch                        | v1                   |
 | certificates.k8s.io          | v1                   |
 | coordination.k8s.io          | v1                   |
 | core                         | v1                   |
-| discovery.k8s.io             | v1, v1beta1          |
-| events.k8s.io                | v1, v1beta1          |
+| discovery.k8s.io             | v1                   |
+| events.k8s.io                | v1                   |
 | flowcontrol.apiserver.k8s.io | v1beta1              |
 | networking.k8s.io            | v1                   |
-| node.k8s.io                  | v1, v1beta1          |
-| policy                       | v1, v1beta1          |
+| node.k8s.io                  | v1                   |
+| policy                       | v1                   |
 | rbac.authorization.k8s.io    | v1                   |
 | scheduling.k8s.io            | v1                   |
-| storage.k8s.io               | v1, v1beta1          |
+| storage.k8s.io               | v1                   |
 
 ## 6.2 [API Machinery Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-api-machinery)
 
@@ -114,7 +114,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | None                                   | X             | Kubernetes mainstream features |
 | Feature:[BoundServiceAccountTokenVolume](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/1205-bound-service-account-tokens/README.md)|               | ServiceAccount admission controller migration master upgrade should maintain a functioning cluster |
 | Feature:NodeAuthenticator              | X             | The kubelet's main port 10250 should reject requests with no credentials |
-| Feature:NodeAuthorizer                 | X             | Setting a non-existent configmap should exit with the Forbidden error, not a NotFound error |
+| Feature:NodeAuthorizer                 | X             | Setting existing and non-existent attributes should exit with the Forbidden error, not a NotFound error |
 | Feature:PodSecurityPolicy              |               | Should enforce the restricted policy.PodSecurityPolicy |
 | NodeFeature:FSGroup                    | X             | ServiceAccounts should set ownership and permission when RunAsUser or FsGroup is present |
 
@@ -198,8 +198,8 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | Feature:Flexvolumes                   |               |                                |
 | Feature:GKELocalSSD                   |               |                                |
 | Feature:VolumeSnapshotDataSource      |               |                                |
-| Feature:Volumes                       |               |                                |
+| Feature:Volumes                       | X             |                                |
 | Feature:vsphere                       |               |                                |
 | Feature:Windows                       |               |                                |
-| NodeFeature:EphemeralStorage          |               |                                |
+| NodeFeature:EphemeralStorage          | X             |                                |
 | NodeFeature:FSGroup                   | X             |                                |

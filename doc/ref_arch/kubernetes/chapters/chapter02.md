@@ -2,6 +2,7 @@
 [<< Back](../../kubernetes)
 
 # 2. Architecture Requirements
+
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents <!-- omit in toc -->
@@ -28,7 +29,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## 2.2 Reference Model Requirements
 
-The tables below contain the requirements from the Reference Model to cover the Basic and High-Performance profiles.  The table also includes a reference to the specification from [Chapter 04 - Component Level Architecture](./chapter04.md) and from [Chapter 05 - Security Guidance](/chapter05.md) to ensure traceability.
+The tables below contain the requirements from the Reference Model to cover the Basic and High-Performance profiles.  The table also includes a reference to the specification from [Chapter 04 - Component Level Architecture](./chapter04.md) and from [Chapter 05 - Security Guidance](/chapter05.md) to ensure traceability. If the related Specification does not exist, the reference will read "N/A" (and in bold "**N/A**" for mandatory requirements).
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
 
@@ -45,31 +46,31 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.002 | Max memory in MB that can be assigned to a single Pod by the Cloud Infrastructure | at least 32 GB | at least 32 GB | [ra2.ch.012](chapter04.md#42-kubernetes-node)|
 | [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.003 | Max storage in GB that can be assigned to a single Pod by the Cloud Infrastructure | at least 320 GB | at least 320 GB | [ra2.ch.010](chapter04.md#42-kubernetes-node)|
 | [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.004 | Max number of connection points that can be assigned to a single Pod by the Cloud Infrastructure | 6 | 6 | [ra2.ntw.003](chapter04.md#45-networking-solutions) |
-| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.005 | Max storage in GB that can be attached / mounted to Pod by the Cloud Infrastructure | Up to 16TB<sup>(1)</sup> | Up to 16TB<sup>()</sup> | |
+| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.005 | Max storage in GB that can be attached / mounted to Pod by the Cloud Infrastructure | Up to 16TB<sup>(1)</sup> | Up to 16TB<sup>()</sup> | N/A |
 | [4.2.2](../../../ref_model/chapters/chapter04.md#422-profiles-specifications--capability-mapping) | e.cap.006 | CPU pinning support | Not required | Must support | [ra2.k8s.009](chapter04.md#43-kubernetes)|
 | [4.2.2](../../../ref_model/chapters/chapter04.md#422-profiles-specifications--capability-mapping) | e.cap.007 | NUMA support | Not required | Must support | [ra2.k8s.006](chapter04.md#43-kubernetes)|
-| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.008 | IPSec Acceleration using the virtio-ipsec interface | Not required | Optional | |
-| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.009 | Crypto Acceleration using the virtio-crypto interface | Not required | Optional | |
-| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.010 | Transcoding Acceleration | Not required | Not required | |
-| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.011 | Programmable Acceleration | Not required | Not required | |
-| [4.1.2](../../../ref_model/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.012 | Enhanced Cache Management: L=Lean; E=Equal; X=eXpanded | E | E | |
+| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.008 | IPSec Acceleration using the virtio-ipsec interface | Not required | Optional | N/A |
+| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.009 | Crypto Acceleration using the virtio-crypto interface | Not required | Optional | N/A |
+| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.010 | Transcoding Acceleration | Not required | Not required | N/A |
+| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.011 | Programmable Acceleration | Not required | Not required | N/A |
+| [4.1.2](../../../ref_model/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.012 | Enhanced Cache Management: L=Lean; E=Equal; X=eXpanded | E | E | N/A |
 | [4.2.2](../../../ref_model/chapters/chapter04.md#422-profiles-specifications--capability-mapping) | e.cap.013 | SR-IOV over PCI-PT | Not required | Must support | [ra2.ch.002](chapter04.md#42-kubernetes-node)<br>[ra2.ch.003](chapter04.md#42-kubernetes-node)<br>[ra2.k8s.007](chapter04.md#43-kubernetes)<br>[ra2.ntw.004](chapter04.md#45-networking-solutions)<br>[ra2.ntw.008](chapter04.md#45-networking-solutions)|
 | [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.014 | Hardware coprocessor support (GPU/NPU) | Not required | Not required | N/A|
-| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.015 | SmartNICs | Not required | Optional | |
+| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.015 | SmartNICs | Not required | Optional | N/A |
 | [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | e.cap.016 | FPGA/other Acceleration H/W | Not required | Optional | [ra2.k8s.007](chapter04.md#43-kubernetes)<br>[ra2.ntw.012](chapter04.md#45-networking-solutions)|
-| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | *e.cap.017* | *Ability to monitor L2-L7 data from workload* | *n/a<sup>(2)</sup>* | *n/a<sup>(2)</sup>* | |
+| [4.1.2](../../../ref_model/chapters/chapter04.md#412-exposed-infrastructure-capabilities) | *e.cap.017* | *Ability to monitor L2-L7 data from workload* | *n/a<sup>(2)</sup>* | *n/a<sup>(2)</sup>* | N/A |
 | [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.cap.014 | Specifies the proportion of CPU cores consumed by the Cloud Infrastructure system on the worker nodes. If SMT is used, it indicates the number of consumed SMT threads. | 2 | 2 | [ra2.k8s.008](chapter04.md#43-kubernetes) |
 | [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the worker nodes | 16 GB | 16GB | |
 | [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.cap.016 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | [ra2.ch.004](chapter04.md#42-kubernetes-node)<br>[ra2.ch.005](chapter04.md#42-kubernetes-node)|
-| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | |
+| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | **N/A** |
 | [4.1.4](../../../ref_model/chapters/chapter04.chapter04.md#414-internal-infrastructure-capabilities) | i.cap.018 | Support for huge pages | Not required | Must support | [ra2.ch.001](chapter04.md#42-kubernetes-node)|
-| [4.1.4](../../../ref_model/chapters/chapter04.chapter04.md#414-internal-infrastructure-capabilities) | i.pm.001  | Monitor worker node CPU usage, per nanosecond | Must support | Must support | |
-| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.002  | Monitor pod CPU usage, per nanosecond | Must support | Must support | |
-| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.003  | Monitor worker node CPU utilisation (%) | Must support | Must support | |
-| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.004  | Monitor pod CPU utilisation | Must support | Must support | |
-| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.005  | Measure external storage IOPs | Must support | Must support | |
-| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.006  | Measure external storage throughput | Must support | Must support | |
-| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.007  | Measure external storage capacity | Must support | Must support | |
+| [4.1.4](../../../ref_model/chapters/chapter04.chapter04.md#414-internal-infrastructure-capabilities) | i.pm.001  | Monitor worker node CPU usage, per nanosecond | Must support | Must support | **N/A**  |
+| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.002  | Monitor pod CPU usage, per nanosecond | Must support | Must support | **N/A** |
+| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.003  | Monitor worker node CPU utilisation (%) | Must support | Must support | **N/A** |
+| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.004  | Monitor pod CPU utilisation | Must support | Must support | **N/A** |
+| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.005  | Measure external storage IOPs | Must support | Must support | **N/A** |
+| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.006  | Measure external storage throughput | Must support | Must support | **N/A** |
+| [4.1.4](../../../ref_model/chapters/chapter04.md#414-internal-infrastructure-capabilities) | i.pm.007  | Measure external storage capacity | Must support | Must support | **N/A** |
 
 <p align="center"><b>Table 2-1:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Capabilities</p>
 
@@ -82,11 +83,11 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for High-Performance Profile| Specification Reference |
 |---|---|---|---|---|---|
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-virtual-network-interface-specifications) | n1, n2, n3, n4, n5, n6	| 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-virtual-network-interface-specifications) | nn10, n20, n30, n40, n50, n60	| 10, 20, 30, 40, 50, 60 Gbps | Must support | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-virtual-network-interface-specifications) | n25, n50, n75, n100, n125, n150	| 25, 50, 75, 100, 125, 150 Gbps | Must support | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-virtual-network-interface-specifications) | nn50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-virtual-network-interface-specifications) | n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Must support | Must support | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-virtual-network-interface-specifications) | n1, n2, n3, n4, n5, n6 | 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | **N/A** |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-virtual-network-interface-specifications) | nn10, n20, n30, n40, n50, n60 | 10, 20, 30, 40, 50, 60 Gbps | Must support | Must support | **N/A** |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-virtual-network-interface-specifications) | n25, n50, n75, n100, n125, n150 | 25, 50, 75, 100, 125, 150 Gbps | Must support | Must support | **N/A** |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-virtual-network-interface-specifications) | nn50, n100, n150, n200, n250, n300 | 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | **N/A** |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-virtual-network-interface-specifications) | n100, n200, n300, n400, n500, n600 | 100, 200, 300, 400, 500, 600 Gbps | Must support | Must support | **N/A** |
 
 <p align="center"><b>Table 2-2:</b> Reference Model Requirements: Network Interface Specifications</p>
 
@@ -99,20 +100,20 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 | [5.1.1](../../../ref_model/chapters/chapter05.md#511-virtual-compute) | infra.com.cfg.003 | CPU pinning capability | Not required | Must support |[ra2.k8s.009](chapter04.md#43-kubernetes)|
 | [5.1.1](../../../ref_model/chapters/chapter05.md#511-virtual-compute) | infra.com.cfg.004 | Huge pages | Not required | Must support | [ra2.ch.001](chapter04.md#42-kubernetes-node)|
 | [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.cfg.002 | Storage Block | Must support | Must support | [ra2.stg.004](chapter04.md#46-storage-components)|
-| [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.cfg.003 | Storage with replication | Not required | Must support | |
-| [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | |
-| [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.acc.cfg.001 | Storage IOPS oriented | Not required | Must support | |
-| [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.acc.cfg.002 | Storage capacity oriented | Not required | Not required | |
-| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.001 | IO virtualisation using virtio1.1 | Must support<sup>(1)</sup> | Must support<sup>(1)</sup>| |
-| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.002 | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric.<sup>(2)</sup> | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | |
-| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.003 | Network Address Translation | Must support | Must support | |
-| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.004 | Security Groups | Must support | Must support | |
-| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.005 | SFC support | Not required | Must support | |
-| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | |
+| [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.cfg.003 | Storage with replication | Not required | Must support | **N/A** |
+| [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | **N/A** |
+| [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.acc.cfg.001 | Storage IOPS oriented | Not required | Must support | **N/A** |
+| [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.acc.cfg.002 | Storage capacity oriented | Not required | Not required | N/A |
+| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.001 | IO virtualisation using virtio1.1 | Must support<sup>(1)</sup> | Must support<sup>(1)</sup>| **N/A** |
+| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.002 | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric.<sup>(2)</sup> | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | **N/A** |
+| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.003 | Network Address Translation | Must support | Must support | **N/A** |
+| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.004 | Security Groups | Must support | Must support | [ra2.k8s.014](chapter04.md#43-kubernetes) |
+| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.005 | SFC support | Not required | Must support | **N/A** |
+| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | **N/A** |
 | [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.acc.cfg.001 | vSwitch optimisation | Not required | Must support DPDK<sup>(3)</sup>|[ra2.ntw.010](chapter04.md#45-networking-solutions)|
-| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.acc.cfg.002 | Support of HW offload | Not required | Optional, SmartNic | |
-| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.acc.cfg.003 | Crypto acceleration | Not required | Optional | |
-| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Not required | Optional | |
+| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.acc.cfg.002 | Support of HW offload | Not required | Optional, SmartNic | N/A |
+| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.acc.cfg.003 | Crypto acceleration | Not required | Optional | N/A |
+| [5.1.3](../../../ref_model/chapters/chapter05.md#513-virtual-networking) | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Not required | Optional | N/A |
 
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
 
@@ -128,17 +129,17 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.002 | Minimum number of Cores per CPU | 20 | 20 |[ra2.ch.008](chapter04.md#42-kubernetes-node)|
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support |[ra2.k8s.006](chapter04.md#43-kubernetes)|
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP) | Must support | Optional |[ra2.ch.004](chapter04.md#42-kubernetes-node)|
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cac.cfg.001 | GPU | Not required | Optional | |
-| [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.hdd.cfg.001 | Local Storage HDD | *No requirement specified* | *No requirement specified* | |
+| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cac.cfg.001 | GPU | Not required | Optional | N/A |
+| [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.hdd.cfg.001 | Local Storage HDD | *No requirement specified* | *No requirement specified* | N/A |
 | [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.ssd.cfg.002 | Local Storage SSD | Should support | Should support |[ra2.ch.009](chapter04.md#42-kubernetes-node)|
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | 4 |[ra2.ch.013](chapter04.md#42-kubernetes-node)|
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 10 | 25 |[ra2.ch.014](chapter04.md#42-kubernetes-node)<br>[ra2.ch.015](chapter04.md#42-kubernetes-node)|
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.001 | Number of PCIe slots available in the host | 8 | 8 | [ra2.ch.016](chapter04.md#42-kubernetes-node) |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 |[ra2.ch.016](chapter04.md#42-kubernetes-node) |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 |[ra2.ch.016](chapter04.md#42-kubernetes-node) |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.001 | Cryptographic Acceleration | Not required | Optional | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | Not required | Optional<sup>(1)</sup> | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.003 | Compression | Optional | Optional | |
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.001 | Cryptographic Acceleration | Not required | Optional | N/A |
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | Not required | Optional<sup>(1)</sup> | N/A |
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.003 | Compression | Optional | Optional | N/A |
 
 <p align="center"><b>Table 2-4:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
 
@@ -148,16 +149,15 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 | Reference Model Section | Reference | Description | Requirement (common to all Profiles) | Specification Reference |
 |---|---|---|---|---|
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.001 | Capability to allocate virtual compute resources to a workload | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.002 | Capability to allocate virtual storage resources to a workload | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.003 | Capability to allocate virtual networking resources to a workload | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.004 | Capability to isolate resources between tenants | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.005 | Capability to manage workload software images | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.006 | Capability to provide information related to allocated virtualised resources per tenant | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.007 | Capability to notify state changes of allocated resources | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.008 | Capability to collect and expose performance information on virtualised resources allocated | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.009 | Capability to collect and notify fault information on virtualised resources | Must support | |
-
+| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.001 | Capability to allocate virtual compute resources to a workload | Must support | **N/A** |
+| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.002 | Capability to allocate virtual storage resources to a workload | Must support | **N/A** |
+| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.003 | Capability to allocate virtual networking resources to a workload | Must support | **N/A** |
+| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.004 | Capability to isolate resources between tenants | Must support | **N/A** |
+| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.005 | Capability to manage workload software images | Must support | **N/A** |
+| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.006 | Capability to provide information related to allocated virtualised resources per tenant | Must support | **N/A** |
+| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.007 | Capability to notify state changes of allocated resources | Must support | **N/A** |
+| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.008 | Capability to collect and expose performance information on virtualised resources allocated | Must support | **N/A** |
+| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.009 | Capability to collect and notify fault information on virtualised resources | Must support | **N/A** |
 
 <p align="center"><b>Table 2-5:</b> Reference Model Requirements: Cloud Infrastructure Management Requirements</p>
 
@@ -287,13 +287,13 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 | [7.9.13](../../../ref_model/chapters/chapter07.md#7913-iaac---runtime-defence-and-monitoring-requirements) | sec.run.004 | Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage. Typically done manually. |  |
 | [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.001 | The Cloud Operator **should** comply with Center for Internet Security CIS Controls ([https://www.cisecurity.org/](https://www.cisecurity.org/)) | |
 | [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.002 | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) | |
-| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.003 | The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries |  |
+| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.003 | The Platform and Workloads **should** follow the guidance in the [OWASP Cheat Sheet Series (OCSS)](https://github.com/OWASP/CheatSheetSeries) |  |
 | [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.004 | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/) |  |
-| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.005 | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/ |  |
-| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.006 | The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document |  |
-| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.007 | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en. ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs). | |
-| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.008 | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en | | |
-| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.009 | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en. ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity. | |
+| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.005 | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the [OWASP Software Maturity Model (SAMM)](https://owaspsamm.org/blog/2019/12/20/version2-community-release/) |  |
+| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.006 | The Cloud Operator, Platform and Workloads **should** utilize the [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document) |  |
+| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.007 | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in [ISO/IEC 27001](https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en). ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs). | |
+| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.008 | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified [ISO/IEC 27002:2013 (or latest)](https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en) | | |
+| [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.009 | The Cloud Operator, and Platform **should** implement the [ISO/IEC 27032:2012 (or latest)](https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en) Guidelines for Cybersecurity techniques. ISO/IEC 27032 - ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity. | |
 | [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.010 | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management. ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. | |
 | [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.011 | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity. ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity. | |
 | [7.9.14](../../../ref_model/chapters/chapter07.md#7914-compliance-with-standards) | sec.std.012 | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. | |
@@ -341,7 +341,7 @@ With regards to containerisation platforms, the scope of the following Architect
 | inf.ntw.18 | Infrastructure | Network | The platform **should** support ExternalName [Publishing Service (ServiceTypes)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types).||
 | inf.vir.01 | Infrastructure | Virtual Infrastructure | The Architecture **must** support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |[ra2.ch.005](chapter04.md#42-kubernetes-node)<br>[ra2.ch.011](chapter04.md#42-kubernetes-node)|
 | inf.phy.01  | Infrastructure |  Physical Infrastructure | The Architecture **must** support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server.| ra2.ch.008 |
-| kcm.gen.01 | Kubernetes Cluster | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes Cluster. | |
+| kcm.gen.01 | Kubernetes Cluster | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes Cluster. | **N/A** |
 | kcm.gen.02 | Kubernetes Cluster | General | The Architecture **must** enable workload resiliency. |[ra2.k8s.004](chapter04.md#43-kubernetes)|
 | int.api.01 | API | General | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |For Networking: <ul><li>[ra2.ntw.001](chapter04.md#45-networking-solutions)<li>[ra2.ntw.008](chapter04.md#45-networking-solutions)<li>[ra2.app.006](chapter04.md#49-kubernetes-workloads)</ul><br>Compute/storage not yet met. |
 | int.api.02 | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. |[ra2.pkg.001](chapter04.md#48-kubernetes-application-package-manager)|

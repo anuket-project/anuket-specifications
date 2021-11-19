@@ -1,4 +1,6 @@
-# Kubernetes Testing Cookbook
+﻿# Kubernetes Testing Cookbook
+
+![Scope](../figures/bogo_dfp.png)
 
 ## Deploy your own conformance toolchain
 

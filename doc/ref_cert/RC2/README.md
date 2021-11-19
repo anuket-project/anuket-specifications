@@ -25,12 +25,12 @@ This is the Kubernetes Based Reference Conformance (RC-2)
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 - Introduction                                                 | Initial Framework Only |
-| Chapter 02 - Kubernetes Test Cases and Requirements Traceability          | Initial Framework Only |
-| Chapter 03 - Kubernetes Testing Cookbook                                  | Initial Framework Only |
-| Chapter 04 - CNF Test Cases and Requirements Traceability                 | Initial Framework Only |
-| Chapter 05 - CNF Testing Cookbook                                         | Initial Framework Only |
-| Chapter 06 - Gap analysis and Development                                 | Initial Framework Only |
+| Chapter 01 - Introduction                                                 | Lots of SME feedback       |
+| Chapter 02 - Kubernetes Test Cases and Requirements Traceability          | Lots of SME feedback       |
+| Chapter 03 - Kubernetes Testing Cookbook                                  | Dickering over fine points |
+| Chapter 04 - CNF Test Cases and Requirements Traceability                 | Initial Framework Only     |
+| Chapter 05 - CNF Testing Cookbook                                         | Initial Framework Only     |
+| Chapter 06 - Gap analysis and Development                                 | Initial Framework Only     |
 
 ## Table of Contents
 * [Chapter 01 - Introduction](chapters/chapter01.md)
