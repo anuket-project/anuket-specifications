@@ -65,11 +65,11 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | e.cap.006/ infra.com.cfg.003 | CPU pinning support | Not required | Must support | |
 | e.cap.007/ infra.com.cfg.002 | NUMA support | Not required | Must support | |
 | e.cap.018/ infra.com.cfg.005 | Simultaneous Multithreading (SMT) enabled | Must support | Optional | |
-| i.cap.018/ infra.com.cfg.004 | Huge Pages configured | Not required | Must support | |
+| i.cap.018/ infra.com.cfg.004 | Huge pages configured | Not required | Must support | |
 
 <p align="center"><b>Table 2-1a:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Capabilities</p>
 
-> **<sup>1</sup>** Defined in the `.bronze` configuration in [RM section 4.2.6 Storage Extensions](../../../ref_model/chapters/chapter04.md#4.2.6)<br> 
+> **<sup>1</sup>** Defined in the `.bronze` configuration in [RM section 4.2.6 Storage Extensions](../../../ref_model/chapters/chapter04.md#4.2.6)<br>
 
 <a name="2.2.1.1"></a>
 ### 2.2.1.1 Cloud Infrastructure Software Profile Extensions Requirements for Compute
@@ -668,7 +668,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Reference | sub-category | Description |  Notes |
 |---|----|---|----|
-| sec.oss.005 | Software | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. Inventory of software components | https://www.ntia.gov/SBOM. | 
+| sec.oss.005 | Software | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. Inventory of software components | https://www.ntia.gov/SBOM. |
 
 <p align="center"><b>Table 2-40:</b> Open-Source Software Security Recommendations</p>
 
@@ -679,7 +679,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | Reference | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.arch.001 | IaaC | Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger. Methodology to identify and understand threats impacting a resource or set of resources. | It may be done manually or using tools like open source OWASP Threat Dragon |
-| sec.arch.002 | IaaC | Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger.| Typically done manually by internal or independent assessors.  | 
+| sec.arch.002 | IaaC | Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger.| Typically done manually by internal or independent assessors.  |
 
 <p align="center"><b>Table 2-41:</b> Reference Model Requirements: IaaC Security, Design and Architecture Stage</p>
 
@@ -687,8 +687,8 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Reference | sub-category | Description |  Notes |
 |---|----|---|----|
-| sec.code.002 | IaaC | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code or compiled code for software components with known vulnerabilities. | Example: open source OWASP range of tools.  | 
-| sec.code.003 | IaaC | Source Code Review **should** be performed continuously during Secure Coding stage. | Typically done manually.  | 
+| sec.code.002 | IaaC | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code or compiled code for software components with known vulnerabilities. | Example: open source OWASP range of tools.  |
+| sec.code.003 | IaaC | Source Code Review **should** be performed continuously during Secure Coding stage. | Typically done manually.  |
 | sec.code.004 | IaaC | Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. On the local machine: through the IDE or integrated test suites; triggered on completion of coding by developer. |  |
 | sec.code.005 | IaaC | SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. Continuous delivery pre-deployment: scanning prior to deployment. |  |
 
@@ -698,7 +698,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Reference | sub-category | Description |  Notes |
 |---|----|---|----|
-| sec.bld.001 | IaaC | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.| 
+| sec.bld.001 | IaaC | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.|
 | sec.bld.002 | IaaC | SCA – Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger.| Example: open source OWASP range of tools.  |
 | sec.bld.004 | IaaC | DAST – Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. Security testing that analyses a running application by exercising application functionality and detecting vulnerabilities based on application behaviour and response. | Example: OWASP ZAP. |
 | sec.bld.005 | IaaC | Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. | Example: GitLab Open Sources Protocol Fuzzer Community Edition. |
@@ -710,7 +710,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Reference | sub-category | Description |  Notes |
 |---|----|---|----|
-| sec.del.003 | IaaC | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning. | 
+| sec.del.003 | IaaC | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning. |
 
 <p align="center"><b>Table 2-44:</b> Reference Model Requirements: IaaC Security, Continuous Delivery and Deployment Stage </p>
 
