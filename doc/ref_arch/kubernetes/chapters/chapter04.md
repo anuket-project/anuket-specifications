@@ -1,24 +1,7 @@
-[<< Back](../../kubernetes)
 
-# 4. Component Level Architecture
+# Component Level Architecture
 
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
-
-## Table of Contents <!-- omit in toc -->
-
-- [4. Component Level Architecture](#4-component-level-architecture)
-  - [4.1 Introduction](#41-introduction)
-  - [4.2 Kubernetes Node](#42-kubernetes-node)
-  - [4.3 Kubernetes](#43-kubernetes)
-  - [4.4 Container runtimes](#44-container-runtimes)
-  - [4.5 Networking solutions](#45-networking-solutions)
-  - [4.6 Storage components](#46-storage-components)
-  - [4.7 Service meshes](#47-service-meshes)
-  - [4.8 Kubernetes Application package manager](#48-kubernetes-application-package-manager)
-  - [4.9 Kubernetes workloads](#49-kubernetes-workloads)
-  - [4.10 Additional required components](#410-additional-required-components)
-
-## 4.1 Introduction
+## Introduction
 
 This chapter describes in detail the Kubernetes Reference Architecture in terms
 of the functional capabilities and how they relate to the Reference Model
@@ -34,12 +17,9 @@ Reference Implementation and any vendor or community implementations.
 Figure 4-1 below shows the architectural components that are described in the
 subsequent sections of this chapter.
 
-<p align="center"><img src="../figures/ch04_k8s_architecture.png"
-alt="Kubernetes Reference Architecture" Title="Kubernetes Reference
-Architecture" width="65%"/></p>
-<p align="center"><b>Figure 4-1:</b> Kubernetes Reference Architecture</p>
+![**Figure 4-1:** Kubernetes Reference Architecture](../figures/ch04_k8s_architecture.png) <!-- width="65%" -->
 
-## 4.2 Kubernetes Node
+## Kubernetes Node
 
 This section describes the configuration that will be applied to the physical or
 virtual machine and an installed Operating System. In order for a Kubernetes Node
@@ -55,7 +35,7 @@ the following specifications:
 |`ra2.ch.005`|CPU Allocation Ratio - VMs|For Kubernetes nodes running as Virtual Machines, the CPU allocation ratio between vCPU and physical CPU core **must** be 1:1.|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)||
 |`ra2.ch.006`|CPU Allocation Ratio - Pods|To ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1, the sum of CPU requests and limits by containers in Pod specifications **must** remain less than the allocatable quantity of CPU resources (i.e. `requests.cpu < allocatable.cpu` and `limits.cpu < allocatable.cpu`).|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|[3.3](../../../ref_impl/cntt-ri2/chapters/chapter03.md#33-infrastructure-requirements)|
 |`ra2.ch.007`|IPv6DualStack|To support IPv4/IPv6 dual stack networking, the Kubernetes Node OS **must** support and be allocated routable IPv4 and IPv6 addresses.|[req.inf.ntw.04](./chapter02.md#23-kubernetes-architecture-requirements)||
-|`ra2.ch.008`|Physical CPU Quantity|The physical machines on which the Kubernetes Nodes run **must** be equipped with at least 2 physical sockets, each with at least 20 CPU cores.|[infra.hw.cpu.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)<br>[infra.hw.cpu.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|[3.3](../../../ref_impl/cntt-ri2/chapters/chapter03.md#33-infrastructure-requirements)|
+|`ra2.ch.008`|Physical CPU Quantity|The physical machines on which the Kubernetes Nodes run **must** be equipped with at least 2 physical sockets, each with at least 20 CPU cores.|[infra.hw.cpu.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements), [infra.hw.cpu.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|[3.3](../../../ref_impl/cntt-ri2/chapters/chapter03.md#33-infrastructure-requirements)|
 |`ra2.ch.009`|Physical Storage|The physical machines on which the Kubernetes Nodes run **should** be equipped with Sold State Drives (SSDs).|[infra.hw.stg.ssd.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|[3.3](../../../ref_impl/cntt-ri2/chapters/chapter03.md#33-infrastructure-requirements)|
 |`ra2.ch.010`|Local Filesystem Storage Quantity|The Kubernetes Nodes **must** be equipped with local filesystem capacity of at least 320GB for unpacking and executing containers. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.003](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|[3.3](../../../ref_impl/cntt-ri2/chapters/chapter03.md#33-infrastructure-requirements)|
 |`ra2.ch.011`|Virtual Node CPU Quantity|If using VMs, the Kubernetes Nodes **must** be equipped with at least 16 vCPUs.  Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.001](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)||
@@ -67,9 +47,9 @@ the following specifications:
 |`ra2.ch.017`|Immutable infrastructure|Whether physical or virtual machines are used, the Kubernetes Node **must not** be changed after it is instantiated. New changes to the Kubernetes Node must be implemented as new Node instances. This covers any changes from BIOS through Operating System to running processes and all associated configurations.|[req.gen.cnt.02](./chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.ch.018`|NFD|[Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) **must** be used to advertise the detailed software and hardware capabilities of each node in the Kubernetes Cluster.|TBD|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 
-<p align="center"><b>Table 4-1:</b> Node Specifications</p>
+**Table 4-1:** Node Specifications
 
-## 4.3 Kubernetes
+## Kubernetes
 
 In order for the Kubernetes components to be conformant with the Reference Architecture they must be implemented as per the following specifications:
 
@@ -77,9 +57,9 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |---|---|---|---|---|
 |`ra2.k8s.001`|Kubernetes Conformance|The Kubernetes distribution, product, or installer used in the implementation **must** be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlUUK2h0/edit#gid=0) and marked (X) as conformant for the Kubernetes version defined in [README](../README.md#required-versions-of-most-important-components).|[req.gen.cnt.03](./chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.k8s.002`|Highly available etcd|An implementation **must** consist of either three, five or seven nodes running the etcd service (can be colocated on the master nodes, or can run on separate nodes, but not on worker nodes).|[req.gen.rsl.02 req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
-|`ra2.k8s.003`|Highly available control plane|An implementation **must** consist of at least one master node per availability zone or fault domain to ensure the high availability and resilience of the Kubernetes control plane services.|[req.gen.rsl.02](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.k8s.012`|Control plane services|A master node **must** run at least the following Kubernetes control plane services: `kube-apiserver`, `kube-scheduler` and `kube-controller-manager`.|[req.gen.rsl.02](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
-|`ra2.k8s.004`|Highly available worker nodes|An implementation **must** consist of at least one worker node per availability zone or fault domain to ensure the high availability and resilience of workloads managed by Kubernetes|[req.gen.rsl.01](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.kcm.gen.02](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.inf.com.01](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.k8s.003`|Highly available control plane|An implementation **must** consist of at least one master node per availability zone or fault domain to ensure the high availability and resilience of the Kubernetes control plane services.|[req.gen.rsl.02](./chapter02.md#23-kubernetes-architecture-requirements), [req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.k8s.012`|Control plane services|A master node **must** run at least the following Kubernetes control plane services: `kube-apiserver`, `kube-scheduler` and `kube-controller-manager`.|[req.gen.rsl.02](./chapter02.md#23-kubernetes-architecture-requirements), [req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
+|`ra2.k8s.004`|Highly available worker nodes|An implementation **must** consist of at least one worker node per availability zone or fault domain to ensure the high availability and resilience of workloads managed by Kubernetes|[req.gen.rsl.01](./chapter02.md#23-kubernetes-architecture-requirements), [req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements), [req.kcm.gen.02](./chapter02.md#23-kubernetes-architecture-requirements), [req.inf.com.01](./chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.k8s.005`|Kubernetes API Version|In alignment with the [Kubernetes version support policy](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions), an implementation **must** use a Kubernetes version as per the subcomponent versions table in [README](../README.md#required-versions-of-most-important-components).|TBC||
 |`ra2.k8s.006`|NUMA Support|When hosting workloads matching the Network Intensive profile, the `TopologyManager` and `CPUManager` feature gates **must** be enabled and configured on the kubelet (note, TopologyManager is enabled by default in Kubernetes v1.18 and later, with CPUManager enabled by default in Kubernetes v1.10 and later). `--feature-gates="...,TopologyManager=true,CPUManager=true" --topology-manager-policy=single-numa-node --cpu-manager-policy=static`|[e.cap.007](chapter02.md#221-cloud-infrastructure-software-profile-capabilities) [infra.com.cfg.002](./chapter02.md#223-cloud-infrastructure-software-profile-requirements) [infra.hw.cpu.cfg.003](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.k8s.007`|DevicePlugins Feature Gate|When hosting workloads matching the Network Intensive profile, the DevicePlugins feature gate **must** be enabled (note, this is enabled by default in Kubernetes v1.10 or later). `--feature-gates="...,DevicePlugins=true,..."`|Various, e.g. [e.cap.013](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
@@ -96,18 +76,18 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |`ra2.k8s.018`|Publishing Services (ServiceTypes)|Kubernetes **should** support ExternalName [Publishing Service (ServiceTypes)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types). |[req.inf.ntw.18](chapter02.md#kubernetes-architecture-requirements)||
 |`ra2.k8s.019`|Kubernetes APIs|Kubernetes Beta APIs **must** be supported only when a stable GA of the same version doesn't exist. |[req.int.api.04](./chapter02.md#23-kubernetes-architecture-requirements)||
 
-<p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
+**Table 4-2:** Kubernetes Specifications
 
-## 4.4 Container runtimes
+## Container runtimes
 
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
 |`ra2.crt.001`|Conformance with OCI 1.0 runtime spec|The container runtime **must** be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The Kubernetes container runtime **must** be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 
-<p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
+**Table 4-3:** Container Runtime Specifications
 
-## 4.5 Networking solutions
+## Networking solutions
 
 In order for the networking solution(s) to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
@@ -115,12 +95,12 @@ Architecture they must be implemented as per the following specifications:
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
 |`ra2.ntw.001`|Centralised network administration|The networking solution deployed within the implementation **must** be administered through the Kubernetes API using native Kubernetes API resources and objects, or Custom Resources.|[req.inf.ntw.03](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
-|`ra2.ntw.002`|Default Pod Network - CNI|The networking solution deployed within the implementation **must** use a CNI-conformant Network Plugin for the Default Pod Network, as the alternative (kubenet) does not support cross-node networking or Network Policies.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)<br>[req.inf.ntw.08](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
+|`ra2.ntw.002`|Default Pod Network - CNI|The networking solution deployed within the implementation **must** use a CNI-conformant Network Plugin for the Default Pod Network, as the alternative (kubenet) does not support cross-node networking or Network Policies.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.08](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.ntw.003`|Multiple connection points|The networking solution deployed within the implementation **must** support the capability to connect at least FIVE connection points to each Pod, which are additional to the default connection point managed by the default Pod network CNI plugin.|[e.cap.004](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.ntw.004`|Multiple connection points presentation|The networking solution deployed within the implementation **must** ensure that all additional non-default connection points are requested by Pods using standard Kubernetes resource scheduling mechanisms such as annotations or container resource requests and limits.|[req.inf.ntw.03](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
-|`ra2.ntw.005`|Multiplexer/meta-plugin|The networking solution deployed within the implementation **may** use a multiplexer/meta-plugin.|[req.inf.ntw.06](chapter02.md#23-kubernetes-architecture-requirements)<br>[req.inf.ntw.07](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
+|`ra2.ntw.005`|Multiplexer/meta-plugin|The networking solution deployed within the implementation **may** use a multiplexer/meta-plugin.|[req.inf.ntw.06](chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.07](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.ntw.006`|Multiplexer/meta-plugin CNI Conformance|If used, the selected multiplexer/meta-plugin **must** integrate with the Kubernetes control plane via CNI.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
-|`ra2.ntw.007`|Multiplexer/meta-plugin CNI Plugins|If used, the selected multiplexer/meta-plugin **must** support the use of multiple CNI-conformant Network Plugins.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)<br>[req.inf.ntw.06](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
+|`ra2.ntw.007`|Multiplexer/meta-plugin CNI Plugins|If used, the selected multiplexer/meta-plugin **must** support the use of multiple CNI-conformant Network Plugins.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.06](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.ntw.008`|SR-IOV Device Plugin for Network Intensive|When hosting workloads that match the Network Intensive profile and require SR-IOV acceleration, a Device Plugin for SR-IOV **must** be used to configure the SR-IOV devices and advertise them to the `kubelet`.|[e.cap.013](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.ntw.009`|Multiple connection points with multiplexer/meta-plugin|When a multiplexer/meta-plugin is used, the additional non-default connection points **must** be managed by a CNI-conformant Network Plugin.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.ntw.010`|User plane networking|When hosting workloads matching the Network Intensive profile, CNI network plugins that support the use of DPDK, VPP, and/or SR-IOV **must** be deployed as part of the networking solution.|[infra.net.acc.cfg.001](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|[4.3.1](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
@@ -130,28 +110,28 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.ntw.014`|Security Groups|The networking solution deployed within the implementation **must** support network policies.|[infra.net.cfg.004](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ntw.015`|IPAM plugin for multiplexer|When a multiplexer/meta-plugin is used, a CNI-conformant IPAM Network Plugin **must** be installed to allocate IP addresses for secondary network interfaces across all nodes of the cluster.|[req.inf.ntw.10](chapter02.md#23-kubernetes-architecture-requirements)|
 
-<p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
+**Table 4-4:** Networking Solution Specifications
 
-## 4.6 Storage components
+## Storage components
 
 In order for the storage solutions to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
-|`ra2.stg.001`| Ephemeral Storage | An implementation must support ephemeral storage, for the unpacked container images to be stored and executed from, as a directory in the filesystem on the worker node on which the container is running. <br>See the [Container runtimes](#44-container-runtimes) section above for more information on how this meets the requirement for ephemeral storage for containers. ||
+|`ra2.stg.001`| Ephemeral Storage | An implementation must support ephemeral storage, for the unpacked container images to be stored and executed from, as a directory in the filesystem on the worker node on which the container is running. See the [Container runtimes](#44-container-runtimes) section above for more information on how this meets the requirement for ephemeral storage for containers. ||
 |`ra2.stg.002`| Kubernetes Volumes | An implementation may attach additional storage to containers using Kubernetes Volumes. ||
 |`ra2.stg.003`| Kubernetes Volumes | An implementation may use Volume Plugins (see `ra2.stg.005` below) to allow the use of a storage protocol (e.g., iSCSI, NFS) or management API (e.g., Cinder, EBS) for the attaching and mounting of storage into a Pod. ||
-|`ra2.stg.004`| Persistent Volumes | An implementation may support Kubernetes Persistent Volumes (PV) to provide persistent storage for Pods.<br>Persistent Volumes exist independent of the lifecycle of containers and/or pods. |[req.inf.stg.01](chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.stg.004`| Persistent Volumes | An implementation may support Kubernetes Persistent Volumes (PV) to provide persistent storage for Pods. Persistent Volumes exist independent of the lifecycle of containers and/or pods. |[req.inf.stg.01](chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.stg.005`| Storage Volume Types | An implementation must support the following Volume types: `emptyDir`, `ConfigMap`, `Secret` and `PersistentVolumeClaim`. Other Volume plugins may be supported to allow for the use of a range of backend storage systems. ||
-|`ra2.stg.006`| Container Storage Interface (CSI) | An implementation may support the Container Storage Interface (CSI), an Out-of-tree plugin.<br> In order to support CSI, the  feature gates `CSIDriverRegistry` and `CSINodeInfo` must be enabled.<br>The implementation must use a CSI driver (a full list of CSI drivers can be found [here](https://kubernetes-csi.github.io/docs/drivers.html)). <br>An implementation may support ephemeral storage through a CSI-compatible volume plugin in which case the `CSIInlineVolume` feature gate must be enabled.<br>An implementation may support Persistent Volumes through a CSI-compatible volume plugin in which case  the `CSIPersistentVolume` feature gate must be enabled. | |
+|`ra2.stg.006`| Container Storage Interface (CSI) | An implementation may support the Container Storage Interface (CSI), an Out-of-tree plugin. In order to support CSI, the  feature gates `CSIDriverRegistry` and `CSINodeInfo` must be enabled. The implementation must use a CSI driver (a full list of CSI drivers can be found [here](https://kubernetes-csi.github.io/docs/drivers.html)). An implementation may support ephemeral storage through a CSI-compatible volume plugin in which case the `CSIInlineVolume` feature gate must be enabled. An implementation may support Persistent Volumes through a CSI-compatible volume plugin in which case  the `CSIPersistentVolume` feature gate must be enabled. | |
 |`ra2.stg.007`|  | An implementation should use Kubernetes Storage Classes to support automation and the separation of concerns between providers of a service and consumers of the service. | |
 
-<p align="center"><b>Table 4-6:</b> Storage Solution Specifications</p>
+**Table 4-6:** Storage Solution Specifications
 
 A note on object storage:
 
-- This Reference Architecture does not include any specifications for object
+* This Reference Architecture does not include any specifications for object
 storage, as this is neither a native Kubernetes object, nor something that is
 required by CSI drivers.  Object storage is an application-level requirement
 that would ordinarily be provided by a highly scalable service offering rather
@@ -159,13 +139,13 @@ than being something an individual Kubernetes cluster could offer.
 
 > Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if applicable) and req.sec.zon.03 (data encryption at rest).
 
-## 4.7 Service meshes
+## Service meshes
 
 Application service meshes are not in scope for the architecture. The service mesh is a dedicated infrastructure layer for handling service-to-service communication, and it is recommended to secure service-to-service communications within a cluster and to reduce the attack surface. The benefits of the service mesh framework are described in [5.4.3](./chapter05.md#543-use-transport-layer-security-and-service-mesh). In addition to securing communications, the use of a service mesh extends Kubernetes capabilities regarding observability and reliability.
 
 Network service mesh specifications are handled in section [4.5 Networking solutions](#45-networking-solutions).
 
-## 4.8 Kubernetes Application package manager
+## Kubernetes Application package manager
 
 In order for the application package managers to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
@@ -174,9 +154,9 @@ Architecture they must be implemented as per the following specifications:
 |---|---|---|---|---|
 |`ra2.pkg.001`|API-based package management| A package manager must use the Kubernetes APIs to manage application artifacts. Cluster-side components such as Tiller are not supported. | [req.int.api.02](./chapter02.md#23-kubernetes-architecture-requirements) ||
 
-<p align="center"><b>Table 4-7:</b> Kubernetes Application Package Manager Specifications</p>
+**Table 4-7:** Kubernetes Application Package Manager Specifications
 
-## 4.9 Kubernetes workloads
+## Kubernetes workloads
 
 In order for the Kubernetes workloads to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
@@ -194,8 +174,8 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.app.009`| Device plugins | Workload descriptors must use the resources advertised by the device plugins to indicate their need for an FPGA, SR-IOV or other acceleration device. | TBD | N/A |
 |`ra2.app.010`| Node Feature Discovery (NFD)|Workload descriptors must use the labels advertised by [Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) to indicate which node software of hardware features they need. | TBD | N/A |
 
-<p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
+**Table 4-8:** Kubernetes Workload Specifications
 
-## 4.10 Additional required components
+## Additional required components
 
 > This chapter should list any additional components needed to provide the services defined in Chapter 3.2 (e.g., Prometheus)
