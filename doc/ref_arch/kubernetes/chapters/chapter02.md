@@ -98,7 +98,7 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 | [5.1.1](../../../ref_model/chapters/chapter05.md#511-virtual-compute) | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | [ra2.ch.005](chapter04.md#42-kubernetes-node)<br>[ra2.ch.006](chapter04.md#42-kubernetes-node)|
 | [5.1.1](../../../ref_model/chapters/chapter05.md#511-virtual-compute) | infra.com.cfg.002 | NUMA awareness | Not required | Must support |[ra2.k8s.006](chapter04.md#43-kubernetes)|
 | [5.1.1](../../../ref_model/chapters/chapter05.md#511-virtual-compute) | infra.com.cfg.003 | CPU pinning capability | Not required | Must support |[ra2.k8s.009](chapter04.md#43-kubernetes)|
-| [5.1.1](../../../ref_model/chapters/chapter05.md#511-virtual-compute) | infra.com.cfg.004 | Huge Pages | Not required | Must support | [ra2.ch.001](chapter04.md#42-kubernetes-node)|
+| [5.1.1](../../../ref_model/chapters/chapter05.md#511-virtual-compute) | infra.com.cfg.004 | Huge pages | Not required | Must support | [ra2.ch.001](chapter04.md#42-kubernetes-node)|
 | [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.cfg.002 | Storage Block | Must support | Must support | [ra2.stg.004](chapter04.md#46-storage-components)|
 | [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.cfg.003 | Storage with replication | Not required | Must support | **N/A** |
 | [5.1.2](../../../ref_model/chapters/chapter05.md#512-virtual-storage) | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | **N/A** |

@@ -98,7 +98,7 @@ This produces an overhead of Kubernetes Masters - is there a way of making this 
 
 Note: with an underlying IaaS this is possible, but then it introduces (undesirable) dependency between workload orchestration in K8s and infrastructure orchestration in IaaS.
 
-### 7.2.8 HW topology aware hugepages
+### 7.2.8 HW topology aware huge pages
 
 **Related requirements:** `nfvi.com.cfg.004` and `nfvi.com.cfg.002`
 

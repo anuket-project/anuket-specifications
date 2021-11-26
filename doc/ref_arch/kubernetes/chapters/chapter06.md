@@ -173,7 +173,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | Feature:PodGarbageCollector               |               | Should handle the creation of 1000 pods |
 | Feature:RegularResourceUsageTracking      |               | Resource tracking for 0 pods per node |
 | Feature:[ProbeTerminationGracePeriod](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#probe-level-terminationgraceperiodseconds)| X             | Probing container should override timeoutGracePeriodSeconds when LivenessProbe field is set |
-| NodeFeature:[DownwardAPIHugePages](https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information)|               | Downward API tests for hugepages should provide container's limits.hugepages-pagesize; and requests.hugepages-pagesize& as env vars |
+| NodeFeature:[DownwardAPIHugePages](https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information)|               | Downward API tests for huge pages should provide container's limits.hugepages-pagesize; and requests.hugepages-pagesize& as env vars |
 | NodeFeature:[PodReadinessGate](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-readiness-gate)| X             | Pods should support pod readiness gates |
 | NodeFeature:RuntimeHandler                |               | RuntimeClass should run a Pod requesting a RuntimeClass with a configured handler |
 | NodeFeature:[Sysctls](https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/)| X             | Should not launch unsafe, but not explicitly enabled sysctls on the node |
