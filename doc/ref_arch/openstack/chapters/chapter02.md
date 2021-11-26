@@ -1,7 +1,6 @@
 [<< Back](../../openstack)
 
 # 2. Architecture Requirements
-<p align="right"><img src="../figures/bogo_dfp.png" alt="Dickering over the final points" title="Bogo: Dickering over the final points" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
@@ -50,30 +49,27 @@ The tables below contain the requirements from the Reference Model to cover the 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
 - Those relating to Cloud Infrastructure Software Profiles
 - Those relating to Cloud Infrastructure Hardware Profiles
-- Those relating to Storage Extensions (S extension)
-- Those relating to Network Acceleration Extensions (A extension)
 - Those relating to Cloud Infrastructure Management
-
-> Note: "(if offered)" used in the Reference Model has been replaced with "Optional" in the tables below so as to align with RFC2119.
+- Those relating to Cloud Infrastructure Security
 
 <a name="2.2.1"></a>
 ### 2.2.1 Cloud Infrastructure Software Profile Requirements for Compute (source [RM 5.2](../../../ref_model/chapters/chapter05.md#5.2))
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
 |---|---|---|---|---|
-| e.cap.001 | Max number of vCPU that can be assigned to a single VM by the Cloud Infrastructure | At least 16 | At least 16 | |
-| e.cap.002 | Max memory that can be assigned to a single VM by the Cloud Infrastructure | at least 32 GB | at least 32 GB | |
-| e.cap.003 | Max storage that can be assigned to a single VM by the Cloud Infrastructure | at least 320 GB | at least 320 GB | |
-| e.cap.004 | Max number of connection points that can be assigned to a single VM by the Cloud Infrastructure | 6 | 6 | |
-| e.cap.005 | Max storage that can be attached / mounted to VM by the Cloud Infrastructure | Up to 16TB<sup>1</sup> | Up to 16TB<sup>1</sup> | |
+| e.cap.001 | Max number of vCPU that can be assigned to a single instance by the Cloud Infrastructure | At least 16 | At least 16 | |
+| e.cap.002 | Max memory that can be assigned to a single instance by the Cloud Infrastructure | at least 32 GB | at least 32 GB | |
+| e.cap.003 | Max storage that can be assigned to a single instance by the Cloud Infrastructure | at least 320 GB | at least 320 GB | |
+| e.cap.004 | Max number of connection points that can be assigned to a single instance by the Cloud Infrastructure | 6 | 6 | |
+| e.cap.005 | Max storage that can be attached / mounted to an instance by the Cloud Infrastructure | Up to 16TB<sup>1</sup> | Up to 16TB<sup>1</sup> | |
 | e.cap.006/ infra.com.cfg.003 | CPU pinning support | Not required | Must support | |
 | e.cap.007/ infra.com.cfg.002 | NUMA support | Not required | Must support | |
-| e.cap.018/ infra.com.cfg.005 | Simultaneous Multithreading (SMT) enabled | Not required | Must support | |
-| i.cap.018/ infra.com.cfg.004 | Huge Pages configured | Not required | Must support | |
+| e.cap.018/ infra.com.cfg.005 | Simultaneous Multithreading (SMT) enabled | Must support | Optional | |
+| i.cap.018/ infra.com.cfg.004 | Huge pages configured | Not required | Must support | |
 
 <p align="center"><b>Table 2-1a:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Capabilities</p>
 
-> **<sup>1</sup>** Defined in the `.bronze` configuration in [RM section 4.2.6 Storage Extensions](../../../ref_model/chapters/chapter04.md#4.2.6)<br> 
+> **<sup>1</sup>** Defined in the `.bronze` configuration in [RM section 4.2.6 Storage Extensions](../../../ref_model/chapters/chapter04.md#4.2.6)<br>
 
 <a name="2.2.1.1"></a>
 ### 2.2.1.1 Cloud Infrastructure Software Profile Extensions Requirements for Compute
@@ -105,7 +101,7 @@ The features and configuration requirements related to virtual networking for th
 
 <p align="center"><b>Table 2-2a:</b> Reference Model Requirements - Virtual Networking</p>
 
-The required number of connection points to a VM is described in `e.cap.004` [above](#2.2.1).  The table below specifies the required bandwidth of those connection points.
+The required number of connection points to an instance is described in `e.cap.004` [above](#2.2.1).  The table below specifies the required bandwidth of those connection points.
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
 |---|---|---|---|---|
@@ -163,7 +159,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | infra.hw.cpu.cfg.001 | Minimum number of CPU (Sockets) | 2 | 2 | |
 | infra.hw.cpu.cfg.002 | Minimum number of Cores per CPU | 20 | 20 | |
 | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support | |
-| infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP) | Must support | Must support | |
+| infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP) | Must support | Optional | |
 | infra.hw.stg.hdd.cfg.001 | Local Storage HDD | *No requirement specified* | *No requirement specified* | |
 | infra.hw.stg.ssd.cfg.002 | Local Storage SSD | Should support | Should support | |
 | infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | 4 | |
@@ -212,7 +208,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 
 #### 2.2.6.1. System Hardening (source [RM 7.9.1](../../../ref_model/chapters/chapter07.md#791-system-hardening))
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |-------|------|------|-------|
 | sec.gen.001 | Hardening | The Platform **must** maintain the specified configuration. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm), [RA-1 7.2 "Cloud Infrastructure and VIM configuration management"](./chapter07.md#72-cloud-infrastructure-and-vim-configuration-management)  |
 | sec.gen.002 | Hardening | All systems part of Cloud Infrastructure **must** support password hardening as defined in [CIS Password Policy Guide](https://www.cisecurity.org/white-papers/cis-password-policy-guide/). | [RA-1 6.3.1.3 "Password policy"](./chapter06.md#6313-password-policy) |
@@ -232,10 +228,10 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 
 ####  2.2.6.2. Platform and Access (source [RM 7.9.2](../../../ref_model/chapters/chapter07.md#792-platform-and-access))
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |-------|-------|-------|---------|
 | sec.sys.001 | Access | The Platform **must** support authenticated and secure access to API, GUI and command line interfaces | [RA-1 6.3.2.4 "RBAC"](./chapter06.md#6324-rbac) |
-| sec.sys.002 | Access | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall). | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
+| sec.sys.002 | Access | The Platform **must** support Traffic Filtering for workloads (for example, Firewall). | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 | sec.sys.003 | Access | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic. | [RA-1 6.3.3.1 "Confidentiality and Integrity of communications"](./chapter06.md#6331-confidentiality-and-integrity-of-communications)  |
 | sec.sys.004 | Access | The Cloud Infrastructure **must** support authentication, integrity and confidentiality on all network channels. | [RA-1 6.3.3.1 "Confidentiality and Integrity of communications"](./chapter06.md#6331-confidentiality-and-integrity-of-communications)|
 | sec.sys.005 | Access | The Cloud Infrastructure **must** segregate the underlay and overlay networks. | [RA-1 6.3.3.1 "Confidentiality and Integrity of communications"](./chapter06.md#6331-confidentiality-and-integrity-of-communications) |
@@ -255,9 +251,9 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 
 <p align="center"><b>Table 2-7:</b> Reference Model Requirements - Platform and Access Requirements</p>
 
-#### 2.2.6.3. Confidentiality and Integrity (source [RM7.9.3](../../../ref_model/chapters/chapter07.md#793-confidentiality-and-integrity))
+#### 2.2.6.3. Confidentiality and Integrity (source [RM 7.9.3](../../../ref_model/chapters/chapter07.md#793-confidentiality-and-integrity))
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |---|----|---|----|
 | sec.ci.001 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data at rest and in transit. | [RA-1 6.3.3 "Confidentiality and Integrity"](./chapter06.md#633-confidentiality-and-integrity) |
 | sec.ci.003 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data related metadata. |   |
@@ -269,9 +265,9 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 
 <p align="center"><b>Table 2-8:</b> Reference Model Requirements: Confidentiality and Integrity Requirements</p>
 
-#### 2.2.6.4. Workload Security (source [RM7.9.4](../../../ref_model/chapters/chapter07.md#794-workload-security))
+#### 2.2.6.4. Workload Security (source [RM 7.9.4](../../../ref_model/chapters/chapter07.md#794-workload-security))
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |---|----|---|----|
 | sec.wl.001 | Workload | The Platform **must** support Workload placement policy. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 | sec.wl.002 | Workload | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g., remote attestation, Trusted Platform Module). |  |
@@ -279,12 +275,13 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.wl.004 | Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements). | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 | sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond Anuket testing scope |
 | sec.wl.006 | Workload | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.) | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
+| sec.wl.007 | Workload |The Operator **must** implement processes and tools to verify NF authenticity and integrity. |  |
 
 <p align="center"><b>Table 2-9:</b> Reference Model Requirements - Workload Security Requirements</p>
 
-#### 2.2.6.5. Image Security (source [RM7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security))
+#### 2.2.6.5. Image Security (source [RM 7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security))
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |---|----|---|----|
 | sec.img.001 | Image | Images from untrusted sources **must not** be used. | [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
 | sec.img.002 | Image | Images **must** be scanned to be maintained free from known vulnerabilities. | [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
@@ -293,12 +290,13 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.img.005 | Image | Image Registries **must** only be accessible to authorised actors. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration) |
 | sec.img.006 | Image | Image Registries **must** only be accessible over networks that enforce authentication, integrity and confidentiality. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration) |
 | sec.img.007 | Image | Image registries **must** be clear of vulnerable and out of date versions. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security)  |
+| sec.img.008 | Image | Images **must not** include any secrets. Secrets include passwords, cloud provider credentials, SSH keys, TLS certificate keys, etc. |  |
 
 <p align="center"><b>Table 2-10:</b> Reference Model Requirements - Image Security Requirements</p>
 
-#### 2.2.6.6. Security LCM (source [RM7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm))
+#### 2.2.6.6. Security LCM (source [RM 7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm))
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |---|----|---|----|
 | sec.lcm.001 | LCM | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |  
 | sec.lcm.002 | LCM | The Cloud Operator **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
@@ -314,11 +312,11 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 
 <p align="center"><b>Table 2-11:</b> Reference Model Requirements - Security LCM Requirements</p>
 
-#### 2.2.6.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit))
+#### 2.2.6.7. Monitoring and Security Audit (source [RM 7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit))
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |---|----|---|----|
 | sec.mon.001 | Monitoring/Audit | Platform **must** provide logs and these logs must be regularly monitored for events of interest. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved.| [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs), [RA-1 6.3.7.4 "Required Fields"](./chapter06.md#6374-required-fields) |
 | sec.mon.002 | Monitoring | Security logs **must** be time synchronised. | [RA-1 6.3.7.6 "Security Logs Time Synchronisation"](./chapter06.md#6376-security-logs-time-synchronisation) |
@@ -342,22 +340,22 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 <p align="center"><b>Table 2-12:</b> Reference Model Requirements - Monitoring and Security Audit Requirements</p>
 
-#### 2.2.6.8. Open-Source Software (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
+#### 2.2.6.8. Open-Source Software (source [RM 7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |---------|---------------|----------------|------------|
 | sec.oss.001 | Software | Open-source code **must** be inspected by tools with various capabilities for static and dynamic code analysis. |  |
-| sec.oss.002 | Software | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open-source code part of Cloud Infrastructure and workloads software, https://cve.mitre.org/ |  |
-| sec.oss.003 | Software | High severity rated vulnerabilities **must** be fixed. Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score. | |
+| sec.oss.002 | Software | The [CVE (Common Vulnerabilities and Exposures)](https://cve.mitre.org/) **must** be used to identify vulnerabilities and their severity rating for open-source code part of Cloud Infrastructure and workloads software. |  |
+| sec.oss.003 | Software | Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the [CVSS (Common Vulnerability Scoring System)](https://www.first.org/cvss/) to know a vulnerability score and its associated rate (low, medium, high, or critical). | |
 | sec.oss.004 | Software | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open-source content. |  |
 
 <p align="center"><b>Table 2-13:</b> Reference Model Requirements - Open-Source Software Security Requirements</p>
 
-#### 2.2.6.9. IaaC security (source [RM7.9.9](../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements))
+#### 2.2.6.9. IaaC security (source [RM 7.9.9](../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements))
 
 **Secure Code Stage Requirements**
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description | Specification Reference  |
 |---------|---------------|----------------|------------|
 | sec.code.001 | IaaC | SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code for software vulnerabilities and gaps against best practices. Example: open source OWASP range of tools.|  |
 
@@ -365,15 +363,15 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 **Continuous Build, Integration and Testing Stage Requirements**
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |---------|---------------|----------------|------------|
-| sec.bld.003 | IaaC | Container and Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |  |
+| sec.bld.003 | IaaC | Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger, example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |  |
 
 <p align="center"><b>Table 2-15:</b> Reference Model Requirements - IaaC Security Requirements, Continuous Build, Integration and Testing Stage </p>
 
 **Continuous Delivery and Deployment Stage Requirements**
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |---------|---------------|----------------|------------|
 | sec.del.001 | IaaC | Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. Example: GitLab uses the open source Clair engine for container image scanning.|  |
 | sec.del.002 | IaaC | Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. Code Signing provides authentication to assure that downloaded files are form the publisher named on the certificate.  |  |
@@ -383,15 +381,15 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 **Runtime Defence and Monitoring Requirements**
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |---------|---------------|----------------|------------|
 | sec.run.001 | IaaC | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage. Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|  |
 
 <p align="center"><b>Table 2-17:</b> Reference Model Requirements - IaaC Security Requirements, Runtime Defence and Monitoring Stage</p>
 
-#### 2.2.6.10. Compliance with Standards (source [RM7.9.10](../../../ref_model/chapters/chapter07.md#7910-compliance-with-standards))
+#### 2.2.6.10. Compliance with Standards (source [RM 7.9.10](../../../ref_model/chapters/chapter07.md#7910-compliance-with-standards))
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |---------|---------------|----------------|------------|
 | sec.std.012 | Standards | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16); International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. | |
 
@@ -401,12 +399,12 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <a name="2.3"></a>
 ## 2.3 Architecture and OpenStack Requirements
 
-"Architecture" in this chapter refers to Cloud infrastructure (referred to as NFVI by ETSI) + VIM (as specified in Reference Model Chapter 3).
+"Architecture" in this chapter refers to Cloud Infrastructure (referred to as NFVI by ETSI) + VIM (as specified in Reference Model Chapter 3).
 
 <a name="2.3.1"></a>
 ### 2.3.1 General Requirements
 
-| Ref # | sub-category | Description | Traceability |
+| Reference | sub-category | Description | Specification Reference |
 |----|---------------|---------------------|---------------|
 | gen.ost.01 | Open source | The Architecture **must** use OpenStack APIs.| [RA-1 5.3](./chapter05.md#5.3) |
 | gen.ost.02 | Open source | The Architecture **must** support dynamic request and configuration of virtual resources (compute, network, storage) through OpenStack APIs. | [RA-1 5.3](./chapter05.md#53-consolidated-set-of-apis) |
@@ -418,18 +416,18 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <a name="2.3.2"></a>
 ### 2.3.2 Infrastructure Requirements
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |----|--------------|---------------------|-----------|
-| inf.com.01 | Compute | The Architecture **must** provide compute resources for VM instances. | [RA-1 3.3.1.4 "Cloud Workload Services"](./chapter03.md#3314-cloud-workload-services) |
+| inf.com.01 | Compute | The Architecture **must** provide compute resources for instances. | [RA-1 3.3.1.4 "Cloud Workload Services"](./chapter03.md#3314-cloud-workload-services) |
 | inf.com.04 | Compute | The Architecture **must** be able to support multiple CPU type options to support various infrastructure profiles (Basic and High Performance).| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
 | inf.com.05 | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
-| inf.com.06 | Compute | The Architecture **must** support CPU Pinning of the vCPUs of VM instance.| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
+| inf.com.06 | Compute | The Architecture **must** support CPU Pinning of the vCPUs of an instance.| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
 | inf.com.07 | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Basic and High Performance).| [RA-1 3.3.3. "Host aggregates providing resource pooling"](./chapter03.md#333-host-aggregates-providing-resource-pooling) |
-| inf.com.08 | Compute | The Architecture **must** support allocating certain number of host cores for all non-tenant workloads such as for OpenStack services. SMT threads can be allocated to individual OpenStack services or their components. | [Dedicating host cores to certain workloads (e.g., OpenStack services)](https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set). Please see example, ["Configuring libvirt compute nodes for CPU pinning"](https://docs.openstack.org/nova/latest/admin/cpu-topologies.html) |
-| inf.com.09 | Compute | The Architecture **must** ensure that the host cores assigned to non-tenant and tenant workloads are SMT aware: that is, a host core and its associated SMT threads are either all assigned to non-tenant workloads or all assigned to tenant workloads. | Achieved through configuring the "cpu_dedicated_set" and "cpu_shared_set" parameters in nova.conf correctly. |
-| inf.stg.01 | Storage | The Architecture **must** provide remote (not directly attached to the host) Block storage for VM Instances. | [RA-1 3.4.2.3. "Storage"](./chapter03.md#3423-storage) |
-| inf.stg.02 | Storage | The Architecture **must** provide Object storage for VM Instances. Operators **may** choose not to implement Object Storage but must be cognizant of the risk of "Compliant VNFs" failing in their environment. | OpenStack Swift Service ([RA-1 4.3.1.4 "Swift"](./chapter04.md#4314-swift)) |
-| inf.ntw.01 | Network | The Architecture **must** provide virtual network interfaces to VM instances. | [RA-1 5.2.5. "Neutron" ](./chapter05.md#525-neutron) |
+| inf.com.08 | Compute | The Architecture **must** support allocating certain number of host cores for all non-tenant workloads such as for OpenStack services. SMT threads can be allocated to individual OpenStack services or their components. [Dedicating host cores to certain workloads (e.g., OpenStack services)](https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set). Please see example, ["Configuring libvirt compute nodes for CPU pinning"](https://docs.openstack.org/nova/latest/admin/cpu-topologies.html) | [RA-1 4.2.2.7 "Reservation of Compute Node cores"](./chapter04.md#4227-reservation-of-compute-node-cores)  |
+| inf.com.09 | Compute | The Architecture **must** ensure that the host cores assigned to non-tenant and tenant workloads are SMT aware: that is, a host core and its associated SMT threads are either all assigned to non-tenant workloads or all assigned to tenant workloads. | [RA-1 4.2.2.7 "Reservation of Compute Node cores"](./chapter04.md#4227-reservation-of-compute-node-cores) and [RA-1 4.2.2.8 "Pinned and Unpinned CPUs"](./chapter04.md#4228-pinned-and-unpinned-cpus) |
+| inf.stg.01 | Storage | The Architecture **must** provide remote (not directly attached to the host) Block storage for Instances. | [RA-1 3.4.2.3. "Storage"](./chapter03.md#3423-storage) |
+| inf.stg.02 | Storage | The Architecture **must** provide Object storage for Instances. Operators **may** choose not to implement Object Storage but must be cognizant of the risk of "Compliant VNFs" failing in their environment. | [RA-1 4.3.1.4 "Swift"](./chapter04.md#4314-swift) |
+| inf.ntw.01 | Network | The Architecture **must** provide virtual network interfaces to instances. | [RA-1 5.2.5. "Neutron" ](./chapter05.md#525-neutron) |
 | inf.ntw.02 | Network | The Architecture **must** include capabilities for integrating SDN controllers to support provisioning of network services, from the OpenStack Neutron service, such as networking of VTEPs to the Border Edge based VRFs. | [RA-1 3.2.5. "Virtual Networking – 3rd party SDN solution"](./chapter03.md#325-virtual-networking--3rd-party-sdn-solution) |
 | inf.ntw.03 | Network | The Architecture **must** support low latency and high throughput traffic needs. | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
 | inf.ntw.05 | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve). | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
@@ -444,7 +442,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <a name="2.3.3"></a>
 ### 2.3.3 VIM Requirements
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |----|----------------|----------------------|-----------|
 | vim.01 | General | The Architecture **must** allow infrastructure resource sharing. | [RA-1 3.2. "Consumable Infrastructure Resources and Services"](./chapter03.md#32-consumable-infrastructure-resources-and-services) |
 | vim.03 | General | The Architecture **must** allow VIM to discover and manage Cloud Infrastructure resources. | [RA-1 5.2.7. "Placement"](./chapter05.md#527-placement) |
@@ -457,7 +455,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <a name="2.3.4"></a>
 ### 2.3.4 Interfaces & APIs Requirements
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |----|----------|--------------------|------------|
 | int.api.01 | API | The Architecture **must** provide APIs to access the authentication service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.1 "Keystone"](./chapter05.md#521-keystone) |
 | int.api.02 | API | The Architecture **must** provide APIs to access the image management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.2 "Glance"](./chapter05.md#522-glance) |
@@ -475,7 +473,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <a name="2.3.5"></a>
 ### 2.3.5 Tenant Requirements
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |----|--------------|---------------|-----------------|
 | tnt.gen.01 | General | The Architecture **must** support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) and [3.3.1.4 Cloud Workload Services](./chapter03.md#3314-cloud-workload-services) |
 
@@ -485,17 +483,17 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 ### 2.3.6 Operations and LCM
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |----|----------|-------------|-------------|
-| lcm.gen.01	| General | The Architecture must support zero downtime of running workloads when the number of compute hosts and/or the storage capacity is being expanded or unused capacity is being removed. | |
-| lcm.adp.02 | Automated deployment | The Architecture must support upgrades of software, provided by the cloud provider, so that the running workloads are not impacted (viz., hitless upgrades). Please note that this means that the existing data plane services should not fail (go down). | |
+| lcm.gen.01	| General | The Architecture **must** support zero downtime of running workloads when the number of compute hosts and/or the storage capacity is being expanded or unused capacity is being removed. | |
+| lcm.adp.02 | Automated deployment | The Architecture **must** support upgrades of software, provided by the cloud provider, so that the running workloads are not impacted (viz., hitless upgrades). Please note that this means that the existing data plane services should not fail (go down). | |
 
 <p align="center"><b>Table 2-24:</b> LCM Requirements</p>
 
 <a name="2.3.7"></a>
 ### 2.3.7 Assurance Requirements
 
-| Ref # | sub-category | Description |  Traceability |
+| Reference | sub-category | Description |  Specification Reference |
 |----|--------|-------------------|----------|
 | asr.mon.01 | Integration | The Architecture **must** include integration with various infrastructure components to support collection of telemetry for assurance monitoring and network intelligence. | |
 | asr.mon.03 | Monitoring | The Architecture **must** allow for the collection and dissemination of performance and fault information. | |
@@ -511,7 +509,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.1"></a>
 ### 2.4.1 General Recommendations
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | gen.cnt.01 | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilise a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
 | gen.cnt.02 | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
@@ -523,13 +521,13 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.2"></a>
 ### 2.4.2 Infrastructure Recommendations
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | inf.com.02 | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). | |
 | inf.com.03 | Compute | The Architecture **should** support Symmetric Multiprocessing with shared memory access as well as Simultaneous Multithreading. | |
 | inf.stg.08 | Storage | The Architecture **should** allow use of externally provided large archival storage for its Backup / Restore / Archival needs. | |
 | inf.stg.09 | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. | |
-| inf.stg.10 | Storage | The Architecture **should** provide local Block storage for VM Instances. | [RA-1 "Virtual Storage"](./chapter03.md#323-virtual-storage) |
+| inf.stg.10 | Storage | The Architecture **should** provide local Block storage for Instances. | [RA-1 "Virtual Storage"](./chapter03.md#323-virtual-storage) |
 | inf.ntw.04 | Network | The Architecture **should** support service function chaining. |  |
 | inf.ntw.06 | Network | The Architecture **should** support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently. | |
 | inf.ntw.08 | Network | The Cloud Infrastructure Network Fabric **should** embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems. | |
@@ -547,7 +545,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.3"></a>
 ### 2.4.3 VIM Recommendations
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |----|----------------|----------------------|-----------|
 | vim.02 | General | The Architecture **should** support deployment of OpenStack components in containers. | [RA-1 4.3.2. "Containerised OpenStack Services"](./chapter04.md#432-containerised-openstack-services) |
 | vim.04| General | The Architecture **should** support Enhanced Platform Awareness (EPA) only for discovery of infrastructure resource capabilities.| |
@@ -559,7 +557,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.4"></a>
 ### 2.4.4 Interfaces and APIs Recommendations
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | int.acc.01 | Acceleration | The Architecture **should** provide an open and standard acceleration interface to VNFs. |  |
 | int.acc.02 | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. | duplicate of inf.acc.03 under "Infrastructure Recommendations" |
@@ -571,7 +569,7 @@ The requirements listed in this section are optional, and are not required in or
 
 This section is left blank for future use.
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 
 <p align="center"><b>Table 2-30:</b> Tenant Recommendations</p>
@@ -579,7 +577,7 @@ This section is left blank for future use.
 <a name="2.4.6"></a>
 ### 2.4.6 Operations and LCM Recommendations
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |----|----------|-------------|-------------|
 | lcm.adp.01 | Automated deployment | The Architecture **should** allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple Cloud Infrastructure sites. | |
 | lcm.adp.03 | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by lcm.adp.02. Whenever hitless upgrades are not feasible, attempt should be made to minimise the duration and nature of impact. | |
@@ -592,7 +590,7 @@ This section is left blank for future use.
 <a name="2.4.7"></a>
 ### 2.4.7 Assurance Recommendations
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |----|--------|-------------------|----------|
 | asr.mon.02 | Monitoring | The Architecture **should** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads. | |
 
@@ -603,7 +601,7 @@ This section is left blank for future use.
 
 #### 2.4.8.1. System Hardening (source [RM 7.9.1](../../../ref_model/chapters/chapter07.md#791-system-hardening))
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |-------|------|------|-------|
 | sec.gen.011 | Hardening | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorised actors). |  |
 | sec.gen.014 | Hardening | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
@@ -612,83 +610,85 @@ This section is left blank for future use.
 
 ####  2.4.8.2. Platform and Access (source [RM 7.9.2](../../../ref_model/chapters/chapter07.md#792-platform-and-access))
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |-------|-------|-------|---------|
 | sec.sys.014 | Access | The Platform **should** use Linux Security Modules such as SELinux to control access to resources. | |
 | sec.sys.020 | Access | The Cloud Infrastructure architecture **should** rely on Zero Trust principles to build a secure by design environment. | Zero Trust Architecture (ZTA) described in NIST SP 800-207 |
 
 <p align="center"><b>Table 2-34:</b> Platform and Access Recommendations</p>
 
-#### 2.4.8.3. Confidentiality and Integrity (source [RM7.9.3](../../../ref_model/chapters/chapter07.md#793-confidentiality-and-integrity))
+#### 2.4.8.3. Confidentiality and Integrity (source [RM 7.9.3](../../../ref_model/chapters/chapter07.md#793-confidentiality-and-integrity))
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.ci.002 | Confidentiality/Integrity | The Platform **should** support self-encrypting storage devices |  |
 | sec.ci.009 | Confidentiality/Integrity |For sensitive data encryption, the key management service **should** leverage a Hardware Security Module to manage and protect cryptographic keys. | |
 
 <p align="center"><b>Table 2-35:</b> Confidentiality and Integrity Recommendations</p>
 
-#### 2.4.8.4. Workload Security (source [RM7.9.4](../../../ref_model/chapters/chapter07.md#794-workload-security))
+#### 2.4.8.4. Workload Security (source [RM 7.9.4](../../../ref_model/chapters/chapter07.md#794-workload-security))
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.wl.007 | Workload | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  |
 
 <p align="center"><b>Table 2-36:</b> Workload Security Recommendations</p>
 
-#### 2.4.8.5. Image Security (source [RM7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security))
+#### 2.4.8.5. Image Security (source [RM 7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security))
 
 This section is left blank for future use.
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
+| sec.img.009 | Image | CIS Hardened Images **should** be used whenever possible. |  |
+| sec.img.010 | Image | Minimalist base images **should** be used whenever possible. |  |
 
 <p align="center"><b>Table 2-37:</b> Image Security Recommendations</p>
 
-#### 2.4.8.6. Security LCM (source [RM7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm))
+#### 2.4.8.6. Security LCM (source [RM 7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm))
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.lcm.004 | LCM | The Cloud Operator **should** support automated templated approved changes; Templated approved changes for automation where available |  |  
 
 <p align="center"><b>Table 2-38:</b> LCM Security Recommendations</p>
 
-#### 2.4.8.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit))
+#### 2.4.8.7. Monitoring and Security Audit (source [RM 7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit))
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.mon.014 | Monitoring | The Monitoring systems **should** not impact IaaS, PaaS, and SaaS SLAs including availability SLAs |  |
 | sec.mon.016 | Monitoring | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing |  |
 
 <p align="center"><b>Table 2-39:</b> Monitoring and Security Audit Recommendations</p>
 
-#### 2.4.8.8. Open-Source Software Security (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
+#### 2.4.8.8. Open-Source Software Security (source [RM 7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
-| sec.oss.004 | Software | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. Inventory of software components | https://www.ntia.gov/SBOM. | 
+| sec.oss.005 | Software | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. Inventory of software components | https://www.ntia.gov/SBOM. |
 
 <p align="center"><b>Table 2-40:</b> Open-Source Software Security Recommendations</p>
 
-#### 2.4.8.9. IaaC security (source [RM7.9.9](../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements))
+#### 2.4.8.9. IaaC security (source [RM 7.9.9](../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements))
 
 **Secure Design and Architecture Stage**
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.arch.001 | IaaC | Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger. Methodology to identify and understand threats impacting a resource or set of resources. | It may be done manually or using tools like open source OWASP Threat Dragon |
-| sec.arch.002 | IaaC | Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger.| Typically done manually by internal or independent assessors.  | 
+| sec.arch.002 | IaaC | Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger.| Typically done manually by internal or independent assessors.  |
 
 <p align="center"><b>Table 2-41:</b> Reference Model Requirements: IaaC Security, Design and Architecture Stage</p>
 
 **Secure Code Stage Requirements**
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
-| sec.code.002 | IaaC | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code or compiled code for software components with known vulnerabilities. | Example: open source OWASP range of tools.  | 
-| sec.code.003 | IaaC | Source Code Review **should** be performed continuously during Secure Coding stage. | Typically done manually.  | 
+| sec.code.002 | IaaC | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code or compiled code for software components with known vulnerabilities. | Example: open source OWASP range of tools.  |
+| sec.code.003 | IaaC | Source Code Review **should** be performed continuously during Secure Coding stage. | Typically done manually.  |
 | sec.code.004 | IaaC | Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. On the local machine: through the IDE or integrated test suites; triggered on completion of coding by developer. |  |
 | sec.code.005 | IaaC | SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. Continuous delivery pre-deployment: scanning prior to deployment. |  |
 
@@ -696,9 +696,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 **Continuous Build, Integration and Testing Stage Requirements**
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
-| sec.bld.001 | IaaC | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.| 
+| sec.bld.001 | IaaC | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.|
 | sec.bld.002 | IaaC | SCA – Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger.| Example: open source OWASP range of tools.  |
 | sec.bld.004 | IaaC | DAST – Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. Security testing that analyses a running application by exercising application functionality and detecting vulnerabilities based on application behaviour and response. | Example: OWASP ZAP. |
 | sec.bld.005 | IaaC | Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. | Example: GitLab Open Sources Protocol Fuzzer Community Edition. |
@@ -708,15 +708,15 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 **Continuous Delivery and Deployment Stage Requirements**
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
-| sec.del.003 | IaaC | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning. | 
+| sec.del.003 | IaaC | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning. |
 
 <p align="center"><b>Table 2-44:</b> Reference Model Requirements: IaaC Security, Continuous Delivery and Deployment Stage </p>
 
 **Runtime Defence and Monitoring Requirements**
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.run.002 | IaaC | RASP – Runtime Application Self-Protection **should** be continuously applied during the Runtime Defence and Monitoring stage. Security technology deployed within the target application in production for detecting, alerting, and blocking attacks.  |  |
 | sec.run.003 | IaaC | Application testing and Fuzzing **should** be continuously applied during the Runtime Defence and Monitoring stage. Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. | Example: GitLab Open Sources Protocol Fuzzer Community Edition.  |
@@ -724,19 +724,19 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 <p align="center"><b>Table 2-45:</b> Reference Model Requirements: Iaac Security, Runtime Defence and Monitoring Stage </p>
 
-#### 2.4.8.10. Compliance with Standards (source [RM7.9.10](../../../ref_model/chapters/chapter07.md#7910-compliance-with-standards))
+#### 2.4.8.10. Compliance with Standards (source [RM 7.9.10](../../../ref_model/chapters/chapter07.md#7910-compliance-with-standards))
 
-| Ref # | sub-category | Description |  Notes |
+| Reference | sub-category | Description |  Notes |
 |---------|---------------|----------------|------------|
-| sec.std.001 | Standards | The Cloud Operator **should** comply with Center for Internet Security CIS Controls ([https://www.cisecurity.org/](https://www.cisecurity.org/)); Center for Internet Security - [https://www.cisecurity.org/](https://www.cisecurity.org/) | |
-| sec.std.002 | Standards | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/).  Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) | |
-| sec.std.003 | Standards | The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries. Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) | |
-| sec.std.004 | Standards | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/) |  |
-| sec.std.005 | Standards | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/ |  |
-| sec.std.006  | Standards | The Cloud Operator, Platform and Workloads **should** utilise the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document |  |
-| sec.std.007 | Standards | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en; ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) | |
-| sec.std.008 | Standards | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en | |
-| sec.std.009 | Standards | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en; ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity | |
+| sec.std.001 | Standards | The Cloud Operator **should** comply with [Center for Internet Security CIS Controls](https://www.cisecurity.org/) | |
+| sec.std.002 | Standards | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version)- CSA, [Cloud Security Alliance](https://cloudsecurityalliance.org/) | |
+| sec.std.003 | Standards | The Platform and Workloads **should** follow the guidance in the [OWASP Cheat Sheet Series (OCSS)]( https://github.com/OWASP/CheatSheetSeries)- OWASP, [Open Web Application Security Project](https://www.owasp.org) | |
+| sec.std.004 | Standards | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the [OWASP Top Ten Security Risks](https://owasp.org/www-project-top-ten/) |  |
+| sec.std.005 | Standards | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the [OWASP Software Maturity Model (SAMM)](https://owaspsamm.org/blog/2019/12/20/version2-community-release/) |  |
+| sec.std.006  | Standards | The Cloud Operator, Platform and Workloads **should** utilise the [OWASP Web Security Testing Guide]( https://github.com/OWASP/wstg/tree/master/document) |  |
+| sec.std.007 | Standards | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in [ISO/IEC 27001]( https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en); ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) | |
+| sec.std.008 | Standards | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified [ISO/IEC 27002:2013 (or latest)](https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en) | |
+| sec.std.009 | Standards | The Cloud Operator, and Platform **should** implement the [ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques](https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en); ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity | |
 | sec.std.010 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management; ISO/IEC 27035 is the international Standard for incident management | |
 | sec.std.011 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity; ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity | |
 

@@ -1,7 +1,6 @@
-[<< Back](../)
+﻿# 4. Operational Runbook
 
-# 4. Operational Runbook
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+![State](../figures/bogo_sdc.png) <!-- width="35" -->
 
 ## Table of Contents
 * [4.1 Introduction](#4.1)
@@ -17,7 +16,7 @@
 
 This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The entire deployment has been tested in Anuket Labs as a part of the [Anuket Kuberef project](https://wiki.anuket.io/display/HOME/Kuberef), that aims to deliver RI-2 based on RA-2 specifications. The Kuberef project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop and test against. Currently, Kuberef supports deployments on both baremetal, as well as pre-provisioned infrastructure (for e.g. offered by baremetal providers like Equinix Metal, etc.).
 
-The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. Host provisioning is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage, etc. This stage can be skipped when using pre-provisioned hardware, infrastructure providers, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
+The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. Host provisioning is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage, etc. This stage can be skipped when using preprovisioned hardware, infrastructure providers, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
 
 <a name="4.2"></a>
 ## 4.2 Prerequisites
@@ -29,7 +28,7 @@ You need one physical server acting as a jump server along with minimum of two a
 
 This section describes how to get started with RI-2 deployment via [Kuberef](https://gerrit.opnfv.org/gerrit/q/project:kuberef).
 
-For the host provisioning stage, the [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) hosted by Nordix Foundation is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) is being used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v21.03) (version v21.03).
+For the host provisioning stage, the [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) hosted by Nordix Foundation is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://networkbuilders.intel.com/intel-technologies/container-experience-kits) is being used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v21.08) (version v21.08).
 
 <a name="4.3.1"></a>
 ### 4.3.1 Installation on Bare Metal Infratructure
@@ -69,9 +68,9 @@ bmra:
 #    qat:                         # Only uncomment if QAT is enabled
 #      - name: crypto01           # QAT device name
 #        pci: "0000:ab:00.0"      # PCI ID of the device (bus:device.function)
-#        mod_type: qat_c62x       # Kernel module [qat_dh895xcc,qat_c62x,qat_c3xxx,qat_200xx,qat_c4xxx,qat_d15xx]
 #        pci_type c6xx            # PCI driver ID [dh895xcc,c6xx,c3xxx,d15xx,200xx,c4xxx]
 #        vfs: 4                   # Number of VFs to be created for PCI ID
+  runtime: docker                 # Supports 'docker' and 'containerd' runtimes
   features:
     sriov:
       enable: true                # Enable SR-IOV
@@ -82,8 +81,7 @@ bmra:
     hugepages:
       enable: true                # Enable hugepages
       default: 2M                 # Default hugepage size [2M, 1G]
-      hugepages_1G: 0             # Number of 1G hugepages to allocate
-      hugepages_2M: 10240         # Number of 2M hugepages to allocate
+      amount: 10240               # Amount of default size hugepages to allocate
     isolcpus:
       enable: true                # Enable CPU isolation in the host
       autogenerate: true          # Automatically generate list of CPUs to isolate
@@ -110,11 +108,11 @@ References for the above features:
 * [CPU Manager for Kubernetes](https://github.com/intel/CPU-Manager-for-Kubernetes)
 * [SR-IOV Network device plugin for Kubernetes](https://github.com/intel/sriov-network-device-plugin)
 * [Intel Device Plugins for Kubernetes](https://github.com/intel/intel-device-plugins-for-kubernetes)
-* [Telemtry Aware Scheduling](https://github.com/intel/telemetry-aware-scheduling)
+* [Telemtry Aware Scheduling](https://github.com/intel/platform-aware-scheduling/tree/master/telemetry-aware-scheduling)
 
 Additional settings are available in the BMRA templates located in `playbooks/roles/bmra-config/templates`. Changing these might have unexpected results and should generally not be done.
 
-You will also have to modify environmental variables defined in `deploy.env` to match your setup. For deploying Kuberef on pre-provisioned infrastructure, set `deployment_type=k8s`.
+You will also have to modify environmental variables defined in `deploy.env` to match your setup. For deploying Kuberef on preprovisioned infrastructure, set `deployment_type=k8s`.
 
 Once ready, issue the following command to initiate the deployment
 

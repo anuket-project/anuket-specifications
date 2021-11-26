@@ -30,12 +30,17 @@
     * [3.5.4.3 Example of IaaS and CaaS Virtualization Infrastructure Instances on a Shared HW Infrastructure With SDN](#3.5.4.3)
   * [3.5.5 Service Function Chaining](#3.5.5)
   * [3.5.6 Time Sensitive Networking](#3.5.6)
-  * [3.5.7 Networking Semantics](#3.5.7)
+  * [3.5.7 Kubernetes Networking Semantics](#3.5.7)
 * [3.6 Storage](#3.6)
+  * [3.6.1 Introduction](#3.6.1)
+  * [3.6.2 Storage Implementation Stereotypes](#3.6.2)
+  * [3.6.3 Storage for Tenant Consumption](#3.6.3)
+  * [3.6.4 Storage Scenarios and Architecture Fit](#3.6.4)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
   * [3.8.1 Types of Accelerators](#3.8.1)
   * [3.8.2 Infrastructure and Application Level Acceleration](#3.8.2)
+    * [3.8.2.1 Example of O-RAN Acceleration Abstraction Layer Interface](#3.8.2.1)
   * [3.8.3 Workload Placement](#3.8.3)
   * [3.8.4 CPU Instructions](#3.8.4)
   * [3.8.5 Fixed Function Accelerators](#3.8.5)
@@ -44,7 +49,7 @@
   * [3.8.8 Smart Switches](#3.8.8)
   * [3.8.9 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration](#3.8.9)
 
-It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
+It is necessary to clearly define the infrastructure resources and their capabilities that a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) provides for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). A common understanding of which resources and their corresponding capabilities a cloud infrastructure provides or shall provide will help improve workload onboarding efficiency and avoid issues that could negatively impact the time and the cost of onboarding and maintaining target workloads and solutions on top of a virtualised infrastructure.
 
 The abstraction model presented in this Reference Model (RM) specifies a common set of virtual infrastructure resources that a cloud infrastructure will need to provide to be able to host most of the typical VNF/CNF telco workloads. The intention of this Reference Model is to follow the following principles:
 
@@ -52,7 +57,7 @@ The abstraction model presented in this Reference Model (RM) specifies a common 
 - **Separation of Concern:** the model should support a clear distinction between the responsibilities related to maintaining the network function virtualisation infrastructure and the responsibilities related to managing the various VNF workloads
 - **Simplicity:** the amount of different types of resources (including their attributes and relationships amongst one another) should be kept to a minimum to reduce the configuration spectrum which needs to be considered
 - **Declarative**: the model should allow for the description of the intended state and configuration of the cloud infrastructure resources for automated life cycle management
-- **Explicit:** the model needs to be rich enough to allow for the instantiation and the on-going operation of the cloud infrastructure
+- **Explicit:** the model needs to be rich enough to cover the instantiation and the on-going operation of the cloud infrastructure
 - **Lifecycle:** the model must distinguish between resources which have independent lifecycles but should group together those resources which share a common lifecycle
 - **Aligned:** the model should clearly highlight the dependencies between its components to allow for a well-defined and simplified synchronisation of independent automation tasks.
 
@@ -69,7 +74,7 @@ The abstraction model for the cloud infrastructure is divided into two logical l
 The functionalities of each layer are as follows:
 
 **Virtual Infrastructure Layer**
-- **Virtual infrastructure resources:** These are all the infrastructure resources (compute, storage and networks) which the cloud infrastructure provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
+- **Virtual infrastructure resources:** These are all the infrastructure resources (compute, storage and networks) which the cloud infrastructure provides to the VNF/CNF and other workloads. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
 - **Virtual infrastructure manager:** This consists of the software components that manage the virtual resources and make those management capabilities accessible via one or more APIs. The responsibilities of this functionality include the management of logical constructs such as tenants, tenant workloads, resource catalogues, identities, access controls, security policies, etc.
 
 **Hardware Infrastructure Layer**
@@ -118,7 +123,7 @@ _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 Virtual Compute
-A virtual machine or a container/pod is used by a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and, since it will need to communicate with other communication partners, it is assumed that the networks have been provisioned in advance.
+A virtual machine or a container/pod capable of hosting the application components of workloads (VNFs/CNFs) of the tenant. A virtual compute therefore requires a tenant context and, since it will need to communicate with other communication partners, it is assumed that the networks have been provisioned in advance.
 
 _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
@@ -137,13 +142,18 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <a name="3.2.1.3"></a>
 #### 3.2.1.3 Virtual Storage
 
-A workload can request storage based on data retaining policy (persistent or ephemeral storage), different types of storage (HDD, SSD, etc.) and storage size.
-Persistent storage outlives the compute instance whereas ephemeral storage is linked to compute instance lifecycle.
+A virtual machine and container can consume storage through a number of means. These include storage that is:
+ - managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and
+ - Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
+The details of the tenant storage consumption model are covered in section ["3.6.3 Storage for Tenant Consumption"](#3.6.3).
 
-There are multiple storage performance attributes, such as latency, IOPS (Input/Output Operations per second), and throughput. For example, a workload may require one of its storage devices to provide low latency, high IOPS and very large/huge storage size (terabytes of data).
-Low Latency storage is for workloads which have strong constraints on the time to access the storage.
-High IOPS oriented storage is for workloads requiring lots of read/write actions.
-Large size storage is for workloads that need lots of volume without strong performance constraints.
+In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity and behaviours. The set of selectable attributes includes:
+ * Storage class: Block, File, Object.
+ * Retention Policy - persistent (storage volume / data) is persistent across stop/start of workload; ephemeral storage - there is no data retention across stop/start events for the workload.
+ * Underlying physical device type (HDD, SSD, etc.).
+ * Performance characteristic - defined as: Latency, IOPS (Input/Output Operations per second), and throughput.
+ * Enhanced features - set of selectable features such as: auto-replicate, encryption, snapshot support.
+
 Note that approximate numeric ranges for the qualitative values used above are given in the 
 [Storage Extensions](./chapter04.md#4.2.6) section.
 
@@ -152,7 +162,7 @@ Storage resources have the following attributes, with metric definitions that su
 | Attribute                | Description                                                                                    |
 |--------------------------|------------------------------------------------------------------------------------------------|
 | `name`                   | name of storage resources                                                                      |
-| `data retaining policy`  | persistent or ephemeral                                                                        |
+| `data retention policy`  | persistent or ephemeral                                                                        |
 | `performance`            | Read and Write Latency, The average amount of time to perform a R/W operation, in milliseconds |
 |                          | Read and Write IOPS, The average rate of performing R/W in IO operations per second            |
 |                          | Read and Write Throughput, The average rate of performing R/W operations in Bytes per second   |
@@ -164,11 +174,11 @@ Storage resources have the following attributes, with metric definitions that su
 
 <a name="3.2.1.4"></a>
 #### 3.2.1.4 Virtual Network
-This topic is currently covered in [Network](#3.5) section.
+This topic is covered in [Network](#3.5) section.
 
 <a name="3.2.1.5"></a>
 #### 3.2.1.5 Availability Zone
-An availability zone is a logical pool of physical resources (e.g. compute, block storage, and network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase its fault-tolerance.
+An availability zone is a logical pool of physical resources (e.g. compute, block storage, and network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase the workloads' fault-tolerance.
 
 As a logical group with operator-specified criteria, the only mandatory attribute for an Availability Zone is the name.
 
@@ -181,7 +191,7 @@ As a logical group with operator-specified criteria, the only mandatory attribut
 
 <a name="3.2.2"></a>
 ### 3.2.2 Virtual Infrastructure Manager
-The virtual infrastructure manager allows to:
+The virtual infrastructure manager allows:
 
 * setup, manage and delete tenants,
 * setup, manage and delete user- and service-accounts,
@@ -210,8 +220,8 @@ The virtual infrastructure manager allows to:
 * **Storage Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware storage resources
 
 * **Network Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware network resources
-<a name="3.3"></a>
 
+<a name="3.3"></a>
 ## 3.3 Hardware Infrastructure Layer
 
 <a name="3.3.1"></a>
@@ -221,12 +231,14 @@ Compute, Storage and Network resources serve as the foundation of the cloud infr
 <p align="center"><img src="../figures/ch03-model-hardware-resources.png" alt="Cloud Infrastructure Hardware Resources" Title="Cloud Infrastructure Hardware Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-4:</b> Cloud Infrastructure Hardware Resources</p>
 
-In managed Hardware Infrastructure systems, these consumable Compute, Storage and Network resources can be provisioned through operator commands or through software APIs.  There is a need to distinguish between these consumable resources, that are treated as leased resources, from the actual physical hardware resources that are installed in the data centre. For this purpose, the hardware resource layer is conceptually split into a Logical Resource Layer that surfaces the consumable resources to the software layer above, and the Physical Resource Layer that is operated and managed by the Data Centre Operations team from the Hardware Infrastructure Management functions perspective.
+In managed Hardware Infrastructure systems, these consumable Compute, Storage and Network resources can be provisioned through operator commands or through software APIs.  There is a need to distinguish between these consumable resources, that are treated as leased resources, from the actual physical hardware resources that are installed in the data centre. For this purpose, the hardware resource layer is conceptually split into a Logical Resource Layer that surfaces the consumable resources to the software layer above, and the Physical Resource Layer that is operated and managed by the Cloud Infrastructure Providers Operations team from the Hardware Infrastructure Management functions perspective.
 
-Some installations might use a cluster of managed switches or storage components controlled by a Switch Fabric controller and/or a Storage Fabric controller acting as an appliance system. These systems should be federated with the HW Infrastructure Management system over some API to facilitate exchange of configuration intent, status and telemetry information allowing the HW Infrastructure Management and Management stack to automate Cloud Infrastructure operations. These appliance systems normally also have their own Equipment Management APIs and procedures for the hardware installation and maintenance staff.
+Some installations might use a cluster of managed switches or storage components controlled by a Switch Fabric controller and/or a Storage Fabric controller acting as an appliance system. These systems should be federated with the HW Infrastructure Management system over some API to facilitate exchange of configuration intent, status and telemetry information allowing the Hardware Infrastructure Management and Management stack to automate Cloud Infrastructure operations. These appliance systems normally also have their own Equipment Management APIs and procedures for the hardware installation and maintenance staff.
 
-An example could be a  Cloud Infrastructure stack federated with a commercial Switch Fabric where the Cloud Infrastructure shall be able to "send" networking configuration intent to the Switch Fabric and the Switch Fabric shall be able to "send" status and telemetry information to the Cloud Infrastructure e.g. Port/Link Status and packet counters of many sorts. The word "send" is a very lose definition of getting a message across to the other side, and could be implemented in many different ways.
-This allows HW Infrastructure Management and Cloud Infrastructure management stack to have network automation that includes the switches that are controlled by the federated Switch Fabric. This would be a rather normal case for Operators  that have a separate Networking Department that owns and runs the Switch Fabric separately from the Data Centre.
+An example could be a  Cloud Infrastructure stack federated with a commercial Switch Fabric where the Cloud Infrastructure shall be able to "send" networking configuration intent to the Switch Fabric and the Switch Fabric shall be able to "send" (see note below) status and telemetry information to the Cloud Infrastructure e.g. Port/Link Status and packet counters of many sorts.
+This allows Hardware Infrastructure Management and Cloud Infrastructure management stack to have network automation that includes the switches that are controlled by the federated Switch Fabric. This would be a rather normal case for Operators  that have a separate Networking Department that owns and runs the Switch Fabric separately from the Data Centre.
+
+NOTE: The word "send" is a very lose definition of getting a message across to the other side, and could be implemented in many different ways.
 
 <a name="3.3.1.1"></a>
 #### 3.3.1.1 Hardware Acceleration Resources
@@ -249,7 +261,7 @@ More details about Hardware Acceleration are in [Section 3.8 Hardware Accelerati
 ### 3.3.2 Hardware Infrastructure Manager
 The HW Infrastructure Manager shall at least support equipment management for all managed physical hardware resources of the Cloud Infrastructure. 
 
-In most deployments the HW Infrastructure Manager should also be the HW Infrastructure Layer provisioning manager of the Compute, Storage and Network resources that can be used by the Virtualization Infrastructure Layer instances. It shall provide an API enabling vital resource recovery and control functions of the provisioned functions e.g. Reset and Power control of the Computes.
+In most deployments the Hardware Infrastructure Manager should also be the HW Infrastructure Layer provisioning manager of the Compute, Storage and Network resources that can be used by the Virtualization Infrastructure Layer instances. It shall provide an API enabling vital resource recovery and control functions of the provisioned functions e.g. Reset and Power control of the Computes.
 
 For deployments with more than one Virtualization Infrastructure Layer instance that will be using a common pool of hardware resources there is a need for a HW Infrastructure Layer provisioning manager of the Compute, Storage and Network resources to handle the resource assignment and arbitration.
 
@@ -428,7 +440,7 @@ In both cases the Underlay Networking can be externally controlled over the SDNu
 
 > **Note:** The use of SmartNIC in this section is only pertaining to Underlay Networking separation of Virtual instances in separate Overlay domains in much the same way as AWS do with their Nitro SmartNIC. This is the important consideration for the Reference Model that enables multiple implementation instances from one or several Reference Architectures to be used on a shared Underlay Network. The use of SmartNIC components from any specific Virtual instance e.g. for internal virtual switching control and acceleration must be regulated by each Reference Architecture without interfering with the authoritative Underlay separation laid out in the Reference Model.
 
-Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer can be seen in **Figure 3-7**.
+Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer can be seen in **Figure 3-7** below.
 
 <p align="center"><img src="../figures/RM-Ch03_5-Underlay Networking separation examples.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
 <p align="center"><b>Figure 3-7:</b> Underlay Networking separation examples</p>
@@ -436,7 +448,7 @@ Two exemplifications of different common HW realisations of Underlay Network sep
 <a name="3.5.4.2"></a>
 #### 3.5.4.2 SDN Overlay and SDN Underlay layering and relationship example
 
-Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling SR-IOV) are described in **Figure 3-8**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
+Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling SR-IOV) are described in **Figure 3-8** (below). The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
 
 <p align="center"><img src="../figures/RM-Ch03_5-SDN Controller relationship examples.png" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
 <p align="center"><b>Figure 3-8:</b> SDN Controller relationship examples</p>
@@ -444,7 +456,7 @@ Two use case examples with both SDNo and SDNu control functions depicting a soft
 <a name="3.5.4.3"></a>
 #### 3.5.4.3 Example of IaaS and CaaS Virtualization Infrastructure Instances on a Shared HW Infrastructure With SDN
 
-A Networking Reference Model deployment example is depicted in **Figure 3-9** to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains represented with separate colours.
+A Networking Reference Model deployment example is depicted in **Figure 3-9** (below) to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains represented with separate colours.
 
 The example is or will be a common scenario for operators that modernise their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNFs on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks, since it is not foreseen any generic standard of a CaaS implementation that will be capable to support all types of CNFs from any vendor. It is also expected that many CNFs will have dependencies to a particular CaaS version or instances which then will prohibit a separation of Life Cycle Management in between individual CNFs and CaaS instances.
 
@@ -599,42 +611,47 @@ SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommen
 SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY.
 
 <a name="3.5.7"></a>
-### 3.5.7 Networking Semantics
-OpenStack Neutron provides “network connectivity as a service” between interface devices; it implements the OpenStack Networking API. It manages virtual networking and access to physical networks. Neutron provides actual layer 2 connectivity to compute instances and supports subnets. A subnet is attached to a network and describes an IP network; a subnet has a CIDR and a gateway IP address. Neutron supports dedicated static IP addresses or DHCP, and Floating IP addresses for dynamic traffic rerouting. These and other capabilities, including support for SDN, allow, for example, the instantiation of network services such as L3aaS and LBaaS and their interconnection. Networking APIs and other networking capabilities can be added through the use of the ML2 plugin.
+### 3.5.7 Kubernetes Networking Semantics
+The support for traditional network orchestration is non existent in Kubernetes as it is foremost a Platform as a Service (PaaS) environment and not an Infrastructure as a Service (Iaas) component. There is no network orchestration API, like Neutron in OpenStack, and there is no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then connect them all together as can be done using Neutron.
 
-Kubernetes networking can be divided into two parts, built-in network functionality available through the pod's mandatory primary interface and network functionality available through the pod's optional secondary interfaces. Kubernetes currently only allows for one network, the cluster network, and one network attachment for each pod. All pods and containers have an eth0 interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as VRFs and additional routes and routing tables inside the pod network namespace. The support for traditional network orchestration is non-existent in Kubernetes, there is no network orchestration API and there is no way to create L2 networks. Multi networks, pod multi-network attachments, or network orchestration is supported by using a [Container Network Interface](https://github.com/containernetworking/cni) multiplexer such as [Multus](https://github.com/k8snetworkplumbingwg/multus-cni). The [Network Plumbing Working Group](https://github.com/k8snetworkplumbingwg/community) has produced the [Kubernetes Network Custom Resource Definition De-facto Standard](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit). This document describes how secondary networks can be defined and attached to pods.
+Kubernetes networking can be divided into two parts, built in network functionality available through the pod's mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
+
+#### Built in Kubernetes Network Functionality 
+Kubernetes currently only allows for one network, the *cluster* network, and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing tables inside the pod network namespace.
+
+#### Multiple Networks and Advanced Configurations
+Kubernetes does currently not in itself support multi networks, pod multi network attachments or network orchestration. This is supported by using a [*Container Network Interface*](https://github.com/containernetworking/cni) multiplexer such as [Multus](https://github.com/k8snetworkplumbingwg/multus-cni). The [*Network Plumbing Working Group*](https://github.com/k8snetworkplumbingwg/community) has produced the [Kubernetes Network Custom Resource Definition De-facto Standard](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit). This document describes how secondary networks can be defined and attached to pods.
+
 
 <a name="3.6"></a>
 ## 3.6 Storage
-The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted VNF applications and the platform management.
-Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). A simplified view of this is provided in the following illustrative model:
-<p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="45%"/></p>
-<p align ="center"><b>Figure 3-14:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
 
-Where:
-* (Comparative) Cost - is monetary value / unit of end user storage capacity 
-* Performance - is defined by IOPS / Latency / Throughput as typically each of these increases with successive generations of storage
-* Capacity - consumption needs are represented by width of the: Ultra High Performance, Enterprise Transactional, Value and Capacity storage options.
-* Storage Types - is how the storage is accessed and used, where:
-  * Platform Native = is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF  boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
-  * Shared Storage = is storage this accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
-  * Object Storage = is storage that is accessed via API interfaces (the most common example being HTTP restful services API), which support get/put of structured objects; and
-  * Archival = is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting legal requirements or other historical recording where the storage mechanism may go through multiple stages before landing at rest.
+<a name="3.6.1"></a>
+### 3.6.1 Introduction
 
-The storage model provides a relatively simple way for the storage consumer to specify / select their storage needs. This is shown in the following table which highlights key attributes and features of the storage classes and "epic use cases" for common usage patterns.
+The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted applications and the platform management.
+Each of:
+* underlying compute host boot and virtual machine hosting,
+* control plane configuration and management plane storage for fault and performance management and automation, capacity management and reporting and
+* tenant application and VNF storage needs
 
-| Storage Type | Consumption Model | Performance & Capacity | Cost | Infrastructure Strategy | Use Case |
-|---|---|---|---|---|---|
-| Platform Native | Managed by the VIM / Hypervisor and attached as part of VNF/CNF start up via VNF Descriptor<br />Volumes shareability across VNF/CNF instances is determined by platform and storage capabilities | Ultra High Performance & Very High Performance<br />Capacity: 10GB - 5TB<br />"Tier 1" | High to Very High | Always part of VIM deployment<br />Storage is directly next to vCPU<br />Can support highest performance use cases<br />Always available to support VNF/CNF boot/startup | Boot/Start VNF/CNF<br />Live Migrate Workload within and across VIMs |
-| Shared Storage | Access via Network File System<br />Concurrent consumption across multiple VNF/CNFs<br />Sharing can be constrained to tenancy, cross tenancy and externally accessible | Enterprise Transactional Performance (real time transaction processing)<br />Capacity: 5GB - 100TB<br />Selectable "Tier 1" to "Tier 3" | High - Mid | Leverage existing capabilities<br />Only build if needed (not needed by many data plan VNF/CNFs)<br />If needed for Edge deployment then aim to unify with "Platform Native" deployment | VNF/CNF's able to share the same file content |
-| Object Storage | Consumed via HTTP/S restful services<br />Provided by serving application which manages storage needs<br />Location Independent | Highly distributable and scalable | High to Mid | Primarily tenant application responsibility | Cloud Native Geo-Distributed VNF/CNFs |
-| Capacity | Typically accessed as per "Shared Storage" but will likely have additional storage stages<br />Not suitable for real time processing | Very low transactional performance<br />Need throughput to accommodate large data flow<br />"Tier 3" | Low | Use cheapest storage available that meets capacity & security needs | Archival storage for tenant/platform backup/restore<br />DR |
+have common and specific needs for storage in terms of performance, capacity and consumption models.
 
-In cloud infrastructure the storage types may manifest in various ways with substantive variations in the architecture models being used. Examples include storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking) and in chassis storage to support hypervisor and container host OS/Runtime.  For the provision of a shared resource platform it is not desirable to use "in chassis storage" for anything other than in the storage devices for platform hypervisor / OS boot or for the hosts providing the storage sub-systems deployment itself.  This is due to difficulty in resulting operational management (see principle below "Operationally Amenable"). For cloud based storage "Ephemeral" storage (hypervisor attached or container images which are disposed when VNF/CNF is stopped) is often distinguished from other persistent storage, however this is a behaviour variation that is managed via the VNF descriptor rather than a specific Storage Type. Storage also follows the alignment of separated virtual and physical resources of Virtual Infrastructure Layer and HW Infrastructure Layer. Reasons for such alignment are described more in Section 3.5.
+The combination of common but diverse needs in conjunction with the differences in the hosting environments (from large data-centres to small edge deployments) has resulted in the proliferation of storage technologies and their deployment architectures. To address this the "Reference Model" outlines a "General Cloud Storage Model" (see Figure 3-14 - "General Cloud Storage Model"). The model will outline the different types of storage technologies and how they can be used to meet the need for:
+* providing storage via dedicated storage systems,
+* multi-tenant cloud storage,
+* Control and Management Plane storage needs,
+
+across both large data-centres and small edge deployments; the model can then be used for implementing Reference Architectures.
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-model-01.png" alt="General Cloud Storage Model" Title="General Cloud Storage Model" width="100%"/></p>
+<p align ="center"><b>Figure 3-14:</b> General Cloud Storage Model</p>
+
+Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). The objective of the model and set of stereotypes and perspectives is to provide guideance to architects and immplementors in establishing storage solutions for Cloud Infrastructure.
 
 The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 * Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
-* Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance requirements (more in Virtual Resources [3.2.1.3 Storage](#3.2.1.3)).
+* Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance requirements (more in Virtual Resources 3.2.1.3 Storage).
 * Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of workloads (VNF/CNF) onboarding.
 * Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
 * Scalability: Storage model enables scalability to enable small up to large deployments.
@@ -642,7 +659,187 @@ The following principles apply to Storage scope for the Reference Model, Referen
 * Operationally Amenable: The storage must be amenable to consistent set of operational processes for: Non-Disruptive Capacity Expansion and Contraction, Backup/Restoration and Archive and Performance Management. Where applicable (examples are: Backup/Restoration/Archive) these processes should also be able to be provided to tenants for their own delegated management.
 * Security Policy Amenable: The storage sub-systems must be amenable to policy based security controls covering areas such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management Security Policy Override, Secure Erase on Device Removal and others
 * Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
+ 
+The above principles should be understood as storage specific specialisations of the [Anuket General Principles](../../common/chapter00.md#2.0).
 
+<a name="3.6.2"></a>
+### 3.6.2 Storage Implementation Stereotypes
+
+The following set of storage implementations outline some of the most prevalent stereotypical storage implementations.
+
+The first of these are for Data Centre Storage cases, with stereotypes of:
+* Dedicated storage appliance (Figure 3-15) - that provide network based storage via iSCSI (2), NFS/CIFS (3) with potentially virtual NAS (vNAS) (4) capability. Having virtual network software (4) allows the establishment of storage tenancies, where storage tenancy have their own virtual storage services which are exposed on their own network,
+* Software defined storage (Figure 3-16) - which is able to provide similar capabilities as the dedicated storage appliance (see (3),(4) & (5) in diagram). In this case this is provided as a software solution on top of a hyper-converged infrastructure.
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-appliance-sterotype-01.png" alt="Storage Appliance Stereotype" Title="Storage Appliance Stereotype" width="100%"/></p>
+<p align ="center"><b>Figure 3-15:</b> Storage Appliance Stereotype</p>
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-software-defined-sterotype-01.png" alt="Software Defined Storage Stereotype" Title="Software Defined Storage Stereotype" width="100%"/></p>
+<p align ="center"><b>Figure 3-16:</b> Software Defined Storage Stereotype</p>
+
+Both of these stereotypes can be used to support very broad storage needs from: machine boot (via iSCSI), providing storage to the Cloud Platform Control and Management Planes, Platform Native (viz., Hypervisor Attached and Container Persistence storage, as defined in section "[3.6.3 Storage for Tenant Consumption](#3.6.3)") and Application/VNF/CNF managed network storage. To provide this requires connectivity within the Cloud Infrastructure Underlay and Tenant Overlay networks.
+
+Successful management of Cloud Infrastructure requires high levels of automation, including the ability to rapidly stand up new storage and hosting infrastructure. This Cloud Infrastructure boot-strapping process is managed through Infrastructure Automation tooling. A typical part of the boot-strap process is to use PXE boot to manage the deployment of initial images to physical hosts and a similar approach is used for "Bare Metal-as-a-Service" provisioning. The storage stereotype that covers this use case is:
+* Infrastructure Automation (Figure 3-17) - where PXE Boot Server provides a cache of boot images that are stored in local storage (2) which are then conditionally served up as PXE boot images (3). The PXE boot server can run within bootstrap management hosting in data-centre or within the routing / switch layer for an edge deployment case aimed to minimise physical footprint. The Infrastructure Automation PXE server is aware of the provisioning status of the physical infrastructure and will serve specific images or even not respond to PXE boot requests for hosts which have already been provisioned and are considered "in service".
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-infrastructure-automation-pxe-server-sterotype-01.png" alt="Infrastructure Automation - PXE Boot Server Stereotype" Title="Infrastructure Automation - PXE Boot Server Stereotype"" width="100%"/></p>
+<p align ="center"><b>Figure 3-17:</b> Infrastructure Automation - PXE Boot Server Stereotype"</p>
+
+To provide PXE boot service to the underlying resource hosts, the PXE server must be connected to the same network as the NIC that is configured for PXE boot. The "Infrastructure Automation - PXE Server" stereotype is also applicable to booting tenant Virtual Machines. In this case the PXE server is on the same network as one of the machines vNICs. For tenant use this is provided as part of tenant consumable boot infrastructure services.
+ 
+For each of the defined stereotypes, the storage service uses physical Block storage for boot (Physical Layer - Block Consumption -> OS File Systems Exposure (1) on stereotype diagrams). This is the primary use case for use of in chassis physical storage, that is not being used for consumption and exposure as network-based storage. In general it is desirable to use network based storage solution for provision of Cloud Infrastructure storage. The "Infrastructure Automation - PXE Server" is an exception to preference for use use of network based storage, as it is managing the bootstrap process, so it cannot be dependent on a separate storage system for maintaining its image cache.
+
+<a name="3.6.3"></a>
+### 3.6.3 Storage for Tenant Consumption
+
+Storage is made avaiable for tenant consumption through a number of models. A simplified view of this is provided in the following illustrative model.
+<p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="50%"/></p>
+<p align ="center"><b>Figure 3-18:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
+
+Where:
+* (Comparative) Cost - is monetary value / unit of end user storage capacity 
+* Performance - is defined by IOPS / Latency / Throughput as typically each of these increases with successive generations of storage
+* Capacity - consumption needs are represented by width of the: Ultra High Performance, Enterprise Transactional, Value and Capacity storage options.
+* Storage Types - is how the storage is accessed and used, where:
+  * Platform Native - is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF  boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
+  * Shared File Storage - is storage that is accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
+  * Object Storage - is storage that is accessed via API interfaces (the most common example being HTTP restful services API), which support get/put of structured objects; and
+  * Archival - is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting legal requirements or other historical recording where the storage mechanism may go through multiple stages before landing at rest.
+
+The storage model provides a relatively simple way for the storage consumer to specify / select their storage needs. This is shown in the following table which highlights key attributes and features of the storage classes and "epic use cases" for common usage patterns.
+
+| Storage Type | Consumption Model | Performance & Capacity | Cost | Infrastructure Strategy | Use Case |
+|---|---|---|---|---|---|
+| Platform Native | Managed by the VIM / Hypervisor and attached as part of VNF/CNF start up via VNF Descriptor<br />Volumes shareability across VNF/CNF instances is determined by platform and storage capabilities | Ultra High Performance & Very High Performance<br />Capacity: 10GB - 5TB<br />"Tier 1" | High to Very High | Always part of VIM deployment<br />Storage is directly next to vCPU<br />Can support highest performance use cases<br />Always available to support VNF/CNF boot/startup | Boot/Start VNF/CNF<br />Live Migrate Workload within and across VIMs |
+| Shared File Storage | Access via Network File System<br />Concurrent consumption across multiple VNF/CNFs<br />Sharing can be constrained to tenancy, cross tenancy and externally accessible | Enterprise Transactional Performance (real time transaction processing)<br />Capacity: 5GB - 100TB<br />Selectable "Tier 1" to "Tier 3" | High - Mid | Leverage existing capabilities<br />Only build if needed (this is not needed by many data plane VNF/CNFs)<br />If needed for Edge deployment then aim to unify with "Platform Native" deployment | VNF/CNF's able to share the same file content | 
+| Object Storage | Consumed via HTTP/S restful services<br />Provided by serving application which manages storage needs<br />Location Independent | Highly distributable and scalable | High to Mid | Primarily tenant application responsibility | Cloud Native Geo-Distributed VNF/CNFs |
+| Capacity | Typically accessed as per "Shared Storage" but will likely have additional storage stages<br />Not suitable for real time processing | Very low transactional performance<br />Need throughput to accommodate large data flow<br />"Tier 3" | Low | Use cheapest storage available that meets capacity & security needs | Archival storage for tenant/platform backup/restore<br />DR |
+
+<p align="center"><b>Table 3-8:</b> Tenant Storage Types</p>
+
+In section "3.6.2 Storage Implementation Stereotypes" the General Cloud Storage Model is used to illustrate the provision of storage. The model can also be used to illustrate the consumption of storage for use by Tenants (see below for "Platform Native" stereotypes):
+* Platform Native - Hypervisor Attached Consumption Stereotype (Figure 3-19) - where hypervisor consumes Software Defined Storage via Network (RA-1 - Cinder backend (2)) and the Block Image is attached to Virtual Machine (RAW or QCOW file within File System), which is used for boot and exposure to virtual machine OS as Block Storage (3). The virtual machine OS in turn consumes this for use by Tenant Application via File System,
+* Platform Native - Container Persistent Consumption Stereotype (Figure 3-20) - is simpler case with Container Runtime consuming Software Defined Storage (via RADOS backend (2)) and exposes this to Container as a file system mount (3).
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-hypervisor-attached-stereotype-01.png" alt="Platform Native - Hypervisor Attached Consumption Stereotype" Title="Platform Native - Hypervisor Attached Consumption Stereotype" width="100%"/></p>
+<p align ="center"><b>Figure 3-19:</b> Platform Native - Hypervisor Attached Consumption Stereotype</p>
+
+<p align="center"> <img src="../figures/rm-chap3.6-general-cloud-storage-container-persistent-stereotype-01.png" alt="Platform Native - Container Persistent Consumption Stereotype" Title="Platform Native - Container Persistent Consumption Stereotype" width="100%"/></p>
+<p align ="center"><b>Figure 3-20:</b> Platform Native - Container Persistent Consumption Stereotype</p>
+
+Note that a sterotype for Network File Storage consumption is not illustrated as this is simply managed by the Tenant Application by doing a file systems mount.
+
+In cloud infrastructure, the storage types may manifest in various ways with substantive variations in the architecture models being used. Examples of this are provided in section "3.6.2 Storage Implementation Stereotypes", with stereotypes for "Dedicated Storage Appliance" and "Software Defined Storage". In the consumption case, again there is use of in-chassis storage to support hypervisor and container host OS/Runtime boot, not for Tenant / User Plane storage consumption.
+
+<a name="3.6.4"></a>
+### 3.6.4 Storage Scenarios and Architecture Fit
+
+The storage model and stereotypical usage scenarios illustrate the key storage uses cases and their applicability to support storage needs from across a range of cloud deployments. This set of storage uses cases is summarised in the following tables, including how the stereotypes can support the Anuket Reference Architectures, followed by the key areas for consideration in such a deployment scenario. The structure of the table is:
+ * Use Case - what is the target storage use case being covered (large data-centre, small data-centre, standalone cloud, edge etc.)
+ * Sterotype - which of defined stereotypes is used
+ * Infra / Ctrl / Mgt - is the storage stereotype able to support the: Infrastructure, Control Plane and Management Plane Needs
+ * Tenant / User - is the storage stereotype able to support Tenant / User Plane needs including: Platform Native, Shared File Storage & Object Storage (as per section - "3.6.3 Storage for Tenant Consumption")
+
+Where:
+ * "Y" - Yes and almost always provided
+ * "O" - Optional and readily accommodated
+ * "N" - No, not available
+ * "NA" - Not Applicable for this Use Case / Stereotype
+ 
+
+| | | | | | Tenant / User | | | | | | |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| | | Infra / Ctrl / Mgt | | | Platform Native | | Shared File | | | | Object |
+| Use Case | Stereotype | Boot | Ctrl | Mgt | Hypervisor Attached | Container Persistent | Within | Cross | Ext | vNAS | Object |
+| Data-centre Storage | Dedicated Network Storage Appliance | Y | Y | Y | Y | Y | O | O | O | O | O |
+| | Dedicated Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
+| | Traditional SAN | Y | Y | Y | N | N | N | N | N | N | N |
+| Satelite data-centre Storage | Small Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
+| Small data-centre Storage | Converged Software Defined Storage | O | O | O | Y | Y | O | O | O | O | O |
+| Edge Cloud | Edge Cloud for VNF/CNF Storage | NA | O | NA | Y | Y | O | O | O | O | O |
+| | Edge Cloud for Apps Storage | NA | O | NA | Y | Y | O | O | O | O | Y |
+| | Edge Cloud for Content Mgt Storage | NA | O | NA | Y | Y | O | O | O | O | Y |
+
+<p align="center"><b>Table 3-9:</b> Storage Use Cases and Stereotypes</p>
+
+The storage sub-system is a foundational part of any Cloud Infrastructure, as such it is important to identify the storage needs, based on target tenant use cases, at inception. This will allow the right set of considerations to be addressed for the deployment. A set of typical considerations is provided for various use cases to meet functional and performance needs and to avoid the need for signifiant rework of the storage solution and its likely ripple through impact on the broader Cloud Infrastructure. The considerations will help to guide the build and deployment of the Storage solution for the various Use Cases and Stereotypes outlined in the summary table.
+
+* Data-centre Storage - in data-centre the goal is to provide a storage capability that has the flexibility to meet the needs of:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control), 
+  * Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation) and
+  * Cloud Infastructure Tenant / User Plane, 
+  * General Areas of Consideration:
+     1. Can storage support Virtual Machine (RA-1) & Container (RA-2) Hosting cases from single instance? Noting that if you wish to have single storage instance providing storage across multiple clusters / availability zones within the same data-centre then this needs to be factored into the underlay network design.
+     2. Can the storage system support Live Migration / Multi-Attach within and across Availability Zones (applicable to Virtual Machine hosting (RA-1)) and how does the Cloud Infrastructure solution support migration of Virtual Machines between availability zones in general?
+     3. Can the storage system support the full range of Shared File Storage use cases: including the ability to control how network exposed Share File Storage is visible: Within Tenancy, Across Tenancy (noting that a Tenancy can operate across availability zones) and Externally?
+     4. Can the storage system support alternate performance tiers to allow tenant selection of best Cost/Performance option? For very high performance storage provision, meeting throughput and IOP needs can be achieved by using: very high IOP flash storage, higher bandwidth networking, performance optimised replication design and storage pool host distribution, while achieving very low latency targets requires careful planning of underlay storage VLAN / switch networking.
+  * Specific Areas of Consideration:
+    1. Dedicated Software Defined Storage:
+      * Need to establish the physical disk data layout / encoding scheme choice, options could be: replication / mirroring of data across multiple storage hosts or CRC-based redundancy management encoding (such as "erasure encoding"). This typically has performance / cost implications as replication has a lower performance impact, but consumes larger number of physical disks. If using replication then increasing the number of replicas provide greater data loss prevention, but consumes more disk system backend network bandwidth, with bandwidth need proportional to number of replicas.
+      * In general with Software Defined Storage solution it is not desirable to use hardware RAID controllers, as this impacts the scope of recovery on failure as the failed device replacement can only be managed within the RAID volume that disk is part of. With Software Defined Storage failure recovering can be managed within the host that the disk failed in, but also across phyiscal storage hosts.
+      * Can storage be consumed optimally irrespective of whether this is at Control, Management or Tenant / User Plane? Example is iSCSI / NFS, which while available and providing a common technical capability, it does not provide best performance that can be achieved. This is best achieved using provided OS layer driver that matches the particular software defined storage implementation (example is using RADOS driver in Ceph case vs. Ceph ability to expose iSCSI).
+    2. Dedicated Network Storage Appliance:
+      * Macro choice is made based on vendor / model selection and configuration choices available
+    3. Traditional SAN:
+      * This is generally made available via FC-AL / SCSI connectivity and hence has a need for very specific connectivity. To provide the features required for Cloud Infrastructure (Shared File Storage, Object Storage and Multi-tenancy support) a SAN storage systems needs to be augmented with other gateway/s to provide an IP Network consumable capability. This is often seen with current deployments where NFS/CIFS (NAS) Gateway is connected by FC-AL (for storage back-end) and IP Network for Cloud Infrastructure consumption (front-end). This model helps to extent use of SAN storage investment. NOTE: This applys to SANs which use SAS/SATA physical disk devices, as direct connect FC-AL disk devices are no longer manufactored.
+
+
+* Satelite Data-centre Storage - the satelite data-centre is a smaller regional deployment which has connectivity to and utilises resources available from the main Data-centre and as such is more likely needed to support:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
+  * Cloud Infastructure Tenant / User Plane,
+  * General Areas of Consideration:
+     1. Is there a need to support multiple clusters / availability zones at the same site? If so then use "Data-Centre Storage" use case, otherwise, consider how to put Virtual Machine & Container Hosting control plane and Storage control plane on the same set of hosts to reduce footprint.
+     2. Can Shared File Storage establishment be avoided by using capabilities provided by large Data-Centre Storage?
+     3. Can very large capacity storage needs be moved to larger Data-Centre Storage capabilities?
+   * Specific Areas of Consideration:
+     1. Small Software Defined Storage:
+       * Leverage same technology as "Dedicated Software Defined Storage" scenarios, but avoid / limit Infrastructure boot and Management Plane support and Network Storage support
+       * Avoid having dedicated storage instance per cluster / availability zone
+       * Resilience through rapid rebuild (N + 1 failure scenario)
+
+* Small Data-centre Storage - the small data-centre storage deployment is used in cases where software-defined storage and virtual machine / container hosting are running on a converged infrastructure footprint with the aim of reducing the overall size of the platform. This solution is then a standalone Infrastructure Cloud platform. This storage solution would need to support:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
+  * Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation) and
+  * Cloud Infastructure Tenant / User Plane,
+  * General Areas of Consideration:
+     1. Is there need to support multiple clusters / availability zones at same site? Follow guidance as per "Satelite Data-centre Storage" use case (1).
+     2. Is Shared File Storage required? Check sharing scope carefully as fully virtualised vNFS solution adds complexity and increases resources needs.
+     3. Is there need for large local capacity ? With large capacity flash (15 - 30 TB / device) the solution can hold signficant storage capacilty, but need to carefully consider data loss prevention needs and impact on rebuilt / recovery times.
+   * Specific Areas of Consideration:
+     1. Converged Software Defined Storage:
+       * Leverage same technology as "Dedicated Software-Defined Storage" scenarios, but on converged infrastructure. To meet capacity needs provision three hosts for storage and the rest for virtual infrastructure and storage control and management and tenant workload hosting.
+       * If the solution needs to host two clusters / availability zones then have sharable storage instances.
+       * Resilience through rapid rebuild (N + 0 or N + 1)
+
+* Edge Cloud for VNF/CNF Storage - this edge case is to support the deployment of VNF / CNF at the edge. The only storage needs are those required to support:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
+  * Cloud Infastructure Tenant / User Plane - very limited configuration storage
+
+* Edge Cloud for App Storage - this edge case is to support the deployment of applications at the edge. The only storage needs are those required to support:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
+  * Cloud Infrastructure Tenant / User Plane - very limited configuration storage.
+
+
+* Edge Cloud for Content Storage - this edge case is to support the deployment of media content cache at the edge. This is a very common Content Distribution Network use case. The only storage needs are those required to support:
+  * Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control) and
+  * Cloud Infastructure Tenant / User Plane - Media Content and 
+  * General Areas of Consideration:
+    1. Consuming and exposing Object storage through Tenant application
+    2. Use Embedded Shared File Storage for Control and Tenant Storage Needs
+  * Specific Areas of Consideration:
+    1. Embedded Shared File Storage:
+
+The General Storage Model illustrates that at the bottom of any storage solution there is always the physical storage layer and a storage operating system of some sort. In Cloud Infrastructure enviroment what is generally consumed is some form of network storage which can be provided by the:
+ * Infrastructure platform underlay network for Control Plan and Platform Native - Hypervisor Attached and Container Runtime Managed
+ * Tenant / User overlay network for Shared File Storage and Object Storage
+
+In general for the provision of storage as shared resource it is not desirable to use "in chassis storage" for anything other than in the storage devices for platform hypervisor / OS boot or for the hosts providing the storage sub-systems deployment itself. This is due to difficulty in resulting operational management (see principles section "3.6.1 Introduction" - "Operationally Amenable" above).
+
+For cloud based storage "Ephemeral" storage (hypervisor attached or container images which are disposed when VNF/CNF is stopped) is often distinguished from other persistent storage, however this is a behaviour variation that is managed via the VNF descriptor rather than a specific Storage Type.
+
+Storage also follows the alignment of separated virtual and physical resources of Virtual Infrastructure Layer and HW Infrastructure Layer. Reasons for such alignment are described more in Section 3.5.
+
+While there are new storage technologies being made available and a trend towards the use of flash for all physical storage needs, for the near future, the core storage architecture for Cloud Infrastructure is likely to remain consistent with the network-based consumption model, as described through the stereotypes. 
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
@@ -651,7 +848,7 @@ The following diagram presents an example of the realization of the reference mo
 
 <p align="center"><img src="../figures/ch03-model-realization-diagram-2.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>
 
-<p align="center"><b>Figure 3-15:</b> Reference model realization example</p>
+<p align="center"><b>Figure 3-21:</b> Reference model realization example</p>
 
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 3.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.5) of this Reference Model document.
@@ -659,9 +856,9 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 <a name="3.8"></a>
 ## 3.8 Hardware Acceleration Abstraction
 
-The purpose of a HW Accelerator is to either Accelerate the execution of an application or to Offload functions from the generic CPU to make the application and/or Cloud Infrastructure more efficient from one or more aspects.
+The purpose of a Hardware Accelerator is to either Accelerate the execution of an application or to Offload functions from the generic CPU to make the application and/or Cloud Infrastructure more efficient from one or more aspects.
 
-Hardware Accelerators are often used in Telco Clouds for many reasons. Some applications require an HW Accelerator to perform tasks that a generic CPU cannot perform fast enough, with enough timing accuracy, or handle the traffic that must be kept in a single context. Other applications could be satisfied with a generic CPU performance in some deployment cases, whilst being inefficient in other situations. The Cloud Infrastructure might also benefit from specialised accelerated HW devices to perform its tasks with less power, space, or cost than a generic CPU.
+Hardware Accelerators are often used in Telco Clouds for many reasons. Some applications require an Hardware Accelerator to perform tasks that a generic CPU cannot perform fast enough, with enough timing accuracy, or handle the traffic that must be kept in a single context. Other applications could be satisfied with a generic CPU performance in some deployment cases, whilst being inefficient in other situations. The Cloud Infrastructure might also benefit from specialised accelerated HW devices to perform its tasks with less power, space, or cost than a generic CPU.
  
 The Accelerators are specialized resources and generally not expected to exist in large quantities, which makes it important that these limited HW Accelerators are carefully assigned to where they can be best used most of the time. In general, this requires that there be software-based alternative functions that can be used for the occasions when HW Accelerators can not be assigned to accelerate or offload applications or Cloud Infrastructure tasks.
  
@@ -680,21 +877,21 @@ Accelerator technologies can be categorized depending on where they are realized
 | SmartNIC | Programmable accelerator for vSwitch/vRouter, NF and/or Hardware Infrastructure | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 types/operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3 Reprogrammable |
 | SmartSwitch-based | Programmable Switch Fabric or TOR switch | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3. Reprogrammable |
 
-<p align="center"><b>Table 3-8:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
+<p align="center"><b>Table 3-10:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
 
 <p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
 
-<p align="center"><b>Figure 3-16:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+<p align="center"><b>Figure 3-22:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
 
 
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
 
-Figure 3-18 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
+Figure 3-23 gives examples for the Hardware Accelerators shown in Figure 3-21 (the [Sample reference model realization](#3.7) diagram).
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
 
-<p align="center"><b>Figure 3-17:</b> Hardware Acceleration in RM Realization Diagram</p>
+<p align="center"><b>Figure 3-23:</b> Hardware Acceleration in RM Realization Diagram</p>
 
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
@@ -712,6 +909,20 @@ Preferably, Application or Infrastructure acceleration can take benefit from und
 - For Linux IO virtualization: VirtIO
 - For Network Functions using DPDK libraries: Crypto Device, EthDev, Event Device and Base Band Device
 - For O-RAN Network functions: O-RAN Acceleration Abstraction Layer Interface.
+
+<a name="3.8.2.1"></a>
+### 3.8.2.1 Example of O-RAN Acceleration Abstraction Layer Interface
+
+O-RAN Alliance’s Cloudification and Orchestration Workgroup (WG6) defines the Acceleration Abstraction Layer (AAL), an application-level interface, as the recommended way of decoupling software vendors’ network functions from the different hardware accelerator implementations.
+
+<p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram_AAL.png" alt="AAL Interface in RM Realization Diagram" Title="AAL Interface in RM Realization Diagram" width="65%"/></p>
+
+<p align="center"><b>Figure 3-24:</b> AAL Interface in RM Realization Diagram</p>
+
+The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” (O-RAN.WG6.AAL-GAnP-v01.00, November 2020, available to the public upon agreement to the O-RAN Alliance Adopter License, from [https://www.o-ran.org](https://www.o-ran.org)):
+-	Describes the functions conveyed over the AAL interface, including configuration and management functions.
+-	Identifies the requirements as well as general procedures and operations.
+-	Introduces the initial set of the O-DU/O-CU AAL profiles.
 
 <a name="3.8.3"></a>
 ### 3.8.3 Workload Placement
@@ -754,7 +965,7 @@ There are two main types of Smart NICs that can accelerate network functions in-
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
 
-<p align="center"><b>Figure 3-18:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+<p align="center"><b>Figure 3-25:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
 
 
 #### 3.8.7.1 Simple SmartNIC

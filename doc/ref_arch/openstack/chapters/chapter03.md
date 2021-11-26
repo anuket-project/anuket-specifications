@@ -1,7 +1,6 @@
 [<< Back](../../openstack)
 
 # 3. Cloud Infrastructure Architecture - OpenStack
-<p align="right"><img src="../figures/bogo_com.png" alt="Complete" title="Bogo: Complete" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
@@ -35,7 +34,7 @@ This Reference Architecture (RA-1) aims to provide an OpenStack distribution agn
 This reference architecture provides optionality in terms of pluggable components such as SDN, hardware acceleration and support tools.
 
 The Cloud Infrastructure layer includes the physical infrastructure which is then offered as virtual resources via a hypervisor.
-The VIM is the OpenStack Train release.
+The VIM is the OpenStack Wallaby release.
 
 This chapter is organised as follows:
 *	Consumable Infrastructure Resources and Services: these are infrastructure services and resources being exposed northbound for consumption
@@ -151,7 +150,7 @@ The SDN controller exposes a NB API that can be consumed by ETSI MANO for VNF/CN
 
 <a name="3.2.6"></a>
 ### 3.2.6. Acceleration
-Acceleration deals with both hardware and software accelerations. Hardware acceleration is the use of specialised hardware to perform some function faster than is possible by executing the same function on a general-purpose CPU or on a traditional networking (or other I/O) device (e.g. NIC, switch, storage controller, etc.). The hardware accelerator covers the options for ASICs, SmartNIC, FPGAs, GPU etc. to offload the main CPU, and to accelerate workload performance. Cloud Infrastructure should manage the accelerators by plugins and provide the acceleration capabilities to VNFs.
+Acceleration deals with both hardware and software accelerations. Hardware acceleration is the use of specialised hardware to perform some function faster than is possible by executing the same function on a general-purpose CPU or on a traditional networking (or other I/O) device (e.g., NIC, switch, storage controller, etc.). The hardware accelerator covers the options for ASICs, SmartNIC, FPGAs, GPU etc. to offload the main CPU, and to accelerate workload performance. Cloud Infrastructure should manage the accelerators by plugins and provide the acceleration capabilities to VNFs.
 
 With the acceleration abstraction layer defined, hardware accelerators as well as software accelerators can be abstracted as a set of acceleration functions (or acceleration capabilities) which exposes a common API to either the VNF or the host.
 
@@ -204,7 +203,7 @@ Functional requirements of this node include:
 -	Grow / Shrink resources
 
 #### 3.3.1.3 Cloud Controller Services
-The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model (RM) Virtual Infrastructure Manager [Reference Model Chapter 3.2.2 Virtual Infrastructure Manager](../../../ref_model/chapters/chapter03.md#322").
+The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The table below also maps the OpenStack core services to the Reference Model (RM) Virtual Infrastructure Manager [Reference Model Chapter 3.2.2 Virtual Infrastructure Manager](../../../ref_model/chapters/chapter03.md#322").
 
 | RM Management Software| Service| Description| Required / Optional| Deployed on Controller Nodes| Deployed on Compute Nodes |
 |-----------------------|-------------|----------------------|----------------|-----------|---------|
@@ -219,9 +218,8 @@ The following OpenStack components are deployed on the Infrastructure. Some of t
 | (Tool that utilises APIs)| Heat| the orchestration service| Required| X |  |
 | UI| Horizon| the WEB UI service| Required| X|  |
 | Key Manager| Barbican| the secret data management service| Optional| X |  |
-<!--
-| Acceleration Resources Manager| Cyborg| the acceleration resources management| Optional| X | X |
--->
+| Acceleration Resources Manager| Cyborg| the acceleration resources and their life cycle management| Optional| X | X |
+
 
 All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services (i.e. instances of a same service must run on different nodes).
 
@@ -232,7 +230,7 @@ The APIs for these OpenStack services are listed in [Chapter 5: Interfaces and A
 #### 3.3.1.4 Cloud Workload Services
 This section describes the core set of services and service components needed to run workloads; instances (such as VMs), their networks and storage are referred to as the “Compute Node Services” (a.k.a. user or data plane services). Contrast this with the Controller nodes which host OpenStack services used for cloud administration and management. The Compute Node Services include virtualisation, hypervisor instance creation/deletion, networking and storage services; some of these activities include RabbitMQ queues in the control plane including the scheduling, networking and cinder volume creation/attachment.
 *	Compute, Storage, Network services:
-    - Nova Compute service: nova-compute (creating/deleting instances)
+    - Nova Compute service: nova-compute (creating/deleting servers (a.k.a. instances))
     -	Neutron Networking service: neutron-l2-agent (manage local Open vSwitch (OVS) configuration), VXLAN
     -	Local Storage (Ephemeral, Root, etc.)
     -	Attached Storage (using Local drivers)
@@ -242,7 +240,7 @@ This section describes the core set of services and service components needed to
 In Keystone v1 and v2 (both deprecated), the term "tenant" was used in OpenStack. With Keystone v3, the term "project" got adopted and both the terms became interchangeable.  According to [OpenStack glossary](https://docs.openstack.org/doc-contrib-guide/common/glossary.html), Projects represent the base unit of resources (compute, storage and network) in OpenStack, in that all assigned resources in OpenStack are owned by a specific project.
 OpenStack offers multi-tenancy by means of resource (compute, network and storage)separation via projects. OpenStack offers ways to share virtual resources between projects while maintaining logical separation. As an example, traffic separation is provided by creating different VLAN ids for neutron networks of different projects. As another example, if host separation is needed, nova scheduler offers AggregateMultiTenancyIsolation scheduler filter to separate projects in host aggregates. Thus, if a host in an aggregate is configured for a particular project, only the instances from that project are placed on the host. Overall, tenant isolation ensures that the resources of a project are not affected by resources of another project.
 
-This document uses the term "project" when referring to OpenStack services and “tenant” ([RM Section 3.2.1]((../../../ref_model/chapters/chapter03.md#321")) to represent an independently manageable logical pool of resources.
+This document uses the term "project" when referring to OpenStack services and “tenant” ([RM Section 3.2.1](../../../ref_model/chapters/chapter03.md#321")) to represent an independently manageable logical pool of resources.
 
 <a name="3.3.3"></a>
 ### 3.3.3. Cloud partitioning: Host Aggregates, Availability Zones
@@ -265,7 +263,7 @@ The number of Compute nodes (for workloads) determines the load on the controlle
 
 <a name="3.4.1"></a>
 ### 3.4.1. Virtualisation
-Virtualisation is a technology that enables a guest Operating System (OS) to be abstracted from the underlying hardware and software. This allows to run multiple Virtual Machines(VMs) on the same hardware. Each such VMs have their own OS and are isolated from each other i.e. application running on one VM does not have the access to resources of another VM. Such virtualisation is supported by various hypervisors available as open-source (KVM, Xen etc.) as well as commercial (Hyper-V, Citrix XenServer etc.). Selecting a hypervisor depends on the workload needs and the features provided by various hypervisors as illustrated in Hypervisor [Feature Support Matrix](https://docs.openstack.org/nova/latest/user/support-matrix.html). OpenStack (Nova) allows the use of various hypervisors within a single installation by means of scheduler filters like ComputeFilter, ImagePropertiesFilter etc.
+Virtualisation is a technology that enables a guest Operating System (OS) to be abstracted from the underlying hardware and software. This allows to run multiple Virtual Machines(VMs) on the same hardware. Each such VMs have their own OS and are isolated from each other i.e. application running on one VM does not have the access to resources of another VM. Such virtualisation is supported by various hypervisors available as open-source (KVM, Xen, etc.) as well as commercial (Hyper-V, Citrix XenServer, etc.). Selecting a hypervisor depends on the workload needs and the features provided by various hypervisors as illustrated in Hypervisor [Feature Support Matrix](https://docs.openstack.org/nova/latest/user/support-matrix.html). OpenStack (Nova) allows the use of various hypervisors within a single installation by means of scheduler filters like ComputeFilter, ImagePropertiesFilter etc.
 
 Virtualisation Services: The OpenStack nova-compute service supports multiple hypervisors natively or through libvirt. The preferred supported hypervisor in this Reference Architecture is KVM.
 
@@ -309,12 +307,12 @@ Figure 3-3 shows a physical network layout where each physical server is dual ho
 
 [OpenStack](https://docs.openstack.org/arch-design/design-storage.html) supports many different storage architectures and backends. The choice of a particular backend storage is driven by a number of factors including: scalability, resiliency, availability, data durability, capacity and performance.
 
-Most cloud storage architectures incorporate a number of clustered storage nodes that provide high bandwidth access to physical storage backends connected by high speed networks. The architecture consists of multiple storage controller units, each a generic server (CPU, Cache, storage), managing a number of high-performance hard drives. The distributed block storage software creates an abstract single pool of storage by aggregating all of the controller units. Advanced and high-speed networking (data routing) and global load balancing techniques ensure high-performance,high availability storage system.
+Most cloud storage architectures incorporate a number of clustered storage nodes that provide high bandwidth access to physical storage backends connected by high speed networks. The architecture consists of multiple storage controller units, each a generic server (CPU, Cache, storage), managing a number of high-performance hard drives. The distributed block storage software creates an abstract single pool of storage by aggregating all of the controller units. Advanced and high-speed networking (data routing) and global load balancing techniques ensure high-performance, high availability storage system.
 
 <a name="3.5"></a>
 ## 3.5. Cloud Topology
 
-A telco cloud will typically be deployed in multiple locations (“sites”) of varying size and capabilities (HVAC, for example); or looking at this in the context of OpenStack, multiple clouds (i.e. OpenStack end-points) will be deployed that do not rely on each other, by design; each cloud consists of a set of resources isolated from resources of the other clouds. The application layer must span such end-points in order to provide the required service SLA.  Irrespective of the nature of the deployment characteristics (e.g. number of racks, number of hosts, etc.), the intent of the architecture would be to allow VNFs to be deployed in these sites without major changes.  
+A telco cloud will typically be deployed in multiple locations (“sites”) of varying size and capabilities (HVAC, for example); or looking at this in the context of OpenStack, multiple clouds (i.e. OpenStack end-points) will be deployed that do not rely on each other, by design; each cloud consists of a set of resources isolated from resources of the other clouds. The application layer must span such end-points in order to provide the required service SLA.  Irrespective of the nature of the deployment characteristics (e.g., number of racks, number of hosts), the intent of the architecture would be to allow VNFs to be deployed in these sites without major changes.  
 
 Some examples of such topologies include:
 - Large data centre capable of hosting potentially thousands of servers and the networking to support them
@@ -324,9 +322,9 @@ Some examples of such topologies include:
 In order to provide the expected availability for any given service, a number of different OpenStack deployment topologies can be considered.  This section explores the main options and highlights the characteristics of each.  Ultimately the decision rests with the operator to achieve specific availability target taking into account use case, data centre capabilities, economics and risks.
 
 Availability of any single OpenStack cloud is dependent on a number of factors including:
--	environmental – dual connected power and PDUs, redundant cooling, rack distribution etc.
--	resilient network fabric – ToR (leaf), spine, overlay networking, underlay networking etc.  It is assumed that all network components are designed to be fault tolerant and all OpenStack controllers, computes and storage are dual-homed to alternate leaf switches.
--	controller nodes setup in-line with the vendor recommendation (e.g. min 3 physical nodes)
+-	environmental – dual connected power and PDUs, redundant cooling, rack distribution, etc.
+-	resilient network fabric – ToR (leaf), spine, overlay networking, underlay networking, etc.  It is assumed that all network components are designed to be fault tolerant and all OpenStack controllers, computes and storage are dual-homed to alternate leaf switches.
+-	controller nodes setup in-line with the vendor recommendation (e.g., min 3 physical nodes)
 -	network nodes (where applicable)
 - backend storage nodes setup for highly availablility based on quorum (aligned with vendor implementation)
 -	compute nodes sized to handle the entire workload following local failure scenario
@@ -352,13 +350,13 @@ Assumptions and conventions:
 
 #### 3.5.2.1. Topology 1	- Local Redundancy
 
-Under normal operation this deployment can handle a single failure of a controller node or storage node without any impact to the service.   If a compute node fails the application layer (often the VNFM) would need to restart workloads on a spare compute node of similar capability i.e., cloud may need to be provided with n+1 capacity.  In the case of an active/active application deployed to separate compute nodes (with hypervisor anti-affinity) there would be no service impact.  
+Under normal operation this deployment can handle a single failure of a controller node or storage node without any impact to the service. If a compute node fails the application layer (often the VNFM) would need to restart workloads on a spare compute node of similar capability i.e., cloud may need to be provided with n+1 capacity. In the case of an active/active application deployed to separate compute nodes (with hypervisor anti-affinity) there would be no service impact.  
 
 *Important to consider:*
 
--	Where possible servers should be distributed and cabled to reduce the impact of any failure e.g. PDU, rack failure.   Because each operator has individual site constraints this document will not propose a standard rack layout.
+-	Where possible servers should be distributed and cabled to reduce the impact of any failure e.g., PDU, rack failure. Because each operator has individual site constraints this document will not propose a standard rack layout.
 -	During maintenance of the control plane, whilst the data (forwarding) plane remains unaffected, the control plane API may not be available and some applications may be relying on it during normal application operation for example for scaling. Additionally if the upgrade involves updating OpenStack services on the compute nodes care needs to be taken.  OVS-kernel networking operations may also be impacted during this time.
--	During maintenance of storage (e.g. ceph) there is an increased risk of a service-impacting failure so it is generally recommended to deploy at least one more server than the minimum required for redundancy.
+-	During maintenance of storage (e.g., ceph) there is an increased risk of a service-impacting failure, so it is generally recommended to deploy at least one more server than the minimum required for redundancy.
 
 #### 3.5.2.2. Topology 2	- Regional Redundancy
 

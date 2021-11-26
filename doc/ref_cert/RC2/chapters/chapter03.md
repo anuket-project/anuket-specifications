@@ -1,12 +1,8 @@
-# 3. Kubernetes Testing Cookbook
+﻿# Kubernetes Testing Cookbook
 
-## Table of Contents
-* [3.1 Deploy your own conformance toolchain](#3.1)
-* [3.2 Configure Kubernetes API testing](#3.2)
-* [3.3 Run Kubernetes conformance suite](#3.3)
+![Scope](../figures/bogo_dfp.png)
 
-<a name="3.1"></a>
-## 3.1 Deploy your own conformance toolchain
+## Deploy your own conformance toolchain
 
 At the time of writing, the CI description file is hosted in Functest and only
 runs the containers selected by Anuket RC2. It will be completed by the
@@ -17,11 +13,13 @@ proposed in a shared tree.
 internet access, GNU/Linux as Operating System and asks for a few
 dependencies as described in
 [Deploy your own Xtesting CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004):
+
 - python-virtualenv
 - git
 
 Please note the next two points depending on the GNU/Linux distributions and
 the network settings:
+
 - SELinux: you may have to add -\-system-site-packages when creating the
   virtualenv ("Aborting, target uses selinux but python bindings
   (libselinux-python) aren't installed!")
@@ -29,6 +27,7 @@ the network settings:
   https://docs.docker.com/config/daemon/systemd/#httphttps-proxy
 
 To deploy your own CI toolchain running Anuket Compliance:
+
 ```bash
 virtualenv functest-kubernetes --system-site-packages
 . functest-kubernetes/bin/activate
@@ -40,17 +39,14 @@ git clone https://gerrit.opnfv.org/gerrit/functest-kubernetes functest-kubernete
 ansible-playbook functest-kubernetes-src/ansible/site.cntt.yml
 ```
 
-<a name="3.2"></a>
-### 3.2 Configure Kubernetes API testing
+### Configure Kubernetes API testing
 
 Place the kubeconfig configuration file corresponding to the Kubernetes cluster
 under test in the following location on the machine running the cookbook:
 
 `/home/opnfv/functest-kubernetes/config`
 
-
-<a name="3.3"></a>
-### 3.3 Run Kubernetes conformance suite
+### Run Kubernetes conformance suite
 
 Open http://127.0.0.1:8080/job/functest-kubernetes-v1.22-daily/ in a web
 browser, login as admin/admin and click on "Build with Parameters" (keep the
@@ -62,6 +58,7 @@ functest-kubernetes-v1.22-zip's console. Be free to download it and then to send
 it to any reviewer committee.
 
 To clean your working dir:
+
 ```bash
 deactivate
 rm -rf functest-kubernetes-src functest-kubernetes

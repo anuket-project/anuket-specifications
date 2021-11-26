@@ -1,11 +1,13 @@
-# 2. Kubernetes Test Cases and Requirements Traceability
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+# Kubernetes Test Cases and Requirements Traceability
+
+![Scope](../figures/bogo_lsf.png)
 
 ## Introduction
 
 All of the requirements for RC2 have been defined in the Reference Model (RM) and Reference Architecture (RA2). The scope of this chapter is to identify and list down test cases based on these requirements. Users of this chapter will be able to use it to determine which test cases they must run in order to test compliance with the requirements. This will enable traceability between the test cases and requirements. They should be able to clearly see which requirements are covered by which tests and the mapping from a specific test result (pass or fail) to a requirement. Each requirement may have one or more test case associated with it.
 
 ### Goals
+
 - Clear mapping between requirements and test cases
 - Provide a stable set of point-in-time requirements and tests to achieve conformance
 - Enable clear traceability of the coverage of requirements across consecutive releases of this document
@@ -14,10 +16,12 @@ All of the requirements for RC2 have been defined in the Reference Model (RM) an
 - A set of test cases to serve as a template for Anuket Assured
 
 ### Non-Goals
+
 - Defining any requirements
 - Providing coverage for non-testable requirements
 
 ### Definitions
+
 *must*: Test Cases that are marked as must are considered mandatory and must pass successfully
 
 *should*: Test Cases that are marked as should are expected to be fulfilled by the cloud infrastructure but it is up to each service provider whether to accept a cloud infrastructure that is not fulfilling any of these requirements. The same applies to should not.
@@ -45,6 +49,7 @@ grow according to the ongoing requirement traceability.
 [End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md)
 basically asks for focus and skip regexes to select or to blacklist
 single tests:
+
   - focus basically matches
     Conformance or [Testing Special Interest Groups](https://github.com/kubernetes/community/blob/master/sig-testing/charter.md)
     in sub-sections below
@@ -54,6 +59,7 @@ single tests:
 The Reference Conformance suites must be stable and executed on real
 deployments. Then all the following labels are defacto skipped in
 [End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md):
+
   - alpha
   - Disruptive
   - Flaky
@@ -72,6 +78,7 @@ testing as defined by [Sonobuoy](https://sonobuoy.io/).
 focus: [Conformance]
 
 skip:
+
   - [Disruptive]
   - NoExecuteTaintManager
 
@@ -80,6 +87,7 @@ skip:
 focus: [sig-api-machinery]
 
 skip:
+
   - [alpha]
   - [Disruptive]
   - [Flaky]
@@ -95,6 +103,7 @@ for more details.
 focus: [sig-apps]
 
 skip:
+
   - [alpha]
   - [Disruptive]
   - [Flaky]
@@ -113,6 +122,7 @@ for more details.
 focus: [sig-auth]
 
 skip:
+
   - [alpha]
   - [Disruptive]
   - [Flaky]
@@ -128,6 +138,7 @@ for more details.
 focus: [sig-cluster-lifecycle]
 
 skip:
+
   - [alpha]
   - [Disruptive]
   - [Flaky]
@@ -141,6 +152,7 @@ for more details.
 focus: [sig-instrumentation]
 
 skip:
+
   - [alpha]
   - [Disruptive]
   - [Flaky]
@@ -170,6 +182,7 @@ appropriate labels.
 focus: [sig-network]
 
 skip:
+
   - [alpha]
   - [Disruptive]
   - [Flaky]
@@ -198,6 +211,7 @@ and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/cha
 focus: [sig-node]
 
 skip:
+
   - [alpha]
   - [Disruptive]
   - [Flaky]
@@ -216,6 +230,7 @@ and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/cha
 focus: [sig-scheduling]
 
 skip:
+
   - [alpha]
   - [Disruptive]
   - [Flaky]
@@ -233,6 +248,7 @@ Conforming to
 all PersistentVolumes NFS testing is also skipped.
 The following exclusions are about
 [the deprecated in-tree GitRepo volume type](https://github.com/kubernetes-sigs/kind/issues/2356):
+
   - should provision storage with different parameters
   - should not cause race condition when used for git_repo
 
@@ -242,6 +258,7 @@ appropriate labels.
 focus: [sig-storage]
 
 skip:
+
   - [alpha]
   - [Disruptive]
   - [Flaky]
@@ -325,6 +342,7 @@ As listed in [netperf's README](https://github.com/kubernetes/perf-tests/tree/ma
 the 5 major network traffic paths are combination of pod IP vs virtual IP and
 whether the pods are co-located on the same node versus a remotely located
 pod:
+
   - same node using pod IP
   - same node using cluster/virtual IP
   - remote node using pod IP
@@ -364,6 +382,7 @@ Here are the
 [vulnerability categories](https://github.com/aquasecurity/kube-hunter/blob/v0.3.1/kube_hunter/core/events/types.py)
 tagged as high by
 [kube-hunter](https://github.com/aquasecurity/kube-hunter):
+
 - RemoteCodeExec
 - IdentityTheft
 - PrivilegeEscalation
@@ -409,7 +428,7 @@ The following software versions are considered to verify Kubernetes v1.22
 
 The following test case must pass as they are for Reference Conformance:
 
-| container                                     | test case                | criteria | requirements                          |
+| container                                     | test suite               | criteria | requirements                          |
 |-----------------------------------------------|--------------------------|:--------:|---------------------------------------|
 | opnfv/functest-kubernetes-smoke:v1.22         | xrally_kubernetes        | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.22         | k8s_conformance          | PASS     | Kubernetes API testing                |

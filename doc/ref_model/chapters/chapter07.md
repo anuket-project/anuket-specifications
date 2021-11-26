@@ -13,6 +13,7 @@
   * [7.4.2 Platform ‘back-end’ access security](#7.4.2)
   * [7.4.3 Platform ‘front-end’ access security](#7.4.3)
   * [7.4.4 Infrastructure as a Code security](#7.4.4)
+  * [7.4.5 Security of Production and Non-production Environments](#7.4.5)
 * [7.5 Workload Security - Vendor Responsibility](#7.5)
   * [7.5.1 Software Hardening](#7.5.1)
   * [7.5.2 Port Protection](#7.5.2)
@@ -168,7 +169,7 @@ The platform supports the workload, and in effect controls access to the workloa
 <a name="7.4.1.1"></a>
 #### 7.4.1.1 The high-level functions of these different access controls
 
-* **MGNT ACCESS CONTROLS** - Platform access to workloads for service management. Typically all management and control-plane traffic is encrypted.
+* **MGMT ACCESS CONTROLS** - Platform access to workloads for service management. Typically all management and control-plane traffic is encrypted.
 * **DATA ACCESS CONTROLS** - Control of east-west traffic between workloads, and control of north-south traffic between the NF and other platform services such as front-end carriage networks and platform services. Inherently strong separation between tenants is mandatory.
 * **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
 * **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as (Two-Factor Authentication) 2FA, and using technologies such as Role-Based Access Control (RBAC) and encryption. Application Programming Interface (API) gateways may be required for automated/script-driven processes.
@@ -234,7 +235,7 @@ The platform supports the workload, and in effect controls access to the workloa
 
 <a name="7.4.4"></a>
 ### 7.4.4 Infrastructure as a Code security
-Infrastructure as a Code (IaaC) (or equivalently called Infrastructure as Code IaC) refers to the software used for the declarative management of cloud infrastructure resources. In order to dynamically address user requirements, release features incrementally, and deliver at a faster pace, DevSecOps teams utilize best practices including continuous integration and continuous delivery and integrate information security controls and scanning tools into these processes, with the aim of providing timely and meaningful feedback including identifying vulnerabilities and security policy violations. With  this automated security testing and analysis capabilities it will be of critical value to detecting vulnerabilities early and maintaining a consistent security policy.
+Infrastructure as a Code (IaaC) (or equivalently called Infrastructure as Code IaC) refers to the software used for the declarative management of cloud infrastructure resources. In order to dynamically address user requirements, release features incrementally, and deliver at a faster pace, DevSecOps teams utilise best practices including continuous integration and continuous delivery and integrate information security controls and scanning tools into these processes, with the aim of providing timely and meaningful feedback including identifying vulnerabilities and security policy violations. With  this automated security testing and analysis capabilities it will be of critical value to detecting vulnerabilities early and maintaining a consistent security policy.
 
 Because of the extremely high complexity of modern telco cloud infrastructures, even minor IaaC code changes may lead to disproportionate and sometime disastrous downstream security and privacy impacts. Therefore, integration of security testing into the IaaC software development pipeline requires security activities to be automated using security tools and integrated  with the native DevOps and DevSecOps tools and procedures.
 
@@ -249,6 +250,15 @@ The framework identifies the following five distinct stages:
 
 Triggers and checkpoints define transitions within stages. When designing DevSecOps security processes, one needs to keep in mind, that when a trigger condition is met, one or more security activities are activated. The outcomes of those security activities need to determine whether the requirements of the process checkpoint are satisfied. If the outcome of the security activities meets the requirements, the next set of security activities are performed as the process transitions to the next checkpoint, or, alternatively, to the next stage if the checkpoint is the last one in the current stage. If, on the other hand, the outcome of the security activities does not meet the requirements, then the process should not be allowed to advance to the next checkpoint. Tables 7-9 to 7-13 in Section 7.9 define the IaaC security activities presented as security requirements mapped to particular stages and trigger points.
 
+<a name="7.4.5"></a>
+### 7.4.5 Security of Production and Non-production Environments
+Telecommunications operators often focus their security efforts on the production environments actively used by their customers and/or their employees. This is of course critical because a breach of such systems can seriously damage the company and its customers. In addition, production systems often contain the most valuable data, making them attractive targets for intruders. But an insecure non-production (development, testing) environment can also create real problems because they may leave a company open to corporate espionage, sabotage by competitors, and theft of sensitive data.
+
+Security is about mitigating risk. If operators do not have the same level of security regime in their non-production environments compared to production, then an additional level of risk may be introduced. Especially if such non-production environments accept outside connections (for example for suppliers or partners, which is quite normal in complex telco ecosystems), there is a real need to monitor security of these non-production environments. The gold standard then is to implement the same security policies in production and non-production infrastructure, which would reduce risk and typically simplify operations by using the same control tools and processes. However, for many practical reasons some of the security monitoring rules may differ. As an example, if a company maintains a separate, isolated environment for infrastructure software development experimentation, the configuration monitoring rules may be relaxed in comparison with the production environment, where such experimentation is not allowed. Therefore, in this document, when dealing with such dilemma, the focus has been placed on those non-production security requirements that must be on the same level as in the production environment (typically of **must** type), leaving relaxed requirements (typically of **should** or **may**) in cases there is no such necessity, see Sec. 7.9.7.  
+ 
+In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered to be Infrastructure as a Code (IaaC). This fact implies that many aspects of code related security automatically apply to IaaC. Security aspects of IaaC in the telco context is discussed in the previous Section 7.4.4 "Infrastructure as a Code", which introduces the relevant framework for security automation and programmatic execution and monitoring of security controls. Organisations need to identify which of the stages or activities within these stages should be performed within the non-production versus production environments. This mapping will then dictate which security activities defined for particular stages and triggers (e.g, vulnerability tests, patch testing, penetration tests) are mandatory, and which can be left as  discretionary.  
+
+
 <a name="7.5"></a>
 ## 7.5 Workload Security - Vendor Responsibility
 
@@ -258,9 +268,9 @@ Triggers and checkpoints define transitions within stages. When designing DevSec
 * No hard-coded credentials or clear text passwords in code and images. Software must support configurable, or industry standard, password complexity rules.
 * Software should be independent of the infrastructure platform (no OS point release dependencies to patch).
 * Software must be code signed and all individual sub-components are assessed and verified for EULA (End-user License Agreement) violations.
-* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc.).
-* Software should support recognized encryption standards and encryption should be decoupled from software.
-* Software should have support for configurable banners to display authorized use criteria/policy.
+* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, penetration testing/scan findings, etc.).
+* Software should support recognised encryption standards and encryption should be decoupled from software.
+* Software should have support for configurable banners to display authorised use criteria/policy.
 
 <a name="7.5.2"></a>
 ### 7.5.2 Port Protection
@@ -327,7 +337,7 @@ Recommended practice to set network security policies following the principle of
 <a name="7.6.4"></a>
 ### 7.6.4 Volume Encryption
 
-Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Encryption functions rely on a Cloud Infrastructure internal key management service. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure. The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
+Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Encryption functions rely on a Cloud Infrastructure internal key management service. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure. The TPM (Trusted Platform Module) module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
 
 For sensitive data encryption, when data sovereignty is required, an external Hardware Security Module (HSM) should be integrated in order to protect the cryptographic keys. A HSM is a physical device which manages and stores secrets. Usage of a HSM strengthens the secrets security. For 5G services, GSMA FASG strongly recommends the implementation of a HSM to secure the storage of UICC (Universal Integrated Circuit Card) credentials.
 
@@ -394,10 +404,12 @@ ZTA principles applied to Cloud infrastructure components are the following:
 -	Secure internal and external communications
 -	Monitor, test, and analyse security continuously
 
+Zero Trust principles should also be applied to cloud-native applications. With the increasing use of these applications which are designed with microservices and deployed using containers as packaging and Kubernetes as an orchestrator, the security of east-west communications between components must be carefully addressed. The use of secured communication protocols brings a first level of security, but considering each component as non-trustworthy will minimize the risk for applications to be compromised. A good practice is to implement the proxy-based service mesh which will provide a framework to build a secured environment for microservices-based applications, offering services such as service discovery, authentication and authorisation policies enforcement, network resilience, and security monitoring capabilities. The two documents, [NIST SP 800-204A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf)(Building Secure Microservices-based Applications Using Service-Mesh Architecture) and [NIST SP 800-204B](https://csrc.nist.gov/publications/detail/sp/800-204b/final)(Attribute-based Access Control for Microservices-based Applications Using a Service Mesh), describe service mesh, and provide guidance for service mesh components deployment.
+
 <a name="7.7"></a>
 ## 7.7 Open Source Software Security 
 
-Software supply chain safety is crucial and can be a complex task in virtualised and containerized environments. Open source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components can also be composed of open source code. The proportion of open source code to an application source code can vary. It can be partial or total, visible or not. Open source code can be upstream code coming directly from open source public repositories or code within a commercial application or network function. To ensure the security of the whole system, all software and hardware components must reach the same level of security by following best security practices including secure lifecycle management. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party Components” provides a detailed risk management approach.
+Software supply chain safety is crucial and can be a complex task in virtualised and containerised environments. Open source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components can also be composed of open source code. The proportion of open source code to an application source code can vary. It can be partial or total, visible or not. Open source code can be upstream code coming directly from open source public repositories or code within a commercial application or network function. To ensure the security of the whole system, all software and hardware components must reach the same level of security by following best security practices including secure lifecycle management. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party Components” provides a detailed risk management approach.
 
 To secure software code, the following methods must be applied:
 
@@ -415,7 +427,15 @@ The strength of open source code is the availability of code source developed by
 
 **SBOM**
 
-To begin, it is highly recommended to identify the software components and their origins. The Software Bill of Materials (SBOM), described by [US NTIA](https://www.ntia.gov/SBOM)(National Telecommunications and Information Administration), is an efficient tool to identify software components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
+To begin, it is highly recommended to identify the software components and their origins. The Software Bill of Materials (SBOM), described by [US NTIA](https://www.ntia.gov/SBOM) (National Telecommunications and Information Administration), is an efficient tool to identify software components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
+
+A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management and it provides assurance of the source and integrity of components. In order to use the SBOM efficiently and spread its adoption, information must be generated and shared in a standard format. This format must be machine-readable to allow automation. The NTIA white paper [“Survey of existing SBOM formats and standards”](https://www.ntia.doc.gov/files/ntia/publications/ntia_sbom_formats_and_standards_whitepaper_-_version_20191025.pdf) identifies two key formats covering baseline SBOM information: Software Package Data eXchange (SPX) and Software Identification Tags (SWID tags).
+
+[SPDX](https://spdx.dev/) is an open-source machine-readable format developed under the umbrella of the Linux Foundation. The [SPDX specification 2.2](https://spdx.dev/specifications/) has been published as the standard ISO/IEC 5962:2021. It provides a language for communicating the data, licenses, copyrights, and security information associated with software components. With the SPDX specification 2.2, multiple file formats are available: YAML, JSON, RDF/XML, tag:value flat text, and xlss spreadsheets.
+
+[SWID Tags](https://nvd.nist.gov/products/swid) is an international XML-based standard used by commercial software publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID tags: primary, patch, corpus, and supplemental to describe a software component.
+
+For both formats, SPDX and SWID Tags, tools are available. 
 
 **Code inspection**
 
@@ -604,31 +624,32 @@ Security certification should encompass the following elements:
 <a name="7.9.7"></a>
 ### 7.9.7. Monitoring and Security Audit
 
-The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
+The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action. In general, it is a good practice to have the same security monitoring and auditing capabilities in both production and non-production environements.  However, we distinguish between requirements for Production Platform (Prod-Platform) and Non-production Platform (NonProd-Platform) as some of the requirements may in practice need to differ, see Sec. 7.4.5 for the general discussion of this topic. In the table below, when a requirement mentions only Prod-Platform, it is assumed that this requirement is optional for NonProd-Platform. If a requirement does not mention any environment, it is assumed that it is valid for both Prod-Platform and NonProd-Platform.
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.mon.001 | Platform **must** provide logs and these logs must be regularly monitored for events of interest. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved. | |
-| req.sec.mon.002 | Security logs **must** be time synchronised. |  |
-| req.sec.mon.003 | The Platform **must** log all changes to time server source, time, date and time zones. |  |
-| req.sec.mon.004 | The Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest. |  |
-| req.sec.mon.005 | The Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly. | |
-| req.sec.mon.006 | The Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions. |  |
-| req.sec.mon.007 | The Platform **must** Monitor and Audit security parameter configurations for compliance with defined security policies. | |
-| req.sec.mon.008 | The Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures. | |
-| req.sec.mon.009 | The Platform **must** Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly. | |
-| req.sec.mon.010 | The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly. |  |
-| req.sec.mon.011 | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | |
-| req.sec.mon.012 | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | |
-| req.sec.mon.013 | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
-| req.sec.mon.014 | The Monitoring systems **should not** impact IAAS, PAAS, and SAAS SLAs including availability SLAs. |  |
-| req.sec.mon.015 | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. |  |
-| req.sec.mon.016 | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
-| req.sec.mon.017 | The Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
-| req.sec.mon.018 | The Platform, starting from initialization, **must** collect and analyse logs to identify security events, and store these events in an external system. | |
-| req.sec.mon.019 | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
-| req.sec.mon.020 | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
-| req.sec.mon.021 | The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful.. | |
+| req.sec.mon.001 | The Prod-Platform and NonProd-Platform  **must** provide logs. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address, and ports (source and destination) involved.  | |
+| req.sec.mon.002 |  The logs **must** be regularly monitored for events of interest.  | |
+| req.sec.mon.003 | Logs **must** be time synchronised for the Prod-Platform as well as for the NonProd-Platform. |  |
+| req.sec.mon.004 | The Prod-Platform and NonProd-Platform **must** log all changes to time server source, time, date and time zones. |  |
+| req.sec.mon.005 | The Prod-Platform and NonProd-Platform **must** secure and protect all logs (containing sensitive information) both in-transit and at rest. |  |
+| req.sec.mon.006 | The Prod-Platform and NonProd-Platform  **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly. | |
+| req.sec.mon.007 | The Prod-Platform and NonProd-Platform  **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions. |  |
+| req.sec.mon.008 | The Prod-Platform  **must** Monitor and Audit security parameter configurations for compliance with defined security policies. | |
+| req.sec.mon.009 | The Prod-Platform and NonProd-Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures. | |
+| req.sec.mon.010 | The Prod-Platform  **must** Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly. | |
+| req.sec.mon.011 | The Prod-Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly. |  |
+| req.sec.mon.012 | The Prod-Platform and NonProd-Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | |
+| req.sec.mon.013 | The Prod-Platform and NonProd-Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | |
+| req.sec.mon.014 | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
+| req.sec.mon.015 | The Monitoring systems **should not** impact IaaS, PaaS, and SaaS SLAs including availability SLAs. |  |
+| req.sec.mon.016 | The Prod-Platform and NonProd-Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. |  |
+| req.sec.mon.017 | The Prod-Platform and NonProd-Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
+| req.sec.mon.018 | The Prod-Platform and NonProd-Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
+| req.sec.mon.019 | The Prod-Platform, starting from initialization, **must** collect and analyse logs to identify security events, and store these events in an external system. | |
+| req.sec.mon.020 | The Prod-Platform’s and NonProd-Platform’s components **must not** include any authentication credentials, e.g., password, in any logs, even if encrypted. | | 
+| req.sec.mon.021 | The Prod-Platform’s and NonProd-Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
+| req.sec.mon.022 | The Prod-Platform  **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful. | |
 
 <p align="center"><b>Table 7-7:</b> Monitoring and security audit requirements</p>
 
@@ -741,30 +762,34 @@ Network Functions Virtualisation (NFV) Release 3; NFV Security; Security Specifi
 
 Network Functions Virtualisation (NFV) Release 2; Security; VNF Package Security Specification, ETSI GS NFV-SEC 021 V2.6.1 (2019-06)
 
-ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - [https://www.etsi.org/committee/1427-nfv](https://www.etsi.org/committee/1427-nfv)
+ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV), [https://www.etsi.org/committee/1427-nfv](https://www.etsi.org/committee/1427-nfv)
 
-ETSI Cyber Security Technical Committee (TC CYBER) - [https://www.etsi.org/committee/cyber](https://www.etsi.org/committee/cyber)
+ETSI Cyber Security Technical Committee (TC CYBER), [https://www.etsi.org/committee/cyber](https://www.etsi.org/committee/cyber)
 
 **NIST Documents**
 
-NIST SP 800-53 Security and Privacy Controls for Federal Information Systems and Organizations https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf
+NIST SP 800-53 Security and Privacy Controls for Federal Information Systems and Organizations, https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf
 
-NIST SP 800-53A Assessing Security and Privacy Controls in Federal Information Systems and Organizations: Building Effective Assessment Plans https://www.serdp-estcp.org/content/download/47513/453118/file/NIST%20SP%20800-53A%20Rev%204%202013.pdf
+NIST SP 800-53A Assessing Security and Privacy Controls in Federal Information Systems and Organizations: Building Effective Assessment Plans, https://www.serdp-estcp.org/content/download/47513/453118/file/NIST%20SP%20800-53A%20Rev%204%202013.pdf
 
-NIST SP 800-63B Digital Identity Guidelines https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf
+NIST SP 800-63B Digital Identity Guidelines, https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf
 
-NIST SP 800-115 Technical Guide to Information Security Testing and Assessment https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf
+NIST SP 800-115 Technical Guide to Information Security Testing and Assessment, https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf
 
-NIST SP 800-123 Guide to General Server Security https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf
+NIST SP 800-123 Guide to General Server Security, https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf
 
-NIST SP 800-125 Guide to Security for Full Virtualization Technologies https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-125.pdf
+NIST SP 800-125 Guide to Security for Full Virtualization Technologies, https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-125.pdf
 
-NIST SP 800-125a Security Recommendations for Server-based Hypervisor Platforms https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125Ar1.pdf
+NIST SP 800-125a Security Recommendations for Server-based Hypervisor Platforms, https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125Ar1.pdf
 
-NIST SP 800-125b Secure Virtual Network Configuration for Virtual Machine (VM) Protection https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf
+NIST SP 800-125b Secure Virtual Network Configuration for Virtual Machine (VM) Protection, https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf
 
-NIST SP 800-137 Information Security Continuous Monitoring for Federal Information Systems and Organizations https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf
+NIST SP 800-137 Information Security Continuous Monitoring for Federal Information Systems and Organizations, https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf
 
-NIST SP 800-145 The NIST Definition of Cloud Computing https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf
+NIST SP 800-145 The NIST Definition of Cloud Computing, https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf
 
-NIST SP 800-190 Application Container Security Guide [https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf)
+NIST SP 800-190 Application Container Security Guide, [https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf)
+
+NIST SP 800-204A Building Secure Microservices-based Applications Using Service-Mesh Architecture, https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf
+
+NIST SP 800-204B Attribute-based Access Control for Microservices-based Applications Using a Service Mesh, https://csrc.nist.gov/publications/detail/sp/800-204b/final

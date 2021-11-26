@@ -1,7 +1,6 @@
 [<< Back](../../openstack)
 
 # 7. Operations and Life Cycle Management
-<p align="right"><img src="../figures/bogo_sdc.png" alt="Still Developing Content" title="Bogo: Still Developing Content" width="35%"/></p>
 
 ## Table of Contents
 * [7.1 Introduction ](#7.1)
@@ -47,7 +46,7 @@ The following are the minimum tasks that need to be performed by automation:
 
 **Configuration and subsequent software installation** is then handed over to a configuration management tool or life cycle manager.
 
-[OpenStack TripleO]( https://docs.openstack.org/project-deploy-guide/tripleo-docs/latest/index.html) documentation, and similar documentation from OpenStack vendors, delves into great detail on the provisioning of servers (bare metal), deploying and configuring OpenStack services. 
+[OpenStack TripleO]( https://docs.openstack.org/project-deploy-guide/tripleo-docs/latest/index.html) documentation and similar documentation from OpenStack vendors delve into great detail on the provisioning of servers (bare metal), deploying and configuring OpenStack services. 
 
 In the [Reference Implementation Chapter 06]( ../../../ref_impl/cntt-ri/chapters/chapter06.md) a set of Installer requirements are specified with a couple of Installers (such as Airship and Triple-O) described in  [Reference Implementation Chapter 8.5]( ../../../ref_impl/cntt-ri/chapters/chapter08.md#85-available-installers). It should be noted that the installers choosen in order to automate deployment depend on the cloud provider.
 
@@ -79,7 +78,7 @@ Cloud Infrastructure and VIM Maintenance activities can be classified as
 **Deployment (or removal) of infrastructure components** 
 
 In declarative tools, the code with the specified desired state (for example, number of compute servers) is modified to the new desired state. The IaC tool then ensures that the desired state is achieved.
-In procedural tools, the step-by-step code to deploy (remove) infrastructure components need to be specified. Existing code can be cloned, and appropriate changes made to get to the desired state.
+In procedural tools, the step-by-step code to deploy (remove) infrastructure components needs to be specified. Existing code can be cloned, and appropriate changes made to get to the desired state.
 
 **Configuration and Version Changes** 
 
@@ -120,9 +119,9 @@ Logs have multiple operational uses including for:
 
 <a name="7.4.2"></a>
 ### 7.4.2. Monitoring
-Monitoring is the process of collecting, aggregating, and analyzing values that improve awareness of 
+Monitoring is the process of collecting, aggregating, and analysing values that improve awareness of 
 the components' characteristics and behavior. The data from various parts of the environment are collected 
-into a monitoring system that is responsible for storage, aggregation, visualization, and initiating automated 
+into a monitoring system that is responsible for storage, aggregation, visualisation, and initiating automated 
 responses when the values meet specific threshold.
 
 Monitoring systems fulfill many related functions. Their first responsibility is to accept and store incoming 
@@ -142,14 +141,14 @@ software to watch for changing conditions.
 
 <a name="7.4.4"></a>
 ### 7.4.4. Logging, Monitoring, and Analytics (LMA) Framework
-In this section, a possible framework utilizing Prometheus, Fluentd, Elasticsearch and Kibana is given as an example only.
+In this section, a possible framework utilising Prometheus, Fluentd, Elasticsearch and Kibana is given as an example only.
 
 
 <p align="center"><img src="../figures/RA1-Ch07-Monitoring-Logging-Framework.png" alt="Monitoring and Logging Framework"><b>
   Figure 7-1: Monitoring and Logging Framework</b> </p>
 
 The monitoring and logging framework (**Figure 7-1**) leverages Prometheus as the monitoring engine and 
-Fluentd for logging. In addition, the framework uses Elasticsearch to store and organize logs for easy access. 
+Fluentd for logging. In addition, the framework uses Elasticsearch to store and organise logs for easy access. 
 Prometheus agents pull information from individual components on every host.  Fluentd, an Open Source data 
 collector, unifies data collection and consumption for better use and understanding of data. Fluentd captures 
 the access, application and system logs.

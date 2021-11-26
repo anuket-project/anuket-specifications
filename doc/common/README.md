@@ -1,14 +1,13 @@
 [<< Back](../)
-# Cloud iNfrastructure Telco Taskforce
+# Anuket Project
 
 ## Table of Contents
-* [Introduction](#1.0)
-* [Approach](#4.0)
-* [Use Cases](#5.0)
-* [Roadmap and Releases](#6.0)
-* [CNTT Technical Policies and Transition Plan](#7.0)
-* [Other Policies](#9.0)
-* [Relevant Technologies](#8.0)
+* [Introduction](#Introduction)
+* [Use Cases](#Use-Cases)
+* [Roadmap and Releases](#Roadmap-and-Releases)
+* [Anuket Project Technical Policies and Transition Plan](#Anuket-Project-Technical-Policies-and-Transition-Plan)
+* [Other Policies](#Other-Policies)
+* [Relevant Technologies](#Relevant-Technologies)
 
 ## Available Specifications
 * [Reference Model](../ref_model)
@@ -17,32 +16,34 @@
 * [Reference Conformances](../ref_cert)
 * [Vendor Implementations](../ven_impl)
 
-<a name="1.0"></a>
+
 ## Introduction
 
-Cloud iNfrastructure Telco Taskforce [Introduction](chapter00.md). 
+Anuket Project [Introduction](chapter00.md). 
 
-<a name="5.0"></a>
+
 ## Use Cases
-CNTT Addresses wide range of use cases from Core all the way to the Edge of the Network. Different use cases supported by CNTT specifications are described in [here](./usecases.md).
 
-<a name="6.0"></a>
+The Anuket Project addresses a wide range of use cases from the Core to the Edge of the network. Different use cases supported by the Anuket Project specifications are described in [here](../ref_model/chapters/chapter02.md#22-use-cases).
+
+
+
 ## Roadmap and Releases
 
-* [CNTT Releases](./release_notes)
-* [CNTT Roadmap](./roadmap.md)
+* [Anuket Project Releases](./release_notes)
+* [Anuket Project Roadmap](./roadmap.md)
 
-<a name="7.0"></a>
-## CNTT Technical Policies and Transition Plan
 
-There are multiple situations where a [policy](./policies.md), comprised of one or more compromises and/or transitions is required to address technology that does not presently conform to CNTT mandates or strategy, and hence requires explicit direction to prescribe how the situation will be treated in the present, as well as in the future. This informs application designers how RC will react when encountering such technologies during the qualification process, including flagging warnings and potentially errors which could prevent issuance of a conformance badge.
+## Anuket Project Technical Policies and Transition Plan
 
-<a name="8.0"></a>
+There are multiple situations where a [policy](./policies.md), comprised of one or more compromises and/or transitions is required to address technology that does not presently conform to the Anuket Project mandates or strategy, and hence requires explicit direction to prescribe how the situation will be treated in the present, as well as in the future. This informs workload designers how the Reference Conformance testing will respond when encountering such technologies during the qualification process, including flagging warnings and potentially errors which could prevent issuance of a conformance badge.
+
+
 ## Other Policies
 
 * [OpenStack Release selection](./openstack-release.md)
 
-<a name="9.0"></a>
+
 ## Relevant Technologies
 
-There are different technologies used and specified by CNTT specifications. This [section](./technologies.md) describes the relevant technologies for CNTT and clarifies CNTT position about them.
+There are different technologies used and specified by the Anuket Project specifications. The [technologies section](./technologies.md) describes the relevant technologies for the Anuket Project and clarifies the Anuket Project position about them.

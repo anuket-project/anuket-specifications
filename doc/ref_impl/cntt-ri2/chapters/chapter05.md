@@ -1,7 +1,7 @@
-[<< Back](../)
-
 # 5. Gap Analysis and Development
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+
+![State](../figures/bogo_ifo.png) <!-- width="35" -->
+
 
 ## Table of Contents
 * [5.1 Introduction](#5.1)

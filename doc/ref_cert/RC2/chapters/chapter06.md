@@ -1,3 +1,3 @@
-# 6. Gap Analysis and Development
+# Gap Analysis and Development
 
-## Table of Contents
+![Scope](../figures/bogo_ifo.png)

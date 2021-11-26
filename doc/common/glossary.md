@@ -37,7 +37,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Hypervisor:** a software that abstracts and isolates workloads with their own operating systems from the underlying physical resources. Also known as a virtual machine monitor (VMM).
 
-- **Instance:** is a virtual compute resource, in a known state such as running or suspended, that can be used like a physical server.
+- **Instance:** is a virtual compute resource, in a known state such as running or suspended, that can be used like a physical server. Used interchangeably with _*Compute Node*_ and _*Server*_.
     >_*Note:*_ Can be used to specify VM Instance or Container Instance.
 
 - **Network Function (NF):**  functional block or application that has well-defined external interfaces and well-defined functional behaviour.
@@ -100,7 +100,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Cloud service user:** Natural person, or entity acting on their behalf, associated with a cloud service customer that uses cloud services.
 >_*Note*_ Examples of such entities include devices and applications.
 
-- **Compute Node:** An abstract definition of a server.
+- **Compute Node:** An abstract definition of a _*server*_. Used interchangeably with _*Instance*_ and _*Server*_.
 >_*Note:*_ A compute node can refer to a set of hardware and software that support the VMs or Containers running on it.
 
 - **External Network:** External networks provide network connectivity for a cloud infrastructure tenant to resources outside of the tenant space.
@@ -173,7 +173,9 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 
 - **Flavor Geometry:** Flavor sizing such as number of vCPUs, RAM, disk, etc.
 
-- **Hugepages:** Physical memory is partitioned and accessed using the basic page unit (in Linux default size of 4 KB). Hugepages, typically 2 MB and 1GB size, allows large amounts of memory to be utilised with reduced overhead. In an NFV environment, huge pages are critical to support large memory pool allocation for data packet buffers. This results in fewer Translation Lookaside Buffers (TLB) lookups, which reduces the virtual to physical pages address translations. Without huge pages enabled high TLB miss rates would occur thereby degrading performance.
+- **Huge pages:** Physical memory is partitioned and accessed using the basic page unit (in Linux default size of 4 KB). Huge pages, typically 2 MB and 1GB size, allows large amounts of memory to be utilised with reduced overhead. In an NFV environment, huge pages are critical to support large memory pool allocation for data packet buffers. This results in fewer Translation Lookaside Buffers (TLB) lookups, which reduces the virtual to physical pages address translations. Without huge pages enabled high TLB miss rates would occur thereby degrading performance.
+
+- **Server:** For the OpenStack Compute API, a _*server*_ is a virtual machine (VM), a physical machine (bare metal) or a container.
 
 <a name="1.6"></a>
 ## Cloud Platform Abstraction Related Terminology:
@@ -215,6 +217,8 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 
 <a name="1.8"></a>
 ## Other Referenced Terminology
+
+- **Anuket Assured Program (AAP):** An open source, community-led program to verify compliance of the telecom applications and the cloud infrastructures with the Anuket specifications.
 
 - **Carrier Grade:** Carrier grade refers to network functions and infrastructure that are characterised by all or some of the following attributes: High reliability allowing near 100% uptime, typically measured as better than “five nines”; Quality of Service (QoS) allowing prioritization of traffic; High Performance optimized for low latency/packet loss, and high bandwidth; Scalability to handle demand growth by adding virtual and/or physical resources; Security to be able to withstand natural and man-made attacks.
 

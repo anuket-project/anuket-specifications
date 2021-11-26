@@ -1,29 +1,20 @@
-# 8. Gap analysis and Development
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+# Gap analysis and Development
 
-## Table of Contents
-* [8.1 Introduction](#8.1)
-* [8.2 Openstack Release Comparisons](#8.2)
-* [8.3 Automation Gaps](#8.3)
-* [8.4 Test Case Gaps](#8.4)
-* [8.5 Framework Gaps](#8.5)
+![Scope](../figures/bogo_ifo.png)
 
-<a name="8.1"></a>
-## 8.1 Introduction
+## Introduction
 
 - Describe the purpose of this chapter, which includes, but not limited to:
 - Test Case Gaps (analysis)
 -	Automation Gaps
 -	OpenStack release Comparisons
 
-<a name="8.2"></a>
-## 8.2 Openstack Release Comparisons
+## Openstack Release Comparisons
 
 - Provide details, preferably in table format, comparing OpenStack releases based
   on Wallaby baseline for RI-1
 
-<a name="8.3"></a>
-## 8.3 Automation Gaps
+## Automation Gaps
 
 At the time of writing,
 [the yaml file](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml)
@@ -39,8 +30,7 @@ In addition to avoid configuring the jumphost, it will allow generating the
 Jenkins jobs via a simple yaml file and
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting).
 
-<a name="8.4"></a>
-## 8.4 Test Case Gaps
+## Test Case Gaps
 
 Anuket has developed many test cases in the different
 [test projects](https://wiki.opnfv.org/display/testing/TestPerf) which
@@ -49,6 +39,7 @@ can quickly improve RC. As listed in
 porting all the existing testcases to Xtesting will unify the test case
 execution and simplify the test integration as required by RC. Here are all the
 related issues:
+
 - [port VinePerf to Xtesting](https://github.com/cntt-n/CNTT/issues/511)
 - [port NFVbench testcases to Xtesting](https://github.com/cntt-n/CNTT/issues/865)
 
@@ -60,8 +51,7 @@ Anuket projects to improve RC:
 | [integrate KloudBuster in Functest](https://github.com/cntt-n/CNTT/issues/508)                    | disk benchmarking |
 | [add tempest-stress in Functest](https://github.com/cntt-n/CNTT/issues/916)                       | stress testing    |
 
-<a name="8.5"></a>
-## 8.5 Framework Gaps
+## Framework Gaps
 
 As proposed in [port VTP test cases to Xtesting](https://github.com/cntt-n/CNTT/issues/917),
 VTP selected in

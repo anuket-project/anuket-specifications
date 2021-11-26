@@ -6,6 +6,7 @@
 |-----------|-----------------|
 | 3GPP | 3rd Generation Partnership Project |
 | AAA | Authentication, Authorisation, and Accounting |
+| AAP | Anuket Assured Program |
 | AArch64 | 64bit ARM architecture |
 | Acc | Accelerator |
 | AD | Active Directory |
@@ -168,6 +169,7 @@
 | LBaaS | Load Balancer as a Service |
 | LCM | LifeCycle Management |
 | LDAP | Lightweight Directory Access Protocol |
+| LF | Linux Foundation |
 | LFN | Linux Foundation Networking |
 | LLDP | Link Layer Discovery Protocol |
 | LMA | Logging, Monitoring, and Analytics |
@@ -388,4 +390,3 @@
 | WLAN | Wireless Local Area Network |
 | WLC | Wireless LAN Controller |
 | WS | WorkStream  |
-

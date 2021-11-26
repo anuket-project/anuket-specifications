@@ -1,3 +1,3 @@
-# 5. CNF Testing Cookbook
+# CNF Testing Cookbook
 
-## Table of Contents
+![Scope](../figures/bogo_ifo.png)
