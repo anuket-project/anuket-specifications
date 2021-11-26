@@ -1,4 +1,4 @@
-# NFVI Testing Cookbook
+# OpenStack-based cloud infrastructure Testing Cookbook
 
 ![Scope](../figures/bogo_ifo.png)
 
@@ -171,7 +171,7 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
   - Supporting installers.
   - Valid options per installer.
 
-## NFVI Testing Cookbook
+## OpenStack Testing Cookbook
 
 At the time of writing, the CI description file is hosted in Functest and only
 runs the containers listed in RM/RA-1 Requirements. It will be completed by the
@@ -199,7 +199,7 @@ git clone https://gerrit.opnfv.org/gerrit/functest functest-src
 ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
-### NFVI API testing configuration
+### OpenStack API testing configuration
 
 Here is the default Functest tree as proposed in
 [Functest Wallaby](https://wiki.anuket.io/display/HOME/Functest+Wallaby):
@@ -219,7 +219,7 @@ and then to reconfigure the toolchain:
 ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
-### Run Anuket NFVI Testing
+### Run Anuket OpenStack Testing
 
 Open http://127.0.0.1:8080/job/functest-wallaby-daily/ in a web browser, login
 as admin/admin and click on "Build with Parameters" (keep the default build_tag
