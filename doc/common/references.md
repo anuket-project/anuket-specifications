@@ -1,16 +1,7 @@
-[<< Back](../)
 
 # References
 
-## Table of Contents
-* [Common References](#1.1)
-* [Cloud Native and Kubernetes References](#1.2)
-* [Network related References](#1.3)
-* [O-RAN, 5G and Miscellaenous References](#1.4)
-* [Security Related References](#1.5)
-  * [NIST Security Related References](#1.5.1)
 
-<a name="1.1"></a>
 ## Common References
 
 |Ref	   | Doc Number	            |Title          |
@@ -51,7 +42,6 @@
 | [34]      | GSMA OPG.02| "Operator Platform Telco Edge Requirements", Available at https://www.gsma.com/operatorplatform  |
 
 
-<a name="1.2"></a>
 ## Cloud Native and Kubernetes References
 
 |Ref	     | Doc Number	            |Title          |
@@ -64,7 +54,6 @@
 | [C6] | | "Open Container Initiative (OCI)". Available at https://github.com/opencontainers/runtime-spec. |
 
 
-<a name="1.3"></a>
 ## Network related References
 
 |Ref	     | Doc Number	            |Title          |
@@ -73,7 +62,6 @@
 | [N2] | ITU-T Y.3500  | "Information Technology – Cloud computing – Overview and vocabulary"; SERIES Y: Global Information Infrastructure, Internet Protocol Aspects and Next-Generation Networks: Cloud Computing. Available at https://www.itu.int/rec/T-REC-Y.3500/recommendation.asp?lang=en&parent=T-REC-Y.3500-201408-I. |
 | [N3]  | | "P4 Language Consortium" (Packet Processing Programming). Available at https://p4.org/.|
 
-<a name="1.4"></a>
 ## O-RAN, 5G and Miscellaenous References
 
 |Ref	     | Doc Number	            |Title          |
@@ -82,7 +70,6 @@
 | [M2] | O-RAN.WG6.AAL-GAnP-v01.00 | "O-RAN Acceleration Abstraction Layer General Aspects an Principles 1.0", November 2020; O-RAN.WG6.AAL-GAnP-v01.00. Available at https://www.o-ran.org/specifications. |
 | [M3] | ETSI TS 123 501 V16.6.0 | "System architecture for the 5G System (5GS)". ETSI TS 123 501 V16.6.0 (2020-10) (3GPP TS 23.501 version 16.6.0 Release 16). Available at https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/16.06.00_60/ts_123501v160600p.pdf. |
 
-<a name="1.5"></a>
 ## Security Related References
 
 |Ref	     | Doc Number	            |Title          |
@@ -104,8 +91,7 @@
 
 
 
-<a name="1.5.1"></a>
-## NIST Security Related References
+## Security Related References
 
 |Ref	     | Doc Number	            |Title          |
 |----------|------------------------|---------------|

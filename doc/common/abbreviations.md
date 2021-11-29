@@ -1,4 +1,3 @@
-[<< Back](../)
 
 # Abbreviations
 
@@ -118,7 +117,7 @@
 | GB | Giga Byte |
 | GFS | Global (Linux) File System |
 | GGSN | Gateway GPRS Support Node |
-| Gi or GiB | Gibibyte (1024<sup>3</sup>) bytes |
+| Gi or GiB | Gibibyte (1024^3) bytes |
 | GPRS | General Packet Radio Service |
 | GPS | Global Positioning System |
 | GPU | Graphics Processing Unit |
@@ -181,7 +180,7 @@
 | MEC | Multi-access Edge Computing |
 | MGCF | Media Gateway Control Function |
 | MGW | Media GateWay |
-| Mi or MiB | Mebibyte (1024<sup>2</sup>) |
+| Mi or MiB | Mebibyte (1024^2) |
 | ML | Machine Learning |
 | ML2 or ML-2 | Modular Layer 2 |
 | MME | Mobility Management Entity |

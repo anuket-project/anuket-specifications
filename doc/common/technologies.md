@@ -1,31 +1,17 @@
-[<< Back](https://cntt-n.github.io/CNTT/)
 # Anuket Project Relevant Technologies
 
-## Table of Contents
-
-* [IO Virtualisation](#IO-Virtualisation)
-* [SmartNICs](#SmartNICs)
-* [Acceleration Cards](#Acceleration-Cards)
-* [FPGA](#FPGA)
-* [GPUs/NPUs](#GPUsNPUs)
-* [EPA/NFD](#EPANFD)
-
-
-
-## IO Virtualisation
+## Virtualisation
 
 There are different ways of which IO devices (such as NICs) are presented to workloads for consumption by those workloads. Here is a list of current methods of existing IO Virtualisation:
 
-- Para-Virtualisation method (software only).
-- Direct Assignment via h/w assisted PCI-Passthrough (IOMMU).
-- Device Sharing with SR-IOV & h/w assisted PCI-Passthrough (IOMMU).
-- Para-Virtualisation method with Hardware support.
+* Para-Virtualisation method (software only).
+* Direct Assignment via h/w assisted PCI-Passthrough (IOMMU).
+* Device Sharing with SR-IOV & h/w assisted PCI-Passthrough (IOMMU).
+* Para-Virtualisation method with Hardware support.
 
 **Figure 1** below shows some of the relevant IO Virtualisation techniques.
 
-<p align="center"><img src="./figures/tech_iov.png" alt="scope" title="Document Types" width="70%"/></p>
-<p align="center"><b>Figure 1:</b> Relevant IO Virtualisation Techniques</p>
-
+![**Figure 1:** Relevant IO Virtualisation Techniques](./figures/tech_iov.png) <!-- width="70%" -->
 
 ### Para-virtualisation method (software only)
 
@@ -35,16 +21,15 @@ For Networking, there are two common networking interfaces used: virtio-net for 
 Using a standard interface for IO means that workload doesn't need to run any proprietary software drivers for specific hardware vendors and the implementation of that workload is completely agnostic of the hardware used.
 
 **Figure 2** below shows the typical components of a para-virtualised interface: 
-- frontEnd driver: The frontEnd driver is an off-the-shelf driver that runs on the workload.
-- backEnd driver: runs on the Hypervisor and is responsible of bridging standard communications coming from applications to a hardware specific ones. 
+
+* frontEnd driver: The frontEnd driver is an off-the-shelf driver that runs on the workload.
+* backEnd driver: runs on the Hypervisor and is responsible of bridging standard communications coming from applications to a hardware specific ones. 
 
 This nature of this disaggregation is what gives the para-virtualised interfaces the flexibility that makes them favourable in a virtualised environment.
 
 The downside of para-virtualisation interfaces is the involvement of the hypervisor which may introduce latency and jitter that can impact the performance.
 
-<p align="center"><img src="./figures/tech_virtio.png" alt="virtio" title="Document Types" width="50%"/></p>
-<p align="center"><b>Figure 2:</b> Para-Virtualszed interface components (software only).</p>
-
+![**Figure 2:** Para-Virtualszed interface components (software only)](./figures/tech_virtio.png) <!-- width="50%" -->
 
 ### Direct assignment with IOMMU.
 
@@ -56,9 +41,7 @@ This method provides better performance than the para-virtualised one as no hype
 
 Having an IO device directly assigned to a workload means that the workload needs to run vendor specific drivers and libraries to be able to access that device which makes the workload less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of the Anuket Project and hence this method of IO Virtualisation must not be used unless explicitly allowed as an exception as part of the transitional plan adopted by the Anuket Project.
 
-<p align="center"><img src="./figures/tech_vtd.png" alt="virtio" title="Document Types" width="50%"/></p>
-<p align="center"><b>Figure 3:</b> Direct Assignment with Virtual Technology.</p>
-
+![**Figure 3:** Direct Assignment with Virtual Technology](./figures/tech_vtd.png) <!-- width="50%" -->
 
 ### Device Sharing with SR-IOV & IOMMU.
 
@@ -70,9 +53,7 @@ Each of those Virtual Functions can then be independently assigned exclusively t
 
 Similar to the previous method ("Direct Assignment"), this method provides better performance than para-virtualisation, but lacks the flexibility and the portability sought and therefore must also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by the Anuket Project.
 
-<p align="center"><img src="./figures/tech_sriov.png" alt="sriov" title="Document Types" width="50%"/></p>
-<p align="center"><b>Figure 4:</b> Device Sharing with SR-IOV & Direct Assignment.</p>
-
+![**Figure 4:** Device Sharing with SR-IOV & Direct Assignment](./figures/tech_sriov.png) <!-- width="50%" -->
 
 ### Para-Virtualisation method (Hardware support)
 
@@ -82,9 +63,7 @@ Unlike the software only para-virtualised interfaces, this method provides bette
 
 However, this method doesn’t provide the same level of flexibility as the software only para-virtualisation method as migrating workloads from one host to another is more challenging due to the hardware presence and the state it holds for the workloads using it and therefore should also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by the Anuket Project.
 
-<p align="center"><img src="./figures/tech_virtio_hw.png" alt="vitio_hw" title="Document Types" width="50%"/></p>
-<p align="center"><b>Figure 5:</b> Para-Virtualisation method (with hardware support).</p>
-
+![**Figure 5:** Para-Virtualisation method (with hardware support)](./figures/tech_virtio_hw.png) <!-- width="50%" -->
 
 ## SmartNICs
 
