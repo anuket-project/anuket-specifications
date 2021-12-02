@@ -13,6 +13,8 @@ There are different ways of which IO devices (such as NICs) are presented to wor
 
 ![**Figure 1:** Relevant IO Virtualisation Techniques](./figures/tech_iov.png) <!-- width="70%" -->
 
+**Figure 1:** Relevant IO Virtualisation Techniques
+
 ### Para-virtualisation method (software only)
 
 This is the preferred method of IO virtualisation as it provides flexibility and full abstraction of workloads from the underlying infrastructure. It usually relies on standard IO interfaces that are implemented in software.
@@ -31,6 +33,8 @@ The downside of para-virtualisation interfaces is the involvement of the hypervi
 
 ![**Figure 2:** Para-Virtualszed interface components (software only)](./figures/tech_virtio.png) <!-- width="50%" -->
 
+**Figure 2:** Para-Virtualszed interface components (software only)
+
 ### Direct assignment with IOMMU.
 
 Direct Assignment is supported in x86 architectures through an IOMMU (Input/Ouput Memory Management Unit), which provides the ability for a PCIe device to autonomously (i.e. without hypervisor intervention) perform DMA transfers directly into guest memory as shown in **Figure 3**.
@@ -42,6 +46,8 @@ This method provides better performance than the para-virtualised one as no hype
 Having an IO device directly assigned to a workload means that the workload needs to run vendor specific drivers and libraries to be able to access that device which makes the workload less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of the Anuket Project and hence this method of IO Virtualisation must not be used unless explicitly allowed as an exception as part of the transitional plan adopted by the Anuket Project.
 
 ![**Figure 3:** Direct Assignment with Virtual Technology](./figures/tech_vtd.png) <!-- width="50%" -->
+
+**Figure 3:** Direct Assignment with Virtual Technology
 
 ### Device Sharing with SR-IOV & IOMMU.
 
@@ -55,6 +61,8 @@ Similar to the previous method ("Direct Assignment"), this method provides bette
 
 ![**Figure 4:** Device Sharing with SR-IOV & Direct Assignment](./figures/tech_sriov.png) <!-- width="50%" -->
 
+**Figure 4:** Device Sharing with SR-IOV & Direct Assignment
+
 ### Para-Virtualisation method (Hardware support)
 
 This method basically is a mixture between the software only para-virtualisation method and the direct assignment method (including the device sharing method) where the frontEnd driver which is running on the workload is a standard off the shelf driver and the backEnd driver is implemented straight in hardware logic (bypassing the hypervisor with hardware support from an IOMMU and SR-IOV) as shown in **Figure 5**.
@@ -64,6 +72,8 @@ Unlike the software only para-virtualised interfaces, this method provides bette
 However, this method doesn’t provide the same level of flexibility as the software only para-virtualisation method as migrating workloads from one host to another is more challenging due to the hardware presence and the state it holds for the workloads using it and therefore should also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by the Anuket Project.
 
 ![**Figure 5:** Para-Virtualisation method (with hardware support)](./figures/tech_virtio_hw.png) <!-- width="50%" -->
+
+**Figure 5:** Para-Virtualisation method (with hardware support)
 
 ## SmartNICs
 

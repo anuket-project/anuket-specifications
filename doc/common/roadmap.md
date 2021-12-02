@@ -10,6 +10,8 @@
 
 ![**Figure 1:** Milestones](./figures/Release Lifecycle.png) <!-- width="100%" -->
 
+**Figure 1:** Milestones
+
 **Definitions**
 
 A project (aka WS) is:
@@ -39,6 +41,8 @@ A Version:
 ### High Level Roadmap
 
 ![**Figure 2:** The Anuket Project Technical Specification Roadmap](./figures/cntt_roadmap.png) <!-- width="100%" -->
+
+**Figure 2:** The Anuket Project Technical Specification Roadmap
 
 ### Detailed Roadmap
 
@@ -85,6 +89,8 @@ There are two different tracks in the Anuket Project:
 Each track follows the industry driven standards in the Reference Model as depicted in the below diagram.
 
 ![**Figure 3:** Anuket Project WS Dependencies](./figures/tech_ws_dependencies.png) <!-- width="100%" -->
+
+**Figure 3:** Anuket Project WS Dependencies
 
 ## Dependencies with Industry Communities
 

@@ -130,6 +130,8 @@ Within the framework of the common Telecom cloud infrastructure vision, there ar
 
 ![**Figure 1:** Documentation Scope of Anuket specifications](./figures/tech_scope.png) <!-- width="100%" -->
 
+**Figure 1:** Documentation Scope of Anuket specifications
+
 ## Functional Scope
 
 To meet the goals, as described above, the Anuket project is focussed on:
@@ -142,6 +144,8 @@ Due to the close alignment with ETSI GR NFV 002[3], those ETSI interfaces that a
 
 ![**Figure 2:** Functional Scope of Anuket specifications](./figures/anuket_scope.png) <!-- width="100%" -->
 <!-- The source file of this figure is available at https://wiki.anuket.io/display/HOME/RA2+Diagrams -->
+
+**Figure 2:** Functional Scope of Anuket specifications
 
 ## Out of Scope Components
 
@@ -163,9 +167,13 @@ While the nature of the Anuket project might seem quite broad, the following are
 
 ![**Figure 3:** Documentation Scope of Anuket specifications](./figures/tech_stack.png) <!-- width="100%" -->
 
+**Figure 3:** Documentation Scope of Anuket specifications
+
 Below is a diagram of the different artefacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture** that will be deployed using the requirements spelled out in the **Reference Implementation**.
 
 ![**Figure 4:** Description of the possible different levels of Anuket specification artefacts](./figures/tech_scope_3.png) <!-- width="100%" -->
+
+**Figure 4:** Description of the possible different levels of Anuket specification artefacts
 
 ## Relationship to other industry projects
 The Anuket work is not done in a vacuum.  The intention from the beginning was to utilize the work from other open source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the Anuket efforts include:
@@ -186,6 +194,8 @@ The ETSI NFV ISG is very closely related to the Anuket project, in that it is a 
 
 ![**Figure 5:** Scope ETSI NFV](./figures/tech_relation_etsi.png) <!-- width="100%" -->
 
+**Figure 5:** Scope ETSI NFV
+
 ### Relationship between Anuket projects and AAP
 
 The Anuket project is also closely aligned with the Anuket Assured Program (AAP), an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV and cloud native products and services including **Vendor's Implementation (VI)** of both infrastructure and workloads. The AAP combines open source based automated compliance and verification testing for multiple parts of the stack specifications established by Anuket, ONAP, multiple SDOs such as ETSI and GSMA, and the LFN End User Advisory Group (EUAG).
@@ -193,6 +203,8 @@ The Anuket project is also closely aligned with the Anuket Assured Program (AAP)
 We create an implementation that adheres to the Anuket **Reference Implementations** specifications. Products can undergo a conformance program based on the Anuket **Reference Conformance** specifications using the Anuket specified testing frameworks and tools. **Figure 6** below illustrates the relationship with the Anuket Assured Program in more detail; the figure is specific to OpenStack-based specifications but the set-up is going to be similar to other implementations.
 
 ![**Figure 6:** Relationship between Anuket and Anuket Assured Program](./figures/tech_relation.png) <!-- width="100%" -->
+
+**Figure 6:** Relationship between Anuket and Anuket Assured Program
 
 As can be seen from the above figure, roles and responsibilities are as follows:
 
