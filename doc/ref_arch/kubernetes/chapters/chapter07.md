@@ -43,7 +43,7 @@ While this Reference Architecture is being developed, Gaps will be identified th
 
 ### Multiple network interfaces on Pods
 
-> **Related requirements:** [RM Chapter 4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications)
+> **Related requirements:** [RM Chapter 4.2.2](../../../ref_model/chapters/chapter04.md#virtual-network-interface-specifications)
 
 > **Baseline project:** _Kubernetes_
 
@@ -51,7 +51,7 @@ While this Reference Architecture is being developed, Gaps will be identified th
 
 ### Dynamic network management
 
-> **Related requirements:** [req.inf.ntw.03](chapter02.md#23-kubernetes-architecture-requirements)
+> **Related requirements:** [req.inf.ntw.03](chapter02.md#kubernetes-architecture-requirements)
 
 > **Baseline project:** _Kubernetes_
 
@@ -82,7 +82,7 @@ Note: with an underlying IaaS this is possible, but then it introduces (undesira
 
 **Baseline project:** _Kubernetes_
 
-**Gap description:** Memory Manager was added in v1.21 as alpha feature. More in [3.2.1.3 Memory and Huge Pages Resources Management](chapter03.md#3213-memory-and-huge-pages-resources-management).
+**Gap description:** Memory Manager was added in v1.21 as alpha feature. More in [3.2.1.3 Memory and Huge Pages Resources Management](chapter03.md#memory-and-huge-pages-resources-management).
 
 ### User namespaces in Kubernetes
 

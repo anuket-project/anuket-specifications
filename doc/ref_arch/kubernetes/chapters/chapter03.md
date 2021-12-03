@@ -197,7 +197,7 @@ If case that memory or huge pages are not considered by the Topology Manager, it
 [Device Plugin Framework](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require vendor-specific activation and life cycle management, and securely maps these devices to containers.
 
 Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
-* 1: During setup, the cluster administrator (more in [3.2.5.1 Operator Pattern](chapter03.md#3251-operator-pattern)) knows or discovers (as per [3.2.1.5 Node Feature Discovery](chapter03.md#3215-node-feature-discovery)) what kind of devices are present on the different nodes, selects which devices to enable and deploys the associated device plugins.
+* 1: During setup, the cluster administrator (more in [3.2.5.1 Operator Pattern](chapter03.md#operator-pattern)) knows or discovers (as per [3.2.1.5 Node Feature Discovery](chapter03.md#node-feature-discovery)) what kind of devices are present on the different nodes, selects which devices to enable and deploys the associated device plugins.
 * 2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server to monitor the devices.
 * 3: A user submits a pod specification (workload manifest file) requesting a certain type of device.
 * 4: The scheduler determines a suitable node based on device availability and the local kubelet assigns a specific device to the pod's containers.
@@ -585,8 +585,8 @@ Kubernetes-based workloads.
 There are no restrictions or constraints that Kubernetes places on the storage
 that can be consumed by a workload, in terms of the requirements that are
 defined in RM sections
-[5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) (software)
-and [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations)
+[5.2.2](../../../ref_model/chapters/chapter05.md#virtual-storage) (software)
+and [5.4.2](../../../ref_model/chapters/chapter05.md#storage-configurations)
 (hardware). The only point of difference is that Kubernetes does not have a
 native object storage offering, and addressing this capability gap directly is
 outside of the scope of this RA.
