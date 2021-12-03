@@ -18,8 +18,6 @@ Requirements for Labs
 =====================
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
-`!Scope <../figures/bogo_lsf.png>`__
-
 Introduction
 ------------
 

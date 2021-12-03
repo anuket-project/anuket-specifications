@@ -16,8 +16,6 @@ Overview
 ========
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
-|Scope|
-
 Introduction
 ------------
 
@@ -196,5 +194,4 @@ For the ongoing proof of concept work related to both RA2 and RI2, some of the f
 
 As work progresses with the proof of concept it is expected that additional features will be added.
 
-.. |Scope| image:: ../figures/bogo_dfp.png
 .. |Relationship of communities| image:: ../figures/ri2-ch01-relationship_of_communities.png

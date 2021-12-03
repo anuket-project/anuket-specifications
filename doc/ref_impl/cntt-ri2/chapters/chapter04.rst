@@ -16,8 +16,6 @@ Operational Runbook
 ===================
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
-|Scope|
-
 Introduction
 ------------
 
@@ -245,5 +243,3 @@ Automation Tooling
 ------------------
 
    Describe the automation tooling used and any specific configurations needed.
-
-.. |Scope| image:: ../figures/bogo_sdc.png

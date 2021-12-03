@@ -33,8 +33,6 @@ Gap Analysis and Development
 ============================
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
-|Scope|
-
 Introduction
 ------------
 
@@ -46,6 +44,7 @@ Proposals and Resolution
 
 Development Efforts
 -------------------
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <a name="5.3"></a>
@@ -58,3 +57,5 @@ Development Efforts
 =======
 .. |Scope| image:: ../figures/bogo_ifo.png
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
+=======
+>>>>>>> c3f5a0a5 ([RI2] removing bogometers)

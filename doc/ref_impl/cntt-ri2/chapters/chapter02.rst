@@ -16,14 +16,13 @@ Reference Implementation Requirements
 =====================================
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
-|Scope|
-
 Introduction
 ------------
 
 This chapter will use the requirements defined in the Kubernetes Reference
-Architecture and only make additional entries in section `2.3 <#2.3>`__ if there
-are additional requirements needed for this Reference Implementation.
+Architecture and only make additional entries in
+`Section `2.3 <./chapter02.html#reference-architecture-specification>`__
+if there are additional requirements needed for this Reference Implementation.
 
 Definitions
 -----------
@@ -311,6 +310,9 @@ RI2 Ref # Category Sub-category Description RI2 Traceability
 ========= ======== ============ =========== ================
 \                                           
 ========= ======== ============ =========== ================
+<<<<<<< HEAD
 
 .. |Scope| image:: ../figures/bogo_ifo.png
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
+=======
+>>>>>>> c3f5a0a5 ([RI2] removing bogometers)
