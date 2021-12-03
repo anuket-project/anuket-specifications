@@ -19,6 +19,8 @@ subsequent sections of this chapter.
 
 ![**Figure 4-1:** Kubernetes Reference Architecture](../figures/ch04_k8s_architecture.png) <!-- width="65%" -->
 
+**Figure 4-1:** Kubernetes Reference Architecture
+
 ## Kubernetes Node
 
 This section describes the configuration that will be applied to the physical or

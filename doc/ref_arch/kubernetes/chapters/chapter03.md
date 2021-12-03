@@ -40,10 +40,14 @@ instance profiles please refer to [RM Chapter 4, section
 
 ![**Figure 5-3 (from RM):** NFVI softwareprofiles](../../../ref_model/figures/RM_chap5_fig_5_3_SW_profile.png)
 
+**Figure 5-3 (from RM):** NFVI softwareprofiles
+
 In addition, the RM Figure 5-4 (shown below) depicts the hardware profile features
 that apply to each instance profile.
 
 ![**Figure 5-4 (from RM):** NFVI hardwareprofiles and host associated capabilities](../../../ref_model/figures/RM_chap5_fig_5_4_HW_profile.png)
+
+**Figure 5-4 (from RM):** NFVI hardwareprofiles and host associated capabilities
 
 The features and capabilities described in the software and hardware profiles
 are considered throughout this RA, with the RA requirements traceability to the
@@ -61,6 +65,8 @@ containers run (and therefore, the OS whose kernel is shared by the referenced
 containers).  This is shown in Figure 3-1 below.
 
 ![**Figure 3-1:** Kubernetes Node Operating System](../figures/ch03_hostOS.png) <!-- width="65%" -->
+
+**Figure 3-1:** Kubernetes Node Operating System
 
 The Kubernetes Node OS (as with any OS) consists of two main  components:
 
@@ -197,6 +203,8 @@ Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
 * 4: The scheduler determines a suitable node based on device availability and the local kubelet assigns a specific device to the pod's containers.
 
 ![**Figure 3-2:** Device Plugin Operation](../figures/Ch3_Figure_Device_Plugin_operation.png) <!-- width="50%" -->
+
+**Figure 3-2:** Device Plugin Operation
 
 An example of often used device plugin is the [SR-IOV Network Device Plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin), that discovers and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is used to map VFs to scheduled pods. To use it, the SR-IOV CNI is required, as well as a CNI multiplexer plugin (such as [Multus CNI](https://github.com/k8snetworkplumbingwg/multus-cni) or [DANM](https://github.com/nokia/danm)), to provision additional secondary network interfaces for VFs (beyond the primary network interface). The SR-IOV CNI during pod creation allocates a SR-IOV VF to a pod's network namespace using the VF information given by the meta plugin, and on pod deletion releases the VF from the pod.
 
@@ -356,9 +364,10 @@ architecture.
 
 
 ![**Figure 3-3:** Kubernetes Networking Architecture](../figures/ch03_networking.png) <!-- width="100%" -->
-
 <!--The above diagram is maintained here:
 https://wiki.lfnetworking.org/display/LN/CNTT+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
+
+**Figure 3-3:** Kubernetes Networking Architecture
 
 There are a number of different methods involved in managing, configuring and
 consuming networking resources in Kubernetes, including:

@@ -83,6 +83,8 @@ The following items are considered **out of scope**:
 
 ![**Figure 1-1:**: Kubernetes Reference Architecture scope](../figures/ch01_scope_k8s.png) <!-- width="100%" -->
 
+**Figure 1-1:**: Kubernetes Reference Architecture scope
+
 ## Approach
 
 The approach taken in this Reference Architecture is to start as simply as possible (i.e. with a basic Kubernetes architecture), and then add detail and additional features/extensions as is required to meet the requirements of the Reference Model and the functional and non-functional requirements of common cloud native network functions.
