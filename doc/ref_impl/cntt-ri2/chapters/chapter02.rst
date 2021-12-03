@@ -119,7 +119,7 @@ Reference Architecture Specification
 |                        |                 |                        | Profile                | Network Intensive      |                        |
 |                        |                 |                        |                        | Profile                |                        |
 +========================+=================+========================+========================+========================+========================+
-| `4.2 Kubernetes        | ``ra2.ch.001``  | Huge Pages             | Must support           | Must support           | `4.3.1                 |
+| `4.2 Kubernetes        | ``ra2.ch.001``  | Huge pages             | Must support           | Must support           | `4.3.1                 |
 | Node <../.             |                 |                        |                        |                        | <./chapter04.md#       |
 | ./../ref_arch/kubernet |                 |                        |                        |                        | installation-on-bare-m |
 | es/chapters/chapter04. |                 |                        |                        |                        | etal-infratructure>`__ |

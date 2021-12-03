@@ -34,10 +34,14 @@ Installation of the Reference Implementation
 This section describes how to get started with RI-2 deployment via `Kuberef <https://gerrit.opnfv.org/gerrit/q/project:kuberef>`__.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 For the host provisioning stage, the [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) hosted by Nordix Foundation is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://networkbuilders.intel.com/intel-technologies/container-experience-kits) is being used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v21.08) (version v21.08).
 =======
 For the host provisioning stage, the `Cloud Infra Automation Framework <https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide>`__ hosted by Nordix Foundation is used. This framework uses `Bifrost <https://docs.openstack.org/bifrost/latest/>`__ for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and `Ironic <https://docs.openstack.org/ironic/latest/>`__. For Kubernetes provisioning, `Bare Metal Reference Architecture (BMRA) <https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf>`__ is being used. This framework uses scripts available on `Github <https://github.com/intel/container-experience-kits/tree/v21.03>`__ (version v21.03).
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
+=======
+For the host provisioning stage, the `Cloud Infra Automation Framework <https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide>`__ hosted by Nordix Foundation is used. This framework uses `Bifrost <https://docs.openstack.org/bifrost/latest/>`__ for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and `Ironic <https://docs.openstack.org/ironic/latest/>`__. For Kubernetes provisioning, `Bare Metal Reference Architecture (BMRA) <https://networkbuilders.intel.com/intel-technologies/container-experience-kits>`__ is being used. This framework uses scripts available on `Github <https://github.com/intel/container-experience-kits/tree/v21.08>`__ (version v21.08).
+>>>>>>> 5dde7ab8 ([RI2] rst conversion: rebasing recent changes)
 
 Installation on Bare Metal Infratructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,9 +146,9 @@ Most of the configuration options in ``hw_config/{deployment}/idf.yaml`` shown b
    #    qat:                         # Only uncomment if QAT is enabled
    #      - name: crypto01           # QAT device name
    #        pci: "0000:ab:00.0"      # PCI ID of the device (bus:device.function)
-   #        mod_type: qat_c62x       # Kernel module [qat_dh895xcc,qat_c62x,qat_c3xxx,qat_200xx,qat_c4xxx,qat_d15xx]
    #        pci_type c6xx            # PCI driver ID [dh895xcc,c6xx,c3xxx,d15xx,200xx,c4xxx]
    #        vfs: 4                   # Number of VFs to be created for PCI ID
+     runtime: docker                 # Supports 'docker' and 'containerd' runtimes
      features:
        sriov:
          enable: true                # Enable SR-IOV
@@ -155,8 +159,7 @@ Most of the configuration options in ``hw_config/{deployment}/idf.yaml`` shown b
        hugepages:
          enable: true                # Enable hugepages
          default: 2M                 # Default hugepage size [2M, 1G]
-         hugepages_1G: 0             # Number of 1G hugepages to allocate
-         hugepages_2M: 10240         # Number of 2M hugepages to allocate
+         amount: 10240               # Amount of default size hugepages to allocate
        isolcpus:
          enable: true                # Enable CPU isolation in the host
          autogenerate: true          # Automatically generate list of CPUs to isolate
@@ -184,15 +187,19 @@ References for the above features:
 -  `CPU Manager for Kubernetes <https://github.com/intel/CPU-Manager-for-Kubernetes>`__
 -  `SR-IOV Network device plugin for Kubernetes <https://github.com/intel/sriov-network-device-plugin>`__
 -  `Intel Device Plugins for Kubernetes <https://github.com/intel/intel-device-plugins-for-kubernetes>`__
--  `Telemtry Aware Scheduling <https://github.com/intel/telemetry-aware-scheduling>`__
+-  `Telemetry Aware Scheduling <https://github.com/intel/platform-aware-scheduling/tree/master/telemetry-aware-scheduling>`__
 
 Additional settings are available in the BMRA templates located in ``playbooks/roles/bmra-config/templates``. Changing these might have unexpected results and should generally not be done.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 You will also have to modify environmental variables defined in `deploy.env` to match your setup. For deploying Kuberef on preprovisioned infrastructure, set `deployment_type=k8s`.
 =======
 You will also have to modify environmental variables defined in ``deploy.env`` to match your setup. For deploying Kuberef on pre-provisioned infrastructure, set ``deployment_type=k8s``.
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
+=======
+You will also have to modify environmental variables defined in ``deploy.env`` to match your setup. For deploying Kuberef on preprovisioned infrastructure, set ``deployment_type=k8s``.
+>>>>>>> 5dde7ab8 ([RI2] rst conversion: rebasing recent changes)
 
 Once ready, issue the following command to initiate the deployment
 

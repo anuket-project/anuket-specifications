@@ -35,10 +35,14 @@ Structure of the document
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 The document first consolidates the requirements that need to be addressed by this RI in [Chapter 2](./chapter02.md). [Chapter 3](./chapter03.md) then details the requirements that need to be met in order for anyone to be able to install the RI, whether that be into a community lab, their own corporate or personal lab or some other environment such as CNF Testbed or a public cloud provider. An operational runbook is documented in [Chapter 4](./chapter04.md) to aid the deployment of the RI into a chosen environment and includes step-by-step instructions for a selection of installers as well as steps on how to validate the deployment. Finally, [Chapter 5](./chapter05.md) is a placeholder to allow the documentation of any gaps found during the development of this document and the associated artifacts.
 =======
 The document first consolidates the requirements that need to be addressed by this RI in `Chapter 2 <./chapter02.md>`__. `Chapter 3 <./chapter03.md>`__ then details the requirements that need to be met in order for anyone to be able to install the RI, whether that be into a community lab, their own corporate or personal lab or some other environment such as CNF Testbed or a public cloud provider. An operational runbook is documented in `Chapter 4 <./chapter04.md>`__ to aid the deployment of the RI into a chosen environment and includes step-by-step instructions for a selection of installers as well as steps on how to validate the deployment. Finally, `Chapter 5 <./chapter05.md>`__ is a placeholder to allow the documentation of any gaps found during the development of this document and the associated artefacts.
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
+=======
+The document first consolidates the requirements that need to be addressed by this RI in `Chapter 2 <./chapter02.md>`__. `Chapter 3 <./chapter03.md>`__ then details the requirements that need to be met in order for anyone to be able to install the RI, whether that be into a community lab, their own corporate or personal lab or some other environment such as CNF Testbed or a public cloud provider. An operational runbook is documented in `Chapter 4 <./chapter04.md>`__ to aid the deployment of the RI into a chosen environment and includes step-by-step instructions for a selection of installers as well as steps on how to validate the deployment. Finally, `Chapter 5 <./chapter05.md>`__ is a placeholder to allow the documentation of any gaps found during the development of this document and the associated artifacts.
+>>>>>>> 5dde7ab8 ([RI2] rst conversion: rebasing recent changes)
 
 Terminology
 ~~~~~~~~~~~
@@ -59,12 +63,12 @@ The scope of this document is as follows:
 =======
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
-1. To generate eco-system requirements for the establishment of the RI, including labs, tooling, installers, releases and automation requirements
+1. To generate ecosystem requirements for the establishment of the RI, including labs, tooling, installers, releases and automation requirements
 2. Provide a detailed description file for use by installers.
 3. Provide detailed lab criteria and operations that are generic enough to allow any environment to be used as the "lab".
 4. Provide an operational runbook for the RI, which includes detailed steps for the deployment and configuration of the RI into a chosen lab environment
 5. Provide detailed design for automation of deployment and testing, provide continuous integration and delivery pipeline for the RI
-6. Gap analysis with required actions for existing eco-system within adjacent community projects
+6. Gap analysis with required actions for existing ecosystem within adjacent community projects
 
 Relationship to other communities and workstreams
 -------------------------------------------------
@@ -89,7 +93,7 @@ The main communities involved in driving requirements and development of this RI
 
 -  **Anuket Functest**
 
-   -  The **Functest** project integrates available test tools and test cases from across the open source ecosystem into a single framework. In particular, it allows to run the test cases selected by the RC2 workstream and outputs a test result package for submission to the OVP program.
+   -  The **Functest** project integrates available test tools and test cases from across the open source ecosystem into a single framework. In particular, it allows to run the test cases selected by the RC2 workstream and outputs a test result package for submission to the Anuket Assured program.
 
 -  **Compliance and Verification Committee & Cloud Native OVP aka OVP 2.0**
 
@@ -139,8 +143,12 @@ The RI should be deployable on different infrastructures. Specifically, the foll
    This deployment scenario makes use of bare-metal cloud providers such as [Equinix Metal](https://metal.equinix.com/). The machines provided in this case have been preprovisioned with a base operating system and optionally a corresponding network configuration. This scenario requires the RI installation tooling to request and configure compute resources via the API of the cloud provider.
 =======
 -  **Deployment on bare-metal hosts provided by a cloud provider**
+<<<<<<< HEAD
    This deployment scenario makes use of bare-metal cloud providers such as `Equinix Metal <https://metal.equinix.com/>`__. The machines provided in this case have been pre-provisioned with a base operating system and optionally a corresponding network configuration. This scenario requires the RI installation tooling to request and configure compute resources via the API of the cloud provider.
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
+=======
+   This deployment scenario makes use of bare-metal cloud providers such as `Equinix Metal <https://metal.equinix.com/>`__. The machines provided in this case have been preprovisioned with a base operating system and optionally a corresponding network configuration. This scenario requires the RI installation tooling to request and configure compute resources via the API of the cloud provider.
+>>>>>>> 5dde7ab8 ([RI2] rst conversion: rebasing recent changes)
 
 -  **Deployment on an Infrastructure-as-a-Service Layer**
    In this deployment scenario, the infrastructure hosts for the Kubernetes cluster are provided by an Infrastructure-as-a-Service layer, for instance based on OpenStack running in a private or public cloud. This scenario requires the RI installation tooling to request and configure compute resources via the API of the IaaS.
@@ -168,7 +176,7 @@ Depending on the tool used for provisioning, there are likely configuration para
 -  Host information (IPs for SSH)
 -  Cluster information (Master/worker node distribution and datastore)
 -  CPU isolation (Kernel)
--  Memory allocation (Hugepages)
+-  Memory allocation (huge pages)
 -  Network interfaces (PFs/VFs and drivers)
 -  Additional Kubernetes features (device plugins, CNIs)
 
