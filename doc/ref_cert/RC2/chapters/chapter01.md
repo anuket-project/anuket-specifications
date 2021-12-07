@@ -1,4 +1,4 @@
-﻿# Introduction
+# Introduction
 
 ![Scope](../figures/bogo_lsf.png)
 
