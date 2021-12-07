@@ -1,5 +1,3 @@
-[<< Back](../)
-
 # Reference Conformance - Kubernetes based platform for Telecom
 
 This is the Kubernetes Based Reference Conformance (RC-2)

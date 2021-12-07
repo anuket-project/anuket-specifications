@@ -20,7 +20,7 @@ The following is a Requirements Traceability Matrix (RTM) mapping Test Case, and
 
 ### Test Case Traceability to RA2 Requirements
 
-This section focuses on the test cases covering the requirements in [RA-2 Chapter 4.9](../../../ref_arch/kubernetes/chapters/chapter04.md#49-kubernetes-workloads) for Kubernetes workloads.
+This section focuses on the test cases covering the requirements in [RA-2 Chapter 4.9](../../../ref_arch/kubernetes/chapters/chapter04.md) for Kubernetes workloads.
 
 | RM/RA Ref | High-level test definition | Test name and project | Priority |
 |---|---|---|---|
