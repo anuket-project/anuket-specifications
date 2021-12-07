@@ -8,3 +8,6 @@ extensions = [
     'sphinx_rtd_theme',
 ]
 html_theme = "sphinx_rtd_theme"
+linkcheck_ignore = [
+        'http://127.0.0.1'
+]

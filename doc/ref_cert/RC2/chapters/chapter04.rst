@@ -11,9 +11,9 @@ Introduction
 
 The scope of this chapter is to identify and list test cases based on
 requirements defined in `Reference Architecture-2
-(RA-2) <../../../ref_arch/kubernetes/README.md>`__. This will serve as
-traceability between test cases and requirements for Kubernetes platform
-interoperability.
+(RA-2) <https://github.com/cntt-n/CNTT/blob/master/doc//ref_arch/kubernetes/README.md>`__.
+This will serve as traceability between test cases and requirements for
+Kubernetes platform interoperability.
 
 Note that each requirement may have one or more test cases associated
 with it.
@@ -42,7 +42,7 @@ Test Case Traceability to RA2 Requirements
 
 This section focuses on the test cases covering the requirements in
 `RA-2 Chapter 4.9
-<../../../ref_arch/kubernetes/chapters/chapter04.md#49-kubernetes-workloads>`__
+<https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/kubernetes/chapters/chapter04.md>`__
 for Kubernetes workloads.
 
 =========== ========================== ===================== ========

@@ -1,5 +1,3 @@
-`<< Back <../>`__
-
 Reference Conformance - Kubernetes based platform for Telecom
 =============================================================
 
