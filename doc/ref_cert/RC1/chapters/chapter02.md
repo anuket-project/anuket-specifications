@@ -285,6 +285,7 @@ The below figure shows the targeted badge for NFVI.
 **Conformance Process**
 
 Conformance and issuance of NFVI badges will be as follows:
+
  - NFVI supplier utilizes, or installs a target RM/RA-x in a RI lab.
  - Required artifacts are submitted/supplied to the OVP, demonstrating proper Lab Installation, Compliance, Validation, Performance, and Release of Results & Known Issues.
  - Artifact validations will be corroborated and confirmed by the OVP. with direct comparison between measured results and documented FRs/NFRs for applications, hardware and software configuration settings, and host systems.
@@ -293,6 +294,7 @@ Conformance and issuance of NFVI badges will be as follows:
 ![NFVI Badges](../figures/NFVI_certifying_vendor_swhw_solutions.jpg)
 
 ## NFVI Test Cases Requirements
+
 The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the compliance program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
 
 ### Generic Requirements on Test Cases
@@ -396,7 +398,6 @@ Of course, they can also be used for other purposes, such as:
 - comparing the performances of different software or hardware technologies (e.g., DPDK vSwitch vs hardware-offloaded vSwitch)
 - assessing the performance impact of specific features (e.g., with or without encapsulation)
 
-
 **Metrics Baseline**
 
 For the purpose of validation, a baseline of the performance metrics is required for comparison with the results of their measurements on the NFVI implementation to be validated.
@@ -446,7 +447,6 @@ The following metrics should be considered as MVP:
 
 - vnf.nfvi.perf.001,002,006,007
 - infra.nfvi.perf.001,005,006,007,009
-
 
 **Network Metrics Measurement Test Cases**
 
