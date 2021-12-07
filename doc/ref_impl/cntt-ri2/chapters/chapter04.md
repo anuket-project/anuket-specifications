@@ -1,4 +1,4 @@
-﻿# 4. Operational Runbook
+# 4. Operational Runbook
 
 ![State](../figures/bogo_sdc.png) <!-- width="35" -->
 

@@ -1,4 +1,4 @@
-﻿# 3. Lab Requirements
+# 3. Lab Requirements
 
 ![State](../figures/bogo_lsf.png) <!-- width="35" -->
 
