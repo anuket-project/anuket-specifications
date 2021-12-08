@@ -22,8 +22,6 @@ The following definitions specify the context of the Cloud Infrastructure Resour
 
 ![**Figure 4-1:** Exposed vs. Internal Scope](../figures/Exposed_vs_Internal_Diagram.png) <!-- width="65%" -->
 
-**Figure 4-1:** Exposed vs. Internal Scope
-
 As illustrated in the figure above, objects designated as "Internal" are only visible within the area inside the blue oval (the Cloud Infrastructure), and only when the entity accessing the object has the appropriate permissions. Whereas objects designated as "Exposed" are potentially visible from both the area within the green oval (the Workloads), as well as from within the Cloud Infrastructure, again provided the entity accessing the object has appropriate permissions.
 
 Note: The figure above indicates the areas from where the objects are _visible_. It is not intended to indicate where the objects are _instantiated_. For example, the virtual resources are instantiated within the Cloud Infrastructure (the blue area), but are Exposed, and therefore are _visible_ to the Workloads, within the green area.
@@ -243,8 +241,6 @@ In this section we will specify the capabilities and features associated with ea
 
 ![**Figure 4-2:**Cloud infrastructure Profiles.](../figures/RM-ch04-node-profiles.png) <!-- width="65%" -->
 
-**Figure 4-2:**Cloud infrastructure Profiles.
-
 The two [profiles]( ./chapter02.md#241-node-profiles-top-level-partitions) are:
 
     Basic (B): for Workloads that can tolerate resource over-subscription and variable latency.
@@ -262,9 +258,7 @@ The justification for defining these two profiles and a set of extensible profil
 
 Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). Figure 4.3 shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes.
 
-![**Figure 4-3:**Workloads built against Cloud Infrastructure Profiles and Workload Flavours.](../figures/RM-ch-04-Workloads-Profiles-Flavours.png) <!-- width="65%" -->
-
-**Figure 4-3:**Workloads built against Cloud Infrastructure Profiles and Workload Flavours.
+![**Figure 4-3:** Workloads built against Cloud Infrastructure Profiles and Workload Flavours.](../figures/RM-ch-04-Workloads-Profiles-Flavours.png) <!-- width="65%" -->
 
 A node configuration can be specified using the syntax:
 

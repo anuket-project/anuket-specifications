@@ -42,15 +42,11 @@ In this section we will further explore the characteristics of the federated clo
 
 ![**Figure 8-1:** Example Hybrid Multi-Cloud Component Cloud](../figures/RM-Ch08-HMC-Image-1.png)
 
-**Figure 8-1:** Example Hybrid Multi-Cloud Component Cloud
-
 ### Telco Cloud
 
 The Figure 8-2 presents a visualisation of a Telco operator cloud (or simply, Telco cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
 
 ![**Figure 8-2:** Telco Cloud: Data Centre to Edge](../figures/RM-Ch08-Multi-Cloud-DC-Edge.png)
-
-**Figure 8-2:** Telco Cloud: Data Centre to Edge
 
 The Telco Operator may own and/or have partnerships and network connections to utilize multiple Clouds for network services, IT workloads, and external subscribers. The types of the component clouds include:
 
@@ -84,8 +80,6 @@ Figure 8-3 shows a conceptual Telco Operator Platform Architecture. The Cloud In
 
 ![../figures/RM-Ch08-Telco-Operator-Platform.png](**Figure 8-3:** Conceptual Architecture of a Telco Operator Platform)
 
-**Figure 8-3:** Conceptual Architecture of a Telco Operator Platform
-
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery.  These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
 
 ### Multi-Cloud Interactions Model
@@ -97,8 +91,6 @@ To realise a federated cloud requires the definition and agreement on a set of A
 As outlined in "Figure 8-3 - Conceptual Architecture of a Telco Operator Platform" above, the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the "Figure 8-4 - Multi-Cloud Interaction Model" below. This provides a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
 
 ![**Figure 8-4:** Multi-Cloud Interactions Model](../figures/rm-chap8-multi-cloud-interactions-02.png)
-
-**Figure 8-4:** Multi-Cloud Interactions Model
 
 The model defines the following core roles:
 
@@ -119,8 +111,6 @@ The set of high level interactions cover:
 A set of stereo-typical interactions cases are illustrated for the cases of a Simple Infrastructure-as-a-Service (IaaS) and Software-as-a-Service (SaaS), where deployment is on a Cloud Provider's centralised sites and/or Edge sites. The scenarios help highlight needs for the Cloud Service Broker and Cloud Resources Broker (as per Figure 8.3) and hence extent of orchestration required to manage the interactions.
 
 ![**Figure 8-5:** Simple Stereo-Typical Interactions](../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png)
-
-**Figure 8-5:** Simple Stereo-Typical Interactions
 
 The following patterns are visible:
 
@@ -148,8 +138,6 @@ A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in th
 
 ![**Figure 8-6:** Disaggregated SaaS Stereo-Typical Interaction](../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png)
 
-**Figure 8-6:** Disaggregated SaaS Stereo-Typical Interaction
-
 In disaggregated SaaS scenario the application provider is able to operate as an "infra-structureless" organisation. This could be achieved through SaaS organisation using public IaaS Cloud Providers which could include the CSP itself. A key consideration for CSP in both cloud provision and consumption in Multi-Cloud scenario is how to manage the integration across the Cloud Providers.
 
 To make this manageable and avoid integration complexity, there are a number of models:
@@ -162,13 +150,9 @@ The different means of integrating with and managing Cloud Providers is broadly 
 
 The API and Cloud Brokerage models are illustrated in the following diagrams:
 
-![**Figure 8-7:** API Brokerage Multi-Cloud Stereo-Typical Interaction])(../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png)
-
-**Figure 8-7:** API Brokerage Multi-Cloud Stereo-Typical Interaction
+![**Figure 8-7:** API Brokerage Multi-Cloud Stereo-Typical Interaction](../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png)
 
 ![**Figure 8-8:** Cloud Brokerage Multi-Cloud Stereo-Typical Interaction](../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-01.png)
-
-**Figure 8-8:** Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
 
 ### Requirements, Reference Architecture & Industry Standards Intersect
 

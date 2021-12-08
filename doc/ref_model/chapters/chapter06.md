@@ -1,6 +1,7 @@
 # External Interfaces
 
 ## Introduction
+
 In this document’s earlier chapters, the various resources and capabilities of the Cloud Infrastructure have been catalogued and the workloads have been profiled with respect to those capabilities. The intent behind this chapter and an “API Layer” is to similarly provide a single place to catalogue and thereby codify, a common set of open APIs to access (i.e. request, consume, control, etc.) the aforementioned resources, be them directly exposed to the workloads, or purely internal to the Cloud Infrastructure.
 
 It is a further intent of this chapter and this document to ensure the APIs adopted for the Cloud Infrastructure implementations are open and not proprietary, in support of compatibility, component substitution, and ability to realize maximum value from existing and future test heads and harnesses.
@@ -22,8 +23,6 @@ This chapter specifies the abstract interfaces (API, CLI, etc.) supported by the
 The Cloud Infrastructure APIs consist of set of APIs that are externally and internally visible. The externally visible APIs are made available for orchestration and management of the execution environments that host workloads while the internally visible APIs support actions on the hypervisor and the physical resources. The ETSI NFV Reference MANO Architecture (**Figure 6-1**) shows a number of Interface points where specific or sets of APIs are supported. For the scope of the reference model the relevant interface points are shown in **Table 6-1**.
 
 ![**Figure 6-1:** ETSI NFV architecture mapping](../figures/ch09-etsi-nfv-architecture-mapping.png) <!-- width="65%" -->
-
-**Figure 6-1:** ETSI NFV architecture mapping
 
 | Interface Point | Cloud Infrastructure Exposure | Interface Between                     | Description                                                                                                                                                                                                                                                                                                     |
 |-----------------|---------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

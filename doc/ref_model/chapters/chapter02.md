@@ -164,7 +164,6 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
 
 ![**Figure 2-1:** Edge CDN with eMBB Core Network Slicing.](../figures/Fig2-1-uc1.png) <!-- width="65%" -->
 
-**Figure 2-1:** Edge CDN with eMBB Core Network Slicing.
 
 * **Use Case #2 - Edge Private 5G with Core Network Slicing**
 

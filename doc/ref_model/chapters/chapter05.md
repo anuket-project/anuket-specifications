@@ -11,8 +11,6 @@ Cloud Infrastructure Software layer is composed of 2 layers, **Figure 5-1**:
 
 ![**Figure 5-1:** Cloud Infrastructure software layers](../figures/ch05-cloud-infrastructure-sw-profile-layers.png) <!-- width="40%" -->
 
-**Figure 5-1:** Cloud Infrastructure software layers
-
 | Ref | Cloud Infrastructure Software | Type | Definition/Notes | Capabilities Reference (1) |
 |-----|-------------------------------|------|------------------|-----------------------------------|
 | infra.sw.001 | Host Operating System |	\<value> |	Values such as Ubuntu20.04, Windows 10 Release #, etc. | `e.cap.021` |
@@ -23,13 +21,9 @@ For a host (compute node or physical server), the virtualisation layer is an abs
 
 ![**Figure 5-2:** Cloud Infrastructure Virtual resources](../figures/ch05_b_ref_profile.png) <!-- width="70%" -->
 
-**Figure 5-2:** Cloud Infrastructure Virtual resources
-
 A Cloud Infrastructure Software Profile is a set of features, capabilities, and metrics offered by a Cloud Infrastructure software layer and configured in the software layers (the Operating System (OS) and the virtualisation software (such as hypervisor)). **Figure 5-3** depicts a high level view of the Basic and High Performance Cloud Infrastructure Profiles.
 
 ![**Figure 5-3:** Cloud Infrastructure Software Profiles](../figures/RM-ch05-sw-profile.png) <!-- width="60%" -->
-
-**Figure 5-3:** Cloud Infrastructure Software Profiles
 
 The following sections detail the Cloud Infrastructure Software Profile capabilities per type of virtual resource.
 
@@ -220,8 +214,6 @@ This chapter defines a simplified host, profile and related capabilities model a
 
 ![**Figure 5-4:** Cloud Infrastructure Hardware Profiles and host associated capabilities.](../figures/RM-ch05-hw-profile.png) <!-- width="60%" -->
 
-**Figure 5-4:** Cloud Infrastructure Hardware Profiles and host associated capabilities.
-
 The profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on Cloud Infrastructure resources.
 
 > **Note:** In this chapter we shall not list all of the EPA-related configuration parameters.
@@ -235,8 +227,6 @@ A given host can only be assigned a single host profile; a host profile can be a
 The host profile properties are specified in the following sub-sections. The following diagram (**Figure 5-5**) pictorially represents a high-level abstraction of a physical server (host).
 
 ![**Figure 5-5:** Generic model of a compute host for use in Host Profile configurations.](../figures/ch06_ref_hw_profile.PNG) <!-- width="65%" -->
-
-**Figure 5-5:** Generic model of a compute host for use in Host Profile configurations.
 
 ## Cloud Infrastructure Hardware Profiles features and requirements.
 
