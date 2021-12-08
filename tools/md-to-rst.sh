@@ -27,7 +27,7 @@ fi
 for filename in $1/*mod.md; do
     [ -e "$filename" ] || continue
     echo "Converting $filename."
-    pandoc -f gfm $filename --from gfm --to rst -s -o ${filename//\-mod\.md/\.rst}
+    pandoc -f gfm $filename --from gfm --to rst -s --wrap=preserve --columns=200 -o ${filename//\-mod\.md/\.rst}
 done
 
 
