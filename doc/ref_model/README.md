@@ -1,16 +1,16 @@
-[<< Back](https://cntt-n.github.io/CNTT/)
 # Reference Model
 
 ## Release Information
-**Bundle: _7_**
 
-**Version: _7.0_**
+**Bundle: _6_**
 
-**Release Date: _14th December 2022_**
+**Version: _6.0_**
+
+**Release Date: _29th January 2021_**
 
 ## Bundle/Version History
 
-| Bundle.Version    | Date                  | Note
+| Bundle.Version    | Date                  | Note                       |
 | ---               | ---                   | ---                        |
 | 1.0               | 16th July 2019        | First Release              |
 | 1.1               | 2nd August 2019       | Post Paris F2F clean up    |
@@ -22,7 +22,7 @@
 | 5.1               | 8th March 2021        | Kali Release work started  |
 | 6.0               | 1 July 2021           | Kali Release work finished |
 | 6.1               | 1 July 2021           | Lakelse Release work started |
-| 7.0               | 14 December 2021      | Lakelse Release readiness |
+| 7.0               | 7 December 2021       | Lakelse Release work finished |
 
 ## Overall Status
 
@@ -39,16 +39,3 @@
 | Chapter 09 | Release work finished |
 | Chapter 10 | Release work finished |
 | Glossary   | Release work finished |
-
-## Table of Contents
-* [Chapter 01 - Introduction](chapters/chapter01.md)
-* [Chapter 02 - Workload Requirements & Analysis](chapters/chapter02.md)
-* [Chapter 03 - Modelling](chapters/chapter03.md)
-* [Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue](chapters/chapter04.md)
-* [Chapter 05 - Feature set and Requirements from Infrastructure](chapters/chapter05.md)
-* [Chapter 06 - External Interfaces](chapters/chapter06.md)
-* [Chapter 07 - Security](chapters/chapter07.md)
-* [Chapter 08 - Hybrid Multi-Cloud: Data Center to Edge](chapters/chapter08.md)
-* [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
-* [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
-* [Glossary](../common/glossary.md)

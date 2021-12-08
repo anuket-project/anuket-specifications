@@ -1,61 +1,13 @@
-<< Back](../../ref_model)
-# 7 Security
+# Security
 
-## Table of Contents
-* [7.1 Introduction](#7.1)
-* [7.2 Potential attack vectors](#7.2)
-* [7.3 Security Scope](#7.3)
-  * [7.3.1 In-scope and Out-of-Scope definition](#7.3.1)
-  * [7.3.2 High level security requirements](#7.3.2)
-  * [7.3.3 Common Security Standards](#7.3.3)
-* [7.4 Cloud Infrastructure Security](#7.4)
-  * [7.4.1 General Platform Security](#7.4.1)
-  * [7.4.2 Platform ‘back-end’ access security](#7.4.2)
-  * [7.4.3 Platform ‘front-end’ access security](#7.4.3)
-  * [7.4.4 Infrastructure as a Code security](#7.4.4)
-  * [7.4.5 Security of Production and Non-production Environments](#7.4.5)
-* [7.5 Workload Security - Vendor Responsibility](#7.5)
-  * [7.5.1 Software Hardening](#7.5.1)
-  * [7.5.2 Port Protection](#7.5.2)
-  * [7.5.3 Software Code Quality and Security](#7.5.3)
-  * [7.5.4 Alerting and Monitoring](#7.5.4)
-  * [7.5.5 Logging](#7.5.5)
-* [7.6 Workload Security- Cloud Infrastructure Operator Responsibility](#7.6)
-  * [7.6.1 Remote Attestation/openCIT](#7.6.1)
-  * [7.6.2 Workload Image](#7.6.2)
-  * [7.6.3 Networking Security Zoning](#7.6.3)
-  * [7.6.4 Volume Encryption](#7.6.4)
-  * [7.6.5 Root of Trust for Measurements (RTM)](#7.6.5)
-  * [7.6.6 Zero Trust Architecture (ZTA)](#7.6.6)
-* [7.7 Open Source Software Security](#7.7)
-* [7.8 Testing & Certification](#7.8)
-* [7.9 Consolidated Security requirements](#7.9)
-  * [7.9.1 System Hardening](#7.9.1)
-  * [7.9.2 Platform Access](#7.9.2)
-  * [7.9.3 Confidentiality and Integrity](#7.9.3)
-  * [7.9.4 Workload Security](#7.9.4)
-  * [7.9.5 Image Security](#7.9.5)
-  * [7.9.6 Security LCM](#7.9.6)
-  * [7.9.7 Monitoring and Security Audit](#7.9.7)
-  * [7.9.8 Open Source Software](#7.9.8)
-  * [7.9.9 IaaC - Secure Design and Architecture Stage Requirements](#7.9.9)
-  * [7.9.10 IaaC - Secure Code Stage Requirements](#7.9.10)
-  * [7.9.11 IaaC - Continuous Build, Integration and Testing Stage Requirements](#7.9.11)
-  * [7.9.12 IaaC - Continuous Delivery and Deployment Stage Requirements](#7.9.12)
-  * [7.9.13 IaaC - Runtime Defence and Monitoring Requirements](#7.9.13)
-  * [7.9.14 Compliance with Standards](#7.9.14)
-* [7.10 Security References](#7.10)
-
-
-<a name="7.1"></a>
-## 7.1 Introduction
+## Introduction
 
 Security vulnerabilities and attack vectors are everywhere.  The Telecom industry and its cloud infrastructures are even more vulnerable to potential attacks due to the ubiquitous nature of the infrastructures and services combined with the vital role Telecommunications play in the modern world. The attack vectors are many and varied, ranging from the potential for exposure of sensitive data, both personal and corporate, to weaponized disruption to the global telecommunications networks.  The threats can take the form of a physical attack on the locations the infrastructure hardware is housed, to network attacks such as denial of service and targeted corruption of the network service applications themselves.  Whatever the source, any Cloud Infrastructure built needs to be able to withstand attacks in whatever form they take.
 
 This chapter examines multiple aspects of security as it relates to Cloud Infrastructure and security aspects for workloads. After discussing security attack vectors, this chapter delves into security requirements. Regarding security requirements and best practices, specifications and documents are published by standards organizations. A selection of standards of interest for Cloud Infrastructure security is listed in a dedicated section. The chapter culminates with a consolidated set of “must” requirements and desired (should) recommendations; it is suggested that operators carefully evaluate the recommendations for possible implementation.
 
-<a name="7.2"></a>
-## 7.2 Potential attack vectors
+## Potential attack vectors
+
 Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using Cloud Infrastructure, violation of regulatory policies and laws becomes possible by actors diverting or moving an application from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure NF API to dump the records of personal data from the database in an attempt to violate user privacy. Cloud Infrastructure operators should ensure that the applications APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices, and RBAC policies to limit exposure of this vulnerability.
 
 Typical cloud associated attacker tactics have been identified in the widely accepted [MITRE ATT&CK® Framework](https://www.mitre.org/sites/default/files/publications/mitre-getting-started-with-attack-october-2019.pdf). This framework provides a systematic approach to capture adversarial tactics targeting cloud environments. Examples of such adversarial tactics are listed in the table below.
@@ -68,31 +20,26 @@ Typical cloud associated attacker tactics have been identified in the widely acc
  |Data Exfiltration|Moving data from the compromised tenant’s production databases to the hacker’s cloud service account or transferring the data out of the Communication Service Provider (CSP) to the attacker’s private network|
  |Service Impact|Creating denial-of-service availability issues by modifying Web Application Firewall (WAF) rules and compromising APIs and web-based GUIs|
 
-<p align="center"><b>Table 7-0:</b> Cloud attacker tactics - Examples</p>
+**Table 7-0:** Cloud attacker tactics - Examples
 
+## Security Scope
 
-<a name="7.3"></a>
-## 7.3 Security Scope
-
-<a name="7.3.1"></a>
-### 7.3.1 In-scope and Out-of-Scope definition
+### In-scope and Out-of-Scope definition
 
 The scope of the security controls requirements maps to the scope of the Reference Model architecture.
 
 Cloud Infrastructure requirements must cover the virtual infrastructure layer and the hardware infrastructure layer, including virtual resources, hardware resources, virtual infrastructure manager and hardware infrastructure manager, as described in Chapter 3.
  
-<a name="7.3.2"></a>
-### 7.3.2 High level security Requirements
+### High level security Requirements
 
 The following diagram shows the different security domains that impact the Reference Model:
 
-<p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
-<p align="center"><b>Figure 7-1:</b> Reference Model Security Domains</p>
+![**Figure 7-1:** Reference Model Security Domains](../figures/ch7_security_posture.png) <!-- width="100%" -->
+**Figure 7-1:** Reference Model Security Domains
 
 Note: "Platform" refers to the Cloud Infrastructure with all its hardware and software components.
 
-<a name="7.3.2.1"></a>
-#### 7.3.2.1 Platform security requirements
+#### Platform security requirements
 
 At a high level, the following areas/requirements cover platform security for a particular deployment:
 * Platform certification
@@ -106,8 +53,7 @@ At a high level, the following areas/requirements cover platform security for a 
 * Typically well-defined security framework documentation including approved deployment use cases
 * Infrastructure software update process
 
-<a name="7.3.2.2"></a>
-#### 7.3.2.2 Workload security requirements
+#### Workload security requirements
 
 At a high level, the following areas/requirements cover workload security for a particular deployment:
 * Up to platform-level certification
@@ -117,8 +63,7 @@ At a high level, the following areas/requirements cover workload security for a 
 * Workload owner owns workload design change process
 * Workload owner owns workload software update process
   
- <a name="7.3.3"></a> 
- ### 7.3.3 Common Security Standards
+  ### 7.3.3 Common Security Standards
 
 The Cloud Infrastructure Reference Model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections (internal or with outside networks), APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
 Standards organizations with recommendations and best practices, and certifications that need to be taken into consideration include the following examples. However this is by no means an exhaustive list, just some of the more important standards in current use.
@@ -132,6 +77,7 @@ Standards organizations with recommendations and best practices, and certificati
 * ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - https://www.etsi.org/technologies/nfv
 * ETSI ISG NFV [SEC WG specifications](https://www.etsi.org/standards-search#page=1&search=NFV-SEC&title=0&etsiNumber=1&content=0&version=1&onApproval=0&published=1&historical=0&startDate=1988-01-15&endDate=2020-02-27&harmonized=0&keyword=&TB=&stdType=&frequency=&mandate=&collection=&sort=1)
 * ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
+
   * ISO/IEC 27002:2013 - ISO/IEC 27001 are the international Standard for best-practice information security management systems (ISMSs)
   * ISO/IEC 27032 - ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity
   * ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management
@@ -144,30 +90,30 @@ A good place to start to understand the requirements is to use the widely accept
 * Availability – ensure systems and data are available to authorized users when they need it.
 
 Additional Cloud Infrastructure security principles that need to be incorporated:
+
 * Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
 
 In mobile network field, the GSM Association ([GSMA](https://www.gsma.com/)) and its Fraud and Security working group of experts have developed a set of documents specifying how to secure the global mobile ecosystem. 
 * The document “Baseline Security controls”, [FS.31 v2.0](https://www.gsma.com/security/resources/fs-31-gsma-baseline-security-controls/)[20], published in February 2020, is a practical guide intended for operators and stakeholders to check mobile network’s internal security. It lists a set of security controls from business controls (including security roles, organizational policies, business continuity management…) to technological controls (for user equipment, networks, operations…) covering all areas of mobile network, including Cloud Infrastructure. A checklist of questions allows to improve the security of a deployed network. 
 
 The GSMA security activities are currently focussed around 5G services and the new challenges posed by network functions virtualisation and open source software. The 2 following documents are in the scope of Cloud Infrastructure security:
+
 * The white paper [“Open Networking & the Security of Open Source Software deployment”](https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/), published in January 2021 [21], deals with open source software security, it highlights the importance of layered security defences and lists recommendations and security concepts able to secure deployments. 
 * The “5G Security Guide”, FS.40 version 1.0, Sept. 2020 (GSMA members only) covers 5G security, in a holistic way, from user equipment to networks. The document describes the new security features in 5G. It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualization, cloud native applications and containerization security.  
 
-<a name="7.4"></a>
-## 7.4 Cloud Infrastructure Security
+## Cloud Infrastructure Security
 
-<a name="7.4.1"></a>
-### 7.4.1 General Platform Security
+### General Platform Security
 
 The security certification of the platform will typically need to be the same, or higher, than the workload requirements.
 
 The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by workloads, or by Data Centre Operations staff supporting the workload, or by tenants accessing workloads. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
 
-<p align="center"><img src="../figures/ch7-data-access-model.png" alt="Overview" title="Access Controls" width="100%"/></p>
-<p align="center"><b>Figure 7-2:</b> Reference Model Access Controls</p>
+![**Figure 7-2:** Reference Model Access Controls](../figures/ch7-data-access-model.png) <!-- width="100%" -->
 
-<a name="7.4.1.1"></a>
-#### 7.4.1.1 The high-level functions of these different access controls
+**Figure 7-2:** Reference Model Access Controls
+
+#### The high-level functions of these different access controls
 
 * **MGMT ACCESS CONTROLS** - Platform access to workloads for service management. Typically all management and control-plane traffic is encrypted.
 * **DATA ACCESS CONTROLS** - Control of east-west traffic between workloads, and control of north-south traffic between the NF and other platform services such as front-end carriage networks and platform services. Inherently strong separation between tenants is mandatory.
@@ -176,21 +122,23 @@ The platform supports the workload, and in effect controls access to the workloa
 * **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific workloads to specific carriage networks. Carriage networks being those that are provided as public networks and operated by carriers, and in this case with interfaces that are usually sub, or virtual networks.
 * **TENANT ACCESS CONTROLS** - Provides appropriate tenant access controls to specific platform services, and tenant workloads - including Role-Based Access Control (RBAC), authentication controls as appropriate for the access arrangement, and Application Programming Interface (API) gateways for automated/script-driven processes.
 
-<a name="7.4.1.2"></a>
-#### 7.4.1.2 The following general security requirements apply to the Cloud Infrastructure
+#### The following general security requirements apply to the Cloud Infrastructure
 
 **System Hardening**
+
 * Adhering to the principle of least privilege, no login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform) when root privileges are not required.
 * Ensure that all the platform's components (including hypervisors, VMs, etc.) are kept up to date with the latest patch.
 * In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
 
 **Vulnerability Management**
+
 * Security defects must be reported.
 * The Cloud Infrastructure components must be continuously analysed from deployment to runtime. The Cloud Infrastructure must offer tools to check the code libraries and all other code against the [Common Vulnerabilities and Exposures (CVE) databases]( https://cve.mitre.org/) to identify the presence of any known vulnerabilities. The CVE is a list of publicly disclosed vulnerabilities and exposures that is maintained by [MITRE](https://www.mitre.org/). Each vulnerability is characterised by an identifier, a description, a date, and comments.
 * When a vulnerability is discovered on a component (from Operating Systems to virtualisation layer components) the remediation action will depend on its severity. The [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/) allows to calculate a vulnerability score. It is an open framework widely used in vulnerability management tools. CVSS is owned and managed by FIRST (Forum of Incident Response and Security Teams). The CVSS consists of three metric groups: Base, Temporal, and Environmental. The Base metrics produce a score ranging from 0 to 10, this score can then be refined using Temporal and Environmental metrics. The numerical score can be translated into a severity qualitative representation: low, medium, high, or critical. The severity score (or the associated qualitative representation) allows organisations to prioritise the remediation activities, high scores mandating a fast response time. The vulnerable components must then be patched, replaced, or their access must be restricted.
 * Security patches must be obtained from an authorised source in order to ensure their integrity.  Patches must be tested and validated in a pre-production environment before being deployed into production.
 
 **Platform access**
+
 * Restrict traffic to only traffic that is necessary, and deny all other traffic, including traffic from and to 'Back-end'.
 * Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
 * All host to host communications within the cloud provider network are to be cryptographically protected in transit.
@@ -201,20 +149,24 @@ The platform supports the workload, and in effect controls access to the workloa
 * All APIs access must use TLS protocol, including back-end APIs.
 
 **Workload security**
+
 * Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
 * Support zoning within a tenant workload - using application-level filtering.
 * Not expose tenant internal IP address details to another tenant.
 * All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks.
 
 **Confidentiality and Integrity**
+
 * All data persisted to primary, replica, or backup storage is to be encrypted.
 
 **Monitoring and security audit**
+
 * All platform security logs are to be time synchronised.
 * Logs are to be regularly scanned for events of interest.
 * The cloud services must be regularly vulnerability and penetration tested.
 
 **Platform provisioning and LCM**
+
 * A platform change management process that is documented, well communicated to staff and tenants, and rigorously followed.
 * A process to check change management adherence that is implemented, and rigorously followed.
 * An approved system or process for last resort access must exist for the platform.
@@ -222,19 +174,17 @@ The platform supports the workload, and in effect controls access to the workloa
 * Continuous Cloud security compliance is mandatory.
 * An incident response plan must exist for the platform.
 
-<a name="7.4.2"></a>
-### 7.4.2 Platform ‘back-end’ access security
+### Platform ‘back-end’ access security
 
 * Validate and verify the integrity of resources management requests coming from a higher orchestration layer to the Cloud Infrastructure manager.
 
-<a name="7.4.3"></a>
-### 7.4.3 Platform ‘front-end’ access security
+### Platform ‘front-end’ access security
 
 * Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks.
 * The front-end network may provide (Distributed Denial Of Service) DDoS support.
 
-<a name="7.4.4"></a>
-### 7.4.4 Infrastructure as a Code security
+### Infrastructure as a Code security
+
 Infrastructure as a Code (IaaC) (or equivalently called Infrastructure as Code IaC) refers to the software used for the declarative management of cloud infrastructure resources. In order to dynamically address user requirements, release features incrementally, and deliver at a faster pace, DevSecOps teams utilise best practices including continuous integration and continuous delivery and integrate information security controls and scanning tools into these processes, with the aim of providing timely and meaningful feedback including identifying vulnerabilities and security policy violations. With  this automated security testing and analysis capabilities it will be of critical value to detecting vulnerabilities early and maintaining a consistent security policy.
 
 Because of the extremely high complexity of modern telco cloud infrastructures, even minor IaaC code changes may lead to disproportionate and sometime disastrous downstream security and privacy impacts. Therefore, integration of security testing into the IaaC software development pipeline requires security activities to be automated using security tools and integrated  with the native DevOps and DevSecOps tools and procedures.
@@ -242,6 +192,7 @@ Because of the extremely high complexity of modern telco cloud infrastructures, 
 The DevSecOps Automation best practice advocates implementing a framework for security automation and programmatic execution and monitoring of security controls to identify, protect, detect, respond, and recover from cyber threats.  The framework used for the IaaC security is based on, the joint publication of Cloud Security Alliance (CSA) and SAFECode, "[The Six Pillars of DevSecOps: Automation (2020)](https://safecode.org/the-six-pillars-of-devsecops-automation)" [22]. The document utilises the base definitions and constructs from [ISO 27000](https://www.iso.org/standard/73906.html) [23], and CSA's [Information Security Management through Reflexive Security](https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/) [24].
 
 The framework identifies the following five distinct stages: 
+
 1.	Secure design and architecture 
 2.	Secure coding (Developer IDE and Code Repository) 
 3.	Continuous build, integration and test 
@@ -250,20 +201,17 @@ The framework identifies the following five distinct stages:
 
 Triggers and checkpoints define transitions within stages. When designing DevSecOps security processes, one needs to keep in mind, that when a trigger condition is met, one or more security activities are activated. The outcomes of those security activities need to determine whether the requirements of the process checkpoint are satisfied. If the outcome of the security activities meets the requirements, the next set of security activities are performed as the process transitions to the next checkpoint, or, alternatively, to the next stage if the checkpoint is the last one in the current stage. If, on the other hand, the outcome of the security activities does not meet the requirements, then the process should not be allowed to advance to the next checkpoint. Tables 7-9 to 7-13 in Section 7.9 define the IaaC security activities presented as security requirements mapped to particular stages and trigger points.
 
-<a name="7.4.5"></a>
-### 7.4.5 Security of Production and Non-production Environments
+### Security of Production and Non-production Environments
+
 Telecommunications operators often focus their security efforts on the production environments actively used by their customers and/or their employees. This is of course critical because a breach of such systems can seriously damage the company and its customers. In addition, production systems often contain the most valuable data, making them attractive targets for intruders. But an insecure non-production (development, testing) environment can also create real problems because they may leave a company open to corporate espionage, sabotage by competitors, and theft of sensitive data.
 
 Security is about mitigating risk. If operators do not have the same level of security regime in their non-production environments compared to production, then an additional level of risk may be introduced. Especially if such non-production environments accept outside connections (for example for suppliers or partners, which is quite normal in complex telco ecosystems), there is a real need to monitor security of these non-production environments. The gold standard then is to implement the same security policies in production and non-production infrastructure, which would reduce risk and typically simplify operations by using the same control tools and processes. However, for many practical reasons some of the security monitoring rules may differ. As an example, if a company maintains a separate, isolated environment for infrastructure software development experimentation, the configuration monitoring rules may be relaxed in comparison with the production environment, where such experimentation is not allowed. Therefore, in this document, when dealing with such dilemma, the focus has been placed on those non-production security requirements that must be on the same level as in the production environment (typically of **must** type), leaving relaxed requirements (typically of **should** or **may**) in cases there is no such necessity, see Sec. 7.9.7.  
  
 In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered to be Infrastructure as a Code (IaaC). This fact implies that many aspects of code related security automatically apply to IaaC. Security aspects of IaaC in the telco context is discussed in the previous Section 7.4.4 "Infrastructure as a Code", which introduces the relevant framework for security automation and programmatic execution and monitoring of security controls. Organisations need to identify which of the stages or activities within these stages should be performed within the non-production versus production environments. This mapping will then dictate which security activities defined for particular stages and triggers (e.g, vulnerability tests, patch testing, penetration tests) are mandatory, and which can be left as  discretionary.  
 
+## Workload Security - Vendor Responsibility
 
-<a name="7.5"></a>
-## 7.5 Workload Security - Vendor Responsibility
-
-<a name="7.5.1"></a>
-### 7.5.1 Software Hardening
+### Software Hardening
 
 * No hard-coded credentials or clear text passwords in code and images. Software must support configurable, or industry standard, password complexity rules.
 * Software should be independent of the infrastructure platform (no OS point release dependencies to patch).
@@ -272,34 +220,30 @@ In the context of the contemporary telecommunication technology, the cloud infra
 * Software should support recognised encryption standards and encryption should be decoupled from software.
 * Software should have support for configurable banners to display authorised use criteria/policy.
 
-<a name="7.5.2"></a>
-### 7.5.2 Port Protection
+### Port Protection
 
 * Unused software and unused network ports should be disabled by default.
 
-<a name="7.5.3"></a>
-### 7.5.3 Software Code Quality and Security
+### Software Code Quality and Security
 
 * Vendors should use industry recognized software testing suites
+
   * Static and dynamic scanning.
   * Automated static code review with remediation of Medium/High/Critical security issues. The tool used for static code analysis and analysis of code being released must be shared.
   * Dynamic security tests with remediation of Medium/High/Critical security issues. The tool used for Dynamic security analysis of code being released must be shared.
   * Penetration tests (pen tests) with remediation of Medium/High/Critical security issues.
   * Methodology for ensuring security is included in the Agile/DevOps delivery lifecycle for ongoing feature enhancement/maintenance.
 
-<a name="7.5.4"></a>
-### 7.5.4 Alerting and monitoring
+### Alerting and monitoring
 
 * Security event logging: all security events must be logged, including informational.
 * Privilege escalation must be detected.
 
-  <a name="7.5.5"></a>
-### 7.5.5 Logging
+### Logging
 
 * Logging output should support customizable Log retention and Log rotation.
 
-<a name="7.6"></a>
-## 7.6 Workload Security - Cloud Infrastructure Operator Responsibility
+## Workload Security - Cloud Infrastructure Operator Responsibility
 
 The Operator’s responsibility is to not only make sure that security is included in all the vendor supplied infrastructure and NFV components, but it is also responsible for the maintenance of the security functions from an operational and management perspective. This includes but is not limited to securing the following elements:
 
@@ -309,13 +253,11 @@ The Operator’s responsibility is to not only make sure that security is includ
 * Support for appropriate incident response and reporting.
 * Methods to support appropriate remote attestation certification of the validity of the security components, architectures, and methodologies used.
 
-<a name="7.6.1"></a>
-### 7.6.1 Remote Attestation/openCIT
+### Remote Attestation/openCIT
 
 Cloud Infrastructure operators must ensure that remote attestation methods are used to remotely verify the trust status of a given Cloud Infrastructure platform.  The basic concept is based on boot integrity measurements leveraging the Trusted Platform Module (TPM) built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the Open Cloud Integrity Tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the Cloud Infrastructure and enables compliance in Cloud Datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM, and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
 
-<a name="7.6.2"></a>
-### 7.6.2 Workload Image
+### Workload Image
 
 Only workload images from trusted sources must be used. Secrets must be stored outside of the images.
 
@@ -327,41 +269,32 @@ CIS Hardened Images should be used whenever possible. CIS provides, for example,
 
 Images are stored in registries. The images registry must contain only vetted images. The registry must remain a source of trust for images over time, images therefore must be continuously scanned to identify vulnerabilities and out-of-date versions as described previously. Access to the registry is an important security risk. It must be granted by a dedicated authorisation and through secure networks enforcing authentication, integrity and confidentiality.
 
-<a name="7.6.3"></a>
-### 7.6.3 Networking Security Zoning
+### Networking Security Zoning
 
 Network segmentation is important to ensure that applications can only communicate with the applications they are supposed to. To prevent a workload from impacting other workloads or hosts, it is a good practice to separate workload traffic and management traffic. This will prevent attacks by VMs or containers breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, workloads of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
 
 Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFV Infrastructure.
 
-<a name="7.6.4"></a>
-### 7.6.4 Volume Encryption
+### Volume Encryption
 
 Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Encryption functions rely on a Cloud Infrastructure internal key management service. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure. The TPM (Trusted Platform Module) module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
 
 For sensitive data encryption, when data sovereignty is required, an external Hardware Security Module (HSM) should be integrated in order to protect the cryptographic keys. A HSM is a physical device which manages and stores secrets. Usage of a HSM strengthens the secrets security. For 5G services, GSMA FASG strongly recommends the implementation of a HSM to secure the storage of UICC (Universal Integrated Circuit Card) credentials.
 
-<a name="7.6.5"></a>
-### 7.6.5 Root of Trust for Measurements (RTM)
+### Root of Trust for Measurements (RTM)
 
 The sections that follow define mechanisms to ensure the integrity of the infrastructure pre-boot and post-boot (running). The following defines a set of terms used in those sections.
 
--  The hardware root of trust helps with the pre-boot and post-boot security issues. 
-
--  Unified Extensible Firmware Interface (UEFI) adheres to standards defined by an industry consortium. Vendors (hardware, software) and solution providers collaborate to define common interfaces, protocols and  structures for computing  platforms.
-
--  Platform Configuration Register (PCR) is a memory location in the TPM used to store TPM Measurements (hash values generated by the SHA-1 standard hashing algorithm). PCRs are cleared only on TPM reset. UEFI defines 24 PCRs of which the first 16, PCR 0 - PCR 15, are used to store measures created during the UEFI boot process.
-
--  Root of Trust for Measurement (RTM) is a computing engine capable of making integrity measurements.
-
--  Core Root of Trust for Measurements (CRTM) is a set of instructions executed when performing RTM.
-
--  Platform Attestation provides proof of validity of the platform’s integrity measurements. Please see Section [7.6.1 Remote Attestation/openCIT](#7.6.1).
+* The hardware root of trust helps with the pre-boot and post-boot security issues. 
+* Unified Extensible Firmware Interface (UEFI) adheres to standards defined by an industry consortium. Vendors (hardware, software) and solution providers collaborate to define common interfaces, protocols and  structures for computing  platforms.
+* Platform Configuration Register (PCR) is a memory location in the TPM used to store TPM Measurements (hash values generated by the SHA-1 standard hashing algorithm). PCRs are cleared only on TPM reset. UEFI defines 24 PCRs of which the first 16, PCR 0 - PCR 15, are used to store measures created during the UEFI boot process.
+* Root of Trust for Measurement (RTM) is a computing engine capable of making integrity measurements.
+* Core Root of Trust for Measurements (CRTM) is a set of instructions executed when performing RTM.
+* Platform Attestation provides proof of validity of the platform’s integrity measurements. Please see Section [7.6.1 Remote Attestation/openCIT](#7.6.1).
 
 Values stored in a PCR cannot be reset (or forged) as they can only be extended. Whenever a measurement is sent to a TPM, the hash of the concatenation of the current value of the PCR and the new measurement is stored in the PCR. The PCR values are used to encrypt data.  If the proper environment is not loaded which will result in different PCR values, the TPM will be unable to decrypt the data.  
  
-<a name="7.6.5.1"></a>
-#### 7.6.5.1 Static Root of Trust for Measurement (SRTM)
+#### Static Root of Trust for Measurement (SRTM)
 
 Static RTM (SRTM) begins with measuring and verifying the integrity of the BIOS firmware. It then measures additional firmware modules, verifies their integrity, and adds each component’s measure to an SRTM value. The final value represents the expected state of boot path loads. SRTM stores results as one or more values stored in PCR storage. In SRTM, the CRTM resets PCRs 0 to 15 only at boot.
 
@@ -369,6 +302,7 @@ Using a Trusted Platform Module (TPM), as a hardware root of trust, measurements
 Cloud Infrastructure operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
 
 A simple process would work as follows;
+
 1. The BIOS CRTM (Bios Boot Block) is executed by the CPU and used to measure the BIOS firmware.
 1. The SHA1 hash of the result of the measurement is sent to the TPM.
 1. The TPM stores this new result hash by extending the currently stored value.
@@ -378,8 +312,8 @@ Cloud Infrastructure operators should ensure that OS kernel measurements can be 
 
 The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
 
-<a name="7.6.5.2"></a>
-#### 7.6.5.2 Dynamic Root of Trust for Measurement (DRTM)
+#### Dynamic Root of Trust for Measurement (DRTM)
+
 In Dynamic Root of Trust for Measurement (DRTM), the RTM for the running environment are stored in PCRs starting with PCR 17. 
 
 If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
@@ -388,8 +322,7 @@ Additionally, platform monitoring can be extended to monitor the integrity of th
 The static file system includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
 This allows the attestation server to detect any tampering with the static file system during the runtime of the platform.
 
-<a name="7.6.6"></a>
-### 7.6.6 Zero Trust Architecture (ZTA) 
+### Zero Trust Architecture (ZTA) 
 
 Remote attestation, section [7.6.1](#7.6.1), and Root of trust for measurements, section [7.6.5](#7.6.5), provide methods to ensure the integrity of the infrastructure. The Zero Trust concept moves a step forward enabling to build secure by design cloud infrastructure, from hardware to applications. The adoption of Zero Trust principles mitigates the threats and attacks within an enterprise, a network or an infrastructure, ensuring a fine grained segmentation between each component of the system.
 
@@ -397,31 +330,30 @@ Zero Trust Architecture (ZTA), described in [NIST SP 800-207 publication](https:
 
 ZTA principles applied to Cloud infrastructure components are the following:
 
--	Adopt least privilege configurations
--	Authentication and authorization required for each entity, service, or session
--	Fine grained segmentation
--	Separation of control plane and data plane
--	Secure internal and external communications
--	Monitor, test, and analyse security continuously
+*	Adopt least privilege configurations
+*	Authentication and authorization required for each entity, service, or session
+*	Fine grained segmentation
+*	Separation of control plane and data plane
+*	Secure internal and external communications
+*	Monitor, test, and analyse security continuously
 
 Zero Trust principles should also be applied to cloud-native applications. With the increasing use of these applications which are designed with microservices and deployed using containers as packaging and Kubernetes as an orchestrator, the security of east-west communications between components must be carefully addressed. The use of secured communication protocols brings a first level of security, but considering each component as non-trustworthy will minimize the risk for applications to be compromised. A good practice is to implement the proxy-based service mesh which will provide a framework to build a secured environment for microservices-based applications, offering services such as service discovery, authentication and authorisation policies enforcement, network resilience, and security monitoring capabilities. The two documents, [NIST SP 800-204A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf)(Building Secure Microservices-based Applications Using Service-Mesh Architecture) and [NIST SP 800-204B](https://csrc.nist.gov/publications/detail/sp/800-204b/final)(Attribute-based Access Control for Microservices-based Applications Using a Service Mesh), describe service mesh, and provide guidance for service mesh components deployment.
 
-<a name="7.7"></a>
-## 7.7 Open Source Software Security 
+## Open Source Software Security 
 
 Software supply chain safety is crucial and can be a complex task in virtualised and containerised environments. Open source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components can also be composed of open source code. The proportion of open source code to an application source code can vary. It can be partial or total, visible or not. Open source code can be upstream code coming directly from open source public repositories or code within a commercial application or network function. To ensure the security of the whole system, all software and hardware components must reach the same level of security by following best security practices including secure lifecycle management. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party Components” provides a detailed risk management approach.
 
 To secure software code, the following methods must be applied:
 
--	Use best practices coding such as design pattern recommended in the [Twelve-Factor App](https://12factor.net/) or [OWASP “Secure Coding Practices - Quick Reference Guide”](owasp.org)
--	Require suppliers to provide a Software Bill of Materials to identify the open source modules in their product’s software releases
--	Use trusted, authenticated and identified software images that are provided by authenticated software distribution portals  
--	Do threat modelling, as described in the document “Tactical Threat Modeling” published by SAFECode
--	Test the software in a pre-production environment to validate integration 
--	Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply remediation actions according to their severity rating
--	Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
--	Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
--	Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, deployment, and runtime operation to perform automatic security check, as described in section 7.4.4  ‘”Infrastructure as a Code Security”
+*	Use best practices coding such as design pattern recommended in the [Twelve-Factor App](https://12factor.net/) or [OWASP “Secure Coding Practices - Quick Reference Guide”](owasp.org)
+*	Require suppliers to provide a Software Bill of Materials to identify the open source modules in their product’s software releases
+*	Use trusted, authenticated and identified software images that are provided by authenticated software distribution portals  
+*	Do threat modelling, as described in the document “Tactical Threat Modeling” published by SAFECode
+*	Test the software in a pre-production environment to validate integration 
+*	Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply remediation actions according to their severity rating
+*	Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
+*	Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
+*	Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, deployment, and runtime operation to perform automatic security check, as described in section 7.4.4  ‘”Infrastructure as a Code Security”
 
 The strength of open source code is the availability of code source developed by a community which maintain and improve it. Open source code integration with application source code helps to develop and produce applications faster. But, in return, it can introduce security risks if a risk management DevSecOps approach is not implemented. The GSMA white paper, “Open Networking & the Security of Open Source Software Deployment - Future Networks”, alerts on these risks and addresses the challenges coming with open source code usage. Amongst these risks for security, we can mention a poor quality code containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open source communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an inactive branch. The GSMA white paper develops means to mitigate these security issues.
 
@@ -453,38 +385,26 @@ Various images scanning tools, such as Clair or Trivy, are useful to audit image
 
 A dedicated internal isolated repository separated from the production environment must be used to store vetted open source content, which can include images, but also installer and utilities. These software packages must be signed and the signature verified prior to packages or images installation. Access to the repository must be granted by a dedicated authorization. The code must be inspected and vulnerabilities identified as described previously. After validating the software is risk free, it can be moved to the appropriate production repository.
 
+## Testing & certification
 
-<a name="7.8"></a>
-## 7.8 Testing & certification
-
-<a name="7.8.1"></a>
-### 7.8.1 Testing demarcation points
+### Testing demarcation points
 
 It is not enough to just secure all potential points of entry and hope for the best, any Cloud Infrastructure architecture must be able to be tested and validated that it is in fact protected from attack as much as possible. The ability to test the infrastructure for vulnerabilities on a continuous basis is critical for maintaining the highest level of security possible.  Testing needs to be done both from the inside and outside of the systems and networks.  Below is a small sample of some of the testing methodologies and frameworks available.
 
-• OWASP testing guide
-
-• Penetration Testing Execution Standard, PTES
-
-• Technical Guide to Information Security Testing and Assessment, NIST 800-115
-
-• VULCAN, Vulnerability Assessment Framework for Cloud Computing, IEEE 2013
-
-• Penetration Testing Framework, VulnerabilityAssessment.co.uk
-
-• Information Systems Security Assessment Framework (ISSAF)
-
-• Open Source Security Testing Methodology Manual (OSSTMM)
-
-• FedRAMP Penetration Test Guidance (US Only)
-
-• CREST Penetration Testing Guide
+* OWASP testing guide
+* Penetration Testing Execution Standard, PTES
+* Technical Guide to Information Security Testing and Assessment, NIST 00-115
+* VULCAN, Vulnerability Assessment Framework for Cloud Computing, IEEE 2013
+* Penetration Testing Framework, VulnerabilityAssessment.co.uk
+* Information Systems Security Assessment Framework (ISSAF)
+* Open Source Security Testing Methodology Manual (OSSTMM)
+* FedRAMP Penetration Test Guidance (US Only)
+* CREST Penetration Testing Guide
 
 Insuring that the security standards and best practices are incorporated into the Cloud Infrastructure and architectures must be a shared responsibility, among the Telecommunications operators interested in building and maintaining the infrastructures in support of their services, the application vendors developing the network services that will be consumed by the operators, and the Cloud Infrastructure vendors creating the infrastructures for their Telecommunications customers.  All of the parties need to incorporate security and testing components, and maintain operational processes and procedures to address any security threats or incidents in an appropriate manner.  Each of the stakeholders need to contribute their part to create effective security for the Cloud Infrastructure.
 
 
-<a name="7.8.2"></a>
-### 7.8.2 Certification requirements
+### Certification requirements
 
 Security certification should encompass the following elements:
 
@@ -497,11 +417,9 @@ Security certification should encompass the following elements:
 * Any additional Security and Privacy requirements implemented in the software deliverable beyond the default rules used security analysis tools.
 * Resiliency tests run (such as hardware failures or power failure tests)
 
-<a name="7.9"></a>
-## 7.9 Consolidated Security Requirements
+## Consolidated Security Requirements
 
-<a name="7.9.1"></a>
-### 7.9.1. System Hardening
+### System Hardening
 
 |  Ref | Requirement  | Definition/Note  |
 |-------|------|-------|
@@ -521,10 +439,9 @@ Security certification should encompass the following elements:
 | req.sec.gen.014 | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
 | req.sec.gen.015 | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. |  |
 
-<p align="center"><b>Table 7-1:</b> System hardening requirements</p>
+**Table 7-1:** System hardening requirements
 
-<a name="7.9.2"></a>
-###  7.9.2. Platform and Access
+###  Platform and Access
 
 |  Ref | Requirement  | Definition/Note  |
 |-------|------|-------|
@@ -549,10 +466,9 @@ Security certification should encompass the following elements:
 | req.sec.sys.019 | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non-revocation, identity). |  |
 | req.sec.sys.020 | The Cloud Infrastructure architecture **should** rely on Zero Trust principles to build a secure by design environment. | Zero Trust Architecture (ZTA) described in NIST SP 800-207 |
 
-<p align="center"><b>Table 7-2:</b> Platform and access requirements</p>
+**Table 7-2:** Platform and access requirements
 
-<a name="7.9.3"></a>
-### 7.9.3. Confidentiality and Integrity
+### Confidentiality and Integrity
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
@@ -566,10 +482,9 @@ Security certification should encompass the following elements:
 | req.sec.ci.008 | The Cloud Infrastructure **must** support tenant networks segregation. | |
 | req.sec.ci.009 | For sensitive data encryption, the key management service **should** leverage a Hardware Security Module to manage and protect cryptographic keys. | |
 
-<p align="center"><b>Table 7-3:</b> Confidentiality and integrity requirements</p>
+**Table 7-3:** Confidentiality and integrity requirements
 
-<a name="7.9.4"></a>
-### 7.9.4. Workload Security
+### Workload Security
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
@@ -581,10 +496,9 @@ Security certification should encompass the following elements:
 | req.sec.wl.006 | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.). | |
 | req.sec.wl.007 | The Operator **should** implement processes and tools to verify NF authenticity and integrity. |  |
 
-<p align="center"><b>Table 7-4:</b> Workload security requirements</p>
+**Table 7-4:** Workload security requirements
 
-<a name="7.9.5"></a>
-### 7.9.5. Image Security
+### Image Security
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
@@ -599,10 +513,9 @@ Security certification should encompass the following elements:
 | req.sec.img.009 | CIS Hardened Images **should** be used whenever possible. |  |
 | req.sec.img.010 | Minimalist base images **should** be used whenever possible. |  |
 
-<p align="center"><b>Table 7-5:</b> Image security requirements</p>
+**Table 7-5:** Image security requirements
 
-<a name="7.9.6"></a>
-### 7.9.6. Security LCM
+### Security LCM
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
@@ -619,10 +532,9 @@ Security certification should encompass the following elements:
 | req.sec.lcm.011 | The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software. | |
 | req.sec.lcm.012 | The Platform **must** log any access privilege escalation. |  |
 
-<p align="center"><b>Table 7-6:</b> Security LCM requirements</p>
+**Table 7-6:** Security LCM requirements
 
-<a name="7.9.7"></a>
-### 7.9.7. Monitoring and Security Audit
+### Monitoring and Security Audit
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action. In general, it is a good practice to have the same security monitoring and auditing capabilities in both production and non-production environements.  However, we distinguish between requirements for Production Platform (Prod-Platform) and Non-production Platform (NonProd-Platform) as some of the requirements may in practice need to differ, see Sec. 7.4.5 for the general discussion of this topic. In the table below, when a requirement mentions only Prod-Platform, it is assumed that this requirement is optional for NonProd-Platform. If a requirement does not mention any environment, it is assumed that it is valid for both Prod-Platform and NonProd-Platform.
 
@@ -651,10 +563,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.021 | The Prod-Platform’s and NonProd-Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
 | req.sec.mon.022 | The Prod-Platform  **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful. | |
 
-<p align="center"><b>Table 7-7:</b> Monitoring and security audit requirements</p>
+**Table 7-7:** Monitoring and security audit requirements
 
-<a name="7.9.8"></a>
-### 7.9.8. Open Source Software 
+### Open Source Software 
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
@@ -664,20 +575,18 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.oss.004 | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
 | req.sec.oss.005 | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. | Inventory of software components, https://www.ntia.gov/SBOM. | 
 
-<p align="center"><b>Table 7-8:</b> Open Source Software requirements</p>
+**Table 7-8:** Open Source Software requirements
 
-<a name="7.9.9"></a>
-### 7.9.9. IaaC - Secure Design and Architecture Stage Requirements
+### IaaC - Secure Design and Architecture Stage Requirements
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
 | req.sec.arch.001 | Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger | Methodology to identify and understand threats impacting a resource or set of resources. It may be done manually or using tools like open source OWASP Threat Dragon |
 | req.sec.arch.002 | Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger | Typically done manually by internal or independent assessors.  |
 
-<p align="center"><b>Table 7-9:</b> IaaC - Secure Design and Architecture Stage Requirements</p>
+**Table 7-9:** IaaC - Secure Design and Architecture Stage Requirements
 
-<a name="7.9.10"></a>
-### 7.9.10. IaaC - Secure Code Stage Requirements
+### IaaC - Secure Code Stage Requirements
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
@@ -687,10 +596,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.code.004 | Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. | On the local machine: through the IDE or integrated test suites; triggered on completion of coding be developer. |
 | req.sec.code.005 | SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. | Continuous delivery pre-deployment: scanning prior to deployment. |
 
-<p align="center"><b>Table 7-10:</b> IaaC - Secure Code Stage Requirements</p>
+**Table 7-10:** IaaC - Secure Code Stage Requirements
 
-<a name="7.9.11"></a>
-### 7.9.11. IaaC - Continuous Build, Integration and Testing Stage Requirements
+### IaaC - Continuous Build, Integration and Testing Stage Requirements
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
@@ -701,10 +609,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.bld.005 | Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition. |
 | req.sec.bld.006 | IAST – Interactive Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Software component deployed with an application that assesses application behaviour and detects presence of vulnerabilities on an application being exercised in realistic testing scenarios. Example:  Contrast Community Edition. |
 
-<p align="center"><b>Table 7-11:</b> IaaC - Continuous Build, Integration and Testing Stage Requirements</p>
+**Table 7-11:** IaaC - Continuous Build, Integration and Testing Stage Requirements
 
-<a name="7.9.12"></a>
-### 7.9.12. IaaC - Continuous Delivery and Deployment Stage Requirements
+### IaaC - Continuous Delivery and Deployment Stage Requirements
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
@@ -713,11 +620,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.del.003 | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning.  |
 | req.sec.del.004 | Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Instantiate Infrastructure trigger. | The vulnerability scanning system is deployed on the cloud platform to detect security vulnerabilities of specified components through scanning and to provide timely security protection. Example: OWASP Zed Attack Proxy (ZAP). |
 
-<p align="center"><b>Table 7-12:</b> IaaC - Continuous Delivery and Deployment Stage Requirements</p>
+**Table 7-12:** IaaC - Continuous Delivery and Deployment Stage Requirements
 
-<a name="7.9.13"></a>
-### 7.9.13. IaaC - Runtime Defence and Monitoring Requirements
-
+### IaaC - Runtime Defence and Monitoring Requirements
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
@@ -726,10 +631,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.run.003 | Application testing and Fuzzing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition.  |
 | req.sec.run.004 | Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Typically done manually. |
 
-<p align="center"><b>Table 7-13:</b> IaaC - Runtime Defence and Monitoring Requirements</p>
+**Table 7-13:** IaaC - Runtime Defence and Monitoring Requirements
 
-<a name="7.9.14"></a>
-### 7.9.14. Compliance with Standards
+### Compliance with Standards
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
@@ -746,11 +650,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.std.011 | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity  ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity. |  |
 | req.sec.std.012 | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). | International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. |
 
-<p align="center"><b>Table 7-14:</b> Compliance with standards requirements</p>
+**Table 7-14:** Compliance with standards requirements
 
-
-<a name="7.10"></a>
-## 7.10. Security References
+## Security References
 
 Network Functions Virtualisation (NFV);NFV Security; Problem Statement, ETSI GS NFV-SEC 001 V1.1.1 (2014-10)
 
