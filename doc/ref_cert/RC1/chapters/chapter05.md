@@ -17,7 +17,7 @@ VNF.
 
 **End-End framework**:
 
-![](media/f3b0c214bc58c44406fd5b801d3dfc91.png)
+![End-End framework](media/f3b0c214bc58c44406fd5b801d3dfc91.png)
 
 Here, the steps 1-4 are NFVI related steps are covered in detail in the
 [RC NFVi chapters](./chapter02.md).
@@ -42,7 +42,7 @@ this flow.
 MANO and appropriate certified NFVi to be setup as defined part of entry criteria.
 This lab could either *OVP 3rd party lab* or *VNF vendors*.
 
-![](media/f3b0c214bc58c44406fd5b801d3dfc89.png)
+![OVP 3rd party lab](media/f3b0c214bc58c44406fd5b801d3dfc89.png)
 
 3. Once testing is completed done, test results will be submitted to the
 OVP portal for community review along with additional information such as product name,
@@ -124,7 +124,7 @@ or Classes, to mimic production-like VNFs to baseline infrastructure conformance
  VVP/VNFSDK test suites to ensure VNF can be spun up, modified, or removed,
  on the target NFVI (aka Interoperability).
 
-![](media/f3b0c214bc58c44406fd5b801d3dfc90.png)
+![Candidate VNF Validation](media/f3b0c214bc58c44406fd5b801d3dfc90.png)
 
 ### Entry criteria
 
@@ -167,7 +167,7 @@ Test platform requirements are provided to address test case design, distributio
 execution and result reporting along with required artifacts and environments in
 place and are defined based on below scope.
 
-![](media/c665a3d13461f67ea8729042cf8d975d.png)
+![Test platform requirements](media/c665a3d13461f67ea8729042cf8d975d.png)
 
 #### Standards/Profiles
 
@@ -231,7 +231,7 @@ management and executions and produce the result the CVC OVP portal for
 Conformance process along with required testing foot print details. So overall
 scoped example architecture could be as below:
 
-![](media/2269537e91994b5b49858734fe73bbb1.png)
+![VNF Test Certification Platform](media/2269537e91994b5b49858734fe73bbb1.png)
 
 ### Test Case Model
 As there are more number of VNF at different levels of networking such as access,
