@@ -25,7 +25,7 @@ guidelines and details for platform and test cases.
 
 Provides details on the architecture, components and it's responsibilities.
 
-![](media/f3b0c214bc58c44406fd5b801d3dfc88.png)
+![Platform Architecture](media/f3b0c214bc58c44406fd5b801d3dfc88.png)
 
 -   **Test Controller**: For every feature supported in VTP, Test controller
     provides required REST API along with user authentication and authorization
