@@ -169,7 +169,7 @@ place and are defined based on below scope.
 
 ![](media/c665a3d13461f67ea8729042cf8d975d.png)
 
-#### Standards/Profiles
+### Standards/Profiles
 
 -   ETSI (TOSCA)
 
@@ -177,7 +177,7 @@ place and are defined based on below scope.
 
 -   ONAP VNFREQS (HOT)
 
-#### Test cases
+### Test cases
 
 Refer *chapter RC-06* for more details on test case requirements defined for VNF
 under Anuket. Platform should support to managed and execute these test cases.
@@ -186,7 +186,7 @@ NOTE: For Conformance, only compliance and verification test cases will be
 considered, but in future, it could be extent to validation and Performance
 related testing.
 
-##### Compliance
+#### Compliance
 
 Perform compliance check based on
 
@@ -196,27 +196,27 @@ Perform compliance check based on
 
 -   GSMA profile as defined in *chapter RM-04*.
 
-##### Verification
+#### Verification
 
 Perform on-boarding/ verification life cycle operation (from instantiation,
 configuration, update, termination) using MANO supporting Anuket compliant NFVI.
 
-##### Validation
+#### Validation
 
 Perform various VNF type specific functionality operations on Anuket RA & RM
 compliant NFVI
 
-##### Performance
+#### Performance
 
 Perform various performance related testing and facilitate for benchmarking the
 VNF performance on different profile and scenarios.
 
-#### Eco-system MANO/NFVI
+### Eco-system MANO/NFVI
 
 Platform would support to execute various test cases on Anuket RA & RM compliant
 NFVi along with required MANO system supporting these NFVi.
 
-#### VNF
+### VNF
 
 Suppliers of VNFs/CNFs seeking to receive VNF Conformance badges must first
 ensure their testing is performed against a compliant RM/RA architecture supporting
@@ -301,7 +301,7 @@ integrated system for consuming.
 -   Summarized conclusion if conditions warrant test Conformance (see Badging Section).
 -   Portal contains links to Conformance badge(s) received.
 
-### 5Test Artifact management
+### Test Artifact management
 
 As part of testing various binaries, configurations, images, scripts ,etc would
 be used during test cases building or execution and
