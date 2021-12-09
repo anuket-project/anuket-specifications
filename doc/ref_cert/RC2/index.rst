@@ -6,7 +6,7 @@ This is the Kubernetes Based Reference Conformance (RC-2)
 Release Information
 -------------------
 
-**Bundle: 6**
+**Bundle: 7**
 
 **Version: 0**
 
@@ -22,6 +22,7 @@ Bundle.Version Date          Note
 4.0            25th Sep 2020 Baraque Release
 5.0            29th Jan 2021 Elbrus Release
 6.0            1st Jul 2021  Kali Release
+7.0            7th Dec 2021  Lakelse Release
 ============== ============= ===================
 
 Overall Status
