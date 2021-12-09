@@ -54,7 +54,7 @@ single tests:
     Conformance or [Testing Special Interest Groups](https://github.com/kubernetes/community/blob/master/sig-testing/charter.md)
     in sub-sections below
   - skip excludes the SIG labels listed as optional in
-    [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+    [Reference Architecture-2 (RA-2) Chapter 6](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter06.html)
 
 The Reference Conformance suites must be stable and executed on real
 deployments. Then all the following labels are defacto skipped in
@@ -95,7 +95,7 @@ skip:
   - [Feature:StorageVersionAPI]
 
 See [API Machinery Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-api-machinery)
-and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+and [Reference Architecture-2 (RA-2) Chapter 6](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter06.html)
 for more details.
 
 #### Apps Testing
@@ -114,7 +114,7 @@ skip:
   - [Feature:SuspendJob]
 
 See [Apps Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-apps)
-and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+and [Reference Architecture-2 (RA-2) Chapter 6](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter06.html)
 for more details.
 
 #### Auth Testing
@@ -130,7 +130,7 @@ skip:
   - [Feature:PodSecurityPolicy]
 
 See [Auth Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-auth)
-and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+and [Reference Architecture-2 (RA-2) Chapter 6](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter06.html)
 for more details.
 
 #### Cluster Lifecycle Testing
@@ -144,7 +144,7 @@ skip:
   - [Flaky]
 
 See [Cluster Lifecycle Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle)
-and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+and [Reference Architecture-2 (RA-2) Chapter 6](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter06.html)
 for more details.
 
 #### Instrumentation Testing
@@ -164,7 +164,7 @@ skip:
   - [Feature:StackdriverMonitoring]
 
 See [Instrumentation Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-instrumentation)
-and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+and [Reference Architecture-2 (RA-2) Chapter 6](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter06.html)
 for more details.
 
 #### Network Testing
@@ -204,7 +204,7 @@ skip:
   - Network.should.set.TCP.CLOSE_WAIT.timeout
 
 See [Network Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-network)
-and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+and [Reference Architecture-2 (RA-2) Chapter 6](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter06.html)
 
 #### Node Testing
 
@@ -223,7 +223,7 @@ skip:
   - [NodeFeature:RuntimeHandler]
 
 See [Node Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-node)
-and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+and [Reference Architecture-2 (RA-2) Chapter 6](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter06.html)
 
 #### Scheduling Testing
 
@@ -238,7 +238,7 @@ skip:
   - [Feature:Recreate]
 
 See [Scheduling Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-scheduling)
-and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+and [Reference Architecture-2 (RA-2) Chapter 6](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter06.html)
 
 #### Storage Testing
 
@@ -277,7 +277,7 @@ skip:
   - should not cause race condition when used for git_repo
 
 See [Storage Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-storage)
-and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+and [Reference Architecture-2 (RA-2) Chapter 6](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter06.html)
 
 ### Kubernetes API benchmarking
 
@@ -291,7 +291,7 @@ which iterates 10 times the mainline
 [xrally-kubernetes](https://github.com/xrally/xrally-kubernetes) scenarios.
 
 At the time of writing, no KPI is defined in
-[Kubernetes based Reference Architecture](../../../ref_arch/kubernetes/chapters/chapter02.md)
+[Kubernetes based Reference Architecture](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/)
 which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
 [Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking/testcases.yaml?h=stable%2Fv1.22)
