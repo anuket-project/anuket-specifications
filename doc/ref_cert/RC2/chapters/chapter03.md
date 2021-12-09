@@ -1,7 +1,5 @@
 # Kubernetes Testing Cookbook
 
-![Scope](../figures/bogo_dfp.png)
-
 ## Deploy your own conformance toolchain
 
 At the time of writing, the CI description file is hosted in Functest and only
