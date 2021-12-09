@@ -1,11 +1,6 @@
 Introduction
 ============
 
-.. figure:: ../figures/bogo_lsf.png
-   :alt: Scope
-
-   Scope
-
 Executive Summary
 -----------------
 

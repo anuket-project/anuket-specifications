@@ -1,11 +1,6 @@
 Kubernetes Testing Cookbook
 ===========================
 
-.. figure:: ../figures/bogo_dfp.png
-   :alt: Scope
-
-   Scope
-
 Deploy your own conformance toolchain
 -------------------------------------
 

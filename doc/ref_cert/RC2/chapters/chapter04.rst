@@ -1,11 +1,6 @@
 CNF Test Cases and Requirements Traceability
 ============================================
 
-.. figure:: ../figures/bogo_ifo.png
-   :alt: Scope
-
-   Scope
-
 Introduction
 ------------
 

@@ -1,11 +1,6 @@
 Kubernetes Test Cases and Requirements Traceability
 ===================================================
 
-.. figure:: ../figures/bogo_lsf.png
-   :alt: Scope
-
-   Scope
-
 Introduction
 ------------
 
