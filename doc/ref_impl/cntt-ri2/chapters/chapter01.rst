@@ -47,7 +47,7 @@ The document first consolidates the requirements that need to be addressed by th
 Terminology
 ~~~~~~~~~~~
 
-Terminology in this document will follow `CNTT Terminology <../../../common/glossary.md>`__.
+Terminology in this document will follow `Anuket Terminology <../../../common/glossary.md>`__.
 
 Scope
 -----
