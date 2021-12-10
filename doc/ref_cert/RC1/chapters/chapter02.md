@@ -1,7 +1,5 @@
 # NFVI Conformance Requirements
 
-![Scope](../figures/bogo_ifo.png)
-
 ## Synopsis
 
 This chapter mainly covers the overall requirement for the Reference
@@ -77,7 +75,7 @@ will not be moved to the next workflow for Conformance. The Cloud
 Infrastructure+VNF conformance consist of a three part process for Compliance,
 Validation, and Performance. Adherence to Security standards are equally
 important and addressed in
-[Chapter 7 of Reference Model](../../../ref_model/chapters/chapter07.md).
+[Chapter 7 of Reference Model](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter07.html).
 
 The three part conformance process includes NFVI Manifest conformance, Empirical Baseline measurements against targeted VNF families, and Candidate VNF validation. More specifically,
 
@@ -98,10 +96,10 @@ The Infrastructure Profile Catalog contains the following attributes:
   - Acceleration capabilities
 - Profiles are offered to VNFs as an instance types with predefined compute flavors.
   - A particular set of options is an instance type
-  - Compute flavors: .tiny, .small etc as defined in [RM §4.2.1.1](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
-- NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. Details for each of these profiles can be found in [RM §2.3](../../../ref_model/chapters/chapter02.md#2.3).
+  - Compute flavors: .tiny, .small etc as defined in [RM §4.2.1.1](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#basic-profile)
+- NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. Details for each of these profiles can be found in [RM §2.3](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html#analysis).
 
-![NFVI Profiles](../../../figures/RM-ch04-node-profiles.png)
+![NFVI Profiles](https://cntt.readthedocs.io/en/latest/ref_model/figures/RM-ch04-node-profiles.png)
 
 ## Profiles Reference
 
@@ -111,7 +109,7 @@ Different vendors have different types of VNFs to serve different use-cases. A V
 - Network intensive (N) profile offering predictable computing performance along with low latency and high networking throughput
 Similarly, different NFVI vendors may specialize in different hardware profiles and some may specialize in both VNFs and NFVI.
 
-To cater to different needs from multiple NFVI vendors, Anuket allows different types of NFVI Conformance based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
+To cater to different needs from multiple NFVI vendors, Anuket allows different types of NFVI Conformance based on their types of [profile](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html#analysis)
  - Certify Vendor NFVI Hardware solution: This allows for Conformance of only NFVI.
  - Certify Vendor NFVI Hardware and Software Solution: This allows for Conformance for NFVI running a particular VNF.
 
@@ -246,7 +244,7 @@ In addition to General Best Practices for NFVI Conformance, the following Qualit
 **Results.** Test results reporting will be communicated as a boolean (pass/fail), or Measurements Only.  
 
  - **Functional Pass/Fail** signals the assertions set in a test script verify the Functional Requirements (FR) has met its stated objective as delivered by the developer. This will consist of both positive validation of expected behavior, as well as negative based testing when to confirm error handling is working as expected.
- - **Performance-based Pass/Fail** determination will be made by comparing Non-Functional (NFR) NFVI KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. See [Chapter 4 of RM](../../../ref_model/chapters/chapter04.md) for a complete list of metrics and requirements.
+ - **Performance-based Pass/Fail** determination will be made by comparing Non-Functional (NFR) NFVI KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. See [Chapter 4 of RM](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html) for a complete list of metrics and requirements.
  - **Measurement Results**.  Baseline Measurements will be performed when there are no benchmark standards to compare results, or established FRs/NFRs for which to gauge application / platform behavior in an integrated environment, or under load conditions.  In these cases, test results will be executed to measure the application, platform, then prepare FRs/NFRs for subsequent enhancements and test runs.  
 
  **Collation | Portal**.  The following criteria will be applied to the collation and presentation of test-runs seeking NFVI Conformance:   
@@ -295,11 +293,11 @@ Conformance and issuance of NFVI badges will be as follows:
 
 ## NFVI Test Cases Requirements
 
-The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the compliance program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
+The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the compliance program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Section [Test Case Selection Requirements](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter08.html#multi-cloud-interactions-model) of the reference model.
 
 ### Generic Requirements on Test Cases
 
-All test cases must fulfill the generic requirements listed in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
+All test cases must fulfill the generic requirements listed in Section [Test Case Selection Requirements](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter08.html#8.2.4) of the reference model.
 
 In addition, for test cases targeting the NFVI compliance program, the following requirements must be met:
 
@@ -314,7 +312,7 @@ In addition, for test cases targeting the NFVI compliance program, the following
 
 The compliance and Conformance program intends to validate four different types of requirements and system properties:
 
-- API compliance: This is the most relevant type of test case, validating the functional correctness of the system under test. API compliance test cases exercise only the specific well-defined APIs described in the reference architecture (see [Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md)).
+- API compliance: This is the most relevant type of test case, validating the functional correctness of the system under test. API compliance test cases exercise only the specific well-defined APIs described in the reference architecture (see [Interfaces and APIs](https://cntt.readthedocs.io/en/latest/ref_arch/openstack/chapters/chapter05.html)).
 
 - Performance: Test cases covering this type of requirement measure specific performance characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
 
@@ -322,16 +320,16 @@ The compliance and Conformance program intends to validate four different types 
 
 - Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to Anuket hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
 
-The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section [NFVI Test Cases Requirements](chapter02.md#28-nfvi-test-cases-requirements).
+The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section NFVI Test Cases Requirements below.
 
 ### Profile Catalog
 
-Section [Infrastructure Profiles Catalogue](../../../ref_model/chapters/chapter04.md#42-infrastructure-profiles-catalogue) of the reference model defines two software profiles, targeting two different use cases:
+Section [Infrastructure Profiles Catalogue](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#profiles-and-workload-flavours) of the reference model defines two software profiles, targeting two different use cases:
 
 - Basic
 - Network intensive
 
-The test cases selected for validating compliance of the two profiles must cover the functional and non-functional requirements as listed in Section [Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#425-instance-capabilities-mapping) and Section [Instance Performance Measurement Mapping](../../../ref_model/chapters/chapter04.md#426-instance-performance-measurement-mapping) of the reference model.
+The test cases selected for validating compliance of the two profiles must cover the functional and non-functional requirements as listed in Section [Instance Capabilities Mapping](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#virtual-network-interface-specifications) and Section [Instance Performance Measurement Mapping](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#storage-extensions) of the reference model.
 
 TODO: what actually needs to be done here is to reference the table from chapter 4.2.5 and mark for which of those requirements test cases are actually available in the set of test tools available to us.
 

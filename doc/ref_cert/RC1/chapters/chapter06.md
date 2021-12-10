@@ -1,7 +1,5 @@
 # VNF Test Cases and Traceability to Requirements
 
-![Scope](../figures/bogo_ifo.png)
-
 ## Introduction
 
 - Provide an overview of the purpose for the VNF TC Traceability to RM Requirements chapter
