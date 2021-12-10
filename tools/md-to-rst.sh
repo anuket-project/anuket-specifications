@@ -11,6 +11,8 @@
 # Usage:
 # md-to-rst.sh DIR-NAME
 
+set -x 
+
 if [ -z $1 ]; then echo "Directory is a mandatory parameter."; fi
 
 if ! command -v pandoc &> /dev/null
@@ -24,10 +26,10 @@ then
     exit 1;
 fi
 
-for filename in $1/*mod.md; do
+for filename in $1/*.md; do
     [ -e "$filename" ] || continue
     echo "Converting $filename."
-    pandoc -f gfm $filename --from gfm --to rst -s --wrap=preserve --columns=200 -o ${filename//\-mod\.md/\.rst}
+    pandoc -f gfm $filename --from gfm --to rst -s --wrap=preserve --columns=200 -o ${filename/\.md/\.rst}
 done
 
 
