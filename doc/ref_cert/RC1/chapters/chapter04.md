@@ -1,7 +1,5 @@
 # OpenStack-based cloud infrastructure Testing Cookbook
 
-![Scope](../figures/bogo_ifo.png)
-
 ## Introduction
 
 Define the purpose of the chapter which is to:
@@ -14,7 +12,7 @@ Define the purpose of the chapter which is to:
 
 ### Functest
 
-[Functest](https://functest.readthedocs.io/en/stable-iruya/) was initially
+[Functest](https://functest.readthedocs.io/en/stable-xena/) was initially
 created to verify OPNFV Installers and Scenarios and then to publish fair,
 trustable and public results regarding the status of the different opensource
 technologies, especially for Neutron backends (e.g. Neutron agents,
@@ -41,7 +39,7 @@ opensource software combinations:
 - blacklist mechanisms are available if needed
 
 It should be noted that
-[the RefStack lists](https://refstack.openstack.org/#/guidelines) are included
+[the RefStack lists](https://refstack.openstack.org) are included
 as they are in Functest in the next 3 dedicated testcases:
 
 - refstack_compute (OpenStack Powered Compute)
@@ -50,7 +48,7 @@ as they are in Functest in the next 3 dedicated testcases:
 
 Functest also integrates
 [Kubernetes End-to-end tests](https://kubernetes.io/blog/2019/03/22/kubernetes-end-to-end-testing-for-everyone/) and allows verifying Kubernetes Conformance (see
-[k8s-conformance](https://build.opnfv.org/ci/job/functest-kubernetes-opnfv-functest-kubernetes-smoke-iruya-k8s_conformance-run/206/console)).
+[k8s-conformance](https://build.opnfv.org/ci/job/functest-kubernetes-opnfv-functest-kubernetes-smoke-v1.22-k8s_conformance-run/24/console)).
 
 Dovetail (OVP) mostly leverages on Functest but only runs a small part of
 Functest (~15% of all functional tests, no benchmarking tests, no VNF
