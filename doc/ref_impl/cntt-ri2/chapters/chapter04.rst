@@ -167,7 +167,7 @@ Most of the configuration options in ``hw_config/{deployment}/idf.yaml`` shown b
        nfd: true                     # Enable Node Feature Discovery
        cmk:
          enable: true                # Enable CPU Manager for Kubernetes
-         num_shared_cores: 3         # Number of CPU cores to assign to the "shared pool" on each node 
+         num_shared_cores: 3         # Number of CPU cores to assign to the "shared pool" on each node
          num_exclusive_cores: 3      # Number of CPU cores to assign to the "exclusive pool" on each node
        topology_manager:
          enable: true                # Enable Kubernetes built-in Topology Manager
