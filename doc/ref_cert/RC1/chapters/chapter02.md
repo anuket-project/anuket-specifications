@@ -320,7 +320,7 @@ The compliance and Conformance program intends to validate four different types 
 
 - Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to Anuket hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
 
-The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section [NFVI Test Cases Requirements](chapter02.md#28-nfvi-test-cases-requirements).
+The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section NFVI Test Cases Requirements below.
 
 ### Profile Catalog
 
