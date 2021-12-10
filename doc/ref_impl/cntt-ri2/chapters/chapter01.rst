@@ -113,10 +113,19 @@ The main communities involved in driving requirements and development of this RI
    -  The CNF Conformance project in CNCF has a stated aim to provide "visibility into how well Cloud native Network Functions (CNFs) and the underlying Telecom platform follows cloud native principles".
    -  The CNF Testbed is an initiative providing a framework for building and deploying technology show cases with a strong focus on telco platform requirements.
 
-The following figure gives an overview of the relationship of the communities involved.
+Figure :ref:`ri2_figure_relationship-of-communities` gives an overview of the relationship of the communities involved.
 
+.. _ri2_figure_relationship-of-communities:
+
+.. figure:: ../figures/ri2-ch01-relationship_of_communities.png
+
+   Relationship of communities
+
+<<<<<<< HEAD
 |Relationship of communities|
 >>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
+=======
+>>>>>>> b1caff75 ([RI2] adding caption and reference to figure)
 
 Reference Implementation Approach
 ---------------------------------
@@ -201,5 +210,3 @@ For the ongoing proof of concept work related to both RA2 and RI2, some of the f
 -  Security
 
 As work progresses with the proof of concept it is expected that additional features will be added.
-
-.. |Relationship of communities| image:: ../figures/ri2-ch01-relationship_of_communities.png
