@@ -1,7 +1,5 @@
 # Gap analysis and Development
 
-![Scope](../figures/bogo_ifo.png)
-
 ## Introduction
 
 - Describe the purpose of this chapter, which includes, but not limited to:

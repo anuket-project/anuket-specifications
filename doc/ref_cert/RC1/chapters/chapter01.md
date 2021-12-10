@@ -1,7 +1,5 @@
 # Introduction
 
-![Scope](../figures/bogo_ifo.png)
-
 ## Synopsis
 
 Ensure an implementation of the Anuket Reference Architecture (RA), such as the Reference Implementation (RI), meets industry driven quality assurance standards for conformance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RC.
@@ -44,7 +42,7 @@ The three step methodology described above of verifying Manifest compliance, exe
 
 ### Terminology
 
-Terminology in this document will follow [Anuket Terminology](../../../common/glossary.md).
+Terminology in this document will follow [Anuket Terminology](https://cntt.readthedocs.io/en/latest/common/glossary.html).
 
 ## Scope
 
@@ -134,10 +132,10 @@ is required if new test suites are added in place of older, stale projects.
 **NFVI+VNF Instance Type:**
 
 * Standard compute flavours to be tested are defined in
-  [chapter 4.2.1](../../../ref_model/chapters/chapter04.md#4.2.1)
+  [chapter 4.2.1](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#virtual-network-interface-specifications)
 * Performance profiles come in the form of Basic, Network Intensive, and
   Compute intensive. Refer to
-  [chapter 2.3](../../../ref_model/chapters/chapter02.md#2.3)
+  [chapter 2.3](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html#analysis)
   for details on these profiles.
 
 ## Results Collation & Presentation

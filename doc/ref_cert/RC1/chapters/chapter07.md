@@ -1,7 +1,5 @@
 # VNF Testing Cookbook
 
-![Scope](../figures/bogo_ifo.png)
-
 ## Introduction
 
 Define the purpose of the chapter which is to:

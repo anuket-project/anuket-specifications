@@ -1,5 +1,3 @@
-[<< Back](../)
-
 # Reference Conformance 1
 
 This is the Reference Conformance for OpenStack based infrastructure (RC-1)
