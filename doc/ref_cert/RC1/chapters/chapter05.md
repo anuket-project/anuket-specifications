@@ -70,9 +70,9 @@ with defined capabilities and metrics. This would help operators to host their
 Telco Workload (VNF) with different traffic types, behaviour and from any vendor
 on a unified consistent Infrastructure. so as part of VNF Conformance, its
 important to certify the VNF based on profiled defined in
-[reference model](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html).
+[reference model](https://cntt.readthedocs.io/en/stable-lakelse/ref_model/chapters/chapter02.html).
 
-In [reference model](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html), following
+In [reference model](https://cntt.readthedocs.io/en/stable-lakelse/ref_model/chapters/chapter02.html), following
 NFVi profiles are proposed as reference:
 
  - **Basic**: for VNF that can tolerate resource over-subscription and variable latency.

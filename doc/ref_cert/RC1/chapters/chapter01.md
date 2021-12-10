@@ -42,7 +42,7 @@ The three step methodology described above of verifying Manifest compliance, exe
 
 ### Terminology
 
-Terminology in this document will follow [Anuket Terminology](https://cntt.readthedocs.io/en/latest/common/glossary.html).
+Terminology in this document will follow [Anuket Terminology](https://cntt.readthedocs.io/en/stable-lakelse/common/glossary.html).
 
 ## Scope
 
@@ -132,10 +132,10 @@ is required if new test suites are added in place of older, stale projects.
 **NFVI+VNF Instance Type:**
 
 * Standard compute flavours to be tested are defined in
-  [chapter 4.2.1](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#virtual-network-interface-specifications)
+  [chapter 4.2.1](https://cntt.readthedocs.io/en/stable-lakelse/ref_model/chapters/chapter04.html#virtual-network-interface-specifications)
 * Performance profiles come in the form of Basic, Network Intensive, and
   Compute intensive. Refer to
-  [chapter 2.3](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html#analysis)
+  [chapter 2.3](https://cntt.readthedocs.io/en/stable-lakelse/ref_model/chapters/chapter02.html#analysis)
   for details on these profiles.
 
 ## Results Collation & Presentation
