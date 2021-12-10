@@ -760,12 +760,12 @@ supported test case can be found in the following two link:
 +----------------------------------+------------------------------------------+
 | Test Cases                       | Link                                     |
 +==================================+==========================================+
-| Heat Test Cases                  | https://onap.readthedocs.io/\            |
+| Heat Test Cases                  | https://onap.readthedocs.io\             |
 |                                  | /en/latest/submodules/vnfrqts/testcases\ |
 |                                  | .git/docs/Appendix.html#list-of-r\       |
 |                                  | equirements-with-associated-tests        |
 +----------------------------------+------------------------------------------+
-| Tosca Test Cases                 | https://onap.readthedocs.io/\            |
+| Tosca Test Cases                 | https://onap.readthedocs.io\             |
 |                                  | /en/latest/submodules/vnfsdk/model.gi\   |
 |                                  | t/docs/files/csar-validation.html        |
 +----------------------------------+------------------------------------------+

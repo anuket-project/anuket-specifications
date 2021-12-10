@@ -177,9 +177,11 @@ categorized into below profiles:
 To cater to different needs from multiple NFVI vendors, Anuket allows
 different types of NFVI Conformance based on their types of
 `profile <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html#analysis>`__
+
 - Certify Vendor NFVI Hardware solution: This allows for Conformance of
-only NFVI. - Certify Vendor NFVI Hardware and Software Solution: This
-allows for Conformance for NFVI running a particular VNF.
+  only NFVI.
+- Certify Vendor NFVI Hardware and Software Solution: This
+  allows for Conformance for NFVI running a particular VNF.
 
 Compliance, Verification, and Conformance
 -----------------------------------------
@@ -781,7 +783,7 @@ the VNF domain.
 |                   |                 |           | (vnf.nfvi.perf.001)       |
 +-------------------+-----------------+-----------+---------------------------+
 | vnf.nfvi.perf.003 | vNIC delay      | second    | Frame Delay Variation     |
-|                   | variation       |           | (FDV) tovNIC at the       |
+|                   | variation       |           | (FDV) to vNIC at the      |
 |                   |                 |           | throughput                |
 |                   |                 |           | (vnf.nfvi.perf.001)       |
 +-------------------+-----------------+-----------+---------------------------+

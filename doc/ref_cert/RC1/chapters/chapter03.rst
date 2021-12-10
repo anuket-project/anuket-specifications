@@ -382,7 +382,7 @@ the following test names must not be executed:
 |                                                 | forwarding                |
 +-------------------------------------------------+---------------------------+
 | .\*test_ports.PortsTaggingOnCreation            | tag-ports-during-\        |
-|                                                 | -bulk-creation            |
+|                                                 | bulk-creation             |
 +-------------------------------------------------+---------------------------+
 | .\*test_ports.PortsTestJSON.                    | uplink-status-propagation |
 | test_create_port_with_propagate_uplink_status   |                           |
@@ -407,7 +407,7 @@ the following test names must not be executed:
 | test_update_router_extra_attributes\_\          |                           |
 | bumps_revision                                  |                           |
 +-------------------------------------------------+---------------------------+
-| .\*test_router_interface_fip                    | router -interface-fip     |
+| .\*test_router_interface_fip                    | router-interface-fip      |
 +-------------------------------------------------+---------------------------+
 | .\*test_routers.DvrRoutersTest                  | dvr                       |
 +-------------------------------------------------+---------------------------+
@@ -564,8 +564,8 @@ the following test names must not be executed:
 +----------------------------------------------------+------------------------+
 | .\*certificates.test_certificates                  | cert                   |
 +----------------------------------------------------+------------------------+
-| .\*test_                                           | https://launchpad.net\ |
-|                                                    | /bugs/1186354          |
+| .\*test_quotas_negative.\                          | https://launchpad.net\ |
+| QuotasSecurityGroupAdminNegativeTest               | /bugs/1186354          |
 +----------------------------------------------------+------------------------+
 | .\*test_novnc                                      | vnc_console            |
 +----------------------------------------------------+------------------------+
