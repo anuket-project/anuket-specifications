@@ -1,1 +1,0 @@
-# CNF Testing Cookbook
