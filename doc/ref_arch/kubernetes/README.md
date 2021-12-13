@@ -10,7 +10,7 @@ This is Kubernetes based Reference Architecture (RA-2)
 
 **Version: _0_**
 
-**Release Date: _7th Dec 2021_**
+**Release Date: _4th Jan 2022_**
 
 ## Bundle/Version History
 
@@ -21,7 +21,7 @@ This is Kubernetes based Reference Architecture (RA-2)
 | 4.0               | 25th Sep 2020     | Baraque Release   |
 | 5.0               | 29th Jan 2021     | Elbrus Release    |
 | 6.0               | 1st Jul 2021      | Kali Release      |
-| 7.0               | 7th Dec 2021      | Lakelse Release   |
+| 7.0               | 4th Jan 2022      | Lakelse Release   |
 
 ## Overall Status
 
