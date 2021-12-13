@@ -42,6 +42,7 @@ The document starts from the abstract and as it progresses it increasingly gets 
 This **Reference Model** document focuses on identifying the abstractions, and associated concepts, that are needed to represent the cloud infrastructure. **Figure 1-1** below highlights its scope in more details.
 
 ![**Figure 1-1:** Scope of Reference Model](../figures/ch01_scope.png) <!-- width="100%" -->
+
 **Figure 1-1:** Scope of Reference Model
 
 This document specifies:

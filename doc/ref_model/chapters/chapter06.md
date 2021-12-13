@@ -24,6 +24,8 @@ The Cloud Infrastructure APIs consist of set of APIs that are externally and int
 
 ![**Figure 6-1:** ETSI NFV architecture mapping](../figures/ch09-etsi-nfv-architecture-mapping.png) <!-- width="65%" -->
 
+**Figure 6-1:** ETSI NFV architecture mapping
+
 | Interface Point | Cloud Infrastructure Exposure | Interface Between                     | Description                                                                                                                                                                                                                                                                                                     |
 |-----------------|---------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Vi-Ha           | Internal NFVI | Software Layer and Hardware Resources | 1. Discover/collect resources and their configuration information, 2. Create execution environment (e.g., VM) for workloads (VNF)                                                                                                                                                                            |

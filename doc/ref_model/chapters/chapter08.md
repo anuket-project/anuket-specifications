@@ -42,11 +42,15 @@ In this section we will further explore the characteristics of the federated clo
 
 ![**Figure 8-1:** Example Hybrid Multi-Cloud Component Cloud](../figures/RM-Ch08-HMC-Image-1.png)
 
+**Figure 8-1:** Example Hybrid Multi-Cloud Component Cloud
+
 ### Telco Cloud
 
 The Figure 8-2 presents a visualisation of a Telco operator cloud (or simply, Telco cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
 
 ![**Figure 8-2:** Telco Cloud: Data Centre to Edge](../figures/RM-Ch08-Multi-Cloud-DC-Edge.png)
+
+**Figure 8-2:** Telco Cloud: Data Centre to Edge
 
 The Telco Operator may own and/or have partnerships and network connections to utilize multiple Clouds for network services, IT workloads, and external subscribers. The types of the component clouds include:
 
@@ -78,7 +82,7 @@ Public (All Users) | HCP | Vendor | Vendor | Vendor Locations | On Demand, Reser
 
 Figure 8-3 shows a conceptual Telco Operator Platform Architecture. The Cloud Infrastructure Resources Layer exposes virtualised (including containerised) resources on the physical infrastructure resources and also consists of various virtualisation and management software (see details later in this chapter). The Cloud Platform Components Layer makes available both elementary and composite objects for use by application and service developers, and for use by Services during runtime.  The Cloud Services Layer exposes the Services and Applications that are available to the Users; some of the Services and Applications may be sourced from or execute on other cloud platforms. Please note that while the architecture is shown as a set of layers, this is not an isolation mechanism and, thus, for example, Users may access the Cloud Infrastructure Resources directly without interacting with a Broker.
 
-![../figures/RM-Ch08-Telco-Operator-Platform.png](**Figure 8-3:** Conceptual Architecture of a Telco Operator Platform)
+![**Figure 8-3:** Conceptual Architecture of a Telco Operator Platform](../figures/RM-Ch08-Telco-Operator-Platform.png)
 
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery.  These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
 
