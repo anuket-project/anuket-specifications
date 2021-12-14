@@ -93,8 +93,7 @@ and services used in the client software stack.
 Terminology
 ~~~~~~~~~~~
 
-Terminology in this document will follow `Anuket
-Terminology <https://cntt.readthedocs.io/en/latest/common/glossary.html>`__.
+Terminology in this document will follow :doc:`common/glossary`.
 
 Scope
 -----

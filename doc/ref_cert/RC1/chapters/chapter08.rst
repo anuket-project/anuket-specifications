@@ -38,8 +38,7 @@ Test Case Gaps
 
 Anuket has developed many test cases in the different `test
 projects <https://wiki.opnfv.org/display/testing/TestPerf>`__ which can
-quickly improve RC. As listed in `RC Test case integration
-requirements <https://cntt.readthedocs.io/en/latest/ref_cert/RC1/chapters/chapter02.html>`__,
+quickly improve RC. As listed in :doc:`ref_cert/RC1/chapters/chapter02`,
 porting all the existing testcases to Xtesting will unify the test case
 execution and simplify the test integration as required by RC. Here are all the
 related issues:
@@ -69,8 +68,8 @@ Framework Gaps
 
 As proposed in `port VTP test cases to
 Xtesting <https://github.com/cntt-n/CNTT/issues/917>`__, VTP selected in
-`VNF E2E C&V Framework <https://cntt.readthedocs.io/en/latest/ref_cert/RC1/chapters/chapter05.html>`__
-requires small adaptations to fully fulfill the current `RC Test case
-integration requirements <https://cntt.readthedocs.io/en/latest/ref_cert/RC1/chapters/chapter02.html>`__.
+:doc:`ref_cert/RC1/chapters/chapter05`
+requires small adaptations to fully fulfill the current
+:doc:`ref_cert/RC1/chapters/chapter02`.
 It seems trivial changes as VTP proposed a REST API but will ensure that both
 NFVI and VNF testing can be executed in the same CI toolchain very easily.
