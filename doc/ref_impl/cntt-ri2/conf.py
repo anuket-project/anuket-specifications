@@ -6,10 +6,12 @@ copyright = '2021, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 
 exclude_patterns = [
-    '.tox'
+    '.tox',
+    'README.rst'
 ]
 extensions = [
     'sphinx_material',
+    'sphinx.ext.autosectionlabel'
 ]
 
 html_theme = "sphinx_material"
@@ -51,3 +53,6 @@ html_theme_options = {
 linkcheck_ignore = [
         'http://127.0.0.1'
 ]
+
+autosectionlabel_prefix_document = True
+autosectionlabel_maxdepth = 2

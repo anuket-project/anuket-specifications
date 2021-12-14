@@ -1,37 +1,14 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# 3. Lab Requirements
-
-![State](../figures/bogo_lsf.png) <!-- width="35" -->
-=======
-# Requirements for Labs
-<<<<<<< HEAD
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
->>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)
-
-
-=======
-[!Scope](../figures/bogo_lsf.png)
->>>>>>> 339390ea ([RI2] replacing HTML tags with markdown)
-=======
 Requirements for Labs
 =====================
->>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
 Introduction
 ------------
 
 The purpose of this chapter is to list and describe the requirements on labs used to deploy and run the RI2. Overall, the RI2 serves the following purposes which guide the definition of requirements in this chapter:
 
-<<<<<<< HEAD
-1. RI2 is an implementation of and a proving ground for the [Reference Architecture 2 (RA2) specification](../../../ref_arch/kubernetes). RI2 is verified against RA2 through the [Reference Conformance 2 (RC2) specification](../../../ref_cert/RC2).
-1. RI2 will align itself with the requirements of the Anuket Assured Program.
-1. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their environment to develop and validate against.
-=======
 1. RI2 is an implementation of and a proving ground for the `Reference Architecture 2 (RA2) specification <../../../ref_arch/kubernetes>`__. RI2 is verified against RA2 through the `Reference Conformance 2 (RC2) specification <../../../ref_cert/RC2>`__.
 2. RI2 will align itself with the requirements of the Anuket Assured Program.
 3. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their environment to develop and validate against.
->>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
 As a result of these, RI2 must be deployable in different lab environments:
 

@@ -1,20 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# 4. Operational Runbook
-
-![State](../figures/bogo_sdc.png) <!-- width="35" -->
-=======
-# Operational Runbook
-<<<<<<< HEAD
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
->>>>>>> 355bf2ba ([RI2] cleanup of markdown for upcoming conversion)
-=======
-![Scope](../figures/bogo_sdc.png)
->>>>>>> 339390ea ([RI2] replacing HTML tags with markdown)
-=======
 Operational Runbook
 ===================
->>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
 Introduction
 ------------
@@ -33,15 +18,7 @@ Installation of the Reference Implementation
 
 This section describes how to get started with RI-2 deployment via `Kuberef <https://gerrit.opnfv.org/gerrit/q/project:kuberef>`__.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-For the host provisioning stage, the [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) hosted by Nordix Foundation is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://networkbuilders.intel.com/intel-technologies/container-experience-kits) is being used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v21.08) (version v21.08).
-=======
-For the host provisioning stage, the `Cloud Infra Automation Framework <https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide>`__ hosted by Nordix Foundation is used. This framework uses `Bifrost <https://docs.openstack.org/bifrost/latest/>`__ for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and `Ironic <https://docs.openstack.org/ironic/latest/>`__. For Kubernetes provisioning, `Bare Metal Reference Architecture (BMRA) <https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf>`__ is being used. This framework uses scripts available on `Github <https://github.com/intel/container-experience-kits/tree/v21.03>`__ (version v21.03).
->>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
-=======
 For the host provisioning stage, the `Cloud Infra Automation Framework <https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide>`__ hosted by Nordix Foundation is used. This framework uses `Bifrost <https://docs.openstack.org/bifrost/latest/>`__ for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and `Ironic <https://docs.openstack.org/ironic/latest/>`__. For Kubernetes provisioning, `Bare Metal Reference Architecture (BMRA) <https://networkbuilders.intel.com/intel-technologies/container-experience-kits>`__ is being used. This framework uses scripts available on `Github <https://github.com/intel/container-experience-kits/tree/v21.08>`__ (version v21.08).
->>>>>>> 5dde7ab8 ([RI2] rst conversion: rebasing recent changes)
 
 Installation on Bare Metal Infratructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,69 +39,6 @@ More details regarding these descriptor files as well as their schema are very w
 
 For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single master (and worker) is required to deploy the cluster. Node roles are configured through the vendor specific IDF file.
 
-<<<<<<< HEAD
-Most of the configuration options in `hw_config/{deployment}/idf.yaml` shown below are set to specific values according to RA-2 requirements. Some of them might need to be changed depending on the hardware, such as the NIC and CPU configuration.
-
-```
-bmra:
-  profile: full_nfv               # BMRA profile for K8s provisioning - Should not be changed
-  network_roles:
-    sriov:
-      - name: eno2                # PF interface name
-        pci: "19:00.1"            # PCI ID of the interface (bus:device.function)
-        pf_driver: i40e           # Driver for the physical function (PF)
-        vf_driver: iavf           # Driver for the virtual function (VF)
-    sriov_dpdk:
-      - name: eno4
-        pci: "19:00.3"
-        pf_driver: i40e
-        vf_driver: vfio-pci
-  device_roles:
-#    qat:                         # Only uncomment if QAT is enabled
-#      - name: crypto01           # QAT device name
-#        pci: "0000:ab:00.0"      # PCI ID of the device (bus:device.function)
-#        pci_type c6xx            # PCI driver ID [dh895xcc,c6xx,c3xxx,d15xx,200xx,c4xxx]
-#        vfs: 4                   # Number of VFs to be created for PCI ID
-  runtime: docker                 # Supports 'docker' and 'containerd' runtimes
-  features:
-    sriov:
-      enable: true                # Enable SR-IOV
-      sriov_vfs_per_port: 2       # Number of VFs to be created for each interface in network_roles:sriov above
-      sriov_dpdk_vfs_per_port: 4  # Number of VFs to be created for each interface in network_roles:sriov_dpdk above
-    sriov_cni: true               # Enable SR-IOV CNI plugin
-    sriov_net_dp: true            # Enable SR-IOV Network Device Plugin
-    hugepages:
-      enable: true                # Enable hugepages
-      default: 2M                 # Default hugepage size [2M, 1G]
-      amount: 10240               # Amount of default size hugepages to allocate
-    isolcpus:
-      enable: true                # Enable CPU isolation in the host
-      autogenerate: true          # Automatically generate list of CPUs to isolate
-      cpus: "8-27,36-55"          # List of CPUs (cores/threads) to isolate (not used when autogenerate: true)
-    nfd: true                     # Enable Node Feature Discovery
-    cmk:
-      enable: true                # Enable CPU Manager for Kubernetes
-      num_shared_cores: 3         # Number of CPU cores to assign to the "shared pool" on each node 
-      num_exclusive_cores: 3      # Number of CPU cores to assign to the "exclusive pool" on each node
-    topology_manager:
-      enable: true                # Enable Kubernetes built-in Topology Manager
-      policy: "best-effort"       # Policy to use with Topology Manager ["none", "best-effort", "restricted", "single-numa-node"]
-    tas:
-      enable: true                # Enable Telemetry Aware Scheduling
-      demo_policy: false          # Enable demo policy for Telemetry Aware Scheduling (default: false)
-    bond_cni: true                # Install CNI for network interface bonding
-    psp: true                     # Enable Pod Security Policy (admission controller and basic set of rules)
-    qat:
-      enable: false               # Enable QAT Device Plugin - Configure devices under "device_roles"
-      update_drivers: false       # Update drivers for QAT devices
-```
-
-References for the above features:
-* [CPU Manager for Kubernetes](https://github.com/intel/CPU-Manager-for-Kubernetes)
-* [SR-IOV Network device plugin for Kubernetes](https://github.com/intel/sriov-network-device-plugin)
-* [Intel Device Plugins for Kubernetes](https://github.com/intel/intel-device-plugins-for-kubernetes)
-* [Telemtry Aware Scheduling](https://github.com/intel/platform-aware-scheduling/tree/master/telemetry-aware-scheduling)
-=======
 Most of the configuration options in ``hw_config/{deployment}/idf.yaml`` shown below are set to specific values according to RA-2 requirements. Some of them might need to be changed depending on the hardware, such as the NIC and CPU configuration.
 
 ::
@@ -182,7 +96,6 @@ Most of the configuration options in ``hw_config/{deployment}/idf.yaml`` shown b
          update_drivers: false       # Update drivers for QAT devices
 
 References for the above features:
->>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
 
 -  `CPU Manager for Kubernetes <https://github.com/intel/CPU-Manager-for-Kubernetes>`__
 -  `SR-IOV Network device plugin for Kubernetes <https://github.com/intel/sriov-network-device-plugin>`__
@@ -191,15 +104,7 @@ References for the above features:
 
 Additional settings are available in the BMRA templates located in ``playbooks/roles/bmra-config/templates``. Changing these might have unexpected results and should generally not be done.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-You will also have to modify environmental variables defined in `deploy.env` to match your setup. For deploying Kuberef on preprovisioned infrastructure, set `deployment_type=k8s`.
-=======
-You will also have to modify environmental variables defined in ``deploy.env`` to match your setup. For deploying Kuberef on pre-provisioned infrastructure, set ``deployment_type=k8s``.
->>>>>>> f8660d8b ([RI2] Converting markdown to rst after cleanup)
-=======
 You will also have to modify environmental variables defined in ``deploy.env`` to match your setup. For deploying Kuberef on preprovisioned infrastructure, set ``deployment_type=k8s``.
->>>>>>> 5dde7ab8 ([RI2] rst conversion: rebasing recent changes)
 
 Once ready, issue the following command to initiate the deployment
 
