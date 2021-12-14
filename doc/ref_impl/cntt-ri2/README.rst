@@ -1,7 +1,7 @@
 Reference Implementation 2
 ==========================
 
-This is the Kubernetes-based Reference Implementation (RI-2)
+This is the Kubernetes-based Reference Implementation (RI-2).
 
 Release Information
 -------------------
