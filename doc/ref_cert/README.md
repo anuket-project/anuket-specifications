@@ -31,7 +31,7 @@ provide the following:
 
 ### Requirement Principles
 
-Requirement Principles can be found in the [Anuket Principles](../common/chapter00.md#2.0)
+Requirement Principles can be found in the [Anuket Principles](https://cntt.readthedocs.io/en/stable/lakelse/common/chapter00.html#requirements-principles)
 
 ### Testing Principles
 
@@ -83,7 +83,7 @@ mentioning that dumping all results and logs required for conformance is
 already in place in CIRV (see
 [cntt-latest-zip](https://build.opnfv.org/ci/job/cntt-latest-zip/)) and
 Functest daily jobs (see
-[functest-hunter-zip](https://build.opnfv.org/ci/job/functest-hunter-zip/3/console)).
+[functest-wallaby-zip](https://build.opnfv.org/ci/job/functest-wallaby-zip/4/console)).
 
 It should be noted that
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) supports both
@@ -108,7 +108,7 @@ operations when configuring the servers running the test cases and prevents
 conflicts between the test cases due to any dependencies.
 
 It's worth mentioning that current
-[test cases selected by Anuket](RC1/chapters/chapter03.md)
+[test cases selected by Anuket](https://cntt.readthedocs.io/en/stable/lakelse/ref_cert/RC1/chapters/chapter03.html)
 already leverage [Xtesting](https://xtesting.readthedocs.io/en/latest/)
 which is a simple framework to assemble sparse test cases and to accelerate the
 adoption of CI/CD best practices. By managing all the interactions with the
@@ -121,7 +121,7 @@ constraints.
 
 The Docker containers proposed by the test projects must also embed
 [the Xtesting Python package](https://pypi.org/project/xtesting/) and
-[the related test case execution description files](https://git.opnfv.org/functest-xtesting/tree/docker/testcases.yaml)
+[the related test case execution description files](https://git.opnfv.org/functest-xtesting/tree/docker/core/testcases.yaml)
 as required by Xtesting.
 
 ## Testing Cookbooks
