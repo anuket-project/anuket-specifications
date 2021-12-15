@@ -5,4 +5,4 @@ sphinxcontrib.relative-link-corrector
 sphinx-bootstrap-theme
 sphinx-markdown-tables
 sphinx_rtd_theme
-recommonmark
+recommonmark>=0.7.1
