@@ -104,8 +104,8 @@ the Cloud Infrastructure Conformance. If the Cloud Infrastructure fails
 the tests, it will not be moved to the next workflow for Conformance.
 The Cloud Infrastructure+VNF conformance consist of a three part process
 for Compliance, Validation, and Performance. Adherence to Security
-standards are equally important and addressed in `Chapter 7 of Reference
-Model <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter07.html>`__.
+standards are equally important and addressed in
+:doc:`ref_model/chapters/chapter07`.
 
 The three part conformance process includes NFVI Manifest conformance,
 Empirical Baseline measurements against targeted VNF families, and
@@ -328,8 +328,7 @@ of VNF developer teams.
 4. Control plane components: Validations for RabbitMQ, Ceph, MariaDB
    etc. and OpenStack components like Nova/Glance/Heat etc. APIs.
 5. Security: Validation for use RBAC roles and user group policies. See
-   `Chapter 7 <https://cntt.readthedocs.io/en/latest/ref_cert/RC1/chapters/chapter07.html>`__
-   for complete list.
+   :doc:`ref_cert/RC1/chapters/chapter07` for complete list.
 
 The following **Optional Test Categories** which can be considered by
 the Operator, or Supplier, for targeted validations to complement
@@ -389,8 +388,7 @@ Performance based.
    comparing Non-Functional (NFR) NFVI KPIs (obtained after testing)
    with the Golden KPIs. Some of the examples of performance KPIs
    include, but not limited to: TCP bandwidth, UDP throughput, Memory
-   latency, Jitter, IOPS etc. See `Chapter 4 of
-   RM <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html>`__
+   latency, Jitter, IOPS etc. See :doc:`ref_model/chapters/chapter04`
    for a complete list of metrics and requirements.
 -  **Measurement Results**. Baseline Measurements will be performed when
    there are no benchmark standards to compare results, or established
@@ -567,7 +565,7 @@ different types of requirements and system properties:
    validating the functional correctness of the system under test. API
    compliance test cases exercise only the specific well-defined APIs
    described in the reference architecture (see `Interfaces and
-   APIs <https://cntt.readthedocs.io/en/latest/ref_arch/openstack/chapters/chapter05.html>`__).
+   APIs :doc:`ref_arch/openstack/chapters/chapter05`).
 
 -  Performance: Test cases covering this type of requirement measure
    specific performance characteristics of the system under test as

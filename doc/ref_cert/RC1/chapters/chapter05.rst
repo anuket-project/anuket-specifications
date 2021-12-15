@@ -24,8 +24,8 @@ given VNF.
 
    End-End framework
 
-Here, the steps 1-4 are NFVI related steps are covered in detail in the
-`RC NFVi chapters <https://cntt.readthedocs.io/en/latest/ref_cert/RC1/chapters/chapter02.html>`__.
+Here, the steps 1-4 are NFVI related steps are covered in detail in
+:doc:`ref_cert/RC1/chapters/chapter02`.
 
 Step-5. Interoperability validations for VNF functional testing defined.
 
@@ -88,11 +88,9 @@ defined capabilities and metrics. This would help operators to host
 their Telco Workload (VNF) with different traffic types, behaviour and
 from any vendor on a unified consistent Infrastructure. so as part of
 VNF Conformance, its important to certify the VNF based on profiled
-defined in `reference
-model <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html>`__.
+defined in :doc:ref_model/chapters/chapter02`.
 
-In `reference
-model <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html>`__,
+In :doc:`ref_model/chapters/chapter02`,
 following NFVi profiles are proposed as reference:
 
 -  **Basic**: for VNF that can tolerate resource over-subscription and
