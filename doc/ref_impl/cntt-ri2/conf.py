@@ -11,6 +11,7 @@ exclude_patterns = [
 ]
 extensions = [
     'sphinx_material',
+    'sphinx.ext.intersphinx',
     'sphinx.ext.autosectionlabel'
 ]
 
@@ -54,5 +55,9 @@ linkcheck_ignore = [
         'http://127.0.0.1'
 ]
 
+intersphinx_mapping = {
+    'cntt': ('https://cntt.readthedocs.io/en/latest/', None)
+}
+
 autosectionlabel_prefix_document = True
-autosectionlabel_maxdepth = 2
+autosectionlabel_maxdepth = 3

@@ -11,7 +11,7 @@ The entire installation is divided into two stages - Host provisioning and Kuber
 Prerequisites
 -------------
 
-You need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be deployed. Please refer to `Chapter 3 <./chapter03.md>`__ for detailed information on the server and network specifications.
+You need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on the server and network specifications.
 
 Installation of the Reference Implementation
 --------------------------------------------
@@ -35,7 +35,7 @@ A PDF is a hardware configuration template that includes hardware characteristic
 
 IDF includes information about network information required by the installer. All the networks along with possible VLAN, DNS, and gateway information should be defined here. The IDF file also contains configuration options for the Kubernetes deployment using BMRA. These options are described in greater detail below.
 
-More details regarding these descriptor files as well as their schema are very well documented in `RI-1 Chapter 8 <../../cntt-ri/chapters/chapter08.md#opnfv-descriptor-files-1>`__.
+More details regarding these descriptor files as well as their schema are very well documented in :doc:`ref_impl/cntt-ri/chapters/chapter08`.
 
 For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single master (and worker) is required to deploy the cluster. Node roles are configured through the vendor specific IDF file.
 
@@ -145,11 +145,11 @@ The list of allocatable resources will vary depending on the configuration, but 
 Validation of the Reference Implementation
 ------------------------------------------
 
-In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of test cases specified in RC-2 should be executed. A selection of these test cases is documented in `RC-2 Chapter 2 <../../../ref_cert/RC2/chapters/chapter02.md>`__.
+In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of test cases specified in RC-2 should be executed. A selection of these test cases is documented in :doc:`ref_cert/RC2/chapters/chapter02`.
 
 Currently, Kuberef is validated by running the RC-2 testsuite in GitLab. This RC-2 testsuite version is determined based on the Kuberenetes version deployed by Kuberef. The list of testcases can be found in the Kuberef ``.gitlab-ci.yml`` file.
 
-For deploying your own RC-2 toolchain, please refer to the steps mentioned in `RC-2 Kubernetes Testing Cookbook <../../../ref_cert/RC2/chapters/chapter03.md>`__.
+For deploying your own RC-2 toolchain, please refer to the steps mentioned in :doc:`ref_cert/RC2/chapters/chapter03`.
 
 Automation Tooling
 ------------------

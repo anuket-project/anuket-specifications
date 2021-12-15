@@ -7,7 +7,7 @@ Introduction
 About the Kubernetes Reference Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This document includes the requirements and deployment details of the Kubernetes-based Reference Implementation (RI2). This RI will conform to the architecture specification as defined in the `Kubernetes Based Reference Architecture (RA2) <../../../ref_arch/kubernetes/README.md>`__, including alignment with the principles and requirements of the `Reference Model <../../../ref_model/README.md>`__.
+This document includes the requirements and deployment details of the Kubernetes-based Reference Implementation (RI2). This RI will conform to the architecture specification as defined in the :doc:`Reference Architecture 2 <ref_arch/kubernetes/chapters/chapter01>`, including alignment with the principles and requirements of the :doc:`Reference Model <ref_model/chapters/chapter01>`.
 
 The RI will be used as follows:
 
@@ -19,12 +19,12 @@ In order to promote the quick deployment of the RI and avoid duplicating effort 
 Structure of the document
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The document first consolidates the requirements that need to be addressed by this RI in `Chapter 2 <./chapter02.md>`__. `Chapter 3 <./chapter03.md>`__ then details the requirements that need to be met in order for anyone to be able to install the RI, whether that be into a community lab, their own corporate or personal lab or some other environment such as CNF Testbed or a public cloud provider. An operational runbook is documented in `Chapter 4 <./chapter04.md>`__ to aid the deployment of the RI into a chosen environment and includes step-by-step instructions for a selection of installers as well as steps on how to validate the deployment. Finally, `Chapter 5 <./chapter05.md>`__ is a placeholder to allow the documentation of any gaps found during the development of this document and the associated artifacts.
+The document first consolidates the requirements that need to be addressed by this RI in :ref:`chapters/chapter02:Reference Implementation Requirements`. :ref:`chapters/chapter03:Requirements for Labs` then details the requirements that need to be met in order for anyone to be able to install the RI, whether that be into a community lab, their own corporate or personal lab or some other environment such as CNF Testbed or a public cloud provider. An operational runbook is documented in :ref:`chapters/chapter04:Operational Runbook` to aid the deployment of the RI into a chosen environment and includes step-by-step instructions for a selection of installers as well as steps on how to validate the deployment. Finally, :ref:`chapters/chapter05:Gap Analysis and Development` is a placeholder to allow the documentation of any gaps found during the development of this document and the associated artifacts.
 
 Terminology
 ~~~~~~~~~~~
 
-Terminology in this document will follow `Anuket Terminology <../../../common/glossary.md>`__.
+Terminology in this document will follow :doc:`common/glossary`.
 
 Scope
 -----
@@ -85,7 +85,7 @@ The approach this RI will take is to separate out the deployment in to two layer
 
 Meaning, initially, the RI is not looking to have a single installer that can both build out virtual or physical machines **and** build out the Kubernetes and other components. The primary reason for this was to ensure the loose coupling between the two layers, to drive the concept that RI2 is a standalone platform that can (in theory at least) be deployable to any infrastructure, whether that be some physical machines in a lab, or virtual machines in a private or public cloud environment, for example. From am implementation perspective, this means that the first step - infrastructure provisioning - needs to potentially support many different infrastructures and could even be an optional step in the overall end-to-end deployment process if an infrastructure is provided by other means. To tightly intertwine the deployment of machines and the Kubernetes platform with a single installer would potentially limit the locations on which the RI can be installed.
 
-The following subsections provide an overview of the provisioning stages as they are currently planned. However, that's not to say full end-to-end installers aren't welcome, but if used we must be clear on the limitations and compromises made when we document them in `Chapter 4 <./chapter04.md>`__.
+The following subsections provide an overview of the provisioning stages as they are currently planned. However, that's not to say full end-to-end installers aren't welcome, but if used we must be clear on the limitations and compromises made when we document them in :ref:`chapters/chapter04:Operational Runbook`.
 
 Infrastructure Provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
