@@ -19,7 +19,7 @@ In summary, NFVI+VNF **Conformance** testing will be performed for **Verificatio
 
 **All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards.**
 
-## Introduction
+## Overview
 
 **Chapter Purpose**
 
