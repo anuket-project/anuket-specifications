@@ -6,3 +6,4 @@ sphinx-bootstrap-theme
 sphinx-markdown-tables
 sphinx_rtd_theme
 recommonmark>=0.7.1
+commonmark>=0.9.1
