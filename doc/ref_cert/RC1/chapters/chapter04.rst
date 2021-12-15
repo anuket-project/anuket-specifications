@@ -95,7 +95,7 @@ tempest_full      General
 tempest_slow      General
 tempest_scenario  General
 patrole           Patrole
-tempest_barbican   Barbican
+tempest_barbican  Barbican
 networking-bgpvpn Networking BGP VPN
 networking-sfc    Networking SFC
 ================= ==================
