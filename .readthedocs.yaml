@@ -4,7 +4,8 @@ build:
   tools:
     python: "3.9"
 sphinx:
-   configuration: doc/conf.py
+  configuration: doc/conf.py
 python:
-   install:
-   - requirements: test-requirements.txt
+  install:
+  - requirements: test-requirements.txt
+  system_packages: false
