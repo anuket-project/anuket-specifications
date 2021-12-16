@@ -329,11 +329,11 @@ The logs have to be continuously monitored and analysed with alerts created for 
 
 Where technically feasible the following system events must be recorded (sec.mon.005):
 
--Successful and unsuccessful login attempts including:
+- Successful and unsuccessful login attempts including:
 
- - Command line authentication (i.e., when initially getting token from keystone)
- - Horizon authentication
- - SSH authentication and sudo on the computes, controllers, network and storage nodes
+  - Command line authentication (i.e., when initially getting token from keystone)
+  - Horizon authentication
+  - SSH authentication and sudo on the computes, controllers, network and storage nodes
 
 - Logoffs
 - Successful and unsuccessful changes to a privilege level (sec.lcm.012)
