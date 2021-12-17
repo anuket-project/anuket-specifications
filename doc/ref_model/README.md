@@ -38,6 +38,8 @@
 | Chapter 08 | Release work finished |
 | Chapter 09 | Release work finished |
 | Chapter 10 | Release work finished |
+| Chapter 10 | Release work finished |
+| Appendix A | Release work finished |
 | Glossary   | Release work finished |
 
 ## Table of Contents
@@ -51,4 +53,5 @@
 * [Chapter 08 - Hybrid Multi-Cloud: Data Center to Edge](chapters/chapter08.md)
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
+* [Appendix A - Guidelines For Application Vendors](chapters/appendix-a.md)
 * [Glossary](../common/glossary.md)
