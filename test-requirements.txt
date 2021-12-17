@@ -1,4 +1,4 @@
-sphinx!=1.6.6,!=1.6.7,!=2.1.0,!=3.0.0,!=3.4.2 # BSD
+sphinx!=1.6.6,!=1.6.7,!=2.1.0,!=3.0.0,!=3.4.2,<2 # BSD
 sphinxcontrib.direct-copy
 sphinxcontrib.readme-to-index
 sphinxcontrib.relative-link-corrector
