@@ -52,7 +52,7 @@ The virtual infrastructure resources provided by the Cloud Infrastructure can be
 .. image:: ../figures/ch03-model-virtual-resources.png
    :alt: "Figure 3-2: Virtual Infrastructure Resources provide virtual compute, storage and networks in a tenant context"
 
-**Figure 3-2**: Virtual Infrastructure Resources provide virtual compute, storage and networks in a tenant context.
+**Figure 3-2**: Virtual Infrastructure Resources provide virtual compute, storage and networks in a tenant context
 
 -  **Tenants:** represent an isolated and independently manageable elastic pool of compute, storage and network resources
 -  **Compute resources:** represent virtualised computes for workloads and other systems as necessary

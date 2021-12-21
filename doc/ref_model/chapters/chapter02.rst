@@ -231,9 +231,9 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
       -  The potential use cases that may consume services from Edge is the Network Model (V2N) and potentially the V2I (According on how the Infrastructure will be mapped to an Edge level)
 
 .. image:: ../figures/Fig2-3-uc3.png
-   :alt: "Figure 2-3: Edge Automotive (V2X) with uRLLC Core Network Slicing."
+   :alt: "Figure 2-3: Edge Automotive (V2X) with uRLLC Core Network Slicing"
 
-**Figure 2-3:** Edge Automotive (V2X) with uRLLC Core Network Slicing.
+**Figure 2-3:** Edge Automotive (V2X) with uRLLC Core Network Slicing
 
 -  **Use Case #4 – Edge vRAN Deployments**
 
@@ -327,15 +327,15 @@ Profiles, Profile Extensions and Flavours will be considered in greater detail i
 Profiles (top-level partitions)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
+Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-5** below)
 
 -  **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
 -  **High Performance**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
 .. image:: ../figures/RM-ch02-node-profiles.png
-   :alt: "Figure 2-1: Infrastructure profiles proposed based on VNFs categorisation."
+   :alt: "Figure 2-5: Infrastructure profiles proposed based on VNFs categorisation."
 
-**Figure 2-1:** Infrastructure profiles proposed based on VNFs categorisation.
+**Figure 2-5:** Infrastructure profiles proposed based on VNFs categorisation.
 
 In `Chapter 4 <./chapter04.md>`__ these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
 
