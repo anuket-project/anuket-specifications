@@ -110,7 +110,7 @@ A virtual machine and container can consume storage through a number of means. T
 
 -  managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and
 -  Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
-   The details of the tenant storage consumption model are covered in section `"3.6.3 Storage for Tenant Consumption" <#3.6.3>`__.
+   The details of the tenant storage consumption model are covered in section `"Storage for Tenant Consumption"`__.
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity and behaviours. The set of selectable attributes includes:
 
@@ -226,7 +226,7 @@ Improve cost/performance               Better cost and less power/cooling by imp
 
 Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve faster performance, or offloading the tasks to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
 
-More details about Hardware Acceleration are in `Section 3.8 Hardware Acceleration Abstraction <chapter03.md#3.8>`__.
+More details about Hardware Acceleration are in `Hardware Acceleration Abstraction`__.
 
 Hardware Infrastructure Manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
