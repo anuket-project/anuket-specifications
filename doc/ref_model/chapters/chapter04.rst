@@ -22,7 +22,10 @@ The following definitions specify the context of the Cloud Infrastructure Resour
 
 **Internal:** Effectively the opposite of Exposed; objects are exclusively available for use within the Cloud Infrastructure.
 
-|Figure 4-1: Exposed vs. Internal Scope|
+.. image:: ../figures/Exposed_vs_Internal_Diagram.png
+   :alt: "Figure 4-1: Exposed vs. Internal Scope"
+
+**Figure 4-1**: Exposed vs. Internal Scope
 
 As illustrated in the figure above, objects designated as "Internal" are only visible within the area inside the blue oval (the Cloud Infrastructure), and only when the entity accessing the object has the appropriate permissions. Whereas objects designated as "Exposed" are potentially visible from both the area within the green oval (the Workloads), as well as from within the Cloud Infrastructure, again provided the entity accessing the object has appropriate permissions.
 
@@ -278,7 +281,10 @@ Section 4.1 enumerates the different capabilities exposed by the infrastructure 
 
 In this section we will specify the capabilities and features associated with each of the defined profiles and extensions. Each Profile (for example, Figure 4-2), and each Extension associated with that profile, specifies a predefined standard set of infrastructure capabilities that workload vendors can use to build their workloads for deployment on conformant cloud infrastructure. A workload can use several profiles and associated Extensions to build its overall functionality as discussed below.
 
-|Figure 4-2: Cloud infrastructure Profiles.|
+.. image:: ../figures/RM-ch04-node-profiles.png
+   :alt: "Figure 4-2: Cloud infrastructure Profiles"
+
+**Figure 4-2**: Cloud infrastructure Profiles
 
 The two `profiles <./chapter02.md#node-profiles-top-level-partitions>`__ are:
 
@@ -299,7 +305,10 @@ The justification for defining these two profiles and a set of extensible profil
 
 Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). Figure 4.3 shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes.
 
-|Figure 4-3: Workloads built against Cloud Infrastructure Profiles and Workload Flavours.|
+.. image:: ../figures/RM-ch-04-Workloads-Profiles-Flavours.png
+   :alt: "Figure 4-3: Workloads built against Cloud Infrastructure Profiles and Workload Flavours"
+
+**Figure 4-3**: Workloads built against Cloud Infrastructure Profiles and Workload Flavours
 
 A node configuration can be specified using the syntax:
 
@@ -495,6 +504,3 @@ Persistent storage is associated with workloads via Storage Extensions. The stor
 
    *Note:* Performance is based on a block size of 256KB or larger.
 
-.. |Figure 4-1: Exposed vs. Internal Scope| image:: ../figures/Exposed_vs_Internal_Diagram.png
-.. |Figure 4-2: Cloud infrastructure Profiles.| image:: ../figures/RM-ch04-node-profiles.png
-.. |Figure 4-3: Workloads built against Cloud Infrastructure Profiles and Workload Flavours.| image:: ../figures/RM-ch-04-Workloads-Profiles-Flavours.png

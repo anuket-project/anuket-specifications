@@ -25,7 +25,8 @@ Cloud Infrastructure APIs
 
 The Cloud Infrastructure APIs consist of set of APIs that are externally and internally visible. The externally visible APIs are made available for orchestration and management of the execution environments that host workloads while the internally visible APIs support actions on the hypervisor and the physical resources. The ETSI NFV Reference MANO Architecture (**Figure 6-1**) shows a number of Interface points where specific or sets of APIs are supported. For the scope of the reference model the relevant interface points are shown in **Table 6-1**.
 
-|Figure 6-1: ETSI NFV architecture mapping|
+.. image:: ../figures/ch09-etsi-nfv-architecture-mapping.png
+   :alt: "Figure 6-1: ETSI NFV architecture mapping"
 
 **Figure 6-1**: ETSI NFV architecture mapping
 
@@ -246,4 +247,3 @@ Enabler Services Interfaces
 
 An operational cloud needs a set of standard services to function. Services such as NTP for time synchronization, DHCP for IP address allocation, DNS for obtaining IP addresses for domain names, and LBaaS (version 2) to distribute incoming requests amongst a pool of designated resources.
 
-.. |Figure 6-1: ETSI NFV architecture mapping| image:: ../figures/ch09-etsi-nfv-architecture-mapping.png
