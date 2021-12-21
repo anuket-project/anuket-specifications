@@ -226,7 +226,7 @@ Improve cost/performance               Better cost and less power/cooling by imp
 
 Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve faster performance, or offloading the tasks to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
 
-More details about Hardware Acceleration are in `Section 3.8 Hardware Acceleration Abstraction <chapter03.md#3.8>`__.
+More details about Hardware Acceleration are in `Hardware Acceleration Abstraction`__.
 
 Hardware Infrastructure Manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
