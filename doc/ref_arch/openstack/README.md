@@ -8,7 +8,7 @@ This is OpenStack based Reference Architecture (RA-1)
 
 **Version: _0_**
 
-**Release Date: _1st July 2021_**
+**Release Date: _4th January 2022_**
 
 ## Bundle/Version History
 
@@ -20,7 +20,7 @@ This is OpenStack based Reference Architecture (RA-1)
 | 3.0               | 25th Sep 2020         | Baraque Release   |
 | 4.0               | 29th Jan 2021         | Elbrus Release    |
 | 5.0               | 1st July 2021         | Kali Release      |
-| 6.0               | 7th December 2021     | Lakelse Release   |
+| 6.0               | 4th January 2022      | Lakelse Release   |
 
 ## Overall Status
 

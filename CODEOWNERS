@@ -34,14 +34,14 @@
 /doc/ref_model/chapters/chapter08-annex.md  @walterkozlowski
 
 # Reference Architectures 1
-/doc/ref_arch/openstack/chapters/chapter01.md        @pgoyal01 @walterkozlowski
-/doc/ref_arch/openstack/chapters/chapter02.md        @pgoyal01 @walterkozlowski
-/doc/ref_arch/openstack/chapters/chapter03.md        @pgoyal01 @walterkozlowski
-/doc/ref_arch/openstack/chapters/chapter04.md        @pgoyal01 @walterkozlowski
-/doc/ref_arch/openstack/chapters/chapter05.md        @pgoyal01 @walterkozlowski
-/doc/ref_arch/openstack/chapters/chapter06.md        @pgoyal01 @walterkozlowski
-/doc/ref_arch/openstack/chapters/chapter07.md        @pgoyal01 @walterkozlowski
-/doc/ref_arch/openstack/chapters/chapter08.md        @pgoyal01 @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter01.md        @karinesevilla @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter02.md        @karinesevilla @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter03.md        @karinesevilla @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter04.md        @karinesevilla @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter05.md        @karinesevilla @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter06.md        @karinesevilla @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter07.md        @karinesevilla @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter08.md        @karinesevilla @walterkozlowski
 
 # Reference Implementation 1
 /doc/ref_impl/cntt-ri/chapters/chapter01.md        @jayacha @walterkozlowski

@@ -52,3 +52,7 @@ html_theme_options = {
 
 html_logo = '_static/anuket-logo.png'
 html_favicon = '_static/favicon.ico'
+
+exclude_patterns = [
+    '**/.tox',
+]
