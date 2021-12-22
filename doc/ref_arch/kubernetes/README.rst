@@ -10,7 +10,7 @@ Release Information
 
 **Version: 0**
 
-**Release Date: 7th Dec 2021**
+**Release Date: 4th Jan 2022**
 
 Bundle/Version History
 ----------------------
@@ -23,7 +23,7 @@ Bundle.Version Date              Note
 4.0            25th Sep 2020     Baraque Release
 5.0            29th Jan 2021     Elbrus Release
 6.0            1st Jul 2021      Kali Release
-7.0            7th Dec 2021      Lakelse Release
+7.0            4th Jan 2022      Lakelse Release
 ============== ================= ===============
 
 Overall Status

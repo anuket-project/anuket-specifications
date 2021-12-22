@@ -2,11 +2,11 @@
 # Reference Model
 
 ## Release Information
-**Bundle: _6_**
+**Bundle: _7_**
 
-**Version: _6.0_**
+**Version: _7.0_**
 
-**Release Date: _29th January 2021_**
+**Release Date: _14th December 2022_**
 
 ## Bundle/Version History
 
@@ -22,7 +22,7 @@
 | 5.1               | 8th March 2021        | Kali Release work started  |
 | 6.0               | 1 July 2021           | Kali Release work finished |
 | 6.1               | 1 July 2021           | Lakelse Release work started |
-| 7.0               | 7 December 2021       | Lakelse Release work finished |
+| 7.0               | 4 January 2022      | Lakelse Release readiness |
 
 ## Overall Status
 

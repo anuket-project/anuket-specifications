@@ -1,4 +1,4 @@
-﻿# 1. Overview
+# 1. Overview
 
 ![State](../figures/bogo_dfp.png) <!-- width="35" -->
 
