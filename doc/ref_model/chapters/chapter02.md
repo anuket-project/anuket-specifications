@@ -283,12 +283,12 @@ Profiles, Profile Extensions and Flavours will be considered in greater detail i
 <a name="2.4.1"></a>
 ### 2.4.1 Profiles (top-level partitions)
 
-Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
+Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-5** below)
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
 - **High Performance**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
 <p align="center"><img src="../figures/RM-ch02-node-profiles.png" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
-<p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
+<p align="center"><b>Figure 2-5:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
 In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
 
