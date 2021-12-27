@@ -1,5 +1,3 @@
-[<< Back](../)
-
 # Reference Implementation 1
 
 This is the OPNFV based Reference Implementation (RI-1)

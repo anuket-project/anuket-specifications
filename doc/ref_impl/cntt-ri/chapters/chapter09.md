@@ -1,21 +1,7 @@
-[<< Back](../)
-
 # 9. Gaps analysis & Innovation
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
-* [9.1 Introduction](#9.1)
-* [9.2 OPNFV Pharos Project](#9.2)
-  * [9.2.1 Pharos Specification](#9.2.1)
-  * [9.2.2 Hardware Specification](#9.2.2)
-  * [9.2.3 Network Specification](#9.2.3)
-* [9.3 NFR Considerations](#9.3)
-  * [9.3.1 Traffic Generators & NIC](#9.3.1)
-
-<a name="9.1"></a>
 ## 9.1 Introduction
 
-<a name="9.2"></a>
 ## 9.2 OPNFV Pharos Project
 For this RI, the OPNFV Pharos specification has been chosen as labs with pods of servers already exist under OPNFV's
 Lab as a Service (LaaS).
@@ -34,7 +20,6 @@ policies. Achieving a consistent look and feel of a federated lab infrastructure
 environments are also useful and provided by some labs. Jira is currently used for tracking lab operational issues as
 well as for Pharos project activities.
 
-<a name="9.2.1"></a>
 ### 9.2.1 Pharos Specification
 
 The Pharos Specification defines a hardware environment for deployment and testing of the OPNFV platform release.
@@ -99,7 +84,6 @@ Memory:
 
 * 32G RAM Minimum
 
-<a name="9.2.3"></a>
 ### 9.2.3 Network Specification
 
 Network Hardware
@@ -131,7 +115,6 @@ Network Options
 
 For this RI, Option III has been chosen.
 
-<a name="9.3"></a>
 ## 9.3 NFR Considerations
 Additional environmental specifications need to be considered when performing Non-Functional Requirement (NFR) testing, which includes performance, resiliency, and scalability, amongst other test categories not addressed through functional testing.  Refer to [What is Non Functional Testing?](https://www.guru99.com/non-functional-testing.html) for information and examples of the various types of NFR testing.  
 
@@ -147,8 +130,6 @@ Examples of potential measurements and/or test scenarios for which NFR test tool
  - Support SRIOV, OVS-DPDK, and VLAN configuration and/or options
 
 Note, when it comes to NFR-tooling, the goals are to provide light-weight solutions that can be packaged within a cookbook to accelerate lab validations, agnostic to the type of hardware in the environment.  This will enable third party suppliers to achieve compliance expectations for the targeted architecture.  
-
-<a name="9.3.1"></a>
 
 ### 9.3.1 Traffic Generators & NIC
 Performance, or load testing, may (will) require specific NICs to achieve desired throughput (TPS, kbps, etc) to properly validate an instance-types (e.g. Basic(B)) stability when subject to traffic.  
