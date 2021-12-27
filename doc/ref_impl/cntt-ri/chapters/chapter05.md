@@ -1,34 +1,11 @@
-[<< Back](../)
-
 # 5. Hardware Delivery and Configuration Requirements
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
-* [5.1 Introduction](#5.1)
-* [5.2 Requirements](#5.2)
-   * [5.2.1 General](#5.2.1)
-   * [5.2.2 Check point](#5.2.2)
-* [5.3 Descriptor file definition](#5.3)
-   * [5.3.1 Resource pool](#5.3.1)
-   * [5.3.2 NIC template](#5.3.2)
-   * [5.3.3 Cabinet](#5.3.3)
-   * [5.3.4 Server](#5.3.4)
-   * [5.3.5 Network device](#5.3.5)
-   * [5.3.6 EOR card](#5.3.6)
-   * [5.3.7 Cabling](#5.3.7)
-   * [5.3.8 Server model](#5.3.8)
-   * [5.3.9 Network device model](#5.3.9)
-* [5.4 Appendix](#5.4)
-   * [5.4.1 HDV Original collection.](#5.4.1)
-
-<a name="5.1"></a>
 ## 5.1 Introduction
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference implementation and implemented by installer. The same applies to _must not_.
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
-<a name="5.2"></a>
 ## 5.2 Requirements
 As we known, the NFVi software builds upon a set of hardware resources. For the operator(user) having a set of hardware resources, there is an inevitable step to examine it before deployment of the software.
 If there is only limited nodes for lab demonstration or something like this, it's acceptable to do it manually, however it would be a time consuming process especially there are large scale of hardware nodes, for example 1000 node.
@@ -41,7 +18,6 @@ Besides, we also collect the common hardware check requiremnt here, most of whic
 We are expecting that by utilizing the common hardware description file, the check tool will perform all the neccessary hardware check point automatically.
 We believe this is a mutual interest for all operators having such needs.
 
-<a name="5.2.1"></a>
 ### 5.2.1 General
 A Descriptor File defines the configuration required by the checker in a common schema.
 The "checker tool" validates the current hardware against the descriptor file, listing mismatches or differences, as failures, allowing the user to quickly identify and correct any errors in hardware, network wiring, or configuration.
@@ -54,9 +30,8 @@ This checking process must be completed before the software stack deployment.
 | `req.gen.chk.02` | Checker | Checker **must** report the checking result of success or failure with reason.|
 | `req.gen.des.01` | Descriptor | Descriptor file **must** include neccessary information to remote access hardware resource|
 | `req.gen.des.02` | Descriptor | Descriptor file **may** automate to generate from a user defined rule of how to generate asset name, IP address, gateways, VLAN ID, etc|
-<p align="center"><b>Table 5-2-1:</b> Check tool requirements </p>
+Table 5-2-1: Check tool requirements
 
-<a name="5.2.2"></a>
 ### 5.2.2 Check point
 Till now, following the check point requirements are collected: (#5.4.1)
 
@@ -76,14 +51,12 @@ Till now, following the check point requirements are collected: (#5.4.1)
 | Hardware Check | Verifies basic OS config attributes (i.e. Linux running on the host and reporting these values).|RAM size/number of cores.||
 | Cabling Connection check | Verifies the wired connection between server NIC port and switch port, or the between switches.|Check if cabling is plugin correct as expected design data||
 | Redfish interface | Verifies that support classic interface.| system service/Manager service/ChassisService/SessionService/AccountService/EventService etc.||
-<p align="center"><b>Table 5-2-2:</b> Hardware check point.</p>
+Table 5-2-2: Hardware check point.
 
-<a name="5.3"></a>
 ## 5.3 Descriptor file definition
 As mentioned at the beginning, the description file is used to define the common hardware data which are used by the checker implementation
 The entry information must be included in the description file,which are the remote access parameter settings.
 
-<a name="5.3.1"></a>
 ### 5.3.1 Resource pool
 Resource pool is the conception which a NFV resource is planned to build up. It consists hardware server device, network device and cabling among them.
 It is referenced by other resource type to introduce later.
@@ -94,9 +67,8 @@ It is referenced by other resource type to introduce later.
 | resource_pool_name | String | Yes | resource name, e.g: NFV-RP-HZZZ-03A_0 |
 | type | String | Yes | TOCHECK: OTHER |
 
-<p align="center"><b>Table 5-3-1:</b> Resource pool.</p>
+Table 5-3-1: Resource pool.
 
-<a name="5.3.2"></a>
 ### 5.3.2 NIC template
 NIC Template defines network interface card parameters, it includes the crucial port number on the NIC, which is used as the reference in the cabling data and check.
 
@@ -115,9 +87,8 @@ NIC Template defines network interface card parameters, it includes the crucial 
 | port_bandwith | String | Yes | bandwith of port. e.g. 10G |
 | cabling_ports | Number | Yes | port name used in the cabing data. corresponding the quantity e.g: 1_1;1_2 or Slot3/Port1;Slot3/Port2 |
 
-<p align="center"><b>Table 5-3-2:</b> NIC template.</p>
+Table 5-3-2: NIC template.
 
-<a name="5.3.3"></a>
 ### 5.3.3 Cabinet
 Cabinet is the rack holder for the server and network devices. The data will be referenced by server and network device data.
 
@@ -128,9 +99,8 @@ Cabinet is the rack holder for the server and network devices. The data will be 
 | column | String | Yes | column number in the room: e.g. "J" |
 | cabinet | String | Yes | cabinet number in the column: e.g. "01" |
 
-<p align="center"><b>Table 5-3-3:</b> Cabinet.</p>
+Table 5-3-3: Cabinet.
 
-<a name="5.3.4"></a>
 ### 5.3.4 Server
 The server device data defines key information about how to access the server remotely, for example remote IP address, user, and credentials.
 There are many ways to validate the hardware by remote interface verification, for example IPMI and redfish.
@@ -163,9 +133,8 @@ The best practice is to use centralized validation when the number of servers is
 | group | String | Yes | network assignment "service/management/storage"|
 | is_bmc_configured | String | Yes | TOCHECK|
 
-<p align="center"><b>Table 5-3-4:</b> Server.</p>
+Table 5-3-4: Server.
 
-<a name="5.3.5"></a>
 ### 5.3.5 Network device
 network device data defines the key data about how to remote access the network device, such as switches and routers.
 
@@ -190,9 +159,8 @@ network device data defines the key data about how to remote access the network 
 | enable_password | String | Yes | e.g. "password"|
 | group | String | Yes | network assignment "service/management/storage"|
 
-<p align="center"><b>Table 5-3-5:</b> Network device.</p>
+Table 5-3-5: Network device.
 
-<a name="5.3.6"></a>
 ### 5.3.6 EOR card
 EOR card data.
 
@@ -203,9 +171,8 @@ EOR card data.
 | card_model | String | Yes | card model |
 | slot | String | Yes | slot e.g. "01" |
 
-<p align="center"><b>Table 5-3-6:</b> EOR Card.</p>
+Table 5-3-6: EOR Card.
 
-<a name="5.3.7"></a>
 ### 5.3.7 Cabling
 Cabling records the physical cable connection information between the ports of server and switch, or switches.
 Check tool will verify the correctness according to the cabling data.
@@ -223,9 +190,8 @@ Check tool will verify the correctness according to the cabling data.
 | target_port | String | Yes | e.g "gigabitethernet0/2" |
 | cabling_type | String | Yes | e.g "SV-TOR","TOR-TOR","ST_TOR-ST_EOR","S_TOR-S_EOR","S_TOR-M_EOR","M_TOR-M_EOR","EOR-EOR" |
 
-<p align="center"><b>Table 5-3-7:</b> Cabling.</p>
+Table 5-3-7: Cabling.
 
-<a name="5.3.8"></a>
 ### 5.3.8 Server model
 The server model describes processor, memory, harddrive, raid,manufacturer, model etc.
 server model will be referenced by servers.
@@ -242,10 +208,9 @@ server model will be referenced by servers.
 | network_card_infos | List | No | interface list definition|
 | network_card_bond_infos | List | No | NIC bonding, might not be always the case.|
 
-<p align="center"><b>Table 5-3-8:</b> Server model.</p>
+Table 5-3-8: Server model.
 
 
-<a name="5.3.9"></a>
 ### 5.3.9 Network device model
 The network device model describes processor, memory,manufacturer, model etc.
 network device model will be referenced by network device.
@@ -261,11 +226,9 @@ network device model will be referenced by network device.
 | memory | String | Yes |  |
 | version | String | Yes |  |
 
-<p align="center"><b>Table 5-3-9:</b> Network device model.</p>
+Table 5-3-9: Network device model.
 
-<a name="5.4"></a>
 ## 5.4 Appendix
-<a name="5.4.1"></a>
 ### 5.4.1 HDV original collection.
 
 [CNTT Hardware Delivery Validation (01-2020 DDF)](https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908)

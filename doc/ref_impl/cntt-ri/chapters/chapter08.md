@@ -1,25 +1,5 @@
-[<< Back](../)
-
 # 8. Integration
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
-* [8.1 Introduction](#8.1)
-* [8.2 Pre-requisites](#8.2)
-* [8.3 Requirements Gathering](#8.3)
-* [8.4 Access and Connectivity](#8.4)
-* [8.5 Available Installers](#8.5)
-  * [8.5.1 Airship](#8.5.1)
-    * [8.5.1.1 Descriptor File Preparations](#8.5.1.1)
-    * [8.5.1.2 Deployment Installer & Install Steps](#8.5.1.2)
-  * [8.5.2 Future Installers](#8.5.2)
-* [8.6 Deployment Validations](#8.6)
-* [8.7 Development Validations](#8.7)
-* [8.8 CICD Tool Chain (use of, process, and scripts)](#8.8)
-* [8.9 Jenkins Setup & Job Creation](#8.9)
-* [8.10 Compliance Validation (steps, process)](#8.10)
-
-<a name="8.1"></a>
 ## 8.1 Introduction
 
 The purpose of this chapter is to establish an operational run-book containing sequences and steps explaining, with enough detail, how to install a Reference Implementation (RI).
@@ -31,7 +11,6 @@ It is assumed that the reader of this chapter has the skill set to install Commo
 *   Covers installers, automation, etc.
 *   Integration of installers and components.
 
-<a name="8.2"></a>
 ## 8.2 Prerequisites
 
 The following hardware was cabled and set up according to the OPNFV Pharos Specification:
@@ -48,9 +27,8 @@ The following hardware was cabled and set up according to the OPNFV Pharos Speci
 Each server has all of 1GbE NICs connected to the same Extreme 480 1GbE switch, and all 10GbE NICs conneted to the
 same IZ1 switch as follows:
 
-<img src="../figures/ch07_pod10_switch_connectivity.png" title="Pod 10 Switch Connectivity">
+![Pod 10 Switch Connectivity](../figures/ch07_pod10_switch_connectivity.png)
 
-<a name="8.3"></a>
 ## 8.3 Requirements Gathering
 
 Requirements gathering processes and steps:
@@ -58,7 +36,6 @@ Requirements gathering processes and steps:
 1.  RA Requirements Gathering process
 2.  Infra Requirements and Selection Process
 
-<a name="8.4"></a>
 ## 8.4 Access & Connectivity
 
 This RI leverages OPNFV Pharos pod 10, which is hosted by Intel and requires VPN access.  Requests for VPN access must
@@ -77,7 +54,6 @@ side of the VPN into that subnet:
 
 This will allow the VPN client host to directly access the Horizon dashboard, as an example.
 
-<a name="8.5"></a>
 
 ## 8.5 Available Installers
 
@@ -276,7 +252,6 @@ The process of publishing involves submitting the manifests to opnfv-airship ger
 - A | dashboard-airship.intel-pod10.opnfv.org | 10.10.100.100
 
 
-<a name="8.5.1.2"></a>
 #### 8.5.1.2 Deployment: Installer & Install Steps
 The deployment is performed and managed from the 'jump-host' node. Any authorized user can login to this node.
 
@@ -362,7 +337,6 @@ Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Instal
 ### 8.5.2 Future Installers
 >> Installers such as Triple-O specefic instructrions will come here.
 
-<a name="8.6"></a>
 ## 8.6 Deployment Validations
 
 CNTT RI should be both verified as any OpenStack deployment and compliant with
@@ -490,7 +464,6 @@ the following test cases are executed at the end.
 | opnfv/functest-vnf:hunter               | vyos_vrouter          | Success            |
 | opnfv/functest-vnf:hunter               | juju_epc              | Success            |
 
-<a name="8.7"></a>
 ## 8.7 Development Validations
 
 CNTT RI jobs must verify all patches before merge as defined in the best open
@@ -538,19 +511,16 @@ It's worth mentioning that Functest already part of RI development validation
 conform to these best practices by running all test cases vs SUTs
 [currently CNTT compliant](https://build.opnfv.org/ci/view/functest/job/functest-hunter-gate/142/).
 
-<a name="8.8"></a>
 ## 8.8 CICD Tool Chain (use of, process, and scripts)]
 
 Placeholder to describe the CICD tool chain used in RI validations.
 
 Include flow diagram.
 
-<a name="8.9"></a>
 ## 8.9 Jenkins Setup & Job Creation
 
 Placeholder to describe the process, access, steps, instance, etc, information for the setup of Jenkins, the jobs required for validation, and the results dashboard.
 
-<a name="8.10"></a>
 ## 8.10 Compliance Validation (steps, process)
 
 Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.

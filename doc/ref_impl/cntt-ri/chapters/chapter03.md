@@ -1,28 +1,11 @@
-[<< Back](../)
-
 # 3. Cloud Infrastructure + VNF Target State & Specification
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
-* [3.1 Introduction](#3.1)
-* [3.2 VNF profile](#3.2)
-* [3.3 Cloud Infrastructure SW profile](#3.3)
-* [3.4 Cloud Infrastructure Hardware Profile](#3.4)
-* [3.5 Cloud Infrastructure Required State](#3.5)
-* [3.6 Cloud Infrastructure and VIM Architecture](#3.6)
-* [3.7 Cloud Infrastructure and VIM Component Level Architecture](#3.7)
-* [3.8 Interface and API for Reference Implementation 1](#3.8)
-
-
-
-<a name="3.1"></a>
 ## 3.1 Introduction
 
 The VNF profile is used to describe every workload running on top of Cloud Infrastructure. The Cloud Infrastructure SW profile is used to describe the list of features provided by the hypervisor and host OS.
 
 The CNTT Reference Model will be referenced as **RM** to avoid long and duplicated reference titles.
 
-<a name="3.2"></a>
 ## 3.2 VNF profile
 
 
@@ -76,7 +59,6 @@ Every VNF instance must declare its profiles explicitly, which can be used by VI
 
 > Open Point 2: What principles should be followed if some the pre-define VNF profile items does not match what actual requires ? How to adjust, "ceiling", "floor", "customise" ?
 
-<a name="3.3"></a>
 ## 3.3 Cloud Infrastructure SW profile
 
 
@@ -111,7 +93,6 @@ This profile is the global settings for the whole Cloud Infrastructure, which me
 | Crypto acceleration | N  | Y |
 | Crypto Acceleration Interface | N  | Y |
 
-<a name="3.4"></a>
 ## 3.4 Cloud Infrastructure Hardware Profile
 [RM1: 5.4 Cloud Infrastructure Hardware Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the Cloud Infrastructure hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple Cloud Infrastructure profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
 

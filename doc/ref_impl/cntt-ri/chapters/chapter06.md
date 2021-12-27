@@ -1,45 +1,13 @@
-[<< Back](../)
-
 # 6. Installer Requirements
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
-* [6.1 Introduction](#6.1)
-* [6.2 Installer requirements](#6.2)
-   * [6.2.1 General](#6.2.1)
-   * [6.2.2 Additional](#6.2.2)
-* [6.3 Descriptor file definition](#6.3)
-   * [6.3.1 Resource Pool information](#6.3.1)
-   * [6.3.2 Global Settings](#6.3.2)
-   * [6.3.3 Parameters for network virtualization](#6.3.3)
-   * [6.3.4 Server information](#6.3.4)
-   * [6.3.5 Network Device information](#6.3.5)
-   * [6.3.6 Port mapping information](#6.3.6)
-   * [6.3.7 Network planning information](#6.3.7)
-   * [6.3.8 TOR VLAN configuration information](#6.3.8)
-   * [6.3.9 TOR VLAN configuration information](#6.3.9)
-   * [6.3.10 Host Aggregate information](#6.3.10)
-   * [6.3.11 VIM Nodes](#6.3.11)
-   * [6.3.12 SDNC Nodes](#6.3.12)
-   * [6.3.13 Storage cluster information](#6.3.13)
-   * [6.3.14 Software integration information](#6.3.14)
-   * [6.3.15 Device Management information](#6.3.15)
-
-* [6.4 Installer prerequisite ](#6.4)
-   * [6.4.1 Hardware validation ](#6.4.1)
-   * [6.4.2 Network configuration ](#6.4.2)
-
-<a name="6.1"></a>
 ## 6.1 Introduction
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference implementation and implemented by installer. The same applies to _must not_.
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
-<a name="6.2"></a>
 ## 6.2 Installer requirements 
 
-<a name="6.2.1"></a>
 ### 6.2.1 General
 The Descriptor File defines the unique configuration required by installer in a common schema.
 It would specialize the installer type per user's implementation requirements.
@@ -56,19 +24,16 @@ Thanks to the descriptor file, the NFVi infrastructure deployment could be compl
 | `req.gen.des.01` | Descriptor   | Descriptor file **must** include hardware resource configuration, software configuration.|
 | `req.gen.des.02` | Descriptor   | Descriptor file **may** include additional extending configuration.                      |
 
-<p align="center"><b>Table 6-2-1:</b> Installer requirements </p>
+Table 6-2-1: Installer requirements
 
-<a name="6.2.2"></a>
 ### 6.2.2 Additional
 Depends xxx.
 
-<a name="6.3"></a>
 ## 6.3 Descriptor file definition specification
 There must be a Descriptor File definition, which used by installer as input of necessary configuration.
 Mandatory and optional definition shall be defined, there's no restrictions on how to use it,
 there could be multiple ways to implement PDF, the implementation will be in next section.
 
-<a name="6.3.1"></a>
 ### 6.3.1 Resource Pool information
 This table is the description of the resource pool, it contains only 2 parameters: name and type of the resource pool.
 
@@ -79,10 +44,9 @@ A resource pool maps to only one instance of below parameters.
 | RES_POOL_NAME | String | Yes | This is the unique name of the resource pool, could be refered by other parameters |
 | RES_POOL_TYPE | String | No | User defined value to identify different hardware or software configuration requirements. |
 
-<p align="center"><b>Table 6-3-1:</b> Resource Pool Information.</p>
+Table 6-3-1: Resource Pool Information.
 
 
-<a name="6.3.2"></a>
 ### 6.3.2 Global Settings
 The Global settings are provided by the user, contains data like like IP_Type, VLAN_Type, etc.
 
@@ -100,10 +64,9 @@ A resource pool maps to only one instance of below parameters.
 | HYPERVISOR_CORES | String | Yes | number of vCPU (CPU cores or hardware threads) assigned to the Hypervisor |
 | EXTERNAL_NTP_SERVER_IP | List | Yes | IP list of NTP server, seperated by comma, for example: primariy_IP;second_IP |
 
-<p align="center"><b>Table 6-3-2:</b> Global Settings </p>
+Table 6-3-2: Global Settings
 
 
-<a name="6.3.3"></a>
 ### 6.3.3 Parameters for network virtualization
 MTU(Maximum Transmission Unit) configuration in switch is different depends on the which network plane it belongs to, this is usually standard value that defined by user.
 
@@ -114,10 +77,9 @@ MTU(Maximum Transmission Unit) configuration in switch is different depends on t
 | SWITCH_TYPE | String | Yes | There should be 3 type of switch based on the network plane: Manage, Storage, and User Services |
 | MTU | String | Yes | Maximum transmission unit |
 
-<p align="center"><b>Table 6-3-3:</b> Network Virtualization parameter .</p>
+Table 6-3-3: Network Virtualization parameter.
 
 
-<a name="6.3.4"></a>
 ### 6.3.4 server information
 Server information should be provided for installer, including full detail info. for each server, NIC mapping etc.
 
@@ -150,13 +112,13 @@ Multiple instances are expected, one instance of all the parameters for each ser
 | HW_REGION | String | No | Hardware region divided by room or area, this is need when pod needs to build on more than one lab, For example: Lab01 or Lab02 |
 | MODULE_NAME | String | Yes | hardware model that divided within each region, Like "Model 3 in Region A", usually contains certain number of racks |
 
-<p align="center"><b>Table 6-3-4-1:</b> Server Information.</p>
+Table 6-3-4-1: Server Information.
 
 #### 6.3.4.2 server NIC information
 This table is describing the slot and port mapping for NICs in each type of server. 
 Port BDF([Bus:Device.Function (BDF) Notation](https://wiki.xenproject.org/wiki/Bus:Device.Function_(BDF)_Notation#:~:text=Simple%20BDF%20notation%20BDF%20stands%20for%20the%20Bus%3ADevice.Function,a%20leading%20zeros%20to%20two%20or%20four%20digits)) information is also needed for each port, 
 it will be used to identify the logical port name after OS is installed. 
-<br>Multiple entries per server type are expected for describing all NIC slots, 1 entry for each port. 
+Multiple entries per server type are expected for describing all NIC slots, 1 entry for each port. 
 Information for all server types in pool should be included. 
 
 | Field # | type | mandatory | Instruction |
@@ -169,9 +131,8 @@ Information for all server types in pool should be included.
 | PORT | List | Yes | Ports number for the above NIC, for example: 1_1 or 1_2, 2 ports for one NIC, so 2 entries are needed for same slot  |
 | PORT_BDF | String | Yes | Port BDF value for above port  |
 
-<p align="center"><b>Table 6-3-4-2:</b> Server NIC Information.</p>
+Table 6-3-4-2: Server NIC Information.
 
-<a name="6.3.5"></a>
 ### 6.3.5 Network Device information
 This table describes each network device, it can be used for network configuration and verification.
 
@@ -197,10 +158,9 @@ Multiple instances are expected, one instance for each network device.
 | HW_REGION | String | Yes | Hardware region |
 | MODULE_NAME | String | Yes | Hardware module which is devided by location, like area A module 1 |
 
-<p align="center"><b>Table 6-3-5:</b> Network device information.</p>
+Table 6-3-5: Network device information.
 
 
-<a name="6.3.6"></a>
 ### 6.3.6 Port mapping information
 Wiremap defines the port mapping between server/switch and switch for each line, 
 we will need this information to trace the connected server and port, so we can extrapolate the required network configuration for the port.
@@ -220,10 +180,9 @@ Multiple instances are expected, one instance for each physical cable.
 | REMOTE_PORT | String | Yes | connected port in remote device. When describing port for remote servers, we use port number like 1_1, or 1_2, instead of PCIeslot number, because the server NIC mapping is already defined in 6.3.4.2 |
 | LINE_TYPE | String | Yes | Line type to describe local device type and remote device type, how each line is connected. For example "S-SRV-C_S-TOR" means this line is connecting a service server in compute module to service TOR, and another example "ST-SRV-S_M-TOR" means storage server connecting to a manage TOR in storage module. The line type can be customized defined, as long as it's unified in end user.|
 
-<p align="center"><b>Table 6-3-6:</b> Port mapping information.</p>
+Table 6-3-6: Port mapping information.
 
 
-<a name="6.3.7"></a>
 ### 6.3.7 Network planning information
 Network planning information for the resource pool of each node needs to be defined which should include VLAN ID an allocated IP range.
 
@@ -241,10 +200,9 @@ Multiple instances are expected, one instance for each network plane.
 | GATEWAY | String | Yes | gateway IP for each IP range |
 | SWITCH_CONFIG_TYPE | String | Yes |   |
 
-<p align="center"><b>Table 6-3-7:</b> Network planning information.</p>
+Table 6-3-7: Network planning information.
 
 
-<a name="6.3.8"></a>
 ### 6.3.8 TOR(Access switch) VLAN configuration information
 Multiple instances are expected, one instance for each TOR. 
 
@@ -263,10 +221,9 @@ Multiple instances are expected, one instance for each TOR.
 | VLAN_ID | List | Yes |  group multiple VLAN with same configuration requirements, and separate different VLAN group with ";" |
 | PORT_TYPE | List | Yes | trunk or access or hybrid  |
 
-<p align="center"><b>Table 6-3-8:</b> TOR VLAN information.</p>
+Table 6-3-8: TOR VLAN information.
 
 
-<a name="6.3.9"></a>
 ### 6.3.9 VLAN configuration for Aggregation Switch
 Multiple instances are expected, one instance for each Aggregation Switch. 
 
@@ -285,10 +242,9 @@ Multiple instances are expected, one instance for each Aggregation Switch.
 | VLANIF_ADDRESS | List | Yes |  Vlanif addresses that need to be configured on Aggregation Switch |
 | NETWORK_MASK | List | Yes |   |
 
-<p align="center"><b>Table 6-3-9:</b> Aggregation Switch VLAN information.</p>
+Table 6-3-9: Aggregation Switch VLAN information.
 
 
-<a name="6.3.10"></a>
 ### 6.3.10 Host Aggregate information
 Servers in the resource pool are usually divided to multiple groups, will use HA(Host Aggregation) to represent host group.
 One HA could belong to multiple AZ(Availability Zone)
@@ -301,7 +257,7 @@ Multiple instances are expected, defines all servers in HA
 | HA_NAME | String | Yes | HA name, which will following naming rules. |
 | DEVICE_NAME | String | Yes | server name in current HA |
 
-<p align="center"><b>Table 6-3-10-1:</b> Host HA Information.</p>
+Table 6-3-10-1: Host HA Information.
 
 #### 6.3.10.2 HA metadata 
 Multiple instances are expected, service, management and DMZ.
@@ -311,9 +267,8 @@ Multiple instances are expected, service, management and DMZ.
 | HA_METADATA | String | Yes | properties for each HA, for example: type=TrustPlane,ovs=C-plane,sriov=false |
 | AZ_NAME | String | Yes | AZ name that HA belongs to |
 
-<p align="center"><b>Table 6-3-10-2:</b> HA meta Information.</p>
+Table 6-3-10-2: HA meta Information.
 
-<a name="6.3.11"></a>
 ### 6.3.11 VIM Nodes
 There's a list of servers that was defined as control/management nodes according to resource pool plan
 
@@ -322,18 +277,16 @@ Multiple instances are expected, defines all management servers.
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DEVICE_NAME | String | Yes | The server name  |
 
-<p align="center"><b>Table 6-3-11:</b> VIM Nodes Information.</p>
+Table 6-3-11: VIM Nodes Information.
 
-<a name="6.3.12"></a>
 ### 6.3.12 SDNC Nodes
 
 Multiple instances are expected, defines all SDN controllers
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DEVICE_NAME | String | Yes | The server name  |
-<p align="center"><b>Table 6-3-12:</b> SDNC Nodes Information.</p>
+Table 6-3-12: SDNC Nodes Information.
 
-<a name="6.3.13"></a>
 ### 6.3.13 Storage cluster information 
 Definition of storage cluster and storage pool, 
 
@@ -347,7 +300,7 @@ Multiple instances are expected, each instance defines one storage node
 | STORAGE_POOL_NAME | String | Yes | Storage pool name, which needs to follow naming rules. |
 | DEVICE_NAME | String | Yes | Storage servers in each storage pool |
 
-<p align="center"><b>Table 6-3-13-1:</b> Storage Pool Plan </p>
+Table 6-3-13-1: Storage Pool Plan
 
 #### 6.3.13.2 Distribution storage pool info
 Storage pool information, defines the management account and network information
@@ -376,10 +329,9 @@ Multiple instances are expected, each instance defines one storage pool
 | STORAGE_CLUSTER_BACKEND_GW | String | Yes |   |
 | BACKUP_POLICY | String | Yes |   |
 
-<p align="center"><b>Table 6-3-13-2:</b> Distribution storage pool info.</p>
+Table 6-3-13-2: Distribution storage pool info.
 
 
-<a name="6.3.14"></a>
 ### 6.3.14 Software integration information
 After VIM and Storage software installation finished, parameters willl be needed in integration process of VIM and Storage,
 the parameters should be defined in advance.
@@ -394,7 +346,7 @@ Only one entry is expected.
 | AUTHORIZATION | String | Yes | One-way or Two-way authentication |
 | VIM_CERTIFICATES_PATH | String | Yes | Full path for certificates that used for integration |
 
-<p align="center"><b>Table 6-3-14-1:</b> VIM context Information.</p>
+Table 6-3-14-1: VIM context Information.
 
 #### 6.3.14.2 Storage Context
 Parameters from storage vendor for integration.
@@ -410,7 +362,7 @@ Only one entry is expected.
 | IS_PIM_JOINT | String | Yes | whether integrate with PIM, usaually "YES" for this value |
 | STORAGE_SOFTWARE_VERSION | String | Yes |  |
 
-<p align="center"><b>Table 6-3-14-2:</b> Storage context Information.</p>
+Table 6-3-14-2: Storage context Information.
 
 #### 6.3.14.3 Storage Client context
 This table defines the parameters for integration with storage client
@@ -423,9 +375,8 @@ Multiple entries are expected, one entry for each authorization user.
 | AUTHORIZATION_USER | String | Yes | match with the component type |
 | KEYRING_FILENAME | String | Yes | Full path for keyring file, this should match the authentication user, |
 
-<p align="center"><b>Table 6-3-14-3:</b> Storage client context.</p>
+Table 6-3-14-3: Storage client context.
 
-<a name="6.3.15"></a>
 ### 6.3.15 Device Management information
 
 #### 6.3.15.1 SERVER PIM(Physical Infrastructure Manager) ACCOUNT
@@ -440,7 +391,7 @@ Multiple entries are expected, one entry for each server model.
 | REDFISH_USER | String | No |  |
 | REDFISH_PASSWD | String | No | Instead of clear-text password, password encryption is recommended for security consideration |
 
-<p align="center"><b>Table 6-3-15-1:</b> SERVER PIM ACCOUNT Information.</p>
+Table 6-3-15-1: SERVER PIM ACCOUNT Information.
 
 #### 6.3.15.2 Switch PIM Account
 Servers are managed by SNMP, credentials should be the same for same type of device  
@@ -457,26 +408,22 @@ Multiple entries are expected, one entry for each device model.
 | ENCRYPTION_METHOD | String | Yes |  |
 | ENCRYPTION_KEY | String | Yes |  |
 
-<p align="center"><b>Table 6-3-15-2:</b> Switch PIM Account.</p>
+Table 6-3-15-2: Switch PIM Account.
 
 
-<a name="6.4"></a>
 ## 6.4 Installer prerequisite
 
-<a name="6.4.1"></a>
 ### 6.4.1 Hardware validation
 Before the installation, the user has to check if each server meets the deployment requirements:
  - BIOS settings: RAID configuration, PXE boot order and boot mode, disk capacity, CPU, and memory settings,
  - remote management accessibility (for example, IPMI, iLO, BMC),
  - NIC quantity and configuration.
 
-<a name="6.4.2"></a>
 ### 6.4.2 Network configuration
 The necessary prerequisite settings must be ready before the deployment, for example:
  - the VLAN must be configured on the switch,
  - the IP address ranges to be used must be allocated.
 
-<a name="6.5"></a>
 ## 6.5 PDF implementation
 When we use PDF for installer or verification tools, all the required data described in 6.3 should be included.
 There's no limitation on how to implement PDF, like the file type of PDF could be csv or json, 

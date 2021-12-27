@@ -1,19 +1,6 @@
-[<< Back](../)
-
 # 2. Reference Implementation Requirements
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
-
-## Table of Contents
-* [2.1 Introduction](#2.1)
-* [2.2 Reference Architecture Requirement](#2.2)
-* [2.3 Reference Implementation Requirement](#2.3)
-* [2.4 Typical Example for Reference Implementation](#2.3)
-
-<a name="2.1"></a>、
-
 
 ## 2.1 Introduction
-
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference architecture and reflected in any implementation targeting this reference architecture. The same applies to _must not_.
 
@@ -23,14 +10,12 @@
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
 
-<a name="2.2"></a>
 ## 2.2 Reference Architecture Requirement
 
 This is the reference implementation for OpenStack based RA. Please refer to [Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement](../../../ref_arch/openstack/chapters/chapter02.md) for the details of the RA requirements.
 
 The implementation should follow all the requirement identified in the RA chapter.
 
-<a name="2.3"></a>
 ## 2.3 Reference Implementation Requirement
 
 The implementation **must** use open source software.
@@ -54,16 +39,14 @@ The implementation **must** provide detailed capabilities needed so as to verify
 The implementation **must** be capable of acting as 'golden NFVi' and support VNFs under certification in OVP
 
 
-<a name="2.4"></a>
 ## 2.4 Typical Example for Reference Implementation
 
 The following figure explicitely shows a typical example for reference implementation based on OpenStack. Note that this is just an example, actual
 deployment can be varied in multiple aspects, including the number of VIM-ctrl, SDN/no-SDN, the number of network nodes and storage nodes and
 leaf-spine/no leaf-spine.
 
-
-<p align="center"><img src="../figures/chp02_typical RI.PNG" alt="relationship" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> A Typical Example for RI.</p>
+![Document Types](../figures/chp02_typical RI.PNG)
+Figure 1-1: A Typical Example for RI.
 
 For the purpose of reference implementation and verification, OPNFV based RI will include the following components:
 
