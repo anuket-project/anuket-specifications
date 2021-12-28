@@ -1,6 +1,6 @@
-# 2. Reference Implementation Requirements
+# Reference Implementation Requirements
 
-## 2.1 Introduction
+## Introduction
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference architecture and reflected in any implementation targeting this reference architecture. The same applies to _must not_.
 
@@ -10,13 +10,13 @@
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
 
-## 2.2 Reference Architecture Requirement
+## Reference Architecture Requirement
 
 This is the reference implementation for OpenStack based RA. Please refer to [Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement](../../../ref_arch/openstack/chapters/chapter02.md) for the details of the RA requirements.
 
 The implementation should follow all the requirement identified in the RA chapter.
 
-## 2.3 Reference Implementation Requirement
+## Reference Implementation Requirement
 
 The implementation **must** use open source software.
 
@@ -39,7 +39,7 @@ The implementation **must** provide detailed capabilities needed so as to verify
 The implementation **must** be capable of acting as 'golden NFVi' and support VNFs under certification in OVP
 
 
-## 2.4 Typical Example for Reference Implementation
+## Typical Example for Reference Implementation
 
 The following figure explicitely shows a typical example for reference implementation based on OpenStack. Note that this is just an example, actual
 deployment can be varied in multiple aspects, including the number of VIM-ctrl, SDN/no-SDN, the number of network nodes and storage nodes and

@@ -1,7 +1,7 @@
-# 7. Lab Operations
+# Lab Operations
 
-## 7.1 Introduction
+## Introduction
 
-## 7.2 Heading
+## Heading
 
-## 7.3 Heading
+## Heading

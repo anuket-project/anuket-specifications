@@ -1,12 +1,12 @@
-# 3. Cloud Infrastructure + VNF Target State & Specification
+# Cloud Infrastructure + VNF Target State & Specification
 
-## 3.1 Introduction
+## Introduction
 
 The VNF profile is used to describe every workload running on top of Cloud Infrastructure. The Cloud Infrastructure SW profile is used to describe the list of features provided by the hypervisor and host OS.
 
 The CNTT Reference Model will be referenced as **RM** to avoid long and duplicated reference titles.
 
-## 3.2 VNF profile
+## VNF profile
 
 
 Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in Cloud Infrastructure Infrastructure Profiles Catalogue. As states in [RM: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](../../../ref_model/chapters/chapter04.md#4.2), the entry uses the following naming convention.
@@ -59,7 +59,7 @@ Every VNF instance must declare its profiles explicitly, which can be used by VI
 
 > Open Point 2: What principles should be followed if some the pre-define VNF profile items does not match what actual requires ? How to adjust, "ceiling", "floor", "customise" ?
 
-## 3.3 Cloud Infrastructure SW profile
+## Cloud Infrastructure SW profile
 
 
 [RM: 5.2 Cloud Infrastructure Software Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.2) defines the Cloud Infrastructure software layer. The profile depicts the feature status of the
@@ -93,7 +93,7 @@ This profile is the global settings for the whole Cloud Infrastructure, which me
 | Crypto acceleration | N  | Y |
 | Crypto Acceleration Interface | N  | Y |
 
-## 3.4 Cloud Infrastructure Hardware Profile
+## Cloud Infrastructure Hardware Profile
 [RM1: 5.4 Cloud Infrastructure Hardware Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the Cloud Infrastructure hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple Cloud Infrastructure profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
 
 
@@ -117,7 +117,7 @@ This profile is the global settings for the whole Cloud Infrastructure, which me
 | nfvi.hw.nac.cfg.003 | Compression |  |  |
 
 
-## 3.5 Cloud Infrastructure Required State
+## Cloud Infrastructure Required State
 This sections describes the readiness of Cloud Infrastructure before the certification process can begin. Once the Cloud Infrastructure is configured with either of the profiles - B, N, a set of tests (for example functests) should be run in order to determine the readiness of the Cloud Infrastructure for certification.
 #TODO : Identify the tests for this section
 
@@ -224,7 +224,7 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 | Orchestration: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions  | v1.0 | NA |
 | Acceleration: Cyborg | https://docs.openstack.org/cyborg/pike/userdoc/api.html | v1.0 | NA |
 
-## 3.6 Cloud Infrastructure and VIM Architecture
+## Cloud Infrastructure and VIM Architecture
 This sections concludes the expectation for Cloud Infrastructure and VIM architecture according to [RA1: Chapter 3 Cloud Infrastructure + VIM Architecture](../../../ref_arch/openstack/chapters/chapter03.md)
 
 | Requirement Area | Description |
@@ -240,7 +240,7 @@ This sections concludes the expectation for Cloud Infrastructure and VIM archite
 |Cloud Controller Services|All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services|
 |Physical Network|The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up.
 
-## 3.7 Cloud Infrastructure and VIM Component Level Architecture
+## Cloud Infrastructure and VIM Component Level Architecture
 This sections concludes the expectation for Cloud Infrastructure and VIM component level architecture according to [RA1: Chapter 4 Cloud Infrastructure + VIM Component Level Architecture](../../../ref_arch/openstack/chapters/chapter04.md)
 
 Requirement for control node:
@@ -272,7 +272,7 @@ Consumable Infrastructure Resources and Services
 |Availability| The NFVI doesn’t provide any resiliency mechanisms at the service level. Any VM restart shall be triggered by the VNF Manager instead of OpenStack|
 |NUMA | For Network intensive instances, VNF Component should fit into a single NUMA zone for performance reason|
 
-## 3.8 Interface and API for Reference Implementation 1
+## Interface and API for Reference Implementation 1
 
 The following table lists the interface for RI1.
 

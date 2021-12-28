@@ -1,12 +1,12 @@
-# 4. Lab Requirements
-# 1. Overview
+# Lab Requirements
+# Overview
 
-## 4.1 Introduction
+## Introduction
 This chapter provides the laboratory hardware requirements needed to deploy the reference implementation.  These requirements represent a minimum set of requirements, where different labs may have hardware or capabilities exceeding these minimum specifications.  
 
 The lab provides a set of physical servers, supported by a dedicated network infrastructure.  Users should be provided access to the servers, their operating systems, and out-of-band management (i.e. IPMI, IDRAC, ILO, etc.).  
 
-## 4.2 Lab Requirements
+## Lab Requirements
 
 Labs are organized into one or more *Pods*, where the *Pod* provides the complete set of resources [servers and network(s)] necessary to support the reference implementation installation and operation.  
 
@@ -18,7 +18,7 @@ A CNTT compliant *Pod* shall meet the following requirements.
 
 The Jump Host / Test Host system will be utilized to install and manage the operation of the *Pod*.  For example, the system can be used to host the installer software used to deploy and configure OpenStack on the other physical servers.  Once installed, the system may be used to run test automations or it may be used to generate test traffic intended to measure the performance of a VNF operating within the *Pod*.  To support these operations, the physical server provided for the Jump / Test Host shall meet the same hardware requirements as compute / controller, as outline below.  In this context, the system may be considered as a miscellaneous use  or general purpose system.
 
-### 4.2.1 Physical Server Requirements
+### Physical Server Requirements
 Each server shall meet the following minimum specifications:
 
 - **CPU**
@@ -34,7 +34,7 @@ Each server shall meet the following minimum specifications:
 
 Note 1: At least 1 network interface must be capable of performing PXE boot and that network must be available to both the Jump / Test Host and each physical server.
 
-## 4.2.2 Lab Network Hardware & Topology
+## Lab Network Hardware & Topology
 
 Labs that are hosting multiple *Pods* should utilize a leaf / spine topology when interconnecting *Pods* or physical servers. This is especially important in the cases where the physical servers constituting a *Pod* are not located in the same physical rack or are not connected to the same leaf switch. At least one leaf switch will be provided for each *Pod*, with interface speeds matching the above server specifications.  In this context, the reference to the single leaf refers to the logical appearance of switch, compared to topologies providing 2 or more leaf switches to provide high availability.
 
@@ -49,7 +49,7 @@ Remote users shall access the lab via a VPN gateway, that shall also provide bas
 ***EDITORS NOTE: Provide a figure showing the basic lab topology, include the VPN, Pod / Servers, Switch, and management / public networks.***
 
 
-## 4.4 Lab Use Guidelines
+## Lab Use Guidelines
 
 **SETUP & Maintenance**
 

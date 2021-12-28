@@ -1,6 +1,6 @@
-# 8. Integration
+# Integration
 
-## 8.1 Introduction
+## Introduction
 
 The purpose of this chapter is to establish an operational run-book containing sequences and steps explaining, with enough detail, how to install a Reference Implementation (RI).
 
@@ -11,7 +11,7 @@ It is assumed that the reader of this chapter has the skill set to install Commo
 *   Covers installers, automation, etc.
 *   Integration of installers and components.
 
-## 8.2 Prerequisites
+## Prerequisites
 
 The following hardware was cabled and set up according to the OPNFV Pharos Specification:
 
@@ -29,14 +29,14 @@ same IZ1 switch as follows:
 
 ![Pod 10 Switch Connectivity](../figures/ch07_pod10_switch_connectivity.png)
 
-## 8.3 Requirements Gathering
+## Requirements Gathering
 
 Requirements gathering processes and steps:
 
 1.  RA Requirements Gathering process
 2.  Infra Requirements and Selection Process
 
-## 8.4 Access & Connectivity
+## Access & Connectivity
 
 This RI leverages OPNFV Pharos pod 10, which is hosted by Intel and requires VPN access.  Requests for VPN access must
 go through the OPNFV Infra Project by submitting a JIRA request for VPN access here: https://jira.opnfv.org/projects/INFRA
@@ -55,11 +55,11 @@ side of the VPN into that subnet:
 This will allow the VPN client host to directly access the Horizon dashboard, as an example.
 
 
-## 8.5 Available Installers
+## Available Installers
 
-### 8.5.1 Airship
+### Airship
 
-#### 8.5.1.1 Descriptor File Preparations
+#### Descriptor File Preparations
 
 Reference steps describing the use, creation, and implementation of descriptor files.  This is where the Airship Manifest
 files need to be documented:
@@ -252,7 +252,7 @@ The process of publishing involves submitting the manifests to opnfv-airship ger
 - A | dashboard-airship.intel-pod10.opnfv.org | 10.10.100.100
 
 
-#### 8.5.1.2 Deployment: Installer & Install Steps
+#### Deployment: Installer & Install Steps
 The deployment is performed and managed from the 'jump-host' node. Any authorized user can login to this node.
 
 ##### FQDN Registration
@@ -334,10 +334,10 @@ Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Instal
 - http://grafana-airship.intel-pod10.opnfv.org/login
 - http://kibana-airship.intel-pod10.opnfv.org/
 
-### 8.5.2 Future Installers
+### Future Installers
 >> Installers such as Triple-O specefic instructrions will come here.
 
-## 8.6 Deployment Validations
+## Deployment Validations
 
 CNTT RI should be both verified as any OpenStack deployment and compliant with
 the CNTT requirements which induces that the validation is composed of:
@@ -464,7 +464,7 @@ the following test cases are executed at the end.
 | opnfv/functest-vnf:hunter               | vyos_vrouter          | Success            |
 | opnfv/functest-vnf:hunter               | juju_epc              | Success            |
 
-## 8.7 Development Validations
+## Development Validations
 
 CNTT RI jobs must verify all patches before merge as defined in the best open
 source practices (see
@@ -511,16 +511,16 @@ It's worth mentioning that Functest already part of RI development validation
 conform to these best practices by running all test cases vs SUTs
 [currently CNTT compliant](https://build.opnfv.org/ci/view/functest/job/functest-hunter-gate/142/).
 
-## 8.8 CICD Tool Chain (use of, process, and scripts)]
+## CICD Tool Chain (use of, process, and scripts)]
 
 Placeholder to describe the CICD tool chain used in RI validations.
 
 Include flow diagram.
 
-## 8.9 Jenkins Setup & Job Creation
+## Jenkins Setup & Job Creation
 
 Placeholder to describe the process, access, steps, instance, etc, information for the setup of Jenkins, the jobs required for validation, and the results dashboard.
 
-## 8.10 Compliance Validation (steps, process)
+## Compliance Validation (steps, process)
 
 Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.
