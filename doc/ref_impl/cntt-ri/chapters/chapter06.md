@@ -1,14 +1,14 @@
-# 6. Installer Requirements
+# Installer Requirements
 
-## 6.1 Introduction
+## Introduction
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference implementation and implemented by installer. The same applies to _must not_.
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
-## 6.2 Installer requirements 
+## Installer requirements 
 
-### 6.2.1 General
+### General
 The Descriptor File defines the unique configuration required by installer in a common schema.
 It would specialize the installer type per user's implementation requirements.
 It would be validated at the very beginning of the deployment.
@@ -26,15 +26,15 @@ Thanks to the descriptor file, the NFVi infrastructure deployment could be compl
 
 Table 6-2-1: Installer requirements
 
-### 6.2.2 Additional
+### Additional
 Depends xxx.
 
-## 6.3 Descriptor file definition specification
+## Descriptor file definition specification
 There must be a Descriptor File definition, which used by installer as input of necessary configuration.
 Mandatory and optional definition shall be defined, there's no restrictions on how to use it,
 there could be multiple ways to implement PDF, the implementation will be in next section.
 
-### 6.3.1 Resource Pool information
+### Resource Pool information
 This table is the description of the resource pool, it contains only 2 parameters: name and type of the resource pool.
 
 A resource pool maps to only one instance of below parameters.
@@ -47,7 +47,7 @@ A resource pool maps to only one instance of below parameters.
 Table 6-3-1: Resource Pool Information.
 
 
-### 6.3.2 Global Settings
+### Global Settings
 The Global settings are provided by the user, contains data like like IP_Type, VLAN_Type, etc.
 
 A resource pool maps to only one instance of below parameters.
@@ -67,7 +67,7 @@ A resource pool maps to only one instance of below parameters.
 Table 6-3-2: Global Settings
 
 
-### 6.3.3 Parameters for network virtualization
+### Parameters for network virtualization
 MTU(Maximum Transmission Unit) configuration in switch is different depends on the which network plane it belongs to, this is usually standard value that defined by user.
 
 3 instances of the parameters are expected(Manage Storage and Service),  they may have different MTU requirement.
@@ -80,10 +80,10 @@ MTU(Maximum Transmission Unit) configuration in switch is different depends on t
 Table 6-3-3: Network Virtualization parameter.
 
 
-### 6.3.4 server information
+### server information
 Server information should be provided for installer, including full detail info. for each server, NIC mapping etc.
 
-#### 6.3.4.1 server information
+#### server information
 A table describing information for each server in the resource pool shall be provided
 
 Multiple instances are expected, one instance of all the parameters for each server.
@@ -114,7 +114,7 @@ Multiple instances are expected, one instance of all the parameters for each ser
 
 Table 6-3-4-1: Server Information.
 
-#### 6.3.4.2 server NIC information
+#### server NIC information
 This table is describing the slot and port mapping for NICs in each type of server. 
 Port BDF([Bus:Device.Function (BDF) Notation](https://wiki.xenproject.org/wiki/Bus:Device.Function_(BDF)_Notation#:~:text=Simple%20BDF%20notation%20BDF%20stands%20for%20the%20Bus%3ADevice.Function,a%20leading%20zeros%20to%20two%20or%20four%20digits)) information is also needed for each port, 
 it will be used to identify the logical port name after OS is installed. 
@@ -133,7 +133,7 @@ Information for all server types in pool should be included.
 
 Table 6-3-4-2: Server NIC Information.
 
-### 6.3.5 Network Device information
+### Network Device information
 This table describes each network device, it can be used for network configuration and verification.
 
 Multiple instances are expected, one instance for each network device.
@@ -161,7 +161,7 @@ Multiple instances are expected, one instance for each network device.
 Table 6-3-5: Network device information.
 
 
-### 6.3.6 Port mapping information
+### Port mapping information
 Wiremap defines the port mapping between server/switch and switch for each line, 
 we will need this information to trace the connected server and port, so we can extrapolate the required network configuration for the port.
 
@@ -183,7 +183,7 @@ Multiple instances are expected, one instance for each physical cable.
 Table 6-3-6: Port mapping information.
 
 
-### 6.3.7 Network planning information
+### Network planning information
 Network planning information for the resource pool of each node needs to be defined which should include VLAN ID an allocated IP range.
 
 Multiple instances are expected, one instance for each network plane.
@@ -203,7 +203,7 @@ Multiple instances are expected, one instance for each network plane.
 Table 6-3-7: Network planning information.
 
 
-### 6.3.8 TOR(Access switch) VLAN configuration information
+### TOR(Access switch) VLAN configuration information
 Multiple instances are expected, one instance for each TOR. 
 
 | Field # | type | mandatory | Instruction |
@@ -224,7 +224,7 @@ Multiple instances are expected, one instance for each TOR.
 Table 6-3-8: TOR VLAN information.
 
 
-### 6.3.9 VLAN configuration for Aggregation Switch
+### VLAN configuration for Aggregation Switch
 Multiple instances are expected, one instance for each Aggregation Switch. 
 
 | Field # | type | mandatory | Instruction |
@@ -245,13 +245,14 @@ Multiple instances are expected, one instance for each Aggregation Switch.
 Table 6-3-9: Aggregation Switch VLAN information.
 
 
-### 6.3.10 Host Aggregate information
+### Host Aggregate information
 Servers in the resource pool are usually divided to multiple groups, will use HA(Host Aggregation) to represent host group.
 One HA could belong to multiple AZ(Availability Zone)
 It is the definition of each HA in the resource pool. it should contain the server list for each HA, and also the HA meta data.
 
-####  6.3.10.1 Host HA Mapping 
+#### Host HA Mapping 
 Multiple instances are expected, defines all servers in HA
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | HA_NAME | String | Yes | HA name, which will following naming rules. |
@@ -259,8 +260,9 @@ Multiple instances are expected, defines all servers in HA
 
 Table 6-3-10-1: Host HA Information.
 
-#### 6.3.10.2 HA metadata 
+#### HA metadata 
 Multiple instances are expected, service, management and DMZ.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | HA_NAME | String | Yes |  |
@@ -269,31 +271,34 @@ Multiple instances are expected, service, management and DMZ.
 
 Table 6-3-10-2: HA meta Information.
 
-### 6.3.11 VIM Nodes
+### VIM Nodes
 There's a list of servers that was defined as control/management nodes according to resource pool plan
 
 Multiple instances are expected, defines all management servers.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DEVICE_NAME | String | Yes | The server name  |
 
 Table 6-3-11: VIM Nodes Information.
 
-### 6.3.12 SDNC Nodes
+### SDNC Nodes
 
 Multiple instances are expected, defines all SDN controllers
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DEVICE_NAME | String | Yes | The server name  |
 Table 6-3-12: SDNC Nodes Information.
 
-### 6.3.13 Storage cluster information 
+### Storage cluster information 
 Definition of storage cluster and storage pool, 
 
-#### 6.3.13.1 Storage pool plan
+#### Storage pool plan
 Storage pool name in each storage cluster, and nodes in Storage pool should be defined, so the storage installer will know which nodes are installing.
 
 Multiple instances are expected, each instance defines one storage node
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | STORAGE_CLUSTER_NAME | String | Yes |  Storage cluster name, which needs to follow naming rules.  |
@@ -302,10 +307,11 @@ Multiple instances are expected, each instance defines one storage node
 
 Table 6-3-13-1: Storage Pool Plan
 
-#### 6.3.13.2 Distribution storage pool info
+#### Distribution storage pool info
 Storage pool information, defines the management account and network information
 
 Multiple instances are expected, each instance defines one storage pool
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | STORAGE_CLUSTER_NAME | String | Yes |   |
@@ -332,14 +338,15 @@ Multiple instances are expected, each instance defines one storage pool
 Table 6-3-13-2: Distribution storage pool info.
 
 
-### 6.3.14 Software integration information
+### Software integration information
 After VIM and Storage software installation finished, parameters willl be needed in integration process of VIM and Storage,
 the parameters should be defined in advance.
 
-#### 6.3.14.1 VIM Context
+#### VIM Context
 Parameters from VIM vendor for integration.
 
 Only one entry is expected.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | VENDOR | String | Yes |  |
@@ -348,10 +355,11 @@ Only one entry is expected.
 
 Table 6-3-14-1: VIM context Information.
 
-#### 6.3.14.2 Storage Context
+#### Storage Context
 Parameters from storage vendor for integration.
 
 Only one entry is expected.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | VENDOR | String | Yes |  |
@@ -364,10 +372,11 @@ Only one entry is expected.
 
 Table 6-3-14-2: Storage context Information.
 
-#### 6.3.14.3 Storage Client context
+#### Storage Client context
 This table defines the parameters for integration with storage client
 
 Multiple entries are expected, one entry for each authorization user.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | JOINT_WAY | String | Yes | integration method for storage client, for example, RBD  |
@@ -377,13 +386,14 @@ Multiple entries are expected, one entry for each authorization user.
 
 Table 6-3-14-3: Storage client context.
 
-### 6.3.15 Device Management information
+### Device Management information
 
-#### 6.3.15.1 SERVER PIM(Physical Infrastructure Manager) ACCOUNT
+#### SERVER PIM(Physical Infrastructure Manager) ACCOUNT
 This table is not mandatory because not all installer require redfish.
 It is only requried when servers managed by PIM through redfish, credentials should be the same for same type of device.
 
 Multiple entries are expected, one entry for each server model.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | VENDOR | String | No |  |
@@ -393,10 +403,11 @@ Multiple entries are expected, one entry for each server model.
 
 Table 6-3-15-1: SERVER PIM ACCOUNT Information.
 
-#### 6.3.15.2 Switch PIM Account
+#### Switch PIM Account
 Servers are managed by SNMP, credentials should be the same for same type of device  
 
 Multiple entries are expected, one entry for each device model.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | VENDOR | String | Yes |  |
@@ -411,20 +422,20 @@ Multiple entries are expected, one entry for each device model.
 Table 6-3-15-2: Switch PIM Account.
 
 
-## 6.4 Installer prerequisite
+## Installer prerequisite
 
-### 6.4.1 Hardware validation
+### Hardware validation
 Before the installation, the user has to check if each server meets the deployment requirements:
  - BIOS settings: RAID configuration, PXE boot order and boot mode, disk capacity, CPU, and memory settings,
  - remote management accessibility (for example, IPMI, iLO, BMC),
  - NIC quantity and configuration.
 
-### 6.4.2 Network configuration
+### Network configuration
 The necessary prerequisite settings must be ready before the deployment, for example:
  - the VLAN must be configured on the switch,
  - the IP address ranges to be used must be allocated.
 
-## 6.5 PDF implementation
+## PDF implementation
 When we use PDF for installer or verification tools, all the required data described in 6.3 should be included.
 There's no limitation on how to implement PDF, like the file type of PDF could be csv or json, 
 and also you can adjust the file structure, whichever is more readable to the tools.

@@ -1,12 +1,12 @@
-# 5. Hardware Delivery and Configuration Requirements
+# Hardware Delivery and Configuration Requirements
 
-## 5.1 Introduction
+## Introduction
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference implementation and implemented by installer. The same applies to _must not_.
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
-## 5.2 Requirements
+## Requirements
 As we known, the NFVi software builds upon a set of hardware resources. For the operator(user) having a set of hardware resources, there is an inevitable step to examine it before deployment of the software.
 If there is only limited nodes for lab demonstration or something like this, it's acceptable to do it manually, however it would be a time consuming process especially there are large scale of hardware nodes, for example 1000 node.
 Also,adding the different provider's factor, that's much complicated to validate it and a headache thing if doing it in manual.
@@ -18,7 +18,7 @@ Besides, we also collect the common hardware check requiremnt here, most of whic
 We are expecting that by utilizing the common hardware description file, the check tool will perform all the neccessary hardware check point automatically.
 We believe this is a mutual interest for all operators having such needs.
 
-### 5.2.1 General
+### General
 A Descriptor File defines the configuration required by the checker in a common schema.
 The "checker tool" validates the current hardware against the descriptor file, listing mismatches or differences, as failures, allowing the user to quickly identify and correct any errors in hardware, network wiring, or configuration.
 If failures are detected, the process can be rerun after corrective actions are taken.
@@ -32,7 +32,7 @@ This checking process must be completed before the software stack deployment.
 | `req.gen.des.02` | Descriptor | Descriptor file **may** automate to generate from a user defined rule of how to generate asset name, IP address, gateways, VLAN ID, etc|
 Table 5-2-1: Check tool requirements
 
-### 5.2.2 Check point
+### Check point
 Till now, following the check point requirements are collected: (#5.4.1)
 
 | Test Type # | Purpose | Example | Check when |
@@ -53,11 +53,11 @@ Till now, following the check point requirements are collected: (#5.4.1)
 | Redfish interface | Verifies that support classic interface.| system service/Manager service/ChassisService/SessionService/AccountService/EventService etc.||
 Table 5-2-2: Hardware check point.
 
-## 5.3 Descriptor file definition
+## Descriptor file definition
 As mentioned at the beginning, the description file is used to define the common hardware data which are used by the checker implementation
 The entry information must be included in the description file,which are the remote access parameter settings.
 
-### 5.3.1 Resource pool
+### Resource pool
 Resource pool is the conception which a NFV resource is planned to build up. It consists hardware server device, network device and cabling among them.
 It is referenced by other resource type to introduce later.
 
@@ -69,7 +69,7 @@ It is referenced by other resource type to introduce later.
 
 Table 5-3-1: Resource pool.
 
-### 5.3.2 NIC template
+### NIC template
 NIC Template defines network interface card parameters, it includes the crucial port number on the NIC, which is used as the reference in the cabling data and check.
 
 | Field # | type | mandatory | Instruction |
@@ -89,7 +89,7 @@ NIC Template defines network interface card parameters, it includes the crucial 
 
 Table 5-3-2: NIC template.
 
-### 5.3.3 Cabinet
+### Cabinet
 Cabinet is the rack holder for the server and network devices. The data will be referenced by server and network device data.
 
 | Field # | type | mandatory | Instruction |
@@ -101,7 +101,7 @@ Cabinet is the rack holder for the server and network devices. The data will be 
 
 Table 5-3-3: Cabinet.
 
-### 5.3.4 Server
+### Server
 The server device data defines key information about how to access the server remotely, for example remote IP address, user, and credentials.
 There are many ways to validate the hardware by remote interface verification, for example IPMI and redfish.
 Considering the number of servers, the user can choose to validate the server interface in a distributed way or in a centralized way.
@@ -135,7 +135,7 @@ The best practice is to use centralized validation when the number of servers is
 
 Table 5-3-4: Server.
 
-### 5.3.5 Network device
+### Network device
 network device data defines the key data about how to remote access the network device, such as switches and routers.
 
 | Field # | type | mandatory | Instruction |
@@ -161,7 +161,7 @@ network device data defines the key data about how to remote access the network 
 
 Table 5-3-5: Network device.
 
-### 5.3.6 EOR card
+### EOR card
 EOR card data.
 
 | Field # | type | mandatory | Instruction |
@@ -173,7 +173,7 @@ EOR card data.
 
 Table 5-3-6: EOR Card.
 
-### 5.3.7 Cabling
+### Cabling
 Cabling records the physical cable connection information between the ports of server and switch, or switches.
 Check tool will verify the correctness according to the cabling data.
 
@@ -192,7 +192,7 @@ Check tool will verify the correctness according to the cabling data.
 
 Table 5-3-7: Cabling.
 
-### 5.3.8 Server model
+### Server model
 The server model describes processor, memory, harddrive, raid,manufacturer, model etc.
 server model will be referenced by servers.
 
@@ -211,7 +211,7 @@ server model will be referenced by servers.
 Table 5-3-8: Server model.
 
 
-### 5.3.9 Network device model
+### Network device model
 The network device model describes processor, memory,manufacturer, model etc.
 network device model will be referenced by network device.
 
@@ -228,7 +228,7 @@ network device model will be referenced by network device.
 
 Table 5-3-9: Network device model.
 
-## 5.4 Appendix
-### 5.4.1 HDV original collection.
+## Appendix
+### HDV original collection.
 
 [CNTT Hardware Delivery Validation (01-2020 DDF)](https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908)

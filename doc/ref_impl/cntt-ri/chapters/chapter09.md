@@ -1,8 +1,8 @@
-# 9. Gaps analysis & Innovation
+# Gaps analysis & Innovation
 
-## 9.1 Introduction
+## Introduction
 
-## 9.2 OPNFV Pharos Project
+## OPNFV Pharos Project
 For this RI, the OPNFV Pharos specification has been chosen as labs with pods of servers already exist under OPNFV's
 Lab as a Service (LaaS).
 
@@ -20,7 +20,7 @@ policies. Achieving a consistent look and feel of a federated lab infrastructure
 environments are also useful and provided by some labs. Jira is currently used for tracking lab operational issues as
 well as for Pharos project activities.
 
-### 9.2.1 Pharos Specification
+### Pharos Specification
 
 The Pharos Specification defines a hardware environment for deployment and testing of the OPNFV platform release.
 
@@ -57,7 +57,7 @@ A pharos compliant OPNFV test-bed provides:
     between storage nodes.
   * OpenStack Management (Management): Used for internal communication between OpenStack Components.
 
-### 9.2.2 Hardware Specification
+### Hardware Specification
 
 CPU:
 
@@ -84,7 +84,7 @@ Memory:
 
 * 32G RAM Minimum
 
-### 9.2.3 Network Specification
+### Network Specification
 
 Network Hardware
 
@@ -115,7 +115,7 @@ Network Options
 
 For this RI, Option III has been chosen.
 
-## 9.3 NFR Considerations
+## NFR Considerations
 Additional environmental specifications need to be considered when performing Non-Functional Requirement (NFR) testing, which includes performance, resiliency, and scalability, amongst other test categories not addressed through functional testing.  Refer to [What is Non Functional Testing?](https://www.guru99.com/non-functional-testing.html) for information and examples of the various types of NFR testing.  
 
 The rational for reviewing and documenting environmental needs and specifications is that NFR-type testing introduces traffic, chaos, or instability (e.g. impulse, spike, long-duration, etc) to the environment, and if not sized properly, or contains robust equipment the test results will be undeterministic, or unreliable.  
@@ -131,7 +131,7 @@ Examples of potential measurements and/or test scenarios for which NFR test tool
 
 Note, when it comes to NFR-tooling, the goals are to provide light-weight solutions that can be packaged within a cookbook to accelerate lab validations, agnostic to the type of hardware in the environment.  This will enable third party suppliers to achieve compliance expectations for the targeted architecture.  
 
-### 9.3.1 Traffic Generators & NIC
+### Traffic Generators & NIC
 Performance, or load testing, may (will) require specific NICs to achieve desired throughput (TPS, kbps, etc) to properly validate an instance-types (e.g. Basic(B)) stability when subject to traffic.  
 
 For example, the OPNFV project, [NFVBench](https://wiki.opnfv.org/display/nfvbench/NFVbench), utilizes the [TRex](https://trex-tgn.cisco.com/) traffic generator.   While TRex offers stateful and stateless testing, achieves 200-400 Gb/sec, and captures latency/jitter measurements, there is a dependency on the type of NICs to be utilized to achieve optimal results:

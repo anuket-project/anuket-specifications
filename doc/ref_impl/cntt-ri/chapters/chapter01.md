@@ -1,19 +1,19 @@
-# 1. Overview
+# Overview
 
-## 1.1 Introduction
+## Introduction
 
-### 1.1.1 About Reference Implementation
+### About Reference Implementation
 
 This document includes the requirement and deployment details of the the first reference implementation for CNTT. This first reference implementation follows the requirement and architecture design of the [OpenStack Based Reference Architecture](../../../ref_arch/openstack/chapters). This document will includes the detailed requirement of RI for CNTT, NFVi configurations according to the requirement of RA and each different flavor of VNF, Lab requirements for RI deployment and validation and installer requirement. This reference implementation will fully reveal the capabilities and features defined in CNTT RM and RA, and thus will be utilized as 'golden NFVi' in the Reference Compliance of CNTT.
 
  In order to promote quick deployment of RI and not re-invent wheels, the CNTT community works closely with OPNFV, utilizing and evolving OPNFV CI pipeline and installer automation and testing automation capabilities. Detailed collaboration and contribution to OPNFV will be concluded in the following sessions.
 
 
-### 1.1.2 Terminology
+### Terminology
 
 Terminology in this document will follow [CNTT Terminology](../../../common/glossary.md).
 
-## 1.2 Scope
+## Scope
 
 The scope of this document is illustrated in **Figure 1-1** below:
 
@@ -33,7 +33,7 @@ e) Provide detailed design for automation of deployment and testing, provide con
 
 f) Gap analysis with required actions for existing eco-system within LFN/OPNFV community projects
 
-## 1.3 Relationship to other communities
+## Relationship to other communities
 
 ![Scope](../figures/ri1_relation.png)
 Figure 1-2: RI-1 Relation to other communities.
@@ -75,6 +75,6 @@ b) Providing Reference Implementation as Golden NFVi for interoperability testin
 c) Providing Reference Compliance test requirements and test cases for compliance test for both NFVi and VNFs
 
 
-## 1.4 Roadmap
+## Roadmap
 
 This document is planned to release on Jan. 2020, while the first of RI code (including installers, manifest test cases, automation CI) will follow the release routine of OPNFV Release J.
