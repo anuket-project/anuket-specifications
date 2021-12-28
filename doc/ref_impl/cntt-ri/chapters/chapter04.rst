@@ -1,9 +1,6 @@
 Lab Requirements
 ================
 
-Overview
-========
-
 Introduction
 ------------
 
@@ -12,8 +9,8 @@ This chapter provides the laboratory hardware requirements needed to deploy the 
 The lab provides a set of physical servers, supported by a dedicated network infrastructure. Users should be provided access to the servers, their operating systems, and out-of-band management (i.e. IPMI, IDRAC, ILO, etc.).
 
 
-Lab Requirements
-----------------
+Requirements
+------------
 
 Labs are organized into one or more *Pods*, where the *Pod* provides the complete set of resources [servers and network(s)] necessary to support the reference implementation installation and operation.
 

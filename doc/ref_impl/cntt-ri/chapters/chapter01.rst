@@ -7,22 +7,24 @@ Introduction
 About Reference Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This document includes the requirement and deployment details of the the first reference implementation for CNTT. This first reference implementation follows the requirement and architecture design of the `OpenStack Based Reference Architecture <../../../ref_arch/openstack/chapters>`__. This document will includes the detailed requirement of RI for CNTT, NFVi configurations according to the requirement of RA and each different flavor of VNF, Lab requirements for RI deployment and validation and installer requirement. This reference implementation will fully reveal the capabilities and features defined in CNTT RM and RA, and thus will be utilized as 'golden NFVi' in the Reference Compliance of CNTT.
+This document includes the requirement and deployment details of the the first reference implementation for CNTT. This first reference implementation follows the requirement and architecture design of the :doc:`OpenStack Based Reference Architecture <ref_arch/openstack/chapters/chapter01>`. This document will includes the detailed requirement of RI for CNTT, NFVi configurations according to the requirement of RA and each different flavor of VNF, Lab requirements for RI deployment and validation and installer requirement. This reference implementation will fully reveal the capabilities and features defined in CNTT RM and RA, and thus will be utilized as 'golden NFVi' in the Reference Compliance of CNTT.
 
 In order to promote quick deployment of RI and not re-invent wheels, the CNTT community works closely with OPNFV, utilizing and evolving OPNFV CI pipeline and installer automation and testing automation capabilities. Detailed collaboration and contribution to OPNFV will be concluded in the following sessions.
 
 Terminology
 ~~~~~~~~~~~
 
-Terminology in this document will follow `CNTT Terminology <../../../common/glossary.md>`__.
+Terminology in this document will follow :doc:`common/glossary`.
 
 Scope
 -----
 
 The scope of this document is illustrated in **Figure 1-1** below:
 
-|Scope|
-Figure 1-1: RI-1 Scope.
+.. figure::
+    ../figures/ri1_scope.png
+
+    **Figure 1-1:** RI-1 Scope.
 
 a) generate eco-system requirements for the establishment of Reference Implementation, including Labs, toolings, installers, releases and automation requirements
 
@@ -36,11 +38,15 @@ e) Provide detailed design for automation of deployment and testing, provide con
 
 f) Gap analysis with required actions for existing eco-system within LFN/OPNFV community projects
 
+
 Relationship to other communities
 ---------------------------------
 
-|image1|
-Figure 1-2: RI-1 Relation to other communities.
+.. figure::
+    ../figures/ri1_relation.png
+
+    **Figure 1-2:** RI-1 Relation to other communities.
+
 
 1. Relationship with OPNFV
 
@@ -55,7 +61,7 @@ https://wiki.opnfv.org/pages/viewpage.action?pageId=47284396
 
 b) OPNFV Infra WG.
 
-The CNTT RI WSs work closely with the OPNFV Infra WG for the requirement of Labs and Installers. The detailed requirements explained in `Chapter 4 <chapter04.md>`__ and `Chapter 5 <chapter05.md>`__ of this document are discussed and reviewed with the Infra WG, and will be used as guideline for detailed development work in Infra WG.
+The CNTT RI WSs work closely with the OPNFV Infra WG for the requirement of Labs and Installers. The detailed requirements explained in :ref:`chapters/chapter04:Lab Requirements` and :ref:`chapters/chapter05:Hardware Delivery and Configuration Requirements` of this document are discussed and reviewed with the Infra WG, and will be used as guideline for detailed development work in Infra WG.
 
 c) OPNFV Testing WG.
 
@@ -81,6 +87,3 @@ Roadmap
 -------
 
 This document is planned to release on Jan. 2020, while the first of RI code (including installers, manifest test cases, automation CI) will follow the release routine of OPNFV Release J.
-
-.. |Scope| image:: ../figures/ri1_scope.png
-.. |image1| image:: ../figures/ri1_relation.png
