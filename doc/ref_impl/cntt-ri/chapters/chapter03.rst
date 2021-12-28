@@ -117,7 +117,7 @@ nfvi.hw.cpu.cfg.002       Number of cores per CPU           This determines the 
 nfvi.hw.cpu.cfg.003       NUMA                              NUMA support and BIOS configured to enable NUMA                          N           Y
 nfvi.hw.cpu.cfg.004       Simultaneous Multithreading (SMT) This permits multiple independent threads of execution on a single core. Y           Y
 nfvi.hw.cac.cfg.001       GPU                               GPU                                                                      N           N
-nfvi.hw.stg.hdd.cfg.001\* Local Storage HDD                 Hard Disk Drive                                                                      
+nfvi.hw.stg.hdd.cfg.001\* Local Storage HDD                 Hard Disk Drive
 nfvi.hw.stg.ssd.cfg.002\* Local Storage SSD                 Solid State Drive                                                        Recommended Recommended
 nfvi.hw.nic.cfg.001       NIC Ports                         Total Number of NIC Ports available in the host                          4           4
 nfvi.hw.nic.cfg.002       Port Speed                        Port speed specified in Gbps (minimum values)                            10          25
@@ -127,7 +127,7 @@ nfvi.hw.pci.cfg.003       PCIe Lanes                                            
 nfvi.hw.bdc.cfg.001       Bonded VLAN ports                                                                                          Y           Y
 nfvi.hw.nac.cfg.001       Cryptographic Acceleration        IPSec, Crypto                                                            N           Optional
 nfvi.hw.nac.cfg.002       SmartNIC                          A SmartNIC that is used to offload network functionality to hardware     N           Optional
-nfvi.hw.nac.cfg.003       Compression                                                                                                            
+nfvi.hw.nac.cfg.003       Compression
 ========================= ================================= ======================================================================== =========== =================
 
 Cloud Infrastructure Required State
@@ -425,14 +425,14 @@ OpenStack Service     Link for API list                                         
 ===================== ============================================================ =============== ============================
 Identity: Keystone    https://docs.openstack.org/api-ref/identity/v3/              3               3.8
 Compute: Nova         https://docs.openstack.org/api-ref/compute/                  v2.1            2.53
-Networking: Neutron   https://docs.openstack.org/api-ref/network/v2/               v2.0            
+Networking: Neutron   https://docs.openstack.org/api-ref/network/v2/               v2.0
 Image: Glance         https://docs.openstack.org/api-ref/image/v2/                 v2              2.5
 Block Storage: Cinder https://docs.openstack.org/api-ref/block-storage/v3/         v3              3.43
-Object Storage: Swift https://docs.openstack.org/api-ref/object-store/             v1              
+Object Storage: Swift https://docs.openstack.org/api-ref/object-store/             v1
 Placement             https://docs.openstack.org/api-ref/placement/                v1              1.10
-Orchestration: Heat   https://docs.openstack.org/api-ref/orchestration/v1/         v1              
-Acceleration: Cyborg  https://docs.openstack.org/api-ref/accelerator/v2/           v2              
-K8S API               https://kubernetes.io/docs/concepts/overview/kubernetes-api/                 
-KVM APIs              https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt                 
-Libvirt APIs          https://libvirt.org/html/index.html                                          
+Orchestration: Heat   https://docs.openstack.org/api-ref/orchestration/v1/         v1
+Acceleration: Cyborg  https://docs.openstack.org/api-ref/accelerator/              v2
+K8S API               https://kubernetes.io/docs/concepts/overview/kubernetes-api/
+KVM APIs              https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt
+Libvirt APIs          https://libvirt.org/html/index.html
 ===================== ============================================================ =============== ============================

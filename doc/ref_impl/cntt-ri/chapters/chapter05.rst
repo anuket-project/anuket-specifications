@@ -105,7 +105,7 @@ It is referenced by other resource type to introduce later.
 ================== ====== ========= =====================================
 Field #            type   mandatory Instruction
 ================== ====== ========= =====================================
-serial_no          String Yes       
+serial_no          String Yes
 resource_pool_name String Yes       resource name, e.g: NFV-RP-HZZZ-03A_0
 type               String Yes       TOCHECK: OTHER
 ================== ====== ========= =====================================
@@ -120,7 +120,7 @@ NIC Template defines network interface card parameters, it includes the crucial 
 ================ ====== ========= =====================================================================================================
 Field #          type   mandatory Instruction
 ================ ====== ========= =====================================================================================================
-serial_no        String Yes       
+serial_no        String Yes
 vendor           String Yes       vendor name: ZTE,HUAWEI
 server_type      String Yes       ZTE "R5300 G4", HUAWEI "TaiShan200-2280"
 customized_model String No        customized model: C2,C21
@@ -144,7 +144,7 @@ Cabinet is the rack holder for the server and network devices. The data will be 
 ========= ====== ========= =======================================
 Field #   type   mandatory Instruction
 ========= ====== ========= =======================================
-serial_no String Yes       
+serial_no String Yes
 room      String Yes       room number, e.g: 2201
 column    String Yes       column number in the room: e.g. "J"
 cabinet   String Yes       cabinet number in the column: e.g. "01"
@@ -165,7 +165,7 @@ The best practice is to use centralized validation when the number of servers is
 ================== ====== ========= =========================================================================
 Field #            type   mandatory Instruction
 ================== ====== ========= =========================================================================
-serial_no          String Yes       
+serial_no          String Yes
 server_name        String Yes       server name, e.g: NFV-D-HZZZ-03A-2201-0J01-M-SRV-01
 vendor             String Yes       vendor name "ZTE","HUAWEI" etc
 server_type        String Yes       ZTE "R5300 G4", HUAWEI "TaiShan200-2280"
@@ -197,7 +197,7 @@ network device data defines the key data about how to remote access the network 
 ================== ====== ========= =========================================================================
 Field #            type   mandatory Instruction
 ================== ====== ========= =========================================================================
-serial_no          String Yes       
+serial_no          String Yes
 device_name        String Yes       device name, e.g: "NFV-D-HZZZ-03A-2201-0F01-DM-TOR-01"
 vendor             String yes       vendor name "ZTE","HUAWEI" etc
 device_model       String Yes       maipu "S4320", HUAWEI "CE6856"
@@ -227,7 +227,7 @@ EOR card data.
 =============== ====== ========= ===============
 Field #         type   mandatory Instruction
 =============== ====== ========= ===============
-serial_no       String Yes       
+serial_no       String Yes
 eor_device_name String Yes       EOR device name
 card_model      String Yes       card model
 slot            String Yes       slot e.g. "01"
@@ -244,7 +244,7 @@ Check tool will verify the correctness according to the cabling data.
 ================== ====== ========= ==========================================================================================
 Field #            type   mandatory Instruction
 ================== ====== ========= ==========================================================================================
-serial_no          String Yes       
+serial_no          String Yes
 source_cabinet     String Yes       source cabinet which belongs to, in format room-column-cabinet, e.g. "2201-J-01"
 source_device_name String yes       server,switch device name e.g "NFV-D-HZZZ-03A-2201-0G12-DM-TOR-01"
 source_device_type String Yes       switch or server
@@ -268,12 +268,12 @@ server model will be referenced by servers.
 Field #                 type   mandatory Instruction
 ======================= ====== ========= ==========================================
 name                    String Yes       model name will referenced by server
-manufacturer            String Yes       
-model                   String Yes       
-processor               String Yes       
-memory                  String Yes       
-hard_drive              String Yes       
-raid                    String Yes       
+manufacturer            String Yes
+model                   String Yes
+processor               String Yes
+memory                  String Yes
+hard_drive              String Yes
+raid                    String Yes
 network_card_infos      List   No        interface list definition
 network_card_bond_infos List   No        NIC bonding, might not be always the case.
 ======================= ====== ========= ==========================================
@@ -290,13 +290,13 @@ network device model will be referenced by network device.
 Field #       type   mandatory Instruction
 ============= ====== ========= ============================================
 name          String Yes       model name will referenced by network device
-manufacturer  String Yes       
-model         String Yes       
-processor     String Yes       
+manufacturer  String Yes
+model         String Yes
+processor     String Yes
 port_type     String Yes       port type
 port_quantity String Yes       total number of port
-memory        String Yes       
-version       String Yes       
+memory        String Yes
+version       String Yes
 ============= ====== ========= ============================================
 
 Table 5-3-9: Network device model.

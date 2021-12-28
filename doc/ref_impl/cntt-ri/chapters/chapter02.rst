@@ -8,16 +8,16 @@ Introduction
 
 **should**: Requirements that are marked as *should* are expected to be fulfilled by the reference architecture but it is up to each service provider to accept an implementation targeting this reference architecture that is not reflecting on any of those requirements. The same applies to *should not*.
 
-   RFC2119
-
 **may**: Requirements that are marked as *may* are considered optional. The same applies to *may not*.
+
 
 Reference Architecture Requirement
 ----------------------------------
 
-This is the reference implementation for OpenStack based RA. Please refer to `Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement <../../../ref_arch/openstack/chapters/chapter02.md>`__ for the details of the RA requirements.
+This is the reference implementation for OpenStack based RA. Please refer to :doc:`Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement <ref_arch/openstack/chapters/chapter02>` for the details of the RA requirements.
 
 The implementation should follow all the requirement identified in the RA chapter.
+
 
 Reference Implementation Requirement
 ------------------------------------
@@ -42,6 +42,7 @@ The implementation **must** provide detailed capabilities needed so as to verify
 
 The implementation **must** be capable of acting as 'golden NFVi' and support VNFs under certification in OVP
 
+
 Typical Example for Reference Implementation
 --------------------------------------------
 
@@ -49,8 +50,10 @@ The following figure explicitely shows a typical example for reference implement
 deployment can be varied in multiple aspects, including the number of VIM-ctrl, SDN/no-SDN, the number of network nodes and storage nodes and
 leaf-spine/no leaf-spine.
 
-![Document Types](../figures/chp02_typical RI.PNG)
-Figure 1-1: A Typical Example for RI.
+.. figure::
+   ../figures/chp02_typical_RI.PNG
+
+   **Figure 1-1:** A Typical Example for RI.
 
 For the purpose of reference implementation and verification, OPNFV based RI will include the following components:
 

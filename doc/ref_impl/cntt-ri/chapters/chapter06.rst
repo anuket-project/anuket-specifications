@@ -10,8 +10,8 @@ Introduction
 
 .. _installer-requirements-1:
 
-Installer requirements
-----------------------
+Requirements
+------------
 
 General
 ~~~~~~~
@@ -127,15 +127,15 @@ SN                 String Yes       Serial Number, each server has a unique SN
 RES_POOL           String Yes       Resource pool name
 RACK               String Yes       rack name where device located
 POS                String Yes       the position of device in rack, like 2-3U,4-5U
-BMC_IP             String Yes       
-BMC_GATEWAY        String Yes       
-BMC_MASK           String Yes       
-BMC_SUBNET         String Yes       
+BMC_IP             String Yes
+BMC_GATEWAY        String Yes
+BMC_MASK           String Yes
+BMC_SUBNET         String Yes
 BMC_USR            String Yes       BMC user
 BMC_PWD            String Yes       BMC password, Instead of clear-text password, password encryption is recommended for security consideration
 INTERNAL_IP        String Yes       It is an internal IP configured and used by hardware integration tools, it will be removed after hardware integration verification
-INTERNAL_GATEWAY   String Yes       
-INTERNAL_MASK      String Yes       
+INTERNAL_GATEWAY   String Yes
+INTERNAL_MASK      String Yes
 GROUP_NAME         String Yes       Usage of server, Manage or Storage or Service
 BMC_PRE_CONFIGURED String Yes       YES or NO
 HW_REGION          String No        Hardware region divided by room or area, this is need when pod needs to build on more than one lab, For example: Lab01 or Lab02
@@ -148,7 +148,7 @@ server NIC information
 ^^^^^^^^^^^^^^^^^^^^^^
 
 This table is describing the slot and port mapping for NICs in each type of server.
-Port BDF(`Bus:Device.Function (BDF) Notation <https://wiki.xenproject.org/wiki/Bus:Device.Function_(BDF)_Notation#:~:text=Simple%20BDF%20notation%20BDF%20stands%20for%20the%20Bus%3ADevice.Function,a%20leading%20zeros%20to%20two%20or%20four%20digits>`__) information is also needed for each port,
+Port BDF(`Bus:Device.Function (BDF) Notation <https://wiki.xenproject.org/wiki/Bus:Device.Function_(BDF)_Notation>`__) information is also needed for each port,
 it will be used to identify the logical port name after OS is installed.
 Multiple entries per server type are expected for describing all NIC slots, 1 entry for each port.
 Information for all server types in pool should be included.
@@ -185,9 +185,9 @@ SN          String Yes       Serial number
 HW_RES_POOL String Yes       Resource pool name for hardware
 RACK        String Yes       rack number where switch is placed
 POS         String Yes       position in rack
-BMC_IP      String Yes       
-BMC_GATEWAY String Yes       
-BMC_MASK    String Yes       
+BMC_IP      String Yes
+BMC_GATEWAY String Yes
+BMC_MASK    String Yes
 BMC_USR     String Yes       BMC login user
 BMC_PWD     String Yes       password for BMC login user. Instead of clear-text password, password encryption is recommended for security consideration
 ENABLE_PWD  String Yes       Enable password. Instead of clear-text password, password encryption is recommended for security consideration
@@ -253,7 +253,7 @@ VENDOR               String Yes       vendor of software product
 VLAN_ID              List   Yes       designed VLAN id or id list for each network plane
 IP_SEGMENT           String Yes       assigned IP segments
 GATEWAY              String Yes       gateway IP for each IP range
-SWITCH_CONFIG_TYPE   String Yes       
+SWITCH_CONFIG_TYPE   String Yes
 ==================== ====== ========= =======================================================================
 
 Table 6-3-7: Network planning information.
@@ -266,12 +266,12 @@ Multiple instances are expected, one instance for each TOR.
 =============== ====== ========= ====================================================================================================
 Field #         type   mandatory Instruction
 =============== ====== ========= ====================================================================================================
-DEVICE_NAME     String Yes       
-VENDOR          String Yes       
-DEVICE_MODEL    String Yes       
-DEVICE_SN       String Yes       
-BMC_IP          String Yes       
-SSH_USER        String Yes       
+DEVICE_NAME     String Yes
+VENDOR          String Yes
+DEVICE_MODEL    String Yes
+DEVICE_SN       String Yes
+BMC_IP          String Yes
+SSH_USER        String Yes
 SSH_PASSWORD    String Yes       Instead of clear-text password, password encryption is recommended for security consideration
 ENABLE_PASSWORD String Yes       Instead of clear-text password, password encryption is recommended for security consideration
 PORT            List   Yes       group multiple ports with same VLAN configuration, and separate different port group with ";"
@@ -290,18 +290,18 @@ Multiple instances are expected, one instance for each Aggregation Switch.
 =============== ====== ========= ====================================================================================================
 Field #         type   mandatory Instruction
 =============== ====== ========= ====================================================================================================
-DEVICE_NAME     String Yes       
-VENDOR          String Yes       
-DEVICE_MODEL    String Yes       
-DEVICE_SN       String Yes       
-BMC_IP          String Yes       
-SSH_USER        String Yes       
+DEVICE_NAME     String Yes
+VENDOR          String Yes
+DEVICE_MODEL    String Yes
+DEVICE_SN       String Yes
+BMC_IP          String Yes
+SSH_USER        String Yes
 SSH_PASSWORD    String Yes       Instead of clear-text password, password encryption is recommended for security consideration
 ENABLE_PASSWORD String Yes       Instead of clear-text password, password encryption is recommended for security consideration
 PORT            List   Yes       group a list of ports with same VLAN configuration, and separate different port group with ";"
 VLAN_ID         List   Yes       group multiple VLAN with same configuration requirements, and separate different VLAN group with ";"
 VLANIF_ADDRESS  List   Yes       Vlanif addresses that need to be configured on Aggregation Switch
-NETWORK_MASK    List   Yes       
+NETWORK_MASK    List   Yes
 =============== ====== ========= ====================================================================================================
 
 Table 6-3-9: Aggregation Switch VLAN information.
@@ -335,7 +335,7 @@ Multiple instances are expected, service, management and DMZ.
 =========== ====== ========= ============================================================================
 Field #     type   mandatory Instruction
 =========== ====== ========= ============================================================================
-HA_NAME     String Yes       
+HA_NAME     String Yes
 HA_METADATA String Yes       properties for each HA, for example: type=TrustPlane,ovs=C-plane,sriov=false
 AZ_NAME     String Yes       AZ name that HA belongs to
 =========== ====== ========= ============================================================================
@@ -402,26 +402,26 @@ Multiple instances are expected, each instance defines one storage pool
 ========================== ====== ========= =============================================================================================
 Field #                    type   mandatory Instruction
 ========================== ====== ========= =============================================================================================
-STORAGE_CLUSTER_NAME       String Yes       
-NODE_POOL                  String No        
-DISK_POOL_NAME             String No        
-STORAGE_POOL_NAME          String Yes       
+STORAGE_CLUSTER_NAME       String Yes
+NODE_POOL                  String No
+DISK_POOL_NAME             String No
+STORAGE_POOL_NAME          String Yes
 HA_NAME_LIST               List   Yes       The corresponding HA lists for current storage pool
 AZ_NAME                    String Yes       The corresponding AZ for current storage pool
 STORAGE_POOL_NODE_CCOUNT   String Yes       How many nodes for current storage pool
-MAX_QUOTA_CAPACITY         String Yes       
+MAX_QUOTA_CAPACITY         String Yes
 STORAGE_POOL_MANAGEMENT_IP String Yes       Designed virtural IP for storage pool management
-NETWORK_MASK               String Yes       
-GATEWAY                    String Yes       
+NETWORK_MASK               String Yes
+GATEWAY                    String Yes
 VIM_USER                   String Yes       VIM credential
 VIM_PASSWORD               String Yes       Instead of clear-text password, password encryption is recommended for security consideration
 PIM_USER                   String Yes       PIM credential
 PIM_PASSWORD               String Yes       Instead of clear-text password, password encryption is recommended for security consideration
-STORAGE_CLUSTER_SERVICE_IP String Yes       
-STORAGE_CLUSTER_SERVICE_GW String Yes       
-STORAGE_CLUSTER_BACKEND_IP String Yes       
-STORAGE_CLUSTER_BACKEND_GW String Yes       
-BACKUP_POLICY              String Yes       
+STORAGE_CLUSTER_SERVICE_IP String Yes
+STORAGE_CLUSTER_SERVICE_GW String Yes
+STORAGE_CLUSTER_BACKEND_IP String Yes
+STORAGE_CLUSTER_BACKEND_GW String Yes
+BACKUP_POLICY              String Yes
 ========================== ====== ========= =============================================================================================
 
 Table 6-3-13-2: Distribution storage pool info.
@@ -442,7 +442,7 @@ Only one entry is expected.
 ===================== ====== ========= ====================================================
 Field #               type   mandatory Instruction
 ===================== ====== ========= ====================================================
-VENDOR                String Yes       
+VENDOR                String Yes
 AUTHORIZATION         String Yes       One-way or Two-way authentication
 VIM_CERTIFICATES_PATH String Yes       Full path for certificates that used for integration
 ===================== ====== ========= ====================================================
@@ -459,13 +459,13 @@ Only one entry is expected.
 ======================== ====== ========= =========================================================
 Field #                  type   mandatory Instruction
 ======================== ====== ========= =========================================================
-VENDOR                   String Yes       
+VENDOR                   String Yes
 AUTHORIZATION            String Yes       One-way or Two-way authentication
 JOINT_WAY                String Yes       by ISCSI or client
 DRIVER_FULL_NAME         String Yes       Full path for storage driver
 CEPH_CONFIG_PATH         String Yes       Full path for ceph.conf storage
 IS_PIM_JOINT             String Yes       whether integrate with PIM, usaually "YES" for this value
-STORAGE_SOFTWARE_VERSION String Yes       
+STORAGE_SOFTWARE_VERSION String Yes
 ======================== ====== ========= =========================================================
 
 Table 6-3-14-2: Storage context Information.
@@ -502,9 +502,9 @@ Multiple entries are expected, one entry for each server model.
 ============== ====== ========= =============================================================================================
 Field #        type   mandatory Instruction
 ============== ====== ========= =============================================================================================
-VENDOR         String No        
+VENDOR         String No
 SERVER_MODEL   String No        MODEL for each type of server
-REDFISH_USER   String No        
+REDFISH_USER   String No
 REDFISH_PASSWD String No        Instead of clear-text password, password encryption is recommended for security consideration
 ============== ====== ========= =============================================================================================
 
@@ -520,14 +520,14 @@ Multiple entries are expected, one entry for each device model.
 ===================== ====== ========= =============================
 Field #               type   mandatory Instruction
 ===================== ====== ========= =============================
-VENDOR                String Yes       
+VENDOR                String Yes
 DEVICE_MODEL          String Yes       MODEL for each type of switch
 SNMP_VERSION          String Yes       v3 by default
-SNMP_USER             String Yes       
+SNMP_USER             String Yes
 AUTHENTICATION_METHOD String Yes       for example: MD5 or SHA1
-VERIFICATION_CODE     String Yes       
-ENCRYPTION_METHOD     String Yes       
-ENCRYPTION_KEY        String Yes       
+VERIFICATION_CODE     String Yes
+ENCRYPTION_METHOD     String Yes
+ENCRYPTION_KEY        String Yes
 ===================== ====== ========= =============================
 
 Table 6-3-15-2: Switch PIM Account.

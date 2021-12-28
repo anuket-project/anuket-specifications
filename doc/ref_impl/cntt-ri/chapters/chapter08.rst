@@ -308,8 +308,8 @@ Auto-generation phase involves generating certificates, which will be used by Ku
 -  mv site definition for pod10 to treasuremap
 -  sudo tools/airship pegleg site -r /target collect intel-pod10 -s intel-pod10_collected
 -  mkdir intel-pod10_certs
--  sudo tools/airship promenade generate-certs -o /target/intel-pod10_certs /target/intel-pod10_collected/*.yaml
--  cp intel-pod10_certs/*.yaml site/intel-pod10/secrets/certificates/
+-  sudo tools/airship promenade generate-certs -o /target/intel-pod10_certs /target/intel-pod10_collected/\*.yaml
+-  cp intel-pod10_certs/\*.yaml site/intel-pod10/secrets/certificates/
 -  mv site/intel-pod10 ../airship/site/
 
 Publishing
@@ -354,11 +354,13 @@ Install
 As Airship is tooling to declaratively automate site deployment, the automation from the installer side is light. See `deploy.sh <https://github.com/opnfv/airship/blob/master/tools/deploy.sh>`__. User will need to export environment variables that correspond to the new site (keystone URL, node IPs, and so on). All these are captured in the site environment file - as described in the `wiki page <(https://wiki.opnfv.org/display/AIR/Airship+Manifest+Creation+For+New+Sites)>`__
 Once the Genesis node is setup, and the manifests are created, user can execute deploy.sh that supports (Shipyard) actions: deploy_site and update_site. Along with the action, the deploy script also take the site name (ex: intel-pod10). The deploy.sh script is part of the opnfv-airship repository. The steps to run the deploy script are as follows.
 
--  git clone https://gerrit.opnfv.org/gerrit/airship
--  cd airship/tools
--  ./deploy.sh intel-pod10 deploy_site
+.. code: bash
+
+   git clone https://gerrit.opnfv.org/gerrit/airship
+   cd airship/tools
+   ./deploy.sh intel-pod10 deploy_site
    OR
--  ./deploy.sh intel-pod10 update_site
+   ./deploy.sh intel-pod10 update_site
 
 Keeping track of the progress
 '''''''''''''''''''''''''''''
@@ -378,9 +380,11 @@ The complete installation can take signification time - 2-3 hours, and it involv
 
 First, the genesis node is setup as single-node Kubernetes Cluster. This is followed by provisioning baremetal nodes. Once the Baremetal provisioning starts, user can use this link to check for the status:
 
-http://<IP-OF-GENESIS-NODE>:31900/MAAS/#/nodes
+.. code:: bash
 
-Ex: for Pod10 - http://10.10.100.21:31900/MAAS/#/nodes
+   http://<IP-OF-GENESIS-NODE>:31900/MAAS/#/nodes
+
+   Ex: for Pod10 - http://10.10.100.21:31900/MAAS/#/nodes
 
 The provisioning of the baremetal nodes is done in a particular order - ex: control nodes (node2 and node3 of intel-pod10) first and then the compute nodes (node4 and node5). To understand any failures in this step, user can check the logs of the drydock service in genesis-node.
 
@@ -404,19 +408,23 @@ Monitoring Ceph StatusShould be HEALTH_OK                                       
 Get services running, and describe a service                                                        kubectl get svc -n openstack and kubectl describe svc -n openstack ingress
 =================================================================================================== ==========================================================================
 
-This link https://airship-treasuremap.readthedocs.io/en/latest/troubleshooting\ `\ \_guide.html <https://airship-treasuremap.readthedocs.io/en/latest/troubleshooting_guide.html>`__ will provide all the details for trouble shooting any issues.
+The `Troubleshooting guide <https://docs.airshipit.org/treasuremap/troubleshooting_guide.html>`__ will provide all the details for trouble shooting any issues.
 
 Once the software is successfully deployed, and the deploy.sh script terminates normally, user can use the following link to access the horizon dashboard.
 
--  http://dashboard-airship.intel-pod10.opnfv.org
+.. code: bash
+
+   http://dashboard-airship.intel-pod10.opnfv.org
 
 In addition to that, users can also use these links to track the metrics and logs, respectively:
 
 Steps and procedures for installing and setting up the RI.
 Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Installer+Deployment+Guide
 
--  http://grafana-airship.intel-pod10.opnfv.org/login
--  http://kibana-airship.intel-pod10.opnfv.org/
+.. code: bash
+
+   http://grafana-airship.intel-pod10.opnfv.org/login
+   http://kibana-airship.intel-pod10.opnfv.org/
 
 Future Installers
 ~~~~~~~~~~~~~~~~~
@@ -566,7 +574,7 @@ Development Validations
 CNTT RI jobs must verify all patches before merge as defined in the best open
 source practices (see
 `OpenStack Gates <https://docs.openstack.org/infra/system-config/devstack-gate.html>`__
-or `Functest Gates <https://build.opnfv.org/ci/view/functest/job/functest-hunter-gate/142/>`__)
+or `Functest Gates <https://build.opnfv.org/ci/view/functest/>`__)
 to achieve the stability needed by CNTT. Then the deployment validations
 previously detailed must be also applied for every patch proposed in RI and
 all changes published in `Gerrit <https://gerrit.opnfv.org/>`__ must be
@@ -608,7 +616,7 @@ All OPNFV test cases part of RI development validation must follow the same
 principles to prevent falsy testing and then to avoid blocking the RI gates.
 It's worth mentioning that Functest already part of RI development validation
 conform to these best practices by running all test cases vs SUTs
-`currently CNTT compliant <https://build.opnfv.org/ci/view/functest/job/functest-hunter-gate/142/>`__.
+`currently CNTT compliant <https://build.opnfv.org/ci/view/functest/>`__.
 
 CICD Tool Chain (use of, process, and scripts)]
 -----------------------------------------------
