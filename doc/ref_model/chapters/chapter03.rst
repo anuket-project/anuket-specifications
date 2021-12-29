@@ -143,7 +143,7 @@ Attribute                 Description
 Virtual Network
 ^^^^^^^^^^^^^^^
 
-This topic is covered in `Network <#3.5>`__ section.
+This topic is covered in `Network <#network>`__ section.
 
 Availability Zone
 ^^^^^^^^^^^^^^^^^
