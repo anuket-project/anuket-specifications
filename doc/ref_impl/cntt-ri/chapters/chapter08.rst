@@ -351,7 +351,7 @@ After Installation, perform the following:
 Install
 '''''''
 
-As Airship is tooling to declaratively automate site deployment, the automation from the installer side is light. See `deploy.sh <https://github.com/opnfv/airship/blob/master/tools/deploy.sh>`__. User will need to export environment variables that correspond to the new site (keystone URL, node IPs, and so on). All these are captured in the site environment file - as described in the `wiki page <(https://wiki.opnfv.org/display/AIR/Airship+Manifest+Creation+For+New+Sites)>`__
+As Airship is tooling to declaratively automate site deployment, the automation from the installer side is light. See `deploy.sh <https://github.com/opnfv/airship/blob/master/tools/deploy.sh>`__. User will need to export environment variables that correspond to the new site (keystone URL, node IPs, and so on). All these are captured in the site environment file - as described in the `wiki page <https://wiki.opnfv.org/display/AIR/Airship+Manifest+Creation+For+New+Sites>`__
 Once the Genesis node is setup, and the manifests are created, user can execute deploy.sh that supports (Shipyard) actions: deploy_site and update_site. Along with the action, the deploy script also take the site name (ex: intel-pod10). The deploy.sh script is part of the opnfv-airship repository. The steps to run the deploy script are as follows.
 
 .. code: bash
@@ -440,9 +440,9 @@ the CNTT requirements which induces that the validation is composed of:
 -  the basic test cases as asked by the OPNFV release criteria
 -  the functional tests checking all OpenStack services and capabilities even if
    they are considered as optional in
-   `RA1 Core OpenStack Services APIs <../../../ref_arch/openstack/chapters/chapter05.md>`__
+   :doc:`RA1 Core OpenStack Services APIs <ref_arch/openstack/chapters/chapter05>`
 -  all test cases listed in
-   `RC1 TC Requirements <../../../ref_cert/RC1/chapters/chapter03.md>`__
+   :doc:`RC1 TC Requirements <ref_cert/RC1/chapters/chapter03>`
 
 Like the
 `classical Functest containers <https://functest.readthedocs.io/en/stable-hunter/testing/user/configguide/configguide.html>`__,
@@ -542,8 +542,8 @@ opnfv/functest-smoke:hunter networking-sfc    Success
 opnfv/functest-smoke:hunter tempest_barbican  Success
 =========================== ================= ==================
 
-According to `RA1 Core OpenStack Services APIs <../../../ref_arch/openstack/chapters/chapter05.md>`__
-and `RC1 TC Requirements <../../../ref_cert/RC1/chapters/chapter03.md>`__
+According to :doc:`RA1 Core OpenStack Services APIs <ref_arch/openstack/chapters/chapter05>`
+and :doc:`RC1 TC Requirements <ref_cert/RC1/chapters/chapter03>`
 the following test cases are executed at the end.
 
 ======================================= ===================== ==================
@@ -583,8 +583,8 @@ automatically voted -1 by Jenkins in case of failures.
 Only the following test cases must pass as a temporarily bypass in
 `RI gates <https://build.opnfv.org/ci/view/airship/job/airship-latest-gate/>`__ to
 allow merging the next patches. At the time writing, CNTT RI is not compliant
-with `RA1 Core OpenStack Services APIs <../../../ref_arch/openstack/chapters/chapter05.md>`__
-and then a part of the containers selected in `RC1 TC Requirements <../../../ref_cert/RC1/chapters/chapter03.md>`__
+with :doc:`RA1 Core OpenStack Services APIs <ref_arch/openstack/chapters/chapter05>`
+and then a part of the containers selected in :doc:`RC1 TC Requirements <ref_cert/RC1/chapters/chapter03>`
 cannot be executed successfully.
 
 ======================================= ================= ==================
