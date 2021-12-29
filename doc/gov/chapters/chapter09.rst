@@ -1,3 +1,5 @@
+.. _gov-ch9-adoption:
+
 Adoption
 ========
 

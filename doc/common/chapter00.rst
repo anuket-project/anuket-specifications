@@ -10,7 +10,7 @@ In 2021, the CNTT and the Open Platform for NFV (OPNFV) projects were merged to 
 Terminology and Glossary
 ------------------------
 
-The definition and intent of the terminology used throughout the documents is defined in the `Glossary <./glossary.md>`__.
+The definition and intent of the terminology used throughout the documents is defined in the :doc:`Glossary <glossary>`.
 
 Problem Statement
 -----------------
@@ -272,10 +272,10 @@ Anuket collaborates with relevant API workgroups of SDOs (such as MEF, TM Forum,
 Abbreviations
 =============
 
-Please refer to `Abbreviations <./abbreviations.md>`__ for a full list.
+Please refer to :doc:`Abbreviations <abbreviations>` for a full list.
 
 References
 ==========
 
-Please refer to `References <./references.md>`__ for a full list.
+Please refer to :doc:`References <references>` for a full list.
 

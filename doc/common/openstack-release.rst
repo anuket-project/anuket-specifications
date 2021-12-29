@@ -22,7 +22,7 @@ This section specifies events that may trigger the selection of the next OpenSta
 OpenStack Release Selection Committee
 -------------------------------------
 
-On the occurrence of any of the triggering events, the TSC shall constitute an OpenStack Release Selection Committee composed of a maximum of 7 (seven) members representing both operators and vendors. These committee members shall be from active Anuket member organisations and meet the criteria specified for “\ `Voting Representatives <../gov/chapters/chapter05.md#52-voting-representatives>`__\ ”.
+On the occurrence of any of the triggering events, the TSC shall constitute an OpenStack Release Selection Committee composed of a maximum of 7 (seven) members representing both operators and vendors. These committee members shall be from active Anuket member organisations and meet the criteria specified for Active Community Members in the actual version of the `Anuket Charter <https://wiki.anuket.io/display/HOME/Anuket+Charter>`__.
 The committee decisions shall be by consensus and no decision shall be made without at least 5 members agreeing.
 The committee may agree by unanimous agreement to adjust the OpenStack Release Selection Criteria.
 

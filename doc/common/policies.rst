@@ -23,4 +23,4 @@ Be aware the compromises and transition plans contained herein, are directly rel
 Anuket Project Technical Transition Plan
 ----------------------------------------
 
-Overall Transition Plan is explained in the Governance `Adoption <../gov/chapters/chapter09.md#9.3>`__ strategy.
+Overall Transition Plan is explained in the Governance :ref:`Adoption <gov-ch9-adoption>` strategy.
