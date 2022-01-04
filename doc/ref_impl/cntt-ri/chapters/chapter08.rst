@@ -43,8 +43,6 @@ Requirements gathering processes and steps:
 1. RA Requirements Gathering process
 2. Infra Requirements and Selection Process
 
-.. _access--connectivity:
-
 Access & Connectivity
 ---------------------
 
@@ -126,8 +124,6 @@ It is important for the generic descriptor files, apart from being generic, to b
 1. New Use-Cases: If the parameter(s) helps in creating new use-cases. Ex: Different networking scenarios.
 2. Feature: If the parameter(s) adds new feature to the installation. Ex: Security.
 3. Simplify: If the parameter(s) simplifies the auto-creation of custom manifests. Ex: Metadata.
-
-.. _opnfv-descriptor-files-1:
 
 **OPNFV Descriptor Files**
 ''''''''''''''''''''''''''
@@ -319,8 +315,6 @@ The process of publishing involves submitting the manifests to opnfv-airship ger
 
 -  A \| dashboard-airship.intel-pod10.opnfv.org \| 10.10.100.100
 
-.. _deployment-installer--install-steps:
-
 Deployment: Installer & Install Steps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -354,7 +348,7 @@ Install
 As Airship is tooling to declaratively automate site deployment, the automation from the installer side is light. See `deploy.sh <https://github.com/opnfv/airship/blob/master/tools/deploy.sh>`__. User will need to export environment variables that correspond to the new site (keystone URL, node IPs, and so on). All these are captured in the site environment file - as described in the `wiki page <https://wiki.opnfv.org/display/AIR/Airship+Manifest+Creation+For+New+Sites>`__
 Once the Genesis node is setup, and the manifests are created, user can execute deploy.sh that supports (Shipyard) actions: deploy_site and update_site. Along with the action, the deploy script also take the site name (ex: intel-pod10). The deploy.sh script is part of the opnfv-airship repository. The steps to run the deploy script are as follows.
 
-.. code: bash
+.. code:: bash
 
    git clone https://gerrit.opnfv.org/gerrit/airship
    cd airship/tools
@@ -412,7 +406,7 @@ The `Troubleshooting guide <https://docs.airshipit.org/treasuremap/troubleshooti
 
 Once the software is successfully deployed, and the deploy.sh script terminates normally, user can use the following link to access the horizon dashboard.
 
-.. code: bash
+.. code:: bash
 
    http://dashboard-airship.intel-pod10.opnfv.org
 
@@ -421,7 +415,7 @@ In addition to that, users can also use these links to track the metrics and log
 Steps and procedures for installing and setting up the RI.
 Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Installer+Deployment+Guide
 
-.. code: bash
+.. code:: bash
 
    http://grafana-airship.intel-pod10.opnfv.org/login
    http://kibana-airship.intel-pod10.opnfv.org/
@@ -624,8 +618,6 @@ CICD Tool Chain (use of, process, and scripts)]
 Placeholder to describe the CICD tool chain used in RI validations.
 
 Include flow diagram.
-
-.. _jenkins-setup--job-creation:
 
 Jenkins Setup & Job Creation
 ----------------------------
