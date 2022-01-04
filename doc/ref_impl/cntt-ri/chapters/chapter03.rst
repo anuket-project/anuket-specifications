@@ -1,5 +1,3 @@
-.. _cloud-infrastructure--vnf-target-state--specification:
-
 Cloud Infrastructure + VNF Target State & Specification
 =======================================================
 

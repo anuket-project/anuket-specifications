@@ -8,8 +8,6 @@ Introduction
 
 **may**: Requirements that are marked as *may* are considered optional. The same applies to *may not*.
 
-.. _installer-requirements-1:
-
 Requirements
 ------------
 
@@ -106,8 +104,6 @@ server information
 ~~~~~~~~~~~~~~~~~~
 
 Server information should be provided for installer, including full detail info. for each server, NIC mapping etc.
-
-.. _server-information-1:
 
 server information
 ^^^^^^^^^^^^^^^^^^

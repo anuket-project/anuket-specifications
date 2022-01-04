@@ -148,8 +148,6 @@ Examples of potential measurements and/or test scenarios for which NFR test tool
 
 Note, when it comes to NFR-tooling, the goals are to provide light-weight solutions that can be packaged within a cookbook to accelerate lab validations, agnostic to the type of hardware in the environment. This will enable third party suppliers to achieve compliance expectations for the targeted architecture.
 
-.. _traffic-generators--nic:
-
 Traffic Generators & NIC
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
