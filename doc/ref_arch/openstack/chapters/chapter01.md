@@ -5,7 +5,7 @@
 
 This Reference Architecture is focussed on OpenStack as the Virtualised Infrastructure Manager (VIM) chosen based on the criteria laid out in the [Reference Model](../../../ref_model/chapters/chapter01.md). [OpenStack](https://docs.openstack.org) has the advantage of being a mature and widely accepted open-source technology; a strong ecosystem of vendors that support it, the OpenInfra Foundation for managing the community, and, most importantly, it is widely deployed by the global operator community for both internal infrastructure and external facing products and services.  This means that the operators have existing staff with the right skill sets to support a Cloud Infrastructure ([NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-INF/001_099/001/01.01.01_60/gs_NFV-INF001v010101p.pdf)) deployment into development, test and production. Another reason to choose OpenStack is that it has a large active community of vendors and operators, which means that any code or component changes needed to support the Common Telco Cloud Infrastructure requirements can be managed through the existing project communities' processes to add and validate the required features through well-established mechanisms.
 
-## Vision
+### Vision
 
 The OpenStack-based Anuket Reference Architecture will host NFV workloads, primarily VNFs, of interest to the Anuket community.  The Reference Architecture document can be used by operators to deploy Anuket conformant infrastructure; hereafter, “conformant” denotes that the resource can satisfy tests conducted to verify conformance with this reference architecture.  
 
