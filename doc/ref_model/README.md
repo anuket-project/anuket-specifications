@@ -11,18 +11,19 @@
 ## Bundle/Version History
 
 | Bundle.Version    | Date                  | Note
-| ---               | ---                   | ---                        |
-| 1.0               | 16th July 2019        | First Release              |
-| 1.1               | 2nd August 2019       | Post Paris F2F clean up    |
-| 2.0               | 20th September 2019   | Botrange Release           |
-| 3.0-alpha         | 10th January 2020     | Snezka Release             |
-| 3.0               | 15th May 2020         | Baldy Release              |
-| 4.0               | 25th Sep 2020         | Baraque Release            |
-| 5.0               | 29th Jan 2021         | Elbrus Release             |
-| 5.1               | 8th March 2021        | Kali Release work started  |
-| 6.0               | 1 July 2021           | Kali Release work finished |
-| 6.1               | 1 July 2021           | Lakelse Release work started |
-| 7.0               | 4 January 2022      | Lakelse Release readiness |
+| ---               | ---                   | ---                            |
+| 1.0               | 16th July 2019        | First Release                  |
+| 1.1               | 2nd August 2019       | Post Paris F2F clean up        |
+| 2.0               | 20th September 2019   | Botrange Release               |
+| 3.0-alpha         | 10th January 2020     | Snezka Release                 |
+| 3.0               | 15th May 2020         | Baldy Release                  |
+| 4.0               | 25th Sep 2020         | Baraque Release                |
+| 5.0               | 29th Jan 2021         | Elbrus Release                 |
+| 5.1               | 8th March 2021        | Kali Release work started      |
+| 6.0               | 1 July 2021           | Kali Release work finished     |
+| 6.1               | 1 July 2021           | Lakelse Release work started   |
+| 7.0               | 4 January 2022        | Lakelse Release work finished  |
+
 
 ## Overall Status
 
@@ -38,6 +39,7 @@
 | Chapter 08 | Release work finished |
 | Chapter 09 | Release work finished |
 | Chapter 10 | Release work finished |
+| Appendix A | Release work finished |
 | Glossary   | Release work finished |
 
 ## Table of Contents
@@ -51,4 +53,5 @@
 * [Chapter 08 - Hybrid Multi-Cloud: Data Center to Edge](chapters/chapter08.md)
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
+* [Appendix A - Guidelines For Application Vendors](chapters/appendix-a.md)
 * [Glossary](../common/glossary.md)
