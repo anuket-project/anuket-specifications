@@ -31,8 +31,8 @@
 # Reference Conformance 2
 /doc/ref_cert/RC2/                   @walterkozlowski @steelescotr
 
-<!--- # Edge
-/doc/tech/usecases.md        @ASawwaf @walterkozlowski --->
+# Edge workstream
+# /doc/tech/usecases.md              @ASawwaf @walterkozlowski
 
 # NFG
 /doc/tech/                          @walterkozlowski @scottsteinbrueck
