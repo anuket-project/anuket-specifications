@@ -26,7 +26,7 @@ Bundle.Version Date                Note
 5.1            8th March 2021      Kali Release work started
 6.0            1 July 2021         Kali Release work finished
 6.1            1 July 2021         Lakelse Release work started
-7.0            4 January 2022      Lakelse Release readiness
+7.0            4 January 2022      Lakelse Release work finished
 ============== =================== =============================
 
 Overall Status
@@ -45,6 +45,7 @@ Chapter 07 Release work finished
 Chapter 08 Release work finished
 Chapter 09 Release work finished
 Chapter 10 Release work finished
+Appendix A Release work finished
 Glossary   Release work finished
 ========== =====================
 
