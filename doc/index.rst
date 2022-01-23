@@ -3,10 +3,16 @@ Anuket Specifications
 .. toctree::
     :maxdepth: 16
 
-    Cloud iNfrastructure Telco Taskforce (CNTT) </common/README.md>
-    Community Guidelines </gov/README.md>
-    Reference Model </ref_model/README.md>
-    Reference Architectures </ref_arch/README.md>
-    Reference Implementation </ref_impl/README.md>
-    Reference Conformance </ref_cert/README.md>
-    Vendor Implementations </ven_impl/README.md>
+    Governance & Community Guidelines </gov/index>
+    Technical Specifications </common/index>
+    Introduction </common/chapter00>
+    Reference Model </ref_model/index>
+    Reference Architectures </ref_arch/index>
+    Reference Implementation </ref_impl/index>
+    Vendor Implementations </ven_impl/index>
+    Reference Conformance </ref_cert/index>
+
+- `Terms of Reference <../GSMA_CNTT_Terms_of_Reference.pdf>`_
+- `Code of Conduct <../CODE_OF_CONDUCT.md>`_
+- `The License (Creative Commons Attribution 4.0 International) <https://creativecommons.org/licenses/by/4.0/legalcode>`_
+
