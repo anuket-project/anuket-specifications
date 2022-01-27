@@ -1,41 +1,22 @@
-[<< Back](../../kubernetes)
 
-# 6. API and Feature Testing requirements
+# API and Feature Testing requirements
 
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
-
-## Table of Contents <!-- omit in toc -->
-
-- [6. API and Feature Testing requirements](#6-api-and-feature-testing-requirements)
-  - [6.1 Introduction](#61-introduction)
-    - [6.1.1 Kubernetes feature gate policy](#611-kubernetes-feature-gate-policy)
-    - [6.1.2 Kubernetes API policy](#612-kubernetes-api-policy)
-  - [6.2 API Machinery Special Interest Group](#62-api-machinery-special-interest-group)
-  - [6.3 Apps Special Interest Group](#63-apps-special-interest-group)
-  - [6.4 Auth Special Interest Group](#64-auth-special-interest-group)
-  - [6.5 Cluster Lifecycle Special Interest Group](#65-cluster-lifecycle-special-interest-group)
-  - [6.6 Instrumentation Special Interest Group](#66-instrumentation-special-interest-group)
-  - [6.7 Network Special Interest Group](#67-network-special-interest-group)
-  - [6.8 Node Special Interest Group](#68-node-special-interest-group)
-  - [6.9 Scheduling Special Interest Group](#69-scheduling-special-interest-group)
-  - [6.10 Storage Special Interest Group](#610-storage-special-interest-group)
-
-## 6.1 Introduction
+## Introduction
 
 The CNCF has defined a
 [Testing Special Interest Group](https://github.com/kubernetes/community/blob/master/sig-testing/charter.md) to make it easier for the community to write and run tests, and to contribute, analyse and act upon test results.
 This chapter maps the requirements written in the previous chapters as mandatory Special Interest Group Features. It enforces the overall requirements traceability to testing, especially those offered for [End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md).
 The Anuket Reference Conformance (RC2) testing then matches the following Features tabs defined here.
 
-### 6.1.1 Kubernetes feature gate policy
+### Kubernetes feature gate policy
 
 [Feature gates](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) are a set of key-value pairs that describe Kubernetes features. The components of the control plane of Kubernetes Clusters can be run with different Feature Gate settings.
 
 A feature can be in Alpha, Beta or GA stage:
 
-- Alpha features are disabled by default, may be buggy, and support may be dropped
-- Beta features are enabled by default, are well tested, and support will not be dropped (although breaking API changes may happen)
-- GA features are stable, always enabled and cannot be disabled.
+* Alpha features are disabled by default, may be buggy, and support may be dropped
+* Beta features are enabled by default, are well tested, and support will not be dropped (although breaking API changes may happen)
+* GA features are stable, always enabled and cannot be disabled.
 
 The policy for RA2 to include Kubernetes features as mandatory is:
 
@@ -43,7 +24,7 @@ The policy for RA2 to include Kubernetes features as mandatory is:
 
 A list of feature gates is available [here](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/#feature-gates).
 
-### 6.1.2 Kubernetes API policy
+### Kubernetes API policy
 
 The [Kubernetes API](https://kubernetes.io/docs/reference/using-api/) supports all operations and communications between components, and external user commands.
 Everything in the Kubernetes platform is treated as an API object.
@@ -80,7 +61,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | scheduling.k8s.io            | v1                   |
 | storage.k8s.io               | v1                   |
 
-## 6.2 [API Machinery Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-api-machinery)
+## [API Machinery Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-api-machinery)
 
 | **Labels**                             | **Mandatory** | **Description** |
 |----------------------------------------|:-------------:|:----------------|
@@ -92,7 +73,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | Feature:ScopeSelectors                 | X             | Verify ResourceQuota with terminating scopes through scope selectors |
 | Feature:[StorageVersionAPI](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#storageversion-v1alpha1-internal-apiserver-k8s-io)|               |
 
-## 6.3 [Apps Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-apps)
+## [Apps Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-apps)
 
 | **Labels**                   | **Mandatory** | **Description** |
 |------------------------------|:-------------:|:----------------|
@@ -106,7 +87,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | Feature:[TaintEviction](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#taint-based-evictions)|               | All pods on the unreachable node should be marked as NotReady upon the node turn NotReady AND all pods should be evicted after eviction timeout passes |
 | Feature:[TTLAfterFinished](https://kubernetes.io/docs/concepts/workloads/controllers/ttlafterfinished/)| X             | Job should be deleted once it finishes after TTL seconds |
 
-## 6.4 [Auth Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-auth)
+## [Auth Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-auth)
 
 | **Labels**                             | **Mandatory** | **Description** |
 |----------------------------------------|:-------------:|:----------------|
@@ -118,7 +99,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | Feature:PodSecurityPolicy              |               | Should enforce the restricted policy.PodSecurityPolicy |
 | NodeFeature:FSGroup                    | X             | ServiceAccounts should set ownership and permission when RunAsUser or FsGroup is present |
 
-## 6.5 [Cluster Lifecycle Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle)
+## [Cluster Lifecycle Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle)
 
 | **Labels**              | **Mandatory** | **Description** |
 |-------------------------|:-------------:|:----------------|
@@ -126,7 +107,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | None                    | X             | Kubernetes mainstream features |
 | Feature:BootstrapTokens | X             | Should delete the token secret when the secret expired |
 
-## 6.6 [Instrumentation Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-instrumentation)
+## [Instrumentation Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-instrumentation)
 
 | **Labels**                               | **Mandatory** | **Description** |
 |------------------------------------------|:-------------:|:----------------|
@@ -139,7 +120,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | Feature:StackdriverMetadataAgent         |               | Stackdriver Monitoring should run Stackdriver Metadata Agent |
 | Feature:StackdriverMonitoring            |               | |
 
-## 6.7 [Network Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-network)
+## [Network Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-network)
 
 | **Labels**                          | **Mandatory** | **Description** |
 |-------------------------------------|:-------------:|:----------------|
@@ -161,7 +142,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | Feature:SCTP                        |               | should allow creating a basic SCTP service with pod and endpoints |
 | Feature:SCTPConnectivity            |               | Pods should function for intra-pod communication: sctp |
 
-## 6.8 [Node Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-node)
+## [Node Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-node)
 
 | **Labels**                                | **Mandatory** | **Description** |
 |-------------------------------------------|:-------------:|:----------------|
@@ -178,7 +159,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | NodeFeature:RuntimeHandler                |               | RuntimeClass should run a Pod requesting a RuntimeClass with a configured handler |
 | NodeFeature:[Sysctls](https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/)| X             | Should not launch unsafe, but not explicitly enabled sysctls on the node |
 
-## 6.9 [Scheduling Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-scheduling)
+## [Scheduling Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-scheduling)
 
 | **Labels**                            | **Mandatory** | **Description** |
 |---------------------------------------|:-------------:|:----------------|
@@ -188,7 +169,7 @@ The list of [API groups](https://kubernetes.io/docs/reference/generated/kubernet
 | Feature:[LocalStorageCapacityIsolation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) | X             | Validates local ephemeral storage resource limits of pods that are allowed to run |
 | Feature:Recreate                      |               | Run Nvidia GPU Device Plugin tests with a recreation |
 
-## 6.10 [Storage Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-storage)
+## [Storage Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-storage)
 
 | **Labels**                            | **Mandatory** | **Description**                |
 |---------------------------------------|:-------------:|:-------------------------------|
