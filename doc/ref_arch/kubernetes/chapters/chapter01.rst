@@ -81,7 +81,7 @@ The Requirements Exceptions lists the Reference Model (RM) requirements and/or R
 =============== =========== =========== ============== ========= ===========
 Ref             Name        Description Valid Until    Rationale Implication
 =============== =========== =========== ============== ========= ===========
-ra1.exc.req.001 Requirement xxx         xxxxxxxxxxxxx.          
+ra1.exc.req.001 Requirement xxx         xxxxxxxxxxxxx.
 =============== =========== =========== ============== ========= ===========
 
 Scope

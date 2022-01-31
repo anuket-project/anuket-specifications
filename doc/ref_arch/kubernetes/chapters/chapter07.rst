@@ -130,10 +130,8 @@ sec.sys.007 The Platform must implement controls enforcing separation of duties 
 Proposals & Resolution
 ----------------------
 
-.. _multi-tenancy-and-workload-isolation-with-kubernetes-1:
-
-Multi-tenancy and workload isolation with Kubernetes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Proposal: Multi-tenancy and workload isolation with Kubernetes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kubernetes is not a single cluster solution. This has been demonstrated across the industry from case studies at prominent companies like `Twitter <https://www.alibabacloud.com/blog/what-can-we-learn-from-twitters-move-to-kubernetes_595156>`__, `USA Today <https://medium.com/usa-today-network/there-and-back-again-scaling-multi-tenant-kubernetes-cluster-s-67afb437716c>`__, `Zalando <https://www.youtube.com/watch?v=LpFApeaGv7A>`__, and `Alibaba <https://www.cncf.io/blog/2019/12/12/demystifying-kubernetes-as-a-service-how-does-alibaba-cloud-manage-10000s-of-kubernetes-clusters/>`__ to the bi-annual CNCF survey that finds that the number of clusters being deployed within an organization is growing. While there are many reasons behind the multi cluster paradigm, examining the gap above we find that a multi cluster solution can address many of these problems like security and software life cycle management.
 
