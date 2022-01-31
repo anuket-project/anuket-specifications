@@ -59,15 +59,15 @@ They cover all together the API testing requirements as asked by
 The following software versions are considered here to verify OpenStack Wallaby
 selected by Anuket:
 
-| software                | version |
-|-------------------------|---------|
-| Functest                | wallaby |
-| Cinder Tempest plugin   | 1.4.0   |
-| Keystone Tempest plugin | 0.7.0   |
-| Heat Tempest plugin     | 1.2.0   |
-| Neutron Tempest plugin  | 1.4.0   |
-| Rally OpenStack         | 2.1.0   |
-| Tempest                 | 27.0.0  |
+| software                | version     |
+|-------------------------|-------------|
+| Functest                | wallaby     |
+| Cinder Tempest plugin   | 1.4.0       |
+| Keystone Tempest plugin | 0.7.0       |
+| Heat Tempest plugin     | 1.2.0       |
+| Neutron Tempest plugin  | 1.4.0       |
+| Rally OpenStack         | 2.2.1.dev11 |
+| Tempest                 | 27.0.0      |
 
 #### Identity - Keystone
 
