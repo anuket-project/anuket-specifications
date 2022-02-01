@@ -1,7 +1,7 @@
 import sphinx_material
 
-project = 'Anuket Reference Implementation for Kubernetes'
-html_title = "Anuket Reference Implementation for Kubernetes"
+project = 'Anuket Reference Architecture for Kubernetes'
+html_title = "Anuket Reference Architecture for Kubernetes"
 copyright = '2021, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 
