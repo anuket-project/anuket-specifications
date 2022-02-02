@@ -9,7 +9,7 @@
 * [Idle Pull Requests Policy](#idle)
 * [Unresolved Pull Requests Policy](#unresolved)
 
-This document is an extension to the generic [Anuket Project Operations and Procedures](https://wiki.anuket.io/display/HOME/Anuket+Project+Operations+and+Procedures) and describes contribtion rules to the Anuket specifications, that is the set of documents maintained in this repository. 
+This document is an extension to the generic [Anuket Project Operations and Procedures](https://wiki.anuket.io/display/HOME/Anuket+Project+Operations+and+Procedures) and describes contribution rules to the Anuket specifications, that are the set of documents maintained in this repository. 
 
 <a name="permissions"></a>
 ### Permission levels
@@ -48,7 +48,7 @@ Every Issue and PR should be tagged with one or more of the following labels to 
   - Relevant Milestone for the upcoming release (M1 - M6).
 - Contributors can assign an unassigned issue to themselves if they would like to work on them
 - Sub-project leads have the responsibility to assign stalling or priority issues to individuals to address them.
-- Sub-project lead may label an issue as "**Returned**" to request further information or to decide not to work on it.
+- Sub-project leads may label an issue as "**Returned**" to request further information or to decide not to work on it.
 
 <a name="prs"></a>
 ### Pull Requests
@@ -79,12 +79,12 @@ Every Issue and PR should be tagged with one or more of the following labels to 
   - Sub-project lead can request additional approvals reviews.
     - Recommendation is to use 4 approvals for complex PRs.
   - 2 business days cool off period should be applied before Final approval.
-  - Only One approval will be counted per each organization for a given PR.
+  - Only one approval will be counted per each organization for a given PR.
 - The selection of which contributor to approve a PR is made by the sub-project lead and should take those factors into consideration:
   - Contributor needs to be actively discussing the PR to be selected for approval.
 - PRs will be merged automatically online by the sub-project lead or other committers of the sub-projetc once consensus is reached and all approvals are received. 
   - Sub-projects shold have an agreed set of committers who are trusted with merging rights to the sub-projects. [CODEOWNERS](CODEOWNERS) file should contain all the committers of the sub-projects including the sub-proejct lead.
-- If sub-project lead is the person who is creating the PR, They need to request an alternate approver, preferably from the co-lead or from the contributors list.
+- If sub-project lead is the person who is creating the PR, They need to request an alternate approver, preferably from a co-lead or from the contributors list.
 - If a PR affects more than one sub-projects or areas ourside of the scope of the sub-projects the following approvals are needed:
   - From the sub-project leads of the affected sub-projects or if the PR affects no sub-projects at least 3 contributors of Anuket specifications
 
