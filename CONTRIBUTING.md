@@ -13,6 +13,7 @@ This document is an extension to the generic [Anuket Project Operations and Proc
 
 <a name="permissions"></a>
 ### Permission levels
+
 There are different permissions (levels) available for contributing into the Anuket specifications:
 - **Outside Collaborators**: This includes general public. 
   - Outside collaborators can create issues and add comments to issues and Pull Requests.
@@ -24,6 +25,7 @@ There are different permissions (levels) available for contributing into the Anu
 
 <a name="labels"></a>
 ### Labels
+
 Every Issue and PR should be tagged with one or more of the following labels to indicate their status and for the automation pipelines to apply the correct Anuket processes.
 
   - **Backlog**: The Issue will be addressed in future releases..
@@ -38,10 +40,9 @@ Every Issue and PR should be tagged with one or more of the following labels to 
 <a name="issues"></a>
 ### Issues
 
-- Issues must be correctly tagged with the correct labels and Milestone by the sub-project lead.
-  - Title needs to be in the following format [SPx Chx] (if applicable).
-    - SPx: The name of the sub-project it is targeting.
-    - Chx: The name of the chapter it is targeting (if applicable).
+- Title needs to be in the following format [SPx Chx] (if applicable).
+  - SPx: The name of the sub-project it is targeting.
+  - Chx: The name of the chapter it is targeting (if applicable).
 - Upon Creation, Issues must be correctly set with the correct **Project Name**. 
   - Project Name = Sub-project name.
 - Issues must be correctly set with the right labels and Milestone by the sub-project lead.
@@ -52,6 +53,7 @@ Every Issue and PR should be tagged with one or more of the following labels to 
 
 <a name="prs"></a>
 ### Pull Requests
+
 - PRs dealing with minor editorial changes can be raised without a corresponding Issue, but must be labelled as "Minor". Otherwise, PRs must only be created when there is an issue present and a decision to create a PR is made. 
 - A PR must reference the issue it is resolving in the description field.
    - using GitHub predefined keyword "Fixes Issue#" will automatically close the issue which the PR is resolving when it is merged.
@@ -73,7 +75,7 @@ Every Issue and PR should be tagged with one or more of the following labels to 
 ### Pull Requests Approval Process
 
 - Once a PR is created, it needs to get the following approvals before it is merged into master.
-  - From at least one of contributor for that sub-project
+  - From at least three of contributors for that sub-project
     - Approvers should be distributed equally among operators and vendors.
   - From sub-project lead (to make sure consensus is reached).
   - Sub-project lead can request additional approvals reviews.
@@ -86,7 +88,7 @@ Every Issue and PR should be tagged with one or more of the following labels to 
   - Sub-projects should have an agreed set of committers who are trusted with merging rights to the sub-projects. [CODEOWNERS](CODEOWNERS) file should contain all the committers of the sub-projects including the sub-project lead.
 - The person creating the PR cannot be an approver and should not be the person performing the merge.
 - If a PR affects more than one sub-project or areas outside of the scope of the sub-projects the following approvals are needed:
-  - From the sub-project leads of the affected sub-projects or if the PR affects no sub-projects at least 3 contributors of Anuket specifications
+  - From the sub-project leads of the affected sub-projects or if the PR affects no sub-projects at least 3 contributors active in 3 different sub-projects of Anuket specifications
 
 <p align="right"><img src="artefacts//figures/approval_process.png" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 1:</b> Approval Process</p>
