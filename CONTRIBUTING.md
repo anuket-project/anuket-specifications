@@ -83,9 +83,9 @@ Every Issue and PR should be tagged with one or more of the following labels to 
 - The selection of which contributor to approve a PR is made by the sub-project lead and should take those factors into consideration:
   - Contributor needs to be actively discussing the PR to be selected for approval.
 - PRs will be merged automatically online by the sub-project lead or other committers of the sub-projetc once consensus is reached and all approvals are received. 
-  - Sub-projects shold have an agreed set of committers who are trusted with merging rights to the sub-projects. [CODEOWNERS](CODEOWNERS) file should contain all the committers of the sub-projects including the sub-proejct lead.
-- If sub-project lead is the person who is creating the PR, They need to request an alternate approver, preferably from a co-lead or from the contributors list.
-- If a PR affects more than one sub-projects or areas ourside of the scope of the sub-projects the following approvals are needed:
+  - Sub-projects should have an agreed set of committers who are trusted with merging rights to the sub-projects. [CODEOWNERS](CODEOWNERS) file should contain all the committers of the sub-projects including the sub-project lead.
+- The person creating the PR cannot be an approver and should not be the person performing the merge.
+- If a PR affects more than one sub-project or areas outside of the scope of the sub-projects the following approvals are needed:
   - From the sub-project leads of the affected sub-projects or if the PR affects no sub-projects at least 3 contributors of Anuket specifications
 
 <p align="right"><img src="artefacts//figures/approval_process.png" alt="scope" title="Scope" width="100%"/></p>
