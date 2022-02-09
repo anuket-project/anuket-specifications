@@ -103,7 +103,7 @@ Principles
 OpenStack Reference Architecture must obey to the following set of
 principles:
 
--  `Reference Model Principles <../../../common/chapter00.md#2.0>`__
+-  `Reference Model Principles <../../../common/chapter00.md#2.0-anuket-general-principles>`__
 -  `Reference Architecture
    Principles <../../../common/chapter00.md#22-architectural-principles>`__
 
