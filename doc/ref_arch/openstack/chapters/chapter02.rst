@@ -36,7 +36,7 @@ following requirements are referenced through:
 -  Those relating to Cloud Infrastructure Management
 -  Those relating to Cloud Infrastructure Security
 
-Cloud Infrastructure Software Profile Requirements for Compute (source `RM 5.2 <../../../ref_model/chapters/chapter05.md#5.2>`__)
+Cloud Infrastructure Software Profile Requirements for Compute (source `RM 5.2 <../../../ref_model/chapters/chapter05.md#52-cloud-infrastructure-software-profiles-features-and-requirements>`__)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------+-------------+-------------+-------------+-------------+
@@ -120,7 +120,7 @@ Profile Capabilities
 
    **1** Defined in the ``.bronze`` configuration in `RM section 4.2.6
    Storage
-   Extensions <../../../ref_model/chapters/chapter04.md#4.2.6>`__\ 
+   Extensions <../../../ref_model/chapters/chapter04.md#426-storage-extensions>`__\ 
 
 Cloud Infrastructure Software Profile Extensions Requirements for Compute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -168,7 +168,7 @@ Cloud Infrastructure Software Profile Extensions Requirements for Compute
 Table 2-1b: Cloud Infrastructure Software Profile Extensions
 Requirements for Compute
 
-Cloud Infrastructure Software Profile Requirements for Networking (source `RM 5.2.3 <../../../ref_model/chapters/chapter05.md#5.2.3>`__)
+Cloud Infrastructure Software Profile Requirements for Networking (source `RM 5.2.3 <../../../ref_model/chapters/chapter05.md#523-virtual-networking>`__)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The features and configuration requirements related to virtual
@@ -293,7 +293,7 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
 Table 2-2c: Cloud Infrastructure Software Profile Extensions
 Requirements for Networking
 
-Cloud Infrastructure Software Profile Requirements for Storage (source `RM 5.2 <../../../ref_model/chapters/chapter05.md#5.2>`__)
+Cloud Infrastructure Software Profile Requirements for Storage (source `RM 5.2 <../../../ref_model/chapters/chapter05.md#52-cloud-infrastructure-software-profiles-features-and-requirements>`__)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------+-------------+-------------+-------------+-------------+
@@ -348,7 +348,8 @@ Cloud Infrastructure Software Profile Extensions Requirements for Storage
 Table 2-3b: Reference Model Requirements - Cloud Infrastructure Software
 Profile Extensions Requirements for Storage
 
-Cloud Infrastructure Hardware Profile Requirements (source `RM 5.4 <../../../ref_model/chapters/chapter05.md#5.4>`__)
+Cloud Infrastructure Hardware Profile Requirements (source `RM 5.4 <../../../ref_model/chapters/
+chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------+-------------+-------------+-------------+-------------+
@@ -427,7 +428,8 @@ Cloud Infrastructure Hardware Profile Requirements (source `RM 5.4 <../../../ref
 Table 2-4a: Reference Model Requirements - Cloud Infrastructure Hardware
 Profile Requirements
 
-Cloud Infrastructure Hardware Profile-Extensions Requirements (source `RM 5.4 <../../../ref_model/chapters/chapter05.md#5.4>`__)
+Cloud Infrastructure Hardware Profile-Extensions Requirements (source `RM 5.4 <../../../ref_model/
+chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------+-------------+-------------+-------------+-------------+
@@ -546,27 +548,27 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 | Reference        | sub-category  | Description   | Specification    |
 |                  |               |               | Reference        |
 +==================+===============+===============+==================+
-| sec.gen.001      | Hardening     | The Platform  | `RA-1 6.3.6      |
+| sec.gen.001      | Hardening     | The Platform  | `RA-1            |
 |                  |               | **must**      | “Security        |
 |                  |               | maintain the  | LCM” <./ch       |
-|                  |               | specified     | apter06.md#636-s |
+|                  |               | specified     | apter06.md#s     |
 |                  |               | c             | ecurity-lcm>`__, |
-|                  |               | onfiguration. | `RA-1 7.2 “Cloud |
+|                  |               | onfiguration. | `RA-1 “Cloud     |
 |                  |               |               | Infrastructure   |
 |                  |               |               | and VIM          |
 |                  |               |               | configuration    |
 |                  |               |               | manageme         |
 |                  |               |               | nt” <./chapter07 |
-|                  |               |               | .md#72-cloud-inf |
+|                  |               |               | .md#cloud-inf    |
 |                  |               |               | rastructure-and- |
 |                  |               |               | vim-configuratio |
 |                  |               |               | n-management>`__ |
 +------------------+---------------+---------------+------------------+
-| sec.gen.002      | Hardening     | All systems   | `RA-1 6.3.1.3    |
+| sec.gen.002      | Hardening     | All systems   | `RA-1            |
 |                  |               | part of Cloud | “Password        |
 |                  |               | I             | policy” <./chapt |
-|                  |               | nfrastructure | er06.md#6313-pas |
-|                  |               | **must**      | sword-policy>`__ |
+|                  |               | nfrastructure | er06.md#password |
+|                  |               | **must**      | -policy>`__      |
 |                  |               | support       |                  |
 |                  |               | password      |                  |
 |                  |               | hardening as  |                  |
@@ -580,21 +582,21 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | assword-polic |                  |
 |                  |               | y-guide/>`__. |                  |
 +------------------+---------------+---------------+------------------+
-| sec.gen.003      | Hardening     | All servers   | `RA-1 6.3.1.1    |
+| sec.gen.003      | Hardening     | All servers   | `RA-1            |
 |                  |               | part of Cloud | “Server boot     |
 |                  |               | I             | hardening        |
 |                  |               | nfrastructure | ” <./chapter06.m |
-|                  |               | **must**      | d#6311-server-bo |
-|                  |               | support a     | ot-hardening>`__ |
+|                  |               | **must**      | d#server-boot-   |
+|                  |               | support a     | hardening>`__ |
 |                  |               | root of trust |                  |
 |                  |               | and secure    |                  |
 |                  |               | boot.         |                  |
 +------------------+---------------+---------------+------------------+
-| sec.gen.004      | Hardening     | The Operating | `RA-1 6.3.1.4    |
+| sec.gen.004      | Hardening     | The Operating | `RA-1            |
 |                  |               | Systems of    | “Function and    |
 |                  |               | all the       | Software         |
 |                  |               | servers part  | ” <./chapter06.m |
-|                  |               | of Cloud      | d#6314-function- |
+|                  |               | of Cloud      | d#function-      |
 |                  |               | I             | and-software>`__ |
 |                  |               | nfrastructure |                  |
 |                  |               | **must** be   |                  |
@@ -628,18 +630,18 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | System (NIST  |                  |
 |                  |               | SP 800-123).  |                  |
 +------------------+---------------+---------------+------------------+
-| sec.gen.005      | Hardening     | The Platform  | `RA-1 6.3.1.2    |
+| sec.gen.005      | Hardening     | The Platform  | `RA-1            |
 |                  |               | **must**      | “System          |
 |                  |               | support       | Access” <./cha   |
-|                  |               | Operating     | pter06.md#6312-s |
+|                  |               | Operating     | pter06.md#s      |
 |                  |               | System level  | ystem-access>`__ |
 |                  |               | access        |                  |
 |                  |               | control.      |                  |
 +------------------+---------------+---------------+------------------+
-| sec.gen.006      | Hardening     | The Platform  | `RA-1 6.3.1.2    |
+| sec.gen.006      | Hardening     | The Platform  | `RA-1            |
 |                  |               | **must**      | “System          |
 |                  |               | support       | Access” <./cha   |
-|                  |               | Secure        | pter06.md#6312-s |
+|                  |               | Secure        | pter06.md#s      |
 |                  |               | logging.      | ystem-access>`__ |
 |                  |               | Logging with  |                  |
 |                  |               | root account  |                  |
@@ -650,52 +652,52 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | are not       |                  |
 |                  |               | required.     |                  |
 +------------------+---------------+---------------+------------------+
-| sec.gen.007      | Hardening     | All servers   | `RA-1 6.3.7.6    |
+| sec.gen.007      | Hardening     | All servers   | `RA-1            |
 |                  |               | part of Cloud | “Security Logs   |
 |                  |               | I             | Time             |
 |                  |               | nfrastructure | Synchronisat     |
 |                  |               | **must** be   | ion” <./chapter0 |
-|                  |               | Time          | 6.md#6376-securi |
+|                  |               | Time          | 6.md#securi      |
 |                  |               | synchronised  | ty-logs-time-syn |
 |                  |               | with          | chronisation>`__ |
 |                  |               | authenticated |                  |
 |                  |               | Time service. |                  |
 +------------------+---------------+---------------+------------------+
-| sec.gen.008      | Hardening     | All servers   | `RA-1 6.3.1.5    |
+| sec.gen.008      | Hardening     | All servers   | `RA-1            |
 |                  |               | part of Cloud | “Patches” <      |
-|                  |               | I             | ./chapter06.md#6 |
-|                  |               | nfrastructure | 315-patches>`__, |
-|                  |               | **must** be   | `RA-1 6.3.6      |
+|                  |               | I             | ./chapter06.md#  |
+|                  |               | nfrastructure | patches>`__,     |
+|                  |               | **must** be   | `RA-1            |
 |                  |               | regularly     | “Security        |
 |                  |               | updated to    | LCM” <./c        |
-|                  |               | address       | hapter06.md#636- |
+|                  |               | address       | hapter06.md#     |
 |                  |               | security      | security-lcm>`__ |
 |                  |               | vul           |                  |
 |                  |               | nerabilities. |                  |
 +------------------+---------------+---------------+------------------+
-| sec.gen.009      | Hardening     | The Platform  | `RA-1 6.3.3.2    |
+| sec.gen.009      | Hardening     | The Platform  | `RA-1            |
 |                  |               | **must**      | “Integrity of    |
 |                  |               | support       | OpenStack        |
 |                  |               | software      | components       |
 |                  |               | integrity     | configur         |
 |                  |               | protection    | ation” <./chapte |
-|                  |               | and           | r06.md#6332-inte |
+|                  |               | and           | r06.md#inte      |
 |                  |               | verification. | grity-of-opensta |
 |                  |               |               | ck-components-co |
 |                  |               |               | nfiguration>`__, |
-|                  |               |               | `RA-1 6.3.5      |
+|                  |               |               | `RA-1            |
 |                  |               |               | “Image           |
 |                  |               |               | Security” <./cha |
-|                  |               |               | pter06.md#635-im |
+|                  |               |               | pter06.md#im     |
 |                  |               |               | age-security>`__ |
 +------------------+---------------+---------------+------------------+
-| sec.gen.010      | Hardening     | The Cloud     | `RA-1 6.3.3.3    |
+| sec.gen.010      | Hardening     | The Cloud     | `RA-1            |
 |                  |               | I             | “Confidentiality |
 |                  |               | nfrastructure | and Integrity of |
 |                  |               | **must**      | tenant           |
 |                  |               | support       | dat              |
 |                  |               | encrypted     | a” <./chapter06. |
-|                  |               | storage, for  | md#6333-confiden |
+|                  |               | storage, for  | md#confiden      |
 |                  |               | example,      | tiality-and-inte |
 |                  |               | block, object | grity-of-tenant- |
 |                  |               | and file      | data-secmon012-a |
@@ -731,10 +733,10 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | in            |                  |
 |                  |               | frastructure. |                  |
 +------------------+---------------+---------------+------------------+
-| sec.gen.013      | Hardening     | The Platform  | `RA-1 6.3.1.2    |
+| sec.gen.013      | Hardening     | The Platform  | `RA-1            |
 |                  |               | **must**      | “System          |
 |                  |               | ensure that   | Access” <./cha   |
-|                  |               | only          | pter06.md#6312-s |
+|                  |               | only          | pter06.md#s      |
 |                  |               | authorised    | ystem-access>`__ |
 |                  |               | actors have   |                  |
 |                  |               | logical       |                  |
@@ -743,10 +745,10 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | in            |                  |
 |                  |               | frastructure. |                  |
 +------------------+---------------+---------------+------------------+
-| sec.gen.015      | Hardening     | Any change to | `RA-1 6.3.6      |
+| sec.gen.015      | Hardening     | Any change to | `RA-1            |
 |                  |               | the Platform  | “Security        |
 |                  |               | **must** be   | LCM” <./c        |
-|                  |               | logged as a   | hapter06.md#636- |
+|                  |               | logged as a   | hapter06.md#     |
 |                  |               | security      | security-lcm>`__ |
 |                  |               | event, and    |                  |
 |                  |               | the logged    |                  |
@@ -771,9 +773,9 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 | Reference     | sub-category  | Description   | Specification      |
 |               |               |               | Reference          |
 +===============+===============+===============+====================+
-| sec.sys.001   | Access        | The Platform  | `RA-1 6.3.2.4      |
+| sec.sys.001   | Access        | The Platform  | `RA-1              |
 |               |               | **must**      | “RBAC” <./chapter0 |
-|               |               | support       | 6.md#6324-rbac>`__ |
+|               |               | support       | 6.md#rbac>`__      |
 |               |               | authenticated |                    |
 |               |               | and secure    |                    |
 |               |               | access to     |                    |
@@ -781,21 +783,21 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | command line  |                    |
 |               |               | interfaces    |                    |
 +---------------+---------------+---------------+--------------------+
-| sec.sys.002   | Access        | The Platform  | `RA-1 6.3.4        |
+| sec.sys.002   | Access        | The Platform  | `RA-1              |
 |               |               | **must**      | “Workload          |
 |               |               | support       | Security” <./ch    |
-|               |               | Traffic       | apter06.md#634-wor |
+|               |               | Traffic       | apter06.md#wor     |
 |               |               | Filtering for | kload-security>`__ |
 |               |               | workloads     |                    |
 |               |               | (for example, |                    |
 |               |               | Firewall).    |                    |
 +---------------+---------------+---------------+--------------------+
-| sec.sys.003   | Access        | The Platform  | `RA-1 6.3.3.1      |
+| sec.sys.003   | Access        | The Platform  | `RA-1              |
 |               |               | **must**      | “Confidentiality   |
 |               |               | support       | and Integrity of   |
 |               |               | Secure and    | communications”    |
-|               |               | encrypted     | <./chapter06.md#63 |
-|               |               | co            | 31-confidentiality |
+|               |               | encrypted     | <./chapter06.md#   |
+|               |               | co            | confidentiality    |
 |               |               | mmunications, | -and-integrity-of- |
 |               |               | and           | communications>`__ |
 |               |               | co            |                    |
@@ -804,12 +806,12 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | of network    |                    |
 |               |               | traffic.      |                    |
 +---------------+---------------+---------------+--------------------+
-| sec.sys.004   | Access        | The Cloud     | `RA-1 6.3.3.1      |
+| sec.sys.004   | Access        | The Cloud     | `RA-1              |
 |               |               | I             | “Confidentiality   |
 |               |               | nfrastructure | and Integrity of   |
 |               |               | **must**      | communications”    |
-|               |               | support       | <./chapter06.md#63 |
-|               |               | au            | 31-confidentiality |
+|               |               | support       | <./chapter06.md#   |
+|               |               | au            | confidentiality    |
 |               |               | thentication, | -and-integrity-of- |
 |               |               | integrity and | communications>`__ |
 |               |               | co            |                    |
@@ -818,19 +820,19 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | network       |                    |
 |               |               | channels.     |                    |
 +---------------+---------------+---------------+--------------------+
-| sec.sys.005   | Access        | The Cloud     | `RA-1 6.3.3.1      |
+| sec.sys.005   | Access        | The Cloud     | `RA-1              |
 |               |               | I             | “Confidentiality   |
 |               |               | nfrastructure | and Integrity of   |
 |               |               | **must**      | communications”    |
-|               |               | segregate the | <./chapter06.md#63 |
-|               |               | underlay and  | 31-confidentiality |
+|               |               | segregate the | <./chapter06.md#   |
+|               |               | underlay and  | confidentiality    |
 |               |               | overlay       | -and-integrity-of- |
 |               |               | networks.     | communications>`__ |
 +---------------+---------------+---------------+--------------------+
-| sec.sys.006   | Access        | The Cloud     | `RA-1 6.3.2.1      |
+| sec.sys.006   | Access        | The Cloud     | `RA-1              |
 |               |               | I             | “Identity          |
 |               |               | nfrastructure | Security” <./cha   |
-|               |               | **must** be   | pter06.md#6321-ide |
+|               |               | **must** be   | pter06.md#ide      |
 |               |               | able to       | ntity-security>`__ |
 |               |               | utilise the   |                    |
 |               |               | Cloud         |                    |
@@ -842,9 +844,9 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | management    |                    |
 |               |               | capabilities. |                    |
 +---------------+---------------+---------------+--------------------+
-| sec.sys.007   | Access        | The Platform  | `RA-1 6.3.2.4      |
+| sec.sys.007   | Access        | The Platform  | `RA-1              |
 |               |               | **must**      | “RBAC” <./chapter0 |
-|               |               | implement     | 6.md#6324-rbac>`__ |
+|               |               | implement     | 6.md#rbac>`__      |
 |               |               | controls      |                    |
 |               |               | enforcing     |                    |
 |               |               | separation of |                    |
@@ -859,10 +861,10 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | Access        |                    |
 |               |               | Control).     |                    |
 +---------------+---------------+---------------+--------------------+
-| sec.sys.008   | Access        | The Platform  | `RA-1 6.3.4        |
+| sec.sys.008   | Access        | The Platform  | `RA-1              |
 |               |               | **must** be   | “Workload          |
 |               |               | able to       | Security” <./ch    |
-|               |               | assign the    | apter06.md#634-wor |
+|               |               | assign the    | apter06.md#wor     |
 |               |               | Entities that | kload-security>`__ |
 |               |               | comprise the  |                    |
 |               |               | tenant        |                    |
@@ -934,11 +936,11 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | directly or   |                    |
 |               |               | indirectly.   |                    |
 +---------------+---------------+---------------+--------------------+
-| sec.sys.011   | Access        | The Platform  | `RA-1 6.3.1.2      |
+| sec.sys.011   | Access        | The Platform  | `RA-1              |
 |               |               | **must not**  | “System            |
 |               |               | reuse the     | Access” <.         |
-|               |               | same          | /chapter06.md#6312 |
-|               |               | a             | -system-access>`__ |
+|               |               | same          | /chapter06.md#     |
+|               |               | a             | system-access>`__  |
 |               |               | uthentication |                    |
 |               |               | credentials   |                    |
 |               |               | (e.g., key    |                    |
@@ -986,11 +988,11 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | points, APIs, |                    |
 |               |               | etc.).        |                    |
 +---------------+---------------+---------------+--------------------+
-| sec.sys.016   | Access        | Login access  | `RA-1 6.3.6        |
+| sec.sys.016   | Access        | Login access  | `RA-1              |
 |               |               | to the        | “Security          |
 |               |               | Platform’s    | LCM”               |
-|               |               | components    | <./chapter06.md#63 |
-|               |               | **must** be   | 6-security-lcm>`__ |
+|               |               | components    | <./chapter06.md#   |
+|               |               | **must** be   | security-lcm>`__   |
 |               |               | through       |                    |
 |               |               | encrypted     |                    |
 |               |               | protocols     |                    |
@@ -1005,12 +1007,12 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | networks are  |                    |
 |               |               | recommended   |                    |
 +---------------+---------------+---------------+--------------------+
-| sec.sys.017   | Access        | The Platform  | `RA-1 6.3.3.1      |
+| sec.sys.017   | Access        | The Platform  | `RA-1              |
 |               |               | **must**      | “Confidentiality   |
 |               |               | provide the   | and Integrity of   |
 |               |               | capability of | communications”    |
-|               |               | using digital | <./chapter06.md#63 |
-|               |               | certificates  | 31-confidentiality |
+|               |               | using digital | <./chapter06.md#   |
+|               |               | certificates  | confidentiality    |
 |               |               | that comply   | -and-integrity-of- |
 |               |               | with X.509    | communications>`__ |
 |               |               | standards     |                    |
@@ -1054,12 +1056,12 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 | Reference    | sub-category      | Description  | Specification     |
 |              |                   |              | Reference         |
 +==============+===================+==============+===================+
-| sec.ci.001   | Confiden          | The Platform | `RA-1 6.3.3       |
+| sec.ci.001   | Confiden          | The Platform | `RA-1             |
 |              | tiality/Integrity | **must**     | “Confidentiality  |
 |              |                   | support      | and               |
 |              |                   | Con          | Integrity” <.     |
-|              |                   | fidentiality | /chapter06.md#633 |
-|              |                   | and          | -confidentiality- |
+|              |                   | fidentiality | /chapter06.md#    |
+|              |                   | and          | confidentiality-  |
 |              |                   | Integrity of | and-integrity>`__ |
 |              |                   | data at rest |                   |
 |              |                   | and in       |                   |
@@ -1164,10 +1166,10 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 |              |                   | Lifecycle    |                   |
 |              |                   | Management.  |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.ci.008   | Confidentiality   | The Cloud    | `RA-1 6.3.4       |
+| sec.ci.008   | Confidentiality   | The Cloud    | `RA-1             |
 |              |                   | In           | “Workload         |
 |              |                   | frastructure | Security” <./chap |
-|              |                   | **must**     | ter06.md#634-work |
+|              |                   | **must**     | ter06.md#work     |
 |              |                   | support      | load-security>`__ |
 |              |                   | tenant       |                   |
 |              |                   | networks     |                   |
@@ -1184,10 +1186,10 @@ Workload Security (source `RM 7.9.4 <../../../ref_model/chapters/chapter07.md#79
 | Reference    | sub-category      | Description  | Specification     |
 |              |                   |              | Reference         |
 +==============+===================+==============+===================+
-| sec.wl.001   | Workload          | The Platform | `RA-1 6.3.4       |
+| sec.wl.001   | Workload          | The Platform | `RA-1             |
 |              |                   | **must**     | “Workload         |
 |              |                   | support      | Security” <./chap |
-|              |                   | Workload     | ter06.md#634-work |
+|              |                   | Workload     | ter06.md#work     |
 |              |                   | placement    | load-security>`__ |
 |              |                   | policy.      |                   |
 +--------------+-------------------+--------------+-------------------+
@@ -1209,18 +1211,18 @@ Workload Security (source `RM 7.9.4 <../../../ref_model/chapters/chapter07.md#79
 |              |                   | Platform     |                   |
 |              |                   | Module).     |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.wl.003   | Workload          | The Platform | `RA-1 6.3.4       |
+| sec.wl.003   | Workload          | The Platform | `RA-1             |
 |              |                   | **must**     | “Workload         |
 |              |                   | support      | Security” <./chap |
-|              |                   | secure       | ter06.md#634-work |
+|              |                   | secure       | ter06.md#work     |
 |              |                   | provisioning | load-security>`__ |
 |              |                   | of           |                   |
 |              |                   | Workloads.   |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.wl.004   | Workload          | The Platform | `RA-1 6.3.4       |
+| sec.wl.004   | Workload          | The Platform | `RA-1             |
 |              |                   | **must**     | “Workload         |
 |              |                   | support      | Security” <./chap |
-|              |                   | Location     | ter06.md#634-work |
+|              |                   | Location     | ter06.md#work     |
 |              |                   | assertion    | load-security>`__ |
 |              |                   | (for         |                   |
 |              |                   | mandated     |                   |
@@ -1240,10 +1242,10 @@ Workload Security (source `RM 7.9.4 <../../../ref_model/chapters/chapter07.md#79
 |              |                   | n-production |                   |
 |              |                   | Workloads.   |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.wl.006   | Workload          | The Platform | `RA-1 6.3.4       |
+| sec.wl.006   | Workload          | The Platform | `RA-1             |
 |              |                   | **must**     | “Workload         |
 |              |                   | support the  | Security” <./chap |
-|              |                   | separation   | ter06.md#634-work |
+|              |                   | separation   | ter06.md#work     |
 |              |                   | of Workloads | load-security>`__ |
 |              |                   | based on     |                   |
 |              |                   | their        |                   |
@@ -1276,16 +1278,16 @@ Image Security (source `RM 7.9.5 <../../../ref_model/chapters/chapter07.md#795-i
 | Reference    | sub-category      | Description  | Specification     |
 |              |                   |              | Reference         |
 +==============+===================+==============+===================+
-| sec.img.001  | Image             | Images from  | `RA-1 6.3.5       |
+| sec.img.001  | Image             | Images from  | `RA-1             |
 |              |                   | untrusted    | “Image            |
 |              |                   | sources      | Security” <./c    |
-|              |                   | **must not** | hapter06.md#635-i |
+|              |                   | **must not** | hapter06.md#i     |
 |              |                   | be used.     | mage-security>`__ |
 +--------------+-------------------+--------------+-------------------+
-| sec.img.002  | Image             | Images       | `RA-1 6.3.5       |
+| sec.img.002  | Image             | Images       | `RA-1             |
 |              |                   | **must** be  | “Image            |
 |              |                   | scanned to   | Security” <./c    |
-|              |                   | be           | hapter06.md#635-i |
+|              |                   | be           | hapter06.md#i     |
 |              |                   | maintained   | mage-security>`__ |
 |              |                   | free from    |                   |
 |              |                   | known        |                   |
@@ -1305,32 +1307,32 @@ Image Security (source `RM 7.9.5 <../../../ref_model/chapters/chapter07.md#795-i
 |              |                   | authorised   |                   |
 |              |                   | to run them. |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.img.004  | Image             | Images       | `RA-1 6.3.3.2     |
+| sec.img.004  | Image             | Images       | `RA-1             |
 |              |                   | **must**     | “Confidentiality  |
 |              |                   | only be      | and Integrity of  |
 |              |                   | accessible   | com               |
 |              |                   | to           | munications” <./c |
-|              |                   | authorised   | hapter06.md#6332- |
+|              |                   | authorised   | hapter06.md#      |
 |              |                   | actors.      | integrity-of-open |
 |              |                   |              | stack-components- |
 |              |                   |              | configuration>`__ |
 +--------------+-------------------+--------------+-------------------+
-| sec.img.005  | Image             | Image        | `RA-1 6.3.3.2     |
+| sec.img.005  | Image             | Image        | `RA-1             |
 |              |                   | Registries   | “Confidentiality  |
 |              |                   | **must**     | and Integrity of  |
 |              |                   | only be      | com               |
 |              |                   | accessible   | munications” <./c |
-|              |                   | to           | hapter06.md#6332- |
+|              |                   | to           | hapter06.md#      |
 |              |                   | authorised   | integrity-of-open |
 |              |                   | actors.      | stack-components- |
 |              |                   |              | configuration>`__ |
 +--------------+-------------------+--------------+-------------------+
-| sec.img.006  | Image             | Image        | `RA-1 6.3.3.2     |
+| sec.img.006  | Image             | Image        | `RA-1             |
 |              |                   | Registries   | “Confidentiality  |
 |              |                   | **must**     | and Integrity of  |
 |              |                   | only be      | com               |
 |              |                   | accessible   | munications” <./c |
-|              |                   | over         | hapter06.md#6332- |
+|              |                   | over         | hapter06.md#      |
 |              |                   | networks     | integrity-of-open |
 |              |                   | that enforce | stack-components- |
 |              |                   | aut          | configuration>`__ |
@@ -1340,19 +1342,19 @@ Image Security (source `RM 7.9.5 <../../../ref_model/chapters/chapter07.md#795-i
 |              |                   | conf         |                   |
 |              |                   | identiality. |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.img.007  | Image             | Image        | `RA-1 6.3.3.2     |
+| sec.img.007  | Image             | Image        | `RA-1             |
 |              |                   | registries   | “Confidentiality  |
 |              |                   | **must** be  | and Integrity of  |
 |              |                   | clear of     | comm              |
 |              |                   | vulnerable   | unications” <./ch |
-|              |                   | and out of   | apter06.md#6332-i |
+|              |                   | and out of   | apter06.md#i      |
 |              |                   | date         | ntegrity-of-opens |
 |              |                   | versions.    | tack-components-c |
 |              |                   |              | onfiguration>`__, |
-|              |                   |              | `RA-1 6.3.5       |
+|              |                   |              | `RA-1             |
 |              |                   |              | “Image            |
 |              |                   |              | Security” <./c    |
-|              |                   |              | hapter06.md#635-i |
+|              |                   |              | hapter06.md#i     |
 |              |                   |              | mage-security>`__ |
 +--------------+-------------------+--------------+-------------------+
 | sec.img.008  | Image             | Images       |                   |
@@ -1380,12 +1382,12 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 | Reference    | sub-category      | Description  | Specification     |
 |              |                   |              | Reference         |
 +==============+===================+==============+===================+
-| sec.lcm.001  | LCM               | The Platform | `RA-1 6.3.7       |
+| sec.lcm.001  | LCM               | The Platform | `RA-1             |
 |              |                   | **must**     | “Monitoring and   |
 |              |                   | support      | Security          |
 |              |                   | Secure       | Audit” <.         |
-|              |                   | P            | /chapter06.md#637 |
-|              |                   | rovisioning, | -monitoring-and-s |
+|              |                   | P            | /chapter06.md#    |
+|              |                   | rovisioning, | monitoring-and-s  |
 |              |                   | A            | ecurity-audit>`__ |
 |              |                   | vailability, |                   |
 |              |                   | and          |                   |
@@ -1405,11 +1407,11 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | other        |                   |
 |              |                   | attacks.     |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.lcm.002  | LCM               | The Cloud    | `RA-1 6.3.6       |
+| sec.lcm.002  | LCM               | The Cloud    | `RA-1             |
 |              |                   | Operator     | “Security         |
 |              |                   | **must** use | LCM” <.           |
-|              |                   | management   | /chapter06.md#636 |
-|              |                   | protocols    | -security-lcm>`__ |
+|              |                   | management   | /chapter06.md#    |
+|              |                   | protocols    |  security-lcm>`__ |
 |              |                   | limiting     |                   |
 |              |                   | security     |                   |
 |              |                   | risk such as |                   |
@@ -1419,12 +1421,12 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | and TLS v1.2 |                   |
 |              |                   | or higher.   |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.lcm.003  | LCM               | The Cloud    | `RA-1 6.3.7       |
+| sec.lcm.003  | LCM               | The Cloud    | `RA-1             |
 |              |                   | Operator     | “Monitoring and   |
 |              |                   | **must**     | Security          |
 |              |                   | implement    | Audit” <.         |
-|              |                   | and strictly | /chapter06.md#637 |
-|              |                   | follow       | -monitoring-and-s |
+|              |                   | and strictly | /chapter06.md#    |
+|              |                   | follow       | monitoring-and-s  |
 |              |                   | change       | ecurity-audit>`__ |
 |              |                   | management   |                   |
 |              |                   | processes    |                   |
@@ -1444,22 +1446,22 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | control on   |                   |
 |              |                   | hardware.    |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.lcm.005  | LCM               | Platform     | `RA-1 6.3.7       |
+| sec.lcm.005  | LCM               | Platform     | `RA-1             |
 |              |                   | **must**     | “Monitoring and   |
 |              |                   | provide logs | Security          |
 |              |                   | and these    | Audit” <.         |
-|              |                   | logs must be | /chapter06.md#637 |
-|              |                   | monitored    | -monitoring-and-s |
+|              |                   | logs must be | /chapter06.md#    |
+|              |                   | monitored    | monitoring-and-s  |
 |              |                   | for          | ecurity-audit>`__ |
 |              |                   | anomalous    |                   |
 |              |                   | behaviour.   |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.lcm.006  | LCM               | The Platform | `RA-1 6.3.3.3     |
+| sec.lcm.006  | LCM               | The Platform | `RA-1             |
 |              |                   | **must**     | “Confidentiality  |
 |              |                   | verify the   | and Integrity of  |
 |              |                   | integrity of | tenant            |
 |              |                   | all Resource | data” <./chapt    |
-|              |                   | management   | er06.md#6333-conf |
+|              |                   | management   | er06.md#conf      |
 |              |                   | requests.    | identiality-and-i |
 |              |                   |              | ntegrity-of-tenan |
 |              |                   |              | t-data-secmon012- |
@@ -1526,10 +1528,10 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | IP block,    |                   |
 |              |                   | and timing). |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.lcm.011  | LCM               | The Platform | `RA-1 6.3.1.5     |
+| sec.lcm.011  | LCM               | The Platform | `RA-1             |
 |              |                   | **must**     | “Patches          |
 |              |                   | implement    | ” <./chapter06.md |
-|              |                   | Security     | #6315-patches>`__ |
+|              |                   | Security     | #patches>`__      |
 |              |                   | life cycle   |                   |
 |              |                   | management   |                   |
 |              |                   | processes    |                   |
@@ -1544,11 +1546,11 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | frastructure |                   |
 |              |                   | software.    |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.lcm.012  | LCM               | The Platform | `RA-1 6.3.7.2     |
+| sec.lcm.012  | LCM               | The Platform | `RA-1             |
 |              |                   | **must** log | “What to          |
 |              |                   | any access   | Log” <.           |
-|              |                   | privilege    | /chapter06.md#637 |
-|              |                   | escalation.  | 2-what-to-log--wh |
+|              |                   | privilege    | /chapter06.md#    |
+|              |                   | escalation.  | what-to-log--wh |
 |              |                   |              | at-not-to-log>`__ |
 +--------------+-------------------+--------------+-------------------+
 
@@ -1567,15 +1569,15 @@ can trigger alerts and notifications for appropriate action.
 | Reference    | sub-category      | Description  | Specification     |
 |              |                   |              | Reference         |
 +==============+===================+==============+===================+
-| sec.mon.001  | Monitoring/Audit  | Platform     | `RA-1 6.3.7.1     |
+| sec.mon.001  | Monitoring/Audit  | Platform     | `RA-1             |
 |              |                   | **must**     | “Creating         |
 |              |                   | provide logs | logs” <./ch       |
-|              |                   | and these    | apter06.md#6371-c |
+|              |                   | and these    | apter06.md#c      |
 |              |                   | logs must be | reating-logs>`__, |
-|              |                   | regularly    | `RA-1 6.3.7.4     |
+|              |                   | regularly    | `RA-1             |
 |              |                   | monitored    | “Required         |
 |              |                   | for events   | Fields” <./cha    |
-|              |                   | of interest. | pter06.md#6374-re |
+|              |                   | of interest. | pter06.md#re      |
 |              |                   | The logs     | quired-fields>`__ |
 |              |                   | **must**     |                   |
 |              |                   | contain the  |                   |
@@ -1597,30 +1599,30 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | destination) |                   |
 |              |                   | involved.    |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.002  | Monitoring        | Security     | `RA-1 6.3.7.6     |
+| sec.mon.002  | Monitoring        | Security     | `RA-1             |
 |              |                   | logs         | “Security Logs    |
 |              |                   | **must** be  | Time              |
 |              |                   | time         | Synchron          |
 |              |                   | s            | isation” <./chapt |
-|              |                   | ynchronised. | er06.md#6376-secu |
+|              |                   | ynchronised. | er06.md#secu      |
 |              |                   |              | rity-logs-time-sy |
 |              |                   |              | nchronisation>`__ |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.003  | Monitoring        | The Platform | `RA-1 6.3.7.6     |
+| sec.mon.003  | Monitoring        | The Platform | `RA-1             |
 |              |                   | **must** log | “Security Logs    |
 |              |                   | all changes  | Time              |
 |              |                   | to time      | Synchron          |
 |              |                   | server       | isation” <./chapt |
-|              |                   | source,      | er06.md#6376-secu |
+|              |                   | source,      | er06.md#secu      |
 |              |                   | time, date   | rity-logs-time-sy |
 |              |                   | and time     | nchronisation>`__ |
 |              |                   | zones.       |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.004  | Audit             | The Platform | `RA-1 6.3.6       |
+| sec.mon.004  | Audit             | The Platform | `RA-1             |
 |              |                   | **must**     | “Security         |
 |              |                   | secure and   | LCM” <.           |
-|              |                   | protect      | /chapter06.md#636 |
-|              |                   | Audit logs   | -security-lcm>`__ |
+|              |                   | protect      | /chapter06.md#    |
+|              |                   | Audit logs   | security-lcm>`__  |
 |              |                   | (containing  |                   |
 |              |                   | sensitive    |                   |
 |              |                   | information) |                   |
@@ -1628,52 +1630,52 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | in-transit   |                   |
 |              |                   | and at rest. |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.005  | Monitoring/Audit  | The Platform | `RA-1 6.3.3.2     |
+| sec.mon.005  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Confidentiality  |
 |              |                   | Monitor and  | and Integrity of  |
 |              |                   | Audit        | comm              |
 |              |                   | various      | unications” <./ch |
-|              |                   | behaviours   | apter06.md#6332-i |
+|              |                   | behaviours   | apter06.md#i      |
 |              |                   | of           | ntegrity-of-opens |
 |              |                   | connection   | tack-components-c |
 |              |                   | and login    | onfiguration>`__, |
-|              |                   | attempts to  | `RA-1 6.3.7.2     |
+|              |                   | attempts to  | `RA-1             |
 |              |                   | detect       | “What to log,     |
 |              |                   | access       | what not to       |
 |              |                   | attacks and  | log” <.           |
-|              |                   | potential    | /chapter06.md#637 |
-|              |                   | access       | 2-what-to-log--wh |
+|              |                   | potential    | /chapter06.md#    |
+|              |                   | access       | what-to-log--wh   |
 |              |                   | attempts and | at-not-to-log>`__ |
 |              |                   | take         |                   |
 |              |                   | corrective   |                   |
 |              |                   | actions      |                   |
 |              |                   | accordingly  |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.006  | Monitoring/Audit  | The Platform | `RA-1 6.3.3.2     |
+| sec.mon.006  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Integrity of     |
 |              |                   | Monitor and  | OpenStack         |
 |              |                   | Audit        | components        |
 |              |                   | operations   | con               |
 |              |                   | by           | figuration” <./ch |
-|              |                   | authorised   | apter06.md#6332-i |
+|              |                   | authorised   | apter06.md#i      |
 |              |                   | account      | ntegrity-of-opens |
 |              |                   | access after | tack-components-c |
 |              |                   | login to     | onfiguration>`__, |
-|              |                   | detect       | `RA-1 6.3.7       |
+|              |                   | detect       | `RA-1             |
 |              |                   | malicious    | “Monitoring and   |
 |              |                   | operational  | Security          |
 |              |                   | activity and | Audit” <.         |
-|              |                   | take         | /chapter06.md#637 |
-|              |                   | corrective   | -monitoring-and-s |
+|              |                   | take         | /chapter06.md#    |
+|              |                   | corrective   | monitoring-and-s  |
 |              |                   | actions.     | ecurity-audit>`__ |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.007  | Monitoring/Audit  | The Platform | `RA-1 6.3.3.2     |
+| sec.mon.007  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Integrity of     |
 |              |                   | Monitor and  | OpenStack         |
 |              |                   | Audit        | components        |
 |              |                   | security     | co                |
 |              |                   | parameter    | nfiguration” <./c |
-|              |                   | co           | hapter06.md#6332- |
+|              |                   | co           | hapter06.md#      |
 |              |                   | nfigurations | integrity-of-open |
 |              |                   | for          | stack-components- |
 |              |                   | compliance   | configuration>`__ |
@@ -1681,12 +1683,12 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | security     |                   |
 |              |                   | policies.    |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.008  | Monitoring/Audit  | The Platform | `RA-1 6.3.3.1     |
+| sec.mon.008  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Confidentiality  |
 |              |                   | Monitor and  | and Integrity of  |
 |              |                   | Audit        | com               |
 |              |                   | externally   | munications” <./c |
-|              |                   | exposed      | hapter06.md#6331- |
+|              |                   | exposed      | hapter06.md#      |
 |              |                   | interfaces   | confidentiality-a |
 |              |                   | for illegal  | nd-integrity-of-c |
 |              |                   | access       | ommunications>`__ |
@@ -1697,30 +1699,30 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | hardening    |                   |
 |              |                   | measures.    |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.009  | Monitoring/Audit  | The Platform | `RA-1 6.3.3.2     |
+| sec.mon.009  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Confidentiality  |
 |              |                   | Monitor and  | and Integrity of  |
 |              |                   | Audit        | comm              |
 |              |                   | service for  | unications” <./ch |
-|              |                   | various      | apter06.md#6332-i |
+|              |                   | various      | apter06.md#i      |
 |              |                   | attacks      | ntegrity-of-opens |
 |              |                   | (malformed   | tack-components-c |
 |              |                   | messages,    | onfiguration>`__, |
-|              |                   | signalling   | `RA-1 6.3.7       |
+|              |                   | signalling   | `RA-1             |
 |              |                   | flooding and | “Monitoring and   |
 |              |                   | replaying,   | Security          |
 |              |                   | etc.) and    | Audit” <.         |
-|              |                   | take         | /chapter06.md#637 |
-|              |                   | corrective   | -monitoring-and-s |
+|              |                   | take         | /chapter06.md#    |
+|              |                   | corrective   | monitoring-and-s |
 |              |                   | actions      | ecurity-audit>`__ |
 |              |                   | accordingly. |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.010  | Monitoring/Audit  | The Platform | `RA-1 6.3.7       |
+| sec.mon.010  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Monitoring and   |
 |              |                   | Monitor and  | Security          |
 |              |                   | Audit        | Audit” <.         |
-|              |                   | running      | /chapter06.md#637 |
-|              |                   | processes to | -monitoring-and-s |
+|              |                   | running      | /chapter06.md#    |
+|              |                   | processes to | monitoring-and-s  |
 |              |                   | detect       | ecurity-audit>`__ |
 |              |                   | unexpected   |                   |
 |              |                   | or           |                   |
@@ -1731,10 +1733,10 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | actions      |                   |
 |              |                   | accordingly. |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.011  | Monitoring/Audit  | The Platform | `RA-1 6.3.7.1     |
+| sec.mon.011  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Creating         |
 |              |                   | Monitor and  | logs” <./c        |
-|              |                   | Audit logs   | hapter06.md#6371- |
+|              |                   | Audit logs   | hapter06.md#      |
 |              |                   | from         | creating-logs>`__ |
 |              |                   | in           |                   |
 |              |                   | frastructure |                   |
@@ -1749,12 +1751,12 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | actions      |                   |
 |              |                   | accordingly. |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.012  | Monitoring/Audit  | The Platform | `RA-1 6.3.3.3     |
+| sec.mon.012  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Confidentiality  |
 |              |                   | Monitor and  | and Integrity of  |
 |              |                   | Audit        | tenant            |
 |              |                   | Traffic      | data” <./chapt    |
-|              |                   | patterns and | er06.md#6333-conf |
+|              |                   | patterns and | er06.md#conf      |
 |              |                   | volumes to   | identiality-and-i |
 |              |                   | prevent      | ntegrity-of-tenan |
 |              |                   | malware      | t-data-secmon012- |
@@ -1781,12 +1783,12 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | back door    |                   |
 |              |                   | entries).    |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.015  | Monitoring        | The Platform | `RA-1 6.3.7       |
+| sec.mon.015  | Monitoring        | The Platform | `RA-1             |
 |              |                   | **must**     | “Monitoring and   |
 |              |                   | ensure that  | Security          |
 |              |                   | the          | Audit” <.         |
-|              |                   | Monitoring   | /chapter06.md#637 |
-|              |                   | systems are  | -monitoring-and-s |
+|              |                   | Monitoring   | /chapter06.md#    |
+|              |                   | systems are  | monitoring-and-s  |
 |              |                   | never        | ecurity-audit>`__ |
 |              |                   | starved of   |                   |
 |              |                   | resources    |                   |
@@ -1799,10 +1801,10 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | configurable |                   |
 |              |                   | threshold.   |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.017  | Audit             | The Platform | `RA-1 6.3.1.5     |
+| sec.mon.017  | Audit             | The Platform | `RA-1             |
 |              |                   | **must**     | “Patches          |
 |              |                   | audit        | ” <./chapter06.md |
-|              |                   | systems for  | #6315-patches>`__ |
+|              |                   | systems for  | #patches>`__      |
 |              |                   | any missing  |                   |
 |              |                   | security     |                   |
 |              |                   | patches and  |                   |
@@ -1810,11 +1812,11 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | appropriate  |                   |
 |              |                   | actions.     |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.018  | Monitoring        | The          | `RA-1 6.3.7.3     |
+| sec.mon.018  | Monitoring        | The          | `RA-1             |
 |              |                   | Platform,    | “Where to         |
 |              |                   | starting     | Log” <./          |
-|              |                   | from         | chapter06.md#6373 |
-|              |                   | ini          | -where-to-log>`__ |
+|              |                   | from         | chapter06.md#     |
+|              |                   | ini          | where-to-log>`__  |
 |              |                   | tialisation, |                   |
 |              |                   | **must**     |                   |
 |              |                   | collect and  |                   |
@@ -1827,11 +1829,11 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | external     |                   |
 |              |                   | system.      |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.019  | Monitoring        | The          | `RA-1 6.3.7.2     |
+| sec.mon.019  | Monitoring        | The          | `RA-1             |
 |              |                   | Platform’s   | “What to          |
 |              |                   | components   | Log” <.           |
-|              |                   | **must not** | /chapter06.md#637 |
-|              |                   | include an   | 2-what-to-log--wh |
+|              |                   | **must not** | /chapter06.md#    |
+|              |                   | include an   | what-to-log--wh   |
 |              |                   | au           | at-not-to-log>`__ |
 |              |                   | thentication |                   |
 |              |                   | credential,  |                   |
@@ -1841,10 +1843,10 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | even if      |                   |
 |              |                   | encrypted.   |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.020  | Monitoring/Audit  | The          | `RA-1 6.3.7.5     |
+| sec.mon.020  | Monitoring/Audit  | The          | `RA-1             |
 |              |                   | Platform’s   | “Data             |
 |              |                   | logging      | Retention <./ch   |
-|              |                   | system       | apter06.md#6375-d |
+|              |                   | system       | apter06.md#d      |
 |              |                   | **must**     | ata-retention>`__ |
 |              |                   | support the  |                   |
 |              |                   | storage of   |                   |
@@ -1855,11 +1857,11 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | period of    |                   |
 |              |                   | time.        |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.mon.021  | Monitoring        | The Platform | `RA-1 6.3.7.3     |
+| sec.mon.021  | Monitoring        | The Platform | `RA-1             |
 |              |                   | **must**     | “Where to         |
 |              |                   | store        | Log” <./          |
-|              |                   | security     | chapter06.md#6373 |
-|              |                   | events       | -where-to-log>`__ |
+|              |                   | security     | chapter06.md#     |
+|              |                   | events       | where-to-log>`__  |
 |              |                   | locally if   |                   |
 |              |                   | the external |                   |
 |              |                   | logging      |                   |
@@ -2097,6 +2099,7 @@ Runtime Defence and Monitoring Stage
 Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapter07.md#7910-compliance-with-standards>`__)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+
 +-----------+-------------------+---------------------+---------------+
 | Reference | sub-category      | Description         | Specification |
 |           |                   |                     | Reference     |
@@ -2142,16 +2145,16 @@ General Requirements
 | ce |                  |                          |                  |
 +====+==================+==========================+==================+
 | ge | Open source      | The Architecture         | `RA-1            |
-| n. |                  | **must** use OpenStack   | 5.3 <./chap      |
-| os |                  | APIs.                    | ter05.md#5.3>`__ |
-| t. |                  |                          |                  |
-| 01 |                  |                          |                  |
+| n. |                  | **must** use OpenStack   | <./chap          |
+| os |                  | APIs.                    | ter05.md#        |
+| t. |                  |                          | consolidated-set |
+| 01 |                  |                          | -of-apis>`__     | 
 +----+------------------+--------------------------+------------------+
 | ge | Open source      | The Architecture         | `RA-1            |
-| n. |                  | **must** support dynamic | 5.3              |
-| os |                  | request and              |  <./chapter05.md |
-| t. |                  | configuration of virtual | #53-consolidated |
-| 02 |                  | resources (compute,      | -set-of-apis>`__ |
+| n. |                  | **must** support dynamic |  <./chapter05.md |   
+| os |                  | request and              | #consolidated    |  
+| t. |                  | configuration of virtual | -set-of-apis>`__ |
+| 02 |                  | resources (compute,      |                  |
 |    |                  | network, storage)        |                  |
 |    |                  | through OpenStack APIs.  |                  |
 +----+------------------+--------------------------+------------------+
@@ -2163,11 +2166,11 @@ General Requirements
 |    |                  | continued availability   |                  |
 |    |                  | of running workloads.    |                  |
 +----+------------------+--------------------------+------------------+
-| ge | Availability     | The Architecture         | `RA-1 4.2        |
+| ge | Availability     | The Architecture         | `RA-1            |
 | n. |                  | **must** provide High    | “Underlying      |
 | av |                  | Availability for         | Resour           |
 | l. |                  | OpenStack components.    | ces” <./chapter0 |
-| 01 |                  |                          | 4.md#42-underlyi |
+| 01 |                  |                          | 4.md#underlyi    |
 |    |                  |                          | ng-resources>`__ |
 +----+------------------+--------------------------+------------------+
 
@@ -2177,23 +2180,23 @@ Infrastructure Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----+-------------------+-----------------------------+--------------+
-| R  | sub-category      | Description                 | S            |
+| R  | sub-category      | Description                 | Specification|
 | ef |                   |                             | pecification |
 | er |                   |                             | Reference    |
 | en |                   |                             |              |
 | ce |                   |                             |              |
 +====+===================+=============================+==============+
 | in | Compute           | The Architecture **must**   | `RA-1        |
-| f. |                   | provide compute resources   | 3.3.1.4      |
-| co |                   | for instances.              | “Cloud       |
-| m. |                   |                             | Workload     |
-| 01 |                   |                             | Services”    |
-|    |                   |                             | <./chapter03 |
-|    |                   |                             | .md#3314-clo |
+| f. |                   | provide compute resources   | “Cloud       |
+| co |                   | for instances.              | Workload     |
+| m. |                   |                             | Services”    |
+| 01 |                   |                             | <./chapter03 |
+|    |                   |                             | .md#clo      |
 |    |                   |                             | ud-workload- |
 |    |                   |                             | services>`__ |
+|    |                   |                             |              |
 +----+-------------------+-----------------------------+--------------+
-| in | Compute           | The Architecture **must**   | `RA-1 4.4.1. |
+| in | Compute           | The Architecture **must**   | `RA-1        |
 | f. |                   | be able to support multiple | “Support for |
 | co |                   | CPU type options to support | Cloud        |
 | m. |                   | various infrastructure      | In           |
@@ -2201,9 +2204,14 @@ Infrastructure Requirements
 |    |                   | Performance).               | Profiles and |
 |    |                   |                             | flavors” <   |
 |    |                   |                             | ./chapter04. |
-|    |                   |                             | md#4.4.1>`__ |
+|    |                   |                             | md#support-  |
+|    |                   |                             | for-cloud-   |
+|    |                   |                             | infrastructu |
+|    |                   |                             | re-profiles- |
+|    |                   |                             | and-flavors  |
+|    |                   |                             | >`__         |
 +----+-------------------+-----------------------------+--------------+
-| in | Compute           | The Architecture **must**   | `RA-1 4.4.1. |
+| in | Compute           | The Architecture **must**   | `RA-1        |
 | f. |                   | support Hardware Platforms  | “Support for |
 | co |                   | with NUMA capabilities.     | Cloud        |
 | m. |                   |                             | In           |
@@ -2211,9 +2219,14 @@ Infrastructure Requirements
 |    |                   |                             | Profiles and |
 |    |                   |                             | flavors” <   |
 |    |                   |                             | ./chapter04. |
-|    |                   |                             | md#4.4.1>`__ |
+|    |                   |                             | md#support-  |
+|    |                   |                             | for-cloud-   |
+|    |                   |                             | infrastructu |
+|    |                   |                             | re-profiles- |
+|    |                   |                             | and-flavors  |
+|    |                   |                             | >`__         |
 +----+-------------------+-----------------------------+--------------+
-| in | Compute           | The Architecture **must**   | `RA-1 4.4.1. |
+| in | Compute           | The Architecture **must**   | `RA-1        |
 | f. |                   | support CPU Pinning of the  | “Support for |
 | co |                   | vCPUs of an instance.       | Cloud        |
 | m. |                   |                             | In           |
@@ -2221,32 +2234,37 @@ Infrastructure Requirements
 |    |                   |                             | Profiles and |
 |    |                   |                             | flavors” <   |
 |    |                   |                             | ./chapter04. |
-|    |                   |                             | md#4.4.1>`__ |
+|    |                   |                             | md#support-  |
+|    |                   |                             | for-cloud-   |
+|    |                   |                             | infrastructu |
+|    |                   |                             | re-profiles- |
+|    |                   |                             | and-flavors  |
+|    |                   |                             | >`__         |
 +----+-------------------+-----------------------------+--------------+
-| in | Compute           | The Architecture **must**   | `RA-1 3.3.3. |
+| in | Compute           | The Architecture **must**   | `RA-1        |
 | f. |                   | support different hardware  | “Host        |
 | co |                   | configurations to support   | aggregates   |
 | m. |                   | various infrastructure      | providing    |
 | 07 |                   | profiles (Basic and High    | resource     |
 |    |                   | Performance).               | poo          |
 |    |                   |                             | ling” <./cha |
-|    |                   |                             | pter03.md#33 |
-|    |                   |                             | 3-host-aggre |
+|    |                   |                             | pter03.md#   |
+|    |                   |                             |   host-aggre |
 |    |                   |                             | gates-provid |
 |    |                   |                             | ing-resource |
 |    |                   |                             | -pooling>`__ |
 +----+-------------------+-----------------------------+--------------+
 | in | Compute           | The Architecture **must**   | `RA-1        |
-| f. |                   | support allocating certain  | 4.2.2.7      |
-| co |                   | number of host cores for    | “Reservation |
-| m. |                   | all non-tenant workloads    | of Compute   |
-| 08 |                   | such as for OpenStack       | Node         |
-|    |                   | services. SMT threads can   | cores        |
-|    |                   | be allocated to individual  | ” <./chapter |
-|    |                   | OpenStack services or their | 04.md#4227-r |
-|    |                   | components. `Dedicating     | eservation-o |
-|    |                   | host cores to certain       | f-compute-no |
-|    |                   | workloads (e.g., OpenStack  | de-cores>`__ |
+| f. |                   | support allocating certain  | “Reservation |
+| co |                   | number of host cores for    | of Compute   |
+| m. |                   | all non-tenant workloads    | Node         |
+| 08 |                   | such as for OpenStack       | cores        |
+|    |                   | services. SMT threads can   | ” <./chapter |
+|    |                   | be allocated to individual  | md#r         |
+|    |                   | OpenStack services or their | eservation-o |
+|    |                   | components. `Dedicating     | f-compute-no |
+|    |                   | host cores to certain       | de-cores>`__ |
+|    |                   | workloads (e.g., OpenStack  |              |
 |    |                   | services) <https://docs.o   |              |
 |    |                   | penstack.org/nova/latest/co |              |
 |    |                   | nfiguration/config.html#com |              |
@@ -2259,98 +2277,96 @@ Infrastructure Requirements
 |    |                   | min/cpu-topologies.html>`__ |              |
 +----+-------------------+-----------------------------+--------------+
 | in | Compute           | The Architecture **must**   | `RA-1        |
-| f. |                   | ensure that the host cores  | 4.2.2.7      |
-| co |                   | assigned to non-tenant and  | “Reservation |
+| f. |                   | ensure that the host cores  | “Reser       |
+| co |                   | assigned to non-tenant and  | vation       |
 | m. |                   | tenant workloads are SMT    | of Compute   |
 | 09 |                   | aware: that is, a host core | Node         |
 |    |                   | and its associated SMT      | cores        |
 |    |                   | threads are either all      | ” <./chapter |
-|    |                   | assigned to non-tenant      | 04.md#4227-r |
+|    |                   | assigned to non-tenant      | 04.md#r      |
 |    |                   | workloads or all assigned   | eservation-o |
 |    |                   | to tenant workloads.        | f-compute-no |
 |    |                   |                             | de-cores>`__ |
 |    |                   |                             | and `RA-1    |
-|    |                   |                             | 4.2.2.8      |
-|    |                   |                             | “Pinned and  |
+|    |                   |                             | “Pinned      |
+|    |                   |                             | and          |
 |    |                   |                             | Unpinned     |
 |    |                   |                             | CPUs” <      |
 |    |                   |                             | ./chapter04. |
-|    |                   |                             | md#4228-pinn |
+|    |                   |                             | md#pinn      |
 |    |                   |                             | ed-and-unpin |
 |    |                   |                             | ned-cpus>`__ |
 +----+-------------------+-----------------------------+--------------+
 | in | Storage           | The Architecture **must**   | `RA-1        |
-| f. |                   | provide remote (not         | 3.4.2.3.     |
-| st |                   | directly attached to the    | “Stora       |
-| g. |                   | host) Block storage for     | ge” <./chapt |
-| 01 |                   | Instances.                  | er03.md#3423 |
-|    |                   |                             | -storage>`__ |
+| f. |                   | provide remote (not         | “Stora       |    |
+| st |                   | directly attached to the    | ge” <./chapt |
+| g. |                   | host) Block storage for     | er03.md#     |
+| 01 |                   | Instances.                  | storage>`__  |
 +----+-------------------+-----------------------------+--------------+
 | in | Storage           | The Architecture **must**   | `RA-1        |
-| f. |                   | provide Object storage for  | 4.3.1.4      |
-| st |                   | Instances. Operators        | “S           |
-| g. |                   | **may** choose not to       | wift” <./cha |
-| 02 |                   | implement Object Storage    | pter04.md#43 |
-|    |                   | but must be cognizant of    | 14-swift>`__ |
+| f. |                   | provide Object storage for  |  “S          |
+| st |                   | Instances. Operators        | wift” <./cha |
+| g. |                   | **may** choose not to       | pter04.md#   |
+| 02 |                   | implement Object Storage    |  swift>`__   |
+|    |                   | but must be cognizant of    |              |
 |    |                   | the risk of “Compliant      |              |
 |    |                   | VNFs” failing in their      |              |
 |    |                   | environment.                |              |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   | `RA-1 5.2.5. |
+| in | Network           | The Architecture **must**   | `RA-1        |
 | f. |                   | provide virtual network     | “Neut        |
 | nt |                   | interfaces to instances.    | ron” <./chap |
-| w. |                   |                             | ter05.md#525 |
-| 01 |                   |                             | -neutron>`__ |
+| w. |                   |                             | ter05.md#    |
+| 01 |                   |                             | neutron>`__  |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   | `RA-1 3.2.5. |
+| in | Network           | The Architecture **must**   | `RA-1        |
 | f. |                   | include capabilities for    | “Virtual     |
 | nt |                   | integrating SDN controllers | Networking – |
 | w. |                   | to support provisioning of  | 3rd party    |
 | 02 |                   | network services, from the  | SDN          |
 |    |                   | OpenStack Neutron service,  | solu         |
 |    |                   | such as networking of VTEPs | tion” <./cha |
-|    |                   | to the Border Edge based    | pter03.md#32 |
-|    |                   | VRFs.                       | 5-virtual-ne |
+|    |                   | to the Border Edge based    | pter03.md#   |
+|    |                   | VRFs.                       | virtual-ne   |
 |    |                   |                             | tworking--3r |
 |    |                   |                             | d-party-sdn- |
 |    |                   |                             | solution>`__ |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   | `RA-1 4.2.3. |
+| in | Network           | The Architecture **must**   | `RA-1        |
 | f. |                   | support low latency and     | “Network     |
 | nt |                   | high throughput traffic     | Fabric” <.   |
 | w. |                   | needs.                      | /chapter04.m |
-| 03 |                   |                             | d#423-networ |
+| 03 |                   |                             | d#networ     |
 |    |                   |                             | k-fabric>`__ |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   | `RA-1 4.2.3. |
+| in | Network           | The Architecture **must**   | `RA-1        |
 | f. |                   | allow for East/West tenant  | “Network     |
 | nt |                   | traffic within the cloud    | Fabric” <.   |
 | w. |                   | (via tunnelled              | /chapter04.m |
-| 05 |                   | encapsulation overlay such  | d#423-networ |
+| 05 |                   | encapsulation overlay such  | d#networ     |
 |    |                   | as VXLAN or Geneve).        | k-fabric>`__ |
 +----+-------------------+-----------------------------+--------------+
 | in | Network           | The Architecture **must**   | `RA-1        |
-| f. |                   | support network             | 3.4.2.2.     |
-| nt |                   | `resiliency                 | “Netwo       |
-| w. |                   |  <../../../common/glossary. | rk” <./chapt |
-| 07 |                   | md#cloud-platform-abstracti | er03.md#3422 |
-|    |                   | on-related-terminology>`__. | -network>`__ |
+| f. |                   | support network             | “Netwo       |
+| nt |                   | `resiliency                 | rk” <./chapt |
+| w. |                   |  <../../../common/glossary. | er03.md#     |
+| 07 |                   | md#cloud-platform-abstracti |-network>`__  | 
+|    |                   | on-related-terminology>`__. |              |
 +----+-------------------+-----------------------------+--------------+
 | in | Network           | The Cloud Infrastructure    | `RA-1        |
-| f. |                   | Network Fabric **must** be  | 3.4.2.2.     |
-| nt |                   | capable of enabling highly  | “Netwo       |
-| w. |                   | available (Five 9’s or      | rk” <./chapt |
-| 10 |                   | better) Cloud               | er03.md#3422 |
-|    |                   | Infrastructure.             | -network>`__ |
+| f. |                   | Network Fabric **must** be  | “Netwo       |     
+| nt |                   | capable of enabling highly  | rk” <./chapt |
+| w. |                   | available (Five 9’s or      | er03.md#     |
+| 10 |                   | better) Cloud               | -network>`__ |
+|    |                   | Infrastructure.             |              |
 +----+-------------------+-----------------------------+--------------+
 | in | Network           | The Architecture **must**   | `RA-1        |
-| f. |                   | support multiple networking | 4.2.3.4.     |
-| nt |                   | options for Cloud           | “Neutron     |
-| w. |                   | Infrastructure to support   | ML2-plugin   |
-| 15 |                   | various infrastructure      | I            |
-|    |                   | profiles (Basic and High    | ntegration”  |
-|    |                   | Performance).               | <./chapter04 |
-|    |                   |                             | .md#4234-neu |
+| f. |                   | support multiple networking | “Neutron     |
+| nt |                   | options for Cloud           | ML2-plugin   |
+| w. |                   | Infrastructure to support   | I            |
+| 15 |                   | various infrastructure      | ntegration”  |
+|    |                   | profiles (Basic and High    | <./chapter04 |
+|    |                   | Performance).               | .md#neu      |
 |    |                   |                             | tron-ml2-int |
 |    |                   |                             | egration>`__ |
 |    |                   |                             | and          |
@@ -2383,7 +2399,7 @@ VIM Requirements
 | en |                    |                            |             |
 | ce |                    |                            |             |
 +====+====================+============================+=============+
-| vi | General            | The Architecture **must**  | `RA-1 3.2.  |
+| vi | General            | The Architecture **must**  | `RA-1       |
 | m. |                    | allow infrastructure       | “Consumable |
 | 01 |                    | resource sharing.          | Inf         |
 |    |                    |                            | rastructure |
@@ -2392,33 +2408,30 @@ VIM Requirements
 |    |                    |                            | Serv        |
 |    |                    |                            | ices” <./ch |
 |    |                    |                            | apter03.md# |
-|    |                    |                            | 32-consumab |
+|    |                    |                            | consumab    |
 |    |                    |                            | le-infrastr |
 |    |                    |                            | ucture-reso |
 |    |                    |                            | urces-and-s |
 |    |                    |                            | ervices>`__ |
 +----+--------------------+----------------------------+-------------+
 | vi | General            | The Architecture **must**  | `RA-1       |
-| m. |                    | allow VIM to discover and  | 5.2.7.      |
-| 03 |                    | manage Cloud               | “           |
-|    |                    | Infrastructure resources.  | Placement”  |
-|    |                    |                            | <./chapter0 |
-|    |                    |                            | 5.md#527-pl |
+| m. |                    | allow VIM to discover and  | “           |           
+| 03 |                    | manage Cloud               | Placement”  |
+|    |                    | Infrastructure resources.  | <./chapter0 |
+|    |                    |                            | 5.md#pl     |
 |    |                    |                            | acement>`__ |
 +----+--------------------+----------------------------+-------------+
 | vi | General            | The Architecture **must**  | `RA-1       |
-| m. |                    | include image repository   | 4.3.1.2.    |
-| 05 |                    | management.                | “Glance     |
-|    |                    |                            | ” <./chapte |
-|    |                    |                            | r04.md#4312 |
+| m. |                    | include image repository   | “Glance     |
+| 05 |                    | management.                | ” <./chapte |
+|    |                    |                            | r04.md#     |
 |    |                    |                            | -glance>`__ |
 +----+--------------------+----------------------------+-------------+
 | vi | General            | The Architecture **must**  | `RA-1       |
-| m. |                    | support multi-tenancy.     | 3.2.1.      |
-| 07 |                    |                            | “Multi-Te   |
-|    |                    |                            | nancy” <./c |
+| m. |                    | support multi-tenancy.     | “Multi-Te   |
+| 07 |                    |                            | nancy” <./c |  
 |    |                    |                            | hapter03.md |
-|    |                    |                            | #321-multi- |
+|    |                    |                            | #multi-     |
 |    |                    |                            | tenancy-exe |
 |    |                    |                            | cution-envi |
 |    |                    |                            | ronment>`__ |
@@ -2444,69 +2457,69 @@ Interfaces & APIs Requirements
 | ere |              |                              | Reference       |
 | nce |              |                              |                 |
 +=====+==============+==============================+=================+
-| i   | API          | The Architecture **must**    | `RA-1 5.2.1     |
+| i   | API          | The Architecture **must**    | `RA-1           |
 | nt. |              | provide APIs to access the   | “Keystone” <.   |
-| api |              | authentication service and   | /chapter05.md#5 |
-| .01 |              | the associated mandatory     | 21-keystone>`__ |
+| api |              | authentication service and   | /chapter05.md#  |
+| .01 |              | the associated mandatory     | keystone>`__    |
 |     |              | features detailed in chapter |                 |
 |     |              | 5.                           |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1 5.2.2     |
+| i   | API          | The Architecture **must**    | `RA-1           |
 | nt. |              | provide APIs to access the   | “Glance”        |
 | api |              | image management service and | <./chapter05.md |
-| .02 |              | the associated mandatory     | #522-glance>`__ |
+| .02 |              | the associated mandatory     | #glance>`__     |
 |     |              | features detailed in chapter |                 |
 |     |              | 5.                           |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1 5.2.3     |
+| i   | API          | The Architecture **must**    | `RA-1           |
 | nt. |              | provide APIs to access the   | “Cinder”        |
 | api |              | block storage management     | <./chapter05.md |
-| .03 |              | service and the associated   | #523-cinder>`__ |
+| .03 |              | service and the associated   | #cinder>`__     |
 |     |              | mandatory features detailed  |                 |
 |     |              | in chapter 5.                |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1 5.2.4     |
+| i   | API          | The Architecture **must**    | `RA-1           |
 | nt. |              | provide APIs to access the   | “Swift”         |
 | api |              | object storage management    |  <./chapter05.m |
-| .04 |              | service and the associated   | d#524-swift>`__ |
+| .04 |              | service and the associated   | d#swift>`__     |
 |     |              | mandatory features detailed  |                 |
 |     |              | in chapter 5.                |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1 5.2.5     |
+| i   | API          | The Architecture **must**    | `RA-1           |
 | nt. |              | provide APIs to access the   | “Neutron” <     |
 | api |              | network management service   | ./chapter05.md# |
-| .05 |              | and the associated mandatory | 525-neutron>`__ |
+| .05 |              | and the associated mandatory | neutron>`__     |
 |     |              | features detailed in chapter |                 |
 |     |              | 5.                           |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1 5.2.6     |
+| i   | API          | The Architecture **must**    | `RA-1           |
 | nt. |              | provide APIs to access the   | “Nova           |
 | api |              | compute resources management | ” <./chapter05. |
-| .06 |              | service and the associated   | md#526-nova>`__ |
+| .06 |              | service and the associated   | md#nova>`__     |
 |     |              | mandatory features detailed  |                 |
 |     |              | in chapter 5.                |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1 4.3.1.9   |
+| i   | API          | The Architecture **must**    | `RA-1           |
 | nt. |              | provide GUI access to tenant | “Horizon” <.    |
-| api |              | facing cloud platform core   | /chapter04.md#4 |
-| .07 |              | services except at Edge/Far  | 319-horizon>`__ |
+| api |              | facing cloud platform core   | /chapter04.md#  |
+| .07 |              | services except at Edge/Far  | horizon>`__     |
 |     |              | Edge clouds.                 |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1 5.2.7.    |
+| i   | API          | The Architecture **must**    | `RA-1           |
 | nt. |              | provide APIs needed to       | “Placement” <./ |
-| api |              | discover and manage Cloud    | chapter05.md#52 |
-| .08 |              | Infrastructure resources.    | 7-placement>`__ |
+| api |              | discover and manage Cloud    | chapter05.md#   |
+| .08 |              | Infrastructure resources.    | placement>`__   |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1 5.2.8     |
+| i   | API          | The Architecture **must**    | `RA-1           |
 | nt. |              | provide APIs to access the   | “Heat           |
 | api |              | orchestration service.       | ” <./chapter05. |
-| .09 |              |                              | md#528-heat>`__ |
+| .09 |              |                              | md#heat>`__     |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture must expose | `RA-1 5.2 Core  |
+| i   | API          | The Architecture must expose | `RA-1 Core      |
 | nt. |              | the latest version and       | OpenStack       |
 | api |              | microversion of the APIs for | Services        |
 | .10 |              | the given Anuket OpenStack   | APIs <./cha     |
-|     |              | release for each of the      | pter05.md#52-co |
+|     |              | release for each of the      | pter05.md#co    |
 |     |              | OpenStack core services.     | re-openstack-se |
 |     |              |                              | rvices-apis>`__ |
 +-----+--------------+------------------------------+-----------------+
@@ -2523,13 +2536,13 @@ Tenant Requirements
 | en |                   |                    |                       |
 | ce |                   |                    |                       |
 +====+===================+====================+=======================+
-| tn | General           | The Architecture   | `RA-1 4.3.1.9         |
+| tn | General           | The Architecture   | `RA-1                 |
 | t. |                   | **must** support   | “Horizon” <./chapter0 |
-| ge |                   | self-service       | 4.md#4319-horizon>`__ |
-| n. |                   | dashboard (GUI)    | and `3.3.1.4 Cloud    |
+| ge |                   | self-service       | 4.md#horizon>`__      |
+| n. |                   | dashboard (GUI)    | and "Cloud            |
 | 01 |                   | and APIs for users | Workload              |
-|    |                   | to deploy,         | Services <./cha       |
-|    |                   | configure and      | pter03.md#3314-cloud- |
+|    |                   | to deploy,         | Services" <./cha       |
+|    |                   | configure and      | pter03.md#cloud-      |
 |    |                   | manage their       | workload-services>`__ |
 |    |                   | workloads.         |                       |
 +----+-------------------+--------------------+-----------------------+
@@ -2705,7 +2718,7 @@ Infrastructure Recommendations
 +-----+----------+--------------------------------+-------------------+
 | i   | Storage  | The Architecture **should**    | `RA-1 “Virtual    |
 | nf. |          | provide local Block storage    | Storage” <./ch    |
-| stg |          | for Instances.                 | apter03.md#323-vi |
+| stg |          | for Instances.                 | apter03.md#vi     |   
 | .10 |          |                                | rtual-storage>`__ |
 +-----+----------+--------------------------------+-------------------+
 | i   | Network  | The Architecture **should**    |                   |
@@ -2745,10 +2758,10 @@ Infrastructure Recommendations
 | ntw |          | for Cloud Infrastructure       |                   |
 | .17 |          | internal networks.             |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Acce     | The Architecture **should**    | `RA-1 3.2.6.      |
+| i   | Acce     | The Architecture **should**    | `RA-1             |
 | nf. | leration | support Application Specific   | “Acceleration” <. |
-| acc |          | Acceleration (exposed to       | /chapter03.md#326 |
-| .01 |          | VNFs).                         | -acceleration>`__ |
+| acc |          | Acceleration (exposed to       | /chapter03.md#    |
+| .01 |          | VNFs).                         | acceleration>`__  |
 +-----+----------+--------------------------------+-------------------+
 | i   | Acce     | The Architecture **should**    | `“OpenStack       |
 | nf. | leration | support Cloud Infrastructure   | Future - Specs    |
@@ -2766,10 +2779,10 @@ Infrastructure Recommendations
 | acc |          | provide acceleration to VNFs.  |                   |
 | .03 |          |                                |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Image    | The Architecture **should**    | `RA-1 4.3.1.2.    |
+| i   | Image    | The Architecture **should**    | `RA-1             |
 | nf. |          | make the immutable images      | “Glanc            |
 | img |          | available via location         | e” <./chapter04.m |
-| .01 |          | independent means.             | d#4312-glance>`__ |
+| .01 |          | independent means.             | d#glance>`__      |
 +-----+----------+--------------------------------+-------------------+
 
 Table 2-27: Infrastructure Recommendations
@@ -2785,13 +2798,12 @@ Recommendations
 | ce |                    |                            |             |
 +====+====================+============================+=============+
 | vi | General            | The Architecture           | `RA-1       |
-| m. |                    | **should** support         | 4.3.2.      |
-| 02 |                    | deployment of OpenStack    | “Co         |
-|    |                    | components in containers.  | ntainerised |
-|    |                    |                            | OpenStack   |
+| m. |                    | **should** support         | “Co         |
+| 02 |                    | deployment of OpenStack    | ntainerised |
+|    |                    | components in containers.  | OpenStack   |
 |    |                    |                            | Services” < |
 |    |                    |                            | ./chapter04 |
-|    |                    |                            | .md#432-con |
+|    |                    |                            | .md#con     |
 |    |                    |                            | tainerised- |
 |    |                    |                            | openstack-s |
 |    |                    |                            | ervices>`__ |
