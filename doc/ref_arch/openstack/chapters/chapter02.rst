@@ -799,8 +799,8 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | encrypted     | <./chapter06.md#   |
 |               |               | co            | confidentiality    |
 |               |               | mmunications, | -and-integrity-of- |
-|               |               | and           | communications>`__ |
-|               |               | co            |                    |
+|               |               | and           | communications     |
+|               |               | co            | -secci001>`__      | 
 |               |               | nfidentiality |                    |
 |               |               | and integrity |                    |
 |               |               | of network    |                    |
@@ -813,8 +813,8 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | support       | <./chapter06.md#   |
 |               |               | au            | confidentiality    |
 |               |               | thentication, | -and-integrity-of- |
-|               |               | integrity and | communications>`__ |
-|               |               | co            |                    |
+|               |               | integrity and | communications     |
+|               |               | co            | -secci001>`__      |
 |               |               | nfidentiality |                    |
 |               |               | on all        |                    |
 |               |               | network       |                    |
@@ -827,7 +827,8 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | segregate the | <./chapter06.md#   |
 |               |               | underlay and  | confidentiality    |
 |               |               | overlay       | -and-integrity-of- |
-|               |               | networks.     | communications>`__ |
+|               |               | networks.     | communications     |
+|               |               |               | -secci001>`__      |
 +---------------+---------------+---------------+--------------------+
 | sec.sys.006   | Access        | The Cloud     | `RA-1              |
 |               |               | I             | “Identity          |
