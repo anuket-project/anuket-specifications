@@ -1015,8 +1015,8 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | using digital | <./chapter06.md#   |
 |               |               | certificates  | confidentiality    |
 |               |               | that comply   | -and-integrity-of- |
-|               |               | with X.509    | communications>`__ |
-|               |               | standards     |                    |
+|               |               | with X.509    | communications     |
+|               |               | standards     | -secci001>`__      |
 |               |               | issued by a   |                    |
 |               |               | trusted       |                    |
 |               |               | Certification |                    |
