@@ -1311,8 +1311,8 @@ Image Security (source `RM 7.9.5 <../../../ref_model/chapters/chapter07.md#795-i
 | sec.img.004  | Image             | Images       | `RA-1             |
 |              |                   | **must**     | “Confidentiality  |
 |              |                   | only be      | and Integrity of  |
-|              |                   | accessible   | com               |
-|              |                   | to           | munications” <./c |
+|              |                   | accessible   | communications”   |
+|              |                   | to           | <./c              |
 |              |                   | authorised   | hapter06.md#      |
 |              |                   | actors.      | integrity-of-open |
 |              |                   |              | stack-components- |
@@ -1321,8 +1321,8 @@ Image Security (source `RM 7.9.5 <../../../ref_model/chapters/chapter07.md#795-i
 | sec.img.005  | Image             | Image        | `RA-1             |
 |              |                   | Registries   | “Confidentiality  |
 |              |                   | **must**     | and Integrity of  |
-|              |                   | only be      | com               |
-|              |                   | accessible   | munications” <./c |
+|              |                   | only be      | communications”   |
+|              |                   | accessible   | <./c              |
 |              |                   | to           | hapter06.md#      |
 |              |                   | authorised   | integrity-of-open |
 |              |                   | actors.      | stack-components- |
@@ -1331,8 +1331,8 @@ Image Security (source `RM 7.9.5 <../../../ref_model/chapters/chapter07.md#795-i
 | sec.img.006  | Image             | Image        | `RA-1             |
 |              |                   | Registries   | “Confidentiality  |
 |              |                   | **must**     | and Integrity of  |
-|              |                   | only be      | com               |
-|              |                   | accessible   | munications” <./c |
+|              |                   | only be      | communications”   |
+|              |                   | accessible   | <./c              |
 |              |                   | over         | hapter06.md#      |
 |              |                   | networks     | integrity-of-open |
 |              |                   | that enforce | stack-components- |
@@ -1346,8 +1346,8 @@ Image Security (source `RM 7.9.5 <../../../ref_model/chapters/chapter07.md#795-i
 | sec.img.007  | Image             | Image        | `RA-1             |
 |              |                   | registries   | “Confidentiality  |
 |              |                   | **must** be  | and Integrity of  |
-|              |                   | clear of     | comm              |
-|              |                   | vulnerable   | unications” <./ch |
+|              |                   | clear of     | communications”   |
+|              |                   | vulnerable   | <./ch             |
 |              |                   | and out of   | apter06.md#i      |
 |              |                   | date         | ntegrity-of-opens |
 |              |                   | versions.    | tack-components-c |
