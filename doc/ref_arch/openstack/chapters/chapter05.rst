@@ -56,11 +56,11 @@ Identity: Keystone    v3              3.14
 ======================= =============
 **Keystone Features**   **Mandatory**
 ======================= =============
- access_rules           
+ access_rules
 application_credentials X
-external_idp            
-federation              
-oauth1                  
+external_idp
+federation
+oauth1
 project_tags            X
 security_compliance     X
 trust                   X
@@ -87,9 +87,9 @@ Image: Glance         v2              2.9
 =================== =============
 **Glance Features** **Mandatory**
 =================== =============
-import_image        
-os_glance_reserved  
-web-download import 
+import_image
+os_glance_reserved
+web-download import
 =================== =============
 
 Image Service Versions:
@@ -109,12 +109,12 @@ Block Storage: Cinder v3              3.64
 ================================ =============
 backup                           X
 clone                            X
-consistency_group                
-extend_attached_volume           
-extend_attached_encrypted_volume 
+consistency_group
+extend_attached_volume
+extend_attached_encrypted_volume
 manage_snapshot                  X
 manage_volume                    X
-multi_backend                    
+multi_backend
 snapshot                         X
 volume_revert                    X
 ================================ =============
@@ -140,12 +140,12 @@ account_quotas     X
 bulk_delete        X
 bulk_upload        X
 container_quotas   X
-container_sync     
+container_sync
 crossdomain        X
 discoverability    X
 form_post          X
 ratelimit          X
-s3api              
+s3api
 slo                X
 staticweb          X
 symlink            X
@@ -181,36 +181,36 @@ availability_zone_filter       X
 binding                        X
 binding-extended               X
 default-subnetpools            X
-dhcp_agent_scheduler           
-dns-domain-ports               
-dns-integration                
-dvr                            
+dhcp_agent_scheduler
+dns-domain-ports
+dns-integration
+dvr
 empty-string-filtering         X
 ext-gw-mode                    X
 external-net                   X
 extra_dhcp_opt                 X
 extraroute                     X
-extraroute-atomic              
+extraroute-atomic
 flavors                        X
-filter-validation              
-fip-port-details               
-floating-ip-port-forwarding    
-floatingip-pools               
+filter-validation
+fip-port-details
+floating-ip-port-forwarding
+floatingip-pools
 ip-substring-filtering         X
-l3_agent_scheduler             
-l3-flavors                     
-l3-ha                          
-logging                        
-metering                       
+l3_agent_scheduler
+l3-flavors
+l3-ha
+logging
+metering
 multi-provider                 X
 net-mtu                        X
 net-mtu-writable               X
 network_availability_zone      X
 network-ip-availability        X
-network-segment-range          
+network-segment-range
 pagination                     X
-port-mac-address-regenerate    
-port-resource-request          
+port-mac-address-regenerate
+port-resource-request
 port-security                  X
 port-security-groups-filtering X
 project-id                     X
@@ -229,10 +229,10 @@ qos-rules-alias                X
 quotas                         X
 quota_details                  X
 revision-if-match              X
-rbac-address-scope             
-rbac-security-groups           
-rbac-subnetpool                
-router-interface-fip           
+rbac-address-scope
+rbac-security-groups
+rbac-subnetpool
+router-interface-fip
 security-group                 X
 service-type                   X
 sorting                        X
@@ -242,21 +242,21 @@ standard-attr-tag              X
 standard-attr-timestamp        X
 subnet_allocation              X
 subnet-service-types           X
-subnetpool-prefix-ops          
-tag-ext                        
-tag-ports-during-bulk-creation 
+subnetpool-prefix-ops
+tag-ext
+tag-ports-during-bulk-creation
 trunk                          X
 trunk-details                  X
-uplink-status-propagation      
+uplink-status-propagation
 ============================== =============
 
 ======================== =============
 **Neutron Type Drivers** **Mandatory**
 ======================== =============
-geneve                   
-gre                      
+geneve
+gre
 vlan                     X
-vxlan                    
+vxlan
 ======================== =============
 
 Networking Service APIs: https://docs.openstack.org/api-ref/network/
@@ -276,9 +276,9 @@ Compute: Nova         v2.1            2.88
 ======================= =============
 **Nova Features**       **Mandatory**
 ======================= =============
-attach_encrypted_volume 
-cert                    
-change_password         
+attach_encrypted_volume
+cert
+change_password
 cold_migration          X
 console_output          X
 disk_config             X
@@ -287,21 +287,21 @@ interface_attach        X
 live_migration          X
 metadata_service        X
 pause                   X
-personality             
-rdp_console             
+personality
+rdp_console
 rescue                  X
 resize                  X
-serial_console          
+serial_console
 shelve                  X
-shelve_migrate          
+shelve_migrate
 snapshot                X
-stable_rescue           
-spice_console           
+stable_rescue
+spice_console
 suspend                 X
-swap_volume             
-vnc_console             
-volume_multiattach      
-xenapi_apis             
+swap_volume
+vnc_console
+volume_multiattach
+xenapi_apis
 ======================= =============
 
 Compute API: https://docs.openstack.org/api-ref/compute/
@@ -359,8 +359,8 @@ language libraries.
 **APIs**
 
 +------------+------------------------------+--------+----------------+
-| *          | Link for API list            | **API  | **Maximal API  |
-| *OpenStack |                              | Ver    | Microversion** |
+| **         | Link for API list            | **API  | **Maximal API  |
+| OpenStack  |                              | Ver    | Microversion** |
 | Service**  |                              | sion** |                |
 +============+==============================+========+================+
 | Identity:  | https://docs.openst          | v3     | 3.14           |
