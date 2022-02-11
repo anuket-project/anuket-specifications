@@ -379,10 +379,9 @@ Cloud Controller Services
 The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
-also maps the OpenStack core services to the Reference Model (RM)
-Virtual Infrastructure Manager `Reference Model Chapter 3.2.2 Virtual
-Infrastructure
-Manager <../../../ref_model/chapters/chapter03.md#322-virtual-infrastructure-manager>`__.
+also maps the OpenStack core services to the `Reference Model (RM)
+Virtual Infrastructure Manager 
+<../../../ref_model/chapters/chapter03.md#322-virtual-infrastructure-manager>`__.
 
 +----------------+--------+---------------+-----------+-------+-----+
 | RM Management  | S\     | Description   | Required  | Dep\  | De\ |
