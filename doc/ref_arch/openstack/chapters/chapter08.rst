@@ -18,7 +18,7 @@ Autoscaling
 ~~~~~~~~~~~
 
 With regards to resource autoscaling
-(`gen.scl.01 <./chapter02.md#241-general-recommendations>`__) it is
+(`gen.scl.01 <./chapter02.md#general-recommendations>`__) it is
 recommended that the NFVO/VNFM manages the policy and triggers a
 scale-up or scale-down action based on application telemetry, event, AI,
 or ML etc. While the use of telemetry and alarming system can trigger a
