@@ -266,8 +266,6 @@ Elasticsearch and Kibana is given as an example only.
 .. figure:: ../figures/RA1-Ch07-Monitoring-Logging-Framework.png
    :alt: Monitoring and Logging Framework
 
-   Monitoring and Logging Framework
-
 Figure 7-1: Monitoring and Logging Framework
 
 The monitoring and logging framework (**Figure 7-1**) leverages
