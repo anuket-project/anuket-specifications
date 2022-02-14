@@ -348,8 +348,7 @@ Cloud Infrastructure Software Profile Extensions Requirements for Storage
 Table 2-3b: Reference Model Requirements - Cloud Infrastructure Software
 Profile Extensions Requirements for Storage
 
-Cloud Infrastructure Hardware Profile Requirements (source `RM 5.4 <../../../ref_model/chapters/
-chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
+Cloud Infrastructure Hardware Profile Requirements (source `RM 5.4 <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------+-------------+-------------+-------------+-------------+
@@ -428,12 +427,11 @@ chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements
 Table 2-4a: Reference Model Requirements - Cloud Infrastructure Hardware
 Profile Requirements
 
-Cloud Infrastructure Hardware Profile-Extensions Requirements (source `RM 5.4 <../../../ref_model/
-chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
+Cloud Infrastructure Hardware Profile-Extensions Requirements (source `RM 5.4 <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------+-------------+-------------+-------------+-------------+
-| Reference   | Description | Requirement | Requirement | Sp\          |
+| Reference   | Description | Requirement | Requirement | Sp\         |
 |             |             | for Basic   | for         | ecification |
 |             |             | Profile     | High-       | Reference   |
 |             |             |             | Performance |             |
@@ -587,7 +585,7 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | I\            | hardening        |
 |                  |               | nfrastructure | ” <./chapter06.m |
 |                  |               | **must**      | d#server-boot-   |
-|                  |               | support a     | hardening>`__ |
+|                  |               | support a     | hardening>`__    |
 |                  |               | root of trust |                  |
 |                  |               | and secure    |                  |
 |                  |               | boot.         |                  |
@@ -2347,7 +2345,7 @@ Infrastructure Requirements
 | in\| Network           | The Architecture **must**   | `RA-1        |
 | f.\|                   | support network             | “Network”    |
 | nt\|                   | `resiliency                 | <./chapter03 |
-| w.\|                   |  <../../../common/glossary. | .md#         |
+| w.\|                   | <../../../common/glossary.  | .md#         |
 | 07 |                   | md#cloud-platform-abstracti | -network>`__ | 
 |    |                   | on-related-terminology>`__. |              |
 +----+-------------------+-----------------------------+--------------+
@@ -2435,7 +2433,7 @@ VIM Requirements
 | vim.08 | General        | The Architecture **must**  | `“OpenStack |
 |        |                | support resource tagging.  | Resource    |
 |        |                |                            | Tags” <htt  |
-|        |                |                           | ps://specs. |
+|        |                |                            | ps://specs. |
 |        |                |                            | openstack.o |
 |        |                |                            | rg/openstac |
 |        |                |                            | k/api-wg/gu |
