@@ -723,7 +723,7 @@ Figure 4-2 shows the networking configuration where the storage and OAM
 share networking but are independent of the PXE network.
 
 .. figure:: ../figures/RA1-Ch04-Basic-host-config-w-Storage-Network.png
-   :alt: Basic Profile Host Config with shared Storage and OAM net
+   :alt: Basic Profile Host Config with shared Storage and OAM networking
    :align: center
 
 Figure 4-2: Basic Profile Host Configuration with shared Storage and OAM
