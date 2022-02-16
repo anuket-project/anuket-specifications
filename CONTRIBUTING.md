@@ -18,10 +18,10 @@ There are different permissions (levels) available for contributing into the Anu
 - **Outside Collaborators**: This includes general public. 
   - Outside collaborators can create issues and add comments to issues and Pull Requests.
 - **Read, Triage, Write, and Maintain** Permissions, which are explained in [here](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization), will be assigned as follows:
-  - **Read** will be assigned to those who are interested to create issues, join the discussion, receive notifications, and provide feedback.
+  - **Read** will be assigned to those who want to create issues, join the discussions, receive notifications, and provide feedback.
   - **Triage** will be assigned to active contributors who create issues, pull requests and review them.
-  - **Writes** will be assigned to Workstream Co-Leads to allow them to manage issues and pull request, approve them and be auto requested for review.
-  - **Maintain** will be assigned to Workstream Leads to allow them to merge PRs into the repository.
+  - **Writes** will be assigned to sub-project Co-Leads to allow them to manage issues and pull request, approve them and be auto requested for review.
+  - **Maintain** will be assigned to sub-project Leads to allow them to merge PRs into the repository.
 
 <a name="labels"></a>
 ### Labels
@@ -30,8 +30,8 @@ Every Issue and PR should be tagged with one or more of the following labels to 
 
   - **Backlog**: The Issue will be addressed in future releases..
   - **Major/Minor**: The Issue or PR concerns a major or minor change.. 
-  - **WIP**: The PR is still being developed and no reviews/approvals are expected yet.
-     - PRs can also be created as "Draft" indicate that the PR is working in progress.
+  - **WIP**: The PR is still under development, no reviews/approvals are expected yet.
+     - PRs can also be created as "Draft" to indicate that the PR is in progress.
   - **Returned**: The issue/PR has been sent back to author (e.g. more information needed, not a high priority, no longer valid, etc). Only WSL or TSL can tag an issue/PR as Returned.
   - **Idle**: This label will be **automatically** applied (by a GitHub work flow or by WSL/TS Leads) to both issues/PRs to indicate that no activity has been observed on the issue/PR for some determined time frame. This triggers an action to close the issue/PR.
   - **Unresolved**: This label will be **automatically** applied to PRs to indicate that no consensus has been reached on the PR. This triggers an action to resolve the PR by the TSC.
@@ -54,7 +54,7 @@ Every Issue and PR should be tagged with one or more of the following labels to 
 <a name="prs"></a>
 ### Pull Requests
 
-- PRs dealing with minor editorial changes can be raised without a corresponding Issue, but must be labelled as "Minor". Otherwise, PRs must only be created when there is an issue present and a decision to create a PR is made. 
+- Minor editorial change PRs can be raised without a corresponding Issue, but must be labelled as "Minor". Otherwise, PRs must only be created when there is an issue present and a decision to create a PR is made. 
 - A PR must reference the issue it is resolving in the description field.
    - using GitHub predefined keyword "Fixes Issue#" will automatically close the issue which the PR is resolving when it is merged.
 - A PR for an issue must only be created by the contributor assigned to the issue (either by self assignment or by the respective sub-project lead).
@@ -99,7 +99,7 @@ Every Issue and PR should be tagged with one or more of the following labels to 
 ### Idle Pull Requests Policy
 
 Pull Requests will be automatically labled as "**Idle**" when:
-- No engagement/activity (content, reviews, conversations) from author, reviewers and workstream contributors on non-merge ready PRs for 15 calendar days.
+- No engagement/activity (content, reviews, conversations) from author, reviewers and sub-project contributors on non-merge ready PRs for 15 calendar days.
   - Personal holidays or public holidays will not be counted.
 - One or more identified Reviewers (including WSL) are not providing feedback/resolutions or approving the Pull Request for more than 15 calender days.
 
