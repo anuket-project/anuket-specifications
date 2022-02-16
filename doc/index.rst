@@ -5,7 +5,7 @@ Anuket Specifications
 
     Cloud iNfrastructure Telco Taskforce (CNTT) </common/README.md>
     Community Guidelines </gov/README.md>
-    Reference Model </ref_model/README.md>
+    Reference Model </ref_model/README>
     Reference Architectures </ref_arch/README.md>
     Reference Implementation </ref_impl/README.md>
     Reference Conformance </ref_cert/README.md>
