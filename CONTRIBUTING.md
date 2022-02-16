@@ -77,10 +77,12 @@ Every Issue and PR should be tagged with one or more of the following labels to 
 - Once a PR is created, it needs to get the following approvals before it is merged into master.
   - From at least three of contributors for that sub-project
     - Approvers should be distributed equally among operators and vendors.
+```Remove this line or reword to make it more of a best practice.  This is going to vary depending on the doc/project
   - From sub-project lead (to make sure consensus is reached).
   - Sub-project lead can request additional approvals reviews.
     - Recommendation is to use 4 approvals for complex PRs.
-  - 2 business days cool off period should be applied before Final approval.
+  - 2 business days waiting period should be applied before Final approval.
+```Do we really need this?
   - Only one approval will be counted per each organization for a given PR.
 - The selection of which contributor to approve a PR is made by the sub-project lead and should take those factors into consideration:
   - Contributor needs to be actively discussing the PR to be selected for approval.
