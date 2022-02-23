@@ -20,7 +20,10 @@ extensions = ['sphinxcontrib.readme-to-index',
               'sphinxcontrib.relative-link-corrector',
               'sphinxcontrib.direct-copy',
               'sphinx_markdown_tables', 
-              'sphinx_rtd_theme']
+              'sphinx_rtd_theme',
+              'sphinx.ext.intersphinx',
+              'sphinx.ext.autosectionlabel'
+             ]
 
 direct_copy_directories = ['/gov/figures', 
                            '/ref_model/figures', 
@@ -56,3 +59,10 @@ html_favicon = '_static/favicon.ico'
 exclude_patterns = [
     '**/.tox',
 ]
+
+intersphinx_mapping = {
+    'cntt': ('https://cntt.readthedocs.io/en/latest/', None)
+}
+
+autosectionlabel_prefix_document = True
+autosectionlabel_maxdepth = 3

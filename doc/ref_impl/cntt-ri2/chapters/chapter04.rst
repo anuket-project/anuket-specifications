@@ -11,7 +11,7 @@ The entire installation is divided into two stages - Host provisioning and Kuber
 Prerequisites
 -------------
 
-You need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on the server and network specifications.
+You need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be deployed. Please refer to :ref:`ref_impl/cntt-ri2/chapters/chapter03:Requirements for Labs` for detailed information on the server and network specifications.
 
 Installation of the Reference Implementation
 --------------------------------------------
