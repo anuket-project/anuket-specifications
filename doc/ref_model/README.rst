@@ -8,7 +8,7 @@ Release Information
 
 **Version: 7.0**
 
-**Release Date: 14th December 2022**
+**Release Date: 4th of January 2022**
 
 Bundle/Version History
 ----------------------
