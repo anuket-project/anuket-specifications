@@ -202,13 +202,30 @@ The API and Cloud Brokerage models are illustrated in the following diagrams:
 Requirements, Reference Architecture & Industry Standards Intersect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Communcations Service Provider is both a provider and consumer of Cloud based services.
-When the CSP is actings as:
-
+The Communcations Service Provider (CSP) is both a provider and consumer of Cloud based services. When the CSP is actings as:
 -  consumer, in which case the typical consideration is total cost of ownership as the consumption is to usually to support internal business operations: BSS/OSS systems;
 -  provider of cloud services, through operation of their own cloud or reselling of cloud services, in which case the typical consideration is margin (cost to offer services vs income received).
-
 These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a Multi-Cloud environment.
+
+As a consumer of cloud to support internal Business operations and BSS/OSS focus is on meeting the applications needs of organisation which historically came with need to operate support the infrastructure needs of these. This resulted in split of CIO organisation into Delivery and Operations groups. At the same time that CIO application workloads have been moving to SaaS Cloud Providers, CTO Network Systems have been moving from running on dedicated infrastructure to being virtualised and IMS, 3GPP (4G & 5G) functions, IP Routers and Firewalls are being provided as VNFs and CNFs.
+
+As outlined in section "8.2.2 Telco Cloud" the result is that the future CSP "network" is a set of distributed NFVi's (Cloud Infrastructure) which will be connected to Cloud Providers and hence the "Hybrid Multi-Cloud" and the need for CSP to be able to support this is both inevitable and essential.
+
+So as a consumer and provider of Cloud Services the CSP will continue to need to build and manage it own Cloud Infrastructure as well as provide network orchestration solution to management interconnectivity across its own and other Cloud Providers. The interactions for this are outlined in the "Multi-Cloud Interactions Model", however to realise this the CSP will need to adopt and sponsor a set of standards that are nessasary to support the interactions.
+
+The follow summary table aims to identify what standards and/or technologies that are seen are applicable.
+
+The criteria for inclusion are
+-  Provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
+-  Are already mature Open Standards that have either been adopted or nurtured by recognised bodies with the telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations , (ANSI etc,) NIST)
+-  There are reference implementations or an active open source project/s or consortia providing implementations (CNCF. Open Infra)
+-  It is possible to source delivery and support services from multiple vendors
+-  It is possible for CSP to actively contribute to and request capabilities / coverage of the standard / technology
+-  It is not sole proprietary property of a vendor / company
+-  Is not focused on "Transactions / Conversations" User / Data Plane standards (typically IETF, IEEE, MEF / Carrier Ethernet etc)
+
+
+NOTE: Where are the gaps and where is there need to focus and raise priority ?
 
 Aspects of Multi-Cloud Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
