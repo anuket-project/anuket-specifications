@@ -360,7 +360,7 @@ language libraries.
 
 +------------+------------------------------+--------+----------------+
 | **         | Link for API list            | **API  | **Maximal API  |
-| OpenStack  |                              | Ver    | Microversion** |
+| OpenStack  |                              | Ver\   | Microversion** |
 | Service**  |                              | sion** |                |
 +============+==============================+========+================+
 | Identity:  | https://docs.openst          | v3     | 3.14           |
@@ -369,7 +369,7 @@ language libraries.
 | Compute:   | https://docs.op              | v2.1   | 2.88           |
 | Nova       | enstack.org/api-ref/compute/ |        |                |
 +------------+------------------------------+--------+----------------+
-| N          | https://docs.opens           | v2.0   |                |
+| N\         | https://docs.opens           | v2.0   |                |
 | etworking: | tack.org/api-ref/network/v2/ |        |                |
 | Neutron    |                              |        |                |
 +------------+------------------------------+--------+----------------+
@@ -387,11 +387,11 @@ language libraries.
 | Placement  | https://docs.open            | v1     | 1.36           |
 |            | stack.org/api-ref/placement/ |        |                |
 +------------+------------------------------+--------+----------------+
-| Orch       | https://docs.openstack.o     | v1     | 2021-04-06     |
+| Orch\      | https://docs.openstack.o     | v1     | 2021-04-06     |
 | estration: | rg/api-ref/orchestration/v1/ |        | (template)     |
 | Heat       |                              |        |                |
 +------------+------------------------------+--------+----------------+
-| Acc        | https://docs.openstack       | v2     |                |
+| Acc\       | https://docs.openstack       | v2     |                |
 | eleration: | .org/api-ref/accelerator/v2/ |        |                |
 | Cyborg     |                              |        |                |
 +------------+------------------------------+--------+----------------+
