@@ -16,9 +16,9 @@ Security Requirements
 ---------------------
 
 Chapter 2 (`section
-2.2.6 <./chapter02.md#226-cloud-infrastructure-security-requirements>`__
+2.2.6 <./chapter02.md#cloud-infrastructure-security-requirements>`__
 and `section
-2.4.8 <./chapters/chapter02.md#248-security-recommendations>`__) gathers
+2.4.8 <./chapters/chapter02.md#security-recommendations>`__) gathers
 all requirements and recommendations regarding security topics developed
 in this chapter.
 
@@ -126,10 +126,23 @@ Patches
 All deployed Cloud Infrastructure software must be audited and must be
 implemented to allow installation of the latest patches to address
 security vulnerabilities in the following timescale from discovery
-(sec.gen.008, sec.lcm.011): \| Severity \| Time to Remediate \| \| ———–
-\| ———– \| \| Zero-Day \| Immediately or as soon as practically possible
-\| \| Critical \| 30 days \| \| High \| 60 days \| \| Medium \| 90 days
-\| \| Low \| 180 days \|
+(sec.gen.008, sec.lcm.011):
+
++----------+-------------------+
+| Severity | Time to Remediate |
++==========+===================+
+| Zero-Day | Immediately or as |
+|          | soon as practica\ |
+|          | lly possible      |
++----------+-------------------+
+| Critical | 30 days           |
++----------+-------------------+
+| High     | 60 days           | 
++----------+-------------------+
+| Medium   | 90 days           | 
++----------+-------------------+
+| Low      | 180 days          |
++----------+-------------------+
 
 **See** `Common Vulnerability Scoring System <https://cve.mitre.org/>`__
 and `NIST Vulnerability
@@ -549,7 +562,7 @@ operational (sec.lcm.003).
 Regarding the provisioning of servers, switches, routers and networking,
 tools must be used to automate the provisioning eliminating human error.
 For Infrastructure hardware resources, a set of recommendations is
-detailed in `7.2.1 <./chapter07.md#7.2.1>`__ to automate and secure
+detailed in `7.2.1 <./chapter07.md#provisioning>`__ to automate and secure
 their provisioning (sec.lcm.001).
 
 For OpenStack services and software components, deployment tools or
