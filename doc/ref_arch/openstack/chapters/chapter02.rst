@@ -120,7 +120,7 @@ Profile Capabilities
 
    **1** Defined in the ``.bronze`` configuration in `RM section 4.2.6
    Storage
-   Extensions <../../../ref_model/chapters/chapter04.md#426-storage-extensions>`__\ 
+   Extensions <../../../ref_model/chapters/chapter04.md#426-storage-extensions>`__\
 
 Cloud Infrastructure Software Profile Extensions Requirements for Compute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -798,7 +798,7 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | co\           | confidentiality    |
 |               |               | mmunications, | -and-integrity-of- |
 |               |               | and           | communications     |
-|               |               | co\           | -secci001>`__      | 
+|               |               | co\           | -secci001>`__      |
 |               |               | nfidentiality |                    |
 |               |               | and integrity |                    |
 |               |               | of network    |                    |
@@ -2146,13 +2146,13 @@ General Requirements
 | gen.o\ | Open source  | The Architecture         | `RA-1            |
 | st.01  |              | **must** use OpenStack   | “Consolidated    |
 |        |              | APIs.                    | set of APIs”     |
-|        |              |                          | <./chapter05.md# |   
-|        |              |                          | consolidated-set |   
-|        |              |                          | -of-apis>`__     | 
+|        |              |                          | <./chapter05.md# |
+|        |              |                          | consolidated-set |
+|        |              |                          | -of-apis>`__     |
 +--------+--------------+--------------------------+------------------+
 | gen.o\ | Open source  | The Architecture         | `RA-1            |
-| st.02  |              | **must** support dynamic | “Consolidated    |   
-|        |              | request and              | set of APIs”     |  
+| st.02  |              | **must** support dynamic | “Consolidated    |
+|        |              | request and              | set of APIs”     |
 |        |              | configuration of virtual | <./chapter05.md# |
 |        |              | resources (compute,      | consolidated-set |
 |        |              | network, storage)        | -of-apis>`__     |
@@ -2294,10 +2294,10 @@ Infrastructure Requirements
 |    |                   |                             | ned-cpus>`__ |
 +----+-------------------+-----------------------------+--------------+
 | in\| Storage           | The Architecture **must**   | `RA-1        |
-| f.\|                   | provide remote (not         | “Storage”    |    
+| f.\|                   | provide remote (not         | “Storage”    |
 | st\|                   | directly attached to the    | <./cha       |
 | g.\|                   | host) Block storage for     | pter03.md#   |
-| 01 |                   | Instances.                  | storage>`__  |  
+| 01 |                   | Instances.                  | storage>`__  |
 +----+-------------------+-----------------------------+--------------+
 | in\| Storage           | The Architecture **must**   | `RA-1        |
 | f.\|                   | provide Object storage for  | “Swift”      |
@@ -2346,11 +2346,11 @@ Infrastructure Requirements
 | f.\|                   | support network             | “Network”    |
 | nt\|                   | `resiliency                 | <./chapter03 |
 | w.\|                   | <../../../common/glossary.  | .md#         |
-| 07 |                   | md#cloud-platform-abstracti | -network>`__ | 
+| 07 |                   | md#cloud-platform-abstracti | -network>`__ |
 |    |                   | on-related-terminology>`__. |              |
 +----+-------------------+-----------------------------+--------------+
 | in\| Network           | The Cloud Infrastructure    | `RA-1        |
-| f.\|                   | Network Fabric **must** be  | “Network”    |     
+| f.\|                   | Network Fabric **must** be  | “Network”    |
 | nt\|                   | capable of enabling highly  | <./chapt     |
 | w.\|                   | available (Five 9’s or      | er03.md#     |
 | 10 |                   | better) Cloud               | -network>`__ |
@@ -2409,7 +2409,7 @@ VIM Requirements
 |        |                |                            | ervices>`__ |
 +--------+----------------+----------------------------+-------------+
 | vim.03 | General        | The Architecture **must**  | `RA-1       |
-|        |                | allow VIM to discover and  | “           |           
+|        |                | allow VIM to discover and  | “           |
 |        |                | manage Cloud               | Placement”  |
 |        |                | Infrastructure resources.  | <./chapter0 |
 |        |                |                            | 5.md#pl     |
@@ -2423,7 +2423,7 @@ VIM Requirements
 +--------+----------------+----------------------------+-------------+
 | vim.07 | General        | The Architecture **must**  | `RA-1       |
 |        |                | support multi-tenancy.     | “Multi-Te\  |
-|        |                |                            | nancy” <./c |  
+|        |                |                            | nancy” <./c |
 |        |                |                            | hapter03.md |
 |        |                |                            | #multi-     |
 |        |                |                            | tenancy-exe |
@@ -2710,7 +2710,7 @@ Infrastructure Recommendations
 +-----+----------+--------------------------------+-------------------+
 | i\  | Storage  | The Architecture **should**    | `RA-1 “Virtual    |
 | nf.\|          | provide local Block storage    | Storage” <./ch    |
-| stg\|          | for Instances.                 | apter03.md#vi     |   
+| stg\|          | for Instances.                 | apter03.md#vi     |
 | .10 |          |                                | rtual-storage>`__ |
 +-----+----------+--------------------------------+-------------------+
 | i\  | Network  | The Architecture **should**    |                   |

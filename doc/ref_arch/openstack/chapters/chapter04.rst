@@ -74,9 +74,9 @@ OpenStack Control Plane Servers (Control Nodes)
 
 For OpenStack control nodes we use the BIOS parameters for the basic
 profile defined in `Chapter 5.4 of the Reference
-Model 
+Model
 <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-
-hardware-profiles-features-and-requirements>`__. 
+hardware-profiles-features-and-requirements>`__.
 Additionally,
 for OpenStack we need to set the following boot parameters:
 
@@ -802,7 +802,7 @@ Profile Extensions is shown in Figure 4-3.
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-DPDK.png
    :alt: High Performance Profile Host Conf with DPDK
    :align: center
-   
+
 Figure 4-3: High Performance Profile Host Configuration with DPDK
 acceleration (example and simplified)
 
@@ -1588,7 +1588,7 @@ OpenStack services topology version is shown in Figure 4-7.
 .. figure:: ../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png
    :alt: Containerised OpenStack Services Topology
    :align: center
-   
+
 Figure 4-7: Containerised OpenStack Services Topology
 
 Consumable Infrastructure Resources and Services
@@ -1809,7 +1809,7 @@ the resource capacity, as in the number of servers, and the capacity of
 these servers in terms of # of cores, RAM, etc. restricting the set of
 services that can be deployed and, thus, creating a dependency between
 other data centres. In `Reference Model Chapter
-8.3 <../../../ref_model/chapters/chapter08.md#83-telco-edge-cloud>`__, 
+8.3 <../../../ref_model/chapters/chapter08.md#83-telco-edge-cloud>`__,
 Table 8-5
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.

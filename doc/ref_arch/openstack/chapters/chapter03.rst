@@ -380,7 +380,7 @@ The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
 also maps the OpenStack core services to the `Reference Model (RM)
-Virtual Infrastructure Manager 
+Virtual Infrastructure Manager
 <../../../ref_model/chapters/chapter03.md#322-virtual-infrastructure-manager>`__.
 
 +----------------+--------+---------------+-----------+-------+-----+
