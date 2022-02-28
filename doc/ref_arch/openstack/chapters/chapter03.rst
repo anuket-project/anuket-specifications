@@ -97,7 +97,7 @@ enable workloads to be logically separated from each other with:
 
 -  differentiated set of associated users
 -  role-based access of two levels – admin or member (see `RBAC security
-   section <./chapter06.md#6314-rbac>`__).
+   section <./chapter06.md#rbac>`__).
 -  quota system to provide maximum resources that can be consumed.
 
 This RA does not intend to restrict how workloads are distributed across
@@ -118,7 +118,7 @@ NUMA alignment, and SMT.
 The configuration of the virtual resources will depend on the software
 and hardware profiles and the flavour (resource sizing) needed to host
 VNF components. Profiles are defined in the `Reference Model chapter
-2.5 <../../../ref_model/chapters/chapter02.md>`__.
+2.4 <../../../ref_model/chapters/chapter02.md#24-profiles-profile-extensions--flavours>`__.
 
 Virtual Storage
 ~~~~~~~~~~~~~~~
@@ -300,9 +300,8 @@ conformant implementation requirements and recommendations for the core
 services.
 
 .. figure:: ../figures/RA1-Ch03-Core-Cloud-Infra-Services.png
-   :alt: Core OpenStack Software Services
-
-   Core OpenStack Software Services
+   :alt: OpenStack Core Services
+   :align: center
 
 Figure 3-1: OpenStack Core Services
 
@@ -346,9 +345,8 @@ the 4 types of nodes constitutive of the Infrastructure: control,
 compute, network and storage nodes.
 
 .. figure:: ../figures/RA1-Ch03-OpenStack-Services-Topology.png
-   :alt: OpenStack Software Services Topology
-
-   OpenStack Software Services Topology
+   :alt: OpenStack Services Topology
+   :align: center
 
 Figure 3-2: OpenStack Services Topology
 
@@ -381,24 +379,23 @@ Cloud Controller Services
 The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
-also maps the OpenStack core services to the Reference Model (RM)
-Virtual Infrastructure Manager `Reference Model Chapter 3.2.2 Virtual
-Infrastructure
-Manager <../../../ref_model/chapters/chapter03.md#322%22>`__.
+also maps the OpenStack core services to the `Reference Model (RM)
+Virtual Infrastructure Manager 
+<../../../ref_model/chapters/chapter03.md#322-virtual-infrastructure-manager>`__.
 
 +----------------+--------+---------------+-----------+-------+-----+
-| RM Management  | S      | Description   | Required  | Dep   | De  |
-| Software       | ervice |               | /         | loyed | plo |
+| RM Management  | S\     | Description   | Required  | Dep\  | De\ |
+| Software       | ervice |               | /         | loyed | plo\|
 |                |        |               | Optional  | on    | yed |
-|                |        |               |           | Contr | on  |
-|                |        |               |           | oller | C   |
-|                |        |               |           | Nodes | omp |
-|                |        |               |           |       | ute |
-|                |        |               |           |       | No  |
+|                |        |               |           | Cont\ | on  |
+|                |        |               |           | roll\ | C\  |
+|                |        |               |           | er    | omp\|
+|                |        |               |           | Nodes | ute |
+|                |        |               |           |       | No\ |
 |                |        |               |           |       | des |
 +================+========+===============+===========+=======+=====+
-| Identity       | Ke     | the           | Required  | X     |     |
-| Management     | ystone | a             |           |       |     |
+| Identity       | Ke\    | the           | Required  | X     |     |
+| Management     | ystone | a\            |           |       |     |
 | (Additional    |        | uthentication |           |       |     |
 | Management     |        | service       |           |       |     |
 | Functions) +   |        |               |           |       |     |
@@ -418,11 +415,11 @@ Manager <../../../ref_model/chapters/chapter03.md#322%22>`__.
 | Manager        |        | management    |           |       |     |
 |                |        | service       |           |       |     |
 +----------------+--------+---------------+-----------+-------+-----+
-| Network        | N      | the network   | Required  | X     | X   |
+| Network        | N\     | the network   | Required  | X     | X   |
 | Resources      | eutron | management    |           |       |     |
 | Manager        |        | service       |           |       |     |
 +----------------+--------+---------------+-----------+-------+-----+
-| Compute        | Pla    | resource      | Required  | X     |     |
+| Compute        | Pla\   | resource      | Required  | X     |     |
 | Resources      | cement | provider      |           |       |     |
 | Inventory      |        | inventory     |           |       |     |
 |                |        | service       |           |       |     |
@@ -441,10 +438,10 @@ Manager <../../../ref_model/chapters/chapter03.md#322%22>`__.
 | utilises APIs) |        | orchestration |           |       |     |
 |                |        | service       |           |       |     |
 +----------------+--------+---------------+-----------+-------+-----+
-| UI             | H      | the WEB UI    | Required  | X     |     |
+| UI             | H\     | the WEB UI    | Required  | X     |     |
 |                | orizon | service       |           |       |     |
 +----------------+--------+---------------+-----------+-------+-----+
-| Key Manager    | Ba     | the secret    | Optional  | X     |     |
+| Key Manager    | Ba\    | the secret    | Optional  | X     |     |
 |                | rbican | data          |           |       |     |
 |                |        | management    |           |       |     |
 |                |        | service       |           |       |     |
@@ -515,7 +512,7 @@ project.
 
 This document uses the term “project” when referring to OpenStack
 services and “tenant” (`RM Section
-3.2.1 <../../../ref_model/chapters/chapter03.md#321%22>`__) to represent
+3.2.1 <../../../ref_model/chapters/chapter03.md#321-virtual-resources>`__) to represent
 an independently manageable logical pool of resources.
 
 Cloud partitioning: Host Aggregates, Availability Zones
@@ -620,7 +617,7 @@ up (in a shipping container), and what resources are required of the DC
 -  Storage
 
    -  discussed in `RA-1 Chapter
-      04 <./chapter04.md#424-storage-backend>`__
+      04 <./chapter04.md#storage-backend>`__
 
 -  Acceleration
 
@@ -645,8 +642,7 @@ The recommended network architecture is spine and leaf topology.
 
 .. figure:: ../figures/RA1-Ch03-Network-Fabric.png
    :alt: Network Fabric – Physical
-
-   Network Fabric – Physical
+   :align: center
 
 Figure 3-3: Network Fabric – Physical
 
@@ -735,160 +731,160 @@ Assumptions and conventions:
 -  Shared storage is optional but it is important to ensure shared
    assets are distributed across serving clouds such as boot images.
 
-+------+---+------------+----------+-------+-----+---------+--------+
-| Topo | T | Control    | Shared   | Co    | A   | Service | Notes  |
-| logy | y | Planes     | Storage  | mpute | chi | Multi   |        |
-| Ref  | p |            | (o       | AZs   | eva | -region |        |
-|      | e |            | ptional) |       | ble | aw      |        |
-|      |   |            |          |       | S   | areness |        |
-|      |   |            |          |       | erv |         |        |
-|      |   |            |          |       | ice |         |        |
-|      |   |            |          |       | Ava |         |        |
-|      |   |            |          |       | ila |         |        |
-|      |   |            |          |       | bil |         |        |
-|      |   |            |          |       | ity |         |        |
-|      |   |            |          |       | %   |         |        |
-+======+===+============+==========+=======+=====+=========+========+
-| 1    | L | 1          | 1        | 1     | Va  | Not     | Su     |
-|      | o |            |          |       | ria | r       | itable |
-|      | c |            |          |       | ble | equired | where  |
-|      | a |            |          |       |     |         | only   |
-|      | l |            |          |       |     |         | l      |
-|      | R |            |          |       |     |         | imited |
-|      | e |            |          |       |     |         | local  |
-|      | d |            |          |       |     |         | appli  |
-|      | u |            |          |       |     |         | cation |
-|      | n |            |          |       |     |         | availa |
-|      | d |            |          |       |     |         | bility |
-|      | a |            |          |       |     |         | is     |
-|      | n |            |          |       |     |         | re     |
-|      | c |            |          |       |     |         | quired |
-|      | y |            |          |       |     |         | e.g    |
-|      | - |            |          |       |     |         | . nova |
-|      | w |            |          |       |     |         | a      |
-|      | o |            |          |       |     |         | nti-af |
-|      | r |            |          |       |     |         | finity |
-|      | k |            |          |       |     |         |        |
-|      | l |            |          |       |     |         |        |
-|      | o |            |          |       |     |         |        |
-|      | a |            |          |       |     |         |        |
-|      | d |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-|      | p |            |          |       |     |         |        |
-|      | r |            |          |       |     |         |        |
-|      | e |            |          |       |     |         |        |
-|      | a |            |          |       |     |         |        |
-|      | d |            |          |       |     |         |        |
-|      | a |            |          |       |     |         |        |
-|      | c |            |          |       |     |         |        |
-|      | r |            |          |       |     |         |        |
-|      | o |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-|      | e |            |          |       |     |         |        |
-|      | r |            |          |       |     |         |        |
-|      | v |            |          |       |     |         |        |
-|      | e |            |          |       |     |         |        |
-|      | r |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-+------+---+------------+----------+-------+-----+---------+--------+
-| 2    | R | 1          | >=2      | >=2   | >9  | Not     | Su     |
-|      | e |            |          |       | 9.n | r       | itable |
-|      | g |            |          |       |     | equired | where  |
-|      | i |            |          |       |     |         | local  |
-|      | o |            |          |       |     |         | appli  |
-|      | n |            |          |       |     |         | cation |
-|      | a |            |          |       |     |         | HA is  |
-|      | l |            |          |       |     |         | req    |
-|      | R |            |          |       |     |         | uired. |
-|      | e |            |          |       |     |         | C      |
-|      | d |            |          |       |     |         | ontrol |
-|      | u |            |          |       |     |         | plane  |
-|      | n |            |          |       |     |         | should |
-|      | d |            |          |       |     |         | be     |
-|      | a |            |          |       |     |         | distr  |
-|      | n |            |          |       |     |         | ibuted |
-|      | c |            |          |       |     |         | across |
-|      | y |            |          |       |     |         | DC     |
-|      | - |            |          |       |     |         | f      |
-|      | w |            |          |       |     |         | ailure |
-|      | o |            |          |       |     |         | d      |
-|      | r |            |          |       |     |         | omains |
-|      | k |            |          |       |     |         | (as    |
-|      | l |            |          |       |     |         | suming |
-|      | o |            |          |       |     |         | layer  |
-|      | a |            |          |       |     |         | 2      |
-|      | d |            |          |       |     |         | c      |
-|      | s |            |          |       |     |         | onnect |
-|      | p |            |          |       |     |         | ivity) |
-|      | r |            |          |       |     |         | but    |
-|      | e |            |          |       |     |         | may be |
-|      | a |            |          |       |     |         | unava  |
-|      | d |            |          |       |     |         | ilable |
-|      | a |            |          |       |     |         | during |
-|      | c |            |          |       |     |         | up     |
-|      | r |            |          |       |     |         | grades |
-|      | o |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-|      | A |            |          |       |     |         |        |
-|      | Z |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-+------+---+------------+----------+-------+-----+---------+--------+
-| 3    | G | >=2        | >=2      | >=2   | >99 | R       | Su     |
-|      | l |            |          |       | .nn | equired | itable |
-|      | o |            |          |       |     |         | where  |
-|      | b |            |          |       |     |         | local  |
-|      | a |            |          |       |     |         | and    |
-|      | l |            |          |       |     |         | region |
-|      | R |            |          |       |     |         | appli  |
-|      | e |            |          |       |     |         | cation |
-|      | d |            |          |       |     |         | HA is  |
-|      | u |            |          |       |     |         | re     |
-|      | n |            |          |       |     |         | quired |
-|      | d |            |          |       |     |         | C      |
-|      | a |            |          |       |     |         | ontrol |
-|      | n |            |          |       |     |         | plane  |
-|      | c |            |          |       |     |         | could  |
-|      | y |            |          |       |     |         | be     |
-|      | - |            |          |       |     |         | kept   |
-|      | w |            |          |       |     |         | ava    |
-|      | o |            |          |       |     |         | ilable |
-|      | r |            |          |       |     |         | in one |
-|      | k |            |          |       |     |         | site   |
-|      | l |            |          |       |     |         | during |
-|      | o |            |          |       |     |         | up     |
-|      | a |            |          |       |     |         | grades |
-|      | d |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-|      | p |            |          |       |     |         |        |
-|      | r |            |          |       |     |         |        |
-|      | e |            |          |       |     |         |        |
-|      | a |            |          |       |     |         |        |
-|      | d |            |          |       |     |         |        |
-|      | a |            |          |       |     |         |        |
-|      | c |            |          |       |     |         |        |
-|      | r |            |          |       |     |         |        |
-|      | o |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-|      | m |            |          |       |     |         |        |
-|      | u |            |          |       |     |         |        |
-|      | l |            |          |       |     |         |        |
-|      | t |            |          |       |     |         |        |
-|      | i |            |          |       |     |         |        |
-|      | p |            |          |       |     |         |        |
-|      | l |            |          |       |     |         |        |
-|      | e |            |          |       |     |         |        |
-|      | R |            |          |       |     |         |        |
-|      | e |            |          |       |     |         |        |
-|      | g |            |          |       |     |         |        |
-|      | i |            |          |       |     |         |        |
-|      | o |            |          |       |     |         |        |
-|      | n |            |          |       |     |         |        |
-|      | s |            |          |       |     |         |        |
-+------+---+------------+----------+-------+-----+---------+--------+
++-----+----+------------+----------+-------+-----+---------+--------+
+| To\ | T\ | Control    | Shared   | Co\   | A\  | Service | Notes  |
+| po\ | y\ | Planes     | Storage  | mpute | chi\| Multi   |        |
+| lo\ | p\ |            | (o\      | AZs   | eva\| -region |        |
+| gy  | e  |            | ptional) |       | ble | aw\     |        |
+| R\  |    |            |          |       | S\  | areness |        |
+| ef  |    |            |          |       | erv\|         |        |
+|     |    |            |          |       | ice |         |        |
+|     |    |            |          |       | Ava\|         |        |
+|     |    |            |          |       | ila\|         |        |
+|     |    |            |          |       | bil\|         |        |
+|     |    |            |          |       | ity |         |        |
+|     |    |            |          |       | %   |         |        |
++=====+====+============+==========+=======+=====+=========+========+
+| 1   | L\ | 1          | 1        | 1     | Va\ | Not     | Su\    |
+|     | o\ |            |          |       | ria\| r\      | itable |
+|     | c\ |            |          |       | ble | equired | where  |
+|     | a\ |            |          |       |     |         | only   |
+|     | l  |            |          |       |     |         | l\     |
+|     | R\ |            |          |       |     |         | imited |
+|     | e\ |            |          |       |     |         | local  |
+|     | d\ |            |          |       |     |         | appli\ |
+|     | u\ |            |          |       |     |         | cation |
+|     | n\ |            |          |       |     |         | availa\|
+|     | d\ |            |          |       |     |         | bility |
+|     | a\ |            |          |       |     |         | is     |
+|     | n\ |            |          |       |     |         | re\    |
+|     | c\ |            |          |       |     |         | quired |
+|     | y  |            |          |       |     |         | e.g.   |
+|     | -  |            |          |       |     |         | nova   |
+|     | w\ |            |          |       |     |         | a\     |
+|     | o\ |            |          |       |     |         | nti-af\|
+|     | r\ |            |          |       |     |         | finity |
+|     | k\ |            |          |       |     |         |        |
+|     | l\ |            |          |       |     |         |        |
+|     | o\ |            |          |       |     |         |        |
+|     | a\ |            |          |       |     |         |        |
+|     | d  |            |          |       |     |         |        |
+|     | s\ |            |          |       |     |         |        |
+|     | p\ |            |          |       |     |         |        |
+|     | r\ |            |          |       |     |         |        |
+|     | e\ |            |          |       |     |         |        |
+|     | a\ |            |          |       |     |         |        |
+|     | d  |            |          |       |     |         |        |
+|     | a\ |            |          |       |     |         |        |
+|     | c\ |            |          |       |     |         |        |
+|     | r\ |            |          |       |     |         |        |
+|     | o\ |            |          |       |     |         |        |
+|     | s\ |            |          |       |     |         |        |
+|     | s  |            |          |       |     |         |        |
+|     | s\ |            |          |       |     |         |        |
+|     | e\ |            |          |       |     |         |        |
+|     | r\ |            |          |       |     |         |        |
+|     | v\ |            |          |       |     |         |        |
+|     | e\ |            |          |       |     |         |        |
+|     | r\ |            |          |       |     |         |        |
+|     | s  |            |          |       |     |         |        |
++-----+----+------------+----------+-------+-----+---------+--------+
+| 2   | R\ | 1          | >=2      | >=2   | >9\ | Not     | Su\    |
+|     | e\ |            |          |       | 9.n | r\      | itable |
+|     | g\ |            |          |       |     | equired | where  |
+|     | i\ |            |          |       |     |         | local  |
+|     | o\ |            |          |       |     |         | appli\ |
+|     | n\ |            |          |       |     |         | cation |
+|     | a\ |            |          |       |     |         | HA is  |
+|     | l  |            |          |       |     |         | req\   |
+|     | R\ |            |          |       |     |         | uired. |
+|     | e\ |            |          |       |     |         | C\     |
+|     | d\ |            |          |       |     |         | ontrol |
+|     | u\ |            |          |       |     |         | plane  |
+|     | n\ |            |          |       |     |         | should |
+|     | d\ |            |          |       |     |         | be     |
+|     | a\ |            |          |       |     |         | distr\ |
+|     | n\ |            |          |       |     |         | ibuted |
+|     | c\ |            |          |       |     |         | across |
+|     | y  |            |          |       |     |         | DC     |
+|     | -  |            |          |       |     |         | f\     |
+|     | w\ |            |          |       |     |         | ailure |
+|     | o\ |            |          |       |     |         | d\     |
+|     | r\ |            |          |       |     |         | omains |
+|     | k\ |            |          |       |     |         | (as\   |
+|     | l\ |            |          |       |     |         | suming |
+|     | o\ |            |          |       |     |         | layer  |
+|     | a\ |            |          |       |     |         | 2      |
+|     | d  |            |          |       |     |         | c\     |
+|     | s\ |            |          |       |     |         | onnect\|
+|     | p\ |            |          |       |     |         | ivity) |
+|     | r\ |            |          |       |     |         | but    |
+|     | e\ |            |          |       |     |         | may be |
+|     | a\ |            |          |       |     |         | unava\ |
+|     | d  |            |          |       |     |         | ilable |
+|     | a\ |            |          |       |     |         | during |
+|     | c\ |            |          |       |     |         | up     |
+|     | r\ |            |          |       |     |         | grades |
+|     | o\ |            |          |       |     |         |        |
+|     | s\ |            |          |       |     |         |        |
+|     | s  |            |          |       |     |         |        |
+|     | A\ |            |          |       |     |         |        |
+|     | Z\ |            |          |       |     |         |        |
+|     | s  |            |          |       |     |         |        |
++-----+----+------------+----------+-------+-----+---------+--------+
+| 3   | G\ |>=2         | >=2      | >=2   | >99\| R\      | Su\    |
+|     | l\ |            |          |       | .nn | equired | itable |
+|     | o\ |            |          |       |     |         | where  |
+|     | b\ |            |          |       |     |         | local  |
+|     | a\ |            |          |       |     |         | and    |
+|     | l  |            |          |       |     |         | region |
+|     | R\ |            |          |       |     |         | appli\ |
+|     | e\ |            |          |       |     |         | cation |
+|     | d\ |            |          |       |     |         | HA is  |
+|     | u\ |            |          |       |     |         | re\    |
+|     | n\ |            |          |       |     |         | quired |
+|     | d\ |            |          |       |     |         | C\     |
+|     | a\ |            |          |       |     |         | ontrol |
+|     | n\ |            |          |       |     |         | plane  |
+|     | c\ |            |          |       |     |         | could  |
+|     | y  |            |          |       |     |         | be     |
+|     | -  |            |          |       |     |         | kept   |
+|     | w\ |            |          |       |     |         | ava\   |
+|     | o\ |            |          |       |     |         | ilable |
+|     | r\ |            |          |       |     |         | in one |
+|     | k\ |            |          |       |     |         | site   |
+|     | l\ |            |          |       |     |         | during |
+|     | o\ |            |          |       |     |         | up\    |
+|     | a\ |            |          |       |     |         | grades |
+|     | d  |            |          |       |     |         |        |
+|     | s\ |            |          |       |     |         |        |
+|     | p\ |            |          |       |     |         |        |
+|     | r\ |            |          |       |     |         |        |
+|     | e\ |            |          |       |     |         |        |
+|     | a\ |            |          |       |     |         |        |
+|     | d  |            |          |       |     |         |        |
+|     | a\ |            |          |       |     |         |        |
+|     | c\ |            |          |       |     |         |        |
+|     | r\ |            |          |       |     |         |        |
+|     | o\ |            |          |       |     |         |        |
+|     | s\ |            |          |       |     |         |        |
+|     | s  |            |          |       |     |         |        |
+|     | m\ |            |          |       |     |         |        |
+|     | u\ |            |          |       |     |         |        |
+|     | l\ |            |          |       |     |         |        |
+|     | t\ |            |          |       |     |         |        |
+|     | i\ |            |          |       |     |         |        |
+|     | p\ |            |          |       |     |         |        |
+|     | l\ |            |          |       |     |         |        |
+|     | e  |            |          |       |     |         |        |
+|     | R\ |            |          |       |     |         |        |
+|     | e\ |            |          |       |     |         |        |
+|     | g\ |            |          |       |     |         |        |
+|     | i\ |            |          |       |     |         |        |
+|     | o\ |            |          |       |     |         |        |
+|     | n\ |            |          |       |     |         |        |
+|     | s  |            |          |       |     |         |        |
++-----+----+------------+----------+-------+-----+---------+--------+
 
 Topology Detail
 ~~~~~~~~~~~~~~~
