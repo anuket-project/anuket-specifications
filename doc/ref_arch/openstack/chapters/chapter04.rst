@@ -19,8 +19,7 @@ structure of control and user planes, operating systems, hypervisors and
 BIOS configurations, and architectural details of underlay and overlay
 networking, and storage, and the distribution of OpenStack service
 components among nodes. The chapter also covers implementation support
-for the `Reference Model profiles and flavours
-<../../../ref_model/chapters/chapter02.md#24-profiles-profile-extensions--flavours>`__;
+for the :ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours`;
 the OpenStack flavor types capture both the sizing and the profile
 configuration (of the host).
 
@@ -73,10 +72,7 @@ OpenStack Control Plane Servers (Control Nodes)
 -  BIOS Requirements
 
 For OpenStack control nodes we use the BIOS parameters for the basic
-profile defined in `Chapter 5.4 of the Reference
-Model
-<../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-
-hardware-profiles-features-and-requirements>`__.
+profile defined in :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`.
 Additionally,
 for OpenStack we need to set the following boot parameters:
 
@@ -156,8 +152,7 @@ BIOS/boot Parameter Value
 Boot disks          RAID 1
 =================== ======
 
--  HW specifications: please see `RM Chapter
-   3.6 <../../../ref_model/chapters/chapter03.md#36-storage>`__
+-  HW specifications: please see :ref:`ref_model/chapters/chapter03:storage`
 -  How many nodes to meet SLA: Active-Passive is the default and
    recently OpenStack started to support Active-Active
 -  Sizing rules: minimum 2 x 1 TB; recommended 2 x 10 TB
@@ -169,20 +164,17 @@ This section specifies the compute node configurations to support the
 Basic and High-Performance profiles; in OpenStack this would be
 accomplished by specifying the configurations when creating “flavors”.
 The cloud operator may choose to implement certain profile-extensions
-(`RM 2.4 Profile Extensions
-<../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations>`__)
+(:ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`)
 as a set of standard configurations, of a given profile, capturing some
 of the variability through different values or extra specifications.
 
 -  The software and hardware configurations are as specified in the
-   `Reference Model chapter 5.4
-   <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__
+   :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
 
 -  BIOS requirement
 
-   -  The general BIOS requirements are described in the `Reference
-      Model chapter 5.4
-      <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__
+   -  The general BIOS requirements are described in the
+      :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
 
 **Example Profiles and their Extensions**
 
@@ -258,8 +250,8 @@ Table 4-2: Profile Extensions and Capabilities
 **BIOS Settings**
 
 A number of capabilities need to be enabled in the BIOS (such as NUMA
-and SMT); the Reference Model section on “`Cloud Infrastructure Software
-profile description <../../../ref_model/chapters/chapter05.md#5.1>`__”
+and SMT); the Reference Model section on
+:ref:`ref_model/chapters/chapter05:cloud infrastructure software profile description`
 specifies the capabilities required to be configured. Please note that
 capabilities may need to be configured in multiple systems. For
 OpenStack, we also need to set the following boot parameters:
@@ -518,8 +510,7 @@ Compute Resource Pooling Considerations
 Reservation of Compute Node Cores
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `RA-1 2.3.2 Infrastructure
-Requirements <./chapter02.md#infrastructure-requirements>`__
+The :ref:`ref_arch/openstack/chapters/chapter02:infrastructure requirements`
 ``inf.com.08`` requires the allocation of “certain number of host
 cores/threads to non-tenant workloads such as for OpenStack services.” A
 number (“n”) of random cores can be reserved for host services
@@ -1033,9 +1024,9 @@ extensions for these standard attributes automatically incorporated.
 Additions to resources, such as additional attributes, must be
 accompanied by an extension.
 
-`Chapter 5 <chapter05.md>`__, “Interfaces and APIs”, of this Reference
-Architecture provides a list of `Neutron
-Extensions <chapter05.md#neutron>`__. The current available
+:doc:`ref_arch/openstack/chapters/chapter05` of this Reference
+Architecture provides a list of :ref:`Neutron Extensions<ref_arch/openstack/chapters/chapter05:neutron>`.
+The current available
 extensions can be obtained using the `List Extensions
 API <https://docs.openstack.org/api-ref/network/v2/#list-extensions>`__
 and details about an extension using the `Show extension details
@@ -1201,7 +1192,7 @@ VIM Services
 ~~~~~~~~~~~~
 
 A high-level overview of the core OpenStack Services was provided in
-`Chapter 3 <./chapter03.md>`__. In this section we describe the core and
+:doc:`ref_arch/openstack/chapters/chapter03`. In this section we describe the core and
 other needed services in more detail.
 
 Keystone
@@ -1410,8 +1401,7 @@ Telco workload requirements requires SDN to offload Neutron calls.
 SDN provides a truly scalable and preferred solution to suport dynamic,
 very large-scale, high-density, telco cloud environments. OpenStack
 Neutron, with its plugin architecture, provides the ability to integrate
-SDN controllers ( `3.2.5. Virtual Networking – 3rd party SDN
-solution <./chapter03.md#virtual-networking--3rd-party-sdn-solution>`__).
+SDN controllers (:ref:`ref_arch/openstack/chapters/chapter03:virtual networking – 3rd party sdn solution`).
 With SDN incorporated in OpenStack, changes to the network is triggered
 by workloads (and users), translated into Neutron APIs and then handled
 through neutron plugins by the corresponding SDN agents.
@@ -1723,9 +1713,7 @@ set up the flavors as specified in the tables below.
 ..
 
    -  To configure profile-extensions, for example, the “Storage
-      Intensive High Performance” profile, as defined in `Reference
-      Model Profile Extensions
-      <../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations>`__,
+      Intensive High Performance” profile, as defined in :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`,
       in addition to the above, need configure the storage IOPS: the
       following two parameters need to be specified in the flavor
       create: –property quota:disk_write_iops_sec=<IOPS#> and –property
@@ -1781,9 +1769,9 @@ been creating intermediate data centres in central office locations,
 colocation centres, and now edge centres at the physical edge of their
 networks because of the demand for low latency and high throughput for
 5G, IoT and connected devices (including autonomous driverless vehicles
-and connected vehicles). Chapter 3.5 of this document, discusses `Cloud
-Topology <./chapter03.md#cloud-topology>`__ and lists 3 types of data centres:
-Large, Intermediate and Edge.
+and connected vehicles). Chapter 3.5 of this document, discusses
+:ref:`ref_arch/openstack/chapters/chapter03:cloud topology`
+and lists 3 types of data centres: Large, Intermediate and Edge.
 
 For ease of convenience, unless specifically required, in this section
 we will use Central Cloud Centre, Edge Cloud Centre and Intermediate
@@ -1792,7 +1780,7 @@ centralised large data centres, Telco edge locations and for locations
 with capacity somewhere in between the large data centres and edge
 locations, respectively. The mapping of various terms, including the
 Reference Model terminology specified in Table `8-5
-<../../..//ref_model/chapters/chapter08.md#835-comparison-of-deployment-topologies-and-edge-terms>`__
+:ref:`ref_model/chapters/chapter08:comparison of deployment topologies and edge terms`
 and `Open Glossary of Edge Computing
 <https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md>`__
 is as follows:
@@ -1808,15 +1796,13 @@ In the Intermediate and Edge cloud centres, there may be limitations on
 the resource capacity, as in the number of servers, and the capacity of
 these servers in terms of # of cores, RAM, etc. restricting the set of
 services that can be deployed and, thus, creating a dependency between
-other data centres. In `Reference Model Chapter
-8.3 <../../../ref_model/chapters/chapter08.md#83-telco-edge-cloud>`__,
+other data centres. In :ref:`ref_model/chapters/chapter08:telco edge cloud`,
 Table 8-5
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.
 
-Chapter `3.3.1.1. OpenStack Services
-Topology <./chapter03.md#openstack-services-topology>`__ of this
-document, specifies the differences between the Control Plane and Data
+:ref:`ref_arch/openstack/chapters/chapter03:openstack services topology`
+of this document, specifies the differences between the Control Plane and Data
 Plane, and specifies which of the control nodes, compute nodes, storage
 nodes (optional) and network nodes (optional) are components of these
 planes. The previous sections of this Chapter 4 include a description of
@@ -1930,10 +1916,10 @@ depending upon Control Plane Scenario
 Edge Cloud Topology
 ~~~~~~~~~~~~~~~~~~~
 
-The Reference Model Chapter 8.3 “`Telco Edge Cloud
-<../../../ref_model/chapters/chapter08.md#83-telco-edge-cloud>`__”, presents
-the deployment environment characteristics, infrastructure characteristics
-and new values for the Infrastructure Profiles at the Edge.
+The Reference Model Chapter
+:ref:`ref_model/chapters/chapter08:telco edge cloud`,
+presents the deployment environment characteristics, infrastructure
+characteristics and new values for the Infrastructure Profiles at the Edge.
 
 The `Edge computing
 whitepaper <https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/>`__
@@ -1947,17 +1933,15 @@ Cloud Centre and the number of copies that should be deployed. These
 references also present the pros and cons of DCP and CCP and designs to
 address some of the challenges of each of the models.
 
-Table 8-4 in the Reference Model Chapter 8.3.4 “`Telco Edge Cloud:
-Platform Services Deployment
-<../../../ref_model/chapters/chapter08.md#834--telco-edge-cloud-platform-services-deployment>`__”
+Table 8-4 in the Reference Model
+:ref:`ref_model/chapters/chapter08:telco edge cloud: platform services deployment`
 lists the Platform Services that may be placed in the different node types
 (control, compute and storage). Depending upon the capacity and
 resources available only the compute nodes may exist at the Edge thereby
 impacting operations.
 
-Table 8-3 in the Reference Model Chapter 8.3.3 “`Telco Edge Cloud
-Infrastructure Profiles
-<../../../ref_model/chapters/chapter08.md#833-telco-edge-cloud-infrastructure-profiles>`__”
+Table 8-3 in the Reference Model Chapter
+:ref:`ref_model/chapters/chapter08:telco edge cloud: infrastructure profiles`
 lists a number of Infrastructure Profile characteristics and the changes that
 may need to be made for certain Edge clouds depending upon their
 resource capabilities. It should be noted that none of these changes

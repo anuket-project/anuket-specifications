@@ -18,8 +18,8 @@ same applies to *should not*. > RFC2119
 **may**: Requirements that are marked as *may* are considered optional.
 The same applies to *may not*.
 
-This chapter includes both “Requirements” that must be satisifed in an
-RA-1 conformant implementation and “Recommendations” that are optional
+This chapter includes both "Requirements" that must be satisifed in an
+RA-1 conformant implementation and "Recommendations" that are optional
 for implementation.
 
 Reference Model Requirements
@@ -39,8 +39,7 @@ following requirements are referenced through:
 Cloud Infrastructure Software Profile Requirements for Compute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(source `RM 5.2
-<../../../ref_model/chapters/chapter05.md#52-cloud-infrastructure-software-profiles-features-and-requirements>`__)
+(source :ref:`ref_model/chapters/chapter05:cloud infrastructure software profiles features and requirements`)
 
 +-------------+-------------+-------------+-------------+-------------+
 | Reference   | Description | Requirement | Requirement | Sp\         |
@@ -121,9 +120,8 @@ Cloud Infrastructure Software Profile Requirements for Compute
 Table 2-1a: Reference Model Requirements: Cloud Infrastructure Software
 Profile Capabilities
 
-   **1** Defined in the ``.bronze`` configuration in `RM section 4.2.6
-   Storage Extensions
-   <../../../ref_model/chapters/chapter04.md#426-storage-extensions>`__
+   **1** Defined in the ``.bronze`` configuration in
+   :ref:`ref_model/chapters/chapter04:storage extensions`
 
 Cloud Infrastructure Software Profile Extensions Requirements for Compute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -174,8 +172,7 @@ Requirements for Compute
 Cloud Infrastructure Software Profile Requirements for Networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(source `RM 5.2.3
-<../../../ref_model/chapters/chapter05.md#523-virtual-networking>`__)
+(source :ref:`ref_model/chapters/chapter05:virtual networking`)
 
 The features and configuration requirements related to virtual
 networking for the two (2) types of Cloud Infrastructure Profiles are
@@ -302,8 +299,7 @@ Requirements for Networking
 Cloud Infrastructure Software Profile Requirements for Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(source `RM 5.2
-<../../../ref_model/chapters/chapter05.md#52-cloud-infrastructure-software-profiles-features-and-requirements>`__)
+(source :ref:`ref_model/chapters/chapter05:cloud infrastructure software profiles features and requirements`)
 
 +-------------+-------------+-------------+-------------+-------------+
 | Reference   | Description | Requirement | Requirement | Sp\         |
@@ -360,8 +356,7 @@ Profile Extensions Requirements for Storage
 Cloud Infrastructure Hardware Profile Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(source `RM 5.4
-<../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
+(source :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`)
 
 +-------------+-------------+-------------+-------------+-------------+
 | Reference   | Description | Requirement | Requirement | Sp\         |
@@ -442,8 +437,7 @@ Profile Requirements
 Cloud Infrastructure Hardware Profile-Extensions Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source `RM 5.4
-<../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
+(source :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`)
 
 +-------------+-------------+-------------+-------------+-------------+
 | Reference   | Description | Requirement | Requirement | Sp\         |
@@ -483,8 +477,7 @@ Profile Extensions Requirements
 Cloud Infrastructure Management Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(source `RM 4.1.5
-<../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities>`__)
+(source :ref:`ref_model/chapters/chapter04:cloud infrastructure management capabilities`)
 
 +-----------------+-----------------+-----------------+-----------------+
 | Reference       | Description     | Requirement     | Specification   |
@@ -560,8 +553,7 @@ Cloud Infrastructure Security Requirements
 System Hardening
 ^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.1
-<../../../ref_model/chapters/chapter07.md#791-system-hardening>`__)
+(source :ref:`ref_model/chapters/chapter07:system hardening`)
 
 +------------------+---------------+---------------+------------------+
 | Reference        | sub-category  | Description   | Specification    |
@@ -788,8 +780,7 @@ Table 2-6: Reference Model Requirements - System Hardening Requirements
 Platform and Access
 ^^^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.2
-<../../../ref_model/chapters/chapter07.md#792-platform-and-access>`__)
+(source :ref:`ref_model/chapters/chapter07:platform and access`)
 
 +---------------+---------------+---------------+--------------------+
 | Reference     | sub-category  | Description   | Specification      |
@@ -1075,8 +1066,7 @@ Requirements
 Confidentiality and Integrity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.3
-<../../../ref_model/chapters/chapter07.md#793-confidentiality-and-integrity>`__)
+(source :ref:`ref_model/chapters/chapter07:confidentiality and integrity`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Specification     |
@@ -1208,8 +1198,7 @@ Requirements
 Workload Security
 ^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.4
-<../../../ref_model/chapters/chapter07.md#794-workload-security>`__)
+(source :ref:`ref_model/chapters/chapter07:workload security`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Specification     |
@@ -1303,8 +1292,7 @@ Table 2-9: Reference Model Requirements - Workload Security Requirements
 Image Security
 ^^^^^^^^^^^^^^
 
-(source `RM 7.9.5
-<../../../ref_model/chapters/chapter07.md#795-image-security>`__)
+(source :ref:`ref_model/chapters/chapter07:image security`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Specification     |
@@ -1410,8 +1398,7 @@ Table 2-10: Reference Model Requirements - Image Security Requirements
 Security LCM
 ^^^^^^^^^^^^
 
-(source `RM 7.9.6
-<../../../ref_model/chapters/chapter07.md#796-security-lcm>`__)
+(source :ref:`ref_model/chapters/chapter07:security lcm`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Specification     |
@@ -1594,9 +1581,8 @@ Table 2-11: Reference Model Requirements - Security LCM Requirements
 Monitoring and Security Audit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.7
-<../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit>`__)
-
+(source
+:ref:`ref_model/chapters/chapter07:monitoring and security audit`)
 
 The Platform is assumed to provide configurable alerting and
 notification capability and the operator is assumed to have automated
@@ -1923,8 +1909,7 @@ Requirements
 Open-Source Software
 ^^^^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.8
-<../../../ref_model/chapters/chapter07.md#798-open-source-sotfware>`__)
+(source :ref:`ref_model/chapters/chapter07:open source software`)
 
 +-----------+-------------------+---------------------+---------------+
 | Reference | sub-category      | Description         | Specification |
@@ -1988,8 +1973,8 @@ Requirements
 IaaC security
 ^^^^^^^^^^^^^
 
-(source `RM 7.9.9
-<../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements>`__)
+(source
+:ref:`ref_model/chapters/chapter07:iaac - secure design and architecture stage requirements`)
 
 **Secure Code Stage Requirements**
 
@@ -2144,8 +2129,7 @@ Runtime Defence and Monitoring Stage
 Compliance with Standards
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.10
-<../../../ref_model/chapters/chapter07.md#7910-compliance-with-standards>`__)
+(source :ref:`ref_model/chapters/chapter07:compliance with standards`)
 
 +-----------+-------------------+---------------------+---------------+
 | Reference | sub-category      | Description         | Specification |
@@ -2995,8 +2979,7 @@ Security Recommendations
 System Hardening
 ^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.1
-<../../../ref_model/chapters/chapter07.md#791-system-hardening>`__)
+(source :ref:`ref_model/chapters/chapter07:system hardening`)
 
 +------------------+---------------+---------------+------------------+
 | Reference        | sub-category  | Description   | Notes            |
@@ -3038,8 +3021,7 @@ Table 2-33: System Hardening Recommendations
 Platform and Access
 ^^^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.2
-<../../../ref_model/chapters/chapter07.md#792-platform-and-access>`__)
+(source :ref:`ref_model/chapters/chapter07:platform and access`)
 
 +---------------+---------------+---------------+--------------------+
 | Reference     | sub-category  | Description   | Notes              |
@@ -3075,8 +3057,7 @@ Table 2-34: Platform and Access Recommendations
 Confidentiality and Integrity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.3
-<../../../ref_model/chapters/chapter07.md#793-confidentiality-and-integrity>`__)
+(source :ref:`ref_model/chapters/chapter07:confidentiality and integrity`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -3115,8 +3096,7 @@ Table 2-35: Confidentiality and Integrity Recommendations
 Workload Security
 ^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.4
-<../../../ref_model/chapters/chapter07.md#794-workload-security>`__)
+(source :ref:`ref_model/chapters/chapter07:workload security`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -3139,8 +3119,7 @@ Table 2-36: Workload Security Recommendations
 Image Security
 ^^^^^^^^^^^^^^
 
-(source `RM 7.9.5
-<../../../ref_model/chapters/chapter07.md#795-image-security>`__)
+(source :ref:`ref_model/chapters/chapter07:image security`)
 
 This section is left blank for future use.
 
@@ -3163,8 +3142,7 @@ Table 2-37: Image Security Recommendations
 Security LCM
 ^^^^^^^^^^^^
 
-(source `RM 7.9.6
-<../../../ref_model/chapters/chapter07.md#796-security-lcm>`__)
+(source :ref:`ref_model/chapters/chapter07:security lcm`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -3192,8 +3170,8 @@ Table 2-38: LCM Security Recommendations
 Monitoring and Security Audit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.7
-<../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit>`__)
+(source
+:ref:`ref_model/chapters/chapter07:monitoring and security audit`)
 
 The Platform is assumed to provide configurable alerting and
 notification capability and the operator is assumed to have automated
@@ -3237,8 +3215,7 @@ Table 2-39: Monitoring and Security Audit Recommendations
 Open-Source Software Security
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.8
-<../../../ref_model/chapters/chapter07.md#798-open-source-sotfware>`__)
+(source :ref:`ref_model/chapters/chapter07:open source software`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -3269,8 +3246,8 @@ Table 2-40: Open-Source Software Security Recommendations
 IaaC security
 ^^^^^^^^^^^^^
 
-(source `RM 7.9.9
-<../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements>`__)
+(source
+:ref:`ref_model/chapters/chapter07:iaac - secure design and architecture stage requirements`)
 
 **Secure Design and Architecture Stage**
 
@@ -3666,8 +3643,7 @@ and Monitoring Stage
 Compliance with Standards
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source `RM 7.9.10
-<../../../ref_model/chapters/chapter07.md#7910-compliance-with-standards>`__)
+(source :ref:`ref_model/chapters/chapter07:compliance with standards`)
 
 +-----------+-------------------+---------------------+---------------+
 | Reference | sub-category      | Description         | Notes         |
