@@ -52,7 +52,7 @@ Cloud Infrastructure Software Profile Requirements for Compute (source `RM 5.2 <
 |             | a single    |             |             |             |
 |             | instance by |             |             |             |
 |             | the Cloud   |             |             |             |
-|             | Inf         |             |             |             |
+|             | Inf\        |             |             |             |
 |             | rastructure |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.002   | Max memory  | at least 32 | at least 32 |             |
@@ -61,7 +61,7 @@ Cloud Infrastructure Software Profile Requirements for Compute (source `RM 5.2 <
 |             | a single    |             |             |             |
 |             | instance by |             |             |             |
 |             | the Cloud   |             |             |             |
-|             | Inf         |             |             |             |
+|             | Inf\        |             |             |             |
 |             | rastructure |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.003   | Max storage | at least    | at least    |             |
@@ -70,7 +70,7 @@ Cloud Infrastructure Software Profile Requirements for Compute (source `RM 5.2 <
 |             | a single    |             |             |             |
 |             | instance by |             |             |             |
 |             | the Cloud   |             |             |             |
-|             | Inf         |             |             |             |
+|             | Inf\        |             |             |             |
 |             | rastructure |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.004   | Max number  | 6           | 6           |             |
@@ -82,7 +82,7 @@ Cloud Infrastructure Software Profile Requirements for Compute (source `RM 5.2 <
 |             | a single    |             |             |             |
 |             | instance by |             |             |             |
 |             | the Cloud   |             |             |             |
-|             | Inf         |             |             |             |
+|             | Inf\        |             |             |             |
 |             | rastructure |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.005   | Max storage | Up to 16TB1 | Up to 16TB1 |             |
@@ -92,7 +92,7 @@ Cloud Infrastructure Software Profile Requirements for Compute (source `RM 5.2 <
 |             | an instance |             |             |             |
 |             | by the      |             |             |             |
 |             | Cloud       |             |             |             |
-|             | Inf         |             |             |             |
+|             | Inf\        |             |             |             |
 |             | rastructure |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.006/  | CPU pinning | Not         | Must        |             |
@@ -103,9 +103,9 @@ Cloud Infrastructure Software Profile Requirements for Compute (source `RM 5.2 <
 | infra.      | support     | required    | support     |             |
 | com.cfg.002 |             |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
-| e.cap.018/  | S           | Must        | Optional    |             |
+| e.cap.018/  | S\          | Must        | Optional    |             |
 | infra.      | imultaneous | support     |             |             |
-| com.cfg.005 | Mul         |             |             |             |
+| com.cfg.005 | Mul\        |             |             |             |
 |             | tithreading |             |             |             |
 |             | (SMT)       |             |             |             |
 |             | enabled     |             |             |             |
@@ -131,20 +131,20 @@ Cloud Infrastructure Software Profile Extensions Requirements for Compute
 |             |             |             |             | Reference   |
 +=============+=============+=============+=============+=============+
 | e.cap.008/  | IPSec       | Compute     |             |             |
-| infra.com.  | A           | Intensive   |             |             |
+| infra.com.  | A\          | Intensive   |             |             |
 | acc.cfg.001 | cceleration | GPU         |             |             |
 |             | using the   |             |             |             |
-|             | v           |             |             |             |
+|             | v\          |             |             |             |
 |             | irtio-ipsec |             |             |             |
 |             | interface   |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.010/  | Transcoding | Compute     | Video       |             |
-| infra.com.  | A           | Intensive   | Transcoding |             |
+| infra.com.  | A\          | Intensive   | Transcoding |             |
 | acc.cfg.002 | cceleration | GPU         |             |             |
 +-------------+-------------+-------------+-------------+-------------+
-| e.cap.011/  | P           | Firmware-p  | Accelerator |             |
+| e.cap.011/  | P\          | Firmware-p\ | Accelerator |             |
 | infra.com.  | rogrammable | rogrammable |             |             |
-| acc.cfg.003 | A           | adapter     |             |             |
+| acc.cfg.003 | A\          | adapter     |             |             |
 |             | cceleration |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.012   | Enhanced    | E           | E           |             |
@@ -159,8 +159,8 @@ Cloud Infrastructure Software Profile Extensions Requirements for Compute
 | acc.cfg.004 | support     | GPU         |             |             |
 |             | (GPU/NPU)   |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
-| e.cap.016/  | FPGA/other  | Firmware-p  |             |             |
-| infra.com.  | A           | rogrammable |             |             |
+| e.cap.016/  | FPGA/other  | Firmware-p\ |             |             |
+| infra.com.  | A\          | rogrammable |             |             |
 | acc.cfg.005 | cceleration | adapter     |             |             |
 |             | H/W         |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
@@ -183,14 +183,14 @@ specified below followed by networking bandwidth requirements.
 |             |             |             | Profile     |             |
 +=============+=============+=============+=============+=============+
 | infra.      | IO          | Must        | Must        |             |
-| net.cfg.001 | vir         | support     | support     |             |
+| net.cfg.001 | vir\        | support     | support     |             |
 |             | tualisation |             |             |             |
 |             | using       |             |             |             |
 |             | virtio1.1   |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | infra.      | The overlay | Must        | *No         |             |
 | net.cfg.002 | network     | support     | requirement |             |
-|             | en          | VXLAN,      | specified*  |             |
+|             | en\         | VXLAN,      | specified*  |             |
 |             | capsulation | MPLSoUDP,   |             |             |
 |             | protocol    | GENEVE,     |             |             |
 |             | needs to    | other       |             |             |
@@ -272,7 +272,7 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
 | nac.cfg.004 |             |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.019/  | vSwitch     | N           | Y           |             |
-| infra.net.  | o           |             |             |             |
+| infra.net.  | o\          |             |             |             |
 | acc.cfg.001 | ptimisation |             |             |             |
 |             | (DPDK)      |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
@@ -281,11 +281,11 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
 | acc.cfg.002 | Offload)    |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.009/  | Crypto      | N           | Optional    |             |
-| infra.net.  | a           |             |             |             |
+| infra.net.  | a\          |             |             |             |
 | acc.cfg.003 | cceleration |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | infra.net.  | Crypto      | N           | Optional    |             |
-| acc.cfg.004 | A           |             |             |             |
+| acc.cfg.004 | A\          |             |             |             |
 |             | cceleration |             |             |             |
 |             | Interface   |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
@@ -348,8 +348,7 @@ Cloud Infrastructure Software Profile Extensions Requirements for Storage
 Table 2-3b: Reference Model Requirements - Cloud Infrastructure Software
 Profile Extensions Requirements for Storage
 
-Cloud Infrastructure Hardware Profile Requirements (source `RM 5.4 <../../../ref_model/chapters/
-chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
+Cloud Infrastructure Hardware Profile Requirements (source `RM 5.4 <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------+-------------+-------------+-------------+-------------+
@@ -359,8 +358,8 @@ chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements
 |             |             |             | Performance |             |
 |             |             |             | Profile     |             |
 +=============+=============+=============+=============+=============+
-| i           | CPU         |             |             |             |
-| nfra.hw.001 | A           |             |             |             |
+| i\          | CPU         |             |             |             |
+| nfra.hw.001 | A\          |             |             |             |
 |             | rchitecture |             |             |             |
 |             | (Values     |             |             |             |
 |             | such as     |             |             |             |
@@ -380,20 +379,20 @@ chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements
 | infra.hw.   | NUMA        | Not         | Must        |             |
 | cpu.cfg.003 |             | required    | support     |             |
 +-------------+-------------+-------------+-------------+-------------+
-| infra.hw.   | S           | Must        | Optional    |             |
+| infra.hw.   | S\          | Must        | Optional    |             |
 | cpu.cfg.004 | imultaneous | support     |             |             |
-|             | Mu          |             |             |             |
-|             | ltithreadin |             |             |             |
+|             | Mu\         |             |             |             |
+|             | ltithreadin\|             |             |             |
 |             | g/Symmetric |             |             |             |
-|             | Mult        |             |             |             |
+|             | Mult\       |             |             |             |
 |             | iprocessing |             |             |             |
 |             | (SMT/SMP)   |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
-| in          | Local       | *No         | *No         |             |
+| in\         | Local       | *No         | *No         |             |
 | fra.hw.stg. | Storage HDD | requirement | requirement |             |
 | hdd.cfg.001 |             | specified*  | specified*  |             |
 +-------------+-------------+-------------+-------------+-------------+
-| in          | Local       | Should      | Should      |             |
+| in\         | Local       | Should      | Should      |             |
 | fra.hw.stg. | Storage SSD | support     | support     |             |
 | ssd.cfg.002 |             |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
@@ -428,12 +427,11 @@ chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements
 Table 2-4a: Reference Model Requirements - Cloud Infrastructure Hardware
 Profile Requirements
 
-Cloud Infrastructure Hardware Profile-Extensions Requirements (source `RM 5.4 <../../../ref_model/
-chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
+Cloud Infrastructure Hardware Profile-Extensions Requirements (source `RM 5.4 <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------+-------------+-------------+-------------+-------------+
-| Reference   | Description | Requirement | Requirement | Sp          |
+| Reference   | Description | Requirement | Requirement | Sp\         |
 |             |             | for Basic   | for         | ecification |
 |             |             | Profile     | High-       | Reference   |
 |             |             |             | Performance |             |
@@ -444,12 +442,12 @@ chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-req
 | cac.cfg.001 |             |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.016/  | FPGA/other  | N           | Optional    |             |
-| infra.hw.   | A           |             |             |             |
+| infra.hw.   | A\          |             |             |             |
 | cac.cfg.002 | cceleration |             |             |             |
 |             | H/W         |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.009/  | Crypto      | N           | Optional    |             |
-| infra.hw.   | A           |             |             |             |
+| infra.hw.   | A\          |             |             |             |
 | nac.cfg.001 | cceleration |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | e.cap.015/  | SmartNIC    | N           | Optional    |             |
@@ -552,7 +550,7 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | **must**      | “Security        |
 |                  |               | maintain the  | LCM” <./ch       |
 |                  |               | specified     | apter06.md#s     |
-|                  |               | c             | ecurity-lcm>`__, |
+|                  |               | c\            | ecurity-lcm>`__, |
 |                  |               | onfiguration. | `RA-1 “Cloud     |
 |                  |               |               | Infrastructure   |
 |                  |               |               | and VIM          |
@@ -566,7 +564,7 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 +------------------+---------------+---------------+------------------+
 | sec.gen.002      | Hardening     | All systems   | `RA-1            |
 |                  |               | part of Cloud | “Password        |
-|                  |               | I             | policy” <./chapt |
+|                  |               | I\            | policy” <./chapt |
 |                  |               | nfrastructure | er06.md#password |
 |                  |               | **must**      | -policy>`__      |
 |                  |               | support       |                  |
@@ -584,10 +582,10 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 +------------------+---------------+---------------+------------------+
 | sec.gen.003      | Hardening     | All servers   | `RA-1            |
 |                  |               | part of Cloud | “Server boot     |
-|                  |               | I             | hardening        |
+|                  |               | I\            | hardening        |
 |                  |               | nfrastructure | ” <./chapter06.m |
 |                  |               | **must**      | d#server-boot-   |
-|                  |               | support a     | hardening>`__ |
+|                  |               | support a     | hardening>`__    |
 |                  |               | root of trust |                  |
 |                  |               | and secure    |                  |
 |                  |               | boot.         |                  |
@@ -597,7 +595,7 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | all the       | Software         |
 |                  |               | servers part  | ” <./chapter06.m |
 |                  |               | of Cloud      | d#function-      |
-|                  |               | I             | and-software>`__ |
+|                  |               | I\            | and-software>`__ |
 |                  |               | nfrastructure |                  |
 |                  |               | **must** be   |                  |
 |                  |               | hardened by   |                  |
@@ -611,7 +609,7 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | configuring   |                  |
 |                  |               | operating     |                  |
 |                  |               | system user   |                  |
-|                  |               | au            |                  |
+|                  |               | au\           |                  |
 |                  |               | thentication, |                  |
 |                  |               | configuring   |                  |
 |                  |               | resource      |                  |
@@ -654,8 +652,8 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 +------------------+---------------+---------------+------------------+
 | sec.gen.007      | Hardening     | All servers   | `RA-1            |
 |                  |               | part of Cloud | “Security Logs   |
-|                  |               | I             | Time             |
-|                  |               | nfrastructure | Synchronisat     |
+|                  |               | I\            | Time             |
+|                  |               | nfrastructure | Synchronisat\    |
 |                  |               | **must** be   | ion” <./chapter0 |
 |                  |               | Time          | 6.md#securi      |
 |                  |               | synchronised  | ty-logs-time-syn |
@@ -665,21 +663,21 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 +------------------+---------------+---------------+------------------+
 | sec.gen.008      | Hardening     | All servers   | `RA-1            |
 |                  |               | part of Cloud | “Patches” <      |
-|                  |               | I             | ./chapter06.md#  |
+|                  |               | I\            | ./chapter06.md#  |
 |                  |               | nfrastructure | patches>`__,     |
 |                  |               | **must** be   | `RA-1            |
 |                  |               | regularly     | “Security        |
 |                  |               | updated to    | LCM” <./c        |
 |                  |               | address       | hapter06.md#     |
 |                  |               | security      | security-lcm>`__ |
-|                  |               | vul           |                  |
+|                  |               | vul\          |                  |
 |                  |               | nerabilities. |                  |
 +------------------+---------------+---------------+------------------+
 | sec.gen.009      | Hardening     | The Platform  | `RA-1            |
 |                  |               | **must**      | “Integrity of    |
 |                  |               | support       | OpenStack        |
 |                  |               | software      | components       |
-|                  |               | integrity     | configur         |
+|                  |               | integrity     | configur\        |
 |                  |               | protection    | ation” <./chapte |
 |                  |               | and           | r06.md#inte      |
 |                  |               | verification. | grity-of-opensta |
@@ -692,10 +690,10 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               |               | age-security>`__ |
 +------------------+---------------+---------------+------------------+
 | sec.gen.010      | Hardening     | The Cloud     | `RA-1            |
-|                  |               | I             | “Confidentiality |
+|                  |               | I\            | “Confidentiality |
 |                  |               | nfrastructure | and Integrity of |
 |                  |               | **must**      | tenant           |
-|                  |               | support       | dat              |
+|                  |               | support       | dat\             |
 |                  |               | encrypted     | a” <./chapter06. |
 |                  |               | storage, for  | md#confiden      |
 |                  |               | example,      | tiality-and-inte |
@@ -712,7 +710,7 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | Access Based  |                  |
 |                  |               | on the Need   |                  |
 |                  |               | to            |                  |
-|                  |               | K             |                  |
+|                  |               | K\            |                  |
 |                  |               | now <https:// |                  |
 |                  |               | www.cisecurit |                  |
 |                  |               | y.org/control |                  |
@@ -730,7 +728,7 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | physical      |                  |
 |                  |               | access to the |                  |
 |                  |               | underlying    |                  |
-|                  |               | in            |                  |
+|                  |               | in\           |                  |
 |                  |               | frastructure. |                  |
 +------------------+---------------+---------------+------------------+
 | sec.gen.013      | Hardening     | The Platform  | `RA-1            |
@@ -742,7 +740,7 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 |                  |               | logical       |                  |
 |                  |               | access to the |                  |
 |                  |               | underlying    |                  |
-|                  |               | in            |                  |
+|                  |               | in\           |                  |
 |                  |               | frastructure. |                  |
 +------------------+---------------+---------------+------------------+
 | sec.gen.015      | Hardening     | Any change to | `RA-1            |
@@ -797,31 +795,31 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | support       | and Integrity of   |
 |               |               | Secure and    | communications”    |
 |               |               | encrypted     | <./chapter06.md#   |
-|               |               | co            | confidentiality    |
+|               |               | co\           | confidentiality    |
 |               |               | mmunications, | -and-integrity-of- |
 |               |               | and           | communications     |
-|               |               | co            | -secci001>`__      | 
+|               |               | co\           | -secci001>`__      | 
 |               |               | nfidentiality |                    |
 |               |               | and integrity |                    |
 |               |               | of network    |                    |
 |               |               | traffic.      |                    |
 +---------------+---------------+---------------+--------------------+
 | sec.sys.004   | Access        | The Cloud     | `RA-1              |
-|               |               | I             | “Confidentiality   |
+|               |               | I\            | “Confidentiality   |
 |               |               | nfrastructure | and Integrity of   |
 |               |               | **must**      | communications”    |
 |               |               | support       | <./chapter06.md#   |
-|               |               | au            | confidentiality    |
+|               |               | au\           | confidentiality    |
 |               |               | thentication, | -and-integrity-of- |
 |               |               | integrity and | communications     |
-|               |               | co            | -secci001>`__      |
+|               |               | co\           | -secci001>`__      |
 |               |               | nfidentiality |                    |
 |               |               | on all        |                    |
 |               |               | network       |                    |
 |               |               | channels.     |                    |
 +---------------+---------------+---------------+--------------------+
 | sec.sys.005   | Access        | The Cloud     | `RA-1              |
-|               |               | I             | “Confidentiality   |
+|               |               | I\            | “Confidentiality   |
 |               |               | nfrastructure | and Integrity of   |
 |               |               | **must**      | communications”    |
 |               |               | segregate the | <./chapter06.md#   |
@@ -831,13 +829,13 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               |               | -secci001>`__      |
 +---------------+---------------+---------------+--------------------+
 | sec.sys.006   | Access        | The Cloud     | `RA-1              |
-|               |               | I             | “Identity          |
+|               |               | I\            | “Identity          |
 |               |               | nfrastructure | Security” <./cha   |
 |               |               | **must** be   | pter06.md#ide      |
 |               |               | able to       | ntity-security>`__ |
 |               |               | utilise the   |                    |
 |               |               | Cloud         |                    |
-|               |               | I             |                    |
+|               |               | I\            |                    |
 |               |               | nfrastructure |                    |
 |               |               | Manager       |                    |
 |               |               | identity      |                    |
@@ -891,7 +889,7 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | between trust |                    |
 |               |               | domains.      |                    |
 |               |               | These maybe   |                    |
-|               |               | un            |                    |
+|               |               | un\           |                    |
 |               |               | i-directional |                    |
 |               |               | relationships |                    |
 |               |               | where the     |                    |
@@ -923,7 +921,7 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | without       |                    |
 |               |               | existing      |                    |
 |               |               | trust         |                    |
-|               |               | r             |                    |
+|               |               | r\            |                    |
 |               |               | elationships, |                    |
 |               |               | the Platform  |                    |
 |               |               | **must not**  |                    |
@@ -941,7 +939,7 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | **must not**  | “System            |
 |               |               | reuse the     | Access” <.         |
 |               |               | same          | /chapter06.md#     |
-|               |               | a             | system-access>`__  |
+|               |               | a\            | system-access>`__  |
 |               |               | uthentication |                    |
 |               |               | credentials   |                    |
 |               |               | (e.g., key    |                    |
@@ -1057,10 +1055,10 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 | Reference    | sub-category      | Description  | Specification     |
 |              |                   |              | Reference         |
 +==============+===================+==============+===================+
-| sec.ci.001   | Confiden          | The Platform | `RA-1             |
+| sec.ci.001   | Confiden\         | The Platform | `RA-1             |
 |              | tiality/Integrity | **must**     | “Confidentiality  |
 |              |                   | support      | and               |
-|              |                   | Con          | Integrity” <.     |
+|              |                   | Con\         | Integrity” <.     |
 |              |                   | fidentiality | /chapter06.md#    |
 |              |                   | and          | confidentiality-  |
 |              |                   | Integrity of | and-integrity>`__ |
@@ -1068,10 +1066,10 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 |              |                   | and in       |                   |
 |              |                   | transit.     |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.ci.003   | Confiden          | The Platform |                   |
+| sec.ci.003   | Confiden\         | The Platform |                   |
 |              | tiality/Integrity | **must**     |                   |
 |              |                   | support      |                   |
-|              |                   | Con          |                   |
+|              |                   | Con\         |                   |
 |              |                   | fidentiality |                   |
 |              |                   | and          |                   |
 |              |                   | Integrity of |                   |
@@ -1081,7 +1079,7 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 | sec.ci.004   | Confidentiality   | The Platform |                   |
 |              |                   | **must**     |                   |
 |              |                   | support      |                   |
-|              |                   | Con          |                   |
+|              |                   | Con\         |                   |
 |              |                   | fidentiality |                   |
 |              |                   | of processes |                   |
 |              |                   | and restrict |                   |
@@ -1092,14 +1090,14 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 |              |                   | owner (e.g., |                   |
 |              |                   | tenant).     |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.ci.005   | Confiden          | The Platform |                   |
+| sec.ci.005   | Confiden\         | The Platform |                   |
 |              | tiality/Integrity | **must**     |                   |
 |              |                   | support      |                   |
-|              |                   | Con          |                   |
+|              |                   | Con\         |                   |
 |              |                   | fidentiality |                   |
 |              |                   | and          |                   |
 |              |                   | Integrity of |                   |
-|              |                   | pro          |                   |
+|              |                   | pro\         |                   |
 |              |                   | cess-related |                   |
 |              |                   | metadata and |                   |
 |              |                   | restrict     |                   |
@@ -1110,10 +1108,10 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 |              |                   | owner (e.g., |                   |
 |              |                   | tenant).     |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.ci.006   | Confiden          | The Platform |                   |
+| sec.ci.006   | Confiden\         | The Platform |                   |
 |              | tiality/Integrity | **must**     |                   |
 |              |                   | support      |                   |
-|              |                   | Con          |                   |
+|              |                   | Con\         |                   |
 |              |                   | fidentiality |                   |
 |              |                   | and          |                   |
 |              |                   | Integrity of |                   |
@@ -1134,7 +1132,7 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 |              |                   | owner (e.g., |                   |
 |              |                   | tenant).     |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.ci.007   | Confiden          | The Platform |                   |
+| sec.ci.007   | Confiden\         | The Platform |                   |
 |              | tiality/Integrity | **must not** |                   |
 |              |                   | allow Memory |                   |
 |              |                   | Inspection   |                   |
@@ -1157,7 +1155,7 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 |              |                   | secure       |                   |
 |              |                   | monitoring   |                   |
 |              |                   | services.    |                   |
-|              |                   | Ad           |                   |
+|              |                   | Ad\          |                   |
 |              |                   | ministrative |                   |
 |              |                   | access must  |                   |
 |              |                   | be managed   |                   |
@@ -1168,7 +1166,7 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 |              |                   | Management.  |                   |
 +--------------+-------------------+--------------+-------------------+
 | sec.ci.008   | Confidentiality   | The Cloud    | `RA-1             |
-|              |                   | In           | “Workload         |
+|              |                   | In\          | “Workload         |
 |              |                   | frastructure | Security” <./chap |
 |              |                   | **must**     | ter06.md#work     |
 |              |                   | support      | load-security>`__ |
@@ -1229,7 +1227,7 @@ Workload Security (source `RM 7.9.4 <../../../ref_model/chapters/chapter07.md#79
 |              |                   | mandated     |                   |
 |              |                   | in-country   |                   |
 |              |                   | or location  |                   |
-|              |                   | re           |                   |
+|              |                   | re\          |                   |
 |              |                   | quirements). |                   |
 +--------------+-------------------+--------------+-------------------+
 | sec.wl.005   | Workload          | The Platform | This              |
@@ -1239,7 +1237,7 @@ Workload Security (source `RM 7.9.4 <../../../ref_model/chapters/chapter07.md#79
 |              |                   | of           | testing scope     |
 |              |                   | production   |                   |
 |              |                   | and          |                   |
-|              |                   | no           |                   |
+|              |                   | no\          |                   |
 |              |                   | n-production |                   |
 |              |                   | Workloads.   |                   |
 +--------------+-------------------+--------------+-------------------+
@@ -1250,7 +1248,7 @@ Workload Security (source `RM 7.9.4 <../../../ref_model/chapters/chapter07.md#79
 |              |                   | of Workloads | load-security>`__ |
 |              |                   | based on     |                   |
 |              |                   | their        |                   |
-|              |                   | ca           |                   |
+|              |                   | ca\          |                   |
 |              |                   | tegorisation |                   |
 |              |                   | (for         |                   |
 |              |                   | example,     |                   |
@@ -1292,7 +1290,7 @@ Image Security (source `RM 7.9.5 <../../../ref_model/chapters/chapter07.md#795-i
 |              |                   | maintained   | mage-security>`__ |
 |              |                   | free from    |                   |
 |              |                   | known        |                   |
-|              |                   | vuln         |                   |
+|              |                   | vuln\        |                   |
 |              |                   | erabilities. |                   |
 +--------------+-------------------+--------------+-------------------+
 | sec.img.003  | Image             | Images       |                   |
@@ -1336,11 +1334,11 @@ Image Security (source `RM 7.9.5 <../../../ref_model/chapters/chapter07.md#795-i
 |              |                   | over         | hapter06.md#      |
 |              |                   | networks     | integrity-of-open |
 |              |                   | that enforce | stack-components- |
-|              |                   | aut          | configuration>`__ |
+|              |                   | aut\         | configuration>`__ |
 |              |                   | hentication, |                   |
 |              |                   | integrity    |                   |
 |              |                   | and          |                   |
-|              |                   | conf         |                   |
+|              |                   | conf\        |                   |
 |              |                   | identiality. |                   |
 +--------------+-------------------+--------------+-------------------+
 | sec.img.007  | Image             | Image        | `RA-1             |
@@ -1387,12 +1385,12 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | **must**     | “Monitoring and   |
 |              |                   | support      | Security          |
 |              |                   | Secure       | Audit” <.         |
-|              |                   | P            | /chapter06.md#    |
+|              |                   | P\           | /chapter06.md#    |
 |              |                   | rovisioning, | monitoring-and-s  |
-|              |                   | A            | ecurity-audit>`__ |
+|              |                   | A\           | ecurity-audit>`__ |
 |              |                   | vailability, |                   |
 |              |                   | and          |                   |
-|              |                   | De           |                   |
+|              |                   | De\          |                   |
 |              |                   | provisioning |                   |
 |              |                   | (Secure      |                   |
 |              |                   | Clean-Up) of |                   |
@@ -1432,10 +1430,10 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | management   |                   |
 |              |                   | processes    |                   |
 |              |                   | for Cloud    |                   |
-|              |                   | Inf          |                   |
+|              |                   | Inf\         |                   |
 |              |                   | rastructure, |                   |
 |              |                   | Cloud        |                   |
-|              |                   | In           |                   |
+|              |                   | In\          |                   |
 |              |                   | frastructure |                   |
 |              |                   | Manager and  |                   |
 |              |                   | other        |                   |
@@ -1472,7 +1470,7 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | **must** be  |                   |
 |              |                   | able to      |                   |
 |              |                   | update newly |                   |
-|              |                   | i            |                   |
+|              |                   | i\           |                   |
 |              |                   | nstantiated, |                   |
 |              |                   | suspended,   |                   |
 |              |                   | hibernated,  |                   |
@@ -1486,7 +1484,7 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | **must** be  |                   |
 |              |                   | able to      |                   |
 |              |                   | update newly |                   |
-|              |                   | i            |                   |
+|              |                   | i\           |                   |
 |              |                   | nstantiated, |                   |
 |              |                   | suspended,   |                   |
 |              |                   | hibernated,  |                   |
@@ -1501,7 +1499,7 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | able to      |                   |
 |              |                   | update the   |                   |
 |              |                   | tag of newly |                   |
-|              |                   | i            |                   |
+|              |                   | i\           |                   |
 |              |                   | nstantiated, |                   |
 |              |                   | suspended,   |                   |
 |              |                   | hibernated,  |                   |
@@ -1510,7 +1508,7 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | images with  |                   |
 |              |                   | relevant     |                   |
 |              |                   | geolocation  |                   |
-|              |                   | (g           |                   |
+|              |                   | (g\          |                   |
 |              |                   | eographical) |                   |
 |              |                   | information. |                   |
 +--------------+-------------------+--------------+-------------------+
@@ -1543,7 +1541,7 @@ Security LCM (source `RM 7.9.6 <../../../ref_model/chapters/chapter07.md#796-sec
 |              |                   | patching of  |                   |
 |              |                   | all deployed |                   |
 |              |                   | Cloud        |                   |
-|              |                   | In           |                   |
+|              |                   | In\          |                   |
 |              |                   | frastructure |                   |
 |              |                   | software.    |                   |
 +--------------+-------------------+--------------+-------------------+
@@ -1603,8 +1601,8 @@ can trigger alerts and notifications for appropriate action.
 | sec.mon.002  | Monitoring        | Security     | `RA-1             |
 |              |                   | logs         | “Security Logs    |
 |              |                   | **must** be  | Time              |
-|              |                   | time         | Synchron          |
-|              |                   | s            | isation” <./chapt |
+|              |                   | time         | Synchron\         |
+|              |                   | s\           | isation” <./chapt |
 |              |                   | ynchronised. | er06.md#secu      |
 |              |                   |              | rity-logs-time-sy |
 |              |                   |              | nchronisation>`__ |
@@ -1612,7 +1610,7 @@ can trigger alerts and notifications for appropriate action.
 | sec.mon.003  | Monitoring        | The Platform | `RA-1             |
 |              |                   | **must** log | “Security Logs    |
 |              |                   | all changes  | Time              |
-|              |                   | to time      | Synchron          |
+|              |                   | to time      | Synchron\         |
 |              |                   | server       | isation” <./chapt |
 |              |                   | source,      | er06.md#secu      |
 |              |                   | time, date   | rity-logs-time-sy |
@@ -1634,7 +1632,7 @@ can trigger alerts and notifications for appropriate action.
 | sec.mon.005  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Confidentiality  |
 |              |                   | Monitor and  | and Integrity of  |
-|              |                   | Audit        | comm              |
+|              |                   | Audit        | comm\             |
 |              |                   | various      | unications” <./ch |
 |              |                   | behaviours   | apter06.md#i      |
 |              |                   | of           | ntegrity-of-opens |
@@ -1656,7 +1654,7 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | **must**     | “Integrity of     |
 |              |                   | Monitor and  | OpenStack         |
 |              |                   | Audit        | components        |
-|              |                   | operations   | con               |
+|              |                   | operations   | con\              |
 |              |                   | by           | figuration” <./ch |
 |              |                   | authorised   | apter06.md#i      |
 |              |                   | account      | ntegrity-of-opens |
@@ -1674,9 +1672,9 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | **must**     | “Integrity of     |
 |              |                   | Monitor and  | OpenStack         |
 |              |                   | Audit        | components        |
-|              |                   | security     | co                |
+|              |                   | security     | co\               |
 |              |                   | parameter    | nfiguration” <./c |
-|              |                   | co           | hapter06.md#      |
+|              |                   | co\          | hapter06.md#      |
 |              |                   | nfigurations | integrity-of-open |
 |              |                   | for          | stack-components- |
 |              |                   | compliance   | configuration>`__ |
@@ -1687,7 +1685,7 @@ can trigger alerts and notifications for appropriate action.
 | sec.mon.008  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Confidentiality  |
 |              |                   | Monitor and  | and Integrity of  |
-|              |                   | Audit        | com               |
+|              |                   | Audit        | com\              |
 |              |                   | externally   | munications” <./c |
 |              |                   | exposed      | hapter06.md#      |
 |              |                   | interfaces   | confidentiality-a |
@@ -1703,7 +1701,7 @@ can trigger alerts and notifications for appropriate action.
 | sec.mon.009  | Monitoring/Audit  | The Platform | `RA-1             |
 |              |                   | **must**     | “Confidentiality  |
 |              |                   | Monitor and  | and Integrity of  |
-|              |                   | Audit        | comm              |
+|              |                   | Audit        | comm\             |
 |              |                   | service for  | unications” <./ch |
 |              |                   | various      | apter06.md#i      |
 |              |                   | attacks      | ntegrity-of-opens |
@@ -1739,7 +1737,7 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | Monitor and  | logs” <./c        |
 |              |                   | Audit logs   | hapter06.md#      |
 |              |                   | from         | creating-logs>`__ |
-|              |                   | in           |                   |
+|              |                   | in\          |                   |
 |              |                   | frastructure |                   |
 |              |                   | elements and |                   |
 |              |                   | workloads to |                   |
@@ -1772,10 +1770,10 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | security     |                   |
 |              |                   | (integrity   |                   |
 |              |                   | and          |                   |
-|              |                   | conf         |                   |
+|              |                   | conf\        |                   |
 |              |                   | identiality) |                   |
 |              |                   | of the       |                   |
-|              |                   | inf          |                   |
+|              |                   | inf\         |                   |
 |              |                   | rastructure, |                   |
 |              |                   | workloads,   |                   |
 |              |                   | or the user  |                   |
@@ -1817,7 +1815,7 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | Platform,    | “Where to         |
 |              |                   | starting     | Log” <./          |
 |              |                   | from         | chapter06.md#     |
-|              |                   | ini          | where-to-log>`__  |
+|              |                   | ini\         | where-to-log>`__  |
 |              |                   | tialisation, |                   |
 |              |                   | **must**     |                   |
 |              |                   | collect and  |                   |
@@ -1835,7 +1833,7 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | components   | Log” <.           |
 |              |                   | **must not** | /chapter06.md#    |
 |              |                   | include an   | what-to-log--wh   |
-|              |                   | au           | at-not-to-log>`__ |
+|              |                   | au\          | at-not-to-log>`__ |
 |              |                   | thentication |                   |
 |              |                   | credential,  |                   |
 |              |                   | e.g.,        |                   |
@@ -1889,7 +1887,7 @@ Open-Source Software (source `RM 7.9.8 <../../../ref_model/chapters/chapter07.md
 | Reference | sub-category      | Description         | Specification |
 |           |                   |                     | Reference     |
 +===========+===================+=====================+===============+
-| se        | Software          | Open-source code    |               |
+| se\       | Software          | Open-source code    |               |
 | c.oss.001 |                   | **must** be         |               |
 |           |                   | inspected by tools  |               |
 |           |                   | with various        |               |
@@ -1897,7 +1895,7 @@ Open-Source Software (source `RM 7.9.8 <../../../ref_model/chapters/chapter07.md
 |           |                   | static and dynamic  |               |
 |           |                   | code analysis.      |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Software          | The `CVE (Common    |               |
+| se\       | Software          | The `CVE (Common    |               |
 | c.oss.002 |                   | Vulnerabilities and |               |
 |           |                   | Exposures) <https:/ |               |
 |           |                   | /cve.mitre.org/>`__ |               |
@@ -1911,7 +1909,7 @@ Open-Source Software (source `RM 7.9.8 <../../../ref_model/chapters/chapter07.md
 |           |                   | Infrastructure and  |               |
 |           |                   | workloads software. |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Software          | Critical and high   |               |
+| se\       | Software          | Critical and high   |               |
 | c.oss.003 |                   | severity rated      |               |
 |           |                   | vulnerabilities     |               |
 |           |                   | **must** be fixed   |               |
@@ -1920,7 +1918,7 @@ Open-Source Software (source `RM 7.9.8 <../../../ref_model/chapters/chapter07.md
 |           |                   | (Common             |               |
 |           |                   | Vulnerability       |               |
 |           |                   | Scoring             |               |
-|           |                   | Sy                  |               |
+|           |                   | Sy\                 |               |
 |           |                   | stem) <https://www. |               |
 |           |                   | first.org/cvss/>`__ |               |
 |           |                   | to know a           |               |
@@ -1929,7 +1927,7 @@ Open-Source Software (source `RM 7.9.8 <../../../ref_model/chapters/chapter07.md
 |           |                   | rate (low, medium,  |               |
 |           |                   | high, or critical). |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Software          | A dedicated         |               |
+| se\       | Software          | A dedicated         |               |
 | c.oss.004 |                   | internal isolated   |               |
 |           |                   | repository          |               |
 |           |                   | separated from the  |               |
@@ -1953,7 +1951,7 @@ IaaC security (source `RM 7.9.9 <../../../ref_model/chapters/chapter07.md#799-ia
 | Reference | sub-category      | Description         | Specification |
 |           |                   |                     | Reference     |
 +===========+===================+=====================+===============+
-| sec       | IaaC              | SAST -Static        |               |
+| sec\      | IaaC              | SAST -Static        |               |
 | .code.001 |                   | Application         |               |
 |           |                   | Security Testing    |               |
 |           |                   | **must** be applied |               |
@@ -1982,7 +1980,7 @@ Secure Code Stage
 | Reference | sub-category      | Description         | Specification |
 |           |                   |                     | Reference     |
 +===========+===================+=====================+===============+
-| se        | IaaC              | Image Scan **must** |               |
+| se\       | IaaC              | Image Scan **must** |               |
 | c.bld.003 |                   | be applied during   |               |
 |           |                   | the Continuous      |               |
 |           |                   | Build, Integration  |               |
@@ -2009,7 +2007,7 @@ Continuous Build, Integration and Testing Stage
 | Reference | sub-category      | Description         | Specification |
 |           |                   |                     | Reference     |
 +===========+===================+=====================+===============+
-| se        | IaaC              | Image Scan **must** |               |
+| se\       | IaaC              | Image Scan **must** |               |
 | c.del.001 |                   | be applied during   |               |
 |           |                   | the Continuous      |               |
 |           |                   | Delivery and        |               |
@@ -2024,7 +2022,7 @@ Continuous Build, Integration and Testing Stage
 |           |                   | for container image |               |
 |           |                   | scanning.           |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | IaaC              | Code Signing        |               |
+| se\       | IaaC              | Code Signing        |               |
 | c.del.002 |                   | **must** be applied |               |
 |           |                   | during the          |               |
 |           |                   | Continuous Delivery |               |
@@ -2042,7 +2040,7 @@ Continuous Build, Integration and Testing Stage
 |           |                   | publisher named on  |               |
 |           |                   | the certificate.    |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | IaaC              | Component           |               |
+| se\       | IaaC              | Component           |               |
 | c.del.004 |                   | Vulnerability Scan  |               |
 |           |                   | **must** be applied |               |
 |           |                   | during the          |               |
@@ -2077,7 +2075,7 @@ Continuous Delivery and Deployment Stage
 | Reference | sub-category      | Description         | Specification |
 |           |                   |                     | Reference     |
 +===========+===================+=====================+===============+
-| se        | IaaC              | Component           |               |
+| se\       | IaaC              | Component           |               |
 | c.run.001 |                   | Vulnerability       |               |
 |           |                   | Monitoring **must** |               |
 |           |                   | be continuously     |               |
@@ -2105,7 +2103,7 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 | Reference | sub-category      | Description         | Specification |
 |           |                   |                     | Reference     |
 +===========+===================+=====================+===============+
-| se        | Standards         | The Public Cloud    |               |
+| se\       | Standards         | The Public Cloud    |               |
 | c.std.012 |                   | Operator **must**,  |               |
 |           |                   | and the Private     |               |
 |           |                   | Cloud Operator      |               |
@@ -2138,43 +2136,43 @@ to as NFVI by ETSI) + VIM (as specified in Reference Model Chapter 3).
 General Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
-+----+------------------+--------------------------+------------------+
-| R  | sub-category     | Description              | Specification    |
-| ef |                  |                          | Reference        |
-| er |                  |                          |                  |
-| en |                  |                          |                  |
-| ce |                  |                          |                  |
-+====+==================+==========================+==================+
-| ge | Open source      | The Architecture         | `RA-1            |
-| n. |                  | **must** use OpenStack   | “Consolidated    |
-| os |                  | APIs.                    | set of APIs”     |
-| t. |                  |                          | <./chapter05.md# |   
-| 01 |                  |                          | consolidated-set |   
-|    |                  |                          | -of-apis>`__     | 
-+----+------------------+--------------------------+------------------+
-| ge | Open source      | The Architecture         | `RA-1            |
-| n. |                  | **must** support dynamic | “Consolidated    |   
-| os |                  | request and              | set of APIs”     |  
-| t. |                  | configuration of virtual | <./chapter05.md# |
-| 02 |                  | resources (compute,      | consolidated-set |
-|    |                  | network, storage)        | -of-apis>`__     |
-|    |                  | through OpenStack APIs.  |                  |
-+----+------------------+--------------------------+------------------+
-| ge | Resiliency       | The Architecture         |                  |
-| n. |                  | **must** support         |                  |
-| rs |                  | resilient OpenStack      |                  |
-| l. |                  | components that are      |                  |
-| 01 |                  | required for the         |                  |
-|    |                  | continued availability   |                  |
-|    |                  | of running workloads.    |                  |
-+----+------------------+--------------------------+------------------+
-| ge | Availability     | The Architecture         | `RA-1            |
-| n. |                  | **must** provide High    | “Underlying      |
-| av |                  | Availability for         | Resources”       |
-| l. |                  | OpenStack components.    | <./chapter0      |
-| 01 |                  |                          | 4.md#underlyi    |
-|    |                  |                          | ng-resources>`__ |
-+----+------------------+--------------------------+------------------+
++--------+--------------+--------------------------+------------------+
+| Refer\ | sub-category | Description              | Specification    |
+| ence   |              |                          | Reference        |
+|        |              |                          |                  |
+|        |              |                          |                  |
+|        |              |                          |                  |
++========+==============+==========================+==================+
+| gen.o\ | Open source  | The Architecture         | `RA-1            |
+| st.01  |              | **must** use OpenStack   | “Consolidated    |
+|        |              | APIs.                    | set of APIs”     |
+|        |              |                          | <./chapter05.md# |   
+|        |              |                          | consolidated-set |   
+|        |              |                          | -of-apis>`__     | 
++--------+--------------+--------------------------+------------------+
+| gen.o\ | Open source  | The Architecture         | `RA-1            |
+| st.02  |              | **must** support dynamic | “Consolidated    |   
+|        |              | request and              | set of APIs”     |  
+|        |              | configuration of virtual | <./chapter05.md# |
+|        |              | resources (compute,      | consolidated-set |
+|        |              | network, storage)        | -of-apis>`__     |
+|        |              | through OpenStack APIs.  |                  |
++--------+--------------+--------------------------+------------------+
+| gen.r\ | Resiliency   | The Architecture         |                  |
+| sl.01  |              | **must** support         |                  |
+|        |              | resilient OpenStack      |                  |
+|        |              | components that are      |                  |
+|        |              | required for the         |                  |
+|        |              | continued availability   |                  |
+|        |              | of running workloads.    |                  |
++--------+--------------+--------------------------+------------------+
+| gen.a\ | Availability | The Architecture         | `RA-1            |
+| vl.01  |              | **must** provide High    | “Underlying      |
+|        |              | Availability for         | Resources”       |
+|        |              | OpenStack components.    | <./chapter0      |
+|        |              |                          | 4.md#underlyi    |
+|        |              |                          | ng-resources>`__ |
++--------+--------------+--------------------------+------------------+
 
 Table 2-19: General Requirements
 
@@ -2182,25 +2180,25 @@ Infrastructure Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----+-------------------+-----------------------------+--------------+
-| R  | sub-category      | Description                 | Specification|
-| ef |                   |                             | pecification |
-| er |                   |                             | Reference    |
-| en |                   |                             |              |
+| R\ | sub-category      | Description                 | Specification|
+| ef\|                   |                             | pecification |
+| er\|                   |                             | Reference    |
+| en\|                   |                             |              |
 | ce |                   |                             |              |
 +====+===================+=============================+==============+
-| in | Compute           | The Architecture **must**   | `RA-1        |
-| f. |                   | provide compute resources   | “Cloud       |
-| co |                   | for instances.              | Workload     |
-| m. |                   |                             | Services”    |
+| in\| Compute           | The Architecture **must**   | `RA-1        |
+| f.\|                   | provide compute resources   | “Cloud       |
+| co\|                   | for instances.              | Workload     |
+| m.\|                   |                             | Services”    |
 | 01 |                   |                             | <./chapter03 |
 |    |                   |                             | .md#clo      |
 |    |                   |                             | ud-workload- |
 |    |                   |                             | services>`__ |
 +----+-------------------+-----------------------------+--------------+
-| in | Compute           | The Architecture **must**   | `RA-1        |
-| f. |                   | be able to support multiple | “Support for |
-| co |                   | CPU type options to support | Cloud Infras\|
-| m. |                   | various infrastructure      | tructure     |
+| in\| Compute           | The Architecture **must**   | `RA-1        |
+| f.\|                   | be able to support multiple | “Support for |
+| co\|                   | CPU type options to support | Cloud Infras\|
+| m.\|                   | various infrastructure      | tructure     |
 | 04 |                   | profiles (Basic and High    | Profiles     |
 |    |                   | Performance).               | and flavors” |
 |    |                   |                             | <./chapter04 |
@@ -2211,10 +2209,10 @@ Infrastructure Requirements
 |    |                   |                             | and-         |
 |    |                   |                             | flavors>`__  |
 +----+-------------------+-----------------------------+--------------+
-| in | Compute           | The Architecture **must**   | `RA-1        |
-| f. |                   | support Hardware Platforms  | “Support for |
-| co |                   | with NUMA capabilities.     | Cloud Infras\|
-| m. |                   |                             | tructure     |
+| in\| Compute           | The Architecture **must**   | `RA-1        |
+| f.\|                   | support Hardware Platforms  | “Support for |
+| co\|                   | with NUMA capabilities.     | Cloud Infras\|
+| m.\|                   |                             | tructure     |
 | 05 |                   |                             | Profiles and |
 |    |                   |                             | flavors”     |
 |    |                   |                             | <./chapter04 |
@@ -2225,10 +2223,10 @@ Infrastructure Requirements
 |    |                   |                             | and-         |
 |    |                   |                             | flavors>`__  |
 +----+-------------------+-----------------------------+--------------+
-| in | Compute           | The Architecture **must**   | `RA-1        |
-| f. |                   | support CPU Pinning of the  | “Support for |
-| co |                   | vCPUs of an instance.       | Cloud Infras\|
-| m. |                   |                             | tructure     |
+| in\| Compute           | The Architecture **must**   | `RA-1        |
+| f.\|                   | support CPU Pinning of the  | “Support for |
+| co\|                   | vCPUs of an instance.       | Cloud Infras\|
+| m.\|                   |                             | tructure     |
 | 06 |                   |                             | Profiles and |
 |    |                   |                             | flavors”     |
 |    |                   |                             | <./chapter04 |
@@ -2239,10 +2237,10 @@ Infrastructure Requirements
 |    |                   |                             | and-         |
 |    |                   |                             | flavors>`__  |
 +----+-------------------+-----------------------------+--------------+
-| in | Compute           | The Architecture **must**   | `RA-1        |
-| f. |                   | support different hardware  | “Host        |
-| co |                   | configurations to support   | aggregates   |
-| m. |                   | various infrastructure      | providing    |
+| in\| Compute           | The Architecture **must**   | `RA-1        |
+| f.\|                   | support different hardware  | “Host        |
+| co\|                   | configurations to support   | aggregates   |
+| m.\|                   | various infrastructure      | providing    |
 | 07 |                   | profiles (Basic and High    | resource     |
 |    |                   | Performance).               | pooling”     |
 |    |                   |                             | <./chapter03 |
@@ -2252,10 +2250,10 @@ Infrastructure Requirements
 |    |                   |                             | g-resource-p |
 |    |                   |                             | ooling>`__   |
 +----+-------------------+-----------------------------+--------------+
-| in | Compute           | The Architecture **must**   | `RA-1        |
-| f. |                   | support allocating certain  | “Reservation |
-| co |                   | number of host cores for    | of Compute   |
-| m. |                   | all non-tenant workloads    | Node         |
+| in\| Compute           | The Architecture **must**   | `RA-1        |
+| f.\|                   | support allocating certain  | “Reservation |
+| co\|                   | number of host cores for    | of Compute   |
+| m.\|                   | all non-tenant workloads    | Node         |
 | 08 |                   | such as for OpenStack       | cores        |
 |    |                   | services. SMT threads can   | ” <./chapter |
 |    |                   | be allocated to individual  | 04.md#r      |
@@ -2274,10 +2272,10 @@ Infrastructure Requirements
 |    |                   | penstack.org/nova/latest/ad |              |
 |    |                   | min/cpu-topologies.html>`__ |              |
 +----+-------------------+-----------------------------+--------------+
-| in | Compute           | The Architecture **must**   | `RA-1        |
-| f. |                   | ensure that the host cores  | “Reservation |
-| co |                   | assigned to non-tenant and  | of           |
-| m. |                   | tenant workloads are SMT    | Compute      |
+| in\| Compute           | The Architecture **must**   | `RA-1        |
+| f.\|                   | ensure that the host cores  | “Reservation |
+| co\|                   | assigned to non-tenant and  | of           |
+| m.\|                   | tenant workloads are SMT    | Compute      |
 | 09 |                   | aware: that is, a host core | Node         |
 |    |                   | and its associated SMT      | cores”       |
 |    |                   | threads are either all      | <./chapter04 |
@@ -2295,31 +2293,32 @@ Infrastructure Requirements
 |    |                   |                             | ed-and-unpin |
 |    |                   |                             | ned-cpus>`__ |
 +----+-------------------+-----------------------------+--------------+
-| in | Storage           | The Architecture **must**   | `RA-1        |
-| f. |                   | provide remote (not         | “Storage”    |    
-| st |                   | directly attached to the    | <./cha       |
-| g. |                   | host) Block storage for     | pter03.md#   |
-| 01 |                   | Instances.                  | storage>`__  |  +----+-------------------+-----------------------------+--------------+
-| in | Storage           | The Architecture **must**   | `RA-1        |
-| f. |                   | provide Object storage for  | “Swift”      |
-| st |                   | Instances. Operators        | <./cha       |
-| g. |                   | **may** choose not to       | pter04.md#   |
+| in\| Storage           | The Architecture **must**   | `RA-1        |
+| f.\|                   | provide remote (not         | “Storage”    |    
+| st\|                   | directly attached to the    | <./cha       |
+| g.\|                   | host) Block storage for     | pter03.md#   |
+| 01 |                   | Instances.                  | storage>`__  |  
++----+-------------------+-----------------------------+--------------+
+| in\| Storage           | The Architecture **must**   | `RA-1        |
+| f.\|                   | provide Object storage for  | “Swift”      |
+| st\|                   | Instances. Operators        | <./cha       |
+| g.\|                   | **may** choose not to       | pter04.md#   |
 | 02 |                   | implement Object Storage    | swift>`__    |
 |    |                   | but must be cognizant of    |              |
 |    |                   | the risk of “Compliant      |              |
 |    |                   | VNFs” failing in their      |              |
 |    |                   | environment.                |              |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   | `RA-1        |
-| f. |                   | provide virtual network     | “Neutron”    |
-| nt |                   | interfaces to instances.    | <./chap      |
-| w. |                   |                             | ter05.md#    |
+| in\| Network           | The Architecture **must**   | `RA-1        |
+| f.\|                   | provide virtual network     | “Neutron”    |
+| n\ |                   | interfaces to instances.    | <./chap      |
+| w.\|                   |                             | ter05.md#    |
 | 01 |                   |                             | neutron>`__  |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   | `RA-1        |
-| f. |                   | include capabilities for    | “Virtual     |
-| nt |                   | integrating SDN controllers | Networking – |
-| w. |                   | to support provisioning of  | 3rd party    |
+| in\| Network           | The Architecture **must**   | `RA-1        |
+| f.\|                   | include capabilities for    | “Virtual     |
+| nt\|                   | integrating SDN controllers | Networking – |
+| w.\|                   | to support provisioning of  | 3rd party    |
 | 02 |                   | network services, from the  | SDN          |
 |    |                   | OpenStack Neutron service,  | solution”    |
 |    |                   | such as networking of VTEPs | <./cha       |
@@ -2329,38 +2328,38 @@ Infrastructure Requirements
 |    |                   |                             | d-party-sdn- |
 |    |                   |                             | solution>`__ |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   | `RA-1        |
-| f. |                   | support low latency and     | “Network     |
-| nt |                   | high throughput traffic     | Fabric” <.   |
-| w. |                   | needs.                      | /chapter04.m |
+| in\| Network           | The Architecture **must**   | `RA-1        |
+| f.\|                   | support low latency and     | “Network     |
+| nt\|                   | high throughput traffic     | Fabric” <.   |
+| w.\|                   | needs.                      | /chapter04.m |
 | 03 |                   |                             | d#networ     |
 |    |                   |                             | k-fabric>`__ |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   | `RA-1        |
-| f. |                   | allow for East/West tenant  | “Network     |
-| nt |                   | traffic within the cloud    | Fabric” <.   |
-| w. |                   | (via tunnelled              | /chapter04.m |
+| in\| Network           | The Architecture **must**   | `RA-1        |
+| f.\|                   | allow for East/West tenant  | “Network     |
+| nt\|                   | traffic within the cloud    | Fabric” <.   |
+| w.\|                   | (via tunnelled              | /chapter04.m |
 | 05 |                   | encapsulation overlay such  | d#networ     |
 |    |                   | as VXLAN or Geneve).        | k-fabric>`__ |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   | `RA-1        |
-| f. |                   | support network             | “Network”    |
-| nt |                   | `resiliency                 | <./chapter03 |
-| w. |                   |  <../../../common/glossary. | .md#         |
+| in\| Network           | The Architecture **must**   | `RA-1        |
+| f.\|                   | support network             | “Network”    |
+| nt\|                   | `resiliency                 | <./chapter03 |
+| w.\|                   | <../../../common/glossary.  | .md#         |
 | 07 |                   | md#cloud-platform-abstracti | -network>`__ | 
 |    |                   | on-related-terminology>`__. |              |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Cloud Infrastructure    | `RA-1        |
-| f. |                   | Network Fabric **must** be  | “Network”    |     
-| nt |                   | capable of enabling highly  | <./chapt     |
-| w. |                   | available (Five 9’s or      | er03.md#     |
+| in\| Network           | The Cloud Infrastructure    | `RA-1        |
+| f.\|                   | Network Fabric **must** be  | “Network”    |     
+| nt\|                   | capable of enabling highly  | <./chapt     |
+| w.\|                   | available (Five 9’s or      | er03.md#     |
 | 10 |                   | better) Cloud               | -network>`__ |
 |    |                   | Infrastructure.             |              |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   | `RA-1        |
-| f. |                   | support multiple networking | “Neutron     |
-| nt |                   | options for Cloud           | ML2-plugin   |
-| w. |                   | Infrastructure to support   | Integration” |
+| in\| Network           | The Architecture **must**   | `RA-1        |
+| f.\|                   | support multiple networking | “Neutron     |
+| nt\|                   | options for Cloud           | ML2-plugin   |
+| w.\|                   | Infrastructure to support   | Integration” |
 | 15 |                   | various infrastructure      | <./chapter04 |
 |    |                   | profiles (Basic and High    | .md          |
 |    |                   | Performance).               | #neu         |
@@ -2377,10 +2376,10 @@ Infrastructure Requirements
 |    |                   |                             | _Plugins_and |
 |    |                   |                             | _Drivers>`__ |
 +----+-------------------+-----------------------------+--------------+
-| in | Network           | The Architecture **must**   |              |
-| f. |                   | support dual stack IPv4 and |              |
-| nt |                   | IPv6 for tenant networks    |              |
-| w. |                   | and workloads.              |              |
+| in\| Network           | The Architecture **must**   |              |
+| f.\|                   | support dual stack IPv4 and |              |
+| nt\|                   | IPv6 for tenant networks    |              |
+| w.\|                   | and workloads.              |              |
 | 16 |                   |                             |              |
 +----+-------------------+-----------------------------+--------------+
 
@@ -2389,60 +2388,58 @@ Table 2-20: Infrastructure Requirements
 VIM Requirements
 ~~~~~~~~~~~~~~~~
 
-+----+--------------------+----------------------------+-------------+
-| R  | sub-category       | Description                | Sp          |
-| ef |                    |                            | ecification |
-| er |                    |                            | Reference   |
-| en |                    |                            |             |
-| ce |                    |                            |             |
-+====+====================+============================+=============+
-| vi | General            | The Architecture **must**  | `RA-1       |
-| m. |                    | allow infrastructure       | “Consumable |
-| 01 |                    | resource sharing.          | Inf\        |
-|    |                    |                            | rastructure |
-|    |                    |                            | Resources   |
-|    |                    |                            | and         |
-|    |                    |                            | Services”   |
-|    |                    |                            | <./ch       |
-|    |                    |                            | apter03.md# |
-|    |                    |                            | consumab    |
-|    |                    |                            | le-infrastr |
-|    |                    |                            | ucture-reso |
-|    |                    |                            | urces-and-s |
-|    |                    |                            | ervices>`__ |
-+----+--------------------+----------------------------+-------------+
-| vi | General            | The Architecture **must**  | `RA-1       |
-| m. |                    | allow VIM to discover and  | “           |           
-| 03 |                    | manage Cloud               | Placement”  |
-|    |                    | Infrastructure resources.  | <./chapter0 |
-|    |                    |                            | 5.md#pl     |
-|    |                    |                            | acement>`__ |
-+----+--------------------+----------------------------+-------------+
-| vi | General            | The Architecture **must**  | `RA-1       |
-| m. |                    | include image repository   | “Glance”    |
-| 05 |                    | management.                | <./chapte   |
-|    |                    |                            | r04.md#     |
-|    |                    |                            | -glance>`__ |
-+----+--------------------+----------------------------+-------------+
-| vi | General            | The Architecture **must**  | `RA-1       |
-| m. |                    | support multi-tenancy.     | “Multi-Te\  |
-| 07 |                    |                            | nancy” <./c |  
-|    |                    |                            | hapter03.md |
-|    |                    |                            | #multi-     |
-|    |                    |                            | tenancy-exe |
-|    |                    |                            | cution-envi |
-|    |                    |                            | ronment>`__ |
-+----+--------------------+----------------------------+-------------+
-| vi | General            | The Architecture **must**  | `“OpenStack |
-| m. |                    | support resource tagging.  | Resource    |
-| 08 |                    |                            | Tags” <htt  |
-|    |                    |                            | ps://specs. |
-|    |                    |                            | openstack.o |
-|    |                    |                            | rg/openstac |
-|    |                    |                            | k/api-wg/gu |
-|    |                    |                            | idelines/ta |
-|    |                    |                            | gs.html>`__ |
-+----+--------------------+----------------------------+-------------+
++--------+----------------+----------------------------+-------------+
+| Refer\ | sub-category   | Description                | Sp\         |
+| ence   |                |                            | ecification |
+|        |                |                            | Reference   |
++========+================+============================+=============+
+| vim.01 | General        | The Architecture **must**  | `RA-1       |
+|        |                | allow infrastructure       | “Consumable |
+|        |                | resource sharing.          | Inf\        |
+|        |                |                            | rastructure |
+|        |                |                            | Resources   |
+|        |                |                            | and         |
+|        |                |                            | Services”   |
+|        |                |                            | <./ch       |
+|        |                |                            | apter03.md# |
+|        |                |                            | consumab    |
+|        |                |                            | le-infrastr |
+|        |                |                            | ucture-reso |
+|        |                |                            | urces-and-s |
+|        |                |                            | ervices>`__ |
++--------+----------------+----------------------------+-------------+
+| vim.03 | General        | The Architecture **must**  | `RA-1       |
+|        |                | allow VIM to discover and  | “           |           
+|        |                | manage Cloud               | Placement”  |
+|        |                | Infrastructure resources.  | <./chapter0 |
+|        |                |                            | 5.md#pl     |
+|        |                |                            | acement>`__ |
++--------+----------------+----------------------------+-------------+
+| vim.05 | General        | The Architecture **must**  | `RA-1       |
+|        |                | include image repository   | “Glance”    |
+|        |                | management.                | <./chapte   |
+|        |                |                            | r04.md#     |
+|        |                |                            | -glance>`__ |
++--------+----------------+----------------------------+-------------+
+| vim.07 | General        | The Architecture **must**  | `RA-1       |
+|        |                | support multi-tenancy.     | “Multi-Te\  |
+|        |                |                            | nancy” <./c |  
+|        |                |                            | hapter03.md |
+|        |                |                            | #multi-     |
+|        |                |                            | tenancy-exe |
+|        |                |                            | cution-envi |
+|        |                |                            | ronment>`__ |
++--------+----------------+----------------------------+-------------+
+| vim.08 | General        | The Architecture **must**  | `“OpenStack |
+|        |                | support resource tagging.  | Resource    |
+|        |                |                            | Tags” <htt  |
+|        |                |                            | ps://specs. |
+|        |                |                            | openstack.o |
+|        |                |                            | rg/openstac |
+|        |                |                            | k/api-wg/gu |
+|        |                |                            | idelines/ta |
+|        |                |                            | gs.html>`__ |
++--------+----------------+----------------------------+-------------+
 
 Table 2-21: VIM Requirements
 
@@ -2450,71 +2447,71 @@ Interfaces & APIs Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----+--------------+------------------------------+-----------------+
-| Ref | sub-category | Description                  | Specification   |
-| ere |              |                              | Reference       |
-| nce |              |                              |                 |
+| Ref\| sub-category | Description                  | Specification   |
+| ere\|              |                              | Reference       |
+| nce\|              |                              |                 |
 +=====+==============+==============================+=================+
-| i   | API          | The Architecture **must**    | `RA-1           |
-| nt. |              | provide APIs to access the   | “Keystone” <.   |
-| api |              | authentication service and   | /chapter05.md#  |
+| i\  | API          | The Architecture **must**    | `RA-1           |
+| nt.\|              | provide APIs to access the   | “Keystone” <.   |
+| api\|              | authentication service and   | /chapter05.md#  |
 | .01 |              | the associated mandatory     | keystone>`__    |
 |     |              | features detailed in chapter |                 |
 |     |              | 5.                           |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1           |
-| nt. |              | provide APIs to access the   | “Glance”        |
-| api |              | image management service and | <./chapter05.md |
+| i\  | API          | The Architecture **must**    | `RA-1           |
+| nt.\|              | provide APIs to access the   | “Glance”        |
+| api\|              | image management service and | <./chapter05.md |
 | .02 |              | the associated mandatory     | #glance>`__     |
 |     |              | features detailed in chapter |                 |
 |     |              | 5.                           |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1           |
-| nt. |              | provide APIs to access the   | “Cinder”        |
-| api |              | block storage management     | <./chapter05.md |
+| i\  | API          | The Architecture **must**    | `RA-1           |
+| nt.\|              | provide APIs to access the   | “Cinder”        |
+| api\|              | block storage management     | <./chapter05.md |
 | .03 |              | service and the associated   | #cinder>`__     |
 |     |              | mandatory features detailed  |                 |
 |     |              | in chapter 5.                |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1           |
-| nt. |              | provide APIs to access the   | “Swift”         |
-| api |              | object storage management    | <./chapter05.m  |
+| i\  | API          | The Architecture **must**    | `RA-1           |
+| nt.\|              | provide APIs to access the   | “Swift”         |
+| api\|              | object storage management    | <./chapter05.m  |
 | .04 |              | service and the associated   | d#swift>`__     |
 |     |              | mandatory features detailed  |                 |
 |     |              | in chapter 5.                |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1           |
-| nt. |              | provide APIs to access the   | “Neutron”       |
-| api |              | network management service   | <./chapter05.md |
+| i\  | API          | The Architecture **must**    | `RA-1           |
+| nt.\|              | provide APIs to access the   | “Neutron”       |
+| api\|              | network management service   | <./chapter05.md |
 | .05 |              | and the associated mandatory | #neutron>`__    |
 |     |              | features detailed in chapter |                 |
 |     |              | 5.                           |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1           |
-| nt. |              | provide APIs to access the   | “Nova”          |
-| api |              | compute resources management | <./chapter05.   |
+| i\  | API          | The Architecture **must**    | `RA-1           |
+| nt.\|              | provide APIs to access the   | “Nova”          |
+| api\|              | compute resources management | <./chapter05.   |
 | .06 |              | service and the associated   | md#nova>`__     |
 |     |              | mandatory features detailed  |                 |
 |     |              | in chapter 5.                |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1           |
-| nt. |              | provide GUI access to tenant | “Horizon” <.    |
-| api |              | facing cloud platform core   | /chapter04.md#  |
+| i\  | API          | The Architecture **must**    | `RA-1           |
+| nt.\|              | provide GUI access to tenant | “Horizon” <.    |
+| api\|              | facing cloud platform core   | /chapter04.md#  |
 | .07 |              | services except at Edge/Far  | horizon>`__     |
 |     |              | Edge clouds.                 |                 |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1           |
-| nt. |              | provide APIs needed to       | “Placement” <./ |
-| api |              | discover and manage Cloud    | chapter05.md#   |
+| i\  | API          | The Architecture **must**    | `RA-1           |
+| nt.\|              | provide APIs needed to       | “Placement” <./ |
+| api\|              | discover and manage Cloud    | chapter05.md#   |
 | .08 |              | Infrastructure resources.    | placement>`__   |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture **must**    | `RA-1           |
-| nt. |              | provide APIs to access the   | “Heat”          |
-| api |              | orchestration service.       | <./chapter05.   |
+| i\  | API          | The Architecture **must**    | `RA-1           |
+| nt.\|              | provide APIs to access the   | “Heat”          |
+| api\|              | orchestration service.       | <./chapter05.   |
 | .09 |              |                              | md#heat>`__     |
 +-----+--------------+------------------------------+-----------------+
-| i   | API          | The Architecture must expose | `RA-1 Core      |
-| nt. |              | the latest version and       | OpenStack       |
-| api |              | microversion of the APIs for | Services        |
+| i\  | API          | The Architecture must expose | `RA-1 Core      |
+| nt.\|              | the latest version and       | OpenStack       |
+| api\|              | microversion of the APIs for | Services        |
 | .10 |              | the given Anuket OpenStack   | APIs <./cha     |
 |     |              | release for each of the      | pter05.md#co    |
 |     |              | OpenStack core services.     | re-openstack-se |
@@ -2526,23 +2523,20 @@ Table 2-22: Interfaces and APIs Requirements
 Tenant Requirements
 ~~~~~~~~~~~~~~~~~~~
 
-+----+-------------------+--------------------+-----------------------+
-| R  | sub-category      | Description        | Specification         |
-| ef |                   |                    | Reference             |
-| er |                   |                    |                       |
-| en |                   |                    |                       |
-| ce |                   |                    |                       |
-+====+===================+====================+=======================+
-| tn | General           | The Architecture   | `RA-1                 |
-| t. |                   | **must** support   | “Horizon” <./chapter0 |
-| ge |                   | self-service       | 4.md#horizon>`__      |
-| n. |                   | dashboard (GUI)    | and `RA-1 "Cloud      |
-| 01 |                   | and APIs for users | Workload              |
-|    |                   | to deploy,         | Services"             |
-|    |                   | configure and      | <./chapter03.md#      |
-|    |                   | manage their       | cloud-workload-       |
-|    |                   | workloads.         | services>`__          |
-+----+-------------------+--------------------+-----------------------+
++--------+---------------+--------------------+-----------------------+
+| Refer\ | sub-category  | Description        | Specification         |
+| ence   |               |                    | Reference             |
++========+===============+====================+=======================+
+| tnt.g\ | General       | The Architecture   | `RA-1                 |
+| en.01  |               | **must** support   | “Horizon” <./chapter0 |
+|        |               | self-service       | 4.md#horizon>`__      |
+|        |               | dashboard (GUI)    | and `RA-1 "Cloud      |
+|        |               | and APIs for users | Workload              |
+|        |               | to deploy,         | Services"             |
+|        |               | configure and      | <./chapter03.md#      |
+|        |               | manage their       | cloud-workload-       |
+|        |               | workloads.         | services>`__          |
++--------+---------------+--------------------+-----------------------+
 
 Table 2-23: Tenant Requirements
 
@@ -2550,12 +2544,12 @@ Operations and LCM
 ~~~~~~~~~~~~~~~~~~
 
 +------+-----------------+----------------------+----------------------+
-| R    | sub-category    | Description          | Specification        |
-| efer |                 |                      | Reference            |
+| R\   | sub-category    | Description          | Specification        |
+| efer\|                 |                      | Reference            |
 | ence |                 |                      |                      |
 +======+=================+======================+======================+
-| lc   | General         | The Architecture     |                      |
-| m.ge |                 | **must** support     |                      |
+| lc\  | General         | The Architecture     |                      |
+| m.ge\|                 | **must** support     |                      |
 | n.01 |                 | zero downtime of     |                      |
 |      |                 | running workloads    |                      |
 |      |                 | when the number of   |                      |
@@ -2565,8 +2559,8 @@ Operations and LCM
 |      |                 | unused capacity is   |                      |
 |      |                 | being removed.       |                      |
 +------+-----------------+----------------------+----------------------+
-| lc   | Automated       | The Architecture     |                      |
-| m.ad | deployment      | **must** support     |                      |
+| lc\  | Automated       | The Architecture     |                      |
+| m.ad\| deployment      | **must** support     |                      |
 | p.02 |                 | upgrades of          |                      |
 |      |                 | software, provided   |                      |
 |      |                 | by the cloud         |                      |
@@ -2588,25 +2582,25 @@ Assurance Requirements
 ~~~~~~~~~~~~~~~~~~~~~~
 
 +------+-------------+--------------------------------+----------------+
-| R    | s           | Description                    | Specification  |
-| efer | ub-category |                                | Reference      |
+| R\   | s\          | Description                    | Specification  |
+| efer\| ub-category |                                | Reference      |
 | ence |             |                                |                |
 +======+=============+================================+================+
-| as   | Integration | The Architecture **must**      |                |
-| r.mo |             | include integration with       |                |
+| as\  | Integration | The Architecture **must**      |                |
+| r.mo\|             | include integration with       |                |
 | n.01 |             | various infrastructure         |                |
 |      |             | components to support          |                |
 |      |             | collection of telemetry for    |                |
 |      |             | assurance monitoring and       |                |
 |      |             | network intelligence.          |                |
 +------+-------------+--------------------------------+----------------+
-| as   | Monitoring  | The Architecture **must**      |                |
-| r.mo |             | allow for the collection and   |                |
+| as\  | Monitoring  | The Architecture **must**      |                |
+| r.mo\|             | allow for the collection and   |                |
 | n.03 |             | dissemination of performance   |                |
 |      |             | and fault information.         |                |
 +------+-------------+--------------------------------+----------------+
-| as   | Network     | The Cloud Infrastructure       |                |
-| r.mo |             | Network Fabric and Network     |                |
+| as\  | Network     | The Cloud Infrastructure       |                |
+| r.mo\|             | Network Fabric and Network     |                |
 | n.04 |             | Operating System **must**      |                |
 |      |             | provide network operational    |                |
 |      |             | visibility through alarming    |                |
@@ -2630,13 +2624,13 @@ General Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----+----------+--------------------------------+-------------------+
-| Ref | sub-     | Description                    | Notes             |
-| ere | category |                                |                   |
+| Ref\| sub-     | Description                    | Notes             |
+| ere\| category |                                |                   |
 | nce |          |                                |                   |
 +=====+==========+================================+===================+
-| g   | Cloud    | The Architecture **should**    | OpenStack         |
-| en. | na       | consist of stateless service   | consists of both  |
-| cnt | tiveness | components. However, where     | stateless and     |
+| g\  | Cloud    | The Architecture **should**    | OpenStack         |
+| en.\| na\      | consist of stateless service   | consists of both  |
+| cnt\| tiveness | components. However, where     | stateless and     |
 | .01 |          | state is required it must be   | stateful services |
 |     |          | kept external to the           | where the         |
 |     |          | component.                     | stateful services |
@@ -2652,15 +2646,15 @@ General Recommendations
 |     |          |                                | stateful          |
 |     |          |                                | .html>`__”        |
 +-----+----------+--------------------------------+-------------------+
-| g   | Cloud    | The Architecture **should**    |                   |
-| en. | na       | consist of service components  |                   |
-| cnt | tiveness | implemented as microservices   |                   |
+| g\  | Cloud    | The Architecture **should**    |                   |
+| en.\| na\      | consist of service components  |                   |
+| cnt\| tiveness | implemented as microservices   |                   |
 | .02 |          | that are individually          |                   |
 |     |          | dynamically scalable.          |                   |
 +-----+----------+--------------------------------+-------------------+
-| g   | Sca      | The Architecture **should**    | This requirement  |
-| en. | lability | support policy driven          | is currently not  |
-| scl |          | auto-scaling.                  | addressed but     |
+| g\  | Sca\     | The Architecture **should**    | This requirement  |
+| en.\| lability | support policy driven          | is currently not  |
+| scl\|          | auto-scaling.                  | addressed but     |
 | .01 |          |                                | will likely be    |
 |     |          |                                | supported through |
 |     |          |                                | `Senlin           |
@@ -2671,9 +2665,9 @@ General Recommendations
 |     |          |                                | management        |
 |     |          |                                | service.          |
 +-----+----------+--------------------------------+-------------------+
-| g   | Re       | The Architecture **should**    |                   |
-| en. | siliency | support resilient OpenStack    |                   |
-| rsl |          | service components that are    |                   |
+| g\  | Re\      | The Architecture **should**    |                   |
+| en.\| siliency | support resilient OpenStack    |                   |
+| rsl\|          | service components that are    |                   |
 | .02 |          | not subject to gen.rsl.01.     |                   |
 +-----+----------+--------------------------------+-------------------+
 
@@ -2683,87 +2677,87 @@ Infrastructure Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----+----------+--------------------------------+-------------------+
-| Ref | sub-     | Description                    | Notes             |
-| ere | category |                                |                   |
+| Ref\| sub-     | Description                    | Notes             |
+| ere\| category |                                |                   |
 | nce |          |                                |                   |
 +=====+==========+================================+===================+
-| i   | Compute  | The Architecture **should**    |                   |
-| nf. |          | include industry standard      |                   |
-| com |          | hardware management systems at |                   |
+| i\  | Compute  | The Architecture **should**    |                   |
+| nf.\|          | include industry standard      |                   |
+| com\|          | hardware management systems at |                   |
 | .02 |          | both HW device level           |                   |
 |     |          | (embedded) and HW platform     |                   |
 |     |          | level (external to device).    |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Compute  | The Architecture **should**    |                   |
-| nf. |          | support Symmetric              |                   |
-| com |          | Multiprocessing with shared    |                   |
+| i\  | Compute  | The Architecture **should**    |                   |
+| nf.\|          | support Symmetric              |                   |
+| com\|          | Multiprocessing with shared    |                   |
 | .03 |          | memory access as well as       |                   |
 |     |          | Simultaneous Multithreading.   |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Storage  | The Architecture **should**    |                   |
-| nf. |          | allow use of externally        |                   |
-| stg |          | provided large archival        |                   |
+| i\  | Storage  | The Architecture **should**    |                   |
+| nf.\|          | allow use of externally        |                   |
+| stg\|          | provided large archival        |                   |
 | .08 |          | storage for its Backup /       |                   |
 |     |          | Restore / Archival needs.      |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Storage  | The Architecture **should**    |                   |
-| nf. |          | make available all non-host OS |                   |
-| stg |          | / Hypervisor / Host systems    |                   |
+| i\  | Storage  | The Architecture **should**    |                   |
+| nf.\|          | make available all non-host OS |                   |
+| stg\|          | / Hypervisor / Host systems    |                   |
 | .09 |          | storage as network-based       |                   |
 |     |          | Block, File or Object Storage  |                   |
 |     |          | for tenant/management          |                   |
 |     |          | consumption.                   |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Storage  | The Architecture **should**    | `RA-1 “Virtual    |
-| nf. |          | provide local Block storage    | Storage” <./ch    |
-| stg |          | for Instances.                 | apter03.md#vi     |   
+| i\  | Storage  | The Architecture **should**    | `RA-1 “Virtual    |
+| nf.\|          | provide local Block storage    | Storage” <./ch    |
+| stg\|          | for Instances.                 | apter03.md#vi     |   
 | .10 |          |                                | rtual-storage>`__ |
 +-----+----------+--------------------------------+-------------------+
-| i   | Network  | The Architecture **should**    |                   |
-| nf. |          | support service function       |                   |
-| ntw |          | chaining.                      |                   |
+| i\  | Network  | The Architecture **should**    |                   |
+| nf.\|          | support service function       |                   |
+| ntw\|          | chaining.                      |                   |
 | .04 |          |                                |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Network  | The Architecture **should**    |                   |
-| nf. |          | support Distributed Virtual    |                   |
-| ntw |          | Routing (DVR) to allow compute |                   |
+| i\  | Network  | The Architecture **should**    |                   |
+| nf.\|          | support Distributed Virtual    |                   |
+| ntw\|          | Routing (DVR) to allow compute |                   |
 | .06 |          | nodes to route traffic         |                   |
 |     |          | efficiently.                   |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Network  | The Cloud Infrastructure       |                   |
-| nf. |          | Network Fabric **should**      |                   |
-| ntw |          | embrace the concepts of open   |                   |
+| i\  | Network  | The Cloud Infrastructure       |                   |
+| nf.\|          | Network Fabric **should**      |                   |
+| ntw\|          | embrace the concepts of open   |                   |
 | .08 |          | networking and disaggregation  |                   |
 |     |          | using commodity networking     |                   |
 |     |          | hardware and disaggregated     |                   |
 |     |          | Network Operating Systems.     |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Network  | The Cloud Infrastructure       |                   |
-| nf. |          | Network Fabric **should**      |                   |
-| ntw |          | embrace open-based standards   |                   |
+| i\  | Network  | The Cloud Infrastructure       |                   |
+| nf.\|          | Network Fabric **should**      |                   |
+| ntw\|          | embrace open-based standards   |                   |
 | .09 |          | and technologies.              |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Network  | The Cloud Infrastructure       |                   |
-| nf. |          | Network Fabric **should** be   |                   |
-| ntw |          | architected to provide a       |                   |
+| i\  | Network  | The Cloud Infrastructure       |                   |
+| nf.\|          | Network Fabric **should** be   |                   |
+| ntw\|          | architected to provide a       |                   |
 | .11 |          | standardised, scalable, and    |                   |
 |     |          | repeatable deployment model    |                   |
 |     |          | across all applicable Cloud    |                   |
 |     |          | Infrastructure sites.          |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Network  | The Architecture **should**    |                   |
-| nf. |          | use dual stack IPv4 and IPv6   |                   |
-| ntw |          | for Cloud Infrastructure       |                   |
+| i\  | Network  | The Architecture **should**    |                   |
+| nf.\|          | use dual stack IPv4 and IPv6   |                   |
+| ntw\|          | for Cloud Infrastructure       |                   |
 | .17 |          | internal networks.             |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Acce     | The Architecture **should**    | `RA-1             |
-| nf. | leration | support Application Specific   | “Acceleration” <. |
-| acc |          | Acceleration (exposed to       | /chapter03.md#    |
+| i\  | Acce     | The Architecture **should**    | `RA-1             |
+| nf.\| leration | support Application Specific   | “Acceleration” <. |
+| acc\|          | Acceleration (exposed to       | /chapter03.md#    |
 | .01 |          | VNFs).                         | acceleration>`__  |
 +-----+----------+--------------------------------+-------------------+
-| i   | Acce     | The Architecture **should**    | `“OpenStack       |
-| nf. | leration | support Cloud Infrastructure   | Future - Specs    |
-| acc |          | Acceleration (such as          | defined” <http    |
+| i\  | Acce     | The Architecture **should**    | `“OpenStack       |
+| nf.\| leration | support Cloud Infrastructure   | Future - Specs    |
+| acc\|          | Acceleration (such as          | defined” <http    |
 | .02 |          | SmartNICs).                    | s://specs.opensta |
 |     |          |                                | ck.org/openstack/ |
 |     |          |                                | neutron-specs/spe |
@@ -2772,14 +2766,14 @@ Infrastructure Recommendations
 |     |          |                                | -baremetal-with-s |
 |     |          |                                | mart-nic.html>`__ |
 +-----+----------+--------------------------------+-------------------+
-| i   | Acce     | The Architecture **may** rely  |                   |
-| nf. | leration | on SR-IOV PCI-Pass through to  |                   |
-| acc |          | provide acceleration to VNFs.  |                   |
+| i\  | Acce     | The Architecture **may** rely  |                   |
+| nf.\| leration | on SR-IOV PCI-Pass through to  |                   |
+| acc\|          | provide acceleration to VNFs.  |                   |
 | .03 |          |                                |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Image    | The Architecture **should**    | `RA-1             |
-| nf. |          | make the immutable images      | “Glance”          |
-| img |          | available via location         | <./chapter04.m    |
+| i\  | Image    | The Architecture **should**    | `RA-1             |
+| nf.\|          | make the immutable images      | “Glance”          |
+| img\|          | available via location         | <./chapter04.m    |
 | .01 |          | independent means.             | d#glance>`__      |
 +-----+----------+--------------------------------+-------------------+
 
@@ -2789,14 +2783,14 @@ Recommendations
 ~~~~~~~~~~~~~~~
 
 +----+--------------------+----------------------------+-------------+
-| R  | sub-category       | Description                | Notes       |
-| ef |                    |                            |             |
-| er |                    |                            |             |
-| en |                    |                            |             |
+| R\ | sub-category       | Description                | Notes       |
+| ef\|                    |                            |             |
+| er\|                    |                            |             |
+| en\|                    |                            |             |
 | ce |                    |                            |             |
 +====+====================+============================+=============+
-| vi | General            | The Architecture           | `RA-1       |
-| m. |                    | **should** support         | “Co\        |
+| vi\| General            | The Architecture           | `RA-1       |
+| m.\|                    | **should** support         | “Co\        |
 | 02 |                    | deployment of OpenStack    | ntainerised |
 |    |                    | components in containers.  | OpenStack   |
 |    |                    |                            | Services”   |
@@ -2806,21 +2800,21 @@ Recommendations
 |    |                    |                            | openstack-s |
 |    |                    |                            | ervices>`__ |
 +----+--------------------+----------------------------+-------------+
-| vi | General            | The Architecture           |             |
-| m. |                    | **should** support         |             |
+| vi\| General            | The Architecture           |             |
+| m.\|                    | **should** support         |             |
 | 04 |                    | Enhanced Platform          |             |
 |    |                    | Awareness (EPA) only for   |             |
 |    |                    | discovery of               |             |
 |    |                    | infrastructure resource    |             |
 |    |                    | capabilities.              |             |
 +----+--------------------+----------------------------+-------------+
-| vi | General            | The Architecture           |             |
-| m. |                    | **should** allow           |             |
+| vi\| General            | The Architecture           |             |
+| m.\|                    | **should** allow           |             |
 | 06 |                    | orchestration solutions to |             |
 |    |                    | be integrated with VIM.    |             |
 +----+--------------------+----------------------------+-------------+
-| vi | General            | The Architecture           |             |
-| m. |                    | **should** support         |             |
+| vi\| General            | The Architecture           |             |
+| m.\|                    | **should** support         |             |
 | 09 |                    | horizontal scaling of      |             |
 |    |                    | OpenStack core services.   |             |
 +----+--------------------+----------------------------+-------------+
@@ -2831,18 +2825,18 @@ Interfaces and APIs Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----+----------+--------------------------------+-------------------+
-| Ref | sub-     | Description                    | Notes             |
-| ere | category |                                |                   |
+| Ref\| sub-     | Description                    | Notes             |
+| ere\| category |                                |                   |
 | nce |          |                                |                   |
 +=====+==========+================================+===================+
-| i   | Acce     | The Architecture **should**    |                   |
-| nt. | leration | provide an open and standard   |                   |
-| acc |          | acceleration interface to      |                   |
+| i\  | Acce\    | The Architecture **should**    |                   |
+| nt.\| leration | provide an open and standard   |                   |
+| acc\|          | acceleration interface to      |                   |
 | .01 |          | VNFs.                          |                   |
 +-----+----------+--------------------------------+-------------------+
-| i   | Acce     | The Architecture **should      | duplicate of      |
-| nt. | leration | not** rely on SR-IOV PCI-Pass  | inf.acc.03 under  |
-| acc |          | through for acceleration       | “Infrastructure   |
+| i\  | Acce\    | The Architecture **should      | duplicate of      |
+| nt.\| leration | not** rely on SR-IOV PCI-Pass  | inf.acc.03 under  |
+| acc\|          | through for acceleration       | “Infrastructure   |
 | .02 |          | interface exposed to VNFs.     | Recommendations”  |
 +-----+----------+--------------------------------+-------------------+
 
@@ -2864,12 +2858,12 @@ Operations and LCM Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------+-----------------+----------------------+----------------------+
-| R    | sub-category    | Description          | Notes                |
-| efer |                 |                      |                      |
+| R\   | sub-category    | Description          | Notes                |
+| efer\|                 |                      |                      |
 | ence |                 |                      |                      |
 +======+=================+======================+======================+
-| lc   | Automated       | The Architecture     |                      |
-| m.ad | deployment      | **should** allow for |                      |
+| lc\  | Automated       | The Architecture     |                      |
+| m.ad\| deployment      | **should** allow for |                      |
 | p.01 |                 | “cookie cutter”      |                      |
 |      |                 | automated            |                      |
 |      |                 | deployment,          |                      |
@@ -2880,8 +2874,8 @@ Operations and LCM Recommendations
 |      |                 | Infrastructure       |                      |
 |      |                 | sites.               |                      |
 +------+-----------------+----------------------+----------------------+
-| lc   | Automated       | The Architecture     |                      |
-| m.ad | deployment      | **should** support   |                      |
+| lc\  | Automated       | The Architecture     |                      |
+| m.ad\| deployment      | **should** support   |                      |
 | p.03 |                 | hitless upgrade of   |                      |
 |      |                 | all software         |                      |
 |      |                 | provided by the      |                      |
@@ -2895,8 +2889,8 @@ Operations and LCM Recommendations
 |      |                 | duration and nature  |                      |
 |      |                 | of impact.           |                      |
 +------+-----------------+----------------------+----------------------+
-| lc   | Automated       | The Architecture     |                      |
-| m.ad | deployment      | **should** support   |                      |
+| lc\  | Automated       | The Architecture     |                      |
+| m.ad\| deployment      | **should** support   |                      |
 | p.04 |                 | declarative          |                      |
 |      |                 | specifications of    |                      |
 |      |                 | hardware and         |                      |
@@ -2907,16 +2901,16 @@ Operations and LCM Recommendations
 |      |                 | maintenance and      |                      |
 |      |                 | management.          |                      |
 +------+-----------------+----------------------+----------------------+
-| lc   | Automated       | The Architecture     |                      |
-| m.ad | deployment      | **should** support   |                      |
+| lc\  | Automated       | The Architecture     |                      |
+| m.ad\| deployment      | **should** support   |                      |
 | p.05 |                 | automated process    |                      |
 |      |                 | for Deployment and   |                      |
 |      |                 | life-cycle           |                      |
 |      |                 | management of VIM    |                      |
 |      |                 | Instances.           |                      |
 +------+-----------------+----------------------+----------------------+
-| lc   | CI/CD           | The Architecture     |                      |
-| m.ci |                 | **should** support   |                      |
+| lc\  | CI/CD           | The Architecture     |                      |
+| m.ci\|                 | **should** support   |                      |
 | d.02 |                 | integrating with     |                      |
 |      |                 | CI/CD Toolchain for  |                      |
 |      |                 | Cloud Infrastructure |                      |
@@ -2930,12 +2924,12 @@ Assurance Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------+-------------+--------------------------------+----------------+
-| R    | s           | Description                    | Notes          |
-| efer | ub-category |                                |                |
+| R\   | s\          | Description                    | Notes          |
+| efer\| ub-category |                                |                |
 | ence |             |                                |                |
 +======+=============+================================+================+
-| as   | Monitoring  | The Architecture **should**    |                |
-| r.mo |             | support Network Intelligence   |                |
+| as\  | Monitoring  | The Architecture **should**    |                |
+| r.mo\|             | support Network Intelligence   |                |
 | n.02 |             | capabilities that allow richer |                |
 |      |             | diagnostic capabilities which  |                |
 |      |             | take as input broader set of   |                |
@@ -2957,7 +2951,7 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 | Reference        | sub-category  | Description   | Notes            |
 +==================+===============+===============+==================+
 | sec.gen.011      | Hardening     | The Cloud     |                  |
-|                  |               | I             |                  |
+|                  |               | I\            |                  |
 |                  |               | nfrastructure |                  |
 |                  |               | **should**    |                  |
 |                  |               | support Read  |                  |
@@ -2972,7 +2966,7 @@ System Hardening (source `RM 7.9.1 <../../../ref_model/chapters/chapter07.md#791
 +------------------+---------------+---------------+------------------+
 | sec.gen.014      | Hardening     | All servers   |                  |
 |                  |               | part of Cloud |                  |
-|                  |               | I             |                  |
+|                  |               | I\            |                  |
 |                  |               | nfrastructure |                  |
 |                  |               | **should**    |                  |
 |                  |               | support       |                  |
@@ -3007,7 +3001,7 @@ Platform and Access (source `RM 7.9.2 <../../../ref_model/chapters/chapter07.md#
 |               |               | resources.    |                    |
 +---------------+---------------+---------------+--------------------+
 | sec.sys.020   | Access        | The Cloud     | Zero Trust         |
-|               |               | I             | Architecture (ZTA) |
+|               |               | I\            | Architecture (ZTA) |
 |               |               | nfrastructure | described in NIST  |
 |               |               | architecture  | SP 800-207         |
 |               |               | **should**    |                    |
@@ -3030,15 +3024,15 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
 +==============+===================+==============+===================+
-| sec.ci.002   | Confiden          | The Platform |                   |
+| sec.ci.002   | Confiden\         | The Platform |                   |
 |              | tiality/Integrity | **should**   |                   |
 |              |                   | support      |                   |
-|              |                   | sel          |                   |
+|              |                   | sel\         |                   |
 |              |                   | f-encrypting |                   |
 |              |                   | storage      |                   |
 |              |                   | devices      |                   |
 +--------------+-------------------+--------------+-------------------+
-| sec.ci.009   | Confiden          | For          |                   |
+| sec.ci.009   | Confiden\         | For          |                   |
 |              | tiality/Integrity | sensitive    |                   |
 |              |                   | data         |                   |
 |              |                   | encryption,  |                   |
@@ -3052,7 +3046,7 @@ Confidentiality and Integrity (source `RM 7.9.3 <../../../ref_model/chapters/cha
 |              |                   | Module to    |                   |
 |              |                   | manage and   |                   |
 |              |                   | protect      |                   |
-|              |                   | c            |                   |
+|              |                   | c\           |                   |
 |              |                   | ryptographic |                   |
 |              |                   | keys.        |                   |
 +--------------+-------------------+--------------+-------------------+
@@ -3210,7 +3204,7 @@ IaaC security (source `RM 7.9.9 <../../../ref_model/chapters/chapter07.md#799-ia
 +==============+===================+==============+===================+
 | sec.arch.001 | IaaC              | Threat       | It may be done    |
 |              |                   | Modelling    | manually or using |
-|              |                   | m            | tools like open   |
+|              |                   | m\           | tools like open   |
 |              |                   | ethodologies | source OWASP      |
 |              |                   | and tools    | Threat Dragon     |
 |              |                   | **should**   |                   |
@@ -3284,7 +3278,7 @@ Architecture Stage
 |              |                   | software     |                   |
 |              |                   | components   |                   |
 |              |                   | with known   |                   |
-|              |                   | vuln         |                   |
+|              |                   | vuln\        |                   |
 |              |                   | erabilities. |                   |
 +--------------+-------------------+--------------+-------------------+
 | sec.code.003 | IaaC              | Source Code  | Typically done    |
@@ -3407,11 +3401,11 @@ Stage
 |              |                   | by           |                   |
 |              |                   | exercising   |                   |
 |              |                   | application  |                   |
-|              |                   | f            |                   |
+|              |                   | f\           |                   |
 |              |                   | unctionality |                   |
 |              |                   | and          |                   |
 |              |                   | detecting    |                   |
-|              |                   | vul          |                   |
+|              |                   | vul\         |                   |
 |              |                   | nerabilities |                   |
 |              |                   | based on     |                   |
 |              |                   | application  |                   |
@@ -3476,7 +3470,7 @@ Stage
 |              |                   | behaviour    |                   |
 |              |                   | and detects  |                   |
 |              |                   | presence of  |                   |
-|              |                   | vul          |                   |
+|              |                   | vul\         |                   |
 |              |                   | nerabilities |                   |
 |              |                   | on an        |                   |
 |              |                   | application  |                   |
@@ -3521,7 +3515,7 @@ Delivery and Deployment Stage
 | sec.run.002  | IaaC              | RASP –       |                   |
 |              |                   | Runtime      |                   |
 |              |                   | Application  |                   |
-|              |                   | Sel          |                   |
+|              |                   | Sel\         |                   |
 |              |                   | f-Protection |                   |
 |              |                   | **should**   |                   |
 |              |                   | be           |                   |
@@ -3600,16 +3594,16 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 +-----------+-------------------+---------------------+---------------+
 | Reference | sub-category      | Description         | Notes         |
 +===========+===================+=====================+===============+
-| se        | Standards         | The Cloud Operator  |               |
+| se\       | Standards         | The Cloud Operator  |               |
 | c.std.001 |                   | **should** comply   |               |
 |           |                   | with `Center for    |               |
 |           |                   | Internet Security   |               |
 |           |                   | CIS                 |               |
-|           |                   | Con                 |               |
+|           |                   | Con\                |               |
 |           |                   | trols <https://www. |               |
 |           |                   | cisecurity.org/>`__ |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Standards         | The Cloud Operator, |               |
+| se\       | Standards         | The Cloud Operator, |               |
 | c.std.002 |                   | Platform and        |               |
 |           |                   | Workloads           |               |
 |           |                   | **should** follow   |               |
@@ -3625,7 +3619,7 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 |           |                   | https://cloudsecuri |               |
 |           |                   | tyalliance.org/>`__ |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Standards         | The Platform and    |               |
+| se\       | Standards         | The Platform and    |               |
 | c.std.003 |                   | Workloads           |               |
 |           |                   | **should** follow   |               |
 |           |                   | the guidance in the |               |
@@ -3640,7 +3634,7 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 |           |                   | Project <https:     |               |
 |           |                   | //www.owasp.org>`__ |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Standards         | The Cloud Operator, |               |
+| se\       | Standards         | The Cloud Operator, |               |
 | c.std.004 |                   | Platform and        |               |
 |           |                   | Workloads           |               |
 |           |                   | **should** ensure   |               |
@@ -3652,7 +3646,7 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 |           |                   | s://owasp.org/www-p |               |
 |           |                   | roject-top-ten/>`__ |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Standards         | The Cloud Operator, |               |
+| se\       | Standards         | The Cloud Operator, |               |
 | c.std.005 |                   | Platform and        |               |
 |           |                   | Workloads           |               |
 |           |                   | **should** strive   |               |
@@ -3666,18 +3660,18 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 |           |                   | /12/20/version2-com |               |
 |           |                   | munity-release/>`__ |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Standards         | The Cloud Operator, |               |
+| se\       | Standards         | The Cloud Operator, |               |
 | c.std.006 |                   | Platform and        |               |
 |           |                   | Workloads           |               |
 |           |                   | **should** utilise  |               |
 |           |                   | the `OWASP Web      |               |
 |           |                   | Security Testing    |               |
-|           |                   | Guid                |               |
-|           |                   | e <https://github.c |               |
+|           |                   | Guide               |               |
+|           |                   | <https://github.c   |               |
 |           |                   | om/OWASP/wstg/tree/ |               |
 |           |                   | master/document>`__ |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Standards         | The Cloud Operator, |               |
+| se\       | Standards         | The Cloud Operator, |               |
 | c.std.007 |                   | and Platform        |               |
 |           |                   | **should** satisfy  |               |
 |           |                   | the requirements    |               |
@@ -3697,7 +3691,7 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 |           |                   | security management |               |
 |           |                   | systems (ISMSs)     |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Standards         | The Cloud Operator, |               |
+| se\       | Standards         | The Cloud Operator, |               |
 | c.std.008 |                   | and Platform        |               |
 |           |                   | **should**          |               |
 |           |                   | implement the Code  |               |
@@ -3710,7 +3704,7 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 |           |                   | /#iso:std:iso-iec:2 |               |
 |           |                   | 7002:ed-2:v1:en>`__ |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Standards         | The Cloud Operator, |               |
+| se\       | Standards         | The Cloud Operator, |               |
 | c.std.009 |                   | and Platform        |               |
 |           |                   | **should**          |               |
 |           |                   | implement the       |               |
@@ -3718,7 +3712,7 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 |           |                   | (or latest)         |               |
 |           |                   | Guidelines for      |               |
 |           |                   | Cybersecurity       |               |
-|           |                   | t                   |               |
+|           |                   | t\                  |               |
 |           |                   | echniques <https:// |               |
 |           |                   | www.iso.org/obp/ui/ |               |
 |           |                   | #iso:std:iso-iec:27 |               |
@@ -3729,7 +3723,7 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 |           |                   | explicitly on       |               |
 |           |                   | cybersecurity       |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Standards         | The Cloud Operator  |               |
+| se\       | Standards         | The Cloud Operator  |               |
 | c.std.010 |                   | **should** conform  |               |
 |           |                   | to the ISO/IEC      |               |
 |           |                   | 27035 standard for  |               |
@@ -3740,7 +3734,7 @@ Compliance with Standards (source `RM 7.9.10 <../../../ref_model/chapters/chapte
 |           |                   | Standard for        |               |
 |           |                   | incident management |               |
 +-----------+-------------------+---------------------+---------------+
-| se        | Standards         | The Cloud Operator  |               |
+| se\       | Standards         | The Cloud Operator  |               |
 | c.std.011 |                   | **should** conform  |               |
 |           |                   | to the ISO/IEC      |               |
 |           |                   | 27031 standard for  |               |
