@@ -476,20 +476,20 @@ Average vCPU per instance v
 Average RAM per instance  ri
 ========================= ========
 
-+----------------+----------------+----------------+----------------+
-|                |                | Basic          | Hi\            |
-|                |                |                | gh-Performance |
-+================+================+================+================+
-| # of VMs per   | (\             | 4\             | (s\ *c*\ t)/v  |
-| node (vCPU)    | s\ *c*\ t*o)/v | \ *(sct)/v     |                |
-+----------------+----------------+----------------+----------------+
-| # of VMs per   | rt/ri          | rt/ri          | rt/ri          |
-| node (RAM)     |                |                |                |
-+----------------+----------------+----------------+----------------+
-| Max # of VMs   |                | min(4\*(sct)/v\| min(\          |
-| per node       |                | , rt/ri)       | (s\ *c*\ t)/v,\|
-|                |                |                | rt/ri)         |
-+----------------+----------------+----------------+----------------+
++----------------+----------------+----------------+------------------+
+|                |                | Basic          | High-Performance |
+|                |                |                |                  |
++================+================+================+==================+
+| # of VMs per   | (\             | 4\             | (s\ *c*\ t)/v    |
+| node (vCPU)    | s\ *c*\ t*o)/v | \ *(sct)/v     |                  |
++----------------+----------------+----------------+------------------+
+| # of VMs per   | rt/ri          | rt/ri          | rt/ri            |
+| node (RAM)     |                |                |                  |
++----------------+----------------+----------------+------------------+
+| Max # of VMs   |                | min(4\*(sct)/v\| min(\            |
+| per node       |                | , rt/ri)       | (s\ *c*\ t)/v,\  |
+|                |                |                | rt/ri)           |
++----------------+----------------+----------------+------------------+
 
 Caveats:
 
@@ -1841,88 +1841,88 @@ subset of the controller services are also deployed on the Intermediate
 and Edge Cloud Centres. Table 4-5 presents examples of such deployment
 choices.
 
-+--------+--------+--------+--------+--------+--------+--------+--------+
-|        |        | O\     | Id\    | Image  | C\     | N\     | S\     |
-|        |        | rchest\| entity | Mana\  | ompute | etwork | torage |
-|        |        | ration | Mana\  | gement |        | Mana\  | Mana\  |
-|        |        |        | gement |        |        | gement | gement |
-+========+========+========+========+========+========+========+========+
-| CCP    | Centr\ | hea\   | Id\    | Glance | nova-c\| n\     | Cinder |
-|        | alised | t-api, | entity | API,   | ompute | eutron | API,   |
-|        | DC –   | heat-e\| Pr\    | Glance | api\   | -serve\| Cinder |
-|        | c\     | ngine, | ovider | Re\    | ,nova- | r,neut\| Sche\  |
-|        | ontrol | nova-p\| (I\    | gistry | schedu\| ron-dh\| duler, |
-|        | nodes  | laceme\| dP),Ke\|        | ler,no\| cp-age\| Cinder |
-|        |        | nt-api | ystone |        | va-con\| nt,neu\| Volume |
-|        |        |        | API    |        | ductor | tron-L\|        |
-|        |        |        |        |        |        | 2-agen\|        |
-|        |        |        |        |        |        | t,neut\|        |
-|        |        |        |        |        |        | ron-L3 |        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (op\   |        |
-|        |        |        |        |        |        | tional |        |
-|        |        |        |        |        |        | ),neut\|        |
-|        |        |        |        |        |        | ron-me\|        |
-|        |        |        |        |        |        | tadata |        |
-|        |        |        |        |        |        | -agent |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| DCP:   | Any DC | hea\   | Id\    | Glance | nova-c\| n\     | Cinder |
-| combi\ | -      | t-api, | entity | API,   | ompute | eutron | API,   |
-| nation | C\     | heat-e\| Pr\    | Glance | api    | -serve\| Cinder |
-| of     | ontrol | ngine, | ovider | Re\    | ,nova- | r,neut\| Sche\  |
-| se\    | nodes  | nova-p\| (I\    | gistry | schedu\| ron-dh\| duler, |
-| rvices | Option | laceme\| dP),Ke\|        | ler,no\| cp-age\| Cinder |
-| dep\   | 1      | nt-api | ystone |        | va-con\| nt,neu\| Volume |
-| ending |        |        | API    |        | ductor | tron-L\|        |
-| upon   |        |        |        |        |        | 2-agen\|        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+|        |        | O\     | Id\    | Image  | C\     | N\      | S\     |
+|        |        | rchest\| entity | Mana\  | ompute | etwork  | torage |
+|        |        | ration | Mana\  | gement |        | Mana\   | Mana\  |
+|        |        |        | gement |        |        | gement  | gement |
++========+========+========+========+========+========+=========+========+
+| CCP    | Centr\ | hea\   | Id\    | Glance | nova-c\| n\      | Cinder |
+|        | alised | t-api, | entity | API,   | ompute | eutron  | API,   |
+|        | DC –   | heat-e\| Pr\    | Glance | api\   | -serve\ | Cinder |
+|        | c\     | ngine, | ovider | Re\    | ,nova- | r,neut\ | Sche\  |
+|        | ontrol | nova-p\| (I\    | gistry | schedu\| ron-dh\ | duler, |
+|        | nodes  | laceme\| dP),Ke\|        | ler,no\| cp-age\ | Cinder |
+|        |        | nt-api | ystone |        | va-con\| nt,neu\ | Volume |
+|        |        |        | API    |        | ductor | tron-L\ |        |
+|        |        |        |        |        |        | 2-agen\ |        |
+|        |        |        |        |        |        | t,neut\ |        |
+|        |        |        |        |        |        | ron-L3  |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (op\    |        |
+|        |        |        |        |        |        | tional  |        |
+|        |        |        |        |        |        | ),neut\ |        |
+|        |        |        |        |        |        | ron-me\ |        |
+|        |        |        |        |        |        | tadata  |        |
+|        |        |        |        |        |        | -agent  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+| DCP:   | Any DC | hea\   | Id\    | Glance | nova-c\| n\      | Cinder |
+| combi\ | -      | t-api, | entity | API,   | ompute | eutron  | API,   |
+| nation | C\     | heat-e\| Pr\    | Glance | api    | -serve\ | Cinder |
+| of     | ontrol | ngine, | ovider | Re\    | ,nova- | r,neut\ | Sche\  |
+| se\    | nodes  | nova-p\| (I\    | gistry | schedu\| ron-dh\ | duler, |
+| rvices | Option | laceme\| dP),Ke\|        | ler,no\| cp-age\ | Cinder |
+| dep\   | 1      | nt-api | ystone |        | va-con\| nt,neu\ | Volume |
+| ending |        |        | API    |        | ductor | tron-L\ |        |
+| upon   |        |        |        |        |        | 2-agen\ |        |
 | Center |        |        |        |        |        | t,neut\ |        |
-| size   |        |        |        |        |        | ron-L3\|        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (op\   |        |
-|        |        |        |        |        |        | tional |        |
-|        |        |        |        |        |        | ),neut\|        |
-|        |        |        |        |        |        | ron-me\|        |
-|        |        |        |        |        |        | tadata |        |
-|        |        |        |        |        |        | -agent |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-|        | Any DC | \*\*   | \* in  | \* in  | \*\*   | \*\*   | \*\*   |
-|        | -      | in     | Large  | Large  | in     | in     | in     |
-|        | C\     | other  | DC     | DC     | a\     | a\     | a\     |
-|        | ontrol | DC     |        |        | nother | nother | nother |
-|        | nodes  |        |        |        | DC     | DC     | DC     |
-|        | Option |        |        |        |        |        |        |
-|        | 2:     |        |        |        |        |        |        |
-|        | split  |        |        |        |        |        |        |
-|        | se\    |        |        |        |        |        |        |
-|        | rvices |        |        |        |        |        |        |
-|        | b\     |        |        |        |        |        |        |
-|        | etween |        |        |        |        |        |        |
-|        | DCs    |        |        |        |        |        |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| CCP or | C\     |        |        |        | nova-c\| neutr\ |        |
-| DCP    | ompute |        |        |        | ompute | on-L2- |        |
-|        | nodes  |        |        |        | -agent | agent, |        |
-|        |        |        |        |        |        | neut\  |        |
-|        |        |        |        |        |        | ron-L3\|        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (opt\  |        |
-|        |        |        |        |        |        | ional) |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| CCP    | C\     | nova-p\|        |        | nov\   | n\     |        |
-|        | ompute | laceme\|        |        | a-comp\| eutron |        |
-|        | nodes  | nt-api |        |        | ute-ag\| -serve\|        |
-|        |        |        |        |        | ent,no\| r,neut\|        |
-|        |        |        |        |        | va-con\| ron-dh\|        |
-|        |        |        |        |        | ductor | cp-age\|        |
-|        |        |        |        |        |        | nt,neu\|        |
-|        |        |        |        |        |        | tron-L\|        |
-|        |        |        |        |        |        | 2-agen\|        |
-|        |        |        |        |        |        | t,neut\|        |
-|        |        |        |        |        |        | ron-L3\|        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (opt\  |        |
-|        |        |        |        |        |        | ional) |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
+| size   |        |        |        |        |        | ron-L3\ |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (op\    |        |
+|        |        |        |        |        |        | tional  |        |
+|        |        |        |        |        |        | ),neut\ |        |
+|        |        |        |        |        |        | ron-me\ |        |
+|        |        |        |        |        |        | tadata  |        |
+|        |        |        |        |        |        | -agent  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+|        | Any DC | \*\*   | \* in  | \* in  | \*\*   | \*\*    | \*\*   |
+|        | -      | in     | Large  | Large  | in     | in      | in     |
+|        | C\     | other  | DC     | DC     | a\     | a\      | a\     |
+|        | ontrol | DC     |        |        | nother | nother  | nother |
+|        | nodes  |        |        |        | DC     | DC      | DC     |
+|        | Option |        |        |        |        |         |        |
+|        | 2:     |        |        |        |        |         |        |
+|        | split  |        |        |        |        |         |        |
+|        | se\    |        |        |        |        |         |        |
+|        | rvices |        |        |        |        |         |        |
+|        | b\     |        |        |        |        |         |        |
+|        | etween |        |        |        |        |         |        |
+|        | DCs    |        |        |        |        |         |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+| CCP or | C\     |        |        |        | nova-c\| neutr\  |        |
+| DCP    | ompute |        |        |        | ompute | on-L2-  |        |
+|        | nodes  |        |        |        | -agent | agent,  |        |
+|        |        |        |        |        |        | neut\   |        |
+|        |        |        |        |        |        | ron-L3\ |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (opt\   |        |
+|        |        |        |        |        |        | ional)  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+| CCP    | C\     | nova-p\|        |        | nov\   | n\      |        |
+|        | ompute | laceme\|        |        | a-comp\| eutron  |        |
+|        | nodes  | nt-api |        |        | ute-ag\| -serve\ |        |
+|        |        |        |        |        | ent,no\| r,neut\ |        |
+|        |        |        |        |        | va-con\| ron-dh\ |        |
+|        |        |        |        |        | ductor | cp-age\ |        |
+|        |        |        |        |        |        | nt,neu\ |        |
+|        |        |        |        |        |        | tron-L\ |        |
+|        |        |        |        |        |        | 2-agen\ |        |
+|        |        |        |        |        |        | t,neut\ |        |
+|        |        |        |        |        |        | ron-L3\ |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (opt\   |        |
+|        |        |        |        |        |        | ional)  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
 
 Table 4-5: Distribution of OpenStack services on different nodes
 depending upon Control Plane Scenario
