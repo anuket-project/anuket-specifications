@@ -476,20 +476,20 @@ Average vCPU per instance v
 Average RAM per instance  ri
 ========================= ========
 
-+----------------+----------------+----------------+------------------+
-|                |                | Basic          | High-Performance |
-|                |                |                |                  |
-+================+================+================+==================+
-| # of VMs per   | (\             | 4\             | (s\ *c*\ t)/v    |
-| node (vCPU)    | s\ *c*\ t*o)/v | \ *(sct)/v     |                  |
-+----------------+----------------+----------------+------------------+
-| # of VMs per   | rt/ri          | rt/ri          | rt/ri            |
-| node (RAM)     |                |                |                  |
-+----------------+----------------+----------------+------------------+
-| Max # of VMs   |                | min(4\*(sct)/v\| min(\            |
-| per node       |                | , rt/ri)       | (s\ *c*\ t)/v,\  |
-|                |                |                | rt/ri)           |
-+----------------+----------------+----------------+------------------+
++----------------+-----------------+-----------------+------------------+
+|                |                 | Basic           | High-Performance |
+|                |                 |                 |                  |
++================+=================+=================+==================+
+| # of VMs per   | (s              | 4               | (s \*c\* t)/v    |
+| node (vCPU)    | \*c\* t\*o)/v   | \*(sct)/v       |                  |
++----------------+-----------------+-----------------+------------------+
+| # of VMs per   | rt/ri           | rt/ri           | rt/ri            |
+| node (RAM)     |                 |                 |                  |
++----------------+-----------------+-----------------+------------------+
+| Max # of VMs   |                 | min(4\*(sct)/v, | min(\            |
+| per node       |                 | rt/ri)          | (s \*c\*\ t)/v,\ |
+|                |                 |                 | rt/ri)           |
++----------------+-----------------+-----------------+------------------+
 
 Caveats:
 
@@ -1277,83 +1277,83 @@ network nodes only deal with tenant networks and not provider networks.
 Also, network nodes are not required when SDN is utilised for
 networking.
 
-+-------------------+-------------------+---------------+---------------+
-| Networking        | Description       | Required or   | Placement     |
-| Service component |                   | Optional      |               |
-|                   |                   | Service       |               |
-+===================+===================+===============+===============+
-| neutron server    | Manages user      | Required      | Controller    |
-| (neutron-server   | requests and      |               | node          |
-| and               | exposes the       |               |               |
-| neutron-*-plugin) | Neutron APIs      |               |               |
-+-------------------+-------------------+---------------+---------------+
-| DHCP agent        | Provides DHCP     | Optional      | Network node  |
-| (ne               | services to       | depending     | (Controller   |
-| utron-dhcp-agent) | tenant networks   | upon plug-in  | node if no    |
-|                   | and is            |               | network node  |
-|                   | responsible for   |               | present)      |
-|                   | maintaining DHCP  |               |               |
-|                   | configuration.    |               |               |
-|                   | For High          |               |               |
-|                   | availability,     |               |               |
-|                   | multiple DHCP     |               |               |
-|                   | agents can be     |               |               |
-|                   | assigned.         |               |               |
-+-------------------+-------------------+---------------+---------------+
-| L3 agent          | Provides L3/NAT   | Optional      | Network node  |
-| (                 | forwarding for    | depending     | (Controller   |
-| neutron-l3-agent) | external network  | upon plug-in  | node if no    |
-|                   | access of servers |               | network node  |
-|                   | on tenant         |               | present) NB   |
-|                   | networks and      |               | in DVR based  |
-|                   | supports services |               | OpenStack     |
-|                   | such as           |               | Networking,   |
-|                   | Fire              |               | also in all   |
-|                   | wall-as-a-service |               | Compute       |
-|                   | (FWaaS) and Load  |               | nodes.        |
-|                   | Bala              |               |               |
-|                   | ncer-as-a-service |               |               |
-|                   | (LBaaS)           |               |               |
-+-------------------+-------------------+---------------+---------------+
-| neutron metadata  | The metadata      | Optional      | Network node  |
-| agent             | service provides  |               | (Controller   |
-| (neutro           | a way for         |               | node if no    |
-| n-metadata-agent) | instances to      |               | network node  |
-|                   | retrieve          |               | present)      |
-|                   | instance-specific |               |               |
-|                   | data. The         |               |               |
-|                   | networking        |               |               |
-|                   | service, neutron, |               |               |
-|                   | is responsible    |               |               |
-|                   | for intercepting  |               |               |
-|                   | these requests    |               |               |
-|                   | and adding HTTP   |               |               |
-|                   | headers which     |               |               |
-|                   | uniquely identify |               |               |
-|                   | the source of the |               |               |
-|                   | request before    |               |               |
-|                   | forwarding it to  |               |               |
-|                   | the metadata API  |               |               |
-|                   | server. These     |               |               |
-|                   | functions are     |               |               |
-|                   | performed by the  |               |               |
-|                   | neutron metadata  |               |               |
-|                   | agent.            |               |               |
-+-------------------+-------------------+---------------+---------------+
-| neutron plugin    | Runs on each      | Required      | Every Compute |
-| agent             | compute node to   |               | Node          |
-| (neutron-*-agent) | control and       |               |               |
-|                   | manage the local  |               |               |
-|                   | virtual network   |               |               |
-|                   | driver (such as   |               |               |
-|                   | the Open vSwitch  |               |               |
-|                   | or Linux Bridge)  |               |               |
-|                   | configuration and |               |               |
-|                   | local networking  |               |               |
-|                   | configuration for |               |               |
-|                   | servers hosted on |               |               |
-|                   | that node.        |               |               |
-+-------------------+-------------------+---------------+---------------+
++--------------------+-------------------+---------------+---------------+
+| Networking         | Description       | Required or   | Placement     |
+| Service component  |                   | Optional      |               |
+|                    |                   | Service       |               |
++====================+===================+===============+===============+
+| neutron server     | Manages user      | Required      | Controller    |
+| (neutron-server    | requests and      |               | node          |
+| and                | exposes the       |               |               |
+| neutron-\*-plugin) | Neutron APIs      |               |               |
++--------------------+-------------------+---------------+---------------+
+| DHCP agent         | Provides DHCP     | Optional      | Network node  |
+| (neutron-\         | services to       | depending     | (Controller   |
+| dhcp-agent)        | tenant networks   | upon plug-in  | node if no    |
+|                    | and is            |               | network node  |
+|                    | responsible for   |               | present)      |
+|                    | maintaining DHCP  |               |               |
+|                    | configuration.    |               |               |
+|                    | For High          |               |               |
+|                    | availability,     |               |               |
+|                    | multiple DHCP     |               |               |
+|                    | agents can be     |               |               |
+|                    | assigned.         |               |               |
++--------------------+-------------------+---------------+---------------+
+| L3 agent           | Provides L3/NAT   | Optional      | Network node  |
+| (\                 | forwarding for    | depending     | (Controller   |
+| neutron-l3-agent)  | external network  | upon plug-in  | node if no    |
+|                    | access of servers |               | network node  |
+|                    | on tenant         |               | present) NB   |
+|                    | networks and      |               | in DVR based  |
+|                    | supports services |               | OpenStack     |
+|                    | such as           |               | Networking,   |
+|                    | Fire              |               | also in all   |
+|                    | wall-as-a-service |               | Compute       |
+|                    | (FWaaS) and Load  |               | nodes.        |
+|                    | Bala              |               |               |
+|                    | ncer-as-a-service |               |               |
+|                    | (LBaaS)           |               |               |
++--------------------+-------------------+---------------+---------------+
+| neutron metadata   | The metadata      | Optional      | Network node  |
+| agent              | service provides  |               | (Controller   |
+| (neutron-\         | a way for         |               | node if no    |
+| metadata-agent)    | instances to      |               | network node  |
+|                    | retrieve          |               | present)      |
+|                    | instance-specific |               |               |
+|                    | data. The         |               |               |
+|                    | networking        |               |               |
+|                    | service, neutron, |               |               |
+|                    | is responsible    |               |               |
+|                    | for intercepting  |               |               |
+|                    | these requests    |               |               |
+|                    | and adding HTTP   |               |               |
+|                    | headers which     |               |               |
+|                    | uniquely identify |               |               |
+|                    | the source of the |               |               |
+|                    | request before    |               |               |
+|                    | forwarding it to  |               |               |
+|                    | the metadata API  |               |               |
+|                    | server. These     |               |               |
+|                    | functions are     |               |               |
+|                    | performed by the  |               |               |
+|                    | neutron metadata  |               |               |
+|                    | agent.            |               |               |
++--------------------+-------------------+---------------+---------------+
+| neutron plugin     | Runs on each      | Required      | Every Compute |
+| agent              | compute node to   |               | Node          |
+| (neutron-\*-agent) | control and       |               |               |
+|                    | manage the local  |               |               |
+|                    | virtual network   |               |               |
+|                    | driver (such as   |               |               |
+|                    | the Open vSwitch  |               |               |
+|                    | or Linux Bridge)  |               |               |
+|                    | configuration and |               |               |
+|                    | local networking  |               |               |
+|                    | configuration for |               |               |
+|                    | servers hosted on |               |               |
+|                    | that node.        |               |               |
++--------------------+-------------------+---------------+---------------+
 
 Table 4-2: Neutron Services Placement
 
