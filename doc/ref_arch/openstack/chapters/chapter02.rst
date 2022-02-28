@@ -37,7 +37,7 @@ following requirements are referenced through:
 -  Those relating to Cloud Infrastructure Security
 
 Cloud Infrastructure Software Profile Requirements for Compute (source `RM 5.2 <../../../ref_model/chapters/chapter05.md#52-cloud-infrastructure-software-profiles-features-and-requirements>`__)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------+-------------+-------------+-------------+-------------+
 | Reference   | Description | Requirement | Requirement | Sp\         |
@@ -169,7 +169,7 @@ Table 2-1b: Cloud Infrastructure Software Profile Extensions
 Requirements for Compute
 
 Cloud Infrastructure Software Profile Requirements for Networking (source `RM 5.2.3 <../../../ref_model/chapters/chapter05.md#523-virtual-networking>`__)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The features and configuration requirements related to virtual
 networking for the two (2) types of Cloud Infrastructure Profiles are
@@ -294,7 +294,7 @@ Table 2-2c: Cloud Infrastructure Software Profile Extensions
 Requirements for Networking
 
 Cloud Infrastructure Software Profile Requirements for Storage (source `RM 5.2 <../../../ref_model/chapters/chapter05.md#52-cloud-infrastructure-software-profiles-features-and-requirements>`__)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------+-------------+-------------+-------------+-------------+
 | Reference   | Description | Requirement | Requirement | Sp\         |
@@ -349,7 +349,7 @@ Table 2-3b: Reference Model Requirements - Cloud Infrastructure Software
 Profile Extensions Requirements for Storage
 
 Cloud Infrastructure Hardware Profile Requirements (source `RM 5.4 <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------+-------------+-------------+-------------+-------------+
 | Reference   | Description | Requirement | Requirement | Sp\         |
@@ -428,7 +428,7 @@ Table 2-4a: Reference Model Requirements - Cloud Infrastructure Hardware
 Profile Requirements
 
 Cloud Infrastructure Hardware Profile-Extensions Requirements (source `RM 5.4 <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------+-------------+-------------+-------------+-------------+
 | Reference   | Description | Requirement | Requirement | Sp\         |
