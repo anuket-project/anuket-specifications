@@ -15,4 +15,3 @@ Anuket Specifications
 - `Terms of Reference <../GSMA_CNTT_Terms_of_Reference.pdf>`_
 - `Code of Conduct <../CODE_OF_CONDUCT.md>`_
 - `The License (Creative Commons Attribution 4.0 International) <https://creativecommons.org/licenses/by/4.0/legalcode>`_
-
