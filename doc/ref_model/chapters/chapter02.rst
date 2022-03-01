@@ -322,7 +322,7 @@ Two profile *layers* are proposed:
 Workloads specify infrastructure capability requirements as workload metadata, indicating what kind of infrastructure they must run on to achieve functionality and/or the intended level of performance. Workloads request resources specifying the Profiles and Profile Extensions, and a set of sizing metadata that maybe expressed as flavours that are required for the workload to run as intended.
 A resource request by a workload can be met by any infrastructure node that has the same or a more specialised profile and the necessary capacity to support the requested flavour or resource size.
 
-Profiles, Profile Extensions and Flavours will be considered in greater detail in `Section 4.2 <./chapter04.md#4.2>`__.
+Profiles, Profile Extensions and Flavours will be considered in greater detail in :ref:`ref_model/chapters/chapter04:profile extensions`.
 
 Profiles (top-level partitions)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -337,7 +337,7 @@ Based on the above analysis, the following cloud infrastructure profiles are pro
 
 **Figure 2-5:** Infrastructure profiles proposed based on VNFs categorisation.
 
-In `Chapter 4 <./chapter04.md>`__ these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
+In :doc:`ref_model/chapters/chapter04` these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
 
 Profiles partition the infrastructure: an infrastructure object (host/node) **must** have one and only one profile associated to it.
 
@@ -351,21 +351,20 @@ The following **profile extensions** are proposed:
 Profile Extension Name                           Mnemonic                Applicable to Basic Profile Applicable to High Performance Profile Description                                                                                                                                                       Notes
 ================================================ ======================= =========================== ====================================== ================================================================================================================================================================= =============================================
 Compute Intensive High-performance CPU           compute-high-perf-cpu   ❌                           ✅                                      Nodes that have predictable computing performance and higher clock speeds.                                                                                      May use vanilla VIM/K8S scheduling instead.
-Storage Intensive High-performance storage       storage-high-perf       ❌                           ✅                                      Nodes that have low storage latency and/or high storage IOPS                                                                                                   
+Storage Intensive High-performance storage       storage-high-perf       ❌                           ✅                                      Nodes that have low storage latency and/or high storage IOPS
 Compute Intensive High memory                    compute-high-memory     ❌                           ✅                                      Nodes that have high amounts of RAM.                                                                                                                            May use vanilla VIM/K8S scheduling instead.
 Compute Intensive GPU                            compute-gpu             ❌                           ✅                                      for compute intensive Workloads that requires GPU compute resource on the node                                                                                  May use Node Feature Discovery.
-Network Intensive High speed network (25G)       high-speed-network      ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node.                                                          
-Network Intensive Very High speed network (100G) very-high-speed-network ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node.                                                         
-Low Latency - Edge Sites                         low-latency-edge        ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.                
-Very Low Latency - Edge Sites                    very-low-latency-edge   ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.                
-Ultra Low Latency - Edge Sites                   ultra-low-latency-edge  ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.                
-Fixed function accelerator                       compute-ffa             ❌                           ✅                                      Labels a host/node that includes a consumable fixed function accelerator (non-programmable, e.g. Crypto, vRAN-specific adapter).                               
+Network Intensive High speed network (25G)       high-speed-network      ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node.
+Network Intensive Very High speed network (100G) very-high-speed-network ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node.
+Low Latency - Edge Sites                         low-latency-edge        ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.
+Very Low Latency - Edge Sites                    very-low-latency-edge   ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.
+Ultra Low Latency - Edge Sites                   ultra-low-latency-edge  ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.
+Fixed function accelerator                       compute-ffa             ❌                           ✅                                      Labels a host/node that includes a consumable fixed function accelerator (non-programmable, e.g. Crypto, vRAN-specific adapter).
 Firmware-programmable adapter                    compute-fpga            ❌                           ✅                                      Labels a host/node that includes a consumable Firmware-programmable adapter (programmable, e.g. Network/storage FPGA with programmable part of firmware image).
-SmartNIC enabled                                 network-smartnic        ❌                           ✅                                      Labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure.                              
-SmartSwitch enabled                              network-smartswitch     ❌                           ✅                                      Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch                                                                             
+SmartNIC enabled                                 network-smartnic        ❌                           ✅                                      Labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure.
+SmartSwitch enabled                              network-smartswitch     ❌                           ✅                                      Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch
 ================================================ ======================= =========================== ====================================== ================================================================================================================================================================= =============================================
 
 **Table 2-1:** Profile extensions
 
    \*\ **Note:** This is an initial set of proposed profiles and profile extensions and it is expected that more profiles and/or profile extensions will be added as more requirements are gathered and as technology enhances and matures.
-
