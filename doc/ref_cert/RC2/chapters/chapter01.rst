@@ -166,7 +166,7 @@ executed. 3rd Party test platforms may also be leveraged if desired.
 
 **Dependencies** infrastructure and workload validation will rely upon
 test harnesses, test tools, and test suites provided by upstream
-projects, including OPNFV and CNF conformance. These upstream projects
+projects, including Anuket and CNF conformance. These upstream projects
 will be reviewed semi-annually to verify they are still healthy and
 active projects. Over time, the projects representing the conformance
 process may change, but test parity is required if new test suites are
