@@ -110,7 +110,7 @@ A virtual machine and container can consume storage through a number of means. T
 
 -  managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and
 -  Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
-   The details of the tenant storage consumption model are covered in section `"Storage for Tenant Consumption"`__.
+   The details of the tenant storage consumption model are covered in section `Storage for Tenant Consumption <./chapter03.md#3.6.3>`__.
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity and behaviours. The set of selectable attributes includes:
 
@@ -226,7 +226,7 @@ Improve cost/performance               Better cost and less power/cooling by imp
 
 Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve faster performance, or offloading the tasks to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
 
-More details about Hardware Acceleration are in `Hardware Acceleration Abstraction`__.
+More details about Hardware Acceleration are in `Hardware Acceleration Abstraction <./chapter03.md#3.8>`__.
 
 Hardware Infrastructure Manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -786,7 +786,7 @@ Where:
 -  "NA" - Not Applicable for this Use Case / Stereotype
 
 ============================ =================================== ================== ==== === =================== ==================== =========== ===== === ==== ======
-\                                                                                            Tenant / User                                                      
+\                                                                                            Tenant / User
 ============================ =================================== ================== ==== === =================== ==================== =========== ===== === ==== ======
 \                                                                Infra / Ctrl / Mgt          Platform Native                          Shared File                Object
 Use Case                     Stereotype                          Boot               Ctrl Mgt Hypervisor Attached Container Persistent Within      Cross Ext vNAS Object
@@ -1100,4 +1100,3 @@ Platform Services:
 -  a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that brings its own Load Balancer.
 -  b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
 -  c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
-
