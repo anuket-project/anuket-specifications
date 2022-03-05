@@ -35,8 +35,7 @@ Test Case Traceability to RA2 Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section focuses on the test cases covering the requirements in
-`RA-2 Chapter 4.9
-<https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/chapters/chapter04.html#kubernetes-workloads>`__
+:ref:`ref_arch/kubernetes/chapters/chapter04:kubernetes workloads`
 for Kubernetes workloads.
 
 =========== ========================== ===================== ========

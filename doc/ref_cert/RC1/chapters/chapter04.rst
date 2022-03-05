@@ -53,7 +53,7 @@ they are in Functest in the next 3 dedicated testcases:
 Functest also integrates `Kubernetes End-to-end
 tests <https://kubernetes.io/blog/2019/03/22/kubernetes-end-to-end-testing-for-everyone/>`__
 and allows verifying Kubernetes Conformance (see
-`k8s-conformance <https://build.opnfv.org/ci/job/functest-kubernetes-opnfv-functest-kubernetes-smoke-v1.22-k8s_conformance-run/24/console>`__).
+`k8s-conformance <https://build.opnfv.org/ci/job/functest-kubernetes-opnfv-functest-kubernetes-smoke-v1.22-k8s_conformance-run/25/console>`__).
 
 Dovetail (OVP) mostly leverages on Functest but only runs a small part
 of Functest (~15% of all functional tests, no benchmarking tests, no VNF
