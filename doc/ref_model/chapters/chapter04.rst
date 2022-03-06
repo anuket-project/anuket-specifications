@@ -77,6 +77,8 @@ e.cap.013 SR-IOV over PCI-PT              Yes/No Traditional SR-IOV. These Capab
 e.cap.014 GPU/NPU                         Yes/No Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads
 e.cap.015 SmartNIC                        Yes/No Network Acceleration
 e.cap.016 FPGA/other Acceleration HW      Yes/No These Capabilities generally require hardware-dependent drivers be injected into workloads
+e.cap.017 CPU allocation ratio            Yes/No N:1: Number of virtual cores per physical core; also known as CPU overbooking ratio
+e.cap.018 Huge pages                      Yes/No Indicates if the Cloud Infrastructure supports huge pages
 ========= =============================== ====== ================================================================================================================
 
 **Table 4-2:** Exposed Performance Optimisation Capabilities of Cloud Infrastructure
@@ -147,24 +149,23 @@ Internal SLA capabilities
 ========= =============================== ====== ==============================================================================
 Ref       Cloud Infrastructure capability Unit   Definition/Notes
 ========= =============================== ====== ==============================================================================
-i.cap.016 CPU allocation ratio            N:1    Number of virtual cores per physical core; also known as CPU overbooking ratio
 i.cap.017 Connection point QoS            Yes/No QoS enablement of the connection point (vNIC or interface)
 ========= =============================== ====== ==============================================================================
 
 **Table 4-6:** Internal SLA capabilities to Cloud Infrastructure
 
-Internal Performance Optimisation Capabilities
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. Internal Performance Optimisation Capabilities
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Table 4-7** below shows possible performance optimisation capabilities that can be provided by the Cloud Infrastructure. These include capabilities exposed to workloads as well as internal capabilities to Cloud Infrastructure. These capabilities will be determined by the Cloud Infrastructure Profile used by the Cloud Infrastructure.
+.. **Table 4-7** below shows possible performance optimisation capabilities that can be provided by the Cloud Infrastructure. These include capabilities exposed to workloads as well as internal capabilities to Cloud Infrastructure. These capabilities will be determined by the Cloud Infrastructure Profile used by the Cloud Infrastructure.
 
-========= =============================== ====== =========================================================
-Ref       Cloud Infrastructure capability Unit   Definition/Notes
-========= =============================== ====== =========================================================
-i.cap.018 Huge pages                      Yes/No Indicates if the Cloud Infrastructure supports huge pages
-========= =============================== ====== =========================================================
+.. ========= =============================== ====== =========================================================
+.. Ref       Cloud Infrastructure capability Unit   Definition/Notes
+.. ========= =============================== ====== =========================================================
+.. i.cap.018 Huge pages                      Yes/No Indicates if the Cloud Infrastructure supports huge pages
+.. ========= =============================== ====== =========================================================
 
-**Table 4-7:** Internal performance optimisation capabilities of Cloud Infrastructure
+.. **Table 4-7:** Internal performance optimisation capabilities of Cloud Infrastructure
 
 Internal Performance Measurement Capabilities
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
