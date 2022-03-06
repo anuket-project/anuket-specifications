@@ -100,23 +100,24 @@ e.cap.017 Monitoring of L2-7 data         Yes/No Ability to monitor L2-L7 data f
 
 **Table 4-3:** Exposed Monitoring Capabilities of Cloud Infrastructure
 
-Exposed Infrastructure Performance Measurements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. Exposed Infrastructure Performance Measurements
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The intent of the following PMs is to be available for and well known to workloads.
+.. The intent of the following PMs is to be available for and well known to workloads.
 
-Exposed Performance Measurements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. Exposed Performance Measurements
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following table of exposed Performance Measurements shows PMs per VM or Pod, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [14]. Specifically exposed PMs use a single workload (PVP) dataplane test setup in a single host.
+.. The following table of exposed Performance Measurements shows PMs per VM or Pod, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [14]. Specifically exposed PMs use a single workload (PVP) dataplane test setup in a single host.
 
-======== ================================ ===== ===================
-Ref      Cloud Infrastructure Measurement Unit  Definition/Notes
-======== ================================ ===== ===================
-e.pm.xxx Place Holder                     Units Concise description
-======== ================================ ===== ===================
+.. ======== ================================ ===== ===================
+.. Ref      Cloud Infrastructure Measurement Unit  Definition/Notes
+.. ======== ================================ ===== ===================
+.. e.pm.xxx Place Holder                     Units Concise description
+.. ======== ================================ ===== ===================
 
-**Table 4-4:** Exposed Performance Measurements of Cloud Infrastructure
+.. **Table 4-4:** Exposed Performance Measurements of Cloud Infrastructure
+**Table 4-4:** Place holder
 
 Internal Infrastructure Capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
