@@ -134,7 +134,41 @@ Automation
 Infrastructure LCM Automation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To be covered in the next release.
+In the typical telecom operator environment, the infrastructure Life Cycle Management has become increasingly complex and error prone, with multiple vendors and products, and high maintenance costs due to the necessary planning, testing and the out-of-business-hours execution required to do frequently disruptive maintenance (e.g., upgrades) and to mitigate outages to mission-critical applications. Consistent process and tooling for infrastructure management across hybrid environments creates additional complexity due to different levels of access to infrastructure with the hands-on access in the on-premise operations and an access restricted to consumable services offered by public clouds.
+
+Life cycle operations, such as software or hardware upgrades (including complex and risky firmware updates), typically involve time-consuming manual research to check whether an upgrade is available, needed, beneficial and not conflicting with the current versions of other components before moving forward.  In a complex and at scale Hybrid Multi-Cloud environment, such a manual process is ineffective and, in many cases, impossible to execute in a controlled manner.  Hence, needs for automation.
+
+The goals of LCM is to provide a reliable administration of a system from its provisioning, through its operational stage, to its final retirement. Key functions of Infrastructure LCM:
+ -  Hybrid, Multi-Cloud support, that is, LCM works across physical virtual and cloud environments, supporting on-site, cloud and distributed environments (like Edge)
+ -  Complete system life cycle control (Build, Monitor, Maintain, Retire)
+ -  Enablement for automation of most system maintenance tasks
+
+Essential foundation blocks for Infrastructure LCM automation:
+ -  Inventory
+ -  Available Software Upgrades and Dependencies
+ -  Orchestration Engine
+ -  Representation Model 
+
+Automated LCM uses Inventory to:
+  -  store configuration data, alert data, and performance data dynamically discovered from the infrastructure (environmental data)
+  -  discover current versions of software modules at each endpoint (discovery)
+  -  track and account for all systems, assets, subscriptions (monitoring)
+  -  provide inventory of all asset, logical and physical
+
+Automated LCM uses Available Software Upgrades and Dependencies component to:
+ -  store information about available software upgrades and dependency expectations
+ -  determine the recommended version of a software item (such as firmware) and dependencies on other items in the node
+ -  determine the recommended versions of foundation software running on the cluster
+
+Automated LCM uses Orchestration Engine to:
+ -  take the inputs from inventory, available versions, and dependencies
+ -  run the non-disruptive upgrades
+ -  dynamically remediate dependencies during the upgrade process to optimise outcome
+ -  ensure that the system is consistent across its life cycle
+
+Automated LCM uses Representation Model to:
+ - abstract various automation technologies
+ - promote evolution from automation understood as an automation of human tasks to autonomous systems using intend-based, declarative automation, supported by evoving AI/ML technologies 
 
 Hardware Configuration CI/CD
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
