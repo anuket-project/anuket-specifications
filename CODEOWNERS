@@ -26,7 +26,7 @@
 /doc/ref_arch/kubernetes/            @rgstori
 
 # Reference Implementation 2
-/doc/ref_impl/cntt-ri2/              @rihabbanday
+/doc/ref_impl/cntt-ri2/              @xudan16
 
 # Reference Conformance 2
 /doc/ref_cert/RC2/                   @steelescotr
