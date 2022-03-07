@@ -137,9 +137,9 @@ security vulnerabilities in the following timescale from discovery
 +----------+-------------------+
 | Critical | 30 days           |
 +----------+-------------------+
-| High     | 60 days           | 
+| High     | 60 days           |
 +----------+-------------------+
-| Medium   | 90 days           | 
+| Medium   | 90 days           |
 +----------+-------------------+
 | Low      | 180 days          |
 +----------+-------------------+

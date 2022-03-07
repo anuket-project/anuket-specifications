@@ -19,8 +19,8 @@ structure of control and user planes, operating systems, hypervisors and
 BIOS configurations, and architectural details of underlay and overlay
 networking, and storage, and the distribution of OpenStack service
 components among nodes. The chapter also covers implementation support
-for the `Reference Model profiles and
-flavours <../../../ref_model/chapters/chapter02.md#24-profiles-profile-extensions--flavours>`__;
+for the `Reference Model profiles and flavours
+<../../../ref_model/chapters/chapter02.md#24-profiles-profile-extensions--flavours>`__;
 the OpenStack flavor types capture both the sizing and the profile
 configuration (of the host).
 
@@ -74,9 +74,9 @@ OpenStack Control Plane Servers (Control Nodes)
 
 For OpenStack control nodes we use the BIOS parameters for the basic
 profile defined in `Chapter 5.4 of the Reference
-Model 
+Model
 <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-
-hardware-profiles-features-and-requirements>`__. 
+hardware-profiles-features-and-requirements>`__.
 Additionally,
 for OpenStack we need to set the following boot parameters:
 
@@ -169,20 +169,20 @@ This section specifies the compute node configurations to support the
 Basic and High-Performance profiles; in OpenStack this would be
 accomplished by specifying the configurations when creating “flavors”.
 The cloud operator may choose to implement certain profile-extensions
-(`RM 2.4 Profile
-Extensions <../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations>`__)
+(`RM 2.4 Profile Extensions
+<../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations>`__)
 as a set of standard configurations, of a given profile, capturing some
 of the variability through different values or extra specifications.
 
 -  The software and hardware configurations are as specified in the
-   `Reference Model chapter
-   5.4 <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__
+   `Reference Model chapter 5.4
+   <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__
 
 -  BIOS requirement
 
    -  The general BIOS requirements are described in the `Reference
-      Model chapter
-      5.4 <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__
+      Model chapter 5.4
+      <../../../ref_model/chapters/chapter05.md#54-cloud-infrastructure-hardware-profiles-features-and-requirements>`__
 
 **Example Profiles and their Extensions**
 
@@ -476,20 +476,20 @@ Average vCPU per instance v
 Average RAM per instance  ri
 ========================= ========
 
-+----------------+----------------+----------------+----------------+
-|                |                | Basic          | Hi\            |
-|                |                |                | gh-Performance |
-+================+================+================+================+
-| # of VMs per   | (\             | 4\             | (s\ *c*\ t)/v  |
-| node (vCPU)    | s\ *c*\ t*o)/v | \ *(sct)/v     |                |
-+----------------+----------------+----------------+----------------+
-| # of VMs per   | rt/ri          | rt/ri          | rt/ri          |
-| node (RAM)     |                |                |                |
-+----------------+----------------+----------------+----------------+
-| Max # of VMs   |                | min(4\*(sct)/v\| min(\          |
-| per node       |                | , rt/ri)       | (s\ *c*\ t)/v,\|
-|                |                |                | rt/ri)         |
-+----------------+----------------+----------------+----------------+
++----------------+-----------------+-----------------+------------------+
+|                |                 | Basic           | High-Performance |
+|                |                 |                 |                  |
++================+=================+=================+==================+
+| # of VMs per   | (s              | 4               | (s \*c\* t)/v    |
+| node (vCPU)    | \*c\* t\*o)/v   | \*(sct)/v       |                  |
++----------------+-----------------+-----------------+------------------+
+| # of VMs per   | rt/ri           | rt/ri           | rt/ri            |
+| node (RAM)     |                 |                 |                  |
++----------------+-----------------+-----------------+------------------+
+| Max # of VMs   |                 | min(4\*(sct)/v, | min(\            |
+| per node       |                 | rt/ri)          | (s \*c\*\ t)/v,\ |
+|                |                 |                 | rt/ri)           |
++----------------+-----------------+-----------------+------------------+
 
 Caveats:
 
@@ -802,7 +802,7 @@ Profile Extensions is shown in Figure 4-3.
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-DPDK.png
    :alt: High Performance Profile Host Conf with DPDK
    :align: center
-   
+
 Figure 4-3: High Performance Profile Host Configuration with DPDK
 acceleration (example and simplified)
 
@@ -1277,83 +1277,83 @@ network nodes only deal with tenant networks and not provider networks.
 Also, network nodes are not required when SDN is utilised for
 networking.
 
-+-------------------+-------------------+---------------+---------------+
-| Networking        | Description       | Required or   | Placement     |
-| Service component |                   | Optional      |               |
-|                   |                   | Service       |               |
-+===================+===================+===============+===============+
-| neutron server    | Manages user      | Required      | Controller    |
-| (neutron-server   | requests and      |               | node          |
-| and               | exposes the       |               |               |
-| neutron-*-plugin) | Neutron APIs      |               |               |
-+-------------------+-------------------+---------------+---------------+
-| DHCP agent        | Provides DHCP     | Optional      | Network node  |
-| (ne               | services to       | depending     | (Controller   |
-| utron-dhcp-agent) | tenant networks   | upon plug-in  | node if no    |
-|                   | and is            |               | network node  |
-|                   | responsible for   |               | present)      |
-|                   | maintaining DHCP  |               |               |
-|                   | configuration.    |               |               |
-|                   | For High          |               |               |
-|                   | availability,     |               |               |
-|                   | multiple DHCP     |               |               |
-|                   | agents can be     |               |               |
-|                   | assigned.         |               |               |
-+-------------------+-------------------+---------------+---------------+
-| L3 agent          | Provides L3/NAT   | Optional      | Network node  |
-| (                 | forwarding for    | depending     | (Controller   |
-| neutron-l3-agent) | external network  | upon plug-in  | node if no    |
-|                   | access of servers |               | network node  |
-|                   | on tenant         |               | present) NB   |
-|                   | networks and      |               | in DVR based  |
-|                   | supports services |               | OpenStack     |
-|                   | such as           |               | Networking,   |
-|                   | Fire              |               | also in all   |
-|                   | wall-as-a-service |               | Compute       |
-|                   | (FWaaS) and Load  |               | nodes.        |
-|                   | Bala              |               |               |
-|                   | ncer-as-a-service |               |               |
-|                   | (LBaaS)           |               |               |
-+-------------------+-------------------+---------------+---------------+
-| neutron metadata  | The metadata      | Optional      | Network node  |
-| agent             | service provides  |               | (Controller   |
-| (neutro           | a way for         |               | node if no    |
-| n-metadata-agent) | instances to      |               | network node  |
-|                   | retrieve          |               | present)      |
-|                   | instance-specific |               |               |
-|                   | data. The         |               |               |
-|                   | networking        |               |               |
-|                   | service, neutron, |               |               |
-|                   | is responsible    |               |               |
-|                   | for intercepting  |               |               |
-|                   | these requests    |               |               |
-|                   | and adding HTTP   |               |               |
-|                   | headers which     |               |               |
-|                   | uniquely identify |               |               |
-|                   | the source of the |               |               |
-|                   | request before    |               |               |
-|                   | forwarding it to  |               |               |
-|                   | the metadata API  |               |               |
-|                   | server. These     |               |               |
-|                   | functions are     |               |               |
-|                   | performed by the  |               |               |
-|                   | neutron metadata  |               |               |
-|                   | agent.            |               |               |
-+-------------------+-------------------+---------------+---------------+
-| neutron plugin    | Runs on each      | Required      | Every Compute |
-| agent             | compute node to   |               | Node          |
-| (neutron-*-agent) | control and       |               |               |
-|                   | manage the local  |               |               |
-|                   | virtual network   |               |               |
-|                   | driver (such as   |               |               |
-|                   | the Open vSwitch  |               |               |
-|                   | or Linux Bridge)  |               |               |
-|                   | configuration and |               |               |
-|                   | local networking  |               |               |
-|                   | configuration for |               |               |
-|                   | servers hosted on |               |               |
-|                   | that node.        |               |               |
-+-------------------+-------------------+---------------+---------------+
++--------------------+-------------------+---------------+---------------+
+| Networking         | Description       | Required or   | Placement     |
+| Service component  |                   | Optional      |               |
+|                    |                   | Service       |               |
++====================+===================+===============+===============+
+| neutron server     | Manages user      | Required      | Controller    |
+| (neutron-server    | requests and      |               | node          |
+| and                | exposes the       |               |               |
+| neutron-\*-plugin) | Neutron APIs      |               |               |
++--------------------+-------------------+---------------+---------------+
+| DHCP agent         | Provides DHCP     | Optional      | Network node  |
+| (neutron-\         | services to       | depending     | (Controller   |
+| dhcp-agent)        | tenant networks   | upon plug-in  | node if no    |
+|                    | and is            |               | network node  |
+|                    | responsible for   |               | present)      |
+|                    | maintaining DHCP  |               |               |
+|                    | configuration.    |               |               |
+|                    | For High          |               |               |
+|                    | availability,     |               |               |
+|                    | multiple DHCP     |               |               |
+|                    | agents can be     |               |               |
+|                    | assigned.         |               |               |
++--------------------+-------------------+---------------+---------------+
+| L3 agent           | Provides L3/NAT   | Optional      | Network node  |
+| (\                 | forwarding for    | depending     | (Controller   |
+| neutron-l3-agent)  | external network  | upon plug-in  | node if no    |
+|                    | access of servers |               | network node  |
+|                    | on tenant         |               | present) NB   |
+|                    | networks and      |               | in DVR based  |
+|                    | supports services |               | OpenStack     |
+|                    | such as           |               | Networking,   |
+|                    | Fire              |               | also in all   |
+|                    | wall-as-a-service |               | Compute       |
+|                    | (FWaaS) and Load  |               | nodes.        |
+|                    | Bala              |               |               |
+|                    | ncer-as-a-service |               |               |
+|                    | (LBaaS)           |               |               |
++--------------------+-------------------+---------------+---------------+
+| neutron metadata   | The metadata      | Optional      | Network node  |
+| agent              | service provides  |               | (Controller   |
+| (neutron-\         | a way for         |               | node if no    |
+| metadata-agent)    | instances to      |               | network node  |
+|                    | retrieve          |               | present)      |
+|                    | instance-specific |               |               |
+|                    | data. The         |               |               |
+|                    | networking        |               |               |
+|                    | service, neutron, |               |               |
+|                    | is responsible    |               |               |
+|                    | for intercepting  |               |               |
+|                    | these requests    |               |               |
+|                    | and adding HTTP   |               |               |
+|                    | headers which     |               |               |
+|                    | uniquely identify |               |               |
+|                    | the source of the |               |               |
+|                    | request before    |               |               |
+|                    | forwarding it to  |               |               |
+|                    | the metadata API  |               |               |
+|                    | server. These     |               |               |
+|                    | functions are     |               |               |
+|                    | performed by the  |               |               |
+|                    | neutron metadata  |               |               |
+|                    | agent.            |               |               |
++--------------------+-------------------+---------------+---------------+
+| neutron plugin     | Runs on each      | Required      | Every Compute |
+| agent              | compute node to   |               | Node          |
+| (neutron-\*-agent) | control and       |               |               |
+|                    | manage the local  |               |               |
+|                    | virtual network   |               |               |
+|                    | driver (such as   |               |               |
+|                    | the Open vSwitch  |               |               |
+|                    | or Linux Bridge)  |               |               |
+|                    | configuration and |               |               |
+|                    | local networking  |               |               |
+|                    | configuration for |               |               |
+|                    | servers hosted on |               |               |
+|                    | that node.        |               |               |
++--------------------+-------------------+---------------+---------------+
 
 Table 4-2: Neutron Services Placement
 
@@ -1588,7 +1588,7 @@ OpenStack services topology version is shown in Figure 4-7.
 .. figure:: ../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png
    :alt: Containerised OpenStack Services Topology
    :align: center
-   
+
 Figure 4-7: Containerised OpenStack Services Topology
 
 Consumable Infrastructure Resources and Services
@@ -1724,8 +1724,8 @@ set up the flavors as specified in the tables below.
 
    -  To configure profile-extensions, for example, the “Storage
       Intensive High Performance” profile, as defined in `Reference
-      Model Profile
-      Extensions <../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations>`__,
+      Model Profile Extensions
+      <../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations>`__,
       in addition to the above, need configure the storage IOPS: the
       following two parameters need to be specified in the flavor
       create: –property quota:disk_write_iops_sec=<IOPS#> and –property
@@ -1791,10 +1791,10 @@ Cloud Centre as representative terms for cloud services hosted at
 centralised large data centres, Telco edge locations and for locations
 with capacity somewhere in between the large data centres and edge
 locations, respectively. The mapping of various terms, including the
-Reference Model terminology specified in Table
-`8-5 <../../..//ref_model/chapters/chapter08.md#835-comparison-of-deployment-topologies-and-edge-terms>`__ and `Open
-Glossary of Edge
-Computing <https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md>`__
+Reference Model terminology specified in Table `8-5
+<../../..//ref_model/chapters/chapter08.md#835-comparison-of-deployment-topologies-and-edge-terms>`__
+and `Open Glossary of Edge Computing
+<https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md>`__
 is as follows:
 
 -  Central Cloud Centre: Large Centralised Data Centre, Regional Data
@@ -1809,7 +1809,7 @@ the resource capacity, as in the number of servers, and the capacity of
 these servers in terms of # of cores, RAM, etc. restricting the set of
 services that can be deployed and, thus, creating a dependency between
 other data centres. In `Reference Model Chapter
-8.3 <../../../ref_model/chapters/chapter08.md#83-telco-edge-cloud>`__, 
+8.3 <../../../ref_model/chapters/chapter08.md#83-telco-edge-cloud>`__,
 Table 8-5
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.
@@ -1841,88 +1841,88 @@ subset of the controller services are also deployed on the Intermediate
 and Edge Cloud Centres. Table 4-5 presents examples of such deployment
 choices.
 
-+--------+--------+--------+--------+--------+--------+--------+--------+
-|        |        | O\     | Id\    | Image  | C\     | N\     | S\     |
-|        |        | rchest\| entity | Mana\  | ompute | etwork | torage |
-|        |        | ration | Mana\  | gement |        | Mana\  | Mana\  |
-|        |        |        | gement |        |        | gement | gement |
-+========+========+========+========+========+========+========+========+
-| CCP    | Centr\ | hea\   | Id\    | Glance | nova-c\| n\     | Cinder |
-|        | alised | t-api, | entity | API,   | ompute | eutron | API,   |
-|        | DC –   | heat-e\| Pr\    | Glance | api\   | -serve\| Cinder |
-|        | c\     | ngine, | ovider | Re\    | ,nova- | r,neut\| Sche\  |
-|        | ontrol | nova-p\| (I\    | gistry | schedu\| ron-dh\| duler, |
-|        | nodes  | laceme\| dP),Ke\|        | ler,no\| cp-age\| Cinder |
-|        |        | nt-api | ystone |        | va-con\| nt,neu\| Volume |
-|        |        |        | API    |        | ductor | tron-L\|        |
-|        |        |        |        |        |        | 2-agen\|        |
-|        |        |        |        |        |        | t,neut\|        |
-|        |        |        |        |        |        | ron-L3 |        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (op\   |        |
-|        |        |        |        |        |        | tional |        |
-|        |        |        |        |        |        | ),neut\|        |
-|        |        |        |        |        |        | ron-me\|        |
-|        |        |        |        |        |        | tadata |        |
-|        |        |        |        |        |        | -agent |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| DCP:   | Any DC | hea\   | Id\    | Glance | nova-c\| n\     | Cinder |
-| combi\ | -      | t-api, | entity | API,   | ompute | eutron | API,   |
-| nation | C\     | heat-e\| Pr\    | Glance | api    | -serve\| Cinder |
-| of     | ontrol | ngine, | ovider | Re\    | ,nova- | r,neut\| Sche\  |
-| se\    | nodes  | nova-p\| (I\    | gistry | schedu\| ron-dh\| duler, |
-| rvices | Option | laceme\| dP),Ke\|        | ler,no\| cp-age\| Cinder |
-| dep\   | 1      | nt-api | ystone |        | va-con\| nt,neu\| Volume |
-| ending |        |        | API    |        | ductor | tron-L\|        |
-| upon   |        |        |        |        |        | 2-agen\|        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+|        |        | O\     | Id\    | Image  | C\     | N\      | S\     |
+|        |        | rchest\| entity | Mana\  | ompute | etwork  | torage |
+|        |        | ration | Mana\  | gement |        | Mana\   | Mana\  |
+|        |        |        | gement |        |        | gement  | gement |
++========+========+========+========+========+========+=========+========+
+| CCP    | Centr\ | hea\   | Id\    | Glance | nova-c\| n\      | Cinder |
+|        | alised | t-api, | entity | API,   | ompute | eutron  | API,   |
+|        | DC –   | heat-e\| Pr\    | Glance | api\   | -serve\ | Cinder |
+|        | c\     | ngine, | ovider | Re\    | ,nova- | r,neut\ | Sche\  |
+|        | ontrol | nova-p\| (I\    | gistry | schedu\| ron-dh\ | duler, |
+|        | nodes  | laceme\| dP),Ke\|        | ler,no\| cp-age\ | Cinder |
+|        |        | nt-api | ystone |        | va-con\| nt,neu\ | Volume |
+|        |        |        | API    |        | ductor | tron-L\ |        |
+|        |        |        |        |        |        | 2-agen\ |        |
+|        |        |        |        |        |        | t,neut\ |        |
+|        |        |        |        |        |        | ron-L3  |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (op\    |        |
+|        |        |        |        |        |        | tional  |        |
+|        |        |        |        |        |        | ),neut\ |        |
+|        |        |        |        |        |        | ron-me\ |        |
+|        |        |        |        |        |        | tadata  |        |
+|        |        |        |        |        |        | -agent  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+| DCP:   | Any DC | hea\   | Id\    | Glance | nova-c\| n\      | Cinder |
+| combi\ | -      | t-api, | entity | API,   | ompute | eutron  | API,   |
+| nation | C\     | heat-e\| Pr\    | Glance | api    | -serve\ | Cinder |
+| of     | ontrol | ngine, | ovider | Re\    | ,nova- | r,neut\ | Sche\  |
+| se\    | nodes  | nova-p\| (I\    | gistry | schedu\| ron-dh\ | duler, |
+| rvices | Option | laceme\| dP),Ke\|        | ler,no\| cp-age\ | Cinder |
+| dep\   | 1      | nt-api | ystone |        | va-con\| nt,neu\ | Volume |
+| ending |        |        | API    |        | ductor | tron-L\ |        |
+| upon   |        |        |        |        |        | 2-agen\ |        |
 | Center |        |        |        |        |        | t,neut\ |        |
-| size   |        |        |        |        |        | ron-L3\|        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (op\   |        |
-|        |        |        |        |        |        | tional |        |
-|        |        |        |        |        |        | ),neut\|        |
-|        |        |        |        |        |        | ron-me\|        |
-|        |        |        |        |        |        | tadata |        |
-|        |        |        |        |        |        | -agent |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-|        | Any DC | \*\*   | \* in  | \* in  | \*\*   | \*\*   | \*\*   |
-|        | -      | in     | Large  | Large  | in     | in     | in     |
-|        | C\     | other  | DC     | DC     | a\     | a\     | a\     |
-|        | ontrol | DC     |        |        | nother | nother | nother |
-|        | nodes  |        |        |        | DC     | DC     | DC     |
-|        | Option |        |        |        |        |        |        |
-|        | 2:     |        |        |        |        |        |        |
-|        | split  |        |        |        |        |        |        |
-|        | se\    |        |        |        |        |        |        |
-|        | rvices |        |        |        |        |        |        |
-|        | b\     |        |        |        |        |        |        |
-|        | etween |        |        |        |        |        |        |
-|        | DCs    |        |        |        |        |        |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| CCP or | C\     |        |        |        | nova-c\| neutr\ |        |
-| DCP    | ompute |        |        |        | ompute | on-L2- |        |
-|        | nodes  |        |        |        | -agent | agent, |        |
-|        |        |        |        |        |        | neut\  |        |
-|        |        |        |        |        |        | ron-L3\|        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (opt\  |        |
-|        |        |        |        |        |        | ional) |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| CCP    | C\     | nova-p\|        |        | nov\   | n\     |        |
-|        | ompute | laceme\|        |        | a-comp\| eutron |        |
-|        | nodes  | nt-api |        |        | ute-ag\| -serve\|        |
-|        |        |        |        |        | ent,no\| r,neut\|        |
-|        |        |        |        |        | va-con\| ron-dh\|        |
-|        |        |        |        |        | ductor | cp-age\|        |
-|        |        |        |        |        |        | nt,neu\|        |
-|        |        |        |        |        |        | tron-L\|        |
-|        |        |        |        |        |        | 2-agen\|        |
-|        |        |        |        |        |        | t,neut\|        |
-|        |        |        |        |        |        | ron-L3\|        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (opt\  |        |
-|        |        |        |        |        |        | ional) |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
+| size   |        |        |        |        |        | ron-L3\ |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (op\    |        |
+|        |        |        |        |        |        | tional  |        |
+|        |        |        |        |        |        | ),neut\ |        |
+|        |        |        |        |        |        | ron-me\ |        |
+|        |        |        |        |        |        | tadata  |        |
+|        |        |        |        |        |        | -agent  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+|        | Any DC | \*\*   | \* in  | \* in  | \*\*   | \*\*    | \*\*   |
+|        | -      | in     | Large  | Large  | in     | in      | in     |
+|        | C\     | other  | DC     | DC     | a\     | a\      | a\     |
+|        | ontrol | DC     |        |        | nother | nother  | nother |
+|        | nodes  |        |        |        | DC     | DC      | DC     |
+|        | Option |        |        |        |        |         |        |
+|        | 2:     |        |        |        |        |         |        |
+|        | split  |        |        |        |        |         |        |
+|        | se\    |        |        |        |        |         |        |
+|        | rvices |        |        |        |        |         |        |
+|        | b\     |        |        |        |        |         |        |
+|        | etween |        |        |        |        |         |        |
+|        | DCs    |        |        |        |        |         |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+| CCP or | C\     |        |        |        | nova-c\| neutr\  |        |
+| DCP    | ompute |        |        |        | ompute | on-L2-  |        |
+|        | nodes  |        |        |        | -agent | agent,  |        |
+|        |        |        |        |        |        | neut\   |        |
+|        |        |        |        |        |        | ron-L3\ |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (opt\   |        |
+|        |        |        |        |        |        | ional)  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+| CCP    | C\     | nova-p\|        |        | nov\   | n\      |        |
+|        | ompute | laceme\|        |        | a-comp\| eutron  |        |
+|        | nodes  | nt-api |        |        | ute-ag\| -serve\ |        |
+|        |        |        |        |        | ent,no\| r,neut\ |        |
+|        |        |        |        |        | va-con\| ron-dh\ |        |
+|        |        |        |        |        | ductor | cp-age\ |        |
+|        |        |        |        |        |        | nt,neu\ |        |
+|        |        |        |        |        |        | tron-L\ |        |
+|        |        |        |        |        |        | 2-agen\ |        |
+|        |        |        |        |        |        | t,neut\ |        |
+|        |        |        |        |        |        | ron-L3\ |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (opt\   |        |
+|        |        |        |        |        |        | ional)  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
 
 Table 4-5: Distribution of OpenStack services on different nodes
 depending upon Control Plane Scenario
@@ -1930,9 +1930,9 @@ depending upon Control Plane Scenario
 Edge Cloud Topology
 ~~~~~~~~~~~~~~~~~~~
 
-The Reference Model Chapter 8.3 “`Telco Edge
-Cloud <../../../ref_model/chapters/chapter08.md#83-telco-edge-cloud>`__”, presents the
-deployment environment characteristics, infrastructure characteristics
+The Reference Model Chapter 8.3 “`Telco Edge Cloud
+<../../../ref_model/chapters/chapter08.md#83-telco-edge-cloud>`__”, presents
+the deployment environment characteristics, infrastructure characteristics
 and new values for the Infrastructure Profiles at the Edge.
 
 The `Edge computing
@@ -1948,17 +1948,17 @@ references also present the pros and cons of DCP and CCP and designs to
 address some of the challenges of each of the models.
 
 Table 8-4 in the Reference Model Chapter 8.3.4 “`Telco Edge Cloud:
-Platform Services
-Deployment <../../../ref_model/chapters/chapter08.md#834--telco-edge-cloud-platform-services-deployment>`__” lists
-the Platform Services that may be placed in the different node types
+Platform Services Deployment
+<../../../ref_model/chapters/chapter08.md#834--telco-edge-cloud-platform-services-deployment>`__”
+lists the Platform Services that may be placed in the different node types
 (control, compute and storage). Depending upon the capacity and
 resources available only the compute nodes may exist at the Edge thereby
 impacting operations.
 
 Table 8-3 in the Reference Model Chapter 8.3.3 “`Telco Edge Cloud
-Infrastructure
-Profiles <../../../ref_model/chapters/chapter08.md#833-telco-edge-cloud-infrastructure-profiles>`__” lists a
-number of Infrastructure Profile characteristics and the changes that
+Infrastructure Profiles
+<../../../ref_model/chapters/chapter08.md#833-telco-edge-cloud-infrastructure-profiles>`__”
+lists a number of Infrastructure Profile characteristics and the changes that
 may need to be made for certain Edge clouds depending upon their
 resource capabilities. It should be noted that none of these changes
 affect the definition of OpenStack flavors.

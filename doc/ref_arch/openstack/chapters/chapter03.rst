@@ -117,8 +117,9 @@ NUMA alignment, and SMT.
 
 The configuration of the virtual resources will depend on the software
 and hardware profiles and the flavour (resource sizing) needed to host
-VNF components. Profiles are defined in the `Reference Model chapter
-2.4 <../../../ref_model/chapters/chapter02.md#24-profiles-profile-extensions--flavours>`__.
+VNF components. Profiles are defined in the
+`Reference Model chapter 2.4
+<../../../ref_model/chapters/chapter02.md#24-profiles-profile-extensions--flavours>`__.
 
 Virtual Storage
 ~~~~~~~~~~~~~~~
@@ -380,7 +381,7 @@ The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
 also maps the OpenStack core services to the `Reference Model (RM)
-Virtual Infrastructure Manager 
+Virtual Infrastructure Manager
 <../../../ref_model/chapters/chapter03.md#322-virtual-infrastructure-manager>`__.
 
 +----------------+--------+---------------+-----------+-------+-----+
@@ -512,8 +513,8 @@ project.
 
 This document uses the term “project” when referring to OpenStack
 services and “tenant” (`RM Section
-3.2.1 <../../../ref_model/chapters/chapter03.md#321-virtual-resources>`__) to represent
-an independently manageable logical pool of resources.
+3.2.1 <../../../ref_model/chapters/chapter03.md#321-virtual-resources>`__)
+to represent an independently manageable logical pool of resources.
 
 Cloud partitioning: Host Aggregates, Availability Zones
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
