@@ -133,23 +133,7 @@ Automation
 
 Infrastructure LCM Automation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To be covered in the next release.
-
-Hardware Configuration CI/CD
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To be covered in the next release.
-
-Networking Automation
-^^^^^^^^^^^^^^^^^^^^^
-
-To be covered in the next release.
-
-Software Development CI/CD
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To be covered in the next release.
+Note: Developmnet of new structure and contents for this section in progress for Moselle release, driven by Issue#2087 and subordinate issues.
 
 Software Onboarding Automation and CI/CD Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
