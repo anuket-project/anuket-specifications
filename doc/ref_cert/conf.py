@@ -9,11 +9,10 @@ exclude_patterns = [
     'README.rst'
 ]
 extensions = [
-    'sphinx_rtd_theme',
     'sphinx.ext.intersphinx',
     'sphinx.ext.autosectionlabel'
 ]
-html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_material"
 linkcheck_ignore = [
     'http://127.0.0.1',
     'https://www.sdxcentral.com'
