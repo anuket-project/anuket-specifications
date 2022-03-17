@@ -22,3 +22,4 @@ intersphinx_mapping = {
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 2
+numfig = True
