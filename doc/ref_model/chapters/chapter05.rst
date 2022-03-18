@@ -43,8 +43,8 @@ A Cloud Infrastructure Software Profile is a set of features, capabilities, and 
 
 The following sections detail the Cloud Infrastructure Software Profile capabilities per type of virtual resource.
 
-Virtual Compute0
-~~~~~~~~~~~~~~~~
+Virtual Compute Profiles
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Table 5-1** and **Table 5-2** depict the features related to virtual compute.
 
@@ -72,8 +72,8 @@ infra.com.acc.cfg.005 FPGA/other Acceleration H/W Yes/No/Optional Non-specific h
 
 **Table 5-2:** Virtual Compute Acceleration features.
 
-Virtual Storage2
-~~~~~~~~~~~~~~~~
+Virtual Storage Profiles
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Table 5-3** and **Table 5-4** depict the features related to virtual storage.
 
@@ -97,8 +97,8 @@ infra.stg.acc.cfg.002 Storage capacity oriented Yes/No
 
 **Table 5-4:** Virtual Storage Acceleration features.
 
-Virtual Networking2
-~~~~~~~~~~~~~~~~~~~
+Virtual Networking Profiles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Table 5-5** and **Table 5-6** depict the features related to virtual networking.
 
