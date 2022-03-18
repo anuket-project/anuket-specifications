@@ -64,8 +64,8 @@ version and then the old servers are undeployed.
 Cloud Infrastructure and VIM configuration management
 -----------------------------------------------------
 
-In the Reference Model, `Chapter 9 Configuration and Lifecycle
-Management <../../../ref_model/chapters/chapter09.md#92-configuration-and-lifecycle-management>`__
+In the Reference Model, `Chapter 9 Configuration and Lifecycle Management
+<../../../ref_model/chapters/chapter09.md#92-configuration-and-lifecycle-management>`__
 defines the functions of Configuration and Life Cycle Management (LCM).
 To operate and manage a scalable cloud, that minimizes operational
 costs, requires tools that incorporates systems for automated
@@ -106,8 +106,8 @@ and configuring OpenStack services.
 In the `Reference Implementation Chapter
 06 <../../../ref_impl/cntt-ri/chapters/chapter06.md>`__ a set of
 Installer requirements are specified with a couple of Installers (such
-as Airship and Triple-O) described in `Reference Implementation Chapter
-8.5 <../../../ref_impl/cntt-ri/chapters/chapter08.md#85-available-installers>`__.
+as Airship and Triple-O) described in `Reference Implementation Chapter 8.5
+<../../../ref_impl/cntt-ri/chapters/chapter08.md#85-available-installers>`__.
 It should be noted that the installers choosen in order to automate
 deployment depend on the cloud provider.
 
@@ -118,11 +118,11 @@ example,
 specifies how to provision and deploy the IaaS, and on how to update
 configuration including OpenStack services.
 
-For Airship, `Reference Implementation Chapter
-8.5.1.1 <../../../ref_impl/cntt-ri/chapters/chapter08.md#8511-descriptor-file-preparations>`__
+For Airship, `Reference Implementation Chapter 8.5.1.1
+<../../../ref_impl/cntt-ri/chapters/chapter08.md#8511-descriptor-file-preparations>`__
 specifies the required descriptor files and in `Reference Implementation
-Chapter
-8.5.1.2 <../../../ref_impl/cntt-ri/chapters/chapter08.md#8512-deployment-installer--install-steps>`__
+Chapter 8.5.1.2
+<../../../ref_impl/cntt-ri/chapters/chapter08.md#8512-deployment-installer--install-steps>`__
 describes the steps to provision the OpenStack based IaaS.
 
 Configuration Management
