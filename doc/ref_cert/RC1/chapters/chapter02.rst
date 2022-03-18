@@ -142,13 +142,13 @@ The Infrastructure Profile Catalog contains the following attributes:
    compute flavors.
 
    -  A particular set of options is an instance type
-   -  Compute flavors: .tiny, .small etc as defined in `RM
-      §4.2.1.1 <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#basic-profile>`__
+   -  Compute flavors: .tiny, .small etc as defined in
+      :ref:`ref_model/chapters/chapter04:basic profile`
 
 -  NFVI performance profiles, for which NFVI validations will support
    and be verified against, are defined as basic and network intensive.
-   Details for each of these profiles can be found in `RM
-   §2.3 <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html#analysis>`__.
+   Details for each of these profiles can be found in
+   :ref:`ref_model/chapters/chapter02:analysis`.
 
 .. figure:: https://cntt.readthedocs.io/en/latest/ref_model/figures/RM-ch04-node-profiles.png
    :alt: NFVI Profiles
@@ -176,7 +176,7 @@ categorized into below profiles:
 
 To cater to different needs from multiple NFVI vendors, Anuket allows
 different types of NFVI Conformance based on their types of
-`profile <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html#analysis>`__
+profile :ref:`ref_model/chapters/chapter02:analysis`
 
 - Certify Vendor NFVI Hardware solution: This allows for Conformance of
   only NFVI.
@@ -511,8 +511,8 @@ LFN-based compliance program. This set of requirements eventually
 determines the scope of the compliance program and the corresponding
 list of test cases included in the compliance program. In particular,
 this chapter extends the generic list of NFVI test case requirements
-which is provided in Section `Test Case Selection
-Requirements <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter08.html#multi-cloud-interactions-model>`__
+which is provided in Section Test Case Selection Requirements
+:ref:`ref_model/chapters/chapter08:multi-cloud interactions model`
 of the reference model.
 
 Generic Requirements on Test Cases
@@ -520,7 +520,7 @@ Generic Requirements on Test Cases
 
 All test cases must fulfill the generic requirements listed in Section
 `Test Case Selection
-Requirements <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter08.html#8.2.4>`__
+Requirements :ref:`ref_model/chapters/chapter08:multi-cloud interactions model`
 of the reference model.
 
 In addition, for test cases targeting the NFVI compliance program, the
@@ -595,8 +595,8 @@ Requirements below.
 Profile Catalog
 ~~~~~~~~~~~~~~~
 
-Section `Infrastructure Profiles
-Catalogue <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#profiles-and-workload-flavours>`__
+Section Infrastructure Profiles Catalogue
+:ref:`ref_model/chapters/chapter04:profiles and workload flavours`
 of the reference model defines two software profiles, targeting two
 different use cases:
 
@@ -605,10 +605,10 @@ different use cases:
 
 The test cases selected for validating compliance of the two profiles
 must cover the functional and non-functional requirements as listed in
-Section `Instance Capabilities
-Mapping <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#virtual-network-interface-specifications>`__
-and Section `Instance Performance Measurement
-Mapping <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#storage-extensions>`__
+Section Instance Capabilities Mapping
+:ref:`ref_model/chapters/chapter04:virtual network interface specifications`
+and Section `Instance Performance Measurement Mapping
+:ref:`ref_model/chapters/chapter04:storage extensions`
 of the reference model.
 
 TODO: what actually needs to be done here is to reference the table from

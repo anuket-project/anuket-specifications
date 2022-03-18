@@ -1,14 +1,7 @@
-[<< Back](../../openstack)
 
-# 5. Interfaces and APIs
+# Interfaces and APIs
 
-## Table of Contents
-* [5.1 Introduction](#5.1)
-* [5.2 Core OpenStack Services APIs](#5.2)
-* [5.3 Consolidated Set of APIs](#5.3)
-
-<a name="5.1"></a>
-## 5.1 Introduction
+## Introduction
 
 This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Nf-Vi, Vi-Vnfm and Or-Vi interfaces.
 The OpenStack Wallaby version is used as the baseline for these APIs and CLIs in this Reference Architecture (RA-1) version. Any Cloud Infrastructure + VIM reference
@@ -26,12 +19,11 @@ In this chapter, the **major version** and **microversion** are specified per se
 The specified microversion is the minimal microversion that supports the features requested for this RA.
 For the purpose of conformance tests, this chapter also identifies the set of features, offered by a service, that are mandatory for Anuket compliant implementation.
 
-<a name="5.2"></a>
-## 5.2. Core OpenStack Services APIs
+## Core OpenStack Services APIs
 
 Please note that OpenStack provides a maximum microversion to be used with an OpenStack release. In the following sections the "Maximal API Version" refers to this maximum microversion specified for the OpenStack Wallaby release. Please note that in Reference Conformance (RC-1) testing, the System Under Test (SUT) can utilise newer microversions because of the OpenStack microversion policies. As per multiple OpenStack services documentation, for example the [Compute Service](https://docs.openstack.org/api-guide/compute/microversions.html), "A cloud that is upgraded to support newer microversions will still support all older microversions to maintain the backward compatibility for those users who depend on older microversions."
 
-### 5.2.1. Keystone
+### Keystone
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
@@ -54,7 +46,7 @@ Identity API v3 extensions: https://docs.openstack.org/api-ref/identity/v3-ext/
 
 Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin/configuration.html#security-compliance-and-pci-dss
 
-### 5.2.2 Glance
+### Glance
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
@@ -68,7 +60,7 @@ Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin
 
 Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.html#version-history
 
-### 5.2.3. Cinder
+### Cinder
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
@@ -91,7 +83,7 @@ Block Storage API: https://docs.openstack.org/api-ref/block-storage/
 
 REST API Version History: https://docs.openstack.org/cinder/latest/contributor/api_microversion_history.html
 
-### 5.2.4. Swift
+### Swift
 
 | **OpenStack Service** | **API Version** |
 |-----------------------|-----------------|
@@ -120,7 +112,7 @@ Object Storage API: https://docs.openstack.org/api-ref/object-store/index.html
 
 Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.html
 
-### 5.2.5. Neutron
+### Neutron
 
 | **OpenStack Service** |  **API Version**  |
 |-----------------------|-------------------|
@@ -216,7 +208,7 @@ Networking Service APIs: https://docs.openstack.org/api-ref/network/
 
 The exhaustive list of extensions is available at https://docs.openstack.org/api-ref/network/v2/
 
-### 5.2.6. Nova
+### Nova
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
@@ -255,7 +247,7 @@ Compute API: https://docs.openstack.org/api-ref/compute/
 
 REST API Version History: https://docs.openstack.org/nova/latest/reference/api-microversion-history.html
 
-### 5.2.7. Placement
+### Placement
 
 |**OpenStack Service** |  **API Version** | **Maximal API Microversion** |
 |----------------------|------------------|------------------------------|
@@ -265,7 +257,7 @@ Placement API: https://docs.openstack.org/api-ref/placement/
 
 REST API Version History: https://docs.openstack.org/placement/latest/placement-api-microversion-history.html
 
-### 5.2.8. Heat
+### Heat
 
 |**OpenStack Service** | **API Version** | **Maximal Template Version** |
 |----------------------|-----------------|------------------------------|
@@ -277,10 +269,10 @@ Template version history: https://docs.openstack.org/heat/latest/template_guide/
 
 Heat Orchestration Template (HOT) specification: https://docs.openstack.org/heat/latest/template_guide/hot_spec.html#rocky
 
-<a name="5.3"></a>
-## 5.3. Consolidated Set of APIs
+## Consolidated Set of APIs
 
-### 5.3.1. OpenStack Interfaces
+### OpenStack Interfaces
+
 This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available
 at https://docs.openstack.org/api-ref/.
 
@@ -301,16 +293,19 @@ directly using the HTTP or REST library, or they can use one of the many cloud s
 | Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              | 2021-04-06 (template)        |
 | Acceleration: Cyborg  | https://docs.openstack.org/api-ref/accelerator/v2/   | v2              |                              |
 
-### 5.3.2. Kubernetes Interfaces
+### Kubernetes Interfaces
+
 The Kubernetes APIs are available at https://kubernetes.io/docs/concepts/overview/kubernetes-api/.
 
-### 5.3.3. KVM Interfaces
+### KVM Interfaces
+
 The KVM APIs are documented in Section 4 of the document https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt.
 
-#### 5.3.3.1. Libvirt Interfaces
+#### Libvirt Interfaces
+
 The Libvirt APIs are documented in https://libvirt.org/html/index.html.
 
-### 5.3.4. Barbican
+### Barbican
 
 | **OpenStack Service**           | **API Version** |
 |---------------------------------|-----------------|

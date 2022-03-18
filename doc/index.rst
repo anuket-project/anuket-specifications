@@ -1,7 +1,7 @@
 Anuket Specifications
 =====================
 .. toctree::
-    :maxdepth: 16
+    :maxdepth: 1
 
     Governance & Community Guidelines </gov/index>
     Technical Specifications </common/index>
