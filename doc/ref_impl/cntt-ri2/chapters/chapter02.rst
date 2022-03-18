@@ -6,7 +6,7 @@ Introduction
 
 This chapter will use the requirements defined in the Kubernetes Reference Architecture.
 The additional implementation requirements are to be incorporated here.
-If architecture requirements are missing in :ref:`ref_arch/kubernetes/chapters/chapter02:Reference Architecture Specification`,
+If architecture requirements are missing in :ref:`ref_arch/kubernetes/chapters/chapter04:Component Level Architecture`,
 then RI2 will open an issue and suggest the changes.
 
 Definitions
@@ -106,7 +106,7 @@ Reference Architecture Specification
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
 | :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions` | ``ra2.ntw.010`` | User plane networking                                   | Not required           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
-| :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions` | ``ra2.ntw.011`` | NATless connectivity                                     | Must support           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
+| :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions` | ``ra2.ntw.011`` | NATless connectivity                                    | Must support           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
 | :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions` | ``ra2.ntw.012`` | Device Plugins                                          | Not required           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
@@ -114,5 +114,5 @@ Reference Architecture Specification
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
 | :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions` | ``ra2.ntw.015`` | IPAM plugin for multiplexer                             | Must support           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
-| :ref:`ref_arch/kubernetes/chapters/chapter04:Storage Components`   | ``ra2.stg.004`` | Persistent Volumes                                      | May support            | May support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
+| :ref:`ref_arch/kubernetes/chapters/chapter04:Storage Components`   | ``ra2.stg.004`` | Persistent Volumes                                      | May support            | May support        | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
