@@ -1,5 +1,5 @@
-Reference Implementation 1
-==========================
+Reference Implementation 1 - OpenStack
+======================================
 
 This is the OPNFV based Reference Implementation (RI-1)
 
@@ -44,7 +44,7 @@ Table of Contents
 -----------------
 
 .. toctree::
-   :glob:
+   :numbered:
    :maxdepth: 1
 
    chapters/chapter01
