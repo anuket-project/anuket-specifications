@@ -4,9 +4,10 @@ Reference Implementation Requirements
 Introduction
 ------------
 
-This chapter will use the requirements defined in the Kubernetes Reference Architecture and
-only make additional entries in :ref:`ref_arch/kubernetes/chapters/chapter02:Reference Architecture Specification`
-if there are additional requirements needed for this Reference Implementation.
+This chapter will use the requirements defined in the Kubernetes Reference Architecture.
+The additional implementation requirements are to be incorporated here.
+If architecture requirements are missing in :ref:`ref_arch/kubernetes/chapters/chapter02:Reference Architecture Specification`,
+then RI2 will open an issue and suggest the changes.
 
 Definitions
 -----------
@@ -48,6 +49,8 @@ Reference Architecture Specification
 | :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes Node`      | ``ra2.ch.015``  | Physical NIC Speed - Network Intensive Profile          | N/A                    | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter03:Infrastructure Requirements`              |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
 | :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes Node`      | ``ra2.ch.017``  | Immutable Infrastructure                                | Must support           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
++--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
+| :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes Node`      | ``ra2.ch.018``  |  NFD                                                    | Must support           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
 | :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`           | ``ra2.k8s.001`` | Kubernetes Conformance                                  | Must support           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
@@ -102,6 +105,8 @@ Reference Architecture Specification
 | :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions` | ``ra2.ntw.009`` | Multiple connection points with multiplexer/meta-plugin | Must support           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
 | :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions` | ``ra2.ntw.010`` | User plane networking                                   | Not required           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
++--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
+| :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions` | ``ra2.ntw.011`` | NATless connectivity                                     | Must support           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
 | :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions` | ``ra2.ntw.012`` | Device Plugins                                          | Not required           | Must support       | :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure` |
 +--------------------------------------------------------------------+-----------------+---------------------------------------------------------+------------------------+--------------------+--------------------------------------------------------------------------------------+
