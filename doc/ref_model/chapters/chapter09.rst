@@ -168,7 +168,7 @@ Automated LCM uses Orchestration Engine to:
 
 Automated LCM uses Representation Model to:
  - abstract various automation technologies
- - promote evolution from automation understood as an automation of human tasks to autonomous systems using intend-based, declarative automation, supported by evoving AI/ML technologies 
+ - promote evolution from automation understood as automation of human tasks to autonomous systems using intent-based, declarative automation, supported by evolving AI/ML technologies 
 
 Hardware Configuration CI/CD
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
