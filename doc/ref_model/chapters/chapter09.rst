@@ -138,7 +138,7 @@ In a typical telecom operator environment, infrastructure Life Cycle Management
 
 Life cycle operations, such as software or hardware upgrades (including complex and risky firmware updates), typically involve time-consuming manual research and substantive testing to ensure that an upgrade is available, required, or needed, and does not conflict with the current versions of other components.  In a complex and at-scale Hybrid Multi-Cloud environment, consisting of multiple on-premise and public clouds, such a manual process is ineffective and, in many cases, impossible to execute in a controlled manner.  Hence, the need for automation.
 
-The goals of LCM is to provide a reliable administration of a system from its provisioning, through its operational stage, to its final retirement. Key functions of Infrastructure LCM:
+The goals of LCM are to provide a reliable administration of a system from its provisioning, through its operational stage, to its final retirement. Key functions of Infrastructure LCM:
  -  Hybrid, Multi-Cloud support, that is, LCM works across physical virtual and cloud environments, supporting on-site, cloud and distributed environments (like Edge)
  -  Complete system life cycle control (Build, Monitor, Maintain, Retire)
  -  Enablement for automation of most system maintenance tasks
