@@ -145,7 +145,7 @@ The goals of LCM are to provide a reliable administration of a system from its 
 
 Essential foundation blocks for Infrastructure LCM automation:
  -  Inventory
- -  Available Software Upgrades and Dependencies
+ -  Available Software Versions and Dependencies
  -  Orchestration Engine
  -  Representation Model 
 
@@ -155,16 +155,16 @@ Automated LCM uses Inventory to:
   -  track and account for all systems, assets, subscriptions (monitoring)
   -  provide an inventory of all virtual and physical assets, 
 
-Automated LCM uses Available Software Upgrades and Dependencies component to:
- -  store information about available software upgrades and dependency expectations
- -  determine the recommended version of a software item (such as firmware) and dependencies on other items in the node
+Automated LCM uses Available Software Versions and Dependencies component to:
+ -  store information about available software versions and dependency expectations
+ -  determine the recommended version of a software item (such as firmware) and dependencies on other items in the node to ensure compliance and maintain the system integrity
  -  determine the recommended versions of foundation software running on the cluster
 
 Automated LCM uses Orchestration Engine to:
  -  take the inputs from inventory, available versions, and dependencies
- -  run the non-disruptive upgrades
- -  dynamically remediate dependencies during the upgrade process to optimise outcome
- -  ensure that the system is consistent across its life cycle
+ -  run the software version changes
+ -  dynamically remediate dependencies during the change process to optimise outcome
+ -  ensure that the system is consistent across its life cycle by maintaining it in accordance with the intent templates
 
 Automated LCM uses Representation Model to:
  - abstract various automation technologies
