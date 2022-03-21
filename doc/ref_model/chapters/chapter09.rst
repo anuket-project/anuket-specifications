@@ -153,7 +153,7 @@ Automated LCM uses Inventory to:
   -  store configuration data, alert data, and performance data dynamically discovered from the infrastructure (environmental data)
   -  discover current versions of software modules at each endpoint (discovery)
   -  track and account for all systems, assets, subscriptions (monitoring)
-  -  provide inventory of all asset, logical and physical
+  -  provide an inventory of all virtual and physical assets, 
 
 Automated LCM uses Available Software Upgrades and Dependencies component to:
  -  store information about available software upgrades and dependency expectations
