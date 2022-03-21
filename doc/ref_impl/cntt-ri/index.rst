@@ -1,7 +1,7 @@
 Reference Implementation 1 - OpenStack
 ======================================
 
-This is the OPNFV based Reference Implementation (RI-1)
+This is the OpenStack based Reference Implementation (RI-1)
 
 Release Information
 -------------------
