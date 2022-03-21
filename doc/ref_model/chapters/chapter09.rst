@@ -170,21 +170,6 @@ Automated LCM uses Representation Model to:
  - abstract various automation technologies
  - promote evolution from automation understood as automation of human tasks to autonomous systems using intent-based, declarative automation, supported by evolving AI/ML technologies 
 
-Hardware Configuration CI/CD
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To be covered in the next release.
-
-Networking Automation
-^^^^^^^^^^^^^^^^^^^^^
-
-To be covered in the next release.
-
-Software Development CI/CD
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To be covered in the next release.
-
 Software Onboarding Automation and CI/CD Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
