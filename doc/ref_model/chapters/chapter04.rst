@@ -117,6 +117,7 @@ e.cap.017 Monitoring of L2-7 data         Yes/No Ability to monitor L2-L7 data f
 .. ======== ================================ ===== ===================
 
 .. **Table 4-4:** Exposed Performance Measurements of Cloud Infrastructure
+
 **Table 4-4:** Place holder
 
 Internal Infrastructure Capabilities
