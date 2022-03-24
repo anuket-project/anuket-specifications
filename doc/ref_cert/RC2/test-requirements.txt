@@ -2,5 +2,5 @@
 # of appearance. Changing the order has an impact on the overall integration
 # process, which may cause wedges in the gate later.
 sphinx!=1.6.6,!=1.6.7,!=2.1.0,!=3.0.0,!=3.4.2 # BSD
-sphinx-rtd-theme  # MIT
 doc8 # Apache-2.0
+sphinx-material

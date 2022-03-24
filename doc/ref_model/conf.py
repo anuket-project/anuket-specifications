@@ -1,5 +1,5 @@
-project = 'Anuket Reference Conformance for Kubernetes (RC2)'
-copyright = '2021, Anuket'
+project = 'Anuket Reference Model (RM)'
+copyright = '2022, Anuket'
 author = 'Anuket'
 exclude_patterns = [
     '.tox',
@@ -10,12 +10,15 @@ extensions = [
     'sphinx.ext.autosectionlabel'
 ]
 html_theme = "sphinx_material"
-linkcheck_ignore = [
-    'http://127.0.0.1'
-]
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/latest/', None)
 }
+linkcheck_ignore = [
+    'https://www.iso.org',
+    'https://www.etsi.org'
+]
 autosectionlabel_prefix_document = True
-autosectionlabel_maxdepth = 2
+autosectionlabel_maxdepth = 3
 numfig = True
+numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
+                 'code-block': 'Listing %s', 'section': 'Section %s'}
