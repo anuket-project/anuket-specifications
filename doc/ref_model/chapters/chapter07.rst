@@ -42,10 +42,11 @@ High level security Requirements
 
 The following diagram shows the different security domains that impact the Reference Model:
 
-.. image:: ../figures/ch7_security_posture.png
-   :alt: "Figure 7-1: Reference Model Security Domains"
+   :name: Reference Model Security Domains
+.. figure:: ../figures/ch7_security_posture.png
+   :alt: "Reference Model Security Domains"
 
-**Figure 7-1**: Reference Model Security Domains
+   Reference Model Security Domains
 
 Note: "Platform" refers to the Cloud Infrastructure with all its hardware and software components.
 
@@ -140,10 +141,11 @@ The security certification of the platform will typically need to be the same, o
 
 The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by workloads, or by Data Centre Operations staff supporting the workload, or by tenants accessing workloads. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
 
-.. image:: ../figures/ch7-data-access-model.png
-   :alt: "Figure 7-2: Reference Model Access Controls"
+   :name: Reference Model Access Controls
+.. figure:: ../figures/ch7-data-access-model.png
+   :alt: "Reference Model Access Controls"
 
-**Figure 7-2**: Reference Model Access Controls
+   Reference Model Access Controls
 
 The high-level functions of these different access controls
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
