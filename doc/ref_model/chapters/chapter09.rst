@@ -33,7 +33,7 @@ Configuration management is concerned with defining the configuration of infrast
 
 .. :name: Configuration and Lifecycle Management
 .. figure:: ../figures/ch09_config_mgmt.png
-   :alt: "Configuration and Lifecycle Management"
+  :alt: "Configuration and Lifecycle Management"
 
   Configuration and Lifecycle Management
 
@@ -405,12 +405,12 @@ Enforcing correct message structures (carrying the data) is performed using Sche
 
 .. :name: Producers and Consumers
 .. figure:: ../figures/RM-Ch09-Fig-Producers-Consumers.png
-   :alt: "Figure 9-2: Producers and Consumers"
+  :alt: "Figure 9-2: Producers and Consumers"
 
   Producers and Consumers
 
 .. :name: Broker Services
 .. figure:: ../figures/RM-Ch09-Fig-Broker-Service.png
-   :alt: "Figure 9-3: Broker Services"
+  :alt: "Figure 9-3: Broker Services"
 
   Broker Services
