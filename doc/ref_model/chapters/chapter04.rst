@@ -22,7 +22,7 @@ The following definitions specify the context of the Cloud Infrastructure Resour
 
 **Internal:** Effectively the opposite of Exposed; objects are exclusively available for use within the Cloud Infrastructure.
 
-   :name: Exposed vs. Internal Scope
+.. :name: Exposed vs. Internal Scope
 .. figure:: ../figures/Exposed_vs_Internal_Diagram.png
    :alt: "Exposed vs. Internal Scope"
 
@@ -284,7 +284,7 @@ Section 4.1 enumerates the different capabilities exposed by the infrastructure 
 
 In this section we will specify the capabilities and features associated with each of the defined profiles and extensions. Each Profile (for example, :numref"`Cloud infrastructure Profiles`), and each Extension associated with that profile, specifies a predefined standard set of infrastructure capabilities that workload vendors can use to build their workloads for deployment on conformant cloud infrastructure. A workload can use several profiles and associated Extensions to build its overall functionality as discussed below.
 
-   :name:  Cloud infrastructure Profiles
+.. :name:  Cloud infrastructure Profiles
 .. figure:: ../figures/RM-ch04-node-profiles.png
    :alt: "Cloud infrastructure Profiles"
 
@@ -309,7 +309,7 @@ The justification for defining these two profiles and a set of extensible profil
 
 Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). :numref"`Workloads built against Cloud Infrastructure Profiles and Workload Flavours` shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes.
 
-   :name: Workloads built against Cloud Infrastructure Profiles and Workload Flavours
+.. :name: Workloads built against Cloud Infrastructure Profiles and Workload Flavours
 .. figure:: ../figures/RM-ch-04-Workloads-Profiles-Flavours.png
    :alt: " Workloads built against Cloud Infrastructure Profiles and Workload Flavours"
 
