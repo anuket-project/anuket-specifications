@@ -6,7 +6,7 @@ Overview
 
 This Reference Architecture is focussed on OpenStack as the Virtualised
 Infrastructure Manager (VIM) chosen based on the criteria laid out in
-the `Reference Model <../../../ref_model/chapters/chapter01.md>`__.
+the :doc:`ref_model/chapters/chapter01`.
 `OpenStack <https://docs.openstack.org>`__ has the advantage of being a
 mature and widely accepted open-source technology; a strong ecosystem of
 vendors that support it, the OpenInfra Foundation for managing the
@@ -103,10 +103,8 @@ Principles
 OpenStack Reference Architecture must obey to the following set of
 principles:
 
--  `Reference Model Principles
-   <../../../common/chapter00.md#anuket-general-principles>`__
--  `Reference Architecture
-   Principles <../../../common/chapter00.md#architectural-principles>`__
+- :ref:`common/chapter00:anuket general principles`
+- :ref:`common/chapter00:architectural principles`
 
 OpenStack specific principles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,6 +146,6 @@ Terminology
 -----------
 
 General terminology definitions can be found in
-`Glossary <../../../common/glossary.md>`__ and specific terms relating
+:doc:`common/glossary` and specific terms relating
 to this reference architecture are to be found in `OpenStack Related
-Terminology <../../../common/glossary.md#openstack-related-terminology>`__.
+Terminology :ref:`common/glossary:openstack related terminology`.

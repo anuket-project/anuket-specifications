@@ -50,7 +50,7 @@ VNF Design Guidelines
 
 A number of software design guidelines (industry best practices) have been developed over the years including micro-services, cohesion and coupling.
 In addition to the industry best-practices, there are additonal guidelines and requirements specified by ONAP in 
-"`VNF or PNF Requirements Documentation <https://onap.readthedocs.io/en/latest/submodules/vnfrqts/requirements.git/docs/index.html>`__." This section
+"`VNF or PNF Requirements Documentation <https://docs.onap.org/projects/onap-vnfrqts-requirements/en/istanbul/>`__." This section
 does not supplant these well-known guidelines and practices. The content here only draws attention to some other design consideration that VNF
 Developers need to incorporate in their practices. Please note that some of these guidelines may be incorporated by operators in their contracts with
 VNF Vendors.
@@ -68,7 +68,7 @@ Additionally, in the design and implementation of their software, the VNF Develo
 
 1. `CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) <https://cloudsecurityalliance.org>`__.
 2. `OWASP Cheat Sheet Series (OCSS) <https://github.com/OWASP/CheatSheetSeries>`__ from the `Open Web Application Security Project <https://www.owasp.org>`__.
-3. `7.5. Workload Security - Vendor Responsibility <chapter07.md#workload-security-vendor-responsibility>`__ section of the Reference Model.
+3. :ref:`ref_model/chapters/chapter07:Workload Security - Vendor Responsibility` section of the Reference Model.
 
 The VNF Developer **should** ensure that their code is not vulnerable to the `OWASP Top Ten Security Risks <https://owasp.org/www-project-top-ten/>`__ created
 by the `Open Web Application Security Project <https://www.owasp.org>`__.

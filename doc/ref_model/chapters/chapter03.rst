@@ -110,7 +110,7 @@ A virtual machine and container can consume storage through a number of means. T
 
 -  managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and
 -  Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
-   The details of the tenant storage consumption model are covered in section `"Storage for Tenant Consumption"`__.
+   The details of the tenant storage consumption model are covered in section :ref:`ref_model/chapters/chapter03:virtual storage`.
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity and behaviours. The set of selectable attributes includes:
 
@@ -121,7 +121,7 @@ In managing the provision of virtual storage the tenant should be able to reques
 -  Enhanced features - set of selectable features such as: auto-replicate, encryption, snapshot support.
 
 Note that approximate numeric ranges for the qualitative values used above are given in the
-`Storage Extensions <./chapter04.md#4.2.6>`__ section.
+:ref:`ref_model/chapters/chapter04:storage extensions` section.
 
 Storage resources have the following attributes, with metric definitions that support verification through passive measurements (telemetry) where appropriate:
 
@@ -226,7 +226,7 @@ Improve cost/performance               Better cost and less power/cooling by imp
 
 Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve faster performance, or offloading the tasks to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
 
-More details about Hardware Acceleration are in `Hardware Acceleration Abstraction`__.
+More details about Hardware Acceleration are in :ref:`ref_model/chapters/chapter03:hardware acceleration abstraction`.
 
 Hardware Infrastructure Manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -674,7 +674,7 @@ The following principles apply to Storage scope for the Reference Model, Referen
 -  Security Policy Amenable: The storage sub-systems must be amenable to policy based security controls covering areas such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management Security Policy Override, Secure Erase on Device Removal and others
 -  Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
 
-The above principles should be understood as storage specific specialisations of the `Anuket General Principles <../../common/chapter00.md#2.0>`__.
+The above principles should be understood as storage specific specialisations of the :ref:`common/chapter00:anuket general principles`.
 
 Storage Implementation Stereotypes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -786,7 +786,7 @@ Where:
 -  "NA" - Not Applicable for this Use Case / Stereotype
 
 ============================ =================================== ================== ==== === =================== ==================== =========== ===== === ==== ======
-\                                                                                            Tenant / User                                                      
+\                                                                                            Tenant / User
 ============================ =================================== ================== ==== === =================== ==================== =========== ===== === ==== ======
 \                                                                Infra / Ctrl / Mgt          Platform Native                          Shared File                Object
 Use Case                     Stereotype                          Boot               Ctrl Mgt Hypervisor Attached Container Persistent Within      Cross Ext vNAS Object
@@ -925,7 +925,7 @@ The following diagram presents an example of the realization of the reference mo
 
 **Figure 3-21**: Reference model realization example
 
-The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in `Section 3.5 <https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.5>`__ of this Reference Model document.
+The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in :ref:`ref_model/chapters/chapter03:network` of this Reference Model document.
 
 Hardware Acceleration Abstraction
 ---------------------------------
@@ -1082,14 +1082,14 @@ Based on Smart Switches, products exist for fully integrated edge and fabric sol
 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Decoupling <https://github.com/cntt-n/CNTT/blob/master/doc/common/glossary.md#cloud-platform-abstraction-related-terminology>`__ applications from hardware accelerator is normally accomplished using drivers that, if available, are preferred with standardised interfaces across vendors and their products, or if not available then through drivers specific to the vendor hardware device. Decoupling infrastructure software from hardware accelerators is also preferred using standard interfaces. If those are not available for target hardware accelerator, coupling one or limited number of software infrastructures is less of an issue compared to coupling multiple applications.
+Decoupling :ref:`common/glossary:cloud platform abstraction related terminology:` applications from hardware accelerator is normally accomplished using drivers that, if available, are preferred with standardised interfaces across vendors and their products, or if not available then through drivers specific to the vendor hardware device. Decoupling infrastructure software from hardware accelerators is also preferred using standard interfaces. If those are not available for target hardware accelerator, coupling one or limited number of software infrastructures is less of an issue compared to coupling multiple applications.
 
 Taking advantage of RM and RA environments with common capabilities, applications can be developed and deployed more rapidly, providing more service agility and easier operations. The extent to which this can be achieved will depend on levels of decoupling between application and infrastructure or platform underneath the application:
 
 Infrastructure:
 ^^^^^^^^^^^^^^^
 
--  a) Application functionality or application control requires infrastructure components beyond RM profiles or infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled with the infrastructure which results in an `Appliance deployment model <../../common/glossary.md#cloud-platform-abstraction-related-terminology>`__.
+-  a) Application functionality or application control requires infrastructure components beyond RM profiles or infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled with the infrastructure which results in an Appliance deployment model (see :ref:`common/glossary:cloud platform abstraction related terminology:`).
 -  b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure components that make application work. Example is an application that to achieve latency requirements needs certain hardware acceleration available in RM profile and is exposed through APIs specified by RA.
 -  c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure component(s) that make application work better (like more performant) than without that infrastructure component. Example is an application that would have better cost/performance with certain acceleration adapter but can also work without it.
 -  d) Application control using APIs specified by RA finds general profile nodes without any specific infrastructure components.
@@ -1100,4 +1100,3 @@ Platform Services:
 -  a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that brings its own Load Balancer.
 -  b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
 -  c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
-

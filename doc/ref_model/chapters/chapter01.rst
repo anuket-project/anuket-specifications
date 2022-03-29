@@ -4,7 +4,7 @@ Introduction
 Overview
 --------
 
-The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. This document has been developed by the Linux Foundation Networking project `Anuket <../../common/chapter00.md>`__.
+The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. This document has been developed by the Linux Foundation Networking project :doc:`common/chapter00`.
 
 **Problem Statement:** Based on community consultations, including telco operators, technology suppliers, and software developers, there is a realisation that there are significant technical, operational, and business challenges to the development and deployment of Virtual Network Functions (VNF) and Cloud Native Network Functions (CNF) due to the lack of a common cloud infrastructure platform. These include but are not limited to the following:
 
@@ -78,14 +78,14 @@ This document specifies:
 Principles
 ----------
 
-The Reference Model specifications conform to the overall principles defined in `Anuket Principles <../../common/chapter00.md#2.0>`__.
+The Reference Model specifications conform to the overall principles defined in :ref:`common/chapter00:anuket general principles`.
 
 Definitions/Terminology/Abbreviations
 -------------------------------------
 
-To help guide the reader, the Reference Model `Glossary <../../common/glossary.md>`__ provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the ETSI GR NFV 003 [1] definitions. In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
+To help guide the reader, the Reference Model :doc:`common/glossary` provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the ETSI GR NFV 003 [1] definitions. In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
 
-Please refer to `Abbreviations <../../common/abbreviations.md>`__ for a full list of abbreviations used in this document.
+Please refer to :doc:`common/abbreviations` for a full list of abbreviations used in this document.
 
 Conventions
 -----------
@@ -95,5 +95,4 @@ Conventions
 References
 ----------
 
-Please refer to `References <../../common/references.md>`__ for a full list of references used in this document.
-
+Please refer to :doc:`common/references` for a full list of references used in this document.

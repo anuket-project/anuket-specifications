@@ -43,18 +43,8 @@ Chapter 07 Complete
 Chapter 08 Complete
 ========== ========
 
-Table of Contents
------------------
+.. toctree::
+   :glob:
+   :maxdepth: 1
 
--  `Chapter 01 - Overview <chapters/chapter01.md>`__
--  `Chapter 02 - Architecture Requirements <chapters/chapter02.md>`__
--  `Chapter 03 - Cloud Infrastructure
-   Architecture <chapters/chapter03.md>`__
--  `Chapter 04 - Cloud Infrastructure and VIM Component Level
-   Architecture <chapters/chapter04.md>`__
--  `Chapter 05 - Interfaces and APIs <chapters/chapter05.md>`__
--  `Chapter 06 - Security <chapters/chapter06.md>`__
--  `Chapter 07 - Operations & Life Cycle
-   Management <chapters/chapter07.md>`__
--  `Chapter 08 - Gaps, Innovation, and
-   Development <chapters/chapter08.md>`__
+   chapters/*
