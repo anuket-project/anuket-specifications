@@ -145,7 +145,7 @@ The goals of LCM are to provide a reliable administration of a system from its 
 
 Essential foundation functional blocks for Infrastructure LCM automation:
  -  Representation Model 
- -  Inventory Functions
+ -  Repository functions
  -  Available Software Versions and Dependencies
  -  Orchestration Engine
 
@@ -153,10 +153,10 @@ Automated LCM uses Representation Model to:
  - abstract various automation technologies
  - promote evolution from automation understood as automation of human tasks to autonomous systems using intent-based, declarative automation, supported by evolving AI/ML technologies 
 
-Automated LCM uses Inventory Functions to:
+Automated LCM uses Repository functions to:
   -  store and manage configuration data
   -  store and manage metrics related data such as event data,  alert data, and performance data 
-  -  maintain currency of data by teh use of discovery of current versions of software modules
+  -  maintain currency of data by the use of discovery of current versions of software modules
   -  track and account for all systems, assets, subscriptions (monitoring)
   -  provide an inventory of all virtual and physical assets
   -  provide a topological view of interconnected resources
