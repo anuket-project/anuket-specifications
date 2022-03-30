@@ -77,8 +77,8 @@ e.cap.013 SR-IOV over PCI-PT              Yes/No Traditional SR-IOV. These Capab
 e.cap.014 GPU/NPU                         Yes/No Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads
 e.cap.015 SmartNIC                        Yes/No Network Acceleration
 e.cap.016 FPGA/other Acceleration HW      Yes/No These Capabilities generally require hardware-dependent drivers be injected into workloads
-e.cap.018 Huge pages                      Yes/No Indicates if the Cloud Infrastructure supports huge pages
-e.cap.019 CPU allocation ratio            Yes/No N:1: Number of virtual cores per physical core; also known as CPU overbooking ratio
+e.cap.023 Huge pages                      Yes/No Indicates if the Cloud Infrastructure supports huge pages
+e.cap.024 CPU allocation ratio            Yes/No N:1: Number of virtual cores per physical core; also known as CPU overbooking ratio
 ========= =============================== ====== ================================================================================================================
 
 **Table 4-2:** Exposed Performance Optimisation Capabilities of Cloud Infrastructure
