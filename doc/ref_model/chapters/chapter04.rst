@@ -307,7 +307,7 @@ The justification for defining these two profiles and a set of extensible profil
 -  Workload development and testing optimisation by using pre-defined and commonly supported (telco operators) profiles and extensions
 -  Better usage of Cloud Objects (Memory; Processor; Network; Storage)
 
-Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). :numref"`Workloads built against Cloud Infrastructure Profiles and Workload Flavours` shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes.
+Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). :numref:`Workloads built against Cloud Infrastructure Profiles and Workload Flavours` shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes.
 
 .. :name: Workloads built against Cloud Infrastructure Profiles and Workload Flavours
 .. figure:: ../figures/RM-ch-04-Workloads-Profiles-Flavours.png
