@@ -163,7 +163,7 @@ Automated LCM uses Repository functions to:
   -  support network design function
   
 
-Automated LCM uses Available Software Versions and Dependencies component to:
+Automated LCM uses available IAC Software Versions and Dependencies component to:
  -  store information about available software versions, software patches and dependency expectations
  -  determine the recommended version of a software item (such as firmware) and dependencies on other items in the node to ensure compliance and maintain the system integrity
  -  determine the recommended versions of foundation software running on the cluster
