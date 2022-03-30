@@ -1,5 +1,5 @@
-Reference Implementation 2
-==========================
+Reference Implementation 2 - Kubernetes
+=======================================
 
 This is the Kubernetes-based Reference Implementation (RI-2).
 

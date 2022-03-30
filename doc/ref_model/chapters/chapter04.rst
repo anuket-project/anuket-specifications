@@ -100,23 +100,25 @@ e.cap.017 Monitoring of L2-7 data         Yes/No Ability to monitor L2-L7 data f
 
 **Table 4-3:** Exposed Monitoring Capabilities of Cloud Infrastructure
 
-Exposed Infrastructure Performance Measurements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. Exposed Infrastructure Performance Measurements
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The intent of the following PMs is to be available for and well known to workloads.
+.. The intent of the following PMs is to be available for and well known to workloads.
 
-Exposed Performance Measurements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. Exposed Performance Measurements
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following table of exposed Performance Measurements shows PMs per VM or Pod, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [14]. Specifically exposed PMs use a single workload (PVP) dataplane test setup in a single host.
+.. The following table of exposed Performance Measurements shows PMs per VM or Pod, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [14]. Specifically exposed PMs use a single workload (PVP) dataplane test setup in a single host.
 
-======== ================================ ===== ===================
-Ref      Cloud Infrastructure Measurement Unit  Definition/Notes
-======== ================================ ===== ===================
-e.pm.xxx Place Holder                     Units Concise description
-======== ================================ ===== ===================
+.. ======== ================================ ===== ===================
+.. Ref      Cloud Infrastructure Measurement Unit  Definition/Notes
+.. ======== ================================ ===== ===================
+.. e.pm.xxx Place Holder                     Units Concise description
+.. ======== ================================ ===== ===================
 
-**Table 4-4:** Exposed Performance Measurements of Cloud Infrastructure
+.. **Table 4-4:** Exposed Performance Measurements of Cloud Infrastructure
+
+**Table 4-4:** Place holder
 
 Internal Infrastructure Capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -178,9 +180,9 @@ i.pm.001 Host CPU usage                              nanoseconds Per Compute nod
 i.pm.002 Virtual compute resource (vCPU) usage       nanoseconds Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean vCPU usage and Peak vCPU usage (Cloud Infrastructure external).
 i.pm.003 Host CPU utilisation                        %           Per Compute node. It maps to ETSI GS NFV-TST 008 V3.2.1 [5] clause 6, processor usage metric (Cloud Infrastructure internal).
 i.pm.004 Virtual compute resource (vCPU) utilisation %           Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean vCPU usage and Peak vCPU usage (Cloud Infrastructure external).
-i.pm.005 Measurement of external storage IOPS        Yes/No     
-i.pm.006 Measurement of external storage throughput  Yes/No     
-i.pm.007 Available external storage capacity         Yes/No     
+i.pm.005 Measurement of external storage IOPS        Yes/No
+i.pm.006 Measurement of external storage throughput  Yes/No
+i.pm.007 Available external storage capacity         Yes/No
 ======== =========================================== =========== =============================================================================================================================
 
 **Table 4-8:** Internal Measurement Capabilities of Cloud Infrastructure
@@ -277,7 +279,7 @@ e.api.008                                             VNFs/CNFs and Virtualisati
 Profiles and Workload Flavours
 ------------------------------
 
-Section 4.1 enumerates the different capabilities exposed by the infrastructure resources. Not every workload is sensitive to all listed capabilities of the cloud infrastructure. In Chapter 2, the analysis of the use cases led to the definition of two `profiles <./chapter02.md#profiles-top-level-partitions>`__ and the need for specialisation through `profile extensions <./chapter02.md#profile-extensions-specialisations>`__. Profiles and Profile Extensions are used to configure the cloud infrastructure nodes. They are also used by workloads to specify the infrastructure capabilities needed by them to run on. Workloads would specify the `flavours and additional capabilities <#workload-flavours-and-other-capabilities-specifications>`__ information.
+Section 4.1 enumerates the different capabilities exposed by the infrastructure resources. Not every workload is sensitive to all listed capabilities of the cloud infrastructure. In Chapter 2, the analysis of the use cases led to the definition of two :ref:`ref_model/chapters/chapter02:profiles (top-level partitions)` and the need for specialisation through :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`. Profiles and Profile Extensions are used to configure the cloud infrastructure nodes. They are also used by workloads to specify the infrastructure capabilities needed by them to run on. Workloads would specify the `flavours and additional capabilities <#workload-flavours-and-other-capabilities-specifications>`__ information.
 
 In this section we will specify the capabilities and features associated with each of the defined profiles and extensions. Each Profile (for example, Figure 4-2), and each Extension associated with that profile, specifies a predefined standard set of infrastructure capabilities that workload vendors can use to build their workloads for deployment on conformant cloud infrastructure. A workload can use several profiles and associated Extensions to build its overall functionality as discussed below.
 
@@ -286,7 +288,7 @@ In this section we will specify the capabilities and features associated with ea
 
 **Figure 4-2**: Cloud infrastructure Profiles
 
-The two `profiles <./chapter02.md#node-profiles-top-level-partitions>`__ are:
+The two :ref:`chapters/chapter02:profiles, profile extensions & flavours` are:
 
 ::
 
@@ -295,7 +297,7 @@ The two `profiles <./chapter02.md#node-profiles-top-level-partitions>`__ are:
 
 The availability of these two (2) profiles will facilitate and accelerate workload deployment. The intent of the above profiles is to match the cloud infrastructure to the workloads most common needs, and allow for a more comprehensive configuration using profile-extensions when needed. These profiles are offered with `extensions <#profile-extensions>`__, that specify capability deviations, and allow for the specification of even more capabilities. The Cloud Infrastructure will have nodes configured as with options, such as virtual interface options, storage extensions, and acceleration extensions.
 
-The justification for defining these two profiles and a set of extensible profile-extensions was provided in Section `2.4 Profiles, Profile Extensions & Flavours <./chapter02.md#profiles--flavours>`__ and includes:
+The justification for defining these two profiles and a set of extensible profile-extensions was provided in Section :ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours` and includes:
 
 -  Workloads can be deployed by requesting compute hosts configured as per a specific profile (Basic or High Performance)
 -  Profile extensions allow a more granular compute host configuration for the workload (e.g., GPU, high, speed network, Edge deployment)
@@ -346,10 +348,10 @@ Profiles Specifications & Capability Mapping
 Ref       Capability                           Basic   High Performance Notes
 ========= ==================================== ======= ================ =========================================================================================
 e.cap.006 CPU pinning                          No      Yes              Exposed performance capabilities as per Table 4-2.
-e.cap.007 NUMA alignment                       No      Yes             
-e.cap.013 SR-IOV over PCI-PT                   No      Yes             
+e.cap.007 NUMA alignment                       No      Yes
+e.cap.013 SR-IOV over PCI-PT                   No      Yes
 i.cap.018 Huge page support                    No      Yes              Internal performance capabilities as per Table 4-7.
-e.cap.018 Simultaneous Multithreading (SMT)    Yes     Optional        
+e.cap.018 Simultaneous Multithreading (SMT)    Yes     Optional
 e.cap.019 vSwitch Optimisation (DPDK)          No      Yes              DPDK doesn't have to be used if some other network acceleration method is being utilised.
 e.cap.020 CPU Architecture                     <value> <value>          Values such as x64, ARM, etc.
 e.cap.021 Host Operating System (OS)           <value> <value>          Values such as a specific Linux version, Windows version, etc.
@@ -360,7 +362,7 @@ i.cap.020 Storage encryption                   Yes     Yes              Specifie
 
 ..
 
-   1 See `Figure 5-1 <./chapter05.md#cloud-infrastructure-software-profile-description>`__.
+   1 See Figure 5-1 :ref:`ref_model/chapters/chapter05:cloud infrastructure software profile description`.
 
 Profile Extensions
 ~~~~~~~~~~~~~~~~~~
@@ -371,19 +373,19 @@ Profile Extensions represent small deviations from or further qualification of t
 Profile Extension Name                           Mnemonic                      Applicable to Basic Profile Applicable to High Performance Profile Description                                                                                                                                       Notes
 ================================================ ============================= =========================== ====================================== ================================================================================================================================================= ===========================================
 Compute Intensive High-performance CPU           compute-high-perf-cpu         ❌                           ✅                                      Nodes that have predictable computing performance and higher clock speeds.                                                                      May use vanilla VIM/K8S scheduling instead.
-Storage Intensive High-performance storage       storage-high-perf             ❌                           ✅                                      Nodes that have low storage latency and/or high storage IOPS.                                                                                  
+Storage Intensive High-performance storage       storage-high-perf             ❌                           ✅                                      Nodes that have low storage latency and/or high storage IOPS.
 Compute Intensive High memory                    compute-high-memory           ❌                           ✅                                      Nodes that have high amounts of RAM.                                                                                                            May use vanilla VIM/K8S scheduling instead.
 Compute Intensive GPU                            compute-gpu                   ❌                           ✅                                      For Compute Intensive workloads that requires GPU compute resource on the node                                                                  May use Node Feature Discovery.
-Network Intensive                                high-speed-network            ❌                           ✅                                      Nodes configured to support SR-IOV.                                                                                                            
-Network Intensive High speed network (25G)       high-speed-network            ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node.                                          
-Network Intensive Very High speed network (100G) very-high-speed-network       ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node.                                         
+Network Intensive                                high-speed-network            ❌                           ✅                                      Nodes configured to support SR-IOV.
+Network Intensive High speed network (25G)       high-speed-network            ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node.
+Network Intensive Very High speed network (100G) very-high-speed-network       ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node.
 Low Latency - Edge Sites                         low-latency-edge              ✅                           ✅                                      Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.
 Very Low Latency - Edge Sites                    very-low-latency-edge         ✅                           ✅                                      Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.
 Ultra Low Latency - Edge Sites                   ultra-low-latency-edge        ✅                           ✅                                      Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.
-Fixed function accelerator                       compute-ffa                   ❌                           ✅                                      Labels a host/node that includes a consumable fixed function accelerator (non-programmable, e.g., Crypto, vRAN-specific adapter).              
-Firmware-programmable adapter                    compute-firmware programmable ❌                           ✅                                      Labels a host/node that includes a consumable Firmware-programmable adapter (e.g., Network/storage adapter).                                   
-SmartNIC enabled                                 network-smartnic              ❌                           ✅                                      Labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure.              
-SmartSwitch enabled                              network-smartswitch           ❌                           ✅                                      Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch.                                                            
+Fixed function accelerator                       compute-ffa                   ❌                           ✅                                      Labels a host/node that includes a consumable fixed function accelerator (non-programmable, e.g., Crypto, vRAN-specific adapter).
+Firmware-programmable adapter                    compute-firmware programmable ❌                           ✅                                      Labels a host/node that includes a consumable Firmware-programmable adapter (e.g., Network/storage adapter).
+SmartNIC enabled                                 network-smartnic              ❌                           ✅                                      Labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure.
+SmartSwitch enabled                              network-smartswitch           ❌                           ✅                                      Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch.
 ================================================ ============================= =========================== ====================================== ================================================================================================================================================= ===========================================
 
 Workload Flavours and Other Capabilities Specifications
@@ -503,4 +505,3 @@ Persistent storage is associated with workloads via Storage Extensions. The stor
 **Table 4-15:** Storage Extensions
 
    *Note:* Performance is based on a block size of 256KB or larger.
-

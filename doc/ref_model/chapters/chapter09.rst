@@ -174,6 +174,8 @@ Automated LCM uses Orchestration Engine to:
  -  dynamically remediate dependencies during the change process to optimise outcome
  -  ensure that the system is consistent across its life cycle by maintaining it in accordance with the intent templates
 
+=======
+Note: Developmnet of new structure and contents for this section in progress for Moselle release, driven by Issue#2087 and subordinate issues.
 
 Software Onboarding Automation and CI/CD Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,21 +223,21 @@ The requirements including for CI/CD for ensuring software security scans, image
 Ref #         Description                                                                                                                   Comments/Notes
 ============= ============================================================================================================================= ==========================================================================================================================================================================================================================================================================================================================================================================================================
 auto.cicd.001 The CI/CD pipeline must support deployment on any cloud and cloud infrastructures including different hardware accelerators.  CI/CD pipelines automate CI/CD best practices into repeatable workflows for integrating code and configurations into builds, testing builds including validation against design and operator specific criteria, and delivery of the product onto a runtime environment. Example of an open-source cloud native CI/CD framework is the Tekton project (`https://tekton.dev/ <https://tekton.dev/>`__)
-auto.cicd.002 The CI/CD pipelines must use event-driven task automation                                                                    
-auto.cicd.003 The CI/CD pipelines should avoid scheduling tasks                                                                            
+auto.cicd.002 The CI/CD pipelines must use event-driven task automation
+auto.cicd.003 The CI/CD pipelines should avoid scheduling tasks
 auto.cicd.004 The CI/CD pipeline is triggered by a new or updated software release being loaded into a repository                           The software release cane be source code files, configuration files, images, manifests. Operators may support a single or multiple repositories and may, thus, specify which repository is to be used for these release. An example, of an open source repository is the CNCF Harbor (`https://goharbor.io/ <https://goharbor.io/>`__)
-auto.cicd.005 The CI pipeline must scan source code and manifests to validate for compliance with design and coding best practices.        
+auto.cicd.005 The CI pipeline must scan source code and manifests to validate for compliance with design and coding best practices.
 auto.cicd.006 The CI pipeline must support build and packaging of images and deployment manifests from source code and configuration files.
-auto.cicd.007 The CI pipeline must scan images and manifests to validate for compliance with security requirements.                         See section 7.9 (`https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md#consolidated-security-requirements <https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md#consolidated-security-requirements>`__). Examples of such security requirements include only ingesting images, source code, configuration files, etc. only form trusted sources.
+auto.cicd.007 The CI pipeline must scan images and manifests to validate for compliance with security requirements.                         See section 7.9 (:ref:`ref_model/chapters/chapter07:consolidated security requirements`). Examples of such security requirements include only ingesting images, source code, configuration files, etc. only form trusted sources.
 auto.cicd.008 The CI pipeline must validate images and manifests                                                                            Example, different tests
-auto.cicd.009 The CI pipeline must validate with all hardware offload permutations and without hardware offload                            
+auto.cicd.009 The CI pipeline must validate with all hardware offload permutations and without hardware offload
 auto.cicd.010 The CI pipeline must promote validated images and manifests to be deployable.                                                 Example, promote from a development repository to a production repository
 auto.cicd.011 The CD pipeline must verify and validate the tenant request                                                                   Example, RBAC, request is within quota limits, affinity/anti-affinity, …
-auto.cicd.012 The CD pipeline after all validations must turn over control to orchestration of the software                                
-auto.cicd.013 The CD pipeline must be able to deploy into Development, Test and Production environments                                    
-auto.cicd.014 The CD pipeline must be able to automatically promote software from Development to Test and Production environments          
-auto.cicd.015 The CI pipeline must run all relevant Reference Conformance test suites                                                      
-auto.cicd.016 The CD pipeline must run all relevant Reference Conformance test suites                                                      
+auto.cicd.012 The CD pipeline after all validations must turn over control to orchestration of the software
+auto.cicd.013 The CD pipeline must be able to deploy into Development, Test and Production environments
+auto.cicd.014 The CD pipeline must be able to automatically promote software from Development to Test and Production environments
+auto.cicd.015 The CI pipeline must run all relevant Reference Conformance test suites
+auto.cicd.016 The CD pipeline must run all relevant Reference Conformance test suites
 ============= ============================================================================================================================= ==========================================================================================================================================================================================================================================================================================================================================================================================================
 
 **Table 9-4:** Automation CI/CD
@@ -266,15 +268,15 @@ Ref #           Description                                                     
 =============== ============================================================================================= ================================================================================================================
 design.cicd.001 The pipeline must allow chaining of independent CI/CD jobs                                    For example, all deployment and test operations from baremetal to Kubernetes, OpenStack, to the network services
 design.cicd.002 The pipeline jobs should be modular                                                           This allows execution of jobs independently of others, for example, start with an existing OpenStack deployment
-design.cicd.003 The pipeline must decouple the deployment and the test steps                                 
+design.cicd.003 The pipeline must decouple the deployment and the test steps
 design.cicd.004 The pipeline should leverage the job artefacts specified by the operator provided CI/CD tools
-design.cicd.005 The pipeline must execute all relevant Reference Conformance suites without modification     
-design.cicd.006 Software vendors/providers must utilise operator provided CI/CD tools                        
-design.cicd.007 All jobs must be packaged as containers                                                      
-design.cicd.008 All jobs must leverage a common execution to allow templating all deployment and test steps  
+design.cicd.005 The pipeline must execute all relevant Reference Conformance suites without modification
+design.cicd.006 Software vendors/providers must utilise operator provided CI/CD tools
+design.cicd.007 All jobs must be packaged as containers
+design.cicd.008 All jobs must leverage a common execution to allow templating all deployment and test steps
 design.cicd.009 The deployment jobs must publish all outputs as artefacts in a specified format               For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC
 design.cicd.010 The test jobs must pull all inputs as artefacts in a specified format                         For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC
-design.cicd.011 The test jobs must conform with the Reference Conformance test case integration requirements 
+design.cicd.011 The test jobs must conform with the Reference Conformance test case integration requirements
 =============== ============================================================================================= ================================================================================================================
 
 **Table 9-5:** CI/CD Design
@@ -289,12 +291,12 @@ Topics include:
 
 1. Tenant Approval -- use, capacity, data centres, etc.
 
-   -  Validate that the `Tenant's <../../../common/glossary.md#operational-and-administrative-terminology>`__ planned use meets the Operators Cloud Use policies
+   -  Validate that the Tenant's (see :ref:`common/glossary:operational and administrative terminology`) planned use meets the Operators Cloud Use policies
    -  Validate that the capacity available within the requests cloud site(s) can satisfy the Tenant requested quota for vCPU, RAM, Disk, Network Bandwidth
    -  Validate that the Cloud Infrastructure can meet Tenant's performance requirements (e.g. I/O, latency, jitter, etc.)
    -  Validate that the Cloud Infrastructure can meet Tenant's resilience requirements
 
-2. For environments that support `Compute Flavours <./chapter04.md#4.2.1>`__:
+2. For environments that support :ref:`ref_model/chapters/chapter04:profiles and workload flavours`:
 
    -  Verify that any requested private flavours have been created
    -  Verify that the metadata for these private flavours have been created
@@ -451,4 +453,3 @@ Enforcing correct message structures (carrying the data) is performed using Sche
    :alt: "Figure 9-3: Broker Services"
 
 **Figure 9-3**: Broker Services
-

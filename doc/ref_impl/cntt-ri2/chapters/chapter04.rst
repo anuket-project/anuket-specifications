@@ -4,42 +4,71 @@ Operational Runbook
 Introduction
 ------------
 
-This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The entire deployment has been tested in Anuket Labs as a part of the `Anuket Kuberef project <https://wiki.anuket.io/display/HOME/Kuberef>`__, that aims to deliver RI-2 based on RA-2 specifications. The Kuberef project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop and test against. Currently, Kuberef supports deployments on both baremetal, as well as pre-provisioned infrastructure (for e.g. offered by baremetal providers like Equinix Metal, etc.).
+This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The
+entire deployment has been tested in Anuket Labs as a part of the `Anuket Kuberef project
+<https://wiki.anuket.io/display/HOME/Kuberef>`__, that aims to deliver RI-2 based on RA-2 specifications. The Kuberef
+project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop
+and test against. Currently, Kuberef supports deployments on both baremetal, as well as pre-provisioned infrastructure
+(for e.g. offered by baremetal providers like Equinix Metal, etc.).
 
-The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. Host provisioning is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage, etc. This stage can be skipped when using preprovisioned hardware, infrastructure providers, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
+The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. Host provisioning
+is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited
+to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage,
+etc. This stage can be skipped when using preprovisioned hardware, infrastructure providers, etc. The Kubernetes
+provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer
+used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
 
 Prerequisites
 -------------
 
-You need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be deployed. Please refer to :ref:`ref_impl/cntt-ri2/chapters/chapter03:Requirements for Labs` for detailed information on the server and network specifications.
+You need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be
+deployed. Please refer to :ref:`ref_impl/cntt-ri2/chapters/chapter03:Requirements for Labs` for detailed information on
+the server and network specifications.
 
 Installation of the Reference Implementation
 --------------------------------------------
 
-This section describes how to get started with RI-2 deployment via `Kuberef <https://gerrit.opnfv.org/gerrit/q/project:kuberef>`__.
+This section describes how to get started with RI-2 deployment via `Kuberef
+<https://gerrit.opnfv.org/gerrit/q/project:kuberef>`__.
 
-For the host provisioning stage, the `Cloud Infra Automation Framework <https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide>`__ hosted by Nordix Foundation is used. This framework uses `Bifrost <https://docs.openstack.org/bifrost/latest/>`__ for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and `Ironic <https://docs.openstack.org/ironic/latest/>`__. For Kubernetes provisioning, `Bare Metal Reference Architecture (BMRA) <https://networkbuilders.intel.com/intel-technologies/container-experience-kits>`__ is being used. This framework uses scripts available on `Github <https://github.com/intel/container-experience-kits/tree/v21.08>`__ (version v21.08).
+For the host provisioning stage, the `Cloud Infra Automation Framework
+<https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide>`__ hosted by Nordix
+Foundation is used. This framework uses `Bifrost <https://docs.openstack.org/bifrost/latest/>`__ for provisioning
+virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and `Ironic
+<https://docs.openstack.org/ironic/latest/>`__. For Kubernetes provisioning, `Bare Metal Reference Architecture (BMRA)
+<https://networkbuilders.intel.com/intel-technologies/container-experience-kits>`__ is being used. This framework uses
+scripts available on `Github <https://github.com/intel/container-experience-kits/tree/v21.08>`__ (version v21.08).
 
 Installation on Bare Metal Infratructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start by cloning the Kuberef repository. Before you are able to run the installer some prerequisites must be installed. Details and installation steps can be found in ``docs/release/installation/deployment-guide.rst``.
+Start by cloning the Kuberef repository. Before you are able to run the installer some prerequisites must be installed.
+Details and installation steps can be found in ``docs/release/installation/deployment-guide.rst``.
 
-Before initiating a deployment, two configuration templates, referred to as POD Descriptor File (PDF) and Installer Descriptor File (IDF) in Anuket terminology need to be defined under ``hw_config/<vendor>``. Both PDF and IDF files are modeled as YAML schema.
+Before initiating a deployment, two configuration templates, referred to as POD Descriptor File (PDF) and Installer
+Descriptor File (IDF) in Anuket terminology need to be defined under ``hw_config/<vendor>``. Both PDF and IDF files are
+modeled as YAML schema.
 
-A PDF is a hardware configuration template that includes hardware characteristics of the jumphost host and the set of compute/controller hosts. For each host, the following characteristics should be defined:
+A PDF is a hardware configuration template that includes hardware characteristics of the jumphost host and the set of
+compute/controller hosts. For each host, the following characteristics should be defined:
 
 -  CPU, disk and memory information
 -  Remote management parameters
 -  Network interfaces list including name, MAC address, IP address, link speed
 
-IDF includes information about network information required by the installer. All the networks along with possible VLAN, DNS, and gateway information should be defined here. The IDF file also contains configuration options for the Kubernetes deployment using BMRA. These options are described in greater detail below.
+IDF includes information about network information required by the installer. All the networks along with possible
+VLAN, DNS, and gateway information should be defined here. The IDF file also contains configuration options for the
+Kubernetes deployment using BMRA. These options are described in greater detail below.
 
-More details regarding these descriptor files as well as their schema are very well documented in :doc:`ref_impl/cntt-ri/chapters/chapter08`.
+More details regarding these descriptor files as well as their schema are very well documented in
+:doc:`ref_impl/cntt-ri/chapters/chapter08`.
 
-For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single master (and worker) is required to deploy the cluster. Node roles are configured through the vendor specific IDF file.
+For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single
+master (and worker) is required to deploy the cluster. Node roles are configured through the vendor specific IDF file.
 
-Most of the configuration options in ``hw_config/{deployment}/idf.yaml`` shown below are set to specific values according to RA-2 requirements. Some of them might need to be changed depending on the hardware, such as the NIC and CPU configuration.
+Most of the configuration options in ``hw_config/{deployment}/idf.yaml`` shown below are set to specific values
+according to RA-2 requirements. Some of them might need to be changed depending on the hardware, such as the NIC and
+CPU configuration.
 
 ::
 
@@ -100,11 +129,14 @@ References for the above features:
 -  `CPU Manager for Kubernetes <https://github.com/intel/CPU-Manager-for-Kubernetes>`__
 -  `SR-IOV Network device plugin for Kubernetes <https://github.com/intel/sriov-network-device-plugin>`__
 -  `Intel Device Plugins for Kubernetes <https://github.com/intel/intel-device-plugins-for-kubernetes>`__
--  `Telemetry Aware Scheduling <https://github.com/intel/platform-aware-scheduling/tree/master/telemetry-aware-scheduling>`__
+-  `Telemetry Aware Scheduling
+   <https://github.com/intel/platform-aware-scheduling/tree/master/telemetry-aware-scheduling>`__
 
-Additional settings are available in the BMRA templates located in ``playbooks/roles/bmra-config/templates``. Changing these might have unexpected results and should generally not be done.
+Additional settings are available in the BMRA templates located in ``playbooks/roles/bmra-config/templates``. Changing
+these might have unexpected results and should generally not be done.
 
-You will also have to modify environmental variables defined in ``deploy.env`` to match your setup. For deploying Kuberef on preprovisioned infrastructure, set ``deployment_type=k8s``.
+You will also have to modify environmental variables defined in ``deploy.env`` to match your setup. For deploying
+Kuberef on preprovisioned infrastructure, set ``deployment_type=k8s``.
 
 Once ready, issue the following command to initiate the deployment
 
@@ -112,7 +144,10 @@ Once ready, issue the following command to initiate the deployment
 
 Once the deployment is successful, you will have a fully functional RI-2 setup!
 
-The cluster is accessible through the ``kubectl`` CLI from the master nodes. It is possible to interact with the cluster from a jumphost outside of the cluster by using the kubeconfig file found in ``$HOME/.kube/config``. The environment path for using the kubeconfig file on the jumphost can be set with ``export KUBECONFIG=/path/to/config``. Steps for installing ``kubectl`` can be found `here <https://kubernetes.io/docs/tasks/tools/install-kubectl/>`__
+The cluster is accessible through the ``kubectl`` CLI from the master nodes. It is possible to interact with the
+cluster from a jumphost outside of the cluster by using the kubeconfig file found in ``$HOME/.kube/config``. The
+environment path for using the kubeconfig file on the jumphost can be set with ``export KUBECONFIG=/path/to/config``.
+Steps for installing ``kubectl`` can be found `here <https://kubernetes.io/docs/tasks/tools/install-kubectl/>`__
 
 Verify that everything is running using the following commands:
 
@@ -123,7 +158,8 @@ Verify that everything is running using the following commands:
    $ kubectl get node <node> -o json | jq '.status.allocatable'
      # Install jq if needed: yum install -y jq
 
-The list of allocatable resources will vary depending on the configuration, but an example output could look as follows:
+The list of allocatable resources will vary depending on the configuration, but an example output could look as
+follows:
 
 ::
 
@@ -145,9 +181,12 @@ The list of allocatable resources will vary depending on the configuration, but 
 Validation of the Reference Implementation
 ------------------------------------------
 
-In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of test cases specified in RC-2 should be executed. A selection of these test cases is documented in :doc:`ref_cert/RC2/chapters/chapter02`.
+In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of test cases specified in
+RC-2 should be executed. A selection of these test cases is documented in :doc:`ref_cert/RC2/chapters/chapter02`.
 
-Currently, Kuberef is validated by running the RC-2 testsuite in GitLab. This RC-2 testsuite version is determined based on the Kuberenetes version deployed by Kuberef. The list of testcases can be found in the Kuberef ``.gitlab-ci.yml`` file.
+Currently, Kuberef is validated by running the RC-2 testsuite in GitLab. This RC-2 testsuite version is determined
+based on the Kuberenetes version deployed by Kuberef. The list of testcases can be found in the Kuberef
+``.gitlab-ci.yml`` file.
 
 For deploying your own RC-2 toolchain, please refer to the steps mentioned in :doc:`ref_cert/RC2/chapters/chapter03`.
 

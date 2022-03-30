@@ -491,7 +491,7 @@ Service:
    metadata:
            name: my-service
            spec:
-                   selector:       
+                   selector:
                            app: my-app
                    ports:
                            - protocol: TCP
@@ -517,7 +517,7 @@ Deployment:
                                    containers:
                                            - name: my-app
                                              image: my-app-1.2.3
-                                             ports:        
+                                             ports:
                                              - containerPort: 123
 
 This is all that is needed to deploy 4 pods/containers that are fronted by a service that performes load balancing. The *Deployment* will ensure that there are always four pods of type *my-app* available. the *Deployment* is responsible for the full lifecycle management of the pods, this includes in service update/upgrade.

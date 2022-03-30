@@ -777,8 +777,6 @@ which would have asked for an update of the default SLA (maximum failure
 rate of 0%) proposed in `Functest Benchmarking
 CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__
 
-.. _identity---keystone-1:
-
 Identity - Keystone
 ^^^^^^^^^^^^^^^^^^^
 
@@ -802,8 +800,6 @@ KeystoneBasic.create_and_list_users            10
 KeystoneBasic.create_tenant_with_users         10
 ============================================== ==========
 
-.. _image---glance-1:
-
 Image - Glance
 ^^^^^^^^^^^^^^
 
@@ -823,8 +819,6 @@ GlanceImages.create_and_download_image       10
 GlanceImages.create_and_get_image            10
 GlanceImages.create_and_update_image         10
 ============================================ ==========
-
-.. _block-storage---cinder-1:
 
 Block Storage - Cinder
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -860,8 +854,6 @@ Quotas.cinder_update_and_delete                               10
 Quotas.cinder_update                                          10
 ============================================================= ==========
 
-.. _object-storage---swift-1:
-
 Object Storage - Swift
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -877,8 +869,6 @@ SwiftObjects.create_container_and_object_then_download_object 10
 SwiftObjects.create_container_and_object_then_delete_all      10
 SwiftObjects.list_and_download_objects_in_containers          10
 ============================================================= ==========
-
-.. _networking---neutron-1:
 
 Networking - Neutron
 ^^^^^^^^^^^^^^^^^^^^
@@ -934,8 +924,6 @@ NeutronNetworks.create_and_update_subnets  100
 NeutronTrunks.create_and_list_trunks       4
 Quotas.neutron_update                      40
 ========================================== ==========
-
-.. _compute---nova-1:
 
 Compute - Nova
 ^^^^^^^^^^^^^^
@@ -1004,8 +992,6 @@ rally_full_cntt <http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv
 +----------------------------------------------------------------+------------+
 | Quotas.nova_update                                             | 10         |
 +----------------------------------------------------------------+------------+
-
-.. _orchestration---heat-1:
 
 Orchestration - Heat
 ^^^^^^^^^^^^^^^^^^^^

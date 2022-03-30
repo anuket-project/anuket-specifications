@@ -69,7 +69,7 @@ expected to grow according to the ongoing requirement traceability.
 
 `End-to-End
 Testing <https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md>`__
-basically asks for focus and skip regexes to select or to blacklist
+basically asks for focus and skip regexes to select or to exclude
 single tests:
 
 -  focus basically matches Conformance or `Testing Special Interest
@@ -498,7 +498,7 @@ Virtualization requirements.
 
 Functest CNF offers 2 test cases which automatically onboard and test
 `Clearwater IMS <https://github.com/Metaswitch/clearwater-docker>`__ via
-kubecltl and Helm. It’s worth mentioning that this CNF is covered by the
+kubectl and Helm. It’s worth mentioning that this CNF is covered by the
 upstream tests (see
 `clearwater-live-test <https://github.com/Metaswitch/clearwater-live-test>`__).
 
