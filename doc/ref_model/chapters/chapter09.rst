@@ -169,7 +169,7 @@ Automated LCM uses available IAC Software Versions and Dependencies component to
  -  determine the recommended versions of foundation software running on the cluster
 
 Automated LCM uses Orchestration Engine to:
- -  take the inputs from Inventory, Available Software Versions, and Dependencies
+ -  take the inputs from Repositories, Available Software Versions, and Dependencies
  -  run the software version changes
  -  dynamically remediate dependencies during the change process to optimise outcome
  -  ensure that the system is consistent across its life cycle by maintaining it in accordance with the intent templates
