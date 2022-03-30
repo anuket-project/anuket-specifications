@@ -399,7 +399,7 @@ Typical characteristics of a push model are:
 Producers, Consumers, and Message broker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In an ideal case, observability data will be sent directly to the message broker in agreed format, so that consumers can take and „understand“ the data without additional logic. Message brokers do not limit on the data types:
+In an ideal case, observability data will be sent directly to the message broker in agreed format, so that consumers can take and "understand“ the data without additional logic. Message brokers do not limit on the data types:
 
 Enforcing correct message structures (carrying the data) is performed using Schema Registry concepts. Even though it is not necessary to use a Schema Registry, it is highly recommended.
 
