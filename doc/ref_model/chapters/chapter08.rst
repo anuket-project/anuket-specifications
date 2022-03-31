@@ -118,7 +118,7 @@ Introduction1
 
 To realise a federated cloud requires the definition and agreement on a set of APIs. These APIs should allow each of the parties to interact cooperatively and need to cover the management layer: business management and service operations interactions; as well as the data plane, customer and user, transactions and conversational interfaces.
 
-As outlined in :numref:`Conceptual Architecture of a Telco Operator Platform" above, the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the :numref:`Multi-Cloud Interactions Model` below. This provides a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
+As outlined in :numref:`Conceptual Architecture of a Telco Operator Platform` above, the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the :numref:`Multi-Cloud Interactions Model` below. This provides a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
 
 .. :name: Multi-Cloud Interactions Model
 .. figure:: ../figures/rm-chap8-multi-cloud-interactions-02.png
