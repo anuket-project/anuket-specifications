@@ -39,7 +39,7 @@ instance profile (Basic and High Performance). For more information on the
 instance profiles please refer to `RM Chapter 4, section
 4.2.4 <../../../ref_model/chapters/chapter04.md#4.2.4>`__.
 
-.. image:: ../../../ref_model/figures/RM_chap5_fig_5_3_SW_profile.png
+.. image:: ../../../ref_model/figures/RM-ch05-sw-profile.png
    :alt: "Figure 5-3 (from RM): NFVI softwareprofiles"
 
 
