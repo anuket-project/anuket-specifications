@@ -13,7 +13,7 @@ Cloud Infrastructure Software layer is composed of 2 layers, :numref:`Cloud Infr
 
 .. :name: Cloud Infrastructure software layers
 .. figure:: ../figures/ch05-cloud-infrastructure-sw-profile-layers.png
-   :alt: "FCloud Infrastructure software layers"
+   :alt: "Cloud Infrastructure software layers"
 
    Cloud Infrastructure software layers
 
