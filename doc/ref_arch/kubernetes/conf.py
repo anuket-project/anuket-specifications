@@ -1,5 +1,5 @@
-project = 'Anuket Reference Conformance for Kubernetes (RC2)'
-copyright = '2021, Anuket'
+project = 'Anuket Kubernetes based Reference Architecture (RA2)'
+copyright = '2022, Anuket'
 author = 'Anuket'
 exclude_patterns = [
     '.tox',
@@ -10,9 +10,6 @@ extensions = [
     'sphinx.ext.autosectionlabel'
 ]
 html_theme = "sphinx_material"
-linkcheck_ignore = [
-    'http://127.0.0.1'
-]
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/latest/', None)
 }
