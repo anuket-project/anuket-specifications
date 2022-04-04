@@ -82,7 +82,7 @@ Every Issue and PR should be tagged with one or more of the following labels to 
   - 2 business days waiting period should be applied before Final approval.
 - The selection of which contributor to approve a PR is made by the sub-project lead and should take those factors into consideration:
   - Contributor needs to be actively discussing the PR to be selected for approval.
-- PRs will be merged automatically online by the sub-project lead or other committers of the sub-projetc once consensus is reached and all approvals are received. 
+- PRs will be merged automatically online by the sub-project lead or other committers of the sub-project once consensus is reached on the changes, all issues are resolved, and all of the required approvals/re-approvals are received. 
   - Sub-projects should have an agreed set of committers who are trusted with merging rights to the sub-projects. [CODEOWNERS](CODEOWNERS) file should contain all the committers of the sub-projects including the sub-project lead.
 - The person creating the PR cannot be an approver and should not be the person performing the merge.
 - If a PR affects more than one sub-project or areas outside of the scope of the sub-projects the following approvals are needed:
