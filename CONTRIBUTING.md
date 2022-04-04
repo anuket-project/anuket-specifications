@@ -31,7 +31,6 @@ Every Issue and PR should be tagged with one or more of the following labels to 
   - **Backlog**: The Issue will be addressed in future releases..
   - **Major/Minor**: The Issue or PR concerns a major or minor change.. 
   - **WIP**: The PR is still under development, no reviews/approvals are expected yet.
-     - PRs can also be created as "Draft" to indicate that the PR is in progress.
   - **Returned**: The issue/PR has been sent back to author (e.g. more information needed, not a high priority, no longer valid, etc). Only WSL or TSL can tag an issue/PR as Returned.
   - **Idle**: This label will be **automatically** applied (by a GitHub work flow or by WSL/TS Leads) to both issues/PRs to indicate that no activity has been observed on the issue/PR for some determined time frame. This triggers an action to close the issue/PR.
   - **Unresolved**: This label will be **automatically** applied to PRs to indicate that no consensus has been reached on the PR. This triggers an action to resolve the PR by the TSC.
