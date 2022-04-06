@@ -45,22 +45,24 @@ A generic Telco cloud is a hybrid multi-cloud. A better designation would be a f
 Characteristics of a Federated Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this section we will further explore the characteristics of the federated cloud architecture, and architecture building blocks that constitute the federated cloud. For example, Figure 8-1 shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
+In this section we will further explore the characteristics of the federated cloud architecture, and architecture building blocks that constitute the federated cloud. For example, :numref:`Example Hybrid Multi-Cloud Component Cloud` shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
 
-.. image:: ../figures/RM-Ch08-HMC-Image-1.png
-   :alt: "Figure 8-1: Example Hybrid Multi-Cloud Component Cloud"
+.. :name: Example Hybrid Multi-Cloud Component Cloud
+.. figure:: ../figures/RM-Ch08-HMC-Image-1.png
+   :alt: Example Hybrid Multi-Cloud Component Cloud"
 
-**Figure 8-1**: Example Hybrid Multi-Cloud Component Cloud
+   Example Hybrid Multi-Cloud Component Cloud
 
 Telco Cloud
 ~~~~~~~~~~~
 
-The Figure 8-2 presents a visualisation of a Telco operator cloud (or simply, Telco cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
+The :numref:`Telco Cloud: Data Centre to Edge` presents a visualisation of a Telco operator cloud (or simply, Telco cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
 
-.. image:: ../figures/RM-Ch08-Multi-Cloud-DC-Edge.png
-   :alt: "Figure 8-2: Telco Cloud: Data Centre to Edge"
+.. :name: Telco Cloud: Data Centre to Edge
+.. figure:: ../figures/RM-Ch08-Multi-Cloud-DC-Edge.png
+   :alt: "Telco Cloud: Data Centre to Edge"
 
-**Figure 8-2**: Telco Cloud: Data Centre to Edge
+   Telco Cloud: Data Centre to Edge
 
 The Telco Operator may own and/or have partnerships and network connections to utilize multiple Clouds for network services, IT workloads, and external subscribers. The types of the component clouds include:
 
@@ -96,12 +98,13 @@ Public (All Users)       HCP              Vendor             Vendor             
 Telco Operator Platform Conceptual Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Figure 8-3 shows a conceptual Telco Operator Platform Architecture. The Cloud Infrastructure Resources Layer exposes virtualised (including containerised) resources on the physical infrastructure resources and also consists of various virtualisation and management software (see details later in this chapter). The Cloud Platform Components Layer makes available both elementary and composite objects for use by application and service developers, and for use by Services during runtime. The Cloud Services Layer exposes the Services and Applications that are available to the Users; some of the Services and Applications may be sourced from or execute on other cloud platforms. Please note that while the architecture is shown as a set of layers, this is not an isolation mechanism and, thus, for example, Users may access the Cloud Infrastructure Resources directly without interacting with a Broker.
+:numref:`Conceptual Architecture of a Telco Operator Platform` shows a conceptual Telco Operator Platform Architecture. The Cloud Infrastructure Resources Layer exposes virtualised (including containerised) resources on the physical infrastructure resources and also consists of various virtualisation and management software (see details later in this chapter). The Cloud Platform Components Layer makes available both elementary and composite objects for use by application and service developers, and for use by Services during runtime. The Cloud Services Layer exposes the Services and Applications that are available to the Users; some of the Services and Applications may be sourced from or execute on other cloud platforms. Please note that while the architecture is shown as a set of layers, this is not an isolation mechanism and, thus, for example, Users may access the Cloud Infrastructure Resources directly without interacting with a Broker.
 
-.. image:: ../figures/RM-Ch08-Telco-Operator-Platform.png
-   :alt: "Figure 8-3: Conceptual Architecture of a Telco Operator Platform"
+.. :name: Conceptual Architecture of a Telco Operator Platform
+.. figure:: ../figures/RM-Ch08-Telco-Operator-Platform.png
+   :alt: "Conceptual Architecture of a Telco Operator Platform"
 
-**Figure 8-3:** Conceptual Architecture of a Telco Operator Platform
+   Conceptual Architecture of a Telco Operator Platform
 
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery. These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
 
@@ -115,12 +118,13 @@ Introduction1
 
 To realise a federated cloud requires the definition and agreement on a set of APIs. These APIs should allow each of the parties to interact cooperatively and need to cover the management layer: business management and service operations interactions; as well as the data plane, customer and user, transactions and conversational interfaces.
 
-As outlined in "Figure 8-3 - Conceptual Architecture of a Telco Operator Platform" above, the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the "Figure 8-4 - Multi-Cloud Interaction Model" below. This provides a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
+As outlined in :numref:`Conceptual Architecture of a Telco Operator Platform` above, the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the :numref:`Multi-Cloud Interactions Model` below. This provides a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
 
-.. image:: ../figures/rm-chap8-multi-cloud-interactions-02.png
-   :alt: "Figure 8-4: Multi-Cloud Interactions Model"
+.. :name: Multi-Cloud Interactions Model
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-02.png
+   :alt: "Multi-Cloud Interactions Model"
 
-**Figure 8-4**: Multi-Cloud Interactions Model
+   Multi-Cloud Interactions Model
 
 The model defines the following core roles:
 
@@ -139,12 +143,13 @@ The set of high level interactions cover:
 Stereo-Typical Scenarios
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-A set of stereo-typical interactions cases are illustrated for the cases of a Simple Infrastructure-as-a-Service (IaaS) and Software-as-a-Service (SaaS), where deployment is on a Cloud Provider's centralised sites and/or Edge sites. The scenarios help highlight needs for the Cloud Service Broker and Cloud Resources Broker (as per Figure 8.3) and hence extent of orchestration required to manage the interactions.
+A set of stereo-typical interactions cases are illustrated for the cases of a Simple Infrastructure-as-a-Service (IaaS) and Software-as-a-Service (SaaS), where deployment is on a Cloud Provider's centralised sites and/or Edge sites. The scenarios help highlight needs for the Cloud Service Broker and Cloud Resources Broker (as per :numref:`Conceptual Architecture of a Telco Operator Platform`) and hence extent of orchestration required to manage the interactions.
 
-.. image:: ../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png
-   :alt: "Figure 8-5: Simple Stereo-Typical Interactions"
+.. :name: Simple Stereo-Typical Interactions
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png
+   :alt: "Simple Stereo-Typical Interactions"
 
-**Figure 8-5**: Simple Stereo-Typical Interactions
+   Simple Stereo-Typical Interactions
 
 The following patterns are visible:
 
@@ -170,10 +175,11 @@ The following patterns are visible:
 
 A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in the following diagram:
 
-.. image:: ../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png
-   :alt: "Figure 8-6: Disaggregated SaaS Stereo-Typical Interaction"
+.. :name: Disaggregated SaaS Stereo-Typical Interaction
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png
+   :alt: "Disaggregated SaaS Stereo-Typical Interaction"
 
-**Figure 8-6**: Disaggregated SaaS Stereo-Typical Interaction
+   Disaggregated SaaS Stereo-Typical Interaction
 
 In disaggregated SaaS scenario the application provider is able to operate as an "infra-structureless" organisation. This could be achieved through SaaS organisation using public IaaS Cloud Providers which could include the CSP itself. A key consideration for CSP in both cloud provision and consumption in Multi-Cloud scenario is how to manage the integration across the Cloud Providers.
 
@@ -187,15 +193,17 @@ The different means of integrating with and managing Cloud Providers is broadly 
 
 The API and Cloud Brokerage models are illustrated in the following diagrams:
 
-.. image:: ../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png
-   :alt: "Figure 8-7: API Brokerage Multi-Cloud Stereo-Typical Interaction"
+.. :name: API Brokerage Multi-Cloud Stereo-Typical Interaction
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png
+   :alt: "API Brokerage Multi-Cloud Stereo-Typical Interaction"
 
-**Figure 8-7**: API Brokerage Multi-Cloud Stereo-Typical Interaction
+   API Brokerage Multi-Cloud Stereo-Typical Interaction
 
-.. image:: ../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-01.png
+.. :name: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-01.png
    :alt: "Figure 8-8: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction"
 
-**Figure 8-8**: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
+   Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
 
 .. _requirements-reference-architecture--industry-standards-intersect:
 

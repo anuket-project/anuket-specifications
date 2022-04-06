@@ -23,12 +23,13 @@ This chapter specifies the abstract interfaces (API, CLI, etc.) supported by the
 Cloud Infrastructure APIs
 -------------------------
 
-The Cloud Infrastructure APIs consist of set of APIs that are externally and internally visible. The externally visible APIs are made available for orchestration and management of the execution environments that host workloads while the internally visible APIs support actions on the hypervisor and the physical resources. The ETSI NFV Reference MANO Architecture (**Figure 6-1**) shows a number of Interface points where specific or sets of APIs are supported. For the scope of the reference model the relevant interface points are shown in **Table 6-1**.
+The Cloud Infrastructure APIs consist of set of APIs that are externally and internally visible. The externally visible APIs are made available for orchestration and management of the execution environments that host workloads while the internally visible APIs support actions on the hypervisor and the physical resources. The ETSI NFV Reference MANO Architecture (:numref:`ETSI NFV architecture mapping`) shows a number of Interface points where specific or sets of APIs are supported. For the scope of the reference model the relevant interface points are shown in **Table 6-1**.
 
-.. image:: ../figures/ch09-etsi-nfv-architecture-mapping.png
-   :alt: "Figure 6-1: ETSI NFV architecture mapping"
+.. :name: ETSI NFV architecture mapping
+.. figure:: ../figures/ch09-etsi-nfv-architecture-mapping.png
+   :alt: "ETSI NFV architecture mapping"
 
-**Figure 6-1**: ETSI NFV architecture mapping
+   ETSI NFV architecture mapping
 
 =============== ============================= ===================================== ===============================================================================================================================================================================================================================================================================================================
 Interface Point Cloud Infrastructure Exposure Interface Between                     Description
@@ -59,7 +60,7 @@ The Or-Vi and Vi-Vnfm are both specifying interfaces provided by the VIM and the
 Tenant Level APIs
 ~~~~~~~~~~~~~~~~~
 
-In the abstraction model of the Cloud Infrastructure (**Chapter 3**) a conceptual model of a Tenant (**Figure 3-2**) represents the slice of a cloud zone dedicated to a workload. This slice, the Tenant, is composed of virtual resources being utilized by workloads within that Tenant. The Tenant has an assigned quota of virtual resources, a set of users can perform operations as per their assigned roles, and the Tenant exists within a Cloud Zone. The APIs will specify the allowed operations on the Tenant including its component virtual resources and the different APIs can only be executed by users with the appropriate roles. For example, a Tenant may only be allowed to be created and deleted by Cloud Zone administrators while virtual compute resources could be allowed to be created and deleted by Tenant administrators.
+In the abstraction model of the Cloud Infrastructure (**Chapter 3**) a conceptual model of a Tenant represents the slice of a cloud zone dedicated to a workload. This slice, the Tenant, is composed of virtual resources being utilized by workloads within that Tenant. The Tenant has an assigned quota of virtual resources, a set of users can perform operations as per their assigned roles, and the Tenant exists within a Cloud Zone. The APIs will specify the allowed operations on the Tenant including its component virtual resources and the different APIs can only be executed by users with the appropriate roles. For example, a Tenant may only be allowed to be created and deleted by Cloud Zone administrators while virtual compute resources could be allowed to be created and deleted by Tenant administrators.
 
 For a workload to be created in a Tenant also requires APIs for the management (creation, deletion, and operation) of the Tenant, software flavours (Chapter 5), Operating System and workload images (“Images”), Identity and Authorization (“Identity”), virtual resources, security, and the workload application (“stack”).
 
