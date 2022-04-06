@@ -173,10 +173,10 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
 
    -  **Architecture**
 
-.. image:: ../figures/Fig2-1-uc1.png
-   :alt: "Figure 2-1: Edge CDN with eMBB Core Network Slicing"
+.. figure:: ../figures/Fig2-1-uc1.png
+   :alt: "Edge CDN with eMBB Core Network Slicing"
 
-**Figure 2-1**: Edge CDN with eMBB Core Network Slicing
+   Edge CDN with eMBB Core Network Slicing
 
 -  **Use Case #2 - Edge Private 5G with Core Network Slicing**
 
@@ -201,10 +201,10 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
       -  Hosting the CU/DU on-Customer Infrastructure depends on the enterprise offering by the Mobile Operator and the selected Private 5G setup.
       -  The Edge Cloud Infrastructure can be governed by the client or handled by the Service Provider (Mobile Operator) as part of Managed-services model.
 
-.. image:: ../figures/Fig2-2-uc2.png
-   :alt: "Figure 2-2: Edge Private 5G with Core Network Slicing"
+.. figure:: ../figures/Fig2-2-uc2.png
+   :alt: "Edge Private 5G with Core Network Slicing"
 
-**Figure 2-2:** Edge Private 5G with Core Network Slicing.
+   Edge Private 5G with Core Network Slicing.
 
 -  **Use Case #3 - Edge Automotive (V2X) with uRLLC Core Network Slicing**
 
@@ -230,10 +230,10 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
 
       -  The potential use cases that may consume services from Edge is the Network Model (V2N) and potentially the V2I (According on how the Infrastructure will be mapped to an Edge level)
 
-.. image:: ../figures/Fig2-3-uc3.png
-   :alt: "Figure 2-3: Edge Automotive (V2X) with uRLLC Core Network Slicing"
+.. figure:: ../figures/Fig2-3-uc3.png
+   :alt: "Edge Automotive (V2X) with uRLLC Core Network Slicing"
 
-**Figure 2-3:** Edge Automotive (V2X) with uRLLC Core Network Slicing
+   Edge Automotive (V2X) with uRLLC Core Network Slicing
 
 -  **Use Case #4 – Edge vRAN Deployments**
 
@@ -252,10 +252,10 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
       -  The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
       -  Following Split Option 7.2, the average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 [13].
 
-.. image:: ../figures/Fig2-4-uc4.png
-   :alt: "Figure 2-4: Edge vRAN Deployments"
+.. figure:: ../figures/Fig2-4-uc4.png
+   :alt: "Edge vRAN Deployments"
 
-**Figure 2-4**: Edge vRAN Deployments
+   Edge vRAN Deployments
 
 Analysis
 --------
@@ -322,22 +322,23 @@ Two profile *layers* are proposed:
 Workloads specify infrastructure capability requirements as workload metadata, indicating what kind of infrastructure they must run on to achieve functionality and/or the intended level of performance. Workloads request resources specifying the Profiles and Profile Extensions, and a set of sizing metadata that maybe expressed as flavours that are required for the workload to run as intended.
 A resource request by a workload can be met by any infrastructure node that has the same or a more specialised profile and the necessary capacity to support the requested flavour or resource size.
 
-Profiles, Profile Extensions and Flavours will be considered in greater detail in `Section 4.2 <./chapter04.md#4.2>`__.
+Profiles, Profile Extensions and Flavours will be considered in greater detail in :ref:`ref_model/chapters/chapter04:profile extensions`.
 
 Profiles (top-level partitions)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-5** below)
+Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in :numref:`Fig-2-5` below)
 
 -  **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
 -  **High Performance**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
-.. image:: ../figures/RM-ch02-node-profiles.png
+.. _Fig-2-5:
+.. figure:: ../figures/RM-ch02-node-profiles.png
    :alt: "Figure 2-5: Infrastructure profiles proposed based on VNFs categorisation."
 
-**Figure 2-5:** Infrastructure profiles proposed based on VNFs categorisation.
+   Infrastructure profiles proposed based on VNFs categorisation.
 
-In `Chapter 4 <./chapter04.md>`__ these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
+In :doc:`ref_model/chapters/chapter04` these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
 
 Profiles partition the infrastructure: an infrastructure object (host/node) **must** have one and only one profile associated to it.
 
@@ -351,21 +352,20 @@ The following **profile extensions** are proposed:
 Profile Extension Name                           Mnemonic                Applicable to Basic Profile Applicable to High Performance Profile Description                                                                                                                                                       Notes
 ================================================ ======================= =========================== ====================================== ================================================================================================================================================================= =============================================
 Compute Intensive High-performance CPU           compute-high-perf-cpu   ❌                           ✅                                      Nodes that have predictable computing performance and higher clock speeds.                                                                                      May use vanilla VIM/K8S scheduling instead.
-Storage Intensive High-performance storage       storage-high-perf       ❌                           ✅                                      Nodes that have low storage latency and/or high storage IOPS                                                                                                   
+Storage Intensive High-performance storage       storage-high-perf       ❌                           ✅                                      Nodes that have low storage latency and/or high storage IOPS
 Compute Intensive High memory                    compute-high-memory     ❌                           ✅                                      Nodes that have high amounts of RAM.                                                                                                                            May use vanilla VIM/K8S scheduling instead.
 Compute Intensive GPU                            compute-gpu             ❌                           ✅                                      for compute intensive Workloads that requires GPU compute resource on the node                                                                                  May use Node Feature Discovery.
-Network Intensive High speed network (25G)       high-speed-network      ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node.                                                          
-Network Intensive Very High speed network (100G) very-high-speed-network ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node.                                                         
-Low Latency - Edge Sites                         low-latency-edge        ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.                
-Very Low Latency - Edge Sites                    very-low-latency-edge   ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.                
-Ultra Low Latency - Edge Sites                   ultra-low-latency-edge  ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.                
-Fixed function accelerator                       compute-ffa             ❌                           ✅                                      Labels a host/node that includes a consumable fixed function accelerator (non-programmable, e.g. Crypto, vRAN-specific adapter).                               
+Network Intensive High speed network (25G)       high-speed-network      ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node.
+Network Intensive Very High speed network (100G) very-high-speed-network ❌                           ✅                                      Denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node.
+Low Latency - Edge Sites                         low-latency-edge        ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.
+Very Low Latency - Edge Sites                    very-low-latency-edge   ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.
+Ultra Low Latency - Edge Sites                   ultra-low-latency-edge  ✅                           ✅                                      Labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution.
+Fixed function accelerator                       compute-ffa             ❌                           ✅                                      Labels a host/node that includes a consumable fixed function accelerator (non-programmable, e.g. Crypto, vRAN-specific adapter).
 Firmware-programmable adapter                    compute-fpga            ❌                           ✅                                      Labels a host/node that includes a consumable Firmware-programmable adapter (programmable, e.g. Network/storage FPGA with programmable part of firmware image).
-SmartNIC enabled                                 network-smartnic        ❌                           ✅                                      Labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure.                              
-SmartSwitch enabled                              network-smartswitch     ❌                           ✅                                      Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch                                                                             
+SmartNIC enabled                                 network-smartnic        ❌                           ✅                                      Labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure.
+SmartSwitch enabled                              network-smartswitch     ❌                           ✅                                      Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch
 ================================================ ======================= =========================== ====================================== ================================================================================================================================================================= =============================================
 
 **Table 2-1:** Profile extensions
 
    \*\ **Note:** This is an initial set of proposed profiles and profile extensions and it is expected that more profiles and/or profile extensions will be added as more requirements are gathered and as technology enhances and matures.
-

@@ -4,11 +4,11 @@ Hybrid Multi-Cloud: Data Centre to Edge
 Introduction
 ------------
 
-The `Reference Model Chapter 3 <./chapter03.md>`__ focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities of the cloud infrastructure are specified for data centres, central office and colocation centres. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, require separate consideration.
+The :doc:`ref_model/chapters/chapter03` focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities of the cloud infrastructure are specified for data centres, central office and colocation centres. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, require separate consideration.
 
 It is unrealistic to expect that a private cloud can cost-effectively meet the needs of all workloads when the private cloud must also meet the needs for peak loads and disaster recovery. For this reason alone, enterprises will need to implement a hybrid cloud. In a hybrid cloud deployment, at least two or more distinct cloud infrastructures are interconnected. In a multi-cloud, the distinct cloud infrastructures of the hybrid cloud may be implemented using one or more technologies. The hybrid multi-cloud infrastructure has differences requiring different abstractions. These hybrid multi-clouds can be considered to be federated.
 
-In the `Reference Model Chapter 3 <./chapter03.md>`__, the cloud infrastructure is defined. The tenants are required to provide certain needed services (such as Load Balancer (LB), messaging). Thus, the VNF/CNFs incorporate different versions of the same services with the resultant issues related to an explosion of services, their integration and management complexities. To mitigate these issues, the Reference Model must specify the common services that every Telco cloud must support and thereby require workload developers to utilise these pre-specified services.
+In the :doc:`ref_model/chapters/chapter03`, the cloud infrastructure is defined. The tenants are required to provide certain needed services (such as Load Balancer (LB), messaging). Thus, the VNF/CNFs incorporate different versions of the same services with the resultant issues related to an explosion of services, their integration and management complexities. To mitigate these issues, the Reference Model must specify the common services that every Telco cloud must support and thereby require workload developers to utilise these pre-specified services.
 
 A generic Telco cloud is a hybrid multi-cloud or a federated cloud that has deployments in large data centres, central offices or colocation facilities, and the edge sites. This chapter discusses the characteristics of Telco Edge and hybrid multi-cloud.
 
@@ -45,22 +45,24 @@ A generic Telco cloud is a hybrid multi-cloud. A better designation would be a f
 Characteristics of a Federated Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this section we will further explore the characteristics of the federated cloud architecture, and architecture building blocks that constitute the federated cloud. For example, Figure 8-1 shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
+In this section we will further explore the characteristics of the federated cloud architecture, and architecture building blocks that constitute the federated cloud. For example, :numref:`Example Hybrid Multi-Cloud Component Cloud` shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
 
-.. image:: ../figures/RM-Ch08-HMC-Image-1.png
-   :alt: "Figure 8-1: Example Hybrid Multi-Cloud Component Cloud"
+.. :name: Example Hybrid Multi-Cloud Component Cloud
+.. figure:: ../figures/RM-Ch08-HMC-Image-1.png
+   :alt: Example Hybrid Multi-Cloud Component Cloud"
 
-**Figure 8-1**: Example Hybrid Multi-Cloud Component Cloud
+   Example Hybrid Multi-Cloud Component Cloud
 
 Telco Cloud
 ~~~~~~~~~~~
 
-The Figure 8-2 presents a visualisation of a Telco operator cloud (or simply, Telco cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
+The :numref:`Telco Cloud: Data Centre to Edge` presents a visualisation of a Telco operator cloud (or simply, Telco cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
 
-.. image:: ../figures/RM-Ch08-Multi-Cloud-DC-Edge.png
-   :alt: "Figure 8-2: Telco Cloud: Data Centre to Edge"
+.. :name: Telco Cloud: Data Centre to Edge
+.. figure:: ../figures/RM-Ch08-Multi-Cloud-DC-Edge.png
+   :alt: "Telco Cloud: Data Centre to Edge"
 
-**Figure 8-2**: Telco Cloud: Data Centre to Edge
+   Telco Cloud: Data Centre to Edge
 
 The Telco Operator may own and/or have partnerships and network connections to utilize multiple Clouds for network services, IT workloads, and external subscribers. The types of the component clouds include:
 
@@ -96,12 +98,13 @@ Public (All Users)       HCP              Vendor             Vendor             
 Telco Operator Platform Conceptual Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Figure 8-3 shows a conceptual Telco Operator Platform Architecture. The Cloud Infrastructure Resources Layer exposes virtualised (including containerised) resources on the physical infrastructure resources and also consists of various virtualisation and management software (see details later in this chapter). The Cloud Platform Components Layer makes available both elementary and composite objects for use by application and service developers, and for use by Services during runtime. The Cloud Services Layer exposes the Services and Applications that are available to the Users; some of the Services and Applications may be sourced from or execute on other cloud platforms. Please note that while the architecture is shown as a set of layers, this is not an isolation mechanism and, thus, for example, Users may access the Cloud Infrastructure Resources directly without interacting with a Broker.
+:numref:`Conceptual Architecture of a Telco Operator Platform` shows a conceptual Telco Operator Platform Architecture. The Cloud Infrastructure Resources Layer exposes virtualised (including containerised) resources on the physical infrastructure resources and also consists of various virtualisation and management software (see details later in this chapter). The Cloud Platform Components Layer makes available both elementary and composite objects for use by application and service developers, and for use by Services during runtime. The Cloud Services Layer exposes the Services and Applications that are available to the Users; some of the Services and Applications may be sourced from or execute on other cloud platforms. Please note that while the architecture is shown as a set of layers, this is not an isolation mechanism and, thus, for example, Users may access the Cloud Infrastructure Resources directly without interacting with a Broker.
 
-.. image:: ../figures/RM-Ch08-Telco-Operator-Platform.png
-   :alt: "Figure 8-3: Conceptual Architecture of a Telco Operator Platform"
+.. :name: Conceptual Architecture of a Telco Operator Platform
+.. figure:: ../figures/RM-Ch08-Telco-Operator-Platform.png
+   :alt: "Conceptual Architecture of a Telco Operator Platform"
 
-**Figure 8-3:** Conceptual Architecture of a Telco Operator Platform
+   Conceptual Architecture of a Telco Operator Platform
 
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery. These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
 
@@ -110,17 +113,18 @@ Multi-Cloud Interactions Model
 
 .. _introduction-1:
 
-Introduction
-~~~~~~~~~~~~
+Introduction1
+~~~~~~~~~~~~~
 
 To realise a federated cloud requires the definition and agreement on a set of APIs. These APIs should allow each of the parties to interact cooperatively and need to cover the management layer: business management and service operations interactions; as well as the data plane, customer and user, transactions and conversational interfaces.
 
-As outlined in "Figure 8-3 - Conceptual Architecture of a Telco Operator Platform" above, the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the "Figure 8-4 - Multi-Cloud Interaction Model" below. This provides a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
+As outlined in :numref:`Conceptual Architecture of a Telco Operator Platform` above, the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the :numref:`Multi-Cloud Interactions Model` below. This provides a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
 
-.. image:: ../figures/rm-chap8-multi-cloud-interactions-02.png
-   :alt: "Figure 8-4: Multi-Cloud Interactions Model"
+.. :name: Multi-Cloud Interactions Model
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-02.png
+   :alt: "Multi-Cloud Interactions Model"
 
-**Figure 8-4**: Multi-Cloud Interactions Model
+   Multi-Cloud Interactions Model
 
 The model defines the following core roles:
 
@@ -139,12 +143,13 @@ The set of high level interactions cover:
 Stereo-Typical Scenarios
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-A set of stereo-typical interactions cases are illustrated for the cases of a Simple Infrastructure-as-a-Service (IaaS) and Software-as-a-Service (SaaS), where deployment is on a Cloud Provider's centralised sites and/or Edge sites. The scenarios help highlight needs for the Cloud Service Broker and Cloud Resources Broker (as per Figure 8.3) and hence extent of orchestration required to manage the interactions.
+A set of stereo-typical interactions cases are illustrated for the cases of a Simple Infrastructure-as-a-Service (IaaS) and Software-as-a-Service (SaaS), where deployment is on a Cloud Provider's centralised sites and/or Edge sites. The scenarios help highlight needs for the Cloud Service Broker and Cloud Resources Broker (as per :numref:`Conceptual Architecture of a Telco Operator Platform`) and hence extent of orchestration required to manage the interactions.
 
-.. image:: ../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png
-   :alt: "Figure 8-5: Simple Stereo-Typical Interactions"
+.. :name: Simple Stereo-Typical Interactions
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png
+   :alt: "Simple Stereo-Typical Interactions"
 
-**Figure 8-5**: Simple Stereo-Typical Interactions
+   Simple Stereo-Typical Interactions
 
 The following patterns are visible:
 
@@ -170,10 +175,11 @@ The following patterns are visible:
 
 A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in the following diagram:
 
-.. image:: ../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png
-   :alt: "Figure 8-6: Disaggregated SaaS Stereo-Typical Interaction"
+.. :name: Disaggregated SaaS Stereo-Typical Interaction
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png
+   :alt: "Disaggregated SaaS Stereo-Typical Interaction"
 
-**Figure 8-6**: Disaggregated SaaS Stereo-Typical Interaction
+   Disaggregated SaaS Stereo-Typical Interaction
 
 In disaggregated SaaS scenario the application provider is able to operate as an "infra-structureless" organisation. This could be achieved through SaaS organisation using public IaaS Cloud Providers which could include the CSP itself. A key consideration for CSP in both cloud provision and consumption in Multi-Cloud scenario is how to manage the integration across the Cloud Providers.
 
@@ -187,15 +193,17 @@ The different means of integrating with and managing Cloud Providers is broadly 
 
 The API and Cloud Brokerage models are illustrated in the following diagrams:
 
-.. image:: ../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png
-   :alt: "Figure 8-7: API Brokerage Multi-Cloud Stereo-Typical Interaction"
+.. :name: API Brokerage Multi-Cloud Stereo-Typical Interaction
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png
+   :alt: "API Brokerage Multi-Cloud Stereo-Typical Interaction"
 
-**Figure 8-7**: API Brokerage Multi-Cloud Stereo-Typical Interaction
+   API Brokerage Multi-Cloud Stereo-Typical Interaction
 
-.. image:: ../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-01.png
+.. :name: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-01.png
    :alt: "Figure 8-8: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction"
 
-**Figure 8-8**: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
+   Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
 
 .. _requirements-reference-architecture--industry-standards-intersect:
 
@@ -277,15 +285,15 @@ At the edge, the infrastructure may further include ruggedised hardware for hars
 Telco Edge Cloud: Infrastructure Profiles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `Cloud Infrastructure Profiles <./chapter04.md#4.2>`__ section specifies two infrastructure profiles:
+The :ref:`ref_model/chapters/chapter04:profiles and workload flavours` section specifies two infrastructure profiles:
 
 The **Basic** cloud infrastructure profile is intended for use by both IT and Network Function workloads that have low to medium network throughput requirements.
 
 The **High Performance** cloud infrastructure profile is intended for use by applications that have high network throughput requirements (up to 50Gbps).
 
-The High Performance profile can specify extensions for hardware offloading; please see `Hardware Acceleration Abstraction <./chapter03.md#3.8>`__. The Reference Model High Performance profile includes an initial set of `High Performance profile extensions <./chapter04.md#4.2.3>`__.
+The High Performance profile can specify extensions for hardware offloading; please see :ref:`ref_model/chapters/chapter03:hardware acceleration abstraction`. The Reference Model High Performance profile includes an initial set of :ref:`ref_model/chapters/chapter04:profile extensions`.
 
-Based on the infrastructure deployed at the edge, Table 8-3 specifies the `Infrastructure Profile features and requirements <./chapter05.md>`__ that would need to be relaxed.
+Based on the infrastructure deployed at the edge, Table 8-3 specifies the :doc:`ref_model/chapters/chapter05` that would need to be relaxed.
 
 ==================== =============================== ================================================================== ============================= ==================== ================== ====================
 Reference            Feature                         Description                                                        As Specified in RM Chapter 05                      Exception for Edge
@@ -310,7 +318,7 @@ Telco Edge Cloud: Platform Services Deployment
 This section characterises the hardware capabilities for different edge deployments and the Platform services that run on the infrastructure. Please note, that the Platform services are containerised to save resources, and benefit from intrinsic availability and auto-scaling capabilities.
 
 ======================= ================= ===== ========= ======= ========== ============= ========= ========== ================ ================= ================== =================== =======
-\                       Platform Services                                                             Storage                                       Network Services                    
+\                       Platform Services                                                             Storage                                       Network Services
 ======================= ================= ===== ========= ======= ========== ============= ========= ========== ================ ================= ================== =================== =======
 \                       Identity          Image Placement Compute Networking Message Queue DB Server  Ephemeral Persistent Block Persistent Object  Management        Underlay (Provider) Overlay
 Control Nodes           ✅                ✅    ✅        ✅      ✅          ✅           ✅                   ✅                                  ✅                ✅                  ✅
@@ -333,11 +341,10 @@ Comparison of Deployment Topologies and Edge terms
 ================================ ============================================================== ========================================================== ==================================== ============================================== ================== ================================================= ====================================== ============================================================================================ =========================================================================================================================================================================================== ======================================== ======================================================================= ============= ============================== ====
 This Specification               Compute                                                        Storage                                                    Networking                           RTT                                            Security           Scalability                                       Elasticity                             Resiliency                                                                                   Preferred Workload Architecture                                                                                                                                                             Upgrades                                  OpenStack                                                               OPNFV Edge    Edge Glossary                 GSMA
 ================================ ============================================================== ========================================================== ==================================== ============================================== ================== ================================================= ====================================== ============================================================================================ =========================================================================================================================================================================================== ======================================== ======================================================================= ============= ============================== ====
-Regional Data Centre (DC), Fixed 1000's, Standardised, >1 CPU, >20 cores/CPU                    10's EB, Standardised, HDD and NVMe, Permanence            >100 Gbps, Standardised              ~100 ms                                        Highly Secure      Horizontal and unlimited scaling                  Rapid spin up and down                 Infrastructure architected for resiliency, Redundancy for FT and HA                          Microservices based, Stateless, Hosted on Containers                                                                                                                                        Firmware: When required, Platform SW: CD  Central Data Centre                                                                                             
-Metro Data Centres, Fixed        10's to 100's, Standardised, >1 CPU, >20 cores/CPU             100's PB, Standardised, NVMe on PCIe, Permanence           > 100 Gbps, Standardised             ~10 ms                                         Highly Secure      Horizontal but limited scaling                    Rapid spin up and down                 Infrastructure architected for some level of resiliency, Redundancy for limited FT and HA    Microservices based, Stateless, Hosted on Containers                                                                                                                                        Firmware: When required, Platform SW: CD  Edge Site                                                               Large Edge   Aggregation Edge              
+Regional Data Centre (DC), Fixed 1000's, Standardised, >1 CPU, >20 cores/CPU                    10's EB, Standardised, HDD and NVMe, Permanence            >100 Gbps, Standardised              ~100 ms                                        Highly Secure      Horizontal and unlimited scaling                  Rapid spin up and down                 Infrastructure architected for resiliency, Redundancy for FT and HA                          Microservices based, Stateless, Hosted on Containers                                                                                                                                        Firmware: When required, Platform SW: CD  Central Data Centre
+Metro Data Centres, Fixed        10's to 100's, Standardised, >1 CPU, >20 cores/CPU             100's PB, Standardised, NVMe on PCIe, Permanence           > 100 Gbps, Standardised             ~10 ms                                         Highly Secure      Horizontal but limited scaling                    Rapid spin up and down                 Infrastructure architected for some level of resiliency, Redundancy for limited FT and HA    Microservices based, Stateless, Hosted on Containers                                                                                                                                        Firmware: When required, Platform SW: CD  Edge Site                                                               Large Edge   Aggregation Edge
 Edge, Fixed / Mobile             10's, Some Variability, >=1 CPU, >10 cores/CPU                 100 TB, Standardised, NVMe on PCIe, Permanence / Ephemeral 50 Gbps, Standardised                ~5 ms                                          Low Level of Trust Horizontal but highly constrained scaling, if any Rapid spin up (when possible) and down Applications designed for resiliency against infra failures, No or highly limited redundancy Microservices based, Stateless, Hosted on Containers                                                                                                                                        Firmware: When required, Platform SW: CD  Far Edge Site                                                           Medium Edge  Access Edge / Aggregation Edge
-Mini-/Micro-Edge, Mobile / Fixed 1's, High Variability, Harsh Environments, 1 CPU, >2 cores/CPU 10's GB, NVMe, Ephemeral, Caching                          10 Gbps, Connectivity not Guaranteed <2 ms, Located in network proximity of EUD/IoT Untrusted          Limited Vertical Scaling (resizing)               Constrained                            Applications designed for resiliency against infra failures, No or highly limited redundancy Microservices based or monolithic, Stateless or Stateful, Hosted on Containers or VMs, Subject to QoS, adaptive to resource availability, viz. reduce resource consumption as they saturate Platform                                  Fog Computing (Mostly deprecated terminology), Extreme Edge, Far Edge   Small Edge   Access Edge                   
+Mini-/Micro-Edge, Mobile / Fixed 1's, High Variability, Harsh Environments, 1 CPU, >2 cores/CPU 10's GB, NVMe, Ephemeral, Caching                          10 Gbps, Connectivity not Guaranteed <2 ms, Located in network proximity of EUD/IoT Untrusted          Limited Vertical Scaling (resizing)               Constrained                            Applications designed for resiliency against infra failures, No or highly limited redundancy Microservices based or monolithic, Stateless or Stateful, Hosted on Containers or VMs, Subject to QoS, adaptive to resource availability, viz. reduce resource consumption as they saturate Platform                                  Fog Computing (Mostly deprecated terminology), Extreme Edge, Far Edge   Small Edge   Access Edge
 ================================ ============================================================== ========================================================== ==================================== ============================================== ================== ================================================= ====================================== ============================================================================================ =========================================================================================================================================================================================== ======================================== ======================================================================= ============= ============================== ====
 
 **Table 8-6:** Comparison of Deployment Topologies
-

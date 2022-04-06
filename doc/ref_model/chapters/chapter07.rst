@@ -42,10 +42,11 @@ High level security Requirements
 
 The following diagram shows the different security domains that impact the Reference Model:
 
-.. image:: ../figures/ch7_security_posture.png
-   :alt: "Figure 7-1: Reference Model Security Domains"
+.. :name: Reference Model Security Domains
+.. figure:: ../figures/ch7_security_posture.png
+   :alt: "Reference Model Security Domains"
 
-**Figure 7-1**: Reference Model Security Domains
+   Reference Model Security Domains
 
 Note: "Platform" refers to the Cloud Infrastructure with all its hardware and software components.
 
@@ -140,10 +141,11 @@ The security certification of the platform will typically need to be the same, o
 
 The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by workloads, or by Data Centre Operations staff supporting the workload, or by tenants accessing workloads. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
 
-.. image:: ../figures/ch7-data-access-model.png
-   :alt: "Figure 7-2: Reference Model Access Controls"
+.. :name: Reference Model Access Controls
+.. figure:: ../figures/ch7-data-access-model.png
+   :alt: "Reference Model Access Controls"
 
-**Figure 7-2**: Reference Model Access Controls
+   Reference Model Access Controls
 
 The high-level functions of these different access controls
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -226,7 +228,7 @@ Infrastructure as a Code (IaaC) (or equivalently called Infrastructure as Code I
 
 Because of the extremely high complexity of modern telco cloud infrastructures, even minor IaaC code changes may lead to disproportionate and sometime disastrous downstream security and privacy impacts. Therefore, integration of security testing into the IaaC software development pipeline requires security activities to be automated using security tools and integrated with the native DevOps and DevSecOps tools and procedures.
 
-The DevSecOps Automation best practice advocates implementing a framework for security automation and programmatic execution and monitoring of security controls to identify, protect, detect, respond, and recover from cyber threats. The framework used for the IaaC security is based on, the joint publication of Cloud Security Alliance (CSA) and SAFECode, "`The Six Pillars of DevSecOps: Automation (2020) <https://safecode.org/the-six-pillars-of-devsecops-automation>`__" [22]. The document utilises the base definitions and constructs from `ISO 27000 <https://www.iso.org/standard/73906.html>`__ [23], and CSA's `Information Security Management through Reflexive Security <https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/>`__ [24].
+The DevSecOps Automation best practice advocates implementing a framework for security automation and programmatic execution and monitoring of security controls to identify, protect, detect, respond, and recover from cyber threats. The framework used for the IaaC security is based on, the joint publication of Cloud Security Alliance (CSA) and SAFECode, "`The Six Pillars of DevSecOps: Automation (2020) <https://cloudsecurityalliance.org/blog/2021/09/09/six-pillars-of-devsecops-series/>`__" [22]. The document utilises the base definitions and constructs from `ISO 27000 <https://www.iso.org/standard/73906.html>`__ [23], and CSA's `Information Security Management through Reflexive Security <https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/>`__ [24].
 
 The framework identifies the following five distinct stages:
 
@@ -369,7 +371,7 @@ Dynamic Root of Trust for Measurement (DRTM)
 In Dynamic Root of Trust for Measurement (DRTM), the RTM for the running environment are stored in PCRs starting with PCR 17.
 
 If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
-Additionally, platform monitoring can be extended to monitor the integrity of the static file system at run-time by using a TPM aware kernel module, such as Linux IMA (Integrity Measurement Architecture), see `https://sourceforge.net/p/linux-ima/wiki/Home <https://sourceforge.net/p/linux-ima/wiki/Home>`__, or by using the trust policies (see `https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#trust-policies <https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#trust-policies>`__) functionality of OpenCIT.
+Additionally, platform monitoring can be extended to monitor the integrity of the static file system at run-time by using a TPM aware kernel module, such as Linux IMA (Integrity Measurement Architecture), see `https://sourceforge.net/p/linux-ima/wiki/Home <https://sourceforge.net/p/linux-ima/wiki/Home>`__, or by using the trust policies (see `https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide <https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide>`__) functionality of OpenCIT.
 
 The static file system includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
 This allows the attestation server to detect any tampering with the static file system during the runtime of the platform.
@@ -399,7 +401,7 @@ Software supply chain safety is crucial and can be a complex task in virtualised
 
 To secure software code, the following methods must be applied:
 
--  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`__ or `OWASP “Secure Coding Practices - Quick Reference Guide” <owasp.org>`__
+-  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`__ or `OWASP “Secure Coding Practices - Quick Reference Guide” <https://owasp.org/>`__
 -  Require suppliers to provide a Software Bill of Materials to identify the open source modules in their product’s software releases
 -  Use trusted, authenticated and identified software images that are provided by authenticated software distribution portals
 -  Do threat modelling, as described in the document “Tactical Threat Modeling” published by SAFECode
@@ -417,7 +419,7 @@ To begin, it is highly recommended to identify the software components and their
 
 A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management and it provides assurance of the source and integrity of components. In order to use the SBOM efficiently and spread its adoption, information must be generated and shared in a standard format. This format must be machine-readable to allow automation. The NTIA white paper `“Survey of existing SBOM formats and standards” <https://www.ntia.doc.gov/files/ntia/publications/ntia_sbom_formats_and_standards_whitepaper_-_version_20191025.pdf>`__ identifies two key formats covering baseline SBOM information: Software Package Data eXchange (SPX) and Software Identification Tags (SWID tags).
 
-`SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux Foundation. The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard ISO/IEC 5962:2021. It provides a language for communicating the data, licenses, copyrights, and security information associated with software components. With the SPDX specification 2.2, multiple file formats are available: YAML, JSON, RDF/XML, tag:value flat text, and xlss spreadsheets.
+`SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux Foundation. The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard ISO/IEC 5962:2021. It provides a language for communicating the data, licenses, copyrights, and security information associated with software components. With the SPDX specification 2.2, multiple file formats are available: YAML, JSON, RDF/XML, tag\:value flat text, and xlss spreadsheets.
 
 `SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID tags: primary, patch, corpus, and supplemental to describe a software component.
 
@@ -484,21 +486,21 @@ System Hardening
 =============== =============================================================================================================================================================================================================================================================================================================================================================================================== ========================================================================================================
 Ref             Requirement                                                                                                                                                                                                                                                                                                                                                                                     Definition/Note
 =============== =============================================================================================================================================================================================================================================================================================================================================================================================== ========================================================================================================
-req.sec.gen.001 The Platform **must** maintain the specified configuration.                                                                                                                                                                                                                                                                                                                                    
+req.sec.gen.001 The Platform **must** maintain the specified configuration.
 req.sec.gen.002 All systems part of Cloud Infrastructure **must** support password hardening as defined in CIS Password Policy Guide `https://www.cisecurity.org/white-papers/cis-password-policy-guide <https://www.cisecurity.org/white-papers/cis-password-policy-guide>`__.                                                                                                                                 Hardening: CIS Password Policy Guide
-req.sec.gen.003 All servers part of Cloud Infrastructure **must** support a root of trust and secure boot.                                                                                                                                                                                                                                                                                                     
+req.sec.gen.003 All servers part of Cloud Infrastructure **must** support a root of trust and secure boot.
 req.sec.gen.004 The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened by removing or disabling unnecessary services, applications and network protocols, configuring operating system user authentication, configuring resource controls, installing and configuring additional security controls where needed, and testing the security of the Operating System.          NIST SP 800-123
-req.sec.gen.005 The Platform **must** support Operating System level access control.                                                                                                                                                                                                                                                                                                                           
-req.sec.gen.006 The Platform **must** support Secure logging. Logging with root account must be prohibited when root privileges are not required.                                                                                                                                                                                                                                                              
-req.sec.gen.007 All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service.                                                                                                                                                                                                                                                                                        
-req.sec.gen.008 All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities.                                                                                                                                                                                                                                                                                    
-req.sec.gen.009 The Platform **must** support Software integrity protection and verification and **must** scan source code and manifests.                                                                                                                                                                                                                                                                      
+req.sec.gen.005 The Platform **must** support Operating System level access control.
+req.sec.gen.006 The Platform **must** support Secure logging. Logging with root account must be prohibited when root privileges are not required.
+req.sec.gen.007 All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service.
+req.sec.gen.008 All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities.
+req.sec.gen.009 The Platform **must** support Software integrity protection and verification and **must** scan source code and manifests.
 req.sec.gen.010 The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. Controlled Access Based on the Need to Know `https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know <https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know>`__.
-req.sec.gen.011 The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors).                                                                                                                                                                                                                                                   
+req.sec.gen.011 The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors).
 req.sec.gen.012 The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure.                                                                                                                                                                                                                                                                                 It is mandatory for a Cloud Infrastructure Operator, but this requirement’s verification is out of scope
-req.sec.gen.013 The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure.                                                                                                                                                                                                                                                                                 
-req.sec.gen.014 All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers.                                                                                                                                                                                                                                             
-req.sec.gen.015 Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change.                                                                                                                                                                                            
+req.sec.gen.013 The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure.
+req.sec.gen.014 All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers.
+req.sec.gen.015 Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change.
 =============== =============================================================================================================================================================================================================================================================================================================================================================================================== ========================================================================================================
 
 **Table 7-1:** System hardening requirements
@@ -509,25 +511,25 @@ Platform and Access
 =============== ============================================================================================================================================================================================== =====================================================================================================================================================================================================================================================================================
 Ref             Requirement                                                                                                                                                                                    Definition/Note
 =============== ============================================================================================================================================================================================== =====================================================================================================================================================================================================================================================================================
-req.sec.sys.001 The Platform **must** support authenticated and secure access to API, GUI and command line interfaces.                                                                                        
-req.sec.sys.002 The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall).                                                                                                       
-req.sec.sys.003 The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic.                                                                      
+req.sec.sys.001 The Platform **must** support authenticated and secure access to API, GUI and command line interfaces.
+req.sec.sys.002 The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall).
+req.sec.sys.003 The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic.
 req.sec.sys.004 The Cloud Infrastructure **must** support authentication, integrity and confidentiality on all network channels.                                                                               A secure channel enables transferring of data that is resistant to overhearing and tampering.
-req.sec.sys.005 The Cloud Infrastructure **must** segregate the underlay and overlay networks.                                                                                                                
-req.sec.sys.006 The Cloud Infrastructure must be able to utilize the Cloud Infrastructure Manager identity lifecycle management capabilities.                                                                 
-req.sec.sys.007 The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control).                           
+req.sec.sys.005 The Cloud Infrastructure **must** segregate the underlay and overlay networks.
+req.sec.sys.006 The Cloud Infrastructure must be able to utilize the Cloud Infrastructure Manager identity lifecycle management capabilities.
+req.sec.sys.007 The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control).
 req.sec.sys.008 The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains.                                                                             Communication between different trust domains is not allowed, by default.
 req.sec.sys.009 The Platform **must** support creation of Trust Relationships between trust domains.                                                                                                           These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain. In a bidirectional relationship both domain are “trusting” and “trusted”.
 req.sec.sys.010 For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly.
-req.sec.sys.011 The Platform **must not** reuse the same authentication credential (e.g., key-pair) on different Platform components (e.g., on different hosts, or different services).                       
+req.sec.sys.011 The Platform **must not** reuse the same authentication credential (e.g., key-pair) on different Platform components (e.g., on different hosts, or different services).
 req.sec.sys.012 The Platform **must** protect all secrets by using strong encryption techniques, and storing the protected secrets externally from the component.                                              (e.g., in OpenStack Barbican).
-req.sec.sys.013 The Platform **must** provide secrets dynamically as and when needed.                                                                                                                         
-req.sec.sys.014 The Platform **should** use Linux Security Modules such as SELinux to control access to resources.                                                                                            
-req.sec.sys.015 The Platform **must not** contain back door entries (unpublished access points, APIs, etc.).                                                                                                  
+req.sec.sys.013 The Platform **must** provide secrets dynamically as and when needed.
+req.sec.sys.014 The Platform **should** use Linux Security Modules such as SELinux to control access to resources.
+req.sec.sys.015 The Platform **must not** contain back door entries (unpublished access points, APIs, etc.).
 req.sec.sys.016 Login access to the platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher.                                                                        Note: Hardened jump servers isolated from external networks are recommended
-req.sec.sys.017 The Platform **must** provide the capability of using digital certificates that comply with X.509 standards issued by a trusted Certification Authority.                                      
-req.sec.sys.018 The Platform **must** provide the capability of allowing certificate renewal and revocation.                                                                                                  
-req.sec.sys.019 The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non-revocation, identity).                                      
+req.sec.sys.017 The Platform **must** provide the capability of using digital certificates that comply with X.509 standards issued by a trusted Certification Authority.
+req.sec.sys.018 The Platform **must** provide the capability of allowing certificate renewal and revocation.
+req.sec.sys.019 The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non-revocation, identity).
 req.sec.sys.020 The Cloud Infrastructure architecture **should** rely on Zero Trust principles to build a secure by design environment.                                                                        Zero Trust Architecture (ZTA) described in NIST SP 800-207
 =============== ============================================================================================================================================================================================== =====================================================================================================================================================================================================================================================================================
 
@@ -539,15 +541,15 @@ Confidentiality and Integrity
 ============== ========================================================================================================================================================================================================================================= =========================================
 Ref            Requirement                                                                                                                                                                                                                               Definition/Note
 ============== ========================================================================================================================================================================================================================================= =========================================
-req.sec.ci.001 The Platform **must** support Confidentiality and Integrity of data at rest and in transit.                                                                                                                                              
-req.sec.ci.002 The Platform **should** support self-encrypting storage devices.                                                                                                                                                                         
-req.sec.ci.003 The Platform **must** support Confidentiality and Integrity of data related metadata.                                                                                                                                                    
-req.sec.ci.004 The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant).                                                                                                  
-req.sec.ci.005 The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant).                                                                     
-req.sec.ci.006 The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant).     
+req.sec.ci.001 The Platform **must** support Confidentiality and Integrity of data at rest and in transit.
+req.sec.ci.002 The Platform **should** support self-encrypting storage devices.
+req.sec.ci.003 The Platform **must** support Confidentiality and Integrity of data related metadata.
+req.sec.ci.004 The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant).
+req.sec.ci.005 The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant).
+req.sec.ci.006 The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant).
 req.sec.ci.007 The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. Admin access must be carefully regulated.
-req.sec.ci.008 The Cloud Infrastructure **must** support tenant networks segregation.                                                                                                                                                                   
-req.sec.ci.009 For sensitive data encryption, the key management service **should** leverage a Hardware Security Module to manage and protect cryptographic keys.                                                                                       
+req.sec.ci.008 The Cloud Infrastructure **must** support tenant networks segregation.
+req.sec.ci.009 For sensitive data encryption, the key management service **should** leverage a Hardware Security Module to manage and protect cryptographic keys.
 ============== ========================================================================================================================================================================================================================================= =========================================
 
 **Table 7-3:** Confidentiality and integrity requirements
@@ -558,13 +560,13 @@ Workload Security
 ============== ========================================================================================================================================================= ================================================
 Ref            Requirement                                                                                                                                               Definition/Note
 ============== ========================================================================================================================================================= ================================================
-req.sec.wl.001 The Platform **must** support Workload placement policy.                                                                                                 
+req.sec.wl.001 The Platform **must** support Workload placement policy.
 req.sec.wl.002 The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module).
-req.sec.wl.003 The Platform **must** support secure provisioning of workloads.                                                                                          
-req.sec.wl.004 The Platform **must** support Location assertion (for mandated in-country or location requirements).                                                     
+req.sec.wl.003 The Platform **must** support secure provisioning of workloads.
+req.sec.wl.004 The Platform **must** support Location assertion (for mandated in-country or location requirements).
 req.sec.wl.005 The Platform **must** support the separation of production and non-production Workloads.                                                                  This requirement’s verification is out of scope.
-req.sec.wl.006 The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.).       
-req.sec.wl.007 The Operator **should** implement processes and tools to verify NF authenticity and integrity.                                                           
+req.sec.wl.006 The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.).
+req.sec.wl.007 The Operator **should** implement processes and tools to verify NF authenticity and integrity.
 ============== ========================================================================================================================================================= ================================================
 
 **Table 7-4:** Workload security requirements
@@ -575,16 +577,16 @@ Image Security
 =============== ==================================================================================================================================== ===============
 Ref             Requirement                                                                                                                          Definition/Note
 =============== ==================================================================================================================================== ===============
-req.sec.img.001 Images from untrusted sources **must not** be used.                                                                                 
-req.sec.img.002 Images **must** be scanned to be maintained free from known vulnerabilities.                                                        
-req.sec.img.003 Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them.            
-req.sec.img.004 Images **must** only be accessible to authorized actors.                                                                            
-req.sec.img.005 Image Registries **must** only be accessible to authorized actors.                                                                  
-req.sec.img.006 Image Registries **must** only be accessible over secure networks that enforce authentication, integrity and confidentiality.       
-req.sec.img.007 Image registries **must** be clear of vulnerable and out of date versions.                                                          
+req.sec.img.001 Images from untrusted sources **must not** be used.
+req.sec.img.002 Images **must** be scanned to be maintained free from known vulnerabilities.
+req.sec.img.003 Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them.
+req.sec.img.004 Images **must** only be accessible to authorized actors.
+req.sec.img.005 Image Registries **must** only be accessible to authorized actors.
+req.sec.img.006 Image Registries **must** only be accessible over secure networks that enforce authentication, integrity and confidentiality.
+req.sec.img.007 Image registries **must** be clear of vulnerable and out of date versions.
 req.sec.img.008 Images **must not** include any secrets. Secrets include passwords, cloud provider credentials, SSH keys, TLS certificate keys, etc.
-req.sec.img.009 CIS Hardened Images **should** be used whenever possible.                                                                           
-req.sec.img.010 Minimalist base images **should** be used whenever possible.                                                                        
+req.sec.img.009 CIS Hardened Images **should** be used whenever possible.
+req.sec.img.010 Minimalist base images **should** be used whenever possible.
 =============== ==================================================================================================================================== ===============
 
 **Table 7-5:** Image security requirements
@@ -596,17 +598,17 @@ Security LCM
 Ref             Requirement                                                                                                                                                                                                              Definition/Note
 =============== ======================================================================================================================================================================================================================== =========================================================================================================================
 req.sec.lcm.001 The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defence against virus or other attacks.            Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data.
-req.sec.lcm.002 Cloud operations staff and systems **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher.                                                           
+req.sec.lcm.002 Cloud operations staff and systems **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher.
 req.sec.lcm.003 The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware.
 req.sec.lcm.004 The Cloud Operator **should** support automated templated approved changes.                                                                                                                                              Templated approved changes for automation where available.
-req.sec.lcm.005 Platform **must** provide logs and these logs must be regularly monitored for anomalous behaviour.                                                                                                                      
-req.sec.lcm.006 The Platform **must** verify the integrity of all Resource management requests.                                                                                                                                         
-req.sec.lcm.007 The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information.                                                                         
-req.sec.lcm.008 The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information.                                                                         
-req.sec.lcm.009 The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information.                                       
-req.sec.lcm.010 The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing).                                                                    
-req.sec.lcm.011 The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software.                                                     
-req.sec.lcm.012 The Platform **must** log any access privilege escalation.                                                                                                                                                              
+req.sec.lcm.005 Platform **must** provide logs and these logs must be regularly monitored for anomalous behaviour.
+req.sec.lcm.006 The Platform **must** verify the integrity of all Resource management requests.
+req.sec.lcm.007 The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information.
+req.sec.lcm.008 The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information.
+req.sec.lcm.009 The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information.
+req.sec.lcm.010 The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing).
+req.sec.lcm.011 The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software.
+req.sec.lcm.012 The Platform **must** log any access privilege escalation.
 =============== ======================================================================================================================================================================================================================== =========================================================================================================================
 
 **Table 7-6:** Security LCM requirements
@@ -620,27 +622,27 @@ The Platform is assumed to provide configurable alerting and notification capabi
 Ref             Requirement                                                                                                                                                                                                                                                                          Definition/Note
 =============== ==================================================================================================================================================================================================================================================================================== ===============
 req.sec.mon.001 The Prod-Platform and NonProd-Platform **must** provide logs. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address, and ports (source and destination) involved.
-req.sec.mon.002 The logs **must** be regularly monitored for events of interest.                                                                                                                                                                                                                    
-req.sec.mon.003 Logs **must** be time synchronised for the Prod-Platform as well as for the NonProd-Platform.                                                                                                                                                                                       
-req.sec.mon.004 The Prod-Platform and NonProd-Platform **must** log all changes to time server source, time, date and time zones.                                                                                                                                                                   
-req.sec.mon.005 The Prod-Platform and NonProd-Platform **must** secure and protect all logs (containing sensitive information) both in-transit and at rest.                                                                                                                                         
-req.sec.mon.006 The Prod-Platform and NonProd-Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly.                                                               
-req.sec.mon.007 The Prod-Platform and NonProd-Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions.                                                                                         
-req.sec.mon.008 The Prod-Platform **must** Monitor and Audit security parameter configurations for compliance with defined security policies.                                                                                                                                                       
-req.sec.mon.009 The Prod-Platform and NonProd-Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures.                                                                                                       
-req.sec.mon.010 The Prod-Platform **must** Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly.                                                                                                     
-req.sec.mon.011 The Prod-Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly.                                                                                                                              
-req.sec.mon.012 The Prod-Platform and NonProd-Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly.                                                                           
-req.sec.mon.013 The Prod-Platform and NonProd-Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts.                                                                                                                                                
-req.sec.mon.014 The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries).                                                                                                              
-req.sec.mon.015 The Monitoring systems **should not** impact IaaS, PaaS, and SaaS SLAs including availability SLAs.                                                                                                                                                                                 
-req.sec.mon.016 The Prod-Platform and NonProd-Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold.                                                                          
-req.sec.mon.017 The Prod-Platform and NonProd-Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing.                                                                                                                          
-req.sec.mon.018 The Prod-Platform and NonProd-Platform **must** audit systems for any missing security patches and take appropriate actions.                                                                                                                                                        
-req.sec.mon.019 The Prod-Platform, starting from initialization, **must** collect and analyse logs to identify security events, and store these events in an external system.                                                                                                                       
-req.sec.mon.020 The Prod-Platform’s and NonProd-Platform’s components **must not** include any authentication credentials, e.g., password, in any logs, even if encrypted.                                                                                                                          
-req.sec.mon.021 The Prod-Platform’s and NonProd-Platform’s logging system **must** support the storage of security audit logs for a configurable period of time.                                                                                                                                    
-req.sec.mon.022 The Prod-Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful.                                                                                
+req.sec.mon.002 The logs **must** be regularly monitored for events of interest.
+req.sec.mon.003 Logs **must** be time synchronised for the Prod-Platform as well as for the NonProd-Platform.
+req.sec.mon.004 The Prod-Platform and NonProd-Platform **must** log all changes to time server source, time, date and time zones.
+req.sec.mon.005 The Prod-Platform and NonProd-Platform **must** secure and protect all logs (containing sensitive information) both in-transit and at rest.
+req.sec.mon.006 The Prod-Platform and NonProd-Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly.
+req.sec.mon.007 The Prod-Platform and NonProd-Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions.
+req.sec.mon.008 The Prod-Platform **must** Monitor and Audit security parameter configurations for compliance with defined security policies.
+req.sec.mon.009 The Prod-Platform and NonProd-Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures.
+req.sec.mon.010 The Prod-Platform **must** Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly.
+req.sec.mon.011 The Prod-Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly.
+req.sec.mon.012 The Prod-Platform and NonProd-Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly.
+req.sec.mon.013 The Prod-Platform and NonProd-Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts.
+req.sec.mon.014 The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries).
+req.sec.mon.015 The Monitoring systems **should not** impact IaaS, PaaS, and SaaS SLAs including availability SLAs.
+req.sec.mon.016 The Prod-Platform and NonProd-Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold.
+req.sec.mon.017 The Prod-Platform and NonProd-Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing.
+req.sec.mon.018 The Prod-Platform and NonProd-Platform **must** audit systems for any missing security patches and take appropriate actions.
+req.sec.mon.019 The Prod-Platform, starting from initialization, **must** collect and analyse logs to identify security events, and store these events in an external system.
+req.sec.mon.020 The Prod-Platform’s and NonProd-Platform’s components **must not** include any authentication credentials, e.g., password, in any logs, even if encrypted.
+req.sec.mon.021 The Prod-Platform’s and NonProd-Platform’s logging system **must** support the storage of security audit logs for a configurable period of time.
+req.sec.mon.022 The Prod-Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful.
 =============== ==================================================================================================================================================================================================================================================================================== ===============
 
 **Table 7-7:** Monitoring and security audit requirements
@@ -651,10 +653,10 @@ Open Source Software
 =============== ====================================================================================================================================================================================================================================== ============================================================================================
 Ref             Requirement                                                                                                                                                                                                                            Definition/Note
 =============== ====================================================================================================================================================================================================================================== ============================================================================================
-req.sec.oss.001 Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis.                                                                                                                       
+req.sec.oss.001 Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis.
 req.sec.oss.002 The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software.                                         `https://cve.mitre.org/ <https://cve.mitre.org/>`__
 req.sec.oss.003 Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score and its associated rate (low, medium, high, or critical). `https://www.first.org/cvss/ <https://www.first.org/cvss/>`__
-req.sec.oss.004 A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content.                                                                                              
+req.sec.oss.004 A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content.
 req.sec.oss.005 A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins.                                                                                             Inventory of software components, `https://www.ntia.gov/SBOM <https://www.ntia.gov/SBOM>`__.
 =============== ====================================================================================================================================================================================================================================== ============================================================================================
 
@@ -740,14 +742,14 @@ Ref             Requirement                                                     
 req.sec.std.001 The Cloud Operator **should** comply with Center for Internet Security CIS Controls.                                                                                                                                                                                          Center for Internet Security - `https://www.cisecurity.org/ <https://www.cisecurity.org/>`__
 req.sec.std.002 The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version).                                                                                                       Cloud Security Alliance - `https://cloudsecurityalliance.org/ <https://cloudsecurityalliance.org/>`__
 req.sec.std.003 The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) `https://github.com/OWASP/CheatSheetSeries <https://github.com/OWASP/CheatSheetSeries>`__.                                                                                   Open Web Application Security Project `https://www.owasp.org <https://www.owasp.org>`__
-req.sec.std.004 The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks `https://owasp.org/www-project-top-ten/ <https://owasp.org/www-project-top-ten/>`__.                                                      
+req.sec.std.004 The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks `https://owasp.org/www-project-top-ten/ <https://owasp.org/www-project-top-ten/>`__.
 req.sec.std.005 The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) `https://owaspsamm.org/blog/2019/12/20/version2-community-release/ <https://owaspsamm.org/blog/2019/12/20/version2-community-release/>`__.
-req.sec.std.006 The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide `https://github.com/OWASP/wstg/tree/master/document <https://github.com/OWASP/wstg/tree/master/document>`__.                                                              
+req.sec.std.006 The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide `https://github.com/OWASP/wstg/tree/master/document <https://github.com/OWASP/wstg/tree/master/document>`__.
 req.sec.std.007 The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001 `https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en <https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en>`__ .          ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs).
-req.sec.std.008 The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest) `https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en <https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en>`__ .  
+req.sec.std.008 The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest) `https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en <https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en>`__ .
 req.sec.std.009 The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques `https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en <https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en>`__ .            ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity.
 req.sec.std.010 The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management.                                                                                                                                                                                 ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management.
-req.sec.std.011 The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.                                                                           
+req.sec.std.011 The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.
 req.sec.std.012 The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16).                                                                            International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16.
 =============== ============================================================================================================================================================================================================================================================================= ===================================================================================================================================
 
@@ -797,4 +799,3 @@ NIST SP 800-190 Application Container Security Guide, `https://nvlpubs.nist.gov/
 NIST SP 800-204A Building Secure Microservices-based Applications Using Service-Mesh Architecture, `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf>`__
 
 NIST SP 800-204B Attribute-based Access Control for Microservices-based Applications Using a Service Mesh, `https://csrc.nist.gov/publications/detail/sp/800-204b/final <https://csrc.nist.gov/publications/detail/sp/800-204b/final>`__
-

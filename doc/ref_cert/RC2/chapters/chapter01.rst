@@ -37,8 +37,6 @@ infrastructure and workload lifecycle testing which includes
 LFN Compliance and Verification Committee (CVC) definitions, and their
 use through CVC documentation, guidelines, and standards.**
 
-.. _introduction-1:
-
 Overview
 --------
 

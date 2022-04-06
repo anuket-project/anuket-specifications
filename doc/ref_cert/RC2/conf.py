@@ -6,11 +6,10 @@ exclude_patterns = [
     'README.rst'
 ]
 extensions = [
-    'sphinx_rtd_theme',
     'sphinx.ext.intersphinx',
     'sphinx.ext.autosectionlabel'
 ]
-html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_material"
 linkcheck_ignore = [
     'http://127.0.0.1'
 ]
@@ -19,3 +18,6 @@ intersphinx_mapping = {
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 2
+numfig = True
+numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
+                 'code-block': 'Listing %s', 'section': 'Section %s'}

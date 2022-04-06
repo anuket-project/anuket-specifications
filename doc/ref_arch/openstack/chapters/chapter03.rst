@@ -96,8 +96,7 @@ confusingly “Projects” in OpenStack are isolated environments that
 enable workloads to be logically separated from each other with:
 
 -  differentiated set of associated users
--  role-based access of two levels – admin or member (see `RBAC security
-   section <./chapter06.md#rbac>`__).
+-  role-based access of two levels – admin or member (see :ref:`ref_arch/openstack/chapters/chapter06:rbac`).
 -  quota system to provide maximum resources that can be consumed.
 
 This RA does not intend to restrict how workloads are distributed across
@@ -117,8 +116,8 @@ NUMA alignment, and SMT.
 
 The configuration of the virtual resources will depend on the software
 and hardware profiles and the flavour (resource sizing) needed to host
-VNF components. Profiles are defined in the `Reference Model chapter
-2.4 <../../../ref_model/chapters/chapter02.md#24-profiles-profile-extensions--flavours>`__.
+VNF components. Profiles are defined in the
+:ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours`.
 
 Virtual Storage
 ~~~~~~~~~~~~~~~
@@ -249,9 +248,8 @@ over the native networking implementations of orchestrators, including:
 -  BGP as a Service (BGPaaS) for distribution of routes between
    privately managed customer networks and service provider networks
 
-Based on the network layering concepts introduced in the `Reference
-Model Section
-3.5 <../../../ref_model/chapters/chapter03.md#35-network>`__, the
+Based on the network layering concepts introduced in the Reference
+Model Section :ref:`ref_model/chapters/chapter03:network`, the
 Tungsten Fabric Controller performs functions of both the SDN underlay
 (SDNu) and overlay (SDNo) controllers.
 
@@ -379,9 +377,8 @@ Cloud Controller Services
 The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
-also maps the OpenStack core services to the `Reference Model (RM)
-Virtual Infrastructure Manager 
-<../../../ref_model/chapters/chapter03.md#322-virtual-infrastructure-manager>`__.
+also maps the OpenStack core services to the Reference Model (RM)
+:ref:`ref_model/chapters/chapter03:virtual infrastructure manager`.
 
 +----------------+--------+---------------+-----------+-------+-----+
 | RM Management  | S\     | Description   | Required  | Dep\  | De\ |
@@ -462,9 +459,8 @@ a same service must run on different nodes).
 The services can be containerised or VM hosted as long as they provide
 the high availability principles described above.
 
-The APIs for these OpenStack services are listed in `Chapter 5:
-Interfaces and
-APIs <../../../ref_arch/openstack/chapters/chapter05.md>`__.
+The APIs for these OpenStack services are listed in 
+:ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`.
 
 Cloud Workload Services
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -511,9 +507,9 @@ the resources of a project are not affected by resources of another
 project.
 
 This document uses the term “project” when referring to OpenStack
-services and “tenant” (`RM Section
-3.2.1 <../../../ref_model/chapters/chapter03.md#321-virtual-resources>`__) to represent
-an independently manageable logical pool of resources.
+services and “tenant” (RM Section
+:ref:`ref_model/chapters/chapter03:virtual resources`)
+to represent an independently manageable logical pool of resources.
 
 Cloud partitioning: Host Aggregates, Availability Zones
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -553,8 +549,8 @@ In OpenStack a flavor defines the compute, memory, and storage capacity
 of nova instances. When instances are spawned, they are mapped to
 flavors which define the available hardware configuration for them. For
 simplicity, operators may create named flavors specifying both the
-sizing and the `software and hardware profile
-configurations <../../../ref_model/chapters/chapter05.md>`__.
+sizing and the
+:doc:`software and hardware profile configurations <ref_model/chapters/chapter05>`.
 
 Underlying Resources
 --------------------
@@ -616,8 +612,7 @@ up (in a shipping container), and what resources are required of the DC
 
 -  Storage
 
-   -  discussed in `RA-1 Chapter
-      04 <./chapter04.md#storage-backend>`__
+   -  discussed in :ref:`ref_arch/openstack/chapters/chapter04:storage backend`
 
 -  Acceleration
 
@@ -632,8 +627,10 @@ Cloud Infrastructure physical Nodes
 
 The physical resources required for the Cloud Infrastructure are mainly
 based on COTS x86 hardware for control and data plane nodes. HW profiles
-are defined in `Reference Model chapters 5.3 and
-5.4 <../../../ref_model/chapters/chapter05.md>`__.
+are defined in Reference Model chapters
+:ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profile description`
+and
+:ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`.
 
 Network
 ^^^^^^^
