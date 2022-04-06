@@ -174,11 +174,12 @@ Kubernetes Application package manager
 In order for the application package managers to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
 
-=============== ============================ ========================================================================================================================================= ======================================================================== ==============================
-Ref             Specification                Details                                                                                                                                   Requirement Trace                                                        Reference Implementation Trace
-=============== ============================ ========================================================================================================================================= ======================================================================== ==============================
-``ra2.pkg.001`` API-based package management A package manager must use the Kubernetes APIs to manage application artifacts. Cluster-side components such as Tiller are not supported. `req.int.api.02 <./chapter02.md#kubernetes-architecture-requirements>`__
-=============== ============================ ========================================================================================================================================= ======================================================================== ==============================
+=============== ============================ ================================================================================================================================================ ======================================================================== ==============================
+Ref             Specification                Details                                                                                                                                          Requirement Trace                                                        Reference Implementation Trace
+=============== ============================ ================================================================================================================================================ ======================================================================== ==============================
+``ra2.pkg.001`` API-based package management A package manager must use the Kubernetes APIs to manage application artifacts. Cluster-side components such as Tiller are not supported.        `req.int.api.02 <./chapter02.md#kubernetes-architecture-requirements>`__
+``ra2.pkg.002`` Helm version 3               All workloads must be packaged using Helm (version 3) charts. The charts must be valid and deployable in order to pass the CNF conformance test.
+=============== ============================ ================================================================================================================================================ ======================================================================== ==============================
 
 **Table 4-7:** Kubernetes Application Package Manager Specifications
 
