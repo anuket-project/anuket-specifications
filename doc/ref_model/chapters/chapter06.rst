@@ -25,9 +25,9 @@ Cloud Infrastructure APIs
 
 The Cloud Infrastructure APIs consist of set of APIs that are externally and internally visible. The externally visible APIs are made available for orchestration and management of the execution environments that host workloads while the internally visible APIs support actions on the hypervisor and the physical resources. The ETSI NFV Reference MANO Architecture (:numref:`ETSI NFV architecture mapping`) shows a number of Interface points where specific or sets of APIs are supported. For the scope of the reference model the relevant interface points are shown in **Table 6-1**.
 
-.. :name: ETSI NFV architecture mapping
 .. figure:: ../figures/ch09-etsi-nfv-architecture-mapping.png
-   :alt: "ETSI NFV architecture mapping"
+   :name: ETSI NFV architecture mapping
+   :alt: ETSI NFV architecture mapping
 
    ETSI NFV architecture mapping
 

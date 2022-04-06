@@ -31,11 +31,11 @@ Configuration and Lifecycle Management
 
 Configuration management is concerned with defining the configuration of infrastructure and its components, and tracking (observing) the running configuration of that infrastructure, and any changes that take place. Modern configuration management practices such as desired state configuration management also mean that any changes from the desired state that are observed (aka the delta) are rectified by an orchestration / fulfilment component of the configuration management system. This "closed loop" mitigates against configuration drift in the infrastructure and its components. Our recommendation is to keep these closed loops as small as possible to reduce complexity and risk of error. :numref:`Configuration and Lifecycle Management` shows the configuration management "loop" and how this relates to lifecycle management.
 
-.. :name: Configuration and Lifecycle Management
 .. figure:: ../figures/ch09_config_mgmt.png
-  :alt: "Configuration and Lifecycle Management"
+   :name: Configuration and Lifecycle Management
+   :alt: "Configuration and Lifecycle Management"
 
-  Configuration and Lifecycle Management
+   Configuration and Lifecycle Management
 
 The initial desired state might be for 10 hosts with a particular set of configuration attributes, including the version of the hypervisor and any management agents. The configuration management system will take that as input (1) and configure the infrastructure as required (2). It will then observe the current state periodically over time (3) and in the case of a difference between the desired state and the observed state it will calculate the delta (4) and re-configure the infrastructure (5). For each lifecycle stage (create, update, delete) this loop takes place - for example if an update to the hypervisor version is defined in the desired state, the configuration management system will calculate the delta (e.g. v1 --> v2) and re-configure the infrastructure as required.
 
@@ -403,14 +403,14 @@ In an ideal case, observability data will be sent directly to the message broker
 
 Enforcing correct message structures (carrying the data) is performed using Schema Registry concepts. Even though it is not necessary to use a Schema Registry, it is highly recommended.
 
-.. :name: Producers and Consumers
 .. figure:: ../figures/RM-Ch09-Fig-Producers-Consumers.png
-  :alt: "Figure 9-2: Producers and Consumers"
+   :name: Producers and Consumers
+   :alt: Producers and Consumers
 
-  Producers and Consumers
+   Producers and Consumers
 
-.. :name: Broker Services
 .. figure:: ../figures/RM-Ch09-Fig-Broker-Service.png
-  :alt: "Figure 9-3: Broker Services"
+   :alt: Figure 9-3: Broker Services
+   :name: Broker Services
 
-  Broker Services
+   Broker Services

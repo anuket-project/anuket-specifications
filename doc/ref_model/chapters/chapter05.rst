@@ -11,9 +11,9 @@ Cloud Infrastructure Software layer is composed of 2 layers, :numref:`Cloud Infr
 -  The virtualisation Infrastructure layer, which is based on hypervisor virtualisation technology or container-based virtualisation technology. Container virtualisation can be nested in hypervisor-based virtualisation
 -  The host OS layer
 
-.. :name: Cloud Infrastructure software layers
 .. figure:: ../figures/ch05-cloud-infrastructure-sw-profile-layers.png
-   :alt: "Cloud Infrastructure software layers"
+   :name: Cloud Infrastructure software layers
+   :alt: Cloud Infrastructure software layers
 
    Cloud Infrastructure software layers
 
@@ -30,17 +30,17 @@ infra.sw.002 Virtualisation Infrastructure Layer <value> Values such as KVM, Hyp
 
 For a host (compute node or physical server), the virtualisation layer is an abstraction layer between hardware components (compute, storage, and network resources) and virtual resources allocated to a VM or a Pod. :numref:`Cloud Infrastructure Virtual resources` represents the virtual resources (virtual compute, virtual network, and virtual storage) allocated to a VM or a Pod and managed by the Cloud Infrastructure Manager.
 
-.. :name: Cloud Infrastructure Virtual resources
 .. figure:: ../figures/ch05_b_ref_profile.png
-   :alt: "Cloud Infrastructure Virtual resources"
+   :name: Cloud Infrastructure Virtual resources
+   :alt: Cloud Infrastructure Virtual resources
 
    Cloud Infrastructure Virtual resources
 
 A Cloud Infrastructure Software Profile is a set of features, capabilities, and metrics offered by a Cloud Infrastructure software layer and configured in the software layers (the Operating System (OS) and the virtualisation software (such as hypervisor)). :numref:`Cloud Infrastructure Software Profiles` depicts a high level view of the Basic and High Performance Cloud Infrastructure Profiles.
 
-.. :name: Cloud Infrastructure Software Profiles
 .. figure:: ../figures/RM-ch05-sw-profile.png
-   :alt: "Cloud Infrastructure Software Profiles"
+   :name: Cloud Infrastructure Software Profiles
+   :alt: Cloud Infrastructure Software Profiles
 
    Cloud Infrastructure Software Profiles
 
@@ -276,9 +276,9 @@ The support of a variety of different workload types, each with different (somet
 
 This chapter defines a simplified host, profile and related capabilities model associated with each of the different Cloud Infrastructure Hardware Profile and related capabilities; the two :ref:`chapters/chapter02:profiles, profile extensions & flavours` (aka host profiles, node profiles, hardware profiles) and some of their associated capabilities are shown in :numref:`Cloud Infrastructure Hardware Profiles and host associated capabilities`.
 
-.. :name: Cloud Infrastructure Hardware Profiles and host associated capabilities
 .. figure:: ../figures/RM-ch05-hw-profile.png
-   :alt: "Cloud Infrastructure Hardware Profiles and host associated capabilities"
+   :name: Cloud Infrastructure Hardware Profiles and host associated capabilities
+   :alt: Cloud Infrastructure Hardware Profiles and host associated capabilities
 
    Cloud Infrastructure Hardware Profiles and host associated capabilities
 
@@ -296,9 +296,9 @@ infra.hw.001 CPU Architecture              <value> Values such as x64, ARM, etc.
 
 The host profile properties are specified in the following sub-sections. The following diagram (:numref:`Generic model of a compute host for use in Host Profile configurations`) pictorially represents a high-level abstraction of a physical server (host).
 
-.. :name: Generic model of a compute host for use in Host Profile configurations
 .. figure:: ../figures/ch06_ref_hw_profile.PNG
-   :alt: "Generic model of a compute host for use in Host Profile configurations"
+   :name: Generic model of a compute host for use in Host Profile configurations
+   :alt: Generic model of a compute host for use in Host Profile configurations
 
    Generic model of a compute host for use in Host Profile configurations
 
