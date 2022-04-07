@@ -178,8 +178,10 @@ Architecture they must be implemented as per the following specifications:
 Ref             Specification                Details                                                                                                                                          Requirement Trace                                                        Reference Implementation Trace
 =============== ============================ ================================================================================================================================================ ======================================================================== ==============================
 ``ra2.pkg.001`` API-based package management A package manager must use the Kubernetes APIs to manage application artifacts. Cluster-side components such as Tiller are not supported.        `req.int.api.02 <./chapter02.md#kubernetes-architecture-requirements>`__
-``ra2.pkg.002`` Helm version 3               All workloads must be packaged using Helm (version 3) charts. The charts must be valid and deployable in order to pass the CNF conformance test.
+``ra2.pkg.002`` Helm version 3               All workloads must be packaged using Helm (version 3) charts.
 =============== ============================ ================================================================================================================================================ ======================================================================== ==============================
+
+Helm version 3 has been chosen as the Application packaging mechanism to ensure compliance with the `ONAP ASD NF descriptor specification <https://wiki.onap.org/display/DW/Application+Service+Descriptor+%28ASD%29+and+packaging+Proposals+for+CNF>`__ and `ETSI SOL0001 rel. 4 MCIOP specification <https://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/001/04.02.01_60/gs_NFV-SOL001v040201p.pdf>`__.
 
 **Table 4-7:** Kubernetes Application Package Manager Specifications
 
