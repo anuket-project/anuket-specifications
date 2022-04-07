@@ -752,68 +752,346 @@ Cloud Infrastructure Security Requirements
 |                                        |           | integrity (e.g. remote attestation,  |                         |
 |                                        |           | Trusted Platform Module).            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.003 | The Platform **must** support secure |`5.4 Securing Kubernetes |
+|ter07.md#workload-security>`__          |           | provisioning of workloads.           |orchestrator <./chapter05|
+|                                        |           |                                      |.md#securing-kubernetes-o|
+|                                        |           |                                      |rchestrator>`__          |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.004 | The Platform **must** support        |                         |
+|ter07.md#workload-security>`__          |           | Location assertion (for mandated     |                         |
+|                                        |           | in-country or location               |                         |
+|                                        |           | requirements).                       |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.005 | The Platform **must** support the    |`5.4 Securing Kubernetes |
+|ter07.md#workload-security>`__          |           | separation of production and         |orchestrator <./chapter05|
+|                                        |           | non-production Workloads.            |.md#securing-kubernetes-o|
+|                                        |           |                                      |rchestrator>`__          |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.006 | The Platform **must** support the    |`5.4 Securing Kubernetes |
+|ter07.md#workload-security>`__          |           | separation of Workloads based on     |orchestrator <./chapter05|
+|                                        |           | their categorisation (for example,   |.md#securing-kubernetes-o|
+|                                        |           | payment card information,            |rchestrator>`__ and `5.6 |
+|                                        |           | healthcare, etc.).                   |Separate Sensitive Worklo|
+|                                        |           |                                      |ad <./chapter05.md#separa|
+|                                        |           |                                      |te-sensitive-workload>`__|
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.007 | The Operator **must** implement      |`5.13 Trusted Registry <.|
+|ter07.md#workload-security>`__          |           | processes and tools to verify VNF    |/chapter05.md#trusted-reg|
+|                                        |           | authenticity and integrity.          |istry>`__                |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.001| Images from untrusted sources **must |`5.13 Trusted Registry <.|
+|ter07.md#image-security>`__             |           | not** be used.                       |/chapter05.md#trusted-reg|
+|                                        |           |                                      |istry>`__                |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.002| Images **must** be scanned to be     |`5.13 Trusted Registry <.|
+|ter07.md#image-security>`__             |           | maintained free from known           |/chapter05.md#trusted-reg|
+|                                        |           | vulnerabilities.                     |istry>`__                |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.003| Images **must not** be configured to |`5.11 Run-Time Security <|
+|ter07.md#image-security>`__             |           | run with privileges higher than the  |./chapter05.md#run-time-s|
+|                                        |           | privileges of the actor authorized   |ecurity>`__              |
+|                                        |           | to run them.                         |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.004| Images **must** only be accessible   |                         |
+|ter07.md#image-security>`__             |           | to authorized actors.                |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.005| Image Registries **must** only be    |                         |
+|ter07.md#image-security>`__             |           | accessible to authorized actors.     |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.006| Image Registries **must** only be    |`5.13 Trusted Registry <.|
+|ter07.md#image-security>`__             |           | accessible over secure networks that |/chapter05.md#trusted-reg|
+|                                        |           | enforce authentication, integrity    |istry>`__                |
+|                                        |           | and confidentiality.                 |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.007| Image registries **must** be clear   |`5.13 Trusted Registry <.|
+|ter07.md#image-security>`__             |           | of vulnerable and out of date        |/chapter05.md#trusted-reg|
+|                                        |           | versions.                            |istry>`__                |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.008| Images **must not** include any      |`5.12 Secrets Management |
+|ter07.md#image-security>`__             |           | secrets. Secrets include passwords,  |<./chapter05.md#secrets-m|
+|                                        |           | cloud provider credentials, SSH      |anagement>`__            |
+|                                        |           | keys, TLS certificate keys, etc.     |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.009| CIS Hardened Images **should** be    |                         |
+|ter07.md#image-security>`__             |           | used whenever possible.              |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.010| Minimalist base images **should** be |                         |
+|ter07.md#image-security>`__             |           | used whenever possible.              |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.001| The Platform **must** support Secure |                         |
+|ter07.md#security-lcm>`__               |           | Provisioning, Availability, and      |                         |
+|                                        |           | Deprovisioning (Secure Clean-Up) of  |                         |
+|                                        |           | workload resources where Secure      |                         |
+|                                        |           | Clean-Up includes tear-down, defense |                         |
+|                                        |           | against virus or other attacks.      |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.002| Cloud operations staff and systems   |`5.4 Securing Kubernetes |
+|ter07.md#security-lcm>`__               |           | **must** use management protocols    |orchestrator <./chapter05|
+|                                        |           | limiting security risk such as       |.md#securing-kubernetes-o|
+|                                        |           | SNMPv3, SSH v2, ICMP, NTP, syslog    |rchestrator>`__          |
+|                                        |           | and TLS v1.2 or higher.              |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.003| The Cloud Operator **must**          |                         |
+|ter07.md#security-lcm>`__               |           | implement and strictly follow change |                         |
+|                                        |           | management processes for Cloud       |                         |
+|                                        |           | Infrastructure, Cloud Infrastructure |                         |
+|                                        |           | Manager and other components of the  |                         |
+|                                        |           | cloud, and Platform change control   |                         |
+|                                        |           | on hardware.                         |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.004| The Cloud Operator **should**        |                         |
+|ter07.md#security-lcm>`__               |           | support automated templated approved |                         |
+|                                        |           | changes.                             |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.005| Platform **must** provide logs and   |`5.10 Enable Logging and |
+|ter07.md#security-lcm>`__               |           | these logs must be regularly         |Monitoring <./chapter05.m|
+|                                        |           | monitored for anomalous behavior.    |d#enable-logging-and-moni|
+|                                        |           |                                      |toring>`__               |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.006| The Platform **must** verify the     |                         |
+|ter07.md#security-lcm>`__               |           | integrity of all Resource management |                         |
+|                                        |           | requests.                            |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.007| The Platform **must** be able to     |`5.4 Securing Kubernetes |
+|ter07.md#security-lcm>`__               |           | update newly instantiated,           |orchestrator <./chapter05|
+|                                        |           | suspended, hibernated, migrated and  |.md#securing-kubernetes-o|
+|                                        |           | restarted images with current time   |rchestrator>`__          |
+|                                        |           | information.                         |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.008| The Platform **must** be able to     |                         |
+|ter07.md#security-lcm>`__               |           | update newly instantiated,           |                         |
+|                                        |           | suspended, hibernated, migrated and  |                         |
+|                                        |           | restarted images with relevant DNS   |                         |
+|                                        |           | information.                         |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.009| The Platform **must** be able to     |                         |
+|ter07.md#security-lcm>`__               |           | update the tag of newly              |                         |
+|                                        |           | instantiated, suspended,             |                         |
+|                                        |           | hibernated, migrated and restarted   |                         |
+|                                        |           | images with relevant geolocation     |                         |
+|                                        |           | (geographical) information.          |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.010| The Platform **must** log all        |                         |
+|ter07.md#security-lcm>`__               |           | changes to geolocation along with    |                         |
+|                                        |           | the mechanisms and sources of        |                         |
+|                                        |           | location information (i.e. GPS, IP   |                         |
+|                                        |           | block, and timing).                  |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.011| The Platform **must** implement      |                         |
+|ter07.md#security-lcm>`__               |           | Security life cycle management       |                         |
+|                                        |           | processes including the proactive    |                         |
+|                                        |           | update and patching of all deployed  |                         |
+|                                        |           | Cloud Infrastructure software.       |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.012| The Platform **must** log any access |                         |
+|ter07.md#security-lcm>`__               |           | privilege escalation.                |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.001| Platform **must** provide logs and   |                         |
+|ter07.md#monitoring-and-security-audit>`|           | these logs must be regularly         |                         |
+|__                                      |           | monitored for events of interest.    |                         |
+|                                        |           | The logs **must** contain the        |                         |
+|                                        |           | following fields: event type,        |                         |
+|                                        |           | date/time, protocol, service or      |                         |
+|                                        |           | program used for access,             |                         |
+|                                        |           | success/failure, login ID or process |                         |
+|                                        |           | ID, IP address and ports (source     |                         |
+|                                        |           | and destination) involved.           |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.002| Security logs **must** be time       |                         |
+|ter07.md#monitoring-and-security-audit>`|           | synchronised.                        |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.003| The Platform **must** log all        |                         |
+|ter07.md#monitoring-and-security-audit>`|           | changes to time server source, time, |                         |
+|                                        |           | date and time zones.                 |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.004| The Platform **must** secure and     |                         |
+|ter07.md#monitoring-and-security-audit>`|           | protect Audit logs (containing       |                         |
+|                                        |           | sensitive information) both          |                         |
+|                                        |           | in-transit and at rest.              |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.005| The Platform **must** Monitor and    |                         |
+|ter07.md#monitoring-and-security-audit>`|           | Audit various behaviours of          |                         |
+|                                        |           | connection and login attempts to     |                         |
+|                                        |           | detect access attacks and potential  |                         |
+|                                        |           | access attempts and take corrective  |                         |
+|                                        |           | actions accordingly.                 |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.006| The Platform **must** Monitor and    |                         |
+|ter07.md#monitoring-and-security-audit>`|           | Audit operations by authorized       |                         |
+|                                        |           | account access after login to detect |                         |
+|                                        |           | malicious operational activity and   |                         |
+|                                        |           | take corrective actions accordingly. |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.007| The Platform **must** Monitor and    |                         |
+|ter07.md#monitoring-and-security-audit>`|           | Audit security parameter             |                         |
+|                                        |           | configurations for compliance with   |                         |
+|                                        |           | defined security policies.           |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.008| The Platform **must** Monitor and    |                         |
+|ter07.md#monitoring-and-security-audit>`|           | Audit externally exposed interfaces  |                         |
+|                                        |           | for illegal access (attacks) and     |                         |
+|                                        |           | take corrective security hardening   |                         |
+|                                        |           | measures.                            |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.009| The Platform **must** Monitor and    |                         |
+|ter07.md#monitoring-and-security-audit>`|           | Audit service handling for various   |                         |
+|                                        |           | attacks (malformed messages,         |                         |
+|                                        |           | signalling flooding and replaying,   |                         |
+|                                        |           | etc.) and take corrective actions    |                         |
+|                                        |           | accordingly.                         |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.010| The Platform **must** Monitor and    |                         |
+|ter07.md#monitoring-and-security-audit>`|           | Audit running processes to detect    |                         |
+|                                        |           | unexpected or unauthorized processes |                         |
+|                                        |           | and take corrective actions          |                         |
+|                                        |           | accordingly.                         |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.011| The Platform **must** Monitor and    |                         |
+|ter07.md#monitoring-and-security-audit>`|           | Audit logs from infrastructure       |                         |
+|                                        |           | elements and workloads to detected   |                         |
+|                                        |           | anomalies in the system components   |                         |
+|                                        |           | and take corrective actions          |                         |
+|                                        |           | accordingly.                         |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.012| The Platform **must** Monitor and    |                         |
+|ter07.md#monitoring-and-security-audit>`|           | Audit Traffic patterns and volumes   |                         |
+|                                        |           | to prevent malware download          |                         |
+|                                        |           | attempts.                            |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.013| The monitoring system **must not**   |                         |
+|ter07.md#monitoring-and-security-audit>`|           | affect the security (integrity and   |                         |
+|                                        |           | confidentiality) of the              |                         |
+|                                        |           | infrastructure, workloads, or the    |                         |
+|                                        |           | user data (through back door         |                         |
+|                                        |           | entries).                            |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.014| The Monitoring systems **should      |                         |
+|ter07.md#monitoring-and-security-audit>`|           | not** impact IAAS, PAAS, and SAAS    |                         |
+|                                        |           | SLAs including availability SLAs.    |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.015| The Platform **must** ensure that    |                         |
+|ter07.md#monitoring-and-security-audit>`|           | the Monitoring systems are never     |                         |
+|                                        |           | starved of resources and **must**    |                         |
+|                                        |           | activate alarms when resource        |                         |
+|                                        |           | utilisation exceeds a configurable   |                         |
+|                                        |           | threshold.                           |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.016| The Platform Monitoring components   |                         |
+|ter07.md#monitoring-and-security-audit>`|           | **should** follow security best      |                         |
+|                                        |           | practices for auditing, including    |                         |
+|                                        |           | secure logging and tracing.          |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.017| The Platform **must** audit systems  |`5.3.3 Vulnerability asse|
+|                                        |           | for any missing security patches and |ssment <./chapter05.md#vu|
+|                                        |           | take appropriate actions.            |lnerability-assessment>`_|
+|                                        |           |                                      |_                        |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.018| The Platform, starting from          |`5.3.4 Patch management <|
+|                                        |           | initialization, **must** collect and |./chapter05.md#patch-mana|
+|                                        |           | analyze logs to identify security    |gement>`__               |
+|                                        |           | events, and store these events in an |                         |
+|                                        |           | external system.                     |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.019| The Platform’s components **must     |                         |
+|                                        |           | not** include an authentication      |                         |
+|                                        |           | credential, e.g., password, in any   |                         |
+|                                        |           | logs, even if encrypted.             |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.020| The Platform’s logging system        |                         |
+|                                        |           | **must** support the storage of      |                         |
+|                                        |           | security audit logs for a            |                         |
+|                                        |           | configurable period of time.         |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.021| The Platform **must** store security |                         |
+|                                        |           | events locally if the external       |                         |
+|                                        |           | logging system is unavailable and    |                         |
+|                                        |           | shall periodically attempt to send   |                         |
+|                                        |           | these to the external logging system |                         |
+|                                        |           | until successful.                    |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.001| Open source code **must** be         |`5.3.3 Vulnerability asse|
+|ter07.md#open-source-software>`__       |           | inspected by tools with various      |ssment <./chapter05.md#vu|
+|                                        |           | capabilities for static and dynamic  |lnerability-assessment>`_|
+|                                        |           | code analysis.                       |_                        |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.002| The `CVE (Common Vulnerabilities and |                         |
+|ter07.md#open-source-software>`__       |           |Exposures) <https://cve.mitre.org/>`__|                         |
+|                                        |           | **must** be used to identify         |                         |
+|                                        |           | vulnerabilities and their severity   |                         |
+|                                        |           | rating for open source code part of  |                         |
+|                                        |           | Cloud Infrastructure and workloads   |                         |
+|                                        |           | software.                            |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.003| Critical and high severity rated     |                         |
+|ter07.md#open-source-software>`__       |           | vulnerabilities **must** be fixed in |                         |
+|                                        |           | a timely manner. Refer to the `CVSS  |                         |
+|                                        |           | (Common Vulnerability Scoring System)|                         |
+|                                        |           | <https://www.first.org/cvss/>`__ to  |                         |
+|                                        |           | know a vulnerability score and its   |                         |
+|                                        |           | associated rate (low, medium, high,  |                         |
+|                                        |           | or critical).                        |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.004| A dedicated internal isolated        |`5.13 Trusted Registry <.|
+|ter07.md#open-source-software>`__       |           | repository separated from the        |/chapter05.md#trusted-reg|
+|                                        |           | production environment **must** be   |istry>`__                |
+|                                        |           | used to store vetted open source     |                         |
+|                                        |           | content.                             |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.005| A Software Bill of Materials (`SBOM <|                         |
+|ter07.md#open-source-software>`__       |           |https://www.ntia.gov/SBOM>`__)        |                         |
+|                                        |           | **should** be provided or build, and |                         |
+|                                        |           | maintained to identify the software  |                         |
+|                                        |           | components and their origins.        |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.9 <../../../ref_model/chapters/chap|sec.arch.00| Threat Modelling methodologies and   |                         |
+|ter07.md#iaac---secure-design-and-archit|1          | tools **should** be used during the  |                         |
+|ecture-stage-requirements>`__           |           | Secure Design and Architecture stage |                         |
+|                                        |           | triggered by Software Feature Design |                         |
+|                                        |           | trigger. It may be done manually or  |                         |
+|                                        |           | using tools like open source OWASP   |                         |
+|                                        |           | Threat Dragon                        |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.9 <../../../ref_model/chapters/chap|sec.arch.00| Security Control Baseline Assessment |                         |
+|ter07.md#iaac---secure-design-and-archit|2          | **should** be performed during the   |                         |
+|ecture-stage-requirements>`__           |           | Secure Design and Architecture stage |                         |
+|                                        |           | triggered by Software Feature Design |                         |
+|                                        |           | trigger. Typically done manually by  |                         |
+|                                        |           | internal or independent assessors.   |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.10 <../../../ref_model/chapters/cha|sec.code.00| SAST -Static Application Security    |                         |
+|pter07.md#iaac---secure-code-stage-requi|1          | Testing **must** be applied during   |                         |
+|rements>`__                             |           | Secure Coding stage triggered by     |                         |
+|                                        |           | Pull, Clone or Comment trigger.      |                         |
+|                                        |           | Security testing that analyses       |                         |
+|                                        |           | application source code for software |                         |
+|                                        |           | vulnerabilities and gaps against     |                         |
+|                                        |           | best practices. Example: open source |                         |
+|                                        |           | OWASP range of tools.                |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.10 <../../../ref_model/chapters/cha|sec.code.00| SCA – Software Composition Analysis  |                         |
+|pter07.md#iaac---secure-code-stage-requi|2          | **should** be applied during Secure  |                         |
+|rements>`__                             |           | Coding stage triggered by Pull,      |                         |
+|                                        |           | Clone or Comment trigger. Security   |                         |
+|                                        |           | testing that analyses application    |                         |
+|                                        |           | source code or compiled code for     |                         |
+|                                        |           | software components with known       |                         |
+|                                        |           | vulnerabilities. Example: open       |                         |
+|                                        |           | source OWASP range of tools.         |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.10 <../../../ref_model/chapters/cha|sec.code.00| Source Code Review **should** be     |                         |
+|pter07.md#iaac---secure-code-stage-requi|3          | performed continuously during Secure |                         |
+|rements>`__                             |           | Coding stage. Typically done         |                         |
+|                                        |           | manually.                            |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
+|`7.9.10 <../../../ref_model/chapters/cha|sec.code.00| Integrated SAST via IDE Plugins      |                         |
+|pter07.md#iaac---secure-code-stage-requi|4          | **should** be used during Secure     |                         |
+|rements>`__                             |           | Coding stage triggered by Developer  |                         |
+|                                        |           | Code trigger. On the local machine:  |                         |
++----------------------------------------+-----------+--------------------------------------+-------------------------+
 
 
 
-`7.9.4 <../../../ref_model/chapters/chapter07.md#workload-security>`__                                                   sec.wl.003   The Platform **must** support secure provisioning of workloads.                                                                                                                                                                                                                                                                                                                                          `5.4 Securing Kubernetes orchestrator <./chapter05.md#securing-kubernetes-orchestrator>`__
-`7.9.4 <../../../ref_model/chapters/chapter07.md#workload-security>`__                                                   sec.wl.004   The Platform **must** support Location assertion (for mandated in-country or location requirements).
-`7.9.4 <../../../ref_model/chapters/chapter07.md#workload-security>`__                                                   sec.wl.005   The Platform **must** support the separation of production and non-production Workloads.                                                                                                                                                                                                                                                                                                                 `5.4 Securing Kubernetes orchestrator <./chapter05.md#securing-kubernetes-orchestrator>`__
-`7.9.4 <../../../ref_model/chapters/chapter07.md#workload-security>`__                                                   sec.wl.006   The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.).                                                                                                                                                                                                                                                       `5.4 Securing Kubernetes orchestrator <./chapter05.md#securing-kubernetes-orchestrator>`__ and `5.6 Separate Sensitive Workload <./chapter05.md#separate-sensitive-workload>`__
-`7.9.4 <../../../ref_model/chapters/chapter07.md#workload-security>`__                                                   sec.wl.007   The Operator **must** implement processes and tools to verify VNF authenticity and integrity.                                                                                                                                                                                                                                                                                                            `5.13 Trusted Registry <./chapter05.md#trusted-registry>`__
-`7.9.5 <../../../ref_model/chapters/chapter07.md#image-security>`__                                                      sec.img.001  Images from untrusted sources **must not** be used.                                                                                                                                                                                                                                                                                                                                                      `5.13 Trusted Registry <./chapter05.md#trusted-registry>`__
-`7.9.5 <../../../ref_model/chapters/chapter07.md#image-security>`__                                                      sec.img.002  Images **must** be scanned to be maintained free from known vulnerabilities.                                                                                                                                                                                                                                                                                                                             `5.13 Trusted Registry <./chapter05.md#trusted-registry>`__
-`7.9.5 <../../../ref_model/chapters/chapter07.md#image-security>`__                                                      sec.img.003  Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them.                                                                                                                                                                                                                                                                                 `5.11 Run-Time Security <./chapter05.md#run-time-security>`__
-`7.9.5 <../../../ref_model/chapters/chapter07.md#image-security>`__                                                      sec.img.004  Images **must** only be accessible to authorized actors.
-`7.9.5 <../../../ref_model/chapters/chapter07.md#image-security>`__                                                      sec.img.005  Image Registries **must** only be accessible to authorized actors.
-`7.9.5 <../../../ref_model/chapters/chapter07.md#image-security>`__                                                      sec.img.006  Image Registries **must** only be accessible over secure networks that enforce authentication, integrity and confidentiality.                                                                                                                                                                                                                                                                            `5.13 Trusted Registry <./chapter05.md#trusted-registry>`__
-`7.9.5 <../../../ref_model/chapters/chapter07.md#image-security>`__                                                      sec.img.007  Image registries **must** be clear of vulnerable and out of date versions.                                                                                                                                                                                                                                                                                                                               `5.13 Trusted Registry <./chapter05.md#trusted-registry>`__
-`7.9.5 <../../../ref_model/chapters/chapter07.md#image-security>`__                                                      sec.img.008  Images **must not** include any secrets. Secrets include passwords, cloud provider credentials, SSH keys, TLS certificate keys, etc.                                                                                                                                                                                                                                                                     `5.12 Secrets Management <./chapter05.md#secrets-management>`__
-`7.9.5 <../../../ref_model/chapters/chapter07.md#image-security>`__                                                      sec.img.009  CIS Hardened Images **should** be used whenever possible.
-`7.9.5 <../../../ref_model/chapters/chapter07.md#image-security>`__                                                      sec.img.010  Minimalist base images **should** be used whenever possible.
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.001  The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks.
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.002  Cloud operations staff and systems **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher.                                                                                                                                                                                                                                            `5.4 Securing Kubernetes orchestrator <./chapter05.md#securing-kubernetes-orchestrator>`__
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.003  The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware.
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.004  The Cloud Operator **should** support automated templated approved changes.
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.005  Platform **must** provide logs and these logs must be regularly monitored for anomalous behavior.                                                                                                                                                                                                                                                                                                        `5.10 Enable Logging and Monitoring <./chapter05.md#enable-logging-and-monitoring>`__
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.006  The Platform **must** verify the integrity of all Resource management requests.
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.007  The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information.                                                                                                                                                                                                                                                          `5.4 Securing Kubernetes orchestrator <./chapter05.md#securing-kubernetes-orchestrator>`__
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.008  The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information.
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.009  The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information.
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.010  The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing).
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.011  The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software.
-`7.9.6 <../../../ref_model/chapters/chapter07.md#security-lcm>`__                                                        sec.lcm.012  The Platform **must** log any access privilege escalation.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.001  Platform **must** provide logs and these logs must be regularly monitored for events of interest. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.002  Security logs **must** be time synchronised.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.003  The Platform **must** log all changes to time server source, time, date and time zones.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.004  The Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.005  The Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.006  The Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions accordingly.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.007  The Platform **must** Monitor and Audit security parameter configurations for compliance with defined security policies.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.008  The Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.009  The Platform **must** Monitor and Audit service handling for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.010  The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.011  The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.012  The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.013  The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries).
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.014  The Monitoring systems **should not** impact IAAS, PAAS, and SAAS SLAs including availability SLAs.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.015  The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.016  The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.017  The Platform **must** audit systems for any missing security patches and take appropriate actions.                                                                                                                                                                                                                                                                                                       `5.3.3 Vulnerability assessment <./chapter05.md#vulnerability-assessment>`__
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.018  The Platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system.                                                                                                                                                                                                                                                 `5.3.4 Patch management <./chapter05.md#patch-management>`__
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.019  The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.020  The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time.
-`7.9.7 <../../../ref_model/chapters/chapter07.md#monitoring-and-security-audit>`__                                       sec.mon.021  The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful.
-`7.9.8 <../../../ref_model/chapters/chapter07.md#open-source-software>`__                                                sec.oss.001  Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis.                                                                                                                                                                                                                                                                                          `5.3.3 Vulnerability assessment <./chapter05.md#vulnerability-assessment>`__
-`7.9.8 <../../../ref_model/chapters/chapter07.md#open-source-software>`__                                                sec.oss.002  The `CVE (Common Vulnerabilities and Exposures) <https://cve.mitre.org/>`__ **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software.
-`7.9.8 <../../../ref_model/chapters/chapter07.md#open-source-software>`__                                                sec.oss.003  Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the `CVSS (Common Vulnerability Scoring System) <https://www.first.org/cvss/>`__ to know a vulnerability score and its associated rate (low, medium, high, or critical).
-`7.9.8 <../../../ref_model/chapters/chapter07.md#open-source-software>`__                                                sec.oss.004  A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content.                                                                                                                                                                                                                                                                 `5.13 Trusted Registry <./chapter05.md#trusted-registry>`__
-`7.9.8 <../../../ref_model/chapters/chapter07.md#open-source-software>`__                                                sec.oss.005  A Software Bill of Materials (`SBOM <https://www.ntia.gov/SBOM>`__) **should** be provided or build, and maintained to identify the software components and their origins.
-`7.9.9 <../../../ref_model/chapters/chapter07.md#iaac---secure-design-and-architecture-stage-requirements>`__            sec.arch.001 Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger. It may be done manually or using tools like open source OWASP Threat Dragon
-`7.9.9 <../../../ref_model/chapters/chapter07.md#iaac---secure-design-and-architecture-stage-requirements>`__            sec.arch.002 Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger. Typically done manually by internal or independent assessors.
-`7.9.10 <../../../ref_model/chapters/chapter07.md#iaac---secure-code-stage-requirements>`__                              sec.code.001 SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code for software vulnerabilities and gaps against best practices. Example: open source OWASP range of tools.
-`7.9.10 <../../../ref_model/chapters/chapter07.md#iaac---secure-code-stage-requirements>`__                              sec.code.002 SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code or compiled code for software components with known vulnerabilities. Example: open source OWASP range of tools.
-`7.9.10 <../../../ref_model/chapters/chapter07.md#iaac---secure-code-stage-requirements>`__                              sec.code.003 Source Code Review **should** be performed continuously during Secure Coding stage. Typically done manually.
-`7.9.10 <../../../ref_model/chapters/chapter07.md#iaac---secure-code-stage-requirements>`__                              sec.code.004 Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. On the local machine: through the IDE or integrated test suites; triggered on completion of coding be developer.
+
 `7.9.10 <../../../ref_model/chapters/chapter07.md#iaac---secure-code-stage-requirements>`__                              sec.code.005 SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. Continuous delivery pre-deployment: scanning prior to deployment.
 `7.9.11 <../../../ref_model/chapters/chapter07.md#iaac---continuous-build-integration-and-testing-stage-requirements>`__ sec.bld.001  SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. Example: open source OWASP range of tools.
 `7.9.11 <../../../ref_model/chapters/chapter07.md#iaac---continuous-build-integration-and-testing-stage-requirements>`__ sec.bld.002  SCA – Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. Example: open source OWASP range of tools.
