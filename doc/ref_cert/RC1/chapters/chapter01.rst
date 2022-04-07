@@ -230,11 +230,11 @@ place of older, stale projects.
 
 **NFVI+VNF Instance Type:**
 
--  Standard compute flavours to be tested are defined in `chapter
-   4.2.1 <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#virtual-network-interface-specifications>`__
+-  Standard compute flavours to be tested are defined in
+   :ref:`ref_model/chapters/chapter04:virtual network interface specifications`
 -  Performance profiles come in the form of Basic, Network Intensive,
-   and Compute intensive. Refer to `chapter
-   2.3 <https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html#analysis>`__
+   and Compute intensive. Refer to
+   :ref:`ref_model/chapters/chapter02:analysis`
    for details on these profiles.
 
 Results Collation & Presentation

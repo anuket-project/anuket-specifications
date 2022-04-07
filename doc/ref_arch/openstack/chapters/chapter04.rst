@@ -19,8 +19,7 @@ structure of control and user planes, operating systems, hypervisors and
 BIOS configurations, and architectural details of underlay and overlay
 networking, and storage, and the distribution of OpenStack service
 components among nodes. The chapter also covers implementation support
-for the `Reference Model profiles and
-flavours <../../../ref_model/chapters/chapter02.md#24-profiles--flavours>`__;
+for the :ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours`;
 the OpenStack flavor types capture both the sizing and the profile
 configuration (of the host).
 
@@ -73,8 +72,8 @@ OpenStack Control Plane Servers (Control Nodes)
 -  BIOS Requirements
 
 For OpenStack control nodes we use the BIOS parameters for the basic
-profile defined in `Chapter 5.4 of the Reference
-Model <../../../ref_model/chapters/chapter05.md#5.4>`__. Additionally,
+profile defined in :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`.
+Additionally,
 for OpenStack we need to set the following boot parameters:
 
 ================================= ===============
@@ -114,7 +113,7 @@ Network nodes
 ^^^^^^^^^^^^^
 
 Networks nodes are mainly used for L3 traffic management for overlay
-tenant network (see more detail in section 4.3.1.5 Neutron).
+tenant network (see more detail in section Neutron).
 
 -  BIOS requirements
 
@@ -140,7 +139,7 @@ Boot disks          RAID 1
 
    -  Scale out of network node is not easy
    -  DVR can be an option for large deployment (see more detail in
-      chapter 4.3.1.5 - Neutron)
+      section Neutron)
 
 Storage nodes
 ^^^^^^^^^^^^^
@@ -153,8 +152,7 @@ BIOS/boot Parameter Value
 Boot disks          RAID 1
 =================== ======
 
--  HW specifications: please see `RM Chapter
-   3.6 <../../../ref_model/chapters/chapter03.md#3.6>`__
+-  HW specifications: please see :ref:`ref_model/chapters/chapter03:storage`
 -  How many nodes to meet SLA: Active-Passive is the default and
    recently OpenStack started to support Active-Active
 -  Sizing rules: minimum 2 x 1 TB; recommended 2 x 10 TB
@@ -166,20 +164,17 @@ This section specifies the compute node configurations to support the
 Basic and High-Performance profiles; in OpenStack this would be
 accomplished by specifying the configurations when creating “flavors”.
 The cloud operator may choose to implement certain profile-extensions
-(`RM 2.4 Profile
-Extensions <../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations>`__)
+(:ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`)
 as a set of standard configurations, of a given profile, capturing some
 of the variability through different values or extra specifications.
 
 -  The software and hardware configurations are as specified in the
-   `Reference Model chapter
-   5.4 <../../../ref_model/chapters/chapter05.md#5.4>`__
+   :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
 
 -  BIOS requirement
 
-   -  The general BIOS requirements are described in the `Reference
-      Model chapter
-      5.4 <../../../ref_model/chapters/chapter05.md#5.4>`__
+   -  The general BIOS requirements are described in the
+      :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
 
 **Example Profiles and their Extensions**
 
@@ -190,63 +185,63 @@ technologies. Table 4-2 lists a few simple examples of profile
 extensions and some of their capabilities.
 
 +--------+--------+--------+--------+--------+--------+--------+--------+
-| P      | Descr  | CPU    | SMT    | CPU    | NUMA   | Huge   | Data   |
-| rofile | iption | Allo   |        | P      |        | pages  | T      |
-| Exte   |        | cation |        | inning |        |        | raffic |
+| P\     | Descr\ | CPU    | SMT    | CPU    | NUMA   | Huge   | Data   |
+| rofile | iption | Allo\  |        | P\     |        | pages  | T\     |
+| Exte\  |        | cation |        | inning |        |        | raffic |
 | nsions |        | Ratio  |        |        |        |        |        |
 +========+========+========+========+========+========+========+========+
 | B1     | Basic  | 1:1    | Y      | N      | N      | N      | OVS-   |
-|        | Pro    |        |        |        |        |        | kernel |
-|        | fileNo |        |        |        |        |        |        |
-|        | CPU    |        |        |        |        |        |        |
+|        | Pro\   |        |        |        |        |        | kernel |
+|        | file   |        |        |        |        |        |        |
+|        | NoCPU  |        |        |        |        |        |        |
 |        | over-  |        |        |        |        |        |        |
-|        | subscr |        |        |        |        |        |        |
+|        | subscr\|        |        |        |        |        |        |
 |        | iption |        |        |        |        |        |        |
-|        | p      |        |        |        |        |        |        |
+|        | p\     |        |        |        |        |        |        |
 |        | rofile |        |        |        |        |        |        |
-|        | ext    |        |        |        |        |        |        |
+|        | ext\   |        |        |        |        |        |        |
 |        | ension |        |        |        |        |        |        |
 +--------+--------+--------+--------+--------+--------+--------+--------+
 | B4     | Basic  | 4:1    | Y      | N      | N      | N      | OVS-   |
-|        | Pro    |        |        |        |        |        | kernel |
-|        | file4x |        |        |        |        |        |        |
-|        | CPU    |        |        |        |        |        |        |
+|        | Pro\   |        |        |        |        |        | kernel |
+|        | file   |        |        |        |        |        |        |
+|        | 4xCPU  |        |        |        |        |        |        |
 |        | over-  |        |        |        |        |        |        |
-|        | subscr |        |        |        |        |        |        |
+|        | subscr\|        |        |        |        |        |        |
 |        | iption |        |        |        |        |        |        |
-|        | p      |        |        |        |        |        |        |
+|        | p\     |        |        |        |        |        |        |
 |        | rofile |        |        |        |        |        |        |
-|        | ext    |        |        |        |        |        |        |
+|        | ext\   |        |        |        |        |        |        |
 |        | ension |        |        |        |        |        |        |
 +--------+--------+--------+--------+--------+--------+--------+--------+
 | HV     | High   | 1:1    | Y      | Y      | Y      | Y      | OVS-   |
-|        | Perfo  |        |        |        |        |        | kernel |
+|        | Perfo\ |        |        |        |        |        | kernel |
 |        | rmance |        |        |        |        |        |        |
-|        | P      |        |        |        |        |        |        |
+|        | P\     |        |        |        |        |        |        |
 |        | rofile |        |        |        |        |        |        |
 +--------+--------+--------+--------+--------+--------+--------+--------+
-| HD     | High   | 1:1    | Y      | Y      | Y      | Y      | OV     |
-|        | Perfo  |        |        |        |        |        | S-DPDK |
+| HD     | High   | 1:1    | Y      | Y      | Y      | Y      | OVS-   |
+|        | Perfo\ |        |        |        |        |        | DPDK   |
 |        | rmance |        |        |        |        |        |        |
-|        | P      |        |        |        |        |        |        |
+|        | P\     |        |        |        |        |        |        |
 |        | rofile |        |        |        |        |        |        |
 |        | with   |        |        |        |        |        |        |
 |        | DPDK   |        |        |        |        |        |        |
-|        | p      |        |        |        |        |        |        |
+|        | p\     |        |        |        |        |        |        |
 |        | rofile |        |        |        |        |        |        |
-|        | ext    |        |        |        |        |        |        |
+|        | ext\   |        |        |        |        |        |        |
 |        | ension |        |        |        |        |        |        |
 +--------+--------+--------+--------+--------+--------+--------+--------+
 | HS     | High   | 1:1    | Y      | Y      | Y      | Y      | SR-IOV |
-|        | Perfo  |        |        |        |        |        |        |
+|        | Perfo\ |        |        |        |        |        |        |
 |        | rmance |        |        |        |        |        |        |
-|        | P      |        |        |        |        |        |        |
+|        | P\     |        |        |        |        |        |        |
 |        | rofile |        |        |        |        |        |        |
 |        | with   |        |        |        |        |        |        |
 |        | SR-IOV |        |        |        |        |        |        |
-|        | p      |        |        |        |        |        |        |
+|        | p\     |        |        |        |        |        |        |
 |        | rofile |        |        |        |        |        |        |
-|        | ext    |        |        |        |        |        |        |
+|        | ext\   |        |        |        |        |        |        |
 |        | ension |        |        |        |        |        |        |
 +--------+--------+--------+--------+--------+--------+--------+--------+
 
@@ -255,8 +250,8 @@ Table 4-2: Profile Extensions and Capabilities
 **BIOS Settings**
 
 A number of capabilities need to be enabled in the BIOS (such as NUMA
-and SMT); the Reference Model section on “`Cloud Infrastructure Software
-profile description <../../../ref_model/chapters/chapter05.md#5.1>`__”
+and SMT); the Reference Model section on
+:ref:`ref_model/chapters/chapter05:cloud infrastructure software profile description`
 specifies the capabilities required to be configured. Please note that
 capabilities may need to be configured in multiple systems. For
 OpenStack, we also need to set the following boot parameters:
@@ -278,40 +273,40 @@ Boot disks          RAID 1 RAID 1
 -  In case of DPDK usage:
 
 +-------------------------------------------------------------+--------+
-| Layer                                                       | Descr  |
+| Layer                                                       | Descr\ |
 |                                                             | iption |
 +=============================================================+========+
-| Cloud infrastructure                                        | Imp    |
+| Cloud infrastructure                                        | Imp\   |
 |                                                             | ortant |
 |                                                             | is     |
-|                                                             | pla    |
+|                                                             | pla\   |
 |                                                             | cement |
 |                                                             | of     |
 |                                                             | NICs   |
 |                                                             | to get |
-|                                                             | N      |
-|                                                             | UMA-ba |
+|                                                             | N\     |
+|                                                             | UMA-ba\|
 |                                                             | lanced |
 |                                                             | system |
-|                                                             | (bal   |
+|                                                             | (bal\  |
 |                                                             | ancing |
 |                                                             | the    |
 |                                                             | I/O,   |
-|                                                             | m      |
+|                                                             | m\     |
 |                                                             | emory, |
 |                                                             | and    |
-|                                                             | s      |
+|                                                             | s\     |
 |                                                             | torage |
 |                                                             | across |
 |                                                             | both   |
-|                                                             | soc    |
+|                                                             | soc\   |
 |                                                             | kets), |
 |                                                             | and    |
-|                                                             | c      |
-|                                                             | onfigu |
+|                                                             | c\     |
+|                                                             | onfigu\|
 |                                                             | ration |
 |                                                             | of NIC |
-|                                                             | fea    |
+|                                                             | fea\   |
 |                                                             | tures. |
 |                                                             | Server |
 |                                                             | BIOS   |
@@ -319,84 +314,84 @@ Boot disks          RAID 1 RAID 1
 |                                                             | Host   |
 |                                                             | OS     |
 |                                                             | kernel |
-|                                                             | c      |
+|                                                             | c\     |
 |                                                             | ommand |
 |                                                             | line   |
-|                                                             | se     |
+|                                                             | se\    |
 |                                                             | ttings |
 |                                                             | are    |
-|                                                             | des    |
+|                                                             | des\   |
 |                                                             | cribed |
 |                                                             | in     |
 |                                                             | `DPDK  |
-|                                                             | r      |
+|                                                             | r\     |
 |                                                             | elease |
 |                                                             | notes  |
 |                                                             | <http: |
-|                                                             | //doc. |
-|                                                             | dpdk.o |
-|                                                             | rg/gui |
-|                                                             | des/re |
-|                                                             | l_note |
+|                                                             | //doc.\|
+|                                                             | dpdk.o\|
+|                                                             | rg/gui\|
+|                                                             | des/re\|
+|                                                             | l_note\|
 |                                                             | s/>`__ |
 |                                                             | and    |
 |                                                             | `DPDK  |
-|                                                             | perfo  |
+|                                                             | perfo\ |
 |                                                             | rmance |
-|                                                             | report |
-|                                                             | s <htt |
-|                                                             | p://co |
-|                                                             | re.dpd |
-|                                                             | k.org/ |
-|                                                             | perf-r |
-|                                                             | eports |
+|                                                             | report\|
+|                                                             | s <htt\|
+|                                                             | p://co\|
+|                                                             | re.dpd\|
+|                                                             | k.org/\|
+|                                                             | perf-r\|
+|                                                             | eports\|
 |                                                             | />`__. |
-|                                                             | Dis    |
+|                                                             | Dis\   |
 |                                                             | abling |
 |                                                             | power  |
-|                                                             | se     |
+|                                                             | se\    |
 |                                                             | ttings |
 |                                                             | (like  |
 |                                                             | Intel  |
 |                                                             | Turbo  |
 |                                                             | Boost  |
-|                                                             | Techn  |
+|                                                             | Techn\ |
 |                                                             | ology) |
 |                                                             | brings |
 |                                                             | stable |
-|                                                             | perfo  |
+|                                                             | perfo\ |
 |                                                             | rmance |
-|                                                             | re     |
+|                                                             | re\    |
 |                                                             | sults, |
-|                                                             | al     |
+|                                                             | al\    |
 |                                                             | though |
-|                                                             | u      |
-|                                                             | nderst |
+|                                                             | u\     |
+|                                                             | nderst\|
 |                                                             | anding |
 |                                                             | if and |
 |                                                             | when   |
 |                                                             | they   |
-|                                                             | b      |
+|                                                             | b\     |
 |                                                             | enefit |
-|                                                             | wor    |
+|                                                             | wor\   |
 |                                                             | kloads |
 |                                                             | and    |
-|                                                             | en     |
+|                                                             | en\    |
 |                                                             | abling |
 |                                                             | them   |
 |                                                             | can    |
-|                                                             | a      |
+|                                                             | a\     |
 |                                                             | chieve |
 |                                                             | better |
-|                                                             | perfo  |
+|                                                             | perfo\ |
 |                                                             | rmance |
-|                                                             | re     |
+|                                                             | re\    |
 |                                                             | sults. |
 +-------------------------------------------------------------+--------+
 | Workload                                                    | DPDK   |
 |                                                             | uses   |
 |                                                             | core   |
-|                                                             | af     |
+|                                                             | af\    |
 |                                                             | finity |
 |                                                             | along  |
 |                                                             | with   |
@@ -405,46 +400,46 @@ Boot disks          RAID 1 RAID 1
 |                                                             | huge   |
 |                                                             | pages, |
 |                                                             | NUMA   |
-|                                                             | se     |
+|                                                             | se\    |
 |                                                             | ttings |
 |                                                             | (to    |
 |                                                             | avoid  |
-|                                                             | cr     |
+|                                                             | cr\    |
 |                                                             | ossing |
-|                                                             | intec  |
+|                                                             | intec\ |
 |                                                             | onnect |
-|                                                             | b      |
+|                                                             | b\     |
 |                                                             | etween |
 |                                                             | CPUs), |
 |                                                             | and    |
 |                                                             | DPDK   |
 |                                                             | Poll   |
 |                                                             | Mode   |
-|                                                             | D      |
+|                                                             | D\     |
 |                                                             | rivers |
 |                                                             | (PMD,  |
 |                                                             | on     |
-|                                                             | re     |
+|                                                             | re\    |
 |                                                             | served |
 |                                                             | cores) |
 |                                                             | to get |
 |                                                             | the    |
 |                                                             | best   |
-|                                                             | perfor |
+|                                                             | perfor\|
 |                                                             | mance. |
 |                                                             | DPDK   |
-|                                                             | ve     |
+|                                                             | ve\    |
 |                                                             | rsions |
 |                                                             | xx.11  |
 |                                                             | are    |
-|                                                             | Lon    |
+|                                                             | Lon\   |
 |                                                             | g-Term |
-|                                                             | S      |
+|                                                             | S\     |
 |                                                             | upport |
-|                                                             | main   |
+|                                                             | main\  |
 |                                                             | tained |
 |                                                             | stable |
-|                                                             | r      |
+|                                                             | r\     |
 |                                                             | elease |
 |                                                             | with   |
 |                                                             | back-  |
@@ -452,9 +447,9 @@ Boot disks          RAID 1 RAID 1
 |                                                             | bug    |
 |                                                             | fixes  |
 |                                                             | for a  |
-|                                                             | tw     |
+|                                                             | tw\    |
 |                                                             | o-year |
-|                                                             | p      |
+|                                                             | p\     |
 |                                                             | eriod. |
 +-------------------------------------------------------------+--------+
 
@@ -473,20 +468,20 @@ Average vCPU per instance v
 Average RAM per instance  ri
 ========================= ========
 
-+----------------+----------------+----------------+----------------+
-|                |                | Basic          | Hi             |
-|                |                |                | gh-Performance |
-+================+================+================+================+
-| # of VMs per   | (              | 4              | (s\ *c*\ t)/v  |
-| node (vCPU)    | s\ *c*\ t*o)/v | \ *(s*\ c*t)/v |                |
-+----------------+----------------+----------------+----------------+
-| # of VMs per   | rt/ri          | rt/ri          | rt/ri          |
-| node (RAM)     |                |                |                |
-+----------------+----------------+----------------+----------------+
-| Max # of VMs   |                | min(4\         | min(           |
-| per node       |                |  *(s*\ c*t)/v, | (s\ *c*\ t)/v, |
-|                |                | rt/ri)         | rt/ri)         |
-+----------------+----------------+----------------+----------------+
++----------------+-----------------+-----------------+------------------+
+|                |                 | Basic           | High-Performance |
+|                |                 |                 |                  |
++================+=================+=================+==================+
+| # of VMs per   | (s              | 4               | (s \*c\* t)/v    |
+| node (vCPU)    | \*c\* t\*o)/v   | \*(sct)/v       |                  |
++----------------+-----------------+-----------------+------------------+
+| # of VMs per   | rt/ri           | rt/ri           | rt/ri            |
+| node (RAM)     |                 |                 |                  |
++----------------+-----------------+-----------------+------------------+
+| Max # of VMs   |                 | min(4\*(sct)/v, | min(\            |
+| per node       |                 | rt/ri)          | (s \*c\*\ t)/v,\ |
+|                |                 |                 | rt/ri)           |
++----------------+-----------------+-----------------+------------------+
 
 Caveats:
 
@@ -515,8 +510,7 @@ Compute Resource Pooling Considerations
 Reservation of Compute Node Cores
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `RA-1 2.3.2 Infrastructure
-Requirements <./chapter02.md#232-infrastructure-requirements>`__
+The :ref:`ref_arch/openstack/chapters/chapter02:infrastructure requirements`
 ``inf.com.08`` requires the allocation of “certain number of host
 cores/threads to non-tenant workloads such as for OpenStack services.” A
 number (“n”) of random cores can be reserved for host services
@@ -687,8 +681,7 @@ Example Host Configurations
 
 .. figure:: ../figures/RA1-Ch04-Basic-host-config.png
    :alt: Basic Profile Host Configuration
-
-   Basic Profile Host Configuration
+   :align: center
 
 Figure 4-1: Basic Profile Host Configuration (example and simplified)
 
@@ -721,11 +714,8 @@ Figure 4-2 shows the networking configuration where the storage and OAM
 share networking but are independent of the PXE network.
 
 .. figure:: ../figures/RA1-Ch04-Basic-host-config-w-Storage-Network.png
-   :alt: Basic Profile Host Configuration with shared Storage and OAM
-   networking
-
-   Basic Profile Host Configuration with shared Storage and OAM
-   networking
+   :alt: Basic Profile Host Config with shared Storage and OAM networking
+   :align: center
 
 Figure 4-2: Basic Profile Host Configuration with shared Storage and OAM
 networking (example and simplified)
@@ -747,7 +737,7 @@ configured:
 | GRUB bootloader       | Description           | Values                |
 | Parameter             |                       |                       |
 +=======================+=======================+=======================+
-| isolcpus (Applicable  | A set of cores        | isolcpus=1-19, 21-39, |
+| isolcpus (Applicable  | A set of cores        | isolcpus=1-19, 21-39,\|
 | only on Compute       | isolated from the     | 41-59, 61-79          |
 | Servers)              | host processes.       |                       |
 |                       | Contains vCPUs        |                       |
@@ -801,10 +791,8 @@ An example of the data traffic configuration for the HD (OVS-DPDK)
 Profile Extensions is shown in Figure 4-3.
 
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-DPDK.png
-   :alt: High Performance Profile Host Configuration with DPDK
-   acceleration
-
-   High Performance Profile Host Configuration with DPDK acceleration
+   :alt: High Performance Profile Host Conf with DPDK
+   :align: center
 
 Figure 4-3: High Performance Profile Host Configuration with DPDK
 acceleration (example and simplified)
@@ -817,7 +805,7 @@ needs to be configured:
 | GRUB bootloader       | Description           | Values                |
 | Parameter             |                       |                       |
 +=======================+=======================+=======================+
-| isolcpus (Applicable  | A set of cores        | isolcpus=3-19, 23-39, |
+| isolcpus (Applicable  | A set of cores        | isolcpus=3-19, 23-39,\|
 | only on Compute       | isolated from the     | 43-59, 63-79          |
 | Servers)              | host processes.       |                       |
 |                       | Contains vCPUs        |                       |
@@ -832,8 +820,7 @@ Extensions is shown in Figure 4-4.
 
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-SRIOV.png
    :alt: High Performance Profile Host Configuration with SR-IOV
-
-   High Performance Profile Host Configuration with SR-IOV
+   :align: center
 
 Figure 4-4: High Performance Profile Host Configuration with SR-IOV
 (example and simplified)
@@ -846,7 +833,7 @@ configured:
 | GRUB bootloader       | Description           | Values                |
 | Parameter             |                       |                       |
 +=======================+=======================+=======================+
-| isolcpus (Applicable  | A set of cores        | isolcpus=1-19, 21-39, |
+| isolcpus (Applicable  | A set of cores        | isolcpus=1-19, 21-39,\|
 | only on Compute       | isolated from the     | 41-59, 61-79          |
 | Servers)              | host processes.       |                       |
 |                       | Contains vCPUs        |                       |
@@ -886,8 +873,7 @@ High Level Logical Network Layout
 
 .. figure:: ../figures/RA1-Ch04-Indicative-OpenStack-Network.png
    :alt: Indicative OpenStack Network Layout
-
-   Indicative OpenStack Network Layout
+   :align: center
 
 Figure 4-5: Indicative OpenStack Network Layout
 
@@ -1038,9 +1024,9 @@ extensions for these standard attributes automatically incorporated.
 Additions to resources, such as additional attributes, must be
 accompanied by an extension.
 
-`Chapter 5 <chapter05.md>`__, “Interfaces and APIs”, of this Reference
-Architecture provides a list of `Neutron
-Extensions <chapter05.md#525-neutron>`__. The current available
+:doc:`ref_arch/openstack/chapters/chapter05` of this Reference
+Architecture provides a list of :ref:`Neutron Extensions<ref_arch/openstack/chapters/chapter05:neutron>`.
+The current available
 extensions can be obtained using the `List Extensions
 API <https://docs.openstack.org/api-ref/network/v2/#list-extensions>`__
 and details about an extension using the `Show extension details
@@ -1161,8 +1147,7 @@ RESTful gateway with a Swift-compatible API for Object Storage.
 
 .. figure:: ../figures/RA1-Ch04-Ceph.png
    :alt: Ceph Storage System
-
-   Ceph Storage System
+   :align: center
 
 Figure 4-6: Ceph Storage System
 
@@ -1207,7 +1192,7 @@ VIM Services
 ~~~~~~~~~~~~
 
 A high-level overview of the core OpenStack Services was provided in
-`Chapter 3 <./chapter03.md>`__. In this section we describe the core and
+:doc:`ref_arch/openstack/chapters/chapter03`. In this section we describe the core and
 other needed services in more detail.
 
 Keystone
@@ -1283,83 +1268,83 @@ network nodes only deal with tenant networks and not provider networks.
 Also, network nodes are not required when SDN is utilised for
 networking.
 
-+-------------------+-------------------+---------------+---------------+
-| Networking        | Description       | Required or   | Placement     |
-| Service component |                   | Optional      |               |
-|                   |                   | Service       |               |
-+===================+===================+===============+===============+
-| neutron server    | Manages user      | Required      | Controller    |
-| (neutron-server   | requests and      |               | node          |
-| and               | exposes the       |               |               |
-| neutron-*-plugin) | Neutron APIs      |               |               |
-+-------------------+-------------------+---------------+---------------+
-| DHCP agent        | Provides DHCP     | Optional      | Network node  |
-| (ne               | services to       | depending     | (Controller   |
-| utron-dhcp-agent) | tenant networks   | upon plug-in  | node if no    |
-|                   | and is            |               | network node  |
-|                   | responsible for   |               | present)      |
-|                   | maintaining DHCP  |               |               |
-|                   | configuration.    |               |               |
-|                   | For High          |               |               |
-|                   | availability,     |               |               |
-|                   | multiple DHCP     |               |               |
-|                   | agents can be     |               |               |
-|                   | assigned.         |               |               |
-+-------------------+-------------------+---------------+---------------+
-| L3 agent          | Provides L3/NAT   | Optional      | Network node  |
-| (                 | forwarding for    | depending     | (Controller   |
-| neutron-l3-agent) | external network  | upon plug-in  | node if no    |
-|                   | access of servers |               | network node  |
-|                   | on tenant         |               | present) NB   |
-|                   | networks and      |               | in DVR based  |
-|                   | supports services |               | OpenStack     |
-|                   | such as           |               | Networking,   |
-|                   | Fire              |               | also in all   |
-|                   | wall-as-a-service |               | Compute       |
-|                   | (FWaaS) and Load  |               | nodes.        |
-|                   | Bala              |               |               |
-|                   | ncer-as-a-service |               |               |
-|                   | (LBaaS)           |               |               |
-+-------------------+-------------------+---------------+---------------+
-| neutron metadata  | The metadata      | Optional      | Network node  |
-| agent             | service provides  |               | (Controller   |
-| (neutro           | a way for         |               | node if no    |
-| n-metadata-agent) | instances to      |               | network node  |
-|                   | retrieve          |               | present)      |
-|                   | instance-specific |               |               |
-|                   | data. The         |               |               |
-|                   | networking        |               |               |
-|                   | service, neutron, |               |               |
-|                   | is responsible    |               |               |
-|                   | for intercepting  |               |               |
-|                   | these requests    |               |               |
-|                   | and adding HTTP   |               |               |
-|                   | headers which     |               |               |
-|                   | uniquely identify |               |               |
-|                   | the source of the |               |               |
-|                   | request before    |               |               |
-|                   | forwarding it to  |               |               |
-|                   | the metadata API  |               |               |
-|                   | server. These     |               |               |
-|                   | functions are     |               |               |
-|                   | performed by the  |               |               |
-|                   | neutron metadata  |               |               |
-|                   | agent.            |               |               |
-+-------------------+-------------------+---------------+---------------+
-| neutron plugin    | Runs on each      | Required      | Every Compute |
-| agent             | compute node to   |               | Node          |
-| (neutron-*-agent) | control and       |               |               |
-|                   | manage the local  |               |               |
-|                   | virtual network   |               |               |
-|                   | driver (such as   |               |               |
-|                   | the Open vSwitch  |               |               |
-|                   | or Linux Bridge)  |               |               |
-|                   | configuration and |               |               |
-|                   | local networking  |               |               |
-|                   | configuration for |               |               |
-|                   | servers hosted on |               |               |
-|                   | that node.        |               |               |
-+-------------------+-------------------+---------------+---------------+
++--------------------+-------------------+---------------+---------------+
+| Networking         | Description       | Required or   | Placement     |
+| Service component  |                   | Optional      |               |
+|                    |                   | Service       |               |
++====================+===================+===============+===============+
+| neutron server     | Manages user      | Required      | Controller    |
+| (neutron-server    | requests and      |               | node          |
+| and                | exposes the       |               |               |
+| neutron-\*-plugin) | Neutron APIs      |               |               |
++--------------------+-------------------+---------------+---------------+
+| DHCP agent         | Provides DHCP     | Optional      | Network node  |
+| (neutron-\         | services to       | depending     | (Controller   |
+| dhcp-agent)        | tenant networks   | upon plug-in  | node if no    |
+|                    | and is            |               | network node  |
+|                    | responsible for   |               | present)      |
+|                    | maintaining DHCP  |               |               |
+|                    | configuration.    |               |               |
+|                    | For High          |               |               |
+|                    | availability,     |               |               |
+|                    | multiple DHCP     |               |               |
+|                    | agents can be     |               |               |
+|                    | assigned.         |               |               |
++--------------------+-------------------+---------------+---------------+
+| L3 agent           | Provides L3/NAT   | Optional      | Network node  |
+| (\                 | forwarding for    | depending     | (Controller   |
+| neutron-l3-agent)  | external network  | upon plug-in  | node if no    |
+|                    | access of servers |               | network node  |
+|                    | on tenant         |               | present) NB   |
+|                    | networks and      |               | in DVR based  |
+|                    | supports services |               | OpenStack     |
+|                    | such as           |               | Networking,   |
+|                    | Fire              |               | also in all   |
+|                    | wall-as-a-service |               | Compute       |
+|                    | (FWaaS) and Load  |               | nodes.        |
+|                    | Bala              |               |               |
+|                    | ncer-as-a-service |               |               |
+|                    | (LBaaS)           |               |               |
++--------------------+-------------------+---------------+---------------+
+| neutron metadata   | The metadata      | Optional      | Network node  |
+| agent              | service provides  |               | (Controller   |
+| (neutron-\         | a way for         |               | node if no    |
+| metadata-agent)    | instances to      |               | network node  |
+|                    | retrieve          |               | present)      |
+|                    | instance-specific |               |               |
+|                    | data. The         |               |               |
+|                    | networking        |               |               |
+|                    | service, neutron, |               |               |
+|                    | is responsible    |               |               |
+|                    | for intercepting  |               |               |
+|                    | these requests    |               |               |
+|                    | and adding HTTP   |               |               |
+|                    | headers which     |               |               |
+|                    | uniquely identify |               |               |
+|                    | the source of the |               |               |
+|                    | request before    |               |               |
+|                    | forwarding it to  |               |               |
+|                    | the metadata API  |               |               |
+|                    | server. These     |               |               |
+|                    | functions are     |               |               |
+|                    | performed by the  |               |               |
+|                    | neutron metadata  |               |               |
+|                    | agent.            |               |               |
++--------------------+-------------------+---------------+---------------+
+| neutron plugin     | Runs on each      | Required      | Every Compute |
+| agent              | compute node to   |               | Node          |
+| (neutron-\*-agent) | control and       |               |               |
+|                    | manage the local  |               |               |
+|                    | virtual network   |               |               |
+|                    | driver (such as   |               |               |
+|                    | the Open vSwitch  |               |               |
+|                    | or Linux Bridge)  |               |               |
+|                    | configuration and |               |               |
+|                    | local networking  |               |               |
+|                    | configuration for |               |               |
+|                    | servers hosted on |               |               |
+|                    | that node.        |               |               |
++--------------------+-------------------+---------------+---------------+
 
 Table 4-2: Neutron Services Placement
 
@@ -1416,8 +1401,7 @@ Telco workload requirements requires SDN to offload Neutron calls.
 SDN provides a truly scalable and preferred solution to suport dynamic,
 very large-scale, high-density, telco cloud environments. OpenStack
 Neutron, with its plugin architecture, provides the ability to integrate
-SDN controllers ( `3.2.5. Virtual Networking – 3rd party SDN
-solution <./chapter03.md#325-virtual-networking--3rd-party-sdn-solution>`__).
+SDN controllers (:ref:`ref_arch/openstack/chapters/chapter03:virtual networking – 3rd party sdn solution`).
 With SDN incorporated in OpenStack, changes to the network is triggered
 by workloads (and users), translated into Neutron APIs and then handled
 through neutron plugins by the corresponding SDN agents.
@@ -1537,7 +1521,8 @@ encryption techniques and storing the protected secrets externally from
 the component” and sec.ci.001 “The Platform **must** support
 Confidentiality and Integrity of data at rest and in transit.”.
 
-#### Cyborg
+Cyborg
+^^^^^^
 
 `Cyborg <https://docs.openstack.org/cyborg/wallaby/>`__ is the OpenStack
 project for the general purpose management framework for accelerators
@@ -1592,8 +1577,7 @@ OpenStack services topology version is shown in Figure 4-7.
 
 .. figure:: ../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png
    :alt: Containerised OpenStack Services Topology
-
-   Containerised OpenStack Services Topology
+   :align: center
 
 Figure 4-7: Containerised OpenStack Services Topology
 
@@ -1612,36 +1596,36 @@ infrastructure. To implement these profiles and sizes, it is required to
 set up the flavors as specified in the tables below.
 
 +-------------+-----------------+-------------------+-----------------+
-| Flavor      | ReferenceRM     | Basic             | H               |
-| C           | Chapter 4 and 5 |                   | igh-Performance |
+| Flavor      | Reference RM    | Basic             | H\              |
+| C\          | Chapter 4 and 5 |                   | igh-Performance |
 | apabilities |                 |                   |                 |
 +=============+=================+===================+=================+
-| CPU         | in              | In flavor create  | In flavor       |
+| CPU         | in\             | In flavor create  | In flavor       |
 | allocation  | fra.com.cfg.001 | or flavor set     | create or       |
 | ratio       |                 | –property         | flavor set      |
 | (custom     |                 | cpu_all           | –property       |
-| e           |                 | ocation_ratio=4.0 | cpu_alloc       |
+| e\          |                 | ocation_ratio=4.0 | cpu_alloc\      |
 | xtra_specs) |                 |                   | ation_ratio=1.0 |
 +-------------+-----------------+-------------------+-----------------+
-| NUMA        | in              |                   | In flavor       |
+| NUMA        | in\             |                   | In flavor       |
 | Awareness   | fra.com.cfg.002 |                   | create or       |
 |             |                 |                   | flavor set      |
-|             |                 |                   | s               |
-|             |                 |                   | pecify–property |
-|             |                 |                   | hw:numa         |
+|             |                 |                   | specify         |
+|             |                 |                   | –property       |
+|             |                 |                   | hw:numa\        |
 |             |                 |                   | _nodes=<integer |
 |             |                 |                   | range of 0 to   |
 |             |                 |                   | #numa_nodes –   |
-|             |                 |                   | 1>To restrict   |
+|             |                 |                   | 1> To restrict  |
 |             |                 |                   | an instance’s   |
 |             |                 |                   | vCPUs to a      |
 |             |                 |                   | single host     |
 |             |                 |                   | NUMA node,      |
 |             |                 |                   | specify:        |
 |             |                 |                   | –property       |
-|             |                 |                   | hw:n            |
-|             |                 |                   | uma_nodes=1Some |
-|             |                 |                   | compute         |
+|             |                 |                   | hw:n\           |
+|             |                 |                   | uma_nodes=1     |
+|             |                 |                   | Some compute    |
 |             |                 |                   | intensive\*     |
 |             |                 |                   | workloads with  |
 |             |                 |                   | highly          |
@@ -1657,20 +1641,20 @@ set up the flavors as specified in the tables below.
 |             |                 |                   | –property       |
 |             |                 |                   | hw:numa_nodes=2 |
 +-------------+-----------------+-------------------+-----------------+
-| CPU Pinning | in              | In flavor create  | In flavor       |
+| CPU Pinning | in\             | In flavor create  | In flavor       |
 |             | fra.com.cfg.003 | or flavor set     | create or       |
 |             |                 | specify –property | flavor set      |
 |             |                 | hw:               | specify         |
 |             |                 | cpu_policy=shared | –property       |
-|             |                 | (default)         | hw:cpu_p        |
+|             |                 | (default)         | hw:cpu_p\       |
 |             |                 |                   | olicy=dedicated |
-|             |                 |                   | and–property    |
-|             |                 |                   | hw:cpu_         |
-|             |                 |                   | _thread_policy= |
+|             |                 |                   | and –property   |
+|             |                 |                   | hw:cpu\         |
+|             |                 |                   | _thread_policy=\|
 |             |                 |                   | <prefer,        |
 |             |                 |                   | require,        |
-|             |                 |                   | isolate>Use     |
-|             |                 |                   | “isolate”       |
+|             |                 |                   | isolate>        |
+|             |                 |                   | Use “isolate”   |
 |             |                 |                   | thread policy   |
 |             |                 |                   | for very high   |
 |             |                 |                   | compute         |
@@ -1682,56 +1666,54 @@ set up the flavors as specified in the tables below.
 |             |                 |                   | different       |
 |             |                 |                   | physical core   |
 +-------------+-----------------+-------------------+-----------------+
-| Huge pages  | in              |                   | –property       |
-|             | fra.com.cfg.004 |                   | hw:mem_p        |
+| Huge pages  | in\             |                   | –property       |
+|             | fra.com.cfg.004 |                   | hw:mem_p\       |
 |             |                 |                   | age_size=<small |
 |             |                 |                   | \|large \|      |
 |             |                 |                   | size>           |
 +-------------+-----------------+-------------------+-----------------+
-| SMT         | in              |                   | In flavor       |
+| SMT         | in\             |                   | In flavor       |
 |             | fra.com.cfg.005 |                   | create or       |
 |             |                 |                   | flavor set      |
 |             |                 |                   | specify         |
 |             |                 |                   | –property       |
-|             |                 |                   | hw:cpu_t        |
-|             |                 |                   | hreads=<integer |
+|             |                 |                   | hw:cpu_t\       |
+|             |                 |                   | hreads=<integer\|
 |             |                 |                   | #threads        |
 |             |                 |                   | (usually 1 or   |
 |             |                 |                   | 2)>             |
 +-------------+-----------------+-------------------+-----------------+
-| OVS-DPDK    | infra.          |                   | ml2.conf.ini    |
+| OVS-DPDK    | infra.\         |                   | ml2.conf.ini    |
 |             | net.acc.cfg.001 |                   | configured to   |
 |             |                 |                   | support [OVS]   |
-|             |                 |                   | datap           |
+|             |                 |                   | datap\          |
 |             |                 |                   | ath_type=netdev |
 |             |                 |                   | Note: huge      |
 |             |                 |                   | pages should be |
 |             |                 |                   | configured to   |
 |             |                 |                   | large           |
 +-------------+-----------------+-------------------+-----------------+
-| Local       | infra.hw.       | trait:STORAGE_    | t               |
-| Storage SSD | stg.ssd.cfg.002 | DISK_SSD=required | rait:STORAGE_DI |
+| Local       | infra.hw.\      | trait:STORAGE\    | t\              |
+| Storage SSD | stg.ssd.cfg.002 | DISK_SSD=required | rait:STORAGE_DI\|
 |             |                 |                   | SK_SSD=required |
 +-------------+-----------------+-------------------+-----------------+
-| Port speed  | infra           | –property quota   | –property quota |
-|             | .hw.nic.cfg.002 | vif_inboun        | vif_inbound_    |
+| Port speed  | infra\          | –property quota   | –property quota |
+|             | .hw.nic.cfg.002 | vif_inboun\       | vif_inbound\    |
 |             |                 | d_average=1310720 | average=3125000 |
-|             |                 | an                | and             |
-|             |                 | dvif_outbound_ave | vif             |
-|             |                 | rage=1310720Note: | _outbound_avera |
-|             |                 | 10 Gbps = 1250000 | ge=3125000Note: |
-|             |                 | kilobytes per     | 25 Gbps =       |
-|             |                 | second            | 3125000         |
-|             |                 |                   | kilobytes per   |
+|             |                 | and               | and             |
+|             |                 | vif_outbound_ave\ | vif\            |
+|             |                 | rage=1310720      | _outbound_avera\|
+|             |                 |                   | ge=3125000      |
+|             |                 | Note:10 Gbps =    | Note: 25 Gbps = |
+|             |                 | 1250000 kilobytes | 3125000         |
+|             |                 | per second        | kilobytes per   |
 |             |                 |                   | second          |
 +-------------+-----------------+-------------------+-----------------+
 
 ..
 
    -  To configure profile-extensions, for example, the “Storage
-      Intensive High Performance” profile, as defined in `Reference
-      Model Profile
-      Extensions <../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations>`__,
+      Intensive High Performance” profile, as defined in :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`,
       in addition to the above, need configure the storage IOPS: the
       following two parameters need to be specified in the flavor
       create: –property quota:disk_write_iops_sec=<IOPS#> and –property
@@ -1787,9 +1769,9 @@ been creating intermediate data centres in central office locations,
 colocation centres, and now edge centres at the physical edge of their
 networks because of the demand for low latency and high throughput for
 5G, IoT and connected devices (including autonomous driverless vehicles
-and connected vehicles). Chapter 3.5 of this document, discusses `Cloud
-Topology <./chapter03.md#3.5>`__ and lists 3 types of data centres:
-Large, Intermediate and Edge.
+and connected vehicles). Chapter 3.5 of this document, discusses
+:ref:`ref_arch/openstack/chapters/chapter03:cloud topology`
+and lists 3 types of data centres: Large, Intermediate and Edge.
 
 For ease of convenience, unless specifically required, in this section
 we will use Central Cloud Centre, Edge Cloud Centre and Intermediate
@@ -1797,10 +1779,10 @@ Cloud Centre as representative terms for cloud services hosted at
 centralised large data centres, Telco edge locations and for locations
 with capacity somewhere in between the large data centres and edge
 locations, respectively. The mapping of various terms, including the
-Reference Model terminology specified in Table
-`8-5 <../../..//ref_model/chapters/chapter08.md#8.3.5>`__ and `Open
-Glossary of Edge
-Computing <https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md>`__
+Reference Model terminology specified in Table `8-5
+:ref:`ref_model/chapters/chapter08:comparison of deployment topologies and edge terms`
+and `Open Glossary of Edge Computing
+<https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md>`__
 is as follows:
 
 -  Central Cloud Centre: Large Centralised Data Centre, Regional Data
@@ -1814,14 +1796,13 @@ In the Intermediate and Edge cloud centres, there may be limitations on
 the resource capacity, as in the number of servers, and the capacity of
 these servers in terms of # of cores, RAM, etc. restricting the set of
 services that can be deployed and, thus, creating a dependency between
-other data centres. In `Reference Model Chapter
-8.3 <../../../ref_model/chapters/chapter08.md#8.3>`__, Table 8-5
+other data centres. In :ref:`ref_model/chapters/chapter08:telco edge cloud`,
+Table 8-5
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.
 
-Chapter `3.3.1.1. OpenStack Services
-Topology <./chapter03.md#3311-openstack-services-topology>`__ of this
-document, specifies the differences between the Control Plane and Data
+:ref:`ref_arch/openstack/chapters/chapter03:openstack services topology`
+of this document, specifies the differences between the Control Plane and Data
 Plane, and specifies which of the control nodes, compute nodes, storage
 nodes (optional) and network nodes (optional) are components of these
 planes. The previous sections of this Chapter 4 include a description of
@@ -1846,88 +1827,88 @@ subset of the controller services are also deployed on the Intermediate
 and Edge Cloud Centres. Table 4-5 presents examples of such deployment
 choices.
 
-+--------+--------+--------+--------+--------+--------+--------+--------+
-|        |        | O      | Id     | Image  | C      | N      | S      |
-|        |        | rchest | entity | Mana   | ompute | etwork | torage |
-|        |        | ration | Mana   | gement |        | Mana   | Mana   |
-|        |        |        | gement |        |        | gement | gement |
-+========+========+========+========+========+========+========+========+
-| CCP    | Centr  | hea    | Id     | Glance | nova-c | n      | Cinder |
-|        | alised | t-api, | entity | API,   | ompute | eutron | API,   |
-|        | DC –   | heat-e | Pr     | Glance | api    | -serve | Cinder |
-|        | c      | ngine, | ovider | Re     | ,nova- | r,neut | Sche   |
-|        | ontrol | nova-p | (I     | gistry | schedu | ron-dh | duler, |
-|        | nodes  | laceme | dP),Ke |        | ler,no | cp-age | Cinder |
-|        |        | nt-api | ystone |        | va-con | nt,neu | Volume |
-|        |        |        | API    |        | ductor | tron-L |        |
-|        |        |        |        |        |        | 2-agen |        |
-|        |        |        |        |        |        | t,neut |        |
-|        |        |        |        |        |        | ron-L3 |        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (op    |        |
-|        |        |        |        |        |        | tional |        |
-|        |        |        |        |        |        | ),neut |        |
-|        |        |        |        |        |        | ron-me |        |
-|        |        |        |        |        |        | tadata |        |
-|        |        |        |        |        |        | -agent |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| DCP:   | Any DC | hea    | Id     | Glance | nova-c | n      | Cinder |
-| combi  | -      | t-api, | entity | API,   | ompute | eutron | API,   |
-| nation | C      | heat-e | Pr     | Glance | api    | -serve | Cinder |
-| of     | ontrol | ngine, | ovider | Re     | ,nova- | r,neut | Sche   |
-| se     | nodes  | nova-p | (I     | gistry | schedu | ron-dh | duler, |
-| rvices | Option | laceme | dP),Ke |        | ler,no | cp-age | Cinder |
-| dep    | 1      | nt-api | ystone |        | va-con | nt,neu | Volume |
-| ending |        |        | API    |        | ductor | tron-L |        |
-| upon   |        |        |        |        |        | 2-agen |        |
-| Center |        |        |        |        |        | t,neut |        |
-| size   |        |        |        |        |        | ron-L3 |        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (op    |        |
-|        |        |        |        |        |        | tional |        |
-|        |        |        |        |        |        | ),neut |        |
-|        |        |        |        |        |        | ron-me |        |
-|        |        |        |        |        |        | tadata |        |
-|        |        |        |        |        |        | -agent |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-|        | Any DC | \*\*   | \* in  | \* in  | \*\*   | \*\*   | \*\*   |
-|        | -      | in     | Large  | Large  | in     | in     | in     |
-|        | C      | other  | DC     | DC     | a      | a      | a      |
-|        | ontrol | DC     |        |        | nother | nother | nother |
-|        | nodes  |        |        |        | DC     | DC     | DC     |
-|        | Option |        |        |        |        |        |        |
-|        | 2:     |        |        |        |        |        |        |
-|        | split  |        |        |        |        |        |        |
-|        | se     |        |        |        |        |        |        |
-|        | rvices |        |        |        |        |        |        |
-|        | b      |        |        |        |        |        |        |
-|        | etween |        |        |        |        |        |        |
-|        | DCs    |        |        |        |        |        |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| CCP or | C      |        |        |        | nova-c | neutr  |        |
-| DCP    | ompute |        |        |        | ompute | on-L2- |        |
-|        | nodes  |        |        |        | -agent | agent, |        |
-|        |        |        |        |        |        | neut   |        |
-|        |        |        |        |        |        | ron-L3 |        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (opt   |        |
-|        |        |        |        |        |        | ional) |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| CCP    | C      | nova-p |        |        | nov    | n      |        |
-|        | ompute | laceme |        |        | a-comp | eutron |        |
-|        | nodes  | nt-api |        |        | ute-ag | -serve |        |
-|        |        |        |        |        | ent,no | r,neut |        |
-|        |        |        |        |        | va-con | ron-dh |        |
-|        |        |        |        |        | ductor | cp-age |        |
-|        |        |        |        |        |        | nt,neu |        |
-|        |        |        |        |        |        | tron-L |        |
-|        |        |        |        |        |        | 2-agen |        |
-|        |        |        |        |        |        | t,neut |        |
-|        |        |        |        |        |        | ron-L3 |        |
-|        |        |        |        |        |        | -agent |        |
-|        |        |        |        |        |        | (opt   |        |
-|        |        |        |        |        |        | ional) |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
++--------+--------+--------+--------+--------+--------+---------+--------+
+|        |        | O\     | Id\    | Image  | C\     | N\      | S\     |
+|        |        | rchest\| entity | Mana\  | ompute | etwork  | torage |
+|        |        | ration | Mana\  | gement |        | Mana\   | Mana\  |
+|        |        |        | gement |        |        | gement  | gement |
++========+========+========+========+========+========+=========+========+
+| CCP    | Centr\ | hea\   | Id\    | Glance | nova-c\| n\      | Cinder |
+|        | alised | t-api, | entity | API,   | ompute | eutron  | API,   |
+|        | DC –   | heat-e\| Pr\    | Glance | api\   | -serve\ | Cinder |
+|        | c\     | ngine, | ovider | Re\    | ,nova- | r,neut\ | Sche\  |
+|        | ontrol | nova-p\| (I\    | gistry | schedu\| ron-dh\ | duler, |
+|        | nodes  | laceme\| dP),Ke\|        | ler,no\| cp-age\ | Cinder |
+|        |        | nt-api | ystone |        | va-con\| nt,neu\ | Volume |
+|        |        |        | API    |        | ductor | tron-L\ |        |
+|        |        |        |        |        |        | 2-agen\ |        |
+|        |        |        |        |        |        | t,neut\ |        |
+|        |        |        |        |        |        | ron-L3  |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (op\    |        |
+|        |        |        |        |        |        | tional  |        |
+|        |        |        |        |        |        | ),neut\ |        |
+|        |        |        |        |        |        | ron-me\ |        |
+|        |        |        |        |        |        | tadata  |        |
+|        |        |        |        |        |        | -agent  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+| DCP:   | Any DC | hea\   | Id\    | Glance | nova-c\| n\      | Cinder |
+| combi\ | -      | t-api, | entity | API,   | ompute | eutron  | API,   |
+| nation | C\     | heat-e\| Pr\    | Glance | api    | -serve\ | Cinder |
+| of     | ontrol | ngine, | ovider | Re\    | ,nova- | r,neut\ | Sche\  |
+| se\    | nodes  | nova-p\| (I\    | gistry | schedu\| ron-dh\ | duler, |
+| rvices | Option | laceme\| dP),Ke\|        | ler,no\| cp-age\ | Cinder |
+| dep\   | 1      | nt-api | ystone |        | va-con\| nt,neu\ | Volume |
+| ending |        |        | API    |        | ductor | tron-L\ |        |
+| upon   |        |        |        |        |        | 2-agen\ |        |
+| Center |        |        |        |        |        | t,neut\ |        |
+| size   |        |        |        |        |        | ron-L3\ |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (op\    |        |
+|        |        |        |        |        |        | tional  |        |
+|        |        |        |        |        |        | ),neut\ |        |
+|        |        |        |        |        |        | ron-me\ |        |
+|        |        |        |        |        |        | tadata  |        |
+|        |        |        |        |        |        | -agent  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+|        | Any DC | \*\*   | \* in  | \* in  | \*\*   | \*\*    | \*\*   |
+|        | -      | in     | Large  | Large  | in     | in      | in     |
+|        | C\     | other  | DC     | DC     | a\     | a\      | a\     |
+|        | ontrol | DC     |        |        | nother | nother  | nother |
+|        | nodes  |        |        |        | DC     | DC      | DC     |
+|        | Option |        |        |        |        |         |        |
+|        | 2:     |        |        |        |        |         |        |
+|        | split  |        |        |        |        |         |        |
+|        | se\    |        |        |        |        |         |        |
+|        | rvices |        |        |        |        |         |        |
+|        | b\     |        |        |        |        |         |        |
+|        | etween |        |        |        |        |         |        |
+|        | DCs    |        |        |        |        |         |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+| CCP or | C\     |        |        |        | nova-c\| neutr\  |        |
+| DCP    | ompute |        |        |        | ompute | on-L2-  |        |
+|        | nodes  |        |        |        | -agent | agent,  |        |
+|        |        |        |        |        |        | neut\   |        |
+|        |        |        |        |        |        | ron-L3\ |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (opt\   |        |
+|        |        |        |        |        |        | ional)  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
+| CCP    | C\     | nova-p\|        |        | nov\   | n\      |        |
+|        | ompute | laceme\|        |        | a-comp\| eutron  |        |
+|        | nodes  | nt-api |        |        | ute-ag\| -serve\ |        |
+|        |        |        |        |        | ent,no\| r,neut\ |        |
+|        |        |        |        |        | va-con\| ron-dh\ |        |
+|        |        |        |        |        | ductor | cp-age\ |        |
+|        |        |        |        |        |        | nt,neu\ |        |
+|        |        |        |        |        |        | tron-L\ |        |
+|        |        |        |        |        |        | 2-agen\ |        |
+|        |        |        |        |        |        | t,neut\ |        |
+|        |        |        |        |        |        | ron-L3\ |        |
+|        |        |        |        |        |        | -agent  |        |
+|        |        |        |        |        |        | (opt\   |        |
+|        |        |        |        |        |        | ional)  |        |
++--------+--------+--------+--------+--------+--------+---------+--------+
 
 Table 4-5: Distribution of OpenStack services on different nodes
 depending upon Control Plane Scenario
@@ -1935,10 +1916,10 @@ depending upon Control Plane Scenario
 Edge Cloud Topology
 ~~~~~~~~~~~~~~~~~~~
 
-The Reference Model Chapter 8.3 “`Telco Edge
-Cloud <../../../ref_model/chapters/chapter08.md#8.3>`__”, presents the
-deployment environment characteristics, infrastructure characteristics
-and new values for the Infrastructure Profiles at the Edge.
+The Reference Model Chapter
+:ref:`ref_model/chapters/chapter08:telco edge cloud`,
+presents the deployment environment characteristics, infrastructure
+characteristics and new values for the Infrastructure Profiles at the Edge.
 
 The `Edge computing
 whitepaper <https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/>`__
@@ -1952,18 +1933,16 @@ Cloud Centre and the number of copies that should be deployed. These
 references also present the pros and cons of DCP and CCP and designs to
 address some of the challenges of each of the models.
 
-Table 8-4 in the Reference Model Chapter 8.3.4 “`Telco Edge Cloud:
-Platform Services
-Deployment <../../../ref_model/chapters/chapter08.md#8.3.4>`__” lists
-the Platform Services that may be placed in the different node types
+Table 8-4 in the Reference Model
+:ref:`ref_model/chapters/chapter08:telco edge cloud: platform services deployment`
+lists the Platform Services that may be placed in the different node types
 (control, compute and storage). Depending upon the capacity and
 resources available only the compute nodes may exist at the Edge thereby
 impacting operations.
 
-Table 8-3 in the Reference Model Chapter 8.3.3 “`Telco Edge Cloud
-Infrastructure
-Profiles <../../../ref_model/chapters/chapter08.md#8.3.3>`__” lists a
-number of Infrastructure Profile characteristics and the changes that
+Table 8-3 in the Reference Model Chapter
+:ref:`ref_model/chapters/chapter08:telco edge cloud: infrastructure profiles`
+lists a number of Infrastructure Profile characteristics and the changes that
 may need to be made for certain Edge clouds depending upon their
 resource capabilities. It should be noted that none of these changes
 affect the definition of OpenStack flavors.

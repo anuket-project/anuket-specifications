@@ -78,7 +78,7 @@ Feature:ComprehensiveNamespaceDraining                                          
 Feature:`CrossNamespacePodAffinity <https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#namespace-selector>`__                                  Should verify ResourceQuota with cross namespace pod affinity scope using scope-selectors
 Feature:`PodPriority <https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/>`__                                                   X             Verify ResourceQuota's priority class scope against a pod with different priority class
 Feature:ScopeSelectors                                                                                                                                 X             Verify ResourceQuota with terminating scopes through scope selectors
-Feature:`StorageVersionAPI <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#storageversion-v1alpha1-internal-apiserver-k8s-io>`__              
+Feature:`StorageVersionAPI <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#storageversion-v1alpha1-internal-apiserver-k8s-io>`__
 ====================================================================================================================================================== ============= =========================================================================================
 
 `Apps Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-apps>`__
@@ -137,7 +137,7 @@ Feature:StackdriverAcceleratorMonitoring               Stackdriver Monitoring sh
 Feature:StackdriverCustomMetrics                       Stackdriver Monitoring should run Custom Metrics - Stackdriver Adapter for new resource model
 Feature:StackdriverExternalMetrics                     Stackdriver Monitoring should run Custom Metrics - Stackdriver Adapter for external metrics
 Feature:StackdriverMetadataAgent                       Stackdriver Monitoring should run Stackdriver Metadata Agent
-Feature:StackdriverMonitoring                         
+Feature:StackdriverMonitoring
 ======================================== ============= =============================================================================================
 
 `Network Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-network>`__
@@ -206,13 +206,13 @@ Feature:Recreate                                                                
 ==================================== ============= ==============================
 Conformance                          X             Kubernetes conformance test
 None                                 X             Kubernetes mainstream features
-Feature:ExpandInUsePersistentVolumes              
-Feature:Flexvolumes                               
-Feature:GKELocalSSD                               
-Feature:VolumeSnapshotDataSource                  
-Feature:Volumes                      X            
-Feature:vsphere                                   
-Feature:Windows                                   
-NodeFeature:EphemeralStorage         X            
-NodeFeature:FSGroup                  X            
+Feature:ExpandInUsePersistentVolumes
+Feature:Flexvolumes
+Feature:GKELocalSSD
+Feature:VolumeSnapshotDataSource
+Feature:Volumes                      X
+Feature:vsphere
+Feature:Windows
+NodeFeature:EphemeralStorage         X
+NodeFeature:FSGroup                  X
 ==================================== ============= ==============================

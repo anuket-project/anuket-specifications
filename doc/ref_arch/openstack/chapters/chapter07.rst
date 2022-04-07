@@ -64,8 +64,7 @@ version and then the old servers are undeployed.
 Cloud Infrastructure and VIM configuration management
 -----------------------------------------------------
 
-In the Reference Model, `Chapter 9 Configuration and Lifecycle
-Management <../../../ref_model/chapters/chapter09.md#92-configuration-and-lifecycle-management>`__
+In the Reference Model, :ref:`ref_model/chapters/chapter09:configuration and lifecycle management`
 defines the functions of Configuration and Life Cycle Management (LCM).
 To operate and manage a scalable cloud, that minimizes operational
 costs, requires tools that incorporates systems for automated
@@ -103,11 +102,10 @@ documentation and similar documentation from OpenStack vendors delve
 into great detail on the provisioning of servers (bare metal), deploying
 and configuring OpenStack services.
 
-In the `Reference Implementation Chapter
-06 <../../../ref_impl/cntt-ri/chapters/chapter06.md>`__ a set of
+In the :doc:`ref_impl/cntt-ri/chapters/chapter06` a set of
 Installer requirements are specified with a couple of Installers (such
-as Airship and Triple-O) described in `Reference Implementation Chapter
-8.5 <../../../ref_impl/cntt-ri/chapters/chapter08.md#85-available-installers>`__.
+as Airship and Triple-O) described in `Reference Implementation Chapter 8.5
+:ref:`ref_impl/cntt-ri/chapters/chapter08:available installers`.
 It should be noted that the installers choosen in order to automate
 deployment depend on the cloud provider.
 
@@ -118,11 +116,8 @@ example,
 specifies how to provision and deploy the IaaS, and on how to update
 configuration including OpenStack services.
 
-For Airship, `Reference Implementation Chapter
-8.5.1.1 <../../../ref_impl/cntt-ri/chapters/chapter08.md#8511-descriptor-file-preparations>`__
-specifies the required descriptor files and in `Reference Implementation
-Chapter
-8.5.1.2 <../../../ref_impl/cntt-ri/chapters/chapter08.md#8512-deployment-installer--install-steps>`__
+For Airship, :ref:`ref_impl/cntt-ri/chapters/chapter08:descriptor file preparations`
+specifies the required descriptor files and in :ref:`ref_impl/cntt-ri/chapters/chapter08:deployment: installer & install steps`
 describes the steps to provision the OpenStack based IaaS.
 
 Configuration Management
@@ -208,8 +203,7 @@ workloads so that appropriate actions can be taken. For example,
    resources.
 
 Some of the data is to support the metrics collection specified in the
-`Reference Model Chapter 4: Infrastructure Capabilities, Metrics and
-Catalogue <../../../ref_model/chapters/chapter04.md>`__.
+:doc:`ref_model/chapters/chapter04`.
 
 Logs have multiple operational uses including for:
 
@@ -265,8 +259,6 @@ Elasticsearch and Kibana is given as an example only.
 
 .. figure:: ../figures/RA1-Ch07-Monitoring-Logging-Framework.png
    :alt: Monitoring and Logging Framework
-
-   Monitoring and Logging Framework
 
 Figure 7-1: Monitoring and Logging Framework
 
