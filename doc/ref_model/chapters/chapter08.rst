@@ -43,7 +43,7 @@ A generic Telco cloud is a hybrid multi-cloud. A better designation would be a f
 -  component clouds only surface NBIs (Please note that VMware deployed in a private and a public cloud can be treated as a single cloud instance)
 
 Characteristics of a Federated Cloud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 In this section we will further explore the characteristics of the federated cloud architecture, and architecture building blocks that constitute the federated cloud. For example, :numref:`Example Hybrid Multi-Cloud Component Cloud` shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
 
@@ -54,7 +54,7 @@ In this section we will further explore the characteristics of the federated clo
    Example Hybrid Multi-Cloud Component Cloud
 
 Telco Cloud
-~~~~~~~~~~~
+-----------
 
 The :numref:`Telco Cloud: Data Centre to Edge` presents a visualisation of a Telco operator cloud (or simply, Telco cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
 
@@ -109,8 +109,7 @@ Telco Operator Platform Conceptual Architecture
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery. These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
 
 Multi-Cloud Interactions Model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+------------------------------
 .. _introduction-1:
 
 Introduction1
@@ -210,13 +209,48 @@ The API and Cloud Brokerage models are illustrated in the following diagrams:
 Requirements, Reference Architecture & Industry Standards Intersect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Communcations Service Provider is both a provider and consumer of Cloud based services.
+The Communcations Service Provider (CSP) is both a provider and consumer of Cloud based services.
 When the CSP is actings as:
 
 -  consumer, in which case the typical consideration is total cost of ownership as the consumption is to usually to support internal business operations: BSS/OSS systems;
 -  provider of cloud services, through operation of their own cloud or reselling of cloud services, in which case the typical consideration is margin (cost to offer services vs income received).
 
 These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a Multi-Cloud environment.
+
+Single Pane of Glass
+~~~~~~~~~~~~~~~~~~~~
+
+As organisations spread their resources across on-premises, multiple clouds, and the Edge, the need for a single set of tools and processes to manage and operate across these Hybrid, Edge, and Multi-clouds (HEM clouds) is obvious. This Single-Pane-of-Glass provides capabilities to conistently:
+
+-  manage Services, resources, etc.
+  -  across facilities (regions, data centers, edge locations)
+-  interoperate the different clouds
+-  implement comon policies and governance standards
+-  manage a common security posture
+-  provide an integrated visualisation into the infrastructure and workloads.
+
+through a common set of governance and operational practices.
+
+.. list-table::
+   :widths: 16, 30, 30
+   :header-rows: 1
+   
+* - Ref
+  - Requirement
+  - Definition/Note
+* - hem.gen.001
+  - 
+  - 
+* - hem.iop.001
+  - 
+  - 
+* - hem.sec.001
+  - 
+  - 
+
+	 
+
+
 
 Aspects of Multi-Cloud Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
