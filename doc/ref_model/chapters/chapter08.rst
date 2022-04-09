@@ -263,6 +263,13 @@ through a common set of governance and operational practices. The following tabl
 
 Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requirements
 
+.. list-table::
+   :widths: 16, 30, 30
+   :header-rows: 1
+   
+* - Ref
+  - Requirement
+  - Definition/Note
 * - hem.ops.001
   - HEMP shall generalise and define a common set of management operations available in constituent clouds. Some operations may only be available for a subset of resources.
   - For example, create, deploy, configure, start, suspend, stop, resume, reboot, delete, scale, list.
@@ -287,6 +294,13 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requireme
 
 Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Operability Requirements
 
+.. list-table::
+   :widths: 16, 30, 30
+   :header-rows: 1
+   
+* - Ref
+  - Requirement
+  - Definition/Note
 * - hem.lcm.001
   - HEMP shall provide visibility into the health of all assets.
   - 
@@ -302,6 +316,13 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Operability Requi
 
 Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Life Cycle Management (LCM) Requirements
 
+.. list-table::
+   :widths: 16, 30, 30
+   :header-rows: 1
+   
+* - Ref
+  - Requirement
+  - Definition/Note
 * - hem.sec.001
   - HEMP shall provide capabilities for the centralised management of all security policies.
   - 
