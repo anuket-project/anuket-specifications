@@ -220,7 +220,17 @@ These two stances will drive differing approaches to how a CSP would look to man
 Single Pane of Glass
 ~~~~~~~~~~~~~~~~~~~~
 
-As organisations spread their resources across on-premises, multiple clouds, and the Edge, the need for a single set of tools and processes to manage and operate across these Hybrid, Edge, and Multi-clouds (HEM clouds) is obvious. This Single-Pane-of-Glass provides capabilities to conistently:
+As organisations spread their resources across on-premises, multiple clouds, and the Edge, the need for a single set of tools and processes to manage and operate across these Hybrid, Edge, and Multi-clouds (HEM clouds) is obvious as can be seen form the following simplistic sceanrio. 
+
+Scenario: An opertor has private clouds that it utilises for its workloads.
+
+- A: The operator has decided to utilise one or more public clouds for some of its workloads.
+- B: The operator has decided to utilise an edge clouds for some of its clients.
+- C: The operator has decided to create edge clouds for some of its clients.
+
+Scenario B can be treated being the same as Scenario A. Scenario C is akin to the private cloud except for location and control over the facilities at that location. For its worklooads, the operator will have to utilise the target clouds tools or APIs to create the necessary accounts, billing arrangements, quotas, etc. Then create the needed resources, such as VMs or kubernetes clusters, etc. Following up with creating needed storage, networking, etc. before onboarding the workload and operating it. This is complex even when the operator is delaing with say only one other cloud, in addition to operating its own cloud. The operator is faced with a number of challenges including acquiring a new set of skills, knowledge of APIs, tools, and the complexity of managing different policies, updates, etc. This becomes impossible to manage when incorporating more than one other cloud. Hence the need for a Single Pane of Glass
+
+This Single-Pane-of-Glass, the HEM operator's Platform (HEMP), provides capabilities to conistently:
 
 -  manage Services, resources, etc.
   -  across facilities (regions, data centers, edge locations)
@@ -229,7 +239,7 @@ As organisations spread their resources across on-premises, multiple clouds, and
 -  manage a common security posture
 -  provide an integrated visualisation into the infrastructure and workloads.
 
-through a common set of governance and operational practices.
+through a common set of governance and operational practices. The following tables list some of the requirements for the Hybrid, Edge, and Multi cloud operator Platform (HEMP). These requirements are in addition to the requirements in other chapters of this RM. 
 
 .. list-table::
    :widths: 16, 30, 30
@@ -239,18 +249,71 @@ through a common set of governance and operational practices.
   - Requirement
   - Definition/Note
 * - hem.gen.001
+  - HEMP shall use only published APIs in managing component clouds. 
+  - For example, to accomplish the example in `hem.gen.003` it will use the published APIs of the target cloud.
+* - hem.gen.002
+  - HEMP shall publish all of the APIs used by any of its components.
+  - For example, the provided GUI portal shall only use HEMP published APIs.
+* - hem.gen.003
+  - HEMP shall provide for a common mechanism for interaction with its constituent clouds.
+  - For example, "create Account" across the different public clouds. 
+* - hem.gen.004
+  - HEMP shall generalise and define a common set of resources available to be managed in constituent clouds.
+  - Example resources: hosts (including BareMetal), Virtual Machines (VM), vCPU, Memory, Storage, Network, kubernetes clusters, kubernetes nodes, Images (OS, and others), credentials. For private cloud additional example resources: Racks, ToR/CE switches, Platform images. 
+
+Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requirements
+
+* - hem.ops.001
+  - HEMP shall generalise and define a common set of management operations available in constituent clouds. Some operations may only be available for a subset of resources.
+  - For example, create, deploy, configure, start, suspend, stop, resume, reboot, delete, scale, list.
+* - hem.ops.002
+  - HEMP shall centrally manage all resources (across all constituent clouds).
   - 
+* - hem.ops.003
+  - HEMP shall cetrally operate all constituent clouds.
+  -
+* - hem.ops.004
+  - HEMP shall provide mechanisms to integrate new clouds.
+  - This may require pre-development of necessary capabilities for the support of HEMP abstractions, and impementation of connectivity with the new cloud.
+* - hem.ops.005
+  - HEMP shall provide mechanisms to drop a constituent cloud.
+  - This will result in deletion of all resources in the constituent cloud.
+* - hem.ops.006
+  - HEMP shall provide mechanisms and processes to onboard existing assets (resources, connectivity, etc.).
+  -
+* - hem.ops.007
+  - HEMP shall provide mechanisms and processes for the automated configuration management of all environments and resources.
+  -
+
+Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Operability Requirements
+
+* - hem.lcm.001
+  - HEMP shall provide visibility into the health of all assets.
   - 
-* - hem.iop.001
-  - 
-  - 
+* - hem.lcm.002
+  - HEMP shall monitor all environments and assets.
+  -
+* - hem.lcm.003
+  - HEMP shall provide capabilities for a centralised visibility and management of all alerts.
+  -
+* - hem.lcm.004
+  - HEMP shall provide capabilities for a centralised analysis of all logs.
+  - This doesn't preclude local log analytics.
+
+Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Life Cycle Management (LCM) Requirements
+
 * - hem.sec.001
+  - HEMP shall provide capabilities for the centralised management of all security policies.
   - 
+* - hem.sec.002
+  - HEMP shall provide capabilities for the centralised tracking of compliance.
   - 
+* - hem.sec.003
+  - HEMP shall provide capabilities for insights into changes that resulted for resource non-compliance.
+  -
 
+Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Security Requirements
 	 
-
-
 
 Aspects of Multi-Cloud Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
