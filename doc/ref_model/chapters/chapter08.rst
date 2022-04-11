@@ -235,7 +235,7 @@ This Single-Pane-of-Glass, the HEM operator's Platform (HEMP), provides capabili
 -  manage Services, resources, etc.
   -  across facilities (regions, data centers, edge locations)
 -  interoperate the different clouds
--  implement comon policies and governance standards
+-  implement common policies and governance standards
 -  manage a common security posture
 -  provide an integrated visualisation into the infrastructure and workloads.
 
