@@ -277,7 +277,7 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requireme
   - HEMP shall centrally manage all resources (across all constituent clouds).
   - 
 * - hem.ops.003
-  - HEMP shall cetrally operate all constituent clouds.
+  - HEMP shall centrally operate all constituent clouds.
   -
 * - hem.ops.004
   - HEMP shall provide mechanisms to integrate new clouds.
