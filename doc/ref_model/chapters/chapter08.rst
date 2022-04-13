@@ -328,7 +328,7 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Life Cycle Manage
   - HEMP shall provide capabilities for the centralised management of all security policies.
   - 
 * - hem.sec.002
-  - HEMP shall provide capabilities for the centralised tracking of compliance.
+  - HEMP shall provide capabilities for the centralised tracking of compliance of all security requirements (:ref:`ref_model/chapters/chapter07:consolidated security requirements`).
   - 
 * - hem.sec.003
   - HEMP shall provide capabilities for insights into changes that resulted for resource non-compliance.
