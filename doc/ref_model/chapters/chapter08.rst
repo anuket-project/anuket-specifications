@@ -232,6 +232,7 @@ Scenario B can be treated being the same as Scenario A. Scenario C is akin to th
 
 This Single-Pane-of-Glass, the HEM operator's Platform (HEMP), provides capabilities to consistently:
 
+-  manage accounts, credentials, and resources
 -  manage Services, resources, etc.
   -  across facilities (regions, data centers, edge locations)
 -  interoperate the different clouds
