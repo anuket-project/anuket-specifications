@@ -220,7 +220,7 @@ These two stances will drive differing approaches to how a CSP would look to man
 Single Pane of Glass
 ~~~~~~~~~~~~~~~~~~~~
 
-As organisations spread their resources across on-premises, multiple clouds, and the Edge, the need for a single set of tools and processes to manage and operate across these Hybrid, Edge, and Multi-clouds (HEM clouds) is obvious as can be seen form the following simplistic sceanrio. 
+As organisations spread their resources across on-premises, multiple clouds, and the Edge, the need for a single set of tools and processes to manage and operate across these Hybrid, Edge, and Multi-clouds (HEM clouds) is obvious as can be seen from the following simplistic sceanario. 
 
 Scenario: An opertor has private clouds that it utilises for its workloads.
 
