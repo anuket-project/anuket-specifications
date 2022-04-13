@@ -222,7 +222,7 @@ Single Pane of Glass
 
 As organisations spread their resources across on-premises, multiple clouds, and the Edge, the need for a single set of tools and processes to manage and operate across these Hybrid, Edge, and Multi-clouds (HEM clouds) is obvious as can be seen from the following simplistic sceanario. 
 
-Scenario: An opertor has private clouds that it utilises for its workloads.
+Scenario: An operator has private clouds that it utilises for its workloads.
 
 - A: The operator has decided to utilise one or more public clouds for some of its workloads.
 - B: The operator has decided to utilise an edge cloud for some of its clients.
