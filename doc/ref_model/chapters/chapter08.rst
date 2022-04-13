@@ -272,7 +272,7 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requireme
   - Requirement
   - Definition/Note
 * - hem.ops.001
-  - HEMP shall generalise and define a common set of management operations available in constituent clouds. Some operations may only be available for a subset of resources.
+  - HEMP shall generalise and define a common set of management operations available in constituent clouds;  required operations include: create, deploy, configure, start, suspend, stop, resume, reboot, delete, scale, list. Some operations may only be available for a subset of resources.
   - For example, create, deploy, configure, start, suspend, stop, resume, reboot, delete, scale, list.
 * - hem.ops.002
   - HEMP shall centrally manage all resources (across all constituent clouds).
