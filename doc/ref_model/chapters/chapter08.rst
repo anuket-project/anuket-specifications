@@ -217,7 +217,7 @@ When the CSP is actings as:
 
 These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a Multi-Cloud environment.
 
-Unified Management of Hybrid, Edge, and Multi-Cloud Environments
+Hybrid, Edge, and Multi-Cloud unified management Platform 
 ~~~~~~~~~~~~~~~~~~~~
 
 As organisations spread their resources across on-premises, multiple clouds, and the Edge, the need for a single set of tools and processes to manage and operate across these Hybrid, Edge, and Multi-clouds (HEM clouds) is obvious as can be seen from the following simplistic sceanarios. 
