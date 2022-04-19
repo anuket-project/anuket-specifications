@@ -194,7 +194,7 @@ The tbale below specifies a set of requirements for the Load Balances platform s
   - The Load Balancer should support resiliency in the global environment
   - 
 * - pas.lb.005
-  - The Load Balancer must support either OSI Level 3/4 and/or Level 7 load-balancing.
+  - The Load Balancer must support OSI Level 3/4 load-balancing and may support Level 7 Load Balancing.
   - OSI Level 3 load-balancing decision on the source and destination IP addresses and OSI Level 4 TCP port numbers. <br>OSI Level 7 (application characteristics based) should support HTTP and HTTPS
 * - pas.lb.006
   - The Load Balancer must, at a minimum, support round-robin load-balancing
