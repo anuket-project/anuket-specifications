@@ -495,23 +495,23 @@ Cloud Infrastructure Security Requirements
 |`7.9.1 <../../../ref_model/chapters/chap|sec.gen.001| The Platform **must** maintain the   |                         |
 |ter07.md#system-hardening>`__           |           | specified configuration.             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.002| All systems part of Cloud            |`5.3.1 Node Hardening: Se|
-|ter07.md#system-hardening>`__           |           | Infrastructure **must** support      |curing Kubernetes Hosts <|
-|                                        |           | password hardening as defined in `CIS|./chapter05.md#node-harde|
-|                                        |           | Password Policy Guide <https://www.ci|ning-securing-kubernetes-|
-|                                        |           |security.org/white-papers/cis-password|hosts>`__                |
-|                                        |           |-policy-guide/>`__. Hardening: CIS    |                         |
+|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.002| All systems part of Cloud            | `5.3.1 Node Hardening:  |
+|ter07.md#system-hardening>`__           |           | Infrastructure **must** support      | Securing Kubernetes     |
+|                                        |           | password hardening as defined in     | Hosts <./chapter05.md#n |
+|                                        |           | `CIS Password Policy Guide <https:// | ode-hardening-securing- |
+|                                        |           | www.cisecurity.org/white-papers/cis- | kubernetes-hosts>`__    |
+|                                        |           | -policy-guide/>`__. Hardening: CIS   |                         |
 |                                        |           | Password Policy Guide                |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.1 <../../../ref_model/chapters/chap|sec.gen.003| All servers part of Cloud            |                         |
 |ter07.md#system-hardening>`__           |           | Infrastructure **must** support a    |                         |
 |                                        |           | root of trust and secure boot.       |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.004| The Operating Systems of all the     |`5.2 Principles <./chapte|
-|ter07.md#system-hardening>`__           |           | servers part of Cloud Infrastructure |r05.md#principles>`__    |
-|                                        |           | **must** be hardened by removing or  |and `5.3 Node Hardening <|
-|                                        |           | disabling unnecessary services,      |./chapter05.md#node-harde|
-|                                        |           | applications and network protocols,  |ning>`__                 |
+|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.004| The Operating Systems of all the     | `5.2 Principles <./chap |
+|ter07.md#system-hardening>`__           |           | servers part of Cloud Infrastructure | ter05.md#principles>`__ |
+|                                        |           | **must** be hardened by removing or  | and `5.3 Node Hardening |
+|                                        |           | disabling unnecessary services,      | <./chapter05.md#node-ha |
+|                                        |           | applications and network protocols,  | rdening>`__             |
 |                                        |           | configuring operating system user    |                         |
 |                                        |           | authentication, configuring resource |                         |
 |                                        |           | controls, installing and configuring |                         |
@@ -520,39 +520,40 @@ Cloud Infrastructure Security Requirements
 |                                        |           | the Operating System.                |                         |
 |                                        |           | (NIST SP 800-123)                    |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.005| The Platform **must** support        |`5.3 Node Hardening <./ch|
-|ter07.md#system-hardening>`__           |           | Operating System level access        |apter05.md#node-hardening|
-|                                        |           | control                              |>`__                     |
+|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.005| The Platform **must** support        | `5.3 Node Hardening <./ |
+|ter07.md#system-hardening>`__           |           | Operating System level access        | chapter05.md#node-harde |
+|                                        |           | control                              | ning>`__                |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.006| The Platform **must** support Secure |`5.3.2 Restrict direct ac|
-|ter07.md#system-hardening>`__           |           | logging. Logging with root account   |cess to nodes <./chapter0|
-|                                        |           | must be prohibited when root         |5.md#restrict-direct-acce|
-|                                        |           | privileges are not required.         |ss-to-nodes>`__          |
+|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.006| The Platform **must** support Secure | `5.3.2 Restrict direct  |
+|ter07.md#system-hardening>`__           |           | logging. Logging with root account   | access to nodes <./chap |
+|                                        |           | must be prohibited when root         | ter05.md#restrict-direc |
+|                                        |           | privileges are not required.         | t-access-to-nodes>`__   |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.1 <../../../ref_model/chapters/chap|sec.gen.007| All servers part of Cloud            |                         |
 |ter07.md#system-hardening>`__           |           | Infrastructure **must** be Time      |                         |
 |                                        |           | synchronized with authenticated Time |                         |
 |                                        |           | service.                             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.008| All servers part of Cloud            |`5.3.3 Vulnerability asse|
-|ter07.md#system-hardening>`__           |           | Infrastructure **must** be regularly |ssment <./chapter05.md#vu|
-|                                        |           | updated to address security          |lnerability-assessment>`_|
-|                                        |           | vulnerabilities.                     |_                        |
+|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.008| All servers part of Cloud            | `5.3.3 Vulnerability as |
+|ter07.md#system-hardening>`__           |           | Infrastructure **must** be regularly | sessment <./chapter05.m |
+|                                        |           | updated to address security          | d#vulnerability-assessm |
+|                                        |           | vulnerabilities.                     | ent>`__                 |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.009| The Platform **must** support        |`5.4 Securing Kubernetes |
-|ter07.md#system-hardening>`__           |           | Software integrity protection and    |orchestrator <./chapter05|
-|                                        |           | verification and **must** scan       |.md#securing-kubernetes-o|
-|                                        |           | source code and manifests.           |rchestrator>`__          |
+|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.009| The Platform **must** support        | `5.4 Securing           |
+|ter07.md#system-hardening>`__           |           | Software integrity protection and    | Kubernetes orchestrator |
+|                                        |           | verification and **must** scan       | <./chapter05.md#securin |
+|                                        |           | source code and manifests.           | g-kubernetes-orchestrat |
+|                                        |           |                                      | or>`__                  |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.1 <../../../ref_model/chapters/chap|sec.gen.010| The Cloud Infrastructure **must**    |                         |
 |ter07.md#system-hardening>`__           |           | support encrypted storage, for       |                         |
-|                                        |           | example, block, object and file stora|                         |
-|                                        |           | ge, with access to encryption keys re|                         |
-|                                        |           | stricted based on a need to know. `Co|                         |
-|                                        |           |ntrolled Access Based on the Need to K|                         |
-|                                        |           |now <https://www.cisecurity.org/contro|                         |
-|                                        |           |ls/controlled-access-based-on-the-need|                         |
-|                                        |           |-to-know/>`__                         |                         |
+|                                        |           | example, block, object and file      |                         |
+|                                        |           | storage, with access to encryption   |                         |
+|                                        |           | keys restricted based on a need to   |                         |
+|                                        |           | know. `Controlled Access Based on    |                         |
+|                                        |           | the Need to Know <https://www.cisecu |                         |
+|                                        |           | rity.org/controls/controlled-access- |                         |
+|                                        |           | based-on-the-need-to-know/>`__       |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.1 <../../../ref_model/chapters/chap|sec.gen.011| The Cloud Infrastructure **should**  |                         |
 |ter07.md#system-hardening>`__           |           | support Read and Write only storage  |                         |
@@ -564,10 +565,11 @@ Cloud Infrastructure Security Requirements
 |                                        |           | access to the underlying             |                         |
 |                                        |           | infrastructure.                      |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.013| The Platform **must** ensure that    |`5.4 Securing Kubernetes |
-|ter07.md#system-hardening>`__           |           | only authorized actors have logical  |orchestrator <./chapter05|
-|                                        |           | access to the underlying             |.md#securing-kubernetes-o|
-|                                        |           | infrastructure.                      |rchestrator>`__          |
+|`7.9.1 <../../../ref_model/chapters/chap|sec.gen.013| The Platform **must** ensure that    | `5.4 Securing           |
+|ter07.md#system-hardening>`__           |           | only authorized actors have logical  | Kubernetes orchestrator |
+|                                        |           | access to the underlying             | <./chapter05.md#securin |
+|                                        |           | infrastructure.                      | g-kubernetes-orchestrat |
+|                                        |           |                                      | or>`__                  |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.1 <../../../ref_model/chapters/chap|sec.gen.014| All servers part of Cloud            |                         |
 |ter07.md#system-hardening>`__           |           | Infrastructure **should** support    |                         |
@@ -582,42 +584,47 @@ Cloud Infrastructure Security Requirements
 |                                        |           | change, the change, the date and the |                         |
 |                                        |           | time of the change.                  |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.001| The Platform **must** support        |`5.4 Securing Kubernetes |
-|ter07.md#platform-and-access>`__        |           | authenticated and secure access to   |orchestrator <./chapter05|
-|                                        |           | API, GUI and command line            |.md#securing-kubernetes-o|
-|                                        |           | interfaces.                          |rchestrator>`__          |
+|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.001| The Platform **must** support        | `5.4 Securing           |
+|ter07.md#platform-and-access>`__        |           | authenticated and secure access to   | Kubernetes orchestrator |
+|                                        |           | API, GUI and command line            | <./chapter05.md#securin |
+|                                        |           | interfaces.                          | g-kubernetes-orchestrat |
+|                                        |           |                                      | or>`__                  |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.2 <../../../ref_model/chapters/chap|sec.sys.002| The Platform **must** support        |                         |
 |ter07.md#platform-and-access>`__        |           | Traffic Filtering for workloads (for |                         |
 |                                        |           | example, Firewall).                  |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.003| The Platform **must** support Secure |`5.4.3 Use Transport Laye|
-|ter07.md#platform-and-access>`__        |           | and encrypted communications, and    |r Security and Service Me|
-|                                        |           | confidentiality and integrity of     |sh <./chapter05.md#use-tr|
-|                                        |           | network traffic.                     |ansport-layer-security-an|
-|                                        |           |                                      |d-service-mesh>`__       |
+|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.003| The Platform **must** support Secure | `5.4.3 Use Transport    |
+|ter07.md#platform-and-access>`__        |           | and encrypted communications, and    | Layer Security and      |
+|                                        |           | confidentiality and integrity of     | Service Mesh <./chapter |
+|                                        |           | network traffic.                     | 05.md#use-transport-lay |
+|                                        |           |                                      | er-security-and-service |
+|                                        |           |                                      | -mesh>`__               |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.004| The Cloud Infrastructure **must**    |`5.4.3 Use Transport Laye|
-|ter07.md#platform-and-access>`__        |           | support authentication, integrity    |r Security and Service Me|
-|                                        |           | and confidentiality on all network   |sh <./chapter05.md#use-tr|
-|                                        |           | channels.                            |ansport-layer-security-an|
-|                                        |           |                                      |d-service-mesh>`__       |
+|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.004| The Cloud Infrastructure **must**    | `5.4.3 Use Transport    |
+|ter07.md#platform-and-access>`__        |           | support authentication, integrity    | Layer Security and      |
+|                                        |           | and confidentiality on all network   | Service Mesh <./chapter |
+|                                        |           | channels.                            | 05.md#use-transport-lay |
+|                                        |           |                                      | er-security-and-service |
+|                                        |           |                                      | -mesh>`__               |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.2 <../../../ref_model/chapters/chap|sec.sys.005| The Cloud Infrastructure **must**    |                         |
 |ter07.md#platform-and-access>`__        |           | segregate the underlay and overlay   |                         |
 |                                        |           | networks.                            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.006| The Cloud Infrastructure must be     |`5.2 Principles <./chapte|
-|ter07.md#platform-and-access>`__        |           | able to utilise the Cloud            |r05.md#principles>`__    |
+|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.006| The Cloud Infrastructure must be     | `5.2 Principles <./chap |
+|ter07.md#platform-and-access>`__        |           | able to utilise the Cloud            | ter05.md#principles>`__ |
 |                                        |           | Infrastructure Manager identity      |                         |
 |                                        |           | lifecycle management capabilities.   |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.007| The Platform **must** implement      |`5.2 Principles <./chapte|
-|ter07.md#platform-and-access>`__        |           | controls enforcing separation of     |r05.md#principles>`__    |
-|                                        |           | duties and privileges, least         | and `5.4 Securing Kubern|
-|                                        |           | privilege use and least common       |etes orchestrator <./chap|
-|                                        |           | mechanism (Role-Based Access         |ter05.md#securing-kuberne|
-|                                        |           | Control).                            |tes-orchestrator>`__     |
+|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.007| The Platform **must** implement      | `5.2 Principles <./chap |
+|ter07.md#platform-and-access>`__        |           | controls enforcing separation of     | ter05.md#principles>`__ |
+|                                        |           | duties and privileges, least         | and                     |
+|                                        |           | privilege use and least common       | `5.4 Securing           |
+|                                        |           | mechanism (Role-Based Access         | Kubernetes orchestrator |
+|                                        |           | Control).                            | <./chapter05.md#securin |
+|                                        |           |                                      | g-kubernetes-orchestrat |
+|                                        |           |                                      | or>`__                  |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.2 <../../../ref_model/chapters/chap|sec.sys.008| The Platform **must** be able to     |                         |
 |ter07.md#platform-and-access>`__        |           | assign the Entities that comprise    |                         |
@@ -662,11 +669,11 @@ Cloud Infrastructure Security Requirements
 |ter07.md#platform-and-access>`__        |           | back door entries (unpublished       |                         |
 |                                        |           | access points, APIs, etc.).          |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.016| Login access to the platform's       |`5.4 Securing Kubernetes |
-|ter07.md#platform-and-access>`__        |           | components **must** be through       |orchestrator <./chapter05|
-|                                        |           | encrypted protocols such as SSH v2   |.md#securing-kubernetes-o|
-|                                        |           | or TLS v1.2 or higher. Note:         |rchestrator>`__          |
-|                                        |           | Hardened jump servers isolated from  |                         |
+|`7.9.2 <../../../ref_model/chapters/chap|sec.sys.016| Login access to the platform's       | `5.4 Securing           |
+|ter07.md#platform-and-access>`__        |           | components **must** be through       | Kubernetes orchestrator |
+|                                        |           | encrypted protocols such as SSH v2   | <./chapter05.md#securin |
+|                                        |           | or TLS v1.2 or higher. Note:         | g-kubernetes-orchestrat |
+|                                        |           | Hardened jump servers isolated from  | or>`__                  |
 |                                        |           | external networks are recommended    |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.2 <../../../ref_model/chapters/chap|sec.sys.017| The Platform **must** provide the    |                         |
@@ -689,57 +696,59 @@ Cloud Infrastructure Security Requirements
 |                                        |           | Trust principles to build a secure   |                         |
 |                                        |           | by design environment.               |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.3 <../../../ref_model/chapters/chap|sec.ci.001 | The Platform **must** support        |`5.4 Securing Kubernetes |
-|ter07.md#confidentiality-and-integrity>`|           | Confidentiality and Integrity of     |orchestrator <./chapter05|
-|__                                      |           | data at rest and in-transit.         |.md#securing-kubernetes-o|
-|                                        |           | by design environment.               |rchestrator>`__          |
+| `7.9.3 <../../../ref_model/chapters/ch |sec.ci.001 | The Platform **must** support        | `5.4 Securing           |
+| apter07.md#confidentiality-and-integri |           | Confidentiality and Integrity of     | Kubernetes orchestrator |
+| ty>`__                                 |           | data at rest and in-transit.         | <./chapter05.md#securin |
+|                                        |           | by design environment.               | g-kubernetes-orchestrat |
+|                                        |           |                                      | or>`__                  |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.3 <../../../ref_model/chapters/chap|sec.ci.002 | The Platform **should** support      |                         |
-|ter07.md#confidentiality-and-integrity>`|           | self-encrypting storage devices.     |                         |
-|__                                      |           | data at rest and in-transit.         |                         |
+| `7.9.3 <../../../ref_model/chapters/ch |sec.ci.002 | The Platform **should** support      |                         |
+| apter07.md#confidentiality-and-integri |           | self-encrypting storage devices.     |                         |
+| ty>`__                                 |           | data at rest and in-transit.         |                         |
 |                                        |           | by design environment.               |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.3 <../../../ref_model/chapters/chap|sec.ci.003 | The Platform **must** support        |                         |
-|ter07.md#confidentiality-and-integrity>`|           | Confidentiality and Integrity of     |                         |
-|__                                      |           | data related metadata.               |                         |
+| `7.9.3 <../../../ref_model/chapters/ch |sec.ci.003 | The Platform **must** support        |                         |
+| apter07.md#confidentiality-and-integri |           | Confidentiality and Integrity of     |                         |
+| ty>`__                                 |           | data related metadata.               |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.3 <../../../ref_model/chapters/chap|sec.ci.004 | The Platform **must** support        |                         |
-|ter07.md#confidentiality-and-integrity>`|           | Confidentiality of processes and     |                         |
-|__                                      |           | restrict information sharing with    |                         |
+| `7.9.3 <../../../ref_model/chapters/ch |sec.ci.004 | The Platform **must** support        |                         |
+| apter07.md#confidentiality-and-integri |           | Confidentiality of processes and     |                         |
+| ty>`__                                 |           | restrict information sharing with    |                         |
 |                                        |           | only the process owner (e.g.,        |                         |
 |                                        |           | tenant).                             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.3 <../../../ref_model/chapters/chap|sec.ci.005 | The Platform **must** support        |                         |
-|ter07.md#confidentiality-and-integrity>`|           | Confidentiality and Integrity of     |                         |
-|__                                      |           | process-related metadata and         |                         |
+| `7.9.3 <../../../ref_model/chapters/ch |sec.ci.005 | The Platform **must** support        |                         |
+| apter07.md#confidentiality-and-integri |           | Confidentiality and Integrity of     |                         |
+| ty>`__                                 |           | process-related metadata and         |                         |
 |                                        |           | restrict information sharing with    |                         |
 |                                        |           | only the process owner (e.g.,        |                         |
 |                                        |           | tenant).                             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.3 <../../../ref_model/chapters/chap|sec.ci.006 | The Platform **must** support        |                         |
-|ter07.md#confidentiality-and-integrity>`|           | Confidentiality and Integrity of     |                         |
-|__                                      |           | workload resource utilization (RAM,  |                         |
+| `7.9.3 <../../../ref_model/chapters/ch |sec.ci.006 | The Platform **must** support        |                         |
+| apter07.md#confidentiality-and-integri |           | Confidentiality and Integrity of     |                         |
+| ty>`__                                 |           | workload resource utilization (RAM,  |                         |
 |                                        |           | CPU, Storage, Network I/O, cache,    |                         |
 |                                        |           | hardware offload) and restrict       |                         |
 |                                        |           | information sharing with only the    |                         |
 |                                        |           | workload owner (e.g., tenant).       |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.3 <../../../ref_model/chapters/chap|sec.ci.007 | The Platform **must not** allow      |                         |
-|ter07.md#confidentiality-and-integrity>`|           | Memory Inspection by any actor other |                         |
-|__                                      |           | than the authorized actors for the   |                         |
+| `7.9.3 <../../../ref_model/chapters/ch |sec.ci.007 | The Platform **must not** allow      |                         |
+| apter07.md#confidentiality-and-integri |           | Memory Inspection by any actor other |                         |
+| ty>`__                                 |           | than the authorized actors for the   |                         |
 |                                        |           | Entity to which Memory is assigned   |                         |
 |                                        |           | (e.g., tenants owning the workload), |                         |
 |                                        |           | for Lawful Inspection, and by secure |                         |
 |                                        |           | monitoring services.                 |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.3 <../../../ref_model/chapters/chap|sec.ci.008 | The Cloud Infrastructure **must**    |`5.7 Create and define Ne|
-|ter07.md#confidentiality-and-integrity>`|           | support tenant networks segregation. |twork Policies <./chapter|
-|                                        |           |                                      |05.md#create-and-define-n|
-|                                        |           |                                      |etwork-policies>`__      |
+| `7.9.3 <../../../ref_model/chapters/ch |sec.ci.008 | The Cloud Infrastructure **must**    | `5.7 Create and define  |
+| apter07.md#confidentiality-and-integri |           | support tenant networks segregation. | Network Policies        |
+| ty>`__                                 |           |                                      | <./chapter05.md#create- |
+|                                        |           |                                      | and-define-network-poli |
+|                                        |           |                                      | cies>`__                |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.3 <../../../ref_model/chapters/chap|sec.ci.009 | For sensitive data encryption, the   |                         |
-|ter07.md#confidentiality-and-integrity>`|           | key management service **should**    |                         |
-|                                        |           | leverage a Hardware Security Module  |                         |
+| `7.9.3 <../../../ref_model/chapters/ch |sec.ci.009 | For sensitive data encryption, the   |                         |
+| apter07.md#confidentiality-and-integri |           | key management service **should**    |                         |
+| ty>`__                                 |           | leverage a Hardware Security Module  |                         |
 |                                        |           | to manage and protect cryptographic  |                         |
 |                                        |           | keys.                                |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
@@ -752,44 +761,47 @@ Cloud Infrastructure Security Requirements
 |                                        |           | integrity (e.g. remote attestation,  |                         |
 |                                        |           | Trusted Platform Module).            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.003 | The Platform **must** support secure |`5.4 Securing Kubernetes |
-|ter07.md#workload-security>`__          |           | provisioning of workloads.           |orchestrator <./chapter05|
-|                                        |           |                                      |.md#securing-kubernetes-o|
-|                                        |           |                                      |rchestrator>`__          |
+|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.003 | The Platform **must** support secure | `5.4 Securing           |
+|ter07.md#workload-security>`__          |           | provisioning of workloads.           | Kubernetesorchestrator  |
+|                                        |           |                                      | <./chapter05.md#securin |
+|                                        |           |                                      | g-kubernetes-orchestrat |
+|                                        |           |                                      | or>`__                  |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.4 <../../../ref_model/chapters/chap|sec.wl.004 | The Platform **must** support        |                         |
 |ter07.md#workload-security>`__          |           | Location assertion (for mandated     |                         |
 |                                        |           | in-country or location               |                         |
 |                                        |           | requirements).                       |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.005 | The Platform **must** support the    |`5.4 Securing Kubernetes |
-|ter07.md#workload-security>`__          |           | separation of production and         |orchestrator <./chapter05|
-|                                        |           | non-production Workloads.            |.md#securing-kubernetes-o|
-|                                        |           |                                      |rchestrator>`__          |
+|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.005 | The Platform **must** support the    | `5.4 Securing           |
+|ter07.md#workload-security>`__          |           | separation of production and         | Kubernetes orchestrator |
+|                                        |           | non-production Workloads.            | <./chapter05.md#securin |
+|                                        |           |                                      | g-kubernetes-orchestrat |
+|                                        |           |                                      | or>`__                  |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.006 | The Platform **must** support the    |`5.4 Securing Kubernetes |
-|ter07.md#workload-security>`__          |           | separation of Workloads based on     |orchestrator <./chapter05|
-|                                        |           | their categorisation (for example,   |.md#securing-kubernetes-o|
-|                                        |           | payment card information,            |rchestrator>`__ and `5.6 |
-|                                        |           | healthcare, etc.).                   |Separate Sensitive Worklo|
-|                                        |           |                                      |ad <./chapter05.md#separa|
-|                                        |           |                                      |te-sensitive-workload>`__|
+|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.006 | The Platform **must** support the    | `5.4 Securing           |
+|ter07.md#workload-security>`__          |           | separation of Workloads based on     | Kubernetes orchestrator |
+|                                        |           | their categorisation (for example,   | <./chapter05.md#securin |
+|                                        |           | payment card information,            | g-kubernetes-orchestrat |
+|                                        |           | healthcare, etc.).                   | or>`__ and `5.6Separate |
+|                                        |           |                                      | Sensitive Workload <./c |
+|                                        |           |                                      | hapter05.md#separate-se |
+|                                        |           |                                      | nsitive-workload>`__    |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.007 | The Operator **must** implement      |`5.13 Trusted Registry <.|
-|ter07.md#workload-security>`__          |           | processes and tools to verify VNF    |/chapter05.md#trusted-reg|
-|                                        |           | authenticity and integrity.          |istry>`__                |
+|`7.9.4 <../../../ref_model/chapters/chap|sec.wl.007 | The Operator **must** implement      | `5.13 Trusted Registry  |
+|ter07.md#workload-security>`__          |           | processes and tools to verify VNF    | <./chapter05.md#trusted |
+|                                        |           | authenticity and integrity.          | -registry>`__           |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.5 <../../../ref_model/chapters/chap|sec.img.001| Images from untrusted sources **must |`5.13 Trusted Registry <.|
-|ter07.md#image-security>`__             |           | not** be used.                       |/chapter05.md#trusted-reg|
-|                                        |           |                                      |istry>`__                |
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.001| Images from untrusted sources **must | `5.13 Trusted Registry  |
+|ter07.md#image-security>`__             |           | not** be used.                       | <./chapter05.md#trusted |
+|                                        |           |                                      | -registry>`__           |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.5 <../../../ref_model/chapters/chap|sec.img.002| Images **must** be scanned to be     |`5.13 Trusted Registry <.|
-|ter07.md#image-security>`__             |           | maintained free from known           |/chapter05.md#trusted-reg|
-|                                        |           | vulnerabilities.                     |istry>`__                |
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.002| Images **must** be scanned to be     | `5.13 Trusted Registry  |
+|ter07.md#image-security>`__             |           | maintained free from known           | <./chapter05.md#trusted |
+|                                        |           | vulnerabilities.                     | -registry>`__           |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.5 <../../../ref_model/chapters/chap|sec.img.003| Images **must not** be configured to |`5.11 Run-Time Security <|
-|ter07.md#image-security>`__             |           | run with privileges higher than the  |./chapter05.md#run-time-s|
-|                                        |           | privileges of the actor authorized   |ecurity>`__              |
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.003| Images **must not** be configured to | `5.11 Run-Time Security |
+|ter07.md#image-security>`__             |           | run with privileges higher than the  | <./chapter05.md#run-tim |
+|                                        |           | privileges of the actor authorized   | e-security>`__          |
 |                                        |           | to run them.                         |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.5 <../../../ref_model/chapters/chap|sec.img.004| Images **must** only be accessible   |                         |
@@ -798,19 +810,19 @@ Cloud Infrastructure Security Requirements
 |`7.9.5 <../../../ref_model/chapters/chap|sec.img.005| Image Registries **must** only be    |                         |
 |ter07.md#image-security>`__             |           | accessible to authorized actors.     |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.5 <../../../ref_model/chapters/chap|sec.img.006| Image Registries **must** only be    |`5.13 Trusted Registry <.|
-|ter07.md#image-security>`__             |           | accessible over secure networks that |/chapter05.md#trusted-reg|
-|                                        |           | enforce authentication, integrity    |istry>`__                |
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.006| Image Registries **must** only be    | `5.13 Trusted Registry  |
+|ter07.md#image-security>`__             |           | accessible over secure networks that |  <./chapter05.md#truste |
+|                                        |           | enforce authentication, integrity    | d-registry>`__          |
 |                                        |           | and confidentiality.                 |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.5 <../../../ref_model/chapters/chap|sec.img.007| Image registries **must** be clear   |`5.13 Trusted Registry <.|
-|ter07.md#image-security>`__             |           | of vulnerable and out of date        |/chapter05.md#trusted-reg|
-|                                        |           | versions.                            |istry>`__                |
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.007| Image registries **must** be clear   | `5.13 Trusted Registry  |
+|ter07.md#image-security>`__             |           | of vulnerable and out of date        | <./chapter05.md#trusted |
+|                                        |           | versions.                            | -registry>`__           |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.5 <../../../ref_model/chapters/chap|sec.img.008| Images **must not** include any      |`5.12 Secrets Management |
-|ter07.md#image-security>`__             |           | secrets. Secrets include passwords,  |<./chapter05.md#secrets-m|
-|                                        |           | cloud provider credentials, SSH      |anagement>`__            |
-|                                        |           | keys, TLS certificate keys, etc.     |                         |
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.008| Images **must not** include any      | `5.12 Secrets           |
+|ter07.md#image-security>`__             |           | secrets. Secrets include passwords,  | Management <./chapter05 |
+|                                        |           | cloud provider credentials, SSH      | .md#secrets-management> |
+|                                        |           | keys, TLS certificate keys, etc.     | `__                     |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.5 <../../../ref_model/chapters/chap|sec.img.009| CIS Hardened Images **should** be    |                         |
 |ter07.md#image-security>`__             |           | used whenever possible.              |                         |
@@ -825,11 +837,11 @@ Cloud Infrastructure Security Requirements
 |                                        |           | Clean-Up includes tear-down, defense |                         |
 |                                        |           | against virus or other attacks.      |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.002| Cloud operations staff and systems   |`5.4 Securing Kubernetes |
-|ter07.md#security-lcm>`__               |           | **must** use management protocols    |orchestrator <./chapter05|
-|                                        |           | limiting security risk such as       |.md#securing-kubernetes-o|
-|                                        |           | SNMPv3, SSH v2, ICMP, NTP, syslog    |rchestrator>`__          |
-|                                        |           | and TLS v1.2 or higher.              |                         |
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.002| Cloud operations staff and systems   | `5.4 Securing           |
+|ter07.md#security-lcm>`__               |           | **must** use management protocols    | Kubernetes orchestrator |
+|                                        |           | limiting security risk such as       | <./chapter05.md#securin |
+|                                        |           | SNMPv3, SSH v2, ICMP, NTP, syslog    | g-kubernetes-orchestrat |
+|                                        |           | and TLS v1.2 or higher.              | or>`__                  |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.003| The Cloud Operator **must**          |                         |
 |ter07.md#security-lcm>`__               |           | implement and strictly follow change |                         |
@@ -843,20 +855,20 @@ Cloud Infrastructure Security Requirements
 |ter07.md#security-lcm>`__               |           | support automated templated approved |                         |
 |                                        |           | changes.                             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.005| Platform **must** provide logs and   |`5.10 Enable Logging and |
-|ter07.md#security-lcm>`__               |           | these logs must be regularly         |Monitoring <./chapter05.m|
-|                                        |           | monitored for anomalous behavior.    |d#enable-logging-and-moni|
-|                                        |           |                                      |toring>`__               |
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.005| Platform **must** provide logs and   | `5.10 Enable Logging    |
+|ter07.md#security-lcm>`__               |           | these logs must be regularly         | and Monitoring <./chapt |
+|                                        |           | monitored for anomalous behavior.    | er05.md#enable-logging- |
+|                                        |           |                                      | and-monitoring>`__      |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.006| The Platform **must** verify the     |                         |
 |ter07.md#security-lcm>`__               |           | integrity of all Resource management |                         |
 |                                        |           | requests.                            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.007| The Platform **must** be able to     |`5.4 Securing Kubernetes |
-|ter07.md#security-lcm>`__               |           | update newly instantiated,           |orchestrator <./chapter05|
-|                                        |           | suspended, hibernated, migrated and  |.md#securing-kubernetes-o|
-|                                        |           | restarted images with current time   |rchestrator>`__          |
-|                                        |           | information.                         |                         |
+|`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.007| The Platform **must** be able to     | `5.4 Securing           |
+|ter07.md#security-lcm>`__               |           | update newly instantiated,           | Kubernetes orchestrator |
+|                                        |           | suspended, hibernated, migrated and  | <./chapter05.md#securin |
+|                                        |           | restarted images with current time   | g-kubernetes-orchestrat |
+|                                        |           | information.                         | or>`__                  |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.008| The Platform **must** be able to     |                         |
 |ter07.md#security-lcm>`__               |           | update newly instantiated,           |                         |
@@ -981,14 +993,14 @@ Cloud Infrastructure Security Requirements
 |                                        |           | practices for auditing, including    |                         |
 |                                        |           | secure logging and tracing.          |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.017| The Platform **must** audit systems  |`5.3.3 Vulnerability asse|
-|                                        |           | for any missing security patches and |ssment <./chapter05.md#vu|
-|                                        |           | take appropriate actions.            |lnerability-assessment>`_|
-|                                        |           |                                      |_                        |
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.017| The Platform **must** audit systems  | `5.3.3 Vulnerability    |
+|                                        |           | for any missing security patches and | assessment <./chapter05 |
+|                                        |           | take appropriate actions.            | .md#vulnerability-asses |
+|                                        |           |                                      | sment>`__               |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.018| The Platform, starting from          |`5.3.4 Patch management <|
-|                                        |           | initialization, **must** collect and |./chapter05.md#patch-mana|
-|                                        |           | analyze logs to identify security    |gement>`__               |
+|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.018| The Platform, starting from          | `5.3.4 Patch management |
+|                                        |           | initialization, **must** collect and | <./chapter05.md#patch-m |
+|                                        |           | analyze logs to identify security    | anagement>`__           |
 |                                        |           | events, and store these events in an |                         |
 |                                        |           | external system.                     |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
@@ -1009,10 +1021,10 @@ Cloud Infrastructure Security Requirements
 |                                        |           | these to the external logging system |                         |
 |                                        |           | until successful.                    |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.001| Open source code **must** be         |`5.3.3 Vulnerability asse|
-|ter07.md#open-source-software>`__       |           | inspected by tools with various      |ssment <./chapter05.md#vu|
-|                                        |           | capabilities for static and dynamic  |lnerability-assessment>`_|
-|                                        |           | code analysis.                       |_                        |
+|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.001| Open source code **must** be         | `5.3.3 Vulnerability    |
+|ter07.md#open-source-software>`__       |           | inspected by tools with various      | assessment <./chapter05 |
+|                                        |           | capabilities for static and dynamic  | .md#vulnerability-asses |
+|                                        |           | code analysis.                       | sment>`__               |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.8 <../../../ref_model/chapters/chap|sec.oss.002| The `CVE (Common Vulnerabilities and |                         |
 |ter07.md#open-source-software>`__       |           |Exposures) <https://cve.mitre.org/>`__|                         |
@@ -1031,9 +1043,9 @@ Cloud Infrastructure Security Requirements
 |                                        |           | associated rate (low, medium, high,  |                         |
 |                                        |           | or critical).                        |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.004| A dedicated internal isolated        |`5.13 Trusted Registry <.|
-|ter07.md#open-source-software>`__       |           | repository separated from the        |/chapter05.md#trusted-reg|
-|                                        |           | production environment **must** be   |istry>`__                |
+|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.004| A dedicated internal isolated        | `5.13 Trusted Registry  |
+|ter07.md#open-source-software>`__       |           | repository separated from the        | <./chapter05.md#trusted |
+|                                        |           | production environment **must** be   | -registry>`__           |
 |                                        |           | used to store vetted open source     |                         |
 |                                        |           | content.                             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
@@ -1348,11 +1360,11 @@ machines or containers.
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
 |Reference | Category     | Sub-category | Description                          | Specification Reference             |
 +==========+==============+==============+======================================+=====================================+
-|gen.cnt.02| General      | Cloud        | The Architecture **must** support    |`ra2.ch.017 <chapter04.md#kubernetes-|
-|          |              | nativeness   | immutable infrastructure.            |node>`__                             |
+|gen.cnt.02| General      | Cloud        | The Architecture **must** support    | `ra2.ch.017 <chapter04.md#kubernete |
+|          |              | nativeness   | immutable infrastructure.            | s-node>`__                          |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|gen.cnt.03| General      | Cloud        | The Architecture **must** run        |`ra2.k8s.001 <chapter04.md#kubernetes|
-|          |              | nativeness   | conformant Kubernetes as defined by  |>`__                                 |
+|gen.cnt.03| General      | Cloud        | The Architecture **must** run        | `ra2.k8s.001 <chapter04.md#kubernet |
+|          |              | nativeness   | conformant Kubernetes as defined by  | es>`__                              |
 |          |              |              | the `CNCF <https://github.com/cncf/k8|                                     |
 |          |              |              |s-conformance>`__.                    |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
@@ -1368,35 +1380,36 @@ machines or containers.
 |          |              |              | policy driven horizontal             |                                     |
 |          |              |              | auto-scaling of workloads.           |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|gen.rsl.01| General      | Resiliency   | The Architecture **must** support    |`ra2.k8s.004 <chapter04.md#kubernetes|
-|          |              |              | resilient Kubernetes components that |>`__                                 |
+|gen.rsl.01| General      | Resiliency   | The Architecture **must** support    | `ra2.k8s.004 <chapter04.md#kubernet |
+|          |              |              | resilient Kubernetes components that | es>`__                              |
 |          |              |              | are required for the continued       |                                     |
 |          |              |              | availability of running workloads.   |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|gen.rsl.02| General      | Resiliency   | The Architecture **should** support  |`ra2.k8s.002 <chapter04.md#kubernetes|
-|          |              |              | resilient Kubernetes service         |>`__, `ra2.k8s.003 <chapter04.md#kube|
-|          |              |              | components that are not subject to   |rnetes>`__                           |
+|gen.rsl.02| General      | Resiliency   | The Architecture **should** support  | `ra2.k8s.002 <chapter04.md#kubernet |
+|          |              |              | resilient Kubernetes service         | es>`__, `ra2.k8s.003 <chapter04.md# |
+|          |              |              | components that are not subject to   | kubernetes>`__                      |
 |          |              |              | gen.rsl.01.                          |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|gen.avl.01| General      | Availability | The Architecture **must** provide    |`ra2.k8s.002 <chapter04.md#kubernetes|
-|          |              |              | High Availability for Kubernetes     |>`__, `ra2.k8s.003 <chapter04.md#kube|
-|          |              |              | components.                          |rnetes>`__, `ra2.k8s.004 <chapter04.m|
-|          |              |              |                                      |d#kubernetes>`__                     |
+|gen.avl.01| General      | Availability | The Architecture **must** provide    | `ra2.k8s.002 <chapter04.md#kubernet |
+|          |              |              | High Availability for Kubernetes     | es>`__, `ra2.k8s.003 <chapter04.md# |
+|          |              |              | components.                          | kubernetes>`__, `ra2.k8s.004 <chapt |
+|          |              |              |                                      | er04.md#kubernetes>`__              |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|gen.ost.01| Openness     | Availability | The Architecture **should** embrace  |`ra2.crt.001 <chapter04.md#container-|
-|          |              |              | open-based standards and             |runtimes>`__, `ra2.crt.002 <chapter04|
-|          |              |              | technologies.                        |.md#container-runtimes>`__, `ra2.ntw.|
-|          |              |              |                                      |002 <chapter04.md#networking-solution|
-|          |              |              |                                      |s>`__, `ra2.ntw.006 <chapter04.md#net|
-|          |              |              |                                      |working-solutions>`__, `ra2.ntw.007 <|
-|          |              |              |                                      |chapter04.md#networking-solutions>`__| 
+|gen.ost.01| Openness     | Availability | The Architecture **should** embrace  | `ra2.crt.001 <chapter04.md#containe |
+|          |              |              | open-based standards and             | r-runtimes>`__, `ra2.crt.002 <chapt |
+|          |              |              | technologies.                        | er04.md#container-runtimes>`__, `ra |
+|          |              |              |                                      | 2.ntw.002 <chapter04.md#networking- |
+|          |              |              |                                      | solutions>`__, `ra2.ntw.006 <chapte |
+|          |              |              |                                      | r04.md#networking-solutions>`__,    |
+|          |              |              |                                      | `ra2.ntw.007 <chapter04.md#networki |
+|          |              |              |                                      | ng-solutions>`__                    | 
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.com.01|Infrastructure| Compute      | The Architecture **must** provide    |`ra2.k8s.004 <chapter04.md#kubernetes|
-|          |              |              | compute resources for Pods.          |>`__                                 |
+|inf.com.01|Infrastructure| Compute      | The Architecture **must** provide    | `ra2.k8s.004 <chapter04.md#kubernet |
+|          |              |              | compute resources for Pods.          | es>`__                              |
 |          |              |              | technologies.                        |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.stg.01|Infrastructure| Storage      | The Architecture **must** support    |`ra2.stg.004 <chapter04.md#storage-co|
-|          |              |              | the ability for an operator to       |mponents>`__                         |
+|inf.stg.01|Infrastructure| Storage      | The Architecture **must** support    | `ra2.stg.004 <chapter04.md#storage- |
+|          |              |              | the ability for an operator to       | components>`__                      |
 |          |              |              | choose whether or not to deploy      |                                     |
 |          |              |              | persistent storage for Pods.         |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
@@ -1409,29 +1422,29 @@ machines or containers.
 |          |              |              | to the Kubernetes nodes, leveraging  |                                     |
 |          |              |              | multiple network connections.        |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.ntw.03|Infrastructure| Network      | The networking solution **should**   |`ra2.ntw.001 <chapter04.md#networking|
-|          |              |              | be able to be centrally              |-solutions>`__, `ra2.ntw.004 <chapter|
-|          |              |              | administrated and configured.        |04.md#networking-solutions>`__       |
+|inf.ntw.03|Infrastructure| Network      | The networking solution **should**   | `ra2.ntw.001 <chapter04.md#networki |
+|          |              |              | be able to be centrally              | ng-solutions>`__, `ra2.ntw.004 <cha |
+|          |              |              | administrated and configured.        | pter04.md#networking-solutions>`__  |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.ntw.04|Infrastructure| Network      | The Architecture **must** support    |`ra2.ch.007 <chapter04.md#kubernetes-|
-|          |              |              | dual stack IPv4 and IPv6 for         |node>`__, `ra2.k8s.010 <chapter04.md#|
-|          |              |              | Kubernetes workloads.                |kubernetes>`__                       |
+|inf.ntw.04|Infrastructure| Network      | The Architecture **must** support    | `ra2.ch.007 <chapter04.md#kubernete |
+|          |              |              | dual stack IPv4 and IPv6 for         | s-node>`__, `ra2.k8s.010 <chapter04 |
+|          |              |              | Kubernetes workloads.                | .md#kubernetes>`__                  |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
 |inf.ntw.05|Infrastructure| Network      | The Architecture **must** support    |                                     |
 |          |              |              | capabilities for integrating SDN     |                                     |
 |          |              |              | controllers.                         |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.ntw.06|Infrastructure| Network      | The Architecture **must** support    |`ra2.ntw.005 <chapter04.md#networking|
-|          |              |              | more than one networking solution.   |-solutions>`__, `ra2.ntw.007 <chapter|
-|          |              |              |                                      |04.md#networking-solutions>`__       |
+|inf.ntw.06|Infrastructure| Network      | The Architecture **must** support    | `ra2.ntw.005 <chapter04.md#networki |
+|          |              |              | more than one networking solution.   | ng-solutions>`__, `ra2.ntw.007 <cha |
+|          |              |              |                                      | pter04.md#networking-solutions>`__  |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.ntw.07|Infrastructure| Network      | The Architecture **must** support    |`ra2.ntw.005 <chapter04.md#networking|
-|          |              |              | the ability for an operator to       |-solutions>`__                       |
+|inf.ntw.07|Infrastructure| Network      | The Architecture **must** support    | `ra2.ntw.005 <chapter04.md#networki |
+|          |              |              | the ability for an operator to       | ng-solutions>`__                    |
 |          |              |              | choose whether or not to deploy more |                                     |
 |          |              |              | than one networking solution.        |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.ntw.08|Infrastructure| Network      | The Architecture **must** provide a  |`ra2.ntw.002 <chapter04.md#networking|
-|          |              |              | default network which implements the |-solutions>`__                       |
+|inf.ntw.08|Infrastructure| Network      | The Architecture **must** provide a  | `ra2.ntw.002 <chapter04.md#networki |
+|          |              |              | default network which implements the | ng-solutions>`__                    |
 |          |              |              | Kubernetes network model.            |                                     |
 |          |              |              |                                      |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
@@ -1465,30 +1478,34 @@ machines or containers.
 |          |              |              |utions>`__                            |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
 |inf.ntw.15|Infrastructure| Network      | The platform **must** support        |                                     |
-|          |              |              | LoadBalancer `Publishing Service (Ser|                                     |
-|          |              |              |viceType) <https://kubernetes.io/docs/|                                     |
-|          |              |              |concepts/services-networking/service/#|                                     |
-|          |              |              |publishing-services-service-types>`__ |                                     |
+|          |              |              | LoadBalancer `Publishing Service     |                                     |
+|          |              |              | (ServiceType) <https://kubernetes.io |                                     |
+|          |              |              | /docs/concepts/services-networking/s |                                     |
+|          |              |              | ervice/#publishing-services-service- |                                     |
+|          |              |              | types>`__                            |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.ntw.16|Infrastructure| Network      | The platform **must** support `Ingres|                                     |
-|          |              |              |s <https://kubernetes.io/docs/concepts|                                     |
-|          |              |              |/services-networking/ingress/>`__.    |                                     |
+|inf.ntw.16|Infrastructure| Network      | The platform **must** support        |                                     |
+|          |              |              | `Ingress <https://kubernetes.io/docs |                                     |
+|          |              |              | /concepts/services-networking/ingres |                                     |
+|          |              |              | s/>`__.                              |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
 |inf.ntw.17|Infrastructure| Network      | The platform **should** support      |                                     |
-|          |              |              |NodePort `Publishing Service (ServiceT|                                     |
-|          |              |              |ypes) <https://kubernetes.io/docs/conc|                                     |
-|          |              |              |epts/services-networking/service/#publ|                                     |
-|          |              |              |ishing-services-service-types>`__.    |                                     |
+|          |              |              | NodePort `Publishing Service         |                                     |
+|          |              |              | (ServiceTypes) <https://kubernetes.i |                                     |
+|          |              |              | o/docs/concepts/services-networking/ |                                     |
+|          |              |              | service/#publishing-services-service |                                     |
+|          |              |              | -types>`__.                          |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
 |inf.ntw.18|Infrastructure| Network      | The platform **should** support      |                                     |
-|          |              |              |ExternalName `Publishing Service (Serv|                                     |
-|          |              |              |iceTypes) <https://kubernetes.io/docs/|                                     |
-|          |              |              |concepts/services-networking/service/#|                                     |
-|          |              |              |publishing-services-service-types>`__.|                                     |
+|          |              |              | ExternalName `Publishing Service     |                                     |
+|          |              |              | (ServiceTypes) <https://kubernetes.i |                                     |
+|          |              |              | o/docs/concepts/services-networking/ |                                     |
+|          |              |              | service/#publishing-services-service |                                     |
+|          |              |              | -types>`__.                          |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.vir.01|Infrastructure| Virtual      | The Architecture **must** support    |`ra2.ch.005 <chapter04.md#kubernetes-|
-|          |              |Infrastructure| the capability for Containers to     |node>`__, `ra2.ch.011 <chapter04.md#k|
-|          |              |              | consume infrastructure resources     |ubernetes-node>`__                   |
+|inf.vir.01|Infrastructure| Virtual      | The Architecture **must** support    | `ra2.ch.005 <chapter04.md#kubernete |
+|          |              |Infrastructure| the capability for Containers to     | s-node>`__, `ra2.ch.011 <chapter04. |
+|          |              |              | consume infrastructure resources     | md#kubernetes-node>`__              |
 |          |              |              | abstracted by Host Operating Systems |                                     |
 |          |              |              | that are running within a virtual    |                                     |
 |          |              |              | machine.                             |                                     |
@@ -1504,18 +1521,18 @@ machines or containers.
 |          | Cluster      |              | policy driven horizontal auto-       |                                     |
 |          |              |              | scaling of Kubernetes Cluster.       |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|kcm.gen.02| Kubernetes   | General      | The Architecture **must** enable     |`ra2.k8s.004 <chapter04.md#kubernetes|
-|          | Cluster      |              | workload resiliency.                 |>`__                                 |
+|kcm.gen.02| Kubernetes   | General      | The Architecture **must** enable     | `ra2.k8s.004 <chapter04.md#kubernet |
+|          | Cluster      |              | workload resiliency.                 | es>`__                              |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|int.api.01| API          | General      | The Architecture **must** leverage   | For Networking: `ra2.ntw.001 <chapte|
-|          |              |              | the Kubernetes APIs to discover and  |r04.md#networking-solutions>`__, `ra2|
-|          |              |              | declaratively manage compute         |.ntw.008 <chapter04.md#networking-sol|
-|          |              |              | (virtual and bare metal resources),  |utions>`__, `ra2.app.006 <chapter04.m|
-|          |              |              | network, and storage.                |d#kubernetes-workloads>`__           |
+|int.api.01| API          | General      | The Architecture **must** leverage   | For Networking: `ra2.ntw.001 <chapt |
+|          |              |              | the Kubernetes APIs to discover and  | er04.md#networking-solutions>`__,   |
+|          |              |              | declaratively manage compute         | `ra2.ntw.008 <chapter04.md#networki |
+|          |              |              | (virtual and bare metal resources),  | ng-solutions>`__, `ra2.app.006 <cha |
+|          |              |              | network, and storage.                | pter04.md#kubernetes-workloads>`__  |
 |          |              |              |                                      | Compute/storage not yet met.        |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|int.api.02| API          | General      | The Architecture **must** support    |`ra2.pkg.001 <chapter04.md#kubernetes|
-|          |              |              | the usage of a Kubernetes            |-application-package-manager>`__     |
+|int.api.02| API          | General      | The Architecture **must** support    | `ra2.pkg.001 <chapter04.md#kubernet |
+|          |              |              | the usage of a Kubernetes            | es-application-package-manager>`__  |
 |          |              |              | Application package manager using    |                                     |
 |          |              |              | the Kubernetes API, like Helm v3.    |                                     |
 |          |              |              | network, and storage.                |                                     |
