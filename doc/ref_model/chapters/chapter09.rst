@@ -29,12 +29,13 @@ Capacity Management                    Configuration      Fulfilment Capacity Ma
 Configuration and Lifecycle Management
 --------------------------------------
 
-Configuration management is concerned with defining the configuration of infrastructure and its components, and tracking (observing) the running configuration of that infrastructure, and any changes that take place. Modern configuration management practices such as desired state configuration management also mean that any changes from the desired state that are observed (aka the delta) are rectified by an orchestration / fulfilment component of the configuration management system. This "closed loop" mitigates against configuration drift in the infrastructure and its components. Our recommendation is to keep these closed loops as small as possible to reduce complexity and risk of error. Figure 9-1 shows the configuration management "loop" and how this relates to lifecycle management.
+Configuration management is concerned with defining the configuration of infrastructure and its components, and tracking (observing) the running configuration of that infrastructure, and any changes that take place. Modern configuration management practices such as desired state configuration management also mean that any changes from the desired state that are observed (aka the delta) are rectified by an orchestration / fulfilment component of the configuration management system. This "closed loop" mitigates against configuration drift in the infrastructure and its components. Our recommendation is to keep these closed loops as small as possible to reduce complexity and risk of error. :numref:`Configuration and Lifecycle Management` shows the configuration management "loop" and how this relates to lifecycle management.
 
-.. image:: ../figures/ch09_config_mgmt.png
-   :alt: "Figure 9-1: Configuration and Lifecycle Management"
+.. figure:: ../figures/ch09_config_mgmt.png
+   :name: Configuration and Lifecycle Management
+   :alt: "Configuration and Lifecycle Management"
 
-**Figure 9-1**: Configuration and Lifecycle Management
+   Configuration and Lifecycle Management
 
 The initial desired state might be for 10 hosts with a particular set of configuration attributes, including the version of the hypervisor and any management agents. The configuration management system will take that as input (1) and configure the infrastructure as required (2). It will then observe the current state periodically over time (3) and in the case of a difference between the desired state and the observed state it will calculate the delta (4) and re-configure the infrastructure (5). For each lifecycle stage (create, update, delete) this loop takes place - for example if an update to the hypervisor version is defined in the desired state, the configuration management system will calculate the delta (e.g. v1 --> v2) and re-configure the infrastructure as required.
 
@@ -133,6 +134,48 @@ Automation
 
 Infrastructure LCM Automation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In a typical telecom operator environment, infrastructure Life Cycle Management is highly complex and error-prone. The environment, with its multiple vendors and products, is maintenance expensive (both time and costs) because of the need for complex planning, testing, and the out-of-business-hours execution required to perform disruptive maintenance (e.g., upgrades) and to mitigate outages to mission-critical applications. Processes and tooling for infrastructure management across hybrid environments create additional complexity due to the different levels of access to infrastructure: hands-on access to the on-premise infrastructure but only restricted access to consumable services offered by public clouds.
+
+Life cycle operations, such as software or hardware upgrades (including complex and risky firmware updates), typically involve time-consuming manual research and substantive testing to ensure that an upgrade is available, required, or needed, and does not conflict with the current versions of other components.  In a complex and at-scale Hybrid Multi-Cloud environment, consisting of multiple on-premise and public clouds, such a manual process is ineffective and, in many cases, impossible to execute in a controlled manner.  Hence, the need for automation.
+
+The goals of LCM are to provide a reliable administration of a system from its provisioning, through its operational stage, to its final retirement. Key functions of Infrastructure LCM:
+ -  Hybrid, Multi-Cloud support, that is, LCM works across physical, virtual, and cloud environments, supporting on-premise, cloud, and distributed environments (like Edge)
+ -  Complete system life cycle control (Build, Monitor, Maintain, Retire)
+ -  Enablement for automation of most system maintenance tasks
+
+Essential foundation functional blocks for Infrastructure LCM automation:
+ -  Representation Model 
+ -  Repository functions
+ -  Available Software Versions and Dependencies
+ -  Orchestration Engine
+
+Automated LCM uses Representation Model to:
+ - abstract various automation technologies
+ - promote evolution from automation understood as automation of human tasks to autonomous systems using intent-based, declarative automation, supported by evolving AI/ML technologies 
+
+Automated LCM uses Repository functions to:
+  -  store and manage configuration data
+  -  store and manage metrics related data such as event data,  alert data, and performance data 
+  -  maintain currency of data by the use of discovery of current versions of software modules
+  -  track and account for all systems, assets, subscriptions (monitoring)
+  -  provide an inventory of all virtual and physical assets
+  -  provide a topological view of interconnected resources
+  -  support network design function
+  
+
+Automated LCM uses available IAC Software Versions and Dependencies component to:
+ -  store information about available software versions, software patches and dependency expectations
+ -  determine the recommended version of a software item (such as firmware) and dependencies on other items in the node to ensure compliance and maintain the system integrity
+ -  determine the recommended versions of foundation software running on the cluster
+
+Automated LCM uses Orchestration Engine to:
+ -  take the inputs from Repositories, Available Software Versions, and Dependencies
+ -  run the software version changes
+ -  dynamically remediate dependencies during the change process to optimise outcome
+ -  ensure that the system is consistent across its life cycle by maintaining it in accordance with the intent templates
+
+=======
 Note: Developmnet of new structure and contents for this section in progress for Moselle release, driven by Issue#2087 and subordinate issues.
 
 Software Onboarding Automation and CI/CD Requirements
@@ -398,16 +441,18 @@ Typical characteristics of a push model are:
 Producers, Consumers, and Message broker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In an ideal case, observability data will be sent directly to the message broker in agreed format, so that consumers can take and „understand“ the data without additional logic. Message brokers do not limit on the data types:
+In an ideal case, observability data will be sent directly to the message broker in agreed format, so that consumers can take and "understand“ the data without additional logic. Message brokers do not limit on the data types:
 
 Enforcing correct message structures (carrying the data) is performed using Schema Registry concepts. Even though it is not necessary to use a Schema Registry, it is highly recommended.
 
-.. image:: ../figures/RM-Ch09-Fig-Producers-Consumers.png
-   :alt: "Figure 9-2: Producers and Consumers"
+.. figure:: ../figures/RM-Ch09-Fig-Producers-Consumers.png
+   :name: Producers and Consumers
+   :alt: Producers and Consumers
 
-**Figure 9-2**: Producers and Consumers
+   Producers and Consumers
 
-.. image:: ../figures/RM-Ch09-Fig-Broker-Service.png
-   :alt: "Figure 9-3: Broker Services"
+.. figure:: ../figures/RM-Ch09-Fig-Broker-Service.png
+   :alt: Figure 9-3: Broker Services
+   :name: Broker Services
 
-**Figure 9-3**: Broker Services
+   Broker Services

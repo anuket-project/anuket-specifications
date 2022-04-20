@@ -22,10 +22,11 @@ The following definitions specify the context of the Cloud Infrastructure Resour
 
 **Internal:** Effectively the opposite of Exposed; objects are exclusively available for use within the Cloud Infrastructure.
 
-.. image:: ../figures/Exposed_vs_Internal_Diagram.png
-   :alt: "Figure 4-1: Exposed vs. Internal Scope"
+.. :name: Exposed vs. Internal Scope
+.. figure:: ../figures/Exposed_vs_Internal_Diagram.png
+   :alt: "Exposed vs. Internal Scope"
 
-**Figure 4-1**: Exposed vs. Internal Scope
+   Exposed vs. Internal Scope
 
 As illustrated in the figure above, objects designated as "Internal" are only visible within the area inside the blue oval (the Cloud Infrastructure), and only when the entity accessing the object has the appropriate permissions. Whereas objects designated as "Exposed" are potentially visible from both the area within the green oval (the Workloads), as well as from within the Cloud Infrastructure, again provided the entity accessing the object has appropriate permissions.
 
@@ -77,6 +78,8 @@ e.cap.013 SR-IOV over PCI-PT              Yes/No Traditional SR-IOV. These Capab
 e.cap.014 GPU/NPU                         Yes/No Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads
 e.cap.015 SmartNIC                        Yes/No Network Acceleration
 e.cap.016 FPGA/other Acceleration HW      Yes/No These Capabilities generally require hardware-dependent drivers be injected into workloads
+e.cap.023 Huge pages                      Yes/No Indicates if the Cloud Infrastructure supports huge pages
+e.cap.024 CPU allocation ratio            Yes/No N:1: Number of virtual cores per physical core; also known as CPU overbooking ratio
 ========= =============================== ====== ================================================================================================================
 
 **Table 4-2:** Exposed Performance Optimisation Capabilities of Cloud Infrastructure
@@ -149,24 +152,23 @@ Internal SLA capabilities
 ========= =============================== ====== ==============================================================================
 Ref       Cloud Infrastructure capability Unit   Definition/Notes
 ========= =============================== ====== ==============================================================================
-i.cap.016 CPU allocation ratio            N:1    Number of virtual cores per physical core; also known as CPU overbooking ratio
 i.cap.017 Connection point QoS            Yes/No QoS enablement of the connection point (vNIC or interface)
 ========= =============================== ====== ==============================================================================
 
 **Table 4-6:** Internal SLA capabilities to Cloud Infrastructure
 
-Internal Performance Optimisation Capabilities
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. Internal Performance Optimisation Capabilities
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Table 4-7** below shows possible performance optimisation capabilities that can be provided by the Cloud Infrastructure. These include capabilities exposed to workloads as well as internal capabilities to Cloud Infrastructure. These capabilities will be determined by the Cloud Infrastructure Profile used by the Cloud Infrastructure.
+.. **Table 4-7** below shows possible performance optimisation capabilities that can be provided by the Cloud Infrastructure. These include capabilities exposed to workloads as well as internal capabilities to Cloud Infrastructure. These capabilities will be determined by the Cloud Infrastructure Profile used by the Cloud Infrastructure.
 
-========= =============================== ====== =========================================================
-Ref       Cloud Infrastructure capability Unit   Definition/Notes
-========= =============================== ====== =========================================================
-i.cap.018 Huge pages                      Yes/No Indicates if the Cloud Infrastructure supports huge pages
-========= =============================== ====== =========================================================
+.. ========= =============================== ====== =========================================================
+.. Ref       Cloud Infrastructure capability Unit   Definition/Notes
+.. ========= =============================== ====== =========================================================
+.. i.cap.018 Huge pages                      Yes/No Indicates if the Cloud Infrastructure supports huge pages
+.. ========= =============================== ====== =========================================================
 
-**Table 4-7:** Internal performance optimisation capabilities of Cloud Infrastructure
+.. **Table 4-7:** Internal performance optimisation capabilities of Cloud Infrastructure
 
 Internal Performance Measurement Capabilities
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -281,12 +283,13 @@ Profiles and Workload Flavours
 
 Section 4.1 enumerates the different capabilities exposed by the infrastructure resources. Not every workload is sensitive to all listed capabilities of the cloud infrastructure. In Chapter 2, the analysis of the use cases led to the definition of two :ref:`ref_model/chapters/chapter02:profiles (top-level partitions)` and the need for specialisation through :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`. Profiles and Profile Extensions are used to configure the cloud infrastructure nodes. They are also used by workloads to specify the infrastructure capabilities needed by them to run on. Workloads would specify the `flavours and additional capabilities <#workload-flavours-and-other-capabilities-specifications>`__ information.
 
-In this section we will specify the capabilities and features associated with each of the defined profiles and extensions. Each Profile (for example, Figure 4-2), and each Extension associated with that profile, specifies a predefined standard set of infrastructure capabilities that workload vendors can use to build their workloads for deployment on conformant cloud infrastructure. A workload can use several profiles and associated Extensions to build its overall functionality as discussed below.
+In this section we will specify the capabilities and features associated with each of the defined profiles and extensions. Each Profile (for example, :numref"`Cloud infrastructure Profiles`), and each Extension associated with that profile, specifies a predefined standard set of infrastructure capabilities that workload vendors can use to build their workloads for deployment on conformant cloud infrastructure. A workload can use several profiles and associated Extensions to build its overall functionality as discussed below.
 
-.. image:: ../figures/RM-ch04-node-profiles.png
-   :alt: "Figure 4-2: Cloud infrastructure Profiles"
+.. :name:  Cloud infrastructure Profiles
+.. figure:: ../figures/RM-ch04-node-profiles.png
+   :alt: "Cloud infrastructure Profiles"
 
-**Figure 4-2**: Cloud infrastructure Profiles
+   Cloud infrastructure Profiles
 
 The two :ref:`chapters/chapter02:profiles, profile extensions & flavours` are:
 
@@ -305,12 +308,13 @@ The justification for defining these two profiles and a set of extensible profil
 -  Workload development and testing optimisation by using pre-defined and commonly supported (telco operators) profiles and extensions
 -  Better usage of Cloud Objects (Memory; Processor; Network; Storage)
 
-Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). Figure 4.3 shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes.
+Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). :numref:`Workloads built against Cloud Infrastructure Profiles and Workload Flavours` shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes.
 
-.. image:: ../figures/RM-ch-04-Workloads-Profiles-Flavours.png
-   :alt: "Figure 4-3: Workloads built against Cloud Infrastructure Profiles and Workload Flavours"
+.. figure:: ../figures/RM-ch-04-Workloads-Profiles-Flavours.png
+   :name: Workloads built against Cloud Infrastructure Profiles and Workload Flavours
+   :alt: Workloads built against Cloud Infrastructure Profiles and Workload Flavours
 
-**Figure 4-3**: Workloads built against Cloud Infrastructure Profiles and Workload Flavours
+   Workloads built against Cloud Infrastructure Profiles and Workload Flavours
 
 A node configuration can be specified using the syntax:
 
@@ -348,14 +352,14 @@ Profiles Specifications & Capability Mapping
 Ref       Capability                           Basic   High Performance Notes
 ========= ==================================== ======= ================ =========================================================================================
 e.cap.006 CPU pinning                          No      Yes              Exposed performance capabilities as per Table 4-2.
-e.cap.007 NUMA alignment                       No      Yes
-e.cap.013 SR-IOV over PCI-PT                   No      Yes
-i.cap.018 Huge page support                    No      Yes              Internal performance capabilities as per Table 4-7.
-e.cap.018 Simultaneous Multithreading (SMT)    Yes     Optional
+e.cap.007 NUMA alignment                       No      Yes             
+e.cap.013 SR-IOV over PCI-PT                   No      Yes             
+e.cap.018 Simultaneous Multithreading (SMT)    Yes     Optional        
 e.cap.019 vSwitch Optimisation (DPDK)          No      Yes              DPDK doesn't have to be used if some other network acceleration method is being utilised.
 e.cap.020 CPU Architecture                     <value> <value>          Values such as x64, ARM, etc.
 e.cap.021 Host Operating System (OS)           <value> <value>          Values such as a specific Linux version, Windows version, etc.
 e.cap.022 Virtualisation Infrastructure Layer1 <value> <value>          Values such as KVM, Hyper-V, Kubernetes, etc. when relevant, depending on technology.
+e.cap.023 Huge page support                    No      Yes              Internal performance capabilities as per Table 4-7.
 i.cap.019 CPU Clock Speed                      <value> <value>          Specifies the Cloud Infrastructure CPU Clock Speed (in GHz).
 i.cap.020 Storage encryption                   Yes     Yes              Specifies whether the Cloud Infrastructure supports storage encryption.
 ========= ==================================== ======= ================ =========================================================================================
