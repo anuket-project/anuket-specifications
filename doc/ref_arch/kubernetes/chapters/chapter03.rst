@@ -667,16 +667,16 @@ outside of the scope of this RA.
 Kubernetes Application package manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To manage complex applications consisting of several Pods and other Kubernetes
+To manage the lifecycle (e.g. install and configure, upgrade, uninstall) of complex applications consisting of several Pods and other Kubernetes
 objects, the Reference Architecture mandates the use of a specific Kubernetes
 Application package manager. The Package Manager must be able to manage the
-lifecycle of a set of Pods and other Kubernetes objects, and provide a
+lifecycle of an application, and provide a
 framework to customise a set of parameters for their deployment. The
 requirement for the Clusters is to expose a Kubernetes API for the package
-managers to use in thelifecycle management of the applications they manage.
+managers to use in the lifecycle management of the applications they manage.
 This must comply with the CNCF CNF Conformance test. As it is not recommended
-to use a Kubernetes Application package manager with aserver side component
-installed to the Kubernetes Cluster (e.g.: Tiller), Helm v3 is the chosen
+to use a Kubernetes Application package manager with a server side component
+installed to the Kubernetes Cluster (e.g.: Tiller), `Helm v3 <https://helm.sh/docs/>`__ is the chosen
 Kubernetes Application package manager.
 
 Custom Resources
