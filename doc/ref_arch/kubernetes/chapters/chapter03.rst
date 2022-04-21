@@ -667,7 +667,8 @@ outside of the scope of this RA.
 Kubernetes Application package manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To manage the lifecycle (e.g. install and configure, upgrade, uninstall) of complex applications consisting of several Pods and other Kubernetes
+To manage the lifecycle (e.g. install and configure, upgrade, uninstall) of complex
+applications consisting of several Pods and other Kubernetes
 objects, the Reference Architecture mandates the use of a specific Kubernetes
 Application package manager. The Package Manager must be able to manage the
 lifecycle of an application, and provide a
