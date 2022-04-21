@@ -811,18 +811,18 @@ Cloud Infrastructure Security Requirements
 |ter07.md#image-security>`__             |           | accessible to authorized actors.     |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.5 <../../../ref_model/chapters/chap|sec.img.006| Image Registries **must** only be    | `5.13 Trusted Registry  |
-|ter07.md#image-security>`__             |           | accessible over secure networks that |  <./chapter05.md#truste |
-|                                        |           | enforce authentication, integrity    | d-registry>`__          |
+|ter07.md#image-security>`__             |           | accessible over secure networks that | <./chapter05.md#trusted |
+|                                        |           | enforce authentication, integrity    | -registry>`__           |
 |                                        |           | and confidentiality.                 |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.5 <../../../ref_model/chapters/chap|sec.img.007| Image registries **must** be clear   | `5.13 Trusted Registry  |
 |ter07.md#image-security>`__             |           | of vulnerable and out of date        | <./chapter05.md#trusted |
 |                                        |           | versions.                            | -registry>`__           |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.5 <../../../ref_model/chapters/chap|sec.img.008| Images **must not** include any      | `5.12 Secrets           |
-|ter07.md#image-security>`__             |           | secrets. Secrets include passwords,  | Management <./chapter05 |
-|                                        |           | cloud provider credentials, SSH      | .md#secrets-management> |
-|                                        |           | keys, TLS certificate keys, etc.     | `__                     |
+|`7.9.5 <../../../ref_model/chapters/chap|sec.img.008| Images **must not** include any      | `5.12 Secrets Management|
+|ter07.md#image-security>`__             |           | secrets. Secrets include passwords,  | <./chapter05.md#secrets |
+|                                        |           | cloud provider credentials, SSH      | -management>`__         |
+|                                        |           | keys, TLS certificate keys, etc.     |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.5 <../../../ref_model/chapters/chap|sec.img.009| CIS Hardened Images **should** be    |                         |
 |ter07.md#image-security>`__             |           | used whenever possible.              |                         |
@@ -898,9 +898,9 @@ Cloud Infrastructure Security Requirements
 |`7.9.6 <../../../ref_model/chapters/chap|sec.lcm.012| The Platform **must** log any access |                         |
 |ter07.md#security-lcm>`__               |           | privilege escalation.                |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.001| Platform **must** provide logs and   |                         |
-|ter07.md#monitoring-and-security-audit>`|           | these logs must be regularly         |                         |
-|__                                      |           | monitored for events of interest.    |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.001| Platform **must** provide logs and   |                         |
+| apter07.md#monitoring-and-security-aud |           | these logs must be regularly         |                         |
+| it>`__                                 |           | monitored for events of interest.    |                         |
 |                                        |           | The logs **must** contain the        |                         |
 |                                        |           | following fields: event type,        |                         |
 |                                        |           | date/time, protocol, service or      |                         |
@@ -909,114 +909,115 @@ Cloud Infrastructure Security Requirements
 |                                        |           | ID, IP address and ports (source     |                         |
 |                                        |           | and destination) involved.           |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.002| Security logs **must** be time       |                         |
-|ter07.md#monitoring-and-security-audit>`|           | synchronised.                        |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.002| Security logs **must** be time       |                         |
+| apter07.md#monitoring-and-security-aud |           | synchronised.                        |                         |
+| it>`__                                 |           |                                      |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.003| The Platform **must** log all        |                         |
-|ter07.md#monitoring-and-security-audit>`|           | changes to time server source, time, |                         |
-|                                        |           | date and time zones.                 |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.003| The Platform **must** log all        |                         |
+| apter07.md#monitoring-and-security-aud |           | changes to time server source, time, |                         |
+| it>`__                                 |           | date and time zones.                 |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.004| The Platform **must** secure and     |                         |
-|ter07.md#monitoring-and-security-audit>`|           | protect Audit logs (containing       |                         |
-|                                        |           | sensitive information) both          |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.004| The Platform **must** secure and     |                         |
+| apter07.md#monitoring-and-security-aud |           | protect Audit logs (containing       |                         |
+| it>`__                                 |           | sensitive information) both          |                         |
 |                                        |           | in-transit and at rest.              |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.005| The Platform **must** Monitor and    |                         |
-|ter07.md#monitoring-and-security-audit>`|           | Audit various behaviours of          |                         |
-|                                        |           | connection and login attempts to     |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.005| The Platform **must** Monitor and    |                         |
+| apter07.md#monitoring-and-security-aud |           | Audit various behaviours of          |                         |
+| it>`__                                 |           | connection and login attempts to     |                         |
 |                                        |           | detect access attacks and potential  |                         |
 |                                        |           | access attempts and take corrective  |                         |
 |                                        |           | actions accordingly.                 |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.006| The Platform **must** Monitor and    |                         |
-|ter07.md#monitoring-and-security-audit>`|           | Audit operations by authorized       |                         |
-|                                        |           | account access after login to detect |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.006| The Platform **must** Monitor and    |                         |
+| apter07.md#monitoring-and-security-aud |           | Audit operations by authorized       |                         |
+| it>`__                                 |           | account access after login to detect |                         |
 |                                        |           | malicious operational activity and   |                         |
 |                                        |           | take corrective actions accordingly. |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.007| The Platform **must** Monitor and    |                         |
-|ter07.md#monitoring-and-security-audit>`|           | Audit security parameter             |                         |
-|                                        |           | configurations for compliance with   |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.007| The Platform **must** Monitor and    |                         |
+| apter07.md#monitoring-and-security-aud |           | Audit security parameter             |                         |
+| it>`__                                 |           | configurations for compliance with   |                         |
 |                                        |           | defined security policies.           |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.008| The Platform **must** Monitor and    |                         |
-|ter07.md#monitoring-and-security-audit>`|           | Audit externally exposed interfaces  |                         |
-|                                        |           | for illegal access (attacks) and     |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.008| The Platform **must** Monitor and    |                         |
+| apter07.md#monitoring-and-security-aud |           | Audit externally exposed interfaces  |                         |
+| it>`__                                 |           | for illegal access (attacks) and     |                         |
 |                                        |           | take corrective security hardening   |                         |
 |                                        |           | measures.                            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.009| The Platform **must** Monitor and    |                         |
-|ter07.md#monitoring-and-security-audit>`|           | Audit service handling for various   |                         |
-|                                        |           | attacks (malformed messages,         |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.009| The Platform **must** Monitor and    |                         |
+| apter07.md#monitoring-and-security-aud |           | Audit service handling for various   |                         |
+| it>`__                                 |           | attacks (malformed messages,         |                         |
 |                                        |           | signalling flooding and replaying,   |                         |
 |                                        |           | etc.) and take corrective actions    |                         |
 |                                        |           | accordingly.                         |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.010| The Platform **must** Monitor and    |                         |
-|ter07.md#monitoring-and-security-audit>`|           | Audit running processes to detect    |                         |
-|                                        |           | unexpected or unauthorized processes |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.010| The Platform **must** Monitor and    |                         |
+| apter07.md#monitoring-and-security-aud |           | Audit running processes to detect    |                         |
+| it>`__                                 |           | unexpected or unauthorized processes |                         |
 |                                        |           | and take corrective actions          |                         |
 |                                        |           | accordingly.                         |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.011| The Platform **must** Monitor and    |                         |
-|ter07.md#monitoring-and-security-audit>`|           | Audit logs from infrastructure       |                         |
-|                                        |           | elements and workloads to detected   |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.011| The Platform **must** Monitor and    |                         |
+| apter07.md#monitoring-and-security-aud |           | Audit logs from infrastructure       |                         |
+| it>`__                                 |           | elements and workloads to detected   |                         |
 |                                        |           | anomalies in the system components   |                         |
 |                                        |           | and take corrective actions          |                         |
 |                                        |           | accordingly.                         |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.012| The Platform **must** Monitor and    |                         |
-|ter07.md#monitoring-and-security-audit>`|           | Audit Traffic patterns and volumes   |                         |
-|                                        |           | to prevent malware download          |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.012| The Platform **must** Monitor and    |                         |
+| apter07.md#monitoring-and-security-aud |           | Audit Traffic patterns and volumes   |                         |
+| it>`__                                 |           | to prevent malware download          |                         |
 |                                        |           | attempts.                            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.013| The monitoring system **must not**   |                         |
-|ter07.md#monitoring-and-security-audit>`|           | affect the security (integrity and   |                         |
-|                                        |           | confidentiality) of the              |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.013| The monitoring system **must not**   |                         |
+| apter07.md#monitoring-and-security-aud |           | affect the security (integrity and   |                         |
+| it>`__                                 |           | confidentiality) of the              |                         |
 |                                        |           | infrastructure, workloads, or the    |                         |
 |                                        |           | user data (through back door         |                         |
 |                                        |           | entries).                            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.014| The Monitoring systems **should      |                         |
-|ter07.md#monitoring-and-security-audit>`|           | not** impact IAAS, PAAS, and SAAS    |                         |
-|                                        |           | SLAs including availability SLAs.    |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.014| The Monitoring systems **should      |                         |
+| apter07.md#monitoring-and-security-aud |           | not** impact IAAS, PAAS, and SAAS    |                         |
+| it>`__                                 |           | SLAs including availability SLAs.    |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.015| The Platform **must** ensure that    |                         |
-|ter07.md#monitoring-and-security-audit>`|           | the Monitoring systems are never     |                         |
-|                                        |           | starved of resources and **must**    |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.015| The Platform **must** ensure that    |                         |
+| apter07.md#monitoring-and-security-aud |           | the Monitoring systems are never     |                         |
+| it>`__                                 |           | starved of resources and **must**    |                         |
 |                                        |           | activate alarms when resource        |                         |
 |                                        |           | utilisation exceeds a configurable   |                         |
 |                                        |           | threshold.                           |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.016| The Platform Monitoring components   |                         |
-|ter07.md#monitoring-and-security-audit>`|           | **should** follow security best      |                         |
-|                                        |           | practices for auditing, including    |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.016| The Platform Monitoring components   |                         |
+| apter07.md#monitoring-and-security-aud |           | **should** follow security best      |                         |
+| it>`__                                 |           | practices for auditing, including    |                         |
 |                                        |           | secure logging and tracing.          |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.017| The Platform **must** audit systems  | `5.3.3 Vulnerability    |
-|                                        |           | for any missing security patches and | assessment <./chapter05 |
-|                                        |           | take appropriate actions.            | .md#vulnerability-asses |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.017| The Platform **must** audit systems  | `5.3.3 Vulnerability    |
+| apter07.md#monitoring-and-security-aud |           | for any missing security patches and | assessment <./chapter05 |
+| it>`__                                 |           | take appropriate actions.            | .md#vulnerability-asses |
 |                                        |           |                                      | sment>`__               |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.018| The Platform, starting from          | `5.3.4 Patch management |
-|                                        |           | initialization, **must** collect and | <./chapter05.md#patch-m |
-|                                        |           | analyze logs to identify security    | anagement>`__           |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.018| The Platform, starting from          | `5.3.4 Patch management |
+| apter07.md#monitoring-and-security-aud |           | initialization, **must** collect and | <./chapter05.md#patch-m |
+| it>`__                                 |           | analyze logs to identify security    | anagement>`__           |
 |                                        |           | events, and store these events in an |                         |
 |                                        |           | external system.                     |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.019| The Platform’s components **must     |                         |
-|                                        |           | not** include an authentication      |                         |
-|                                        |           | credential, e.g., password, in any   |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.019| The Platform’s components **must     |                         |
+| apter07.md#monitoring-and-security-aud |           | not** include an authentication      |                         |
+| it>`__                                 |           | credential, e.g., password, in any   |                         |
 |                                        |           | logs, even if encrypted.             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.020| The Platform’s logging system        |                         |
-|                                        |           | **must** support the storage of      |                         |
-|                                        |           | security audit logs for a            |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.020| The Platform’s logging system        |                         |
+| apter07.md#monitoring-and-security-aud |           | **must** support the storage of      |                         |
+| it>`__                                 |           | security audit logs for a            |                         |
 |                                        |           | configurable period of time.         |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.7 <../../../ref_model/chapters/chap|sec.mon.021| The Platform **must** store security |                         |
-|                                        |           | events locally if the external       |                         |
-|                                        |           | logging system is unavailable and    |                         |
+| `7.9.7 <../../../ref_model/chapters/ch |sec.mon.021| The Platform **must** store security |                         |
+| apter07.md#monitoring-and-security-aud |           | events locally if the external       |                         |
+| it>`__                                 |           | logging system is unavailable and    |                         |
 |                                        |           | shall periodically attempt to send   |                         |
 |                                        |           | these to the external logging system |                         |
 |                                        |           | until successful.                    |                         |
@@ -1026,9 +1027,9 @@ Cloud Infrastructure Security Requirements
 |                                        |           | capabilities for static and dynamic  | .md#vulnerability-asses |
 |                                        |           | code analysis.                       | sment>`__               |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.002| The `CVE (Common Vulnerabilities and |                         |
-|ter07.md#open-source-software>`__       |           |Exposures) <https://cve.mitre.org/>`__|                         |
-|                                        |           | **must** be used to identify         |                         |
+|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.002| The `CVE (Common Vulnerabilities     |                         |
+|ter07.md#open-source-software>`__       |           | and Exposures) <https://cve.mitre.or |                         |
+|                                        |           | g/>`__ **must** be used to identify  |                         |
 |                                        |           | vulnerabilities and their severity   |                         |
 |                                        |           | rating for open source code part of  |                         |
 |                                        |           | Cloud Infrastructure and workloads   |                         |
@@ -1049,8 +1050,8 @@ Cloud Infrastructure Security Requirements
 |                                        |           | used to store vetted open source     |                         |
 |                                        |           | content.                             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.005| A Software Bill of Materials (`SBOM <|                         |
-|ter07.md#open-source-software>`__       |           |https://www.ntia.gov/SBOM>`__)        |                         |
+|`7.9.8 <../../../ref_model/chapters/chap|sec.oss.005| A Software Bill of Materials (`SBOM  |                         |
+|ter07.md#open-source-software>`__       |           | <https://www.ntia.gov/SBOM>`__)      |                         |
 |                                        |           | **should** be provided or build, and |                         |
 |                                        |           | maintained to identify the software  |                         |
 |                                        |           | components and their origins.        |                         |
@@ -1247,50 +1248,52 @@ Cloud Infrastructure Security Requirements
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.14 <../../../ref_model/chapters/cha|sec.std.001| The Cloud Operator **should** comply |                         |
 |pter07.md#compliance-with-standards>`__ |           | with Center for Internet Security    |                         |
-|                                        |           | CIS Controls (`https://www.cisecurity|                         |
-|                                        |           |.org/ <https://www.cisecurity.org/>`__|                         |
-|                                        |           |)                                     |                         |
+|                                        |           | CIS Controls (`https://www.cisecur   |                         |
+|                                        |           | ity.org/ <https://www.cisecurity.org |                         |
+|                                        |           | />`__)                               |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.14 <../../../ref_model/chapters/cha|sec.std.002| The Cloud Operator, Platform and     |                         |
 |pter07.md#compliance-with-standards>`__ |           | Workloads **should** follow the      |                         |
 |                                        |           | guidance in the CSA Security         |                         |
 |                                        |           | Guidance for Critical Areas of Focus |                         |
-|                                        |           |in Cloud Computing (latest version) `h|                         |
-|                                        |           |ttps://cloudsecurityalliance.org/ <htt|                         |
-|                                        |           |ps://cloudsecurityalliance.org/>`__   |                         |
+|                                        |           | in Cloud Computing (latest version)  |                         |
+|                                        |           | `https://cloudsecurityalliance.      |                         |
+|                                        |           | org/ <https://cloudsecurityalliance. |                         |
+|                                        |           | org/>`__                             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.14 <../../../ref_model/chapters/cha|sec.std.003| The Platform and Workloads           |                         |
 |pter07.md#compliance-with-standards>`__ |           | **should** follow the guidance in    |                         |
 |                                        |           | the `OWASP Cheat Sheet Series (OCSS) |                         |
-|                                        |           |<https://github.com/OWASP/CheatSheetSe|                         |
-|                                        |           |ries>`__                              |                         |
+|                                        |           | <https://github.com/OWASP/CheatSheet |                         |
+|                                        |           | Series>`__                           |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.14 <../../../ref_model/chapters/cha|sec.std.004| The Cloud Operator, Platform and     |                         |
 |pter07.md#compliance-with-standards>`__ |           | Workloads **should** ensure that     |                         |
 |                                        |           | their code is not vulnerable to the  |                         |
-|                                        |           | OWASP Top Ten Security Risks `https:/|                         |
-|                                        |           |/owasp.org/www-project-top-ten/ <https|                         |
-|                                        |           |://owasp.org/www-project-top-ten/>`__ |                         |
+|                                        |           | OWASP Top Ten Security Risks         |                         |
+|                                        |           | `https://owasp.org/www-project-top-t |                         |
+|                                        |           | en/ <https://owasp.org/www-project-t |                         |
+|                                        |           | op-ten/>`__                          |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.14 <../../../ref_model/chapters/cha|sec.std.005| The Cloud Operator, Platform and     |                         |
 |pter07.md#compliance-with-standards>`__ |           | Workloads **should** strive to       |                         |
 |                                        |           | improve their maturity on the `OWASP |                         |
-|                                        |           |Software Maturity Model (SAMM) <https:|                         |
-|                                        |           |//owaspsamm.org/blog/2019/12/20/versio|                         |
-|                                        |           |n2-community-release/>`__             |                         |
+|                                        |           | Software Maturity Model (SAMM) <http |                         |
+|                                        |           | s://owaspsamm.org/blog/2019/12/20/ve |                         |
+|                                        |           | rsion2-community-release/>`__        |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.14 <../../../ref_model/chapters/cha|sec.std.006| The Cloud Operator, Platform and     |                         |
-|pter07.md#compliance-with-standards>`__ |           | Workloads **should** utilize the `OWA|                         |
-|                                        |           |SP Web Security Testing Guide <https:/|                         |
-|                                        |           |/github.com/OWASP/wstg/tree/master/doc|                         |
-|                                        |           |ument>`__                             |                         |
+|pter07.md#compliance-with-standards>`__ |           | Workloads **should** utilize the `OW |                         |
+|                                        |           | ASP Web Security Testing Guide <http |                         |
+|                                        |           | s://github.com/OWASP/wstg/tree/maste |                         |
+|                                        |           | r/document>`__                       |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.14 <../../../ref_model/chapters/cha|sec.std.007| The Cloud Operator, and Platform     |                         |
 |pter07.md#compliance-with-standards>`__ |           | **should** satisfy the requirements  |                         |
 |                                        |           | for Information Management Systems   |                         |
-|                                        |           | specified in `ISO/IEC 27001 <https://|                         |
-|                                        |           |www.iso.org/obp/ui/#iso:std:iso-iec:27|                         |
-|                                        |           |001:ed-2:v1:en>`__. ISO/IEC           |                         |
+|                                        |           | specified in `ISO/IEC 27001 <https:/ |                         |
+|                                        |           | /www.iso.org/obp/ui/#iso:std:iso-iec |                         |
+|                                        |           | :27001:ed-2:v1:en>`__. ISO/IEC       |                         |
 |                                        |           | 27002:2013 - ISO/IEC 27001 is the    |                         |
 |                                        |           | international Standard for           |                         |
 |                                        |           | best-practice information security   |                         |
@@ -1299,18 +1302,18 @@ Cloud Infrastructure Security Requirements
 |`7.9.14 <../../../ref_model/chapters/cha|sec.std.008| The Cloud Operator, and Platform     |                         |
 |pter07.md#compliance-with-standards>`__ |           | **should** implement the Code of     |                         |
 |                                        |           | practice for Security Controls       |                         |
-|                                        |           | specified `ISO/IEC 27002:2013 (or lat|                         |
-|                                        |           |est) <https://www.iso.org/obp/ui/#iso:|                         |
-|                                        |           |std:iso-iec:27002:ed-2:v1:en>`__      |                         |
+|                                        |           | specified `ISO/IEC 27002:2013 (or la |                         |
+|                                        |           | test) <https://www.iso.org/obp/ui/#i |                         |
+|                                        |           | so:std:iso-iec:27002:ed-2:v1:en>`__  |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.14 <../../../ref_model/chapters/cha|sec.std.009| The Cloud Operator, and Platform     |                         |
-|pter07.md#compliance-with-standards>`__ |           | **should** implement the `ISO/IEC 270|                         |
-|                                        |           |32:2012 (or latest) <https://www.iso.o|                         |
-|                                        |           |rg/obp/ui/#iso:std:iso-iec:27032:ed-1:|                         |
-|                                        |           |v1:en>`__ Guidelines for              |                         |
+|pter07.md#compliance-with-standards>`__ |           | **should** implement the `ISO/IEC 27 |                         |
+|                                        |           | 032:2012 (or latest) <https://www.is |                         |
+|                                        |           | o.org/obp/ui/#iso:std:iso-iec:27032: |                         |
+|                                        |           | ed-1:v1:en>`__ Guidelines for        |                         |
 |                                        |           | Cybersecurity techniques. ISO/IEC    |                         |
 |                                        |           | 27032 - ISO/IEC 27032 is the         |                         |
-|                                        |           |  international Standard focusing     |                         |
+|                                        |           | international Standard focusing      |                         |
 |                                        |           | explicitly on cybersecurity.         |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.14 <../../../ref_model/chapters/cha|sec.std.010| The Cloud Operator **should**        |                         |
@@ -1365,8 +1368,8 @@ machines or containers.
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
 |gen.cnt.03| General      | Cloud        | The Architecture **must** run        | `ra2.k8s.001 <chapter04.md#kubernet |
 |          |              | nativeness   | conformant Kubernetes as defined by  | es>`__                              |
-|          |              |              | the `CNCF <https://github.com/cncf/k8|                                     |
-|          |              |              |s-conformance>`__.                    |                                     |
+|          |              |              | the `CNCF <https://github.com/cncf/k |                                     |
+|          |              |              | 8s-conformance>`__.                  |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
 |gen.cnt.04| General      | Cloud        | The Architecture **must** support    |                                     |
 |          |              | nativeness   | clearly defined abstraction layers.  |                                     |
@@ -1473,9 +1476,9 @@ machines or containers.
 |          |              |              | traffic headers from workloads to    |                                     |
 |          |              |              | external networks. This is needed    |                                     |
 |          |              |              | e.g. for signaling applications,     |                                     |
-|          |              |              | using SIP and Diameter protocols. `ra|                                     |
-|          |              |              |2.ntw.011 <chapter04.md#networking-sol|                                     |
-|          |              |              |utions>`__                            |                                     |
+|          |              |              | using SIP and Diameter protocols.    |                                     |
+|          |              |              | `ra2.ntw.011 <chapter04.md#networkin |                                     |
+|          |              |              | g-solutions>`__                      |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
 |inf.ntw.15|Infrastructure| Network      | The platform **must** support        |                                     |
 |          |              |              | LoadBalancer `Publishing Service     |                                     |
@@ -1503,16 +1506,16 @@ machines or containers.
 |          |              |              | service/#publishing-services-service |                                     |
 |          |              |              | -types>`__.                          |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.vir.01|Infrastructure| Virtual      | The Architecture **must** support    | `ra2.ch.005 <chapter04.md#kubernete |
-|          |              |Infrastructure| the capability for Containers to     | s-node>`__, `ra2.ch.011 <chapter04. |
+|inf.vir.01|Infrastructure| Virtual Infr | The Architecture **must** support    | `ra2.ch.005 <chapter04.md#kubernete |
+|          |              | astructure   | the capability for Containers to     | s-node>`__, `ra2.ch.011 <chapter04. |
 |          |              |              | consume infrastructure resources     | md#kubernetes-node>`__              |
 |          |              |              | abstracted by Host Operating Systems |                                     |
 |          |              |              | that are running within a virtual    |                                     |
 |          |              |              | machine.                             |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
 |inf.phy.01|Infrastructure| Physical     | The Architecture **must** support    | ra2.ch.008                          |
-|          |              |Infrastructure| the capability for Containers to     |                                     |
-|          |              |              | consume infrastructure resources     |                                     |
+|          |              | Infrastructu | the capability for Containers to     |                                     |
+|          |              | re           | consume infrastructure resources     |                                     |
 |          |              |              | abstracted by Host Operating Systems |                                     |
 |          |              |              | that are running within a physical   |                                     |
 |          |              |              | server.                              |                                     |
