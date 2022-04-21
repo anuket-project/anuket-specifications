@@ -95,7 +95,7 @@ are many similarities, but the key principles from both, which are applicable to
 Exceptions
 ~~~~~~~~~~
 
-Anuket specification define certain policies and `principles <../../../common/chapter00.md#2.0>`__ and strives to
+Anuket specifications define certain policies and `principles <../../../common/chapter00.md#2.0>`__ and strive to
 coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently
 available technology options, incompatibilities, performance and operator constraints (including costs), these
 policies and principles may not always be achievable and, thus, require an exception process. These policies
