@@ -169,71 +169,34 @@ Tracing                                Jaeger
 
 **Table 5-7a:** Service examples.
 
-Platform Services - Load Balancer REquirements
+Platform Services - Load Balancer Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The tbale below specifies a set of requirements for the Load Balances platform service.
+The table below specifies a set of requirements for the Load Balancer platform service.
 
-.. list-table::
-   :widths: 16, 30, 30
-   :header-rows: 1
+========== =========================================================================================================== ==================================================================================================================================================================================================
+Reference  Requirement                                                                                                 Notes
+========== =========================================================================================================== ==================================================================================================================================================================================================
+pas.lb.001 The Load Balancer must support resource scaling	
+pas.lb.002 The Load Balancer must support resource resiliency	
+pas.lb.003 The Load Balancer must support scaling and resiliency in the local environment                              Define local environment: within a subnet, tenant network, Availability Zone of a cloud, ...
+pas.lb.004 The Load Balancer should support resiliency in the global environment	
+pas.lb.005 The Load Balancer must support OSI Level 3/4 load-balancing and may support Level 7 Load Balancing          OSI Level 3 load-balancing decision on the source and destination IP addresses and OSI Level 4 TCP port numbers. <br>OSI Level 7 (application characteristics based) should support HTTP and HTTPS
+pas.lb.006 The Load Balancer must, at a minimum, support round-robin load-balancing	
+pas.lb.007 The Load Balancer must create event logs with the appropriate severity levels (catastrophic, critical, ...)	
+pas.lb.008 The Load Balancer must support monitoring of endpoints	
+pas.lb.009 The Load Balancer must support Direct Server Return (DSR)                                                   Other modes OK as well, but DSR should always be supported
+pas.lb.010 The Load Balancer must state-full TSP load-balancing	
+pas.lb.011 The Load Balancer must support UDP load-balancing	
+pas.lb.012 The Load Balancer must support load-balancing and correct handling of fragmented packets 	
+pas.lb.013 The Load Balancer may support state-full SCTP load-balancing	
+pas.lb.014 The Load Balancer may support state-full M-TCP load-balancing	
+pas.lb.015 The L7 Load Balancer may support HTTP2	
+pas.lb.016 The L7 Load Balancer may support HTTP3	
+pas.lb.017 The L7 Load Balancer may support QUIC
+========== =========================================================================================================== ==================================================================================================================================================================================================
 
-* - Ref #
-  - Requirement
-  - Notes
-* - pas.lb.001
-  - The Load Balancer must support resource scaling
-  - 
-* - pas.lb.002
-  - The Load Balancer must support resource resiliency
-  - 
-* - pas.lb.003
-  - The Load Balancer must support scaling and resiliency in the local environment
-  - Define local environment: within a subnet, tenant network, Az of a cloud, ...
-* - pas.lb.004
-  - The Load Balancer should support resiliency in the global environment
-  - 
-* - pas.lb.005
-  - The Load Balancer must support OSI Level 3/4 load-balancing and may support Level 7 Load Balancing.
-  - OSI Level 3 load-balancing decision on the source and destination IP addresses and OSI Level 4 TCP port numbers. <br>OSI Level 7 (application characteristics based) should support HTTP and HTTPS
-* - pas.lb.006
-  - The Load Balancer must, at a minimum, support round-robin load-balancing
-  - 
-* - pas.lb.007
-  - The Load Balancer must create event logs with the appropriate severity levels (catastrophic, critical, ...)
-  - 
-* - pas.lb.008
-  - The Load Balancer must support monitoring of endpoints
-  - 
-* - pas.lb.009
-  - The Load Balancer must support Direct Server Return (DSR)
-  - Other modes OK as well, but DSR should always be supported
-* - pas.lb.010
-  - The Load Balancer must state-full TSP load-balancing
-  - 
-* - pas.lb.011
-  - The Load Balancer must support UDP load-balancing
-  - 
-* - pas.lb.012
-  - The Load Balancer must support load-balancing and correct handling of  fragmented packets 
-  - 
-* - pas.lb.013
-  - The Load Balancer may support state-full SCTP load-balancing
-  - 
-* - pas.lb.014
-  - The Load Balancer may support state-full M-TCP load-balancing
-  - 
-* - pas.lb.015
-  - The L7 Load Balancer may support HTTP2
-  - 
-* - pas.lb.016
-  - The L7 Load Balancer may support HTTP3
-  - 
-* - pas.lb.017
-  - The L7 Load Balancer may support QUIC
-  - 
-
-
+**Table 5-7b:** Platform Services - Load Balancer Requirementss.
 
 Cloud Infrastructure Software Profiles features and requirements
 ----------------------------------------------------------------
