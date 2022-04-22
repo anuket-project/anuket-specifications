@@ -394,15 +394,36 @@ ZTA principles applied to Cloud infrastructure components are the following:
 
 Zero Trust principles should also be applied to cloud-native applications. With the increasing use of these applications which are designed with microservices and deployed using containers as packaging and Kubernetes as an orchestrator, the security of east-west communications between components must be carefully addressed. The use of secured communication protocols brings a first level of security, but considering each component as non-trustworthy will minimize the risk for applications to be compromised. A good practice is to implement the proxy-based service mesh which will provide a framework to build a secured environment for microservices-based applications, offering services such as service discovery, authentication and authorisation policies enforcement, network resilience, and security monitoring capabilities. The two documents, `NIST SP 800-204A <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf>`__\ (Building Secure Microservices-based Applications Using Service-Mesh Architecture) and `NIST SP 800-204B <https://csrc.nist.gov/publications/detail/sp/800-204b/final>`__\ (Attribute-based Access Control for Microservices-based Applications Using a Service Mesh), describe service mesh, and provide guidance for service mesh components deployment.
 
-Open Source Software Security
------------------------------
+Software Supply Chain Security
+------------------------------
 
-Software supply chain safety is crucial and can be a complex task in virtualised and containerised environments. Open source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components can also be composed of open source code. The proportion of open source code to an application source code can vary. It can be partial or total, visible or not. Open source code can be upstream code coming directly from open source public repositories or code within a commercial application or network function. To ensure the security of the whole system, all software and hardware components must reach the same level of security by following best security practices including secure lifecycle management. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party Components” provides a detailed risk management approach.
+Software supply chain attacks are increasing worldwilde and can cause serious damages. Many entreprises and 
+organisations are experiencing these threats. Software suppliers can be targeted and by rebound effect their 
+customers, as seen with the backdoors affecting SolarWinds products and detailed in
+`Defending against SolarWinds attacks 
+<https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_.
+Open-source code weaknesses can also be utilised by attackers, the Log4J vulnerability, impacting lots of 
+applications, is a recent example in this field. The cyber security of software supply chain are often not 
+taken into account. Gouvernments are alerting and requesting actions to face these risks. The British 
+government is hardening the law and standards of cyber security for the supply chain. The US government 
+requested actions to enhance the software supply chain security. The security of software supply chain 
+is a challenge pointed out by the European Network and Information Security Agency, ENISA, 
+in the report `NFV Security in 5G - Challenges and Best Practices 
+<https://www.enisa.europa.eu/publications/nfv-security-in-5g-challenges-and-best-practices>`_.
+ 
+
+Software security
+~~~~~~~~~~~~~~~~~
+
+Software supply chain safety is crucial and can be a complex task in virtualised and containerised environments
+with a greater attack surface. All software components must be trusted, from commercial software, open-source 
+code to proprietary software. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party 
+Components” provides a detailed risk management approach.
 
 To secure software code, the following methods must be applied:
 
--  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`__ or `OWASP “Secure Coding Practices - Quick Reference Guide” <https://owasp.org/>`__
--  Require suppliers to provide a Software Bill of Materials to identify the open source modules in their product’s software releases
+-  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`_ or `OWASP “Secure Coding Practices - Quick Reference Guide” <https://owasp.org/>`_
+-  Require suppliers to provide a Software Bill of Materials to identify all the components part of their product’s software releases with their dependencies, and eventually identify the open source modules
 -  Use trusted, authenticated and identified software images that are provided by authenticated software distribution portals
 -  Do threat modelling, as described in the document “Tactical Threat Modeling” published by SAFECode
 -  Test the software in a pre-production environment to validate integration
@@ -411,35 +432,77 @@ To secure software code, the following methods must be applied:
 -  Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
 -  Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, deployment, and runtime operation to perform automatic security check, as described in section 7.4.4 ‘”Infrastructure as a Code Security”
 
-The strength of open source code is the availability of code source developed by a community which maintain and improve it. Open source code integration with application source code helps to develop and produce applications faster. But, in return, it can introduce security risks if a risk management DevSecOps approach is not implemented. The GSMA white paper, “Open Networking & the Security of Open Source Software Deployment - Future Networks”, alerts on these risks and addresses the challenges coming with open source code usage. Amongst these risks for security, we can mention a poor quality code containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open source communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an inactive branch. The GSMA white paper develops means to mitigate these security issues.
+Open-Source Software Security
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**SBOM**
+Open-source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer 
+components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components 
+can also be composed of open source code. The proportion of open-source code to an application source code can vary. 
+It can be partial or total, visible or not. Open-source code can be upstream code coming directly from open-source 
+public repositories or code within a commercial application or network function. 
 
-To begin, it is highly recommended to identify the software components and their origins. The Software Bill of Materials (SBOM), described by `US NTIA <https://www.ntia.gov/SBOM>`__ (National Telecommunications and Information Administration), is an efficient tool to identify software components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
+The strength of open-source code is the availability of code source developed by a community which maintain and improve it. 
+Open-source code integration with application source code helps to develop and produce applications faster. But, in return, 
+it can introduce security risks if a risk management DevSecOps approach is not implemented. The GSMA white paper, “Open 
+Networking & the Security of Open Source Software Deployment - Future Networks”, alerts on these risks and addresses the 
+challenges coming with open-source code usage. Amongst these risks for security, we can mention a poor quality code 
+containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open source 
+communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an inactive branch. 
+The GSMA white paper develops means to mitigate these security issues.
 
-A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management and it provides assurance of the source and integrity of components. In order to use the SBOM efficiently and spread its adoption, information must be generated and shared in a standard format. This format must be machine-readable to allow automation. The NTIA white paper `“Survey of existing SBOM formats and standards” <https://www.ntia.doc.gov/files/ntia/publications/ntia_sbom_formats_and_standards_whitepaper_-_version_20191025.pdf>`__ identifies two key formats covering baseline SBOM information: Software Package Data eXchange (SPX) and Software Identification Tags (SWID tags).
+Poor code quality is a factor of risk. Open-source code advantage is its transparency, code can be inspected by tools with 
+various capabilities such as open-source software discovery and static and dynamic code analysis.
 
-`SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux Foundation. The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard ISO/IEC 5962:2021. It provides a language for communicating the data, licenses, copyrights, and security information associated with software components. With the SPDX specification 2.2, multiple file formats are available: YAML, JSON, RDF/XML, tag\:value flat text, and xlss spreadsheets.
+A dedicated internal isolated repository separated from the production environment must be used to store vetted open-source 
+content, which can include images, but also installer and utilities. These software packages must be signed and the signature 
+verified prior to packages or images installation. Access to the repository must be granted by a dedicated authorization. The 
+code must be inspected and vulnerabilities identified as described previously. After validating the software is risk free, it 
+can be moved to the appropriate production repository.
 
-`SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID tags: primary, patch, corpus, and supplemental to describe a software component.
+SBOM
+~~~~
+
+It is crucial to identify the software components and their origins. The Software Bill of Materials (SBOM), 
+described by `US NTIA <https://www.ntia.gov/SBOM>`__ (National Telecommunications and Information Administration), 
+is an efficient tool to identify software components. The SBOM is an inventory of software components and the relationships 
+between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability 
+detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
+
+A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management and it 
+provides assurance of the source and integrity of components. In order to use the SBOM efficiently and spread its adoption, 
+information must be generated and shared in a standard format. This format must be machine-readable to allow automation. The 
+NTIA white paper `“Survey of existing SBOM formats and standards” <https://www.ntia.doc.gov/files/ntia/publications
+/ntia_sbom_formats_and_standards_whitepaper_-_version_20191025.pdf>`__ identifies two key formats covering baseline SBOM 
+information: Software Package Data eXchange (SPX) and Software Identification Tags (SWID tags).
+
+`SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux Foundation. 
+The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard ISO/IEC 5962:2021. It 
+provides a language for communicating the data, licenses, copyrights, and security information associated with software 
+components. With the SPDX specification 2.2, multiple file formats are available: YAML, JSON, RDF/XML, tag\:value flat text, 
+and xlss spreadsheets.
+
+`SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software 
+publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID tags: primary, 
+patch, corpus, and supplemental to describe a software component.
 
 For both formats, SPDX and SWID Tags, tools are available.
 
-**Code inspection**
+Vulnerability identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Poor code quality is a factor of risk. Open source code advantage is its transparency, code can be inspected by tools with various capabilities such as open source software discovery and static and dynamic code analysis.
+Vulnerability management must be continuous: from development to runtime, not only on the development process, but during all 
+the life of the application or workload or service. When a public vulnerability on a component is released, the update of the 
+component must be triggered. When an SBOM recording the code composition is provided, the affected components will be easier 
+to identify. It is essential to remediate the affected components as soon as possible, because the vulnerability can be 
+exploited by attackers who can take the benefit of code weakness.
 
-**Vulnerability identification**
+The CVE and the CVSS must be used to identify vulnerabilities and their severity rating. The CVE identifies, defines, and 
+catalogues publicly disclosed cybersecurity vulnerabilities while the CVSS is an open framework to calculate the 
+vulnerabilities' severity score.
 
-Vulnerability management must be continuous: from development to runtime, not only on the development process, but during all the life of the application or workload or service. When a public vulnerability on a component is released, the update of the component must be triggered. When an SBOM recording the code composition is provided, the affected components will be easier to identify. It is essential to remediate the affected components as soon as possible, because code transparency can also be exploited by attackers who can take the benefit of vulnerabilities.
-
-The CVE and the CVSS must be used to identify vulnerabilities and their severity rating. The CVE identifies, defines, and catalogues publicly disclosed cybersecurity vulnerabilities while the CVSS is an open framework to calculate the vulnerabilities' severity score.
-
-Various images scanning tools, such as Clair or Trivy, are useful to audit images from security vulnerabilities. The results of vulnerabilities scan audit must be analysed carefully when it is applied to vendor offering packaged solutions; as patches are not detected by scanning tools, some components can be detected as obsolete.
-
-**Trusted repositories**
-
-A dedicated internal isolated repository separated from the production environment must be used to store vetted open source content, which can include images, but also installer and utilities. These software packages must be signed and the signature verified prior to packages or images installation. Access to the repository must be granted by a dedicated authorization. The code must be inspected and vulnerabilities identified as described previously. After validating the software is risk free, it can be moved to the appropriate production repository.
+Various images scanning tools, such as Clair or Trivy, are useful to audit images from security vulnerabilities. 
+The results of vulnerabilities scan audit must be analysed carefully when it is applied to vendor offering packaged 
+solutions; as patches are not detected by scanning tools, some components can be detected as obsolete.
 
 .. _testing--certification:
 
