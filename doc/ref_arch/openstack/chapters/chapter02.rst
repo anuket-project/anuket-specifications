@@ -973,318 +973,136 @@ systems, policies and procedures to act on alerts and notifications in a
 timely fashion. In the following the monitoring and logging capabilities
 can trigger alerts and notifications for appropriate action.
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Specification     |
-|              |                   |              | Reference         |
-+==============+===================+==============+===================+
-| sec.mon.001  | Monitoring/Audit  | Platform     | `RA-1             |
-|              |                   | **must**     | “Creating         |
-|              |                   | provide logs | logs” <./ch       |
-|              |                   | and these    | apter06.md#c      |
-|              |                   | logs must be | reating-logs>`__, |
-|              |                   | regularly    | `RA-1             |
-|              |                   | monitored    | “Required         |
-|              |                   | for events   | Fields” <./cha    |
-|              |                   | of interest. | pter06.md#re      |
-|              |                   | The logs     | quired-fields>`__ |
-|              |                   | **must**     |                   |
-|              |                   | contain the  |                   |
-|              |                   | following    |                   |
-|              |                   | fields:      |                   |
-|              |                   | event type,  |                   |
-|              |                   | date/time,   |                   |
-|              |                   | protocol,    |                   |
-|              |                   | service or   |                   |
-|              |                   | program used |                   |
-|              |                   | for access,  |                   |
-|              |                   | succ         |                   |
-|              |                   | ess/failure, |                   |
-|              |                   | login ID or  |                   |
-|              |                   | process ID,  |                   |
-|              |                   | IP address   |                   |
-|              |                   | and ports    |                   |
-|              |                   | (source and  |                   |
-|              |                   | destination) |                   |
-|              |                   | involved.    |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.002  | Monitoring        | Security     | `RA-1             |
-|              |                   | logs         | “Security Logs    |
-|              |                   | **must** be  | Time              |
-|              |                   | time         | Synchron\         |
-|              |                   | s\           | isation” <./chapt |
-|              |                   | ynchronised. | er06.md#secu      |
-|              |                   |              | rity-logs-time-sy |
-|              |                   |              | nchronisation>`__ |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.003  | Monitoring        | The Platform | `RA-1             |
-|              |                   | **must** log | “Security Logs    |
-|              |                   | all changes  | Time              |
-|              |                   | to time      | Synchron\         |
-|              |                   | server       | isation” <./chapt |
-|              |                   | source,      | er06.md#secu      |
-|              |                   | time, date   | rity-logs-time-sy |
-|              |                   | and time     | nchronisation>`__ |
-|              |                   | zones.       |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.004  | Audit             | The Platform | `RA-1             |
-|              |                   | **must**     | “Security         |
-|              |                   | secure and   | LCM” <.           |
-|              |                   | protect      | /chapter06.md#    |
-|              |                   | Audit logs   | security-lcm>`__  |
-|              |                   | (containing  |                   |
-|              |                   | sensitive    |                   |
-|              |                   | information) |                   |
-|              |                   | both         |                   |
-|              |                   | in-transit   |                   |
-|              |                   | and at rest. |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.005  | Monitoring/Audit  | The Platform | `RA-1             |
-|              |                   | **must**     | “Confidentiality  |
-|              |                   | Monitor and  | and Integrity of  |
-|              |                   | Audit        | comm\             |
-|              |                   | various      | unications” <./ch |
-|              |                   | behaviours   | apter06.md#i      |
-|              |                   | of           | ntegrity-of-opens |
-|              |                   | connection   | tack-components-c |
-|              |                   | and login    | onfiguration>`__, |
-|              |                   | attempts to  | `RA-1             |
-|              |                   | detect       | “What to log,     |
-|              |                   | access       | what not to       |
-|              |                   | attacks and  | log” <.           |
-|              |                   | potential    | /chapter06.md#    |
-|              |                   | access       | what-to-log--wh   |
-|              |                   | attempts and | at-not-to-log>`__ |
-|              |                   | take         |                   |
-|              |                   | corrective   |                   |
-|              |                   | actions      |                   |
-|              |                   | accordingly  |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.006  | Monitoring/Audit  | The Platform | `RA-1             |
-|              |                   | **must**     | “Integrity of     |
-|              |                   | Monitor and  | OpenStack         |
-|              |                   | Audit        | components        |
-|              |                   | operations   | con\              |
-|              |                   | by           | figuration” <./ch |
-|              |                   | authorised   | apter06.md#i      |
-|              |                   | account      | ntegrity-of-opens |
-|              |                   | access after | tack-components-c |
-|              |                   | login to     | onfiguration>`__, |
-|              |                   | detect       | `RA-1             |
-|              |                   | malicious    | “Monitoring and   |
-|              |                   | operational  | Security          |
-|              |                   | activity and | Audit” <.         |
-|              |                   | take         | /chapter06.md#    |
-|              |                   | corrective   | monitoring-and-s  |
-|              |                   | actions.     | ecurity-audit>`__ |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.007  | Monitoring/Audit  | The Platform | `RA-1             |
-|              |                   | **must**     | “Integrity of     |
-|              |                   | Monitor and  | OpenStack         |
-|              |                   | Audit        | components        |
-|              |                   | security     | co\               |
-|              |                   | parameter    | nfiguration” <./c |
-|              |                   | co\          | hapter06.md#      |
-|              |                   | nfigurations | integrity-of-open |
-|              |                   | for          | stack-components- |
-|              |                   | compliance   | configuration>`__ |
-|              |                   | with defined |                   |
-|              |                   | security     |                   |
-|              |                   | policies.    |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.008  | Monitoring/Audit  | The Platform | `RA-1             |
-|              |                   | **must**     | “Confidentiality  |
-|              |                   | Monitor and  | and Integrity of  |
-|              |                   | Audit        | com\              |
-|              |                   | externally   | munications” <./c |
-|              |                   | exposed      | hapter06.md#      |
-|              |                   | interfaces   | confidentiality-a |
-|              |                   | for illegal  | nd-integrity-of-c |
-|              |                   | access       | ommunications>`__ |
-|              |                   | (attacks)    |                   |
-|              |                   | and take     |                   |
-|              |                   | corrective   |                   |
-|              |                   | security     |                   |
-|              |                   | hardening    |                   |
-|              |                   | measures.    |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.009  | Monitoring/Audit  | The Platform | `RA-1             |
-|              |                   | **must**     | “Confidentiality  |
-|              |                   | Monitor and  | and Integrity of  |
-|              |                   | Audit        | comm\             |
-|              |                   | service for  | unications” <./ch |
-|              |                   | various      | apter06.md#i      |
-|              |                   | attacks      | ntegrity-of-opens |
-|              |                   | (malformed   | tack-components-c |
-|              |                   | messages,    | onfiguration>`__, |
-|              |                   | signalling   | `RA-1             |
-|              |                   | flooding and | “Monitoring and   |
-|              |                   | replaying,   | Security          |
-|              |                   | etc.) and    | Audit” <.         |
-|              |                   | take         | /chapter06.md#    |
-|              |                   | corrective   | monitoring-and-s  |
-|              |                   | actions      | ecurity-audit>`__ |
-|              |                   | accordingly. |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.010  | Monitoring/Audit  | The Platform | `RA-1             |
-|              |                   | **must**     | “Monitoring and   |
-|              |                   | Monitor and  | Security          |
-|              |                   | Audit        | Audit” <.         |
-|              |                   | running      | /chapter06.md#    |
-|              |                   | processes to | monitoring-and-s  |
-|              |                   | detect       | ecurity-audit>`__ |
-|              |                   | unexpected   |                   |
-|              |                   | or           |                   |
-|              |                   | unauthorised |                   |
-|              |                   | processes    |                   |
-|              |                   | and take     |                   |
-|              |                   | corrective   |                   |
-|              |                   | actions      |                   |
-|              |                   | accordingly. |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.011  | Monitoring/Audit  | The Platform | `RA-1             |
-|              |                   | **must**     | “Creating         |
-|              |                   | Monitor and  | logs” <./c        |
-|              |                   | Audit logs   | hapter06.md#      |
-|              |                   | from         | creating-logs>`__ |
-|              |                   | in\          |                   |
-|              |                   | frastructure |                   |
-|              |                   | elements and |                   |
-|              |                   | workloads to |                   |
-|              |                   | detected     |                   |
-|              |                   | anomalies in |                   |
-|              |                   | the system   |                   |
-|              |                   | components   |                   |
-|              |                   | and take     |                   |
-|              |                   | corrective   |                   |
-|              |                   | actions      |                   |
-|              |                   | accordingly. |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.012  | Monitoring/Audit  | The Platform | `RA-1             |
-|              |                   | **must**     | “Confidentiality  |
-|              |                   | Monitor and  | and Integrity of  |
-|              |                   | Audit        | tenant            |
-|              |                   | Traffic      | data” <./chapt    |
-|              |                   | patterns and | er06.md#conf      |
-|              |                   | volumes to   | identiality-and-i |
-|              |                   | prevent      | ntegrity-of-tenan |
-|              |                   | malware      | t-data-secmon012- |
-|              |                   | download     | and-secmon013>`__ |
-|              |                   | attempts.    |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.013  | Monitoring        | The          |                   |
-|              |                   | monitoring   |                   |
-|              |                   | system       |                   |
-|              |                   | **must not** |                   |
-|              |                   | affect the   |                   |
-|              |                   | security     |                   |
-|              |                   | (integrity   |                   |
-|              |                   | and          |                   |
-|              |                   | conf\        |                   |
-|              |                   | identiality) |                   |
-|              |                   | of the       |                   |
-|              |                   | inf\         |                   |
-|              |                   | rastructure, |                   |
-|              |                   | workloads,   |                   |
-|              |                   | or the user  |                   |
-|              |                   | data         |                   |
-|              |                   | (through     |                   |
-|              |                   | back door    |                   |
-|              |                   | entries).    |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.015  | Monitoring        | The Platform | `RA-1             |
-|              |                   | **must**     | “Monitoring and   |
-|              |                   | ensure that  | Security          |
-|              |                   | the          | Audit” <.         |
-|              |                   | Monitoring   | /chapter06.md#    |
-|              |                   | systems are  | monitoring-and-s  |
-|              |                   | never        | ecurity-audit>`__ |
-|              |                   | starved of   |                   |
-|              |                   | resources    |                   |
-|              |                   | and **must** |                   |
-|              |                   | activate     |                   |
-|              |                   | alarms when  |                   |
-|              |                   | resource     |                   |
-|              |                   | utilisation  |                   |
-|              |                   | exceeds a    |                   |
-|              |                   | configurable |                   |
-|              |                   | threshold.   |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.017  | Audit             | The Platform | `RA-1             |
-|              |                   | **must**     | “Patches          |
-|              |                   | audit        | ” <./chapter06.md |
-|              |                   | systems for  | #patches>`__      |
-|              |                   | any missing  |                   |
-|              |                   | security     |                   |
-|              |                   | patches and  |                   |
-|              |                   | take         |                   |
-|              |                   | appropriate  |                   |
-|              |                   | actions.     |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.018  | Monitoring        | The          | `RA-1             |
-|              |                   | Platform,    | “Where to         |
-|              |                   | starting     | Log” <./          |
-|              |                   | from         | chapter06.md#     |
-|              |                   | ini\         | where-to-log>`__  |
-|              |                   | tialisation, |                   |
-|              |                   | **must**     |                   |
-|              |                   | collect and  |                   |
-|              |                   | analyse logs |                   |
-|              |                   | to identify  |                   |
-|              |                   | security     |                   |
-|              |                   | events, and  |                   |
-|              |                   | store these  |                   |
-|              |                   | events in an |                   |
-|              |                   | external     |                   |
-|              |                   | system.      |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.019  | Monitoring        | The          | `RA-1             |
-|              |                   | Platform’s   | “What to          |
-|              |                   | components   | Log” <.           |
-|              |                   | **must not** | /chapter06.md#    |
-|              |                   | include an   | what-to-log--wh   |
-|              |                   | au\          | at-not-to-log>`__ |
-|              |                   | thentication |                   |
-|              |                   | credential,  |                   |
-|              |                   | e.g.,        |                   |
-|              |                   | password, in |                   |
-|              |                   | any logs,    |                   |
-|              |                   | even if      |                   |
-|              |                   | encrypted.   |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.020  | Monitoring/Audit  | The          | `RA-1             |
-|              |                   | Platform’s   | “Data             |
-|              |                   | logging      | Retention <./ch   |
-|              |                   | system       | apter06.md#d      |
-|              |                   | **must**     | ata-retention>`__ |
-|              |                   | support the  |                   |
-|              |                   | storage of   |                   |
-|              |                   | security     |                   |
-|              |                   | audit logs   |                   |
-|              |                   | for a        |                   |
-|              |                   | configurable |                   |
-|              |                   | period of    |                   |
-|              |                   | time.        |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.021  | Monitoring        | The Platform | `RA-1             |
-|              |                   | **must**     | “Where to         |
-|              |                   | store        | Log” <./          |
-|              |                   | security     | chapter06.md#     |
-|              |                   | events       | where-to-log>`__  |
-|              |                   | locally if   |                   |
-|              |                   | the external |                   |
-|              |                   | logging      |                   |
-|              |                   | system is    |                   |
-|              |                   | unavailable  |                   |
-|              |                   | and shall    |                   |
-|              |                   | periodically |                   |
-|              |                   | attempt to   |                   |
-|              |                   | send these   |                   |
-|              |                   | to the       |                   |
-|              |                   | external     |                   |
-|              |                   | logging      |                   |
-|              |                   | system until |                   |
-|              |                   | successful.  |                   |
-+--------------+-------------------+--------------+-------------------+
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| Reference    | sub-category      | Description                     | Specification                                 |
+|              |                   |                                 | Reference                                     |
++==============+===================+=================================+===============================================+
+| sec.mon.001  | Monitoring/Audit  | Platform **must** provide logs  | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | and these logs must be          | required fields`                              |
+|              |                   | regularly monitored for events  |                                               |
+|              |                   | of interest. The logs **must**  |                                               |
+|              |                   | contain the following fields:   |                                               |
+|              |                   | event type, date/time,          |                                               |
+|              |                   | protocol, service or program    |                                               |
+|              |                   | used for access,                |                                               |
+|              |                   | success/failure, login ID or    |                                               |
+|              |                   | process ID, IP address and      |                                               |
+|              |                   | ports (source and destination)  |                                               |
+|              |                   | involved.                       |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.002  | Monitoring        | Security logs **must** be       | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | time synchronised.              | security logs time synchronisation`           |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.003  | Monitoring        | The Platform **must** log all   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | changes to time server source,  | security logs time synchronisation`           |
+|              |                   | time, date and time zones.      |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.004  | Audit             | The Platform **must** secure    | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | and protect Audit logs          | security lcm`                                 |
+|              |                   | (containing sensitive           |                                               |
+|              |                   | information) both in-transit    |                                               |
+|              |                   | and at rest.                    |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.005  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | and Audit various behaviours    | what to log / what not to log`                |
+|              |                   | of connection and login         |                                               |
+|              |                   | attempts to detect access       |                                               |
+|              |                   | attacks and potential access    |                                               |
+|              |                   | attempts and take corrective    |                                               |
+|              |                   | accordingly actions.            |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.006  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | and Audit operations by         | monitoring and security audit`                |
+|              |                   | authorised account access after |                                               |
+|              |                   | login to detect malicious       |                                               |
+|              |                   | operational activity and        |                                               |
+|              |                   | take corrective actions.        |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.007  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | and Audit security parameter    | integrity of openstack components \           |
+|              |                   | configurations for compliance   | configuration`                                |
+|              |                   | with defined security policies. |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.008  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | and Audit externally exposed    | confidentiality and integrity of \            |
+|              |                   | interfaces for illegal access   | communications (sec.ci.001)`                  |
+|              |                   | (attacks) and take              |                                               |
+|              |                   | corrective security hardening   |                                               |
+|              |                   | measures.                       |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.009  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | and Audit service for various   | monitoring and security audit`                |
+|              |                   | attacks (malformed messages,    |                                               |
+|              |                   | signalling flooding and         |                                               |
+|              |                   | replaying, etc.) and take       |                                               |
+|              |                   | corrective actions accordingly. |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.010  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | and Audit running processes     | monitoring and security audit`                |
+|              |                   | to detect unexpected or         |                                               |
+|              |                   | unauthorised processes and take |                                               |
+|              |                   | corrective actions accordingly. |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.011  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | and Audit logs from             | creating logs`                                |
+|              |                   | infrastructure elements and     |                                               |
+|              |                   | workloads to detected           |                                               |
+|              |                   | anomalies in the system         |                                               |
+|              |                   | components and take             |                                               |
+|              |                   | corrective actions accordingly. |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.012  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | and Audit Traffic patterns      | confidentiality and integrity of tenant \     |
+|              |                   | and volumes to prevent          | data (sec.ci.001)`                            |
+|              |                   | malware download attempts.      |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.013  | Monitoring        | The monitoring system           |                                               |
+|              |                   | **must not** affect the         |                                               |
+|              |                   | security (integrity and         |                                               |
+|              |                   | confidentiality) of the         |                                               |
+|              |                   | infrastructure, workloads,      |                                               |
+|              |                   | or the user data (through back  |                                               |
+|              |                   | door entries)                   |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.015  | Monitoring        | The Platform **must** ensure    | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | that the Monitoring systems     | monitoring and security audit`                |
+|              |                   | are never starved of resources  |                                               |
+|              |                   | and **must** activate alarms    |                                               |
+|              |                   | when resource utilisation       |                                               |
+|              |                   | exceeds a configurable          |                                               |
+|              |                   | threshold.                      |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.017  | Audit             | The Platform **must** audit     | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | systems for any missing         | patches`                                      |
+|              |                   | security patches and take       |                                               |
+|              |                   | appropriate actions.            |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.018  | Monitoring        | The Platform, starting from     | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | initialisation, **must**        | where to log`                                 |
+|              |                   | collect and analyse logs to     |                                               |
+|              |                   | identify security events, and   |                                               |
+|              |                   | store these events in an        |                                               |
+|              |                   | external system.                |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.019  | Monitoring        | The Platform's components       | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | **must not** include an         | what to log / what not to log`                |
+|              |                   | authentication credential,      |                                               |
+|              |                   | e.g., password, in any logs,    |                                               |
+|              |                   | even if encrypted.              |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.020  | Monitoring/Audit  | The Platform's logging system   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | **must** support the storage    | data retention`                               |
+|              |                   | of security audit logs for a    |                                               |
+|              |                   | configurable period of time.    |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
+| sec.mon.021  | Monitoring        | The Platform **must** store     | :ref:`ref_arch/openstack/chapters/chapter06:\ |
+|              |                   | security events locally if      | where to log`                                 |
+|              |                   | the external logging system     |                                               |
+|              |                   | is unavailable and shall        |                                               |
+|              |                   | periodically attempt to send    |                                               |
+|              |                   | these to the external logging   |                                               |
+|              |                   | system until successful.        |                                               |
++--------------+-------------------+---------------------------------+-----------------------------------------------+
 
 Table 2-12: Reference Model Requirements - Monitoring and Security Audit
 Requirements
@@ -1294,61 +1112,41 @@ Open-Source Software
 
 (source :ref:`ref_model/chapters/chapter07:open source software`)
 
-+-----------+-------------------+---------------------+---------------+
-| Reference | sub-category      | Description         | Specification |
-|           |                   |                     | Reference     |
-+===========+===================+=====================+===============+
-| se\       | Software          | Open-source code    |               |
-| c.oss.001 |                   | **must** be         |               |
-|           |                   | inspected by tools  |               |
-|           |                   | with various        |               |
-|           |                   | capabilities for    |               |
-|           |                   | static and dynamic  |               |
-|           |                   | code analysis.      |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Software          | The `CVE (Common    |               |
-| c.oss.002 |                   | Vulnerabilities and |               |
-|           |                   | Exposures) <https:/ |               |
-|           |                   | /cve.mitre.org/>`__ |               |
-|           |                   | **must** be used to |               |
-|           |                   | identify            |               |
-|           |                   | vulnerabilities and |               |
-|           |                   | their severity      |               |
-|           |                   | rating for          |               |
-|           |                   | open-source code    |               |
-|           |                   | part of Cloud       |               |
-|           |                   | Infrastructure and  |               |
-|           |                   | workloads software. |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Software          | Critical and high   |               |
-| c.oss.003 |                   | severity rated      |               |
-|           |                   | vulnerabilities     |               |
-|           |                   | **must** be fixed   |               |
-|           |                   | in a timely manner. |               |
-|           |                   | Refer to the `CVSS  |               |
-|           |                   | (Common             |               |
-|           |                   | Vulnerability       |               |
-|           |                   | Scoring             |               |
-|           |                   | Sy\                 |               |
-|           |                   | stem) <https://www. |               |
-|           |                   | first.org/cvss/>`__ |               |
-|           |                   | to know a           |               |
-|           |                   | vulnerability score |               |
-|           |                   | and its associated  |               |
-|           |                   | rate (low, medium,  |               |
-|           |                   | high, or critical). |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Software          | A dedicated         |               |
-| c.oss.004 |                   | internal isolated   |               |
-|           |                   | repository          |               |
-|           |                   | separated from the  |               |
-|           |                   | production          |               |
-|           |                   | environment         |               |
-|           |                   | **must** be used to |               |
-|           |                   | store vetted        |               |
-|           |                   | open-source         |               |
-|           |                   | content.            |               |
-+-----------+-------------------+---------------------+---------------+
++-------------+-------------------+----------------------------------+---------------+
+| Reference   | sub-category      | Description                      | Specification |
+|             |                   |                                  | Reference     |
++=============+===================+==================================+===============+
+| sec.oss.001 | Software          | Open-source code **must** be     |               |
+|             |                   | inspected by tools with various  |               |
+|             |                   | capabilities for static and      |               |
+|             |                   | dynamic code analysis.           |               |
++-------------+-------------------+----------------------------------+---------------+
+| sec.oss.002 | Software          | The `CVE (Common Vulnerabilities |               |
+|             |                   | and Exposures)                   |               |
+|             |                   | <https://cve.mitre.org/>`__      |               |
+|             |                   | **must** be used to identify     |               |
+|             |                   | vulnerabilities and their        |               |
+|             |                   | severity rating for  open-source |               |
+|             |                   | code part of Cloud               |               |
+|             |                   | Infrastructure and  workloads    |               |
+|             |                   | software.                        |               |
++-------------+-------------------+----------------------------------+---------------+
+| sec.oss.003 | Software          | Critical and high severity rated |               |
+|             |                   | vulnerabilities **must** be      |               |
+|             |                   | fixed in a timely manner. Refer  |               |
+|             |                   | to the `CVSS (Common             |               |
+|             |                   | Vulnerability Scoring System)    |               |
+|             |                   | <https://www.first.org/cvss/>`__ |               |
+|             |                   | to know a vulnerability score    |               |
+|             |                   | and its associated rate (low,    |               |
+|             |                   | medium, high, or critical)       |               |
++-------------+-------------------+----------------------------------+---------------+
+| sec.oss.004 | Software          | A dedicated internal isolated    |               |
+|             |                   | repository separated from the    |               |
+|             |                   | production environment **must**  |               |
+|             |                   | be used to store vetted          |               |
+|             |                   | open-source content.             |               |
++-------------+-------------------+----------------------------------+---------------+
 
 Table 2-13: Reference Model Requirements - Open-Source Software Security
 Requirements
@@ -1361,150 +1159,150 @@ IaaC security
 
 **Secure Code Stage Requirements**
 
-+-----------+-------------------+---------------------+---------------+
-| Reference | sub-category      | Description         | Specification |
-|           |                   |                     | Reference     |
-+===========+===================+=====================+===============+
-| sec\      | IaaC              | SAST -Static        |               |
-| .code.001 |                   | Application         |               |
-|           |                   | Security Testing    |               |
-|           |                   | **must** be applied |               |
-|           |                   | during Secure       |               |
-|           |                   | Coding stage        |               |
-|           |                   | triggered by Pull,  |               |
-|           |                   | Clone or Comment    |               |
-|           |                   | trigger. Security   |               |
-|           |                   | testing that        |               |
-|           |                   | analyses            |               |
-|           |                   | application source  |               |
-|           |                   | code for software   |               |
-|           |                   | vulnerabilities and |               |
-|           |                   | gaps against best   |               |
-|           |                   | practices. Example: |               |
-|           |                   | open source OWASP   |               |
-|           |                   | range of tools.     |               |
-+-----------+-------------------+---------------------+---------------+
++--------------+-------------------+---------------------+---------------+
+| Reference    | sub-category      | Description         | Specification |
+|              |                   |                     | Reference     |
++==============+===================+=====================+===============+
+| sec.code.001 | IaaC              | SAST -Static        |               |
+|              |                   | Application         |               |
+|              |                   | Security Testing    |               |
+|              |                   | **must** be applied |               |
+|              |                   | during Secure       |               |
+|              |                   | Coding stage        |               |
+|              |                   | triggered by Pull,  |               |
+|              |                   | Clone or Comment    |               |
+|              |                   | trigger. Security   |               |
+|              |                   | testing that        |               |
+|              |                   | analyses            |               |
+|              |                   | application source  |               |
+|              |                   | code for software   |               |
+|              |                   | vulnerabilities and |               |
+|              |                   | gaps against best   |               |
+|              |                   | practices. Example: |               |
+|              |                   | open source OWASP   |               |
+|              |                   | range of tools.     |               |
++--------------+-------------------+---------------------+---------------+
 
 Table 2-14: Reference Model Requirements: IaaC Security Requirements,
 Secure Code Stage
 
 **Continuous Build, Integration and Testing Stage Requirements**
 
-+-----------+-------------------+---------------------+---------------+
-| Reference | sub-category      | Description         | Specification |
-|           |                   |                     | Reference     |
-+===========+===================+=====================+===============+
-| se\       | IaaC              | Image Scan **must** |               |
-| c.bld.003 |                   | be applied during   |               |
-|           |                   | the Continuous      |               |
-|           |                   | Build, Integration  |               |
-|           |                   | and Testing stage   |               |
-|           |                   | triggered by        |               |
-|           |                   | Package trigger,    |               |
-|           |                   | example: A push of  |               |
-|           |                   | a container image   |               |
-|           |                   | to a container      |               |
-|           |                   | registry may        |               |
-|           |                   | trigger a           |               |
-|           |                   | vulnerability scan  |               |
-|           |                   | before the image    |               |
-|           |                   | becomes available   |               |
-|           |                   | in the registry.    |               |
-+-----------+-------------------+---------------------+---------------+
++-------------+-------------------+---------------------+---------------+
+| Reference   | sub-category      | Description         | Specification |
+|             |                   |                     | Reference     |
++=============+===================+=====================+===============+
+| sec.bld.003 | IaaC              | Image Scan **must** |               |
+|             |                   | be applied during   |               |
+|             |                   | the Continuous      |               |
+|             |                   | Build, Integration  |               |
+|             |                   | and Testing stage   |               |
+|             |                   | triggered by        |               |
+|             |                   | Package trigger,    |               |
+|             |                   | example: A push of  |               |
+|             |                   | a container image   |               |
+|             |                   | to a container      |               |
+|             |                   | registry may        |               |
+|             |                   | trigger a           |               |
+|             |                   | vulnerability scan  |               |
+|             |                   | before the image    |               |
+|             |                   | becomes available   |               |
+|             |                   | in the registry.    |               |
++-------------+-------------------+---------------------+---------------+
 
 Table 2-15: Reference Model Requirements - IaaC Security Requirements,
 Continuous Build, Integration and Testing Stage
 
 **Continuous Delivery and Deployment Stage Requirements**
 
-+-----------+-------------------+---------------------+---------------+
-| Reference | sub-category      | Description         | Specification |
-|           |                   |                     | Reference     |
-+===========+===================+=====================+===============+
-| se\       | IaaC              | Image Scan **must** |               |
-| c.del.001 |                   | be applied during   |               |
-|           |                   | the Continuous      |               |
-|           |                   | Delivery and        |               |
-|           |                   | Deployment stage    |               |
-|           |                   | triggered by        |               |
-|           |                   | Publish to Artifact |               |
-|           |                   | and Image           |               |
-|           |                   | Repository trigger. |               |
-|           |                   | Example: GitLab     |               |
-|           |                   | uses the open       |               |
-|           |                   | source Clair engine |               |
-|           |                   | for container image |               |
-|           |                   | scanning.           |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | IaaC              | Code Signing        |               |
-| c.del.002 |                   | **must** be applied |               |
-|           |                   | during the          |               |
-|           |                   | Continuous Delivery |               |
-|           |                   | and Deployment      |               |
-|           |                   | stage triggered by  |               |
-|           |                   | Publish to Artifact |               |
-|           |                   | and Image           |               |
-|           |                   | Repository trigger. |               |
-|           |                   | Code Signing        |               |
-|           |                   | provides            |               |
-|           |                   | authentication to   |               |
-|           |                   | assure that         |               |
-|           |                   | downloaded files    |               |
-|           |                   | are form the        |               |
-|           |                   | publisher named on  |               |
-|           |                   | the certificate.    |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | IaaC              | Component           |               |
-| c.del.004 |                   | Vulnerability Scan  |               |
-|           |                   | **must** be applied |               |
-|           |                   | during the          |               |
-|           |                   | Continuous Delivery |               |
-|           |                   | and Deployment      |               |
-|           |                   | stage triggered by  |               |
-|           |                   | Instantiate         |               |
-|           |                   | Infrastructure      |               |
-|           |                   | trigger. The        |               |
-|           |                   | vulnerability       |               |
-|           |                   | scanning system is  |               |
-|           |                   | deployed on the     |               |
-|           |                   | cloud platform to   |               |
-|           |                   | detect security     |               |
-|           |                   | vulnerabilities of  |               |
-|           |                   | specified           |               |
-|           |                   | components through  |               |
-|           |                   | scanning and to     |               |
-|           |                   | provide timely      |               |
-|           |                   | security            |               |
-|           |                   | protection.         |               |
-|           |                   | Example: OWASP Zed  |               |
-|           |                   | Attack Proxy (ZAP). |               |
-+-----------+-------------------+---------------------+---------------+
++-------------+-------------------+---------------------+---------------+
+| Reference   | sub-category      | Description         | Specification |
+|             |                   |                     | Reference     |
++=============+===================+=====================+===============+
+| sec.del.001 | IaaC              | Image Scan **must** |               |
+|             |                   | be applied during   |               |
+|             |                   | the Continuous      |               |
+|             |                   | Delivery and        |               |
+|             |                   | Deployment stage    |               |
+|             |                   | triggered by        |               |
+|             |                   | Publish to Artifact |               |
+|             |                   | and Image           |               |
+|             |                   | Repository trigger. |               |
+|             |                   | Example: GitLab     |               |
+|             |                   | uses the open       |               |
+|             |                   | source Clair engine |               |
+|             |                   | for container image |               |
+|             |                   | scanning.           |               |
++-------------+-------------------+---------------------+---------------+
+| sec.del.002 | IaaC              | Code Signing        |               |
+|             |                   | **must** be applied |               |
+|             |                   | during the          |               |
+|             |                   | Continuous Delivery |               |
+|             |                   | and Deployment      |               |
+|             |                   | stage triggered by  |               |
+|             |                   | Publish to Artifact |               |
+|             |                   | and Image           |               |
+|             |                   | Repository trigger. |               |
+|             |                   | Code Signing        |               |
+|             |                   | provides            |               |
+|             |                   | authentication to   |               |
+|             |                   | assure that         |               |
+|             |                   | downloaded files    |               |
+|             |                   | are form the        |               |
+|             |                   | publisher named on  |               |
+|             |                   | the certificate.    |               |
++-------------+-------------------+---------------------+---------------+
+| sec.del.004 | IaaC              | Component           |               |
+|             |                   | Vulnerability Scan  |               |
+|             |                   | **must** be applied |               |
+|             |                   | during the          |               |
+|             |                   | Continuous Delivery |               |
+|             |                   | and Deployment      |               |
+|             |                   | stage triggered by  |               |
+|             |                   | Instantiate         |               |
+|             |                   | Infrastructure      |               |
+|             |                   | trigger. The        |               |
+|             |                   | vulnerability       |               |
+|             |                   | scanning system is  |               |
+|             |                   | deployed on the     |               |
+|             |                   | cloud platform to   |               |
+|             |                   | detect security     |               |
+|             |                   | vulnerabilities of  |               |
+|             |                   | specified           |               |
+|             |                   | components through  |               |
+|             |                   | scanning and to     |               |
+|             |                   | provide timely      |               |
+|             |                   | security            |               |
+|             |                   | protection.         |               |
+|             |                   | Example: OWASP Zed  |               |
+|             |                   | Attack Proxy (ZAP). |               |
++-------------+-------------------+---------------------+---------------+
 
 Table 2-16: Reference Model Requirements - IaaC Security Requirements,
 Continuous Delivery and Deployment Stage
 
 **Runtime Defence and Monitoring Requirements**
 
-+-----------+-------------------+---------------------+---------------+
-| Reference | sub-category      | Description         | Specification |
-|           |                   |                     | Reference     |
-+===========+===================+=====================+===============+
-| se\       | IaaC              | Component           |               |
-| c.run.001 |                   | Vulnerability       |               |
-|           |                   | Monitoring **must** |               |
-|           |                   | be continuously     |               |
-|           |                   | applied during the  |               |
-|           |                   | Runtime Defence and |               |
-|           |                   | Monitoring stage.   |               |
-|           |                   | Security technology |               |
-|           |                   | that monitors       |               |
-|           |                   | components like     |               |
-|           |                   | virtual servers and |               |
-|           |                   | assesses data,      |               |
-|           |                   | applications, and   |               |
-|           |                   | infrastructure for  |               |
-|           |                   | security risks.     |               |
-+-----------+-------------------+---------------------+---------------+
++-------------+-------------------+---------------------+---------------+
+| Reference   | sub-category      | Description         | Specification |
+|             |                   |                     | Reference     |
++=============+===================+=====================+===============+
+| sec.run.001 | IaaC              | Component           |               |
+|             |                   | Vulnerability       |               |
+|             |                   | Monitoring **must** |               |
+|             |                   | be continuously     |               |
+|             |                   | applied during the  |               |
+|             |                   | Runtime Defence and |               |
+|             |                   | Monitoring stage.   |               |
+|             |                   | Security technology |               |
+|             |                   | that monitors       |               |
+|             |                   | components like     |               |
+|             |                   | virtual servers and |               |
+|             |                   | assesses data,      |               |
+|             |                   | applications, and   |               |
+|             |                   | infrastructure for  |               |
+|             |                   | security risks.     |               |
++-------------+-------------------+---------------------+---------------+
 
 Table 2-17: Reference Model Requirements - IaaC Security Requirements,
 Runtime Defence and Monitoring Stage
@@ -1514,30 +1312,30 @@ Compliance with Standards
 
 (source :ref:`ref_model/chapters/chapter07:compliance with standards`)
 
-+-----------+-------------------+---------------------+---------------+
-| Reference | sub-category      | Description         | Specification |
-|           |                   |                     | Reference     |
-+===========+===================+=====================+===============+
-| se\       | Standards         | The Public Cloud    |               |
-| c.std.012 |                   | Operator **must**,  |               |
-|           |                   | and the Private     |               |
-|           |                   | Cloud Operator      |               |
-|           |                   | **may** be          |               |
-|           |                   | certified to be     |               |
-|           |                   | compliant with the  |               |
-|           |                   | International       |               |
-|           |                   | Standard on         |               |
-|           |                   | Awareness           |               |
-|           |                   | Engagements (ISAE)  |               |
-|           |                   | 3402 (in the US:    |               |
-|           |                   | SSAE 16);           |               |
-|           |                   | International       |               |
-|           |                   | Standard on         |               |
-|           |                   | Awareness           |               |
-|           |                   | Engagements (ISAE)  |               |
-|           |                   | 3402. US            |               |
-|           |                   | Equivalent: SSAE16. |               |
-+-----------+-------------------+---------------------+---------------+
++-------------+-------------------+---------------------+---------------+
+| Reference   | sub-category      | Description         | Specification |
+|             |                   |                     | Reference     |
++=============+===================+=====================+===============+
+| sec.std.012 | Standards         | The Public Cloud    |               |
+|             |                   | Operator **must**,  |               |
+|             |                   | and the Private     |               |
+|             |                   | Cloud Operator      |               |
+|             |                   | **may** be          |               |
+|             |                   | certified to be     |               |
+|             |                   | compliant with the  |               |
+|             |                   | International       |               |
+|             |                   | Standard on         |               |
+|             |                   | Awareness           |               |
+|             |                   | Engagements (ISAE)  |               |
+|             |                   | 3402 (in the US:    |               |
+|             |                   | SSAE 16);           |               |
+|             |                   | International       |               |
+|             |                   | Standard on         |               |
+|             |                   | Awareness           |               |
+|             |                   | Engagements (ISAE)  |               |
+|             |                   | 3402. US            |               |
+|             |                   | Equivalent: SSAE16. |               |
++-------------+-------------------+---------------------+---------------+
 
 Table 2-18: Reference Model Requirements: Cloud Infrastructure Security
 Requirements
@@ -1551,252 +1349,148 @@ to as NFVI by ETSI) + VIM (as specified in Reference Model Chapter 3).
 General Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
-+--------+--------------+--------------------------+------------------+
-| Refer\ | sub-category | Description              | Specification    |
-| ence   |              |                          | Reference        |
-|        |              |                          |                  |
-|        |              |                          |                  |
-|        |              |                          |                  |
-+========+==============+==========================+==================+
-| gen.o\ | Open source  | The Architecture         | `RA-1            |
-| st.01  |              | **must** use OpenStack   | “Consolidated    |
-|        |              | APIs.                    | set of APIs”     |
-|        |              |                          | <./chapter05.md# |
-|        |              |                          | consolidated-set |
-|        |              |                          | -of-apis>`__     |
-+--------+--------------+--------------------------+------------------+
-| gen.o\ | Open source  | The Architecture         | `RA-1            |
-| st.02  |              | **must** support dynamic | “Consolidated    |
-|        |              | request and              | set of APIs”     |
-|        |              | configuration of virtual | <./chapter05.md# |
-|        |              | resources (compute,      | consolidated-set |
-|        |              | network, storage)        | -of-apis>`__     |
-|        |              | through OpenStack APIs.  |                  |
-+--------+--------------+--------------------------+------------------+
-| gen.r\ | Resiliency   | The Architecture         |                  |
-| sl.01  |              | **must** support         |                  |
-|        |              | resilient OpenStack      |                  |
-|        |              | components that are      |                  |
-|        |              | required for the         |                  |
-|        |              | continued availability   |                  |
-|        |              | of running workloads.    |                  |
-+--------+--------------+--------------------------+------------------+
-| gen.a\ | Availability | The Architecture         | `RA-1            |
-| vl.01  |              | **must** provide High    | “Underlying      |
-|        |              | Availability for         | Resources”       |
-|        |              | OpenStack components.    | <./chapter0      |
-|        |              |                          | 4.md#underlyi    |
-|        |              |                          | ng-resources>`__ |
-+--------+--------------+--------------------------+------------------+
++------------+--------------+--------------------------+-----------------------------------------------+
+| Reference  | sub-category | Description              | Specification                                 |
+|            |              |                          | Reference                                     |
+|            |              |                          |                                               |
+|            |              |                          |                                               |
+|            |              |                          |                                               |
++============+==============+==========================+===============================================+
+| gen.ost.01 | Open source  | The Architecture         | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | **must** use OpenStack   | consolidated set of apis`                     |
+|            |              | APIs.                    |                                               |
++------------+--------------+--------------------------+-----------------------------------------------+
+| gen.ost.02 | Open source  | The Architecture         | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | **must** support dynamic | consolidated set of apis`                     |
+|            |              | request and              |                                               |
+|            |              | configuration of virtual |                                               |
+|            |              | resources (compute,      |                                               |
+|            |              | network, storage)        |                                               |
+|            |              | through OpenStack APIs.  |                                               |
++------------+--------------+--------------------------+-----------------------------------------------+
+| gen.rsl.01 | Resiliency   | The Architecture         |                                               |
+|            |              | **must** support         |                                               |
+|            |              | resilient OpenStack      |                                               |
+|            |              | components that are      |                                               |
+|            |              | required for the         |                                               |
+|            |              | continued availability   |                                               |
+|            |              | of running workloads.    |                                               |
++------------+--------------+--------------------------+-----------------------------------------------+
+| gen.avl.01 | Availability | The Architecture         | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | **must** provide High    | underlying resources`                         |
+|            |              | Availability for         |                                               |
+|            |              | OpenStack components.    |                                               |
++------------+--------------+--------------------------+-----------------------------------------------+
 
 Table 2-19: General Requirements
 
 Infrastructure Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----+-------------------+-----------------------------+--------------+
-| R\ | sub-category      | Description                 | Specification|
-| ef\|                   |                             | pecification |
-| er\|                   |                             | Reference    |
-| en\|                   |                             |              |
-| ce |                   |                             |              |
-+====+===================+=============================+==============+
-| in\| Compute           | The Architecture **must**   | `RA-1        |
-| f.\|                   | provide compute resources   | “Cloud       |
-| co\|                   | for instances.              | Workload     |
-| m.\|                   |                             | Services”    |
-| 01 |                   |                             | <./chapter03 |
-|    |                   |                             | .md#clo      |
-|    |                   |                             | ud-workload- |
-|    |                   |                             | services>`__ |
-+----+-------------------+-----------------------------+--------------+
-| in\| Compute           | The Architecture **must**   | `RA-1        |
-| f.\|                   | be able to support multiple | “Support for |
-| co\|                   | CPU type options to support | Cloud Infras\|
-| m.\|                   | various infrastructure      | tructure     |
-| 04 |                   | profiles (Basic and High    | Profiles     |
-|    |                   | Performance).               | and flavors” |
-|    |                   |                             | <./chapter04 |
-|    |                   |                             | .md#support- |
-|    |                   |                             | for-cloud-   |
-|    |                   |                             | infrastructu |
-|    |                   |                             | re-profiles- |
-|    |                   |                             | and-         |
-|    |                   |                             | flavors>`__  |
-+----+-------------------+-----------------------------+--------------+
-| in\| Compute           | The Architecture **must**   | `RA-1        |
-| f.\|                   | support Hardware Platforms  | “Support for |
-| co\|                   | with NUMA capabilities.     | Cloud Infras\|
-| m.\|                   |                             | tructure     |
-| 05 |                   |                             | Profiles and |
-|    |                   |                             | flavors”     |
-|    |                   |                             | <./chapter04 |
-|    |                   |                             | md#support-  |
-|    |                   |                             | for-cloud-   |
-|    |                   |                             | infrastructu |
-|    |                   |                             | re-profiles- |
-|    |                   |                             | and-         |
-|    |                   |                             | flavors>`__  |
-+----+-------------------+-----------------------------+--------------+
-| in\| Compute           | The Architecture **must**   | `RA-1        |
-| f.\|                   | support CPU Pinning of the  | “Support for |
-| co\|                   | vCPUs of an instance.       | Cloud Infras\|
-| m.\|                   |                             | tructure     |
-| 06 |                   |                             | Profiles and |
-|    |                   |                             | flavors”     |
-|    |                   |                             | <./chapter04 |
-|    |                   |                             | md#support-  |
-|    |                   |                             | for-cloud-   |
-|    |                   |                             | infrastructu |
-|    |                   |                             | re-profiles- |
-|    |                   |                             | and-         |
-|    |                   |                             | flavors>`__  |
-+----+-------------------+-----------------------------+--------------+
-| in\| Compute           | The Architecture **must**   | `RA-1        |
-| f.\|                   | support different hardware  | “Host        |
-| co\|                   | configurations to support   | aggregates   |
-| m.\|                   | various infrastructure      | providing    |
-| 07 |                   | profiles (Basic and High    | resource     |
-|    |                   | Performance).               | pooling”     |
-|    |                   |                             | <./chapter03 |
-|    |                   |                             | .md#         |
-|    |                   |                             | host-aggrega |
-|    |                   |                             | tes-providin |
-|    |                   |                             | g-resource-p |
-|    |                   |                             | ooling>`__   |
-+----+-------------------+-----------------------------+--------------+
-| in\| Compute           | The Architecture **must**   | `RA-1        |
-| f.\|                   | support allocating certain  | “Reservation |
-| co\|                   | number of host cores for    | of Compute   |
-| m.\|                   | all non-tenant workloads    | Node         |
-| 08 |                   | such as for OpenStack       | cores        |
-|    |                   | services. SMT threads can   | ” <./chapter |
-|    |                   | be allocated to individual  | 04.md#r      |
-|    |                   | OpenStack services or their | eservation-o |
-|    |                   | components. `Dedicating     | f-compute-no |
-|    |                   | host cores to certain       | de-cores>`__ |
-|    |                   | workloads (e.g., OpenStack  |              |
-|    |                   | services) <https://docs.o   |              |
-|    |                   | penstack.org/nova/latest/co |              |
-|    |                   | nfiguration/config.html#com |              |
-|    |                   | pute.cpu_dedicated_set>`__. |              |
-|    |                   | Please see example,         |              |
-|    |                   | `“Configuring libvirt       |              |
-|    |                   | compute nodes for CPU       |              |
-|    |                   | pinning” <https://docs.o    |              |
-|    |                   | penstack.org/nova/latest/ad |              |
-|    |                   | min/cpu-topologies.html>`__ |              |
-+----+-------------------+-----------------------------+--------------+
-| in\| Compute           | The Architecture **must**   | `RA-1        |
-| f.\|                   | ensure that the host cores  | “Reservation |
-| co\|                   | assigned to non-tenant and  | of           |
-| m.\|                   | tenant workloads are SMT    | Compute      |
-| 09 |                   | aware: that is, a host core | Node         |
-|    |                   | and its associated SMT      | cores”       |
-|    |                   | threads are either all      | <./chapter04 |
-|    |                   | assigned to non-tenant      | .md#r        |
-|    |                   | workloads or all assigned   | eservation-o |
-|    |                   | to tenant workloads.        | f-compute-no |
-|    |                   |                             | de-cores>`__ |
-|    |                   |                             | and `RA-1    |
-|    |                   |                             | “Pinned      |
-|    |                   |                             | and          |
-|    |                   |                             | Unpinned     |
-|    |                   |                             | CPUs” <./cha |
-|    |                   |                             | pter04.      |
-|    |                   |                             | md#pinn      |
-|    |                   |                             | ed-and-unpin |
-|    |                   |                             | ned-cpus>`__ |
-+----+-------------------+-----------------------------+--------------+
-| in\| Storage           | The Architecture **must**   | `RA-1        |
-| f.\|                   | provide remote (not         | “Storage”    |
-| st\|                   | directly attached to the    | <./cha       |
-| g.\|                   | host) Block storage for     | pter03.md#   |
-| 01 |                   | Instances.                  | storage>`__  |
-+----+-------------------+-----------------------------+--------------+
-| in\| Storage           | The Architecture **must**   | `RA-1        |
-| f.\|                   | provide Object storage for  | “Swift”      |
-| st\|                   | Instances. Operators        | <./cha       |
-| g.\|                   | **may** choose not to       | pter04.md#   |
-| 02 |                   | implement Object Storage    | swift>`__    |
-|    |                   | but must be cognizant of    |              |
-|    |                   | the risk of “Compliant      |              |
-|    |                   | VNFs” failing in their      |              |
-|    |                   | environment.                |              |
-+----+-------------------+-----------------------------+--------------+
-| in\| Network           | The Architecture **must**   | `RA-1        |
-| f.\|                   | provide virtual network     | “Neutron”    |
-| n\ |                   | interfaces to instances.    | <./chap      |
-| w.\|                   |                             | ter05.md#    |
-| 01 |                   |                             | neutron>`__  |
-+----+-------------------+-----------------------------+--------------+
-| in\| Network           | The Architecture **must**   | `RA-1        |
-| f.\|                   | include capabilities for    | “Virtual     |
-| nt\|                   | integrating SDN controllers | Networking – |
-| w.\|                   | to support provisioning of  | 3rd party    |
-| 02 |                   | network services, from the  | SDN          |
-|    |                   | OpenStack Neutron service,  | solution”    |
-|    |                   | such as networking of VTEPs | <./cha       |
-|    |                   | to the Border Edge based    | pter03.md#   |
-|    |                   | VRFs.                       | virtual-ne   |
-|    |                   |                             | tworking--3r |
-|    |                   |                             | d-party-sdn- |
-|    |                   |                             | solution>`__ |
-+----+-------------------+-----------------------------+--------------+
-| in\| Network           | The Architecture **must**   | `RA-1        |
-| f.\|                   | support low latency and     | “Network     |
-| nt\|                   | high throughput traffic     | Fabric” <.   |
-| w.\|                   | needs.                      | /chapter04.m |
-| 03 |                   |                             | d#networ     |
-|    |                   |                             | k-fabric>`__ |
-+----+-------------------+-----------------------------+--------------+
-| in\| Network           | The Architecture **must**   | `RA-1        |
-| f.\|                   | allow for East/West tenant  | “Network     |
-| nt\|                   | traffic within the cloud    | Fabric” <.   |
-| w.\|                   | (via tunnelled              | /chapter04.m |
-| 05 |                   | encapsulation overlay such  | d#networ     |
-|    |                   | as VXLAN or Geneve).        | k-fabric>`__ |
-+----+-------------------+-----------------------------+--------------+
-| in\| Network           | The Architecture **must**   | `RA-1        |
-| f.\|                   | support network             | “Network”    |
-| nt\|                   | `resiliency                 | <./chapter03 |
-| w.\|                   | <../../../common/glossary.  | .md#         |
-| 07 |                   | md#cloud-platform-abstracti | -network>`__ |
-|    |                   | on-related-terminology>`__. |              |
-+----+-------------------+-----------------------------+--------------+
-| in\| Network           | The Cloud Infrastructure    | `RA-1        |
-| f.\|                   | Network Fabric **must** be  | “Network”    |
-| nt\|                   | capable of enabling highly  | <./chapt     |
-| w.\|                   | available (Five 9’s or      | er03.md#     |
-| 10 |                   | better) Cloud               | -network>`__ |
-|    |                   | Infrastructure.             |              |
-+----+-------------------+-----------------------------+--------------+
-| in\| Network           | The Architecture **must**   | `RA-1        |
-| f.\|                   | support multiple networking | “Neutron     |
-| nt\|                   | options for Cloud           | ML2-plugin   |
-| w.\|                   | Infrastructure to support   | Integration” |
-| 15 |                   | various infrastructure      | <./chapter04 |
-|    |                   | profiles (Basic and High    | .md          |
-|    |                   | Performance).               | #neu         |
-|    |                   |                             | tron-ml2-int |
-|    |                   |                             | egration>`__ |
-|    |                   |                             | and          |
-|    |                   |                             | `“OpenStack  |
-|    |                   |                             | Neutron      |
-|    |                   |                             | Plugins”     |
-|    |                   |                             | <https://wik |
-|    |                   |                             | i.op         |
-|    |                   |                             | enstack.org/ |
-|    |                   |                             | wiki/Neutron |
-|    |                   |                             | _Plugins_and |
-|    |                   |                             | _Drivers>`__ |
-+----+-------------------+-----------------------------+--------------+
-| in\| Network           | The Architecture **must**   |              |
-| f.\|                   | support dual stack IPv4 and |              |
-| nt\|                   | IPv6 for tenant networks    |              |
-| w.\|                   | and workloads.              |              |
-| 16 |                   |                             |              |
-+----+-------------------+-----------------------------+--------------+
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| Reference  | sub-category | Description                            | Specification                                 |
+|            |              |                                        | Reference                                     |
++============+==============+========================================+===============================================+
+| inf.com.01 | Compute      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | compute resources for instances.       | cloud workload services`             `        |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.04 | Compute      | The Architecture **must** be able to   | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | support multiple CPU type options      | support for cloud infrastructure profiles \   |
+|            |              | to support various infrastructure      | and flavors`                                  |
+|            |              | profiles (Basic and High Performance). |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.05 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | Hardware Platforms with NUMA           | support for cloud infrastructure profiles \   |
+|            |              | capabilities.                          | and flavors`                                  |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.06 | Compute      | The Architecture **must** support CPU  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | Pinning of the vCPUs of an instance.   | support for cloud infrastructure profiles \   |
+|            |              |                                        | and flavors`                                  |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.07 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | different hardware configurations to   | cloud partitioning: host aggregates, \        |
+|            |              | support various infrastructure         | availability zones`                           |
+|            |              | profiles (Basic and High Performance). |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.08 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | allocating certain number of host      | reservation of compute node cores`            |
+|            |              | cores for  all non-tenant workloads    |                                               |
+|            |              | such as for OpenStack services. SMT    |                                               |
+|            |              | threads can be allocated to individual |                                               |
+|            |              | OpenStack services or their            |                                               |
+|            |              | components.                            |                                               |
+|            |              | `Dedicating host cores to certain      |                                               |
+|            |              | workloads (e.g., OpenStack services)   |                                               |
+|            |              | <https://docs.openstack.org/nova\\     |                                               |
+|            |              | /latest/configuration/config.html#\    |                                               |
+|            |              | compute.cpu_dedicated_set>`__.         |                                               |
+|            |              | Please see example,                    |                                               |
+|            |              | `Configuring libvirt compute nodes for |                                               |
+|            |              | CPU pinning                            |                                               |
+|            |              | <https://docs.openstack.org/nova\\     |                                               |
+|            |              | /latest/admin/cpu-topologies.html>`__  |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.09 | Compute      | The Architecture **must** ensure that  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | the host cores assigned to non-tenant  | pinned and unpinned cpus`                     |
+|            |              | and tenant workloads are SMT aware:    |                                               |
+|            |              | that is, a host core and its           |                                               |
+|            |              | associated SMT threads are either all  |                                               |
+|            |              | assigned to non-tenant workloads or    |                                               |
+|            |              | all assigned to tenant workloads.      |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.stg.01 | Storage      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | remote (not directly attached to the   | storage`                                      |
+|            |              | host) Block storage for Instances.     |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.stg.02 | Storage      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | Object storage for Instances.          | swift`                                        |
+|            |              | Operators **may** choose not to        |                                               |
+|            |              | implement Object Storage but must be   |                                               |
+|            |              | cognizant of the the risk of           |                                               |
+|            |              | "Compliant VNFs" failing in their      |                                               |
++            +              + environment.                           |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.01  | Network      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | virtual network interfaces to          | neutron`                                      |
+|            |              | instances.                             |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.02  | Network      | The Architecture **must** include      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | capabilities for integrating SDN       | virtual networking – 3rd party sdn solution`  |
+|            |              | controllers to support provisioning    |                                               |
+|            |              | of network services, from the SDN      |                                               |
+|            |              | OpenStack Neutron service, such as     |                                               |
+|            |              | networking of VTEPs to the Border Edge |                                               |
+|            |              | based VRFs.                            |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.03  | Network      | The Architecture **must** support low  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | latency and high throughput traffic    | network fabric`                               |
+|            |              | needs.                                 |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.05  | Network      | The Architecture **must** allow for    | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | East/West tenant traffic within the    | network fabric`                               |
+|            |              | cloud (via tunnelled encapsulation     |                                               |
+|            |              | overlay such as VXLAN or Geneve).      |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.07  | Network      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | network :ref:`resiliency \             | network`                                      |
+|            |              | <common/glossary:cloud platform \      |                                               |
+|            |              | abstraction related terminology:>`     |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.10  | Network      | The Cloud Infrastructure Network       | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | Fabric **must** be capable of enabling | network`                                      |
+|            |              | highly available (Five 9's or better)  |                                               |
+|            |              | Cloud Infrastructure.                  |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.15  | Network      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | multiple networking options for        | neutron extensions` and                       |
+|            |              | Cloud Infrastructure to support        | `OpenStack Neutron Plugins \                  |
+|            |              | various infrastructure profiles (Basic | <https://wiki.openstack.org/wiki/\            |
+|            |              | and High Performance).                 | Neutron_Plugins_and_Drivers>`__               |
++-----------+---------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.16 | Network       | The Architecture **must** support dual |                                               |
+|           |               | stack IPv4 and IPv6 for tenant         |                                               |
+|           |               | networks and workloads.                |                                               |
++-----------+---------------+----------------------------------------+-----------------------------------------------+
 
 Table 2-20: Infrastructure Requirements
 
