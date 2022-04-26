@@ -247,9 +247,9 @@ The following tables list some of the requirements for the Hybrid, Edge, and Mul
 
 **HEMP General Requirements**
 
-=====================================================================================================================================
++-------------+--------------------------------------------------------+------------------------------------------------------------+
 | Ref         | Requirement                                            | Definition/Note                                            |
-=====================================================================================================================================
++=============+========================================================+============================================================+
 | hem.gen.001 | HEMP shall use only published APIs in managing         | For example, to accomplish the example in `hem.gen.003`    |
 |             | component clouds				       | it will use the published APIs of the target cloud.        |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
@@ -274,16 +274,16 @@ The following tables list some of the requirements for the Hybrid, Edge, and Mul
 | hem.gen.007 | HEMP shall allow reservation of resources if the       |                                                            |
 |             | component cloud operator allows    	               |                                                            |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
-| hem.gen.0087 | HEMP shall support multi-tenancy                      |                                                            |
+| hem.gen.008 | HEMP shall support multi-tenancy                       |                                                            |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
 
 Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requirements
 
 **HEMP Operations Requirements**
 
-=====================================================================================================================================
++-------------+--------------------------------------------------------+------------------------------------------------------------+
 | Ref         | Requirement                                            | Definition/Note                                            |
-=====================================================================================================================================
++=============+========================================================+============================================================+
 | hem.ops.001 | HEMP shall generalise and define a common set of       |                                                            |
 |             | management operations available in constituent clouds; |                                                            |
 |             | required operations include: create, deploy, configure,|                                                            |
@@ -309,16 +309,16 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requireme
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
 | hem.ops.007 | HEMP shall provide mechanisms and processes for the    |                                                            |
 |             | automated configuration management of all environments |                                                            |
-|             |and resources                                           |                                                            |
+|             | and resources                                          |                                                            |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
 
 Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Operability Requirements
 
 **HEMP LCM Requirements**
 
-=====================================================================================================================================
++-------------+--------------------------------------------------------+------------------------------------------------------------+
 | Ref         | Requirement                                            | Definition/Note                                            |
-=====================================================================================================================================
++=============+========================================================+============================================================+
 | hem.lcm.001 | HEMP shall monitor all environments and assets         |                                                            |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
 | hem.lcm.002 | HEMP shall provide visibility into the health of all   |                                                            |
@@ -335,15 +335,15 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Life Cycle Manage
 
 **HEMP Security Requirements**
 
-=====================================================================================================================================
++-------------+--------------------------------------------------------+------------------------------------------------------------+
 | Ref         | Requirement                                            | Definition/Note                                            |
-=====================================================================================================================================
++=============+========================================================+============================================================+
 | hem.sec.001 | HEMP shall provide capabilities for the centralised    |                                                            |
 |             | management of all security policies                    |                                                            |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
 | hem.sec.002 | HEMP shall provide capabilities for the centralised    |                                                            |
 |             | tracking of compliance of all security requirements    |                                                            |
-|             | (:ref:`ref_model/chapters/chapter07:consolidated       |                                                            |
+|             | (:ref:`ref_model/chapters/chapter07:consolidated \     |                                                            |
 |             | security requirements`)                                |                                                            |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
 | hem.sec.003 | HEMP shall provide capabilities for insights into      |                                                            |
@@ -360,16 +360,29 @@ Cloud infrastructures, emerging as a key element in the telco operator ecosystem
 
 In the multi-cloud ecosystem comprised of different security postures and policies, network domains, products, and business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an environment, there are additional security principles to be considered. These principles, see Table 8-1a below, are drawn from the collaboration with the GSMA Fraud and Security Group (FASG).
 
-============================== =================================================================================================================================================================================================================
-Multi-cloud Security Principle Description
-============================== =================================================================================================================================================================================================================
-Policy synchronization         Consistency in applying the right security policies across environments, services, interfaces, and configured resources
-Visibility                     A common data model approach to share events and behaviours across all the key compute, storage, network, and applications resources, environments, virtualised platforms, containers and interfaces
-Monitoring                     Centralisation, correlation, and visualisation of security information across the different cloud environments to provide an end-to-end view and enable timely response to attacks
-Automation                     Automation of critical activities including cloud security posture management, continuous security assessments, compliance monitoring, detection of misconfigurations and identification and remediation of risks
-Access Management              Wide range of users including administrators, testers, DevOps, and developers and customers should be organised into security groups with privileges appropriate to different resources and environments
-Security Operations Model      Augmentation of security services provided by cloud service providers with the vetted third-party and/or open-source tools and services, all incorporated into the established overall security operations model
-============================== =================================================================================================================================================================================================================
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| Multi-cloud Security Principle | Description                                                                                           |
++================================+=======================================================================================================+ 
+| Policy synchronization         | Consistency in applying the right security policies across environments, services, interfaces, and    |
+|                                | configured resources                                                                                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| Visibility                     | A common data model approach to share events and behaviours across all the key compute, storage,      |
+|                                | network, and applications resources, environments, virtualised platforms, containers and interfaces   |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| Monitoring                     | Centralisation, correlation, and visualisation of security information across the different cloud     |
+|                                | environments to provide an end-to-end view and enable timely response to attacks                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| Automation                     | Automation of critical activities including cloud security posture management, continuous security    |
+|                                | assessments, compliance monitoring, detection of misconfigurations and identification and remediation |
+|                                | of risks                                                                                              |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| Access Management              | Wide range of users including administrators, testers, DevOps, and developers and customers should be |
+|                                | organised into security groups with privileges appropriate to different resources and environments    |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| Security Operations Model      | Augmentation of security services provided by cloud service providers with the vetted third-party     |
+|                                | and/or open-source tools and services, all incorporated into the established overall security         |
+|                                | operations model                                                                                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
 
 **Table 8-2. Multi-Cloud Principles**
 
@@ -452,14 +465,18 @@ Telco Edge Cloud: Platform Services Deployment
 
 This section characterises the hardware capabilities for different edge deployments and the Platform services that run on the infrastructure. Please note, that the Platform services are containerised to save resources, and benefit from intrinsic availability and auto-scaling capabilities.
 
-======================= ================= ===== ========= ======= ========== ============= ========= ========== ================ ================= ================== =================== =======
-\                       Platform Services                                                             Storage                                       Network Services
-======================= ================= ===== ========= ======= ========== ============= ========= ========== ================ ================= ================== =================== =======
-\                       Identity          Image Placement Compute Networking Message Queue DB Server  Ephemeral Persistent Block Persistent Object  Management        Underlay (Provider) Overlay
-Control Nodes           ✅                ✅    ✅        ✅      ✅          ✅           ✅                   ✅                                  ✅                ✅                  ✅
-Workload Nodes(Compute)                                   ✅      ✅                                  ✅        ✅               ✅                 ✅                ✅                  ✅
-Storage Nodes                                                                                                   ✅               ✅                 ✅                ✅                  ✅
-======================= ================= ===== ========= ======= ========== ============= ========= ========== ================ ================= ================== =================== =======
++----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+ 
+|                | Platform Services                                                      | Storage                             | Network Services                  |
++================+==========+=======+===========+=========+============+=========+========+===========+============+============+============+============+=========+ 
+|                | Identity | Image | Placement | Compute | Networking | Message | DB     | Ephemeral | Persistent | Persistent | Management | Underlay   | Overlay |
+|                |          |       |           |         |            | Queue   | Server |           | Block      | Object     |            | (Provider) |         |
++----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+ 
+| Control Nodes  | ✅        | ✅     | ✅         | ✅     | ✅         | ✅     | ✅     |          | ✅        |             | ✅         | ✅        |✅       |
++----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+ 
+| Workload Nodes |          |       |           | ✅     | ✅         |         |        | ✅       | ✅         | ✅        | ✅         | ✅        | ✅      | 
+| (Compute)      |          |       |           |         |            |         |        |          |             |            |             |           |         | 
++----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+  | Storage Nodes  |          |       |           |         |            |         |        |           | ✅         | ✅        | ✅         | ✅        | ✅      |
++----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+ 
 
 **Table 8-5. Characteristics of Infrastructure nodes**
 
