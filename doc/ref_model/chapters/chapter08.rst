@@ -241,7 +241,7 @@ This Hybrid, Edge, and Multi-Cloud unified management Platform (HEMP) (a.k.a. Si
 
 through a common set of governance and operational practices.
 
-GSMA's Operator Platform Group (OPG) specify a federated model and specify requirements for the Edge Platforms (Operator Platform Telco Edge Requirements v2.0(:ref:`https://infocentre2.gsma.com/gp/pr/FNW/OPG/OfficialDocuments/OPG.02%20Operator%20Platform%20Telco%20Edge%20Requirements%20v2.0%20(Current)/OPG.02%20v2.0.pdf`); while the document is for Edge, most of the requirements are easily applicable to other cloud deployments. Anuket RM is implementation agnostic, viz., whether the implementation uses agents, federations or some other mechanisms. 
+GSMA's Operator Platform Group (OPG) specify a federated model and specify requirements for the Edge Platforms (Operator Platform Telco Edge Requirements v2.0 (:ref:`https://infocentre2.gsma.com/gp/pr/FNW/OPG/OfficialDocuments/OPG.02%20Operator%20Platform%20Telco%20Edge%20Requirements%20v2.0%20(Current)/OPG.02%20v2.0.pdf`); while the document is for Edge, most of the requirements are easily applicable to other cloud deployments. Anuket RM is implementation agnostic, viz., whether the implementation uses agents, federations or some other mechanisms. 
 
 The following tables list some of the requirements for the Hybrid, Edge, and Multi cloud operator Platform (HEMP). These requirements are in addition to the requirements in other chapters of this RM. 
 
@@ -465,18 +465,19 @@ Telco Edge Cloud: Platform Services Deployment
 
 This section characterises the hardware capabilities for different edge deployments and the Platform services that run on the infrastructure. Please note, that the Platform services are containerised to save resources, and benefit from intrinsic availability and auto-scaling capabilities.
 
-+----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+ 
++----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+
 |                | Platform Services                                                      | Storage                             | Network Services                  |
-+================+==========+=======+===========+=========+============+=========+========+===========+============+============+============+============+=========+ 
++================+==========+=======+===========+=========+============+=========+========+===========+============+============+============+============+=========+
 |                | Identity | Image | Placement | Compute | Networking | Message | DB     | Ephemeral | Persistent | Persistent | Management | Underlay   | Overlay |
 |                |          |       |           |         |            | Queue   | Server |           | Block      | Object     |            | (Provider) |         |
-+----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+ 
-| Control Nodes  | ✅        | ✅     | ✅         | ✅     | ✅         | ✅     | ✅     |          | ✅        |             | ✅         | ✅        |✅       |
-+----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+ 
-| Workload Nodes |          |       |           | ✅     | ✅         |         |        | ✅       | ✅         | ✅        | ✅         | ✅        | ✅      | 
-| (Compute)      |          |       |           |         |            |         |        |          |             |            |             |           |         | 
-+----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+  | Storage Nodes  |          |       |           |         |            |         |        |           | ✅         | ✅        | ✅         | ✅        | ✅      |
-+----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+ 
++----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+
+| Control Nodes  |    x     |   x   |     x     |    x    |     x      |    x    |   x    |           |     x      |            |     x      |     x      |    x    |
++----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+
+| Workload Nodes |          |       |           |    x    |     x      |         |        |     x     |     x      |     x      |     x      |     x      |    x    |
+| (Compute)      |          |       |           |         |            |         |        |           |            |            |            |            |         |
++----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+
+| Storage Nodes  |          |       |           |         |            |         |        |           |     x      |     x      |     x      |     x      |    x    |
++----------------+----------+-------+-----------+---------+------------+---------+--------+-----------+------------+------------+------------+------------+---------+
 
 **Table 8-5. Characteristics of Infrastructure nodes**
 
