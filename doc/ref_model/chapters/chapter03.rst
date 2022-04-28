@@ -1003,27 +1003,27 @@ guideance to architects and immplementors in establishing storage solutions for 
 The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference
 Implementations and Reference Conformance test suites:
 
--  Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical
+- Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical
   Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
--  Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance
-requirements (more in Virtual Resources 3.2.1.3 Storage).
--  Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of
-workloads (VNF/CNF) onboarding.
--  Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound
-Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
--  Scalability: Storage model enables scalability to enable small up to large deployments.
--  Workload agnostic: Storage model can provide storage functionality to any type of workloads, including: tenant VNF,
-CNF and Infrastructure Management whether this is via BareMetal or Virtualised Deployments.
--  Operationally Amenable: The storage must be amenable to consistent set of operational processes for: Non-Disruptive
-Capacity Expansion and Contraction, Backup/Restoration and Archive and Performance Management. Where applicable
-(examples are: Backup/Restoration/Archive) these processes should also be able to be provided to tenants for their own
-delegated management.
--  Security Policy Amenable: The storage sub-systems must be amenable to policy based security controls covering areas
-such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management
-Security Policy Override, Secure Erase on Device Removal and others
--  Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of
-memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and
-Persistent Memory, integrated for multi-clouds, and Edge related technologies.
+- Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance
+  requirements (more in Virtual Resources 3.2.1.3 Storage).
+- Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of
+  workloads (VNF/CNF) onboarding.
+- Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound
+  Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
+- Scalability: Storage model enables scalability to enable small up to large deployments.
+- Workload agnostic: Storage model can provide storage functionality to any type of workloads, including: tenant VNF,
+  CNF and Infrastructure Management whether this is via BareMetal or Virtualised Deployments.
+- Operationally Amenable: The storage must be amenable to consistent set of operational processes for: Non-Disruptive
+  Capacity Expansion and Contraction, Backup/Restoration and Archive and Performance Management. Where applicable
+  (examples are: Backup/Restoration/Archive) these processes should also be able to be provided to tenants for their own
+  delegated management.
+- Security Policy Amenable: The storage sub-systems must be amenable to policy based security controls covering areas
+  such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management
+  Security Policy Override, Secure Erase on Device Removal and others
+- Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of
+  memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and
+  Persistent Memory, integrated for multi-clouds, and Edge related technologies.
 
 The above principles should be understood as storage specific specialisations of the
 :ref:`common/chapter00:anuket general principles`.
@@ -1112,16 +1112,16 @@ Where:
   and Capacity storage options.
 - Storage Types - is how the storage is accessed and used, where:
 
-   - Platform Native - is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF
-     boots and can write back to, the storage interface that is exposed by the container runtime), this storage is
-     typically not shared across running VNF / CNF instances;
-   - Shared File Storage - is storage that is accessed through a file systems interface (examples are network based
-     storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
-   - Object Storage - is storage that is accessed via API interfaces (the most common example being HTTP restful
-     services API), which support get/put of structured objects; and
-   - Archival - is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting
-     legal requirements or other historical recording where the storage mechanism may go through multiple stages before
-   landing at rest.
+  - Platform Native - is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF
+    boots and can write back to, the storage interface that is exposed by the container runtime), this storage is
+    typically not shared across running VNF / CNF instances;
+  - Shared File Storage - is storage that is accessed through a file systems interface (examples are network based
+    storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
+  - Object Storage - is storage that is accessed via API interfaces (the most common example being HTTP restful
+    services API), which support get/put of structured objects; and
+  - Archival - is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting
+    legal requirements or other historical recording where the storage mechanism may go through multiple stages before
+    landing at rest.
 
 The storage model provides a relatively simple way for the storage consumer to specify / select their storage needs.
 This is shown in the following table which highlights key attributes and features of the storage classes and
