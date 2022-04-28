@@ -110,9 +110,7 @@ leveraging the common Anuket centralized services. However, the
 interfaces remain unchanged for leveraging test jobs, the common test
 case execution, the test result database and the S3 protocol to publish
 the artifacts. It’s worth mentioning that dumping all results and logs
-required for conformance is already in place in CIRV (see
-`cntt-latest-zip <https://build.opnfv.org/ci/job/cntt-latest-zip/>`__)
-and Functest daily jobs (see
+required for conformance is already in place in Functest daily jobs (see
 `functest-wallaby-zip <https://build.opnfv.org/ci/job/functest-wallaby-zip/4/console>`__).
 
 It should be noted that `Xtesting
@@ -177,8 +175,8 @@ conformance:
 
 -  smoothly assemble multiple heterogeneous test cases
 -  generate the Jenkins jobs in `Anuket
-   Releng <https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml>`__
-   to verify Anuket RI
+   Releng <https://git.opnfv.org/releng/tree/jjb/functest>`__
+   to verify Anuket RC1 and RC2
 -  deploy local CI/CD toolchains everywhere to check compliance with
    Anuket
 -  `dump all test case results and
