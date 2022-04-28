@@ -1,7 +1,6 @@
 import os
 import sys
-#import sphinx_rtd_theme
-import sphinx_bootstrap_theme
+import sphinx_material
 
 from recommonmark.parser import CommonMarkParser
 source_parsers = {
@@ -12,17 +11,18 @@ source_suffix = ['.rst', '.md']
 templates_path = ['_templates']
 
 master_doc = 'index'
-project = ''
+project = "Anuket Specifications"
+html_title = "Anuket Specifications"
 copyright = '2021, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 
 extensions = ['sphinxcontrib.readme-to-index', 
               'sphinxcontrib.relative-link-corrector',
               'sphinxcontrib.direct-copy',
-              'sphinx_markdown_tables', 
-              'sphinx_rtd_theme',
               'sphinx.ext.intersphinx',
-              'sphinx.ext.autosectionlabel'
+              'sphinx.ext.autosectionlabel',
+              'sphinx_markdown_tables',
+              'sphinx_material'
              ]
 
 direct_copy_directories = ['/gov/figures', 
@@ -37,11 +37,13 @@ direct_copy_directories = ['/gov/figures',
                            '/ven_impl/figures', 
                            '/common/figures'] 
 
-html_theme = "bootstrap"
-#html_theme = "sphinx_rtd_theme"
+html_theme_path = sphinx_material.html_theme_path()
+html_context = sphinx_material.get_html_context()
+html_theme = "sphinx_material"
 
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
-html_sidebars = {'**': ['my_custom_sidebar.html', 'relations.html'],}
+html_sidebars = {
+    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
+}
 
 html_static_path = ['_static']
 html_css_files = [
@@ -49,8 +51,24 @@ html_css_files = [
 ]
 
 html_theme_options = {
-    'bootswatch_theme': "journal",
-    'navbar_sidebarrel': False,
+    'repo_name': 'Material for Sphinx',
+    'nav_title': 'Anuket Specifications',
+     # Set the color and the accent color
+    'color_primary': 'white',
+    'color_accent': 'teal',
+    # Visible levels of the global TOC; -1 means unlimited
+    'globaltoc_depth': 1,
+    # If False, expand all TOC entries
+    'globaltoc_collapse': False,
+    # If True, show hidden TOC entries
+    'globaltoc_includehidden': False,
+    'nav_links': [
+        {
+            'href': 'https://docs.opnfv.org/',
+            'internal': False,
+            'title': 'Anuket Project Documentation'
+        }
+    ]
 }
 
 html_logo = '_static/anuket-logo.png'
