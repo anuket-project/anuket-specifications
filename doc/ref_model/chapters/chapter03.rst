@@ -707,7 +707,7 @@ directed acyclic graph with the composing network functions being the vertices. 
 can be modelled by defining two parameters:
 
 -  An acyclic graph defining the service functions that need to be traversed for the service chain. This allows for
-multiple paths for a packet to traverse the service chain.
+   multiple paths for a packet to traverse the service chain.
 -  A set of packet/flow classifiers that determine what packets will enter and exit a given service chain
 
 These capabilities need to be provided for both virtualised and containerised (cloud-native) network functions as there
@@ -871,8 +871,8 @@ Data Steering in Service Function Chain
    Data steering in Service Function Chain
 
 - SFC classifier detects the traffic flow based on classification policies. For example, to enable SGi-Lan feature as
-SFC, 5G User plane function (UPF) acts as SFC classifier. UPF receives the classification policies from 5G Policy
-control function (PCF) as traffic steering policies.
+  SFC, 5G User plane function (UPF) acts as SFC classifier. UPF receives the classification policies from 5G Policy
+  control function (PCF) as traffic steering policies.
 - SFC classifier applies the SFC encapsulation (e.g., SCH, NSH) and routes traffic towards SFF, acts as entry point to
   SFP. The SFC Encapsulation provides, at a minimum, SFP identification, and is used by the SFC-aware functions, such as
   the SFF and SFC-aware SFs.
@@ -1004,7 +1004,7 @@ The following principles apply to Storage scope for the Reference Model, Referen
 Implementations and Reference Conformance test suites:
 
 -  Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical
-Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
+  Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
 -  Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance
 requirements (more in Virtual Resources 3.2.1.3 Storage).
 -  Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of
@@ -1068,11 +1068,11 @@ of initial images to physical hosts and a similar approach is used for "Bare Met
 storage stereotype that covers this use case is:
 
 - Infrastructure Automation (:numref:`Fig-3-17`) - where PXE Boot Server provides a cache of boot images that are stored
-in local storage (2) which are then conditionally served up as PXE boot images (3). The PXE boot server can run within
-bootstrap management hosting in data-centre or within the routing / switch layer for an edge deployment case aimed to
-minimise physical footprint. The Infrastructure Automation PXE server is aware of the provisioning status of the
-physical infrastructure and will serve specific images or even not respond to PXE boot requests for hosts which have
-already been provisioned and are considered "in service".
+  in local storage (2) which are then conditionally served up as PXE boot images (3). The PXE boot server can run within
+  bootstrap management hosting in data-centre or within the routing / switch layer for an edge deployment case aimed to
+  minimise physical footprint. The Infrastructure Automation PXE server is aware of the provisioning status of the
+  physical infrastructure and will serve specific images or even not respond to PXE boot requests for hosts which have
+  already been provisioned and are considered "in service".
 
 .. _Fig-3-17:
 .. figure:: ../figures/rm-chap3.6-general-cloud-storage-infrastructure-automation-pxe-server-sterotype-01.png
@@ -1554,12 +1554,12 @@ operator or Application tenant roles.
 Hardware Accelerators can be used as:
 
 -  Virtualization Infrastructure layer acceleration: Example can be vSwitch, which can be leveraged agnostically by VNFs
-if standard host interfaces (like VirtIO) are used.
+   if standard host interfaces (like VirtIO) are used.
 -  Application layer acceleration: Example of software library/framework (like DPDK) in VM providing Application level
-acceleration with (where available) hardware-abstracted APIs to access platform Hardware Acceleration and providing
-software equivalent libraries when hardware assist not available.
+   acceleration with (where available) hardware-abstracted APIs to access platform Hardware Acceleration and providing
+   software equivalent libraries when hardware assist not available.
 -  Hardware Infrastructure layer offload: Example can be an OOB managed underlay network separation providing network
-separation secured from host OS reach on any provisioned transport switch infrastructure.
+   separation secured from host OS reach on any provisioned transport switch infrastructure.
 
 Two levels of consumption are for underlay separation or overlay acceleration. Underlay Separation ensures that multiple
 different Virtualization Infrastructure instances are kept in separate underlay network access domains. Overlay
@@ -1772,20 +1772,21 @@ Infrastructure:
 ^^^^^^^^^^^^^^^
 
 - a) Application functionality or application control requires infrastructure components beyond RM profiles or
-infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled with
-the infrastructure which results in an Appliance deployment model (see
-:ref:`common/glossary:cloud platform abstraction related terminology:`).
+     infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled with
+     the infrastructure which results in an Appliance deployment model (see
+     :ref:`common/glossary:cloud platform abstraction related terminology:`).
 - b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
-the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure
-components that make application work. Example is an application that to achieve latency requirements needs certain
-hardware acceleration available in RM profile and is exposed through APIs specified by RA.
+     the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure
+     components that make application work. Example is an application that to achieve latency requirements needs 
+certain
+     hardware acceleration available in RM profile and is exposed through APIs specified by RA.
 - c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
-optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure
-component(s) that make application work better (like more performant) than without that infrastructure component.
-Example is an application that would have better cost/performance with certain acceleration adapter but can also work
-without it.
+     optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure
+     component(s) that make application work better (like more performant) than without that infrastructure component.
+     Example is an application that would have better cost/performance with certain acceleration adapter but can also work
+     without it.
 - d) Application control using APIs specified by RA finds general profile nodes without any specific infrastructure
-components.
+     components.
 
 Platform Services:
 ^^^^^^^^^^^^^^^^^^
