@@ -1104,8 +1104,7 @@ can trigger alerts and notifications for appropriate action.
 |              |                   | system until successful.        |                                               |
 +--------------+-------------------+---------------------------------+-----------------------------------------------+
 
-Table 2-12: Reference Model Requirements - Monitoring and Security Audit
-Requirements
+Table 2-12: Reference Model Requirements - Monitoring and Security Audit Requirements
 
 Open-Source Software
 ^^^^^^^^^^^^^^^^^^^^
@@ -1148,8 +1147,7 @@ Open-Source Software
 |             |                   | open-source content.             |               |
 +-------------+-------------------+----------------------------------+---------------+
 
-Table 2-13: Reference Model Requirements - Open-Source Software Security
-Requirements
+Table 2-13: Reference Model Requirements - Open-Source Software Security Requirements
 
 IaaC security
 ^^^^^^^^^^^^^
@@ -1159,29 +1157,22 @@ IaaC security
 
 **Secure Code Stage Requirements**
 
-+--------------+-------------------+---------------------+---------------+
-| Reference    | sub-category      | Description         | Specification |
-|              |                   |                     | Reference     |
-+==============+===================+=====================+===============+
-| sec.code.001 | IaaC              | SAST -Static        |               |
-|              |                   | Application         |               |
-|              |                   | Security Testing    |               |
-|              |                   | **must** be applied |               |
-|              |                   | during Secure       |               |
-|              |                   | Coding stage        |               |
-|              |                   | triggered by Pull,  |               |
-|              |                   | Clone or Comment    |               |
-|              |                   | trigger. Security   |               |
-|              |                   | testing that        |               |
-|              |                   | analyses            |               |
-|              |                   | application source  |               |
-|              |                   | code for software   |               |
-|              |                   | vulnerabilities and |               |
-|              |                   | gaps against best   |               |
-|              |                   | practices. Example: |               |
-|              |                   | open source OWASP   |               |
-|              |                   | range of tools.     |               |
-+--------------+-------------------+---------------------+---------------+
++--------------+-------------------+---------------------------------+---------------+
+| Reference    | sub-category      | Description                     | Specification |
+|              |                   |                                 | Reference     |
++==============+===================+=================================+===============+
+| sec.code.001 | IaaC              | SAST -Static  Application       |               |
+|              |                   | Security Testing **must** be    |               |
+|              |                   | applied during Secure Coding    |               |
+|              |                   | stage triggered by Pull, Clone  |               |
+|              |                   | or Comment trigger.             |               |
+|              |                   | Security testing that analyses  |               |
+|              |                   | application source code for     |               |
+|              |                   | software vulnerabilities and    |               |
+|              |                   | gaps against bestpractices.     |               |
+|              |                   | Example: open source OWASP      |               |
+|              |                   | range of tools.                 |               |
++--------------+-------------------+---------------------------------+---------------+
 
 Table 2-14: Reference Model Requirements: IaaC Security Requirements,
 Secure Code Stage
