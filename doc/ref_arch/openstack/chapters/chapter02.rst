@@ -1111,41 +1111,41 @@ Open-Source Software
 
 (source :ref:`ref_model/chapters/chapter07:open source software`)
 
-+-------------+-------------------+----------------------------------+---------------+
-| Reference   | sub-category      | Description                      | Specification |
-|             |                   |                                  | Reference     |
-+=============+===================+==================================+===============+
-| sec.oss.001 | Software          | Open-source code **must** be     |               |
-|             |                   | inspected by tools with various  |               |
-|             |                   | capabilities for static and      |               |
-|             |                   | dynamic code analysis.           |               |
-+-------------+-------------------+----------------------------------+---------------+
-| sec.oss.002 | Software          | The `CVE (Common Vulnerabilities |               |
-|             |                   | and Exposures)                   |               |
-|             |                   | <https://cve.mitre.org/>`__      |               |
-|             |                   | **must** be used to identify     |               |
-|             |                   | vulnerabilities and their        |               |
-|             |                   | severity rating for  open-source |               |
-|             |                   | code part of Cloud               |               |
-|             |                   | Infrastructure and  workloads    |               |
-|             |                   | software.                        |               |
-+-------------+-------------------+----------------------------------+---------------+
-| sec.oss.003 | Software          | Critical and high severity rated |               |
-|             |                   | vulnerabilities **must** be      |               |
-|             |                   | fixed in a timely manner. Refer  |               |
-|             |                   | to the `CVSS (Common             |               |
-|             |                   | Vulnerability Scoring System)    |               |
-|             |                   | <https://www.first.org/cvss/>`__ |               |
-|             |                   | to know a vulnerability score    |               |
-|             |                   | and its associated rate (low,    |               |
-|             |                   | medium, high, or critical)       |               |
-+-------------+-------------------+----------------------------------+---------------+
-| sec.oss.004 | Software          | A dedicated internal isolated    |               |
-|             |                   | repository separated from the    |               |
-|             |                   | production environment **must**  |               |
-|             |                   | be used to store vetted          |               |
-|             |                   | open-source content.             |               |
-+-------------+-------------------+----------------------------------+---------------+
++-------------+-------------------+----------------------------------+----------------------------+
+| Reference   | sub-category      | Description                      | Specification              |
+|             |                   |                                  | Reference                  |
++=============+===================+==================================+============================+
+| sec.oss.001 | Software          | Open-source code **must** be     |                            |
+|             |                   | inspected by tools with various  |                            |
+|             |                   | capabilities for static and      |                            |
+|             |                   | dynamic code analysis.           |                            |
++-------------+-------------------+----------------------------------+----------------------------+
+| sec.oss.002 | Software          | The `CVE (Common Vulnerabilities |                            |
+|             |                   | and Exposures)                   |                            |
+|             |                   | <https://cve.mitre.org/>`__      |                            |
+|             |                   | **must** be used to identify     |                            |
+|             |                   | vulnerabilities and their        |                            |
+|             |                   | severity rating for  open-source |                            |
+|             |                   | code part of Cloud               |                            |
+|             |                   | Infrastructure and  workloads    |                            |
+|             |                   | software.                        |                            |
++-------------+-------------------+----------------------------------+----------------------------+
+| sec.oss.003 | Software          | Critical and high severity rated |                            |
+|             |                   | vulnerabilities **must** be      |                            |
+|             |                   | fixed in a timely manner. Refer  |                            |
+|             |                   | to the `CVSS (Common             |                            |
+|             |                   | Vulnerability Scoring System)    |                            |
+|             |                   | <https://www.first.org/cvss/>`__ |                            |
+|             |                   | to know a vulnerability score    |                            |
+|             |                   | and its associated rate (low,    |                            |
+|             |                   | medium, high, or critical)       |                            |
++-------------+-------------------+----------------------------------+----------------------------+
+| sec.oss.004 | Software          | A dedicated internal isolated    |                            |
+|             |                   | repository separated from the    |                            |
+|             |                   | production environment **must**  |                            |
+|             |                   | be used to store vetted          |                            |
+|             |                   | open-source content.             |                            |
++-------------+-------------------+----------------------------------+----------------------------+
 
 Table 2-13: Reference Model Requirements - Open-Source Software Security Requirements
 
@@ -1157,143 +1157,107 @@ IaaC security
 
 **Secure Code Stage Requirements**
 
-+--------------+-------------------+---------------------------------+---------------+
-| Reference    | sub-category      | Description                     | Specification |
-|              |                   |                                 | Reference     |
-+==============+===================+=================================+===============+
-| sec.code.001 | IaaC              | SAST -Static  Application       |               |
-|              |                   | Security Testing **must** be    |               |
-|              |                   | applied during Secure Coding    |               |
-|              |                   | stage triggered by Pull, Clone  |               |
-|              |                   | or Comment trigger.             |               |
-|              |                   | Security testing that analyses  |               |
-|              |                   | application source code for     |               |
-|              |                   | software vulnerabilities and    |               |
-|              |                   | gaps against bestpractices.     |               |
-|              |                   | Example: open source OWASP      |               |
-|              |                   | range of tools.                 |               |
-+--------------+-------------------+---------------------------------+---------------+
++--------------+-------------------+---------------------------------+----------------------------+
+| Reference    | sub-category      | Description                     | Specification              |
+|              |                   |                                 | Reference                  |
++==============+===================+=================================+============================+
+| sec.code.001 | IaaC              | SAST -Static  Application       |                            |
+|              |                   | Security Testing **must** be    |                            |
+|              |                   | applied during Secure Coding    |                            |
+|              |                   | stage triggered by Pull, Clone  |                            |
+|              |                   | or Comment trigger.             |                            |
+|              |                   | Security testing that analyses  |                            |
+|              |                   | application source code for     |                            |
+|              |                   | software vulnerabilities and    |                            |
+|              |                   | gaps against bestpractices.     |                            |
+|              |                   | Example: open source OWASP      |                            |
+|              |                   | range of tools.                 |                            |
++--------------+-------------------+---------------------------------+----------------------------+
 
 Table 2-14: Reference Model Requirements: IaaC Security Requirements,
 Secure Code Stage
 
 **Continuous Build, Integration and Testing Stage Requirements**
 
-+-------------+-------------------+---------------------+---------------+
-| Reference   | sub-category      | Description         | Specification |
-|             |                   |                     | Reference     |
-+=============+===================+=====================+===============+
-| sec.bld.003 | IaaC              | Image Scan **must** |               |
-|             |                   | be applied during   |               |
-|             |                   | the Continuous      |               |
-|             |                   | Build, Integration  |               |
-|             |                   | and Testing stage   |               |
-|             |                   | triggered by        |               |
-|             |                   | Package trigger,    |               |
-|             |                   | example: A push of  |               |
-|             |                   | a container image   |               |
-|             |                   | to a container      |               |
-|             |                   | registry may        |               |
-|             |                   | trigger a           |               |
-|             |                   | vulnerability scan  |               |
-|             |                   | before the image    |               |
-|             |                   | becomes available   |               |
-|             |                   | in the registry.    |               |
-+-------------+-------------------+---------------------+---------------+
++-------------+-------------------+----------------------------------+----------------------------+
+| Reference   | sub-category      | Description                      | Specification              |
+|             |                   |                                  | Reference                  |
++=============+===================+==================================+============================+
+| sec.bld.003 | IaaC              | Image Scan **must** be applied   |                            |
+|             |                   | during the Continuous Build,     |                            |
+|             |                   | Integration and Testing stage    |                            |
+|             |                   | triggered by Package trigger,    |                            |
+|             |                   | example: A push of a container   |                            |
+|             |                   | image to a containerregistry     |                            |
+|             |                   | may trigger a vulnerability scan |                            |
+|             |                   | before the image becomes         |                            |
+|             |                   | available in the registry.       |                            |
++-------------+-------------------+----------------------------------+----------------------------+
 
 Table 2-15: Reference Model Requirements - IaaC Security Requirements,
 Continuous Build, Integration and Testing Stage
 
 **Continuous Delivery and Deployment Stage Requirements**
 
-+-------------+-------------------+---------------------+---------------+
-| Reference   | sub-category      | Description         | Specification |
-|             |                   |                     | Reference     |
-+=============+===================+=====================+===============+
-| sec.del.001 | IaaC              | Image Scan **must** |               |
-|             |                   | be applied during   |               |
-|             |                   | the Continuous      |               |
-|             |                   | Delivery and        |               |
-|             |                   | Deployment stage    |               |
-|             |                   | triggered by        |               |
-|             |                   | Publish to Artifact |               |
-|             |                   | and Image           |               |
-|             |                   | Repository trigger. |               |
-|             |                   | Example: GitLab     |               |
-|             |                   | uses the open       |               |
-|             |                   | source Clair engine |               |
-|             |                   | for container image |               |
-|             |                   | scanning.           |               |
-+-------------+-------------------+---------------------+---------------+
-| sec.del.002 | IaaC              | Code Signing        |               |
-|             |                   | **must** be applied |               |
-|             |                   | during the          |               |
-|             |                   | Continuous Delivery |               |
-|             |                   | and Deployment      |               |
-|             |                   | stage triggered by  |               |
-|             |                   | Publish to Artifact |               |
-|             |                   | and Image           |               |
-|             |                   | Repository trigger. |               |
-|             |                   | Code Signing        |               |
-|             |                   | provides            |               |
-|             |                   | authentication to   |               |
-|             |                   | assure that         |               |
-|             |                   | downloaded files    |               |
-|             |                   | are form the        |               |
-|             |                   | publisher named on  |               |
-|             |                   | the certificate.    |               |
-+-------------+-------------------+---------------------+---------------+
-| sec.del.004 | IaaC              | Component           |               |
-|             |                   | Vulnerability Scan  |               |
-|             |                   | **must** be applied |               |
-|             |                   | during the          |               |
-|             |                   | Continuous Delivery |               |
-|             |                   | and Deployment      |               |
-|             |                   | stage triggered by  |               |
-|             |                   | Instantiate         |               |
-|             |                   | Infrastructure      |               |
-|             |                   | trigger. The        |               |
-|             |                   | vulnerability       |               |
-|             |                   | scanning system is  |               |
-|             |                   | deployed on the     |               |
-|             |                   | cloud platform to   |               |
-|             |                   | detect security     |               |
-|             |                   | vulnerabilities of  |               |
-|             |                   | specified           |               |
-|             |                   | components through  |               |
-|             |                   | scanning and to     |               |
-|             |                   | provide timely      |               |
-|             |                   | security            |               |
-|             |                   | protection.         |               |
-|             |                   | Example: OWASP Zed  |               |
-|             |                   | Attack Proxy (ZAP). |               |
-+-------------+-------------------+---------------------+---------------+
++-------------+-------------------+----------------------------------+----------------------------+
+| Reference   | sub-category      | Description                      | Specification              |
+|             |                   |                                  | Reference                  |
++=============+===================+==================================+============================+
+| sec.del.001 | IaaC              | Image Scan **must** be applied   |                            |
+|             |                   | during the Continuous            |                            |
+|             |                   | Delivery and Deployment stage    |                            |
+|             |                   | triggered by Publish to Artifact |                            |
+|             |                   | and Image Repository trigger.    |                            |
+|             |                   | Example: GitLab uses the open    |                            |
+|             |                   | source Clair engine for          |                            |
+|             |                   | container image scanning.        |                            |
++-------------+-------------------+----------------------------------+----------------------------+
+| sec.del.002 | IaaC              | Code Signing **must** be         |                            |
+|             |                   | applied during the Continuous    |                            |
+|             |                   | Deliveryand Deployment stage     |                            |
+|             |                   | and Image Repository trigger.    |                            |
+|             |                   | Code Signing provides            |                            |
+|             |                   | authentication to assure that    |                            |
+|             |                   | downloaded files are form the    |                            |
+|             |                   | publisher named on the           |                            |
+|             |                   | certificate.                     |                            |
++-------------+-------------------+----------------------------------+----------------------------+
+| sec.del.004 | IaaC              | Component Vulnerability Scan     |                            |
+|             |                   | **must** be applied during       |                            |
+|             |                   | the Continuous Delivery and      |                            |
+|             |                   | Deployment stage triggered  by   |                            |
+|             |                   | Instantiate Infrastructure       |                            |
+|             |                   | trigger. The vulnerability       |                            |
+|             |                   | scanning system is deployed on   |                            |
+|             |                   | the cloud platform to detect     |                            |
+|             |                   | security vulnerabilities of      |                            |
+|             |                   | specified components through     |                            |
+|             |                   | scanning and to provide timely   |                            |
+|             |                   | security protection.             |                            |
+|             |                   | Example:                         |                            |
+|             |                   | OWASP Zed Attack Proxy (ZAP).    |                            |
++-------------+-------------------+----------------------------------+----------------------------+
 
 Table 2-16: Reference Model Requirements - IaaC Security Requirements,
 Continuous Delivery and Deployment Stage
 
 **Runtime Defence and Monitoring Requirements**
 
-+-------------+-------------------+---------------------+---------------+
-| Reference   | sub-category      | Description         | Specification |
-|             |                   |                     | Reference     |
-+=============+===================+=====================+===============+
-| sec.run.001 | IaaC              | Component           |               |
-|             |                   | Vulnerability       |               |
-|             |                   | Monitoring **must** |               |
-|             |                   | be continuously     |               |
-|             |                   | applied during the  |               |
-|             |                   | Runtime Defence and |               |
-|             |                   | Monitoring stage.   |               |
-|             |                   | Security technology |               |
-|             |                   | that monitors       |               |
-|             |                   | components like     |               |
-|             |                   | virtual servers and |               |
-|             |                   | assesses data,      |               |
-|             |                   | applications, and   |               |
-|             |                   | infrastructure for  |               |
-|             |                   | security risks.     |               |
-+-------------+-------------------+---------------------+---------------+
++-------------+-------------------+----------------------------------+----------------------------+
+| Reference   | sub-category      | Description                      | Specification              |
+|             |                   |                                  | Reference                  |
++=============+===================+==================================+============================+
+| sec.run.001 | IaaC              | Component Vulnerability          |                            |
+|             |                   | Monitoring **must** be           |                            |
+|             |                   | continuously applied during the  |                            |
+|             |                   | Runtime Defence and monitoring   |                            |
+|             |                   | stage. Security technology       |                            |
+|             |                   | that monitors components like    |                            |
+|             |                   | virtual servers and assesses     |                            |
+|             |                   | data, applications, and          |                            |
+|             |                   | infrastructure forsecurity       |                            |
+|             |                   | risks.                           |                            |
++-------------+-------------------+----------------------------------+----------------------------+
 
 Table 2-17: Reference Model Requirements - IaaC Security Requirements,
 Runtime Defence and Monitoring Stage
@@ -1303,30 +1267,21 @@ Compliance with Standards
 
 (source :ref:`ref_model/chapters/chapter07:compliance with standards`)
 
-+-------------+-------------------+---------------------+---------------+
-| Reference   | sub-category      | Description         | Specification |
-|             |                   |                     | Reference     |
-+=============+===================+=====================+===============+
-| sec.std.012 | Standards         | The Public Cloud    |               |
-|             |                   | Operator **must**,  |               |
-|             |                   | and the Private     |               |
-|             |                   | Cloud Operator      |               |
-|             |                   | **may** be          |               |
-|             |                   | certified to be     |               |
-|             |                   | compliant with the  |               |
-|             |                   | International       |               |
-|             |                   | Standard on         |               |
-|             |                   | Awareness           |               |
-|             |                   | Engagements (ISAE)  |               |
-|             |                   | 3402 (in the US:    |               |
-|             |                   | SSAE 16);           |               |
-|             |                   | International       |               |
-|             |                   | Standard on         |               |
-|             |                   | Awareness           |               |
-|             |                   | Engagements (ISAE)  |               |
-|             |                   | 3402. US            |               |
-|             |                   | Equivalent: SSAE16. |               |
-+-------------+-------------------+---------------------+---------------+
++-------------+-------------------+----------------------------------+----------------------------+
+| Reference   | sub-category      | Description                      | Specification              |
+|             |                   |                                  | Reference                  |
++=============+===================+==================================+============================+
+| sec.std.012 | Standards         | The Public Cloud Operator        |                            |
+|             |                   | **must**, and the Private Cloud  |                            |
+|             |                   | Operator **may** be certified    |                            |
+|             |                   | to be compliant with the         |                            |
+|             |                   | International Standard on        |                            |
+|             |                   | Awareness Engagements (ISAE)     |                            |
+|             |                   | 3402 (in the US:SSAE 16);        |                            |
+|             |                   | International Standard on        |                            |
+|             |                   | Awareness Engagements (ISAE)     |                            |
+|             |                   | 3402. US  Equivalent: SSAE16.    |                            |
++-------------+-------------------+----------------------------------+----------------------------+
 
 Table 2-18: Reference Model Requirements: Cloud Infrastructure Security
 Requirements
@@ -1340,148 +1295,158 @@ to as NFVI by ETSI) + VIM (as specified in Reference Model Chapter 3).
 General Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
-+------------+--------------+--------------------------+-----------------------------------------------+
-| Reference  | sub-category | Description              | Specification                                 |
-|            |              |                          | Reference                                     |
-|            |              |                          |                                               |
-|            |              |                          |                                               |
-|            |              |                          |                                               |
-+============+==============+==========================+===============================================+
-| gen.ost.01 | Open source  | The Architecture         | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | **must** use OpenStack   | consolidated set of apis`                     |
-|            |              | APIs.                    |                                               |
-+------------+--------------+--------------------------+-----------------------------------------------+
-| gen.ost.02 | Open source  | The Architecture         | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | **must** support dynamic | consolidated set of apis`                     |
-|            |              | request and              |                                               |
-|            |              | configuration of virtual |                                               |
-|            |              | resources (compute,      |                                               |
-|            |              | network, storage)        |                                               |
-|            |              | through OpenStack APIs.  |                                               |
-+------------+--------------+--------------------------+-----------------------------------------------+
-| gen.rsl.01 | Resiliency   | The Architecture         |                                               |
-|            |              | **must** support         |                                               |
-|            |              | resilient OpenStack      |                                               |
-|            |              | components that are      |                                               |
-|            |              | required for the         |                                               |
-|            |              | continued availability   |                                               |
-|            |              | of running workloads.    |                                               |
-+------------+--------------+--------------------------+-----------------------------------------------+
-| gen.avl.01 | Availability | The Architecture         | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | **must** provide High    | underlying resources`                         |
-|            |              | Availability for         |                                               |
-|            |              | OpenStack components.    |                                               |
-+------------+--------------+--------------------------+-----------------------------------------------+
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| Reference   | sub-category      | Description                      | Specification                                 |
+|             |                   |                                  | Reference                                     |
+|             |                   |                                  |                                               |
+|             |                   |                                  |                                               |
+|             |                   |                                  |                                               |
++=============+===================+==================================+===============================================+
+| gen.ost.01  | Open source       | The Architecture                 | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|             |                   | **must** use OpenStack APIs.     | consolidated set of apis`                     |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| gen.ost.02  | Open source       | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|             |                   | support dynamic request and      | consolidated set of apis`                     |
+|             |                   | configuration of virtual         |                                               |
+|             |                   | resources (compute, network,     |                                               |
+|             |                   | storage) through OpenStack APIs. |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| gen.rsl.01  | Resiliency        | The Architecture **must**        |                                               |
+|             |                   | support resilient OpenStack      |                                               |
+|             |                   | components that are required     |                                               |
+|             |                   | for the continued availability   |                                               |
+|             |                   | of running workloads.            |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| gen.avl.01  | Availability      | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|             |                   | provide High Availability        | underlying resources`                         |
+|             |                   | for OpenStack components.        |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
 
 Table 2-19: General Requirements
 
 Infrastructure Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| Reference  | sub-category | Description                            | Specification                                 |
-|            |              |                                        | Reference                                     |
-+============+==============+========================================+===============================================+
-| inf.com.01 | Compute      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | compute resources for instances.       | cloud workload services`             `        |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.04 | Compute      | The Architecture **must** be able to   | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | support multiple CPU type options      | support for cloud infrastructure profiles \   |
-|            |              | to support various infrastructure      | and flavors`                                  |
-|            |              | profiles (Basic and High Performance). |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.05 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | Hardware Platforms with NUMA           | support for cloud infrastructure profiles \   |
-|            |              | capabilities.                          | and flavors`                                  |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.06 | Compute      | The Architecture **must** support CPU  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | Pinning of the vCPUs of an instance.   | support for cloud infrastructure profiles \   |
-|            |              |                                        | and flavors`                                  |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.07 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | different hardware configurations to   | cloud partitioning: host aggregates, \        |
-|            |              | support various infrastructure         | availability zones`                           |
-|            |              | profiles (Basic and High Performance). |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.08 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | allocating certain number of host      | reservation of compute node cores`            |
-|            |              | cores for  all non-tenant workloads    |                                               |
-|            |              | such as for OpenStack services. SMT    |                                               |
-|            |              | threads can be allocated to individual |                                               |
-|            |              | OpenStack services or their            |                                               |
-|            |              | components.                            |                                               |
-|            |              | `Dedicating host cores to certain      |                                               |
-|            |              | workloads (e.g., OpenStack services)   |                                               |
-|            |              | <https://docs.openstack.org/nova\\     |                                               |
-|            |              | /latest/configuration/config.html#\    |                                               |
-|            |              | compute.cpu_dedicated_set>`__.         |                                               |
-|            |              | Please see example,                    |                                               |
-|            |              | `Configuring libvirt compute nodes for |                                               |
-|            |              | CPU pinning                            |                                               |
-|            |              | <https://docs.openstack.org/nova\\     |                                               |
-|            |              | /latest/admin/cpu-topologies.html>`__  |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.09 | Compute      | The Architecture **must** ensure that  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | the host cores assigned to non-tenant  | pinned and unpinned cpus`                     |
-|            |              | and tenant workloads are SMT aware:    |                                               |
-|            |              | that is, a host core and its           |                                               |
-|            |              | associated SMT threads are either all  |                                               |
-|            |              | assigned to non-tenant workloads or    |                                               |
-|            |              | all assigned to tenant workloads.      |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.stg.01 | Storage      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | remote (not directly attached to the   | storage`                                      |
-|            |              | host) Block storage for Instances.     |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.stg.02 | Storage      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | Object storage for Instances.          | swift`                                        |
-|            |              | Operators **may** choose not to        |                                               |
-|            |              | implement Object Storage but must be   |                                               |
-|            |              | cognizant of the the risk of           |                                               |
-|            |              | "Compliant VNFs" failing in their      |                                               |
-+            +              + environment.                           |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.01  | Network      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | virtual network interfaces to          | neutron`                                      |
-|            |              | instances.                             |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.02  | Network      | The Architecture **must** include      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | capabilities for integrating SDN       | virtual networking – 3rd party sdn solution`  |
-|            |              | controllers to support provisioning    |                                               |
-|            |              | of network services, from the SDN      |                                               |
-|            |              | OpenStack Neutron service, such as     |                                               |
-|            |              | networking of VTEPs to the Border Edge |                                               |
-|            |              | based VRFs.                            |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.03  | Network      | The Architecture **must** support low  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | latency and high throughput traffic    | network fabric`                               |
-|            |              | needs.                                 |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.05  | Network      | The Architecture **must** allow for    | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | East/West tenant traffic within the    | network fabric`                               |
-|            |              | cloud (via tunnelled encapsulation     |                                               |
-|            |              | overlay such as VXLAN or Geneve).      |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.07  | Network      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | network :ref:`resiliency \             | network`                                      |
-|            |              | <common/glossary:cloud platform \      |                                               |
-|            |              | abstraction related terminology:>`     |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.10  | Network      | The Cloud Infrastructure Network       | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | Fabric **must** be capable of enabling | network`                                      |
-|            |              | highly available (Five 9's or better)  |                                               |
-|            |              | Cloud Infrastructure.                  |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.15  | Network      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | multiple networking options for        | neutron extensions` and                       |
-|            |              | Cloud Infrastructure to support        | `OpenStack Neutron Plugins \                  |
-|            |              | various infrastructure profiles (Basic | <https://wiki.openstack.org/wiki/\            |
-|            |              | and High Performance).                 | Neutron_Plugins_and_Drivers>`__               |
-+-----------+---------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.16 | Network       | The Architecture **must** support dual |                                               |
-|           |               | stack IPv4 and IPv6 for tenant         |                                               |
-|           |               | networks and workloads.                |                                               |
-+-----------+---------------+----------------------------------------+-----------------------------------------------+
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| Reference   | sub-category      | Description                      | Specification                                 |
+|             |                   |                                  | Reference                                     |
++=============+===================+==================================+===============================================+
+| inf.com.01  | Compute           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|             |                   | provide compute resources for    | cloud workload services`             `        |
+|             |                   | instances.                       |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.com.04  | Compute           | The Architecture **must** be     | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|             |                   | able to support multiple CPU     | support for cloud infrastructure profiles \   |
+|             |                   | type options to support various  | and flavors`                                  |
+|             |                   | infrastructure profiles (Basic   |                                               |
+|             |                   | and High Performance).           |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.com.05  | Compute           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|             |                   | support Hardware Platforms with  | support for cloud infrastructure profiles \   |
+|             |                   | NUMA capabilities.               | and flavors`                                  |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.com.06  | Compute           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|             |                   | support CPU Pinning of the       | support for cloud infrastructure profiles \   |
+|             |                   | vCPUs of an instance.            | and flavors`                                  |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.com.07  | Compute           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|             |                   | support different hardware       | cloud partitioning: host aggregates, \        |
+|             |                   | configurations to support        | availability zones`                           |
+|             |                   | various infrastructure profiles  |                                               |
+|             |                   | (Basic and High Performance).    |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.com.08  | Compute           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|             |                   | support allocating certain       | reservation of compute node cores`            |
+|             |                   | number of host cores for  all    |                                               |
+|             |                   | non-tenant workloads             |                                               |
+|             |                   | such as for OpenStack services.  |                                               |
+|             |                   | SMT threads can be allocated to  |                                               |
+|             |                   | individual OpenStack services or |                                               |
+|             |                   | their components.                |                                               |
+|             |                   | `Dedicating host cores to certa\ |                                               |
+|             |                   | in workloads (e.g., OpenStack s\ |                                               |
+|             |                   | ervices)                         |                                               |
+|             |                   | <https://docs.openstack.org\\    |                                               |
+|             |                   | /nova/latest/configuration\\     |                                               |
+|             |                   | /config.html#\                   |                                               |
+|             |                   | compute.cpu_dedicated_set>`__.   |                                               |
+|             |                   | Please see example,              |                                               |
+|             |                   | `Configuring libvirt compute     |                                               |
+|             |                   | nodes for CPU pinning            |                                               |
+|             |                   | <https://docs.openstack.org\\    |                                               |
+|             |                   | /nova/latest/admin\\             |                                               |
+|             |                   | /cpu-topologies.html>`__         |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.com.09  | Compute           | The Architecture **must** ensure | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|             |                   | that the host cores assigned to  | pinned and unpinned cpus`                     |
+|             |                   | non-tenant and tenant workloads  |                                               |
+|             |                   | are SMT aware: that is, a host   |                                               |
+|             |                   | core and its associated SMT      |                                               |
+|             |                   | threads are either all assigned  |                                               |
+|             |                   | to non-tenant workloads or all   |                                               |
+|             |                   | assigned to tenant workloads.    |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.stg.01  | Storage           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|             |                   | provide remote (not directly     | storage`                                      |
+|             |                   | attached to the host)            |                                               |
+|             |                   | Block storage for Instances.     |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.stg.02  | Storage           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|             |                   | provide Object storage for       | swift`                                        |
+|             |                   | Instances. Operators **may**     |                                               |
+|             |                   | choose not to implement Object   |                                               |
+|             |                   | Storage but must be cognizant of |                                               |
+|             |                   | the the risk of "Compliant VNFs" |                                               |
+|             |                   | failing in their environment.    |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.nw.01   | Network           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|             |                   | provide virtual network          | neutron`                                      |
+|             |                   | interfaces to instances.         |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.nw.02   | Network           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|             |                   | include capabilities for         | virtual networking – 3rd party sdn solution`  |
+|             |                   | integrating SDN controllers to   |                                               |
+|             |                   | support provisioning of network  |                                               |
+|             |                   | services, from the SDN OpenStack |                                               |
+|             |                   | Neutron service, such as         |                                               |
+|             |                   | networking of VTEPs to thee      |                                               |
+|             |                   | Border Edge based VRFs.          |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.nw.03   | Network           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|             |                   | support low latency and high     | network fabric`                               |
+|             |                   | throughput traffic needs.        |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.nw.05   | Network           | The Architecture **must** allow  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|             |                   | for East/West tenant traffic     | network fabric`                               |
+|             |                   | within the cloud (via tunnelled  |                                               |
+|             |                   | encapsulation overlay such as    |                                               |
+|             |                   | VXLAN or Geneve).                |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.nw.07   | Network           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|             |                   | support network                  | network`                                      |
+|             |                   | :ref:`resiliency \               |                                               |
+|             |                   | <common/glossary:cloud \         |                                               |
+|             |                   | platform abstraction \           |                                               |
+|             |                   | related terminology:>`           |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.nw.10   | Network           | The Cloud Infrastructure         | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|             |                   | Network Fabric **must** be       | network`                                      |
+|             |                   | capable of enabling highly       |                                               |
+|             |                   | available(Five 9's or better)    |                                               |
+|             |                   | Cloud Infrastructure.            |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.nw.15   | Network           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|             |                   | support multiple networking      | neutron extensions` and                       |
+|             |                   | options for Cloud                | `OpenStack Neutron Plugins \                  |
+|             |                   | Infrastructure to support        | <https://wiki.openstack.org/wiki/\            |
+|             |                   | various infrastructure profiles  | Neutron_Plugins_and_Drivers>`__               |
+|             |                   | (Basicand High Performance).     |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
+| inf.nw.16   | Network           | The Architecture **must**        |                                               |
+|             |                   | support dual stack IPv4 and IPv6 |                                               |
+|             |                   | for tenant networks and          |                                               |
+|             |                   | workloads.                       |                                               |
++-------------+-------------------+----------------------------------+-----------------------------------------------+
 
 Table 2-20: Infrastructure Requirements
 
