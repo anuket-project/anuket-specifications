@@ -158,74 +158,117 @@ which provides the isolation of Operating System kernels.
 The architecture must support a way to isolate the compute resources of the
 infrastructure itself from the workloads compute resources.
 
-The basic semantics of Kubernetes, and the information found in manifests, defines the built-in Kubernetes objects and their desired state.
+The basic semantics of Kubernetes, and the information found in manifests, defines the built-in Kubernetes objects and
+their desired state.
 
 Kubernetes built in objects
 
-+------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-|Pod and workloads                                                                         | Description                                                                                                                                   |
-+==========================================================================================+===============================================================================================================================================+
-|`Pod: <https://kubernetes.io/docs/concepts/workloads/pods/>`__                            | Pod is a collection of containers that can run on a node. This resource is created by clients and scheduled onto nodes.                       |
-+------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-|`ReplicaSet: <https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/>`__   | ReplicaSet ensures that a specified number of pod replicas are running at any given time.                                                     |
-+------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-|`Deployment: <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>`__   | Deployment enables declarative updates for Pods and ReplicaSets.                                                                              |
-+------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-|`DaemonSet: <https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/>`__     | A Daemon set ensures that the correct nodes run a copy of a Pod.                                                                              |
-+------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-|`Job: <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__                 | A Job represent a task, it creates one or more Pods and will continue to retry until the expected number of successful completions is reached.|
-+------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-|`CronJob: <https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/>`__       | A CronJob manages time-based Jobs, namely: once at a specified point in time and repeatedly at a specified point in time                      |
-+------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-|`StatefulSet: <https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/>`__ | StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage.                                 |
-+------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------+----------------------------------------------------------+
+| Pod and workloads                                        | Description                                              |
++==========================================================+==========================================================+
+|`Pod: <https://kubernetes.io/docs/concepts/workloads/pods | Pod is a collection of containers that can run on        |
+|/>`__                                                     | a node. This resource is created by clients and          |
+|                                                          | scheduled onto nodes.                                    |
++----------------------------------------------------------+----------------------------------------------------------+
+|`ReplicaSet: <https://kubernetes.io/docs/concepts/workload| ReplicaSet ensures that a specified number of pod        |
+|s/controllers/replicaset/>`__                             | replicas are running at any given time.                  |
++----------------------------------------------------------+----------------------------------------------------------+
+|`Deployment: <https://kubernetes.io/docs/concepts/workload| Deployment enables declarative updates for Pods and      |
+|s/controllers/deployment/>`__                             | ReplicaSets.                                             |
++----------------------------------------------------------+----------------------------------------------------------+
+|`DaemonSet: <https://kubernetes.io/docs/concepts/workloads| A Daemon set ensures that the correct nodes run a copy   |
+|/controllers/daemonset/>`__                               | of a Pod.                                                |
++----------------------------------------------------------+----------------------------------------------------------+
+|`Job: <https://kubernetes.io/docs/concepts/workloads/contr| A Job represent a task, it creates one or more Pods and  |
+|ollers/job/>`__                                           | will continue to retry until the expected number of      |
+|                                                          | successful completions is reached.                       |
++----------------------------------------------------------+----------------------------------------------------------+
+|`CronJob: <https://kubernetes.io/docs/concepts/workloads/c| A CronJob manages time-based Jobs, namely: once at a     |
+|ontrollers/cron-jobs/>`__                                 | specified point in time and repeatedly at a specified    |
+|                                                          | point in time.                                           |
++----------------------------------------------------------+----------------------------------------------------------+
+|`StatefulSet: <https://kubernetes.io/docs/concepts/workloa| StatefulSet represents a set of pods with consistent     |
+|ds/controllers/statefulset/>`__                           | identities. Identities are defined as: network, storage. |
++----------------------------------------------------------+----------------------------------------------------------+
 
 CPU Management
 ^^^^^^^^^^^^^^
 
-CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache affinity or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some workloads are sensitive to differences between physical cores and SMT, while others (like DPDK-based workloads) are designed to run on isolated CPUs (like on Linux with cpuset-based selection of CPUs and isolcpus kernel parameter specifying cores isolated from general SMP balancing and scheduler algorithms).
+CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache affinity
+or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some workloads
+are sensitive to differences between physical cores and SMT, while others (like DPDK-based workloads) are designed to
+run on isolated CPUs (like on Linux with cpuset-based selection of CPUs and isolcpus kernel parameter specifying cores
+isolated from general SMP balancing and scheduler algorithms).
 
-Kubernetes `CPU Manager <https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/>`__ works with Topology Manager. Special care needs to be taken of:
+Kubernetes `CPU Manager <https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/>`__ works with
+Topology Manager. Special care needs to be taken of:
 
--  Supporting isolated CPUs: Using kubelet `Reserved CPUs <https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#explicitly-reserved-cpu-list>`__ and Linux isolcpus allows configuration where only isolcpus are allocatable to pods. Scheduling pods to such nodes can be influenced with taints, tolerations and node affinity.
--  Differentiating between physical cores and SMT: When requesting even number of CPU cores for pods, scheduling can be influenced with taints, tolerations, and node affinity.
+-  Supporting isolated CPUs: Using kubelet `Reserved CPUs
+   <https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#explicitly-reserved-cpu-list>`__
+   and Linux isolcpus allows configuration where only isolcpus are allocatable to pods. Scheduling pods to such nodes
+   can be influenced with taints, tolerations and node affinity.
+-  Differentiating between physical cores and SMT: When requesting even number of CPU cores for pods, scheduling
+   can be influenced with taints, tolerations, and node affinity.
 
 Memory and Huge Pages Resources Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Reference Model requires the support of huge pages in i.cap.018 which is supported by upstream Kubernetes (`documentation <https://kubernetes.io/docs/tasks/manage-hugepages/scheduling-hugepages/>`__).
+The Reference Model requires the support of huge pages in i.cap.018 which is supported by upstream Kubernetes
+(`documentation <https://kubernetes.io/docs/tasks/manage-hugepages/scheduling-hugepages/>`__).
 
-For proper mapping of huge pages to scheduled pods, both need to have huge pages enabled in the operating system (configured in kernel and mounted with correct permissions) and kubelet configuration. Multiple sizes of huge pages can be enabled like 2 MiB and 1 GiB.
+For proper mapping of huge pages to scheduled pods, both need to have huge pages enabled in the operating system
+(configured in kernel and mounted with correct permissions) and kubelet configuration. Multiple sizes of huge pages
+can be enabled like 2 MiB and 1 GiB.
 
-For some applications, huge pages
-should be allocated to account for consideration of the underlying HW topology.
-`The Memory Manager <https://kubernetes.io/docs/tasks/administer-cluster/memory-manager/>`__ (added to Kubernetes v1.21 as alpha feature) enables the feature of guaranteed memory and huge pages allocation for pods in the Guaranteed QoS class. The Memory Manager feeds the Topology Manager with hints for most suitable NUMA affinity.
+For some applications, huge pages should be allocated to account for consideration of the underlying HW topology.
+`The Memory Manager <https://kubernetes.io/docs/tasks/administer-cluster/memory-manager/>`__
+(added to Kubernetes v1.21 as alpha feature) enables the feature of guaranteed memory and huge pages allocation
+for pods in the Guaranteed QoS class. The Memory Manager feeds the Topology Manager with hints for most suitable
+NUMA affinity.
 
 Hardware Topology Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Scheduling pods across NUMA boundaries can result in lower performance and higher latencies. This would be an issue for applications that require optimisations of CPU isolation, memory and device locality.
+Scheduling pods across NUMA boundaries can result in lower performance and higher latencies. This would be an issue
+for applications that require optimisations of CPU isolation, memory and device locality.
 
-Kubernetes supports Topology policy per node as beta feature (`documentation <https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/>`__) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
+Kubernetes supports Topology policy per node as beta feature
+(`documentation <https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/>`__) and not per pod.
+The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server
+system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class
+having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU
+and the Device Manager would provide hints for the requested device.
 
-If case that memory or huge pages are not considered by the Topology Manager, it can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
+If case that memory or huge pages are not considered by the Topology Manager, it can be done by the operating system
+providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node,
+or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
 
 Node Feature Discovery
 ^^^^^^^^^^^^^^^^^^^^^^
 
-`Node Feature Discovery <https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html>`__ (NFD) can run on every node as a daemon or as a job. NFD detects detailed hardware and software capabilities of each node and then advertises those capabilities as node labels. Those node labels can be used in scheduling pods by using Node Selector or Node Affinity for pods that require such capabilities.
+`Node Feature Discovery <https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html>`__
+(NFD) can run on every node as a daemon or as a job. NFD detects detailed hardware and software capabilities of each
+node and then advertises those capabilities as node labels. Those node labels can be used in scheduling pods by using
+Node Selector or Node Affinity for pods that require such capabilities.
 
 Device Plugin Framework
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-`Device Plugin Framework <https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/>`__ advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require vendor-specific activation and life cycle management, and securely maps these devices to containers.
+`Device Plugin Framework <https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/>`__
+advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require
+vendor-specific activation and life cycle management, and securely maps these devices to containers.
 
 Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
 
--  1: During setup, the cluster administrator (more in `3.2.5.1 Operator Pattern <chapter03.md#operator-pattern>`__) knows or discovers (as per `3.2.1.5 Node Feature Discovery <chapter03.md#node-feature-discovery>`__) what kind of devices are present on the different nodes, selects which devices to enable and deploys the associated device plugins.
--  2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server to monitor the devices.
+-  1: During setup, the cluster administrator (more in `3.2.5.1 Operator Pattern <chapter03.md#operator-pattern>`__)
+   knows or discovers (as per `3.2.1.5 Node Feature Discovery <chapter03.md#node-feature-discovery>`__) what kind of
+   devices are present on the different nodes, selects which devices to enable and deploys the associated device
+   plugins.
+-  2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server
+   to monitor the devices.
 -  3: A user submits a pod specification (workload manifest file) requesting a certain type of device.
--  4: The scheduler determines a suitable node based on device availability and the local kubelet assigns a specific device to the pod's containers.
+-  4: The scheduler determines a suitable node based on device availability and the local kubelet assigns a specific
+   device to the pod's containers.
 
 .. image:: ../figures/Ch3_Figure_Device_Plugin_operation.png
    :alt: "Figure 3-2: Device Plugin Operation"
@@ -233,46 +276,78 @@ Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
 
 **Figure 3-2:** Device Plugin Operation
 
-An example of often used device plugin is the `SR-IOV Network Device Plugin <https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin>`__, that discovers and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is used to map VFs to scheduled pods. To use it, the SR-IOV CNI is required, as well as a CNI multiplexer plugin (such as `Multus CNI <https://github.com/k8snetworkplumbingwg/multus-cni>`__ or `DANM <https://github.com/nokia/danm>`__), to provision additional secondary network interfaces for VFs (beyond the primary network interface). The SR-IOV CNI during pod creation allocates a SR-IOV VF to a pod's network namespace using the VF information given by the meta plugin, and on pod deletion releases the VF from the pod.
+An example of often used device plugin is the
+`SR-IOV Network Device Plugin <https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin>`__, that discovers
+and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is used to map VFs to scheduled pods.
+To use it, the SR-IOV CNI is required, as well as a CNI multiplexer plugin (such as
+`Multus CNI <https://github.com/k8snetworkplumbingwg/multus-cni>`__ or `DANM <https://github.com/nokia/danm>`__),
+to provision additional secondary network interfaces for VFs (beyond the primary network interface). The SR-IOV CNI
+during pod creation allocates a SR-IOV VF to a pod's network namespace using the VF information given by the meta
+plugin, and on pod deletion releases the VF from the pod.
 
 Hardware Acceleration
 ^^^^^^^^^^^^^^^^^^^^^
 
-Hardware Acceleration Abstraction in RM `3.8 Hardware Acceleration Abstraction <../../../ref_model/chapters/chapter03.md#3.8>`__ describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
+Hardware Acceleration Abstraction in RM
+`3.8 Hardware Acceleration Abstraction <../../../ref_model/chapters/chapter03.md#3.8>`__ describes types of hardware
+acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and
+SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
 
-Scheduling pods that require or prefer to run on nodes with hardware accelerators will depend on type of accelerator used:
+Scheduling pods that require or prefer to run on nodes with hardware accelerators will depend on type of accelerator
+used:
 
 -  CPU instructions can be found with Node Feature Discovery
--  Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods by using Device Plugin.
+-  Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods
+   by using Device Plugin.
 
 Scheduling Pods with Non-resilient Applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Non-resilient applications are sensitive to platform impairments on Compute like pausing CPU cycles (for example because of OS scheduler) or Networking like packet drops, reordering or latencies. Such applications need to be carefully scheduled on nodes and preferably still decoupled from infrastructure details of those nodes.
+Non-resilient applications are sensitive to platform impairments on Compute like pausing CPU cycles (for example
+because of OS scheduler) or Networking like packet drops, reordering or latencies. Such applications need to be
+carefully scheduled on nodes and preferably still decoupled from infrastructure details of those nodes.
 
-= ====================== ====================== ======================================================================================= =====================================================================================================================================================
-# Intensive on           Not intensive on       Using hardware acceleration                                                             Requirements for optimised pod scheduling
-= ====================== ====================== ======================================================================================= =====================================================================================================================================================
-1 Compute                Networking (dataplane) No                                                                                      CPU Manager
-2 Compute                Networking (dataplane) CPU instructions                                                                        CPU Manager, NFD
-3 Compute                Networking (dataplane) Fixed function acceleration, Firmware-programmable network adapters or SmartNICs        CPU Manager, Device Plugin
-4 Networking (dataplane)                        No, or Fixed function acceleration, Firmware-programmable network adapters or SmartNICs Huge pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin
-5 Networking (dataplane)                        CPU instructions                                                                        Huge pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin; NFD
-= ====================== ====================== ======================================================================================= =====================================================================================================================================================
++---------------+-------------------+--------------------------------+------------------------------------------------+
+| Intensive on  | Not intensive on  | Using hardware acceleration    | Requirements for optimised pod scheduling      |
++===============+===================+================================+================================================+
+| 1 Compute     | Networking        | No                             | CPU Manager                                    |
+|               | (dataplane)       |                                |                                                |
++---------------+-------------------+--------------------------------+------------------------------------------------+
+| 2 Compute     | Networking        | CPU instructions               | CPU Manager, NFD                               |
+|               | (dataplane)       |                                |                                                |
++---------------+-------------------+--------------------------------+------------------------------------------------+
+| 3 Compute     | Networking        | Fixed function acceleration,   | CPU Manager, Device Plugin                     |
+|               | (dataplane)       | Firmware-programmable network  |                                                |
+|               |                   | adapters or SmartNICs          |                                                |
++---------------+-------------------+--------------------------------+------------------------------------------------+
+| 4 Networking  |                   | No, or Fixed function          | Huge pages (for DPDK-based applications); CPU  |
+| (dataplane)   |                   | acceleration, Firmware-        | Manager with configuration for isolcpus and    |
+|               |                   | programmable network adapters  | SMT; Multiple interfaces; NUMA topology;       |
+|               |                   | or SmartNICs                   | Device Plugin                                  |
++---------------+-------------------+--------------------------------+------------------------------------------------+
+| 5 Networking  |                   | CPU instructions               | Huge pages (for DPDK-based applications); CPU  |
+| (dataplane)   |                   |                                | Manager with configuration for isolcpus and    |
+|               |                   |                                | SMT; Multiple interfaces; NUMA topology;       |
+|               |                   |                                | Device Plugin; NFD                             |
++---------------------------------------------------------------------------------------------------------------------+
 
 **Table 3-1:** Categories of applications, requirements for scheduling pods and Kubernetes features
 
 Virtual Machine based Clusters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Kubernetes clusters using above enhancements can implement worker nodes with "bare metal" servers (running Container Runtime in Linux host Operating System) or with virtual machines (VMs, on hypervisor).
+Kubernetes clusters using above enhancements can implement worker nodes with "bare metal" servers (running Container
+Runtime in Linux host Operating System) or with virtual machines (VMs, on hypervisor).
 
 When running in VMs, the following list of configurations shows what is needed for non-resilient applications:
 
 -  CPU Manager managing vCPUs that hypervisor provides to VMs.
 -  Huge pages enabled in hypervisor, mapped to VM, enabled in guest OS, and mapped to pod.
--  Hardware Topology Management with NUMA enabled in hypervisor, mapped into VM, if needed enabled in guest OS, and mapped into pod.
--  If Node Feature Discovery and Device Plugin Framework are required, the required CPU instructions must be enabled in the VM virtual hardware, and the required devices must be virtualised in the hypervisor or passed through to the Node VM, and mapped into the pods.
+-  Hardware Topology Management with NUMA enabled in hypervisor, mapped into VM, if needed enabled in guest OS, and
+   mapped into pod.
+-  If Node Feature Discovery and Device Plugin Framework are required, the required CPU instructions must be enabled
+   in the VM virtual hardware, and the required devices must be virtualised in the hypervisor or passed through to
+   the Node VM, and mapped into the pods.
 
 Container Networking Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -307,8 +382,8 @@ different descriptors from the Kubernetes workloads (specifically, the deploymen
 artefacts such as YAML files, etc.), therefore the networking solution should be
 agreed between the CNF vendors and the CNF operators:
 
--  The **Default CNI Plugin** through the use of deployment specific configuration
-   (e.g. `Tungsten Fabric <https://tungstenfabric.github.io/website/Tungsten-Fabric-Architecture.html#vrouter-deployment-options>`__)
+-  The **Default CNI Plugin** through the use of deployment specific configuration (e.g. `Tungsten Fabric
+   <https://tungstenfabric.github.io/website/Tungsten-Fabric-Architecture.html#vrouter-deployment-options>`__)
 -  A **multiplexer/meta-plugin** that integrates with the Kubernetes control plane
    via CNI (Container Network Interface) and allows for use of multiple CNI plugins
    in order to provide this specific connectivity that the default Network Plugin may
@@ -318,23 +393,73 @@ agreed between the CNF vendors and the CNF operators:
    to create and manage additional connections for Pods (e.g. `Network Service
    Mesh <https://networkservicemesh.io/docs/concepts/what-is-nsm/>`__)
 
-============================================================================================================ ================================================================= ================================================================= ================================================================= =================================================================
-Requirement                                                                                                  Networking Solution with Multus                                   Networking Solution with DANM                                     Networking Solution with Tungsten Fabric                          Networking Solution with NSM
-============================================================================================================ ================================================================= ================================================================= ================================================================= =================================================================
-Additional network connections provider                                                                      Multiplexer/meta-plugin                                           Multiplexer/meta-plugin                                           Federated networking manager                                      Default CNI Plugin
-The overlay network encapsulation protocol needs to enable ECMP in the underlay (``infra.net.cfg.002``)      Supported via the additional CNI plugin                           Supported via the additional CNI plugin                           Supported                                                         TBC
-NAT (``infra.net.cfg.003``)                                                                                  Supported via the additional CNI plugin                           Supported                                                         Supported                                                         TBC
-Network Policies (Security Groups) (``infra.net.cfg.004``)                                                   Supported via a CNI Network Plugin that supports Network Policies Supported via a CNI Network Plugin that supports Network Policies Supported via a CNI Network Plugin that supports Network Policies Supported via a CNI Network Plugin that supports Network Policies
-Traffic patterns symmetry (``infra.net.cfg.006``)                                                            Depends on CNI plugin used                                        Depends on CNI plugin used                                        Depends on CNI plugin used                                        Depends on CNI plugin used
-Centrally administrated and configured (``req.inf.ntw.03``)                                                  Supported via Kubernetes API Server                               Supported via Kubernetes API Server                               Supported via Kubernetes API Server                               Supported via Kubernetes API Server
-Dual stack IPv4 and IPv6 for Kubernetes workloads (``req.inf.ntw.04``)                                       Supported via the additional CNI plugin                           Supported                                                         Supported                                                         Supported
-Integrating SDN controllers (``req.inf.ntw.05``)                                                             Supported via the additional CNI plugin                           Supported via the additional CNI plugin                           TF is an SDN controller                                           TBC
-More than one networking solution (``req.inf.ntw.06``)                                                       Supported                                                         Supported                                                         Supported                                                         Supported
-Choose whether or not to deploy more than one networking solution (``req.inf.ntw.07``)                       Supported                                                         Supported                                                         Supported                                                         Supported
-Kubernetes network model (``req.inf.ntw.08``)                                                                Supported via the additional CNI plugin                           Supported via the additional CNI plugin                           Supported                                                         Supported via the default CNI plugin
-Do not interfere with or cause interference to any interface or network it does not own (``req.inf.ntw.09``) Supported                                                         Supported                                                         Supported                                                         Supported
-Cluster wide coordination of IP address assignment (``req.inf.ntw.10``)                                      Supported via IPAM CNI plugin                                     Supported                                                         Supported                                                         Supported via IPAM CNI plugin
-============================================================================================================ ================================================================= ================================================================= ================================================================= =================================================================
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| Requirement          | Networking Solution | Networking Solution  | Networking Solution  | Networking Solution       |
+|                      | with Multus         | with DANM            | with Tungsten Fabric | with NSM                  |
++======================+=====================+======================+======================+===========================+
+| Additional network   | Multiplexer/meta-   | Multiplexer/meta-    | Federated networking | Default CNI Plugin        |
+| connections provider | plugin              | plugin               | manager              |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| The overlay network  | Supported via the   | Supported via the    | Supported            | TBC                       |
+| encapsulation        | additional CNI      | additional CNI       |                      |                           |
+| protocol needs to    | plugin              | plugin               |                      |                           |
+| enable ECMP in the   |                     |                      |                      |                           |
+| underlay (``infra.   |                     |                      |                      |                           |
+| net.cfg.002``)       |                     |                      |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| NAT (``infra.net.    | Supported via the   | Supported            | Supported            | TBC                       |
+| cfg.003``)           | additional CNI      |                      |                      |                           |
+|                      | plugin              |                      |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| Network Policies     | Supported via a CNI | Supported via a CNI  | Supported via a CNI  | Supported via a CNI       |
+| (Security Groups)    | Network Plugin that | Network Plugin that  | Network Plugin that  | Network Plugin that       |
+| (``infra.net.cfg.    | supports Network    | supports Network     | supports Network     | supports Network Policies |
+| 004``)               | Policies            | Policies             | Policies             |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| Traffic patterns     | Depends on CNI      | Depends on CNI       | Depends on CNI       | Depends on CNI plugin     |
+| symmetry (``infra.   | plugin used         | plugin used          | plugin used          | used                      |
+| net.cfg.006``)       |                     |                      |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| Centrally            | Supported via       | Supported via        | Supported via        | Supported via Kubernetes  |
+| administrated and    | Kubernetes API      | Kubernetes API       | Kubernetes API       | API Server                |
+| configured (``req.   | Server              | Server               | Server               |                           |
+| inf.ntw.03``)        |                     |                      |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| Dual stack IPv4 and  | Supported via the   | Supported            | Supported            | Supported                 |
+| IPv6 for Kubernetes  | additional CNI      |                      |                      |                           |
+| workloads (``req.    | plugin              |                      |                      |                           |
+| inf.ntw.04``)        |                     |                      |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| Integrating SDN      | Supported via the   | Supported via the    | TF is an SDN         | TBC                       |
+| controllers (``req.  | additional CNI      | additional CNI       | controller           |                           |
+| inf.ntw.05``)        | plugin              | plugin               |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| More than one        | Supported           | Supported            | Supported            | Supported                 |
+| networking solution  |                     |                      |                      |                           |
+| (``req.inf.ntw.06``) |                     |                      |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| Choose whether or    | Supported           | Supported            | Supported            | Supported                 |
+| not to deploy more   |                     |                      |                      |                           |
+| than one networking  |                     |                      |                      |                           |
+| solution (``req.inf  |                     |                      |                      |                           |
+| .ntw.07``)           |                     |                      |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| Kubernetes network   | Supported via the   | Supported via the    | Supported            | Supported via the default |
+| model (``req.inf.    | additional CNI      | additional CNI       |                      | CNI plugin                |
+| ntw.08``)            | plugin              | plugin               |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| Do not interfere     | Supported           | Supported            | Supported            | Supported                 |
+| with or cause        |                     |                      |                      |                           |
+| interference to any  |                     |                      |                      |                           |
+| interface or network |                     |                      |                      |                           |
+| it does not own      |                     |                      |                      |                           |
+| (``req.inf.ntw.09``) |                     |                      |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
+| Cluster wide         | Supported via IPAM  | Supported            | Supported            | Supported via IPAM CNI    |
+| coordination of IP   | CNI plugin          |                      |                      | plugin                    |
+| address assignment   |                     |                      |                      |                           |
+| (``req.inf.ntw.10``) |                     |                      |                      |                           |
++----------------------+---------------------+----------------------+----------------------+---------------------------+
 
 **Table 3-1:** Comparison of example networking solutions
 
@@ -458,27 +583,52 @@ traffic require the capability to use a user space networking technology.
 Kubernetes Networking Semantics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The support for advanced network configuration management doesn't exist in core Kubernetes. Kubernetes is missing the advanced networking configuration component of Infrastructure as a Service (IaaS). For example, there is no network configuration API, there is no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then connect them all together.
+The support for advanced network configuration management doesn't exist in core Kubernetes. Kubernetes is missing the
+advanced networking configuration component of Infrastructure as a Service (IaaS). For example, there is no network
+configuration API, there is no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then
+connect them all together.
 
-Kubernetes networking can be divided into two parts, built in network functionality available through the pod's mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
+Kubernetes networking can be divided into two parts, built in network functionality available through the pod's
+mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
 
 Built in Kubernetes Network Functionality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Kubernetes currently only allows for one network, the *cluster* network, and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing tables inside the pod network namespace.
+Kubernetes currently only allows for one network, the *cluster* network, and one network attachment for each pod.
+All pods and containers have an *eth0* interface, this interface is created by Kubernetes at pod creation and attached
+to the cluster network. All communication to and from the pod is done through this interface. To only allow for one
+interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing
+tables inside the pod network namespace.
 
-The basic semantics of Kubernetes, and the information found in manifests, defines the connectivity rules and behavior without any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW services and network policies for them that are not location aware and therefore can be executed more or less anywhere.
+The basic semantics of Kubernetes, and the information found in manifests, defines the connectivity rules and behavior
+without any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW
+services and network policies for them that are not location aware and therefore can be executed more or less anywhere.
 
-============================================================================================== ================================================================================================================================================================================================================================================================
-Network objects                                                                                Description
-============================================================================================== ================================================================================================================================================================================================================================================================
-`Ingress: <https://kubernetes.io/docs/concepts/services-networking/ingress/>`__                Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally reachable URLs, load balance traffic, terminate SSL, offer name based virtual hosting etc.
-`Service: <https://kubernetes.io/docs/concepts/services-networking/service/>`__                Service is a named abstraction of an application running on a set of pods consisting of a local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
-`EndpointSlices: <https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/>`__ Endpoints and Endpointslices are a collection of objects that contain the ip address, v4 and v6, of the pods that represents a service.
-`Network Policy: <https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/>`__ Network Policy defines which network traffic is allowed to ingress and egress from a set of pods.
-============================================================================================== ================================================================================================================================================================================================================================================================
++--------------------------------------+-------------------------------------------------------------------------------+
+| Network objects                      | Description                                                                   |
++======================================+===============================================================================+
+|`Ingress: <https://kubernetes.io/docs/| Ingress is a collection of rules that allow inbound connections to reach      |
+|concepts/services-networking/ingress/>| the endpoints defined by a backend. An Ingress can be configured to give      |
+|`__                                   | services externally reachable URLs, load balance traffic, terminate SSL,      |
+|                                      | offer name based virtual hosting etc.                                         |
++======================================+===============================================================================+
+|`Service: <https://kubernetes.io/docs/| Service is a named abstraction of an application running on a set of pods     |
+|concepts/services-networking/service/>| consisting of a local port (for example 3306) that the proxy listens on, and  |
+|`__                                   | the selector that determines which pods will answer requests sent through     |
+|                                      | the proxy.                                                                    |
++======================================+===============================================================================+
+|`EndpointSlices: <https://kubernetes.i| Endpoints and Endpointslices are a collection of objects that contain the ip  |
+|o/docs/concepts/services-networking/en| address, v4 and v6, of the pods that represents a service.                    |
+|dpoint-slices/>`__                    |                                                                               |
++======================================+===============================================================================+
+|`Network Policy: <https://kubernetes.i| Network Policy defines which network traffic is allowed to ingress and egress |
+|o/docs/concepts/services-networking/en| from a set of pods.                                                           |
+|dpoint-slices/>`__                    |                                                                               |
++--------------------------------------+-------------------------------------------------------------------------------+
 
-There is no need to explicitly define internal load balancers, server pools, service monitors, firewalls and so on. The Kubernetes semantics and relation between the different objects defined in the object manifests contains all the information needed.
+There is no need to explicitly define internal load balancers, server pools, service monitors, firewalls and so on.
+The Kubernetes semantics and relation between the different objects defined in the object manifests contains all the
+information needed.
 
 Example: The manifests for service *my-service* and the *deployment* with the four load balanced pods of type *my-app*
 
@@ -491,7 +641,7 @@ Service:
    metadata:
            name: my-service
            spec:
-                   selector:       
+                   selector:
                            app: my-app
                    ports:
                            - protocol: TCP
@@ -517,33 +667,53 @@ Deployment:
                                    containers:
                                            - name: my-app
                                              image: my-app-1.2.3
-                                             ports:        
+                                             ports:
                                              - containerPort: 123
 
-This is all that is needed to deploy 4 pods/containers that are fronted by a service that performes load balancing. The *Deployment* will ensure that there are always four pods of type *my-app* available. the *Deployment* is responsible for the full lifecycle management of the pods, this includes in service update/upgrade.
+This is all that is needed to deploy 4 pods/containers that are fronted by a service that performes load balancing.
+The *Deployment* will ensure that there are always four pods of type *my-app* available. the *Deployment* is
+responsible for the full lifecycle management of the pods, this includes in service update/upgrade.
 
-None of this is of much help however when implementing network service functions such as VNFs/CNFs that operate on multiple networks and require advanced networking configurations.
+None of this is of much help however when implementing network service functions such as VNFs/CNFs that operate on
+multiple networks and require advanced networking configurations.
 
 Multiple Networks and Advanced Configurations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Kubernetes does currently not in itself support multiple networks, pod multiple network attachments or advanced network configurations. This is supported by using a `Container Network Interface <https://github.com/containernetworking/cni>`__ multiplexer such as `Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__.
-A considerable effort is being invested to add better network support to Kubernetes, all such activities are coordinated through the kubernetes `Network Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-network>`__ and it's sub groups. One such group, the `Network Plumbing Working Group <https://github.com/k8snetworkplumbingwg/community>`__ has produced the `Kubernetes Network Custom Resource Definition De-facto Standard <https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit>`__. This document describes how secondary networks can be defined and attached to pods.
+Kubernetes does currently not in itself support multiple networks, pod multiple network attachments or advanced
+network configurations. This is supported by using a
+`Container Network Interface <https://github.com/containernetworking/cni>`__ multiplexer such as
+`Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__.
+A considerable effort is being invested to add better network support to Kubernetes, all such activities are
+coordinated through the kubernetes
+`Network Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-network>`__ and it's sub
+groups. One such group, the `Network Plumbing Working Group <https://github.com/k8snetworkplumbingwg/community>`__ has
+produced the
+`Kubernetes Network Custom Resource Definition De-facto Standard
+<https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit>`__.
+This document describes how secondary networks can be defined and attached to pods.
 
 This defacto standard defines among other things
 
-+-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Definition                              | Description                                                                                                                                                              |
-+=========================================+==========================================================================================================================================================================+
-| Kubernetes Cluster-Wide default network | A network to which all pods are attached following the current behavior and requirements of Kubernetes, this done by attaching the *eth0* interface to the pod namespace.|
-+-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Network Attachment                      | A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not necessarily) each attachment takes the form of a kernel   |
-|                                         | network interface placed into the pod’s network namespace. Each attachment may result in zero or more IP addresses being assigned to the pod.                            |
-+-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| NetworkAttachmentDefinition object      | This defines resource object that describes how to attach a pod to a logical or physical network, the annotation name is *"k8s.v1.cni.cncf.io/networks"*                 |
-+-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Network Attachment Selection Annotation | Selects one or more networks that a pod should be attached to.                                                                                                           |
-+-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------+----------------------------------------------------------------------------+
+| Definition                              | Description                                                                |
++=========================================+============================================================================+
+| Kubernetes Cluster-Wide default network | A network to which all pods are attached following the current behavior    |
+|                                         | and requirements of Kubernetes, this done by attaching the *eth0*          |
+|                                         | interface to the pod namespace.                                            |
++-----------------------------------------+----------------------------------------------------------------------------+
+| Network Attachment                      | A means of allowing a pod to directly communicate with a given logical     |
+|                                         | or physical network. Typically (but not necessarily) each attachment takes |
+|                                         | the form of a kernel network interface placed into the pod’s network       |
+|                                         | namespace. Each attachment may result in zero or more IP addresses being   |
+|                                         | assigned to the pod.                                                       |
++-----------------------------------------+----------------------------------------------------------------------------+
+| NetworkAttachmentDefinition object      | This defines resource object that describes how to attach a pod to a       |
+|                                         | logical or physical network, the annotation name is                        |
+|                                         | *"k8s.v1.cni.cncf.io/networks"*                                            |
++-----------------------------------------+----------------------------------------------------------------------------+
+| Network Attachment Selection Annotation | Selects one or more networks that a pod should be attached to.             |
++-----------------------------------------+----------------------------------------------------------------------------+
 
 Example: Define three network attachments and attach the three networks to a pod.
 
@@ -606,7 +776,9 @@ Pod my-pod
      annotations:
        k8s.v1.cni.cncf.io/networks: blue-network, green-network, red-network
 
-This is enough to support basic network configuration management, it is possible to map up L2 networks from an external network infrastructure into a Kubernetes system and attach pods to these networks. The support for IPv4 and IPv6 address management is however limited. The address must be assigned by the CNI plugin as part of the pod creation process.
+This is enough to support basic network configuration management, it is possible to map up L2 networks from an external
+network infrastructure into a Kubernetes system and attach pods to these networks. The support for IPv4 and IPv6 address
+management is however limited. The address must be assigned by the CNI plugin as part of the pod creation process.
 
 Container Storage Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -680,19 +852,32 @@ server side component installed to the Kubernetes Cluster (e.g.: Tiller).
 Custom Resources
 ~~~~~~~~~~~~~~~~
 
-`Custom resources <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/>`__ are extensions of the Kubernetes API that represent customizations of Kubernetes installation. Core Kubernetes functions are also built using custom resources which makes Kubernetes more modular.
+`Custom resources <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/>`__ are
+extensions of the Kubernetes API that represent customizations of Kubernetes installation. Core Kubernetes functions are
+also built using custom resources which makes Kubernetes more modular.
 Two ways to add custom resources are:
 
--  `Custom Resource Definitions <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`__ (CRDs): Defining CRD object creates new custom resource with a name and schema that are easy to use.
--  `API Server Aggregation <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/>`__: Additional API that in flexible way extends Kubernetes beyond core Kubernetes API.
+-  `Custom Resource Definitions
+   <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`__
+   (CRDs): Defining CRD object creates new custom resource with a name and schema that are easy to use.
+-  `API Server Aggregation
+   <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/>`__: Additional
+   API that in flexible way extends Kubernetes beyond core Kubernetes API.
 
 Operator Pattern
 ^^^^^^^^^^^^^^^^
 
-A `custom controller <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers>`__ is a control loop that watches a custom resource for changes and tries to keep the current state of the resource in sync with the desired state.
+A `custom controller
+<https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers>`__
+is a control loop that watches a custom resource for changes and tries to keep the current state of the resource
+in sync with the desired state.
 
-`Operator pattern <https://kubernetes.io/docs/concepts/extend-kubernetes/operator/>`__ combines custom resources and custom controllers. Operators are software extensions to Kubernetes that capture operational knowledge and automate usage of custom resources to manage applications, their components and cloud infrastructure.
-Operators can have different capability levels. As per repository `OperatorHub.io <https://operatorhub.io/>`__, an operator can have different capability levels (`picture <https://operatorhub.io/static/images/capability-level-diagram.svg>`__):
+`Operator pattern <https://kubernetes.io/docs/concepts/extend-kubernetes/operator/>`__ combines custom resources and
+custom controllers. Operators are software extensions to Kubernetes that capture operational knowledge and automate
+usage of custom resources to manage applications, their components and cloud infrastructure.
+Operators can have different capability levels. As per repository `OperatorHub.io <https://operatorhub.io/>`__, an
+operator can have different capability levels
+(`picture <https://operatorhub.io/static/images/capability-level-diagram.svg>`__):
 
 -  Basic install: Automated application provisioning and configuration management.
 -  Seamless upgrades: Patch and minor version upgrades supported.
@@ -705,9 +890,13 @@ CaaS Manager - Cluster Lifecycle Management
 
    Note: *detailed requirements and component specification of cluster LCM are out of scope for this release.*
 
-In order to provision multiple Kubernetes Clusters, which is a common scenario where workloads and network functions require dedicated, single-tenant Clusters, the Reference
-Architecture provides support for a **CaaS Manager**, a component responsible for the Lifecycle Management of multiple Kubernetes Clusters.
-This component is responsible for delivering an end-to-end life cycle management (creation and installation, scaling, updating, deleting, etc., of entire clusters), visibility and control of CaaS clusters, along with verification of security and compliance of Kubernetes clusters across multiple data centres and clouds.
+In order to provision multiple Kubernetes Clusters, which is a common scenario where workloads and network functions
+require dedicated, single-tenant Clusters, the Reference
+Architecture provides support for a **CaaS Manager**, a component responsible for the Lifecycle Management of multiple
+Kubernetes Clusters.
+This component is responsible for delivering an end-to-end life cycle management (creation and installation, scaling,
+updating, deleting, etc., of entire clusters), visibility and control of CaaS clusters, along with verification
+of security and compliance of Kubernetes clusters across multiple data centres and clouds.
 Specifically, the scope of the CaaS Manager includes:
 
 -  Infrastructure (Kubernetes Clusters) provisioning
@@ -721,9 +910,13 @@ Specifically, the scope of the CaaS Manager includes:
 
 -  Management of Cluster add-ons (eg CNIs, CSIs, Service Meshes)
 
-The CaaS Manager maintains a catalogue of **clusters templates**, used to create clusters specific to the requirements of workloads, the underlying virtualisation provider and/or the specific server hardware to be used for the cluster.
+The CaaS Manager maintains a catalogue of **clusters templates**, used to create clusters specific to the requirements
+of workloads, the underlying virtualisation provider and/or the specific server hardware to be used for the cluster.
 
-The CaaS manager works by integrating with an underlying virtualisation provider for VM-based clusters, or with Bare Metal management APIs for physical clusters, to create Cluster nodes and provide other capabilities such as node scaling (e.g. provisioning a new node and attaching it to a cluster).
+The CaaS manager works by integrating with an underlying virtualisation provider for VM-based clusters, or with
+Bare Metal management APIs for physical clusters, to create Cluster nodes and provide other capabilities such as node
+scaling (e.g. provisioning a new node and attaching it to a cluster).
 
-A CaaS Manager leverages the closed-loop desired state configuration management concept that Kubernetes itself enables. Meaning, the CaaS Manager takes the desired state of a CaaS Cluster as input and the controller must be able to maintain that desired state through a series of closed loops.
-
+A CaaS Manager leverages the closed-loop desired state configuration management concept that Kubernetes itself enables.
+Meaning, the CaaS Manager takes the desired state of a CaaS Cluster as input and the controller must be able to maintain
+that desired state through a series of closed loops.
