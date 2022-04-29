@@ -404,7 +404,7 @@ customers, as seen with the backdoors affecting SolarWinds products and detailed
 <https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_.
 Open-source code weaknesses can also be utilised by attackers, the Log4J vulnerability, impacting lots of 
 applications, is a recent example in this field. The cyber security of software supply chain are often not 
-taken into account. Gouvernments are alerting and requesting actions to face these risks. The British 
+taken into account. Governments are alerting and requesting actions to face these risks. The British 
 government is hardening the law and standards of cyber security for the supply chain. The US government 
 requested actions to enhance the software supply chain security. The security of software supply chain 
 is a challenge pointed out by the European Network and Information Security Agency, ENISA, 
@@ -430,12 +430,12 @@ To secure software code, the following methods must be applied:
 -  Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply remediation actions according to their severity rating
 -  Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
 -  Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
--  Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, deployment, and runtime operation to perform automatic security check, as described in section 7.4.4 ‘”Infrastructure as a Code Security”
+-  Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, deployment, and runtime operation to perform automatic security check, as described in section ”Infrastructure as a Code Security”
 
 Open-Source Software Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open-source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer 
+Open-source code is present in Cloud Infrastructure software from BIOS, host Operating System to virtualisation layer 
 components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components 
 can also be composed of open source code. The proportion of open-source code to an application source code can vary. 
 It can be partial or total, visible or not. Open-source code can be upstream code coming directly from open-source 
