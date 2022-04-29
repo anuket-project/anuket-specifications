@@ -453,11 +453,12 @@ The GSMA white paper develops means to mitigate these security issues.
 Poor code quality is a factor of risk. Open-source code advantage is its transparency, code can be inspected by tools with 
 various capabilities such as open-source software discovery and static and dynamic code analysis.
 
-A dedicated internal isolated repository separated from the production environment must be used to store vetted open-source 
-content, which can include images, but also installer and utilities. These software packages must be signed and the signature 
-verified prior to packages or images installation. Access to the repository must be granted by a dedicated authorization. The 
-code must be inspected and vulnerabilities identified as described previously. After validating the software is risk free, it 
-can be moved to the appropriate production repository.
+Each actor in the whole chain of software production must use a dedicated internal isolated repository separated from the 
+production environment to store vetted open-source content, which can include images, but also installer and utilities. 
+These software packages must be signed and the signature verified prior to packages or images installation. 
+Access to the repository must be granted by a dedicated authorization. The code must be inspected and vulnerabilities 
+identified as described previously. After validating the software is risk free, it can be moved to the appropriate production 
+repository.
 
 SBOM
 ~~~~
