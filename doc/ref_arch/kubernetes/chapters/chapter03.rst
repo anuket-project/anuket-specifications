@@ -35,11 +35,11 @@ Chapter 5 of the Reference Model (RM) describes the
 descriptions of the capabilities and features that the Cloud Infrastructure
 provide to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below)
 depicts a high level view of the software profile features that apply to each
-instance profile (Basic and Network Intensive). For more information on the
+instance profile (Basic and High Performance). For more information on the
 instance profiles please refer to `RM Chapter 4, section
 4.2.4 <../../../ref_model/chapters/chapter04.md#4.2.4>`__.
 
-.. image:: ../../../ref_model/figures/RM_chap5_fig_5_3_SW_profile.png
+.. image:: ../../../ref_model/figures/RM-ch05-sw-profile.png
    :alt: "Figure 5-3 (from RM): NFVI softwareprofiles"
 
 
@@ -489,8 +489,8 @@ Figure 3-3 below shows the main building blocks of a Kubernetes networking solut
    each Pod, as shown by the use of additional CNI Plugin and ``net0`` connection in
    the Pod. Note that the different network characteristics of the interfaces might
    require different networking technologies, which would potentially require
-   different CNI plugins. Also note that this is only required for the Network
-   Intensive profile. Example CNI implementations which meet these requirements
+   different CNI plugins. Also note that this is only required for the High Performance
+   profile. Example CNI implementations which meet these requirements
    include Multus and DANM.
 
 -  **CNI Plugin (Additional)**: this is a CNI plugin that is used to provide

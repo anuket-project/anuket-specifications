@@ -173,10 +173,10 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
 
    -  **Architecture**
 
-.. image:: ../figures/Fig2-1-uc1.png
-   :alt: "Figure 2-1: Edge CDN with eMBB Core Network Slicing"
+.. figure:: ../figures/Fig2-1-uc1.png
+   :alt: "Edge CDN with eMBB Core Network Slicing"
 
-**Figure 2-1**: Edge CDN with eMBB Core Network Slicing
+   Edge CDN with eMBB Core Network Slicing
 
 -  **Use Case #2 - Edge Private 5G with Core Network Slicing**
 
@@ -201,10 +201,10 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
       -  Hosting the CU/DU on-Customer Infrastructure depends on the enterprise offering by the Mobile Operator and the selected Private 5G setup.
       -  The Edge Cloud Infrastructure can be governed by the client or handled by the Service Provider (Mobile Operator) as part of Managed-services model.
 
-.. image:: ../figures/Fig2-2-uc2.png
-   :alt: "Figure 2-2: Edge Private 5G with Core Network Slicing"
+.. figure:: ../figures/Fig2-2-uc2.png
+   :alt: "Edge Private 5G with Core Network Slicing"
 
-**Figure 2-2:** Edge Private 5G with Core Network Slicing.
+   Edge Private 5G with Core Network Slicing.
 
 -  **Use Case #3 - Edge Automotive (V2X) with uRLLC Core Network Slicing**
 
@@ -230,10 +230,10 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
 
       -  The potential use cases that may consume services from Edge is the Network Model (V2N) and potentially the V2I (According on how the Infrastructure will be mapped to an Edge level)
 
-.. image:: ../figures/Fig2-3-uc3.png
-   :alt: "Figure 2-3: Edge Automotive (V2X) with uRLLC Core Network Slicing"
+.. figure:: ../figures/Fig2-3-uc3.png
+   :alt: "Edge Automotive (V2X) with uRLLC Core Network Slicing"
 
-**Figure 2-3:** Edge Automotive (V2X) with uRLLC Core Network Slicing
+   Edge Automotive (V2X) with uRLLC Core Network Slicing
 
 -  **Use Case #4 – Edge vRAN Deployments**
 
@@ -252,10 +252,10 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
       -  The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
       -  Following Split Option 7.2, the average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 [13].
 
-.. image:: ../figures/Fig2-4-uc4.png
-   :alt: "Figure 2-4: Edge vRAN Deployments"
+.. figure:: ../figures/Fig2-4-uc4.png
+   :alt: "Edge vRAN Deployments"
 
-**Figure 2-4**: Edge vRAN Deployments
+   Edge vRAN Deployments
 
 Analysis
 --------
@@ -327,15 +327,16 @@ Profiles, Profile Extensions and Flavours will be considered in greater detail i
 Profiles (top-level partitions)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-5** below)
+Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in :numref:`Fig-2-5` below)
 
 -  **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
 -  **High Performance**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
-.. image:: ../figures/RM-ch02-node-profiles.png
+.. _Fig-2-5:
+.. figure:: ../figures/RM-ch02-node-profiles.png
    :alt: "Figure 2-5: Infrastructure profiles proposed based on VNFs categorisation."
 
-**Figure 2-5:** Infrastructure profiles proposed based on VNFs categorisation.
+   Infrastructure profiles proposed based on VNFs categorisation.
 
 In :doc:`ref_model/chapters/chapter04` these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
 

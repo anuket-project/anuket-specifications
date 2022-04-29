@@ -39,32 +39,33 @@ The policy for RA2 to include Kubernetes APIs as mandatory is:
 
 The Kubernetes API reference is available `here <https://kubernetes.io/docs/reference/kubernetes-api/>`__.
 
-The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#-strong-api-groups-strong->`__ that are mandatory is:
+The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#-strong-api-groups-strong->`__ that are mandatory is:
 
-============================ ====================
+============================ ========================
 Group                        Version
-============================ ====================
+============================ ========================
 admissionregistration.k8s.io v1
 apiextensions.k8s.io         v1
 apiregistration.k8s.io       v1
 apps                         v1
 authentication.k8s.io        v1
 authorization.k8s.io         v1
-autoscaling                  v1, v2beta2, v2beta1
-batch                        v1
+autoscaling                  v1, v2, v2beta2, v2beta1
+batch                        v1, v1beta1
 certificates.k8s.io          v1
 coordination.k8s.io          v1
 core                         v1
-discovery.k8s.io             v1
-events.k8s.io                v1
-flowcontrol.apiserver.k8s.io v1beta1
+discovery.k8s.io             v1, v1beta1
+events.k8s.io                v1, v1beta1
+flowcontrol.apiserver.k8s.io v1beta2, v1beta1
+internal.apiserver.k8s.io    v1alpha1
 networking.k8s.io            v1
-node.k8s.io                  v1
-policy                       v1
+node.k8s.io                  v1, v1beta1, v1alpha1
+policy                       v1, v1beta1
 rbac.authorization.k8s.io    v1
 scheduling.k8s.io            v1
-storage.k8s.io               v1
-============================ ====================
+storage.k8s.io               v1, v1beta1, v1alpha1
+============================ ========================
 
 `API Machinery Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-api-machinery>`__
 ----------------------------------------------------------------------------------------------------------------
@@ -78,7 +79,7 @@ Feature:ComprehensiveNamespaceDraining                                          
 Feature:`CrossNamespacePodAffinity <https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#namespace-selector>`__                                  Should verify ResourceQuota with cross namespace pod affinity scope using scope-selectors
 Feature:`PodPriority <https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/>`__                                                   X             Verify ResourceQuota's priority class scope against a pod with different priority class
 Feature:ScopeSelectors                                                                                                                                 X             Verify ResourceQuota with terminating scopes through scope selectors
-Feature:`StorageVersionAPI <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#storageversion-v1alpha1-internal-apiserver-k8s-io>`__              
+Feature:`StorageVersionAPI <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#storageversion-v1alpha1-internal-apiserver-k8s-io>`__
 ====================================================================================================================================================== ============= =========================================================================================
 
 `Apps Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-apps>`__
@@ -89,7 +90,7 @@ Feature:`StorageVersionAPI <https://kubernetes.io/docs/reference/generated/kuber
 ====================================================================================================================================== ============= ======================================================================================================================================================
 Conformance                                                                                                                            X             Kubernetes conformance test
 None                                                                                                                                   X             Kubernetes mainstream features
-Feature:`DaemonSetUpdateSurge <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#rollingupdatedaemonset-v1-apps>`__               Daemon set should surge pods onto nodes when spec was updated and update strategy is RollingUpdate
+Feature:`DaemonSetUpdateSurge <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#rollingupdatedaemonset-v1-apps>`__               Daemon set should surge pods onto nodes when spec was updated and update strategy is RollingUpdate
 Feature:`IndexedJob <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__                                                              Should create pods for an Indexed job with completion indexes
 Feature:`StatefulSet <https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/>`__                                                     Should creating a working zookeeper cluster
 Feature:StatefulUpgrade                                                                                                                              Stateful upgrade should maintain a functioning cluster
@@ -137,7 +138,7 @@ Feature:StackdriverAcceleratorMonitoring               Stackdriver Monitoring sh
 Feature:StackdriverCustomMetrics                       Stackdriver Monitoring should run Custom Metrics - Stackdriver Adapter for new resource model
 Feature:StackdriverExternalMetrics                     Stackdriver Monitoring should run Custom Metrics - Stackdriver Adapter for external metrics
 Feature:StackdriverMetadataAgent                       Stackdriver Monitoring should run Stackdriver Metadata Agent
-Feature:StackdriverMonitoring                         
+Feature:StackdriverMonitoring
 ======================================== ============= =============================================================================================
 
 `Network Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-network>`__
@@ -206,13 +207,13 @@ Feature:Recreate                                                                
 ==================================== ============= ==============================
 Conformance                          X             Kubernetes conformance test
 None                                 X             Kubernetes mainstream features
-Feature:ExpandInUsePersistentVolumes              
-Feature:Flexvolumes                               
-Feature:GKELocalSSD                               
-Feature:VolumeSnapshotDataSource                  
-Feature:Volumes                      X            
-Feature:vsphere                                   
-Feature:Windows                                   
-NodeFeature:EphemeralStorage         X            
-NodeFeature:FSGroup                  X            
+Feature:ExpandInUsePersistentVolumes
+Feature:Flexvolumes
+Feature:GKELocalSSD
+Feature:VolumeSnapshotDataSource
+Feature:Volumes                      X
+Feature:vsphere
+Feature:Windows
+NodeFeature:EphemeralStorage         X
+NodeFeature:FSGroup                  X
 ==================================== ============= ==============================
