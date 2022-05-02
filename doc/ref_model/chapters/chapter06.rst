@@ -369,5 +369,5 @@ Enabler Services Interfaces
 
 An operational cloud needs a set of standard services to function. Services such as NTP for time synchronization, DHCP
 for IP address allocation, DNS for obtaining IP addresses for domain names, and LBaaS (version 2) to distribute incoming
-requests amongst a pool of designated resources.
+SSrequests amongst a pool of designated resources.
 
