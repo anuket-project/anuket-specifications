@@ -116,7 +116,11 @@ Telco Operator Platform Conceptual Architecture
 
    Conceptual Architecture of a Telco Operator Platform
 
-The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery. These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
+The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental 
+capabilities like service and resource discovery. These Brokers are critical for a multi-cloud environment to function 
+and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and 
+manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or 
+specific industries.
 
 Multi-Cloud Interactions Model
 ------------------------------
