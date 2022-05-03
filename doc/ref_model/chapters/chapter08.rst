@@ -288,7 +288,7 @@ The following tables list some of the requirements for the Hybrid, Edge, and Mul
 |             |                                                        | others), credentials. For private cloud additional         |
 |             |                                                        | example resources: Racks, ToR/CE switches, Platform images |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
-| hem.gen.005 | HEMP shall provide a common interface for managing     |                                                            |
+| hem.gen.005 | HEMP should provide a common interface for managing    |                                                            |
 |             | component clouds				       |                                                            |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
 | hem.gen.006 | HEMP shall expose resources from all cloud operators   | See example of resources in `hem.gen.004` Definition/Note  |
