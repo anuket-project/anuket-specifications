@@ -65,7 +65,7 @@ with operational considerations, such as security and lifecycle management.
   recommended for the different types of cloud infrastructure profiles.
 
   - **Audience**: This chapter is written for architects, developers and others who need to deploy infrastructure or
-  develop applications.
+    develop applications.
 
 - **Chapter 06 - External Interfaces**: This chapter covers APIs and any actual interfaces needed to communicate with
   the workloads and any other external components.
