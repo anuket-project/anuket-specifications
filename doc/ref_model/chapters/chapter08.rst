@@ -294,7 +294,7 @@ The following tables list some of the requirements for the Hybrid, Edge, and Mul
 | hem.gen.006 | HEMP should expose resources from all cloud operators   | See example of resources in `hem.gen.004` Definition/Note  |
 |             | and locations (regions, sites, etc.)	               |                                                            |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
-| hem.gen.007 | HEMP shall allow reservation of resources if the       |                                                            |
+| hem.gen.007 | HEMP should allow reservation of resources if the      |                                                            |
 |             | component cloud operator allows    	               |                                                            |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
 | hem.gen.008 | HEMP shall support multi-tenancy                       |                                                            |
