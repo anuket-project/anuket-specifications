@@ -282,7 +282,7 @@ The following tables list some of the requirements for the Hybrid, Edge, and Mul
 | hem.gen.003 | HEMP should provide for common terms for interaction    | For example, "create Account" across the different         |
 |             | with its constituent clouds                            | clouds                                                     |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
-| hem.gen.004 | HEMP shall generalise and define a common set of       | Example resources: hosts (including BareMetal),            |
+| hem.gen.004 | HEMP should generalise and define a common set of      | Example resources: hosts (including BareMetal),            |
 |             | resources available to be managed inconstituent clouds | Virtual Machines (VM), vCPU, Memory, Storage, Network,     |
 |             |                                                        | kubernetes clusters, kubernetes nodes, Images (OS, and     |
 |             |                                                        | others), credentials. For private cloud additional         |
