@@ -230,7 +230,14 @@ Scenario: An operator has private clouds that it utilises for its workloads. Ove
 - B: The operator has decided to utilise an edge cloud for some of its clients.
 - C: The operator has decided to create edge clouds for some of its clients.
 
-Scenario B can be treated being the same as Scenario A. Scenario C is akin to the private cloud except for location and control over the facilities at that location. For its worklooads, the operator will have to utilise the target clouds tools or APIs to create the necessary accounts, billing arrangements, quotas, etc. Then create the needed resources, such as VMs or kubernetes clusters, etc. Following up with creating needed storage, networking, etc. before onboarding the workload and operating it. This is complex even when the operator is dealing with say only one other cloud, in addition to operating its own cloud. The operator is faced with a number of challenges including acquiring a new set of skills, knowledge of APIs, tools, and the complexity of managing different policies, updates, etc. This becomes impossible to manage when incorporating more than one other cloud. Hence the need for a Single Pane of Glass.
+Scenario B can be treated as being the same as Scenario A. Scenario C is akin to the private cloud except for location
+and control over the facilities at that location. For its workloads, the operator will have to utilise the target clouds 
+tools or APIs to create the necessary accounts, billing arrangements, quotas, etc. Then create the needed resources, 
+such as VMs or Kubernetes clusters, etc. Following up with creating needed storage, networking, etc. before 
+onboarding the workload and operating it. This is complex even when the operator is dealing with say only one other 
+cloud, in addition to operating its own cloud. The operator is faced with a number of challenges including acquiring a 
+new set of skills, knowledge of APIs, tools, and the complexity of managing different policies, updates, etc. This 
+becomes impossible to manage when incorporating more than one other cloud. Hence the need for a Single Pane of Glass.
 
 This Hybrid, Edge, and Multi-Cloud unified management Platform (HEMP) (a.k.a. Single-Pane-of-Glass) provides capabilities to consistently:
 
