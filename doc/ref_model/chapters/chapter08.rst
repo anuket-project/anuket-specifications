@@ -276,7 +276,7 @@ The following tables list some of the requirements for the Hybrid, Edge, and Mul
 | hem.gen.001 | HEMP should use only published APIs in managing        | For example, to accomplish the example in `hem.gen.003`    |
 |             | component clouds				       | it will use the published APIs of the target cloud.        |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
-| hem.gen.002 | HEMP shall publish all of the APIs used by any of      | For example, the provided GUI portal shall only use        |
+| hem.gen.002 | HEMP should publish all of the APIs used by any of     | For example, the provided GUI portal shall only use        |
 |             | its components                                         | HEMP published APIs                                        |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
 | hem.gen.003 | HEMP shall provide for common terms for interaction    | For example, "create Account" across the different         |
