@@ -63,7 +63,10 @@ services.
 Telco Cloud
 -----------
 
-The :numref:`Telco Cloud: Data Centre to Edge` presents a visualisation of a Telco operator cloud (or simply, Telco cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
+The :numref:`Telco Cloud: Data Centre to Edge` presents a visualisation of a Telco operator cloud (or simply, Telco 
+cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central 
+Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at 
+the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
 
 .. figure:: ../figures/RM-Ch08-Multi-Cloud-DC-Edge.png
    :name: Telco Cloud: Data Centre to Edge
