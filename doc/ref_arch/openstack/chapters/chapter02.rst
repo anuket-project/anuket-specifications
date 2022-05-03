@@ -498,10 +498,10 @@ Requirements
 Cloud Infrastructure Security Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System Hardening
-^^^^^^^^^^^^^^^^
+System Hardening Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:system hardening`)
+(source :ref:`ref_model/chapters/chapter07:system hardening requirements`)
 
 +-------------+-----------+---------------------------------+--------------------------------------------------------+
 | Reference   | sub-\     | Description                     | Specification Reference                                |
@@ -600,10 +600,10 @@ System Hardening
 
 Table 2-6: Reference Model Requirements - System Hardening Requirements
 
-Platform and Access
-^^^^^^^^^^^^^^^^^^^
+Platform and Access Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:platform and access`)
+(source :ref:`ref_model/chapters/chapter07:platform and access requirements`)
 
 +-------------+-----------+---------------------------------+--------------------------------------------------------+
 | Reference   | sub-\     | Description                     | Specification Reference                                |
@@ -734,10 +734,10 @@ Platform and Access
 Table 2-7: Reference Model Requirements - Platform and Access
 Requirements
 
-Confidentiality and Integrity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Confidentiality and Integrity Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:confidentiality and integrity`)
+(source :ref:`ref_model/chapters/chapter07:confidentiality and integrity requirements`)
 
 +-------------+------------------+-----------------------------------+-----------------------------------------------+
 | Reference   | sub-category     | Description                       | Specification Reference                       |
@@ -792,10 +792,10 @@ Confidentiality and Integrity
 Table 2-8: Reference Model Requirements: Confidentiality and Integrity
 Requirements
 
-Workload Security
-^^^^^^^^^^^^^^^^^
+Workload Security Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:workload security`)
+(source :ref:`ref_model/chapters/chapter07:workload security requirements`)
 
 +--------------+-------------------+---------------------------------+-----------------------------------------------+
 | Reference    | sub-category      | Description                     | Specification Reference                       |
@@ -837,10 +837,10 @@ Workload Security
 
 Table 2-9: Reference Model Requirements - Workload Security Requirements
 
-Image Security
-^^^^^^^^^^^^^^
+Image Security Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:image security`)
+(source :ref:`ref_model/chapters/chapter07:image security requirements`)
 
 +--------------+-----------------+-------------------------------+--------------------------------------------------+
 | Reference    | sub-category    | Description                   | Specification Reference                          |
@@ -885,10 +885,10 @@ Image Security
 
 Table 2-10: Reference Model Requirements - Image Security Requirements
 
-Security LCM
-^^^^^^^^^^^^
+Security LCM Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:security lcm`)
+(source :ref:`ref_model/chapters/chapter07:security lcm requirements`)
 
 +--------------+--------------+-------------------------------------+------------------------------------------------+
 | Reference    | sub-category | Description                         | Specification Reference                        |
@@ -961,11 +961,11 @@ Security LCM
 
 Table 2-11: Reference Model Requirements - Security LCM Requirements
 
-Monitoring and Security Audit
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Monitoring and Security Audit Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source
-:ref:`ref_model/chapters/chapter07:monitoring and security audit`)
+:ref:`ref_model/chapters/chapter07:monitoring and security audit requirements`)
 
 The Platform is assumed to provide configurable alerting and
 notification capability and the operator is assumed to have automated
@@ -1107,10 +1107,10 @@ can trigger alerts and notifications for appropriate action.
 Table 2-12: Reference Model Requirements - Monitoring and Security Audit
 Requirements
 
-Open-Source Software
-^^^^^^^^^^^^^^^^^^^^
+Open-Source Software Security Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:open source software`)
+(source :ref:`ref_model/chapters/chapter07:open source software security requirements`)
 
 +-------------+-------------------+----------------------------------+---------------+
 | Reference   | sub-category      | Description                      | Specification |
@@ -1151,8 +1151,8 @@ Open-Source Software
 Table 2-13: Reference Model Requirements - Open-Source Software Security
 Requirements
 
-IaaC security
-^^^^^^^^^^^^^
+IaaC security Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source
 :ref:`ref_model/chapters/chapter07:iaac - secure design and architecture stage requirements`)
@@ -1307,10 +1307,10 @@ Continuous Delivery and Deployment Stage
 Table 2-17: Reference Model Requirements - IaaC Security Requirements,
 Runtime Defence and Monitoring Stage
 
-Compliance with Standards
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Compliance with Standards Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:compliance with standards`)
+(source :ref:`ref_model/chapters/chapter07:compliance with standards requirements`)
 
 +-------------+-------------------+---------------------+---------------+
 | Reference   | sub-category      | Description         | Specification |
@@ -1337,7 +1337,7 @@ Compliance with Standards
 |             |                   | Equivalent: SSAE16. |               |
 +-------------+-------------------+---------------------+---------------+
 
-Table 2-18: Reference Model Requirements: Cloud Infrastructure Security
+Table 2-18: Reference Model Requirements: Compliance with Standards 
 Requirements
 
 Architecture and OpenStack Requirements
@@ -1888,7 +1888,7 @@ Infrastructure Recommendations
 
 Table 2-27: Infrastructure Recommendations
 
-Recommendations
+VIM Recommendations
 ~~~~~~~~~~~~~~~
 
 +----+--------------------+----------------------------+-------------+
@@ -2053,10 +2053,10 @@ Security Recommendations
 
 .. _system-hardening-source-rm-7.9.1-1:
 
-System Hardening
-^^^^^^^^^^^^^^^^
+System Hardening Recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:system hardening`)
+(source :ref:`ref_model/chapters/chapter07:system hardening recommendations`)
 
 +------------------+---------------+---------------+------------------+
 | Reference        | sub-category  | Description   | Notes            |
@@ -2095,10 +2095,10 @@ Table 2-33: System Hardening Recommendations
 
 .. _platform-and-access-source-rm-7.9.2-1:
 
-Platform and Access
-^^^^^^^^^^^^^^^^^^^
+Platform and Access Recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:platform and access`)
+(source :ref:`ref_model/chapters/chapter07:platform and access recommendations`)
 
 +---------------+---------------+---------------+--------------------+
 | Reference     | sub-category  | Description   | Notes              |
@@ -2131,10 +2131,10 @@ Table 2-34: Platform and Access Recommendations
 
 .. _confidentiality-and-integrity-source-rm-7.9.3-1:
 
-Confidentiality and Integrity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Confidentiality and Integrity Recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:confidentiality and integrity`)
+(source :ref:`ref_model/chapters/chapter07:confidentiality and integrity recommendations`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2170,10 +2170,10 @@ Table 2-35: Confidentiality and Integrity Recommendations
 
 .. _workload-security-source-rm-7.9.4-1:
 
-Workload Security
-^^^^^^^^^^^^^^^^^
+Workload Security Recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:workload security`)
+(source :ref:`ref_model/chapters/chapter07:workload security recommendations`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2193,10 +2193,10 @@ Table 2-36: Workload Security Recommendations
 
 .. _image-security-source-rm-7.9.5-1:
 
-Image Security
-^^^^^^^^^^^^^^
+Image Security Recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:image security`)
+(source :ref:`ref_model/chapters/chapter07:image security recommendations`)
 
 This section is left blank for future use.
 
@@ -2216,10 +2216,10 @@ Table 2-37: Image Security Recommendations
 
 .. _security-lcm-source-rm-7.9.6-1:
 
-Security LCM
-^^^^^^^^^^^^
+Security LCM Recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:security lcm`)
+(source :ref:`ref_model/chapters/chapter07:security lcm recommendations`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2244,11 +2244,11 @@ Table 2-38: LCM Security Recommendations
 
 .. _monitoring-and-security-audit-source-rm-7.9.7-1:
 
-Monitoring and Security Audit
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Monitoring and Security Audit Recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source
-:ref:`ref_model/chapters/chapter07:monitoring and security audit`)
+:ref:`ref_model/chapters/chapter07:monitoring and security audit recommendations`)
 
 The Platform is assumed to provide configurable alerting and
 notification capability and the operator is assumed to have automated
@@ -2289,10 +2289,10 @@ can trigger alerts and notifications for appropriate action.
 
 Table 2-39: Monitoring and Security Audit Recommendations
 
-Open-Source Software Security
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Open-Source Software Security Recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:open source software`)
+(source :ref:`ref_model/chapters/chapter07:open source software recommendations`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2320,11 +2320,11 @@ Table 2-40: Open-Source Software Security Recommendations
 
 .. _iaac-security-source-rm-7.9.9-1:
 
-IaaC security
-^^^^^^^^^^^^^
+IaaC security Recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source
-:ref:`ref_model/chapters/chapter07:iaac - secure design and architecture stage requirements`)
+:ref:`ref_model/chapters/chapter07:iaac - secure design and architecture stage recommendations`)
 
 **Secure Design and Architecture Stage**
 
@@ -2379,7 +2379,7 @@ IaaC security
 Table 2-41: Reference Model Requirements: IaaC Security, Design and
 Architecture Stage
 
-**Secure Code Stage Requirements**
+**Secure Code Stage Recommendations**
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2467,7 +2467,7 @@ Architecture Stage
 Table 2-42: Reference Model Requirements: IaaC Security, Secure Code
 Stage
 
-**Continuous Build, Integration and Testing Stage Requirements**
+**Continuous Build, Integration and Testing Stage Recommendations**
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2613,7 +2613,7 @@ Stage
 Table 2-43: Reference Model Requirements: IaaC Security, Continuous
 Build, Integration and Testing Stage
 
-**Continuous Delivery and Deployment Stage Requirements**
+**Continuous Delivery and Deployment Stage Recommendations**
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2636,7 +2636,7 @@ Build, Integration and Testing Stage
 Table 2-44: Reference Model Requirements: IaaC Security, Continuous
 Delivery and Deployment Stage
 
-**Runtime Defence and Monitoring Requirements**
+**Runtime Defence and Monitoring Recommendations**
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2717,10 +2717,10 @@ and Monitoring Stage
 
 .. _compliance-with-standards-source-rm-7.9.10-1:
 
-Compliance with Standards
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Compliance with Standards Recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:compliance with standards`)
+(source :ref:`ref_model/chapters/chapter07:compliance with standards recommendations`)
 
 +-----------+-------------------+---------------------+---------------+
 | Reference | sub-category      | Description         | Notes         |
@@ -2879,4 +2879,4 @@ Compliance with Standards
 |           |                   | business continuity |               |
 +-----------+-------------------+---------------------+---------------+
 
-Table 2-46: Security Recommendations
+Table 2-46: Compliance with Security Recommendations
