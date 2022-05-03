@@ -50,7 +50,8 @@ blocks that constitute the federated cloud. For example, :numref:`Example Hybrid
 shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private 
 outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see 
 diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market 
-positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised 
+positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a 
+sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised 
 services.
 
 .. figure:: ../figures/RM-Ch08-HMC-Image-1.png
