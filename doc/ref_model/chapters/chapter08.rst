@@ -279,7 +279,7 @@ The following tables list some of the requirements for the Hybrid, Edge, and Mul
 | hem.gen.002 | HEMP should publish all of the APIs used by any of     | For example, the provided GUI portal shall only use        |
 |             | its components                                         | HEMP published APIs                                        |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
-| hem.gen.003 | HEMP shall provide for common terms for interaction    | For example, "create Account" across the different         |
+| hem.gen.003 | HEMP should provide for common terms for interaction    | For example, "create Account" across the different         |
 |             | with its constituent clouds                            | clouds                                                     |
 +-------------+--------------------------------------------------------+------------------------------------------------------------+
 | hem.gen.004 | HEMP shall generalise and define a common set of       | Example resources: hosts (including BareMetal),            |
