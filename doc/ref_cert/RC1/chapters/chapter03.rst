@@ -795,7 +795,7 @@ KeystoneBasic.create_and_delete_service        10
 KeystoneBasic.get_entities                     10
 KeystoneBasic.create_update_and_delete_tenant  10
 KeystoneBasic.create_user                      10
- KeystoneBasic.create_tenant                   10
+KeystoneBasic.create_tenant                    10
 KeystoneBasic.create_and_list_users            10
 KeystoneBasic.create_tenant_with_users         10
 ============================================== ==========
