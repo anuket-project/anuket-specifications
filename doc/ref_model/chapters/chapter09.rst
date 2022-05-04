@@ -148,9 +148,11 @@ The goals of LCM are to provide a reliable administration of a system from its 
  -  Enablement for automation of most system maintenance tasks
 
 Key benefits of the Infrastructure LCM Automation are:
- -  Agility: stadardisation of the LCM process by writing and running IaaC allows to quickly and easily develop, stage, and produce environments
- -  Operational Consistency: automation of lifecycle  results in consistently maintaining desired state, reduces the possibility of errors and decreases the chances of incompatibility issues within the infrastructure
- -  Human related Risks Mitigation: automation reduces risks related to human errors, rogue activities, and safeguards the institutional knowledge from leakage in case any employee leaves the organization
+ -  Agility: standardisation of the LCM process by writing and running IaaC allows to quickly and easily develop, stage, and produce environments
+ -  Operational Consistency: automation of lifecycle  results in consistently maintaining desired state, reduces the possibility of errors and 
+    decreases the chances of incompatibility issues within the infrastructure
+ -  Human related Risks Mitigation: automation reduces risks related to human errors, rogue activities, and safeguards the institutional knowledge 
+    from leakage in case any employee leaves the organization
  -  Higher Efficiency: achieved by minimizing human inaccuracies and eliminating the lack of knowledge about infrastructure installed base and its configuration, using the CI/CD techniques adapted to infrastructure 
  -  Cost/time Saving: engineers save up on time and cost which can be wisely invested in performing higher-value jobs; additional cost savings on cloud more optimal use of cloud resources using LCM Automation
  
