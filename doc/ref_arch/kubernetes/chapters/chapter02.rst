@@ -203,7 +203,7 @@ Cloud Infrastructure Software Profile Capabilities
 |ernal-infrastructure-capab|          |                        |                 |                 |                  |
 |ilities>`__               |          |                        |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
-|`4.2.2 <../../../ref_model|i.os.001  | Host operating         | Must support    | Must support    |`ra2.ch.004 <chapt|
+|`4.2.2 <../../../ref_model|i.os.001  | Host operating         | Must support(3) | Must support(3) |`ra2.ch.004 <chapt|
 |/chapters/chapter04.md#pro|          | system support         |                 |                 |er04.md#kubernetes|
 |files-specifications--capa|          |                        |                 |                 |-node>`__         |
 |bility-mapping>`__        |          |                        |                 |                 |                  |
@@ -216,6 +216,9 @@ Cloud Infrastructure Software Profile Capabilities
 `4.2.6 Storage Extensions <../../../ref_model/chapters/chapter04.md#storage-extensions>`__
 
 **(2)** In Kubernetes based infrastructures packet monitoring is out of the scope for the infrastructure.
+
+**(3)** Host operating system must provide drivers etc. to support listed capabilities. More information,
+e.g. minimum versions in section `ra2.ch.004 <chapter04.md#kubernetes-node>`__ 
 
 Virtual Network Interface Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
