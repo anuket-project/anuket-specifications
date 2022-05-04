@@ -203,6 +203,12 @@ Cloud Infrastructure Software Profile Capabilities
 |ernal-infrastructure-capab|          |                        |                 |                 |                  |
 |ilities>`__               |          |                        |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
+|`4.2.2 <../../../ref_model|i.os.001  | Host operating         | Must support    | Must support    |`ra2.ch.004 <chapt|
+|/chapters/chapter04.md#pro|          | system support         |                 |                 |er04.md#kubernetes|
+|files-specifications--capa|          |                        |                 |                 |-node>`__         |
+|bility-mapping>`__        |          |                        |                 |                 |                  |
++--------------------------+----------+------------------------+-----------------+-----------------+------------------+
+
 
 **Table 2-1:** Reference Model Requirements: Cloud Infrastructure Software Profile Capabilities
 
