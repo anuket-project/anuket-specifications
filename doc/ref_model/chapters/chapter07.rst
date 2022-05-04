@@ -403,34 +403,41 @@ customers, as seen with the backdoors affecting SolarWinds products and detailed
 `Defending against SolarWinds attacks 
 <https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_.
 Open-source code weaknesses can also be utilised by attackers, the Log4J vulnerability, impacting lots of 
-applications, is a recent example in this field. The cyber security of software supply chain are often not 
-taken into account. Governments are alerting and requesting actions to face these risks. The British 
-government is hardening the law and standards of cyber security for the supply chain. The US government 
-requested actions to enhance the software supply chain security. The security of software supply chain 
-is a challenge pointed out by the European Network and Information Security Agency, ENISA, 
-in the report `NFV Security in 5G - Challenges and Best Practices 
+applications, is a recent example in this field. When addressing cyber security, the vulnerabilities of 
+software supply chain are often not taken into account. Some governments are already alerting and requesting 
+actions to face these risks. The British government is hardening the law and standards of cyber security for 
+the supply chain. The US government requested actions to enhance the software supply chain security. 
+The security of the software supply chain is a also challenge pointed out by the European Network and 
+Information Security Agency, ENISA, in the report `NFV Security in 5G - Challenges and Best Practices 
 <https://www.enisa.europa.eu/publications/nfv-security-in-5g-challenges-and-best-practices>`_.
  
 
 Software security
 ~~~~~~~~~~~~~~~~~
 
-Software supply chain safety is crucial and can be a complex task in virtualised and containerised environments
-with a greater attack surface. All software components must be trusted, from commercial software, open-source 
+Software supply chain security is crucial and is made complex by the greater attack surface provided by the 
+many different supply chains in virtualised, containerised, and edge environments. 
+All software components must be trusted, from commercial software, open-source 
 code to proprietary software. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party 
 Components” provides a detailed risk management approach.
 
 To secure software code, the following methods must be applied:
 
--  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`_ or `OWASP “Secure Coding Practices - Quick Reference Guide” <https://owasp.org/>`_
--  Require suppliers to provide a Software Bill of Materials to identify all the components part of their product’s software releases with their dependencies, and eventually identify the open source modules
--  Use trusted, authenticated and identified software images that are provided by authenticated software distribution portals
+-  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`_ 
+   or `OWASP “Secure Coding Practices - Quick Reference Guide” <https://owasp.org/>`_
+-  Require suppliers to provide a Software Bill of Materials to identify all the components part of their product’s 
+   software releases with their dependencies, and eventually identify the open source modules
+-  Use trusted, authenticated and identified software images that are provided by authenticated software 
+   distribution portals
 -  Do threat modelling, as described in the document “Tactical Threat Modeling” published by SAFECode
 -  Test the software in a pre-production environment to validate integration
--  Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply remediation actions according to their severity rating
--  Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
+-  Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply 
+   remediation actions according to their severity rating
+-  Actively monitor the open source software repositories to determine if new versions have been released that address 
+   identified vulnerabilities discovered in the community
 -  Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
--  Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, deployment, and runtime operation to perform automatic security check, as described in section ”Infrastructure as a Code Security”
+-  Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, 
+   deployment, and runtime operation to perform automatic security check, as described in section ”Infrastructure as a Code Security”
 
 Open-Source Software Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -441,11 +448,11 @@ can also be composed of open source code. The proportion of open-source code to 
 It can be partial or total, visible or not. Open-source code can be upstream code coming directly from open-source 
 public repositories or code within a commercial application or network function. 
 
-The strength of open-source code is the availability of code source developed by a community which maintain and improve it. 
+The strength of open-source code is the availability of code source developed by a community which maintains and improves it. 
 Open-source code integration with application source code helps to develop and produce applications faster. But, in return, 
 it can introduce security risks if a risk management DevSecOps approach is not implemented. The GSMA white paper, “Open 
 Networking & the Security of Open Source Software Deployment - Future Networks”, alerts on these risks and addresses the 
-challenges coming with open-source code usage. Amongst these risks for security, we can mention a poor quality code 
+challenges coming with open-source code usage. Amongst these risks for security, we can mention a poor code quality 
 containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open source 
 communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an inactive branch. 
 The GSMA white paper develops means to mitigate these security issues.
@@ -457,7 +464,7 @@ Each actor in the whole chain of software production must use a dedicated intern
 production environment to store vetted open-source content, which can include images, but also installer and utilities. 
 These software packages must be signed and the signature verified prior to packages or images installation. 
 Access to the repository must be granted by a dedicated authorization. The code must be inspected and vulnerabilities 
-identified as described previously. After validating the software is risk free, it can be moved to the appropriate production 
+identified as described previously. After validating the software, it can be moved to the appropriate production 
 repository.
 
 SBOM
@@ -474,7 +481,7 @@ provides assurance of the source and integrity of components. In order to use th
 information must be generated and shared in a standard format. This format must be machine-readable to allow automation. The 
 NTIA white paper `“Survey of existing SBOM formats and standards” <https://www.ntia.doc.gov/files/ntia/publications
 /ntia_sbom_formats_and_standards_whitepaper_-_version_20191025.pdf>`__ identifies two key formats covering baseline SBOM 
-information: Software Package Data eXchange (SPX) and Software Identification Tags (SWID tags).
+information: Software Package Data eXchange (SDPX) and Software Identification Tags (SWID tags).
 
 `SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux Foundation. 
 The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard ISO/IEC 5962:2021. It 
