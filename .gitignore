@@ -5,4 +5,4 @@ doc/.DS_Store
 ~$*
 _build/
 .tox/
-.vscode/settings.json
+.vscode/
