@@ -61,22 +61,93 @@ the following specifications:
 |              |              |                                              |profile-require        |-requirements>`__      |
 |              |              |                                              |ments>`__              |                       |      
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.005``|CPU Allocation|For Kubernetes nodes running as Virtual       |                       |                       |
+|              |Ratio - VMs   |Machines, the CPU allocation ratio between    |                       |                       |
+|              |              |vCPU and physical CPU core **must** be 1:1.   |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.006``|CPU           |To ensure the CPU allocation ratio between    |`infra.com.cfg.001     |`3.3 <../../../ref_impl|
+|              |Allocation    |vCPU and physical CPU core is 1:1, the sum of |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |Ratio - Pods  |CPU requests and limits by containers in Pod  |nfrastructure-software-|ter03.md#infrastructure|
+|              |              |specifications **must** remain less than the  |profile-require        |-requirements>`__      |
+|              |              |allocatable quantity of CPU resources (i.e.   |ments>`__              |                       |
+|              |              |``requests.cpu < allocatable.cpu`` and        |                       |                       |
+|              |              |``limits.cpu < allocatable.cpu``).            |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.007``|IPv6DualStack |To support IPv4/IPv6 dual stack networking,   |                       |                       | 
+|              |              |the Kubernetes Node OS **must** support and   |                       |                       |
+|              |              |be allocated routable IPv4 and IPv6 addresses.|                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.008``|Physical CPU  |The physical machines on which the Kubernetes |`infra.hw.cpu.cfg.001  |`3.3 <../../../ref_impl|
+|              |Quantity      |Nodes run **must** be equipped with at least  |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |              |2 physical sockets, each with at least 20     |nfrastructure-hardware-|ter03.md#infrastructure|
+|              |              |CPU cores.                                    |profile-require        |-requirements>`__      |
+|              |              |                                              |ments>`__,             |                       |
+|              |              |                                              |`infra.hw.cpu.cfg.002  |                       |
+|              |              |                                              |<./chapter02.md#cloud-i|                       |
+|              |              |                                              |nfrastructure-hardware-|                       |
+|              |              |                                              |profile-require        |                       |
+|              |              |                                              |ments>`__              |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.009``|Physical      |The physical machines on which the Kubernetes |`infra.hw.stg.ssd.cfg.0|`3.3 <../../../ref_impl|
+|              |Storage       |Nodes run **should** be equipped with Sold    |02 <./chapter02.md#clou|/cntt-ri2/chapters/chap|
+|              |              |State Drives (SSDs).                          |d-infrastructure-hardwa|ter03.md#infrastructure|
+|              |              |                                              |re-profile-require     |-requirements>`__      |
+|              |              |                                              |ments>`__              |                       |
 |              |              |                                              |                       |                       |      
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.010``|Local         |The Kubernetes Nodes **must** be equipped     |`e.cap.003 <./chapter02|`3.3 <../../../ref_impl|
+|              |Filesystem    |with local filesystem capacity of at least    |.md#cloud-infrastructur|/cntt-ri2/chapters/chap|
+|              |Storage       |320GB for unpacking and executing containers. |e-software-profile-capa|ter03.md#infrastructure|
+|              |Quantity      |Note, extra should be provisioned to cater    |bilities>`__           |-requirements>`__      |
+|              |              |for any overhead required by the Operating    |                       |                       |
+|              |              |System and any required OS processes such as  |                       |                       |
+|              |              |the container runtime, Kubernetes agents, etc.|                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.011``|Virtual Node  |If using VMs, the Kubernetes Nodes **must**   |`e.cap.001 <./chapter02|                       |
+|              |CPU Quantity  |be equipped with at least 16 vCPUs. Note,     |.md#cloud-infrastructur|                       |
+|              |              |extra should be provisioned to cater for any  |e-software-profile-capa|                       |
+|              |              |overhead required by the Operating System and |bilities>`__           |                       |
+|              |              |any required OS processes such as the         |                       |                       |
+|              |              |container runtime, Kubernetes agents, etc.    |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.012``|Kubernetes    |The Kubernetes Nodes **must** be equipped     |`e.cap.002 <./chapter02|`3.3 <../../../ref_impl|
+|              |Node RAM      |with at least 32GB of RAM. Note, extra should |.md#cloud-infrastructur|/cntt-ri2/chapters/chap|
+|              |Quantity      |be provisioned to cater for any overhead      |e-software-profile-capa|ter03.md#infrastructure|
+|              |              |required by the Operating System and any      |bilities>`__           |-requirements>`__      |
+|              |              |required OS processes such as the container   |                       |                       |
+|              |              |runtime, Kubernetes agents, etc.              |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.013``|Physical      |The physical machines on which the Kubernetes |`infra.hw.nic.cfg.001  |`3.3 <../../../ref_impl|
+|              |NIC Quantity  |Nodes run **must** be equipped with at least  |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |              |four (4) Network Interface Card (NIC) ports.  |nfrastructure-hardware-|ter03.md#infrastructure|
+|              |              |                                              |profile-require        |-requirements>`__      |
+|              |              |                                              |ments>`__              |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.014``|Physical      |The speed of NIC ports housed in the physical |`infra.hw.nic.cfg.002  |`3.3 <../../../ref_impl|
+|              |NIC Speed -   |machines on which the Kubernetes Nodes run    |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |Basic Profile |for workloads matching the Basic Profile      |nfrastructure-hardware-|ter03.md#infrastructure|
+|              |              |**must** be at least 10Gbps.                  |profile-require        |-requirements>`__      |
+|              |              |                                              |ments>`__              |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.015``|Physical      |The speed of NIC ports housed in the physical |`infra.hw.nic.cfg.002  |`3.3 <../../../ref_impl|
+|              |NIC Speed -   |machines on which the Kubernetes Nodes run    |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |High          |for workloads matching the High Performance   |nfrastructure-hardware-|ter03.md#infrastructure|
+|              |Performance   |profile **must** be at least 25Gbps.          |profile-require        |-requirements>`__      |
+|              |Profile       |                                              |ments>`__              |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|              |              |                                              |                       |                       |      
 
-=================== =====================================================================================================
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|              |              |                                              |                       |                       |      
 
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|              |              |                                              |                       |                       |      
 
-``ra2.ch.005`` CPU Allocation Ratio - VMs                     For Kubernetes nodes running as Virtual Machines, the CPU allocation ratio between vCPU and physical CPU core **must** be 1:1.
-``ra2.ch.006`` CPU Allocation Ratio - Pods                    To ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1, the sum of CPU requests and limits by containers in Pod specifications **must** remain less than the allocatable quantity of CPU resources (i.e. ``requests.cpu < allocatable.cpu`` and ``limits.cpu < allocatable.cpu``).              `infra.com.cfg.001 <./chapter02.md#cloud-infrastructure-software-profile-requirements>`__                                                                                                  `3.3 <../../../ref_impl/cntt-ri2/chapters/chapter03.md#infrastructure-requirements>`__
-``ra2.ch.007`` IPv6DualStack                                  To support IPv4/IPv6 dual stack networking, the Kubernetes Node OS **must** support and be allocated routable IPv4 and IPv6 addresses.
-``ra2.ch.008`` Physical CPU Quantity                          The physical machines on which the Kubernetes Nodes run **must** be equipped with at least 2 physical sockets, each with at least 20 CPU cores.                                                                                                                                                                       `infra.hw.cpu.cfg.001 <./chapter02.md#cloud-infrastructure-hardware-profile-requirements>`__, `infra.hw.cpu.cfg.002 <./chapter02.md#cloud-infrastructure-hardware-profile-requirements>`__ `3.3 <../../../ref_impl/cntt-ri2/chapters/chapter03.md#infrastructure-requirements>`__
-``ra2.ch.009`` Physical Storage                               The physical machines on which the Kubernetes Nodes run **should** be equipped with Sold State Drives (SSDs).                                                                                                                                                                                                         `infra.hw.stg.ssd.cfg.002 <./chapter02.md#cloud-infrastructure-hardware-profile-requirements>`__                                                                                           `3.3 <../../../ref_impl/cntt-ri2/chapters/chapter03.md#infrastructure-requirements>`__
-``ra2.ch.010`` Local Filesystem Storage Quantity              The Kubernetes Nodes **must** be equipped with local filesystem capacity of at least 320GB for unpacking and executing containers. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.  `e.cap.003 <./chapter02.md#cloud-infrastructure-software-profile-capabilities>`__                                                                                                          `3.3 <../../../ref_impl/cntt-ri2/chapters/chapter03.md#infrastructure-requirements>`__
-``ra2.ch.011`` Virtual Node CPU Quantity                      If using VMs, the Kubernetes Nodes **must** be equipped with at least 16 vCPUs. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.                                                     `e.cap.001 <./chapter02.md#cloud-infrastructure-software-profile-capabilities>`__
-``ra2.ch.012`` Kubernetes Node RAM Quantity                   The Kubernetes Nodes **must** be equipped with at least 32GB of RAM. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.                                                                `e.cap.002 <./chapter02.md#cloud-infrastructure-software-profile-capabilities>`__                                                                                                          `3.3 <../../../ref_impl/cntt-ri2/chapters/chapter03.md#infrastructure-requirements>`__
-``ra2.ch.013`` Physical NIC Quantity                          The physical machines on which the Kubernetes Nodes run **must** be equipped with at least four (4) Network Interface Card (NIC) ports.                                                                                                                                                                               `infra.hw.nic.cfg.001 <./chapter02.md#cloud-infrastructure-hardware-profile-requirements>`__                                                                                               `3.3 <../../../ref_impl/cntt-ri2/chapters/chapter03.md#infrastructure-requirements>`__
-``ra2.ch.014`` Physical NIC Speed - Basic Profile             The speed of NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the Basic Profile **must** be at least 10Gbps.                                                                                                                                                        `infra.hw.nic.cfg.002 <./chapter02.md#cloud-infrastructure-hardware-profile-requirements>`__                                                                                               `3.3 <../../../ref_impl/cntt-ri2/chapters/chapter03.md#infrastructure-requirements>`__
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|              |              |                                              |                       |                       |      
+
+========================================================================================================================
+
 ``ra2.ch.015`` Physical NIC Speed - High Performance Profile The speed of NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the High Performance profile **must** be at least 25Gbps.                                                                                                                                            `infra.hw.nic.cfg.002 <./chapter02.md#cloud-infrastructure-hardware-profile-requirements>`__                                                                                               `3.3 <../../../ref_impl/cntt-ri2/chapters/chapter03.md#infrastructure-requirements>`__
 ``ra2.ch.016`` Physical PCIe slots                            The physical machines on which the Kubernetes Nodes run **must** be equipped with at least eight (8) Gen3.0 PCIe slots, each with at least eight (8) lanes.
 ``ra2.ch.017`` Immutable infrastructure                       Whether physical or virtual machines are used, the Kubernetes Node **must not** be changed after it is instantiated. New changes to the Kubernetes Node must be implemented as new Node instances. This covers any changes from BIOS through Operating System to running processes and all associated configurations. `req.gen.cnt.02 <./chapter02.md#kubernetes-architecture-requirements>`__                                                                                                                   `4.3.1 <../../../ref_impl/cntt-ri2/chapters/chapter04.md#installation-on-bare-metal-infratructure>`__
