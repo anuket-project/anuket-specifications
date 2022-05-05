@@ -1,8 +1,8 @@
-[<< Back](../)
 # Baldy Release Notes
 
-<p align="center"><img src="../figures/Baldy.png" alt="Baldy Release Organisation" Title="Baldy Release Organisation" width="65%"/></p>
-<p align="center"><b>Figure 1:</b> Baldy Release Organisation</p>
+![**Figure 1:** Baldy Release Organisation](../figures/Baldy.png) <!-- width="65%" -->
+
+**Figure 1:** Baldy Release Organisation
 
 ## Baldy Release Contents
 * [Overview](#overview)
@@ -14,7 +14,6 @@
 * [RI-2 (draft)](#ri2)
 * [RC-2 (draft)](#rc2)
 
-<a name="overview"></a>
 ## Overview
 
 | Reference # 	| Feature 	| Notes 	|
@@ -23,7 +22,6 @@
 | `baldy.tech.2` 	| Backward/Forward Compatibility 	|  	|
 | `baldy.tech.3` 	| Future Roadmap |  |
 
-<a name="rm"></a>
 ## Reference Model (v3.0)
 
 >WSL Note: Features below should be implemented in order.
@@ -41,7 +39,6 @@
 
 *Baldy Release includes at least features up to and including `baldy.rm.4`.
 
-<a name="ra1"></a>
 ## Reference Architecture 1 (v2.0)
 
 >WSL Note: Features below should be implemented in order.
@@ -60,11 +57,11 @@
 
 *Baldy Release includes at least features up to and including `baldy.ra1.6`.
 
-<a name="rc1"></a>
 ## Reference Conformance 1 (v2.0)
 
-<p align="center"><img src="../figures/rc1_baldy.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 2:</b> RC-1 Baldy Release plan</p>
+![**Figure 2:** RC-1 Baldy Release plan](../figures/rc1_baldy.png) <!-- width="100%" -->
+
+**Figure 2:** RC-1 Baldy Release plan
 
 >WSL Note: Features below should be implemented in order.
 
@@ -79,13 +76,12 @@
 | `baldy.rc1.7` 	| NFVI Framework & Test Cases Development   | **DEV** 	|
 | `baldy.rc1.8` 	| RC-1 test suites can run against RI-1   | **DEV** 	|
 
-<a name="ri1"></a>
 ## Reference Implementation 1 (v3.0-alpha)
 
-<p align="center"><img src="../figures/ri1_baldy.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1:</b> RI-1 Baldy Release plan</p>
+![**Figure 1:** RI-1 Baldy Release plan](../figures/ri1_baldy.png) <!-- width="100%" -->
 
->WSL Note: Features below should be implemented in order.
+**Figure 1:** RI-1 Baldy Release plan
+
 
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
@@ -99,7 +95,6 @@
 | `baldy.ri1.7` 	| Implement Profiles within OPNFV Installers and consume CNTT metadata 	|  **DEV**	|
 | `baldy.ri1.8` 	| RI-1 passes the RC-1 test suite execution (For sanity and APIs)   | **DEV** 	|
 
-<a name="ra2"></a>
 ## Reference Architecture 2 (v3.0)
 
 >WSL Note: Features below should be implemented in order. For Baldy, At least 

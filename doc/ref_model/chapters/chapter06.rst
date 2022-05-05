@@ -69,9 +69,9 @@ A virtual compute resource is created as per the flavour template (specifies the
 =============== ====== ==== ====== ====== ====== ===========================================================================================================
 Resource        Create List Attach Detach Delete Notes
 =============== ====== ==== ====== ====== ====== ===========================================================================================================
-Flavour         +      +                  +     
+Flavour         +      +                  +
 Image           +      +                  +      Create/delete by appropriate administrators
-Key pairs       +      +                  +     
+Key pairs       +      +                  +
 Privileges                                       Created and managed by Cloud Service Provider(CSP) administrators
 Role            +      +                  +      Create/delete by authorized administrators where roles are assigned privileges and mapped to users in scope
 Security Groups +      +                  +      Create and delete only by VDC administrators
@@ -100,7 +100,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
 | Request                                  | Response                                  | From, To  | Type   | Parameter                 | Description                                   |
 +==========================================+===========================================+===========+========+===========================+===============================================+
-|                                          |                                           |           | Input  | accFilter                 | the accelartor sub-system(s) to               | 
+|                                          |                                           |           | Input  | accFilter                 | the accelartor sub-system(s) to               |
 |                                          |                                           |           |        |                           | initialize and retrieve their capabilities.   |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 | InitAccRequest                           | InitAccResponse                           | VNF → NFVI| Filter | accAttributeSelector      | attribute names of accelerator capabilities   |
@@ -116,7 +116,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 | AccEventNotificationRequest              | AccEventNotificationResponse              |           +--------+---------------------------+-----------------------------------------------+
 |                                          |                                           | NFVI → VNF| Input  | accEventMetaData          |                                               |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
-| DeRegisterForAccEventResponse            | DeRegisterForAccEventResponse             | VNF → NFVI| Input  | accEvent                  | Event VNF is deregistering from               | 
+| DeRegisterForAccEventResponse            | DeRegisterForAccEventResponse             | VNF → NFVI| Input  | accEvent                  | Event VNF is deregistering from               |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
 | ReleaseAccRequest                        | ReleaseAccResponse                        | VNF → NFVI|        |                           |                                               |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
@@ -124,13 +124,13 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 | ModifyAccConfigurationResponse           | ModifyAccConfigurationResponse            |           +--------+---------------------------+-----------------------------------------------+
 |                                          |                                           |           | Input  | accSubSysConfigurationData| Config data for accelerator sub-system        |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
-|                                          |                                           |           | Input  | accFilter                 | Filter for subsystems from which config data  | 
+|                                          |                                           |           | Input  | accFilter                 | Filter for subsystems from which config data  |
 |                                          |                                           |           |        |                           | requested                                     |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 | GetAccConfigsRequest                     | GetAccConfigsResponse                     | VNF → NFVI| Input  | accConfigSelector         | attributes of config types                    |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 |                                          |                                           |           | Output | accConfigs                | Config info (only for the specified           |
-|                                          |                                           |           |        |                           | attributes) for specified subsystems          | 
+|                                          |                                           |           |        |                           | attributes) for specified subsystems          |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
 |                                          |                                           |           | Input  | accFilter                 | Filter for subsystems for which config is to  |
 |                                          |                                           | VNF → NFVI|        |                           | be reset                                      |
@@ -138,23 +138,23 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                                          |                                           |           | Input  | accConfigSelector         | attributes of config types whose values will  |
 |                                          |                                           |           |        |                           | be reset                                      |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
-|                                          |                                           |           | Input  | accData                   | Data (metadata) sent too accelerator          | 
+|                                          |                                           |           | Input  | accData                   | Data (metadata) sent too accelerator          |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 | AccDataRequest                           | AccDataResponse                           | VNF → NFVI| Input  | accChannel                | Channel data is to be sent to                 |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 |                                          |                                           |           | Output | accData                   | Data from accelerator                         |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
-| AccSendDataRequest                       | AccSendDataResponse                       | VNF → NFVI| Input  | accData                   | Data (metadata) sent too accelerator          | 
+| AccSendDataRequest                       | AccSendDataResponse                       | VNF → NFVI| Input  | accData                   | Data (metadata) sent too accelerator          |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 |                                          |                                           |           | Input  | accChannel                | Channel data is to be sent to                 |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
-|                                          |                                           |           | Input  | maxNumberOfDataItems      | Max number of data items to be received       | 
+|                                          |                                           |           | Input  | maxNumberOfDataItems      | Max number of data items to be received       |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 | AccReceiveDataRequest                    | AccReceiveDataResponse                    | VNF → NFVI| Input  | accChannel                | Channel data is requested from                |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 |                                          |                                           |           | Output | accData                   | Data received form Accelerator                |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
-| RegisterForAccDataAvailableEventRequest  | RegisterForAccDataAvailableEventResponse  | VNF → NFVI| Input  | regHandlerId              | Registration Identifier                       | 
+| RegisterForAccDataAvailableEventRequest  | RegisterForAccDataAvailableEventResponse  | VNF → NFVI| Input  | regHandlerId              | Registration Identifier                       |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 |                                          |                                           |           | Input  | accChannel                | Channel where event is requested for          |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
@@ -189,7 +189,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                                          |                                           |           | Output | accStatistics             | Statistics data of the accelerators matching  |
 |                                          |                                           |           |        |                           | the input filter located in the selected host.|
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
-| ResetAccStatisticsRequest                | ResetAccStatisticsResponse                | VIM → NFVI| Input  | accFilter                 | Accelerator subsystems for which data is to be| 
+| ResetAccStatisticsRequest                | ResetAccStatisticsResponse                | VIM → NFVI| Input  | accFilter                 | Accelerator subsystems for which data is to be|
 |                                          |                                           |           |        |                           | reset                                         |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 |                                          |                                           |           | Input  | accStatSelector           | attributes of AccStatistics whose data will be|
@@ -204,7 +204,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                                          |                                           |           | Output | SubscriptionId            | Identifier of the successfully created        |
 |                                          |                                           |           |        |                           | subscription.                                 |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
-| UnsubscribeRequest                       | UnsubscribeResponse                       | VIM → NFVI| Input  | hostId                    | Id of specified host                          | 
+| UnsubscribeRequest                       | UnsubscribeResponse                       | VIM → NFVI| Input  | hostId                    | Id of specified host                          |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 |                                          |                                           |           | Input  | SubscriptionId            | Identifier of the subscription to be          |
 |                                          |                                           |           |        |                           | unsubscribed.                                 |
@@ -220,7 +220,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                                          |                                           |           | Output | Alarm                     | Information about the alarms if filter matches|
 |                                          |                                           |           |        |                           | an alarm.                                     |
 +------------------------------------------+-------------------------------------------+-----------+--------+---------------------------+-----------------------------------------------+
-| AccResourcesDiscoveryRequest             | AccResourcesDiscoveryResponse             | VIM → NFVI| Input  | hostId                    | Id of specified host                          | 
+| AccResourcesDiscoveryRequest             | AccResourcesDiscoveryResponse             | VIM → NFVI| Input  | hostId                    | Id of specified host                          |
 |                                          |                                           |           +--------+---------------------------+-----------------------------------------------+
 |                                          |                                           |           | Output | discoveredAccResourceInfo | nformation on the acceleration resources      |
 |                                          |                                           |           |        |                           | discovered within the NFVI.                   |
@@ -247,4 +247,3 @@ Enabler Services Interfaces
 ---------------------------
 
 An operational cloud needs a set of standard services to function. Services such as NTP for time synchronization, DHCP for IP address allocation, DNS for obtaining IP addresses for domain names, and LBaaS (version 2) to distribute incoming requests amongst a pool of designated resources.
-

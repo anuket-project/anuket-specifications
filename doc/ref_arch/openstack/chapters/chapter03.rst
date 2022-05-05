@@ -459,7 +459,7 @@ a same service must run on different nodes).
 The services can be containerised or VM hosted as long as they provide
 the high availability principles described above.
 
-The APIs for these OpenStack services are listed in 
+The APIs for these OpenStack services are listed in
 :ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`.
 
 Cloud Workload Services
