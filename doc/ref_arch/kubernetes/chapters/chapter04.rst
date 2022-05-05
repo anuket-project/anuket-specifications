@@ -135,24 +135,26 @@ the following specifications:
 |              |Performance   |profile **must** be at least 25Gbps.          |profile-require        |-requirements>`__      |
 |              |Profile       |                                              |ments>`__              |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|              |              |                                              |                       |                       |      
-
+|``ra2.ch.016``|Physical PCIe |The physical machines on which the Kubernetes |                       |                       |
+|              |slots         |Nodes run **must** be equipped with at least  |                       |                       |
+|              |              |eight (8) Gen3.0 PCIe slots, each with at     |                       |                       |
+|              |              |least eight (8) lanes.                        |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|              |              |                                              |                       |                       |      
-
+|``ra2.ch.017``|Immutable     |Whether physical or virtual machines are      |`req.gen.cnt.02 <./chap|`4.3.1 <../../../ref_im|
+|              |infrastructure|used, the Kubernetes Node **must not** be     |ter02.md#kubernetes-arc|pl/cntt-ri2/chapters/ch|
+|              |              |changed after it is instantiated. New changes |hitecture-require      |apter04.md#installation|
+|              |              |to the Kubernetes Node must be implemented as |ments>`__              |-on-bare-metal-infratru|
+|              |              |new Node instances. This covers any changes   |                       |cture>`__              |
+|              |              |from BIOS through Operating System to running |                       |                       |
+|              |              |processes and all associated configurations.  |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|              |              |                                              |                       |                       |      
-
+|``ra2.ch.018``|NFD           |`Node Feature Discovery <https://kubernetes-si|TBD                    |`4.3.1 <../../../ref_im|
+|              |              |gs.github.io/node-feature-discovery/stable/get|                       |pl/cntt-ri2/chapters/ch|
+|              |              |-started/index.html>`__ **must** be used to ad|                       |apter04.md#installa    |
+|              |              |vertise the detailed software and hardware    |                       |tion-on-bare-metal-infr|
+|              |              |capabilities of each node in the Kubernetes   |                       |atructure>`__          |
+|              |              |Cluster.                                      |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|              |              |                                              |                       |                       |      
-
-========================================================================================================================
-
-``ra2.ch.015`` Physical NIC Speed - High Performance Profile The speed of NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the High Performance profile **must** be at least 25Gbps.                                                                                                                                            `infra.hw.nic.cfg.002 <./chapter02.md#cloud-infrastructure-hardware-profile-requirements>`__                                                                                               `3.3 <../../../ref_impl/cntt-ri2/chapters/chapter03.md#infrastructure-requirements>`__
-``ra2.ch.016`` Physical PCIe slots                            The physical machines on which the Kubernetes Nodes run **must** be equipped with at least eight (8) Gen3.0 PCIe slots, each with at least eight (8) lanes.
-``ra2.ch.017`` Immutable infrastructure                       Whether physical or virtual machines are used, the Kubernetes Node **must not** be changed after it is instantiated. New changes to the Kubernetes Node must be implemented as new Node instances. This covers any changes from BIOS through Operating System to running processes and all associated configurations. `req.gen.cnt.02 <./chapter02.md#kubernetes-architecture-requirements>`__                                                                                                                   `4.3.1 <../../../ref_impl/cntt-ri2/chapters/chapter04.md#installation-on-bare-metal-infratructure>`__
-``ra2.ch.018`` NFD                                            `Node Feature Discovery <https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html>`__ **must** be used to advertise the detailed software and hardware capabilities of each node in the Kubernetes Cluster.                                                                             TBD                                                                                                                                                                                        `4.3.1 <../../../ref_impl/cntt-ri2/chapters/chapter04.md#installation-on-bare-metal-infratructure>`__
-============== ============================================== ===================================================================================================================================================================================================================================================================================================================== ========================================================================================================================================================================================== =====================================================================================================
 
 **Table 4-1:** Node Specifications
 
