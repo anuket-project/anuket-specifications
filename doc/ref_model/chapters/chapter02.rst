@@ -216,11 +216,16 @@ latency requirements.
   - **Architecture**
 
     - There are multiple flavours for Private 5G deployments or NPN, Non-Public Network as defined by 3GPP.
-    - The use case addresses the technical realization of NPN as a Network Slice of a PLMN as per Annex D – 3GPP TS 23.501 R16 and not covering the other scenarios of deployment.
-    - The use case assumes a network slice that is constructed from a single UPF deployed on Customer premises while sharing the 5G Control Plane (AMF, SMF, & other CP Network Functions) with the PLMN.
-    - The use case doesn’t cover the requirements of the private Application Servers (ASs) as they may vary with each customer setup.
-    - Hosting the CU/DU on-Customer Infrastructure depends on the enterprise offering by the Mobile Operator and the selected Private 5G setup.
-    - The Edge Cloud Infrastructure can be governed by the client or handled by the Service Provider (Mobile Operator) as part of Managed-services model.
+    - The use case addresses the technical realization of NPN as a Network Slice of a PLMN as per Annex D –
+      3GPP TS 23.501 R16 and not covering the other scenarios of deployment.
+    - The use case assumes a network slice that is constructed from a single UPF deployed on Customer premises while
+      sharing the 5G Control Plane (AMF, SMF, & other CP Network Functions) with the PLMN.
+    - The use case doesn’t cover the requirements of the private Application Servers (ASs) as they may vary with each
+      customer setup.
+    - Hosting the CU/DU on-Customer Infrastructure depends on the enterprise offering by the Mobile Operator and the
+      selected Private 5G setup.
+    - The Edge Cloud Infrastructure can be governed by the client or handled by the Service Provider (Mobile Operator)
+      as part of Managed-services model.
 
 .. figure:: ../figures/Fig2-2-uc2.png
    :alt: "Edge Private 5G with Core Network Slicing"
@@ -498,7 +503,7 @@ The following **profile extensions** are proposed:
 +-------------------+-------------------------+---------------+---------------+------------------------+---------------+
 | SmartSwitch       | network-smartswitch     | ❌            | ✅            | Labels a host/node     |               |
 | enabled           |                         |               |               | that is connected to a |               |
-|                   |                         |               |               |  Programmable Switch   |               |
+|                   |                         |               |               | Programmable Switch    |               |
 |                   |                         |               |               | Fabric or TOR switch   |               |
 +-------------------+-------------------------+---------------+---------------+------------------------+---------------+
 
