@@ -456,6 +456,7 @@ Compute Resources
    Servers for specialised use with the data centres or other locations, such as at edge sites, are likely to have
    different specifications.
 
+
 **Table 5-14:** Minimum sizing and capability configurations for general purpose servers.
 
 Compute Acceleration Hardware Specifications
