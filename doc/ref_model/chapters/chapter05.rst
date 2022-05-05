@@ -17,7 +17,7 @@ Cloud Infrastructure Software profile description
 Cloud Infrastructure Software layer is composed of 2 layers, :numref:`Cloud Infrastructure software layers`:
 
 -  The virtualisation Infrastructure layer, which is based on hypervisor virtualisation technology or container-based
-virtualisation technology. Container virtualisation can be nested in hypervisor-based virtualisation
+   virtualisation technology. Container virtualisation can be nested in hypervisor-based virtualisation
 -  The host OS layer
 
 .. figure:: ../figures/ch05-cloud-infrastructure-sw-profile-layers.png
