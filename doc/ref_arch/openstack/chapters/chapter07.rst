@@ -64,7 +64,8 @@ version and then the old servers are undeployed.
 Cloud Infrastructure and VIM configuration management
 -----------------------------------------------------
 
-In the Reference Model, :ref:`ref_model/chapters/chapter09:configuration and lifecycle management`
+In the Reference Model,
+:ref:`ref_model/chapters/chapter09:configuration and lifecycle management`
 defines the functions of Configuration and Life Cycle Management (LCM).
 To operate and manage a scalable cloud, that minimizes operational
 costs, requires tools that incorporates systems for automated
@@ -117,7 +118,8 @@ specifies how to provision and deploy the IaaS, and on how to update
 configuration including OpenStack services.
 
 For Airship, :ref:`ref_impl/cntt-ri/chapters/chapter08:descriptor file preparations`
-specifies the required descriptor files and in :ref:`ref_impl/cntt-ri/chapters/chapter08:deployment: installer & install steps`
+specifies the required descriptor files and in
+:ref:`ref_impl/cntt-ri/chapters/chapter08:deployment: installer & install steps`
 describes the steps to provision the OpenStack based IaaS.
 
 Configuration Management

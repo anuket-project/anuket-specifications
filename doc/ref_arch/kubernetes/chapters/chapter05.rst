@@ -198,7 +198,8 @@ ports which makes it easy to identify the clusters and attack them. Hence, it is
 highly recommended to configure authentication and authorisation on the cluster
 and cluster nodes.
 
-The `Kubernetes documentation <https://kubernetes.io/docs/reference/ports-and-protocols/>`__ specifies the default ports used in Kubernetes. Make sure that your
+The `Kubernetes documentation <https://kubernetes.io/docs/reference/ports-and-protocols/>`__ specifies the default
+ports used in Kubernetes. Make sure that your
 network blocks access to unnecessary ports and consider limiting access to the Kubernetes
 API server except from trusted networks.
 
@@ -226,7 +227,8 @@ TCP      30000-32767 NodePort Services
 Controlling access to the Kubernetes API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Kubernetes platform is controlled using APIs, which are the first items to be secured in order to defend against attackers.
+The Kubernetes platform is controlled using APIs, which are the first items to be secured in order to defend against
+attackers.
 Controlling who has access and what actions they are allowed to perform is the primary concern.
 
 Use Transport Layer Security and Service Mesh
@@ -244,12 +246,14 @@ Advances in network technology, such as the service mesh, have led to the
 creation of products like LinkerD and Istio which can enable TLS by default
 while providing extra telemetry information on transactions between services.
 The service mesh is a mesh of layer 7 proxies handling service-to-service communications.
-The service mesh architecture consists of data plane components made up of network proxies paired with each micro-service,
+The service mesh architecture consists of data plane components made up of network proxies paired with each
+micro-service,
 and control plane components providing proxies configuration, managing TLS certificates and policies.
 The two documents, `NIST SP 800-204A <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf>`__
 (Building Secure Microservices-based Applications Using Service-Mesh Architecture) and
 `NIST SP 800-204B <https://csrc.nist.gov/publications/detail/sp/800-204b/final>`__
-(Attribute-based Access Control for Microservices-based Applications Using a Service Mesh) provide guidance to deploy service mesh.
+(Attribute-based Access Control for Microservices-based Applications Using a Service Mesh) provide guidance to deploy
+service mesh.
 
 API Authentication, API Authorisation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -300,7 +304,8 @@ the cluster; a number of tutorials show how to do this.
 Unfortunately, most of them create a service account with very high privileges.
 This caused Tesla and some others to be hacked via such a poorly configured Kubernetes
 dashboard (Reference: `Tesla cloud resources are hacked to run
-cryptocurrency-mining malware <https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware/>`__).
+cryptocurrency-mining malware <https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-
+to-run-cryptocurrency-mining-malware/>`__).
 
 To prevent attacks via the dashboard, you should follow some best practices:
 
