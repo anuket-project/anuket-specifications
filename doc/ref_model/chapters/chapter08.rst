@@ -202,18 +202,18 @@ The model defines the following core roles:
 
 -  Communications Service Provider (CSP) - is the party responsible for providing end user service to their customer
 -  Customer / User - are the parties that use the service (User) and establishes the business agreement for the service
-provision (Customer). For retail services the customer and user are the same party, while for enterprise services the
-Enterprise is the Customer (responsible for the business agreement) and its representatives are the Users.
+   provision (Customer). For retail services the customer and user are the same party, while for enterprise services the
+   Enterprise is the Customer (responsible for the business agreement) and its representatives are the Users.
 -  Cloud Providers - are the parties providing the cloud services. These services could be any XaaS service. It could be
-that a CSP has an agreement with a SaaS Cloud, which in turn uses an IaaS Cloud Provider to deliver their service.
+   that a CSP has an agreement with a SaaS Cloud, which in turn uses an IaaS Cloud Provider to deliver their service.
 
 The set of high level interactions cover:
 
 -  Manage Account - covering Account, Users, Subscription, Billing
 -  Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge / Cloud Connection Configuration,
-Connection Security Profile
+   Connection Security Profile
 -  Manage Resource - Resource Pool Management, VM / VNF Management (CPU, Memory, Storage, Network), Image Repository
-Management, Storage Management, VNF / CNF LCM, Monitor Resources
+   Management, Storage Management, VNF / CNF LCM, Monitor Resources
 -  Manage App/VNF - Image / Container / Registry Management, Deploy/Configure/Scale/Start/Stop App/VNF, Monitor App/VNFs
 -  Transactions / Conversations - Use Communications Services, Use Edge Applications Services, Use Cloud Services
 
