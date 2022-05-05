@@ -1712,77 +1712,75 @@ Table 2-27: Infrastructure Recommendations
 VIM Recommendations
 ~~~~~~~~~~~~~~~~~~~
 
-+----+--------------------+----------------------------+-------------+
-| R\ | sub-category       | Description                | Notes       |
-| ef\|                    |                            |             |
-| er\|                    |                            |             |
-| en\|                    |                            |             |
-| ce |                    |                            |             |
-+====+====================+============================+=============+
-| vi\| General            | The Architecture           | `RA-1       |
-| m.\|                    | **should** support         | “Co\        |
-| 02 |                    | deployment of OpenStack    | ntainerised |
-|    |                    | components in containers.  | OpenStack   |
-|    |                    |                            | Services”   |
-|    |                    |                            | <./chapter0 |
-|    |                    |                            | 4.md#con    |
-|    |                    |                            | tainerised- |
-|    |                    |                            | openstack-s |
-|    |                    |                            | ervices>`__ |
-+----+--------------------+----------------------------+-------------+
-| vi\| General            | The Architecture           |             |
-| m.\|                    | **should** support         |             |
-| 04 |                    | Enhanced Platform          |             |
-|    |                    | Awareness (EPA) only for   |             |
-|    |                    | discovery of               |             |
-|    |                    | infrastructure resource    |             |
-|    |                    | capabilities.              |             |
-+----+--------------------+----------------------------+-------------+
-| vi\| General            | The Architecture           |             |
-| m.\|                    | **should** allow           |             |
-| 06 |                    | orchestration solutions to |             |
-|    |                    | be integrated with VIM.    |             |
-+----+--------------------+----------------------------+-------------+
-| vi\| General            | The Architecture           |             |
-| m.\|                    | **should** support         |             |
-| 09 |                    | horizontal scaling of      |             |
-|    |                    | OpenStack core services.   |             |
-+----+--------------------+----------------------------+-------------+
+.. list-table:: VIM Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-28: VIM Recommendations
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - vim.02
+     - General
+     - The Architecture **should** support deployment of OpenStack components
+       in containers.
+     - :ref:`ref_arch/openstack/chapters/chapter04:\
+       containerised openstack services`
+   * - vim.04
+     - General
+     - The Architecture **should** support Enhanced Platform Awareness (EPA)
+       only for discovery of infrastructure resource capabilities.
+     -
+   * - vim.06
+     - General
+     - The Architecture **should** allow orchestration solutions to be integrated
+       with VIM.
+     -
+   * - vim.09
+     - General
+     - The Architecture **should** support horizontal scaling of OpenStack core
+       services.
+     -
 
 Interfaces and APIs Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----+----------+--------------------------------+-------------------+
-| Ref\| sub-     | Description                    | Notes             |
-| ere\| category |                                |                   |
-| nce |          |                                |                   |
-+=====+==========+================================+===================+
-| i\  | Acce\    | The Architecture **should**    |                   |
-| nt.\| leration | provide an open and standard   |                   |
-| acc\|          | acceleration interface to      |                   |
-| .01 |          | VNFs.                          |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Acce\    | The Architecture **should      | duplicate of      |
-| nt.\| leration | not** rely on SR-IOV PCI-Pass  | inf.acc.03 under  |
-| acc\|          | through for acceleration       | “Infrastructure   |
-| .02 |          | interface exposed to VNFs.     | Recommendations”  |
-+-----+----------+--------------------------------+-------------------+
+.. list-table:: Interfaces and APIs Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-29: Interfaces and APIs Recommendations
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - int.acc.01
+     - Acceleration
+     - The Architecture **should** provide an open and standard acceleration
+       interface to VNFs.
+     -
+   * - int.acc.02
+     - Acceleration
+     - The Architecture **should not** rely on SR-IOV PCI-Pass through for
+       acceleration interface exposed to VNFs.”
+     - duplicate of inf.acc.03 under "Infrastructure Recommendation"
 
 Tenant Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This section is left blank for future use.
 
-========= ============ =========== =====
-Reference sub-category Description Notes
-========= ============ =========== =====
-========= ============ =========== =====
+.. list-table:: Tenant Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-30: Tenant Recommendations
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * -
+     -
+     -
+     -
 
 Operations and LCM Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
