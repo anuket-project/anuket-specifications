@@ -501,7 +501,7 @@ Cloud Infrastructure Security Requirements
 System Hardening Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:system hardening requirements`)
+(source :ref:`ref_model/chapters/chapter07:system hardening`)
 
 +-------------+-----------+---------------------------------+--------------------------------------------------------+
 | Reference   | sub-\     | Description                     | Specification Reference                                |
@@ -603,7 +603,7 @@ Table 2-6: Reference Model Requirements - System Hardening Requirements
 Platform and Access Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:platform and access requirements`)
+(source :ref:`ref_model/chapters/chapter07:platform and access`)
 
 +-------------+-----------+---------------------------------+--------------------------------------------------------+
 | Reference   | sub-\     | Description                     | Specification Reference                                |
@@ -737,7 +737,7 @@ Requirements
 Confidentiality and Integrity Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:confidentiality and integrity requirements`)
+(source :ref:`ref_model/chapters/chapter07:confidentiality and integrity`)
 
 +-------------+------------------+-----------------------------------+-----------------------------------------------+
 | Reference   | sub-category     | Description                       | Specification Reference                       |
@@ -840,7 +840,7 @@ Table 2-9: Reference Model Requirements - Workload Security Requirements
 Image Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:image security requirements`)
+(source :ref:`ref_model/chapters/chapter07:image security`)
 
 +--------------+-----------------+-------------------------------+--------------------------------------------------+
 | Reference    | sub-category    | Description                   | Specification Reference                          |
@@ -888,7 +888,7 @@ Table 2-10: Reference Model Requirements - Image Security Requirements
 Security LCM Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:security lcm requirements`)
+(source :ref:`ref_model/chapters/chapter07:security lcm`)
 
 +--------------+--------------+-------------------------------------+------------------------------------------------+
 | Reference    | sub-category | Description                         | Specification Reference                        |
@@ -965,7 +965,7 @@ Monitoring and Security Audit Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source
-:ref:`ref_model/chapters/chapter07:monitoring and security audit requirements`)
+:ref:`ref_model/chapters/chapter07:monitoring and security audit`)
 
 The Platform is assumed to provide configurable alerting and
 notification capability and the operator is assumed to have automated
@@ -1109,7 +1109,7 @@ Table 2-12: Reference Model Requirements - Monitoring and Security Audit Require
 Open-Source Software Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:open source software security requirements`)
+(source :ref:`ref_model/chapters/chapter07:open source software security`)
 
 +-------------+-------------------+----------------------------------+----------------------------+
 | Reference   | sub-category      | Description                      | Specification              |
@@ -1265,7 +1265,7 @@ Runtime Defence and Monitoring Stage
 Compliance with Standards Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:compliance with standards requirements`)
+(source :ref:`ref_model/chapters/chapter07:compliance with standards`)
 
 +-------------+-------------------+----------------------------------+----------------------------+
 | Reference   | sub-category      | Description                      | Specification              |
@@ -1327,355 +1327,265 @@ Table 2-19: General Requirements
 Infrastructure Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| Reference   | sub-category      | Description                      | Specification                                 |
-|             |                   |                                  | Reference                                     |
-+=============+===================+==================================+===============================================+
-| inf.com.01  | Compute           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|             |                   | provide compute resources for    | cloud workload services`             `        |
-|             |                   | instances.                       |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.com.04  | Compute           | The Architecture **must** be     | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|             |                   | able to support multiple CPU     | support for cloud infrastructure profiles \   |
-|             |                   | type options to support various  | and flavors`                                  |
-|             |                   | infrastructure profiles (Basic   |                                               |
-|             |                   | and High Performance).           |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.com.05  | Compute           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|             |                   | support Hardware Platforms with  | support for cloud infrastructure profiles \   |
-|             |                   | NUMA capabilities.               | and flavors`                                  |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.com.06  | Compute           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|             |                   | support CPU Pinning of the       | support for cloud infrastructure profiles \   |
-|             |                   | vCPUs of an instance.            | and flavors`                                  |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.com.07  | Compute           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|             |                   | support different hardware       | cloud partitioning: host aggregates, \        |
-|             |                   | configurations to support        | availability zones`                           |
-|             |                   | various infrastructure profiles  |                                               |
-|             |                   | (Basic and High Performance).    |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.com.08  | Compute           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|             |                   | support allocating certain       | reservation of compute node cores`            |
-|             |                   | number of host cores for  all    |                                               |
-|             |                   | non-tenant workloads             |                                               |
-|             |                   | such as for OpenStack services.  |                                               |
-|             |                   | SMT threads can be allocated to  |                                               |
-|             |                   | individual OpenStack services or |                                               |
-|             |                   | their components.                |                                               |
-|             |                   | `Dedicating host cores to certa\ |                                               |
-|             |                   | in workloads (e.g., OpenStack s\ |                                               |
-|             |                   | ervices)                         |                                               |
-|             |                   | <https://docs.openstack.org\\    |                                               |
-|             |                   | /nova/latest/configuration\\     |                                               |
-|             |                   | /config.html#\                   |                                               |
-|             |                   | compute.cpu_dedicated_set>`__.   |                                               |
-|             |                   | Please see example,              |                                               |
-|             |                   | `Configuring libvirt compute     |                                               |
-|             |                   | nodes for CPU pinning            |                                               |
-|             |                   | <https://docs.openstack.org\\    |                                               |
-|             |                   | /nova/latest/admin\\             |                                               |
-|             |                   | /cpu-topologies.html>`__         |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.com.09  | Compute           | The Architecture **must** ensure | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|             |                   | that the host cores assigned to  | pinned and unpinned cpus`                     |
-|             |                   | non-tenant and tenant workloads  |                                               |
-|             |                   | are SMT aware: that is, a host   |                                               |
-|             |                   | core and its associated SMT      |                                               |
-|             |                   | threads are either all assigned  |                                               |
-|             |                   | to non-tenant workloads or all   |                                               |
-|             |                   | assigned to tenant workloads.    |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.stg.01  | Storage           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|             |                   | provide remote (not directly     | storage`                                      |
-|             |                   | attached to the host)            |                                               |
-|             |                   | Block storage for Instances.     |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.stg.02  | Storage           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|             |                   | provide Object storage for       | swift`                                        |
-|             |                   | Instances. Operators **may**     |                                               |
-|             |                   | choose not to implement Object   |                                               |
-|             |                   | Storage but must be cognizant of |                                               |
-|             |                   | the the risk of "Compliant VNFs" |                                               |
-|             |                   | failing in their environment.    |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.nw.01   | Network           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|             |                   | provide virtual network          | neutron`                                      |
-|             |                   | interfaces to instances.         |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.nw.02   | Network           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|             |                   | include capabilities for         | virtual networking – 3rd party sdn solution`  |
-|             |                   | integrating SDN controllers to   |                                               |
-|             |                   | support provisioning of network  |                                               |
-|             |                   | services, from the SDN OpenStack |                                               |
-|             |                   | Neutron service, such as         |                                               |
-|             |                   | networking of VTEPs to thee      |                                               |
-|             |                   | Border Edge based VRFs.          |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.nw.03   | Network           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|             |                   | support low latency and high     | network fabric`                               |
-|             |                   | throughput traffic needs.        |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.nw.05   | Network           | The Architecture **must** allow  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|             |                   | for East/West tenant traffic     | network fabric`                               |
-|             |                   | within the cloud (via tunnelled  |                                               |
-|             |                   | encapsulation overlay such as    |                                               |
-|             |                   | VXLAN or Geneve).                |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.nw.07   | Network           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|             |                   | support network                  | network`                                      |
-|             |                   | :ref:`resiliency \               |                                               |
-|             |                   | <common/glossary:cloud \         |                                               |
-|             |                   | platform abstraction \           |                                               |
-|             |                   | related terminology:>`           |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.nw.10   | Network           | The Cloud Infrastructure         | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|             |                   | Network Fabric **must** be       | network`                                      |
-|             |                   | capable of enabling highly       |                                               |
-|             |                   | available(Five 9's or better)    |                                               |
-|             |                   | Cloud Infrastructure.            |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.nw.15   | Network           | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|             |                   | support multiple networking      | neutron extensions` and                       |
-|             |                   | options for Cloud                | `OpenStack Neutron Plugins \                  |
-|             |                   | Infrastructure to support        | <https://wiki.openstack.org/wiki/\            |
-|             |                   | various infrastructure profiles  | Neutron_Plugins_and_Drivers>`__               |
-|             |                   | (Basicand High Performance).     |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| inf.nw.16   | Network           | The Architecture **must**        |                                               |
-|             |                   | support dual stack IPv4 and IPv6 |                                               |
-|             |                   | for tenant networks and          |                                               |
-|             |                   | workloads.                       |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| Reference  | sub-category | Description                            | Specification                                 |
+|            |              |                                        | Reference                                     |
++============+==============+========================================+===============================================+
+| inf.com.01 | Compute      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | compute resources for instances.       | cloud workload services`             `        |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.04 | Compute      | The Architecture **must** be able to   | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | support multiple CPU type options      | support for cloud infrastructure profiles \   |
+|            |              | to support various infrastructure      | and flavors`                                  |
+|            |              | profiles (Basic and High Performance). |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.05 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | Hardware Platforms with NUMA           | support for cloud infrastructure profiles \   |
+|            |              | capabilities.                          | and flavors`                                  |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.06 | Compute      | The Architecture **must** support CPU  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | Pinning of the vCPUs of an instance.   | support for cloud infrastructure profiles \   |
+|            |              |                                        | and flavors`                                  |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.07 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | different hardware configurations to   | cloud partitioning: host aggregates, \        |
+|            |              | support various infrastructure         | availability zones`                           |
+|            |              | profiles (Basic and High Performance). |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.08 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | allocating certain number of host      | reservation of compute node cores`            |
+|            |              | cores for  all non-tenant workloads    |                                               |
+|            |              | such as for OpenStack services. SMT    |                                               |
+|            |              | threads can be allocated to individual |                                               |
+|            |              | OpenStack services or their            |                                               |
+|            |              | components.                            |                                               |
+|            |              | `Dedicating host cores to certain      |                                               |
+|            |              | workloads (e.g., OpenStack services)   |                                               |
+|            |              | <https://docs.openstack.org/nova\\     |                                               |
+|            |              | /latest/configuration/config.html#\    |                                               |
+|            |              | compute.cpu_dedicated_set>`__.         |                                               |
+|            |              | Please see example,                    |                                               |
+|            |              | `Configuring libvirt compute nodes for |                                               |
+|            |              | CPU pinning                            |                                               |
+|            |              | <https://docs.openstack.org/nova\\     |                                               |
+|            |              | /latest/admin/cpu-topologies.html>`__  |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.09 | Compute      | The Architecture **must** ensure that  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | the host cores assigned to non-tenant  | pinned and unpinned cpus`                     |
+|            |              | and tenant workloads are SMT aware:    |                                               |
+|            |              | that is, a host core and its           |                                               |
+|            |              | associated SMT threads are either all  |                                               |
+|            |              | assigned to non-tenant workloads or    |                                               |
+|            |              | all assigned to tenant workloads.      |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.stg.01 | Storage      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | remote (not directly attached to the   | storage`                                      |
+|            |              | host) Block storage for Instances.     |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.stg.02 | Storage      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | Object storage for Instances.          | swift`                                        |
+|            |              | Operators **may** choose not to        |                                               |
+|            |              | implement Object Storage but must be   |                                               |
+|            |              | cognizant of the the risk of           |                                               |
+|            |              | "Compliant VNFs" failing in their      |                                               |
++            +              + environment.                           |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.01  | Network      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | virtual network interfaces to          | neutron`                                      |
+|            |              | instances.                             |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.02  | Network      | The Architecture **must** include      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | capabilities for integrating SDN       | virtual networking – 3rd party sdn solution`  |
+|            |              | controllers to support provisioning    |                                               |
+|            |              | of network services, from the SDN      |                                               |
+|            |              | OpenStack Neutron service, such as     |                                               |
+|            |              | networking of VTEPs to the Border Edge |                                               |
+|            |              | based VRFs.                            |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.03  | Network      | The Architecture **must** support low  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | latency and high throughput traffic    | network fabric`                               |
+|            |              | needs.                                 |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.05  | Network      | The Architecture **must** allow for    | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | East/West tenant traffic within the    | network fabric`                               |
+|            |              | cloud (via tunnelled encapsulation     |                                               |
+|            |              | overlay such as VXLAN or Geneve).      |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.07  | Network      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | network :ref:`resiliency \             | network`                                      |
+|            |              | <common/glossary:cloud platform \      |                                               |
+|            |              | abstraction related terminology:>`     |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.10  | Network      | The Cloud Infrastructure Network       | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | Fabric **must** be capable of enabling | network`                                      |
+|            |              | highly available (Five 9's or better)  |                                               |
+|            |              | Cloud Infrastructure.                  |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.15  | Network      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | multiple networking options for        | neutron extensions` and                       |
+|            |              | Cloud Infrastructure to support        | `OpenStack Neutron Plugins \                  |
+|            |              | various infrastructure profiles (Basic | <https://wiki.openstack.org/wiki/\            |
+|            |              | and High Performance).                 | Neutron_Plugins_and_Drivers>`__               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.nw.16  | Network      | The Architecture **must** support dual |                                               |
+|            |              | stack IPv4 and IPv6 for tenant         |                                               |
+|            |              | networks and workloads.                |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
 
 Table 2-20: Infrastructure Requirements
 
 VIM Requirements
 ~~~~~~~~~~~~~~~~
 
-+--------+----------------+----------------------------+-------------+
-| Refer\ | sub-category   | Description                | Sp\         |
-| ence   |                |                            | ecification |
-|        |                |                            | Reference   |
-+========+================+============================+=============+
-| vim.01 | General        | The Architecture **must**  | `RA-1       |
-|        |                | allow infrastructure       | “Consumable |
-|        |                | resource sharing.          | Inf\        |
-|        |                |                            | rastructure |
-|        |                |                            | Resources   |
-|        |                |                            | and         |
-|        |                |                            | Services”   |
-|        |                |                            | <./ch       |
-|        |                |                            | apter03.md# |
-|        |                |                            | consumab    |
-|        |                |                            | le-infrastr |
-|        |                |                            | ucture-reso |
-|        |                |                            | urces-and-s |
-|        |                |                            | ervices>`__ |
-+--------+----------------+----------------------------+-------------+
-| vim.03 | General        | The Architecture **must**  | `RA-1       |
-|        |                | allow VIM to discover and  | “           |
-|        |                | manage Cloud               | Placement”  |
-|        |                | Infrastructure resources.  | <./chapter0 |
-|        |                |                            | 5.md#pl     |
-|        |                |                            | acement>`__ |
-+--------+----------------+----------------------------+-------------+
-| vim.05 | General        | The Architecture **must**  | `RA-1       |
-|        |                | include image repository   | “Glance”    |
-|        |                | management.                | <./chapte   |
-|        |                |                            | r04.md#     |
-|        |                |                            | -glance>`__ |
-+--------+----------------+----------------------------+-------------+
-| vim.07 | General        | The Architecture **must**  | `RA-1       |
-|        |                | support multi-tenancy.     | “Multi-Te\  |
-|        |                |                            | nancy” <./c |
-|        |                |                            | hapter03.md |
-|        |                |                            | #multi-     |
-|        |                |                            | tenancy-exe |
-|        |                |                            | cution-envi |
-|        |                |                            | ronment>`__ |
-+--------+----------------+----------------------------+-------------+
-| vim.08 | General        | The Architecture **must**  | `“OpenStack |
-|        |                | support resource tagging.  | Resource    |
-|        |                |                            | Tags” <htt  |
-|        |                |                            | ps://specs. |
-|        |                |                            | openstack.o |
-|        |                |                            | rg/openstac |
-|        |                |                            | k/api-wg/gu |
-|        |                |                            | idelines/ta |
-|        |                |                            | gs.html>`__ |
-+--------+----------------+----------------------------+-------------+
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| Reference  | sub-category | Description                            | Specification Reference                       |
++============+==============+========================================+===============================================+
+| vim.01     | General      | The Architecture **must** allow        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | infrastructure resource sharing.       | consumable infrastructure resources and       |
+|            |              |                                        | services`                                     |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| vim.03     | General      | The Architecture **must** allow VIM    | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | to discover and manage Cloud           | placement`                                    |
+|            |              | Infrastructure resources.              |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| vim.05     | General      | The Architecture **must** include      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | image repository management.           | glance`                                       |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| vim.07     | General      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | multi-tenancy.                         | multi-tenancy (execution environment)`        |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| vim.08     | General      | The Architecture **must** support      | `OpenStack Resource Tags                      |
+|            |              | resource tagging.                      | <https://specs.openstack.org/openstack\\      |
+|            |              |                                        | /api-wg/guidelines/tags.html>`__              |
++------------+--------------+----------------------------------------+-----------------------------------------------+
 
 Table 2-21: VIM Requirements
 
 Interfaces & APIs Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----+--------------+------------------------------+-----------------+
-| Ref\| sub-category | Description                  | Specification   |
-| ere\|              |                              | Reference       |
-| nce\|              |                              |                 |
-+=====+==============+==============================+=================+
-| i\  | API          | The Architecture **must**    | `RA-1           |
-| nt.\|              | provide APIs to access the   | “Keystone” <.   |
-| api\|              | authentication service and   | /chapter05.md#  |
-| .01 |              | the associated mandatory     | keystone>`__    |
-|     |              | features detailed in chapter |                 |
-|     |              | 5.                           |                 |
-+-----+--------------+------------------------------+-----------------+
-| i\  | API          | The Architecture **must**    | `RA-1           |
-| nt.\|              | provide APIs to access the   | “Glance”        |
-| api\|              | image management service and | <./chapter05.md |
-| .02 |              | the associated mandatory     | #glance>`__     |
-|     |              | features detailed in chapter |                 |
-|     |              | 5.                           |                 |
-+-----+--------------+------------------------------+-----------------+
-| i\  | API          | The Architecture **must**    | `RA-1           |
-| nt.\|              | provide APIs to access the   | “Cinder”        |
-| api\|              | block storage management     | <./chapter05.md |
-| .03 |              | service and the associated   | #cinder>`__     |
-|     |              | mandatory features detailed  |                 |
-|     |              | in chapter 5.                |                 |
-+-----+--------------+------------------------------+-----------------+
-| i\  | API          | The Architecture **must**    | `RA-1           |
-| nt.\|              | provide APIs to access the   | “Swift”         |
-| api\|              | object storage management    | <./chapter05.m  |
-| .04 |              | service and the associated   | d#swift>`__     |
-|     |              | mandatory features detailed  |                 |
-|     |              | in chapter 5.                |                 |
-+-----+--------------+------------------------------+-----------------+
-| i\  | API          | The Architecture **must**    | `RA-1           |
-| nt.\|              | provide APIs to access the   | “Neutron”       |
-| api\|              | network management service   | <./chapter05.md |
-| .05 |              | and the associated mandatory | #neutron>`__    |
-|     |              | features detailed in chapter |                 |
-|     |              | 5.                           |                 |
-+-----+--------------+------------------------------+-----------------+
-| i\  | API          | The Architecture **must**    | `RA-1           |
-| nt.\|              | provide APIs to access the   | “Nova”          |
-| api\|              | compute resources management | <./chapter05.   |
-| .06 |              | service and the associated   | md#nova>`__     |
-|     |              | mandatory features detailed  |                 |
-|     |              | in chapter 5.                |                 |
-+-----+--------------+------------------------------+-----------------+
-| i\  | API          | The Architecture **must**    | `RA-1           |
-| nt.\|              | provide GUI access to tenant | “Horizon” <.    |
-| api\|              | facing cloud platform core   | /chapter04.md#  |
-| .07 |              | services except at Edge/Far  | horizon>`__     |
-|     |              | Edge clouds.                 |                 |
-+-----+--------------+------------------------------+-----------------+
-| i\  | API          | The Architecture **must**    | `RA-1           |
-| nt.\|              | provide APIs needed to       | “Placement” <./ |
-| api\|              | discover and manage Cloud    | chapter05.md#   |
-| .08 |              | Infrastructure resources.    | placement>`__   |
-+-----+--------------+------------------------------+-----------------+
-| i\  | API          | The Architecture **must**    | `RA-1           |
-| nt.\|              | provide APIs to access the   | “Heat”          |
-| api\|              | orchestration service.       | <./chapter05.   |
-| .09 |              |                              | md#heat>`__     |
-+-----+--------------+------------------------------+-----------------+
-| i\  | API          | The Architecture must expose | `RA-1 Core      |
-| nt.\|              | the latest version and       | OpenStack       |
-| api\|              | microversion of the APIs for | Services        |
-| .10 |              | the given Anuket OpenStack   | APIs <./cha     |
-|     |              | release for each of the      | pter05.md#co    |
-|     |              | OpenStack core services.     | re-openstack-se |
-|     |              |                              | rvices-apis>`__ |
-+-----+--------------+------------------------------+-----------------+
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| Reference  | sub-category | Description                            | Specification                                 |
++============+==============+========================================+===============================================+
+| int.api.01 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | to access the authentication service   | keystone`                                     |
+|            |              | and the associated mandatory features  |                                               |
+|            |              | detailed in chapter 5                  |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| int.api.02 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | to access the image management service | glance`                                       |
+|            |              | and the associated mandatory features  |                                               |
+|            |              | detailed in chapter 5                  |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| int.api.03 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | to access the block storage management | cinder`                                       |
+|            |              | service and the associated mandatory   |                                               |
+|            |              | features detailed in chapter 5.        |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| int.api.04 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | to access the object storage           | swift`                                        |
+|            |              | management service and the associated  |                                               |
+|            |              | mandatory features detailed in         |                                               |
+|            |              | chapter 5.                             |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| int.api.05 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | to access the network management       | neutron`                                      |
+|            |              | service and the associated mandatory   |                                               |
+|            |              | features detailed in chapter 5.        |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| int.api.06 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | to access the compute resources        | nova`                                         |
+|            |              | management service and the associated  |                                               |
+|            |              | mandatory features detailed in chapter |                                               |
+|            |              | 5.                                     |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| int.api.07 | API          | The Architecture **must** provide GUI  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | access to tenant facing cloud platform | horizon`                                      |
+|            |              | core services except at Edge/Far Edge  |                                               |
+|            |              | clouds.                                |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| int.api.08 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | needed to discover and manage Cloud    | placement`                                    |
+|            |              | Infrastructure resources.              |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| int.api.09 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | to access the orchestration service.   | heat`                                         |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| int.api.10 | API          | The Architecture must expose the       | :ref:`ref_arch/openstack/chapters/chapter05:\ |
+|            |              | latest version and microversion of the | core openstack services apis`                 |
+|            |              | APIs for the given Anuket OpenStack    |                                               |
+|            |              | release for each of the OpenStack core |                                               |
+|            |              | services.                              |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
 
 Table 2-22: Interfaces and APIs Requirements
 
 Tenant Requirements
 ~~~~~~~~~~~~~~~~~~~
 
-+--------+---------------+--------------------+-----------------------+
-| Refer\ | sub-category  | Description        | Specification         |
-| ence   |               |                    | Reference             |
-+========+===============+====================+=======================+
-| tnt.g\ | General       | The Architecture   | `RA-1                 |
-| en.01  |               | **must** support   | “Horizon” <./chapter0 |
-|        |               | self-service       | 4.md#horizon>`__      |
-|        |               | dashboard (GUI)    | and `RA-1 "Cloud      |
-|        |               | and APIs for users | Workload              |
-|        |               | to deploy,         | Services"             |
-|        |               | configure and      | <./chapter03.md#      |
-|        |               | manage their       | cloud-workload-       |
-|        |               | workloads.         | services>`__          |
-+--------+---------------+--------------------+-----------------------+
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| Reference  | sub-category | Description                            | Specification Reference                       |
++============+==============+========================================+===============================================+
+| tnt.gen.01 | General      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | self-service dashboard (GUI) and APIs  | horizon`                                      |
+|            |              | for users to deploy, configure and     |                                               |
+|            |              | manage their workloads.                | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              |                                        | cloud workload services`                      |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+
 
 Table 2-23: Tenant Requirements
 
 Operations and LCM
 ~~~~~~~~~~~~~~~~~~
 
-+------+-----------------+----------------------+----------------------+
-| R\   | sub-category    | Description          | Specification        |
-| efer\|                 |                      | Reference            |
-| ence |                 |                      |                      |
-+======+=================+======================+======================+
-| lc\  | General         | The Architecture     |                      |
-| m.ge\|                 | **must** support     |                      |
-| n.01 |                 | zero downtime of     |                      |
-|      |                 | running workloads    |                      |
-|      |                 | when the number of   |                      |
-|      |                 | compute hosts and/or |                      |
-|      |                 | the storage capacity |                      |
-|      |                 | is being expanded or |                      |
-|      |                 | unused capacity is   |                      |
-|      |                 | being removed.       |                      |
-+------+-----------------+----------------------+----------------------+
-| lc\  | Automated       | The Architecture     |                      |
-| m.ad\| deployment      | **must** support     |                      |
-| p.02 |                 | upgrades of          |                      |
-|      |                 | software, provided   |                      |
-|      |                 | by the cloud         |                      |
-|      |                 | provider, so that    |                      |
-|      |                 | the running          |                      |
-|      |                 | workloads are not    |                      |
-|      |                 | impacted (viz.,      |                      |
-|      |                 | hitless upgrades).   |                      |
-|      |                 | Please note that     |                      |
-|      |                 | this means that the  |                      |
-|      |                 | existing data plane  |                      |
-|      |                 | services should not  |                      |
-|      |                 | fail (go down).      |                      |
-+------+-----------------+----------------------+----------------------+
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| Reference  | sub-category | Description                            | Specification Reference                       |
++============+==============+========================================+===============================================+
+| lcm.gen.01 | General      | The Architecture **must** support      |                                               |
+|            |              | zero downtime of running workloads     |                                               |
+|            |              | when the number of compute hosts       |                                               |
+|            |              | and/or the storage capacity is being   |                                               |
+|            |              | expanded or unused capacity is being   |                                               |
+|            |              | removed.                               |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| lcm.adp.02 | Automated    | The Architecture **must** support      |                                               |
+|            | deployment   | upgrades of software, provided by the  |                                               |
+|            |              | cloud provider, so that the running    |                                               |
+|            |              | workloads are not impacted (viz.,      |                                               |
+|            |              | hitless upgrades). Please note that    |                                               |
+|            |              | this means that the existing data      |                                               |
+|            |              | plane services should not fail (go     |                                               |
+|            |              | down).                                 |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
 
 Table 2-24: LCM Requirements
 
 Assurance Requirements
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+------+-------------+--------------------------------+----------------+
-| R\   | s\          | Description                    | Specification  |
-| efer\| ub-category |                                | Reference      |
-| ence |             |                                |                |
-+======+=============+================================+================+
-| as\  | Integration | The Architecture **must**      |                |
-| r.mo\|             | include integration with       |                |
-| n.01 |             | various infrastructure         |                |
-|      |             | components to support          |                |
-|      |             | collection of telemetry for    |                |
-|      |             | assurance monitoring and       |                |
-|      |             | network intelligence.          |                |
-+------+-------------+--------------------------------+----------------+
-| as\  | Monitoring  | The Architecture **must**      |                |
-| r.mo\|             | allow for the collection and   |                |
-| n.03 |             | dissemination of performance   |                |
-|      |             | and fault information.         |                |
-+------+-------------+--------------------------------+----------------+
-| as\  | Network     | The Cloud Infrastructure       |                |
-| r.mo\|             | Network Fabric and Network     |                |
-| n.04 |             | Operating System **must**      |                |
-|      |             | provide network operational    |                |
-|      |             | visibility through alarming    |                |
-|      |             | and streaming telemetry        |                |
-|      |             | services for operational       |                |
-|      |             | management, engineering        |                |
-|      |             | planning, troubleshooting, and |                |
-|      |             | network performance            |                |
-|      |             | optimisation.                  |                |
-+------+-------------+--------------------------------+----------------+
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| Reference  | sub-category | Description                            | Specification Reference                       |
++============+==============+========================================+===============================================+
+| asr.mon.01 | Integration  | The Architecture **must** include      |                                               |
+|            |              | integration with various               |                                               |
+|            |              | infrastructure components to support   |                                               |
+|            |              | collection of telemetry for assurance  |                                               |
+|            |              | monitoring and network intelligence.   |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| asr.mon.03 | Monitoring   | The Architecture **must** allow for    |                                               |
+|            |              | the collection and dissemination of    |                                               |
+|            |              | of performance and fault information.  |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| asr.mon.04 | Network      | The Cloud Infrastructure Network       |                                               |
+|            |              | Fabric and Network Operating System    |                                               |
+|            |              | **must** provide network operational   |                                               |
+|            |              | visibility through alarming and        |                                               |
+|            |              | streaming telemetry services for       |                                               |
+|            |              | operational management, engineering    |                                               |
+|            |              | planning, troubleshooting, and         |                                               |
+|            |              | network performance optimisation.      |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
 
 Table 2-25: Assurance Requirements
 
@@ -1688,164 +1598,119 @@ required in order to be deemed a conformant implementation.
 General Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----+----------+--------------------------------+-------------------+
-| Ref\| sub-     | Description                    | Notes             |
-| ere\| category |                                |                   |
-| nce |          |                                |                   |
-+=====+==========+================================+===================+
-| g\  | Cloud    | The Architecture **should**    | OpenStack         |
-| en.\| na\      | consist of stateless service   | consists of both  |
-| cnt\| tiveness | components. However, where     | stateless and     |
-| .01 |          | state is required it must be   | stateful services |
-|     |          | kept external to the           | where the         |
-|     |          | component.                     | stateful services |
-|     |          |                                | utilise a         |
-|     |          |                                | database. For     |
-|     |          |                                | latter see        |
-|     |          |                                | “`Configuring the |
-|     |          |                                | stateful          |
-|     |          |                                | services          |
-|     |          |                                | <https://docs.ope |
-|     |          |                                | nstack.org/ha-gui |
-|     |          |                                | de/control-plane- |
-|     |          |                                | stateful          |
-|     |          |                                | .html>`__”        |
-+-----+----------+--------------------------------+-------------------+
-| g\  | Cloud    | The Architecture **should**    |                   |
-| en.\| na\      | consist of service components  |                   |
-| cnt\| tiveness | implemented as microservices   |                   |
-| .02 |          | that are individually          |                   |
-|     |          | dynamically scalable.          |                   |
-+-----+----------+--------------------------------+-------------------+
-| g\  | Sca\     | The Architecture **should**    | This requirement  |
-| en.\| lability | support policy driven          | is currently not  |
-| scl\|          | auto-scaling.                  | addressed but     |
-| .01 |          |                                | will likely be    |
-|     |          |                                | supported through |
-|     |          |                                | `Senlin           |
-|     |          |                                | <https://docs.    |
-|     |          |                                | openstack.org/sen |
-|     |          |                                | lin/wallaby/>`__, |
-|     |          |                                | cluster           |
-|     |          |                                | management        |
-|     |          |                                | service.          |
-+-----+----------+--------------------------------+-------------------+
-| g\  | Re\      | The Architecture **should**    |                   |
-| en.\| siliency | support resilient OpenStack    |                   |
-| rsl\|          | service components that are    |                   |
-| .02 |          | not subject to gen.rsl.01.     |                   |
-+-----+----------+--------------------------------+-------------------+
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| Reference  | sub-category | Description                            | Notes                                         |
++============+==============+========================================+===============================================+
+| gen.cnt.01 | Cloud        | The Architecture **should** consist of | OpenStack consists of both stateless and      |
+|            | nativeness   | stateless service components. However, | stateful services where the stateful services |
+|            |              | where state is required it must be     | utilise a database. For latter see            |
+|            |              | kept external to the component.        | `Configuring the stateful services            |
+|            |              |                                        | <https://docs.openstack.org/ha-guide/\\       |
+|            |              |                                        | control-plane-stateful.html>`__               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| gen.cnt.02 | Cloud        | The Architecture **should** consist of |                                               |
+|            | nativeness   | service components implemented as      |                                               |
+|            |              | microservices that are individually    |                                               |
+|            |              | dynamically scalable.                  |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| gen.scl.01 | Scalability  | The Architecture **should** support    | This requirement is currently not addressed   |
+|            |              | policy driven auto-scaling.            | but will likely be supported through          |
+|            |              |                                        | `Senlin <https://docs.openstack.org/senlin/\\ |
+|            |              |                                        | wallaby/>`__, cluster management service.     |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| gen.rsl.02 | Resiliency   | The Architecture **should** support    |                                               |
+|            |              | resilient OpenStack service components |                                               |
+|            |              | that are not subject to gen.rsl.01.    |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
 
 Table 2-26: General Recommendations
 
 Infrastructure Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----+----------+--------------------------------+-------------------+
-| Ref\| sub-     | Description                    | Notes             |
-| ere\| category |                                |                   |
-| nce |          |                                |                   |
-+=====+==========+================================+===================+
-| i\  | Compute  | The Architecture **should**    |                   |
-| nf.\|          | include industry standard      |                   |
-| com\|          | hardware management systems at |                   |
-| .02 |          | both HW device level           |                   |
-|     |          | (embedded) and HW platform     |                   |
-|     |          | level (external to device).    |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Compute  | The Architecture **should**    |                   |
-| nf.\|          | support Symmetric              |                   |
-| com\|          | Multiprocessing with shared    |                   |
-| .03 |          | memory access as well as       |                   |
-|     |          | Simultaneous Multithreading.   |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Storage  | The Architecture **should**    |                   |
-| nf.\|          | allow use of externally        |                   |
-| stg\|          | provided large archival        |                   |
-| .08 |          | storage for its Backup /       |                   |
-|     |          | Restore / Archival needs.      |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Storage  | The Architecture **should**    |                   |
-| nf.\|          | make available all non-host OS |                   |
-| stg\|          | / Hypervisor / Host systems    |                   |
-| .09 |          | storage as network-based       |                   |
-|     |          | Block, File or Object Storage  |                   |
-|     |          | for tenant/management          |                   |
-|     |          | consumption.                   |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Storage  | The Architecture **should**    | `RA-1 “Virtual    |
-| nf.\|          | provide local Block storage    | Storage” <./ch    |
-| stg\|          | for Instances.                 | apter03.md#vi     |
-| .10 |          |                                | rtual-storage>`__ |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Network  | The Architecture **should**    |                   |
-| nf.\|          | support service function       |                   |
-| ntw\|          | chaining.                      |                   |
-| .04 |          |                                |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Network  | The Architecture **should**    |                   |
-| nf.\|          | support Distributed Virtual    |                   |
-| ntw\|          | Routing (DVR) to allow compute |                   |
-| .06 |          | nodes to route traffic         |                   |
-|     |          | efficiently.                   |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Network  | The Cloud Infrastructure       |                   |
-| nf.\|          | Network Fabric **should**      |                   |
-| ntw\|          | embrace the concepts of open   |                   |
-| .08 |          | networking and disaggregation  |                   |
-|     |          | using commodity networking     |                   |
-|     |          | hardware and disaggregated     |                   |
-|     |          | Network Operating Systems.     |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Network  | The Cloud Infrastructure       |                   |
-| nf.\|          | Network Fabric **should**      |                   |
-| ntw\|          | embrace open-based standards   |                   |
-| .09 |          | and technologies.              |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Network  | The Cloud Infrastructure       |                   |
-| nf.\|          | Network Fabric **should** be   |                   |
-| ntw\|          | architected to provide a       |                   |
-| .11 |          | standardised, scalable, and    |                   |
-|     |          | repeatable deployment model    |                   |
-|     |          | across all applicable Cloud    |                   |
-|     |          | Infrastructure sites.          |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Network  | The Architecture **should**    |                   |
-| nf.\|          | use dual stack IPv4 and IPv6   |                   |
-| ntw\|          | for Cloud Infrastructure       |                   |
-| .17 |          | internal networks.             |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Acce     | The Architecture **should**    | `RA-1             |
-| nf.\| leration | support Application Specific   | “Acceleration” <. |
-| acc\|          | Acceleration (exposed to       | /chapter03.md#    |
-| .01 |          | VNFs).                         | acceleration>`__  |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Acce     | The Architecture **should**    | `“OpenStack       |
-| nf.\| leration | support Cloud Infrastructure   | Future - Specs    |
-| acc\|          | Acceleration (such as          | defined” <http    |
-| .02 |          | SmartNICs).                    | s://specs.opensta |
-|     |          |                                | ck.org/openstack/ |
-|     |          |                                | neutron-specs/spe |
-|     |          |                                | cs/stein/neutron- |
-|     |          |                                | ovs-agent-support |
-|     |          |                                | -baremetal-with-s |
-|     |          |                                | mart-nic.html>`__ |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Acce     | The Architecture **may** rely  |                   |
-| nf.\| leration | on SR-IOV PCI-Pass through to  |                   |
-| acc\|          | provide acceleration to VNFs.  |                   |
-| .03 |          |                                |                   |
-+-----+----------+--------------------------------+-------------------+
-| i\  | Image    | The Architecture **should**    | `RA-1             |
-| nf.\|          | make the immutable images      | “Glance”          |
-| img\|          | available via location         | <./chapter04.m    |
-| .01 |          | independent means.             | d#glance>`__      |
-+-----+----------+--------------------------------+-------------------+
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| Reference  | sub-category | Description                            | Notes                                         |
++============+==============+========================================+===============================================+
+| inf.com.02 | Compute      | The Architecture **should** include    |                                               |
+|            |              | industry standard hardware management  |                                               |
+|            |              | systems at both HW device level        |                                               |
+|            |              | (embedded) and HW platform level       |                                               |
+|            |              | (external to device).                  |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.com.03 | Compute      | The Architecture **should** support    |                                               |
+|            |              | Symmetric Multiprocessing with         |                                               |
+|            |              | shared memory access as well as        |                                               |
+|            |              | Simultaneous Multithreading.           |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.stg.08 | Storage      | The Architecture **should** allow      |                                               |
+|            |              | use of externally provided large       |                                               |
+|            |              | archival storage for its Backup /      |                                               |
+|            |              | Restore / Archival needs.              |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.stg.09 | Storage      | The Architecture **should** make       |                                               |
+|            |              | available all non-host OS /            |                                               |
+|            |              | Hypervisor / Host systems storage      |                                               |
+|            |              | as network-based Block, File or Object |                                               |
+|            |              | Storage for tenant/management          |                                               |
+|            |              | consumption.                           |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.stg.10 | Storage      | The Architecture **should** provide    | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | local Block storage for Instances.     | virtual storage`                              |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.ntw.04 | Network      | The Architecture **should** support    |                                               |
+|            |              | service function chaining.             |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.ntw.06 | Network      | The Architecture **should** support    |                                               |
+|            |              | Distributed Virtual Routing (DVR)      |                                               |
+|            |              | to allow compute nodes to route        |                                               |
+|            |              | traffic efficiently.                   |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.ntw.08 | Network      | The Cloud Infrastructure Network       |                                               |
+|            |              | Fabric **should** embrace the concepts |                                               |
+|            |              | of open  networking and disaggregation |                                               |
+|            |              | using commodity networking hardware    |                                               |
+|            |              | and disaggregated Network Operating    |                                               |
+|            |              | Systems.                               |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.ntw.09 | Network      | The Cloud Infrastructure Network       |                                               |
+|            |              | Fabric **should** embrace open-based   |                                               |
+|            |              | standards  and technologies.           |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.ntw.11 | Network      | The Cloud Infrastructure Network       |                                               |
+|            |              | Fabric **should** be architected to    |                                               |
+|            |              | provide a standardised, scalable,      |                                               |
+|            |              | and repeatable deployment model across |                                               |
+|            |              | all applicable Cloud Infrastructure    |                                               |
+|            |              | sites.                                 |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.ntw.17 | Network      | The Architecture **should** use dual   |                                               |
+|            |              | stack IPv4 and IPv6 for Cloud          |                                               |
+|            |              | Infrastructure internal networks.      |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.acc.01 | Acceleration | The Architecture **should** support    | :ref:`ref_arch/openstack/chapters/chapter03:\ |
+|            |              | Application Specific Acceleration      | acceleration`                                 |
+|            |              | (exposed to VNFs).                     |                                               |
+|            |              |                                        |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.acc.02 | Acceleration | The Architecture **should** support    | `OpenStack Future - Specs defined             |
+|            |              | Cloud Infrastructure Acceleration      | <https://specs.openstack.org/openstack/\\     |
+|            |              | (such as SmartNICs).                   | neutron-specs/specs/stein/\\                  |
+|            |              |                                        | neutron-ovs-agent-support-baremetal-with-\    |
+|            |              |                                        | smart-nic.html>`__                            |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.acc.03 | Acceleration | The Architecture **may** rely on       |                                               |
+|            |              | on SR-IOV PCI-Pass through to provide  |                                               |
+|            |              | acceleration to VNFs.                  |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
+| inf.img.01 | Image        | The Architecture **should** make the   | :ref:`ref_arch/openstack/chapters/chapter04:\ |
+|            |              | immutable images available via         | glance`                                       |
+|            |              | location independent means.            |                                               |
++------------+--------------+----------------------------------------+-----------------------------------------------+
 
 Table 2-27: Infrastructure Recommendations
 
 VIM Recommendations
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 +----+--------------------+----------------------------+-------------+
 | R\ | sub-category       | Description                | Notes       |
@@ -2012,7 +1877,7 @@ Security Recommendations
 System Hardening Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:system hardening recommendations`)
+(source :ref:`ref_model/chapters/chapter07:system hardening`)
 
 +------------------+---------------+---------------+------------------+
 | Reference        | sub-category  | Description   | Notes            |
@@ -2054,7 +1919,7 @@ Table 2-33: System Hardening Recommendations
 Platform and Access Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:platform and access recommendations`)
+(source :ref:`ref_model/chapters/chapter07:platform and access`)
 
 +---------------+---------------+---------------+--------------------+
 | Reference     | sub-category  | Description   | Notes              |
@@ -2090,7 +1955,7 @@ Table 2-34: Platform and Access Recommendations
 Confidentiality and Integrity Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:confidentiality and integrity recommendations`)
+(source :ref:`ref_model/chapters/chapter07:confidentiality and integrity`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2129,7 +1994,7 @@ Table 2-35: Confidentiality and Integrity Recommendations
 Workload Security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:workload security recommendations`)
+(source :ref:`ref_model/chapters/chapter07:workload security`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2152,7 +2017,7 @@ Table 2-36: Workload Security Recommendations
 Image Security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:image security recommendations`)
+(source :ref:`ref_model/chapters/chapter07:image security`)
 
 This section is left blank for future use.
 
@@ -2175,7 +2040,7 @@ Table 2-37: Image Security Recommendations
 Security LCM Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:security lcm recommendations`)
+(source :ref:`ref_model/chapters/chapter07:security lcm`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2204,7 +2069,7 @@ Monitoring and Security Audit Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source
-:ref:`ref_model/chapters/chapter07:monitoring and security audit recommendations`)
+:ref:`ref_model/chapters/chapter07:monitoring and security audit`)
 
 The Platform is assumed to provide configurable alerting and
 notification capability and the operator is assumed to have automated
@@ -2248,7 +2113,7 @@ Table 2-39: Monitoring and Security Audit Recommendations
 Open-Source Software Security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:open source software recommendations`)
+(source :ref:`ref_model/chapters/chapter07:open source software`)
 
 +--------------+-------------------+--------------+-------------------+
 | Reference    | sub-category      | Description  | Notes             |
@@ -2280,7 +2145,7 @@ IaaC security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source
-:ref:`ref_model/chapters/chapter07:iaac - secure design and architecture stage recommendations`)
+:ref:`ref_model/chapters/chapter07:iaac - secure design and architecture stage requirements`)
 
 **Secure Design and Architecture Stage**
 
@@ -2676,7 +2541,7 @@ and Monitoring Stage
 Compliance with Standards Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:compliance with standards recommendations`)
+(source :ref:`ref_model/chapters/chapter07:compliance with standards`)
 
 +-----------+-------------------+---------------------+---------------+
 | Reference | sub-category      | Description         | Notes         |
