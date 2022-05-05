@@ -49,7 +49,7 @@ VNF Design Guidelines
 ---------------------
 
 A number of software design guidelines (industry best practices) have been developed over the years including micro-services, cohesion and coupling.
-In addition to the industry best-practices, there are additonal guidelines and requirements specified by ONAP in 
+In addition to the industry best-practices, there are additonal guidelines and requirements specified by ONAP in
 "`VNF or PNF Requirements Documentation <https://docs.onap.org/projects/onap-vnfrqts-requirements/en/istanbul/>`__." This section
 does not supplant these well-known guidelines and practices. The content here only draws attention to some other design consideration that VNF
 Developers need to incorporate in their practices. Please note that some of these guidelines may be incorporated by operators in their contracts with

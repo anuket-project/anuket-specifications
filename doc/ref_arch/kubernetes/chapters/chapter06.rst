@@ -50,34 +50,34 @@ The policy for RA2 to include Kubernetes APIs as mandatory is:
 
 The Kubernetes API reference is available `here <https://kubernetes.io/docs/reference/kubernetes-api/>`__.
 
-The list of 
-`API groups <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#-strong-api-groups-strong->`__ that
-are mandatory is:
+The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/
+#-strong-api-groups-strong->`__ that are mandatory is:
 
-============================ ====================
+============================ ========================
 Group                        Version
-============================ ====================
+============================ ========================
 admissionregistration.k8s.io v1
 apiextensions.k8s.io         v1
 apiregistration.k8s.io       v1
 apps                         v1
 authentication.k8s.io        v1
 authorization.k8s.io         v1
-autoscaling                  v1, v2beta2, v2beta1
-batch                        v1
+autoscaling                  v1, v2, v2beta2, v2beta1
+batch                        v1, v1beta1
 certificates.k8s.io          v1
 coordination.k8s.io          v1
 core                         v1
-discovery.k8s.io             v1
-events.k8s.io                v1
-flowcontrol.apiserver.k8s.io v1beta1
+discovery.k8s.io             v1, v1beta1
+events.k8s.io                v1, v1beta1
+flowcontrol.apiserver.k8s.io v1beta2, v1beta1
+internal.apiserver.k8s.io    v1alpha1
 networking.k8s.io            v1
-node.k8s.io                  v1
-policy                       v1
+node.k8s.io                  v1, v1beta1, v1alpha1
+policy                       v1, v1beta1
 rbac.authorization.k8s.io    v1
 scheduling.k8s.io            v1
-storage.k8s.io               v1
-============================ ====================
+storage.k8s.io               v1, v1beta1, v1alpha1
+============================ ========================
 
 `API Machinery Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-api-machinery>`__
 ----------------------------------------------------------------------------------------------------------------
@@ -106,7 +106,7 @@ storage.k8s.io               v1
 +----------------------------------------+-------------+--------------------------------------------------------------+
 | Feature:`StorageVersionAPI <https://ku |             |                                                              |
 | bernetes.io/docs/reference/generated/k |             |                                                              |
-| ubernetes-api/v1.21/#storageversion-v1 |             |                                                              |
+| ubernetes-api/v1.23/#storageversion-v1 |             |                                                              |
 | alpha1-internal-apiserver-k8s-io>`__   |             |                                                              |
 +----------------------------------------+-------------+--------------------------------------------------------------+
 
@@ -122,7 +122,7 @@ storage.k8s.io               v1
 +----------------------------------------+-------------+--------------------------------------------------------------+
 | Feature:`DaemonSetUpdateSurge <https:/ |             | Daemon set should surge pods onto nodes when spec was        |
 | /kubernetes.io/docs/reference/generate |             | updated and update strategy is RollingUpdate                 |
-| d/kubernetes-api/v1.21/#rollingupdated |             |                                                              |
+| d/kubernetes-api/v1.23/#rollingupdated |             |                                                              |
 | aemonset-v1-apps>`__                   |             |                                                              |
 +----------------------------------------+-------------+--------------------------------------------------------------+
 | Feature:`IndexedJob <https://kubernete |             | Should create pods for an Indexed job with completion        |
