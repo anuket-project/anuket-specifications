@@ -352,9 +352,9 @@ Profiles Specifications & Capability Mapping
 Ref       Capability                           Basic   High Performance Notes
 ========= ==================================== ======= ================ =========================================================================================
 e.cap.006 CPU pinning                          No      Yes              Exposed performance capabilities as per Table 4-2.
-e.cap.007 NUMA alignment                       No      Yes             
-e.cap.013 SR-IOV over PCI-PT                   No      Yes             
-e.cap.018 Simultaneous Multithreading (SMT)    Yes     Optional        
+e.cap.007 NUMA alignment                       No      Yes
+e.cap.013 SR-IOV over PCI-PT                   No      Yes
+e.cap.018 Simultaneous Multithreading (SMT)    Yes     Optional
 e.cap.019 vSwitch Optimisation (DPDK)          No      Yes              DPDK doesn't have to be used if some other network acceleration method is being utilised.
 e.cap.020 CPU Architecture                     <value> <value>          Values such as x64, ARM, etc.
 e.cap.021 Host Operating System (OS)           <value> <value>          Values such as a specific Linux version, Windows version, etc.
