@@ -16,23 +16,6 @@ Openstack Release Comparisons
 -  Provide details, preferably in table format, comparing OpenStack
    releases based on Wallaby baseline for RI-1
 
-Automation Gaps
----------------
-
-At the time of writing, `the yaml
-file <https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml>`__
-configuring all RI Jenkins jobs are postprocessed by hand which requires
-lots of skills especially about `Jenkins job
-builder <https://docs.openstack.org/infra/jenkins-job-builder/>`__. The
-RI Cookbook will be deeply simplified if the deployment scripts are
-delivered in a new
-`Xtesting <https://xtesting.readthedocs.io/en/latest/>`__-based
-container as proposed in `new RI deployment
-container <https://github.com/cntt-n/CNTT/issues/828>`__. In addition to
-avoid configuring the jumphost, it will allow generating the Jenkins
-jobs via a simple yaml file and `Xtesting
-CI <https://galaxy.ansible.com/collivier/xtesting>`__.
-
 Test Case Gaps
 --------------
 

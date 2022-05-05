@@ -72,9 +72,9 @@ OpenStack Control Plane Servers (Control Nodes)
 -  BIOS Requirements
 
 For OpenStack control nodes we use the BIOS parameters for the basic
-profile defined in :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`.
-Additionally,
-for OpenStack we need to set the following boot parameters:
+profile defined in :ref:`ref_model/chapters/chapter05:\
+cloud infrastructure hardware profiles features and requirements.`.
+Additionally, for OpenStack we need to set the following boot parameters:
 
 ================================= ===============
 BIOS/boot Parameter               Value
@@ -1713,7 +1713,8 @@ set up the flavors as specified in the tables below.
 ..
 
    -  To configure profile-extensions, for example, the “Storage
-      Intensive High Performance” profile, as defined in :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`,
+      Intensive High Performance” profile, as defined in
+      :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`,
       in addition to the above, need configure the storage IOPS: the
       following two parameters need to be specified in the flavor
       create: –property quota:disk_write_iops_sec=<IOPS#> and –property
