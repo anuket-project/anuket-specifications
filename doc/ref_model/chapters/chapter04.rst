@@ -501,14 +501,14 @@ storage extensions, and acceleration extensions.
 The justification for defining these two profiles and a set of extensible profile-extensions was provided in Section
 :ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours` and includes:
 
--  Workloads can be deployed by requesting compute hosts configured as per a specific profile (Basic or High
-Performance)
--  Profile extensions allow a more granular compute host configuration for the workload (e.g., GPU, high, speed network,
-Edge deployment)
--  Cloud infrastructure "scattering" is minimised
--  Workload development and testing optimisation by using pre-defined and commonly supported (telco operators) profiles
-and extensions
--  Better usage of Cloud Objects (Memory; Processor; Network; Storage)
+- Workloads can be deployed by requesting compute hosts configured as per a specific profile (Basic or High
+  Performance)
+- Profile extensions allow a more granular compute host configuration for the workload (e.g., GPU, high, speed network,
+  Edge deployment)
+- Cloud infrastructure "scattering" is minimised
+- Workload development and testing optimisation by using pre-defined and commonly supported (telco operators) profiles
+  and extensions
+- Better usage of Cloud Objects (Memory; Processor; Network; Storage)
 
 Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS).
 :numref:`Workloads built against Cloud Infrastructure Profiles and Workload Flavours` shows three resources (VM or Pod)
