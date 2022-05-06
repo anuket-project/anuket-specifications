@@ -1327,112 +1327,122 @@ Table 2-19: General Requirements
 Infrastructure Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| Reference  | sub-category | Description                            | Specification                                 |
-|            |              |                                        | Reference                                     |
-+============+==============+========================================+===============================================+
-| inf.com.01 | Compute      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | compute resources for instances.       | cloud workload services`             `        |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.04 | Compute      | The Architecture **must** be able to   | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | support multiple CPU type options      | support for cloud infrastructure profiles \   |
-|            |              | to support various infrastructure      | and flavors`                                  |
-|            |              | profiles (Basic and High Performance). |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.05 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | Hardware Platforms with NUMA           | support for cloud infrastructure profiles \   |
-|            |              | capabilities.                          | and flavors`                                  |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.06 | Compute      | The Architecture **must** support CPU  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | Pinning of the vCPUs of an instance.   | support for cloud infrastructure profiles \   |
-|            |              |                                        | and flavors`                                  |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.07 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | different hardware configurations to   | cloud partitioning: host aggregates, \        |
-|            |              | support various infrastructure         | availability zones`                           |
-|            |              | profiles (Basic and High Performance). |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.08 | Compute      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | allocating certain number of host      | reservation of compute node cores`            |
-|            |              | cores for  all non-tenant workloads    |                                               |
-|            |              | such as for OpenStack services. SMT    |                                               |
-|            |              | threads can be allocated to individual |                                               |
-|            |              | OpenStack services or their            |                                               |
-|            |              | components.                            |                                               |
-|            |              | `Dedicating host cores to certain      |                                               |
-|            |              | workloads (e.g., OpenStack services)   |                                               |
-|            |              | <https://docs.openstack.org/nova\\     |                                               |
-|            |              | /latest/configuration/config.html#\    |                                               |
-|            |              | compute.cpu_dedicated_set>`__.         |                                               |
-|            |              | Please see example,                    |                                               |
-|            |              | `Configuring libvirt compute nodes for |                                               |
-|            |              | CPU pinning                            |                                               |
-|            |              | <https://docs.openstack.org/nova\\     |                                               |
-|            |              | /latest/admin/cpu-topologies.html>`__  |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.09 | Compute      | The Architecture **must** ensure that  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | the host cores assigned to non-tenant  | pinned and unpinned cpus`                     |
-|            |              | and tenant workloads are SMT aware:    |                                               |
-|            |              | that is, a host core and its           |                                               |
-|            |              | associated SMT threads are either all  |                                               |
-|            |              | assigned to non-tenant workloads or    |                                               |
-|            |              | all assigned to tenant workloads.      |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.stg.01 | Storage      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | remote (not directly attached to the   | storage`                                      |
-|            |              | host) Block storage for Instances.     |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.stg.02 | Storage      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | Object storage for Instances.          | swift`                                        |
-|            |              | Operators **may** choose not to        |                                               |
-|            |              | implement Object Storage but must be   |                                               |
-|            |              | cognizant of the the risk of           |                                               |
-|            |              | "Compliant VNFs" failing in their      |                                               |
-+            +              + environment.                           |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.01  | Network      | The Architecture **must** provide      | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | virtual network interfaces to          | neutron`                                      |
-|            |              | instances.                             |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.02  | Network      | The Architecture **must** include      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | capabilities for integrating SDN       | virtual networking – 3rd party sdn solution`  |
-|            |              | controllers to support provisioning    |                                               |
-|            |              | of network services, from the SDN      |                                               |
-|            |              | OpenStack Neutron service, such as     |                                               |
-|            |              | networking of VTEPs to the Border Edge |                                               |
-|            |              | based VRFs.                            |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.03  | Network      | The Architecture **must** support low  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | latency and high throughput traffic    | network fabric`                               |
-|            |              | needs.                                 |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.05  | Network      | The Architecture **must** allow for    | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | East/West tenant traffic within the    | network fabric`                               |
-|            |              | cloud (via tunnelled encapsulation     |                                               |
-|            |              | overlay such as VXLAN or Geneve).      |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.07  | Network      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | network :ref:`resiliency \             | network`                                      |
-|            |              | <common/glossary:cloud platform \      |                                               |
-|            |              | abstraction related terminology:>`     |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.10  | Network      | The Cloud Infrastructure Network       | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | Fabric **must** be capable of enabling | network`                                      |
-|            |              | highly available (Five 9's or better)  |                                               |
-|            |              | Cloud Infrastructure.                  |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.15  | Network      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | multiple networking options for        | neutron extensions` and                       |
-|            |              | Cloud Infrastructure to support        | `OpenStack Neutron Plugins \                  |
-|            |              | various infrastructure profiles (Basic | <https://wiki.openstack.org/wiki/\            |
-|            |              | and High Performance).                 | Neutron_Plugins_and_Drivers>`__               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.nw.16  | Network      | The Architecture **must** support dual |                                               |
-|            |              | stack IPv4 and IPv6 for tenant         |                                               |
-|            |              | networks and workloads.                |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
+.. list-table:: Infrastructure Requirements
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-20: Infrastructure Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - inf.com.01
+     - Compute
+     - The Architecture **must** provide compute resources for instances.
+     - :ref:`ref_arch/openstack/chapters/chapter03:cloud workload services`
+   * - inf.com.04
+     - Compute
+     - The Architecture **must** be able to support multiple CPU type options
+       to support various infrastructure profiles (Basic and High
+       Performance).
+     - :ref:`ref_arch/openstack/chapters/chapter04:\
+       support for cloud infrastructure profiles and flavors`
+   * - inf.com.05
+     - Compute
+     - The Architecture **must** support Hardware Platforms with NUMA
+       capabilities.
+     - :ref:`ref_arch/openstack/chapters/chapter04:\
+       support for cloud infrastructure profiles and flavors`
+   * - inf.com.06
+     - Compute
+     - The Architecture **must** support CPU Pinning of the vCPUs of an
+       instance.
+     - :ref:`ref_arch/openstack/chapters/chapter04:\
+       support for cloud infrastructure profiles and flavors`
+   * - inf.com.07
+     - Compute
+     - The Architecture **must** support different hardware configurations
+       to support various infrastructure profiles (Basic and High
+       Performance).
+     - :ref:`ref_arch/openstack/chapters/chapter03:\
+       cloud partitioning: host aggregates, availability zones`
+   * - inf.com.08
+     - Compute
+     - The Architecture **must** support allocating certain number of host
+       cores for all non-tenant workloads such as for OpenStack services.
+       SMT threads can be allocated to individual OpenStack services or their
+       components. `Dedicating host cores to certain workloads
+       (e.g., OpenStack services)
+       <https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set>`__.
+       Please see example, `Configuring libvirt compute nodes for CPU pinning
+       <https://docs.openstack.org/nova/latest/admin/cpu-topologies.html>`__
+     - :ref:`ref_arch/openstack/chapters/chapter03:\
+       cloud partitioning: host aggregates, availability zones`
+   * - inf.com.09
+     - Compute
+     - The Architecture **must** ensure that the host cores assigned to
+       non-tenant and tenant workloads are SMT aware: that is, a host core and
+       its associated SMT threads are either all assigned to non-tenant
+       workloads or all assigned to tenant workloads.
+     - :ref:`ref_arch/openstack/chapters/chapter04:\
+       pinned and unpinned cpus`
+   * - inf.stg.01
+     - Storage
+     - The Architecture **must** provide remote (not directly attached to the
+       host) Block storage for Instances.
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage`
+   * - inf.stg.02
+     - Storage
+     - The Architecture **must** provide Object storage for Instances.
+       Operators **may** choose not to implement Object Storage but must be
+       cognizant of the the risk of "Compliant VNFs" failing in their
+       environment.
+     - :ref:`ref_arch/openstack/chapters/chapter04:swift`
+   * - inf.nw.01
+     - Network
+     - The Architecture **must** provide virtual network interfaces to
+       instances.
+     - :ref:`ref_arch/openstack/chapters/chapter05:neutron`
+   * - inf.nw.02
+     - Network
+     - The Architecture **must** include capabilities for integrating SDN
+       controllers to support provisioning of network services, from the SDN
+       OpenStack Neutron service, such as networking of VTEPs to the Border
+       Edge based VRFs.
+     - :ref:`ref_arch/openstack/chapters/chapter03:\
+       virtual networking – 3rd party sdn solution`
+   * - inf.nw.03
+     - Network
+     - The Architecture **must** support low latency and high throughput
+       traffic needs.
+     - :ref:`ref_arch/openstack/chapters/chapter04:network fabric`
+   * - inf.nw.05
+     - Network
+     - The Architecture **must** allow for East/West tenant traffic within the
+       cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve).
+     - :ref:`ref_arch/openstack/chapters/chapter04:network fabric`
+   * - inf.nw.07
+     - Network
+     - The Architecture must support network :ref:`resiliency
+       <common/glossary:cloud platform abstraction related terminology:>`
+     - :ref:`ref_arch/openstack/chapters/chapter03:network`
+   * - inf.nw.10
+     - Network
+     - The Cloud Infrastructure Network Fabric **must** be capable of enabling
+       highly available (Five 9’s or better) Cloud Infrastructure.
+     - :ref:`ref_arch/openstack/chapters/chapter03:network`
+   * - inf.nw.15
+     - Network
+     - The Architecture **must** support multiple networking options for Cloud
+       Infrastructure to support various infrastructure profiles (Basic and
+       High Performance).
+     - :ref:`ref_arch/openstack/chapters/chapter04:\
+       neutron extensions` and `OpenStack Neutron Plugins
+       <https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers>`__
+   * - inf.nw.16
+     - Network
+     - The Architecture **must** support dual stack IPv4 and IPv6 for tenant
+       networks and workloads.
+     -
 
 VIM Requirements
 ~~~~~~~~~~~~~~~~
@@ -1598,32 +1608,40 @@ required in order to be deemed a conformant implementation.
 General Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| Reference  | sub-category | Description                            | Notes                                         |
-+============+==============+========================================+===============================================+
-| gen.cnt.01 | Cloud        | The Architecture **should** consist of | OpenStack consists of both stateless and      |
-|            | nativeness   | stateless service components. However, | stateful services where the stateful services |
-|            |              | where state is required it must be     | utilise a database. For latter see            |
-|            |              | kept external to the component.        | `Configuring the stateful services            |
-|            |              |                                        | <https://docs.openstack.org/ha-guide/\\       |
-|            |              |                                        | control-plane-stateful.html>`__               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| gen.cnt.02 | Cloud        | The Architecture **should** consist of |                                               |
-|            | nativeness   | service components implemented as      |                                               |
-|            |              | microservices that are individually    |                                               |
-|            |              | dynamically scalable.                  |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| gen.scl.01 | Scalability  | The Architecture **should** support    | This requirement is currently not addressed   |
-|            |              | policy driven auto-scaling.            | but will likely be supported through          |
-|            |              |                                        | `Senlin <https://docs.openstack.org/senlin/\\ |
-|            |              |                                        | wallaby/>`__, cluster management service.     |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| gen.rsl.02 | Resiliency   | The Architecture **should** support    |                                               |
-|            |              | resilient OpenStack service components |                                               |
-|            |              | that are not subject to gen.rsl.01.    |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
+.. list-table:: General Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-26: General Recommendations
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - gen.cnt.01
+     - Cloud nativeness
+     - The Architecture **should** consist of stateless service components.
+       However, where state is required it must be kept external to the
+       component.
+     - OpenStack consists of both stateless and stateful services where the
+       stateful services utilise a database. For latter see `Configuring the
+       stateful services
+       <https://docs.openstack.org/ha-guide/control-plane-stateful.html>`__
+   * - gen.cnt.02
+     - Cloud nativeness
+     - The Architecture **should** consist of service components implemented
+       as microservices that are individually dynamically scalable.
+     -
+   * - gen.scl.01
+     - Scalability
+     - The Architecture **should** support policy driven auto-scaling.
+     - This requirement is currently not addressed but will likely be
+       supported through
+       `Senlin <https://docs.openstack.org/senlin/wallaby/>`__, cluster
+       management service.
+   * - gen.rsl.02
+     - Resiliency
+     - The Architecture **should** support resilient OpenStack service
+       components that are not subject to gen.rsl.01.
+     -
 
 Infrastructure Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
