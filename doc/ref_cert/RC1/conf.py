@@ -1,4 +1,4 @@
-project = 'Anuket Reference Conformance for Kubernetes (RC2)'
+project = 'Anuket Reference Conformance for OpenStack (RC1)'
 copyright = '2021, Anuket'
 author = 'Anuket'
 exclude_patterns = [
