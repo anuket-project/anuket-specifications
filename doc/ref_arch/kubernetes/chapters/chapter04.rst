@@ -203,15 +203,15 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
 
 **Table 4-2:** Operating System Requirements
 
-Table 4-3 lists the Linux kernel versions that comply with this Reference Architecture specification.
+Table 4-3 lists the kernel versions that comply with this Reference Architecture specification.
 
-+------------+------------------+--------------------------+
-|OS Family   |Version(s)        |Notes                     |
-+============+==================+==========================+
-|Linux       |3.10+             |                          |
-+------------+------------------+--------------------------+
-|Windows     |1809 (10.0.17763) |For worker nodes only     |
-+------------+------------------+--------------------------+
++-------------+-------------------+---------------------------+
+| OS Family   | Kernel Version(s) | Notes                     |
++=============+===================+===========================+
+| Linux       | 3.10+             |                           |
++-------------+-------------------+---------------------------+
+| Windows     | 1809 (10.0.17763) | For worker nodes only     |
++-------------+-------------------+---------------------------+
 
 **Table 4-3:** Operating System Versions
 
