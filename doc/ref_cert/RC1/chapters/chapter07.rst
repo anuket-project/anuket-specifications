@@ -94,7 +94,7 @@ export
 OCLIP_DOWNLOAD_URL=“https://nexus.onap.org/content/repositories/snapshots/org/onap/cli/cli-zip/5.0.0-SNAPSHOT/cli-zip-5.0.0-20200302.120040-1.zip”
 
 export
-VTP_DOWNLOAD_URL=“https://nexus.onap.org/content/repositories/snapshots/org/onap/vnfsdk/refrepo/vnf-sdk-marketplace/1.6.4-SNAPSHOT/vnf-sdk-marketplace-1.6.4-20220428.041705-10.war”
+VTP_DOWNLOAD_URL=“https://nexus.onap.org/content/repositories/snapshots/org/onap/vnfsdk/refrepo/vnf-sdk-marketplace/1.6.4-SNAPSHOT/vnf-sdk-marketplace-1.6.4-20220504.134611-11.war”
 
 export
 CSAR_VALIDATE_DOWNLOAD_URL=“https://nexus.onap.org/content/repositories/snapshots/org/onap/vnfsdk/validation/csarvalidation-deployment/1.2.2-SNAPSHOT/csarvalidation-deployment-1.2.2-20200314.160204-18.zip”
