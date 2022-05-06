@@ -401,10 +401,13 @@ Software supply chain attacks are increasing worldwilde and can cause serious da
 organisations are experiencing these threats. Aqua security's experts estimated that `software supply chain attacks 
 have more than tripled in 2021 <https://www.aquasec.com/news/aqua-securitys-argon-experts-find-software-supply-chain\
 -attacks-more-than-tripled-in-2021/>`_. 
-Software suppliers can be targeted and by rebound effect their 
-customers, as seen with the backdoors affecting SolarWinds products and detailed in
-`Defending against SolarWinds attacks 
-<https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_.
+Reuters reported in August 2021 that the `ransomware affecting Kaseya Virtual System Administration product 
+<https://www.reuters.com/technology/kaseya-ransomware-attack-sets-off-race-hack-service-providers-researchers-2021-08-03/>`_
+caused downtime for over 1500 companies. In the case of the `backdoor inserted in codecov software 
+<https://www.reuters.com/technology/codecov-hackers-breached-hundreds-restricted-customer-sites-sources-2021-04-19/>`_, 
+hundred of customers were affected. The Solarwinds attack detailed in `Defending against SolarWinds attacks 
+<https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_ 
+is another example of how software suppliers are targeted and, by rebound, their customers affected.
 Open-source code weaknesses can also be utilised by attackers, the `Log4J <https://www.cisa.gov/uscert/apache-log4j-\
 vulnerability-guidance>`_ vulnerability, impacting many 
 applications, is a recent example in this field. When addressing cyber security, the vulnerabilities of 
@@ -431,18 +434,18 @@ To secure software code, the following methods must be applied:
 
 -  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`_ 
    or `OWASP “Secure Coding Practices - Quick Reference Guide” <https://owasp.org/>`_
--  Require suppliers to provide a Software Bill of Materials to identify all the components part of their product’s 
-   software releases with their dependencies, and eventually identify the open source modules
--  Use trusted, authenticated and identified software images that are provided by authenticated software 
-   distribution portals
 -  Do threat modelling, as described in the document `“Tactical Threat Modeling” 
    <https://safecode.org/wp-content/uploads/2017/05/SAFECode_TM_Whitepaper.pdf>`_ published by SAFECode
+-  Use trusted, authenticated and identified software images that are provided by authenticated software 
+   distribution portals  
+-  Require suppliers to provide a Software Bill of Materials to identify all the components part of their product’s 
+   software releases with their dependencies, and eventually identify the open source modules
 -  Test the software in a pre-production environment to validate integration
 -  Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply 
    remediation actions according to their severity rating
+-  Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals   
 -  Actively monitor the open source software repositories to determine if new versions have been released that address 
    identified vulnerabilities discovered in the community
--  Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
 -  Secure the integration process by securing the software production pipeline
 -  Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, 
    deployment, and runtime operation to perform automatic security check, as described in section ”Infrastructure as a Code Security”
