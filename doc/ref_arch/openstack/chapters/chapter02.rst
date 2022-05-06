@@ -1283,7 +1283,7 @@ Compliance with Standards Requirements
 |             |                   | 3402. US  Equivalent: SSAE16.    |                            |
 +-------------+-------------------+----------------------------------+----------------------------+
 
-Table 2-18: Reference Model Requirements: Compliance with Standards 
+Table 2-18: Reference Model Requirements: Compliance with Standards
 Requirements
 
 Architecture and OpenStack Requirements
@@ -1785,232 +1785,156 @@ This section is left blank for future use.
 Operations and LCM Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------+-----------------+----------------------+----------------------+
-| R\   | sub-category    | Description          | Notes                |
-| efer\|                 |                      |                      |
-| ence |                 |                      |                      |
-+======+=================+======================+======================+
-| lc\  | Automated       | The Architecture     |                      |
-| m.ad\| deployment      | **should** allow for |                      |
-| p.01 |                 | “cookie cutter”      |                      |
-|      |                 | automated            |                      |
-|      |                 | deployment,          |                      |
-|      |                 | configuration,       |                      |
-|      |                 | provisioning and     |                      |
-|      |                 | management of        |                      |
-|      |                 | multiple Cloud       |                      |
-|      |                 | Infrastructure       |                      |
-|      |                 | sites.               |                      |
-+------+-----------------+----------------------+----------------------+
-| lc\  | Automated       | The Architecture     |                      |
-| m.ad\| deployment      | **should** support   |                      |
-| p.03 |                 | hitless upgrade of   |                      |
-|      |                 | all software         |                      |
-|      |                 | provided by the      |                      |
-|      |                 | cloud provider that  |                      |
-|      |                 | are not covered by   |                      |
-|      |                 | lcm.adp.02. Whenever |                      |
-|      |                 | hitless upgrades are |                      |
-|      |                 | not feasible,        |                      |
-|      |                 | attempt should be    |                      |
-|      |                 | made to minimise the |                      |
-|      |                 | duration and nature  |                      |
-|      |                 | of impact.           |                      |
-+------+-----------------+----------------------+----------------------+
-| lc\  | Automated       | The Architecture     |                      |
-| m.ad\| deployment      | **should** support   |                      |
-| p.04 |                 | declarative          |                      |
-|      |                 | specifications of    |                      |
-|      |                 | hardware and         |                      |
-|      |                 | software assets for  |                      |
-|      |                 | automated            |                      |
-|      |                 | deployment,          |                      |
-|      |                 | configuration,       |                      |
-|      |                 | maintenance and      |                      |
-|      |                 | management.          |                      |
-+------+-----------------+----------------------+----------------------+
-| lc\  | Automated       | The Architecture     |                      |
-| m.ad\| deployment      | **should** support   |                      |
-| p.05 |                 | automated process    |                      |
-|      |                 | for Deployment and   |                      |
-|      |                 | life-cycle           |                      |
-|      |                 | management of VIM    |                      |
-|      |                 | Instances.           |                      |
-+------+-----------------+----------------------+----------------------+
-| lc\  | CI/CD           | The Architecture     |                      |
-| m.ci\|                 | **should** support   |                      |
-| d.02 |                 | integrating with     |                      |
-|      |                 | CI/CD Toolchain for  |                      |
-|      |                 | Cloud Infrastructure |                      |
-|      |                 | and VIM components   |                      |
-|      |                 | Automation.          |                      |
-+------+-----------------+----------------------+----------------------+
+.. list-table:: LCM Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-31: LCM Recommendations
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - lcm.adp.01
+     - Automated deployment
+     - The Architecture **should** allow for cookie cutter automated
+       deployment, configuration, provisioning and management of multiple
+       Cloud Infrastructure sites.
+     -
+   * - lcm.adp.03
+     - Automated deployment
+     - The Architecture **should** support hitless upgrade of all software
+       provided by the cloud provider that are not covered by lcm.adp.02.
+       Whenever hitless upgrades are not feasible, attempt should be made
+       to minimise the duration and nature of impact.
+     -
+   * - lcm.adp.04
+     - Automated deployment
+     - The Architecture **should** support declarative specifications of
+       hardware and software assets for automated deployment, configuration,
+       maintenance and management.
+     -
+   * - lcm.adp.05
+     - Automated deployment
+     - The Architecture **should** support automated process for Deployment
+       and life-cycle management of VIM Instances.
+     -
+   * - lcm.cid.02
+     - CI/CD
+     - The Architecture **should** support integrating with CI/CD Toolchain
+       for Cloud Infrastructure and VIM components Automation.
+     -
 
 Assurance Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------+-------------+--------------------------------+----------------+
-| R\   | s\          | Description                    | Notes          |
-| efer\| ub-category |                                |                |
-| ence |             |                                |                |
-+======+=============+================================+================+
-| as\  | Monitoring  | The Architecture **should**    |                |
-| r.mo\|             | support Network Intelligence   |                |
-| n.02 |             | capabilities that allow richer |                |
-|      |             | diagnostic capabilities which  |                |
-|      |             | take as input broader set of   |                |
-|      |             | data across the network and    |                |
-|      |             | from VNF workloads.            |                |
-+------+-------------+--------------------------------+----------------+
+.. list-table:: Assurance Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-32: Assurance Recommendations
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - asr.mon.02
+     - Monitoring
+     - The Architecture **should** support Network Intelligence capabilities
+       that allow richer diagnostic capabilities which take as input broader
+       set of data across the network and from VNF workloads.
+     -
 
 Security Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. _system-hardening-source-rm-7.9.1-1:
 
 System Hardening Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:system hardening`)
 
-+------------------+---------------+---------------+------------------+
-| Reference        | sub-category  | Description   | Notes            |
-+==================+===============+===============+==================+
-| sec.gen.011      | Hardening     | The Cloud     |                  |
-|                  |               | I\            |                  |
-|                  |               | nfrastructure |                  |
-|                  |               | **should**    |                  |
-|                  |               | support Read  |                  |
-|                  |               | and Write     |                  |
-|                  |               | only storage  |                  |
-|                  |               | partitions    |                  |
-|                  |               | (write only   |                  |
-|                  |               | permission to |                  |
-|                  |               | one or more   |                  |
-|                  |               | authorised    |                  |
-|                  |               | actors).      |                  |
-+------------------+---------------+---------------+------------------+
-| sec.gen.014      | Hardening     | All servers   |                  |
-|                  |               | part of Cloud |                  |
-|                  |               | I\            |                  |
-|                  |               | nfrastructure |                  |
-|                  |               | **should**    |                  |
-|                  |               | support       |                  |
-|                  |               | measured boot |                  |
-|                  |               | and an        |                  |
-|                  |               | attestation   |                  |
-|                  |               | server that   |                  |
-|                  |               | monitors the  |                  |
-|                  |               | measurements  |                  |
-|                  |               | of the        |                  |
-|                  |               | servers.      |                  |
-+------------------+---------------+---------------+------------------+
+.. list-table:: System Hardening Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-33: System Hardening Recommendations
-
-.. _platform-and-access-source-rm-7.9.2-1:
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.gen.011
+     - Hardening
+     - The Cloud Infrastructure **should** support Read and Write only storage
+       partitions (write only permission to one or more authorised actors).
+     -
+   * - sec.gen.014
+     - Hardening
+     - All servers part of Cloud Infrastructure **should** support measured
+       boot and an attestation server that monitors the measurements of the
+       servers.
+     -
 
 Platform and Access Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:platform and access`)
 
-+---------------+---------------+---------------+--------------------+
-| Reference     | sub-category  | Description   | Notes              |
-+===============+===============+===============+====================+
-| sec.sys.014   | Access        | The Platform  |                    |
-|               |               | **should**    |                    |
-|               |               | use Linux     |                    |
-|               |               | Security      |                    |
-|               |               | Modules such  |                    |
-|               |               | as SELinux to |                    |
-|               |               | control       |                    |
-|               |               | access to     |                    |
-|               |               | resources.    |                    |
-+---------------+---------------+---------------+--------------------+
-| sec.sys.020   | Access        | The Cloud     | Zero Trust         |
-|               |               | I\            | Architecture (ZTA) |
-|               |               | nfrastructure | described in NIST  |
-|               |               | architecture  | SP 800-207         |
-|               |               | **should**    |                    |
-|               |               | rely on Zero  |                    |
-|               |               | Trust         |                    |
-|               |               | principles to |                    |
-|               |               | build a       |                    |
-|               |               | secure by     |                    |
-|               |               | design        |                    |
-|               |               | environment.  |                    |
-+---------------+---------------+---------------+--------------------+
+.. list-table:: Platform and Access Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-34: Platform and Access Recommendations
-
-.. _confidentiality-and-integrity-source-rm-7.9.3-1:
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.sys.014
+     - Access
+     - The Platform **should** use Linux Security Modules such as SELinux to
+       control access to resources.
+     -
+   * - sec.sys.020
+     - Access
+     - The Cloud Infrastructure architecture **should** rely on Zero Trust
+       principles to build a secure by design environment.
+     - Zero Trust Architecture (ZTA) described in NIST SP 800-207
 
 Confidentiality and Integrity Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:confidentiality and integrity`)
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Notes             |
-+==============+===================+==============+===================+
-| sec.ci.002   | Confiden\         | The Platform |                   |
-|              | tiality/Integrity | **should**   |                   |
-|              |                   | support      |                   |
-|              |                   | sel\         |                   |
-|              |                   | f-encrypting |                   |
-|              |                   | storage      |                   |
-|              |                   | devices      |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.ci.009   | Confiden\         | For          |                   |
-|              | tiality/Integrity | sensitive    |                   |
-|              |                   | data         |                   |
-|              |                   | encryption,  |                   |
-|              |                   | the key      |                   |
-|              |                   | management   |                   |
-|              |                   | service      |                   |
-|              |                   | **should**   |                   |
-|              |                   | leverage a   |                   |
-|              |                   | Hardware     |                   |
-|              |                   | Security     |                   |
-|              |                   | Module to    |                   |
-|              |                   | manage and   |                   |
-|              |                   | protect      |                   |
-|              |                   | c\           |                   |
-|              |                   | ryptographic |                   |
-|              |                   | keys.        |                   |
-+--------------+-------------------+--------------+-------------------+
+.. list-table:: Confidentiality and Integrity Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-35: Confidentiality and Integrity Recommendations
-
-.. _workload-security-source-rm-7.9.4-1:
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.ci.002
+     - Confidentiality/Integrity
+     - The Platform **should** support self-encrypting storage devices.
+     -
+   * - sec.ci.009
+     - Confidentiality/Integrity
+     - For sensitive data encryption, the key management service **should**
+       leverage a Hardware Security Module to manage and protect cryptographic
+       keys.
+     -
 
 Workload Security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:workload security`)
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Notes             |
-+==============+===================+==============+===================+
-| sec.wl.007   | Workload          | The Operator |                   |
-|              |                   | **should**   |                   |
-|              |                   | implement    |                   |
-|              |                   | processes    |                   |
-|              |                   | and tools to |                   |
-|              |                   | verify VNF   |                   |
-|              |                   | authenticity |                   |
-|              |                   | and          |                   |
-|              |                   | integrity.   |                   |
-+--------------+-------------------+--------------+-------------------+
+.. list-table:: Workload Security Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-36: Workload Security Recommendations
-
-.. _image-security-source-rm-7.9.5-1:
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.wl.007
+     - Workload
+     - The Operator **should** implement processes and tools to verify VNF
+       authenticity and integrity.
+     -
 
 Image Security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2019,49 +1943,41 @@ Image Security Recommendations
 
 This section is left blank for future use.
 
-+-------------+--------------+------------------------------+-------+
-| Reference   | sub-category | Description                  | Notes |
-+=============+==============+==============================+=======+
-| sec.img.009 | Image        | CIS Hardened Images          |       |
-|             |              | **should** be used whenever  |       |
-|             |              | possible.                    |       |
-+-------------+--------------+------------------------------+-------+
-| sec.img.010 | Image        | Minimalist base images       |       |
-|             |              | **should** be used whenever  |       |
-|             |              | possible.                    |       |
-+-------------+--------------+------------------------------+-------+
+.. list-table:: Image Security Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-37: Image Security Recommendations
-
-.. _security-lcm-source-rm-7.9.6-1:
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.img.009
+     - Image
+     - CIS Hardened Images **should** be used whenever possible.
+     -
+   * - sec.img.010
+     - Image
+     - Minimalist base images **should** be used whenever possible.
+     -
 
 Security LCM Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:security lcm`)
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Notes             |
-+==============+===================+==============+===================+
-| sec.lcm.004  | LCM               | The Cloud    |                   |
-|              |                   | Operator     |                   |
-|              |                   | **should**   |                   |
-|              |                   | support      |                   |
-|              |                   | automated    |                   |
-|              |                   | templated    |                   |
-|              |                   | approved     |                   |
-|              |                   | changes;     |                   |
-|              |                   | Templated    |                   |
-|              |                   | approved     |                   |
-|              |                   | changes for  |                   |
-|              |                   | automation   |                   |
-|              |                   | where        |                   |
-|              |                   | available    |                   |
-+--------------+-------------------+--------------+-------------------+
+.. list-table:: LCM Security Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-38: LCM Security Recommendations
-
-.. _monitoring-and-security-audit-source-rm-7.9.7-1:
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.lcm.004
+     - LCM
+     - The Cloud Operator **should** support automated templated approved
+       changes; Templated approved changes for automation where available
+     -
 
 Monitoring and Security Audit Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2075,69 +1991,44 @@ systems, policies and procedures to act on alerts and notifications in a
 timely fashion. In the following the monitoring and logging capabilities
 can trigger alerts and notifications for appropriate action.
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Notes             |
-+==============+===================+==============+===================+
-| sec.mon.014  | Monitoring        | The          |                   |
-|              |                   | Monitoring   |                   |
-|              |                   | systems      |                   |
-|              |                   | **should**   |                   |
-|              |                   | not impact   |                   |
-|              |                   | IaaS, PaaS,  |                   |
-|              |                   | and SaaS     |                   |
-|              |                   | SLAs         |                   |
-|              |                   | including    |                   |
-|              |                   | availability |                   |
-|              |                   | SLAs         |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.mon.016  | Monitoring        | The Platform |                   |
-|              |                   | Monitoring   |                   |
-|              |                   | components   |                   |
-|              |                   | **should**   |                   |
-|              |                   | follow       |                   |
-|              |                   | security     |                   |
-|              |                   | best         |                   |
-|              |                   | practices    |                   |
-|              |                   | for          |                   |
-|              |                   | auditing,    |                   |
-|              |                   | including    |                   |
-|              |                   | secure       |                   |
-|              |                   | logging and  |                   |
-|              |                   | tracing      |                   |
-+--------------+-------------------+--------------+-------------------+
+.. list-table:: Monitoring and Security Audit Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-39: Monitoring and Security Audit Recommendations
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.mon.014
+     - Monitoring
+     - The Monitoring systems **should** not impact IaaS, PaaS, and SaaS SLAs
+       including availability SLAs
+     -
+   * - sec.mon.016
+     - Monitoring
+     - The Platform Monitoring components **should** follow security best
+       practices for auditing, including secure logging and tracing
+     -
 
 Open-Source Software Security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:open source software`)
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Notes             |
-+==============+===================+==============+===================+
-| sec.oss.005  | Software          | A Software   | `NTIA SBOM        |
-|              |                   | Bill of      | <https://www.     |
-|              |                   | Materials    | ntia.gov/SBOM>`__ |
-|              |                   | (SBOM)       |                   |
-|              |                   | **should**   |                   |
-|              |                   | be provided  |                   |
-|              |                   | or build,    |                   |
-|              |                   | and          |                   |
-|              |                   | maintained   |                   |
-|              |                   | to identify  |                   |
-|              |                   | the software |                   |
-|              |                   | components   |                   |
-|              |                   | and their    |                   |
-|              |                   | origins.     |                   |
-|              |                   | Inventory of |                   |
-|              |                   | software     |                   |
-|              |                   | components   |                   |
-+--------------+-------------------+--------------+-------------------+
+.. list-table:: Open-Source Software Security Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-40: Open-Source Software Security Recommendations
-
-.. _iaac-security-source-rm-7.9.9-1:
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.oss.005
+     - Software
+     - A Software Bill of Materials (SBOM) **should** be provided or build,
+       and maintained to identify the software components and their origins.
+       Inventory of software components
+     - `NTIA SBOM <https://www.ntia.gov/SBOM>`__
 
 IaaC security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2147,555 +2038,247 @@ IaaC security Recommendations
 
 **Secure Design and Architecture Stage**
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Notes             |
-+==============+===================+==============+===================+
-| sec.arch.001 | IaaC              | Threat       | It may be done    |
-|              |                   | Modelling    | manually or using |
-|              |                   | m\           | tools like open   |
-|              |                   | ethodologies | source OWASP      |
-|              |                   | and tools    | Threat Dragon     |
-|              |                   | **should**   |                   |
-|              |                   | be used      |                   |
-|              |                   | during the   |                   |
-|              |                   | Secure       |                   |
-|              |                   | Design and   |                   |
-|              |                   | Architecture |                   |
-|              |                   | stage        |                   |
-|              |                   | triggered by |                   |
-|              |                   | Software     |                   |
-|              |                   | Feature      |                   |
-|              |                   | Design       |                   |
-|              |                   | trigger.     |                   |
-|              |                   | Methodology  |                   |
-|              |                   | to identify  |                   |
-|              |                   | and          |                   |
-|              |                   | understand   |                   |
-|              |                   | threats      |                   |
-|              |                   | impacting a  |                   |
-|              |                   | resource or  |                   |
-|              |                   | set of       |                   |
-|              |                   | resources.   |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.arch.002 | IaaC              | Security     | Typically done    |
-|              |                   | Control      | manually by       |
-|              |                   | Baseline     | internal or       |
-|              |                   | Assessment   | independent       |
-|              |                   | **should**   | assessors.        |
-|              |                   | be performed |                   |
-|              |                   | during the   |                   |
-|              |                   | Secure       |                   |
-|              |                   | Design and   |                   |
-|              |                   | Architecture |                   |
-|              |                   | stage        |                   |
-|              |                   | triggered by |                   |
-|              |                   | Software     |                   |
-|              |                   | Feature      |                   |
-|              |                   | Design       |                   |
-|              |                   | trigger.     |                   |
-+--------------+-------------------+--------------+-------------------+
+.. list-table:: Reference Model Requirements: IaaC Security,
+                Design and Architecture Stage
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-41: Reference Model Requirements: IaaC Security, Design and
-Architecture Stage
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.arch.001
+     - IaaC
+     - Threat Modelling methodologies and tools **should** be used during the
+       Secure Design and Architecture stage triggered by Software Feature
+       Design trigger. Methodology to identify and understand threats
+       impacting a resource or set of resources.
+     - It may be done manually or using tools like open source OWASP Threat
+       Dragon
+   * - sec.arch.002
+     - IaaC
+     - Security Control Baseline Assessment **should** be performed during the
+       Secure Design and Architecture stage triggered by Software Feature
+       Design trigger.
+     - Typically done manually by internal or independent assessors.
 
 **Secure Code Stage Recommendations**
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Notes             |
-+==============+===================+==============+===================+
-| sec.code.002 | IaaC              | SCA –        | Example: open     |
-|              |                   | Software     | source OWASP      |
-|              |                   | Composition  | range of tools.   |
-|              |                   | Analysis     |                   |
-|              |                   | **should**   |                   |
-|              |                   | be applied   |                   |
-|              |                   | during       |                   |
-|              |                   | Secure       |                   |
-|              |                   | Coding stage |                   |
-|              |                   | triggered by |                   |
-|              |                   | Pull, Clone  |                   |
-|              |                   | or Comment   |                   |
-|              |                   | trigger.     |                   |
-|              |                   | Security     |                   |
-|              |                   | testing that |                   |
-|              |                   | analyses     |                   |
-|              |                   | application  |                   |
-|              |                   | source code  |                   |
-|              |                   | or compiled  |                   |
-|              |                   | code for     |                   |
-|              |                   | software     |                   |
-|              |                   | components   |                   |
-|              |                   | with known   |                   |
-|              |                   | vuln\        |                   |
-|              |                   | erabilities. |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.code.003 | IaaC              | Source Code  | Typically done    |
-|              |                   | Review       | manually.         |
-|              |                   | **should**   |                   |
-|              |                   | be performed |                   |
-|              |                   | continuously |                   |
-|              |                   | during       |                   |
-|              |                   | Secure       |                   |
-|              |                   | Coding       |                   |
-|              |                   | stage.       |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.code.004 | IaaC              | Integrated   |                   |
-|              |                   | SAST via IDE |                   |
-|              |                   | Plugins      |                   |
-|              |                   | **should**   |                   |
-|              |                   | be used      |                   |
-|              |                   | during       |                   |
-|              |                   | Secure       |                   |
-|              |                   | Coding stage |                   |
-|              |                   | triggered by |                   |
-|              |                   | Developer    |                   |
-|              |                   | Code         |                   |
-|              |                   | trigger. On  |                   |
-|              |                   | the local    |                   |
-|              |                   | machine:     |                   |
-|              |                   | through the  |                   |
-|              |                   | IDE or       |                   |
-|              |                   | integrated   |                   |
-|              |                   | test suites; |                   |
-|              |                   | triggered on |                   |
-|              |                   | completion   |                   |
-|              |                   | of coding by |                   |
-|              |                   | developer.   |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.code.005 | IaaC              | SAST of      |                   |
-|              |                   | Source Code  |                   |
-|              |                   | Repo         |                   |
-|              |                   | **should**   |                   |
-|              |                   | be performed |                   |
-|              |                   | during       |                   |
-|              |                   | Secure       |                   |
-|              |                   | Coding stage |                   |
-|              |                   | triggered by |                   |
-|              |                   | Developer    |                   |
-|              |                   | Code         |                   |
-|              |                   | trigger.     |                   |
-|              |                   | Continuous   |                   |
-|              |                   | delivery     |                   |
-|              |                   | pre          |                   |
-|              |                   | -deployment: |                   |
-|              |                   | scanning     |                   |
-|              |                   | prior to     |                   |
-|              |                   | deployment.  |                   |
-+--------------+-------------------+--------------+-------------------+
+.. list-table:: Reference Model Requirements: IaaC Security, Secure Code Stage
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-42: Reference Model Requirements: IaaC Security, Secure Code
-Stage
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.code.002
+     - IaaC
+     - SCA – Software Composition Analysis **should** be applied during
+       Secure Coding stage triggered by Pull, Clone or Comment trigger.
+       Security testing that analyses application source code or compiled code
+       for software components with known vulnerabilities.
+     - Example: open source OWASP range of tools.
+   * - sec.code.003
+     - IaaC
+     - Source Code Review **should** be performed continuously during Secure
+       Coding stage.
+     - Typically done manually.
+   * - sec.code.004
+     - IaaC
+     - Integrated SAST via IDE Plugins should be used during Secure Coding
+       stage triggered by Developer Code trigger. On the local machine:
+       through the IDE or integrated test suites; triggered on completion of
+       coding by developer.
+     -
+   * - sec.code.005
+     - IaaC
+     - SAST of Source Code Repo **should** be performed during Secure Coding
+       stage triggered by Developer Code trigger. Continuous delivery
+       pre -deployment: scanning prior to deployment.
+     -
 
 **Continuous Build, Integration and Testing Stage Recommendations**
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Notes             |
-+==============+===================+==============+===================+
-| sec.bld.001  | IaaC              | SAST -Static | Example: open     |
-|              |                   | Application  | source OWASP      |
-|              |                   | Security     | range of tools.   |
-|              |                   | Testing      |                   |
-|              |                   | **should**   |                   |
-|              |                   | be applied   |                   |
-|              |                   | during the   |                   |
-|              |                   | Continuous   |                   |
-|              |                   | Build,       |                   |
-|              |                   | Integration  |                   |
-|              |                   | and Testing  |                   |
-|              |                   | stage        |                   |
-|              |                   | triggered by |                   |
-|              |                   | Build and    |                   |
-|              |                   | Integrate    |                   |
-|              |                   | trigger.     |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.bld.002  | IaaC              | SCA –        | Example: open     |
-|              |                   | Software     | source OWASP      |
-|              |                   | Composition  | range of tools.   |
-|              |                   | Analysis     |                   |
-|              |                   | **should**   |                   |
-|              |                   | be applied   |                   |
-|              |                   | during the   |                   |
-|              |                   | Continuous   |                   |
-|              |                   | Build,       |                   |
-|              |                   | Integration  |                   |
-|              |                   | and Testing  |                   |
-|              |                   | stage        |                   |
-|              |                   | triggered by |                   |
-|              |                   | Build and    |                   |
-|              |                   | Integrate    |                   |
-|              |                   | trigger.     |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.bld.004  | IaaC              | DAST –       | Example: OWASP    |
-|              |                   | Dynamic      | ZAP.              |
-|              |                   | Application  |                   |
-|              |                   | Security     |                   |
-|              |                   | Testing      |                   |
-|              |                   | **should**   |                   |
-|              |                   | be applied   |                   |
-|              |                   | during the   |                   |
-|              |                   | Continuous   |                   |
-|              |                   | Build,       |                   |
-|              |                   | Integration  |                   |
-|              |                   | and Testing  |                   |
-|              |                   | stage        |                   |
-|              |                   | triggered by |                   |
-|              |                   | Stage & Test |                   |
-|              |                   | trigger.     |                   |
-|              |                   | Security     |                   |
-|              |                   | testing that |                   |
-|              |                   | analyses a   |                   |
-|              |                   | running      |                   |
-|              |                   | application  |                   |
-|              |                   | by           |                   |
-|              |                   | exercising   |                   |
-|              |                   | application  |                   |
-|              |                   | f\           |                   |
-|              |                   | unctionality |                   |
-|              |                   | and          |                   |
-|              |                   | detecting    |                   |
-|              |                   | vul\         |                   |
-|              |                   | nerabilities |                   |
-|              |                   | based on     |                   |
-|              |                   | application  |                   |
-|              |                   | behaviour    |                   |
-|              |                   | and          |                   |
-|              |                   | response.    |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.bld.005  | IaaC              | Fuzzing      | Example: GitLab   |
-|              |                   | **should**   | Open Sources      |
-|              |                   | be applied   | Protocol Fuzzer   |
-|              |                   | during the   | Community         |
-|              |                   | Continuous   | Edition.          |
-|              |                   | Build,       |                   |
-|              |                   | Integration  |                   |
-|              |                   | and testing  |                   |
-|              |                   | stage        |                   |
-|              |                   | triggered by |                   |
-|              |                   | Stage & Test |                   |
-|              |                   | trigger.     |                   |
-|              |                   | Fuzzing or   |                   |
-|              |                   | fuzz testing |                   |
-|              |                   | is an        |                   |
-|              |                   | automated    |                   |
-|              |                   | software     |                   |
-|              |                   | testing      |                   |
-|              |                   | technique    |                   |
-|              |                   | that         |                   |
-|              |                   | involves     |                   |
-|              |                   | providing    |                   |
-|              |                   | invalid,     |                   |
-|              |                   | unexpected,  |                   |
-|              |                   | or random    |                   |
-|              |                   | data as      |                   |
-|              |                   | inputs to a  |                   |
-|              |                   | computer     |                   |
-|              |                   | program.     |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.bld.006  | IaaC              | IAST –       | Example: Contrast |
-|              |                   | Interactive  | Community         |
-|              |                   | Application  | Edition.          |
-|              |                   | Security     |                   |
-|              |                   | Testing      |                   |
-|              |                   | **should**   |                   |
-|              |                   | be applied   |                   |
-|              |                   | during the   |                   |
-|              |                   | Continuous   |                   |
-|              |                   | Build,       |                   |
-|              |                   | Integration  |                   |
-|              |                   | and Testing  |                   |
-|              |                   | stage        |                   |
-|              |                   | triggered by |                   |
-|              |                   | Stage & Test |                   |
-|              |                   | trigger.     |                   |
-|              |                   | Software     |                   |
-|              |                   | component    |                   |
-|              |                   | deployed     |                   |
-|              |                   | with an      |                   |
-|              |                   | application  |                   |
-|              |                   | that         |                   |
-|              |                   | assesses     |                   |
-|              |                   | application  |                   |
-|              |                   | behaviour    |                   |
-|              |                   | and detects  |                   |
-|              |                   | presence of  |                   |
-|              |                   | vul\         |                   |
-|              |                   | nerabilities |                   |
-|              |                   | on an        |                   |
-|              |                   | application  |                   |
-|              |                   | being        |                   |
-|              |                   | exercised in |                   |
-|              |                   | realistic    |                   |
-|              |                   | testing      |                   |
-|              |                   | scenarios.   |                   |
-+--------------+-------------------+--------------+-------------------+
+.. list-table:: Reference Model Requirements: IaaC Security, Continuous Build,
+                Integration and Testing Stage
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-43: Reference Model Requirements: IaaC Security, Continuous
-Build, Integration and Testing Stage
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.bld.001
+     - IaaC
+     - SAST -Static Application Security Testing **should** be applied during
+       the Continuous Build, Integration and Testing stage triggered by Build
+       and Integrate trigger.
+     - Example: open source OWASP range of tools.
+   * - sec.bld.002
+     - IaaC
+     - SCA – Software Composition Analysis **should** be applied during the
+       Continuous Build, Integration and Testing stage triggered by Build and
+       Integrate trigger.
+     - Example: open source OWASP range of tools.
+   * - sec.bld.004
+     - IaaC
+     - SDAST – Dynamic Application Security Testing **should** be applied
+       during the Continuous Build, Integration and Testing stage triggered
+       by Stage & Test trigger. Security testing that analyses a running
+       application by exercising application functionality and detecting
+       vulnerabilities based on application behaviour and response.
+     - Example: OWASP ZAP.
+   * - sec.bld.005
+     - IaaC
+     - Fuzzing **should** be applied during the Continuous Build, Integration
+       and testing stage triggered by Stage & Test trigger. Fuzzing or fuzz
+       testing is an automated software testing technique that involves
+       providing invalid, unexpected, or random data as inputs to a computer
+       program.
+     - Example: GitLab Open Sources Protocol Fuzzer Community Edition.
+   * - sec.bld.006
+     - IaaC
+     - IAST – Interactive Application Security Testing **should** be applied
+       during the Continuous Build, Integration and Testing stage triggered by
+       Stage & Test trigger. Software component deployed with an application
+       that assesses application behaviour and detects presence of
+       vulnerabilities on an application being exercised in realistic testing
+       scenarios.
+     - Example: Contrast Community Edition.
 
 **Continuous Delivery and Deployment Stage Recommendations**
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Notes             |
-+==============+===================+==============+===================+
-| sec.del.003  | IaaC              | Artifact and | Example: GitLab   |
-|              |                   | Image        | uses the open     |
-|              |                   | Repository   | source Clair      |
-|              |                   | Scan         | engine for        |
-|              |                   | **should**   | container         |
-|              |                   | be           | scanning.         |
-|              |                   | continuously |                   |
-|              |                   | applied      |                   |
-|              |                   | during the   |                   |
-|              |                   | Continuous   |                   |
-|              |                   | Delivery and |                   |
-|              |                   | Deployment   |                   |
-|              |                   | stage.       |                   |
-+--------------+-------------------+--------------+-------------------+
+.. list-table:: Reference Model Requirements: IaaC Security, Continuous
+                Delivery and Deployment Stage
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-44: Reference Model Requirements: IaaC Security, Continuous
-Delivery and Deployment Stage
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.del.003
+     - IaaC
+     - Artifact and Image Repository Scan **should** be continuously applied
+       during the Continuous Delivery and Deployment stage.
+     - Example: GitLab uses the open source Clair engine for container
+       scanning.
 
 **Runtime Defence and Monitoring Recommendations**
 
-+--------------+-------------------+--------------+-------------------+
-| Reference    | sub-category      | Description  | Notes             |
-+==============+===================+==============+===================+
-| sec.run.002  | IaaC              | RASP –       |                   |
-|              |                   | Runtime      |                   |
-|              |                   | Application  |                   |
-|              |                   | Sel\         |                   |
-|              |                   | f-Protection |                   |
-|              |                   | **should**   |                   |
-|              |                   | be           |                   |
-|              |                   | continuously |                   |
-|              |                   | applied      |                   |
-|              |                   | during the   |                   |
-|              |                   | Runtime      |                   |
-|              |                   | Defence and  |                   |
-|              |                   | Monitoring   |                   |
-|              |                   | stage.       |                   |
-|              |                   | Security     |                   |
-|              |                   | technology   |                   |
-|              |                   | deployed     |                   |
-|              |                   | within the   |                   |
-|              |                   | target       |                   |
-|              |                   | application  |                   |
-|              |                   | in           |                   |
-|              |                   | production   |                   |
-|              |                   | for          |                   |
-|              |                   | detecting,   |                   |
-|              |                   | alerting,    |                   |
-|              |                   | and blocking |                   |
-|              |                   | attacks.     |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.run.003  | IaaC              | Application  | Example: GitLab   |
-|              |                   | testing and  | Open Sources      |
-|              |                   | Fuzzing      | Protocol Fuzzer   |
-|              |                   | **should**   | Community         |
-|              |                   | be           | Edition.          |
-|              |                   | continuously |                   |
-|              |                   | applied      |                   |
-|              |                   | during the   |                   |
-|              |                   | Runtime      |                   |
-|              |                   | Defence and  |                   |
-|              |                   | Monitoring   |                   |
-|              |                   | stage.       |                   |
-|              |                   | Fuzzing or   |                   |
-|              |                   | fuzz testing |                   |
-|              |                   | is an        |                   |
-|              |                   | automated    |                   |
-|              |                   | software     |                   |
-|              |                   | testing      |                   |
-|              |                   | technique    |                   |
-|              |                   | that         |                   |
-|              |                   | involves     |                   |
-|              |                   | providing    |                   |
-|              |                   | invalid,     |                   |
-|              |                   | unexpected,  |                   |
-|              |                   | or random    |                   |
-|              |                   | data as      |                   |
-|              |                   | inputs to a  |                   |
-|              |                   | computer     |                   |
-|              |                   | program.     |                   |
-+--------------+-------------------+--------------+-------------------+
-| sec.run.004  | IaaC              | Penetration  | Typically done    |
-|              |                   | Testing      | manually.         |
-|              |                   | **should**   |                   |
-|              |                   | be           |                   |
-|              |                   | continuously |                   |
-|              |                   | applied      |                   |
-|              |                   | during the   |                   |
-|              |                   | Runtime      |                   |
-|              |                   | Defence and  |                   |
-|              |                   | Monitoring   |                   |
-|              |                   | stage.       |                   |
-+--------------+-------------------+--------------+-------------------+
+.. list-table:: Reference Model Requirements: Iaac Security, Runtime Defence
+                and Monitoring Stage
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-45: Reference Model Requirements: Iaac Security, Runtime Defence
-and Monitoring Stage
-
-.. _compliance-with-standards-source-rm-7.9.10-1:
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.run.002
+     - IaaC
+     - RASP – Runtime Application Self-Protection **should** be continuously
+       applied during the Runtime Defence and Monitoring stage. Security
+       technology deployed within the target application in production for
+       detecting, alerting, and blocking attacks.
+     -
+   * - sec.run.003
+     - IaaC
+     - Application testing and Fuzzing **should** be continuously applied
+       during the Runtime Defence and Monitoring stage. Fuzzing or fuzz
+       testing is an automated software testing technique that involves
+       providing invalid, unexpected, or random data as inputs to a computer
+       program.
+     - Example: GitLab Open Sources Protocol Fuzzer Community Edition.
+   * - sec.run.004
+     - IaaC
+     - Penetration Testing **should** be continuously applied during the
+       Runtime Defence and Monitoring stage.
+     - Typically done manually.
 
 Compliance with Standards Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:compliance with standards`)
 
-+-----------+-------------------+---------------------+---------------+
-| Reference | sub-category      | Description         | Notes         |
-+===========+===================+=====================+===============+
-| se\       | Standards         | The Cloud Operator  |               |
-| c.std.001 |                   | **should** comply   |               |
-|           |                   | with `Center for    |               |
-|           |                   | Internet Security   |               |
-|           |                   | CIS                 |               |
-|           |                   | Con\                |               |
-|           |                   | trols <https://www. |               |
-|           |                   | cisecurity.org/>`__ |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Standards         | The Cloud Operator, |               |
-| c.std.002 |                   | Platform and        |               |
-|           |                   | Workloads           |               |
-|           |                   | **should** follow   |               |
-|           |                   | the guidance in the |               |
-|           |                   | CSA Security        |               |
-|           |                   | Guidance for        |               |
-|           |                   | Critical Areas of   |               |
-|           |                   | Focus in Cloud      |               |
-|           |                   | Computing (latest   |               |
-|           |                   | version)- CSA,      |               |
-|           |                   | `Cloud Security     |               |
-|           |                   | Alliance <\         |               |
-|           |                   | https://cloudsecuri |               |
-|           |                   | tyalliance.org/>`__ |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Standards         | The Platform and    |               |
-| c.std.003 |                   | Workloads           |               |
-|           |                   | **should** follow   |               |
-|           |                   | the guidance in the |               |
-|           |                   | `OWASP Cheat Sheet  |               |
-|           |                   | Series              |               |
-|           |                   | (OCSS) <https://    |               |
-|           |                   | github.com/OWASP/Ch |               |
-|           |                   | eatSheetSeries>`__- |               |
-|           |                   | OWASP, `Open Web    |               |
-|           |                   | Application         |               |
-|           |                   | Security            |               |
-|           |                   | Project <https:     |               |
-|           |                   | //www.owasp.org>`__ |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Standards         | The Cloud Operator, |               |
-| c.std.004 |                   | Platform and        |               |
-|           |                   | Workloads           |               |
-|           |                   | **should** ensure   |               |
-|           |                   | that their code is  |               |
-|           |                   | not vulnerable to   |               |
-|           |                   | the `OWASP Top Ten  |               |
-|           |                   | Security            |               |
-|           |                   | Risks <http         |               |
-|           |                   | s://owasp.org/www-p |               |
-|           |                   | roject-top-ten/>`__ |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Standards         | The Cloud Operator, |               |
-| c.std.005 |                   | Platform and        |               |
-|           |                   | Workloads           |               |
-|           |                   | **should** strive   |               |
-|           |                   | to improve their    |               |
-|           |                   | maturity on the     |               |
-|           |                   | `OWASP Software     |               |
-|           |                   | Maturity Model      |               |
-|           |                   | (                   |               |
-|           |                   | SAMM) <https://owas |               |
-|           |                   | psamm.org/blog/2019 |               |
-|           |                   | /12/20/version2-com |               |
-|           |                   | munity-release/>`__ |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Standards         | The Cloud Operator, |               |
-| c.std.006 |                   | Platform and        |               |
-|           |                   | Workloads           |               |
-|           |                   | **should** utilise  |               |
-|           |                   | the `OWASP Web      |               |
-|           |                   | Security Testing    |               |
-|           |                   | Guide               |               |
-|           |                   | <https://github.c   |               |
-|           |                   | om/OWASP/wstg/tree/ |               |
-|           |                   | master/document>`__ |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Standards         | The Cloud Operator, |               |
-| c.std.007 |                   | and Platform        |               |
-|           |                   | **should** satisfy  |               |
-|           |                   | the requirements    |               |
-|           |                   | for Information     |               |
-|           |                   | Management Systems  |               |
-|           |                   | specified in        |               |
-|           |                   | `ISO/IEC            |               |
-|           |                   | 27001 <https://     |               |
-|           |                   | www.iso.org/obp/ui/ |               |
-|           |                   | #iso:std:iso-iec:27 |               |
-|           |                   | 001:ed-2:v1:en>`__; |               |
-|           |                   | ISO/IEC 27001 is    |               |
-|           |                   | the international   |               |
-|           |                   | Standard for        |               |
-|           |                   | best-practice       |               |
-|           |                   | information         |               |
-|           |                   | security management |               |
-|           |                   | systems (ISMSs)     |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Standards         | The Cloud Operator, |               |
-| c.std.008 |                   | and Platform        |               |
-|           |                   | **should**          |               |
-|           |                   | implement the Code  |               |
-|           |                   | of practice for     |               |
-|           |                   | Security Controls   |               |
-|           |                   | specified `ISO/IEC  |               |
-|           |                   | 27002:2013 (or      |               |
-|           |                   | latest) <https:/    |               |
-|           |                   | /www.iso.org/obp/ui |               |
-|           |                   | /#iso:std:iso-iec:2 |               |
-|           |                   | 7002:ed-2:v1:en>`__ |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Standards         | The Cloud Operator, |               |
-| c.std.009 |                   | and Platform        |               |
-|           |                   | **should**          |               |
-|           |                   | implement the       |               |
-|           |                   | `ISO/IEC 27032:2012 |               |
-|           |                   | (or latest)         |               |
-|           |                   | Guidelines for      |               |
-|           |                   | Cybersecurity       |               |
-|           |                   | t\                  |               |
-|           |                   | echniques <https:// |               |
-|           |                   | www.iso.org/obp/ui/ |               |
-|           |                   | #iso:std:iso-iec:27 |               |
-|           |                   | 032:ed-1:v1:en>`__; |               |
-|           |                   | ISO/IEC 27032 is    |               |
-|           |                   | the international   |               |
-|           |                   | Standard focusing   |               |
-|           |                   | explicitly on       |               |
-|           |                   | cybersecurity       |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Standards         | The Cloud Operator  |               |
-| c.std.010 |                   | **should** conform  |               |
-|           |                   | to the ISO/IEC      |               |
-|           |                   | 27035 standard for  |               |
-|           |                   | incidence           |               |
-|           |                   | management; ISO/IEC |               |
-|           |                   | 27035 is the        |               |
-|           |                   | international       |               |
-|           |                   | Standard for        |               |
-|           |                   | incident management |               |
-+-----------+-------------------+---------------------+---------------+
-| se\       | Standards         | The Cloud Operator  |               |
-| c.std.011 |                   | **should** conform  |               |
-|           |                   | to the ISO/IEC      |               |
-|           |                   | 27031 standard for  |               |
-|           |                   | business            |               |
-|           |                   | continuity; ISO/IEC |               |
-|           |                   | 27031 - ISO/IEC     |               |
-|           |                   | 27031 is the        |               |
-|           |                   | international       |               |
-|           |                   | Standard for ICT    |               |
-|           |                   | readiness for       |               |
-|           |                   | business continuity |               |
-+-----------+-------------------+---------------------+---------------+
+.. list-table:: Compliance with Security Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-46: Compliance with Security Recommendations
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - sec.std.001
+     - Standards
+     - The Cloud Operator **should** comply with `Center for Internet Security
+       CIS Controls <https://www.cisecurity.org/>`__
+     -
+   * - sec.std.002
+     - Standards
+     - The Cloud Operator, Platform and Workloads **should** follow the
+       guidance in the CSA Security Guidance for Critical Areas of Focus in
+       Cloud Computing (latest version)- CSA, `Cloud Security Alliance
+       <https://cloudsecurityalliance.org/>`__
+     -
+   * - sec.std.003
+     - Standards
+     - The Platform and Workloads **should** follow the guidance in the
+       `OWASP Cheat Sheet Series (OCSS)
+       <https://github.com/OWASP/CheatSheetSeries>`__ - OWASP, `Open Web
+       Application Security Project <https://www.owasp.org>`__
+     -
+   * - sec.std.004
+     - Standards
+     - The Cloud Operator, Platform and Workloads **should** ensure that their
+       code is not vulnerable to the `OWASP Top Ten Security Risks
+       <https://owasp.org/www-project-top-ten/>`__
+     -
+   * - sec.std.005
+     - Standards
+     - The Cloud Operator, Platform and Workloads **should** strive to improve
+       their maturity on the `OWASP Software Maturity Model (SAMM)
+       <https://owaspsamm.org/blog/2019/12/20/version2-community-release/>`__
+     -
+   * - sec.std.006
+     - Standards
+     - The Cloud Operator, Platform and Workloads should utilise the
+       `OWASP Web Security Testing Guide
+       <https://github.com/OWASP/wstg/tree/master/document>`__
+     -
+   * - sec.std.007
+     - Standards
+     - The Cloud Operator, and Platform **should** satisfy the requirements
+       for Information Management Systems specified in `ISO/IEC 27001
+       <https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en>`__;
+       ISO/IEC 27001 is the international Standard for best-practice
+       information security management systems (ISMSs)
+     -
+   * - sec.std.008
+     - Standards
+     - The Cloud Operator, and Platform **should** implement the Code of
+       practice for Security Controls specified
+       `ISO/IEC 27002:2013 (or latest)
+       <https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en>`__
+     -
+   * - sec.std.009
+     - Standards
+     - The Cloud Operator, and Platform **should** implement the
+       `ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques
+       <https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en>`__;
+       ISO/IEC 27032 is the international Standard focusing explicitly on
+       cybersecurity
+     -
+   * - sec.std.010
+     - Standards
+     - The Cloud Operator **should** conform to the ISO/IEC 27035 standard for
+       incidence management; ISO/IEC 27035 is the international Standard for
+       incident management
+     -
+   * - sec.std.011
+     - Standards
+     - The Cloud Operator **should** conform to the ISO/IEC 27031 standard for
+       business continuity; ISO/IEC 27031 - ISO/IEC 27031 is the international
+       Standard for ICT readiness for business continuity
+     -
