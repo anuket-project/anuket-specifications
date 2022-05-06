@@ -1004,7 +1004,8 @@ The following principles apply to Storage scope for the Reference Model, Referen
 Implementations and Reference Conformance test suites:
 
 - Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical
-  Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
+  Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation
+  Layers.
 - Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance
   requirements (more in Virtual Resources 3.2.1.3 Storage).
 - Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of
@@ -1772,19 +1773,18 @@ Infrastructure:
 ^^^^^^^^^^^^^^^
 
 - a) Application functionality or application control requires infrastructure components beyond RM profiles or
-     infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled with
-     the infrastructure which results in an Appliance deployment model (see
+     infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled
+     with the infrastructure which results in an Appliance deployment model (see
      :ref:`common/glossary:cloud platform abstraction related terminology:`).
 - b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
      the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure
      components that make application work. Example is an application that to achieve latency requirements needs 
-certain
-     hardware acceleration available in RM profile and is exposed through APIs specified by RA.
+     certain hardware acceleration available in RM profile and is exposed through APIs specified by RA.
 - c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
      optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure
      component(s) that make application work better (like more performant) than without that infrastructure component.
-     Example is an application that would have better cost/performance with certain acceleration adapter but can also work
-     without it.
+     Example is an application that would have better cost/performance with certain acceleration adapter but can also 
+     work without it.
 - d) Application control using APIs specified by RA finds general profile nodes without any specific infrastructure
      components.
 
