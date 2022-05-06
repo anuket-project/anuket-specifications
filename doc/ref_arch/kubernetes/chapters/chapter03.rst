@@ -326,7 +326,7 @@ carefully scheduled on nodes and preferably still decoupled from infrastructure 
 |   |              |                  | or SmartNICs                  | Device Plugin                                 |
 +---+--------------+------------------+-------------------------------+-----------------------------------------------+
 | 5 | Networking   |                  | CPU instructions              | Huge pages (for DPDK-based applications); CPU |
-|   |(dataplane)   |                  |                               | Manager with configuration for isolcpus and   |
+|   | (dataplane)  |                  |                               | Manager with configuration for isolcpus and   |
 |   |              |                  |                               | SMT; Multiple interfaces; NUMA topology;      |
 |   |              |                  |                               | Device Plugin; NFD                            |
 +---+--------------+------------------+-------------------------------+-----------------------------------------------+
