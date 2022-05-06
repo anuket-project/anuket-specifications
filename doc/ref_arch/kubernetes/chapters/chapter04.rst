@@ -163,43 +163,43 @@ Node Operating System
 
 In order for a Host OS to be compliant with this Reference Architecture it must meet the following requirements:
 
-+--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-| Ref          | Specification| Details                                      | Requirement           | Reference             |
-|              |              |                                              | Trace                 | Implementation Trace  |
-+==============+==============+==========+===================================+=======================+=======================+
-|``ra2.os.001``|Linux         |A deb/rpm compatible distribution of Linux    |tbd                    |tbd                    |
-|              |Distribution  |(this must be used for the master nodes, and  |                       |                       |
-|              |              |can be used for worker nodes).                |                       |                       |
-+--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.os.002``|Linux Kernel  |A version of the Linux kernel that is         |tbd                    |tbd                    |
-|              |Version       |compatible with kubeadm - this has been       |                       |                       |
-|              |              |chosen as the baseline because kubeadm is     |                       |                       |
-|              |              |focussed on installing and managing the       |                       |                       |
-|              |              |lifecycle of Kubernetes and nothing else,     |                       |                       |
-|              |              |hence it is easily integrated into            |                       |                       |
-|              |              |higher-level and more complete tooling for    |                       |                       |
-|              |              |the full lifecycle management of the          |                       |                       |
-|              |              |infrastructure, cluster add-ons, etc.         |                       |                       |
-+--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.os.003``|Windows Server|Windows Server 2019 (this can be used for     |tbd                    |tbd                    |
-|              |              |worker nodes, but be aware of the             |                       |                       |
-|              |              |limitations).                                 |                       |                       |
-+--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.os.004``|Disposable OS |In order to support req.gen.cnt.03 (immutable |tbd                    |tbd                    |
-|              |              |infrastructure), the Host OS must be          |                       |                       |
-|              |              |disposable, meaning the configuration of the  |                       |                       |
-|              |              |Host OS (and associated infrastructure such   |                       |                       |
-|              |              |as VM or bare metal server) must be           |                       |                       |
-|              |              |consistent - e.g. the system software and     |                       |                       |
-|              |              |configuration of that software must be        |                       |                       |
-|              |              |identical apart from those areas of           |                       |                       |
-|              |              |configuration that must be different such as  |                       |                       |
-|              |              |IP addresses and hostnames.                   |                       |                       |
-+--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.os.005``|Automated     |This approach to configuration management     |tbd                    |tbd                    |
-|              |Deployment    |supports req.lcm.gen.01 (automated            |                       |                       |
-|              |              |deployments)                                  |                       |                       |
-+--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+| Ref          | Specification | Details                                       | Requirement           | Reference             |
+|              |               |                                               | Trace                 | Implementation Trace  |
++==============+===============+===========+===================================+=======================+=======================+
+|``ra2.os.001``| Linux         | A deb/rpm compatible distribution of Linux    | tbd                   | tbd                   |
+|              | Distribution  | (this must be used for the master nodes, and  |                       |                       |
+|              |               | can be used for worker nodes).                |                       |                       |
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+|``ra2.os.002``| Linux Kernel  | A version of the Linux kernel that is         | tbd                   | tbd                   |
+|              | Version       | compatible with kubeadm - this has been       |                       |                       |
+|              |               | chosen as the baseline because kubeadm is     |                       |                       |
+|              |               | focussed on installing and managing the       |                       |                       |
+|              |               | lifecycle of Kubernetes and nothing else,     |                       |                       |
+|              |               | hence it is easily integrated into            |                       |                       |
+|              |               | higher-level and more complete tooling for    |                       |                       |
+|              |               | the full lifecycle management of the          |                       |                       |
+|              |               | infrastructure, cluster add-ons, etc.         |                       |                       |
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+|``ra2.os.003``| Windows       | Windows Server (this can be used for          | tbd                   | tbd                   |
+|              | Server        | worker nodes, but be aware of the             |                       |                       |
+|              |               | limitations).                                 |                       |                       |
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+|``ra2.os.004``| Disposable    | In order to support req.gen.cnt.03 (immutable | tbd                   | tbd                   |
+|              | OS            | infrastructure), the Host OS must be          |                       |                       |
+|              |               | disposable, meaning the configuration of the  |                       |                       |
+|              |               | Host OS (and associated infrastructure such   |                       |                       |
+|              |               | as VM or bare metal server) must be           |                       |                       |
+|              |               | consistent - e.g. the system software and     |                       |                       |
+|              |               | configuration of that software must be        |                       |                       |
+|              |               | identical apart from those areas of           |                       |                       |
+|              |               | configuration that must be different such as  |                       |                       |
+|              |               | IP addresses and hostnames.                   |                       |                       |
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+|``ra2.os.005``| Automated     | This approach to configuration management     | tbd                   | tbd                   |
+|              | Deployment    | supports req.lcm.gen.01 (automated            |                       |                       |
+|              |               | deployments)                                  |                       |                       |
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
 
 **Table 4-2:** Operating System Requirements
 
