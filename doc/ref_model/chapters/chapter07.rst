@@ -402,7 +402,8 @@ organisations are experiencing these threats. Software suppliers can be targeted
 customers, as seen with the backdoors affecting SolarWinds products and detailed in
 `Defending against SolarWinds attacks 
 <https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_.
-Open-source code weaknesses can also be utilised by attackers, the Log4J vulnerability, impacting lots of 
+Open-source code weaknesses can also be utilised by attackers, the `Log4J <https://www.cisa.gov/uscert/apache-log4j-vulnerability-guidance>`_
+vulnerability, impacting many 
 applications, is a recent example in this field. When addressing cyber security, the vulnerabilities of 
 software supply chain are often not taken into account. Some governments are already alerting and requesting 
 actions to face these risks. The British government is hardening the law and standards of cyber security for 
