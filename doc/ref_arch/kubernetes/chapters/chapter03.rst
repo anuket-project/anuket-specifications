@@ -307,29 +307,29 @@ Non-resilient applications are sensitive to platform impairments on Compute like
 because of OS scheduler) or Networking like packet drops, reordering or latencies. Such applications need to be
 carefully scheduled on nodes and preferably still decoupled from infrastructure details of those nodes.
 
-+---------------+-------------------+--------------------------------+------------------------------------------------+
-| Intensive on  | Not intensive on  | Using hardware acceleration    | Requirements for optimised pod scheduling      |
-+===============+===================+================================+================================================+
-| 1 Compute     | Networking        | No                             | CPU Manager                                    |
-|               | (dataplane)       |                                |                                                |
-+---------------+-------------------+--------------------------------+------------------------------------------------+
-| 2 Compute     | Networking        | CPU instructions               | CPU Manager, NFD                               |
-|               | (dataplane)       |                                |                                                |
-+---------------+-------------------+--------------------------------+------------------------------------------------+
-| 3 Compute     | Networking        | Fixed function acceleration,   | CPU Manager, Device Plugin                     |
-|               | (dataplane)       | Firmware-programmable network  |                                                |
-|               |                   | adapters or SmartNICs          |                                                |
-+---------------+-------------------+--------------------------------+------------------------------------------------+
-| 4 Networking  |                   | No, or Fixed function          | Huge pages (for DPDK-based applications); CPU  |
-| (dataplane)   |                   | acceleration, Firmware-        | Manager with configuration for isolcpus and    |
-|               |                   | programmable network adapters  | SMT; Multiple interfaces; NUMA topology;       |
-|               |                   | or SmartNICs                   | Device Plugin                                  |
-+---------------+-------------------+--------------------------------+------------------------------------------------+
-| 5 Networking  |                   | CPU instructions               | Huge pages (for DPDK-based applications); CPU  |
-| (dataplane)   |                   |                                | Manager with configuration for isolcpus and    |
-|               |                   |                                | SMT; Multiple interfaces; NUMA topology;       |
-|               |                   |                                | Device Plugin; NFD                             |
-+---------------------------------------------------------------------------------------------------------------------+
++---+--------------+------------------+-------------------------------+-----------------------------------------------+
+| # | Intensive on | Not intensive on | Using hardware acceleration   | Requirements for optimised pod scheduling     |
++===+==============+==================+===============================+===============================================+
+| 1 | Compute      | Networking       | No                            | CPU Manager                                   |
+|   |              | (dataplane)      |                               |                                               |
++---+--------------+------------------+-------------------------------+-----------------------------------------------+
+| 2 | Compute      | Networking       | CPU instructions              | CPU Manager, NFD                              |
+|   |              | (dataplane)      |                               |                                               |
++---+--------------+------------------+-------------------------------+-----------------------------------------------+
+| 3 | Compute      | Networking       | Fixed function acceleration,  | CPU Manager, Device Plugin                    |
+|   |              | (dataplane)      | Firmware-programmable network |                                               |
+|   |              |                  | adapters or SmartNICs         |                                               |
++---+--------------+------------------+-------------------------------+-----------------------------------------------+
+| 4 | Networking   |                  | No, or Fixed function         | Huge pages (for DPDK-based applications); CPU |
+|   | (dataplane)  |                  | acceleration, Firmware-       | Manager with configuration for isolcpus and   |
+|   |              |                  | programmable network adapters | SMT; Multiple interfaces; NUMA topology;      |
+|   |              |                  | or SmartNICs                  | Device Plugin                                 |
++---+--------------+------------------+-------------------------------+-----------------------------------------------+
+| 5 | Networking   |                  | CPU instructions              | Huge pages (for DPDK-based applications); CPU |
+|   |(dataplane)   |                  |                               | Manager with configuration for isolcpus and   |
+|   |              |                  |                               | SMT; Multiple interfaces; NUMA topology;      |
+|   |              |                  |                               | Device Plugin; NFD                            |
++---+--------------+------------------+-------------------------------+-----------------------------------------------+
 
 **Table 3-1:** Categories of applications, requirements for scheduling pods and Kubernetes features
 
@@ -604,27 +604,27 @@ The basic semantics of Kubernetes, and the information found in manifests, defin
 without any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW
 services and network policies for them that are not location aware and therefore can be executed more or less anywhere.
 
-+--------------------------------------+-------------------------------------------------------------------------------+
-| Network objects                      | Description                                                                   |
-+======================================+===============================================================================+
-|`Ingress: <https://kubernetes.io/docs/| Ingress is a collection of rules that allow inbound connections to reach      |
-|concepts/services-networking/ingress/>| the endpoints defined by a backend. An Ingress can be configured to give      |
-|`__                                   | services externally reachable URLs, load balance traffic, terminate SSL,      |
-|                                      | offer name based virtual hosting etc.                                         |
-+======================================+===============================================================================+
-|`Service: <https://kubernetes.io/docs/| Service is a named abstraction of an application running on a set of pods     |
-|concepts/services-networking/service/>| consisting of a local port (for example 3306) that the proxy listens on, and  |
-|`__                                   | the selector that determines which pods will answer requests sent through     |
-|                                      | the proxy.                                                                    |
-+======================================+===============================================================================+
-|`EndpointSlices: <https://kubernetes.i| Endpoints and Endpointslices are a collection of objects that contain the ip  |
-|o/docs/concepts/services-networking/en| address, v4 and v6, of the pods that represents a service.                    |
-|dpoint-slices/>`__                    |                                                                               |
-+======================================+===============================================================================+
-|`Network Policy: <https://kubernetes.i| Network Policy defines which network traffic is allowed to ingress and egress |
-|o/docs/concepts/services-networking/en| from a set of pods.                                                           |
-|dpoint-slices/>`__                    |                                                                               |
-+--------------------------------------+-------------------------------------------------------------------------------+
++----------------------------------------+-----------------------------------------------------------------------------+
+| Network objects                        | Description                                                                 |
++========================================+=============================================================================+
+| `Ingress: <https://kubernetes.io/docs/ | Ingress is a collection of rules that allow inbound connections to reach    |
+| concepts/services-networking/ingress/> | the endpoints defined by a backend. An Ingress can be configured to give    |
+| `__                                    | services externally reachable URLs, load balance traffic, terminate SSL,    |
+|                                        | offer name based virtual hosting etc.                                       |
++========================================+=============================================================================+
+| `Service: <https://kubernetes.io/docs/ | Service is a named abstraction of an application running on a set of pods   |
+| concepts/services-networking/service/> | consisting of a local port (for example 3306) that the proxy listens on,    |
+| `__                                    | and the selector that determines which pods will answer requests sent       |
+|                                        | through the proxy.                                                          |
++========================================+=============================================================================+
+| `EndpointSlices: <https://kubernetes.i | Endpoints and Endpointslices are a collection of objects that contain the   |
+| o/docs/concepts/services-networking/en | ip address, v4 and v6, of the pods that represents a service.               |
+| dpoint-slices/>`__                     |                                                                             |
++========================================+=============================================================================+
+| `Network Policy: <https://kubernetes.i | Network Policy defines which network traffic is allowed to ingress and      |
+| o/docs/concepts/services-networking/en | egress from a set of pods.                                                  |
+| dpoint-slices/>`__                     |                                                                             |
++----------------------------------------+-----------------------------------------------------------------------------+
 
 There is no need to explicitly define internal load balancers, server pools, service monitors, firewalls and so on.
 The Kubernetes semantics and relation between the different objects defined in the object manifests contains all the
