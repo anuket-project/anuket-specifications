@@ -331,12 +331,12 @@ refers to Continuous Deployment.
 |               | of images and deployment manifests from source    |                                                  |
 |               | code and configuration files.                     |                                                  |
 +---------------+---------------------------------------------------+--------------------------------------------------+
-| auto.cicd.007 | The CI pipeline must scan images and manifests to | See section 7.9 (:ref:`ref_model/chapters/chapte |
-|               | validate for compliance with security             | r07:consolidated security requirements`).        |
-|               | requirements.                                     | Examples of such security requirements include   |
-|               |                                                   | only ingesting images, source code,              |
-|               |                                                   | configuration files, etc. only form trusted      |
-|               |                                                   | sources.                                         |
+| auto.cicd.007 | The CI pipeline must scan images and manifests to | See section 7.9 (                                |
+|               | validate for compliance with security             | :ref:`ref_model/chapters/chapter07:consolidated  |
+|               | requirements.                                     | security requirements`). Examples of such        |
+|               |                                                   | security requirements include only ingesting     |
+|               |                                                   | images, source code, configuration files, etc.   |
+|               |                                                   | only form trusted sources.                                         |
 +---------------+---------------------------------------------------+--------------------------------------------------+
 | auto.cicd.008 | The CI pipeline must validate images and          | Example, different tests                         |
 |               | manifests                                         |                                                  |
