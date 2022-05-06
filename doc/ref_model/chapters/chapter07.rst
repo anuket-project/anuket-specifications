@@ -458,8 +458,8 @@ public repositories or code within a commercial application or network function.
 
 The strength of open-source code is the availability of code source developed by a community which maintains and improves it. 
 Open-source code integration with application source code helps to develop and produce applications faster. But, in return, 
-it can introduce security risks if a risk management DevSecOps approach is not implemented. The GSMA white paper, “Open 
-Networking & the Security of Open Source Software Deployment - Future Networks”`
+it can introduce security risks if a risk management DevSecOps approach is not implemented. The GSMA white paper  
+`“Open Networking & the Security of Open Source Software Deployment - Future Networks” 
 <https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/>`_ 
 alerts on these risks and addresses the 
 challenges coming with open-source code usage. Amongst these risks for security, we can mention a poor code quality 
