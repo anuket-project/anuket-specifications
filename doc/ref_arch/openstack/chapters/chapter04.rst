@@ -1653,91 +1653,59 @@ subset of the controller services are also deployed on the Intermediate
 and Edge Cloud Centres. Table 4-5 presents examples of such deployment
 choices.
 
-+--------+--------+--------+--------+--------+--------+---------+--------+
-|        |        | O\     | Id\    | Image  | C\     | N\      | S\     |
-|        |        | rchest\| entity | Mana\  | ompute | etwork  | torage |
-|        |        | ration | Mana\  | gement |        | Mana\   | Mana\  |
-|        |        |        | gement |        |        | gement  | gement |
-+========+========+========+========+========+========+=========+========+
-| CCP    | Centr\ | hea\   | Id\    | Glance | nova-c\| n\      | Cinder |
-|        | alised | t-api, | entity | API,   | ompute | eutron  | API,   |
-|        | DC –   | heat-e\| Pr\    | Glance | api\   | -serve\ | Cinder |
-|        | c\     | ngine, | ovider | Re\    | ,nova- | r,neut\ | Sche\  |
-|        | ontrol | nova-p\| (I\    | gistry | schedu\| ron-dh\ | duler, |
-|        | nodes  | laceme\| dP),Ke\|        | ler,no\| cp-age\ | Cinder |
-|        |        | nt-api | ystone |        | va-con\| nt,neu\ | Volume |
-|        |        |        | API    |        | ductor | tron-L\ |        |
-|        |        |        |        |        |        | 2-agen\ |        |
-|        |        |        |        |        |        | t,neut\ |        |
-|        |        |        |        |        |        | ron-L3  |        |
-|        |        |        |        |        |        | -agent  |        |
-|        |        |        |        |        |        | (op\    |        |
-|        |        |        |        |        |        | tional  |        |
-|        |        |        |        |        |        | ),neut\ |        |
-|        |        |        |        |        |        | ron-me\ |        |
-|        |        |        |        |        |        | tadata  |        |
-|        |        |        |        |        |        | -agent  |        |
-+--------+--------+--------+--------+--------+--------+---------+--------+
-| DCP:   | Any DC | hea\   | Id\    | Glance | nova-c\| n\      | Cinder |
-| combi\ | -      | t-api, | entity | API,   | ompute | eutron  | API,   |
-| nation | C\     | heat-e\| Pr\    | Glance | api    | -serve\ | Cinder |
-| of     | ontrol | ngine, | ovider | Re\    | ,nova- | r,neut\ | Sche\  |
-| se\    | nodes  | nova-p\| (I\    | gistry | schedu\| ron-dh\ | duler, |
-| rvices | Option | laceme\| dP),Ke\|        | ler,no\| cp-age\ | Cinder |
-| dep\   | 1      | nt-api | ystone |        | va-con\| nt,neu\ | Volume |
-| ending |        |        | API    |        | ductor | tron-L\ |        |
-| upon   |        |        |        |        |        | 2-agen\ |        |
-| Center |        |        |        |        |        | t,neut\ |        |
-| size   |        |        |        |        |        | ron-L3\ |        |
-|        |        |        |        |        |        | -agent  |        |
-|        |        |        |        |        |        | (op\    |        |
-|        |        |        |        |        |        | tional  |        |
-|        |        |        |        |        |        | ),neut\ |        |
-|        |        |        |        |        |        | ron-me\ |        |
-|        |        |        |        |        |        | tadata  |        |
-|        |        |        |        |        |        | -agent  |        |
-+--------+--------+--------+--------+--------+--------+---------+--------+
-|        | Any DC | \*\*   | \* in  | \* in  | \*\*   | \*\*    | \*\*   |
-|        | -      | in     | Large  | Large  | in     | in      | in     |
-|        | C\     | other  | DC     | DC     | a\     | a\      | a\     |
-|        | ontrol | DC     |        |        | nother | nother  | nother |
-|        | nodes  |        |        |        | DC     | DC      | DC     |
-|        | Option |        |        |        |        |         |        |
-|        | 2:     |        |        |        |        |         |        |
-|        | split  |        |        |        |        |         |        |
-|        | se\    |        |        |        |        |         |        |
-|        | rvices |        |        |        |        |         |        |
-|        | b\     |        |        |        |        |         |        |
-|        | etween |        |        |        |        |         |        |
-|        | DCs    |        |        |        |        |         |        |
-+--------+--------+--------+--------+--------+--------+---------+--------+
-| CCP or | C\     |        |        |        | nova-c\| neutr\  |        |
-| DCP    | ompute |        |        |        | ompute | on-L2-  |        |
-|        | nodes  |        |        |        | -agent | agent,  |        |
-|        |        |        |        |        |        | neut\   |        |
-|        |        |        |        |        |        | ron-L3\ |        |
-|        |        |        |        |        |        | -agent  |        |
-|        |        |        |        |        |        | (opt\   |        |
-|        |        |        |        |        |        | ional)  |        |
-+--------+--------+--------+--------+--------+--------+---------+--------+
-| CCP    | C\     | nova-p\|        |        | nov\   | n\      |        |
-|        | ompute | laceme\|        |        | a-comp\| eutron  |        |
-|        | nodes  | nt-api |        |        | ute-ag\| -serve\ |        |
-|        |        |        |        |        | ent,no\| r,neut\ |        |
-|        |        |        |        |        | va-con\| ron-dh\ |        |
-|        |        |        |        |        | ductor | cp-age\ |        |
-|        |        |        |        |        |        | nt,neu\ |        |
-|        |        |        |        |        |        | tron-L\ |        |
-|        |        |        |        |        |        | 2-agen\ |        |
-|        |        |        |        |        |        | t,neut\ |        |
-|        |        |        |        |        |        | ron-L3\ |        |
-|        |        |        |        |        |        | -agent  |        |
-|        |        |        |        |        |        | (opt\   |        |
-|        |        |        |        |        |        | ional)  |        |
-+--------+--------+--------+--------+--------+--------+---------+--------+
+.. list-table:: Distribution of OpenStack services on different nodes depending upon Control Plane Scenario
+   :widths: 10 10 10 10 10 10 10 10
+   :header-rows: 1
 
-Table 4-5: Distribution of OpenStack services on different nodes
-depending upon Control Plane Scenario
+* - Control Plane
+  - Deployed in
+  - Orchestration
+  - Identity Management
+  - Image Management
+  - Compute
+  - Network Management
+  - Storage Management
+* - CCP
+  - Centralised DC – control nodes
+  - heat-api, heat-engine, nova-placement-api
+  - Identity Provider (IdP), Keystone API
+  - Glance API, Glance Registry
+  - nova-compute api, nova- scheduler, nova-conductor
+  - neutron -server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3 -agent (optional), neutron-metadata -agent
+  - Cinder API, Cinder Scheduler, Cinder Volume
+* - DCP: combination of services depending upon Center size
+* - Any DC - Control nodes Option 1
+* - heat-api, heat-engine, nova-placement-api
+* - Identity Provider (IdP), Keystone API
+* - Glance API, Glance Registry
+* - nova-compute api, nova- scheduler, nova-conductor
+* - neutron -server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3-agent (optional), neutron-metadata -agent
+* - Cinder API, Cinder Scheduler, Cinder Volume
+* -  
+  - Any DC - Control nodes Option 2: split services between two DCs
+  - in the other DC
+  - in the Large DC
+  - in the Large DC
+  - in the other DC
+  - in the other DC
+  - in the other DC
+* - CCP or DCP
+  - Compute nodes
+  -  
+  -  
+  -  
+  - nova-compute -agent
+  - neutron-L2- agent, neutron-L3-agent (optional)
+  -  
+* - CCP
+  - Compute nodes
+  - nova-placement-api
+  -  
+  -  
+  - nova-compute-agent, nova-conductor
+  - neutron -server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3-agent (optional)
+  -
+
 
 Edge Cloud Topology
 ~~~~~~~~~~~~~~~~~~~
