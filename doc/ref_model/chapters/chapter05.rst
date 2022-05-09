@@ -169,6 +169,39 @@ Tracing                                Jaeger
 
 **Table 5-7a:** Service examples.
 
+Platform Services - Log Management Service (LMS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The table below specifies a set of requirements for the Log Management Service (LMS).
+
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| Reference   | Requirement                                                           | Notes                                 |
++=============+=======================================================================+=======================================+
+| pas.lms.001 | LMS must support log management from multiple, distributed sources    |                                       |  
+|             | LMS must manage log rotation at configurable time periods             |                                       |
+|             | LMS must manage log rotation at configurable log file status (%full)  |                                       |
+|             | LMS must manage archival and retention of logs for configurable       |                                       |
+|             | time periods by different log types                                   |                                       |
+|             | LMS should ensure log file integrity                                  |                                       |
+|             | LMS must monitor log rotation and log archival processes              |                                       |
+|             | LMS must monitoring the logging status of all log sources             |                                       |
+|             | LMS must ensure that each logging host’s clock is synched to a common |                                       |
+|             | time source                                                           |                                       |
+|             | LMS must support reconfiguring of logging as needed based on policy   |                                       |
+|             | changes, technology changes, and other factors                        |                                       |
+|             | LMS must supppoort the documenting and reporting of anomalies in log  |                                       |
+|             | settings, configurations, and processes                               |                                       |
+|             | LMS must support the correlating of entries from multiple logs that   |                                       |
+|             | relate to the same event                                              |                                       |
+|             | LMS must support the correlating of multiple log entries from a       |                                       |
+|             | single source or multiple sources based on logged values (e.g., event |                                       |
+|             | types, timestamps, IP addresses                                       |                                       |
+|             | LMS should support rule-based correlation                             |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+
+**Table 5-7d:** Platform Services - Log Management Service (LMS) Requirements.
+
+
 Cloud Infrastructure Software Profiles features and requirements
 ----------------------------------------------------------------
 
