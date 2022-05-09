@@ -177,26 +177,38 @@ The table below specifies a set of requirements for the Log Management Service (
 +-------------+-----------------------------------------------------------------------+---------------------------------------+
 | Reference   | Requirement                                                           | Notes                                 |
 +=============+=======================================================================+=======================================+
-| pas.lms.001 | LMS must support log management from multiple, distributed sources    |                                       |  
-|             | LMS must manage log rotation at configurable time periods             |                                       |
-|             | LMS must manage log rotation at configurable log file status (%full)  |                                       |
-|             | LMS must manage archival and retention of logs for configurable       |                                       |
+| pas.lms.001 | LMS must support log management from multiple, distributed sources    |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.002 | LMS must manage log rotation at configurable time periods             |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.003 | LMS must manage log rotation at configurable log file status (%full)  |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.004 | LMS must manage archival and retention of logs for configurable       |                                       |
 |             | time periods by different log types                                   |                                       |
-|             | LMS should ensure log file integrity                                  |                                       |
-|             | LMS must monitor log rotation and log archival processes              |                                       |
-|             | LMS must monitoring the logging status of all log sources             |                                       |
-|             | LMS must ensure that each logging host’s clock is synched to a common |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.005 | LMS should ensure log file integrity                                  |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.006 | LMS must monitor log rotation and log archival processes              |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.007 | LMS must monitoring the logging status of all log sources             |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.008 | LMS must ensure that each logging host’s clock is synched to a common |                                       |
 |             | time source                                                           |                                       |
-|             | LMS must support reconfiguring of logging as needed based on policy   |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.009 | LMS must support reconfiguring of logging as needed based on policy   |                                       |
 |             | changes, technology changes, and other factors                        |                                       |
-|             | LMS must supppoort the documenting and reporting of anomalies in log  |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.010 | LMS must supppoort the documenting and reporting of anomalies in log  |                                       |
 |             | settings, configurations, and processes                               |                                       |
-|             | LMS must support the correlating of entries from multiple logs that   |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.011 | LMS must support the correlating of entries from multiple logs that   |                                       |
 |             | relate to the same event                                              |                                       |
-|             | LMS must support the correlating of multiple log entries from a       |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.012 | LMS must support the correlating of multiple log entries from a       |                                       |
 |             | single source or multiple sources based on logged values (e.g., event |                                       |
 |             | types, timestamps, IP addresses                                       |                                       |
-|             | LMS should support rule-based correlation                             |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.013 | LMS should support rule-based correlation                             |                                       |
 +-------------+-----------------------------------------------------------------------+---------------------------------------+
 
 **Table 5-7d:** Platform Services - Log Management Service (LMS) Requirements.
