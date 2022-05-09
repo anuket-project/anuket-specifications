@@ -1019,19 +1019,19 @@ CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yam
 offers two benchmarking dataplane test cases leveraging on:
 
 -  `VMTP <http://vmtp.readthedocs.io/en/latest>`__
--  `Shaker <http://pyshaker.readthedocs.io/en/latest/>`__
+-  `Shaker <https://pyshaker.readthedocs.io/en/latest/>`__
 
-`VMTP <http://vmtp.readthedocs.io/en/latest>`__ is a small python
+`VMTP <https://vmtp.readthedocs.io/en/latest/>`__ is a small python
 application that will automatically perform ping connectivity, round
 trip time measurement (latency) and TCP/UDP throughput measurement on
 any OpenStack deployment.
 
-`Shaker <http://pyshaker.readthedocs.io/en/latest/>`__ wraps around
+`Shaker <hhttps://pyshaker.readthedocs.io/en/latest/>`__ wraps around
 popular system network testing tools like iperf, iperf3 and netperf
 (with help of flent).
-`Shaker <http://pyshaker.readthedocs.io/en/latest/>`__ is able to deploy
+`Shaker <https://pyshaker.readthedocs.io/en/latest/>`__ is able to deploy
 OpenStack instances and networks in different topologies.
-`Shaker <http://pyshaker.readthedocs.io/en/latest/>`__ scenario
+`Shaker <https://pyshaker.readthedocs.io/en/latest/>`__ scenario
 specifies the deployment and list of tests to execute.
 
 At the time of writing, no KPIs are defined in Anuket specifications

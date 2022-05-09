@@ -64,7 +64,7 @@ which has differed from OpenStack rules for years.
 
 Then Functest conforms with the upstream rules (versions, code quality,
 etc.) and especially their
-`gates <https://docs.openstack.org/infra/system-config/devstack-gate.html>`__
+`gates <https://docs.opendev.org/opendev/system-config/latest/devstack-gate.html>`__
 (a.k.a. the automatic verification prior to any code review) to preserve
 the quality between code and deployment. In that case, Functest can be
 considered as a smooth and lightweight integration of tests developed
