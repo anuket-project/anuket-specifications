@@ -514,26 +514,39 @@ Let us refer to the data traffic networking configuration of Figure 4-1
 to be part of the hp-B1-a and hp-B4-a host profiles and this requires
 the configurations as Table 4-3.
 
-+----------------+---------------+----------------+----------------+
-|                | Configured in | Host profile:  | Host profile:  |
-|                |               | hp-B1-a        | hp-B4-a        |
-+================+===============+================+================+
-| CPU Allocation | Hypervisor    | 1:1            | 4:1            |
-| Ratio          |               |                |                |
-+----------------+---------------+----------------+----------------+
-| CPU Pinning    | BIOS          | Disable        | Disable        |
-+----------------+---------------+----------------+----------------+
-| SMT            | BIOS          | Enable         | Enable         |
-+----------------+---------------+----------------+----------------+
-| NUMA           | BIOS          | Disable        | Disable        |
-+----------------+---------------+----------------+----------------+
-| Huge pages     | BIOS          | No             | No             |
-+----------------+---------------+----------------+----------------+
-| Profile        |               | B1             | B4             |
-| Extensions     |               |                |                |
-+----------------+---------------+----------------+----------------+
+.. list-table:: Configuration of Basic Flavor Capabilities
+   :widths: 20 10 10 10
+   :header-rows: 1
 
-Table 4-3: Configuration of Basic Flavor Capabilities
+* - Capability
+  - Configured in
+  - Host profile: hp-B1-a
+  - Host profile: hp-B4-a
+* - CPU Allocation Ratio
+  - Hypervisor
+  - 1:1
+  - 4:1
+* - CPU Pinning
+  - BIOS
+  - Enable
+  - Disable
+* - SMT
+  - BIOS
+  - Enable
+  - Enable
+* - NUMA
+  - BIOS
+  - Disable
+  - Disable
+* - Huge pages
+  - BIOS
+  - No
+  - No
+* - Profile Extensions
+  -  
+  - B1
+  - B4
+
 
 Figure 4-2 shows the networking configuration where the storage and OAM
 share networking but are independent of the PXE network.
@@ -578,37 +591,46 @@ below) and hence there will be a need for different host profiles. Table
 4-4 gives examples of three different host profiles; one each for HV, HD
 and HS Profile Extensions.
 
-+-------------+-------------+-------------+-------------+-------------+
-|             | Configured  | Host        | Host        | Host        |
-|             | in          | profile:    | profile:    | profile:    |
-|             |             | hp-hv-a     | hp-hd-a     | hp-hs-a     |
-+=============+=============+=============+=============+=============+
-| Profile     |             | HV          | HD          | HS          |
-| Extensions  |             |             |             |             |
-+-------------+-------------+-------------+-------------+-------------+
-| CPU         | Hypervisor  | 1:1         | 1:1         | 1:1         |
-| Allocation  |             |             |             |             |
-| Ratio       |             |             |             |             |
-+-------------+-------------+-------------+-------------+-------------+
-| NUMA        | BIOS,       | Enable      | Enable      | Enable      |
-|             | Operating   |             |             |             |
-|             | System,     |             |             |             |
-|             | Hypervisor  |             |             |             |
-|             | and         |             |             |             |
-|             | OpenStack   |             |             |             |
-|             | Nova        |             |             |             |
-|             | Scheduler   |             |             |             |
-+-------------+-------------+-------------+-------------+-------------+
-| CPU Pinning | OpenStack   | Enable      | Enable      | Enable      |
-| (requires   | Nova        |             |             |             |
-| NUMA)       | Scheduler   |             |             |             |
-+-------------+-------------+-------------+-------------+-------------+
-| SMT         | BIOS        | Enable      | Enable      | Enable      |
-+-------------+-------------+-------------+-------------+-------------+
-| Huge pages  | BIOS        | Yes         | Yes         | Yes         |
-+-------------+-------------+-------------+-------------+-------------+
+.. list-table:: Configuration of High Performance Flavor Capabilities
+   :widths: 15 29 12 12 12
+   :header-rows: 2
 
-Table 4-4: Configuration of High Performance Flavor Capabilities
+* - Capability 
+  - Configured in
+  - Host profile: hp-hv-a
+  - Host profile: hp-hd-a
+  - Host profile: hp-hs-a
+* - Profile Extensions
+  -  
+  - HV
+  - HD
+  - HS
+* - CPU Allocation Ratio
+  - Hypervisor
+  - 1:1
+  - 1:1
+  - 1:1
+* - NUMA
+  - BIOS, Operating System, Hypervisor and OpenStack Nova Scheduler
+  - Enable
+  - Enable
+  - Enable
+* - CPU Pinning (requires NUMA)
+  - OpenStack Nova Scheduler
+  - Enable
+  - Enable
+  - Enable
+* - SMT
+  - BIOS
+  - Enable
+  - Enable
+  - Enable
+* - Huge pages
+  - BIOS
+  - Yes
+  - Yes
+  - Yes
+
 
 *Host Networking configuration for HD Profile Extensions*
 
@@ -702,88 +724,60 @@ High Level Logical Network Layout
 
 Figure 4-5: Indicative OpenStack Network Layout
 
-+--------------------+------------------+-----------------------------+
-| Network            | Description      | Characteristics             |
-+====================+==================+=============================+
-| Provisioning &     | Initial OS       | Security Domain:            |
-| Management         | bootstrapping of | ManagementExternally        |
-|                    | the servers via  | Routable: NoConnected to:   |
-|                    | PXE, deployment  | All nodes                   |
-|                    | of software and  |                             |
-|                    | thereafter for   |                             |
-|                    | access from      |                             |
-|                    | within the       |                             |
-|                    | control plane.   |                             |
-+--------------------+------------------+-----------------------------+
-| Internal API       | Intra-OpenStack  | Security Domain:            |
-|                    | service API      | ManagementExternally        |
-|                    | communications,  | Routable: No Connected to:  |
-|                    | messaging and    | All nodes except foundation |
-|                    | database         |                             |
-|                    | replication      |                             |
-+--------------------+------------------+-----------------------------+
-| Storage Management | Backend          | Security Domain: Storage    |
-|                    | connectivity     | Externally Routable: No     |
-|                    | between storage  | Connected to: All nodes     |
-|                    | nodes for        | except foundation           |
-|                    | heartbeats, data |                             |
-|                    | object           |                             |
-|                    | replication and  |                             |
-|                    | synchronisation  |                             |
-+--------------------+------------------+-----------------------------+
-| Storage Front-end  | Block/Object     | Security Domain:            |
-|                    | storage access   | StorageExternally Routable: |
-|                    | via cinder/swift | NoConnected to: All nodes   |
-|                    |                  | except foundation           |
-+--------------------+------------------+-----------------------------+
-| Tenant             | VXLAN / Geneve   | Security Domain:            |
-|                    | project overlay  | UnderlayExternally          |
-|                    | networks (OVS    | Routable: No Connected to:  |
-|                    | kernel mode) –   | controllers and computes    |
-|                    | i.e. RFC1918     |                             |
-|                    | re-usable        |                             |
-|                    | private networks |                             |
-|                    | as controlled by |                             |
-|                    | cloud            |                             |
-|                    | administrator    |                             |
-+--------------------+------------------+-----------------------------+
-| External API       | Hosts the public | Security Domain:            |
-|                    | OpenStack API    | PublicExternally routable:  |
-|                    | endpoints        | YesConnected to:            |
-|                    | including the    | controllers                 |
-|                    | dashboard        |                             |
-|                    | (Horizon)        |                             |
-+--------------------+------------------+-----------------------------+
-| External Provider  | Network with a   | Security Domain: Data       |
-| (FIP)              | pool of          | CentreExternally routable:  |
-|                    | externally       | YesConnected to:            |
-|                    | routable IP      | controllers, OVS computes   |
-|                    | addresses used   |                             |
-|                    | by neutron       |                             |
-|                    | routers to NAT   |                             |
-|                    | to/from the      |                             |
-|                    | tenant RFC1918   |                             |
-|                    | private networks |                             |
-+--------------------+------------------+-----------------------------+
-| External Provider  | External Data    | Security Domain: Data       |
-| (VLAN)             | Centre L2        | CentreExternally routable:  |
-|                    | networks (VLANs) | YesConnected to: OVS DPDK   |
-|                    | that are         | computes                    |
-|                    | directly         |                             |
-|                    | accessible to    |                             |
-|                    | the project.     |                             |
-|                    | Note: External   |                             |
-|                    | IP address       |                             |
-|                    | management is    |                             |
-|                    | required         |                             |
-+--------------------+------------------+-----------------------------+
-| IPMI / Out of Band | The remote       | Security Domain:            |
-|                    | “lights-out”     | ManagementExternally        |
-|                    | management port  | routable: NoConnected to:   |
-|                    | of the servers   | IPMI port on all servers    |
-|                    | e.g. iLO, IDRAC  |                             |
-|                    | / IPMI / Redfish |                             |
-+--------------------+------------------+-----------------------------+
+.. list-table:: OpenStack Network Characteristics
+   :widths: 15 35 30
+   :header-rows: 1
+
+* - Network
+  - Description
+  - Characteristics
+* - Provisioning & Management
+  - Initial OS bootstrapping of the servers via PXE, deployment of software and thereafter for access from within the control plane.
+  - Security Domain: Management 
+     Externally Routable: No
+    Connected to: All nodes
+* - Internal API
+  - Intra-OpenStack service API communications, messaging, and database replication
+  - Security Domain: Management
+    Externally Routable: No
+    Connected to: All nodes except foundation
+* - Storage Management
+  - Backend connectivity between storage nodes for heartbeats, data object replication and synchronisation
+  - Security Domain: Storage
+    Externally Routable: No
+    Connected to: All nodes except foundation
+* - Storage Front-end
+  - Block/Object storage access via cinder/swift
+  - Security Domain: Storage
+    Externally Routable: No
+    Connected to: All nodes except foundation
+* - Tenant
+  - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918 re-usable private networks as controlled by cloud administrator
+  - Security Domain: Underlay
+    Externally Routable: No
+    Connected to: controllers and computes
+* - External API
+  - Hosts the public OpenStack API endpoints including the dashboard (Horizon)
+  - Security Domain: Public
+    Externally routable: Yes
+    Connected to: controllers
+* - External Provider (FIP)
+  - Network with a pool of externally routable IP addresses used by neutron routers to NAT to/from the tenant RFC1918 private networks
+  - Security Domain: Data Centre
+    Externally routable: Yes
+    Connected to: controllers, OVS computes
+* - External Provider (VLAN)
+  - External Data Centre L2 networks (VLANs) that are directly accessible to the project.
+    Note: External IP address management is required
+  - Security Domain: Data Centre
+    Externally routable: Yes
+    Connected to: OVS DPDK computes
+* - IPMI / Out of Band
+  - The remote “lights-out” management port of the servers e.g., iLO, IDRAC / IPMI / Redfish
+  - Security Domain: Management
+    Externally routable: No
+    Connected to: IPMI port on all servers
+
 
 A VNF application network topology is expressed in terms of servers,
 vNIC interfaces with vNet access networks, and WAN Networks while the
@@ -1086,92 +1080,42 @@ Factors affecting controller node load include number of compute nodes
 and the number of API calls being served for the various OpenStack
 services (nova, neutron, cinder, glance etc.). To reduce controller node
 load, network nodes are widely added to manage L3 traffic for overlay
-tenant networks and interconnection with external networks. Table 4-2
+tenant networks and interconnection with external networks. The Table 
 below lists the networking service components and their placement.
 Please note that while network nodes are listed in the table below,
 network nodes only deal with tenant networks and not provider networks.
 Also, network nodes are not required when SDN is utilised for
 networking.
 
-+--------------------+-------------------+---------------+---------------+
-| Networking         | Description       | Required or   | Placement     |
-| Service component  |                   | Optional      |               |
-|                    |                   | Service       |               |
-+====================+===================+===============+===============+
-| neutron server     | Manages user      | Required      | Controller    |
-| (neutron-server    | requests and      |               | node          |
-| and                | exposes the       |               |               |
-| neutron-\*-plugin) | Neutron APIs      |               |               |
-+--------------------+-------------------+---------------+---------------+
-| DHCP agent         | Provides DHCP     | Optional      | Network node  |
-| (neutron-\         | services to       | depending     | (Controller   |
-| dhcp-agent)        | tenant networks   | upon plug-in  | node if no    |
-|                    | and is            |               | network node  |
-|                    | responsible for   |               | present)      |
-|                    | maintaining DHCP  |               |               |
-|                    | configuration.    |               |               |
-|                    | For High          |               |               |
-|                    | availability,     |               |               |
-|                    | multiple DHCP     |               |               |
-|                    | agents can be     |               |               |
-|                    | assigned.         |               |               |
-+--------------------+-------------------+---------------+---------------+
-| L3 agent           | Provides L3/NAT   | Optional      | Network node  |
-| (\                 | forwarding for    | depending     | (Controller   |
-| neutron-l3-agent)  | external network  | upon plug-in  | node if no    |
-|                    | access of servers |               | network node  |
-|                    | on tenant         |               | present) NB   |
-|                    | networks and      |               | in DVR based  |
-|                    | supports services |               | OpenStack     |
-|                    | such as           |               | Networking,   |
-|                    | Fire              |               | also in all   |
-|                    | wall-as-a-service |               | Compute       |
-|                    | (FWaaS) and Load  |               | nodes.        |
-|                    | Bala              |               |               |
-|                    | ncer-as-a-service |               |               |
-|                    | (LBaaS)           |               |               |
-+--------------------+-------------------+---------------+---------------+
-| neutron metadata   | The metadata      | Optional      | Network node  |
-| agent              | service provides  |               | (Controller   |
-| (neutron-\         | a way for         |               | node if no    |
-| metadata-agent)    | instances to      |               | network node  |
-|                    | retrieve          |               | present)      |
-|                    | instance-specific |               |               |
-|                    | data. The         |               |               |
-|                    | networking        |               |               |
-|                    | service, neutron, |               |               |
-|                    | is responsible    |               |               |
-|                    | for intercepting  |               |               |
-|                    | these requests    |               |               |
-|                    | and adding HTTP   |               |               |
-|                    | headers which     |               |               |
-|                    | uniquely identify |               |               |
-|                    | the source of the |               |               |
-|                    | request before    |               |               |
-|                    | forwarding it to  |               |               |
-|                    | the metadata API  |               |               |
-|                    | server. These     |               |               |
-|                    | functions are     |               |               |
-|                    | performed by the  |               |               |
-|                    | neutron metadata  |               |               |
-|                    | agent.            |               |               |
-+--------------------+-------------------+---------------+---------------+
-| neutron plugin     | Runs on each      | Required      | Every Compute |
-| agent              | compute node to   |               | Node          |
-| (neutron-\*-agent) | control and       |               |               |
-|                    | manage the local  |               |               |
-|                    | virtual network   |               |               |
-|                    | driver (such as   |               |               |
-|                    | the Open vSwitch  |               |               |
-|                    | or Linux Bridge)  |               |               |
-|                    | configuration and |               |               |
-|                    | local networking  |               |               |
-|                    | configuration for |               |               |
-|                    | servers hosted on |               |               |
-|                    | that node.        |               |               |
-+--------------------+-------------------+---------------+---------------+
+.. list-table:: Neutron Services Placement
+   :widths: 15 30 15 20
+   :header-rows: 1
 
-Table 4-2: Neutron Services Placement
+* - Networking Service component
+  - Description
+  - Required or Optional Service
+  - Placement
+* - neutron server (neutron-server and neutron-*-plugin)
+  - Manages user requests and exposes the Neutron APIs
+  - Required
+  - Controller node
+* - DHCP agent (neutron-dhcp-agent)
+  - Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. For High availability, multiple DHCP agents can be assigned.
+  - Optional depending upon plug-in
+  - Network node (Controller node if no network node present)
+* - L3 agent (neutron-l3-agent)
+  - Provides L3/NAT forwarding for external network access of servers on tenant networks and supports services such as Fire wall-as-a-service (FWaaS) and Load Bala ncer-as-a-service (LBaaS)
+  - Optional depending upon plug-in
+  - Network node (Controller node if no network node present) NB in DVR based OpenStack Networking, also in all Compute nodes.
+* - neutron metadata agent (neutron-metadata-agent)
+  - The metadata service provides a way for instances to retrieve instance-specific data. The networking service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely identify the source of the request before forwarding it to the metadata API server. These functions are performed by the neutron metadata agent.
+  - Optional
+  - Network node (Controller node if no network node present)
+*  - neutron plugin agent (neutron-*-agent)
+  - Runs on each compute node to control and manage the local virtual network driver (such as the Open vSwitch or Linux Bridge) configuration and local networking configuration for servers hosted on that node.
+  - Required
+  - Every Compute Node
+
 
 Issues with the standard networking (centralised routing) approach
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -1420,120 +1364,49 @@ set of properties must match compute profiles available in the
 infrastructure. To implement these profiles and sizes, it is required to
 set up the flavors as specified in the tables below.
 
-+-------------+-----------------+-------------------+-----------------+
-| Flavor      | Reference RM    | Basic             | H\              |
-| C\          | Chapter 4 and 5 |                   | igh-Performance |
-| apabilities |                 |                   |                 |
-+=============+=================+===================+=================+
-| CPU         | in\             | In flavor create  | In flavor       |
-| allocation  | fra.com.cfg.001 | or flavor set     | create or       |
-| ratio       |                 | –property         | flavor set      |
-| (custom     |                 | cpu_all           | –property       |
-| e\          |                 | ocation_ratio=4.0 | cpu_alloc\      |
-| xtra_specs) |                 |                   | ation_ratio=1.0 |
-+-------------+-----------------+-------------------+-----------------+
-| NUMA        | in\             |                   | In flavor       |
-| Awareness   | fra.com.cfg.002 |                   | create or       |
-|             |                 |                   | flavor set      |
-|             |                 |                   | specify         |
-|             |                 |                   | –property       |
-|             |                 |                   | hw:numa\        |
-|             |                 |                   | _nodes=<integer |
-|             |                 |                   | range of 0 to   |
-|             |                 |                   | #numa_nodes –   |
-|             |                 |                   | 1> To restrict  |
-|             |                 |                   | an instance’s   |
-|             |                 |                   | vCPUs to a      |
-|             |                 |                   | single host     |
-|             |                 |                   | NUMA node,      |
-|             |                 |                   | specify:        |
-|             |                 |                   | –property       |
-|             |                 |                   | hw:n\           |
-|             |                 |                   | uma_nodes=1     |
-|             |                 |                   | Some compute    |
-|             |                 |                   | intensive\*     |
-|             |                 |                   | workloads with  |
-|             |                 |                   | highly          |
-|             |                 |                   | sensitive       |
-|             |                 |                   | memory latency  |
-|             |                 |                   | or bandwidth    |
-|             |                 |                   | requirements,   |
-|             |                 |                   | the instance    |
-|             |                 |                   | may benefit     |
-|             |                 |                   | from spreading  |
-|             |                 |                   | across multiple |
-|             |                 |                   | NUMA nodes:     |
-|             |                 |                   | –property       |
-|             |                 |                   | hw:numa_nodes=2 |
-+-------------+-----------------+-------------------+-----------------+
-| CPU Pinning | in\             | In flavor create  | In flavor       |
-|             | fra.com.cfg.003 | or flavor set     | create or       |
-|             |                 | specify –property | flavor set      |
-|             |                 | hw:               | specify         |
-|             |                 | cpu_policy=shared | –property       |
-|             |                 | (default)         | hw:cpu_p\       |
-|             |                 |                   | olicy=dedicated |
-|             |                 |                   | and –property   |
-|             |                 |                   | hw:cpu\         |
-|             |                 |                   | _thread_policy=\|
-|             |                 |                   | <prefer,        |
-|             |                 |                   | require,        |
-|             |                 |                   | isolate>        |
-|             |                 |                   | Use “isolate”   |
-|             |                 |                   | thread policy   |
-|             |                 |                   | for very high   |
-|             |                 |                   | compute         |
-|             |                 |                   | intensive       |
-|             |                 |                   | workloads that  |
-|             |                 |                   | require that    |
-|             |                 |                   | each vCPU be    |
-|             |                 |                   | placed on a     |
-|             |                 |                   | different       |
-|             |                 |                   | physical core   |
-+-------------+-----------------+-------------------+-----------------+
-| Huge pages  | in\             |                   | –property       |
-|             | fra.com.cfg.004 |                   | hw:mem_p\       |
-|             |                 |                   | age_size=<small |
-|             |                 |                   | \|large \|      |
-|             |                 |                   | size>           |
-+-------------+-----------------+-------------------+-----------------+
-| SMT         | in\             |                   | In flavor       |
-|             | fra.com.cfg.005 |                   | create or       |
-|             |                 |                   | flavor set      |
-|             |                 |                   | specify         |
-|             |                 |                   | –property       |
-|             |                 |                   | hw:cpu_t\       |
-|             |                 |                   | hreads=<integer\|
-|             |                 |                   | #threads        |
-|             |                 |                   | (usually 1 or   |
-|             |                 |                   | 2)>             |
-+-------------+-----------------+-------------------+-----------------+
-| OVS-DPDK    | infra.\         |                   | ml2.conf.ini    |
-|             | net.acc.cfg.001 |                   | configured to   |
-|             |                 |                   | support [OVS]   |
-|             |                 |                   | datap\          |
-|             |                 |                   | ath_type=netdev |
-|             |                 |                   | Note: huge      |
-|             |                 |                   | pages should be |
-|             |                 |                   | configured to   |
-|             |                 |                   | large           |
-+-------------+-----------------+-------------------+-----------------+
-| Local       | infra.hw.\      | trait:STORAGE\    | t\              |
-| Storage SSD | stg.ssd.cfg.002 | DISK_SSD=required | rait:STORAGE_DI\|
-|             |                 |                   | SK_SSD=required |
-+-------------+-----------------+-------------------+-----------------+
-| Port speed  | infra\          | –property quota   | –property quota |
-|             | .hw.nic.cfg.002 | vif_inboun\       | vif_inbound\    |
-|             |                 | d_average=1310720 | average=3125000 |
-|             |                 | and               | and             |
-|             |                 | vif_outbound_ave\ | vif\            |
-|             |                 | rage=1310720      | _outbound_avera\|
-|             |                 |                   | ge=3125000      |
-|             |                 | Note:10 Gbps =    | Note: 25 Gbps = |
-|             |                 | 1250000 kilobytes | 3125000         |
-|             |                 | per second        | kilobytes per   |
-|             |                 |                   | second          |
-+-------------+-----------------+-------------------+-----------------+
+.. list-table:: Neutron Services Placement
+   :widths: 10 15 20 35
+   :header-rows: 1
+
+* - Flavor Capabilities
+  - Reference RM Chapter 4 and 5
+  - Basic
+  - High-Performance
+* - CPU allocation ratio (custom extra_specs)
+  - infra.com.cfg.001
+  - In flavor create or flavor set –property cpu_all ocation_ratio=4.0
+  - In flavor create or flavor set –property cpu_allocation_ratio=1.0
+* - NUMA Awareness
+  - infra.com.cfg.002
+  -  
+  - In flavor create or flavor set specify –property hw:numa_nodes=<integer range of 0 to #numa_nodes – 1> 
+    To restrict an instance’s vCPUs to a single host NUMA node, specify: –property hw:numa_nodes=1 
+    Some compute intensive* workloads with highly sensitive memory latency or bandwidth requirements, the instance may benefit from spreading across multiple NUMA nodes: –property hw:numa_nodes=2
+* - CPU Pinning
+  - infra.com.cfg.003
+  - In flavor create or flavor set specify –property hw: cpu_policy=shared (default)
+  - In flavor create or flavor set specify –property hw:cpu_policy=dedicated and –property hw:cpu_thread_policy=<prefer, require, isolate> Use “isolate” thread policy for very high compute intensive workloads that require that each vCPU be placed on a different physical core
+* - Huge pages
+  - infra.com.cfg.004
+  -  
+  - –property hw:mem_page_size=<small |large | size>
+* - SMT
+  - infra.com.cfg.005
+  -  
+  - In flavor create or flavor set specify –property hw:cpu_threads=<integer#threads (usually 1 or 2)>
+* - OVS-DPDK
+  - infra.net.acc.cfg.001
+  -  
+  - ml2.conf.ini configured to support [OVS] datapath_type=netdev Note: huge pages should be configured to large
+* - Local Storage SSD
+  - infra.hw.stg.ssd.cfg.002
+  - trait:STORAGEDISK_SSD=required
+  - trait:STORAGE_DISK_SSD=required
+* - Port speed
+  - infra.hw.nic.cfg.002
+  - –property quota vif_inbound_average=1310720 and vif_outbound_average=1310720
+  - Note:10 Gbps = 1250000 kilobytes per second
+  - –property quota vif_inboundaverage=3125000 and vif_outbound_average=3125000 Note: 25 Gbps = 3125000 kilobytes per second
 
 ..
 
