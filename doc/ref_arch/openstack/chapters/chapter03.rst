@@ -380,76 +380,89 @@ will be deployed within both control and compute hosts. The table below
 also maps the OpenStack core services to the Reference Model (RM)
 :ref:`ref_model/chapters/chapter03:virtual infrastructure manager`.
 
-+----------------+--------+---------------+-----------+-------+-----+
-| RM Management  | S\     | Description   | Required  | Dep\  | De\ |
-| Software       | ervice |               | /         | loyed | plo\|
-|                |        |               | Optional  | on    | yed |
-|                |        |               |           | Cont\ | on  |
-|                |        |               |           | roll\ | C\  |
-|                |        |               |           | er    | omp\|
-|                |        |               |           | Nodes | ute |
-|                |        |               |           |       | No\ |
-|                |        |               |           |       | des |
-+================+========+===============+===========+=======+=====+
-| Identity       | Ke\    | the           | Required  | X     |     |
-| Management     | ystone | a\            |           |       |     |
-| (Additional    |        | uthentication |           |       |     |
-| Management     |        | service       |           |       |     |
-| Functions) +   |        |               |           |       |     |
-| Catalogue      |        |               |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| Storage        | Glance | the image     | Required  | X     |     |
-| Resources      |        | management    |           |       |     |
-| Manager        |        | service       |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| Storage        | Cinder | the block     | Required  | X     |     |
-| Resources      |        | storage       |           |       |     |
-| Manager        |        | management    |           |       |     |
-|                |        | service       |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| Storage        | Swift  | the Object    | Required  | X     |     |
-| Resources      |        | storage       |           |       |     |
-| Manager        |        | management    |           |       |     |
-|                |        | service       |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| Network        | N\     | the network   | Required  | X     | X   |
-| Resources      | eutron | management    |           |       |     |
-| Manager        |        | service       |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| Compute        | Pla\   | resource      | Required  | X     |     |
-| Resources      | cement | provider      |           |       |     |
-| Inventory      |        | inventory     |           |       |     |
-|                |        | service       |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| Compute        | Nova   | the compute   | Required  | X     | X   |
-| Resources      |        | resources     |           |       |     |
-| Manager +      |        | management    |           |       |     |
-| Scheduler      |        | service       |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| Compute        | Ironic | the Bare      | Optional  | X     | X   |
-| Resources      |        | Metal         |           |       |     |
-| Manager        |        | Provisioning  |           |       |     |
-|                |        | service       |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| (Tool that     | Heat   | the           | Required  | X     |     |
-| utilises APIs) |        | orchestration |           |       |     |
-|                |        | service       |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| UI             | H\     | the WEB UI    | Required  | X     |     |
-|                | orizon | service       |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| Key Manager    | Ba\    | the secret    | Optional  | X     |     |
-|                | rbican | data          |           |       |     |
-|                |        | management    |           |       |     |
-|                |        | service       |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
-| Acceleration   | Cyborg | the           | Optional  | X     | X   |
-| Resources      |        | acceleration  |           |       |     |
-| Manager        |        | resources and |           |       |     |
-|                |        | their life    |           |       |     |
-|                |        | cycle         |           |       |     |
-|                |        | management    |           |       |     |
-+----------------+--------+---------------+-----------+-------+-----+
+.. list-table:: OpenStack components deployment
+   :widths: 20 10 20 10 10 10
+   :header-rows: 1
+
+* - RM Management Software
+  - Service
+  - Description
+  - Required / Optional
+  - Deployed on Controller Nodes
+  - Deployed on Compute Nodes
+* - Identity Management (Additional Management Functions) + Catalogue
+  - Keystone
+  - the authentication service
+ - Required
+ - X
+  -  
+* - Storage Resources Manager
+  - Glance
+  - the image management service
+  - Required
+  - X
+  -  
+* - Storage Resources Manager
+  - Cinder
+  - the block storage management service
+  - Required
+  - X
+  -  
+* - Storage Resources Manager
+  - Swift
+  - the Object storage management service
+  - Required
+  - X
+  -  
+* - Network Resources Manager
+  - Neutron
+  - the network management service
+  - Required
+  - X
+  - X
+* - Compute Resources Inventory
+  - Placement
+  - resource provider inventory service
+  - Required
+  - X
+  -  
+* - Compute Resources Manager + Scheduler
+  - Nova
+  - the compute resources management service
+  - Required
+  - X
+  - X
+* - Compute Resources Manager
+  - Ironic
+  - the Bare Metal Provisioning service
+  - Optional
+  - X
+  - X
+* - (Tool that utilises APIs)
+  - Heat
+  - the orchestration service
+  - Required
+  - X
+  -  
+* - UI
+  - Horizon
+  - the WEB UI service
+  - Required
+  - X
+  -  
+* - Key Manager
+  - Barbican
+  - the secret data management service
+  - Optional
+  - X
+  -  
+* - Acceleration Resources Manager
+  - Cyborg
+  - the acceleration resources and their life cycle management
+  - Optional
+  - X
+  - X
+ 
 
 All components must be deployed within a high available architecture
 that can withstand at least a single node failure and respects the
@@ -696,6 +709,8 @@ characteristics of each. Ultimately the decision rests with the operator
 to achieve specific availability target taking into account use case,
 data centre capabilities, economics and risks.
 
+**Topology Overview**
+
 Availability of any single OpenStack cloud is dependent on a number of
 factors including:
 
@@ -713,8 +728,6 @@ factors including:
 -  compute nodes sized to handle the entire workload following local
    failure scenario
 
-Topology Overview
-~~~~~~~~~~~~~~~~~
 
 Assumptions and conventions:
 
@@ -728,166 +741,47 @@ Assumptions and conventions:
 -  Shared storage is optional but it is important to ensure shared
    assets are distributed across serving clouds such as boot images.
 
-+-----+----+------------+----------+-------+-----+---------+--------+
-| To\ | T\ | Control    | Shared   | Co\   | A\  | Service | Notes  |
-| po\ | y\ | Planes     | Storage  | mpute | chi\| Multi   |        |
-| lo\ | p\ |            | (o\      | AZs   | eva\| -region |        |
-| gy  | e  |            | ptional) |       | ble | aw\     |        |
-| R\  |    |            |          |       | S\  | areness |        |
-| ef  |    |            |          |       | erv\|         |        |
-|     |    |            |          |       | ice |         |        |
-|     |    |            |          |       | Ava\|         |        |
-|     |    |            |          |       | ila\|         |        |
-|     |    |            |          |       | bil\|         |        |
-|     |    |            |          |       | ity |         |        |
-|     |    |            |          |       | %   |         |        |
-+=====+====+============+==========+=======+=====+=========+========+
-| 1   | L\ | 1          | 1        | 1     | Va\ | Not     | Su\    |
-|     | o\ |            |          |       | ria\| r\      | itable |
-|     | c\ |            |          |       | ble | equired | where  |
-|     | a\ |            |          |       |     |         | only   |
-|     | l  |            |          |       |     |         | l\     |
-|     | R\ |            |          |       |     |         | imited |
-|     | e\ |            |          |       |     |         | local  |
-|     | d\ |            |          |       |     |         | appli\ |
-|     | u\ |            |          |       |     |         | cation |
-|     | n\ |            |          |       |     |         | availa\|
-|     | d\ |            |          |       |     |         | bility |
-|     | a\ |            |          |       |     |         | is     |
-|     | n\ |            |          |       |     |         | re\    |
-|     | c\ |            |          |       |     |         | quired |
-|     | y  |            |          |       |     |         | e.g.   |
-|     | -  |            |          |       |     |         | nova   |
-|     | w\ |            |          |       |     |         | a\     |
-|     | o\ |            |          |       |     |         | nti-af\|
-|     | r\ |            |          |       |     |         | finity |
-|     | k\ |            |          |       |     |         |        |
-|     | l\ |            |          |       |     |         |        |
-|     | o\ |            |          |       |     |         |        |
-|     | a\ |            |          |       |     |         |        |
-|     | d  |            |          |       |     |         |        |
-|     | s\ |            |          |       |     |         |        |
-|     | p\ |            |          |       |     |         |        |
-|     | r\ |            |          |       |     |         |        |
-|     | e\ |            |          |       |     |         |        |
-|     | a\ |            |          |       |     |         |        |
-|     | d  |            |          |       |     |         |        |
-|     | a\ |            |          |       |     |         |        |
-|     | c\ |            |          |       |     |         |        |
-|     | r\ |            |          |       |     |         |        |
-|     | o\ |            |          |       |     |         |        |
-|     | s\ |            |          |       |     |         |        |
-|     | s  |            |          |       |     |         |        |
-|     | s\ |            |          |       |     |         |        |
-|     | e\ |            |          |       |     |         |        |
-|     | r\ |            |          |       |     |         |        |
-|     | v\ |            |          |       |     |         |        |
-|     | e\ |            |          |       |     |         |        |
-|     | r\ |            |          |       |     |         |        |
-|     | s  |            |          |       |     |         |        |
-+-----+----+------------+----------+-------+-----+---------+--------+
-| 2   | R\ | 1          | >=2      | >=2   | >9\ | Not     | Su\    |
-|     | e\ |            |          |       | 9.n | r\      | itable |
-|     | g\ |            |          |       |     | equired | where  |
-|     | i\ |            |          |       |     |         | local  |
-|     | o\ |            |          |       |     |         | appli\ |
-|     | n\ |            |          |       |     |         | cation |
-|     | a\ |            |          |       |     |         | HA is  |
-|     | l  |            |          |       |     |         | req\   |
-|     | R\ |            |          |       |     |         | uired. |
-|     | e\ |            |          |       |     |         | C\     |
-|     | d\ |            |          |       |     |         | ontrol |
-|     | u\ |            |          |       |     |         | plane  |
-|     | n\ |            |          |       |     |         | should |
-|     | d\ |            |          |       |     |         | be     |
-|     | a\ |            |          |       |     |         | distr\ |
-|     | n\ |            |          |       |     |         | ibuted |
-|     | c\ |            |          |       |     |         | across |
-|     | y  |            |          |       |     |         | DC     |
-|     | -  |            |          |       |     |         | f\     |
-|     | w\ |            |          |       |     |         | ailure |
-|     | o\ |            |          |       |     |         | d\     |
-|     | r\ |            |          |       |     |         | omains |
-|     | k\ |            |          |       |     |         | (as\   |
-|     | l\ |            |          |       |     |         | suming |
-|     | o\ |            |          |       |     |         | layer  |
-|     | a\ |            |          |       |     |         | 2      |
-|     | d  |            |          |       |     |         | c\     |
-|     | s\ |            |          |       |     |         | onnect\|
-|     | p\ |            |          |       |     |         | ivity) |
-|     | r\ |            |          |       |     |         | but    |
-|     | e\ |            |          |       |     |         | may be |
-|     | a\ |            |          |       |     |         | unava\ |
-|     | d  |            |          |       |     |         | ilable |
-|     | a\ |            |          |       |     |         | during |
-|     | c\ |            |          |       |     |         | up     |
-|     | r\ |            |          |       |     |         | grades |
-|     | o\ |            |          |       |     |         |        |
-|     | s\ |            |          |       |     |         |        |
-|     | s  |            |          |       |     |         |        |
-|     | A\ |            |          |       |     |         |        |
-|     | Z\ |            |          |       |     |         |        |
-|     | s  |            |          |       |     |         |        |
-+-----+----+------------+----------+-------+-----+---------+--------+
-| 3   | G\ |>=2         | >=2      | >=2   | >99\| R\      | Su\    |
-|     | l\ |            |          |       | .nn | equired | itable |
-|     | o\ |            |          |       |     |         | where  |
-|     | b\ |            |          |       |     |         | local  |
-|     | a\ |            |          |       |     |         | and    |
-|     | l  |            |          |       |     |         | region |
-|     | R\ |            |          |       |     |         | appli\ |
-|     | e\ |            |          |       |     |         | cation |
-|     | d\ |            |          |       |     |         | HA is  |
-|     | u\ |            |          |       |     |         | re\    |
-|     | n\ |            |          |       |     |         | quired |
-|     | d\ |            |          |       |     |         | C\     |
-|     | a\ |            |          |       |     |         | ontrol |
-|     | n\ |            |          |       |     |         | plane  |
-|     | c\ |            |          |       |     |         | could  |
-|     | y  |            |          |       |     |         | be     |
-|     | -  |            |          |       |     |         | kept   |
-|     | w\ |            |          |       |     |         | ava\   |
-|     | o\ |            |          |       |     |         | ilable |
-|     | r\ |            |          |       |     |         | in one |
-|     | k\ |            |          |       |     |         | site   |
-|     | l\ |            |          |       |     |         | during |
-|     | o\ |            |          |       |     |         | up\    |
-|     | a\ |            |          |       |     |         | grades |
-|     | d  |            |          |       |     |         |        |
-|     | s\ |            |          |       |     |         |        |
-|     | p\ |            |          |       |     |         |        |
-|     | r\ |            |          |       |     |         |        |
-|     | e\ |            |          |       |     |         |        |
-|     | a\ |            |          |       |     |         |        |
-|     | d  |            |          |       |     |         |        |
-|     | a\ |            |          |       |     |         |        |
-|     | c\ |            |          |       |     |         |        |
-|     | r\ |            |          |       |     |         |        |
-|     | o\ |            |          |       |     |         |        |
-|     | s\ |            |          |       |     |         |        |
-|     | s  |            |          |       |     |         |        |
-|     | m\ |            |          |       |     |         |        |
-|     | u\ |            |          |       |     |         |        |
-|     | l\ |            |          |       |     |         |        |
-|     | t\ |            |          |       |     |         |        |
-|     | i\ |            |          |       |     |         |        |
-|     | p\ |            |          |       |     |         |        |
-|     | l\ |            |          |       |     |         |        |
-|     | e  |            |          |       |     |         |        |
-|     | R\ |            |          |       |     |         |        |
-|     | e\ |            |          |       |     |         |        |
-|     | g\ |            |          |       |     |         |        |
-|     | i\ |            |          |       |     |         |        |
-|     | o\ |            |          |       |     |         |        |
-|     | n\ |            |          |       |     |         |        |
-|     | s  |            |          |       |     |         |        |
-+-----+----+------------+----------+-------+-----+---------+--------+
+.. list-table:: Cloud Topology: Redundancy Models
+   :widths: 8 15 8 8 8 8 8 17
+   :header-rows: 1
 
-Topology Detail
-~~~~~~~~~~~~~~~
+* - Topology Ref
+  - Type
+  - Control Planes
+  - Shared Storage (optional)
+  - Compute AZs
+  - Achievable Service Availability %
+  - Service Multi -region awareness
+  - Notes
+*  - 1
+  - Local Redundancy - workload spread across servers
+  - 1
+  - 1
+  - 1
+  - Variable
+  - Not required
+  - Suitable where only limited local application availability is required e.g. nova anti-affinity
+* - 2
+  - Regional Redundancy - workload spread across AZs
+  - 1
+  - >=2
+  - >=2
+  - >99.n
+  - Not required
+  - Suitable where local application HA is required. Control plane should be distributed across DC failure domains (assuming layer 2 connectivity) but may be unavailable during up grades
+* - 3
+  - Global Redundancy - workload spread across multiple Regions
+  - >=2
+  - >=2
+  - >=2
+  - >99.nn
+  - Required
+  - Suitable where local and region application HA is required Control plane could be kept available in one site during upgrades
 
-Topology 1 - Local Redundancy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Topology Overview**
+
+**Topology 1 - Local Redundancy**
 
 Under normal operation this deployment can handle a single failure of a
 controller node or storage node without any impact to the service. If a
@@ -915,8 +809,7 @@ hypervisor anti-affinity) there would be no service impact.
    deploy at least one more server than the minimum required for
    redundancy.
 
-Topology 2 - Regional Redundancy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Topology 2 - Regional Redundancy**
 
 Under normal operation this topology can handle a single failure of a
 controller node but provides additional protection to the compute plane
@@ -939,8 +832,7 @@ third AZ or arbitrator.
 -  The distributed network fabric must support L2 for the OpenStack
    control plane VIPs.
 
-Topology 3 - Global Redundancy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Topology 3 - Global Redundancy**
 
 Following the example set by public cloud providers who provide Regions
 and Availability Zones this is effectively a multi-region OpenStack.
