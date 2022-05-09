@@ -1555,13 +1555,13 @@ choices.
 * - neutron -server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3-agent (optional), neutron-metadata -agent
 * - Cinder API, Cinder Scheduler, Cinder Volume
 * -  
-  - Any DC - Control nodes Option 2: split services between two DCs
-  - in the other DC
+  - Any DC - Control nodes Option 2: split services between two or more DCs
+  - in one of the DC
   - in the Large DC
   - in the Large DC
-  - in the other DC
-  - in the other DC
-  - in the other DC
+  - in one of the DC
+  - in one of ther DC
+  - in one of the DC
 * - CCP or DCP
   - Compute nodes
   -  
