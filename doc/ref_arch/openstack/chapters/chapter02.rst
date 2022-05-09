@@ -503,102 +503,93 @@ System Hardening Requirements
 
 (source :ref:`ref_model/chapters/chapter07:system hardening`)
 
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| Reference   | sub-\     | Description                     | Specification Reference                                |
-|             | category  |                                 |                                                        |
-+=============+===========+=================================+========================================================+
-| sec.gen.001 | Hardening | The Platform **must**           | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | maintain the specified          | security lcm`                                          |
-|             |           | configuration.                  |                                                        |
-|             |           |                                 | :ref:`ref_arch/openstack/chapters/chapter07:\          |
-|             |           |                                 | cloud infrastructure and vim configuration management` |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.002 | Hardening | All systems part of Cloud       | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | Infrastructure **must**         | password policy`                                       |
-|             |           | support hardening as defined in |                                                        |
-|             |           | `CIS Password Policy Guide      |                                                        |
-|             |           | <https://www.cisecurity.org\\   |                                                        |
-|             |           | white-papers/cis-password-\     |                                                        |
-|             |           | policy-guide/>`__.              |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.003 | Hardening | All servers part of Cloud       | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | Infrastructure **must** support | server boot hardening`                                 |
-|             |           | a root of trust and secure      |                                                        |
-|             |           | boot.                           |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.004 | Hardening | The Operating Systems of all    | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | the servers part  of Cloud      | function and software`                                 |
-|             |           | Infrastructure **must** be      |                                                        |
-|             |           | hardened by removing or         |                                                        |
-|             |           | disabling unnecessary services, |                                                        |
-|             |           | applications and network        |                                                        |
-|             |           | protocols, configuring          |                                                        |
-|             |           | operating system user           |                                                        |
-|             |           | authentication, configuring     |                                                        |
-|             |           | resource controls, installing   |                                                        |
-|             |           | and configuring additional      |                                                        |
-|             |           | security controls where needed, |                                                        |
-|             |           | and testing the security of the |                                                        |
-|             |           | Operating System                |                                                        |
-|             |           | (NIST SP 800-123).              |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.005 | Hardening | The Platform **must** support   | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | Operating System level access   | system access`                                         |
-|             |           | control.                        |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.006 | Hardening | The Platform **must** support   | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | Secure logging. Logging with    | system access`                                         |
-|             |           | root account must be prohibited |                                                        |
-|             |           | when root privileges are not    |                                                        |
-|             |           | required.                       |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.007 | Hardening | All servers part of Cloud       | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | Infrastructure **must** be Time | security logs time synchronisation`                    |
-|             |           | synchronised with authenticated |                                                        |
-|             |           | Time service.                   |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.008 | Hardening | All servers part of Cloud       | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | Infrastructure  **must** be     | security lcm`                                          |
-|             |           | regularly updated to address    |                                                        |
-|             |           | security vulnerabilities.       |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.009 | Hardening | The Platform **must** support   | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | software integrity protection   | integrity of openstack components configuration`       |
-|             |           | and verification.               |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.010 | Hardening | The Cloud Infrastructure        | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | encrypted storage, for example, | confidentiality and integrity`                         |
-|             |           | block, object and file storage  |                                                        |
-|             |           | access to encryption keys       |                                                        |
-|             |           | restricted based on a need to   |                                                        |
-|             |           | know (`Controlled Access Based  |                                                        |
-|             |           | on the Need to Know             |                                                        |
-|             |           | <https://www.cisecurity.org\\   |                                                        |
-|             |           | controls/controlled-access-\    |                                                        |
-|             |           | based-on-the-need-to-know/>`__\ |                                                        |
-|             |           | ).                              |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.012 | Hardening | The Operator **must** ensure    | This requirement\'s verification goes beyond Anuket    |
-|             |           | that only authorised actors     | testing scope                                          |
-|             |           | have physical access to the     |                                                        |
-|             |           | underlying infrastructure.      |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.013 | Hardening | The Platform **must** ensure    | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | that only authorised actors     | system access`                                         |
-|             |           | have logical access to the      |                                                        |
-|             |           | underlying infrastructure.      |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.gen.015 | Hardening | Any change to the Platform      | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | **must** be logged as a         | security lcm`                                          |
-|             |           | security event, and the logged  |                                                        |
-|             |           | event must include the          |                                                        |
-|             |           | identity of the entity making   |                                                        |
-|             |           | the change, the change, the     |                                                        |
-|             |           | date and the time of the        |                                                        |
-|             |           | change.                         |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
+.. list-table:: Reference Model Requirements - System Hardening Requirements
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-6: Reference Model Requirements - System Hardening Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.gen.001
+     - Hardening
+     - The Platform **must** maintain the specified configuration.
+     - :ref:`ref_arch/openstack/chapters/chapter06:security lcm`
+
+       :ref:`ref_arch/openstack/chapters/chapter07:\
+       cloud infrastructure and vim configuration management`
+   * - sec.gen.002
+     - Hardening
+     - All systems part of Cloud Infrastructure **must** support hardening as
+       defined in `CIS Password Policy Guide
+       <https://www.cisecurity.org/white-papers/cis-password-policy-guide/>`__
+       .
+     - :ref:`ref_arch/openstack/chapters/chapter06:password policy`
+   * - sec.gen.003
+     - Hardening
+     - All servers part of Cloud Infrastructure **must** support a root of
+       trust and secure boot.
+     - :ref:`ref_arch/openstack/chapters/chapter06:server boot hardening`
+   * - sec.gen.004
+     - Hardening
+     - The Operating Systems of all the servers part of Cloud Infrastructure
+       **must** be hardened by removing or disabling unnecessary services,
+       applications and network protocols, configuring operating system user
+       authentication, configuring resource controls, installing and
+       configuring additional security controls where needed, and testing the
+       security of the Operating System (NIST SP 800-123).
+     - :ref:`ref_arch/openstack/chapters/chapter06:function and software`
+   * - sec.gen.005
+     - Hardening
+     - The Platform **must** support Operating System level access control.
+     - :ref:`ref_arch/openstack/chapters/chapter06:system access`
+   * - sec.gen.006
+     - Hardening
+     - The Platform **must** support Secure logging. Logging with root account
+       must be prohibited when root privileges are not required.
+     - :ref:`ref_arch/openstack/chapters/chapter06:system access`
+   * - sec.gen.007
+     - Hardening
+     - All servers part of Cloud Infrastructure **must** be Time synchronised
+       with authenticated Time service.
+     - :ref:`ref_arch/openstack/chapters/chapter06:\
+       security logs time synchronisation`
+   * - sec.gen.008
+     - Hardening
+     - All servers part of Cloud Infrastructure **must** be regularly updated
+       to address security vulnerabilities.
+     - :ref:`ref_arch/openstack/chapters/chapter06:security lcm`
+   * - sec.gen.009
+     - Hardening
+     - The Platform **must** support software integrity protection and
+       verification.
+     - :ref:`ref_arch/openstack/chapters/chapter06:\
+       integrity of openstack components configuration`
+   * - sec.gen.010
+     - Hardening
+     - The Cloud Infrastructure **must** support encrypted storage, for
+       example, block, object and file storage, with access to encryption
+       keys restricted based on a need to know
+       (`Controlled Access Based on the Need to Know
+       <https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/>`__).
+     - :ref:`ref_arch/openstack/chapters/chapter06:\
+       confidentiality and integrity`
+   * - sec.gen.012
+     - Hardening
+     - The Operator **must** ensure that only authorised actors have physical
+       access to the underlying infrastructure.
+     - This requirement's verification goes beyond Anuket testing scope
+   * - sec.gen.013
+     - Hardening
+     - The Platform **must** ensure that only authorised actors have logical
+       access to the underlying infrastructure.
+     - :ref:`ref_arch/openstack/chapters/chapter06:system access`
+   * - sec.gen.015
+     - Hardening
+     - Any change to the Platform **must** be logged as a security event, and
+       the logged event must include the identity of the entity making the
+       change, the change, the date and the time of the change.
+     - :ref:`ref_arch/openstack/chapters/chapter06:security lcm`
 
 Platform and Access Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1447,29 +1438,38 @@ Infrastructure Requirements
 VIM Requirements
 ~~~~~~~~~~~~~~~~
 
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| Reference  | sub-category | Description                            | Specification Reference                       |
-+============+==============+========================================+===============================================+
-| vim.01     | General      | The Architecture **must** allow        | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | infrastructure resource sharing.       | consumable infrastructure resources and       |
-|            |              |                                        | services`                                     |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| vim.03     | General      | The Architecture **must** allow VIM    | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | to discover and manage Cloud           | placement`                                    |
-|            |              | Infrastructure resources.              |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| vim.05     | General      | The Architecture **must** include      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | image repository management.           | glance`                                       |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| vim.07     | General      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | multi-tenancy.                         | multi-tenancy (execution environment)`        |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| vim.08     | General      | The Architecture **must** support      | `OpenStack Resource Tags                      |
-|            |              | resource tagging.                      | <https://specs.openstack.org/openstack\\      |
-|            |              |                                        | /api-wg/guidelines/tags.html>`__              |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
+.. list-table:: VIM Requirements
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-21: VIM Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - vim.01
+     - General
+     - The Architecture **must** allow infrastructure resource sharing.
+     - :ref:`ref_arch/openstack/chapters/chapter03:\
+       consumable infrastructure resources and services`
+   * - vim.03
+     - General
+     - The Architecture **must** allow VIM to discover and manage Cloud
+       Infrastructure resources.
+     - :ref:`ref_arch/openstack/chapters/chapter05:placement`
+   * - vim.05
+     - General
+     - The Architecture **must** include image repository management.
+     - :ref:`ref_arch/openstack/chapters/chapter05:glance`
+   * - vim.07
+     - General
+     - The Architecture **must** support multi-tenancy.
+     - :ref:`ref_arch/openstack/chapters/chapter03:\
+       multi-tenancy (execution environment)`
+   * - vim.08
+     - General
+     - The Architecture **must** support resource tagging.
+     - `OpenStack Resource Tags
+       <https://specs.openstack.org/openstack/api-wg/guidelines/tags.html>`__
 
 Interfaces & APIs Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1646,86 +1646,92 @@ General Recommendations
 Infrastructure Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| Reference  | sub-category | Description                            | Notes                                         |
-+============+==============+========================================+===============================================+
-| inf.com.02 | Compute      | The Architecture **should** include    |                                               |
-|            |              | industry standard hardware management  |                                               |
-|            |              | systems at both HW device level        |                                               |
-|            |              | (embedded) and HW platform level       |                                               |
-|            |              | (external to device).                  |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.com.03 | Compute      | The Architecture **should** support    |                                               |
-|            |              | Symmetric Multiprocessing with         |                                               |
-|            |              | shared memory access as well as        |                                               |
-|            |              | Simultaneous Multithreading.           |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.stg.08 | Storage      | The Architecture **should** allow      |                                               |
-|            |              | use of externally provided large       |                                               |
-|            |              | archival storage for its Backup /      |                                               |
-|            |              | Restore / Archival needs.              |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.stg.09 | Storage      | The Architecture **should** make       |                                               |
-|            |              | available all non-host OS /            |                                               |
-|            |              | Hypervisor / Host systems storage      |                                               |
-|            |              | as network-based Block, File or Object |                                               |
-|            |              | Storage for tenant/management          |                                               |
-|            |              | consumption.                           |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.stg.10 | Storage      | The Architecture **should** provide    | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | local Block storage for Instances.     | virtual storage`                              |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.ntw.04 | Network      | The Architecture **should** support    |                                               |
-|            |              | service function chaining.             |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.ntw.06 | Network      | The Architecture **should** support    |                                               |
-|            |              | Distributed Virtual Routing (DVR)      |                                               |
-|            |              | to allow compute nodes to route        |                                               |
-|            |              | traffic efficiently.                   |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.ntw.08 | Network      | The Cloud Infrastructure Network       |                                               |
-|            |              | Fabric **should** embrace the concepts |                                               |
-|            |              | of open  networking and disaggregation |                                               |
-|            |              | using commodity networking hardware    |                                               |
-|            |              | and disaggregated Network Operating    |                                               |
-|            |              | Systems.                               |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.ntw.09 | Network      | The Cloud Infrastructure Network       |                                               |
-|            |              | Fabric **should** embrace open-based   |                                               |
-|            |              | standards  and technologies.           |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.ntw.11 | Network      | The Cloud Infrastructure Network       |                                               |
-|            |              | Fabric **should** be architected to    |                                               |
-|            |              | provide a standardised, scalable,      |                                               |
-|            |              | and repeatable deployment model across |                                               |
-|            |              | all applicable Cloud Infrastructure    |                                               |
-|            |              | sites.                                 |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.ntw.17 | Network      | The Architecture **should** use dual   |                                               |
-|            |              | stack IPv4 and IPv6 for Cloud          |                                               |
-|            |              | Infrastructure internal networks.      |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.acc.01 | Acceleration | The Architecture **should** support    | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              | Application Specific Acceleration      | acceleration`                                 |
-|            |              | (exposed to VNFs).                     |                                               |
-|            |              |                                        |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.acc.02 | Acceleration | The Architecture **should** support    | `OpenStack Future - Specs defined             |
-|            |              | Cloud Infrastructure Acceleration      | <https://specs.openstack.org/openstack/\\     |
-|            |              | (such as SmartNICs).                   | neutron-specs/specs/stein/\\                  |
-|            |              |                                        | neutron-ovs-agent-support-baremetal-with-\    |
-|            |              |                                        | smart-nic.html>`__                            |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.acc.03 | Acceleration | The Architecture **may** rely on       |                                               |
-|            |              | on SR-IOV PCI-Pass through to provide  |                                               |
-|            |              | acceleration to VNFs.                  |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| inf.img.01 | Image        | The Architecture **should** make the   | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | immutable images available via         | glance`                                       |
-|            |              | location independent means.            |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
+.. list-table:: Infrastructure Recommendations
+   :widths: 15 15 40 30
+   :header-rows: 1
 
-Table 2-27: Infrastructure Recommendations
+   * - Reference
+     - sub-category
+     - Description
+     - Notes
+   * - inf.com.02
+     - Compute
+     - The Architecture **should** include industry standard hardware
+       management systems at both HW device level (embedded) and HW platform
+       level (external to device).
+     -
+   * - inf.com.03
+     - Compute
+     - The Architecture **should** support Symmetric Multiprocessing with
+       shared memory access as well as Simultaneous Multithreading.
+     -
+   * - inf.stg.08
+     - Storage
+     - The Architecture **should** allow use of externally provided large
+       archival storage for its Backup / Restore / Archival needs.
+     -
+   * - inf.stg.09
+     - Storage
+     - The Architecture **should** make available all non-host OS / Hypervisor
+       / Host systems storage as network-based Block, File or Object Storage
+       for tenant/management consumption.
+     -
+   * - inf.stg.10
+     - Storage
+     - The Architecture **should** provide local Block storage for Instances.
+     - :ref:`ref_arch/openstack/chapters/chapter03:virtual storage`
+   * - inf.nw.04
+     - Network
+     - The Architecture **should** support service function chaining.
+     -
+   * - inf.nw.06
+     - Network
+     - The Architecture **should** support Distributed Virtual Routing (DVR)
+       to allow compute nodes to route traffic efficiently.
+     -
+   * - inf.nw.08
+     - Network
+     - The Cloud Infrastructure Network Fabric **should** embrace the concepts
+       of open networking and disaggregation using commodity networking
+       hardware and disaggregated Network Operating Systems.
+     -
+   * - inf.nw.09
+     - Network
+     - The Cloud Infrastructure Network Fabric **should** embrace open-based
+       standards and technologies.
+     -
+   * - inf.nw.11
+     - Network
+     - The Cloud Infrastructure Network Fabric **should** be architected to
+       provide a standardised, scalable, and repeatable deployment model
+       across all applicable Cloud Infrastructure sites.
+     -
+   * - inf.nw.17
+     - Network
+     - The Architecture **should** use dual stack IPv4 and IPv6 for Cloud
+       Infrastructure internal networks.
+     -
+   * - inf.acc.01
+     - Acceleration
+     - The Architecture **should** support Application Specific Acceleration
+       (exposed to VNFs).
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
+   * - inf.acc.02
+     - Acceleration
+     - The Architecture **should** support Cloud Infrastructure Acceleration
+       (such as SmartNICs).
+     - `OpenStack Future - Specs defined
+       <https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html>`__
+   * - inf.acc.03
+     - Acceleration
+     - The Architecture **may** rely on on SR-IOV PCI-Pass through to provide
+       acceleration to VNFs.
+     -
+   * - inf.img.01
+     - Image
+     - The Architecture **should** make the immutable images available via
+       location independent means.
+     - :ref:`ref_arch/openstack/chapters/chapter04:glance`
 
 VIM Recommendations
 ~~~~~~~~~~~~~~~~~~~
