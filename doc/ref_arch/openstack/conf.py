@@ -10,6 +10,10 @@ extensions = [
     'sphinx.ext.autosectionlabel'
 ]
 html_theme = "sphinx_material"
+linkcheck_ignore = [
+    "https://www.cisecurity.org/cis-benchmarks/",
+    "https://www.iso.org/obp/ui/",
+]
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/latest/', None)
 }

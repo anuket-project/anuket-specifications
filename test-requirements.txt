@@ -1,9 +1,8 @@
-sphinx!=1.6.6,!=1.6.7,!=2.1.0,!=3.0.0,!=3.4.2,<3 # BSD
+sphinx!=1.6.6,!=1.6.7,!=2.1.0,!=3.0.0,!=3.4.2,>=4.2.0  # BSD
 sphinxcontrib.direct-copy
 sphinxcontrib.readme-to-index
 sphinxcontrib.relative-link-corrector
 sphinx_material
 sphinx-markdown-tables
-sphinx_rtd_theme
 recommonmark>=0.7.1
 commonmark>=0.9.1
