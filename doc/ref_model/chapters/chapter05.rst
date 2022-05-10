@@ -228,7 +228,7 @@ The table below specifies a set of requirements for the Monitoring service (aka 
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | pas.mon.017 | The monitoring service must publish its APIs for programmatic         |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.018 | The monitoring service should provide a consolidated view of the      |                                                       |
+| pas.mon.018 | The monitoring service should provide a consolidated view of the      |  View: dashboard or report                             |
 |             | entire monitored infrastructure                                       |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 
