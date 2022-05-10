@@ -4,7 +4,9 @@ Infrastructure Operations and Lifecycle Management
 Introduction
 ------------
 
-The purpose of this chapter is to define the capabilities required of the infrastructure to ensure it is effectively supported, maintained and otherwise lifecycle-managed by Operations teams. This includes requirements relating to the need to be able to maintain infrastructure services "in-service" without impacting the applications and workloads, whilst minimising human labour. It shall also capture any exceptions and related assumptions.
+The purpose of this chapter is to define the capabilities required of the infrastructure to ensure it is effectively supported, maintained and otherwise 
+lifecycle-managed by Operations teams. This includes requirements relating to the need to be able to maintain infrastructure services "in-service" without impacting 
+the applications and workloads, whilst minimising human labour. It shall also capture any exceptions and related assumptions.
 
 There are three main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chapter:
 
@@ -24,12 +26,17 @@ Capacity Management                    Configuration      Fulfilment Capacity Ma
 
 **Table 9-1:** Operating Frameworks
 
-   **Note:** The above mapping is provided for the general orientation purpose only. Detailed mapping of the required Cloud Infrastructure Lifecycle Management capabilities to any of these frameworks is beyond the scope of this document.
+   **Note:** The above mapping is provided for the general orientation purpose only. Detailed mapping of the required Cloud Infrastructure Lifecycle Management 
+   capabilities to any of these frameworks is beyond the scope of this document.
 
 Configuration and Lifecycle Management
 --------------------------------------
 
-Configuration management is concerned with defining the configuration of infrastructure and its components, and tracking (observing) the running configuration of that infrastructure, and any changes that take place. Modern configuration management practices such as desired state configuration management also mean that any changes from the desired state that are observed (aka the delta) are rectified by an orchestration / fulfilment component of the configuration management system. This "closed loop" mitigates against configuration drift in the infrastructure and its components. Our recommendation is to keep these closed loops as small as possible to reduce complexity and risk of error. :numref:`Configuration and Lifecycle Management` shows the configuration management "loop" and how this relates to lifecycle management.
+Configuration management is concerned with defining the configuration of infrastructure and its components, and tracking (observing) the running configuration of that 
+infrastructure, and any changes that take place. Modern configuration management practices such as desired state configuration management also mean that any changes 
+from the desired state that are observed (aka the delta) are rectified by an orchestration / fulfilment component of the configuration management system. This "closed 
+loop" mitigates against configuration drift in the infrastructure and its components. Our recommendation is to keep these closed loops as small as possible to reduce 
+complexity and risk of error. :numref:`Configuration and Lifecycle Management` shows the configuration management "loop" and how this relates to lifecycle management.
 
 .. figure:: ../figures/ch09_config_mgmt.png
    :name: Configuration and Lifecycle Management
@@ -37,9 +44,13 @@ Configuration management is concerned with defining the configuration of infrast
 
    Configuration and Lifecycle Management
 
-The initial desired state might be for 10 hosts with a particular set of configuration attributes, including the version of the hypervisor and any management agents. The configuration management system will take that as input (1) and configure the infrastructure as required (2). It will then observe the current state periodically over time (3) and in the case of a difference between the desired state and the observed state it will calculate the delta (4) and re-configure the infrastructure (5). For each lifecycle stage (create, update, delete) this loop takes place - for example if an update to the hypervisor version is defined in the desired state, the configuration management system will calculate the delta (e.g. v1 --> v2) and re-configure the infrastructure as required.
+The initial desired state might be for 10 hosts with a particular set of configuration attributes, including the version of the hypervisor and any management agents. 
+The configuration management system will take that as input (1) and configure the infrastructure as required (2). It will then observe the current state periodically 
+over time (3) and in the case of a difference between the desired state and the observed state it will calculate the delta (4) and re-configure the infrastructure (5). For each lifecycle stage (create, update, delete) this loop takes place - for example if an update to the hypervisor version is defined in the desired state, the configuration management system will calculate the delta (e.g. v1 --> v2) and re-configure the infrastructure as required.
 
-However, the key requirements for the infrastructure and infrastructure management are those interfaces and reference points in the red box - where configuration is **set**, and where it is **observed**. Table 9-2 lists the main components and capabilities required in order to manage the configuration and lifecycle of those components.
+However, the key requirements for the infrastructure and infrastructure management are those interfaces and reference points in the red box - where configuration is 
+**set**, and where it is **observed**. Table 9-2 lists the main components and capabilities required in order to manage the configuration and lifecycle of those 
+components.
 
 +---------------------------------+---------------+---------------------------------+-----------------------------+
 | Component                       | set / observe | Capability                      | Example                     |
@@ -86,7 +97,8 @@ However, the key requirements for the infrastructure and infrastructure manageme
 
 **Table 9-2:** Configuration and Lifecycle Management Capabilities
 
-This leads to the following table (Table 9-3) which defines the standard interfaces that should be made available by the infrastructure and Cloud Infrastructure Management components to allow for successful Configuration Management.
+This leads to the following table (Table 9-3) which defines the standard interfaces that should be made available by the infrastructure and Cloud Infrastructure 
+Management components to allow for successful Configuration Management.
 
 ========================= ============================ ===============================
 Component                 Interface Standard           Link
@@ -103,7 +115,8 @@ Assurance
 
 Assurance is concerned with:
 
--  The proactive and reactive maintenance activities that are required to ensure infrastructure services are available as per defined performance and availability levels.
+-  The proactive and reactive maintenance activities that are required to ensure infrastructure services are available as per defined performance and availability 
+levels.
 -  Continuous monitoring of the status and performance of individual components and of the service as a whole.
 -  Collection and analysis of performance data, which is used to identify potential issues including the ability to resolve the issue with no customer impact.
 
@@ -113,21 +126,29 @@ There are the following requirement types:
 
    -  The ability to collect data relating to events (transactions, security events, physical interface up/down events, warning events, error events, etc.)
    -  The ability to collect data relating to component status (up/down, physical temperature, disk speed, etc.)
-   -  The ability to collect data relating to component performance (used CPU resources, storage throughput, network bandwidth in/out, API transactions, transaction response times, etc.)
+   -  The ability to collect data relating to component performance (used CPU resources, storage throughput, network bandwidth in/out, API transactions, transaction 
+   response times, etc.)
 
 2. Capabilities of the Infrastructure Management Software to allow for in-service maintenance of the Infrastructure Software and Hardware under its management, e.g.
 
-   -  The ability to mark a physical compute node as being in some sort of "maintenance mode" and for the Infrastructure Management Software to ensure all running workloads are moved off or rescheduled on to other available nodes (after checking that there is sufficient capacity) before marking the node as being ready for whatever maintenance activity needs to be performed
-   -  The ability to co-ordinate, automate, and allow the declarative input of in-service software component upgrades - such as internal orchestration and scheduler components in the Infrastructure Management Software
+   -  The ability to mark a physical compute node as being in some sort of "maintenance mode" and for the Infrastructure Management Software to ensure all running 
+   workloads are moved off or rescheduled on to other available nodes (after checking that there is sufficient capacity) before marking the node as being ready for 
+   whatever maintenance activity needs to be performed
+   -  The ability to co-ordinate, automate, and allow the declarative input of in-service software component upgrades - such as internal orchestration and scheduler 
+   components in the Infrastructure Management Software
 
-Note that the above only refers to components - it is expected that any "service" level assurance doesn't add any further requirements onto the infrastructure, but rather takes the data extracted and builds service models based on the knowledge it has of the services being offered.
+Note that the above only refers to components - it is expected that any "service" level assurance doesn't add any further requirements onto the infrastructure, but 
+rather takes the data extracted and builds service models based on the knowledge it has of the services being offered.
 
 Capacity Management
 -------------------
 
-Capacity Management is a potentially wide ranging process that includes taking demand across lines of business, analysing data about the infrastructure that is running, and calculating when additional infrastructure might be required, or when infrastructure might need to be decommissioned.
+Capacity Management is a potentially wide ranging process that includes taking demand across lines of business, analysing data about the infrastructure that is running,
+and calculating when additional infrastructure might be required, or when infrastructure might need to be decommissioned.
 
-As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration and Lifecycle Management sections above. The Assurance section deals with the collection of data - there is no reason to consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware, software, and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
+As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration and Lifecycle Management sections above. 
+The Assurance section deals with the collection of data - there is no reason to consider that this would be done by a different mechanism for Capacity Management as it
+is for Assurance - and the Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware, software, and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
 
 Automation
 ----------
@@ -138,12 +159,21 @@ Infrastructure LCM Automation
 Introduction
 ^^^^^^^^^^^^
 
-In a typical telecom operator environment, infrastructure Life Cycle Management is highly complex and error-prone. The environment, with its multiple vendors and products, is maintenance expensive (both in terms of time and costs) because of the need for complex planning, testing, and the out-of-business-hours execution required to perform disruptive maintenance (e.g., upgrades) and to mitigate outages to mission-critical applications. Processes and tooling for infrastructure management across hybrid environments create additional complexity due to the different levels of access to infrastructure: hands-on access to the on-premise infrastructure but only restricted access to consumable services offered by public clouds.
+In a typical telecom operator environment, infrastructure Life Cycle Management is highly complex and error-prone. The environment, with its multiple vendors and 
+products, is maintenance expensive (both in terms of time and costs) because of the need for complex planning, testing, and the out-of-business-hours execution 
+required to perform disruptive maintenance (e.g., upgrades) and to mitigate outages to mission-critical applications. Processes and tooling for infrastructure 
+management across hybrid environments create additional complexity due to the different levels of access to infrastructure: hands-on access to the on-premise 
+infrastructure but only restricted access to consumable services offered by public clouds.
 
-Life cycle operations, such as software or hardware upgrades (including complex and risky firmware updates), typically involve time-consuming manual research and substantive testing to ensure that an upgrade is available, required, or needed, and does not conflict with the current versions of other components.  In a complex and at-scale Hybrid Multi-Cloud environment, consisting of multiple on-premise and public clouds, such a manual process is ineffective and, in many cases, impossible to execute in a controlled manner.  Hence, the need for automation.
+Life cycle operations, such as software or hardware upgrades (including complex and risky firmware updates), typically involve time-consuming manual research and 
+substantive testing to ensure that an upgrade is available, required, or needed, and does not conflict with the current versions of other components.  In a complex 
+and at-scale Hybrid Multi-Cloud environment, consisting of multiple on-premise and public clouds, such a manual process is ineffective and, in many cases, impossible 
+to execute in a controlled manner.  Hence, the need for automation.
 
-The goals of LCM are to provide a reliable administration of a system from its provisioning, through its operational stage, to its final retirement. Key functions of Infrastructure LCM:
- -  Hybrid, Multi-Cloud support, that is, LCM works across physical, virtual, and cloud environments, supporting on-premise, cloud, and distributed environments (like Edge)
+The goals of LCM are to provide a reliable administration of a system from its provisioning, through its operational stage, to its final retirement. 
+
+Key functions of Infrastructure LCM are:
+ -  Hybrid, Multi-Cloud support, that is, LCM works across physical, virtual, and cloud environments, supporting on-premise, cloud, and distributed environments 
  -  Complete system life cycle control (Plan/Design, Build, Provision, Operate/Manage, Retire, Recycle/Scrap)
  -  Enablement for automation of most system maintenance tasks
 
@@ -153,13 +183,19 @@ Key benefits of the Infrastructure LCM Automation are:
     decreases the chances of incompatibility issues within the infrastructure
  -  Human related Risks Mitigation: automation reduces risks related to human errors, rogue activities, and safeguards the institutional knowledge 
     from leakage in case any employee leaves the organization
- -  Higher Efficiency: achieved by minimizing human inaccuracies and eliminating the lack of knowledge about infrastructure installed base and its configuration, using the CI/CD techniques adapted to infrastructure 
- -  Cost/time Saving: engineers save up on time and cost which can be wisely invested in performing higher-value jobs; additional cost savings on cloud more optimal use of cloud resources using LCM Automation
+ -  Higher Efficiency: achieved by minimizing human inaccuracies and eliminating the lack of knowledge about infrastructure installed base and its configuration, using
+ the CI/CD techniques adapted to infrastructure 
+ -  Cost/time Saving: engineers save up on time and cost which can be wisely invested in performing higher-value jobs; additional cost savings on cloud more optimal 
+ use of cloud resources using LCM Automation
  
 Infrastructure LCM Automation Framework
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
-The following diagrams provide mapping between different stages of the lifecycle automation across all layers of the stack, to owners of infrastructure and cloud and the tenant as the consumer of the cloud services, in three very different scenarios: applications running as containers within virtual machines (CaaS on IaaS scenario), application running as containers on bare metal (CaaS on BM scenario) and a more traditional view of applications running as VNFs within virtual machines (IaaS scenario). The diagrams define the scope of the Infrastructure LCM Automation for each of these scenarios. The dotted lines symbolise the interactions between the layers of each of the model.
+The following diagrams provide mapping between different stages of the lifecycle automation across all layers of the stack, to owners of infrastructure and cloud and 
+the tenant as the consumer of the cloud services, in three very different scenarios: applications running as containers within virtual machines (CaaS on IaaS scenario),
+application running as containers on bare metal (CaaS on BM scenario) and a more traditional view of applications running as VNFs within virtual machines (IaaS 
+scenario). The diagrams define the scope of the Infrastructure LCM Automation for each of these scenarios. The dotted lines symbolise the interactions between the layers of 
+each of the model.
  
 .. figure:: ../figures/RM-Ch09-LCM-Automation-CaaS-on-IaaS.png
    :name: Infrastructure Automation in CaaS on IaaS scenario
@@ -184,7 +220,10 @@ of the Application Orchestration layer.
 
    Infrastructure Automation in CaaS on BM scenario
       
-The main and obvious difference in the Caas on BM scenario is lack of the IaaS layer, and hence the scope of the Infrastructure Automation is limited to only two layers: Site/Physical and CaaS.  From the lifecycle ownership perspective, the CaaS layer is now shared not only between the Cloud Provider and the Cloud Consumer (for the same reasons as in the CaaS on IaaS scenario) but also with the Infrastructure Owner.  The latter observation is related to the fact that in the bare metal deployments lacking the hypervisor separation, the CaaS layer is much more dependent on the underlying physical infrastructure. 
+The main and obvious difference in the Caas on BM scenario is lack of the IaaS layer, and hence the scope of the Infrastructure Automation is limited to only two 
+layers: Site/Physical and CaaS.  From the lifecycle ownership perspective, the CaaS layer is now shared not only between the Cloud Provider and the Cloud Consumer 
+(for the same reasons as in the CaaS on IaaS scenario) but also with the Infrastructure Owner.  The latter observation is related to the fact that in the bare metal 
+deployments lacking the hypervisor separation, the CaaS layer is much more dependent on the underlying physical infrastructure. 
 
  
 .. figure:: ../figures/RM-Ch09-LCM-Automation-VNF-on-IaaS.png
@@ -193,7 +232,9 @@ The main and obvious difference in the Caas on BM scenario is lack of the IaaS l
 
    Infrastructure Automation in IaaS scenario
 
-In this "classical" scenario the scope of the Infrastructure Automation is defined by the Site/Physical and IaaS layers. From the lifecycle perspective the ownership of IaaS is shared between the Infrastructure Owner and the Cloud Provider.  This scenario is characterised by a clear separation between the lifecycle (and hence its automation) of infrastructure and the application lifecycle owned by the Cloud Consumer / Tenant in the role of the Application Owner.
+In this "classical" scenario the scope of the Infrastructure Automation is defined by the Site/Physical and IaaS layers. From the lifecycle perspective the ownership 
+of IaaS is shared between the Infrastructure Owner and the Cloud Provider.  This scenario is characterised by a clear separation between the lifecycle (and hence its 
+automation) of infrastructure and the application lifecycle owned by the Cloud Consumer / Tenant in the role of the Application Owner.
 
 Essential foundation functional blocks for Infrastructure LCM automation:
  -  Representation Model 
@@ -203,7 +244,8 @@ Essential foundation functional blocks for Infrastructure LCM automation:
 
 Automated LCM uses Representation Model to:
  - abstract various automation technologies
- - promote evolution from automation understood as automation of human tasks to autonomous systems using intent-based, declarative automation, supported by evolving AI/ML technologies 
+ - promote evolution from automation understood as automation of human tasks to autonomous systems using intent-based, declarative automation, supported by evolving 
+ AI/ML technologies 
 
 Automated LCM uses Repository functions to:
   -  store and manage configuration data
@@ -217,7 +259,8 @@ Automated LCM uses Repository functions to:
 
 Automated LCM uses available IAC Software Versions and Dependencies component to:
  -  store information about available software versions, software patches and dependency expectations
- -  determine the recommended version of a software item (such as firmware) and dependencies on other items in the node to ensure compliance and maintain the system integrity
+ -  determine the recommended version of a software item (such as firmware) and dependencies on other items in the node to ensure compliance and maintain the system 
+ integrity
  -  determine the recommended versions of foundation software running on the cluster
 
 Automated LCM uses Orchestration Engine to:
@@ -230,14 +273,20 @@ LCM Automation Principles / Best Practice
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following principles should guide best practice in the area of the Infrastructure LCM Automation:
-  -  Everything Codified: use explicit coding to configure files not only for initial provisioning but also as a single source of truth for the whole infrastructure lifecycle, to ensure consistency with the intent configuration templates and to eliminate configuration drift 
+  -  Everything Codified: use explicit coding to configure files not only for initial provisioning but also as a single source of truth for the whole infrastructure 
+  lifecycle, to ensure consistency with the intent configuration templates and to eliminate configuration drift 
   -  Version Controlled: use stringent version control for the infrastructure code to allow proper lifecycle automation
-  -  Self-Documentation: code itself represents the updated documentation of the infrastructure, to minimise the documentation maintenance burden and to ensure the documentation currency
-  -  Code Modularisation: apply to IaaC principles of the microservices architecture where the modular units of code can be independently deployed and lifecycled in an automated fashion
-  -  Immutability: IT infrastructure components are required to be replaced for each deployment during the system lifecycle to be consistent with immutable infrastructure to avoid configuration drift and to restrict the impact of undocumented changes in the stack
+  -  Self-Documentation: code itself represents the updated documentation of the infrastructure, to minimise the documentation maintenance burden and to ensure the 
+  documentation currency
+  -  Code Modularisation: apply to IaaC principles of the microservices architecture where the modular units of code can be independently deployed and lifecycled in 
+  an automated fashion
+  -  Immutability: IT infrastructure components are required to be replaced for each deployment during the system lifecycle to be consistent with immutable 
+  infrastructure to avoid configuration drift and to restrict the impact of undocumented changes in the stack
   -  Automated Testing: is the key for the error-free post-deployment lifecycle processes and to eliminate lengthy manual testing processes
-  -  Unified Automation: use the same Infrastructure LCM Automation templates, toolsets and procedures across different environments such as Dev, Test, QA and Prod, to ensure consistency of the lifecycle results and to reduce operational costs 
-  -  Security Automation: security of infrastructure is critical for the overall security, dictating to use consistent automated security procedures for the threat detection, investigation and remediation through all infrastructure lifecyle stages and all environments 
+  -  Unified Automation: use the same Infrastructure LCM Automation templates, toolsets and procedures across different environments such as Dev, Test, QA and Prod, to
+  ensure consistency of the lifecycle results and to reduce operational costs 
+  -  Security Automation: security of infrastructure is critical for the overall security, dictating to use consistent automated security procedures for the threat 
+  detection, investigation and remediation through all infrastructure lifecyle stages and all environments 
 
 
 Software Onboarding Automation and CI/CD Requirements
