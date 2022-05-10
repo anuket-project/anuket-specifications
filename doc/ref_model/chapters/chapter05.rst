@@ -209,7 +209,7 @@ The table below specifies a set of requirements for the Monitoring service (aka 
 |             | disabling future alerting of the same resource/reason                 |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | pas.mon.011 | The Monitoring service must support selective enabling and            |                                                       |
-|             | disabling of alerts by resource, category of resources, time periods, |                                                       |
+|             | disabling of alerts by resource, category of resources, time periods. |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | pas.mon.012 | The Monitoring service should be implemented for high availability    |                                                       |
 |             | to ensure non-stop monitoring of critical infrastructure components   |                                                       |
