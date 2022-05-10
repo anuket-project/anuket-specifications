@@ -170,7 +170,7 @@ Tracing                                Jaeger
 **Table 5-7a:** Service examples.
 
 Platform Services - Monitoring Service Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The table below specifies a set of requirements for the Monitoring service (aka monitoring system).
 
