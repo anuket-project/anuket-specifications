@@ -205,7 +205,7 @@ The table below specifies a set of requirements for the Monitoring service (aka 
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | pas.mon.009 | The Monitoring service must support configurable alert escalations    |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.010 | The Monitoring service must support Alert acknowledgments by          |                                                       |
+| pas.mon.010 | The Monitoring service must support alert acknowledgments by          |                                                       |
 |             | disabling future alerting of the same resource/reason                 |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | pas.mon.011 | The Monitoring service must support selective enabling and            |                                                       |
