@@ -172,7 +172,7 @@ Tracing                                Jaeger
 Platform Services - Load Balancer Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The table below specifies a set of requirements for the Monitoring service (aka monitoring sysstem).
+The table below specifies a set of requirements for the Monitoring service (aka monitoring system).
 
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | Reference   | Requirement                                                           | Notes                                                 |
