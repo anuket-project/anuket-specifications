@@ -1026,7 +1026,7 @@ application that will automatically perform ping connectivity, round
 trip time measurement (latency) and TCP/UDP throughput measurement on
 any OpenStack deployment.
 
-`Shaker <hhttps://pyshaker.readthedocs.io/en/latest/>`__ wraps around
+`Shaker <https://pyshaker.readthedocs.io/en/latest/>`__ wraps around
 popular system network testing tools like iperf, iperf3 and netperf
 (with help of flent).
 `Shaker <https://pyshaker.readthedocs.io/en/latest/>`__ is able to deploy
