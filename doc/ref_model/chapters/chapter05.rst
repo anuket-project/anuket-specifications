@@ -206,7 +206,7 @@ The table below specifies a set of requirements for the Log Management Service (
 +-------------+-----------------------------------------------------------------------+---------------------------------------+
 | pas.lms.012 | LMS must support the correlating of multiple log entries from a       |                                       |
 |             | single source or multiple sources based on logged values (e.g., event |                                       |
-|             | types, timestamps, IP addresses                                       |                                       |
+|             | types, timestamps, IP addresses)                                      |                                       |
 +-------------+-----------------------------------------------------------------------+---------------------------------------+
 | pas.lms.013 | LMS should support rule-based correlation                             |                                       |
 +-------------+-----------------------------------------------------------------------+---------------------------------------+
