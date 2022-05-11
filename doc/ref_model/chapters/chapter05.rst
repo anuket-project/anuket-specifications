@@ -198,7 +198,7 @@ The table below specifies a set of requirements for the Log Management Service (
 | pas.lms.009 | LMS must support reconfiguring of logging as needed based on policy   |                                       |
 |             | changes, technology changes, and other factors                        |                                       |
 +-------------+-----------------------------------------------------------------------+---------------------------------------+
-| pas.lms.010 | LMS must supppoort the documenting and reporting of anomalies in log  |                                       |
+| pas.lms.010 | LMS must support the documenting and reporting of anomalies in log    |                                       |
 |             | settings, configurations, and processes                               |                                       |
 +-------------+-----------------------------------------------------------------------+---------------------------------------+
 | pas.lms.011 | LMS must support the correlating of entries from multiple logs that   |                                       |
