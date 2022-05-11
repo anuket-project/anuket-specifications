@@ -105,8 +105,8 @@ server information
 
 Server information should be provided for installer, including full detail info. for each server, NIC mapping etc.
 
-server information
-^^^^^^^^^^^^^^^^^^
+server parameters
+^^^^^^^^^^^^^^^^^
 
 A table describing information for each server in the resource pool shall be provided
 
@@ -138,7 +138,7 @@ HW_REGION          String No        Hardware region divided by room or area, thi
 MODULE_NAME        String Yes       hardware model that divided within each region, Like "Model 3 in Region A", usually contains certain number of racks
 ================== ====== ========= ==================================================================================================================================
 
-Table 6-3-4-1: Server Information.
+Table 6-3-4-1: Server Parameters.
 
 server NIC information
 ^^^^^^^^^^^^^^^^^^^^^^

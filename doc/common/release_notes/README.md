@@ -1,5 +1,4 @@
-[<< Back](../)
-# CNTT Releases
+# Releases
 
 ## Content
 * [Release Process](./release_process.md)

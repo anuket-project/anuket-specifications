@@ -72,9 +72,9 @@ OpenStack Control Plane Servers (Control Nodes)
 -  BIOS Requirements
 
 For OpenStack control nodes we use the BIOS parameters for the basic
-profile defined in :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`.
-Additionally,
-for OpenStack we need to set the following boot parameters:
+profile defined in :ref:`ref_model/chapters/chapter05:\
+cloud infrastructure hardware profiles features and requirements.`.
+Additionally, for OpenStack we need to set the following boot parameters:
 
 ================================= ===============
 BIOS/boot Parameter               Value
@@ -184,68 +184,50 @@ acceleration capabilities utilising, for example, DPDK and SR-IOV
 technologies. Table 4-2 lists a few simple examples of profile
 extensions and some of their capabilities.
 
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| P\     | Descr\ | CPU    | SMT    | CPU    | NUMA   | Huge   | Data   |
-| rofile | iption | Allo\  |        | P\     |        | pages  | T\     |
-| Exte\  |        | cation |        | inning |        |        | raffic |
-| nsions |        | Ratio  |        |        |        |        |        |
-+========+========+========+========+========+========+========+========+
-| B1     | Basic  | 1:1    | Y      | N      | N      | N      | OVS-   |
-|        | Pro\   |        |        |        |        |        | kernel |
-|        | file   |        |        |        |        |        |        |
-|        | NoCPU  |        |        |        |        |        |        |
-|        | over-  |        |        |        |        |        |        |
-|        | subscr\|        |        |        |        |        |        |
-|        | iption |        |        |        |        |        |        |
-|        | p\     |        |        |        |        |        |        |
-|        | rofile |        |        |        |        |        |        |
-|        | ext\   |        |        |        |        |        |        |
-|        | ension |        |        |        |        |        |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| B4     | Basic  | 4:1    | Y      | N      | N      | N      | OVS-   |
-|        | Pro\   |        |        |        |        |        | kernel |
-|        | file   |        |        |        |        |        |        |
-|        | 4xCPU  |        |        |        |        |        |        |
-|        | over-  |        |        |        |        |        |        |
-|        | subscr\|        |        |        |        |        |        |
-|        | iption |        |        |        |        |        |        |
-|        | p\     |        |        |        |        |        |        |
-|        | rofile |        |        |        |        |        |        |
-|        | ext\   |        |        |        |        |        |        |
-|        | ension |        |        |        |        |        |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| HV     | High   | 1:1    | Y      | Y      | Y      | Y      | OVS-   |
-|        | Perfo\ |        |        |        |        |        | kernel |
-|        | rmance |        |        |        |        |        |        |
-|        | P\     |        |        |        |        |        |        |
-|        | rofile |        |        |        |        |        |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| HD     | High   | 1:1    | Y      | Y      | Y      | Y      | OVS-   |
-|        | Perfo\ |        |        |        |        |        | DPDK   |
-|        | rmance |        |        |        |        |        |        |
-|        | P\     |        |        |        |        |        |        |
-|        | rofile |        |        |        |        |        |        |
-|        | with   |        |        |        |        |        |        |
-|        | DPDK   |        |        |        |        |        |        |
-|        | p\     |        |        |        |        |        |        |
-|        | rofile |        |        |        |        |        |        |
-|        | ext\   |        |        |        |        |        |        |
-|        | ension |        |        |        |        |        |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| HS     | High   | 1:1    | Y      | Y      | Y      | Y      | SR-IOV |
-|        | Perfo\ |        |        |        |        |        |        |
-|        | rmance |        |        |        |        |        |        |
-|        | P\     |        |        |        |        |        |        |
-|        | rofile |        |        |        |        |        |        |
-|        | with   |        |        |        |        |        |        |
-|        | SR-IOV |        |        |        |        |        |        |
-|        | p\     |        |        |        |        |        |        |
-|        | rofile |        |        |        |        |        |        |
-|        | ext\   |        |        |        |        |        |        |
-|        | ension |        |        |        |        |        |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
+.. list-table:: Profile Extensions and Capabilities
+   :widths: 10 30 10 10 10 10 10 10
+   :header-rows: 1
 
-Table 4-2: Profile Extensions and Capabilities
+   * - Profile Extensions
+     - Description
+     - CPU Allocation Ratio
+     - SMT
+     - CPU Pinning
+     - NUMA
+     - Huge pages
+     - Data Traffic
+   * - B1
+     - Basic Profile NoCPU over- subscription profile extension
+     - 1:1
+     - Y
+     - N
+     - N
+     - N
+     - OVS- kernel
+   * - HV
+     - High Performance Profile
+     - 1:1
+     - Y
+     - Y
+     - Y
+     - Y
+     - OVS- kernel
+   * - HD
+     - High Performance Profile with DPDK profile extension
+     - 1:1
+     - Y
+     - Y
+     - Y
+     - Y
+     - OVS-DPDK
+   * - HS
+     - High Performance Profile with SR-IOV profile extension
+     - 1:1
+     - Y
+     - Y
+     - Y
+     - Y
+     - SR-IOV
 
 **BIOS Settings**
 
@@ -272,186 +254,29 @@ Boot disks          RAID 1 RAID 1
 
 -  In case of DPDK usage:
 
-+-------------------------------------------------------------+--------+
-| Layer                                                       | Descr\ |
-|                                                             | iption |
-+=============================================================+========+
-| Cloud infrastructure                                        | Imp\   |
-|                                                             | ortant |
-|                                                             | is     |
-|                                                             | pla\   |
-|                                                             | cement |
-|                                                             | of     |
-|                                                             | NICs   |
-|                                                             | to get |
-|                                                             | N\     |
-|                                                             | UMA-ba\|
-|                                                             | lanced |
-|                                                             | system |
-|                                                             | (bal\  |
-|                                                             | ancing |
-|                                                             | the    |
-|                                                             | I/O,   |
-|                                                             | m\     |
-|                                                             | emory, |
-|                                                             | and    |
-|                                                             | s\     |
-|                                                             | torage |
-|                                                             | across |
-|                                                             | both   |
-|                                                             | soc\   |
-|                                                             | kets), |
-|                                                             | and    |
-|                                                             | c\     |
-|                                                             | onfigu\|
-|                                                             | ration |
-|                                                             | of NIC |
-|                                                             | fea\   |
-|                                                             | tures. |
-|                                                             | Server |
-|                                                             | BIOS   |
-|                                                             | and    |
-|                                                             | Host   |
-|                                                             | OS     |
-|                                                             | kernel |
-|                                                             | c\     |
-|                                                             | ommand |
-|                                                             | line   |
-|                                                             | se\    |
-|                                                             | ttings |
-|                                                             | are    |
-|                                                             | des\   |
-|                                                             | cribed |
-|                                                             | in     |
-|                                                             | `DPDK  |
-|                                                             | r\     |
-|                                                             | elease |
-|                                                             | notes  |
-|                                                             | <http: |
-|                                                             | //doc.\|
-|                                                             | dpdk.o\|
-|                                                             | rg/gui\|
-|                                                             | des/re\|
-|                                                             | l_note\|
-|                                                             | s/>`__ |
-|                                                             | and    |
-|                                                             | `DPDK  |
-|                                                             | perfo\ |
-|                                                             | rmance |
-|                                                             | report\|
-|                                                             | s <htt\|
-|                                                             | p://co\|
-|                                                             | re.dpd\|
-|                                                             | k.org/\|
-|                                                             | perf-r\|
-|                                                             | eports\|
-|                                                             | />`__. |
-|                                                             | Dis\   |
-|                                                             | abling |
-|                                                             | power  |
-|                                                             | se\    |
-|                                                             | ttings |
-|                                                             | (like  |
-|                                                             | Intel  |
-|                                                             | Turbo  |
-|                                                             | Boost  |
-|                                                             | Techn\ |
-|                                                             | ology) |
-|                                                             | brings |
-|                                                             | stable |
-|                                                             | perfo\ |
-|                                                             | rmance |
-|                                                             | re\    |
-|                                                             | sults, |
-|                                                             | al\    |
-|                                                             | though |
-|                                                             | u\     |
-|                                                             | nderst\|
-|                                                             | anding |
-|                                                             | if and |
-|                                                             | when   |
-|                                                             | they   |
-|                                                             | b\     |
-|                                                             | enefit |
-|                                                             | wor\   |
-|                                                             | kloads |
-|                                                             | and    |
-|                                                             | en\    |
-|                                                             | abling |
-|                                                             | them   |
-|                                                             | can    |
-|                                                             | a\     |
-|                                                             | chieve |
-|                                                             | better |
-|                                                             | perfo\ |
-|                                                             | rmance |
-|                                                             | re\    |
-|                                                             | sults. |
-+-------------------------------------------------------------+--------+
-| Workload                                                    | DPDK   |
-|                                                             | uses   |
-|                                                             | core   |
-|                                                             | af\    |
-|                                                             | finity |
-|                                                             | along  |
-|                                                             | with   |
-|                                                             | 1G or  |
-|                                                             | 2M     |
-|                                                             | huge   |
-|                                                             | pages, |
-|                                                             | NUMA   |
-|                                                             | se\    |
-|                                                             | ttings |
-|                                                             | (to    |
-|                                                             | avoid  |
-|                                                             | cr\    |
-|                                                             | ossing |
-|                                                             | intec\ |
-|                                                             | onnect |
-|                                                             | b\     |
-|                                                             | etween |
-|                                                             | CPUs), |
-|                                                             | and    |
-|                                                             | DPDK   |
-|                                                             | Poll   |
-|                                                             | Mode   |
-|                                                             | D\     |
-|                                                             | rivers |
-|                                                             | (PMD,  |
-|                                                             | on     |
-|                                                             | re\    |
-|                                                             | served |
-|                                                             | cores) |
-|                                                             | to get |
-|                                                             | the    |
-|                                                             | best   |
-|                                                             | perfor\|
-|                                                             | mance. |
-|                                                             | DPDK   |
-|                                                             | ve\    |
-|                                                             | rsions |
-|                                                             | xx.11  |
-|                                                             | are    |
-|                                                             | Lon\   |
-|                                                             | g-Term |
-|                                                             | S\     |
-|                                                             | upport |
-|                                                             | main\  |
-|                                                             | tained |
-|                                                             | stable |
-|                                                             | r\     |
-|                                                             | elease |
-|                                                             | with   |
-|                                                             | back-  |
-|                                                             | ported |
-|                                                             | bug    |
-|                                                             | fixes  |
-|                                                             | for a  |
-|                                                             | tw\    |
-|                                                             | o-year |
-|                                                             | p\     |
-|                                                             | eriod. |
-+-------------------------------------------------------------+--------+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Layer
+     - Description
+   * - Cloud infrastructure
+     - Important is placement of NICs to get NUMA-balanced system (balancing
+       the I/O, memory, and storage across both sockets), and configuration of
+       NIC features. Server BIOS and Host OS kernel command line settings are
+       described in
+       `DPDK release notes <http://doc.dpdk.org/guides/rel_notes/>`__ and
+       `DPDK performance reports <http://core.dpdk.org/perf-reports/>`__.
+       Disabling power settings (like Intel Turbo Boost Technology) brings
+       stable performance results, although understanding if and when they
+       benefit workloads and enabling them can achieve better performance
+       results.
+   * - Workload
+     - DPDK uses core affinity along with 1G or 2M huge pages, NUMA settings
+       (to avoid crossing inteconnect between CPUs), and DPDK Poll Mode
+       Drivers (PMD, on reserved cores) to get the best performance. DPDK
+       versions xx.11 are Long-Term Support maintained stable release with
+       back-ported bug fixes for a two-year period.
 
 -  Sizing rules
 
@@ -1121,7 +946,7 @@ document provides information on the capabilities required by Anuket
 including managing volumes, snapshots, multi-storage backends, migrate
 volumes, etc.
 
-`Ceph <https://ceph.io/>`__ is the default Anuket Reference Architecture
+`Ceph <https://ceph.io/en/>`__ is the default Anuket Reference Architecture
 storage backend and is discussed below.
 
 Ceph Storage Cluster
@@ -1713,7 +1538,8 @@ set up the flavors as specified in the tables below.
 ..
 
    -  To configure profile-extensions, for example, the “Storage
-      Intensive High Performance” profile, as defined in :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`,
+      Intensive High Performance” profile, as defined in
+      :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`,
       in addition to the above, need configure the storage IOPS: the
       following two parameters need to be specified in the flavor
       create: –property quota:disk_write_iops_sec=<IOPS#> and –property
