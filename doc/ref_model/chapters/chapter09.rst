@@ -184,9 +184,9 @@ Key benefits of the Infrastructure LCM Automation are:
  -  Human related Risks Mitigation: automation reduces risks related to human errors, rogue activities, and safeguards the institutional knowledge 
     from leakage in case any employee leaves the organization
  -  Higher Efficiency: achieved by minimizing human inaccuracies and eliminating the lack of knowledge about infrastructure installed base and its configuration, using
- the CI/CD techniques adapted to infrastructure 
+    the CI/CD techniques adapted to infrastructure 
  -  Cost/time Saving: engineers save up on time and cost which can be wisely invested in performing higher-value jobs; additional cost savings on cloud more optimal 
- use of cloud resources using LCM Automation
+    use of cloud resources using LCM Automation
  
 Infrastructure LCM Automation Framework
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
