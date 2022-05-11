@@ -274,19 +274,19 @@ LCM Automation Principles / Best Practice
 
 The following principles should guide best practice in the area of the Infrastructure LCM Automation:
   -  Everything Codified: use explicit coding to configure files not only for initial provisioning but also as a single source of truth for the whole infrastructure 
-  lifecycle, to ensure consistency with the intent configuration templates and to eliminate configuration drift 
+     lifecycle, to ensure consistency with the intent configuration templates and to eliminate configuration drift 
   -  Version Controlled: use stringent version control for the infrastructure code to allow proper lifecycle automation
   -  Self-Documentation: code itself represents the updated documentation of the infrastructure, to minimise the documentation maintenance burden and to ensure the 
-  documentation currency
+     documentation currency
   -  Code Modularisation: apply to IaaC principles of the microservices architecture where the modular units of code can be independently deployed and lifecycled in 
-  an automated fashion
+     an automated fashion
   -  Immutability: IT infrastructure components are required to be replaced for each deployment during the system lifecycle to be consistent with immutable 
-  infrastructure to avoid configuration drift and to restrict the impact of undocumented changes in the stack
+     infrastructure to avoid configuration drift and to restrict the impact of undocumented changes in the stack
   -  Automated Testing: is the key for the error-free post-deployment lifecycle processes and to eliminate lengthy manual testing processes
   -  Unified Automation: use the same Infrastructure LCM Automation templates, toolsets and procedures across different environments such as Dev, Test, QA and Prod, to
-  ensure consistency of the lifecycle results and to reduce operational costs 
+     ensure consistency of the lifecycle results and to reduce operational costs 
   -  Security Automation: security of infrastructure is critical for the overall security, dictating to use consistent automated security procedures for the threat 
-  detection, investigation and remediation through all infrastructure lifecyle stages and all environments 
+     detection, investigation and remediation through all infrastructure lifecyle stages and all environments 
 
 
 Software Onboarding Automation and CI/CD Requirements
