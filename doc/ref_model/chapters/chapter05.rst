@@ -174,63 +174,73 @@ Platform Services - Load Balancer Requirements
 
 The table below specifies a set of requirements for the Load Balancer platform service.
 
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| Reference  | Requirement                                                           | Notes                                                                   |
-+============+=======================================================================+=========================================================================+
-| pas.lb.001 | The Load Balancer must support resource scaling	                      |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.002 | The Load Balancer must support resource resiliency	                   |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.003 | The Load Balancer must support scaling and resiliency in the local    | Define local environment: within a subnet, tenant network, Availability |
-|            | environment                                                           | Zone of a cloud, ...                                                    |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.004 | The Load Balancer should support resiliency in the  environment       |                                                                         |	
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.005 | The Load Balancer must support OSI Level 3/4 load-balancing and may   | OSI Level 3 load-balancing decision on the source and destination       |
-|            | support Level 7 Load Balancing                                        |   IP addresses and OSI Level 4 TCP port numbers.                        |
-|            |                                                                       | OSI Level 7 (application characteristics based) should support          |
-|            |                                                                       |   HTTP and HTTPS                                                        |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.006 | The Load Balancer must, at a minimum, support round-robin load-       |                                                                         |
-|            | balancing	                                                          |                                                                         | 
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.007 | The Load Balancer must create event logs with the appropriate         |                                                                         |
-|            | severity levels (catastrophic, critical, ...)	                      |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.008 | The Load Balancer must support monitoring of endpoints	             |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.009 | The Load Balancer must support Direct Server Return (DSR)             | Other modes OK as well, but DSR should always be supported              |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.010 | The Load Balancer must state-full TSP load-balancing	                |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.011 | The Load Balancer must support UDP load-balancing	                   |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.012 | The Load Balancer must support load-balancing and correct handling    |                                                                         |
-|            | of fragmented packets 	                                              |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.013 | The Load Balancer should support state-full SCTP load-balancing       |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.014 | The Load Balancer should support state-full M-TCP load-balancing	    |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.015 | The L7 Load Balancer should support HTTP2	                            |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.016 | The L7 Load Balancer should support HTTP3	                            |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| pas.lb.017 | The L7 Load Balancer should support QUIC                              |                                                                         |
-+------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------+
++------------+--------------------------------------------------------+---------------------------------------------+
+| Reference  | Requirement                                            | Notes                                       |
++============+========================================================+=============================================+
+| pas.lb.001 | The Load Balancer must support resource scaling        |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.002 | The Load Balancer must support resource resiliency     |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.003 | The Load Balancer must support scaling and resiliency  | Define local environment: within a subnet,  |
+|            | in the local environment                               | tenant network, Availability Zone of a      |
+|            |                                                        | cloud, ...                                  |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.004 | The Load Balancer should support resiliency in the     |                                             |
+|            | environment                                            |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.005 | The Load Balancer must support OSI Level 3/4           | OSI Level 3 load-balancing decision on the  |
+|            | load-balancing                                         | source and destination IP addresses and OSI |
+|            |                                                        | Level 4 TCP port numbers.                   |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.006 | The Load Balancer must, at a minimum, support          |                                             |
+|            | round-robin load-balancing                             |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.007 | The Load Balancer must create event logs with the      |                                             |
+|            | appropriate severity levels (catastrophic,             |                                             |
+|            | critical, ...)                                         |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.008 | The Load Balancer must support monitoring of endpoints |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.009 | The Load Balancer must support Direct Server           | Other modes OK as well, but DSR should      |
+|            | Return (DSR)                                           | always be supported                         |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.010 | The Load Balancer must state-full TSP load-balancing   |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.011 | The Load Balancer must support UDP load-balancing      |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.012 | The Load Balancer must support load-balancing and      |                                             |
+|            | correct handling of fragmented packets                 |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.013 | The Load Balancer should support state-full SCTP       |                                             |
+|            | load-balancing                                         |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.014 | The Load Balancer should support state-full M-TCP      |                                             |
+|            | load-balancing                                         |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.015 | The Load Balancer should support Level 7               | OSI Level 7 (application characteristics    |
+|            | load balancing                                         | based) should support HTTP and HTTPS        |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.016 | The L7 Load Balancer should support HTTP2              |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.017 | The L7 Load Balancer should support HTTP3              |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
+| pas.lb.018 | The L7 Load Balancer should support QUIC               |                                             |
++------------+--------------------------------------------------------+---------------------------------------------+
 **Table 5-7b:** Platform Services - Load Balancer Requirements.
 
 Cloud Infrastructure Software Profiles features and requirements
 ----------------------------------------------------------------
 
-This section will detail Cloud Infrastructure Software Profiles and associated configurations for the 2 types of Cloud Infrastructure Profiles: Basic and High Performance.
+This section will detail Cloud Infrastructure Software Profiles and associated configurations for the 2 types of Cloud 
+Infrastructure Profiles: Basic and High Performance.
 
 .. _virtual-compute-1:
 
 Virtual Compute
 ~~~~~~~~~~~~~~~
 
-**Table 5-8** depicts the features and configurations related to virtual compute for the two (2) Cloud Infrastructure Profiles.
+**Table 5-8** depicts the features and configurations related to virtual compute for the two (2) Cloud Infrastructure 
+Profiles.
 
 ================= ================================= =============== ===== ================
 Reference         Feature                           Type            Basic High Performance
@@ -244,7 +254,9 @@ infra.com.cfg.005 Simultaneous Multithreading (SMT) Yes/No/Optional Y     Option
 
 **Table 5-8:** Virtual Compute features and configuration for the 2 types of Cloud Infrastructure Profiles.
 
-**Table 5-9** lists the features related to compute acceleration for the High Performance profile. The table also lists the applicable :ref:`ref_model/chapters/chapter04:profile extensions` and Extra Specs that may need to be specified.
+**Table 5-9** lists the features related to compute acceleration for the High Performance profile. The table also 
+lists the applicable :ref:`ref_model/chapters/chapter04:profile extensions` and Extra Specs that may need to be 
+specified.
 
 ===================== =========================== ============================= ===================
 Reference             Feature                     Profile-Extensions            Profile Extra Specs
@@ -263,7 +275,8 @@ infra.com.acc.cfg.005 FPGA/other Acceleration H/W Firmware-programmable adapter
 Virtual Storage
 ~~~~~~~~~~~~~~~
 
-**Table 5-10** and **Table 5-11** depict the features and configurations related to virtual storage for the two (2) Cloud Infrastructure Profiles.
+**Table 5-10** and **Table 5-11** depict the features and configurations related to virtual storage for the two (2) 
+Cloud Infrastructure Profiles.
 
 ================= ======================== ====== ===== ================
 Reference         Feature                  Type   Basic High Performance
@@ -292,7 +305,8 @@ infra.stg.acc.cfg.002 Storage capacity oriented Yes/No N     N
 Virtual Networking
 ~~~~~~~~~~~~~~~~~~
 
-**Table 5-12** and **Table 5-13** depict the features and configurations related to virtual networking for the 2 types of Cloud Infrastructure Profiles.
+**Table 5-12** and **Table 5-13** depict the features and configurations related to virtual networking for the 2 
+types of Cloud Infrastructure Profiles.
 
 ================= ========================== ================= ============================== ==============================
 Reference         Feature                    Type              Basic                          High Performance
@@ -307,7 +321,9 @@ infra.net.cfg.006 Traffic patterns symmetry  Yes/No            Y                
 
 **Table 5-12:** Virtual Networking features and configuration for the 2 types of SW profiles.
 
-   **Note:** \* might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
+   **Note:** \* might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific 
+   drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency 
+   level (for example regarding CPU and energy consumption).
 
 ===================== ============================= ========================== ===== ================
 Reference             Feature                       Type                       Basic High Performance
@@ -323,9 +339,18 @@ infra.net.acc.cfg.004 Crypto Acceleration Interface Yes/No/Optional            N
 Cloud Infrastructure Hardware Profile description
 -------------------------------------------------
 
-The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage, and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware (host) profile and capabilities. A host profile is essentially a “personality” assigned to a compute host (also known as physical server, compute host, host, node, or pServer). The host profiles and related capabilities consist of the intrinsic compute host capabilities (such as number of CPU sockets, number of cores per CPU, RAM, local disks and their capacity, etc.), and capabilities enabled in hardware/BIOS, specialised hardware (such as accelerators), the underlay networking, and storage.
+The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage, 
+and network characteristics, including accelerations and optimizations, drives the need to aggregate these 
+characteristics as a hardware (host) profile and capabilities. A host profile is essentially a “personality” assigned 
+to a compute host (also known as physical server, compute host, host, node, or pServer). The host profiles and related 
+capabilities consist of the intrinsic compute host capabilities (such as number of CPU sockets, number of cores per CPU, 
+RAM, local disks and their capacity, etc.), and capabilities enabled in hardware/BIOS, specialised hardware (such as 
+accelerators), the underlay networking, and storage.
 
-This chapter defines a simplified host, profile and related capabilities model associated with each of the different Cloud Infrastructure Hardware Profile and related capabilities; the two :ref:`chapters/chapter02:profiles, profile extensions & flavours` (aka host profiles, node profiles, hardware profiles) and some of their associated capabilities are shown in :numref:`Cloud Infrastructure Hardware Profiles and host associated capabilities`.
+This chapter defines a simplified host, profile and related capabilities model associated with each of the different 
+Cloud Infrastructure Hardware Profile and related capabilities; the two :ref:`chapters/chapter02:profiles, profile 
+extensions & flavours` (aka host profiles, node profiles, hardware profiles) and some of their associated capabilities 
+are shown in :numref:`Cloud Infrastructure Hardware Profiles and host associated capabilities`.
 
 .. figure:: ../figures/RM-ch05-hw-profile.png
    :name: Cloud Infrastructure Hardware Profiles and host associated capabilities
@@ -333,11 +358,16 @@ This chapter defines a simplified host, profile and related capabilities model a
 
    Cloud Infrastructure Hardware Profiles and host associated capabilities
 
-The profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on Cloud Infrastructure resources.
+The profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on Cloud 
+Infrastructure resources.
 
    **Note:** In this chapter we shall not list all of the EPA-related configuration parameters.
 
-A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. In addition to the host profile, :ref:`ref_model/chapters/chapter04:profiles and workload flavours` and additional capability specifications for the configuration of the host can be specified. Different Cloud Service Providers (CSP) may use different naming standards for their host profiles. For the profiles to be configured, the architecture of the underlying resource needs to be known.
+A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. In addition 
+to the host profile, :ref:`ref_model/chapters/chapter04:profiles and workload flavours` and additional capability 
+specifications for the configuration of the host can be specified. Different Cloud Service Providers (CSP) may use 
+different naming standards for their host profiles. For the profiles to be configured, the architecture of the 
+underlying resource needs to be known.
 
 ============ ============================= ======= ============================= ======================
 Ref          Cloud Infrastructure Resource Type    Definition/Notes              Capabilities Reference
@@ -345,7 +375,9 @@ Ref          Cloud Infrastructure Resource Type    Definition/Notes             
 infra.hw.001 CPU Architecture              <value> Values such as x64, ARM, etc. ``e.cap.020``
 ============ ============================= ======= ============================= ======================
 
-The host profile properties are specified in the following sub-sections. The following diagram (:numref:`Generic model of a compute host for use in Host Profile configurations`) pictorially represents a high-level abstraction of a physical server (host).
+The host profile properties are specified in the following sub-sections. The following diagram (:numref:`Generic model 
+of a compute host for use in Host Profile configurations`) pictorially represents a high-level abstraction of a physical 
+server (host).
 
 .. figure:: ../figures/ch06_ref_hw_profile.PNG
    :name: Generic model of a compute host for use in Host Profile configurations
@@ -358,7 +390,8 @@ The host profile properties are specified in the following sub-sections. The fol
 Cloud Infrastructure Hardware Profiles features and requirements.
 -----------------------------------------------------------------
 
-The configurations specified in here will be used in specifying the actual hardware profile configurations for each of the Cloud Infrastructure Hardware Profiles depicted in **Figure 5-4**.
+The configurations specified in here will be used in specifying the actual hardware profile configurations for each of the 
+Cloud Infrastructure Hardware Profiles depicted in **Figure 5-4**.
 
 Compute Resources
 ~~~~~~~~~~~~~~~~~
@@ -374,7 +407,8 @@ infra.hw.cpu.cfg.004 Simultaneous Multithreading (SMT) SMT enabled that allows e
 
 ..
 
-   (*) Please note that these specifications are for general purpose servers normally located in large data centres. Servers for specialised use with the data centres or other locations, such as at edge sites, are likely to have different specifications.
+   (*) Please note that these specifications are for general purpose servers normally located in large data centres. Servers 
+   for specialised use with the data centres or other locations, such as at edge sites, are likely to have different specifications.
 
 **Table 5-14:** Minimum sizing and capability configurations for general purpose servers.
 
