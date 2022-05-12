@@ -417,7 +417,7 @@ the following specifications:
 |           |                  |                                                   | s>`__          |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-**Table 4-2:** Kubernetes Specifications
+**Table 4-4:** Kubernetes Specifications
 
 Container runtimes
 ------------------
@@ -444,7 +444,7 @@ Container runtimes
 |           |                  |                                                   |                | ructure>`__     |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-**Table 4-3:** Container Runtime Specifications
+**Table 4-5:** Container Runtime Specifications
 
 Networking solutions
 --------------------
@@ -605,7 +605,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   | s>`__          |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-**Table 4-4:** Networking Solution Specifications
+**Table 4-6:** Networking Solution Specifications
 
 Storage components
 ------------------
@@ -671,7 +671,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  | consumers of the service.                         |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-**Table 4-6:** Storage Solution Specifications
+**Table 4-7:** Storage Solution Specifications
 
 A note on object storage:
 
@@ -725,7 +725,7 @@ Helm version 3 has been chosen as the Application packaging mechanism to ensure 
 kaging+Proposals+for+CNF>`__ and `ETSI SOL0001 rel. 4 MCIOP specification <https://www.etsi.org/deliver/etsi_gs/NFV-SOL/
 001_099/001/04.02.01_60/gs_NFV-SOL001v040201p.pdf>`__.
 
-**Table 4-7:** Kubernetes Application Package Manager Specifications
+**Table 4-8:** Kubernetes Application Package Manager Specifications
 
 Kubernetes workloads
 --------------------
@@ -815,7 +815,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  | node software of hardware features they need.     |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-**Table 4-8:** Kubernetes Workload Specifications
+**Table 4-9:** Kubernetes Workload Specifications
 
 Additional required components
 ------------------------------
