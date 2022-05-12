@@ -189,44 +189,45 @@ The table below specifies a set of requirements for the Monitoring service (aka 
 | pas.mon.004 | The Monitoring service must at least perform active or passive        |                                                       |
 |             | monitoring                                                            |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.005 | The Monitoring service should be able to perform both active and      |                                                       |
-|             | passive monitoring                                                    |                                                       |
-+-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.006 | The Monitoring service must support configuration of thresholds,      |                                                       |
+| pas.mon.005 | The Monitoring service must support configuration of thresholds,      |                                                       |
 |             | outside of which the resource cannot function normally, for alert     |                                                       |
 |             | generation                                                            |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.007 | The Monitoring service must support configuration of alert            |                                                       |
+| pas.mon.006 | The Monitoring service must support configuration of alert            |                                                       |
 |             | notification medium (email, SMS, phone, etc.)                         |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.008 | The Monitoring service must support configurable re-alerting after    |                                                       |
+| pas.mon.007 | The Monitoring service must support configurable re-alerting after    |                                                       |
 |             | a configurable period of time if the metric remains outside of the    |                                                       |
 |             | threshold                                                             |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.009 | The Monitoring service must support configurable alert escalations    |                                                       |
+| pas.mon.008 | The Monitoring service must support configurable alert escalations    |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.010 | The Monitoring service must support alert acknowledgments by          |                                                       |
+| pas.mon.009 | The Monitoring service must support alert acknowledgments by          |                                                       |
 |             | disabling future alerting of the same resource/reason                 |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.011 | The Monitoring service must support selective enabling and            |                                                       |
+| pas.mon.010 | The Monitoring service must support selective enabling and            |                                                       |
 |             | disabling of alerts by resource, category of resources, time periods. |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.012 | The Monitoring service should be implemented for high availability    |                                                       |
-|             | to ensure non-stop monitoring of critical infrastructure components   |                                                       |
+| pas.mon.011 | The monitoring service must publish its APIs for programmatic         |                                                       |
+|             | invocation of all monitoring service functions                        |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.013 | The Monitoring service should run as separately from production       |                                                       |
-|             | services                                                              |                                                       |
-+-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.014 | Failure of the system being monitored should not cause a failure      |                                                       |
-|             | in the monitoring service                                             |                                                       |
-+-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.015 | An inoperative monitoring service should not generate alerts about    |                                                       |
-|             | the monitored system                                                  |                                                       |
-+-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.016 | The monitoring service must itself be monitored through a logging     |                                                       |
+| pas.mon.012 | The monitoring service must itself be monitored through a logging     |                                                       |
 |             | service                                                               |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.017 | The monitoring service must publish its APIs for programmatic         |                                                       |
+| pas.mon.013 | The Monitoring service should be implemented for high availability    |                                                       |
+|             | to ensure non-stop monitoring of critical infrastructure components   |                                                       |
++-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
+| pas.mon.014 | The Monitoring service should run as separately from production       |                                                       |
+|             | services                                                              |                                                       |
++-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
+| pas.mon.015 | Failure of the system being monitored should not cause a failure      |                                                       |
+|             | in the monitoring service                                             |                                                       |
++-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
+| pas.mon.016 | An inoperative monitoring service should not generate alerts about    |                                                       |
+|             | the monitored system                                                  |                                                       |
++-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
+| pas.mon.017 | The Monitoring service should be able to perform both active and      |                                                       |
+|             | passive monitoring                                                    |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | pas.mon.018 | The monitoring service should provide a consolidated view of the      |  View: dashboard or report                            |
 |             | entire monitored infrastructure                                       |                                                       |
