@@ -7,7 +7,7 @@ Anuket Specifications
     Technical Specifications </common/index>
     Introduction </common/chapter00>
     Reference Model </ref_model/index>
-    Reference Architectures </ref_arch/README>
+    Reference Architectures </ref_arch/index>
     Reference Implementation </ref_impl/index>
     Vendor Implementations </ven_impl/index>
     Reference Conformance </ref_cert/index>
