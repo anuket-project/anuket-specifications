@@ -1738,8 +1738,8 @@ Smart Switches can be broadly categorized into Configurable Switches and Program
 
 Configurable Smart Switches run generic “smart” configurable network operating system offering full range of network
 functionality and are flexible enough to support most network solutions. The most common such network operating system
-is Linux-based `SONiC <https://azure.github.io/SONiC/>`__ allowing hardware and software disaggregation by running on
-switches from multiple switch vendors with different types of vendor fixed-function ASICs. Still, SONiC today cannot
+is Linux-based `SONiC <https://github.com/sonic-net/SONiC>`__ allowing hardware and software disaggregation by running
+on switches from multiple switch vendors with different types of vendor fixed-function ASICs. Still, SONiC today cannot
 implement new type of data plane functionality or patch/modify/correct an ASIC, which is the type of support offered by
 programmable smart switches.
 

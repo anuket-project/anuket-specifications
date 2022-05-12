@@ -358,43 +358,42 @@ language libraries.
 
 **APIs**
 
-+------------+------------------------------+--------+----------------+
-| **         | Link for API list            | **API  | **Maximal API  |
-| OpenStack  |                              | Ver\   | Microversion** |
-| Service**  |                              | sion** |                |
-+============+==============================+========+================+
-| Identity:  | https://docs.openst          | v3     | 3.14           |
-| Keystone   | ack.org/api-ref/identity/v3/ |        |                |
-+------------+------------------------------+--------+----------------+
-| Compute:   | https://docs.op              | v2.1   | 2.88           |
-| Nova       | enstack.org/api-ref/compute/ |        |                |
-+------------+------------------------------+--------+----------------+
-| N\         | https://docs.opens           | v2.0   |                |
-| etworking: | tack.org/api-ref/network/v2/ |        |                |
-| Neutron    |                              |        |                |
-+------------+------------------------------+--------+----------------+
-| Image:     | https://docs.ope             | v2     | 2.9            |
-| Glance     | nstack.org/api-ref/image/v2/ |        |                |
-+------------+------------------------------+--------+----------------+
-| Block      | https://docs.openstack.o     | v3     | 3.64           |
-| Storage:   | rg/api-ref/block-storage/v3/ |        |                |
-| Cinder     |                              |        |                |
-+------------+------------------------------+--------+----------------+
-| Object     | https://docs.opensta         | v1     |                |
-| Storage:   | ck.org/api-ref/object-store/ |        |                |
-| Swift      |                              |        |                |
-+------------+------------------------------+--------+----------------+
-| Placement  | https://docs.open            | v1     | 1.36           |
-|            | stack.org/api-ref/placement/ |        |                |
-+------------+------------------------------+--------+----------------+
-| Orch\      | https://docs.openstack.o     | v1     | 2021-04-06     |
-| estration: | rg/api-ref/orchestration/v1/ |        | (template)     |
-| Heat       |                              |        |                |
-+------------+------------------------------+--------+----------------+
-| Acc\       | https://docs.openstack       | v2     |                |
-| eleration: | .org/api-ref/accelerator/v2/ |        |                |
-| Cyborg     |                              |        |                |
-+------------+------------------------------+--------+----------------+
+.. list-table:: APIs
+   :widths: 20 50 15 15
+   :header-rows: 1
+
+   * - OpenStack Service
+     - Link for API list
+     - API Version
+     - Maximal API Microversion
+   * - Identity: Keystone
+     - https://docs.openstack.org/api-ref/identity/v3/
+     - v3
+     - 3.14
+   * - Compute: Nova
+     - https://docs.openstack.org/api-ref/compute/
+     - v2.1
+     - 2.88
+   * - Networking: Neutron
+     - https://docs.openstack.org/api-ref/network/v2/
+     - v2.0
+     -
+   * - Image: Glance
+     - https://docs.openstack.org/api-ref/image/v2/
+     - v2
+     - 2.9
+   * - Block Storage: Cinder
+     - https://docs.openstack.org/api-ref/block-storage/v3/
+     - v3
+     - 3.64
+   * - Placement
+     - https://docs.openstack.org/api-ref/placement/
+     - v1
+     - 1.36
+   * - Orchestration: Heat
+     - https://docs.openstack.org/api-ref/orchestration/v1/
+     - v1
+     - 2021-04-06 (template)
 
 Kubernetes Interfaces
 ~~~~~~~~~~~~~~~~~~~~~
