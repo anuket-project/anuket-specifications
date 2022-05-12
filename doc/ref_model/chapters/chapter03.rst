@@ -111,7 +111,7 @@ A virtual machine and container can consume storage through a number of means. T
 
 -  managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and
 -  Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
-   The details of the tenant storage consumption model are covered in section :ref:`ref_model/chapters/chapter03:virtual storage`.
+   The details of the tenant storage consumption model are covered in section :ref:`Storage for Tenant Consumption`.
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity and behaviours. The set of selectable attributes includes:
 
@@ -798,21 +798,30 @@ Where:
 -  "O" - Optional and readily accommodated
 -  "N" - No, not available
 -  "NA" - Not Applicable for this Use Case / Stereotype
-
-============================ =================================== ================== ==== === =================== ==================== =========== ===== === ==== ======
-\                                                                                            Tenant / User
-============================ =================================== ================== ==== === =================== ==================== =========== ===== === ==== ======
-\                                                                Infra / Ctrl / Mgt          Platform Native                          Shared File                Object
-Use Case                     Stereotype                          Boot               Ctrl Mgt Hypervisor Attached Container Persistent Within      Cross Ext vNAS Object
-Data-centre Storage          Dedicated Network Storage Appliance Y                  Y    Y   Y                   Y                    O           O     O   O    O
-\                            Dedicated Software Defined Storage  O                  O    O   Y                   Y                    O           O     O   O    O
-\                            Traditional SAN                     Y                  Y    Y   N                   N                    N           N     N   N    N
-Satelite data-centre Storage Small Software Defined Storage      O                  O    O   Y                   Y                    O           O     O   O    O
-Small data-centre Storage    Converged Software Defined Storage  O                  O    O   Y                   Y                    O           O     O   O    O
-Edge Cloud                   Edge Cloud for VNF/CNF Storage      NA                 O    NA  Y                   Y                    O           O     O   O    O
-\                            Edge Cloud for Apps Storage         NA                 O    NA  Y                   Y                    O           O     O   O    Y
-\                            Edge Cloud for Content Mgt Storage  NA                 O    NA  Y                   Y                    O           O     O   O    Y
-============================ =================================== ================== ==== === =================== ==================== =========== ===== === ==== ======
++------------------------------+-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
+|                                                                                         | Tenant / User                                                  |
++==============================+=====================================+======+======+======+============+============+========+=======+=====+======+========+
+|                                                                    | Infra / Ctrl / Mgt | Platform Native         | Shared File                 | Object |
++==============================+=====================================+======+======+======+============+============+========+=======+=====+======+========+
+| Use Case                     | Stereotype                          | Boot | Ctrl | Mgt  | Hypervisor | Container  | Within | Cross | Ext | vNAS | Object |
+|                              |                                     |      |      |      | Attached   | Persistent |        |       |     |      |        |
++==============================+=====================================+======+======+======+============+============+========+=======+=====+======+========+
+| Data-centre Storage          | Dedicated Network Storage Appliance | Y    | Y    | Y    | Y          | Y          | O      | O     | O   | O    | O      |
+|                              +-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
+|                              | Dedicated Software Defined Storage  | O    | O    | O    | Y          | Y          | O      | O     | O   | O    | O      |
+|                              +-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
+|                              | Traditional SAN                     | Y    | Y    | Y    | N          | N          | N      | N     | N   | N    | N      |
++------------------------------+-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
+| Satelite data-centre Storage | Small Software Defined Storage      | O    | O    | O    | Y          | Y          | O      | O     | O   | O    | O      |
++------------------------------+-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
+| Small data-centre Storage    | Converged Software Defined Storage  | O    | O    | O    | Y          | Y          | O      | O     | O   | O    | O      |
++------------------------------+-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
+| Edge Cloud                   | Edge Cloud for VNF/CNF Storage      | NA   | O    | NA   | Y          | Y          | O      | O     | O   | O    | O      |
+|                              +-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
+|                              | Edge Cloud for Apps Storage         | NA   | O    | NA   | Y          | Y          | O      | O     | O   | O    | Y      |
+|                              +-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
+|                              | Edge Cloud for Content Mgt Storage  | NA   | O    | NA   | Y          | Y          | O      | O     | O   | O    | Y      |
++------------------------------+-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
 
 **Table 3-9:** Storage Use Cases and Stereotypes
 
