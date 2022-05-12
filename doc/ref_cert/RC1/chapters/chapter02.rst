@@ -150,7 +150,7 @@ The Infrastructure Profile Catalog contains the following attributes:
    Details for each of these profiles can be found in
    :ref:`ref_model/chapters/chapter02:analysis`.
 
-.. figure:: https://cntt.readthedocs.io/en/latest/ref_model/figures/RM-ch04-node-profiles.png
+.. figure:: ../figures/RM-ch04-node-profiles.png
    :alt: NFVI Profiles
 
    NFVI Profiles
