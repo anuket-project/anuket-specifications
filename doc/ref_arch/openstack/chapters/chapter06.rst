@@ -518,7 +518,7 @@ Images from untrusted sources must not be used (sec.img.001). Valuable
 guidance on trusted image creation process and image signature
 verification is provided in the “Trusted Images” section of the
 `OpenStack Security
-Guide <https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images/>`__.
+Guide <https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images>`__.
 The OpenStack Security Guide includes reference to the “`OpenStack
 Virtual Machine Image
 Guide <https://docs.openstack.org/image-guide/>`__” that describes how
