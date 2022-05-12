@@ -186,7 +186,11 @@ The table below specifies a set of requirements for the Log Management Service (
 | pas.lms.004 | LMS must manage archival and retention of logs for configurable       |                                       |
 |             | time periods by different log types                                   |                                       |
 +-------------+-----------------------------------------------------------------------+---------------------------------------+
-| pas.lms.005 | LMS should ensure log file integrity                                  |  Covered by req.sec.mon.005           |
+| pas.lms.005 | LMS must ensure log file integrity (no changes, particularly changes  | Covered by req.sec.mon.005: "The      |
+|             | that may affect the completeness, consistency, and accuracy including | Prod-Platform and NonProd-Platform    |
+|             | event times, of the log file content)                                 | must secure  and protect all logs     |
+|             |                                                                       | (containing  sensitive information)   |
+|             |                                                                       | both in-transit  and at rest."        |
 +-------------+-----------------------------------------------------------------------+---------------------------------------+
 | pas.lms.006 | LMS must monitor log rotation and log archival processes              |                                       |
 +-------------+-----------------------------------------------------------------------+---------------------------------------+
