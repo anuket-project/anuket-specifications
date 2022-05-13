@@ -57,7 +57,7 @@ environments. Examples of such adversarial tactics are listed in the table below
 |                  | and compromising APIs and web-based GUIs                                                          |
 +------------------+---------------------------------------------------------------------------------------------------+
 
-**Table 7-0:** Cloud attacker tactics - Examples
+**Table 7-1:** Cloud attacker tactics - Examples
 
 Security Scope
 --------------
@@ -676,7 +676,8 @@ To secure software code, the following methods must be applied:
    identified vulnerabilities discovered in the community
 -  Secure the integration process by securing the software production pipeline
 -  Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, 
-   deployment, and runtime operation to perform automatic security check, as described in section ”Infrastructure as a Code Security”
+   deployment, and runtime operation to perform automatic security check, as described in section ”Infrastructure 
+   as a Code Security”
 
 Open-Source Software Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -688,18 +689,18 @@ It can be partial or total, visible or not. Open-source code can be upstream cod
 public repositories or code within a commercial application or network function. 
 
 The strength of open-source code is the availability of code source developed by a community which maintains and improves it. 
-Open-source code integration with application source code helps to develop and produce applications faster. But, in return, 
-it can introduce security risks if a risk management DevSecOps approach is not implemented. The GSMA white paper  
-`“Open Networking & the Security of Open Source Software Deployment - Future Networks” 
+Open-source code integration with application source code helps to develop and produce applications faster. 
+But, in return, it can introduce security risks if a risk management DevSecOps approach is not implemented. 
+The GSMA white paper  `“Open Networking & the Security of Open Source Software Deployment - Future Networks” 
 <https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/>`_ 
 alerts on these risks and addresses the 
 challenges coming with open-source code usage. Amongst these risks for security, we can mention a poor code quality 
 containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open source 
-communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an inactive branch. 
-The GSMA white paper develops means to mitigate these security issues.
+communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an inactive 
+branch. The GSMA white paper develops means to mitigate these security issues.
 
-Poor code quality is a factor of risk. Open-source code advantage is its transparency, code can be inspected by tools with 
-various capabilities such as open-source software discovery and static and dynamic code analysis.
+Poor code quality is a factor of risk. Open-source code advantage is its transparency, code can be inspected by tools 
+with various capabilities such as open-source software discovery and static and dynamic code analysis.
 
 Each actor in the whole chain of software production must use a dedicated internal isolated repository separated from the 
 production environment to store vetted open-source content, which can include images, but also installer and utilities. 
@@ -708,33 +709,91 @@ Access to the repository must be granted by a dedicated authorization. The code 
 identified as described previously. After validating the software, it can be moved to the appropriate production 
 repository.
 
-SBOM
-~~~~
+Software Bill of Materials (SBOM)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It is crucial to identify the software components and their origins. The Software Bill of Materials (SBOM), 
-described by `US NTIA <https://www.ntia.gov/SBOM>`__ (National Telecommunications and Information Administration), 
-is an efficient tool to identify software components. The SBOM is an inventory of software components and the relationships 
-between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability 
-detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
+In order to ensure software security, it is crucial to identify the software components and their origins. The 
+Software Bill of Materials (SBOM), described by `US NTIA <https://www.ntia.gov/SBOM>`__ (National 
+Telecommunications and Information Administration), is an efficient and highly recommended tool to identify software 
+components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to 
+establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the 
+SBOM inventory is an effective means to identify the impacted component and provide remediation.
 
-A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management and it 
-provides assurance of the source and integrity of components. In order to use the SBOM efficiently and spread its adoption, 
-information must be generated and shared in a standard format. This format must be machine-readable to allow automation. The 
-NTIA white paper `“Survey of existing SBOM formats and standards” <https://www.ntia.doc.gov/files/ntia/publications
-/ntia_sbom_formats_and_standards_whitepaper_-_version_20191025.pdf>`__ identifies two key formats covering baseline SBOM 
-information: Software Package Data eXchange (SDPX) and Software Identification Tags (SWID tags).
+A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management 
+and it provides assurance of the source and integrity of components. To achieve and take benefit of this transparency, 
+a shared model must be supported by industry. This is the goal of the work performed by the USA department of commerce 
+and the National Telecommunications and Information administration (NTIA) and published, in July 2021, in the report 
+`“The Minimum Elements for a Software Bill of Materials (SBOM)” <https://www.ntia.doc.gov/files/ntia/publications/sbom_\
+minimum_elements_report.pdf>`_. The document gives guidance and describes sets the minimum elements for the SBOM, as 
+a starting point. 
 
-`SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux Foundation. 
-The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard ISO/IEC 5962:2021. It 
-provides a language for communicating the data, licenses, copyrights, and security information associated with software 
-components. With the SPDX specification 2.2, multiple file formats are available: YAML, JSON, RDF/XML, tag\:value flat text, 
-and xlss spreadsheets.
+A piece of software can be modeled as a hierarchical tree with components and subcomponents, each 
+component should have its SBOM including,  as a baseline, the information described in the following table.
 
-`SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software 
-publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID tags: primary, 
-patch, corpus, and supplemental to describe a software component.
 
-For both formats, SPDX and SWID Tags, tools are available.
++------------------------------+---------------------------------------------------+
+| **Data Field**               | Description                                       |
++==============================+===================================================+
+| **Supplier Name**            | The name of an entity that creates, defines, and  |
+|                              | identifies components.                            |
++------------------------------+---------------------------------------------------+
+| **Component Name**           | Designation assigned to a unit of software        |
+|                              | defined by the original supplier.                 |
++------------------------------+---------------------------------------------------+
+| **Version of the Component** | Identifier used by the supplier to specify a      |
+|                              | change in software from a previously identified   |
+|                              | version.                                          |
++------------------------------+---------------------------------------------------+
+| **Other Unique Identifiers** | Other identifiers that are used to identify a     |
+|                              | component, or serve as a look-up key for relevant |
+|                              | databases.                                        |
++------------------------------+---------------------------------------------------+
+| **Dependency Relationship**  | Characterizing the relationship that an upstream  |
+|                              | component X is included in software Y.            |
++------------------------------+---------------------------------------------------+
+| **Author of SBOM Data**      | The name of the entity that creates the SBOM data |
+|                              | for this component.                               |
++------------------------------+---------------------------------------------------+
+| **Timestamp**                | Record of the date and time of the SBOM data      |
+|                              | assembly.                                         |
++------------------------------+---------------------------------------------------+
+**Table 7-2 **: SBOM Data Fields components, source `NTIA <https://www.ntia.doc.gov/files/ntia/publications/\
+sbom_minimum_elements_report.pdf>`_
+
+Refer to the document for more details on each data field. Examples of commonly used identifiers are provided.
+
+In order to use SBOMs efficiently and spread their adoption, information must be generated and shared in a standard 
+format. This format must be machine-readable to allow automation. Proprietary formats should not be used. 
+Multiple data formats exist covering baseline SBOM information. The three key formats, Software Package Data 
+eXchange (SPDX), CycloneDX, and Software Identification Tags (SWID tags) are interoperable for the core data fields 
+and use common data syntax representations.
+
+- `SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux 
+  Foundation. 
+  
+  The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard 
+  ISO/IEC 5962:2021. It provides a language for communicating the data, licenses, copyrights, and security information 
+  associated with software components. With the SPDX specification 2.2, multiple file formats are available: YAML, 
+  JSON, RDF/XML, tag\:value flat text, and xls spreadsheets.
+
+- `CycloneDX <https://cyclonedx.org/>`_ was designed in 2017 for use with OWASP(Open Web Application Security Project) 
+  Dependency-Track tool, an open-source Component Analysis platform that identifies risk in the software supply chain.
+  
+  CycloneDX supports a wide range of software components, including: applications, containers, libraries, files, 
+  firmware,   frameworks, Operating Systems. The CycloneDX project provides standards in XML, JSON, and Protocol 
+  Buffers, as well as a large collection of official and community supported tools that create or interoperate with 
+  the standard.
+
+- `SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software 
+  publishers and has been published as the standard ISO/IEC 19770-2. 
+  
+  The specification defines four types of SWID tags: 
+  primary, patch, corpus, and supplemental to describe a software component.
+
+The SBOM should be integrated into the operations of the secure development life cycle, especially for vulnerabilities 
+management. It should also evolve in time. When a software component is updated, a new SBOM must be created. The 
+elements described in this section are part of an ongoing effort, improvements will be added in the future such as 
+SBOM integrity and authenticity.
 
 Vulnerability identification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -887,7 +946,7 @@ System Hardening
 |                 | change.                                          |                                                 |
 +-----------------+--------------------------------------------------+-------------------------------------------------+
 
-**Table 7-1:** System hardening requirements
+**Table 7-3:** System hardening requirements
 
 Platform and Access
 ~~~~~~~~~~~~~~~~~~~
@@ -981,7 +1040,7 @@ Platform and Access
 |                 | by design environment.                           |                                                 |
 +-----------------+--------------------------------------------------+-------------------------------------------------+
 
-**Table 7-2:** Platform and access requirements
+**Table 7-4:** Platform and access requirements
 
 Confidentiality and Integrity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1020,7 +1079,7 @@ Confidentiality and Integrity
 |                | Module to manage and protect cryptographic keys.                           |                        |
 +----------------+----------------------------------------------------------------------------+------------------------+
 
-**Table 7-3:** Confidentiality and integrity requirements
+**Table 7-5:** Confidentiality and integrity requirements
 
 Workload Security
 ~~~~~~~~~~~~~~~~~
@@ -1050,7 +1109,7 @@ Workload Security
 |                | authenticity and integrity.                                                |                        |
 +----------------+----------------------------------------------------------------------------+------------------------+
 
-**Table 7-4:** Workload security requirements
+**Table 7-6:** Workload security requirements
 
 Image Security
 ~~~~~~~~~~~~~~
@@ -1082,7 +1141,7 @@ Image Security
 | req.sec.img.010 | Minimalist base images **should** be used whenever possible.                     |                 |
 +-----------------+----------------------------------------------------------------------------------+-----------------+
 
-**Table 7-5:** Image security requirements
+**Table 7-7:** Image security requirements
 
 Security LCM
 ~~~~~~~~~~~~
@@ -1137,7 +1196,7 @@ Security LCM
 | req.sec.lcm.012 | The Platform **must** log any access privilege escalation.                |                        |
 +-----------------+---------------------------------------------------------------------------+------------------------+
 
-**Table 7-6:** Security LCM requirements
+**Table 7-8:** Security LCM requirements
 
 Monitoring and Security Audit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1231,7 +1290,7 @@ both Prod-Platform and NonProd-Platform.
 |                 | external logging system until successful.                                        |                 |
 +-----------------+----------------------------------------------------------------------------------+-----------------+
 
-**Table 7-7:** Monitoring and security audit requirements
+**Table 7-9:** Monitoring and security audit requirements
 
 Open Source Software
 ~~~~~~~~~~~~~~~~~~~~
@@ -1261,7 +1320,7 @@ Open Source Software
 |                 |                                                                           | M>`__.                 |
 +-----------------+---------------------------------------------------------------------------+------------------------+
 
-**Table 7-8:** Open Source Software requirements
+**Table 7-10:** Open Source Software requirements
 
 IaaC - Secure Design and Architecture Stage Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1281,7 +1340,7 @@ IaaC - Secure Design and Architecture Stage Requirements
 |                  | Software Feature Design trigger             |                                                     |
 +------------------+---------------------------------------------+-----------------------------------------------------+
 
-**Table 7-9:** IaaC - Secure Design and Architecture Stage Requirements
+**Table 7-11:** IaaC - Secure Design and Architecture Stage Requirements
 
 IaaC - Secure Code Stage Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1311,7 +1370,7 @@ IaaC - Secure Code Stage Requirements
 |                  | triggered by Developer Code trigger.        |                                                     |
 +------------------+---------------------------------------------+-----------------------------------------------------+
 
-**Table 7-10:** IaaC - Secure Code Stage Requirements
+**Table 7-12:** IaaC - Secure Code Stage Requirements
 
 IaaC - Continuous Build, Integration and Testing Stage Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1351,7 +1410,7 @@ IaaC - Continuous Build, Integration and Testing Stage Requirements
 |                 |                                              | Contrast Community Edition.                         |
 +-----------------+----------------------------------------------+-----------------------------------------------------+
 
-**Table 7-11:** IaaC - Continuous Build, Integration and Testing Stage Requirements
+**Table 7-13:** IaaC - Continuous Build, Integration and Testing Stage Requirements
 
 IaaC - Continuous Delivery and Deployment Stage Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1381,7 +1440,7 @@ IaaC - Continuous Delivery and Deployment Stage Requirements
 |                 |                                              | Example: OWASP Zed Attack Proxy (ZAP).              |
 +-----------------+----------------------------------------------+-----------------------------------------------------+
 
-**Table 7-12:** IaaC - Continuous Delivery and Deployment Stage Requirements
+**Table 7-14:** IaaC - Continuous Delivery and Deployment Stage Requirements
 
 IaaC - Runtime Defence and Monitoring Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1410,7 +1469,7 @@ IaaC - Runtime Defence and Monitoring Requirements
 |                 | Defence and Monitoring stage.                |                                                     |
 +-----------------+----------------------------------------------+-----------------------------------------------------+
 
-**Table 7-13:** IaaC - Runtime Defence and Monitoring Requirements
+**Table 7-15:** IaaC - Runtime Defence and Monitoring Requirements
 
 Compliance with Standards
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1493,7 +1552,7 @@ Compliance with Standards
 |                 | 3402 (in the US: SSAE 16).                   |                                                     |
 +-----------------+----------------------------------------------+-----------------------------------------------------+
 
-**Table 7-14:** Compliance with standards requirements
+**Table 7-16:** Compliance with standards requirements
 
 Security References
 -------------------
