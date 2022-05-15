@@ -768,7 +768,8 @@ Assumptions and conventions:
   - >=2
   - >99.n
   - Not required
-  - Suitable where local application HA is required. Control plane should be distributed across DC failure domains (assuming layer 2 connectivity) but may be unavailable during up grades
+  - Suitable where local application HA is required. Control plane should be distributed across DC failure domains 
+(assuming layer 2 connectivity) but may be unavailable during up grades
 * - 3
   - Global Redundancy - workload spread across multiple Regions
   - >=2
@@ -776,7 +777,8 @@ Assumptions and conventions:
   - >=2
   - >99.nn
   - Required
-  - Suitable where local and region application HA is required Control plane could be kept available in one site during upgrades
+  - Suitable where local and region application HA is required Control plane could be kept available in one site during 
+upgrades
 
 
 **Topology Overview**
