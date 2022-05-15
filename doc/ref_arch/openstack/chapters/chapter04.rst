@@ -1104,7 +1104,7 @@ networking.
   - Optional depending upon plug-in
   - Network node (Controller node if no network node present)
 * - L3 agent (neutron-l3-agent)
-  - Provides L3/NAT forwarding for external network access of servers on tenant networks and supports services such as Fire wall-as-a-service (FWaaS) and Load Bala ncer-as-a-service (LBaaS)
+  - Provides L3/NAT forwarding for external network access of servers on tenant networks and supports services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS)
   - Optional depending upon plug-in
   - Network node (Controller node if no network node present) NB in DVR based OpenStack Networking, also in all Compute nodes.
 * - neutron metadata agent (neutron-metadata-agent)
