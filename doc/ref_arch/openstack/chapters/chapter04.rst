@@ -181,7 +181,8 @@ of the variability through different values or extra specifications.
 The Reference Model specifies the Basic (B) and High-Performance (H)
 profile types. The Reference Model also provides a choice of network
 acceleration capabilities utilising, for example, DPDK and SR-IOV
-technologies. Table 4-2 lists a few simple examples of profile
+technologies. The Table :numref:` Profile Extensions and Capabilities`
+(below) lists a few simple examples of profile
 extensions and some of their capabilities.
 
 .. list-table:: Profile Extensions and Capabilities
