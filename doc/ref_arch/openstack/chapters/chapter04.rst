@@ -1566,7 +1566,7 @@ choices.
 * - Identity Provider (IdP), Keystone API
 * - Glance API, Glance Registry
 * - nova-compute api, nova-scheduler, nova-conductor
-* - neutron -server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3-agent (optional), neutron-metadata -agent
+* - neutron-server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3-agent (optional), neutron-metadata -agent
 * - Cinder API, Cinder Scheduler, Cinder Volume
 * -  
   - Any DC - Control nodes Option 2: split services between two or more DCs
