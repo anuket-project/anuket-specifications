@@ -1557,7 +1557,7 @@ choices.
   - heat-api, heat-engine, nova-placement-api
   - Identity Provider (IdP), Keystone API
   - Glance API, Glance Registry
-  - nova-compute api, nova- scheduler, nova-conductor
+  - nova-compute api, nova-scheduler, nova-conductor
   - neutron -server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3 -agent (optional), neutron-metadata -agent
   - Cinder API, Cinder Scheduler, Cinder Volume
 * - DCP: combination of services depending upon Center size
