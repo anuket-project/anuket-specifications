@@ -1662,10 +1662,16 @@ Instance images are downloaded and stored locally; they can be downloaded even
 prior to use.
 
 If the edge site doesn't contain storage then the images would need to be
-cached from the central site. The instance images would be downloaded and
+cached from the central site. Two ptions exist:
+- The instance images would be downloaded and
 cached in the Nova cache on first use; they will then be available for
-subsequent use.  This requires that all instance images be available at the
-central site.
+subsequent use.
+- Pre-caching the instance images for low time-to-boot latency. This has been supported 
+in Nova since the OpenStack Ussuri release.
+
+Image caching and considerations for its use are discussed in the OpenStack document
+`Image Caching <https://docs.openstack.org/nova/latest/admin/image-caching.html#image-pre-caching>`_.
+
 
 Edge Cloud Deployment Tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
