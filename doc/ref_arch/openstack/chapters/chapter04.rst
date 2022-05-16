@@ -1633,7 +1633,7 @@ the control plane distribution. As specified earlier in this chapter, at least 3
 for HA.  Compute nodes may also exist at the sites where controller nodes are deployed.  
 
 Control plane services are not hosted at edge sites. Each edge site can be treated as its own OpenStack AZ. The 
-compute nodes, will host `nova-compute`, a component of the the CCompute Service (Nova), and `neutron-L2-agent`,
+compute nodes, will host `nova-compute`, a component of the the Compute Service (Nova), and `neutron-L2-agent`,
 a component of the Network Service (Neutron).
 
 The Edge sites may or may not contain local storage. If the edge sites contain storage, then the Block Storage 
