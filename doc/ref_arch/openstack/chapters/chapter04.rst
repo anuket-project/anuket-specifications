@@ -518,35 +518,34 @@ the configurations as Table 4-3.
    :widths: 20 10 10 10
    :header-rows: 1
 
-* - Capability
-  - Configured in
-  - Host profile: hp-B1-a
-  - Host profile: hp-B4-a
-* - CPU Allocation Ratio
-  - Hypervisor
-  - 1:1
-  - 4:1
-* - CPU Pinning
-  - BIOS
-  - Enable
-  - Disable
-* - SMT
-  - BIOS
-  - Enable
-  - Enable
-* - NUMA
-  - BIOS
-  - Disable
-  - Disable
-* - Huge pages
-  - BIOS
-  - No
-  - No
-* - Profile Extensions
-  -  
-  - B1
-  - B4
-
+   * - Capability
+     - Configured in
+     - Host profile: hp-B1-a
+     - Host profile: hp-B4-a
+   * - CPU Allocation Ratio
+     - Hypervisor
+     - 1:1
+     - 4:1
+   * - CPU Pinning
+     - BIOS
+     - Enable
+     - Disable
+   * - SMT
+     - BIOS
+     - Enable
+     - Enable
+   * - NUMA
+     - BIOS
+     - Disable
+     - Disable
+   * - Huge pages
+     - BIOS
+     - No
+     - No
+   * - Profile Extensions
+     -
+     - B1
+     - B4
 
 Figure 4-2 shows the networking configuration where the storage and OAM
 share networking but are independent of the PXE network.
@@ -595,42 +594,41 @@ and HS Profile Extensions.
    :widths: 15 29 12 12 12
    :header-rows: 2
 
-* - Capability 
-  - Configured in
-  - Host profile: hp-hv-a
-  - Host profile: hp-hd-a
-  - Host profile: hp-hs-a
-* - Profile Extensions
-  -  
-  - HV
-  - HD
-  - HS
-* - CPU Allocation Ratio
-  - Hypervisor
-  - 1:1
-  - 1:1
-  - 1:1
-* - NUMA
-  - BIOS, Operating System, Hypervisor and OpenStack Nova Scheduler
-  - Enable
-  - Enable
-  - Enable
-* - CPU Pinning (requires NUMA)
-  - OpenStack Nova Scheduler
-  - Enable
-  - Enable
-  - Enable
-* - SMT
-  - BIOS
-  - Enable
-  - Enable
-  - Enable
-* - Huge pages
-  - BIOS
-  - Yes
-  - Yes
-  - Yes
-
+   * - Capability
+     - Configured in
+     - Host profile: hp-hv-a
+     - Host profile: hp-hd-a
+     - Host profile: hp-hs-a
+   * - Profile Extensions
+     -
+     - HV
+     - HD
+     - HS
+   * - CPU Allocation Ratio
+     - Hypervisor
+     - 1:1
+     - 1:1
+     - 1:1
+   * - NUMA
+     - BIOS, Operating System, Hypervisor and OpenStack Nova Scheduler
+     - Enable
+     - Enable
+     - Enable
+   * - CPU Pinning (requires NUMA)
+     - OpenStack Nova Scheduler
+     - Enable
+     - Enable
+     - Enable
+   * - SMT
+     - BIOS
+     - Enable
+     - Enable
+     - Enable
+   * - Huge pages
+     - BIOS
+     - Yes
+     - Yes
+     - Yes
 
 *Host Networking configuration for HD Profile Extensions*
 
@@ -728,59 +726,58 @@ Figure 4-5: Indicative OpenStack Network Layout
    :widths: 15 35 30
    :header-rows: 1
 
-* - Network
-  - Description
-  - Characteristics
-* - Provisioning & Management
-  - Initial OS bootstrapping of the servers via PXE, deployment of software and thereafter for access from within 
-    the control plane.
-  - Security Domain: Management 
-     Externally Routable: No
-    Connected to: All nodes
-* - Internal API
-  - Intra-OpenStack service API communications, messaging, and database replication
-  - Security Domain: Management
-    Externally Routable: No
-    Connected to: All nodes except foundation
-* - Storage Management
-  - Backend connectivity between storage nodes for heartbeats, data object replication and synchronisation
-  - Security Domain: Storage
-    Externally Routable: No
-    Connected to: All nodes except foundation
-* - Storage Front-end
-  - Block/Object storage access via cinder/swift
-  - Security Domain: Storage
-    Externally Routable: No
-    Connected to: All nodes except foundation
-* - Tenant
-  - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918 re-usable private networks as controlled 
-    by cloud administrator
-  - Security Domain: Underlay
-    Externally Routable: No
-    Connected to: controllers and computes
-* - External API
-  - Hosts the public OpenStack API endpoints including the dashboard (Horizon)
-  - Security Domain: Public
-    Externally routable: Yes
-    Connected to: controllers
-* - External Provider (FIP)
-  - Network with a pool of externally routable IP addresses used by neutron routers to NAT to/from the tenant RFC1918 
-    private networks
-  - Security Domain: Data Centre
-    Externally routable: Yes
-    Connected to: controllers, OVS computes
-* - External Provider (VLAN)
-  - External Data Centre L2 networks (VLANs) that are directly accessible to the project.
-    Note: External IP address management is required
-  - Security Domain: Data Centre
-    Externally routable: Yes
-    Connected to: OVS DPDK computes
-* - IPMI / Out of Band
-  - The remote “lights-out” management port of the servers e.g., iLO, IDRAC / IPMI / Redfish
-  - Security Domain: Management
-    Externally routable: No
-    Connected to: IPMI port on all servers
-
+   * - Network
+     - Description
+     - Characteristics
+   * - Provisioning & Management
+     - Initial OS bootstrapping of the servers via PXE, deployment of software
+       and thereafter for access from within the control plane.
+     - Security Domain: Management
+       Externally Routable: No
+       Connected to: All nodes
+   * - Internal API
+     - Intra-OpenStack service API communications, messaging, and database replication
+     - Security Domain: Management
+       Externally Routable: No
+       Connected to: All nodes except foundation
+   * - Storage Management
+     - Backend connectivity between storage nodes for heartbeats, data object replication and synchronisation
+     - Security Domain: Storage
+       Externally Routable: No
+       Connected to: All nodes except foundation
+   * - Storage Front-end
+     - Block/Object storage access via cinder/swift
+     - Security Domain: Storage
+       Externally Routable: No
+       Connected to: All nodes except foundation
+   * - Tenant
+     - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918 re-usable private networks as controlled
+       by cloud administrator
+     - Security Domain: Underlay
+       Externally Routable: No
+       Connected to: controllers and computes
+   * - External API
+     - Hosts the public OpenStack API endpoints including the dashboard (Horizon)
+     - Security Domain: Public
+       Externally routable: Yes
+       Connected to: controllers
+   * - External Provider (FIP)
+     - Network with a pool of externally routable IP addresses used by neutron routers to NAT to/from the tenant RFC1918
+       private networks
+     - Security Domain: Data Centre
+       Externally routable: Yes
+       Connected to: controllers, OVS computes
+   * - External Provider (VLAN)
+     - External Data Centre L2 networks (VLANs) that are directly accessible to the project.
+       Note: External IP address management is required
+     - Security Domain: Data Centre
+       Externally routable: Yes
+       Connected to: OVS DPDK computes
+   * - IPMI / Out of Band
+     - The remote “lights-out” management port of the servers e.g., iLO, IDRAC / IPMI / Redfish
+     - Security Domain: Management
+       Externally routable: No
+       Connected to: IPMI port on all servers
 
 A VNF application network topology is expressed in terms of servers,
 vNIC interfaces with vNet access networks, and WAN Networks while the
@@ -1083,7 +1080,7 @@ Factors affecting controller node load include number of compute nodes
 and the number of API calls being served for the various OpenStack
 services (nova, neutron, cinder, glance etc.). To reduce controller node
 load, network nodes are widely added to manage L3 traffic for overlay
-tenant networks and interconnection with external networks. The Table 
+tenant networks and interconnection with external networks. The Table
 below lists the networking service components and their placement.
 Please note that while network nodes are listed in the table below,
 network nodes only deal with tenant networks and not provider networks.
@@ -1094,38 +1091,42 @@ networking.
    :widths: 15 30 15 20
    :header-rows: 1
 
-* - Networking Service component
-  - Description
-  - Required or Optional Service
-  - Placement
-* - neutron server (neutron-server and neutron-*-plugin)
-  - Manages user requests and exposes the Neutron APIs
-  - Required
-  - Controller node
-* - DHCP agent (neutron-dhcp-agent)
-  - Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. 
-    For High availability, multiple DHCP agents can be assigned.
-  - Optional depending upon plug-in
-  - Network node (Controller node if no network node present)
-* - L3 agent (neutron-l3-agent)
-  - Provides L3/NAT forwarding for external network access of servers on tenant networks and supports 
-    services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS)
-  - Optional depending upon plug-in
-  - Network node (Controller node if no network node present) NB in DVR based OpenStack Networking, 
-    also in all Compute nodes.
-* - neutron metadata agent (neutron-metadata-agent)
-  - The metadata service provides a way for instances to retrieve instance-specific data. The networking 
-    service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely 
-    identify the source of the request before forwarding it to the metadata API server. These functions are 
-    performed by the neutron metadata agent.
-  - Optional
-  - Network node (Controller node if no network node present)
-*  - neutron plugin agent (neutron-*-agent)
-  - Runs on each compute node to control and manage the local virtual network driver (such as the Open vSwitch 
-    or Linux Bridge) configuration and local networking configuration for servers hosted on that node.
-  - Required
-  - Every Compute Node
-
+   * - Networking Service component
+     - Description
+     - Required or Optional Service
+     - Placement
+   * - neutron server (neutron-server and neutron-\*-plugin)
+     - Manages user requests and exposes the Neutron APIs
+     - Required
+     - Controller node
+   * - DHCP agent (neutron-dhcp-agent)
+     - Provides DHCP services to tenant networks and is responsible for
+       maintaining DHCP configuration. For High availability, multiple DHCP
+       agents can be assigned.
+     - Optional depending upon plug-in
+     - Network node (Controller node if no network node present)
+   * - L3 agent (neutron-l3-agent)
+     - Provides L3/NAT forwarding for external network access of servers on
+       tenant networks and supports services such as Firewall-as-a-service
+       (FWaaS) and Load Balancer-as-a-service (LBaaS)
+     - Optional depending upon plug-in
+     - Network node (Controller node if no network node present) NB in DVR
+       based OpenStack Networking, also in all Compute nodes.
+   * - neutron metadata agent (neutron-metadata-agent)
+     - The metadata service provides a way for instances to retrieve
+       instance-specific data. The networking service, neutron, is responsible
+       for intercepting these requests and adding HTTP headers which uniquely
+       identify the source of the request before forwarding it to the metadata
+       API server. These functions are performed by the neutron metadata
+       agent.
+     - Optional
+     - Network node (Controller node if no network node present)
+   * - neutron plugin agent (neutron-\*-agent)
+     - Runs on each compute node to control and manage the local virtual
+       network driver (such as the Open vSwitch or Linux Bridge)
+       configuration and local networking configuration for servers hosted on that node.
+     - Required
+     - Every Compute Node
 
 Issues with the standard networking (centralised routing) approach
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -1378,49 +1379,57 @@ set up the flavors as specified in the tables below.
    :widths: 10 15 20 35
    :header-rows: 1
 
-* - Flavor Capabilities
-  - Reference RM Chapter 4 and 5
-  - Basic
-  - High-Performance
-* - CPU allocation ratio (custom extra_specs)
-  - infra.com.cfg.001
-  - In flavor create or flavor set –property cpu_all ocation_ratio=4.0
-  - In flavor create or flavor set –property cpu_allocation_ratio=1.0
-* - NUMA Awareness
-  - infra.com.cfg.002
-  -  
-  - In flavor create or flavor set specify –property hw:numa_nodes=<integer range of 0 to #numa_nodes – 1> 
-    To restrict an instance’s vCPUs to a single host NUMA node, specify: –property hw:numa_nodes=1 
-    Some compute intensive* workloads with highly sensitive memory latency or bandwidth requirements, the 
-    instance may benefit from spreading across multiple NUMA nodes: –property hw:numa_nodes=2
-* - CPU Pinning
-  - infra.com.cfg.003
-  - In flavor create or flavor set specify –property hw: cpu_policy=shared (default)
-  - In flavor create or flavor set specify –property hw:cpu_policy=dedicated 
-    and –property hw:cpu_thread_policy=<prefer, require, isolate> Use “isolate” thread policy for very high 
-    compute intensive workloads that require that each vCPU be placed on a different physical core
-* - Huge pages
-  - infra.com.cfg.004
-  -  
-  - –property hw:mem_page_size=<small |large | size>
-* - SMT
-  - infra.com.cfg.005
-  -  
-  - In flavor create or flavor set specify –property hw:cpu_threads=<integer#threads (usually 1 or 2)>
-* - OVS-DPDK
-  - infra.net.acc.cfg.001
-  -  
-  - ml2.conf.ini configured to support [OVS] datapath_type=netdev Note: huge pages should be configured to large
-* - Local Storage SSD
-  - infra.hw.stg.ssd.cfg.002
-  - trait:STORAGEDISK_SSD=required
-  - trait:STORAGE_DISK_SSD=required
-* - Port speed
-  - infra.hw.nic.cfg.002
-  - –property quota vif_inbound_average=1310720 and vif_outbound_average=1310720
-  - Note:10 Gbps = 1250000 kilobytes per second
-  - –property quota vif_inboundaverage=3125000 and vif_outbound_average=3125000 Note: 25 Gbps = 3125000 kilobytes 
-    per second
+   * - Flavor Capabilities
+     - Reference RM Chapter 4 and 5
+     - Basic
+     - High-Performance
+   * - CPU allocation ratio (custom extra_specs)
+     - infra.com.cfg.001
+     - In flavor create or flavor set –property cpu_all ocation_ratio=4.0
+     - In flavor create or flavor set –property cpu_allocation_ratio=1.0
+   * - NUMA Awareness
+     - infra.com.cfg.002
+     -
+     - In flavor create or flavor set specify –property hw:numa_nodes=<integer
+       range of 0 to #numa_nodes – 1> To restrict an instance’s vCPUs to a
+       single host NUMA node, specify: –property hw:numa_nodes=1
+       Some compute intensive* workloads with highly sensitive memory latency
+       or bandwidth requirements, the instance may benefit from spreading
+       across multiple NUMA nodes: –property hw:numa_nodes=2
+   * - CPU Pinning
+     - infra.com.cfg.003
+     - In flavor create or flavor set specify –property hw: cpu_policy=shared
+       (default)
+     - In flavor create or flavor set specify –property
+       hw:cpu_policy=dedicated and –property hw:cpu_thread_policy=<prefer,
+       require, isolate> Use “isolate” thread policy for very high
+       compute intensive workloads that require that each vCPU be placed on a
+       different physical core
+   * - Huge pages
+     - infra.com.cfg.004
+     -
+     - –property hw:mem_page_size=<small \|large \| size>
+   * - SMT
+     - infra.com.cfg.005
+     -
+     - In flavor create or flavor set specify –property
+       hw:cpu_threads=<integer#threads (usually 1 or 2)>
+   * - OVS-DPDK
+     - infra.net.acc.cfg.001
+     -
+     - ml2.conf.ini configured to support [OVS] datapath_type=netdev Note:
+       huge pages should be configured to large
+   * - Local Storage SSD
+     - infra.hw.stg.ssd.cfg.002
+     - trait:STORAGEDISK_SSD=required
+     - trait:STORAGE_DISK_SSD=required
+   * - Port speed
+     - infra.hw.nic.cfg.002
+     - –property quota vif_inbound_average=1310720 and
+       vif_outbound_average=1310720
+       Note:10 Gbps = 1250000 kilobytes per second
+     - –property quota vif_inboundaverage=3125000 and
+       vif_outbound_average=3125000 Note: 25 Gbps = 3125000 kilobytes per second
 
 ..
 
@@ -1540,58 +1549,61 @@ subset of the controller services are also deployed on the Intermediate
 and Edge Cloud Centres. Table 4-5 presents examples of such deployment
 choices.
 
-.. list-table:: Distribution of OpenStack services on different nodes depending upon Control Plane Scenario
+.. list-table:: Distribution of OpenStack services on different nodes
+                depending upon Control Plane Scenario
    :widths: 10 10 10 10 10 10 10 10
    :header-rows: 1
 
-* - Control Plane
-  - Deployed in
-  - Orchestration
-  - Identity Management
-  - Image Management
-  - Compute
-  - Network Management
-  - Storage Management
-* - CCP
-  - Centralised DC – control nodes
-  - heat-api, heat-engine, nova-placement-api
-  - Identity Provider (IdP), Keystone API
-  - Glance API, Glance Registry
-  - nova-compute api, nova-scheduler, nova-conductor
-  - neutron -server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3-agent (optional), neutron-metadata -agent
-  - Cinder API, Cinder Scheduler, Cinder Volume
-* - DCP: combination of services depending upon Center size
-* - Any DC - Control nodes Option 1
-* - heat-api, heat-engine, nova-placement-api
-* - Identity Provider (IdP), Keystone API
-* - Glance API, Glance Registry
-* - nova-compute api, nova-scheduler, nova-conductor
-* - neutron-server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3-agent (optional), neutron-metadata -agent
-* - Cinder API, Cinder Scheduler, Cinder Volume
-* -  
-  - Any DC - Control nodes Option 2: split services between two or more DCs
-  - in one of the DC
-  - in the Large DC
-  - in the Large DC
-  - in one of the DC
-  - in one of ther DC
-  - in one of the DC
-* - CCP or DCP
-  - Compute nodes
-  -  
-  -  
-  -  
-  - nova-compute -agent
-  - neutron-L2- agent, neutron-L3-agent (optional)
-  -  
-* - CCP
-  - Compute nodes
-  - nova-placement-api
-  -  
-  -  
-  - nova-compute-agent, nova-conductor
-  - neutron -server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3-agent (optional)
-  -
+   * - Control Plane
+     - Deployed in
+     - Orchestration
+     - Identity Management
+     - Image Management
+     - Compute
+     - Network Management
+     - Storage Management
+   * - CCP
+     - Centralised DC – control nodes
+     - heat-api, heat-engine, nova-placement-api
+     - Identity Provider (IdP), Keystone API
+     - Glance API, Glance Registry
+     - nova-compute api, nova-scheduler, nova-conductor
+     - neutron-server, neutron-dhcp-agent, neutron-L2-agent,
+       neutron-L3-agent (optional), neutron-metadata -agent
+     - Cinder API, Cinder Scheduler, Cinder Volume
+   * - DCP: combination of services depending upon Center size
+     - Any DC - Control nodes Option 1
+     - heat-api, heat-engine, nova-placement-api
+     - Identity Provider (IdP), Keystone API
+     - Glance API, Glance Registry
+     - nova-compute api, nova-scheduler, nova-conductor
+     - neutron-server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3-agent
+       (optional), neutron-metadata -agent
+     - Cinder API, Cinder Scheduler, Cinder Volume
+   * -
+     - Any DC - Control nodes Option 2: split services between two or more DCs
+     - in one of the DC
+     - in the Large DC
+     - in the Large DC
+     - in one of the DC
+     - in one of ther DC
+     - in one of the DC
+   * - CCP or DCP
+     - Compute nodes
+     -
+     -
+     -
+     - nova-compute -agent
+     - neutron-L2- agent, neutron-L3-agent (optional)
+     -
+   * - CCP
+     - Compute nodes
+     - nova-placement-api
+     -
+     -
+     - nova-compute-agent, nova-conductor
+     - neutron -server, neutron-dhcp-agent, neutron-L2-agent, neutron-L3-agent (optional)
+     -
 
 
 Edge Cloud Topology
@@ -1628,21 +1640,27 @@ may need to be made for certain Edge clouds depending upon their
 resource capabilities. It should be noted that none of these changes
 affect the definition of OpenStack flavors.
 
-The previous section listed the OpenStack services deployed on the controller nodes depending upon
-the control plane distribution. As specified earlier in this chapter, at least 3 controller nodes should be deployed 
-for HA.  Compute nodes may also exist at the sites where controller nodes are deployed.  
+The previous section listed the OpenStack services deployed on the controller
+nodes depending upon the control plane distribution. As specified earlier in
+this chapter, at least 3 controller nodes should be deployed  for HA.  Compute
+nodes may also exist at the sites where controller nodes are deployed.
 
-Control plane services are not hosted at edge sites. Each edge site can be treated as its own OpenStack AZ. The 
-compute nodes, will host `nova-compute`, a component of the the Compute Service (Nova), and `neutron-L2-agent`,
+Control plane services are not hosted at edge sites. Each edge site can be
+treated as its own OpenStack AZ. The compute nodes, will host `nova-compute`,
+a component of the the Compute Service (Nova), and `neutron-L2-agent`,
 a component of the Network Service (Neutron).
 
-The Edge sites may or may not contain local storage. If the edge sites contain storage, then the Block Storage 
-service (Cinder) is usually deployed to run in an active/active mode with the centrally deployed Block Storage 
-service. Instance images are downloaded and stored locally; they can be downloaded even prior to use.
+The Edge sites may or may not contain local storage. If the edge sites contain
+storage, then the Block Storage  service (Cinder) is usually deployed to run
+in an active/active mode with the centrally deployed Block Storage service.
+Instance images are downloaded and stored locally; they can be downloaded even
+prior to use.
 
-If the edge site doesn't contain storage then the images would need to be cached from the central site. The instance
-images would be downloaded and cached in the Nova cache on first use; they will then be available for subsequent
-use.  This requires that all instance images be available at the central site.
+If the edge site doesn't contain storage then the images would need to be
+cached from the central site. The instance images would be downloaded and
+cached in the Nova cache on first use; they will then be available for
+subsequent use.  This requires that all instance images be available at the
+central site.
 
 Edge Cloud Deployment Tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

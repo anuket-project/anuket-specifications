@@ -384,85 +384,84 @@ also maps the OpenStack core services to the Reference Model (RM)
    :widths: 20 10 20 10 10 10
    :header-rows: 1
 
-* - RM Management Software
-  - Service
-  - Description
-  - Required / Optional
-  - Deployed on Controller Nodes
-  - Deployed on Compute Nodes
-* - Identity Management (Additional Management Functions) + Catalogue
-  - Keystone
-  - the authentication service
- - Required
- - X
-  -  
-* - Storage Resources Manager
-  - Glance
-  - the image management service
-  - Required
-  - X
-  -  
-* - Storage Resources Manager
-  - Cinder
-  - the block storage management service
-  - Required
-  - X
-  -  
-* - Storage Resources Manager
-  - Swift
-  - the Object storage management service
-  - Required
-  - X
-  -  
-* - Network Resources Manager
-  - Neutron
-  - the network management service
-  - Required
-  - X
-  - X
-* - Compute Resources Inventory
-  - Placement
-  - resource provider inventory service
-  - Required
-  - X
-  -  
-* - Compute Resources Manager + Scheduler
-  - Nova
-  - the compute resources management service
-  - Required
-  - X
-  - X
-* - Compute Resources Manager
-  - Ironic
-  - the Bare Metal Provisioning service
-  - Optional
-  - X
-  - X
-* - (Tool that utilises APIs)
-  - Heat
-  - the orchestration service
-  - Required
-  - X
-  -  
-* - UI
-  - Horizon
-  - the WEB UI service
-  - Required
-  - X
-  -  
-* - Key Manager
-  - Barbican
-  - the secret data management service
-  - Optional
-  - X
-  -  
-* - Acceleration Resources Manager
-  - Cyborg
-  - the acceleration resources and their life cycle management
-  - Optional
-  - X
-  - X
- 
+   * - RM Management Software
+     - Service
+     - Description
+     - Required / Optional
+     - Deployed on Controller Nodes
+     - Deployed on Compute Nodes
+   * - Identity Management (Additional Management Functions) + Catalogue
+     - Keystone
+     - the authentication service
+     - Required
+     - X
+     -
+   * - Storage Resources Manager
+     - Glance
+     - the image management service
+     - Required
+     - X
+     -
+   * - Storage Resources Manager
+     - Cinder
+     - the block storage management service
+     - Required
+     - X
+     -
+   * - Storage Resources Manager
+     - Swift
+     - the Object storage management service
+     - Required
+     - X
+     -
+   * - Network Resources Manager
+     - Neutron
+     - the network management service
+     - Required
+     - X
+     - X
+   * - Compute Resources Inventory
+     - Placement
+     - resource provider inventory service
+     - Required
+     - X
+     -
+   * - Compute Resources Manager + Scheduler
+     - Nova
+     - the compute resources management service
+     - Required
+     - X
+     - X
+   * - Compute Resources Manager
+     - Ironic
+     - the Bare Metal Provisioning service
+     - Optional
+     - X
+     - X
+   * - (Tool that utilises APIs)
+     - Heat
+     - the orchestration service
+     - Required
+     - X
+     -
+   * - UI
+     - Horizon
+     - the WEB UI service
+     - Required
+     - X
+     -
+   * - Key Manager
+     - Barbican
+     - the secret data management service
+     - Optional
+     - X
+     -
+   * - Acceleration Resources Manager
+     - Cyborg
+     - the acceleration resources and their life cycle management
+     - Optional
+     - X
+     - X
 
 All components must be deployed within a high available architecture
 that can withstand at least a single node failure and respects the
@@ -745,42 +744,44 @@ Assumptions and conventions:
    :widths: 8 15 8 8 8 8 8 17
    :header-rows: 1
 
-* - Topology Ref
-  - Type
-  - Control Planes
-  - Shared Storage (optional)
-  - Compute AZs
-  - Achievable Service Availability %
-  - Service Multi -region awareness
-  - Notes
-*  - 1
-  - Local Redundancy - workload spread across servers
-  - 1
-  - 1
-  - 1
-  - Variable
-  - Not required
-  - Suitable where only limited local application availability is required e.g. nova anti-affinity
-* - 2
-  - Regional Redundancy - workload spread across AZs
-  - 1
-  - >=2
-  - >=2
-  - >99.n
-  - Not required
-  - Suitable where local application HA is required. Control plane should be distributed across DC failure domains 
-    (assuming layer 2 connectivity) but may be unavailable during up grades
-* - 3
-  - Global Redundancy - workload spread across multiple Regions
-  - >=2
-  - >=2
-  - >=2
-  - >99.nn
-  - Required
-  - Suitable where local and region application HA is required Control plane could be kept available in one site during 
-    upgrades
+   * - Topology Ref
+     - Type
+     - Control Planes
+     - Shared Storage (optional)
+     - Compute AZs
+     - Achievable Service Availability %
+     - Service Multi -region awareness
+     - Notes
+   * - 1
+     - Local Redundancy - workload spread across servers
+     - 1
+     - 1
+     - 1
+     - Variable
+     - Not required
+     - Suitable where only limited local application availability is required
+       e.g. nova anti-affinity
+   * - 2
+     - Regional Redundancy - workload spread across AZs
+     - 1
+     - >=2
+     - >=2
+     - >99.n
+     - Not required
+     - Suitable where local application HA is required. Control plane should be
+       distributed across DC failure domains (assuming layer 2 connectivity) but
+       may be unavailable during up grades
+   * - 3
+     - Global Redundancy - workload spread across multiple Regions
+     - >=2
+     - >=2
+     - >=2
+     - >99.nn
+     - Required
+     - Suitable where local and region application HA is required Control plane
+       could be kept available in one site during upgrades
 
-
+**Topology Overview**
 
 **Topology 1 - Local Redundancy**
 
