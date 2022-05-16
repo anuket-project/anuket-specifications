@@ -182,10 +182,33 @@ information.
 
 These acceleration interfaces are summarized here in Table 6.3 only for convenience.
 
+
+
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
 | Request               | Response               | From, | Type   | Parameter     | Description                        |
 |                       |                        | To    |        |               |                                    |
-+=======================+========================+=======+========+===============+====================================+                       |                        |       | Input  | accFilter     | the accelartor sub-system(s) to    |                       |                        |       |        |               | initialize and retrieve their      |                       |                        |       |        |               | capabilities.                      |                       |                        |       +--------+---------------+------------------------------------+ InitAccRequest        | InitAccResponse        | VNF → | Filter | accAttributeS | attribute names of accelerator     |                       |                        | NFVI  |        | elector       | capabilities                       |                       |                        |       +--------+---------------+------------------------------------+                       |                        |       | Output | accCapabilitie| acceleration sub-system            |                       |                        |       |        | s             | capabilities                       |-----------------------+------------------------+-------+--------+---------------+------------------------------------+                       |                        |       | Input  | accEvent      | event the VNF is interested in     |                       |                        |       +--------+---------------+------------------------------------+ RegisterForAccEventRe | RegisterForAccEventRes | VNF → | Input  | vnfEventHandl | the handler for NFVI to use when   | quest                 | ponse                  | NFVI  |        | erId          | notifying the VNF of the event     |-----------------------+------------------------+-------+--------+---------------+------------------------------------+                       |                        | NFVI  | Input  | vnfEventHandl | Handler used by VNF registering    |                       |                        | → VNF |        | erId          | for this event                     | AccEventNotificationR | AccEventNotificationRe |       +--------+---------------+------------------------------------+ equest                | sponse                 |       | Input  | accEventMetaD |                                    |                       |                        |       |        | ata           |                                    |-----------------------+------------------------+-------+--------+---------------+------------------------------------+
++=======================+========================+=======+========+===============+====================================+ 
+| InitAccRequest        | InitAccResponse        | VNF → | Input  | accFilter     | the accelartor sub-system(s) to    |
+|                       |                        | NFVI  |        |               | initialize and retrieve their      |
+|                       |                        |       |        |               | capabilities.                      | 
+|                       |                        |       +--------+---------------+------------------------------------+
+|                       |                        |       | Filter | accAttributeS | attribute names of accelerator     |
+|                       |                        |       |        | elector       | capabilities                       |
+|                       |                        |       +--------+---------------+------------------------------------+
+|                       |                        |       | Output | accCapabiliti | acceleration sub-system            |
+|                       |                        |       |        | es            | capabilities                       |
++-----------------------+------------------------+-------+--------+---------------+------------------------------------+
+| RegisterForAccEventRe | RegisterForAccEventRes | VNF → | Input  | accEvent      |event the VNF is interested in      |
+| quest                 | ponse                  | NFVI  +--------+---------------+------------------------------------+
+|                       |                        |       | Input  | vnfEventHandl | the handler for NFVI to use when   | 
+|                       |                        |       |        | erId          | notifying the VNF of the event     |
++-----------------------+------------------------+-------+--------+---------------+------------------------------------+
+| AccEventNotificationR | AccEventNotificationRe | NFVI  | Input  | vnfEventHandl | Handler used by VNF registering    |
+| equest                | sponse                 | → VNF |        | erId          | for this event                     |
+|                       |                        |       +--------+---------------+------------------------------------+
+|                       |                        |       | Input  | accEventMetaD |                                    |
+|                       |                        |       |        | ata           |                                    |
++-----------------------+------------------------+-------+--------+---------------+------------------------------------+
 | DeRegisterForAccEvent | DeRegisterForAccEventR | VNF → | Input  | accEvent      | Event VNF is deregistering from    |
 | Response              | esponse                | NFVI  |        |               |                                    |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
