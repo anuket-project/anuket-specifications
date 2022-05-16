@@ -1628,7 +1628,7 @@ may need to be made for certain Edge clouds depending upon their
 resource capabilities. It should be noted that none of these changes
 affect the definition of OpenStack flavors.
 
-The previous section listed the OpenStack services deployed on the controller nodes depepnding upon
+The previous section listed the OpenStack services deployed on the controller nodes depending upon
 the control plane distribution. As specified earlier in this chapter, at least 3 controller nodes should be deployed 
 for HA.  Compute nodes may also exist at the sites where controller nodes are deployed.  
 
