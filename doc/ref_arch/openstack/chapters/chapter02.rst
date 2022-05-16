@@ -1109,7 +1109,7 @@ Table 2-12: Reference Model Requirements - Monitoring and Security Audit Require
 Open-Source Software Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model/chapters/chapter07:open source software security`)
+(source :ref:`ref_model/chapters/chapter07:open-source software security`)
 
 +-------------+-------------------+----------------------------------+----------------------------+
 | Reference   | sub-category      | Description                      | Specification              |
