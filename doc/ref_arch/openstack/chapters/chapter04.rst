@@ -366,7 +366,7 @@ cores are numbered ‘0’ to ‘19’ while the sibling threads are numbered
 are siblings:
 
          cpu_shared_set = 1-7,9-19,21-27,29-39          (can also be
-specified as cpu_shared_set = 1-19,\ :sup:`8,21-39,`\ 28)
+specified as cpu_shared_set = 1-19,\&8,21-39,\&28)
 
 This implies that the two physical cores ‘0’ and ‘8’ and their sibling
 threads ‘20’ and ‘28’ are dedicated to the host services, and 19 cores
