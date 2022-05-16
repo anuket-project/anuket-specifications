@@ -53,17 +53,16 @@ A generic Telco cloud is a hybrid multi-cloud. A better designation would be a f
 - a collection of cooperating, interoperable autonomous component clouds
 - the component clouds perform their local operations (internal requests) while also participating in the federation and
   responding to other component clouds (external requests)
+- the component clouds perform their local operations (internal requests) while also participating in the federation and
+  responding to other component clouds (external requests)
 
   - the component clouds are autonomous in terms of, for example, execution autonomy; please note that in a centralised
-    control plane scenario (please see the section "Centralised Control Plane" in the "`Edge Computing: Next Steps in Ar
-    chitecture, Design and Testing <https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-arch
-    itecture-design-and-testing/>`__" whitepaper [26]) the edge clouds do not have total autonomy and are subject to
-    constraints (e.g., workload LCM)
+    control plane scenario (please see the section "Centralised Control Plane" in the
+    "`Edge Computing: Next Steps in Architecture, Design and Testing <https://www.openstack.org/use-cases/edge-computing
+    /edge-computing-next-steps-in-architecture-design-and-testing/>`__" whitepaper [26]) the edge clouds do not have
+    total autonomy and are subject to constraints (e.g., workload LCM)
   - execution autonomy is the ability of a component cloud to decide the order in which internal and external requests
     are performed
-
-- the component clouds are loosely coupled where no changes are required to participate in a federation
-
   - also, a federation controller does not impose changes to the component cloud except for running some central
     component(s) of the federated system (for example, a broker agent – executes as a workload)
 
@@ -74,15 +73,15 @@ A generic Telco cloud is a hybrid multi-cloud. A better designation would be a f
   a single cloud instance)
 
 Characteristics of a Federated Cloud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
-In this section we will further explore the characteristics of the federated cloud architecture, and architecture
-building blocks that constitute the federated cloud. For example, :numref:`Example Hybrid Multi-Cloud Component Cloud`
-shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private
-outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see diagram
-below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market
-positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a
-sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised
+In this section, we will further explore the characteristics of the federated cloud architecture, and architecture
+building blocks that constitute the federated cloud. For example, :numref:`Example Hybrid Multi-Cloud Component Cloud` 
+shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private 
+outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see 
+diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market 
+positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a 
+sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised 
 services.
 
 .. figure:: ../figures/RM-Ch08-HMC-Image-1.png
@@ -92,11 +91,11 @@ services.
    Example Hybrid Multi-Cloud Component Cloud
 
 Telco Cloud
-~~~~~~~~~~~
+-----------
 
-The :numref:`Telco Cloud: Data Centre to Edge` presents a visualisation of a Telco operator cloud (or simply, Telco
-cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central
-Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at
+The :numref:`Telco Cloud: Data Centre to Edge` presents a visualisation of a Telco operator cloud (or simply, Telco 
+cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central 
+Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at 
 the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
 
 .. figure:: ../figures/RM-Ch08-Multi-Cloud-DC-Edge.png
@@ -120,11 +119,15 @@ services, IT workloads, and external subscribers. The types of the component clo
 - (Outsourced) Public: Commercial Cloud Service \| Examples: AWS, Azure, VMware, etc.
 - Multiple different Clouds can be co-located in the same physical location and may share some of the physical
   infrastructure (for example, racks)
+- Outsourced Private: hosting outsourced; hosting can be at a Commercial Cloud Service \| Examples: Equinix, AWS, etc.
+- (Outsourced) Public: Commercial Cloud Service \| Examples: AWS, Azure, VMware, etc.
+- Multiple different Clouds can be co-located in the same physical location and may share some of the physical
+  infrastructure (for example, racks)
 
 In general, a Telco Cloud consists of multiple interconnected very large data centres that serve trans-continental areas
-(Regions). A Telco Cloud Region may connect to multiple regions of another Telco Cloud via large capacity networks. A
-Telco Cloud also consists of interconnected local/metro sites (multiple possible scenarios). A local site cloud may
-connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large
+(Regions). A Telco Cloud Region may connect to multiple regions of another Telco Cloud via large capacity networks.
+A Telco Cloud also consists of interconnected local/metro sites (multiple possible scenarios). A local site cloud may
+connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large 
 number of interconnected edge nodes where these edge nodes maybe impermanent. A Telco Cloud's Edge node may connect to
 multiple local sites within that Telco Cloud or another Telco Cloud; an Edge node may rarely connect to a Telco Cloud
 Region.
@@ -157,7 +160,7 @@ Telco Operator Platform Conceptual Architecture
 The Cloud Infrastructure Resources Layer exposes virtualised (including containerised) resources on the physical
 infrastructure resources and also consists of various virtualisation and management software (see details later in this
 chapter). The Cloud Platform Components Layer makes available both elementary and composite objects for use by
-application and service developers, and for use by Services during runtime. The Cloud Services Layer exposes the
+application and service developers, and for use by Services during runtime. The Cloud Services Layer exposes the 
 Services and Applications that are available to the Users; some of the Services and Applications may be sourced from or
 execute on other cloud platforms. Please note that while the architecture is shown as a set of layers, this is not an
 isolation mechanism and, thus, for example, Users may access the Cloud Infrastructure Resources directly without
@@ -169,15 +172,14 @@ interacting with a Broker.
 
    Conceptual Architecture of a Telco Operator Platform
 
-The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental
-capabilities like service and resource discovery. These Brokers are critical for a multi-cloud environment to function
-and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and
-manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or
+The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental 
+capabilities like service and resource discovery. These Brokers are critical for a multi-cloud environment to function 
+and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and 
+manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or 
 specific industries.
 
 Multi-Cloud Interactions Model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+------------------------------
 .. _introduction-1:
 
 Introduction1
@@ -200,22 +202,22 @@ a taxonomy for the interactions between the Communications Service Provider and 
 
 The model defines the following core roles:
 
--  Communications Service Provider (CSP) - is the party responsible for providing end user service to their customer
--  Customer / User - are the parties that use the service (User) and establishes the business agreement for the service
-   provision (Customer). For retail services the customer and user are the same party, while for enterprise services the
-   Enterprise is the Customer (responsible for the business agreement) and its representatives are the Users.
--  Cloud Providers - are the parties providing the cloud services. These services could be any XaaS service. It could be
-   that a CSP has an agreement with a SaaS Cloud, which in turn uses an IaaS Cloud Provider to deliver their service.
+- Communications Service Provider (CSP) - is the party responsible for providing end user service to their customer
+- Customer / User - are the parties that use the service (User) and establishes the business agreement for the service
+  provision (Customer). For retail services the customer and user are the same party, while for enterprise services the
+  Enterprise is the Customer (responsible for the business agreement) and its representatives are the Users.
+- Cloud Providers - are the parties providing the cloud services. These services could be any XaaS service. It could be
+  that a CSP has an agreement with a SaaS Cloud, which in turn uses an IaaS Cloud Provider to deliver their service.
 
 The set of high level interactions cover:
 
--  Manage Account - covering Account, Users, Subscription, Billing
--  Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge / Cloud Connection Configuration,
-   Connection Security Profile
--  Manage Resource - Resource Pool Management, VM / VNF Management (CPU, Memory, Storage, Network), Image Repository
-   Management, Storage Management, VNF / CNF LCM, Monitor Resources
--  Manage App/VNF - Image / Container / Registry Management, Deploy/Configure/Scale/Start/Stop App/VNF, Monitor App/VNFs
--  Transactions / Conversations - Use Communications Services, Use Edge Applications Services, Use Cloud Services
+- Manage Account - covering Account, Users, Subscription, Billing
+- Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge / Cloud Connection Configuration,
+  Connection Security Profile
+- Manage Resource - Resource Pool Management, VM / VNF Management (CPU, Memory, Storage, Network), Image Repository
+  Management, Storage Management, VNF / CNF LCM, Monitor Resources
+- Manage App/VNF - Image / Container / Registry Management, Deploy/Configure/Scale/Start/Stop App/VNF, Monitor App/VNFs
+- Transactions / Conversations - Use Communications Services, Use Edge Applications Services, Use Cloud Services
 
 Stereo-Typical Scenarios
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -267,7 +269,7 @@ A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in th
 
    Disaggregated SaaS Stereo-Typical Interaction
 
-In disaggregated SaaS scenario the application provider is able to operate as an "infra-structureless" organisation.
+In disaggregated SaaS scenario the application provider is able to operate as an "infra-structureless" organisation. 
 This could be achieved through SaaS organisation using public IaaS Cloud Providers which could include the CSP itself. A
 key consideration for CSP in both cloud provision and consumption in Multi-Cloud scenario is how to manage the
 integration across the Cloud Providers.
@@ -302,7 +304,7 @@ The API and Cloud Brokerage models are illustrated in the following diagrams:
 Requirements, Reference Architecture & Industry Standards Intersect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Communcations Service Provider is both a provider and consumer of Cloud based services.
+The Communcations Service Provider (CSP) is both a provider and consumer of Cloud based services.
 When the CSP is actings as:
 
 - consumer, in which case the typical consideration is total cost of ownership as the consumption is to usually to
@@ -312,6 +314,164 @@ When the CSP is actings as:
 
 These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a
 Multi-Cloud environment.
+
+Hybrid, Edge, and Multi-Cloud unified management Platform 
+~~~~~~~~~~~~~~~~~~~~
+
+As organisations spread their resources across on-premises, multiple clouds, and the Edge, the need for a single set
+of tools and processes to manage and operate across these Hybrid, Edge, and Multi-clouds (HEM clouds) is obvious 
+as can be seen from the following simplistic scenarios. 
+
+Scenario: An operator has private clouds that it utilises for its workloads. Over time, the operator evolves their
+environment:
+
+- A: The operator has decided to utilise one or more public clouds for some of its workloads.
+- B: The operator has decided to utilise an edge cloud for some of its clients.
+- C: The operator has decided to create edge clouds for some of its clients.
+
+Scenario B can be treated as being the same as Scenario A. Scenario C is akin to the private cloud except for location
+and control over the facilities at that location. For its workloads, the operator will have to utilise the target clouds 
+tools or APIs to create the necessary accounts, billing arrangements, quotas, etc. Then create the needed resources, 
+such as VMs or Kubernetes clusters, etc. Following up with creating needed storage, networking, etc. before 
+onboarding the workload and operating it. This is complex even when the operator is dealing with say only one other 
+cloud, in addition to operating its own cloud. The operator is faced with a number of challenges including acquiring a 
+new set of skills, knowledge of APIs, tools, and the complexity of managing different policies, updates, etc. This 
+becomes impossible to manage when incorporating more than one other cloud. Hence the need for a Single Pane of Glass.
+
+This Hybrid, Edge, and Multi-Cloud unified management Platform (HEMP) (a.k.a. Single-Pane-of-Glass) provides
+capabilities to consistently:
+
+- manage accounts, credentials, resources and services
+
+  - across facilities (regions, data centers, edge locations)
+
+- interoperate the different clouds
+- implement common policies and governance standards
+- manage a common security posture
+- provide an integrated visualisation into the infrastructure and workloads.
+
+through a common set of governance and operational practices.
+
+GSMA's Operator Platform Group (OPG) specify a federated model and specify requirements for the Edge Platforms
+(Operator Platform Telco Edge Requirements v2.0 
+(:ref:`https://infocentre2.gsma.com/gp/pr/FNW/OPG/OfficialDocuments/OPG.02%20Operator%20Platform%20Telco%20Edge%20Requir
+ements%20v2.0%20(Current)/OPG.02%20v2.0.pdf`); while the document is for Edge, most of the requirements are easily
+applicable to other cloud deployments. Anuket RM is implementation agnostic, viz., whether the implementation uses
+agents, federations or some other mechanisms. 
+
+The following tables list some of the requirements for the Hybrid, Edge, and Multi cloud operator Platform (HEMP). These
+requirements are in addition to the requirements in other chapters of this RM. 
+
+**HEMP General Requirements**
+
++-------------+-------------------------------------------------+------------------------------------------------------+
+| Ref         | Requirement                                     | Definition/Note                                      |
++=============+=================================================+======================================================+
+| hem.gen.001 | HEMP should use only published APIs in managing | For example, to accomplish the example in            |
+|             | component clouds				                        | `hem.gen.003` it will use the published APIs of the  |
+|             |                                                 | target cloud.                                        |
++-------------+-------------------------------------------------+------------------------------------------------------+
+| hem.gen.002 | HEMP should publish all of the APIs used by any | For example, the provided GUI portal shall only use  |
+|             | of its components                               | HEMP published APIs                                  |
++-------------+-------------------------------------------------+------------------------------------------------------+
+| hem.gen.003 | HEMP should provide for common terms for        | For example, "create Account" across the different   |
+|             | interaction with its constituent clouds         | clouds                                               |
++-------------+-------------------------------------------------+------------------------------------------------------+
+| hem.gen.004 | HEMP should generalise and define a common set  | Example resources: hosts (including BareMetal),      |
+|             | of resources available to be managed            | Virtual Machines (VM), vCPU, Memory, Storage,        |
+|             | inconstituent clouds                            | Network, kubernetes clusters, kubernetes nodes,      |
+|             |                                                 | Images (OS, and others), credentials. For private    |
+|             |                                                 | cloud additional example resources: Racks, ToR/CE    |
+|             |                                                 | switches, Platform images                            |
++-------------+-------------------------------------------------+------------------------------------------------------+
+| hem.gen.005 | HEMP should provide a common interface for      |                                                      |
+|             | managing component clouds                       |                                                      |
++-------------+-------------------------------------------------+------------------------------------------------------+
+| hem.gen.006 | HEMP should expose resources from all cloud     | See example of resources in `hem.gen.004`            |
+|             | operators and locations (regions, sites, etc.)	| Definition/Note                                      |
++-------------+-------------------------------------------------+------------------------------------------------------+
+| hem.gen.007 | HEMP should allow reservation of resources if   |                                                      |
+|             | the component cloud operator allows             |                                                      |
++-------------+-------------------------------------------------+------------------------------------------------------+
+| hem.gen.008 | HEMP should support multi-tenancy               |                                                      |
++-------------+-------------------------------------------------+------------------------------------------------------+
+
+Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requirements
+
+**HEMP Operations Requirements**
+
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| Ref         | Requirement                                            | Definition/Note                               |
++=============+========================================================+===============================================+
+| hem.ops.001 | HEMP should generalise and define a common set of      |                                               |
+|             | management operations available in constituent clouds; |                                               |
+|             | required operations include: create, deploy, configure,|                                               |
+|             | start, suspend, stop, resume, reboot, delete, scale,   |                                               |
+|             | list. Some operations may only be available for a      |                                               |
+|             | subset of resources.                                   |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.ops.002 | HEMP should centrally manage all resources (across all |                                               |
+|             | constituent clouds)                                    |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.ops.003 | HEMP should centrally operate all constituent clouds   |                                               |
+|             |                                                        |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.ops.004 | HEMP should provide mechanisms to integrate new clouds | This may require pre-development of necessary |
+|             |                                                        | capabilities for the support of HEMP          |
+|             |                                                        | abstractions, and impementation of            |
+|             |                                                        | connectivity with the new cloud               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.ops.005 | HEMP should provide mechanisms to drop a constituent   | For example, the provided GUI portal shall    |
+|             | cloud                                                  | only use HEMP published APIs                  |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.ops.006 | HEMP should provide mechanisms and processes to onboard|                                               |
+|             | existing assets (resources, connectivity, etc.)        |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.ops.007 | HEMP should provide mechanisms and processes for the   |                                               |
+|             | automated configuration management of all environments |                                               |
+|             | and resources                                          |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+
+Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Operability Requirements
+
+**HEMP LCM Requirements**
+
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| Ref         | Requirement                                            | Definition/Note                               |
++=============+========================================================+===============================================+
+| hem.lcm.001 | HEMP should monitor all environments and assets        |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.lcm.002 | HEMP should provide visibility into the health of all  |                                               |
+|             | assets           				                               |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.lcm.003 | HEMP should provide capabilities for a centralised     |                                               |
+|             | visibility and management of all alerts                |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.lcm.004 | HEMP should provide capabilities for a centralised     | This doesn't preclude local log analytics     |
+|             | analysis of all logs                                   |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+
+Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Life Cycle Management (LCM) Requirements
+
+**HEMP Security Requirements**
+
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| Ref         | Requirement                                            | Definition/Note                               |
++=============+========================================================+===============================================+
+| hem.sec.001 | HEMP should provide capabilities for the centralised   |                                               |
+|             | management of all security policies                    |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.sec.002 | HEMP should provide capabilities for the centralised   |                                               |
+|             | tracking of compliance of all security requirements    |                                               |
+|             | (:ref:`ref_model/chapters/chapter07:consolidated \     |                                               |
+|             | security requirements`)                                |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+| hem.sec.003 | HEMP should provide capabilities for insights into     |                                               |
+|             | changes that resulted for resource non-compliance      |                                               |
++-------------+--------------------------------------------------------+-----------------------------------------------+
+
+Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Security Requirements
+	 
 
 Aspects of Multi-Cloud Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -324,36 +484,35 @@ threat actors use.
 In the multi-cloud ecosystem comprised of different security postures and policies, network domains, products, and
 business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use
 cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an
-environment, there are additional security principles to be considered. These principles, see Table 8-1a below, are
+environment, there are additional security principles to be considered. These principles, see Table 8-1a below, are 
 drawn from the collaboration with the GSMA Fraud and Security Group (FASG).
 
-+--------------------------+-------------------------------------------------------------------------------------------+
-| Multi-cloud Security     | Description                                                                               |
-| Principle                |                                                                                           |
-+==========================+===========================================================================================+
-| Policy synchronization   | Consistency in applying the right security policies across environments, services,        |
-|                          | interfaces, and configured resources                                                      |
-+--------------------------+-------------------------------------------------------------------------------------------+
-| Visibility               | A common data model approach to share events and behaviours across all the key compute,   |
-|                          | storage, network, and applications resources, environments, virtualised platforms,        |
-|                          | containers and interfaces                                                                 |
-+--------------------------+-------------------------------------------------------------------------------------------+
-| Monitoring               | Centralisation, correlation, and visualisation of security information across the         |
-|                          | different cloud environments to provide an end-to-end view and enable timely response to  |
-|                          | attacks                                                                                   |
-+--------------------------+-------------------------------------------------------------------------------------------+
-| Automation               | Automation of critical activities including cloud security posture management, continuous |
-|                          | security assessments, compliance monitoring, detection of misconfigurations and           |
-|                          | identification and remediation of risks                                                   |
-+--------------------------+-------------------------------------------------------------------------------------------+
-| Access Management        | Wide range of users including administrators, testers, DevOps, and developers and         |
-|                          | customers should be organised into security groups with privileges appropriate to         |
-|                          | different resources and environments                                                      |
-+--------------------------+-------------------------------------------------------------------------------------------+
-| Security Operations      | Augmentation of security services provided by cloud service providers with the vetted     |
-| Model                    | third-party and/or open-source tools and services, all incorporated into the established  |
-|                          | overall security operations model                                                         |
-+--------------------------+-------------------------------------------------------------------------------------------+
++--------------------------------+-------------------------------------------------------------------------------------+
+| Multi-cloud Security Principle | Description                                                                         |
++================================+=====================================================================================+ 
+| Policy synchronization         | Consistency in applying the right security policies across environments, services,  |
+|                                | interfaces, and configured resources                                                |
++--------------------------------+-------------------------------------------------------------------------------------+
+| Visibility                     | A common data model approach to share events and behaviours across all the key      |
+|                                | compute, storage, network, and applications resources, environments, virtualised    |
+|                                | platforms, containers and interfaces                                                |
++--------------------------------+-------------------------------------------------------------------------------------+
+| Monitoring                     | Centralisation, correlation, and visualisation of security information across the   |
+|                                | different cloud environments to provide an end-to-end view and enable timely        |
+|                                | response to attacks                                                                 |
++--------------------------------+-------------------------------------------------------------------------------------+
+| Automation                     | Automation of critical activities including cloud security posture management,      |
+|                                | continuous security assessments, compliance monitoring, detection of                |
+|                                | misconfigurations and identification and remediation of risks                       |
++--------------------------------+-------------------------------------------------------------------------------------+
+| Access Management              | Wide range of users including administrators, testers, DevOps, and developers and   |
+|                                | customers should be organised into security groups with privileges appropriate to   |
+|                                | different resources and environments                                                |
++--------------------------------+-------------------------------------------------------------------------------------+
+| Security Operations Model      | Augmentation of security services provided by cloud service providers with the      |
+|                                | vetted third-party and/or open-source tools and services, all incorporated into the |
+|                                | established overall security operations model                                       |
++--------------------------------+-------------------------------------------------------------------------------------+
 
 **Table 8-2. Multi-Cloud Principles**
 

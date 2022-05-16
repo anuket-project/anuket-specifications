@@ -560,7 +560,7 @@ in addition to verify general NFVI capabilities based on Anuket
 RM/RA/RI, it is also necessary to verify that VNFs can provide
 virtualization functions normally based on the Anuket-compliant NFVI. So
 the VNF testing should at least include:
-Compliance，verification，validation，Performance. With the improvement
+Compliance, verification, validation, Performance. With the improvement
 of specifications, the types of tests may continue to add in the future.
 
 In this chapter, the scope and requirements of VNF test cases are
@@ -686,25 +686,25 @@ are some examples of network elements for each type of network
 |                                       | network                      |
 +---------------------------------------+------------------------------+
 | Transport network & Bearer network    | Including Trunk Optical      |
-|                                       | Transport Network，Metro     |
-|                                       | transport network，IP        |
+|                                       | Transport Network, Metro     |
+|                                       | transport network, IP        |
 |                                       | backbone network, etc.       |
 +---------------------------------------+------------------------------+
 | Core Network                          | Circuit domain, including    |
 |                                       | MSC / VLR, GMSC, MGW, NPMSC, |
 |                                       | HLR / AUC, NPHLR,            |
-|                                       | HSS，etc；Packet domain      |
+|                                       | HSS, etc, Packet domain      |
 |                                       | devices, including MME, SAE  |
 |                                       | GW, EPC CG, EPC DNS,         |
-|                                       | PCC，etc；Core network       |
+|                                       | PCC, etc; Core network       |
 |                                       | equipment for IoT private    |
-|                                       | network，including           |
+|                                       | network, including           |
 |                                       | PGW/                         |
-|                                       | GGSN、PCRF、HSS/HLR，etc；5G |
+|                                       | GGSN, PCRF, HSS/HLR, etc, 5G |
 |                                       | core network                 |
-|                                       | element，including           |
-|                                       | AMF、SMF、UPF、UDM/UDR/AUS   |
-|                                       | F、PCF、NSSF、NRF、SMSF，etc |
+|                                       | element,including            |
+|                                       | AMF, SMF, UPF, UDM/UDR/AUS   |
+|                                       | F, PCF, NSSF, NRF, SMSF, etc |
 +---------------------------------------+------------------------------+
 
 In addition to the above network elements, there are some other data
@@ -714,7 +714,7 @@ According to the current level of the entire network virtualization, the
 core network already has many VNFs, and also includes some
 datacom-type(data communication) VNFs.
 
-We can also classify VNFs based on the level of VNF operation：
+We can also classify VNFs based on the level of VNF operation:
 
 a) VNFs that operate at Layer 2 or Layer 3 are primarily involved in
    switching or routing packets at these layers. Examples include
@@ -752,7 +752,7 @@ Compliance test cases
 Currently, there VNFs can be packaged as HEAT templates or in a CSAR
 file using TOSCA and OVP has supported the VNF compliance test
 cases(compliance check based on TOSCA using ETSI SOL004 &
-SOL001；OpenStack HOT using ONAP VNFREQS；GSMA profile), all the OVP
+SOL001; OpenStack HOT using ONAP VNFREQS; GSMA profile), all the OVP
 supported test case can be found in the following two link:
 
 +----------------------------------+------------------------------------------+
@@ -777,9 +777,9 @@ be added here.
 Verification test cases
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In general， the VNF Manager, in collaboration with the NFV
-Orchestrator, the VIM and the EM, is responsible for managing a VNF’s
-lifecycle. The lifecycle phases are listed below：
+In general, the VNF Manager, in collaboration with the NFV
+Orchestrator, the VIM and the EM, is responsible for managing a VNF's
+lifecycle. The lifecycle phases are listed below:
 
 -  VNF on-boarding, it refers to VNF package onboarding to
    service/resouce Orchestrator
@@ -808,7 +808,7 @@ different types of VNFs
 Performance Test cases
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This is the same as what described in validation test cases，the
+This is the same as what described in validation test cases, the
 performance test cases need to be defined according to different types
 of VNFs. Combined with the classification of VNF, according to the
 protocol level that VNF operates, it can include:
@@ -819,4 +819,4 @@ protocol level that VNF operates, it can include:
 -  VNF user plane benchmarking, like Packet Loss,Latency, Packet Delay
 
 ETSI spec has also defined the testing method
-http://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/001/01.01.01_60/gs_nfv-tst001v010101p.pdf
+https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/001/01.01.01_60/gs_nfv-tst001v010101p.pdf
