@@ -781,7 +781,6 @@ Assumptions and conventions:
     upgrades
 
 
-**Topology Overview**
 
 **Topology 1 - Local Redundancy**
 
