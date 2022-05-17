@@ -222,7 +222,7 @@ The interactions for this are outlined in the "Multi-Cloud Interactions Model", 
 -  Are already mature Open Standards that have either been adopted or nurtured by recognised bodies with the telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations , (ANSI etc,) NIST)
 -  There are reference implementations or an active open source project/s or consortia providing implementations (CNCF. Open Infra)
 -  It is possible to source delivery and support services from multiple vendors
--  It is possible for CSP to actively contribute to and request capabilities / coverage of the standard / technology
+-  Allow the CSP to actively contribute to and request capabilities / coverage of the standard / technology
 -  Not  be the sole proprietary property of a vendor / company
 -  Not be focused on "Transactions / Conversations" or "User / Data Plane" standards (typically IETF, IEEE, MEF / Carrier Ethernet etc.)
 
