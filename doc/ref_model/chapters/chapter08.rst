@@ -216,7 +216,7 @@ As a consumer and provider of Cloud Services, the CSP will continue to need to b
 - cloud orchestration solutions to orchestrate the utilisation of cloud services and capabilities from its own and other Cloud Providers;
 - network orchestration solutions to manage the interconnectivity across its own and other Cloud Provider networks. 
 
-The interactions for this are outlined in the "Multi-Cloud Interactions Model", however, to realise this, the CSP will need to adopt and sponsor a set of standards that are necessary to support these interactions. The identification of existing appliable standardas and gaps across the interations needs to be completed. As a first step in the following criterial for inclusion of a standard / technology is defined:
+The interactions for this are outlined in the "Multi-Cloud Interactions Model", however, to realise this, the CSP will need to adopt and sponsor a set of standards that are necessary to support these interactions. The identification of existing appliable standards and gaps across the interactions needs to be completed. As a first step, the following criteria for inclusion of a standard/technology is defined. These standards/technologies must:
 
 -  Provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
 -  Are already mature Open Standards that have either been adopted or nurtured by recognised bodies with the telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations , (ANSI etc,) NIST)
