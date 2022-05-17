@@ -203,7 +203,7 @@ Requirements, Reference Architecture & Industry Standards Intersect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Communcations Service Provider (CSP) is both a provider and consumer of Cloud based services. When the CSP is acting as:
--  consumer of cloud services, the typical consideration is total cost of ownership as the consumption is to usually to support internal business operations: BSS/OSS systems;
+-  consumer of cloud services, the typical consideration is total cost of ownership as the consumption is usually to support internal business operations: BSS/OSS systems;
 -  provider of cloud services, through operation of their own cloud or reselling of cloud services, in which case the typical consideration is margin (cost to offer services vs income received).
 These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a Multi-Cloud environment.
 
