@@ -220,7 +220,7 @@ The interactions for this are outlined in the "Multi-Cloud Interactions Model", 
 
 -  provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
 -  be already mature Open Standards that have either been adopted or nurtured by recognised bodies with the telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations , (ANSI etc,) NIST)
--  have reference implementations or an active open source project/s or consortia providing implementations (CNCF. Open Infra)
+-  have reference implementations or an active open source project/s or consortia providing implementations (e.g., CNCF. Open InfraCNCF)
 -  allow the CSP to source delivery and support services based on these from multiple vendors
 -  allow the CSP to actively contribute to and request capabilities / coverage of the standard / technology
 -  not  be the sole proprietary property of a vendor / company
