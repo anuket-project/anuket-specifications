@@ -649,17 +649,17 @@ Introduction
 The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted applications and the platform management.
 Each of:
 
--  underlying compute host boot and virtual machine hosting,
--  control plane configuration and management plane storage for fault and performance management and automation, capacity management and reporting and
--  tenant application and VNF storage needs
+- underlying compute host boot and virtual machine hosting,
+- control plane configuration and management plane storage for fault and performance management and automation, capacity management and reporting and
+- tenant application and VNF storage needs
 
 have common and specific needs for storage in terms of performance, capacity and consumption models.
 
 The combination of common but diverse needs in conjunction with the differences in the hosting environments (from large data-centres to small edge deployments) has resulted in the proliferation of storage technologies and their deployment architectures. To address this the "Reference Model" outlines a "General Cloud Storage Model" (see :numref:`Fig-3-14` - "General Cloud Storage Model"). The model will outline the different types of storage technologies and how they can be used to meet the need for:
 
--  providing storage via dedicated storage systems,
--  multi-tenant cloud storage,
--  Control and Management Plane storage needs,
+- providing storage via dedicated storage systems,
+- multi-tenant cloud storage,
+- Control and Management Plane storage needs,
 
 across both large data-centres and small edge deployments; the model can then be used for implementing Reference Architectures.
 
@@ -673,15 +673,15 @@ Storage is multi-faceted and so can be classified based on its: cost, performanc
 
 The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 
--  Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
--  Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance requirements (more in Virtual Resources 3.2.1.3 Storage).
--  Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of workloads (VNF/CNF) onboarding.
--  Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
--  Scalability: Storage model enables scalability to enable small up to large deployments.
--  Workload agnostic: Storage model can provide storage functionality to any type of workloads, including: tenant VNF, CNF and Infrastructure Management whether this is via BareMetal or Virtualised Deployments.
--  Operationally Amenable: The storage must be amenable to consistent set of operational processes for: Non-Disruptive Capacity Expansion and Contraction, Backup/Restoration and Archive and Performance Management. Where applicable (examples are: Backup/Restoration/Archive) these processes should also be able to be provided to tenants for their own delegated management.
--  Security Policy Amenable: The storage sub-systems must be amenable to policy based security controls covering areas such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management Security Policy Override, Secure Erase on Device Removal and others
--  Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
+- Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
+- Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance requirements (more in Virtual Resources 3.2.1.3 Storage).
+- Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of workloads (VNF/CNF) onboarding.
+- Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
+- Scalability: Storage model enables scalability to enable small up to large deployments.
+- Workload agnostic: Storage model can provide storage functionality to any type of workloads, including: tenant VNF, CNF and Infrastructure Management whether this is via BareMetal or Virtualised Deployments.
+- Operationally Amenable: The storage must be amenable to consistent set of operational processes for: Non-Disruptive Capacity Expansion and Contraction, Backup/Restoration and Archive and Performance Management. Where applicable (examples are: Backup/Restoration/Archive) these processes should also be able to be provided to tenants for their own delegated management.
+- Security Policy Amenable: The storage sub-systems must be amenable to policy based security controls covering areas such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management Security Policy Override, Secure Erase on Device Removal and others
+- Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
 
 The above principles should be understood as storage specific specialisations of the :ref:`common/chapter00:anuket general principles`.
 
@@ -692,8 +692,8 @@ The following set of storage implementations outline some of the most prevalent 
 
 The first of these are for Data Centre Storage cases, with stereotypes of:
 
--  Dedicated storage appliance (:numref:`Fig-3-15`) - that provide network based storage via iSCSI (2), NFS/CIFS (3) with potentially virtual NAS (vNAS) (4) capability. Having virtual network software (4) allows the establishment of storage tenancies, where storage tenancy have their own virtual storage services which are exposed on their own network,
--  Software defined storage (:numref:`Fig-3-16`) - which is able to provide similar capabilities as the dedicated storage appliance (see (3),(4) & (5) in diagram). In this case this is provided as a software solution on top of a hyper-converged infrastructure.
+- Dedicated storage appliance (:numref:`Fig-3-15`) - that provide network based storage via iSCSI (2), NFS/CIFS (3) with potentially virtual NAS (vNAS) (4) capability. Having virtual network software (4) allows the establishment of storage tenancies, where storage tenancy have their own virtual storage services which are exposed on their own network,
+- Software defined storage (:numref:`Fig-3-16`) - which is able to provide similar capabilities as the dedicated storage appliance (see (3),(4) & (5) in diagram). In this case this is provided as a software solution on top of a hyper-converged infrastructure.
 
 .. _Fig-3-15:
 .. figure:: ../figures/rm-chap3.6-general-cloud-storage-appliance-sterotype-01.png
@@ -735,18 +735,18 @@ Storage is made avaiable for tenant consumption through a number of models. A si
 
 Where:
 
--  (Comparative) Cost - is monetary value / unit of end user storage capacity
+- (Comparative) Cost - is monetary value / unit of end user storage capacity
 
--  Performance - is defined by IOPS / Latency / Throughput as typically each of these increases with successive generations of storage
+- Performance - is defined by IOPS / Latency / Throughput as typically each of these increases with successive generations of storage
 
--  Capacity - consumption needs are represented by width of the: Ultra High Performance, Enterprise Transactional, Value and Capacity storage options.
+- Capacity - consumption needs are represented by width of the: Ultra High Performance, Enterprise Transactional, Value and Capacity storage options.
 
--  Storage Types - is how the storage is accessed and used, where:
+- Storage Types - is how the storage is accessed and used, where:
 
-   -  Platform Native - is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
-   -  Shared File Storage - is storage that is accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
-   -  Object Storage - is storage that is accessed via API interfaces (the most common example being HTTP restful services API), which support get/put of structured objects; and
-   -  Archival - is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting legal requirements or other historical recording where the storage mechanism may go through multiple stages before landing at rest.
+   - Platform Native - is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
+   - Shared File Storage - is storage that is accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
+   - Object Storage - is storage that is accessed via API interfaces (the most common example being HTTP restful services API), which support get/put of structured objects; and
+   - Archival - is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting legal requirements or other historical recording where the storage mechanism may go through multiple stages before landing at rest.
 
 The storage model provides a relatively simple way for the storage consumer to specify / select their storage needs. This is shown in the following table which highlights key attributes and features of the storage classes and "epic use cases" for common usage patterns.
 
@@ -763,8 +763,8 @@ Capacity            Typically accessed as per "Shared Storage" but will likely h
 
 In section "3.6.2 Storage Implementation Stereotypes" the General Cloud Storage Model is used to illustrate the provision of storage. The model can also be used to illustrate the consumption of storage for use by Tenants (see below for "Platform Native" stereotypes):
 
--  Platform Native - Hypervisor Attached Consumption Stereotype (:numref:`Fig-3-19`) - where hypervisor consumes Software Defined Storage via Network (RA-1 - Cinder backend (2)) and the Block Image is attached to Virtual Machine (RAW or QCOW file within File System), which is used for boot and exposure to virtual machine OS as Block Storage (3). The virtual machine OS in turn consumes this for use by Tenant Application via File System,
--  Platform Native - Container Persistent Consumption Stereotype (:numref:`Fig-3-20`) - is simpler case with Container Runtime consuming Software Defined Storage (via RADOS backend (2)) and exposes this to Container as a file system mount (3).
+- Platform Native - Hypervisor Attached Consumption Stereotype (:numref:`Fig-3-19`) - where hypervisor consumes Software Defined Storage via Network (RA-1 - Cinder backend (2)) and the Block Image is attached to Virtual Machine (RAW or QCOW file within File System), which is used for boot and exposure to virtual machine OS as Block Storage (3). The virtual machine OS in turn consumes this for use by Tenant Application via File System,
+- Platform Native - Container Persistent Consumption Stereotype (:numref:`Fig-3-20`) - is simpler case with Container Runtime consuming Software Defined Storage (via RADOS backend (2)) and exposes this to Container as a file system mount (3).
 
 .. _Fig-3-19:
 .. figure:: ../figures/rm-chap3.6-general-cloud-storage-hypervisor-attached-stereotype-01.png
@@ -787,17 +787,17 @@ Storage Scenarios and Architecture Fit
 
 The storage model and stereotypical usage scenarios illustrate the key storage uses cases and their applicability to support storage needs from across a range of cloud deployments. This set of storage uses cases is summarised in the following tables, including how the stereotypes can support the Anuket Reference Architectures, followed by the key areas for consideration in such a deployment scenario. The structure of the table is:
 
--  Use Case - what is the target storage use case being covered (large data-centre, small data-centre, standalone cloud, edge etc.)
--  Sterotype - which of defined stereotypes is used
--  Infra / Ctrl / Mgt - is the storage stereotype able to support the: Infrastructure, Control Plane and Management Plane Needs
--  Tenant / User - is the storage stereotype able to support Tenant / User Plane needs including: Platform Native, Shared File Storage & Object Storage (as per section - "3.6.3 Storage for Tenant Consumption")
+- Use Case - what is the target storage use case being covered (large data-centre, small data-centre, standalone cloud, edge etc.)
+- Sterotype - which of defined stereotypes is used
+- Infra / Ctrl / Mgt - is the storage stereotype able to support the: Infrastructure, Control Plane and Management Plane Needs
+- Tenant / User - is the storage stereotype able to support Tenant / User Plane needs including: Platform Native, Shared File Storage & Object Storage (as per section - "3.6.3 Storage for Tenant Consumption")
 
 Where:
 
--  "Y" - Yes and almost always provided
--  "O" - Optional and readily accommodated
--  "N" - No, not available
--  "NA" - Not Applicable for this Use Case / Stereotype
+- "Y" - Yes and almost always provided
+- "O" - Optional and readily accommodated
+- "N" - No, not available
+- "NA" - Not Applicable for this Use Case / Stereotype
 +------------------------------+-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
 |                                                                                         | Tenant / User                                                  |
 +==============================+=====================================+======+======+======+============+============+========+=======+=====+======+========+
@@ -915,7 +915,7 @@ The storage sub-system is a foundational part of any Cloud Infrastructure, as su
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Use Case                | Description                                                                                                                             |
 +====+====================+====+====================================================================================================================================+
-| Small Data-centre       |  Small data-centre storage deployment is used in cases where software-defined storage and virtual machine / container hosting are       | 
+| Small Data-centre       | Small data-centre storage deployment is used in cases where software-defined storage and virtual machine / container hosting are       | 
 | Storage                 | running on a converged infrastructure footprint with the aim of reducing the overall size of the platform. This solution behaves as a   |
 |                         | standalone Infrastructure Cloud platform.                                                                                               |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
@@ -991,8 +991,8 @@ The storage sub-system is a foundational part of any Cloud Infrastructure, as su
 
 The General Storage Model illustrates that at the bottom of any storage solution there is always the physical storage layer and a storage operating system of some sort. In Cloud Infrastructure enviroment what is generally consumed is some form of network storage which can be provided by the:
 
--  Infrastructure platform underlay network for Control Plan and Platform Native - Hypervisor Attached and Container Runtime Managed
--  Tenant / User overlay network for Shared File Storage and Object Storage
+- Infrastructure platform underlay network for Control Plan and Platform Native - Hypervisor Attached and Container Runtime Managed
+- Tenant / User overlay network for Shared File Storage and Object Storage
 
 In general for the provision of storage as shared resource it is not desirable to use "in chassis storage" for anything other than in the storage devices for platform hypervisor / OS boot or for the hosts providing the storage sub-systems deployment itself. This is due to difficulty in resulting operational management (see principles section "3.6.1 Introduction" - "Operationally Amenable" above).
 
