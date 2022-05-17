@@ -218,13 +218,13 @@ As a consumer and provider of Cloud Services, the CSP will continue to need to b
 
 The interactions for this are outlined in the "Multi-Cloud Interactions Model", however, to realise this, the CSP will need to adopt and sponsor a set of standards that are necessary to support these interactions. The identification of existing appliable standards and gaps across the interactions needs to be completed. As a first step, the following criteria for inclusion of a standard/technology is defined. These standards/technologies must:
 
--  Provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
--  Are already mature Open Standards that have either been adopted or nurtured by recognised bodies with the telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations , (ANSI etc,) NIST)
--  There are reference implementations or an active open source project/s or consortia providing implementations (CNCF. Open Infra)
--  It is possible to source delivery and support services from multiple vendors
--  Allow the CSP to actively contribute to and request capabilities / coverage of the standard / technology
--  Not  be the sole proprietary property of a vendor / company
--  Not be focused on "Transactions / Conversations" or "User / Data Plane" standards (typically IETF, IEEE, MEF / Carrier Ethernet etc.)
+-  provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
+-  be already mature Open Standards that have either been adopted or nurtured by recognised bodies with the telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations , (ANSI etc,) NIST)
+-  have reference implementations or an active open source project/s or consortia providing implementations (CNCF. Open Infra)
+-  allow the CSP to source delivery and support services based on these from multiple vendors
+-  allow the CSP to actively contribute to and request capabilities / coverage of the standard / technology
+-  not  be the sole proprietary property of a vendor / company
+-  not be focused on "Transactions / Conversations" or "User / Data Plane" standards (typically IETF, IEEE, MEF / Carrier Ethernet etc.)
 
 
 Aspects of Multi-Cloud Security
