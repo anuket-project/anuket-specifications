@@ -124,17 +124,17 @@ As outlined in "Figure 8-3 - Conceptual Architecture of a Telco Operator Platfor
 
 The model defines the following core roles:
 
--  Communications Service Provider (CSP) - is the party responsible for providing end user service to their customer
--  Customer / User - are the parties that use the service (User) and establishes the business agreement for the service provision (Customer). For retail services the customer and user are the same party, while for enterprise services the Enterprise is the Customer (responsible for the business agreement) and its representatives are the Users.
--  Cloud Providers - are the parties providing the cloud services. These services could be any XaaS service. It could be that a CSP has an agreement with a SaaS Cloud, which in turn uses an IaaS Cloud Provider to deliver their service.
+- Communications Service Provider (CSP) - is the party responsible for providing end user service to their customer
+- Customer / User - are the parties that use the service (User) and establishes the business agreement for the service provision (Customer). For retail services the customer and user are the same party, while for enterprise services the Enterprise is the Customer (responsible for the business agreement) and its representatives are the Users.
+- Cloud Providers - are the parties providing the cloud services. These services could be any XaaS service. It could be that a CSP has an agreement with a SaaS Cloud, which in turn uses an IaaS Cloud Provider to deliver their service.
 
 The set of high level interactions cover:
 
--  Manage Account - covering Account, Users, Subscription, Billing
--  Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge / Cloud Connection Configuration, Connection Security Profile
--  Manage Resource - Resource Pool Management, VM / VNF Management (CPU, Memory, Storage, Network), Image Repository Management, Storage Management, VNF / CNF LCM, Monitor Resources
--  Manage App/VNF - Image / Container / Registry Management, Deploy/Configure/Scale/Start/Stop App/VNF, Monitor App/VNFs
--  Transactions / Conversations - Use Communications Services, Use Edge Applications Services, Use Cloud Services
+- Manage Account - covering Account, Users, Subscription, Billing
+- Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge / Cloud Connection Configuration, Connection Security Profile
+- Manage Resource - Resource Pool Management, VM / VNF Management (CPU, Memory, Storage, Network), Image Repository Management, Storage Management, VNF / CNF LCM, Monitor Resources
+- Manage App/VNF - Image / Container / Registry Management, Deploy/Configure/Scale/Start/Stop App/VNF, Monitor App/VNFs
+- Transactions / Conversations - Use Communications Services, Use Edge Applications Services, Use Cloud Services
 
 Stereo-Typical Scenarios
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,25 +148,25 @@ A set of stereo-typical interactions cases are illustrated for the cases of a Si
 
 The following patterns are visible:
 
--  For IaaS Cloud Integration:
+- For IaaS Cloud Integration:
 
-   -  Cloud behaves like a set of virtual servers and, thus, requires virtual server life-cycle management and orchestration
-   -  Depending on whether the cloud is accessed via public internet or private connection will change the extend of the Connectivity Management
+   - Cloud behaves like a set of virtual servers and, thus, requires virtual server life-cycle management and orchestration
+   - Depending on whether the cloud is accessed via public internet or private connection will change the extend of the Connectivity Management
 
--  For SaaS Cloud Integration:
+- For SaaS Cloud Integration:
 
-   -  Cloud behaves like a running application/service and requires subscription management, and complex orchestration of the app/service and underlying resources is managed by SaaS provider with the User is relieved of having to provide direct control of resources
+   - Cloud behaves like a running application/service and requires subscription management, and complex orchestration of the app/service and underlying resources is managed by SaaS provider with the User is relieved of having to provide direct control of resources
 
--  For CaaS Cloud Integration:
+- For CaaS Cloud Integration:
 
-   -  Registry for pulling Containers could be from:
+   - Registry for pulling Containers could be from:
 
-      -  Cloud in which case consumption model is closer to SaaS or
-      -  from Private / Public Registry in which case integration model requires specific registry management elements
+      - Cloud in which case consumption model is closer to SaaS or
+      - from Private / Public Registry in which case integration model requires specific registry management elements
 
--  For Edge Cloud Integration:
+- For Edge Cloud Integration:
 
-   -  Adds need for Communications Service Provider and Cloud Provider physical, network underlay and overlay connectivity management
+   - Adds need for Communications Service Provider and Cloud Provider physical, network underlay and overlay connectivity management
 
 A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in the following diagram:
 
@@ -179,9 +179,9 @@ In disaggregated SaaS scenario the application provider is able to operate as an
 
 To make this manageable and avoid integration complexity, there are a number of models:
 
--  Industry Standard APIs that allow consistent consumption across Cloud Providers,
--  API Brokage which provide consistent set of Consumer facings APIs that manage adaption to prorietry APIs
--  Cloud Brokerage where the Brokerage function is provided "as a Service" and allow "single pane of glass" to be presented for management of the multi-cloud environment
+- Industry Standard APIs that allow consistent consumption across Cloud Providers,
+- API Brokage which provide consistent set of Consumer facings APIs that manage adaption to prorietry APIs
+- Cloud Brokerage where the Brokerage function is provided "as a Service" and allow "single pane of glass" to be presented for management of the multi-cloud environment
 
 The different means of integrating with and managing Cloud Providers is broadly covered under the umbrella topic of "Cloud Management Platforms". A survey of applicable standards to achieve this is provided in section 8.2.4.3 "Requirements, Reference Architecture & Industry Standards Intersect".
 
@@ -203,13 +203,13 @@ Requirements, Reference Architecture & Industry Standards Intersect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Communcations Service Provider (CSP) is both a provider and consumer of Cloud based services. When the CSP is acting as:
--  consumer of cloud services, the typical consideration is total cost of ownership as the consumption is usually to support internal business operations: BSS/OSS systems;
--  provider of cloud services, through operation of their own cloud or reselling of cloud services, in which case the typical consideration is margin (cost to offer services vs income received).
+- consumer of cloud services, the typical consideration is total cost of ownership as the consumption is usually to support internal business operations: BSS/OSS systems;
+- provider of cloud services, through operation of their own cloud or reselling of cloud services, in which case the typical consideration is margin (cost to offer services vs income received).
 These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a Multi-Cloud environment.
 
 As a consumer of cloud services to support internal Business operations and BSS/OSS, the focus is on meeting the needs of the organisation's applications . Historically this came with the need to operate and support the organisation's infrastructure needs. The result was a split of the CIO organisation into Delivery and Operations groups. At the same time that the CIO application workloads are moving to SaaS and other Cloud Providers, the CTO Network Systems are migrating from running on custom dedicated infrastructure to run on virtualised COTS infrastructure; examples include IMS, 3GPP (4G & 5G) functions, IP Routers and Firewalls are being provided as VNFs and CNFs.  These network workloads are now also being deployed on private CSP clouds as well as public clouds.
 
-As outlined in section "8.2.2 Telco Cloud", the result is that the CSP "network" is now an interconnected set of distributed NFVi's (Cloud Infrastructure) supported by different Cloud Providers, including the CSP, and, hence, the term "Hybrid Multi-Cloud", and the need for the CSP to be able to support and utilize this interconnected cloud is both inevitable and essential.
+As outlined in section "8.2.2 Telco Cloud", the result is that the CSP "network" is now an interconnected set of distributed Cloud Infrastructure supported by different Cloud Providers, including the CSP, and, hence, the term "Hybrid Multi-Cloud", and the need for the CSP to be able to support and utilize this interconnected cloud is both inevitable and essential.
 
 As a consumer and provider of Cloud Services, the CSP will continue to need to build and manage its own Cloud Infrastructure as well as provide: 
 
@@ -218,13 +218,13 @@ As a consumer and provider of Cloud Services, the CSP will continue to need to b
 
 The interactions for this are outlined in the "Multi-Cloud Interactions Model", however, to realise this, the CSP will need to adopt and sponsor a set of standards that are necessary to support these interactions. The identification of existing appliable standards and gaps across the interactions needs to be completed. As a first step, the following criteria for inclusion of a standard/technology is defined. These standards/technologies must:
 
--  provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
--  be already mature Open Standards that have either been adopted or nurtured by recognised bodies with the telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations , (ANSI etc,) NIST)
--  have reference implementations or an active open source project/s or consortia providing implementations (e.g., CNCF. Open InfraCNCF)
--  allow the CSP to source delivery and support services based on these from multiple vendors
--  allow the CSP to actively contribute to and request capabilities / coverage of the standard / technology
--  not  be the sole proprietary property of a vendor / company
--  not be focused on "Transactions / Conversations" or "User / Data Plane" standards (typically IETF, IEEE, MEF / Carrier Ethernet etc.)
+- provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
+- be already mature Open Standards that have either been adopted or nurtured by recognised bodies with the telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations , (ANSI etc,) NIST)
+- have reference implementations or an active open source project/s or consortia providing implementations (e.g., CNCF. Open Infra)
+- allow the CSP to source delivery and support services based on these from multiple vendors
+- allow the CSP to actively contribute to and request capabilities / coverage of the standard / technology
+- not  be the sole proprietary property of a vendor / company
+- not be focused on "Transactions / Conversations" or "User / Data Plane" standards (typically IETF, IEEE, MEF / Carrier Ethernet etc.)
 
 
 Aspects of Multi-Cloud Security
