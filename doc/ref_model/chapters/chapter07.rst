@@ -122,6 +122,19 @@ networking functions, but they must be designed with common security principles 
 practices must be applied at all layers of the infrastructure stack and across all points of interconnections (internal
 or with outside networks), APIs and contact points with the NFV network functions overlaying or interacting with that
 infrastructure.
+
+A good place to start to understand the security requirements is to use the widely accepted definitions and core 
+principles developed by the OWASP, Open Web Application Security Project: 
+
+- Confidentiality – Only allow access to data for which the user is permitted.
+- Integrity – Ensure data is not tampered with or altered by unauthorized users.
+- Availability – ensure systems and data are available to authorized users when they need it.
+
+These 3 principles are complemented for Cloud Infrastructure security by:
+
+- Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems
+  or data.
+  
 Standards organizations with recommendations and best practices, and certifications that need to be taken into
 consideration include the following examples. However this is by no means an exhaustive list, just some of the more
 important standards in current use.
@@ -147,17 +160,7 @@ important standards in current use.
   - ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management
   - ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity
 
-A good place to start to understand the requirements is to use the widely accepted definitions developed by the OWASP –
-Open Web Application Security Project. These include the following core principles:
 
-- Confidentiality – Only allow access to data for which the user is permitted.
-- Integrity – Ensure data is not tampered with or altered by unauthorized users.
-- Availability – ensure systems and data are available to authorized users when they need it.
-
-Additional Cloud Infrastructure security principles that need to be incorporated:
-
-- Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems
-  or data.
 
 In mobile network field, the GSM Association (`GSMA <https://www.gsma.com/>`__) and its Fraud and Security working group
 of experts have developed a set of documents specifying how to secure the global mobile ecosystem.
@@ -176,10 +179,10 @@ virtualisation and open source software. The 2 following documents are in the sc
   rks/resources/open-networking-the-security-of-open-source-software-deployment/>`__, published in January 2021 [21],
   deals with open source software security, it highlights the importance of layered security defences and lists
   recommendations and security concepts able to secure deployments.
-- The “5G Security Guide”, FS.40 version 1.0, Sept. 2020 (GSMA members only) covers 5G security, in a holistic way, from
-  user equipment to networks. The document describes the new security features in 5G. It includes a dedicated section on
-  the impact of Cloud on 5G security with recommendations on virtualization, cloud native applications and
-  containerization security.
+- The “5G Security Guide”, FS.40 version 2.0, Oct. 2021 (non-binding Permanent Reference Document), covers 5G security, 
+  in a holistic way, from user equipment to networks. The document describes the new security features in 5G. 
+  It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualisation, cloud 
+  native applications and containerisation security.
 
 Cloud Infrastructure Security
 -----------------------------
@@ -201,8 +204,8 @@ within the platform to provide access controls throughout the platform:
 
    Reference Model Access Controls
 
-The high-level functions of these different access controls
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+High-level functions of access controls
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - **MGMT ACCESS CONTROLS** - Platform access to workloads for service management. Typically all management and
   control-plane traffic is encrypted.
@@ -221,8 +224,8 @@ The high-level functions of these different access controls
   workloads - including Role-Based Access Control (RBAC), authentication controls as appropriate for the access
   arrangement, and Application Programming Interface (API) gateways for automated/script-driven processes.
 
-The following general security requirements apply to the Cloud Infrastructure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cloud Infrastructure general security requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **System Hardening**
 
