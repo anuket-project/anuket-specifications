@@ -813,7 +813,7 @@ losing their reputation and eventually losing customers, with an obvious adverse
 
 Compliance means that an operator’s systems, processes, and workflows align with the requirements mandated by the regulatory regimes imposed by the relevant 
 governmental and industry regulatory bodies. The need for compliance extends to the cloud, so operators must ensure that any data transferred to and out, and stored 
-in their cloud infrastructure complies with all relevant data protection and privacy laws.
+in their cloud infrastructure complies with all relevant data protection, including data residency, and privacy laws.
 
 To comply with the laws that apply to an operator’s business, the proper security controls need to be applied. The applicable laws have very specific rules and 
 constraints about how companies can collect, store and process data in the cloud. To satisfy these constraints and ensure compliance, the telecom operators should 
