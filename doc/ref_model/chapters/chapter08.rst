@@ -211,15 +211,13 @@ As a consumer of cloud to support internal Business operations and BSS/OSS the f
 
 As outlined in section "8.2.2 Telco Cloud", the result is that the CSP "network" is now an interconnected set of distributed NFVi's (Cloud Infrastructure) supported by different Cloud Providers, including the CSP, and, hence, the term "Hybrid Multi-Cloud", and the need for the CSP to be able to support and utilize this interconnected cloud is both inevitable and essential.
 
-So as a consumer and provider of Cloud Services, the CSP will continue to need to build and manage its own Cloud Infrastructure as well as provide 
+So as a consumer and provider of Cloud Services, the CSP will continue to need to build and manage its own Cloud Infrastructure as well as provide: 
+
 - cloud orchestration solutions to orchestrate the utilisation of cloud services and capabilities from its own and other Cloud Providers;
 - network orchestration solutions to manage the interconnectivity across its own and other Cloud Provider networks. 
 
-The interactions for this are outlined in the "Multi-Cloud Interactions Model", however, to realise this, the CSP will need to adopt and sponsor a set of standards that are necessary to support these interactions.
+The interactions for this are outlined in the "Multi-Cloud Interactions Model", however, to realise this, the CSP will need to adopt and sponsor a set of standards that are necessary to support these interactions. The identification of existing appliable standardas and gaps across the interations needs to be completed. As a first step in the following criterial for inclusion of a standard / technology is defined:
 
-The following summary table aims to identify the applicable standards and/or technologies.
-
-The criteria for inclusion are
 -  Provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
 -  Are already mature Open Standards that have either been adopted or nurtured by recognised bodies with the telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations , (ANSI etc,) NIST)
 -  There are reference implementations or an active open source project/s or consortia providing implementations (CNCF. Open Infra)
@@ -228,8 +226,6 @@ The criteria for inclusion are
 -  It is not sole proprietary property of a vendor / company
 -  Is not focused on "Transactions / Conversations" User / Data Plane standards (typically IETF, IEEE, MEF / Carrier Ethernet etc)
 
-
-NOTE: Where are the gaps and where is there need to focus and raise priority ?
 
 Aspects of Multi-Cloud Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
