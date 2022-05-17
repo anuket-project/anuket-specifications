@@ -224,7 +224,7 @@ The interactions for this are outlined in the "Multi-Cloud Interactions Model", 
 -  It is possible to source delivery and support services from multiple vendors
 -  It is possible for CSP to actively contribute to and request capabilities / coverage of the standard / technology
 -  Not  be the sole proprietary property of a vendor / company
--  Is not focused on "Transactions / Conversations" User / Data Plane standards (typically IETF, IEEE, MEF / Carrier Ethernet etc)
+-  Not be focused on "Transactions / Conversations" or "User / Data Plane" standards (typically IETF, IEEE, MEF / Carrier Ethernet etc.)
 
 
 Aspects of Multi-Cloud Security
