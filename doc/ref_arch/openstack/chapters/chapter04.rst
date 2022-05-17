@@ -1647,7 +1647,7 @@ affect the definition of OpenStack flavors.
 
 The previous section listed the OpenStack services deployed on the controller
 nodes depending upon the control plane distribution. As specified earlier in
-this chapter, at least 3 controller nodes should be deployed  for HA.  Compute
+this chapter, at least 3 controller nodes should be deployed for HA.  Compute
 nodes may also exist at the sites where controller nodes are deployed.
 
 Control plane services are not hosted at edge sites. Each edge site can be
