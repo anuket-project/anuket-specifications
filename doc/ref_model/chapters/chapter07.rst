@@ -801,6 +801,124 @@ Security certification should encompass the following elements:
   security analysis tools.
 - Resiliency tests run (such as hardware failures or power failure tests)
 
+
+Cloud Infrastructure Regulatory Compliance 
+------------------------------------------
+Evolving cloud adoption in the telecom industry, now encroaching on its inner sanctum of network services, undoubtedly brings many benefits for the network operators 
+and their partners, and ultimately to the end consumers of the telecommunication services. However, it also brings compliance challenges that can seem overwhelming. 
+The telecommunication industry players can reduce this overwhelm by arming themselves with information about which laws they need to comply with, why, and how.  
+
+The costs of non-compliance can be very serious. Organisations may not only have to contend with hefty fines and possible lawsuits, but they may also even end up 
+losing their reputation and eventually losing customers, with an obvious adverse impact on revenues and profitability. 
+
+Compliance means that an operator’s systems, processes, and workflows align with the requirements mandated by the regulatory regimes imposed by the relevant 
+governmental and industry regulatory bodies. The need for compliance extends to the cloud, so operators must ensure that any data transferred to and out, and stored 
+in their cloud infrastructure complies with all relevant data protection and privacy laws.
+
+To comply with the laws that apply to an operator’s business, the proper security controls need to be applied. The applicable laws have very specific rules and 
+constraints about how companies can collect, store and process data in the cloud. To satisfy these constraints and ensure compliance, the telecom operators should 
+work with their cloud providers and other partners to implement strong controls. To speed up this process, the operators may start from augmenting their existing 
+cybersecurity/information security frameworks to guide their security programs to implement controls to secure their cloud infrastructure and to achieve regulatory 
+compliance. This process can also be assisted by support from the cloud providers and third parties, who can offer their well-proven compliance offerings, resources, 
+audit reports, dashboards, and even some security controls as a service.
+
+After implementing these controls, companies need to train their employees and partners to use the controls properly to protect data and maintain the required 
+compliance posture. This is a critical requirement to maintain compliance via enforcing relevant security guiderails in all aspects of every-day operations, as well as
+for ensuring a process of regular assessment of the compliance posture.
+
+Because of the localised nature of the regulatory regimes, this document may not provide any specific compliance requirements.  However, some examples provided below,
+can be of assistance for an operator’ compliance considerations.
+
+Commonly used (in many jurisdictions) compliance audit reports are based on SOC 2 report from the SOC (System and Organization Controls) suite of services,  
+standardised by the American Institute of Certified Public Accountants (AICPA) and meant for service organizations like cloud providers; see 
+`AICPA SOC <https://us.aicpa.org/content/aicpa/interestareas/frc/assuranceadvisoryservices/sorhome.html>`__. A SOC 2 report shows whether the cloud provider has implemented the security controls required to comply with the AICPA’s
+five “trust services criteria”: security, availability, confidentiality, processing integrity, and privacy. Operators should request SOC 2 report from their cloud 
+providers (public or internal to their organisations). There are two flavours of SOC 2:  type 1 report shows the status and suitability of the provider’s controls 
+at a particular moment, while type 2 report shows the operational effectiveness of these controls over a certain period. In cases when a cloud provider is not willing
+to share SOC 2 report because it may contain sensitive information, operators can ask for the SOC 3 report which is intended as a general-use report but can still 
+help assess the provider’s compliance posture.
+
+Some cloud providers also provide attestations (or in case of private cloud, telecoms should seek such attestation) to show which of their cloud services have achieved
+compliance with different frameworks such as mentioned above SOC, but also commonly used frameworks like OWASP, ISAE, NIST, ETSI and ISO 27000 series, and more 
+geographically localised standard frameworks like NIST (as used in the U.S.A.), ENISA, GDPR, ISM.
+
+The use of the ISO 2700s, OWASP, ISAE, NIST and ETSI security frameworks for cloud infrastructure is referenced in “Common Security Standards”, “Compliance with 
+Standards” and “Security References” sections of this chapter. 
+
+Examples of regulatory frameworks are briefly presented below. It is intended to expand this list of examples in the future releases to cover more jurisdictions and 
+to accommodate changes in the rapidly evolving security and regulatory landscape. 
+
+
+U.S.A.
+~~~~~~
+
+In the United States, the Federal Communications Commission  `(FCC) <https://www.fcc.gov/>`__ regulates interstate and international communications by radio, television, wire, satellite and 
+cable in all 50 states, the District of Columbia and U.S. territories. The FCC is an independent U.S. government agency overseen by 
+Congress. The Commission is the federal agency responsible for implementing and enforcing America’s communications 
+laws and regulations.
+
+National Institute of Standards and Technology `(NIST) Cybersecurity Framework <https://www.nist.gov/cyberframework/>`__,  
+compliance is mandatory for the supply chain for all U.S.A. federal government agencies.  Because this framework references globally accepted standards, guidelines 
+and practice, telecom organisations in the U.S.A. and 
+world-wide can use it to efficiently operate in a global environment and manage new and evolving cybersecurity risks in the cloud adoption area.
+
+
+European Union (EU)
+~~~~~~~~~~~~~~~~~~~
+
+The overall telecommunications regulatory framework in the European Union (EU) is provided in `The European Electronic Communications Code 
+<https://digital-strategy.ec.europa.eu/en/policies/electronic-communications-laws/>`__.
+
+The European Union Agency for Cybersecurity `(ENISA) <https://www.enisa.europa.eu/>`__ contributes to EU cyber policy, enhances the trustworthiness of 
+Information and Communications Technology (ICT) products, services and processes with cybersecurity certification schemes, cooperates with Member States and EU bodies,
+and helps Europe prepare for the cyber challenges of tomorrow. In particular, ENISA is carrying out a risk assessment of cloud computing and works on the 
+European Cybersecurity Certification Scheme  `(EUCS) <https://www.enisa.europa.eu/publications/eucs-cloud-service-scheme/>`__ for Cloud Services scheme, which looks 
+into the certification of the cybersecurity of cloud services,
+
+The General Data Protection Regulation `(GDPR) <https://gdpr-info.eu/>`__ is a set of EU regulations that governs
+how data should be protected for EU citizens. It affects organisations that have EU-based customers, even if they're not based in the EU themselves. 
+
+
+UK
+~~
+
+Office of Communications `(Ofcom) <https://www.ofcom.org.uk/>`__ is the regulator and competition authority for the UK communications industries. It regulates the TV 
+and radio sectors, fixed line telecoms, mobiles, postal services, plus the airwaves over which wireless devices operate.
+
+Security of Networks & Information Systems `NIS Regulations in UK <https://www.gov.uk/government/collections/nis-directive-and-nis-regulations-2018/>`__, provide 
+legal measures to boost the level of security (both cyber & physical resilience) of network and information systems for the provision of essential services and digital
+services.
+
+The UK’s National Cyber Security Centre `(NCSC) <https://www.ncsc.gov.uk/>`__ acts as a bridge between industry and government, providing a unified 
+source of advice, guidance and support on cyber security, including the management of cyber security incidents. From this perspective it is critical for the cloud 
+related security in the UK telecommunications industry. The NCSC is not a regulator. Within the general UK cyber security regulatory environment, including both NIS 
+and GDPR, the NCSC’s aim is to operate as a trusted, expert and impartial advisor to all interested parties. The NCSC supports Security of Networks & Information 
+Systems (NIS) Regulations
+
+The data protection in UK is controlled by `Data Protection Act 2018 <https://www.legislation.gov.uk/ukpga/2018/12/contents/enacted/>`__, which is UK’s implementation
+of the General Data Protection Regulation (GDPR).
+
+Australia
+~~~~~~~~~
+
+In Australia, the telecommunication sector is regulated by the `Australian Competition & Consumer Commission (ACCC) <https://www.accc.gov.au/regulated-infrastructure/communications/>`__.  
+The ACCC is responsible for the economic regulation of the communications sector, including telecommunications and the National Broadband Network (NBN), broadcasting 
+and content sectors.
+
+From the cloud services security perspective, the Australian Cyber Security Centre (ACSC) produced `Information Security Manual (ISM) <https://www.cyber.gov.au/acsc/view-all-content/ism/>`__, 
+is of particular importance. The purpose of the ISM is to outline a cyber security framework that organisations can apply, using their risk management 
+framework, to protect their information and systems from cyber threats. The ISM is intended for Chief Information Security Officers, Chief Information Officers, cyber
+security professionals and information technology managers. While in general ISM provides guidelines rather than mandates, several security controls are by law 
+mandatory for cloud-based services used by the Australian telecommunication operators, in situation involving strategically important data and/or services. 
+
+Australia regulates data privacy and protection through a mix of federal, state and territory laws. The federal `Privacy Act 1988 <https://www.oaic.gov.au/privacy/the-privacy-act/>`__  
+(currently under review by The Australian Government) and the Australian Privacy Principles (APP) contained in the Privacy Act regulate the handling of 
+personal information by relevant entities and under the Privacy Act. The Privacy Commissioner has authority to conduct investigations, including own motion 
+investigations, to enforce the Privacy Act and seek civil penalties for serious and egregious breaches or for repeated breaches of the APPs where an entity has failed
+to implement remedial efforts.
+
+
+
 Consolidated Security Requirements
 ----------------------------------
 
