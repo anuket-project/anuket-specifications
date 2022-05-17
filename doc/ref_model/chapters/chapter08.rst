@@ -203,11 +203,11 @@ Requirements, Reference Architecture & Industry Standards Intersect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Communcations Service Provider (CSP) is both a provider and consumer of Cloud based services. When the CSP is actings as:
--  consumer, in which case the typical consideration is total cost of ownership as the consumption is to usually to support internal business operations: BSS/OSS systems;
+-  consumer of cloud services, the typical consideration is total cost of ownership as the consumption is to usually to support internal business operations: BSS/OSS systems;
 -  provider of cloud services, through operation of their own cloud or reselling of cloud services, in which case the typical consideration is margin (cost to offer services vs income received).
 These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a Multi-Cloud environment.
 
-As a consumer of cloud to support internal Business operations and BSS/OSS focus is on meeting the applications needs of organisation which historically came with need to operate support the infrastructure needs of these. This resulted in split of CIO organisation into Delivery and Operations groups. At the same time that CIO application workloads have been moving to SaaS Cloud Providers, CTO Network Systems have been moving from running on dedicated infrastructure to being virtualised and IMS, 3GPP (4G & 5G) functions, IP Routers and Firewalls are being provided as VNFs and CNFs.
+As a consumer of cloud to support internal Business operations and BSS/OSS the focus is on meeting the applications needs of organisation. Historically this came with need to operate support the applications infrastructure needs. The result was a split of CIO organisation into Delivery and Operations groups. At the same time that CIO application workloads have been moving to SaaS Cloud Providers, CTO Network Systems have been moving from running on dedicated infrastructure to being virtualised, example are IMS, 3GPP (4G & 5G) functions, IP Routers and Firewalls are being provided as VNFs and CNFs.  These network loads are now also being deployed on private CSP clouds as well as public clouds.
 
 As outlined in section "8.2.2 Telco Cloud" the result is that the future CSP "network" is a set of distributed NFVi's (Cloud Infrastructure) which will be connected to Cloud Providers and hence the "Hybrid Multi-Cloud" and the need for CSP to be able to support this is both inevitable and essential.
 
