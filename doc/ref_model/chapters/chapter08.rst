@@ -211,7 +211,11 @@ As a consumer of cloud to support internal Business operations and BSS/OSS focus
 
 As outlined in section "8.2.2 Telco Cloud" the result is that the future CSP "network" is a set of distributed NFVi's (Cloud Infrastructure) which will be connected to Cloud Providers and hence the "Hybrid Multi-Cloud" and the need for CSP to be able to support this is both inevitable and essential.
 
-So as a consumer and provider of Cloud Services the CSP will continue to need to build and manage it own Cloud Infrastructure as well as provide network orchestration solution to management interconnectivity across its own and other Cloud Providers. The interactions for this are outlined in the "Multi-Cloud Interactions Model", however to realise this the CSP will need to adopt and sponsor a set of standards that are nessasary to support the interactions.
+So as a consumer and provider of Cloud Services, the CSP will continue to need to build and manage its own Cloud Infrastructure as well as provide 
+- cloud orchestration solutions to orchestrate the utilisation of cloud services and capabilities from its own and other Cloud Providers;
+- network orchestration solutions to manage the interconnectivity across its own and other Cloud Provider networks. 
+
+The interactions for this are outlined in the "Multi-Cloud Interactions Model", however, to realise this, the CSP will need to adopt and sponsor a set of standards that are necessary to support these interactions.
 
 The following summary table aims to identify the applicable standards and/or technologies.
 
