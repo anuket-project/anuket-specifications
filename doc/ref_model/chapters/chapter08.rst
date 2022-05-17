@@ -209,7 +209,7 @@ These two stances will drive differing approaches to how a CSP would look to man
 
 As a consumer of cloud to support internal Business operations and BSS/OSS the focus is on meeting the applications needs of organisation. Historically this came with need to operate support the applications infrastructure needs. The result was a split of CIO organisation into Delivery and Operations groups. At the same time that CIO application workloads have been moving to SaaS Cloud Providers, CTO Network Systems have been moving from running on dedicated infrastructure to being virtualised, example are IMS, 3GPP (4G & 5G) functions, IP Routers and Firewalls are being provided as VNFs and CNFs.  These network loads are now also being deployed on private CSP clouds as well as public clouds.
 
-As outlined in section "8.2.2 Telco Cloud" the result is that the future CSP "network" is a set of distributed NFVi's (Cloud Infrastructure) which will be connected to Cloud Providers and hence the "Hybrid Multi-Cloud" and the need for CSP to be able to support this is both inevitable and essential.
+As outlined in section "8.2.2 Telco Cloud", the result is that the CSP "network" is now an interconnected set of distributed NFVi's (Cloud Infrastructure) supported by different Cloud Providers, including the CSP, and, hence, the term "Hybrid Multi-Cloud", and the need for the CSP to be able to support and utilize this interconnected cloud is both inevitable and essential.
 
 So as a consumer and provider of Cloud Services, the CSP will continue to need to build and manage its own Cloud Infrastructure as well as provide 
 - cloud orchestration solutions to orchestrate the utilisation of cloud services and capabilities from its own and other Cloud Providers;
