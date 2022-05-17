@@ -5,13 +5,13 @@ It is necessary to clearly define the infrastructure resources and their capabil
 
 The abstraction model presented in this Reference Model (RM) specifies a common set of virtual infrastructure resources that a cloud infrastructure will need to provide to be able to host most of the typical VNF/CNF telco workloads. The intention of this Reference Model is to follow the following principles:
 
--  **Scope:** the model should describe the most relevant virtualised infrastructure resources (incl. acceleration technologies) a cloud infrastructure needs to host Telco workloads
--  **Separation of Concern:** the model should support a clear distinction between the responsibilities related to maintaining the network function virtualisation infrastructure and the responsibilities related to managing the various VNF workloads
--  **Simplicity:** the amount of different types of resources (including their attributes and relationships amongst one another) should be kept to a minimum to reduce the configuration spectrum which needs to be considered
--  **Declarative**: the model should allow for the description of the intended state and configuration of the cloud infrastructure resources for automated life cycle management
--  **Explicit:** the model needs to be rich enough to cover the instantiation and the on-going operation of the cloud infrastructure
--  **Lifecycle:** the model must distinguish between resources which have independent lifecycles but should group together those resources which share a common lifecycle
--  **Aligned:** the model should clearly highlight the dependencies between its components to allow for a well-defined and simplified synchronisation of independent automation tasks.
+- **Scope:** the model should describe the most relevant virtualised infrastructure resources (incl. acceleration technologies) a cloud infrastructure needs to host Telco workloads
+- **Separation of Concern:** the model should support a clear distinction between the responsibilities related to maintaining the network function virtualisation infrastructure and the responsibilities related to managing the various VNF workloads
+- **Simplicity:** the amount of different types of resources (including their attributes and relationships amongst one another) should be kept to a minimum to reduce the configuration spectrum which needs to be considered
+- **Declarative**: the model should allow for the description of the intended state and configuration of the cloud infrastructure resources for automated life cycle management
+- **Explicit:** the model needs to be rich enough to cover the instantiation and the on-going operation of the cloud infrastructure
+- **Lifecycle:** the model must distinguish between resources which have independent lifecycles but should group together those resources which share a common lifecycle
+- **Aligned:** the model should clearly highlight the dependencies between its components to allow for a well-defined and simplified synchronisation of independent automation tasks.
 
 **To summarise:**\ *the abstraction model presented in this document will build upon existing modelling concepts and simplify and streamline them to the needs of telco operators who intend to distinguish between infrastructure related and workload related responsibilities.*
 
@@ -30,17 +30,17 @@ The functionalities of each layer are as follows:
 
 **Virtual Infrastructure Layer**
 
--  **Virtual infrastructure resources:** These are all the infrastructure resources (compute, storage and networks) which the cloud infrastructure provides to the VNF/CNF and other workloads. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
--  **Virtual infrastructure manager:** This consists of the software components that manage the virtual resources and make those management capabilities accessible via one or more APIs. The responsibilities of this functionality include the management of logical constructs such as tenants, tenant workloads, resource catalogues, identities, access controls, security policies, etc.
+- **Virtual infrastructure resources:** These are all the infrastructure resources (compute, storage and networks) which the cloud infrastructure provides to the VNF/CNF and other workloads. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
+- **Virtual infrastructure manager:** This consists of the software components that manage the virtual resources and make those management capabilities accessible via one or more APIs. The responsibilities of this functionality include the management of logical constructs such as tenants, tenant workloads, resource catalogues, identities, access controls, security policies, etc.
 
 **Hardware Infrastructure Layer**
 
--  **Hardware infrastructure manager:** This is a logical block of functionality responsible for the management of the abstracted hardware resources (compute, network and storage) and as such it is shielded from the direct involvement with server host software.
--  **Hardware resources:** These consist of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, and the basic input output system (BIOS).
+- **Hardware infrastructure manager:** This is a logical block of functionality responsible for the management of the abstracted hardware resources (compute, network and storage) and as such it is shielded from the direct involvement with server host software.
+- **Hardware resources:** These consist of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, and the basic input output system (BIOS).
 
 **Workload Layer**
 
--  **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run within a virtual machine (VM) or as a set of containers.
+- **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run within a virtual machine (VM) or as a set of containers.
 
 Virtual Infrastructure Layer
 ----------------------------
@@ -55,10 +55,10 @@ The virtual infrastructure resources provided by the Cloud Infrastructure can be
 
    Virtual Infrastructure Resources provide virtual compute, storage and networks in a tenant context
 
--  **Tenants:** represent an isolated and independently manageable elastic pool of compute, storage and network resources
--  **Compute resources:** represent virtualised computes for workloads and other systems as necessary
--  **Storage resources:** represent virtualised resources for persisting data
--  **Network resources:** represent virtual resources providing layer 2 and layer 3 connectivity
+- **Tenants:** represent an isolated and independently manageable elastic pool of compute, storage and network resources
+- **Compute resources:** represent virtualised computes for workloads and other systems as necessary
+- **Storage resources:** represent virtualised resources for persisting data
+- **Network resources:** represent virtual resources providing layer 2 and layer 3 connectivity
 
 The virtualised infrastructure resources related to these categories are listed below.
 
@@ -109,17 +109,17 @@ Virtual Storage
 
 A virtual machine and container can consume storage through a number of means. These include storage that is:
 
--  managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and
--  Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
-   The details of the tenant storage consumption model are covered in section :ref:`Storage for Tenant Consumption`.
+- managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for containers) and is connected via cloud infrastructure underlay network and
+- Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
+  The details of the tenant storage consumption model are covered in section :ref:`Storage for Tenant Consumption`.
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity and behaviours. The set of selectable attributes includes:
 
--  Storage class: Block, File, Object.
--  Retention Policy - persistent (storage volume / data) is persistent across stop/start of workload; ephemeral storage - there is no data retention across stop/start events for the workload.
--  Underlying physical device type (HDD, SSD, etc.).
--  Performance characteristic - defined as: Latency, IOPS (Input/Output Operations per second), and throughput.
--  Enhanced features - set of selectable features such as: auto-replicate, encryption, snapshot support.
+- Storage class: Block, File, Object.
+- Retention Policy - persistent (storage volume / data) is persistent across stop/start of workload; ephemeral storage - there is no data retention across stop/start events for the workload.
+- Underlying physical device type (HDD, SSD, etc.).
+- Performance characteristic - defined as: Latency, IOPS (Input/Output Operations per second), and throughput.
+- Enhanced features - set of selectable features such as: auto-replicate, encryption, snapshot support.
 
 Note that approximate numeric ranges for the qualitative values used above are given in the
 :ref:`ref_model/chapters/chapter04:storage extensions` section.
@@ -166,10 +166,10 @@ Virtual Infrastructure Manager
 
 The virtual infrastructure manager allows:
 
--  setup, manage and delete tenants,
--  setup, manage and delete user- and service-accounts,
--  manage access privileges and
--  provision, manage, monitor and delete virtual resources.
+- setup, manage and delete tenants,
+- setup, manage and delete user- and service-accounts,
+- manage access privileges and
+- provision, manage, monitor and delete virtual resources.
 
 .. figure:: ../figures/ch03-model-virtual-manager.png
    :alt: "Virtual Infrastructure Manager"
@@ -178,15 +178,15 @@ The virtual infrastructure manager allows:
 
 The virtual infrastructure manager needs to support the following functional aspects:
 
--  **API/UI**: an application programming interface / user interface providing access to the virtual resource management function
--  **Catalogue**: manages the collection of available templates for virtual resource the cloud infrastructure can provide
--  **Inventory**: manages the information related to virtual resources of a cloud infrastructure
--  **Scheduler**: receives requests via API/UI, provisions and manages virtual resources by coordinating the activities of the compute-, storage- and network resources managers
--  **Monitoring**: monitors and collects information on all events and the current state of all virtual resources
--  **Additional Management Functions**: include identity management, access management, policy management (e.g. to enforce security policies), etc.
--  **Compute Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware compute resources
--  **Storage Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware storage resources
--  **Network Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware network resources
+- **API/UI**: an application programming interface / user interface providing access to the virtual resource management function
+- **Catalogue**: manages the collection of available templates for virtual resource the cloud infrastructure can provide
+- **Inventory**: manages the information related to virtual resources of a cloud infrastructure
+- **Scheduler**: receives requests via API/UI, provisions and manages virtual resources by coordinating the activities of the compute-, storage- and network resources managers
+- **Monitoring**: monitors and collects information on all events and the current state of all virtual resources
+- **Additional Management Functions**: include identity management, access management, policy management (e.g. to enforce security policies), etc.
+- **Compute Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware compute resources
+- **Storage Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware storage resources
+- **Network Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware network resources
 
 Hardware Infrastructure Layer
 -----------------------------
@@ -247,20 +247,20 @@ The resource allocation could be a simple book-keeping of which Virtualization I
 
 The hardware infrastructure manager allows to:
 
--  provision, manage, monitor and delete hardware resources
--  manage physical hardware resource discovery, monitoring and topology
--  manage hardware infrastructure telemetry and log collection services
+- provision, manage, monitor and delete hardware resources
+- manage physical hardware resource discovery, monitoring and topology
+- manage hardware infrastructure telemetry and log collection services
 
 The hardware infrastructure manager needs to support the following functional aspects:
 
--  **API/UI**: an application programming interface / user interface providing access to the hardware resource management functions
--  **Discovery**: discover physical hardware resources and collect relevant information about them
--  **Topology**: discover and monitor physical interconnection (e.g. cables) in between the physical hardware resources
--  **Equipment**: manages the physical hardware resources in terms of configuration, firmware status, health/fault status and autonomous environmental control functions such as fan and power conversion regulations
--  **Resource Allocation and Composition**: creates, modifies and deletes logical Compute, Network and Storage Resources through Composition of allocated physical hardware resources
--  **Underlay Network Resources Manager**: provides a mechanism to provision hardware resources and provide separation in between multiple Virtualization Infrastructure instances for the use of the underlay network (e.g. switch fabric, switches, SmartNICs)
--  **Monitoring**: monitors and collects information on events, current state and telemetry data of physical hardware resources, autonomous equipment control functions as well as Switch and Storage Fabric systems
--  **Additional Management Functions**: include software and configuration life cycle management, identity management, access management, policy management (e.g. to enforce security policies), etc.
+- **API/UI**: an application programming interface / user interface providing access to the hardware resource management functions
+- **Discovery**: discover physical hardware resources and collect relevant information about them
+- **Topology**: discover and monitor physical interconnection (e.g. cables) in between the physical hardware resources
+- **Equipment**: manages the physical hardware resources in terms of configuration, firmware status, health/fault status and autonomous environmental control functions such as fan and power conversion regulations
+- **Resource Allocation and Composition**: creates, modifies and deletes logical Compute, Network and Storage Resources through Composition of allocated physical hardware resources
+- **Underlay Network Resources Manager**: provides a mechanism to provision hardware resources and provide separation in between multiple Virtualization Infrastructure instances for the use of the underlay network (e.g. switch fabric, switches, SmartNICs)
+- **Monitoring**: monitors and collects information on events, current state and telemetry data of physical hardware resources, autonomous equipment control functions as well as Switch and Storage Fabric systems
+- **Additional Management Functions**: include software and configuration life cycle management, identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 Left for future use
 -------------------
@@ -279,40 +279,32 @@ Network Principles
 
 Principles that should be followed during the development and definition of the networking scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 
--  Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
+- Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
 
 ..
 
    **Note:** In deployment phases this principle may be applied in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementations of pipeline stages and available platforms. The network abstraction layer supports, for example, physical resources with or without programmable hardware acceleration, or programmable network switches
 
--  Agnosticism: Define Network Fabric concepts and models that can carry any type of traffic in terms of:
-
-   -  Control, User and Management traffic types
-   -  Acceleration technologies that can support multiple types of infrastructure deployments and network function workloads
-
--  Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workloads (VNF/CNF) onboarding.
-
--  Openness: All networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components such as SDN controllers.
-
--  Programmability: Network model enables a programmable forwarding plane controlled from a separately deployed control plane.
-
--  Scalability: Network model enables scalability to handle all traffic traverse North-South and East-West enabling small up to large deployments in a non-blocking manner.
-
--  Workload agnostic: Network model is capable of providing connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
-
--  Carrier Grade: Network model is capable of supporting deployments of the carrier grade workloads.
-
--  Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
+- Agnosticism: Define Network Fabric concepts and models that can carry any type of traffic in terms of:
+  - Control, User and Management traffic types
+  - Acceleration technologies that can support multiple types of infrastructure deployments and network function workloads
+- Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workloads (VNF/CNF) onboarding.
+- Openness: All networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components such as SDN controllers.
+- Programmability: Network model enables a programmable forwarding plane controlled from a separately deployed control plane.
+- Scalability: Network model enables scalability to handle all traffic traverse North-South and East-West enabling small up to large deployments in a non-blocking manner.
+- Workload agnostic: Network model is capable of providing connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
+- Carrier Grade: Network model is capable of supporting deployments of the carrier grade workloads.
+- Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
 
 Network Layering and Concepts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Cloud Infrastructure Networking Reference Model is an essential foundation that governs all Reference Architectures and Cloud Infrastructure implementations to enable multiple cloud infrastructure virtualisation technology choices and their evolution. These include:
 
--  Single Infrastructure as a Service (IaaS) based virtualisation instances with Virtual Machines (VM)
--  Multi IaaS based virtualisation instances
--  Cloud Native Container as a Service (CaaS) based virtualisation instances, and
--  Hybrid multi IaaS and CaaS based virtualisation instances
+- Single Infrastructure as a Service (IaaS) based virtualisation instances with Virtual Machines (VM)
+- Multi IaaS based virtualisation instances
+- Cloud Native Container as a Service (CaaS) based virtualisation instances, and
+- Hybrid multi IaaS and CaaS based virtualisation instances
 
 To retain the cloud paradigms of automation, scalability and usage of shared hardware resources when introducing CaaS instances it is necessary to enable an ability to co-deploy multiple simultaneous IaaS and CaaS instances on a shared pool of hardware resources.
 
@@ -320,17 +312,17 @@ Compute and Storage resources are rarely shared in between IaaS or CaaS instance
 
 Throughout this chapter and its figures a number of references to ETSI NFV are made and they explicitly are made towards the ETSI NFV models in the Architectural Framework:
 
--  ETSI GS NFV 002 V1.2.1 [3]
--  ETSI GR NFV-IFA 029 V3.3.1 [4]
+- ETSI GS NFV 002 V1.2.1 [3]
+- ETSI GR NFV-IFA 029 V3.3.1 [4]
 
 Cloud and Telco networking are layered, and it is very important to keep the dependencies between the layers low to enable security, separation and portability in between multiple implementations and generations.
 
 Before we start developing a deep model we need to agree on some foundational concepts and layering that allow decoupling of implementations in between the layers. We will emphasize four concepts in this section:
 
--  Underlay and Overlay Networking concepts
--  Hardware and Virtual Infrastructure Layer concepts
--  Software Defined Underlay and Overlay Networking concepts
--  Programmable Networking Fabric concept
+- Underlay and Overlay Networking concepts
+- Hardware and Virtual Infrastructure Layer concepts
+- Software Defined Underlay and Overlay Networking concepts
+- Programmable Networking Fabric concept
 
 Underlay and Overlay Networking Concepts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -465,8 +457,8 @@ Over the past few years there has been a significant move towards decomposing ne
 
 In order to support this capability in a sustainable manner, there is a need to have the capability to model service chains as a high level abstraction. This is essential to ensure that the underlying connection setup, and (re-)direction of traffic flows can be performed in an automated manner. At a very high level a service chain can be considered a directed acyclic graph with the composing network functions being the vertices. Building on top of this, a service chain can be modelled by defining two parameters:
 
--  An acyclic graph defining the service functions that need to be traversed for the service chain. This allows for multiple paths for a packet to traverse the service chain.
--  A set of packet/flow classifiers that determine what packets will enter and exit a given service chain
+- An acyclic graph defining the service functions that need to be traversed for the service chain. This allows for multiple paths for a packet to traverse the service chain.
+- A set of packet/flow classifiers that determine what packets will enter and exit a given service chain
 
 These capabilities need to be provided for both virtualised and containerised (cloud-native) network functions as there will be a need to support both of them for the foreseeable future. Since virtualised network functions have existed for a while there is existing, albeit partial, support for service chaining in virtualised environments in orchestration platforms like OpenStack. Container orchestration platforms such as Kubernetes don't support service chaining and may require development of new primitives in order to support advanced networking functions.
 
@@ -535,8 +527,8 @@ Creation of Service Function Chain
 
 The creation of the SFC might include design/preparation phase as:
 
--  The service functions that are included in the SFC.
--  The routing order in the service function, if the SFC is composed of more than one service function.
+- The service functions that are included in the SFC.
+- The routing order in the service function, if the SFC is composed of more than one service function.
 
 :numref:`Fig-3-12` shows SFC creation call flow, separated logically in two steps.
 
@@ -548,35 +540,32 @@ The creation of the SFC might include design/preparation phase as:
 
 1. Creation of service functions of SFC.
 
--  The flow of steps to enable the SFC creation can be as follows:
-
-   a. SFC orchestrator creates the SFs with help of VNF MANO or CNF MANO.
-   b. SFC Renderer attaches the SFC aware interfaces at SFs to enable Service plane
-   c. NFVO boots up the relevant SF configurations at SF.
-
+   - The flow of steps to enable the SFC creation can be as follows:
+     a. SFC orchestrator creates the SFs with help of VNF MANO or CNF MANO.
+     b. SFC Renderer attaches the SFC aware interfaces at SFs to enable Service plane
+     c. NFVO boots up the relevant SF configurations at SF.
       **Note:** These steps are optional, if SFC orchestrator discovers that SFs are already created and existing.
 
 2. Creation of Service Function Path (SFP) using the created SFs and associated interfaces.
 
--  A Service Function Path consists of:
+   - A Service Function Path consists of:
+     - A set of ports( in VNF environment) or interfaces ( in CNF environment) , that define the sequence of service functions
+     - A set of flow classifiers that specify the classified traffic flows entering the chain.
+   
+   - This step creates a new chain policy with chain rules. Chain rules can include the identifier of a traffic flow, service characteristics, the SFC identifier and related information to route the packets along the chain. Service characteristics can be application layer matching information (e.g., URL). Traffic flow identifier can be kind of traffic (e.g., Video, TCP, HTTP) flow need to be serviced. It can be specific Subscriber to apply service (e.g., parental control). The SFC identifier to steer the matched traffic along the SFP with SFC encapsulation.
 
-   -  A set of ports( in VNF environment) or interfaces ( in CNF environment) , that define the sequence of service functions
-   -  A set of flow classifiers that specify the classified traffic flows entering the chain.
-
--  This step creates a new chain policy with chain rules. Chain rules can include the identifier of a traffic flow, service characteristics, the SFC identifier and related information to route the packets along the chain. Service characteristics can be application layer matching information (e.g., URL). Traffic flow identifier can be kind of traffic (e.g., Video, TCP, HTTP) flow need to be serviced. It can be specific Subscriber to apply service (e.g., parental control). The SFC identifier to steer the matched traffic along the SFP with SFC encapsulation.
-
-   a. SFC orchestrator creates SFP with help of SDNC.
-   b. SDNC pushes the SFC traffic steering policies to SFF(s).
-   c. SFC classifier Policy provided for SFP to SFC classifier by SFC Controller. **Note:** not shown in call flow.
+     a. SFC orchestrator creates SFP with help of SDNC.
+     b. SDNC pushes the SFC traffic steering policies to SFF(s).
+     c. SFC classifier Policy provided for SFP to SFC classifier by SFC Controller. **Note:** not shown in call flow.
 
 Updating Service Function Chain
 '''''''''''''''''''''''''''''''
 
 SFP or SFC can be updated for various reasons and some of them are:
 
--  SFC controller monitors the SFP status and alerts SFC controller in case of not meeting SLA or some anomaly.
--  SFC design changes to update SF order, inclusion/removal of SFs
--  SFC Policy Rules changes
+- SFC controller monitors the SFP status and alerts SFC controller in case of not meeting SLA or some anomaly.
+- SFC design changes to update SF order, inclusion/removal of SFs
+- SFC Policy Rules changes
 
 Data Steering in Service Function Chain
 '''''''''''''''''''''''''''''''''''''''
@@ -589,11 +578,11 @@ Data Steering in Service Function Chain
 
    Data steering in Service Function Chain
 
--  SFC classifier detects the traffic flow based on classification policies. For example, to enable SGi-Lan feature as SFC, 5G User plane function (UPF) acts as SFC classifier. UPF receives the classification policies from 5G Policy control function (PCF) as traffic steering policies.
--  SFC classifier applies the SFC encapsulation (e.g., SCH, NSH) and routes traffic towards SFF, acts as entry point to SFP. The SFC Encapsulation provides, at a minimum, SFP identification, and is used by the SFC-aware functions, such as the SFF and SFC-aware SFs.
--  SFF based on SFC encapsulation routes the traffic to SF for service functionalities.
--  SF updates the SFC encapsulation based on its policies for further services.
--  At end of SFP, SFC encapsulation is removed and packet is routed out of SFP.
+- SFC classifier detects the traffic flow based on classification policies. For example, to enable SGi-Lan feature as SFC, 5G User plane function (UPF) acts as SFC classifier. UPF receives the classification policies from 5G Policy control function (PCF) as traffic steering policies.
+- SFC classifier applies the SFC encapsulation (e.g., SCH, NSH) and routes traffic towards SFF, acts as entry point to SFP. The SFC Encapsulation provides, at a minimum, SFP identification, and is used by the SFC-aware functions, such as the SFF and SFC-aware SFs.
+- SFF based on SFC encapsulation routes the traffic to SF for service functionalities.
+- SF updates the SFC encapsulation based on its policies for further services.
+- At end of SFP, SFC encapsulation is removed and packet is routed out of SFP.
 
 
 Time Sensitive Networking
@@ -618,10 +607,10 @@ Some Network functions, like vDU, of vRAN, also require `SyncE <http://www.itu.i
 
 SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommendations:
 
--  ITU-T Rec. G.8261 that defines aspects about the architecture and the wander performance of SyncE networks
--  ITU-T Rec. G.8262 that specifies Synchronous Ethernet clocks for SyncE
--  ITU-T Rec. G.8264 that describes the specification of Ethernet Synchronization Messaging Channel (ESMC)
-   SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY.
+- ITU-T Rec. G.8261 that defines aspects about the architecture and the wander performance of SyncE networks
+- ITU-T Rec. G.8262 that specifies Synchronous Ethernet clocks for SyncE
+- ITU-T Rec. G.8264 that describes the specification of Ethernet Synchronization Messaging Channel (ESMC)
+  SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY.
 
 Kubernetes Networking Semantics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -743,10 +732,10 @@ Where:
 
 - Storage Types - is how the storage is accessed and used, where:
 
-   - Platform Native - is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
-   - Shared File Storage - is storage that is accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
-   - Object Storage - is storage that is accessed via API interfaces (the most common example being HTTP restful services API), which support get/put of structured objects; and
-   - Archival - is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting legal requirements or other historical recording where the storage mechanism may go through multiple stages before landing at rest.
+  - Platform Native - is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
+  - Shared File Storage - is storage that is accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
+  - Object Storage - is storage that is accessed via API interfaces (the most common example being HTTP restful services API), which support get/put of structured objects; and
+  - Archival - is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting legal requirements or other historical recording where the storage mechanism may go through multiple stages before landing at rest.
 
 The storage model provides a relatively simple way for the storage consumer to specify / select their storage needs. This is shown in the following table which highlights key attributes and features of the storage classes and "epic use cases" for common usage patterns.
 
@@ -1065,17 +1054,17 @@ Application uses software library supporting hardware acceleration and running o
 
 Hardware Accelerators can be used as:
 
--  Virtualization Infrastructure layer acceleration: Example can be vSwitch, which can be leveraged agnostically by VNFs if standard host interfaces (like VirtIO) are used.
--  Application layer acceleration: Example of software library/framework (like DPDK) in VM providing Application level acceleration with (where available) hardware-abstracted APIs to access platform Hardware Acceleration and providing software equivalent libraries when hardware assist not available.
--  Hardware Infrastructure layer offload: Example can be an OOB managed underlay network separation providing network separation secured from host OS reach on any provisioned transport switch infrastructure.
+- Virtualization Infrastructure layer acceleration: Example can be vSwitch, which can be leveraged agnostically by VNFs if standard host interfaces (like VirtIO) are used.
+- Application layer acceleration: Example of software library/framework (like DPDK) in VM providing Application level acceleration with (where available) hardware-abstracted APIs to access platform Hardware Acceleration and providing software equivalent libraries when hardware assist not available.
+- Hardware Infrastructure layer offload: Example can be an OOB managed underlay network separation providing network separation secured from host OS reach on any provisioned transport switch infrastructure.
 
 Two levels of consumption are for underlay separation or overlay acceleration. Underlay Separation ensures that multiple different Virtualization Infrastructure instances are kept in separate underlay network access domains. Overlay Acceleration offloads Virtualization Infrastructure instance vSwitch/vRouter or virtual termination endpoints (for applications that bypass the Virtual Infrastructure Layer).
 
 Preferably, Application or Infrastructure acceleration can take benefit from underlying hardware acceleration and still be decoupled from it by using open multi-vendor API for Hardware Acceleration devices like for example:
 
--  For Linux IO virtualization: VirtIO
--  For Network Functions using DPDK libraries: Crypto Device, EthDev, Event Device and Base Band Device
--  For O-RAN Network functions: O-RAN Acceleration Abstraction Layer Interface.
+- For Linux IO virtualization: VirtIO
+- For Network Functions using DPDK libraries: Crypto Device, EthDev, Event Device and Base Band Device
+- For O-RAN Network functions: O-RAN Acceleration Abstraction Layer Interface.
 
 Example of O-RAN Acceleration Abstraction Layer Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1089,9 +1078,9 @@ O-RAN Alliance’s Cloudification and Orchestration Workgroup (WG6) defines the 
 
 The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” (O-RAN.WG6.AAL-GAnP-v01.00, November 2020, available to the public upon agreement to the O-RAN Alliance Adopter License, from `https://www.o-ran.org <https://www.o-ran.org>`__):
 
--  Describes the functions conveyed over the AAL interface, including configuration and management functions.
--  Identifies the requirements as well as general procedures and operations.
--  Introduces the initial set of the O-DU/O-CU AAL profiles.
+- Describes the functions conveyed over the AAL interface, including configuration and management functions.
+- Identifies the requirements as well as general procedures and operations.
+- Introduces the initial set of the O-DU/O-CU AAL profiles.
 
 Workload Placement
 ~~~~~~~~~~~~~~~~~~
@@ -1178,14 +1167,14 @@ Taking advantage of RM and RA environments with common capabilities, application
 Infrastructure:
 ^^^^^^^^^^^^^^^
 
--  a) Application functionality or application control requires infrastructure components beyond RM profiles or infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled with the infrastructure which results in an Appliance deployment model (see :ref:`common/glossary:cloud platform abstraction related terminology:`).
--  b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure components that make application work. Example is an application that to achieve latency requirements needs certain hardware acceleration available in RM profile and is exposed through APIs specified by RA.
--  c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure component(s) that make application work better (like more performant) than without that infrastructure component. Example is an application that would have better cost/performance with certain acceleration adapter but can also work without it.
--  d) Application control using APIs specified by RA finds general profile nodes without any specific infrastructure components.
+- a) Application functionality or application control requires infrastructure components beyond RM profiles or infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled with the infrastructure which results in an Appliance deployment model (see :ref:`common/glossary:cloud platform abstraction related terminology:`).
+- b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure components that make application work. Example is an application that to achieve latency requirements needs certain hardware acceleration available in RM profile and is exposed through APIs specified by RA.
+- c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure component(s) that make application work better (like more performant) than without that infrastructure component. Example is an application that would have better cost/performance with certain acceleration adapter but can also work without it.
+- d) Application control using APIs specified by RA finds general profile nodes without any specific infrastructure components.
 
 Platform Services:
 ^^^^^^^^^^^^^^^^^^
 
--  a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that brings its own Load Balancer.
--  b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
--  c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
+- a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that brings its own Load Balancer.
+- b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
+- c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
