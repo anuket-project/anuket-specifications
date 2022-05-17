@@ -735,52 +735,52 @@ Figure 4-5: Indicative OpenStack Network Layout
    * - Provisioning & Management
      - Initial OS bootstrapping of the servers via PXE, deployment of software
        and thereafter for access from within the control plane.
-     - Security Domain: Management
-       | Externally Routable: No
-       | Connected to: All nodes
+     -   - Security Domain: Management
+         - Externally Routable: No
+         - Connected to: All nodes
    * - Internal API
      - Intra-OpenStack service API communications, messaging, and database replication
-     - Security Domain: Management
-       | Externally Routable: No
-       | Connected to: All nodes except foundation
+     -   - Security Domain: Management
+         - Externally Routable: No
+         - Connected to: All nodes except foundation
    * - Storage Management
      - Backend connectivity between storage nodes for heartbeats, data object replication and synchronisation
-     - Security Domain: Storage
-       | Externally Routable: No
-       | Connected to: All nodes except foundation
+     -   - Security Domain: Storage
+         - Externally Routable: No
+         - Connected to: All nodes except foundation
    * - Storage Front-end
      - Block/Object storage access via cinder/swift
-     - Security Domain: Storage
-       | Externally Routable: No
-       | Connected to: All nodes except foundation
+     -   - Security Domain: Storage
+         - Externally Routable: No
+         - Connected to: All nodes except foundation
    * - Tenant
      - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918 re-usable private networks as controlled
        by cloud administrator
-     - Security Domain: Underlay
-       | Externally Routable: No
-       | Connected to: controllers and computes
+     -   - Security Domain: Underlay
+         - Externally Routable: No
+         - Connected to: controllers and computes
    * - External API
      - Hosts the public OpenStack API endpoints including the dashboard (Horizon)
-     - Security Domain: Public
-       | Externally routable: Yes
-       | Connected to: controllers
+     -   - Security Domain: Public
+         - Externally routable: Yes
+         - Connected to: controllers
    * - External Provider (FIP)
      - Network with a pool of externally routable IP addresses used by neutron routers to NAT to/from the tenant RFC1918
        private networks
-     - Security Domain: Data Centre
-       | Externally routable: Yes
-       | Connected to: controllers, OVS computes
+     -   - Security Domain: Data Centre
+         - Externally routable: Yes
+         - Connected to: controllers, OVS computes
    * - External Provider (VLAN)
      - External Data Centre L2 networks (VLANs) that are directly accessible to the project.
-       | Note: External IP address management is required
-     - Security Domain: Data Centre
-       | Externally routable: Yes
-       | Connected to: OVS DPDK computes
+         Note: External IP address management is required
+     -   - Security Domain: Data Centre
+         - Externally routable: Yes
+         - Connected to: OVS DPDK computes
    * - IPMI / Out of Band
      - The remote “lights-out” management port of the servers e.g., iLO, IDRAC / IPMI / Redfish
-     - Security Domain: Management
-       | Externally routable: No
-       | Connected to: IPMI port on all servers
+     -   - Security Domain: Management
+         - Externally routable: No
+         - Connected to: IPMI port on all servers
 
 A VNF application network topology is expressed in terms of servers,
 vNIC interfaces with vNet access networks, and WAN Networks while the
@@ -1393,23 +1393,23 @@ set up the flavors as specified in the tables below.
    * - NUMA Awareness
      - infra.com.cfg.002
      -
-     - In flavor create or flavor set specify –property hw:numa_nodes=<integer
-       range of 0 to #numa_nodes – 1>.
-       | To restrict an instance’s vCPUs to a
-       single host NUMA node, specify: –property hw:numa_nodes=1.
-       | Some compute intensive* workloads with highly sensitive memory latency
-       or bandwidth requirements, the instance may benefit from spreading
-       across multiple NUMA nodes: –property hw:numa_nodes=2
+     -   - In flavor create or flavor set specify –property hw:numa_nodes=<integer
+           range of 0 to #numa_nodes – 1>.
+         - To restrict an instance’s vCPUs to a
+           single host NUMA node, specify: –property hw:numa_nodes=1.
+         - Some compute intensive* workloads with highly sensitive memory latency
+           or bandwidth requirements, the instance may benefit from spreading
+           across multiple NUMA nodes: –property hw:numa_nodes=2
    * - CPU Pinning
      - infra.com.cfg.003
      - In flavor create or flavor set specify –property hw: cpu_policy=shared
        (default)
-     - In flavor create or flavor set specify –property
-       hw:cpu_policy=dedicated and –property hw:cpu_thread_policy=<prefer,
-       require, isolate>.
-       | Use “isolate” thread policy for very high
-       compute intensive workloads that require that each vCPU be placed on a
-       different physical core
+     -   - In flavor create or flavor set specify –property
+           hw:cpu_policy=dedicated and –property hw:cpu_thread_policy=<prefer,
+           require, isolate>.
+         - Use “isolate” thread policy for very high
+           compute intensive workloads that require that each vCPU be placed on a
+           different physical core
    * - Huge pages
      - infra.com.cfg.004
      -
@@ -1432,7 +1432,7 @@ set up the flavors as specified in the tables below.
      - infra.hw.nic.cfg.002
      - –property quota vif_inbound_average=1310720 and
        vif_outbound_average=1310720.
-       | Note:10 Gbps = 1250000 kilobytes per second
+         Note:10 Gbps = 1250000 kilobytes per second
      - –property quota vif_inboundaverage=3125000 and
        vif_outbound_average=3125000 Note: 25 Gbps = 3125000 kilobytes per second
 
