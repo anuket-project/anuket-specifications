@@ -213,7 +213,7 @@ As outlined in section "8.2.2 Telco Cloud" the result is that the future CSP "ne
 
 So as a consumer and provider of Cloud Services the CSP will continue to need to build and manage it own Cloud Infrastructure as well as provide network orchestration solution to management interconnectivity across its own and other Cloud Providers. The interactions for this are outlined in the "Multi-Cloud Interactions Model", however to realise this the CSP will need to adopt and sponsor a set of standards that are nessasary to support the interactions.
 
-The follow summary table aims to identify what standards and/or technologies that are seen are applicable.
+The following summary table aims to identify the applicable standards and/or technologies.
 
 The criteria for inclusion are
 -  Provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
