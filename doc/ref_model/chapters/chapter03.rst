@@ -658,7 +658,7 @@ across both large data-centres and small edge deployments; the model can then be
 
    General Cloud Storage Model
 
-Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). The objective of the model and set of stereotypes and perspectives is to provide guideance to architects and immplementors in establishing storage solutions for Cloud Infrastructure.
+Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). The objective of the model (and set of stereotypes and perspectives) is to provide guideance to architects and immplementors in establishing storage solutions for Cloud Infrastructure.
 
 The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 
@@ -710,7 +710,7 @@ Successful management of Cloud Infrastructure requires high levels of automation
 
 To provide PXE boot service to the underlying resource hosts, the PXE server must be connected to the same network as the NIC that is configured for PXE boot. The "Infrastructure Automation - PXE Server" stereotype is also applicable to booting tenant Virtual Machines. In this case the PXE server is on the same network as one of the machines vNICs. For tenant use this is provided as part of tenant consumable boot infrastructure services.
 
-For each of the defined stereotypes, the storage service uses physical Block storage for boot (Physical Layer - Block Consumption -> OS File Systems Exposure (1) on stereotype diagrams). This is the primary use case for use of in chassis physical storage, that is not being used for consumption and exposure as network-based storage. In general it is desirable to use network based storage solution for provision of Cloud Infrastructure storage. The "Infrastructure Automation - PXE Server" is an exception to preference for use use of network based storage, as it is managing the bootstrap process, so it cannot be dependent on a separate storage system for maintaining its image cache.
+For each of the defined stereotypes, the storage service uses physical Block storage for boot (Physical Layer - Block Consumption -> OS File Systems Exposure (1) on stereotype diagrams). This is the primary use case for use of in-chassis physical storage, that is not being used for consumption and exposure as network-based storage. In general it is desirable to use network based storage solution for provision of Cloud Infrastructure storage. The "Infrastructure Automation - PXE Server" is an exception to preference for use use of network based storage, as it is managing the bootstrap process, so it cannot be dependent on a separate storage system for maintaining its image cache.
 
 Storage for Tenant Consumption
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -814,7 +814,12 @@ Where:
 
 **Table 3-9:** Storage Use Cases and Stereotypes
 
-The storage sub-system is a foundational part of any Cloud Infrastructure, as such it is important to identify the storage needs, based on target tenant use cases, at inception. This will allow the right set of considerations to be addressed for the deployment. A set of typical considerations is provided for various use cases to meet functional and performance needs and to avoid the need for signifiant rework of the storage solution and its likely ripple through impact on the broader Cloud Infrastructure. The considerations will help to guide the build and deployment of the Storage solution for the various Use Cases and Stereotypes outlined in the summary table.
+The storage sub-system is a foundational part of any Cloud Infrastructure, as such it is important to identify the storage needs, based on target tenant use cases, at inception. This will allow the right set of considerations to be addressed for the deployment. A set of typical considerations is provided:
+
+- for various use cases to meet functional and performance needs and
+- to avoid the need for signifiant rework of the storage solution and the likely ripple through impact on the broader Cloud Infrastructure.
+
+The considerations will help to guide the build and deployment of the Storage solution for the various Use Cases and Stereotypes outlined in the summary table.
 
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Use Case                | Description                                                                                                                             |
@@ -953,7 +958,7 @@ The storage sub-system is a foundational part of any Cloud Infrastructure, as su
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Meets Needs of          | Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control)                             |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
-|                         | Cloud Infastructure Tenant / User Plane - limited configuration storage                                                                 |
+|                         | Cloud Infastructure Tenant / User Plane - limited configuration storage                                                               |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
@@ -974,8 +979,8 @@ The storage sub-system is a foundational part of any Cloud Infrastructure, as su
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Specific Considerations | In selecting a particular stereotype/technology this can bring with it considerations that are specific to this choice                  |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
-| Embedded Shared File    |                                                                                                                                         |
-| Storage                 |                                                                                                                                         |
+| Embedded Shared File    |  What is the best way to achieve some level of data resilence, while minimising required infrastrucxture? (i.e do not have luxury of    |
+| Storage                 |  of having host (vms) deceidated to supporting storage control and storage data needs)                                                  |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 
 The General Storage Model illustrates that at the bottom of any storage solution there is always the physical storage layer and a storage operating system of some sort. In Cloud Infrastructure enviroment what is generally consumed is some form of network storage which can be provided by the:
