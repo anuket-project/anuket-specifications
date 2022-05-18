@@ -803,8 +803,8 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   | lm_chart_vali    |                |
 |           |                  |                                                   | d>`__            |                |
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
-|ra2.app.014| Rolling update   | The CNF must be able to perform a rolling update  | `CNCF CNF        | N/A            |
-|           |                  | using Kubernetes deployments.                     | Testsuite        |                |
+|ra2.app.014| Rolling update   | Rolling update of the CNF must be possible using  | `CNCF CNF        | N/A            |
+|           |                  | Kubernetes deployments.                           | Testsuite        |                |
 |           |                  |                                                   | <https://github. |                |
 |           |                  |                                                   | com/cncf/cnf-tes |                |
 |           |                  |                                                   | tsuite/blob/main |                |
@@ -814,8 +814,8 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   | olling-update-ro |                |
 |           |                  |                                                   | lling_update>`__ |                |
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
-|ra2.app.015| Rolling          | The CNF must be able to perform a rolling         | `CNCF CNF        | N/A            |
-|           | downgrade        | downgrade using Kubernetes deployments.           | Testsuite        |                |
+|ra2.app.015| Rolling          | Rolling downgrade of the CNF must be possible     | `CNCF CNF        | N/A            |
+|           | downgrade        | using Kubernetes deployments.                     | Testsuite        |                |
 |           |                  |                                                   | <https://github. |                |
 |           |                  |                                                   | com/cncf/cnf-tes |                |
 |           |                  |                                                   | tsuite/blob/main |                |
@@ -839,8 +839,8 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   | nis-cni_compatib |                |
 |           |                  |                                                   | ility>`__        |                |
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
-|ra2.app.017| API stability    | The CNF must not use any Kubernetes alpha API-s.  | `CNCF CNF        | N/A            |
-|           |                  |                                                   | Testsuite        |                |
+|ra2.app.017| Kubernetes API   | The CNF must not use any Kubernetes alpha API-s.  | `CNCF CNF        | N/A            |
+|           | stability        |                                                   | Testsuite        |                |
 |           |                  |                                                   | <https://github. |                |
 |           |                  |                                                   | com/cncf/cnf-tes |                |
 |           |                  |                                                   | tsuite/blob/main |                |
@@ -1121,11 +1121,11 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   | d-resource_polic |                |
 |           |                  |                                                   | ies>`__          |                |
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
-|ra2.app.041| Read only        | It is recommended that the containers of the CNF  | `CNCF CNF        | N/A            |
-|           | filesystem       | have read only filesystem. The                    | Testsuite        |                |
-|           |                  | `readOnlyRootFilesystem` attribute of the Pods in | <https://github. |                |
-|           |                  | the their `securityContext` should be set to      | com/cncf/cnf-tes |                |
-|           |                  | true.                                             | tsuite/blob/main |                |
+|ra2.app.041| Read only        | All containers of the CNF must have a read only   | `CNCF CNF        | N/A            |
+|           | filesystem       | filesystem. The `readOnlyRootFilesystem`          | Testsuite        |                |
+|           |                  | attribute of the Pods in the their                | <https://github. |                |
+|           |                  | `securityContext` should be set to true.          | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
 |           |                  |                                                   | /RATIONALE.md#to |                |
 |           |                  |                                                   | -check-if-contai |                |
 |           |                  |                                                   | ners-have-immuta |                |
