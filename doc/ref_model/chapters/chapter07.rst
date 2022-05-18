@@ -760,7 +760,7 @@ component should have its SBOM including,  as a baseline, the information descri
 **Table 7-2 **: SBOM Data Fields components, source `NTIA <https://www.ntia.doc.gov/files/ntia/publications/\
 sbom_minimum_elements_report.pdf>`_
 
-Refer to the document for more details on each data field. Examples of commonly used identifiers are provided.
+Refer to the NTIA SBOM document for more details on each data field. Examples of commonly used identifiers are provided.
 
 In order to use SBOMs efficiently and spread their adoption, information must be generated and shared in a standard 
 format. This format must be machine-readable to allow automation. Proprietary formats should not be used. 
