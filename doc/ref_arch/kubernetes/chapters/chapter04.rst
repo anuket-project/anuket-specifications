@@ -775,7 +775,7 @@ Architecture they must be implemented as per the following specifications:
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
 |ra2.app.011| Horizontal       | Increasing and decreasing of the CNF capacity     | TBD              | N/A            |
 |           | scaling          | should be implemented using horizontal scaling.   |                  |                |
-|           |                  | If horizontal scaling is supported automatic      |                  |                |
+|           |                  | If horizontal scaling is supported, automatic     |                  |                |
 |           |                  | scaling must be possible using Kubernetes         |                  |                |
 |           |                  | `Horizontal Pod Autoscale (HPA) <https://kubernet |                  |                |
 |           |                  | es.io/docs/tasks/run-application/horizontal-pod-a |                  |                |
