@@ -211,20 +211,20 @@ The table below specifies a set of requirements for the Load Balancer platform s
 | pas.lb.012 | The Load Balancer must support load-balancing and      |                                             |
 |            | correct handling of fragmented packets                 |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.013 | The Load Balancer should support state-full SCTP       |                                             |
+| pas.lb.013 | The Load Balancer may support state-full SCTP          |                                             |
 |            | load-balancing                                         |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.014 | The Load Balancer should support state-full M-TCP      |                                             |
+| pas.lb.014 | The Load Balancer may support state-full M-TCP         |                                             |
 |            | load-balancing                                         |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.015 | The Load Balancer should support Level 7               | OSI Level 7 (application characteristics    |
+| pas.lb.015 | The Load Balancer may support Level 7                  | OSI Level 7 (application characteristics    |
 |            | load balancing                                         | based) should support HTTP and HTTPS        |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.016 | The L7 Load Balancer should support HTTP2              |                                             |
+| pas.lb.016 | The L7 Load Balancer may support HTTP2                 |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.017 | The L7 Load Balancer should support HTTP3              |                                             |
+| pas.lb.017 | The L7 Load Balancer may support HTTP3                 |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.018 | The L7 Load Balancer should support QUIC               |                                             |
+| pas.lb.018 | The L7 Load Balancer may support QUIC                  |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
 **Table 5-7b:** Platform Services - Load Balancer Requirements.
 
