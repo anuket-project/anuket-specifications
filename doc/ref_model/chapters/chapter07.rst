@@ -724,7 +724,7 @@ and it provides assurance of the source and integrity of components. To achieve 
 a shared model must be supported by industry. This is the goal of the work performed by the US Department of Commerce 
 and the National Telecommunications and Information administration (NTIA) and published, in July 2021, in the report 
 `“The Minimum Elements for a Software Bill of Materials (SBOM)” <https://www.ntia.doc.gov/files/ntia/publications/sbom_\
-minimum_elements_report.pdf>`_. The document gives guidance and describes sets the minimum elements for the SBOM, as 
+minimum_elements_report.pdf>`_ in July 2021. The document gives guidance and specifies the minimum elements for the SBOM, as 
 a starting point. 
 
 A piece of software can be modeled as a hierarchical tree with components and subcomponents, each 
