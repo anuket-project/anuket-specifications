@@ -720,7 +720,7 @@ establish an SBOM and provides SBOM standard data formats. In case of vulnerabil
 SBOM inventory is an effective means to identify the impacted component and provide remediation.
 
 A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management 
-and it provides assurance of the source and integrity of components. To achieve and take benefit of this transparency, 
+and it provides assurance of the source and integrity of components. To achieve and benefit from this transparency, 
 a shared model must be supported by industry. This is the goal of the work performed by the USA department of commerce 
 and the National Telecommunications and Information administration (NTIA) and published, in July 2021, in the report 
 `“The Minimum Elements for a Software Bill of Materials (SBOM)” <https://www.ntia.doc.gov/files/ntia/publications/sbom_\
