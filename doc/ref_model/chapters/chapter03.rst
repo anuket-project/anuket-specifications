@@ -286,6 +286,7 @@ Principles that should be followed during the development and definition of the 
    **Note:** In deployment phases this principle may be applied in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementations of pipeline stages and available platforms. The network abstraction layer supports, for example, physical resources with or without programmable hardware acceleration, or programmable network switches
 
 - Agnosticism: Define Network Fabric concepts and models that can carry any type of traffic in terms of:
+
   - Control, User and Management traffic types
   - Acceleration technologies that can support multiple types of infrastructure deployments and network function workloads
 - Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workloads (VNF/CNF) onboarding.
@@ -828,9 +829,9 @@ The considerations will help to guide the build and deployment of the Storage so
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Meets Needs of          | Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control)                             |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
-|                         | Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation)               |
+|                         | Cloud Infrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation)               |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
-|                         | Cloud Infastructure Tenant / User Plane                                                                                                 |
+|                         | Cloud Infrastructure Tenant / User Plane                                                                                                 |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | General Considerations  | What are the general considerations, irrespective of the deployment stereotype/technology used in storage sub-system ?                  |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
@@ -915,7 +916,7 @@ The considerations will help to guide the build and deployment of the Storage so
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Meets Needs of          | Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control)                             |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
-|                         | Cloud Infrastrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation)               |
+|                         | Cloud Infrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation)               |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
 |                         | Cloud Infastructure Tenant / User Plane                                                                                                 |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
@@ -947,7 +948,7 @@ The considerations will help to guide the build and deployment of the Storage so
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Meets Needs of          | Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control)                             |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
-|                         | Cloud Infastructure Tenant / User Plane - very limited configuration storage                                                            |
+|                         | Cloud Infrastructure Tenant / User Plane - very limited configuration storage                                                            |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
