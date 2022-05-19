@@ -741,8 +741,8 @@ Architecture they must be implemented as per the following specifications:
 |           | r>`__ Parameter  |                                                   |                  |                |
 |           | Group (OCI Spec) |                                                   |                  |                |
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
-|ra2.app.006| Consumption of   | The workload must request additional non-default  | `req.int.api.01  | N/A            |
-|           | additional,      | connection points through the use of workload     | <chapter02.md#ku |                |
+|ra2.app.006| Consumption of   | Any additional non-default connection points must | `req.int.api.01  | N/A            |
+|           | additional,      | be requested through the use of workload          | <chapter02.md#ku |                |
 |           | non-default      | annotations or resource requests and limits       | bernetes-archite |                |
 |           | connection       | within the container spec passed to the           | cture-requiremen |                |
 |           | points           | Kubernetes API Server.                            | ts>`__           |                |
@@ -888,7 +888,7 @@ Architecture they must be implemented as per the following specifications:
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
 |ra2.app.021| CNF resiliency   | CNF must not loose data, must continue to run and | `CNCF CNF        | N/A            |
 |           | (network         | its readiness probe outcome must be Success even  | Testsuite        |                |
-|           | latency)         | in case of network latency occurs.                | <https://github. |                |
+|           | latency)         | in case of network latency up to 2000 ms occurs.  | <https://github. |                |
 |           |                  |                                                   | com/cncf/cnf-tes |                |
 |           |                  |                                                   | tsuite/blob/main |                |
 |           |                  |                                                   | /RATIONALE.md#te |                |
