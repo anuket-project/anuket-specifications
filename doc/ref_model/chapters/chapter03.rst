@@ -1178,7 +1178,7 @@ The considerations will help to guide the build and deployment of the Storage so
 |    | can bring with it considerations that are specific to this choice             |
 +----+----+----+----------+----------------------------------------------------------+
 |    | Converged Software Defined Storage                                            |
-|----+----+----+----------+----------------------------------------------------------+
++----+----+----+----------+----------------------------------------------------------+
 |         | 1  | Leverage same technology as "Dedicated Software-Defined Storage"    |
 |         |    | scenarios, but on converged infrastructure. To meet capacity needs  |
 |         |    | provision three hosts for storage and the rest for virtual          |
