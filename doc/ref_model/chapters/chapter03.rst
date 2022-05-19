@@ -684,6 +684,7 @@ The creation of the SFC might include design/preparation phase as:
 1. Creation of service functions of SFC.
 
    - The flow of steps to enable the SFC creation can be as follows:
+   
      a. SFC orchestrator creates the SFs with help of VNF MANO or CNF MANO.
      b. SFC Renderer attaches the SFC aware interfaces at SFs to enable Service plane
      c. NFVO boots up the relevant SF configurations at SF.
@@ -692,6 +693,7 @@ The creation of the SFC might include design/preparation phase as:
 2. Creation of Service Function Path (SFP) using the created SFs and associated interfaces.
 
    - A Service Function Path consists of:
+   
      - A set of ports( in VNF environment) or interfaces ( in CNF environment) , that define the sequence of service functions
      - A set of flow classifiers that specify the classified traffic flows entering the chain.
    
