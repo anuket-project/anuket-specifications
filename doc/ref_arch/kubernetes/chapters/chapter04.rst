@@ -898,7 +898,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   | s-pod_network_la |                |
 |           |                  |                                                   | tency>`__        |                |
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
-|ra2.app.022| CNF resiliency   | CNF must not loose data, must continue to run and | `CNCF CNF        | N/A            |
+|ra2.app.022| CNF resiliency   | CNF must not lose data, must continue to run and  | `CNCF CNF        | N/A            |
 |           | (disk fill)      | its readiness probe outcome must be Success even  | Testsuite        |                |
 |           |                  | in case of disk fill occurs.                      | <https://github. |                |
 |           |                  |                                                   | com/cncf/cnf-tes |                |
