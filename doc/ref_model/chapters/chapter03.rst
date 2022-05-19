@@ -1179,15 +1179,16 @@ The considerations will help to guide the build and deployment of the Storage so
 +----+----+----+----------+----------------------------------------------------------+
 |    | Converged Software Defined Storage                                            |
 |----+----+----+----------+----------------------------------------------------------+
-|    | 1  | Leverage same technology as "Dedicated Software-Defined Storage"         |
-|    |    | scenarios, but on converged infrastructure. To meet capacity needs       |
-|    |    | provision three hosts for storage and the rest for virtual infrastructure|
-|    |    | and storage control and management and tenant workload hosting.          |
-|    +----+----+----------+----------------------------------------------------------+
-|    | 2  | If the solution needs to host two clusters/availability zones then have  |
-|    |    | sharable storage instances.                                              |
-|    +----+----+----------+----------------------------------------------------------+
-|    | 3  | Resilience through rapid rebuild (N + 0 or N + 1)                        |
+|         | 1  | Leverage same technology as "Dedicated Software-Defined Storage"    |
+|         |    | scenarios, but on converged infrastructure. To meet capacity needs  |
+|         |    | provision three hosts for storage and the rest for virtual          |
+|         |    | infrastructure and storage control and management and tenant        |
+|         |    | workload hosting.                                                   |
+|         +----+----------+----------------------------------------------------------+
+|         | 2  | If the solution needs to host two clusters/availability zones then  |
+|         |    | have sharable storage instances.                                    |
+|         +----+----------+----------------------------------------------------------+
+|         | 3  | Resilience through rapid rebuild (N + 0 or N + 1)                   |
 +----+----+----+----------+----------------------------------------------------------+
 | **Edge Cloud for App**  | Support the deployment of Applications at the edge, which|
 | **Storage**             | tend to have greater storage needs than a network VNF/CNF|
@@ -1229,10 +1230,10 @@ The considerations will help to guide the build and deployment of the Storage so
 |    +----+----+----------+----------------------------------------------------------+
 |    | Embedded Shared File Storage                                                  |
 +----+----+----+----------+----------------------------------------------------------+
-|    | 1  | What is the best way to achieve some level of data resilence, while      |
-|    |    | minimising required infrastrucxture? (i.e do not have luxury of having   |
-|    |    | host (VMs) deceidated to supporting storage control and storage data     |
-|    |    | needs)                                                                   |
+|         | 1  | What is the best way to achieve some level of data resilence, while |
+|         |    | minimising required infrastrucxture? (i.e do not have luxury of     |
+|         |    | having host (VMs) deceidated to supporting storage control and      |
+|         |    | storage data needs)                                                 |
 +----+----+----+----------+----------------------------------------------------------+
 
 The General Storage Model illustrates that at the bottom of any storage solution there is always the physical storage layer and a storage operating system of some
