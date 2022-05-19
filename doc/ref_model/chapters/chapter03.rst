@@ -1297,7 +1297,7 @@ The considerations will help to guide the build and deployment of the Storage so
 |    | Specific Considerations: In selecting a particular stereotype/technology this |
 |    | can bring with it considerations that are specific to this choice             |
 +----+----+----+----------+----+-----------------------------------------------------+
-|    | Small Software Defined Storage                                                |
+|    |Small Software Defined Storage                                                 |
 +----+----+----+----------+----+-----------------------------------------------------+
 |         | 1  | Leverage same technology as "Dedicated Software Defined Storage"    |
 |         |    | scenarios, but avoid/limit Infrastructure boot and Management plane |
@@ -1341,16 +1341,17 @@ The considerations will help to guide the build and deployment of the Storage so
 |    | Specific Considerations: In selecting a particular stereotype/technology this |
 |    | can bring with it considerations that are specific to this choice             |
 +----+----+----+----------+----+-----------------------------------------------------+
-| **Converged Software**  | Leverage same technology as "Dedicated Software-Defined  |
-| **Defined Storage**     | Storage" scenarios, but on converged infrastructure. To  |
-|                         | meet capacity needs provision three hosts for storage and|
-|                         | the rest for virtual infrastructure and storage control  |
-|                         | and management and tenant workload hosting.              |
-|                         +----+-----------------------------------------------------+
-|                         | If the solution needs to host two clusters / availability|
-|                         | zones then have sharable storage instances.              |
-|                         +----+-----------------------------------------------------+
-|                         | Resilience through rapid rebuild (N + 0 or N + 1)        |
+|    | Converged Software Defined Storage                                            |
+|----+----+----+----------+----+-----------------------------------------------------+
+|    | 1  | Leverage same technology as "Dedicated Software-Defined Storage"         |
+|    |    | scenarios, but on converged infrastructure. To meet capacity needs       |
+|    |    | provision three hosts for storage and the rest for virtual infrastructure|
+|    |    | and storage control and management and tenant workload hosting.          |
+|    +----+----+----------+----+-----------------------------------------------------+
+|    | 2  | If the solution needs to host two clusters/availability zones then have  |
+|    |    | sharable storage instances.                                              |
+|    +----+----+----------+----+-----------------------------------------------------+
+|    | 3  | Resilience through rapid rebuild (N + 0 or N + 1)                        |
 +----+----+----+----------+----+-----------------------------------------------------+
 | **Edge Cloud for App**  | Support the deployment of Applications at the edge, which|
 | **Storage**             | tend to have greater storage needs than a network VNF/CNF|
@@ -1380,24 +1381,23 @@ The considerations will help to guide the build and deployment of the Storage so
 |    |                    | Cloud Infrastructure Tenant / User Plane - Media Content |
 |    |                    | storage                                                  |
 |    +----+----+----------+----+-----------------------------------------------------+
-|    | General Considerations: What are the general considerations,            |
-|    | irrespective of the deployment stereotype/technology used in the storage|
-|    | sub-system?                                                             |
-|    +----+----+----------+----+-----------------------------------------------+
-|    | 1  | Consuming and exposing Object storage through                      |
-|    |    | Tenant application                                                 |
-|    +----+----+----------+----+-----------------------------------------------+
-|    | 2  | Use Embedded Shared File Storage for Control                       |
-|    |    | and Tenant Storage Needs                                           |
-|    +----+----+----------+----+-----------------------------------------------+
-|    | Specific Considerations: In selecting a particular                      |
-|    | stereotype/technology this can bring with it                            |
-|    | considerations that are specific to this choice                         |
-|    +----+----+----------+----+-----------------------------------------------+
-|    | 1  | Embedded Shared File Storage                                       |
-+----+----+----+----------+----+-----------------------------------------------+
-
-
+|    | General Considerations: What are the general considerations, irrespective of  |
+|    | the deployment stereotype/technology used in the storage sub-system?          |
+|    +----+----+----------+----+-----------------------------------------------------+
+|    | 1  | Consuming and exposing Object storage through Tenant application         |
+|    +----+----+----------+----+-----------------------------------------------------+
+|    | 2  | Use Embedded Shared File Storage for Control and Tenant Storage Needs    |
+|    +----+----+----------+----+-----------------------------------------------------+
+|    | Specific Considerations: In selecting a particular stereotype/technology this |
+|    | can bring with it considerations that are specific to this choice             |
+|    +----+----+----------+----+-----------------------------------------------------+
+|    | Embedded Shared File Storage                                                  |
++----+----+----+----------+----+-----------------------------------------------------+
+|    | 1  | What is the best way to achieve some level of data resilence, while      |
+|    |    | minimising required infrastrucxture? (i.e do not have luxury of having   |
+|    |    | host (VMs) deceidated to supporting storage control and storage data     |
+|    |    | needs)                                                                   |
++----+----+----+----------+----+-----------------------------------------------------+
 
 The General Storage Model illustrates that at the bottom of any storage solution there is always the physical storage layer and a storage operating system of some
 sort. In Cloud Infrastructure enviroment what is generally consumed is some form of network storage which can be provided by the:
