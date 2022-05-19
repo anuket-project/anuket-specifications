@@ -1692,50 +1692,90 @@ is by that the preferred usage method.
 
 Simple SmartNICs direct usage by the application tenant (VNF or CNF), where it acts as a dedicated accelerator appliance, require the application tenant to manage
 loading and the function that is loaded in the SmartNIC as well as any interface to the offloaded network functions. Such deployment is similar to the NIC PCI
-Pass-Through in that it bypasses the Virtualization Infrastructure layer’s virtual switching, which require all network encapsulation, mapping and separation to be done by the underlay network, often by manual provisioning and therefore is not a preferred usage method.
+Pass-Through in that it bypasses the Virtualization Infrastructure layer’s virtual switching, which require all network encapsulation, mapping and separation to be
+done by the underlay network, often by manual provisioning and therefore is not a preferred usage method.
 
 DPU
 ^^^
 
-The DPU can accelerate software infrastructure functions (vSwitch/vRouter) from the main CPU and simultaneously offer networking services e.g. load balancers, firewalls and application tenant offload functions. Through Out of band management it can also ensure underlay separation and map a selected part of the underlay network to the specific Virtualization Infrastructure instance that the server it is mounted on requires allowing them to be used on any statically provisioned underlay network.
+The DPU can accelerate software infrastructure functions (vSwitch/vRouter) from the main CPU and simultaneously offer networking services e.g. load balancers,
+firewalls and application tenant offload functions. Through Out of band management it can also ensure underlay separation and map a selected part of the underlay
+network to the specific Virtualization Infrastructure instance that the server it is mounted on requires allowing them to be used on any statically provisioned
+underlay network.
 
-The forwarding path (data plane) needs to be installed and controlled by the Hardware Infrastructure Manager through an isolated Out of band management channel into the DPU control and operating system completely out of reach for the main CPU Host SW. All content in the forwarding path must come from Hardware Infrastructure operator trusted code since any fault or malicious content can seriously disturb the whole network for all connected devices.
+The forwarding path (data plane) needs to be installed and controlled by the Hardware Infrastructure Manager through an isolated Out of band management channel into
+the DPU control and operating system completely out of reach for the main CPU Host SW. All content in the forwarding path must come from Hardware Infrastructure
+operator trusted code since any fault or malicious content can seriously disturb the whole network for all connected devices.
 
-The trusted forwarding functions must be handled through a Hardware Infrastructure Management repository and have APIs for their respective control functions. These APIs must have an ability to handle some version differences since the forwarding and control planes life cycle management will not be atomic. The offload functions that should be offered as services must have published and preferably standardized open APIs, but the application specific forwarding functions do not have to be open APIs since they will only communicate with the application tenant provided control functions. `P4 <https://p4.org/>`__ and `OpenConfig <https://openconfig.net/>`__ are examples of suitable languages and models, with different levels of flexibility, usable for these forwarding and control functions.
+The trusted forwarding functions must be handled through a Hardware Infrastructure Management repository and have APIs for their respective control functions. These
+APIs must have an ability to handle some version differences since the forwarding and control planes life cycle management will not be atomic. The offload functions
+that should be offered as services must have published and preferably standardized open APIs, but the application specific forwarding functions do not have to be
+open APIs since they will only communicate with the application tenant provided control functions. `P4 <https://p4.org/>`__ and
+`OpenConfig <https://openconfig.net/>`__ are examples of suitable languages and models, with different levels of flexibility, usable for these forwarding and control
+functions.
 
-The separated management channel could either come in through the BMC, a direct management port on the DPU or through a management VPN on the switch ports. This enable the Hardware Infrastructure Management to automate its networking through the DPU without any need to dynamically manage the switch fabric, thereby enabling a free choice of switch fabric vendor. These deployments allow the switch fabric to be statically provisioned by the operators networking operation unit, as it is often required.
+The separated management channel could either come in through the BMC, a direct management port on the DPU or through a management VPN on the switch ports. This
+enable the Hardware Infrastructure Management to automate its networking through the DPU without any need to dynamically manage the switch fabric, thereby enabling a
+free choice of switch fabric vendor. These deployments allow the switch fabric to be statically provisioned by the operators networking operation unit, as it is
+often required.
 
-The DPU can offload control and data plane of the virtual switching to the DPU as well as trusted hardware offload for virtualized Packet Core and Radio data plane networking and transport related functionality in a power efficient way. It can also offload relevant application tenant control functions if the DPU offers an Execution Environment for VMs or containers and there is space and performance headroom. In such cases the DPU must also setup a communication channel into respective application tenant environment.
+The DPU can offload control and data plane of the virtual switching to the DPU as well as trusted hardware offload for virtualized Packet Core and Radio data plane
+networking and transport related functionality in a power efficient way. It can also offload relevant application tenant control functions if the DPU offers an
+Execution Environment for VMs or containers and there is space and performance headroom. In such cases the DPU must also setup a communication channel into
+respective application tenant environment.
 
 Smart Switches
 ~~~~~~~~~~~~~~
 
 Smart Switches can be broadly categorized into Configurable Switches and Programmable Switches.
 
-Configurable Smart Switches run generic “smart” configurable network operating system offering full range of network functionality and are flexible enough to support most network solutions. The most common such network operating system is Linux-based `SONiC <https://github.com/sonic-net/SONiC>`__ allowing hardware and software disaggregation by running on switches from multiple switch vendors with different types of vendor fixed-function ASICs. Still, SONiC today cannot implement new type of data plane functionality or patch/modify/correct an ASIC, which is the type of support offered by programmable smart switches.
+Configurable Smart Switches run generic “smart” configurable network operating system offering full range of network functionality and are flexible enough to support
+most network solutions. The most common such network operating system is Linux-based `SONiC <https://github.com/sonic-net/SONiC>`__ allowing hardware and software
+disaggregation by running on switches from multiple switch vendors with different types of vendor fixed-function ASICs. Still, SONiC today cannot implement new type
+of data plane functionality or patch/modify/correct an ASIC, which is the type of support offered by programmable smart switches.
 
-Programmable Smart Switches make it possible to quickly support new or correct/modify existing protocols and network functions, allow end customers to implement network functions, and to only implement and load functionality that is needed. Such switches contain one or more programmable switch ASICs of the same or different types. The two most used programming languages are `P4 <https://p4.org/>`__ and `NPL <https://nplang.org/>`__, and both can be used with vendor-specific toolchains to program their switch ASICs and/or FPGAs. Open Networking Foundation `Stratum <https://opennetworking.org/stratum/>`__ is an example of network operating system that offers generic life cycle management control services for the P4 components and a management API. The control API for the individual network functions are not part of the Stratum APIs.
+Programmable Smart Switches make it possible to quickly support new or correct/modify existing protocols and network functions, allow end customers to implement
+network functions, and to only implement and load functionality that is needed. Such switches contain one or more programmable switch ASICs of the same or different
+types. The two most used programming languages are `P4 <https://p4.org/>`__ and `NPL <https://nplang.org/>`__, and both can be used with vendor-specific toolchains
+to program their switch ASICs and/or FPGAs. Open Networking Foundation `Stratum <https://opennetworking.org/stratum/>`__ is an example of network operating system
+that offers generic life cycle management control services for the P4 components and a management API. The control API for the individual network functions are not
+part of the Stratum APIs.
 
 Based on Smart Switches, products exist for fully integrated edge and fabric solutions from vendors like Arista, Cisco or Kaloom.
 
 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Decoupling :ref:`common/glossary:cloud platform abstraction related terminology:` applications from hardware accelerator is normally accomplished using drivers that, if available, are preferred with standardised interfaces across vendors and their products, or if not available then through drivers specific to the vendor hardware device. Decoupling infrastructure software from hardware accelerators is also preferred using standard interfaces. If those are not available for target hardware accelerator, coupling one or limited number of software infrastructures is less of an issue compared to coupling multiple applications.
+Decoupling :ref:`common/glossary:cloud platform abstraction related terminology:` applications from hardware accelerator is normally accomplished using drivers that,
+if available, are preferred with standardised interfaces across vendors and their products, or if not available then through drivers specific to the vendor hardware
+device. Decoupling infrastructure software from hardware accelerators is also preferred using standard interfaces. If those are not available for target hardware
+accelerator, coupling one or limited number of software infrastructures is less of an issue compared to coupling multiple applications.
 
-Taking advantage of RM and RA environments with common capabilities, applications can be developed and deployed more rapidly, providing more service agility and easier operations. The extent to which this can be achieved will depend on levels of decoupling between application and infrastructure or platform underneath the application:
+Taking advantage of RM and RA environments with common capabilities, applications can be developed and deployed more rapidly, providing more service agility and
+easier operations. The extent to which this can be achieved will depend on levels of decoupling between application and infrastructure or platform underneath the
+application:
 
 Infrastructure:
 ^^^^^^^^^^^^^^^
 
-- a) Application functionality or application control requires infrastructure components beyond RM profiles or infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled with the infrastructure which results in an Appliance deployment model (see :ref:`common/glossary:cloud platform abstraction related terminology:`).
-- b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure components that make application work. Example is an application that to achieve latency requirements needs certain hardware acceleration available in RM profile and is exposed through APIs specified by RA.
-- c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure component(s) that make application work better (like more performant) than without that infrastructure component. Example is an application that would have better cost/performance with certain acceleration adapter but can also work without it.
+- a) Application functionality or application control requires infrastructure components beyond RM profiles or infrastructure configuration changes beyond APIs
+specified by RA. Generally, such an application is tightly coupled with the infrastructure which results in an Appliance deployment model
+(see :ref:`common/glossary:cloud platform abstraction related terminology:`).
+- b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with the required infrastructure component(s), and in
+that node using APIs specified by RA configures infrastructure components that make application work. Example is an application that to achieve latency requirements
+needs certain hardware acceleration available in RM profile and is exposed through APIs specified by RA.
+- c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with optional infrastructure component(s), and in
+these nodes using APIs specified by RA configures infrastructure component(s) that make application work better (like more performant) than without that
+infrastructure component. Example is an application that would have better cost/performance with certain acceleration adapter but can also work without it.
 - d) Application control using APIs specified by RA finds general profile nodes without any specific infrastructure components.
 
 Platform Services:
 ^^^^^^^^^^^^^^^^^^
 
-- a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that brings its own Load Balancer.
-- b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
-- c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
+- a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that
+brings its own Load Balancer.
+- b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use
+defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness
+of Load Balancer being hardware-accelerated).
+- c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load
+Balancer which can be accelerated with hardware acceleration.
