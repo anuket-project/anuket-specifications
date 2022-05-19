@@ -966,8 +966,7 @@ cloud deployments. This set of storage uses cases is summarised in the following
   - Infrastructure - for host computer boot (from either local host storage or PXE),
   - Control Plane - for cloud infrastructure control (such as OpenStack (RA1) or Kubernetes (RA2) control functions) and
   - Management Plane Needs - for Infrastructure Automation, Tenant VNF/CNF Orchestration and cloud infrastructure monitoring and assurance
-- Tenant / User - is the storage stereotype able to support Tenant / User Plane needs including: Platform Native, Shared File Storage & Object Storage (as per
-section - "3.6.3 Storage for Tenant Consumption")
+- Tenant / User - is the storage stereotype able to support Tenant / User Plane needs including: Platform Native, Shared File Storage & Object Storage (as per section - "3.6.3 Storage for Tenant Consumption")
 
 Where:
 
@@ -1022,9 +1021,9 @@ The considerations will help to guide the build and deployment of the Storage so
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Meets Needs of          | Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control)                             |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
-|                         | Cloud Infrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation)               |
+|                         | Cloud Infrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation)                   |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
-|                         | Cloud Infrastructure Tenant / User Plane                                                                                                 |
+|                         | Cloud Infrastructure Tenant / User Plane                                                                                                |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | General Considerations  | What are the general considerations, irrespective of the deployment stereotype/technology used in storage sub-system ?                  |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
@@ -1103,13 +1102,13 @@ The considerations will help to guide the build and deployment of the Storage so
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Use Case                | Description                                                                                                                             |
 +====+====================+====+====================================================================================================================================+
-| Small Data-centre       | Small data-centre storage deployment is used in cases where software-defined storage and virtual machine / container hosting are       | 
+| Small Data-centre       | Small data-centre storage deployment is used in cases where software-defined storage and virtual machine / container hosting are        | 
 | Storage                 | running on a converged infrastructure footprint with the aim of reducing the overall size of the platform. This solution behaves as a   |
 |                         | standalone Infrastructure Cloud platform.                                                                                               |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Meets Needs of          | Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control)                             |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
-|                         | Cloud Infrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation)               |
+|                         | Cloud Infrastructure Management Plane (Cloud Infrastructure fault and performance management and platform automation)                   |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
 |                         | Cloud Infastructure Tenant / User Plane                                                                                                 |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
@@ -1141,7 +1140,7 @@ The considerations will help to guide the build and deployment of the Storage so
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Meets Needs of          | Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control)                             |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
-|                         | Cloud Infrastructure Tenant / User Plane - very limited configuration storage                                                            |
+|                         | Cloud Infrastructure Tenant / User Plane - very limited configuration storage                                                           |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
@@ -1152,7 +1151,7 @@ The considerations will help to guide the build and deployment of the Storage so
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 | Meets Needs of          | Cloud Infrastructure Control Plane (tenant Virtual Machine and Container life-cycle management and control)                             |
 +                         +----+------------------------------------------------------------------------------------------------------------------------------------+
-|                         | Cloud Infastructure Tenant / User Plane - limited configuration storage                                                               |
+|                         | Cloud Infastructure Tenant / User Plane - limited configuration storage                                                                 |
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
 
 +----+--------------------+----+------------------------------------------------------------------------------------------------------------------------------------+
