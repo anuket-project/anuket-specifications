@@ -750,8 +750,11 @@ Assumptions and conventions:
    used.
 -  Controller nodes should be setup for high availability based on
    quorum (aligned with vendor implementation).
--  Shared storage is optional but it is important to ensure shared
+-  Shared storage is optional, but it is important to ensure shared
    assets are distributed across serving clouds such as boot images.
+   Storage needs, per deployment and use cases, can be found in
+   :ref:`ref_model/chapters/chapter03:
+   storage scenarios and architecture fit`.
 
 +-----+----+------------+----------+-------+-----+---------+--------+
 | To\ | T\ | Control    | Shared   | Co\   | A\  | Service | Notes  |
