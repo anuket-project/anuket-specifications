@@ -226,10 +226,7 @@ The table below specifies a set of requirements for the Monitoring service (aka 
 | pas.mon.016 | An inoperative monitoring service should not generate alerts about    |                                                       |
 |             | the monitored system                                                  |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.017 | The Monitoring service should be able to perform both active and      |                                                       |
-|             | passive monitoring                                                    |                                                       |
-+-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.018 | The monitoring service should provide a consolidated view of the      |  View: dashboard or report                            |
+| pas.mon.017 | The monitoring service should provide a consolidated view of the      |  View: dashboard or report                            |
 |             | entire monitored infrastructure                                       |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 
