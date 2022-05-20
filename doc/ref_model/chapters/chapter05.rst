@@ -186,8 +186,8 @@ The table below specifies a set of requirements for the Monitoring service (aka 
 | pas.mon.003 | The Monitoring service must be able to correlate data from different  |                                                       |
 |             | systems                                                               |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
-| pas.mon.004 | The Monitoring service must at least perform active or passive        |                                                       |
-|             | monitoring                                                            |                                                       |
+| pas.mon.004 | The Monitoring service must be able to perform at least one           |                                                       |
+|             | of active or passive monitoring                                       |                                                       |
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | pas.mon.005 | The Monitoring service must support configuration of thresholds,      |                                                       |
 |             | outside of which the resource cannot function normally, for alert     |                                                       |
