@@ -122,36 +122,57 @@ VNF components. Profiles are defined in the
 Virtual Storage
 ~~~~~~~~~~~~~~~
 
-The three storage services offered by Cloud Infrastructure are:
+The Reference Model 
+:ref:`ref_model/chapters/chapter02:storage for tenant consumption` 
+details consumption models for tenants: Platform native, 
+object storage, shared file storage and archival. 
+The choice of a solution will depend on the storage use case needs.
+
+The two storage services offered by Cloud Infrastructure are:
 
 -  Persistent storage
 -  Ephemeral storage
--  Image storage
-
-Two types of persistent data storage are supported in OpenStack:
-
--  Block storage
--  Object storage
 
 The OpenStack services, Cinder for block storage and Swift for Object
 Storage, are discussed below in Section 3.3 “Cloud Infrastructure
 Management Software (VIM)”.
 
 Ephemeral data is typically stored on the compute host’s local disks,
-except in environments that support live instance migration between
-compute hosts. In the latter case, the ephemeral data would need to be
+in the form of a file system as part of the provisioning. 
+This storage is volatile, it is deleted when instances are stopped.
+In environments that support live instance migration between
+compute hosts, the ephemeral data would need to be
 stored in a storage system shared between the compute hosts such as on
 persistent block or object storage.
 
-Images are stored using the OpenStack Glance service discussed below in
-Section 3.3 “Cloud Infrastructure Management Software (VIM)”.
+Three types of persistent data storage are supported in OpenStack:
 
-The `OpenStack Storage
-Table <https://docs.openstack.org/arch-design/design-storage/design-storage-concepts.html#table-openstack-storage>`__
+- Block storage
+- Object storage
+- Shared file systems storage
+
+The `OpenStack Storage Table
+<https://docs.openstack.org/arch-design/design-storage/
+design-storage-concepts.html#table-openstack-storage>`__
 explains the differences between the storage types and typical use
-cases. The `OpenStack compatible storage backend
-drivers <https://docs.openstack.org/cinder/latest/reference/support-matrix.html>`__
-table lists the capabilities that each of these drivers support.
+cases.
+
+Block storage is dedicated to persistent data. Data is stored 
+in the form of volumes. Block storage is managed by OpenStack 
+Cinder service and storage Backends. `OpenStack compatible 
+storage backend drivers table 
+<https://docs.openstack.org/cinder/latest/reference/support-matrix.html>`__
+lists the storage backends compatible with Cinder and their capabilities. 
+
+The Object storage is a persistent data storage, not attached to an instance. 
+Data is accessed via API. Object storage is managed by OpenStack Swift. 
+
+Images are persistent data, stored using the OpenStack Glance service.
+
+Cinder, Swift, and Glance services are discussed in the section 
+:ref:`ref_arch/openstack/chapters/chapter04:
+virtualised infrastructure manager (VIM)`.
+
 
 Virtual Networking Neutron standalone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -624,7 +645,11 @@ up (in a shipping container), and what resources are required of the DC
 
 -  Storage
 
-   -  discussed in :ref:`ref_arch/openstack/chapters/chapter04:storage backend`
+   - Storage technologies are multiple, they are extensively 
+     described in 
+     :ref:`refm/chapters/chapter03:storage implementation stereotypes`. 
+     Storage backends are discussed in 
+     :ref:`ref_arch/openstack/chapters/chapter04:storage backend`.
 
 -  Acceleration
 
@@ -737,8 +762,11 @@ Assumptions and conventions:
    used.
 -  Controller nodes should be setup for high availability based on
    quorum (aligned with vendor implementation).
--  Shared storage is optional but it is important to ensure shared
+-  Shared storage is optional, but it is important to ensure shared
    assets are distributed across serving clouds such as boot images.
+   Storage needs, per deployment and use cases, can be found in
+   :ref:`ref_model/chapters/chapter03:
+   storage scenarios and architecture fit`.
 
 .. list-table:: Cloud Topology: Redundancy Models
    :widths: 8 15 8 8 8 8 8 17
