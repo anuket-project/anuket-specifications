@@ -717,7 +717,7 @@ Software Bill of Materials (SBOM), described by `US NTIA <https://www.ntia.gov/S
 Telecommunications and Information Administration), is an efficient and highly recommended tool to identify software 
 components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to 
 establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the 
-SBOM inventory is an effective means to identify the impacted component and provide remediation.
+SBOM inventory is an effective means to identify the impacted component and enable remediation.
 
 A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management 
 and it provides assurance of the source and integrity of components. To achieve and benefit from this transparency, 
