@@ -372,8 +372,8 @@ Cloud Infrastructure Hardware Profile Requirements
 |/chapters/chapter05.md#com|cpu.cfg.  | Cores per CPU          |                 |                 |er04.md#kubernetes|
 |pute-resources>`__        |002       |                        |                 |                 |-node>`__         |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
-|`5.4.1 <../../../ref_model|infra.hw. | Minimum number of      | 20              | 20              |`ra2.ch.008 <chapt|
-|/chapters/chapter05.md#com|cpu.cfg.  | Cores per CPU          |                 |                 |er04.md#kubernetes|
+|`5.4.1 <../../../ref_model|infra.hw. | NUMA Alignment         | N               | Y               |`ra2.ch.008 <chapt|
+|/chapters/chapter05.md#com|cpu.cfg.  |                        |                 |                 |er04.md#kubernetes|
 |pute-resources>`__        |003       |                        |                 |                 |-node>`__         |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
 |`5.4.1 <../../../ref_model|infra.hw. | Simultaneous           | Must support    | Optional        |`ra2.ch.004 <chapt|
@@ -435,6 +435,38 @@ Cloud Infrastructure Hardware Profile Requirements
 
 **(1)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.
 
+Edge Cloud Infrastructure Hardware Profile Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the case of Telco Edge Cloud Deployments, hardware requirements can differ from the above to account for
+environmental and other constraints.
+The Reference Model :ref:`ref_model/chapters/chapter08:chapter 8 Hybrid Multi-Cloud: Data Centre to Edge` 
+includes considerations specific to deployments at the edge of the network. The infrastructure profiles "Basic" and 
+"High Performance" as per :ref:`ref_model/chapters/chapter04:profiles and workload flavours` still apply, but a number
+of requirements of the above table are relaxed as follows:
+
++--------------------------+----------+------------------------+-----------------+-----------------+------------------+
+| Reference Model Section  | Reference| Description            | Requirement for | Requirement for | Specification    |
+|                          |          |                        | Basic Profile   | High-Performance| Reference        |
+|                          |          |                        |                 | Profile         |                  |
++==========================+==========+========================+=================+=================+==================+
+|`8.x.x <../../../ref_model|infra.hw. | Minimum number of CPU  | 1               | 1               |`ra2.ch.008 <chapt|
+|/chapters/chapter08.md>`__|cpu.cfg.  | sockets                |                 |                 |er04.md#kubernetes|
+|                          |001       |                        |                 |                 |-node>`__         |
++--------------------------+----------+------------------------+-----------------+-----------------+------------------+
+|`8.x.x <../../../ref_model|infra.hw. | Minimum number of      | 1               | 1               |`ra2.ch.008 <chapt|
+|/chapters/chapter08.md>`__|cpu.cfg.  | Cores per CPU          |                 |                 |er04.md#kubernetes|
+|                          |002       |                        |                 |                 |-node>`__         |
++--------------------------+----------+------------------------+-----------------+-----------------+------------------+
+|`8.x.x <../../../ref_model|infra.hw. | NUMA Alignment         |  N              | Y (1)           |`ra2.ch.008 <chapt|
+|/chapters/chapter08.md>`__|cpu.cfg.  |                        |                 |                 |er04.md#kubernetes|
+|                          |003       |                        |                 |                 |-node>`__         |
++--------------------------+----------+------------------------+-----------------+-----------------+------------------+
+
+**Table 2-5:** Reference Model Requirements: Edge Cloud Infrastructure Hardware Profile Requirements
+
+**(1)** immaterial if the number of CPU sockets (infra.hw.cpu.cfg.001) is 1.
+
 Cloud Infrastructure Management Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -482,7 +514,7 @@ Cloud Infrastructure Management Requirements
 |e-management-capabilities>`__     |           | virtualised resources          |                 |                   |
 +----------------------------------+-----------+--------------------------------+-----------------+-------------------+
 
-**Table 2-5:** Reference Model Requirements: Cloud Infrastructure Management Requirements
+**Table 2-6:** Reference Model Requirements: Cloud Infrastructure Management Requirements
 
 Cloud Infrastructure Security Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1340,7 +1372,7 @@ Cloud Infrastructure Security Requirements
 |                                        |           | (ISAE) 3402. US Equivalent: SSAE16.  |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 
-**Table 2-6:** Reference Model Requirements: Cloud Infrastructure Security Requirements
+**Table 2-7:** Reference Model Requirements: Cloud Infrastructure Security Requirements
 
 Kubernetes Architecture Requirements
 ------------------------------------
@@ -1550,4 +1582,4 @@ machines or containers.
 |          |              |              | or other details can change.         |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
   
-**Table 2-7:** Kubernetes Architecture Requirements
+**Table 2-8:** Kubernetes Architecture Requirements

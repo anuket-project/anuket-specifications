@@ -819,4 +819,5 @@ protocol level that VNF operates, it can include:
 -  VNF user plane benchmarking, like Packet Loss,Latency, Packet Delay
 
 ETSI spec has also defined the testing method
-http://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/001/01.01.01_60/gs_nfv-tst001v010101p.pdf
+https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/001/01.01.01_60/gs_nfv-tst001v010101p.pdf
+

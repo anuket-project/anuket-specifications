@@ -622,103 +622,136 @@ Microservices-based Applications Using Service-Mesh Architecture) and
 Microservices-based Applications Using a Service Mesh), describe service mesh, and provide guidance for service mesh
 components deployment.
 
-Open Source Software Security
------------------------------
+Software Supply Chain Security
+------------------------------
 
-Software supply chain safety is crucial and can be a complex task in virtualised and containerised environments. Open
-source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer components,
-the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components can also be
-composed of open source code. The proportion of open source code to an application source code can vary. It can be
-partial or total, visible or not. Open source code can be upstream code coming directly from open source public
-repositories or code within a commercial application or network function. To ensure the security of the whole system,
-all software and hardware components must reach the same level of security by following best security practices
-including secure lifecycle management. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party
-Components” provides a detailed risk management approach.
+Software supply chain attacks are increasing worldwilde and can cause serious damages. Many entreprises and 
+organisations are experiencing these threats. Aqua security's experts estimated that `software supply chain attacks 
+have more than tripled in 2021 <https://www.aquasec.com/news/aqua-securitys-argon-experts-find-software-supply-chain\
+-attacks-more-than-tripled-in-2021/>`_. 
+Reuters reported in August 2021 that the `ransomware affecting Kaseya Virtual System Administration product 
+<https://www.reuters.com/technology/kaseya-ransomware-attack-sets-off-race-hack-service-providers-researchers-2021-08-03/>`_
+caused downtime for over 1500 companies. In the case of the `backdoor inserted in codecov software 
+<https://www.reuters.com/technology/codecov-hackers-breached-hundreds-restricted-customer-sites-sources-2021-04-19/>`_, 
+hundred of customers were affected. The Solarwinds attack detailed in `Defending against SolarWinds attacks 
+<https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_ 
+is another example of how software suppliers are targeted and, by rebound, their customers affected.
+Open-source code weaknesses can also be utilised by attackers, the `Log4J <https://www.cisa.gov/uscert/apache-log4j-\
+vulnerability-guidance>`_ vulnerability, impacting many 
+applications, is a recent example in this field. When addressing cyber security, the vulnerabilities of 
+software supply chain are often not taken into account. Some governments are already alerting and requesting 
+actions to face these risks. The British government is hardening the law and standards of cyber security for 
+the supply chain. The US government requested actions to enhance the software supply chain security. 
+The security of the software supply chain is a also challenge pointed out by the European Network and 
+Information Security Agency, ENISA, in the report `NFV Security in 5G - Challenges and Best Practices 
+<https://www.enisa.europa.eu/publications/nfv-security-in-5g-challenges-and-best-practices>`_.
+ 
+
+Software security
+~~~~~~~~~~~~~~~~~
+
+Software supply chain security is crucial and is made complex by the greater attack surface provided by the 
+many different supply chains in virtualised, containerised, and edge environments. 
+All software components must be trusted, from commercial software, open-source 
+code to proprietary software, as well as the integration of these components. 
+The SAFECode white paper `"Managing Security Risks Inherent in the Use of Third-party Components” 
+<https://safecode.org/wp-content/uploads/2017/05/SAFECode_TPC_Whitepaper.pdf>`_ provides 
+a detailed risk management approach.
 
 To secure software code, the following methods must be applied:
 
-- Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`__ or
-  `OWASP “Secure Coding Practices - Quick Reference Guide” <https://owasp.org/>`__
-- Require suppliers to provide a Software Bill of Materials to identify the open source modules in their product’s
-  software releases
-- Use trusted, authenticated and identified software images that are provided by authenticated software distribution
-  portals
-- Do threat modelling, as described in the document “Tactical Threat Modeling” published by SAFECode
-- Test the software in a pre-production environment to validate integration
-- Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply
-  remediation actions according to their severity rating
-- Actively monitor the open source software repositories to determine if new versions have been released that address
-  identified vulnerabilities discovered in the community
-- Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
-- Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery,
-  deployment, and runtime operation to perform automatic security check, as described in section 7.4.4 ‘”Infrastructure
-  as a Code Security”
+-  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`_ 
+   or `OWASP “Secure Coding Practices - Quick Reference Guide” <https://owasp.org/>`_
+-  Do threat modelling, as described in the document `“Tactical Threat Modeling” 
+   <https://safecode.org/wp-content/uploads/2017/05/SAFECode_TM_Whitepaper.pdf>`_ published by SAFECode
+-  Use trusted, authenticated and identified software images that are provided by authenticated software 
+   distribution portals  
+-  Require suppliers to provide a Software Bill of Materials to identify all the components part of their product’s 
+   software releases with their dependencies, and eventually identify the open source modules
+-  Test the software in a pre-production environment to validate integration
+-  Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply 
+   remediation actions according to their severity rating
+-  Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals   
+-  Actively monitor the open source software repositories to determine if new versions have been released that address 
+   identified vulnerabilities discovered in the community
+-  Secure the integration process by securing the software production pipeline
+-  Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, 
+   deployment, and runtime operation to perform automatic security check, as described in section ”Infrastructure as a Code Security”
 
-The strength of open source code is the availability of code source developed by a community which maintain and improve
-it. Open source code integration with application source code helps to develop and produce applications faster. But, in
-return, it can introduce security risks if a risk management DevSecOps approach is not implemented. The GSMA white
-paper, “Open Networking & the Security of Open Source Software Deployment - Future Networks”, alerts on these risks and
-addresses the challenges coming with open source code usage. Amongst these risks for security, we can mention a poor
-quality code containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open
-source communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an
-inactive branch. The GSMA white paper develops means to mitigate these security issues.
+Open-Source Software Security
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**SBOM**
+Open-source code is present in Cloud Infrastructure software from BIOS, host Operating System to virtualisation layer 
+components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components 
+can also be composed of open source code. The proportion of open-source code to an application source code can vary. 
+It can be partial or total, visible or not. Open-source code can be upstream code coming directly from open-source 
+public repositories or code within a commercial application or network function. 
 
-To begin, it is highly recommended to identify the software components and their origins. The Software Bill of Materials
-(SBOM), described by `US NTIA <https://www.ntia.gov/SBOM>`__ (National Telecommunications and Information
-Administration), is an efficient tool to identify software components. The SBOM is an inventory of software components
-and the relationships between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In
-case of vulnerability detected for a component, the SBOM inventory is an effective means to identify the impacted
-component and provide remediation.
+The strength of open-source code is the availability of code source developed by a community which maintains and improves it. 
+Open-source code integration with application source code helps to develop and produce applications faster. But, in return, 
+it can introduce security risks if a risk management DevSecOps approach is not implemented. The GSMA white paper  
+`“Open Networking & the Security of Open Source Software Deployment - Future Networks” 
+<https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/>`_ 
+alerts on these risks and addresses the 
+challenges coming with open-source code usage. Amongst these risks for security, we can mention a poor code quality 
+containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open source 
+communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an inactive branch. 
+The GSMA white paper develops means to mitigate these security issues.
 
-A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management
-and it provides assurance of the source and integrity of components. In order to use the SBOM efficiently and spread its
-adoption, information must be generated and shared in a standard format. This format must be machine-readable to allow
-automation. The NTIA white paper `“Survey of existing SBOM formats and standards” <https://www.ntia.doc.gov/files/ntia/p
-ublications/ntia_sbom_formats_and_standards_whitepaper_-_version_20191025.pdf>`__ identifies two key formats covering
-baseline SBOM information: Software Package Data eXchange (SPX) and Software Identification Tags (SWID tags).
+Poor code quality is a factor of risk. Open-source code advantage is its transparency, code can be inspected by tools with 
+various capabilities such as open-source software discovery and static and dynamic code analysis.
 
-`SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux
-Foundation. The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard
-ISO/IEC 5962:2021. It provides a language for communicating the data, licenses, copyrights, and security information
-associated with software components. With the SPDX specification 2.2, multiple file formats are available: YAML, JSON,
-RDF/XML, tag\:value flat text, and xlss spreadsheets.
+Each actor in the whole chain of software production must use a dedicated internal isolated repository separated from the 
+production environment to store vetted open-source content, which can include images, but also installer and utilities. 
+These software packages must be signed and the signature verified prior to packages or images installation. 
+Access to the repository must be granted by a dedicated authorization. The code must be inspected and vulnerabilities 
+identified as described previously. After validating the software, it can be moved to the appropriate production 
+repository.
 
-`SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software
-publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID tags:
-primary, patch, corpus, and supplemental to describe a software component.
+SBOM
+~~~~
+
+It is crucial to identify the software components and their origins. The Software Bill of Materials (SBOM), 
+described by `US NTIA <https://www.ntia.gov/SBOM>`__ (National Telecommunications and Information Administration), 
+is an efficient tool to identify software components. The SBOM is an inventory of software components and the relationships 
+between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability 
+detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
+
+A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management and it 
+provides assurance of the source and integrity of components. In order to use the SBOM efficiently and spread its adoption, 
+information must be generated and shared in a standard format. This format must be machine-readable to allow automation. The 
+NTIA white paper `“Survey of existing SBOM formats and standards” <https://www.ntia.doc.gov/files/ntia/publications
+/ntia_sbom_formats_and_standards_whitepaper_-_version_20191025.pdf>`__ identifies two key formats covering baseline SBOM 
+information: Software Package Data eXchange (SDPX) and Software Identification Tags (SWID tags).
+
+`SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux Foundation. 
+The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard ISO/IEC 5962:2021. It 
+provides a language for communicating the data, licenses, copyrights, and security information associated with software 
+components. With the SPDX specification 2.2, multiple file formats are available: YAML, JSON, RDF/XML, tag\:value flat text, 
+and xlss spreadsheets.
+
+`SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software 
+publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID tags: primary, 
+patch, corpus, and supplemental to describe a software component.
 
 For both formats, SPDX and SWID Tags, tools are available.
 
-**Code inspection**
+Vulnerability identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Poor code quality is a factor of risk. Open source code advantage is its transparency, code can be inspected by tools
-with various capabilities such as open source software discovery and static and dynamic code analysis.
+Vulnerability management must be continuous: from development to runtime, not only on the development process, but during all 
+the life of the application or workload or service. When a public vulnerability on a component is released, the update of the 
+component must be triggered. When an SBOM recording the code composition is provided, the affected components will be easier 
+to identify. It is essential to remediate the affected components as soon as possible, because the vulnerability can be 
+exploited by attackers who can take the benefit of code weakness.
 
-**Vulnerability identification**
-
-Vulnerability management must be continuous: from development to runtime, not only on the development process, but
-during all the life of the application or workload or service. When a public vulnerability on a component is released,
-the update of the component must be triggered. When an SBOM recording the code composition is provided, the affected
-components will be easier to identify. It is essential to remediate the affected components as soon as possible, because
-code transparency can also be exploited by attackers who can take the benefit of vulnerabilities.
-
-The CVE and the CVSS must be used to identify vulnerabilities and their severity rating. The CVE identifies, defines,
-and catalogues publicly disclosed cybersecurity vulnerabilities while the CVSS is an open framework to calculate the
+The CVE and the CVSS must be used to identify vulnerabilities and their severity rating. The CVE identifies, defines, and 
+catalogues publicly disclosed cybersecurity vulnerabilities while the CVSS is an open framework to calculate the 
 vulnerabilities' severity score.
 
-Various images scanning tools, such as Clair or Trivy, are useful to audit images from security vulnerabilities. The
-results of vulnerabilities scan audit must be analysed carefully when it is applied to vendor offering packaged
-solutions; as patches are not detected by scanning tools, some components can be detected as obsolete.
-
-**Trusted repositories**
-
-A dedicated internal isolated repository separated from the production environment must be used to store vetted open
-source content, which can include images, but also installer and utilities. These software packages must be signed and
-the signature verified prior to packages or images installation. Access to the repository must be granted by a dedicated
-authorization. The code must be inspected and vulnerabilities identified as described previously. After validating the
-software is risk free, it can be moved to the appropriate production repository.
+Various images scanning tools, including open-source tools like Clair or Trivy, are useful to audit images from security 
+vulnerabilities. The results of vulnerabilities scan audit must be analysed carefully when it is applied to vendor offering 
+packaged solutions; as patches are not detected by scanning tools, some components can be detected as obsolete.
 
 .. _testing--certification:
 
@@ -767,6 +800,124 @@ Security certification should encompass the following elements:
 - Any additional Security and Privacy requirements implemented in the software deliverable beyond the default rules used
   security analysis tools.
 - Resiliency tests run (such as hardware failures or power failure tests)
+
+
+Cloud Infrastructure Regulatory Compliance 
+------------------------------------------
+Evolving cloud adoption in the telecom industry, now encroaching on its inner sanctum of network services, undoubtedly brings many benefits for the network operators 
+and their partners, and ultimately to the end consumers of the telecommunication services. However, it also brings compliance challenges that can seem overwhelming. 
+The telecommunication industry players can reduce this overwhelm by arming themselves with information about which laws they need to comply with, why, and how.  
+
+The costs of non-compliance can be very serious. Organisations may not only have to contend with hefty fines and possible lawsuits, but they may also even end up 
+losing their reputation and eventually losing customers, with an obvious adverse impact on revenues and profitability. 
+
+Compliance means that an operator’s systems, processes, and workflows align with the requirements mandated by the regulatory regimes imposed by the relevant 
+governmental and industry regulatory bodies. The need for compliance extends to the cloud, so operators must ensure that any data transferred to and out, and stored 
+in their cloud infrastructure complies with all relevant data protection, including data residency, and privacy laws.
+
+To comply with the laws that apply to an operator’s business, the proper security controls need to be applied. The applicable laws have very specific rules and 
+constraints about how companies can collect, store and process data in the cloud. To satisfy these constraints and ensure compliance, the telecom operators should 
+work with their cloud providers and other partners to implement strong controls. To speed up this process, the operators may start from augmenting their existing 
+cybersecurity/information security frameworks to guide their security programs to implement controls to secure their cloud infrastructure and to achieve regulatory 
+compliance. This process can also be assisted by support from the cloud providers and third parties, who can offer their well-proven compliance offerings, resources, 
+audit reports, dashboards, and even some security controls as a service.
+
+After implementing these controls, companies need to train their employees and partners to use the controls properly to protect data and maintain the required 
+compliance posture. This is a critical requirement to maintain compliance via enforcing relevant security guiderails in all aspects of every-day operations, as well as
+for ensuring a process of regular assessment of the compliance posture.
+
+Because of the localised nature of the regulatory regimes, this document may not provide any specific compliance requirements.  However, some examples provided below,
+can be of assistance for an operator’ compliance considerations.
+
+Commonly used (in many jurisdictions) compliance audit reports are based on SOC 2 report from the SOC (System and Organization Controls) suite of services,  
+standardised by the American Institute of Certified Public Accountants (AICPA) and meant for service organizations like cloud providers; see 
+`AICPA SOC <https://us.aicpa.org/content/aicpa/interestareas/frc/assuranceadvisoryservices/sorhome.html>`__. A SOC 2 report shows whether the cloud provider has implemented the security controls required to comply with the AICPA’s
+five “trust services criteria”: security, availability, confidentiality, processing integrity, and privacy. Operators should request SOC 2 report from their cloud 
+providers (public or internal to their organisations). There are two flavours of SOC 2:  type 1 report shows the status and suitability of the provider’s controls 
+at a particular moment, while type 2 report shows the operational effectiveness of these controls over a certain period. In cases when a cloud provider is not willing
+to share SOC 2 report because it may contain sensitive information, operators can ask for the SOC 3 report which is intended as a general-use report but can still 
+help assess the provider’s compliance posture.
+
+Some cloud providers also provide attestations (or in case of private cloud, telecoms should seek such attestation) to show which of their cloud services have achieved
+compliance with different frameworks such as mentioned above SOC, but also commonly used frameworks like OWASP, ISAE, NIST, ETSI and ISO 27000 series, and more 
+geographically localised standard frameworks like NIST (as used in the U.S.A.), ENISA, GDPR, ISM.
+
+The use of the ISO 2700s, OWASP, ISAE, NIST and ETSI security frameworks for cloud infrastructure is referenced in “Common Security Standards”, “Compliance with 
+Standards” and “Security References” sections of this chapter. 
+
+Examples of regulatory frameworks are briefly presented below. It is intended to expand this list of examples in the future releases to cover more jurisdictions and 
+to accommodate changes in the rapidly evolving security and regulatory landscape. 
+
+
+U.S.A.
+~~~~~~
+
+In the United States, the Federal Communications Commission  `(FCC) <https://www.fcc.gov/>`__ regulates interstate and international communications by radio, television, wire, satellite and 
+cable in all 50 states, the District of Columbia and U.S. territories. The FCC is an independent U.S. government agency overseen by 
+Congress. The Commission is the federal agency responsible for implementing and enforcing America’s communications 
+laws and regulations.
+
+National Institute of Standards and Technology `(NIST) Cybersecurity Framework <https://www.nist.gov/cyberframework/>`__,  
+compliance is mandatory for the supply chain for all U.S.A. federal government agencies.  Because this framework references globally accepted standards, guidelines 
+and practice, telecom organisations in the U.S.A. and 
+world-wide can use it to efficiently operate in a global environment and manage new and evolving cybersecurity risks in the cloud adoption area.
+
+
+European Union (EU)
+~~~~~~~~~~~~~~~~~~~
+
+The overall telecommunications regulatory framework in the European Union (EU) is provided in `The European Electronic Communications Code 
+<https://digital-strategy.ec.europa.eu/en/policies/electronic-communications-laws/>`__.
+
+The European Union Agency for Cybersecurity `(ENISA) <https://www.enisa.europa.eu/>`__ contributes to EU cyber policy, enhances the trustworthiness of 
+Information and Communications Technology (ICT) products, services and processes with cybersecurity certification schemes, cooperates with Member States and EU bodies,
+and helps Europe prepare for the cyber challenges of tomorrow. In particular, ENISA is carrying out a risk assessment of cloud computing and works on the 
+European Cybersecurity Certification Scheme  `(EUCS) <https://www.enisa.europa.eu/publications/eucs-cloud-service-scheme/>`__ for Cloud Services scheme, which looks 
+into the certification of the cybersecurity of cloud services,
+
+The General Data Protection Regulation `(GDPR) <https://gdpr-info.eu/>`__ is a set of EU regulations that governs
+how data should be protected for EU citizens. It affects organisations that have EU-based customers, even if they're not based in the EU themselves. 
+
+
+UK
+~~
+
+Office of Communications `(Ofcom) <https://www.ofcom.org.uk/>`__ is the regulator and competition authority for the UK communications industries. It regulates the TV 
+and radio sectors, fixed line telecoms, mobiles, postal services, plus the airwaves over which wireless devices operate.
+
+Security of Networks & Information Systems `NIS Regulations in UK <https://www.gov.uk/government/collections/nis-directive-and-nis-regulations-2018/>`__, provide 
+legal measures to boost the level of security (both cyber & physical resilience) of network and information systems for the provision of essential services and digital
+services.
+
+The UK’s National Cyber Security Centre `(NCSC) <https://www.ncsc.gov.uk/>`__ acts as a bridge between industry and government, providing a unified 
+source of advice, guidance and support on cyber security, including the management of cyber security incidents. From this perspective it is critical for the cloud 
+related security in the UK telecommunications industry. The NCSC is not a regulator. Within the general UK cyber security regulatory environment, including both NIS 
+and GDPR, the NCSC’s aim is to operate as a trusted, expert and impartial advisor to all interested parties. The NCSC supports Security of Networks & Information 
+Systems (NIS) Regulations
+
+The data protection in UK is controlled by `Data Protection Act 2018 <https://www.legislation.gov.uk/ukpga/2018/12/contents/enacted/>`__, which is UK’s implementation
+of the General Data Protection Regulation (GDPR).
+
+Australia
+~~~~~~~~~
+
+In Australia, the telecommunication sector is regulated by the `Australian Competition & Consumer Commission (ACCC) <https://www.accc.gov.au/regulated-infrastructure/communications/>`__.  
+The ACCC is responsible for the economic regulation of the communications sector, including telecommunications and the National Broadband Network (NBN), broadcasting 
+and content sectors.
+
+From the cloud services security perspective, the Australian Cyber Security Centre (ACSC) produced `Information Security Manual (ISM) <https://www.cyber.gov.au/acsc/view-all-content/ism/>`__, 
+is of particular importance. The purpose of the ISM is to outline a cyber security framework that organisations can apply, using their risk management 
+framework, to protect their information and systems from cyber threats. The ISM is intended for Chief Information Security Officers, Chief Information Officers, cyber
+security professionals and information technology managers. While in general ISM provides guidelines rather than mandates, several security controls are by law 
+mandatory for cloud-based services used by the Australian telecommunication operators, in situation involving strategically important data and/or services. 
+
+Australia regulates data privacy and protection through a mix of federal, state and territory laws. The federal `Privacy Act 1988 <https://www.oaic.gov.au/privacy/the-privacy-act/>`__  
+(currently under review by The Australian Government) and the Australian Privacy Principles (APP) contained in the Privacy Act regulate the handling of 
+personal information by relevant entities and under the Privacy Act. The Privacy Commissioner has authority to conduct investigations, including own motion 
+investigations, to enforce the Privacy Act and seek civil penalties for serious and egregious breaches or for repeated breaches of the APPs where an entity has failed
+to implement remedial efforts.
+
+
 
 Consolidated Security Requirements
 ----------------------------------
