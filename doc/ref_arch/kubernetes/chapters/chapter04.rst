@@ -32,150 +32,190 @@ virtual machine and an installed Operating System. In order for a Kubernetes Nod
 to be conformant with the Reference Architecture it must be implemented as per
 the following specifications:
 
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-| Ref      | Specification     | Details                                           | Requirement    | Reference       |
-|          |                   |                                                   | Trace          | Implementation  |
-|          |                   |                                                   |                | Trace           |
-+==========+===================+===================================================+================+=================+
-|ra2.ch.001| Huge pages        | When hosting workloads matching the High          | `infra.com.cfg | `4.3.1 <../../. |
-|          |                   | Performance profile, it **must** be possible to   | .004 <./chapte | ./ref_impl/cntt |
-|          |                   | enable Huge pages (2048KiB and 1048576KiB) within | r02.md#cloud-i | -ri2/chapters/c |
-|          |                   | the Kubernetes Node OS, exposing schedulable      | nfrastructure- | hapter04.md#ins |
-|          |                   | resources ``hugepages-2Mi`` and ``hugepages-1Gi`` | software-profi | tallation-on-ba |
-|          |                   | .                                                 | le-requirement | re-metal-infrat |
-|          |                   |                                                   | s>`__          | ructure>`__     |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.002| SR-IOV capable    | When hosting workloads matching the High          | `e.cap.013 <./ | `3.3 <../../../ |
-|          | NICs              | Performance profile, the physical machines on     | chapter02.md#c | ref_impl/cntt-r |
-|          |                   | which the Kubernetes Nodes run **must** be        | loud-infrastru | i2/chapters/cha |
-|          |                   | equipped with NICs that are SR-IOV capable.       | cture-software | pter03.md#infra |
-|          |                   |                                                   | -profile-requi | structure-requi |
-|          |                   |                                                   | rements>`__    | rements>`__     |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.003| SR-IOV Virtual    | When hosting workloads matching the High          | `e.cap.013 <./ | `4.3.1 <../../. |
-|          | Functions         | Performance profile, SR-IOV virtual functions     | chapter02.md#c | ./ref_impl/cntt |
-|          |                   | (VFs) **must** be configured within the           | loud-infrastru | -ri2/chapters/c |
-|          |                   | Kubernetes Node OS, as the SR-IOV Device Plugin   | cture-software | hapter04.md#ins |
-|          |                   | does not manage the creation of these VFs.        | -profile-requi | tallation-on-ba |
-|          |                   |                                                   | rements>`__    | re-metal-infrat |
-|          |                   |                                                   |                | ructure>`__     |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.004| CPU Simultaneous  | SMT **must** be enabled in the BIOS on the        | `infra.hw.cpu. | `3.3 <../../../ |
-|          | Multi-Threading   | physical machine on which the Kubernetes Node     | cfg.004 <./cha | ref_impl/cntt-r |
-|          | (SMT)             | runs.                                             | pter02.md#clou | i2/chapters/cha |
-|          |                   |                                                   | d-infrastructu | pter03.md#infra |
-|          |                   |                                                   | re-hardware-pr | structure-requi |
-|          |                   |                                                   | ofile-requirem | rements>`__     |
-|          |                   |                                                   | ents>`__       |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.005| CPU Allocation    | For Kubernetes nodes running as Virtual Machines, |                |                 |
-|          | Ratio - VMs       | the CPU allocation ratio between vCPU and         |                |                 |
-|          |                   | physical CPU core **must** be 1:1.                |                |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.006| CPU Allocation    | To ensure the CPU allocation ratio between vCPU   | `infra.com.cfg | `3.3 <../../../ |
-|          | Ratio - Pods      | and physical CPU core is 1:1, the sum of CPU      | .001 <./chapte | ref_impl/cntt-r |
-|          |                   | requests and limits by containers in Pod          | r02.md#cloud-i | i2/chapters/cha |
-|          |                   | specifications **must** remain less than the      | nfrastructure- | pter03.md#infra |
-|          |                   | allocatable quantity of CPU resources (i.e.       | software-profi | structure-requi |
-|          |                   | ``requests.cpu < allocatable.cpu`` and            | le-requirement | rements>`__     |
-|          |                   | ``limits.cpu < allocatable.cpu``).                | s>`__          |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.007| IPv6DualStack     | To support IPv4/IPv6 dual stack networking, the   |                |                 |
-|          |                   | Kubernetes Node OS **must** support and be        |                |                 |
-|          |                   | allocated routable IPv4 and IPv6 addresses.       |                |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.008| Physical CPU      | The physical machines on which the Kubernetes     | `infra.hw.cpu. | `3.3 <../../../ |
-|          | Quantity          | Nodes run **must** be equipped with at least 2    | cfg.001 <./cha | ref_impl/cntt-r |
-|          |                   | physical sockets, each with at least 20 CPU       | pter02.md#clou | i2/chapters/cha |
-|          |                   | cores.                                            | d-infrastructu | pter03.md#infra |
-|          |                   |                                                   | re-hardware-pr | structure-requi |
-|          |                   |                                                   | ofile-requirem | rements>`__     |
-|          |                   |                                                   | ents>`__,      |                 |
-|          |                   |                                                   | `infra.hw.cpu. |                 |
-|          |                   |                                                   | cfg.002 <./cha |                 |
-|          |                   |                                                   | pter02.md#clou |                 |
-|          |                   |                                                   | d-infrastructu |                 |
-|          |                   |                                                   | re-hardware-pr |                 |
-|          |                   |                                                   | ofile-requirem |                 |
-|          |                   |                                                   | ents>`__       |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.009| Physical Storage  | The physical machines on which the Kubernetes     | `infra.hw.stg. | `3.3 <../../../ |
-|          |                   | Nodes run **should** be equipped with Sold State  | ssd.cfg.002 <. | ref_impl/cntt-r |
-|          |                   | Drives (SSDs).                                    | /chapter02.md# | i2/chapters/cha |
-|          |                   |                                                   | cloud-infrastr | pter03.md#infra |
-|          |                   |                                                   | ucture-hardwar | structure-requi |
-|          |                   |                                                   | e-profile-requ | rements>`__     |
-|          |                   |                                                   | irements>`__   |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.010| Local Filesystem  | The Kubernetes Nodes **must** be equipped with    | `e.cap.003 <./ | `3.3 <../../../ |
-|          | Storage Quantity  | local filesystem capacity of at least 320GB for   | chapter02.md#c | ref_impl/cntt-r |
-|          |                   | unpacking and executing containers. Note, extra   | loud-infrastru | i2/chapters/cha |
-|          |                   | should be provisioned to cater for any overhead   | cture-software | pter03.md#infra |
-|          |                   | required by the Operating System and any required | -profile-capab | structure-requi |
-|          |                   | OS processes such as the container runtime,       | ilities>`__    | rements>`__     |
-|          |                   | Kubernetes agents, etc.                           |                |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.011| Virtual Node CPU  | If using VMs, the Kubernetes Nodes **must** be    | `e.cap.001 <./ |                 |
-|          | Quantity          | equipped with at least 16 vCPUs. Note, extra      | chapter02.md#c |                 |
-|          |                   | should be provisioned to cater for any overhead   | loud-infrastru |                 |
-|          |                   | required by the Operating System and any required | cture-software |                 |
-|          |                   | OS processes such as the container runtime,       | -profile-capab |                 |
-|          |                   | Kubernetes agents, etc.                           | ilities>`__    |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.012| Kubernetes Node   | The Kubernetes Nodes **must** be equipped with at | `e.cap.002 <./ | `3.3 <../../../ |
-|          | RAM Quantity      | least 32GB of RAM. Note, extra should be          | chapter02.md#c | ref_impl/cntt-r |
-|          |                   | provisioned to cater for any overhead required by | loud-infrastru | i2/chapters/cha |
-|          |                   | the Operating System and any required OS          | cture-software | pter03.md#infra |
-|          |                   | processes such as the container runtime,          | -profile-capab | structure-requi |
-|          |                   | Kubernetes agents, etc.                           | ilities>`__    | rements>`__     |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.013| Physical NIC      | The physical machines on which the Kubernetes     | `infra.hw.nic. | `3.3 <../../../ |
-|          | Quantity          | Nodes run **must** be equipped with at least four | cfg.001 <./cha | ref_impl/cntt-r |
-|          |                   | (4) Network Interface Card (NIC) ports.           | pter02.md#clou | i2/chapters/cha |
-|          |                   |                                                   | d-infrastructu | pter03.md#infra |
-|          |                   |                                                   | re-hardware-pr | structure-requi |
-|          |                   |                                                   | ofile-requirem | rements>`__     |
-|          |                   |                                                   | ents>`__       |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.014| Physical NIC      | The speed of NIC ports housed in the physical     | `infra.hw.nic. | `3.3 <../../../ |
-|          | Speed - Basic     | machines on which the Kubernetes Nodes run for    | cfg.002 <./cha | ref_impl/cntt-r |
-|          | Profile           | workloads matching the Basic Profile **must** be  | pter02.md#clou | i2/chapters/cha |
-|          |                   | at least 10Gbps.                                  | d-infrastructu | pter03.md#infra |
-|          |                   |                                                   | re-hardware-pr | structure-requi |
-|          |                   |                                                   | ofile-requirem | rements>`__     |
-|          |                   |                                                   | ents>`__       |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.015| Physical NIC      | The speed of NIC ports housed in the physical     | `infra.hw.nic. | `3.3 <../../../ |
-|          | Speed - High      | machines on which the Kubernetes Nodes run for    | cfg.002 <./cha | ref_impl/cntt-r |
-|          | Performance       | workloads matching the High Performance profile   | pter02.md#clou | i2/chapters/cha |
-|          | Profile           | **must** be at least 25Gbps.                      | d-infrastructu | pter03.md#infra |
-|          |                   |                                                   | re-hardware-pr | structure-requi |
-|          |                   |                                                   | ofile-requirem | rements>`__     |
-|          |                   |                                                   | ents>`__       |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.016| Physical PCIe     | The physical machines on which the Kubernetes     |                |                 |
-|          | slots             | Nodes run **must** be equipped with at least      |                |                 |
-|          |                   | eight (8) Gen3.0 PCIe slots, each with at least   |                |                 |
-|          |                   | eight (8) lanes.                                  |                |                 |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.017| Immutable         | Whether physical or virtual machines are used,    | `req.gen.cnt.0 | `4.3.1 <../../. |
-|          | infrastructure    | the Kubernetes Node **must not** be changed       | 2 <./chapter02 | ./ref_impl/cntt |
-|          |                   | after it is instantiated. New changes to the      | .md#kubernetes | -ri2/chapters/c |
-|          |                   | Kubernetes Node must be implemented as new Node   | -architecture- | hapter04.md#ins |
-|          |                   | instances. This covers any changes from BIOS      | require        | tallation-on-ba |
-|          |                   | through Operating System to running processes and | ments>`__      | re-metal-infrat |
-|          |                   | all associated configurations.                    |                | ructure>`__     |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ch.018| NFD               | `Node Feature Discovery <https://kubernetes-sigs. | TBD            | `4.3.1 <../../. |
-|          |                   | github.io/node-feature-discovery/stable/get-start |                | ./ref_impl/cntt |
-|          |                   | ed/index.html>`__ **must** be used to advertise   |                | -ri2/chapters/c |
-|          |                   | the detailed software and hardware capabilities   |                | hapter04.md#ins |
-|          |                   | of each node in the Kubernetes Cluster.           |                | tallation-on-ba |
-|          |                   |                                                   |                | re-metal-infrat |
-|          |                   |                                                   |                | ructure>`__     |
-+----------+-------------------+---------------------------------------------------+----------------+-----------------+
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+| Ref          | Specification| Details                                      | Requirement           | Reference             |
+|              |              |                                              | Trace                 | Implementation Trace  |
++==============+==============+==========+===================================+=======================+=======================+
+|``ra2.ch.001``|Huge pages    |When hosting workloads matching the High      |`infra.com.cfg.004 <./c|`4.3.1 <../../../ref_im|
+|              |              |Performance profile, it **must** be possible  |hapter02.md#cloud-infra|pl/cntt-ri2/chapters/ch|
+|              |              |to enable Huge pages (2048KiB and 1048576KiB) |structure-software-prof|apter04.md#installation|
+|              |              |within the Kubernetes Node OS, exposing schedu|ile-requirements>`__   |-on-bare-metal-infratru|
+|              |              |lable resources ``hugepages-2Mi`` and         |                       |cture>`__              |
+|              |              |``hugepages-1Gi``.                            |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.002``|SR-IOV capable|When hosting workloads matching the High      |`e.cap.013 <./chapter02|`3.3 <../../../ref_impl|
+|              |NICs          |Performance profile, the physical machines on |.md#cloud-infrastructur|/cntt-ri2/chapters/chap|
+|              |              |which the Kubernetes Nodes run **must** be    |e-software-profile-requ|ter03.md#infrastructure|
+|              |              |equipped with NICs that are SR-IOV capable.   |irements>`__           |-requirements>`__      |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.003``|SR-IOV Virtual|When hosting workloads matching the High      |`e.cap.013 <./chapter02|`4.3.1 <../../../ref_im|
+|              |Functions     |Performance profile, SR-IOV virtual functions |.md#cloud-infrastructur|pl/cntt-ri2/chapters/ch|
+|              |Functions     |(VFs) **must** be configured within the       |e-software-profile-requ|apter04.md#installation|
+|              |              |Kubernetes Node OS, as the SR-IOV Device      |irements>`__           |-on-bare-metal-infratru|
+|              |              |Plugin does not manage the creation of these  |                       |cture>`__              |
+|              |              |VFs.                                          |                       |                       |      
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.004``|CPU Simultaneo|SMT **must** be enabled in the BIOS on the    |`infra.hw.cpu.cfg.004  |`3.3 <../../../ref_impl|
+|              |us Multi-Threa|physical machine on which the Kubernetes Node |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |ding (SMT)    |runs.                                         |nfrastructure-hardware-|ter03.md#infrastructure|
+|              |              |                                              |profile-require        |-requirements>`__      |
+|              |              |                                              |ments>`__              |                       |      
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.005``|CPU Allocation|For Kubernetes nodes running as Virtual       |                       |                       |
+|              |Ratio - VMs   |Machines, the CPU allocation ratio between    |                       |                       |
+|              |              |vCPU and physical CPU core **must** be 1:1.   |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.006``|CPU           |To ensure the CPU allocation ratio between    |`infra.com.cfg.001     |`3.3 <../../../ref_impl|
+|              |Allocation    |vCPU and physical CPU core is 1:1, the sum of |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |Ratio - Pods  |CPU requests and limits by containers in Pod  |nfrastructure-software-|ter03.md#infrastructure|
+|              |              |specifications **must** remain less than the  |profile-require        |-requirements>`__      |
+|              |              |allocatable quantity of CPU resources (i.e.   |ments>`__              |                       |
+|              |              |``requests.cpu < allocatable.cpu`` and        |                       |                       |
+|              |              |``limits.cpu < allocatable.cpu``).            |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.007``|IPv6DualStack |To support IPv4/IPv6 dual stack networking,   |                       |                       | 
+|              |              |the Kubernetes Node OS **must** support and   |                       |                       |
+|              |              |be allocated routable IPv4 and IPv6 addresses.|                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.008``|Physical CPU  |The physical machines on which the Kubernetes |`infra.hw.cpu.cfg.001  |`3.3 <../../../ref_impl|
+|              |Quantity      |Nodes run **must** be equipped with at least  |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |              |2 physical sockets, each with at least 20     |nfrastructure-hardware-|ter03.md#infrastructure|
+|              |              |CPU cores.                                    |profile-require        |-requirements>`__      |
+|              |              |                                              |ments>`__,             |                       |
+|              |              |                                              |`infra.hw.cpu.cfg.002  |                       |
+|              |              |                                              |<./chapter02.md#cloud-i|                       |
+|              |              |                                              |nfrastructure-hardware-|                       |
+|              |              |                                              |profile-require        |                       |
+|              |              |                                              |ments>`__              |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.009``|Physical      |The physical machines on which the Kubernetes |`infra.hw.stg.ssd.cfg.0|`3.3 <../../../ref_impl|
+|              |Storage       |Nodes run **should** be equipped with Sold    |02 <./chapter02.md#clou|/cntt-ri2/chapters/chap|
+|              |              |State Drives (SSDs).                          |d-infrastructure-hardwa|ter03.md#infrastructure|
+|              |              |                                              |re-profile-require     |-requirements>`__      |
+|              |              |                                              |ments>`__              |                       |
+|              |              |                                              |                       |                       |      
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.010``|Local         |The Kubernetes Nodes **must** be equipped     |`e.cap.003 <./chapter02|`3.3 <../../../ref_impl|
+|              |Filesystem    |with local filesystem capacity of at least    |.md#cloud-infrastructur|/cntt-ri2/chapters/chap|
+|              |Storage       |320GB for unpacking and executing containers. |e-software-profile-capa|ter03.md#infrastructure|
+|              |Quantity      |Note, extra should be provisioned to cater    |bilities>`__           |-requirements>`__      |
+|              |              |for any overhead required by the Operating    |                       |                       |
+|              |              |System and any required OS processes such as  |                       |                       |
+|              |              |the container runtime, Kubernetes agents, etc.|                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.011``|Virtual Node  |If using VMs, the Kubernetes Nodes **must**   |`e.cap.001 <./chapter02|                       |
+|              |CPU Quantity  |be equipped with at least 16 vCPUs. Note,     |.md#cloud-infrastructur|                       |
+|              |              |extra should be provisioned to cater for any  |e-software-profile-capa|                       |
+|              |              |overhead required by the Operating System and |bilities>`__           |                       |
+|              |              |any required OS processes such as the         |                       |                       |
+|              |              |container runtime, Kubernetes agents, etc.    |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.012``|Kubernetes    |The Kubernetes Nodes **must** be equipped     |`e.cap.002 <./chapter02|`3.3 <../../../ref_impl|
+|              |Node RAM      |with at least 32GB of RAM. Note, extra should |.md#cloud-infrastructur|/cntt-ri2/chapters/chap|
+|              |Quantity      |be provisioned to cater for any overhead      |e-software-profile-capa|ter03.md#infrastructure|
+|              |              |required by the Operating System and any      |bilities>`__           |-requirements>`__      |
+|              |              |required OS processes such as the container   |                       |                       |
+|              |              |runtime, Kubernetes agents, etc.              |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.013``|Physical      |The physical machines on which the Kubernetes |`infra.hw.nic.cfg.001  |`3.3 <../../../ref_impl|
+|              |NIC Quantity  |Nodes run **must** be equipped with at least  |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |              |four (4) Network Interface Card (NIC) ports.  |nfrastructure-hardware-|ter03.md#infrastructure|
+|              |              |                                              |profile-require        |-requirements>`__      |
+|              |              |                                              |ments>`__              |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.014``|Physical      |The speed of NIC ports housed in the physical |`infra.hw.nic.cfg.002  |`3.3 <../../../ref_impl|
+|              |NIC Speed -   |machines on which the Kubernetes Nodes run    |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |Basic Profile |for workloads matching the Basic Profile      |nfrastructure-hardware-|ter03.md#infrastructure|
+|              |              |**must** be at least 10Gbps.                  |profile-require        |-requirements>`__      |
+|              |              |                                              |ments>`__              |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.015``|Physical      |The speed of NIC ports housed in the physical |`infra.hw.nic.cfg.002  |`3.3 <../../../ref_impl|
+|              |NIC Speed -   |machines on which the Kubernetes Nodes run    |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
+|              |High          |for workloads matching the High Performance   |nfrastructure-hardware-|ter03.md#infrastructure|
+|              |Performance   |profile **must** be at least 25Gbps.          |profile-require        |-requirements>`__      |
+|              |Profile       |                                              |ments>`__              |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.016``|Physical PCIe |The physical machines on which the Kubernetes |                       |                       |
+|              |slots         |Nodes run **must** be equipped with at least  |                       |                       |
+|              |              |eight (8) Gen3.0 PCIe slots, each with at     |                       |                       |
+|              |              |least eight (8) lanes.                        |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.017``|Immutable     |Whether physical or virtual machines are      |`req.gen.cnt.02 <./chap|`4.3.1 <../../../ref_im|
+|              |infrastructure|used, the Kubernetes Node **must not** be     |ter02.md#kubernetes-arc|pl/cntt-ri2/chapters/ch|
+|              |              |changed after it is instantiated. New changes |hitecture-require      |apter04.md#installation|
+|              |              |to the Kubernetes Node must be implemented as |ments>`__              |-on-bare-metal-infratru|
+|              |              |new Node instances. This covers any changes   |                       |cture>`__              |
+|              |              |from BIOS through Operating System to running |                       |                       |
+|              |              |processes and all associated configurations.  |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.018``|NFD           |`Node Feature Discovery <https://kubernetes-si|TBD                    |`4.3.1 <../../../ref_im|
+|              |              |gs.github.io/node-feature-discovery/stable/get|                       |pl/cntt-ri2/chapters/ch|
+|              |              |-started/index.html>`__ **must** be used to ad|                       |apter04.md#installa    |
+|              |              |vertise the detailed software and hardware    |                       |tion-on-bare-metal-infr|
+|              |              |capabilities of each node in the Kubernetes   |                       |atructure>`__          |
+|              |              |Cluster.                                      |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
 
 **Table 4-1:** Node Specifications
+
+Node Operating System
+---------------------
+
+In order for a Host OS to be compliant with this Reference Architecture it must meet the following requirements:
+
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+| Ref          | Specification | Details                                       | Requirement           | Reference             |
+|              |               |                                               | Trace                 | Implementation Trace  |
++==============+===============+===========+===================================+=======================+=======================+
+|``ra2.os.001``| Linux         | A deb/rpm compatible distribution of Linux    | tbd                   | tbd                   |
+|              | Distribution  | (this must be used for the master nodes, and  |                       |                       |
+|              |               | can be used for worker nodes).                |                       |                       |
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+|``ra2.os.002``| Linux Kernel  | A version of the Linux kernel that is         | tbd                   | tbd                   |
+|              | Version       | compatible with kubeadm - this has been       |                       |                       |
+|              |               | chosen as the baseline because kubeadm is     |                       |                       |
+|              |               | focussed on installing and managing the       |                       |                       |
+|              |               | lifecycle of Kubernetes and nothing else,     |                       |                       |
+|              |               | hence it is easily integrated into            |                       |                       |
+|              |               | higher-level and more complete tooling for    |                       |                       |
+|              |               | the full lifecycle management of the          |                       |                       |
+|              |               | infrastructure, cluster add-ons, etc.         |                       |                       |
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+|``ra2.os.003``| Windows       | Windows Server (this can be used for          | tbd                   | tbd                   |
+|              | Server        | worker nodes, but be aware of the             |                       |                       |
+|              |               | limitations).                                 |                       |                       |
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+|``ra2.os.004``| Disposable    | In order to support req.gen.cnt.03 (immutable | tbd                   | tbd                   |
+|              | OS            | infrastructure), the Host OS must be          |                       |                       |
+|              |               | disposable, meaning the configuration of the  |                       |                       |
+|              |               | Host OS (and associated infrastructure such   |                       |                       |
+|              |               | as VM or bare metal server) must be           |                       |                       |
+|              |               | consistent - e.g. the system software and     |                       |                       |
+|              |               | configuration of that software must be        |                       |                       |
+|              |               | identical apart from those areas of           |                       |                       |
+|              |               | configuration that must be different such as  |                       |                       |
+|              |               | IP addresses and hostnames.                   |                       |                       |
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+|``ra2.os.005``| Automated     | This approach to configuration management     | tbd                   | tbd                   |
+|              | Deployment    | supports req.lcm.gen.01 (automated            |                       |                       |
+|              |               | deployments)                                  |                       |                       |
++--------------+---------------+-----------------------------------------------+-----------------------+-----------------------+
+
+**Table 4-2:** Operating System Requirements
+
+Table 4-3 lists the kernel versions that comply with this Reference Architecture specification.
+
++-------------+-------------------+---------------------------+
+| OS Family   | Kernel Version(s) | Notes                     |
++=============+===================+===========================+
+| Linux       | 3.10+             |                           |
++-------------+-------------------+---------------------------+
+| Windows     | 1809 (10.0.17763) | For worker nodes only     |
++-------------+-------------------+---------------------------+
+
+**Table 4-3:** Operating System Versions
+
+
 
 Kubernetes
 ----------
@@ -377,7 +417,7 @@ the following specifications:
 |           |                  |                                                   | s>`__          |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-**Table 4-2:** Kubernetes Specifications
+**Table 4-4:** Kubernetes Specifications
 
 Container runtimes
 ------------------
@@ -404,7 +444,7 @@ Container runtimes
 |           |                  |                                                   |                | ructure>`__     |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-**Table 4-3:** Container Runtime Specifications
+**Table 4-5:** Container Runtime Specifications
 
 Networking solutions
 --------------------
@@ -565,7 +605,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   | s>`__          |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-**Table 4-4:** Networking Solution Specifications
+**Table 4-6:** Networking Solution Specifications
 
 Storage components
 ------------------
@@ -631,7 +671,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  | consumers of the service.                         |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-**Table 4-6:** Storage Solution Specifications
+**Table 4-7:** Storage Solution Specifications
 
 A note on object storage:
 
@@ -685,7 +725,7 @@ Helm version 3 has been chosen as the Application packaging mechanism to ensure 
 kaging+Proposals+for+CNF>`__ and `ETSI SOL0001 rel. 4 MCIOP specification <https://www.etsi.org/deliver/etsi_gs/NFV-SOL/
 001_099/001/04.02.01_60/gs_NFV-SOL001v040201p.pdf>`__.
 
-**Table 4-7:** Kubernetes Application Package Manager Specifications
+**Table 4-8:** Kubernetes Application Package Manager Specifications
 
 Kubernetes workloads
 --------------------
@@ -775,7 +815,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  | node software of hardware features they need.     |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-**Table 4-8:** Kubernetes Workload Specifications
+**Table 4-9:** Kubernetes Workload Specifications
 
 Additional required components
 ------------------------------
