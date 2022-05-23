@@ -253,6 +253,56 @@ infra.svc.stg.001 Object Storage Yes/No Object Storage Service (e.g S3-compatibl
 
 **Table 5-7a:** Service examples.
 
+
+Platform Services - Log Management Service (LMS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The table below specifies a set of requirements for the Log Management Service (LMS).
+
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| Reference   | Requirement                                                           | Notes                                 |
++=============+=======================================================================+=======================================+
+| pas.lms.001 | LMS must support log management from multiple, distributed sources    |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.002 | LMS must manage log rotation at configurable time periods             |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.003 | LMS must manage log rotation at configurable log file status (%full)  |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.004 | LMS must manage archival and retention of logs for configurable       |                                       |
+|             | time periods by different log types                                   |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.005 | LMS must ensure log file integrity (no changes, particularly changes  | Covered by req.sec.mon.005: "The      |
+|             | that may affect the completeness, consistency, and accuracy including | Prod-Platform and NonProd-Platform    |
+|             | event times, of the log file content)                                 | must secure  and protect all logs     |
+|             |                                                                       | (containing  sensitive information)   |
+|             |                                                                       | both in-transit  and at rest."        |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.006 | LMS must monitor log rotation and log archival processes              |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.007 | LMS must monitoring the logging status of all log sources             |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.008 | LMS must ensure that each logging host’s clock is synched to a common |                                       |
+|             | time source                                                           |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.009 | LMS must support reconfiguring of logging as needed based on policy   |                                       |
+|             | changes, technology changes, and other factors                        |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.010 | LMS must support the documenting and reporting of anomalies in log    |                                       |
+|             | settings, configurations, and processes                               |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.011 | LMS must support the correlating of entries from multiple logs that   |                                       |
+|             | relate to the same event                                              |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.012 | LMS must support the correlating of multiple log entries from a       |                                       |
+|             | single source or multiple sources based on logged values (e.g., event |                                       |
+|             | types, timestamps, IP addresses)                                      |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+| pas.lms.013 | LMS should support rule-based correlation                             |                                       |
++-------------+-----------------------------------------------------------------------+---------------------------------------+
+
+**Table 5-7b:** Platform Services - Log Management Service (LMS) Requirements.
+
+
 Platform Services - Monitoring Service Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -315,6 +365,7 @@ The table below specifies a set of requirements for the Monitoring service (aka 
 +-------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 
 **Table 5-7c:** Platform Services - Monitoring Service Requirements.
+
 
 Cloud Infrastructure Software Profiles features and requirements
 ----------------------------------------------------------------
