@@ -627,51 +627,67 @@ Platform and Access Requirements
      - Specification Reference
    * - sec.sys.001
      - Access
-     - The Platform must support authenticated and secure access to API, GUI and command line interfaces
+     - The Platform must support authenticated and secure access to API, GUI
+       and command line interfaces
      - :ref:`ref_arch/openstack/chapters/chapter06:rbac`
    * - sec.sys.002
      - Access
-     - The Platform must support Traffic Filtering for workloads (for example, Firewall).
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+     - The Platform must support Traffic Filtering for workloads (for example,
+       Firewall).
+     - :ref:`ref_arch/openstack/chapters/chapter06: workload security`
    * - sec.sys.003
      - Access
-     - The Platform must support Secure and encrypted communications, and confidentiality and integrity of network
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ confidentiality and integrity`
+     - The Platform must support Secure and encrypted communications, and
+       confidentiality and integrity of network
+     - :ref:`ref_arch/openstack/chapters/chapter06: confidentiality and integrity`
    * - sec.sys.004
      - Access
-     - The Cloud Infrastructure must support authentication, integrity and confidentiality on all network channels.
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ confidentiality and integrity` `
+     - The Cloud Infrastructure must support authentication, integrity and
+       confidentiality on all network channels.
+     - :ref:`ref_arch/openstack/chapters/chapter06: confidentiality and integrity` `
    * - sec.sys.005
      - Access
      - The Cloud Infrastructure must segregate the underlay and overlay networks.
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06: confidentiality and integrity`
    * - sec.sys.006
      - Access
-     - The Cloud Infrastructure must be able to utilise the Cloud Infrastructure Manager identity lifecycle management capabilities.
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ identity security`
+     - The Cloud Infrastructure must be able to utilise the Cloud Infrastructure Manager
+       identity lifecycle management capabilities.
+     - :ref:`ref_arch/openstack/chapters/chapter06: identity security`
    * - sec.sys.007
      - Access
-     - The Platform must implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control).
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ rbac`
+     - The Platform must implement controls enforcing separation of duties and privileges,
+       least privilege use and least common mechanism (Role-Based Access Control).
+     - :ref:`ref_arch/openstack/chapters/chapter06: rbac`
    * - sec.sys.008
      - Access
-     - The Platform must be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.)
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+     - The Platform must be able to assign the Entities that comprise the tenant networks to
+       different trust domains. (Communication between different trust domains is not allowed,
+       by default.)
+     - :ref:`ref_arch/openstack/chapters/chapter06: workload security`
    * - sec.sys.009
      - Access
-     - The Platform must support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts another domain (the "trusted domain") to authenticate users for them them or to allow access to its resources from the trusted domain. In a bidirectional relationship both domain are "trusting" and "trusted".
+     - The Platform must support creation of Trust Relationships between trust domains. These
+       maybe uni-directional relationships where the trusting domain trusts another domain (the
+       "trusted domain") to authenticate users for them them or to allow access to its resources
+       from the trusted domain. In a bidirectional relationship both domain are "trusting" and 
+       "trusted".
      -
    * - sec.sys.010
      - Access
-     - For two or more domains without existing trust relationships, the Platform must not allow the effect of an attack on one domain to impact the other domains either directly or indirectly.
+     - For two or more domains without existing trust relationships, the Platform must not allow
+       the effect of an attack on one domain to impact the other domains either directly or
+       indirectly.
      -
    * - sec.sys.011
      - Access
-     - The Platform must not reuse the same authentication credentials (e.g., key pairs) on different Platform components (e.g., different hosts, or different services).
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ system access`
+     - The Platform must not reuse the same authentication credentials (e.g., key pairs) on
+       different Platform components (e.g., different hosts, or different services).
+     - :ref:`ref_arch/openstack/chapters/chapter06: system access`
    * - sec.sys.012
      - Access
-     - The Platform must protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component (e.g., in OpenStack Barbican)
+     - The Platform must protect all secrets by using strong encryption techniques and storing
+       the protected secrets externally from the component (e.g., in OpenStack Barbican)
      -
    * - sec.sys.013
      - Access
@@ -683,19 +699,23 @@ Platform and Access Requirements
      -
    * - sec.sys.016
      - Access
-     - Login access to the Platform’s components must be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. Note: Hardened jump servers isolated from external networks are recommended
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ security lcm`
+     - Login access to the Platform’s components must be through encrypted protocols such as SSH
+       v2 or TLS v1.2 or higher. Note: Hardened jump servers isolated from external networks are
+       recommended
+     - :ref:`ref_arch/openstack/chapters/chapter06: security lcm`
    * - sec.sys.017
      - Access
-     - The Platform must provide the capability of using digital certificates that comply with X.509 standards issued by a trusted Certification Authority.
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ confidentiality and integrity`
+     - The Platform must provide the capability of using digital certificates that comply with X.509
+       standards issued by a trusted Certification Authority.
+     - :ref:`ref_arch/openstack/chapters/chapter06: confidentiality and integrity`
    * - sec.sys.018
      - Access
      - The Platform must provide the capability of allowing certificate renewal and revocation.
      -
    * - sec.sys.019
      - Access
-     - The Platform must provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation identity).
+     - The Platform must provide the capability of testing the validity of a digital certificate (CA
+       signature, validity period, non revocation identity).
      -
 
 Confidentiality and Integrity Requirements
@@ -716,7 +736,7 @@ Confidentiality and Integrity Requirements
      - Confidentiality/Integrity
      - The Platform must support Confidentiality and Integrity of data
        at rest and in transit.
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ confidentiality and\
+     - :ref:`ref_arch/openstack/chapters/chapter06: confidentiality and\
        integrity`
    * - sec.ci.003
      - Confidentiality/Integrity
@@ -753,7 +773,7 @@ Confidentiality and Integrity Requirements
    * - sec.ci.008
      - Confidentiality
      - The Cloud Infrastructure must support tenant networks segregation.
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06: workload security`
 
 
 Workload Security Requirements
@@ -773,7 +793,7 @@ Workload Security Requirements
    * - sec.wl.001
      - Workload
      - The Platform must support Workload placement policy.
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06: workload security`
    * - sec.wl.002
      - Workload
      - The Cloud Infrastructure provide methods to ensure the platform's
@@ -783,12 +803,12 @@ Workload Security Requirements
    * - sec.wl.003
      - Workload
      - The Platform must support secure provisioning of Workloads.
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06: workload security`
    * - sec.wl.004
      - Workload
      - The Platform must support Location assertion (for mandated in-
        country or location requirements).
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06: workload security`
    * - sec.wl.005
      - Workload
      - The Platform must support the separation of production and non-
@@ -799,7 +819,7 @@ Workload Security Requirements
      - The Platform must support the separation of Workloads based on
        their categorisation (for example, payment card information,
        healthcare, etc.)
-     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06: workload security`
    * - sec.wl.007
      - Workload
      - The Operator must implement processes and tools to verify verify
@@ -811,124 +831,132 @@ Image Security Requirements
 
 (source :ref:`ref_model/chapters/chapter07:image security`)
 
-+--------------+-----------------+-------------------------------+--------------------------------------------------+
-| Reference    | sub-category    | Description                   | Specification Reference                          |
-+==============+=================+===============================+==================================================+
-| sec.img.001  | Image           | Images from untrusted sources | :ref:`ref_arch/openstack/chapters/chapter06:\    |
-|              |                 | **must not** be used.         | image security`                                  |
-+--------------+-----------------+-------------------------------+--------------------------------------------------+
-| sec.img.002  | Image           | Images **must** be scanned to | :ref:`ref_arch/openstack/chapters/chapter06:\    |
-|              |                 | be maintained free from known | image security`                                  |
-|              |                 | vulnerabilities.              |                                                  |
-+--------------+-----------------+-------------------------------+--------------------------------------------------+
-| sec.img.003  | Image           | Images **must not** be        |                                                  |
-|              |                 | configured to run with        |                                                  |
-|              |                 | privileges higher than        |                                                  |
-|              |                 | the privileges of the actor   |                                                  |
-|              |                 | authorised to run them.       |                                                  |
-+--------------+-----------------+-------------------------------+--------------------------------------------------+
-| sec.img.004  | Image           | Images **must** only be       | :ref:`ref_arch/openstack/chapters/chapter06:\    |
-|              |                 | accessible to authorised      | integrity of openstack components configuration` |
-|              |                 | actors.                       |                                                  |
-+--------------+-----------------+-------------------------------+--------------------------------------------------+
-| sec.img.005  | Image           | Image Registries **must**     | :ref:`ref_arch/openstack/chapters/chapter06:\    |
-|              |                 | only be accessible to         | integrity of openstack components configuration` |
-|              |                 | authorised actors.            |                                                  |
-+--------------+-----------------+-------------------------------+--------------------------------------------------+
-| sec.img.006  | Image           | Image Registries **must**     | :ref:`ref_arch/openstack/chapters/chapter06:\    |
-|              |                 | only be accessible over       | integrity of openstack components configuration` |
-|              |                 | networks that enforce         |                                                  |
-|              |                 | authentication, integrity and |                                                  |
-|              |                 | confidentiality.              |                                                  |
-+--------------+-----------------+-------------------------------+--------------------------------------------------+
-| sec.img.007  | Image           | Image registries **must**     | :ref:`ref_arch/openstack/chapters/chapter06:\    |
-|              |                 | be clear of vulnerable        | image security`                                  |
-|              |                 | and out of date versions.     |                                                  |
-+--------------+-----------------+-------------------------------+--------------------------------------------------+
-| sec.img.008  | Image           | Images **must not** include   |                                                  |
-|              |                 | any secrets. Secrets include  |                                                  |
-|              |                 | passwords, cloud provider     |                                                  |
-|              |                 | credentials, SSH keys, TLS    |                                                  |
-|              |                 | certificate keys, etc.        |                                                  |
-+--------------+-----------------+-------------------------------+--------------------------------------------------+
+.. list-table:: Reference Model Requirements - Image Security
+   Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-10: Reference Model Requirements - Image Security Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.img.001
+     - Image
+     - Images from untrusted sources must not be used.
+     - :ref:`ref_arch/openstack/chapters/chapter06: image security`
+   * - sec.img.002
+     - Image
+     - Images must be scanned to be maintained free from known vulnerabilities.
+     - :ref:`ref_arch/openstack/chapters/chapter06: image security`
+   * - sec.img.003
+     - Image
+     - Images must not be configured to run with privileges higher than the
+       privileges of the actor authorised to run them.
+     -
+   * - sec.img.004
+     - Image
+     - Images must only be accessible to authorised actors.
+     - :ref:`ref_arch/openstack/chapters/chapter06: integrity of openstack
+       components configuration`
+   * - sec.img.005
+     - Image
+     - Image Registries must only be accessible to authorised actors.
+     - :ref:`ref_arch/openstack/chapters/chapter06: integrity of openstack
+       components configuration`
+   * - sec.img.006
+     - Image
+     - Image Registries must only be accessible over networks that enforce
+       authentication, integrity and confidentiality.
+     - :ref:`ref_arch/openstack/chapters/chapter06: integrity of openstack
+       components configuration`
+   * - sec.img.007
+     - Image
+     - Image registries must be clear of vulnerable and out of date versions.
+     - :ref:`ref_arch/openstack/chapters/chapter06: image security`
+   * - sec.img.008
+     - Image
+     - Images must not include any secrets. Secrets include passwords, cloud
+       provider credentials, SSH keys, TLS certificate keys, etc.
+     -
 
 Security LCM Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:security lcm`)
 
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| Reference    | sub-category | Description                         | Specification Reference                        |
-+==============+==============+=====================================+================================================+
-| sec.lcm.001  | LCM          | The Platform **must** support       | :ref:`ref_arch/openstack/chapters/chapter06:\  |
-|              |              | Secure Provisioning, Availability,  | monitoring and security audit`                 |
-|              |              | and Deprovisioning (Secure          |                                                |
-|              |              | Clean-Up) of workload resources     |                                                |
-|              |              | where Secure Clean-Up includes      |                                                |
-|              |              | tear-down, defense against virus or |                                                |
-|              |              | other attacks.                      |                                                |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| sec.lcm.002  | LCM          | The Cloud Operator **must** use     | :ref:`ref_arch/openstack/chapters/chapter06:\  |
-|              |              | management protocols limiting       | security lcm`                                  |
-|              |              | security risk such as SNMPv3, SSH   |                                                |
-|              |              | v2, ICMP, NTP, syslog and TLS v1.2  |                                                |
-|              |              | or higher.                          |                                                |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| sec.lcm.003  | LCM          | The Cloud Operator **must**         | :ref:`ref_arch/openstack/chapters/chapter06:\  |
-|              |              | implement and strictly follow       | monitoring and security audit`                 |
-|              |              | change management processes for     |                                                |
-|              |              | Cloud Infrastructure,               |                                                |
-|              |              | Infrastructure Manager and other    |                                                |
-|              |              | components of the cloud, and        |                                                |
-|              |              | Platform change control on          |                                                |
-|              |              | hardware.                           |                                                |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| sec.lcm.005  | LCM          | Platform **must** provide logs      | :ref:`ref_arch/openstack/chapters/chapter06:\  |
-|              |              | and these logs must be monitored    | monitoring and security audit`                 |
-|              |              | for anomalous behaviour.            |                                                |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| sec.lcm.006  | LCM          | The Platform  **must** verify the   | :ref:`ref_arch/openstack/chapters/chapter06:\  |
-|              |              | integrity of all Resource           | confidentiality and integrity of tenant data \ |
-|              |              | management requests.                | (sec.ci.001)`                                  |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| sec.lcm.007  | LCM          | The Platform **must** be able to    |                                                |
-|              |              | update newly instantiated,          |                                                |
-|              |              | suspended, hibernated, migrated and |                                                |
-|              |              | restarted images with current time  |                                                |
-|              |              | information.                        |                                                |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| sec.lcm.008  | LCM          | The Platform **must** be able to    |                                                |
-|              |              | update newly instantiated,          |                                                |
-|              |              | suspended, hibernated, migrated and |                                                |
-|              |              | restarted images with relevant DNS  |                                                |
-|              |              | information.                        |                                                |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| sec.lcm.009  | LCM          | The Platform **must** be able to    |                                                |
-|              |              | update the tag of newly             |                                                |
-|              |              | instantiated, suspended,            |                                                |
-|              |              | hibernated, migrated and restarted  |                                                |
-|              |              | images with relevant geolocation    |                                                |
-|              |              | (geographical) information.         |                                                |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| sec.lcm.010  | LCM          | The Platform **must** log all       |                                                |
-|              |              | changes to geolocation along with   |                                                |
-|              |              | the mechanisms and sources of       |                                                |
-|              |              | location information (i.e. GPS, IP  |                                                |
-|              |              | block, and timing).                 |                                                |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| sec.lcm.011  | LCM          | The Platform **must** implement     | :ref:`ref_arch/openstack/chapters/chapter06:\  |
-|              |              | Security life cycle management      | patches`                                       |
-|              |              | processes including the proactive   |                                                |
-|              |              | update and patching of all deployed |                                                |
-|              |              | Cloud Infrastructure software.      |                                                |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
-| sec.lcm.012  | LCM          | The Platform **must** log any       | :ref:`ref_arch/openstack/chapters/chapter06:\  |
-|              |              | access privilege escalation.        | what to log / what not to log`                 |
-+--------------+--------------+-------------------------------------+------------------------------------------------+
+.. list-table:: Reference Model Requirements - Security LCM
+   Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-11: Reference Model Requirements - Security LCM Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.lcm.001
+     - LCM
+     - The Platform must support Secure Provisioning, Availability, and
+       Deprovisioning (Secure Clean-Up) of workload resources where Secure
+       Clean-Up includes tear-down, defense against virus or other attacks.
+     - :ref:`ref_arch/openstack/chapters/chapter06: monitoring and security
+       audit`
+   * - sec.lcm.002
+     - LCM
+     - The Cloud Operator must use management protocols limiting security risk
+       such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher.
+     - :ref:`ref_arch/openstack/chapters/chapter06: security lcm`
+   * - sec.lcm.003
+     - LCM
+     - The Cloud Operator must implement and strictly follow change management
+       processes for Cloud Infrastructure, Infrastructure Manager and other
+       components of the cloud, and Platform change control on hardware.
+     - :ref:`ref_arch/openstack/chapters/chapter06: monitoring and security
+       audit`
+   * - sec.lcm.005
+     - LCM
+     - Platform must provide logs and these logs must be monitored for
+       anomalous behaviour.
+     - :ref:`ref_arch/openstack/chapters/chapter06: monitoring and security
+       audit`
+   * - sec.lcm.006
+     - LCM
+     - The Platform must verify the integrity of all Resource management
+       requests.
+     - :ref:`ref_arch/openstack/chapters/chapter06: confidentiality and
+       integrity of tenant data (sec.ci.001)`
+   * - sec.lcm.007
+     - LCM
+     - The Platform must be able to update newly instantiated, suspended,
+       hibernated, migrated and restarted images with current time information.
+     -
+   * - sec.lcm.008
+     - LCM
+     - The Platform must be able to update newly instantiated, suspended,
+       hibernated, migrated and restarted images with relevant DNS information.
+     -
+   * - sec.lcm.009
+     - LCM
+     - The Platform must be able to update the tag of newly instantiated,
+       suspended, hibernated, migrated and restarted images with relevant
+       geolocation (geographical) information.
+     -
+   * - sec.lcm.010
+     - LCM
+     - The Platform must log all changes to geolocation along with the
+       mechanisms and sources of location information (i.e. GPS, IP block,
+       and timing).
+     -
+   * - sec.lcm.011
+     - LCM
+     - The Platform must implement Security life cycle management processes
+       including the proactive update and patching of all deployed Cloud
+       Infrastructure software.
+     - :ref:`ref_arch/openstack/chapters/chapter06: patches`
+   * - sec.lcm.012
+     - LCM
+     - The Platform must log any access privilege escalation.
+     - :ref:`ref_arch/openstack/chapters/chapter06: what to log / what not
+       to log`
 
 Monitoring and Security Audit Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -942,181 +970,171 @@ systems, policies and procedures to act on alerts and notifications in a
 timely fashion. In the following the monitoring and logging capabilities
 can trigger alerts and notifications for appropriate action.
 
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| Reference    | sub-category      | Description                     | Specification                                 |
-|              |                   |                                 | Reference                                     |
-+==============+===================+=================================+===============================================+
-| sec.mon.001  | Monitoring/Audit  | Platform **must** provide logs  | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | and these logs must be          | required fields`                              |
-|              |                   | regularly monitored for events  |                                               |
-|              |                   | of interest. The logs **must**  |                                               |
-|              |                   | contain the following fields:   |                                               |
-|              |                   | event type, date/time,          |                                               |
-|              |                   | protocol, service or program    |                                               |
-|              |                   | used for access,                |                                               |
-|              |                   | success/failure, login ID or    |                                               |
-|              |                   | process ID, IP address and      |                                               |
-|              |                   | ports (source and destination)  |                                               |
-|              |                   | involved.                       |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.002  | Monitoring        | Security logs **must** be       | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | time synchronised.              | security logs time synchronisation`           |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.003  | Monitoring        | The Platform **must** log all   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | changes to time server source,  | security logs time synchronisation`           |
-|              |                   | time, date and time zones.      |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.004  | Audit             | The Platform **must** secure    | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | and protect Audit logs          | security lcm`                                 |
-|              |                   | (containing sensitive           |                                               |
-|              |                   | information) both in-transit    |                                               |
-|              |                   | and at rest.                    |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.005  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | and Audit various behaviours    | what to log / what not to log`                |
-|              |                   | of connection and login         |                                               |
-|              |                   | attempts to detect access       |                                               |
-|              |                   | attacks and potential access    |                                               |
-|              |                   | attempts and take corrective    |                                               |
-|              |                   | accordingly actions.            |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.006  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | and Audit operations by         | monitoring and security audit`                |
-|              |                   | authorised account access after |                                               |
-|              |                   | login to detect malicious       |                                               |
-|              |                   | operational activity and        |                                               |
-|              |                   | take corrective actions.        |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.007  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | and Audit security parameter    | integrity of openstack components \           |
-|              |                   | configurations for compliance   | configuration`                                |
-|              |                   | with defined security policies. |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.008  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | and Audit externally exposed    | confidentiality and integrity of \            |
-|              |                   | interfaces for illegal access   | communications (sec.ci.001)`                  |
-|              |                   | (attacks) and take              |                                               |
-|              |                   | corrective security hardening   |                                               |
-|              |                   | measures.                       |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.009  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | and Audit service for various   | monitoring and security audit`                |
-|              |                   | attacks (malformed messages,    |                                               |
-|              |                   | signalling flooding and         |                                               |
-|              |                   | replaying, etc.) and take       |                                               |
-|              |                   | corrective actions accordingly. |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.010  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | and Audit running processes     | monitoring and security audit`                |
-|              |                   | to detect unexpected or         |                                               |
-|              |                   | unauthorised processes and take |                                               |
-|              |                   | corrective actions accordingly. |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.011  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | and Audit logs from             | creating logs`                                |
-|              |                   | infrastructure elements and     |                                               |
-|              |                   | workloads to detected           |                                               |
-|              |                   | anomalies in the system         |                                               |
-|              |                   | components and take             |                                               |
-|              |                   | corrective actions accordingly. |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.012  | Monitoring/Audit  | The Platform **must** Monitor   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | and Audit Traffic patterns      | confidentiality and integrity of tenant \     |
-|              |                   | and volumes to prevent          | data (sec.ci.001)`                            |
-|              |                   | malware download attempts.      |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.013  | Monitoring        | The monitoring system           |                                               |
-|              |                   | **must not** affect the         |                                               |
-|              |                   | security (integrity and         |                                               |
-|              |                   | confidentiality) of the         |                                               |
-|              |                   | infrastructure, workloads,      |                                               |
-|              |                   | or the user data (through back  |                                               |
-|              |                   | door entries)                   |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.015  | Monitoring        | The Platform **must** ensure    | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | that the Monitoring systems     | monitoring and security audit`                |
-|              |                   | are never starved of resources  |                                               |
-|              |                   | and **must** activate alarms    |                                               |
-|              |                   | when resource utilisation       |                                               |
-|              |                   | exceeds a configurable          |                                               |
-|              |                   | threshold.                      |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.017  | Audit             | The Platform **must** audit     | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | systems for any missing         | patches`                                      |
-|              |                   | security patches and take       |                                               |
-|              |                   | appropriate actions.            |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.018  | Monitoring        | The Platform, starting from     | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | initialisation, **must**        | where to log`                                 |
-|              |                   | collect and analyse logs to     |                                               |
-|              |                   | identify security events, and   |                                               |
-|              |                   | store these events in an        |                                               |
-|              |                   | external system.                |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.019  | Monitoring        | The Platform's components       | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | **must not** include an         | what to log / what not to log`                |
-|              |                   | authentication credential,      |                                               |
-|              |                   | e.g., password, in any logs,    |                                               |
-|              |                   | even if encrypted.              |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.020  | Monitoring/Audit  | The Platform's logging system   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | **must** support the storage    | data retention`                               |
-|              |                   | of security audit logs for a    |                                               |
-|              |                   | configurable period of time.    |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.mon.021  | Monitoring        | The Platform **must** store     | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | security events locally if      | where to log`                                 |
-|              |                   | the external logging system     |                                               |
-|              |                   | is unavailable and shall        |                                               |
-|              |                   | periodically attempt to send    |                                               |
-|              |                   | these to the external logging   |                                               |
-|              |                   | system until successful.        |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
+.. list-table:: Reference Model Requirements - Monitoring and Security Audit
+   Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-12: Reference Model Requirements - Monitoring and Security Audit Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.mon.001
+     - Monitoring/Audit
+     - Platform must provide logs and these logs must be regularly monitored
+       for events of interest. The logs must contain the following fields:
+       event type, date/time, protocol, service or program used for access,
+       success/failure, login ID or process ID, IP address and ports (source
+       and destination) involved.
+     - :ref:`ref_arch/openstack/chapters/chapter06: required fields`
+   * - sec.mon.002
+     - Monitoring
+     - Security logs must be time synchronised.
+     - :ref:`ref_arch/openstack/chapters/chapter06: security logs time
+       synchronisation`
+   * - sec.mon.003
+     - Monitoring
+     - The Platform must log all changes to time server source, time, date
+       and time zones.
+     - :ref:`ref_arch/openstack/chapters/chapter06: security logs time
+       synchronisation`
+   * - sec.mon.004
+     - Audit
+     - The Platform must secure and protect Audit logs (containing sensitive
+       information) both in-transit and at rest.
+     - :ref:`ref_arch/openstack/chapters/chapter06: security lcm`
+   * - sec.mon.005
+     - Monitoring/Audit
+     - The Platform must Monitor and Audit various behaviours of connection
+       and login attempts to detect access attacks and potential access
+       attempts and take corrective accordingly actions.
+     - :ref:`ref_arch/openstack/chapters/chapter06: what to log / what not
+       to log`
+   * - sec.mon.006
+     - Monitoring/Audit
+     - The Platform must Monitor and Audit operations by authorised account
+       access after login to detect malicious operational activity and take
+       corrective actions.
+     - :ref:`ref_arch/openstack/chapters/chapter06: monitoring and security
+       audit`
+   * - sec.mon.007
+     - Monitoring/Audit
+     - The Platform must Monitor and Audit security parameter configurations
+       for compliance with defined security policies.
+     - :ref:`ref_arch/openstack/chapters/chapter06: integrity of openstack
+       components configuration`
+   * - sec.mon.008
+     - Monitoring/Audit
+     - The Platform must Monitor and Audit externally exposed interfaces for
+       illegal access (attacks) and take corrective security hardening
+       measures.
+     - :ref:`ref_arch/openstack/chapters/chapter06: confidentiality and
+       integrity of communications (sec.ci.001)`
+   * - sec.mon.009
+     - Monitoring/Audit
+     - The Platform must Monitor and Audit service for various attacks
+       (malformed messages, signalling flooding and replaying, etc.) and take
+       corrective actions accordingly.
+     - :ref:`ref_arch/openstack/chapters/chapter06: monitoring and security
+       audit`
+   * - sec.mon.010
+     - Monitoring/Audit
+     - The Platform must Monitor and Audit running processes to detect
+       unexpected or unauthorised processes and take corrective actions
+       accordingly.
+     - :ref:`ref_arch/openstack/chapters/chapter06: monitoring and security 
+       audit`
+   * - sec.mon.011
+     - Monitoring/Audit
+     - The Platform must Monitor and Audit logs from infrastructure elements
+       and workloads to detected anomalies in the system components and take
+       corrective actions accordingly.
+     - :ref:`ref_arch/openstack/chapters/chapter06: creating logs`
+   * - sec.mon.012
+     - Monitoring/Audit
+     - The Platform must Monitor and Audit Traffic patterns and volumes to
+       prevent malware download attempts.
+     - :ref:`ref_arch/openstack/chapters/chapter06: confidentiality and
+       integrity of tenant data (sec.ci.001)`
+   * - sec.mon.013
+     - Monitoring
+     - The monitoring system must not affect the security (integrity and
+       confidentiality) of the infrastructure, workloads, or the user data
+       (through back door entries)
+     -
+   * - sec.mon.015
+     - Monitoring
+     - The Platform must ensure that the Monitoring systems are never starved
+       of resources and must activate alarms when resource utilisation exceeds
+       a configurable threshold.
+     - :ref:`ref_arch/openstack/chapters/chapter06: monitoring and security
+       audit`
+   * - sec.mon.017
+     - Audit
+     - The Platform must audit systems for any missing security patches and
+       take appropriate actions.
+     - :ref:`ref_arch/openstack/chapters/chapter06: patches`
+   * - sec.mon.018
+     - Monitoring
+     - The Platform, starting from initialisation, must collect and analyse
+       logs to identify security events, and store these events in an external
+       system.
+     - :ref:`ref_arch/openstack/chapters/chapter06: where to log`
+   * - sec.mon.019
+     - Monitoring
+     - The Platform's components must not include an authentication
+       credential, e.g., password, in any logs, even if encrypted.
+     - :ref:`ref_arch/openstack/chapters/chapter06: what to log / what not
+       to log`
+   * - sec.mon.020
+     - Monitoring/Audit
+     - The Platform's logging system must support the storage of security
+       audit logs for a configurable period of time.
+     - :ref:`ref_arch/openstack/chapters/chapter06: data retention`
+   * - sec.mon.021
+     - Monitoring
+     - The Platform must store security events locally if the external logging
+       system is unavailable and shall periodically attempt to send these to
+       the external logging system until successful.
+     - :ref:`ref_arch/openstack/chapters/chapter06: where to log`
 
 Open-Source Software Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:open-source software security`)
 
-+-------------+-------------------+----------------------------------+----------------------------+
-| Reference   | sub-category      | Description                      | Specification              |
-|             |                   |                                  | Reference                  |
-+=============+===================+==================================+============================+
-| sec.oss.001 | Software          | Open-source code **must** be     |                            |
-|             |                   | inspected by tools with various  |                            |
-|             |                   | capabilities for static and      |                            |
-|             |                   | dynamic code analysis.           |                            |
-+-------------+-------------------+----------------------------------+----------------------------+
-| sec.oss.002 | Software          | The `CVE (Common Vulnerabilities |                            |
-|             |                   | and Exposures)                   |                            |
-|             |                   | <https://cve.mitre.org/>`__      |                            |
-|             |                   | **must** be used to identify     |                            |
-|             |                   | vulnerabilities and their        |                            |
-|             |                   | severity rating for  open-source |                            |
-|             |                   | code part of Cloud               |                            |
-|             |                   | Infrastructure and  workloads    |                            |
-|             |                   | software.                        |                            |
-+-------------+-------------------+----------------------------------+----------------------------+
-| sec.oss.003 | Software          | Critical and high severity rated |                            |
-|             |                   | vulnerabilities **must** be      |                            |
-|             |                   | fixed in a timely manner. Refer  |                            |
-|             |                   | to the `CVSS (Common             |                            |
-|             |                   | Vulnerability Scoring System)    |                            |
-|             |                   | <https://www.first.org/cvss/>`__ |                            |
-|             |                   | to know a vulnerability score    |                            |
-|             |                   | and its associated rate (low,    |                            |
-|             |                   | medium, high, or critical)       |                            |
-+-------------+-------------------+----------------------------------+----------------------------+
-| sec.oss.004 | Software          | A dedicated internal isolated    |                            |
-|             |                   | repository separated from the    |                            |
-|             |                   | production environment **must**  |                            |
-|             |                   | be used to store vetted          |                            |
-|             |                   | open-source content.             |                            |
-+-------------+-------------------+----------------------------------+----------------------------+
+.. list-table:: Reference Model Requirements - Open-Source Software Security
+   Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-13: Reference Model Requirements - Open-Source Software Security Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.oss.001
+     - Software
+     - Open-source code must be inspected by tools with various capabilities
+       for static and dynamic code analysis.
+     -
+   * - sec.oss.002
+     - Software
+     - The CVE (Common Vulnerabilities and Exposures) must be used to identify
+       vulnerabilities and their severity rating for open-source code part of
+       Cloud Infrastructure and workloads software.
+     -
+   * - sec.oss.003
+     - Software
+     - Critical and high severity rated vulnerabilities must be fixed in a
+       timely manner. Refer to the CVSS (Common Vulnerability Scoring System)
+       to know a vulnerability score and its associated rate (low, medium,
+       high, or critical)
+     -
+   * - sec.oss.004
+     - Software
+     - A dedicated internal isolated repository separated from the production
+       environment must be used to store vetted open-source content.
+     -
 
 IaaC security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1126,45 +1144,42 @@ IaaC security Requirements
 
 **Secure Code Stage Requirements**
 
-+--------------+-------------------+---------------------------------+----------------------------+
-| Reference    | sub-category      | Description                     | Specification              |
-|              |                   |                                 | Reference                  |
-+==============+===================+=================================+============================+
-| sec.code.001 | IaaC              | SAST -Static  Application       |                            |
-|              |                   | Security Testing **must** be    |                            |
-|              |                   | applied during Secure Coding    |                            |
-|              |                   | stage triggered by Pull, Clone  |                            |
-|              |                   | or Comment trigger.             |                            |
-|              |                   | Security testing that analyses  |                            |
-|              |                   | application source code for     |                            |
-|              |                   | software vulnerabilities and    |                            |
-|              |                   | gaps against bestpractices.     |                            |
-|              |                   | Example: open source OWASP      |                            |
-|              |                   | range of tools.                 |                            |
-+--------------+-------------------+---------------------------------+----------------------------+
+.. list-table:: Reference Model Requirements: IaaC Security Requirements,
+   Secure Code Stage
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-14: Reference Model Requirements: IaaC Security Requirements,
-Secure Code Stage
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.code.001
+     - IaaC
+     - SAST -Static Application Security Testing must be applied during Secure
+       Coding stage triggered by Pull, Clone or Comment trigger. Security
+       testing that analyses application source code for software
+       vulnerabilities and gaps against bestpractices. Example: open source
+       OWASP range of tools.
+     -
 
 **Continuous Build, Integration and Testing Stage Requirements**
 
-+-------------+-------------------+----------------------------------+----------------------------+
-| Reference   | sub-category      | Description                      | Specification              |
-|             |                   |                                  | Reference                  |
-+=============+===================+==================================+============================+
-| sec.bld.003 | IaaC              | Image Scan **must** be applied   |                            |
-|             |                   | during the Continuous Build,     |                            |
-|             |                   | Integration and Testing stage    |                            |
-|             |                   | triggered by Package trigger,    |                            |
-|             |                   | example: A push of a container   |                            |
-|             |                   | image to a containerregistry     |                            |
-|             |                   | may trigger a vulnerability scan |                            |
-|             |                   | before the image becomes         |                            |
-|             |                   | available in the registry.       |                            |
-+-------------+-------------------+----------------------------------+----------------------------+
+.. list-table:: Reference Model Requirements - IaaC Security Requirements,
+   Continuous Build, Integration and Testing Stage
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-15: Reference Model Requirements - IaaC Security Requirements,
-Continuous Build, Integration and Testing Stage
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.bld.003
+     - IaaC
+     - Image Scan must be applied during the Continuous Build, Integration and
+       Testing stage triggered by Package trigger, example: A push of a container
+       image to a containerregistry may trigger a vulnerability scan before the
+       image becomes available in the registry.
+     -
 
 **Continuous Delivery and Deployment Stage Requirements**
 
