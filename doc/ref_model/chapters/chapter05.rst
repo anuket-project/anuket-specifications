@@ -204,7 +204,7 @@ The table below specifies a set of requirements for the Load Balancer platform s
 | pas.lb.009 | The Load Balancer must support Direct Server           | Other modes OK as well, but DSR should      |
 |            | Return (DSR)                                           | always be supported                         |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.010 | The Load Balancer must state-full TSP load-balancing   |                                             |
+| pas.lb.010 | The Load Balancer must stateful TCP load-balancing   |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
 | pas.lb.011 | The Load Balancer must support UDP load-balancing      |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
