@@ -177,54 +177,51 @@ The table below specifies a set of requirements for the Load Balancer platform s
 +------------+--------------------------------------------------------+---------------------------------------------+
 | Reference  | Requirement                                            | Notes                                       |
 +============+========================================================+=============================================+
-| pas.lb.001 | The Load Balancer must support resource scaling        |                                             |
+| pas.lb.001 | The Load Balancer must support workload resource       |                                             |
+|            | scaling                                                |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
 | pas.lb.002 | The Load Balancer must support resource resiliency     |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.003 | The Load Balancer must support scaling and resiliency  | Define local environment: within a subnet,  |
-|            | in the local environment                               | tenant network, Availability Zone of a      |
-|            |                                                        | cloud, ...                                  |
+| pas.lb.003 | The Load Balancer must support scaling and resiliency  | Local environment: within a subnet, tenant  |
+|            | in the local environment                               | network, Availability Zone of a cloud, ...  |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.004 | The Load Balancer should support resiliency in the     |                                             |
-|            | environment                                            |                                             |
-+------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.005 | The Load Balancer must support OSI Level 3/4           | OSI Level 3 load-balancing decision on the  |
+| pas.lb.004 | The Load Balancer must support OSI Level 3/4           | OSI Level 3 load-balancing decision on the  |
 |            | load-balancing                                         | source and destination IP addresses and OSI |
 |            |                                                        | Level 4 TCP port numbers.                   |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.006 | The Load Balancer must, at a minimum, support          |                                             |
+| pas.lb.005 | The Load Balancer must, at a minimum, support          |                                             |
 |            | round-robin load-balancing                             |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.007 | The Load Balancer must create event logs with the      |                                             |
+| pas.lb.006 | The Load Balancer must create event logs with the      |                                             |
 |            | appropriate severity levels (catastrophic,             |                                             |
 |            | critical, ...)                                         |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.008 | The Load Balancer must support monitoring of endpoints |                                             |
+| pas.lb.007 | The Load Balancer must support monitoring of endpoints |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.009 | The Load Balancer must support Direct Server           | Other modes OK as well, but DSR should      |
+| pas.lb.008 | The Load Balancer must support Direct Server           | Other modes OK as well, but DSR should      |
 |            | Return (DSR)                                           | always be supported                         |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.010 | The Load Balancer must stateful TCP load-balancing   |                                             |
+| pas.lb.009 | The Load Balancer must stateful TCP load-balancing     |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.011 | The Load Balancer must support UDP load-balancing      |                                             |
+| pas.lb.010 | The Load Balancer must support UDP load-balancing      |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.012 | The Load Balancer must support load-balancing and      |                                             |
+| pas.lb.011 | The Load Balancer must support load-balancing and      |                                             |
 |            | correct handling of fragmented packets                 |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.013 | The Load Balancer may support state-full SCTP          |                                             |
+| pas.lb.012 | The Load Balancer may support state-full SCTP          |                                             |
 |            | load-balancing                                         |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.014 | The Load Balancer may support state-full M-TCP         |                                             |
+| pas.lb.013 | The Load Balancer may support state-full M-TCP         |                                             |
 |            | load-balancing                                         |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.015 | The Load Balancer may support Level 7                  | OSI Level 7 (application characteristics    |
+| pas.lb.014 | The Load Balancer may support Level 7                  | OSI Level 7 (application characteristics    |
 |            | load balancing                                         | based) should support HTTP and HTTPS        |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.016 | The L7 Load Balancer may support HTTP2                 |                                             |
+| pas.lb.0156 | The L7 Load Balancer may support HTTP2                |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.017 | The L7 Load Balancer may support HTTP3                 |                                             |
+| pas.lb.016 | The L7 Load Balancer may support HTTP3                 |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.018 | The L7 Load Balancer may support QUIC                  |                                             |
+| pas.lb.017 | The L7 Load Balancer may support QUIC                  |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
 **Table 5-7b:** Platform Services - Load Balancer Requirements.
 
