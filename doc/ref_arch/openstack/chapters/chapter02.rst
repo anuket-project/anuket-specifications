@@ -703,103 +703,108 @@ Confidentiality and Integrity Requirements
 
 (source :ref:`ref_model/chapters/chapter07:confidentiality and integrity`)
 
-+-------------+------------------+-----------------------------------+-----------------------------------------------+
-| Reference   | sub-category     | Description                       | Specification Reference                       |
-+=============+==================+===================================+===============================================+
-| sec.ci.001  | Confidentiality\ | The Platform **must** support     | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|             | /Integrity       | Confidentiality and Integrity of  | confidentiality and integrity`                |
-|             |                  | data at rest and in transit.      |                                               |
-+-------------+------------------+-----------------------------------+-----------------------------------------------+
-| sec.ci.003  | Confidentiality\ | The Platform **must** support     |                                               |
-|             | /Integrity       | Confidentiality and Integrity of  |                                               |
-|             |                  | data related metadata.            |                                               |
-+-------------+------------------+-----------------------------------+-----------------------------------------------+
-| sec.ci.004  | Confidentiality  | The Platform **must** support     |                                               |
-|             |                  | Confidentiality of processes and  |                                               |
-|             |                  | restrict information sharing with |                                               |
-|             |                  | only the process owner (e.g.,     |                                               |
-|             |                  | tenant).                          |                                               |
-+-------------+------------------+-----------------------------------+-----------------------------------------------+
-| sec.ci.005  | Confidentiality\ | The Platform **must** support     |                                               |
-|             | /Integrity       | Confidentiality and Integrity of  |                                               |
-|             |                  | process-related metadata and      |                                               |
-|             |                  | restrict information sharing with |                                               |
-|             |                  | only the process owner (e.g.,     |                                               |
-|             |                  | tenant).                          |                                               |
-+-------------+------------------+-----------------------------------+-----------------------------------------------+
-| sec.ci.006  | Confidentiality\ | The Platform **must** support     |                                               |
-|             | /Integrity       | Confidentiality and Integrity of  |                                               |
-|             |                  | workload resource utilisation     |                                               |
-|             |                  | (RAM, CPU, Storage, Network I/O,  |                                               |
-|             |                  | cache, hardware offload) and      |                                               |
-|             |                  | restrict information sharing with |                                               |
-|             |                  | only the workload owner (e.g.,    |                                               |
-|             |                  | tenant).                          |                                               |
-+-------------+------------------+-----------------------------------+-----------------------------------------------+
-| sec.ci.007  | Confidentiality\ | The Platform **must not** allow   |                                               |
-|             | /Integrity       | Memory Inspection by any actor    |                                               |
-|             |                  | other than the authorised actors  |                                               |
-|             |                  | for the Entity to which Memory is |                                               |
-|             |                  | assigned (e.g., tenants owning    |                                               |
-|             |                  | the workload), for Lawful         |                                               |
-|             |                  | Inspection, and for secure        |                                               |
-|             |                  | monitoring services.              |                                               |
-|             |                  | Administrative access must be     |                                               |
-|             |                  | managed using Platform Identity   |                                               |
-|             |                  | Lifecycle Management.             |                                               |
-+-------------+------------------+-----------------------------------+-----------------------------------------------+
-| sec.ci.008  | Confidentiality  | The Cloud Infrastructure **must** | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|             |                  | support tenant networks           | workload security`                            |
-|             |                  | segregation.                      |                                               |
-+-------------+------------------+-----------------------------------+-----------------------------------------------+
+.. list-table:: Reference Model Requirements - Confidentiality and Integrity
+   Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-8: Reference Model Requirements: Confidentiality and Integrity
-Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.ci.001
+     - Confidentiality/Integrity
+     - The Platform must support Confidentiality and Integrity of data
+       at rest and in transit.
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ confidentiality and\
+       integrity`
+   * - sec.ci.003
+     - Confidentiality/Integrity
+     - The Platform must support Confidentiality and Integrity of data
+       related metadata.
+     -  
+   * - sec.ci.004
+     - Confidentiality
+     - The Platform must support Confidentiality of processes and restrict
+       information sharing with only the process owner (e.g., tenant).
+     -  
+   * - sec.ci.005
+     - Confidentiality/Integrity
+     - The Platform must support Confidentiality and Integrity of process-
+       related metadata and restrict information sharing with only the 
+       process owner (e.g., tenant).
+     -  
+   * - sec.ci.006
+     - Confidentiality/Integrity
+     - The Platform must support Confidentiality and Integrity of workload
+       resource utilisation (RAM, CPU, Storage, Network I/O, cache, 
+       hardware offload) and restrict information sharing with only the 
+       workload owner (e.g., tenant).
+     -  
+   * - sec.ci.007
+     - Confidentiality/Integrity
+     - The Platform must not allow Memory Inspection by any actor other
+       than the authorised actors for the Entity to which Memory is
+       assigned (e.g., tenants owning the workload), for Lawful
+       Inspection, and for secure monitoring services. Administrative
+       access must be managed using Platform Identity Lifecycle
+       Management.
+     -  
+   * - sec.ci.008
+     - Confidentiality
+     - The Cloud Infrastructure must support tenant networks segregation.
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+
 
 Workload Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:workload security requirements`)
 
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| Reference    | sub-category      | Description                     | Specification Reference                       |
-+==============+===================+=================================+===============================================+
-| sec.wl.001   | Workload          | The Platform **must** support   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | Workload placement policy.      | workload security`                            |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.wl.002   | Workload          | The Cloud Infrastructure        |                                               |
-|              |                   | provide methods to ensure the   |                                               |
-|              |                   | platform's trust status and     |                                               |
-|              |                   | integrity (e.g., remote         |                                               |
-|              |                   | attestation, Trusted Platform   |                                               |
-|              |                   | Module).                        |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.wl.003   | Workload          | The Platform **must** support   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | secure provisioning of          | workload security`                            |
-|              |                   | Workloads.                      |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.wl.004   | Workload          | The Platform **must** support   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | Location assertion (for         | workload security`                            |
-|              |                   | mandated in-country or location |                                               |
-|              |                   | requirements).                  |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.wl.005   | Workload          | The Platform **must** support   | This requirement's verification goes beyond   |
-|              |                   | the separation of production    | Anuket testing scope                          |
-|              |                   | and non-production Workloads.   |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.wl.006   | Workload          | The Platform **must** support   | :ref:`ref_arch/openstack/chapters/chapter06:\ |
-|              |                   | the separation of Workloads     | workload security`                            |
-|              |                   | based on their categorisation   |                                               |
-|              |                   | (for example, payment card      |                                               |
-|              |                   | information, healthcare, etc.)  |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
-| sec.wl.007   | Workload          | The Operator **must** implement |                                               |
-|              |                   | processes and tools to verify   |                                               |
-|              |                   | verify NF authenticity and      |                                               |
-|              |                   | integrity.                      |                                               |
-+--------------+-------------------+---------------------------------+-----------------------------------------------+
+.. list-table:: Reference Model Requirements - Workload Security
+   Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-9: Reference Model Requirements - Workload Security Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.wl.001
+     - Workload
+     - The Platform must support Workload placement policy.
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+   * - sec.wl.002
+     - Workload
+     - The Cloud Infrastructure provide methods to ensure the platform's
+       trust status and integrity (e.g., remote attestation, Trusted
+       Platform Module).
+     -
+   * - sec.wl.003
+     - Workload
+     - The Platform must support secure provisioning of Workloads.
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+   * - sec.wl.004
+     - Workload
+     - The Platform must support Location assertion (for mandated in-
+       country or location requirements).
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+   * - sec.wl.005
+     - Workload
+     - The Platform must support the separation of production and non-
+       production Workloads.
+     - This requirement's verification goes beyond Anuket testing scope
+   * - sec.wl.006
+     - Workload
+     - The Platform must support the separation of Workloads based on
+       their categorisation (for example, payment card information,
+       healthcare, etc.)
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+   * - sec.wl.007
+     - Workload
+     - The Operator must implement processes and tools to verify verify
+       NF authenticity and integrity.
+     -
 
 Image Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
