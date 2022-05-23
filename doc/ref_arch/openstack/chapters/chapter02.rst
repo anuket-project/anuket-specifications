@@ -102,42 +102,45 @@ Cloud Infrastructure Software Profile Requirements for Compute
 Cloud Infrastructure Software Profile Extensions Requirements for Compute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------+--------------+---------------+-------------+---------------+
-| Reference             | Description  | Profile       | Profile     | Specification |
-|                       |              | Extensions    | Extra-Specs | Reference     |
-+=======================+==============+===============+=============+===============+
-| e.cap.008/\           | IPSec        | Compute       |             |               |
-| infra.com.acc.cfg.001 | Acceleration | Intensive     |             |               |
-|                       | using the    | GPU           |             |               |
-|                       | virtio-ipsec |               |             |               |
-|                       | interface    |               |             |               |
-+-----------------------+--------------+---------------+-------------+---------------+
-| e.cap.010/\           | Transcoding  | Compute       | Video       |               |
-| infra.com.acc.cfg.002 | Acceleration | Intensive GPU | Transcoding |               |
-+-----------------------+--------------+---------------+-------------+---------------+
-| e.cap.011/\           | Programmable | Firmware-\    | Accelerator |               |
-| infra.com.acc.cfg.003 | Acceleration | programmable  |             |               |
-|                       |              | adapter       |             |               |
-+-----------------------+--------------+---------------+-------------+---------------+
-| e.cap.012             | Enhanced     | E             | E           |               |
-|                       | Cache        |               |             |               |
-|                       | Management:  |               |             |               |
-|                       | L=Lean;      |               |             |               |
-|                       | E=Equal;     |               |             |               |
-|                       | X=eXpanded   |               |             |               |
-+-----------------------+--------------+---------------+-------------+---------------+
-| e.cap.014/\           | Hardware     | Compute       |             |               |
-| infra.com.acc.cfg.004 | coprocessor  | Intensive     |             |               |
-|                       | support      | GPU           |             |               |
-|                       | (GPU/NPU)    |               |             |               |
-+-----------------------+--------------+---------------+-------------+---------------+
-| e.cap.016/\           | FPGA/other   | Firmware-\    |             |               |
-| infra.com.acc.cfg.005 | Acceleration | programmable  |             |               |
-|                       | H/W          | adapter       |             |               |
-+-----------------------+--------------+---------------+-------------+---------------+
+.. list-table:: Cloud Infrastructure Software Profile Extensions Requirements for Compute
+   :widths: 20 20 10 10 20
+   :header-rows: 1
 
-Table 2-1b: Cloud Infrastructure Software Profile Extensions
-Requirements for Compute
+   * - Reference
+     - Description
+     - Profile Extensions
+     - Profile Extra-Specs
+     - Specification Reference
+   * - e.cap.008/infra.com.acc.cfg.001
+     - IPSec Acceleration using the virtio-ipsec interface
+     - Compute Intensive GPU
+     -
+     -
+   * - e.cap.010/infra.com.acc.cfg.002
+     - Transcoding Acceleration
+     - Compute Intensive GPU
+     - Video Transcoding
+     -
+   * - e.cap.011/infra.com.acc.cfg.003
+     - Programmable Acceleration
+     - Firmware-programmable adapter
+     - Accelerator
+     -
+   * - e.cap.012
+     - Enhanced Cache Management: L=Lean; E=Equal; X=eXpanded
+     - E
+     - E
+     -
+   * - e.cap.014/infra.com.acc.cfg.004
+     - Hardware coprocessor support (GPU/NPU)
+     - Compute Intensive GPU
+     -
+     -
+   * - e.cap.016/infra.com.acc.cfg.005
+     - FPGA/other Acceleration H/W
+     - Firmware-programmable adapter
+     -
+     -
 
 Cloud Infrastructure Software Profile Requirements for Networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,109 +151,123 @@ The features and configuration requirements related to virtual
 networking for the two (2) types of Cloud Infrastructure Profiles are
 specified below followed by networking bandwidth requirements.
 
-+-------------------+---------------------+-------------+-------------+---------------+
-| Reference         | Description         | Requirement | Requirement | Specification |
-|                   |                     | for Basic   | for         | Reference     |
-|                   |                     | Profile     | High-\      |               |
-|                   |                     |             | Performance |               |
-|                   |                     |             | Profile     |               |
-+===================+=====================+=============+=============+===============+
-| infra.net.cfg.001 | IO                  | Must        | Must        |               |
-|                   | virtualisation      | support     | support     |               |
-|                   | using               |             |             |               |
-|                   | virtio1.1           |             |             |               |
-+-------------------+---------------------+-------------+-------------+---------------+
-| infra.net.cfg.002 | The overlay network | Must        | *No         |               |
-|                   | encapsulation       | support     | requirement |               |
-|                   | protocol needs to   | VXLAN,      | specified*  |               |
-|                   | enable ECMP in the  | MPLSoUDP,   |             |               |
-|                   | underlay to take    | GENEVE,     |             |               |
-|                   | advantage of the    | other       |             |               |
-|                   | scale-out features  |             |             |               |
-|                   | of the network      |             |             |               |
-|                   | fabric              |             |             |               |
-+-------------------+---------------------+-------------+-------------+---------------+
-| infra.net.cfg.003 | Network Address     | Must        | Must        |               |
-|                   | Translation         | support     | support     |               |
-|                   |                     |             |             |               |
-+-------------------+---------------------+-------------+-------------+---------------+
-| infra.net.cfg.004 | Security            | Must        | Must        |               |
-|                   | Groups              | support     | support     |               |
-+-------------------+---------------------+-------------+-------------+---------------+
-| infra.net.cfg.005 | SFC support         | Not         | Must        |               |
-|                   |                     | required    | support     |               |
-+-------------------+---------------------+-------------+-------------+---------------+
-| infra.net.cfg.006 | Traffic patterns    | Must        | Must        |               |
-|                   | symmetry            | support     | support     |               |
-+-------------------+---------------------+-------------+-------------+---------------+
+.. list-table:: Reference Model Requirements - Virtual Networking
+   :widths: 20 30 10 10 10
+   :header-rows: 1
 
-Table 2-2a: Reference Model Requirements - Virtual Networking
+   * - Reference
+     - Description
+     - Requirement for Basic Profile
+     - Requirement for High-Performance Profile
+     - Specification Reference
+   * - infra.net.cfg.001
+     - IO virtualisation using virtio1.1
+     - Must support
+     - Must support
+     -
+   * - infra.net.cfg.002
+     - The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric
+     - Must support VXLAN, MPLSoUDP, GENEVE, other
+     - No requirement specified
+     -
+   * - infra.net.cfg.003
+     - Network Address Translation
+     - Must support
+     - Must support
+     -
+   * - infra.net.cfg.004
+     - Security Groups
+     - Must support
+     - Must support
+     -
+   * - infra.net.cfg.005
+     - SFC support
+     - Not required
+     - Must support
+     -
+   * - infra.net.cfg.006
+     - Traffic patterns symmetry
+     - Must support
+     - Must support
+     -
 
 The required number of connection points to an instance is described in
 ``e.cap.004`` `above <#2.2.1>`__. The table below specifies the required
 bandwidth of those connection points.
 
-+-------------+-------------+-------------+-------------+---------------+
-| Reference   | Description | Requirement | Requirement | Specification |
-|             |             | for Basic   | for High    | Reference     |
-|             |             | Profile     | Performance |               |
-|             |             |             | Profile     |               |
-+=============+=============+=============+=============+===============+
-| n1, n2, n3, | 1, 2, 3, 4, | Must        | Must        |               |
-| n4, n5, n6  | 5, 6 Gbps   | support     | support     |               |
-+-------------+-------------+-------------+-------------+---------------+
-| n10, n20,   | 10, 20, 30, | Must        | Must        |               |
-| n30, n40,   | 40, 50, 60  | support     | support     |               |
-| n50, n60    | Gbps        |             |             |               |
-+-------------+-------------+-------------+-------------+---------------+
-| n25, n50,   | 25, 50, 75, | Optional    | Must        |               |
-| n75, n100,  | 100, 125,   |             | support     |               |
-| n125, n150  | 150 Gbps    |             |             |               |
-+-------------+-------------+-------------+-------------+---------------+
-| n50, n100,  | 50, 100,    | Optional    | Must        |               |
-| n150, n200, | 150, 200,   |             | support     |               |
-| n250, n300  | 250, 300    |             |             |               |
-|             | Gbps        |             |             |               |
-+-------------+-------------+-------------+-------------+---------------+
-| n100, n200, | 100, 200,   | Optional    | Must        |               |
-| n300, n400, | 300, 400,   |             | support     |               |
-| n500, n600  | 500, 600    |             |             |               |
-|             | Gbps        |             |             |               |
-+-------------+-------------+-------------+-------------+---------------+
+.. list-table:: Reference Model Requirements - Network Interface Specifications
+   :widths: 20 20 10 10 20
+   :header-rows: 1
 
-Table 2-2b: Reference Model Requirements - Network Interface
-Specifications
+   * - Reference
+     - Description
+     - Requirement for Basic Profile
+     - Requirement for High Performance Profile
+     - Specification Reference
+   * - n1, n2, n3, n4, n5, n6
+     - 1, 2, 3, 4, 5, 6 Gbps
+     - Must support
+     - Must support
+     -
+   * - n10, n20, n30, n40, n50, n60
+     - 10, 20, 30, 40, 50, 60 Gbps
+     - Must support
+     - Must support
+     -
+   * - n25, n50, n75, n100, n125, n150
+     - 25, 50, 75, 100, 125, 150 Gbps
+     - Optional
+     - Must support
+     -
+   * - n50, n100, n150, n200, n250, n300
+     - 50, 100, 150, 200, 250, 300 Gbps
+     - Optional
+     - Must support
+     -
+   * - n100, n200, n300, n400, n500, n600
+     - 100, 200, 300, 400, 500, 600 Gbps
+     - Optional
+     - Must support
+     -
 
 Cloud Infrastructure Software Profile Extensions Requirements for Networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------+--------------+-------------+-------------+---------------+
-| Reference             | Description  | Requirement | Requirement | Specification |
-|                       |              | for Basic   | for High-\  | Reference     |
-|                       |              | Profile     | Performance |               |
-|                       |              |             | Profile     |               |
-+=======================+==============+=============+=============+===============+
-| e.cap.013/\           | SR-IOV over  | N           | Y           |               |
-| infra.hw.nac.cfg.004  | PCI-PT       |             |             |               |
-+-----------------------+--------------+-------------+-------------+---------------+
-| e.cap.019/\           | vSwitch      | N           | Y           |               |
-| infra.net.acc.cfg.001 | optimisation |             |             |               |
-|                       | (DPDK)       |             |             |               |
-+-----------------------+--------------+-------------+-------------+---------------+
-| e.cap.015/\           | SmartNIC     | N           | Optional    |               |
-| infra.net.acc.cfg.002 | (for HW      |             |             |               |
-|                       | Offload)     |             |             |               |
-+-----------------------+--------------+-------------+-------------+---------------+
-| e.cap.009/\           | Crypto       | N           | Optional    |               |
-| infra.net.acc.cfg.003 | acceleration |             |             |               |
-+-----------------------+--------------+-------------+-------------+---------------+
-| infra.net.acc.cfg.004 | Crypto       | N           | Optional    |               |
-|                       | Acceleration |             |             |               |
-|                       | Interface    |             |             |               |
-+-----------------------+--------------+-------------+-------------+---------------+
+.. list-table:: Cloud Infrastructure Software Profile Extensions Requirements
+   for Networking
+   :widths: 20 20 10 10 20
+   :header-rows: 1
 
-Table 2-2c: Cloud Infrastructure Software Profile Extensions
-Requirements for Networking
+     * - Reference
+     - Description
+     - Requirement for Basic Profile
+     - Requirement for High-Performance Profile
+     - Specification Reference
+     * - e.cap.013/infra.hw.nac.cfg.004
+     - SR-IOV over PCI-PT
+     - N
+     - Y
+     -
+     * - e.cap.019/infra.net.acc.cfg.001
+     - vSwitch optimisation (DPDK)
+     - N
+     - Y
+     -
+     * - e.cap.015/infra.net.acc.cfg.002
+     - SmartNIC (for HW Offload)
+     - N
+     - Optional
+     -
+     * - e.cap.009/infra.net.acc.cfg.003
+     - Crypto acceleration
+     - N
+     - Optional
+     -
+     * - infra.net.acc.cfg.004
+     - Crypto Acceleration Interface
+     - N
+     - Optional
+     -
 
 Cloud Infrastructure Software Profile Requirements for Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
