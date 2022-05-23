@@ -49,7 +49,9 @@ The functionalities of each layer are as follows:
 
 **Virtual Infrastructure Layer**
 
-  tenants and tenant workloads directly or indirectly via an application programming interface (API).
+- **Virtual infrastructure resources:** These are all the infrastructure resources (compute, storage and networks)
+  which the cloud infrastructure provides to the VNF/CNF and other workloads. These virtual resources can be managed
+  by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
 - **Virtual infrastructure manager:** This consists of the software components that manage the virtual resources and
   make those management capabilities accessible via one or more APIs. The responsibilities of this functionality include
   the management of logical constructs such as tenants, tenant workloads, resource catalogues, identities, access
