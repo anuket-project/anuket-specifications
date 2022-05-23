@@ -100,8 +100,8 @@ Rally OpenStack         2.2.1.dev11
 Tempest                 27.0.0
 ======================= ===========
 
-Identity - Keystone
-^^^^^^^^^^^^^^^^^^^
+Identity - Keystone API testing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Keystone API is covered in the OpenStack Gates via
 `Tempest <https://opendev.org/openstack/tempest>`__ and
@@ -151,8 +151,8 @@ CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=sta
 -  KeystoneBasic.create_and_list_users
 -  KeystoneBasic.create_tenant_with_users
 
-Image - Glance
-^^^^^^^^^^^^^^
+Image - Glance API testing
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Glance API is covered in the OpenStack Gates via
 `Tempest <https://opendev.org/openstack/tempest>`__ as integrated in
@@ -196,8 +196,8 @@ CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=sta
 -  GlanceImages.list_images
 -  GlanceImages.create_image_and_boot_instances
 
-Block Storage - Cinder
-^^^^^^^^^^^^^^^^^^^^^^
+Block Storage - Cinder API testing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Cinder API is covered in the OpenStack Gates via
 `Tempest <https://opendev.org/openstack/tempest>`__ and
@@ -271,8 +271,8 @@ CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=sta
 -  Quotas.cinder_update_and_delete
 -  Quotas.cinder_update
 
-Object Storage - Swift
-^^^^^^^^^^^^^^^^^^^^^^
+Object Storage - Swift API testing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Swift API is covered in the OpenStack Gates via
 `Tempest <https://opendev.org/openstack/tempest>`__ as integrated in
@@ -309,8 +309,8 @@ CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=sta
 -  SwiftObjects.create_container_and_object_then_delete_all
 -  SwiftObjects.list_and_download_objects_in_containers
 
-Networking - Neutron
-^^^^^^^^^^^^^^^^^^^^
+Networking - Neutron API testing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Neutron API is covered in the OpenStack Gates via
 `Tempest <https://opendev.org/openstack/tempest>`__ and
@@ -489,8 +489,8 @@ CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=sta
 -  NeutronNetworks.set_and_clear_router_gateway
 -  Quotas.neutron_update
 
-Compute - Nova
-^^^^^^^^^^^^^^
+Compute - Nova API testing
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Nova API is covered in the OpenStack Gates via
 `Tempest <https://opendev.org/openstack/tempest>`__ as integrated in
@@ -697,8 +697,8 @@ CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=sta
 -  NovaServerGroups.create_and_delete_server_group
 -  Quotas.nova_update
 
-Orchestration - Heat
-^^^^^^^^^^^^^^^^^^^^
+Orchestration - Heat API testing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Heat API is covered in the OpenStack Gates via
 `heat-tempest-plugin <https://opendev.org/openstack/heat-tempest-plugin>`__
@@ -777,10 +777,8 @@ which would have asked for an update of the default SLA (maximum failure
 rate of 0%) proposed in `Functest Benchmarking
 CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__
 
-.. _identity---keystone-1:
-
-Identity - Keystone
-^^^^^^^^^^^^^^^^^^^
+Identity - Keystone API benchmarking
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Functest
 rally_full_cntt <http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html>`__:
@@ -797,15 +795,13 @@ KeystoneBasic.create_and_delete_service        10
 KeystoneBasic.get_entities                     10
 KeystoneBasic.create_update_and_delete_tenant  10
 KeystoneBasic.create_user                      10
- KeystoneBasic.create_tenant                   10
+KeystoneBasic.create_tenant                    10
 KeystoneBasic.create_and_list_users            10
 KeystoneBasic.create_tenant_with_users         10
 ============================================== ==========
 
-.. _image---glance-1:
-
-Image - Glance
-^^^^^^^^^^^^^^
+Image - Glance API benchmarking
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Functest
 rally_full_cntt <http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html>`__:
@@ -824,10 +820,8 @@ GlanceImages.create_and_get_image            10
 GlanceImages.create_and_update_image         10
 ============================================ ==========
 
-.. _block-storage---cinder-1:
-
-Block Storage - Cinder
-^^^^^^^^^^^^^^^^^^^^^^
+Block Storage - Cinder API benchmarking
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Functest
 rally_full_cntt <http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html>`__:
@@ -860,10 +854,8 @@ Quotas.cinder_update_and_delete                               10
 Quotas.cinder_update                                          10
 ============================================================= ==========
 
-.. _object-storage---swift-1:
-
-Object Storage - Swift
-^^^^^^^^^^^^^^^^^^^^^^
+Object Storage - Swift API benchmarking
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Functest
 rally_full_cntt <http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html>`__:
@@ -878,10 +870,8 @@ SwiftObjects.create_container_and_object_then_delete_all      10
 SwiftObjects.list_and_download_objects_in_containers          10
 ============================================================= ==========
 
-.. _networking---neutron-1:
-
-Networking - Neutron
-^^^^^^^^^^^^^^^^^^^^
+Networking - Neutron API benchmarking
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Functest
 rally_full_cntt <http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html>`__:
@@ -935,10 +925,8 @@ NeutronTrunks.create_and_list_trunks       4
 Quotas.neutron_update                      40
 ========================================== ==========
 
-.. _compute---nova-1:
-
-Compute - Nova
-^^^^^^^^^^^^^^
+Compute - Nova API benchmarking
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Functest
 rally_full_cntt <http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html>`__:
@@ -1005,10 +993,8 @@ rally_full_cntt <http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv
 | Quotas.nova_update                                             | 10         |
 +----------------------------------------------------------------+------------+
 
-.. _orchestration---heat-1:
-
-Orchestration - Heat
-^^^^^^^^^^^^^^^^^^^^
+Orchestration - Heat API benchmarking
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Functest
 rally_full_cntt <http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html>`__:
@@ -1033,19 +1019,19 @@ CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yam
 offers two benchmarking dataplane test cases leveraging on:
 
 -  `VMTP <http://vmtp.readthedocs.io/en/latest>`__
--  `Shaker <http://pyshaker.readthedocs.io/en/latest/>`__
+-  `Shaker <https://pyshaker.readthedocs.io/en/latest/>`__
 
-`VMTP <http://vmtp.readthedocs.io/en/latest>`__ is a small python
+`VMTP <https://vmtp.readthedocs.io/en/latest/>`__ is a small python
 application that will automatically perform ping connectivity, round
 trip time measurement (latency) and TCP/UDP throughput measurement on
 any OpenStack deployment.
 
-`Shaker <http://pyshaker.readthedocs.io/en/latest/>`__ wraps around
+`Shaker <https://pyshaker.readthedocs.io/en/latest/>`__ wraps around
 popular system network testing tools like iperf, iperf3 and netperf
 (with help of flent).
-`Shaker <http://pyshaker.readthedocs.io/en/latest/>`__ is able to deploy
+`Shaker <https://pyshaker.readthedocs.io/en/latest/>`__ is able to deploy
 OpenStack instances and networks in different topologies.
-`Shaker <http://pyshaker.readthedocs.io/en/latest/>`__ scenario
+`Shaker <https://pyshaker.readthedocs.io/en/latest/>`__ scenario
 specifies the deployment and list of tests to execute.
 
 At the time of writing, no KPIs are defined in Anuket specifications

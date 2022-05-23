@@ -5,7 +5,15 @@
 # the repo. Unless a later match takes precedence,
 # @global-owner1 and @global-owner2 will be requested for
 # review when someone opens a pull request.
+
 *       @walterkozlowski
+*       @karinesevilla
+*       @jgu17
+*       @collivier
+*       @rgstori
+*       @xudan16
+*       @steelescotr
+
 
 # Governance
 /doc/gov/                            @walterkozlowski
@@ -26,7 +34,7 @@
 /doc/ref_arch/kubernetes/            @rgstori
 
 # Reference Implementation 2
-/doc/ref_impl/cntt-ri2/              @rihabbanday
+/doc/ref_impl/cntt-ri2/              @xudan16
 
 # Reference Conformance 2
 /doc/ref_cert/RC2/                   @steelescotr
