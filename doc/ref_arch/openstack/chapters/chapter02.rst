@@ -166,7 +166,8 @@ specified below followed by networking bandwidth requirements.
      - Must support
      -
    * - infra.net.cfg.002
-     - The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric
+     - The overlay network encapsulation protocol needs to enable ECMP in the 
+       underlay to take advantage of the scale-out features of the network fabric
      - Must support VXLAN, MPLSoUDP, GENEVE, other
      - No requirement specified
      -
@@ -238,32 +239,32 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
    :widths: 20 20 10 10 20
    :header-rows: 1
 
-     * - Reference
+   * - Reference
      - Description
      - Requirement for Basic Profile
      - Requirement for High-Performance Profile
      - Specification Reference
-     * - e.cap.013/infra.hw.nac.cfg.004
+   * - e.cap.013/infra.hw.nac.cfg.004
      - SR-IOV over PCI-PT
      - N
      - Y
      -
-     * - e.cap.019/infra.net.acc.cfg.001
+   * - e.cap.019/infra.net.acc.cfg.001
      - vSwitch optimisation (DPDK)
      - N
      - Y
      -
-     * - e.cap.015/infra.net.acc.cfg.002
+   * - e.cap.015/infra.net.acc.cfg.002
      - SmartNIC (for HW Offload)
      - N
      - Optional
      -
-     * - e.cap.009/infra.net.acc.cfg.003
+   * - e.cap.009/infra.net.acc.cfg.003
      - Crypto acceleration
      - N
      - Optional
      -
-     * - infra.net.acc.cfg.004
+   * - infra.net.acc.cfg.004
      - Crypto Acceleration Interface
      - N
      - Optional
@@ -274,230 +275,245 @@ Cloud Infrastructure Software Profile Requirements for Storage
 
 (source :ref:`ref_model/chapters/chapter05:cloud infrastructure software profiles features and requirements`)
 
-+-----------------------+-------------+-------------+-------------+---------------+
-| Reference             | Description | Requirement | Requirement | Specification |
-|                       |             | for Basic   | for         | Reference     |
-|                       |             | Profile     | High-\      |               |
-|                       |             |             | Performance |               |
-|                       |             |             | Profile     |               |
-+=======================+=============+=============+=============+===============+
-| infra.stg.cfg.002     | Storage     | Must        | Must        |               |
-|                       | Block       | support     | support     |               |
-+-----------------------+-------------+-------------+-------------+---------------+
-| infra.stg.cfg.003     | Storage     | Not         | Must        |               |
-|                       | with        | required    | support     |               |
-|                       | replication |             |             |               |
-+-----------------------+-------------+-------------+-------------+---------------+
-| infra.stg.cfg.004     | Storage     | Must        | Must        |               |
-|                       | with        | support     | support     |               |
-|                       | encryption  |             |             |               |
-+-----------------------+-------------+-------------+-------------+---------------+
-| infra.stg.acc.cfg.001 | Storage     | Not         | Must        |               |
-|                       | IOPS        | required    | support     |               |
-|                       | oriented    |             |             |               |
-+-----------------------+-------------+-------------+-------------+---------------+
-| infra.stg.acc.cfg.002 | Storage     | Not         | Not         |               |
-|                       | capacity    | required    | required    |               |
-|                       | oriented    |             |             |               |
-+-----------------------+-------------+-------------+-------------+---------------+
+.. list-table:: Reference Model Requirements - Cloud Infrastructure Software
+   Profile Requirements for Storage
+   for Networking
+   :widths: 20 20 10 10 20
+   :header-rows: 1
 
-Table 2-3a: Reference Model Requirements - Cloud Infrastructure Software
-Profile Requirements for Storage
+   * - Reference
+     - Description
+     - Requirement for Basic Profile
+     - Requirement for High-Performance Profile
+     - Specification Reference
+   * - infra.stg.cfg.002
+     - Storage Block
+     - Must support
+     - Must support
+     -
+   * - infra.stg.cfg.003
+     - Storage with replication
+     - Not required
+     - Must support
+     -
+   * - infra.stg.cfg.004
+     - Storage with encryption
+     - Must support
+     - Must support
+     -
+   * - infra.stg.acc.cfg.001
+     - Storage IOPS oriented
+     - Not required
+     - Must support
+     -
+   * - infra.stg.acc.cfg.002
+     - Storage capacity oriented
+     - Not required
+     - Not required
+     -
 
 Cloud Infrastructure Software Profile Extensions Requirements for Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------+-------------+-------------+-------------+---------------+
-| Reference             | Description | Profile     | Profile     | Specification |
-|                       |             | Extensions  | Extra-Specs |               |
-|                       |             |             |             |               |
-+=======================+=============+=============+=============+===============+
-| infra.stg.acc.cfg.001 | Storage     | Storage     |             |               |
-|                       | IOPS        | Intensive   |             |               |
-|                       | oriented    | High-\      |             |               |
-|                       |             | performance |             |               |
-|                       |             | storage     |             |               |
-+-----------------------+-------------+-------------+-------------+---------------+
-| infra.stg.acc.cfg.002 | Storage     | High        |             |               |
-|                       | capacity    | Capacity    |             |               |
-|                       | oriented    |             |             |               |
-+-----------------------+-------------+-------------+-------------+---------------+
+.. list-table:: Reference Model Requirements - Cloud Infrastructure Software
+   Profile Extensions Requirements for Storage
+   for Networking
+   :widths: 15 15 20 10 20
+   :header-rows: 1
 
-Table 2-3b: Reference Model Requirements - Cloud Infrastructure Software
-Profile Extensions Requirements for Storage
+   * - Reference
+     - Description
+     - Profile Extensions
+     - Profile Extra-Specs
+     - Specification Reference
+   * - infra.stg.acc.cfg.001
+     - Storage IOPS oriented
+     - Storage Intensive High-performance storage	
+     -
+     -
+   * - infra.stg.acc.cfg.002
+     - Storage capacity oriented
+     - High Capacity
+     -
+     -
 
 Cloud Infrastructure Hardware Profile Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 (source :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`)
 
-+--------------------------+------------------+-------------+-------------+---------------+
-| Reference                | Description      | Requirement | Requirement | Specification |
-|                          |                  | for Basic   | for         |               |
-|                          |                  | Profile     | High-\      | Reference     |
-|                          |                  |             | Performance |               |
-|                          |                  |             | Profile     |               |
-+==========================+==================+=============+=============+===============+
-| infra.hw.001             | CPU Architecture |             |             |               |
-|                          | (Values such as  |             |             |               |
-|                          | x64, ARM, etc.)  |             |             |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.cpu.cfg.001     | Minimum number   | 2           | 2           |               |
-|                          | of CPU (Sockets) |             |             |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.cpu.cfg.002     | Minimum number   | 20          | 20          |               |
-|                          | of Cores per CPU |             |             |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.cpu.cfg.003     | NUMA             | Not         | Must        |               |
-|                          |                  | required    | support     |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.cpu.cfg.004     | Simultaneous     | Must        | Optional    |               |
-|                          | Multithreading/\ | support     |             |               |
-|                          | Symmetric        |             |             |               |
-|                          | Multiprocessing  |             |             |               |
-|                          | (SMT/SMP)        |             |             |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.stg.hdd.cfg.001 | Local            | *No         | *No         |               |
-|                          | Storage HDD      | requirement | requirement |               |
-|                          |                  | specified*  | specified*  |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.stg.ssd.cfg.002 | Local            | Should      | Should      |               |
-|                          | Storage SSD      | support     | support     |               |
-|                          |                  |             |             |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.nic.cfg.001     | Total Number of  | 4           | 4           |               |
-|                          | NIC Ports        |             |             |               |
-|                          | available in the |             |             |               |
-|                          | host             |             |             |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.nic.cfg.002     | Port speed       | 10          | 25          |               |
-|                          | specified in     |             |             |               |
-|                          | Gbps (minimum    |             |             |               |
-|                          | values)          |             |             |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.pci.cfg.001     | Number of PCIe   | 8           | 8           |               |
-|                          | slots            |             |             |               |
-|                          | available in     |             |             |               |
-|                          | the host         |             |             |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.pci.cfg.002     | PCIe speed       | Gen 3       | Gen 3       |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.pci.cfg.003     | PCIe Lanes       | 8           | 8           |               |
-+--------------------------+------------------+-------------+-------------+---------------+
-| infra.hw.nac.cfg.003     | Compression      | *No         | *No         |               |
-|                          |                  | requirement | requirement |               |
-|                          |                  | specified*  | specified*  |               |
-+--------------------------+------------------+-------------+-------------+---------------+
+.. list-table:: Reference Model Requirements - Cloud Infrastructure Hardware
+   Profile Requirements
+   :widths: 20 20 10 10 20
+   :header-rows: 1
 
-Table 2-4a: Reference Model Requirements - Cloud Infrastructure Hardware
-Profile Requirements
+   * - Reference
+     - Description
+     - Requirement for Basic Profile
+     - Requirement for High-Performance Profile
+     - Specification Reference
+   * - infra.hw.001
+     - CPU Architecture (Values such as x64, ARM, etc.)
+     -
+     -
+     -
+   * - infra.hw.cpu.cfg.001
+     - Minimum number of CPU (Sockets)
+     - 2
+     - 2
+     -
+   * - infra.hw.cpu.cfg.002
+     - Minimum number of Cores per CPU
+     - 20
+     - 20
+     -
+   * - infra.hw.cpu.cfg.003
+     - NUMA
+     - Not required
+     - Must support
+     -
+   * - infra.hw.cpu.cfg.004
+     - Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP)
+     - Must support
+     - Optional
+     -
+   * - infra.hw.stg.hdd.cfg.001
+     - Local Storage HDD
+     - No requirement specified
+     - No requirement specified
+     -
+   * - infra.hw.stg.ssd.cfg.002
+     - Local Storage SSD
+     - Should support
+     - Should support
+     -
+   * - infra.hw.nic.cfg.001
+     - Total Number of NIC Ports available in the host
+     - 4
+     - 4
+     -
+   * - infra.hw.nic.cfg.002
+     - Port speed specified in Gbps (minimum values)
+     - 10
+     - 25
+     -
+   * - infra.hw.pci.cfg.001
+     - Number of PCIe slots available in the host
+     - 8
+     - 8
+     -
+   * - infra.hw.pci.cfg.002
+     - PCIe speed
+     - Gen 3
+     - Gen 3
+     -
+   * - infra.hw.pci.cfg.003
+     - PCIe Lanes
+     - 8
+     - 8
+     -
+   * - infra.hw.nac.cfg.003
+     - Compression
+     - No requirement specified
+     - No requirement specified
+     -
 
 Cloud Infrastructure Hardware Profile-Extensions Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`)
 
-+----------------------+-------------+-------------+-------------+---------------+
-| Reference            | Description | Requirement | Requirement | Specification |
-|                      |             | for Basic   | for         | Reference     |
-|                      |             | Profile     | High-\      |               |
-|                      |             |             | Performance |               |
-|                      |             |             | Profile     |               |
-+======================+==============+============+=============+===============+
-| e.cap.014/\          | GPU          | N          | Optional    |               |
-| infra.hw.cac.cfg.001 |              |            |             |               |
-+----------------------+--------------+------------+-------------+---------------+
-| e.cap.016/\          | FPGA/other   | N          | Optional    |               |
-| infra.hw.cac.cfg.002 | Acceleration |            |             |               |
-|                      | H/W          |            |             |               |
-+----------------------+--------------+------------+-------------+---------------+
-| e.cap.009/\          | Crypto       | N          | Optional    |               |
-| infra.hw.nac.cfg.001 | Acceleration |            |             |               |
-+----------------------+--------------+------------+-------------+---------------+
-| e.cap.015/\          | SmartNIC     | N          | Optional    |               |
-| infra.hw.nac.cfg.002 |              |            |             |               |
-+----------------------+--------------+------------+-------------+---------------+
-| infra.hw.nac.cfg.003 | Compression  | Optional   | Optional    |               |
-+----------------------+--------------+------------+-------------+---------------+
-| e.cap.013/\          | SR-IOV over  | N          | Yes         |               |
-| infra.hw.nac.cfg.004 | PCI-PT       |            |             |               |
-+----------------------+--------------+------------+-------------+---------------+
+.. list-table:: Reference Model Requirements - Cloud Infrastructure Hardware
+   Profile Extensions Requirements
+   :widths: 20 20 10 10 20
+   :header-rows: 1
 
-Table 2-4b: Reference Model Requirements - Cloud Infrastructure Hardware
-Profile Extensions Requirements
+   * - Reference
+     - Description
+     - Requirement for Basic Profile
+     - Requirement for High-Performance Profile
+     - Specification Reference
+   * - e.cap.014/infra.hw.cac.cfg.001
+     - GPU
+     - N
+     - Optional
+     - 
+   * - e.cap.016/infra.hw.cac.cfg.002
+     - FPGA/other Acceleration H/W
+     - N
+     - Optional
+     - 
+   * - e.cap.009/infra.hw.nac.cfg.001
+     - Crypto Acceleration
+     - N
+     - Optional
+     - 
+   * - e.cap.015/infra.hw.nac.cfg.002
+     - SmartNIC
+     - N
+     - Optional
+     - 
+   * - infra.hw.nac.cfg.003
+     - Compression
+     - Optional
+     - Optional
+     - 
+   * - e.cap.013/infra.hw.nac.cfg.004
+     - SR-IOV over PCI-PT
+     - N
+     - Yes
+     - 
 
 Cloud Infrastructure Management Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 (source :ref:`ref_model/chapters/chapter04:cloud infrastructure management capabilities`)
 
-+-----------------+-----------------+-----------------+-----------------+
-| Reference       | Description     | Requirement     | Specification   |
-|                 |                 | (common to all  | Reference       |
-|                 |                 | Profiles)       |                 |
-+=================+=================+=================+=================+
-| e.man.001       | Capability to   | Must support    |                 |
-|                 | allocate        |                 |                 |
-|                 | virtual compute |                 |                 |
-|                 | resources to a  |                 |                 |
-|                 | workload        |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| e.man.002       | Capability to   | Must support    |                 |
-|                 | allocate        |                 |                 |
-|                 | virtual storage |                 |                 |
-|                 | resources to a  |                 |                 |
-|                 | workload        |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| e.man.003       | Capability to   | Must support    |                 |
-|                 | allocate        |                 |                 |
-|                 | virtual         |                 |                 |
-|                 | networking      |                 |                 |
-|                 | resources to a  |                 |                 |
-|                 | workload        |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| e.man.004       | Capability to   | Must support    |                 |
-|                 | isolate         |                 |                 |
-|                 | resources       |                 |                 |
-|                 | between tenants |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| e.man.005       | Capability to   | Must support    |                 |
-|                 | manage workload |                 |                 |
-|                 | software images |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| e.man.006       | Capability to   | Must support    |                 |
-|                 | provide         |                 |                 |
-|                 | information     |                 |                 |
-|                 | related to      |                 |                 |
-|                 | allocated       |                 |                 |
-|                 | virtualised     |                 |                 |
-|                 | resources per   |                 |                 |
-|                 | tenant          |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| e.man.007       | Capability to   | Must support    |                 |
-|                 | notify state    |                 |                 |
-|                 | changes of      |                 |                 |
-|                 | allocated       |                 |                 |
-|                 | resources       |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| e.man.008       | Capability to   | Must support    |                 |
-|                 | collect and     |                 |                 |
-|                 | expose          |                 |                 |
-|                 | performance     |                 |                 |
-|                 | information on  |                 |                 |
-|                 | virtualised     |                 |                 |
-|                 | resources       |                 |                 |
-|                 | allocated       |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| e.man.009       | Capability to   | Must support    |                 |
-|                 | collect and     |                 |                 |
-|                 | notify fault    |                 |                 |
-|                 | information on  |                 |                 |
-|                 | virtualised     |                 |                 |
-|                 | resources       |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
+.. list-table:: Reference Model Requirements - Cloud Infrastructure
+   Management Requirements
+   :widths: 20 30 10 20
+   :header-rows: 1
 
-Table 2-5: Reference Model Requirements: Cloud Infrastructure Management
-Requirements
+   * - Reference
+     - Description
+     - Requirement (common to all Profiles)
+     - Specification Reference
+   * - e.man.001
+     - Capability to allocate virtual compute resources to a workload
+     - Must support
+     -
+   * - e.man.002
+     - Capability to allocate virtual storage resources to a workload
+     - Must support
+     -
+   * - e.man.003
+     - Capability to allocate virtual networking resources to a workload
+     - Must support
+     -
+   * - e.man.004
+     - Capability to isolate resources between tenants
+     - Must support
+     -
+   * - e.man.005
+     - Capability to manage workload software images
+     - Must support
+     -
+   * - e.man.006
+     - Capability to provide information related to allocated virtualised resources per tenant
+     - Must support
+     -
+   * - e.man.007
+     - Capability to notify state changes of allocated resources
+     - Must support
+     -
+   * - e.man.008
+     - Capability to collect and expose performance information on virtualised resources allocated
+     - Must support
+     -
+   * - e.man.009
+     - Capability to collect and notify fault information on virtualised resources
+     - Must support
+     -
 
 Cloud Infrastructure Security Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -600,134 +616,87 @@ Platform and Access Requirements
 
 (source :ref:`ref_model/chapters/chapter07:platform and access`)
 
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| Reference   | sub-\     | Description                     | Specification Reference                                |
-|             | category  |                                 |                                                        |
-+=============+===========+=================================+========================================================+
-| sec.sys.001 | Access    | The Platform **must** support   | :ref:`ref_arch/openstack/chapters/chapter06:rbac`      |
-|             |           | authenticated and secure access |                                                        |
-|             |           | to API, GUI and command line    |                                                        |
-|             |           | interfaces                      |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.002 | Access    | The Platform **must** support   | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | Traffic Filtering for           | workload security`                                     |
-|             |           | workloads (for example,         |                                                        |
-|             |           | Firewall).                      |                                                        |
-|             |           |                                 |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.003 | Access    | The Platform **must** support   | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | Secure and encrypted            | confidentiality and integrity`                         |
-|             |           | communications, and             |                                                        |
-|             |           | confidentiality and integrity   |                                                        |
-|             |           | of network                      |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.004 | Access    | The Cloud Infrastructure        | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | **must** support                | confidentiality and integrity`                    `    |
-|             |           | authentication, integrity and   |                                                        |
-|             |           | confidentiality on all          |                                                        |
-|             |           | network channels.               |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.005 | Access    | The Cloud Infrastructure        | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | **must** segregate the underlay | confidentiality and integrity`                         |
-|             |           | and overlay networks.           |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.006 | Access    | The Cloud Infrastructure        | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | **must** be able to utilise     | identity security`                                     |
-|             |           | the Cloud Infrastructure        |                                                        |
-|             |           | Manager identity lifecycle      |                                                        |
-|             |           | management capabilities.        |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.007 | Access    | The Platform **must** implement | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | controls enforcing separation   | rbac`                                                  |
-|             |           | of duties and privileges, least |                                                        |
-|             |           | privilege use and least common  |                                                        |
-|             |           | mechanism (Role-Based Access    |                                                        |
-|             |           | Control).                       |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.008 | Access    | The Platform **must** be able   | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | to assign the Entities that     | workload security`                                     |
-|             |           | comprise the tenant networks to |                                                        |
-|             |           | different trust domains.        |                                                        |
-|             |           | (Communication between          |                                                        |
-|             |           | different trust domains is not  |                                                        |
-|             |           | allowed, by default.)           |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.009 | Access    | The Platform **must** support   |                                                        |
-|             |           | creation of Trust Relationships |                                                        |
-|             |           | between trust domains. These    |                                                        |
-|             |           | maybe uni-directional           |                                                        |
-|             |           | relationships where the         |                                                        |
-|             |           | trusting domain trusts another  |                                                        |
-|             |           | domain (the "trusted domain")   |                                                        |
-|             |           | to authenticate users for them  |                                                        |
-|             |           | them or to allow access to its  |                                                        |
-|             |           | resources from the trusted      |                                                        |
-|             |           | domain. In a bidirectional      |                                                        |
-|             |           | relationship both domain are    |                                                        |
-|             |           | "trusting" and "trusted".       |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.010 | Access    | For two or more domains         |                                                        |
-|             |           | without existing trust          |                                                        |
-|             |           | relationships, the Platform     |                                                        |
-|             |           | **must not** allow the effect   |                                                        |
-|             |           | of an attack on one domain to   |                                                        |
-|             |           | impact the other domains either |                                                        |
-|             |           | directly or indirectly.         |                                                        |
-|             |           |                                 |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.011 | Access    | The Platform **must not**       | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | reuse the same authentication   | system access`                                         |
-|             |           | credentials (e.g., key  pairs)  |                                                        |
-|             |           | on different Platform           |                                                        |
-|             |           | components (e.g., different     |                                                        |
-|             |           | hosts, or different services).  |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.012 | Access    | The Platform **must** protect   |                                                        |
-|             |           | all secrets by using strong     |                                                        |
-|             |           | encryption techniques and       |                                                        |
-|             |           | storing the protected secrets   |                                                        |
-|             |           | externally from the component   |                                                        |
-|             |           | (e.g., in OpenStack Barbican)   |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.013 | Access    | The Platform **must** generate  |                                                        |
-|             |           | secrets dynamically as and when |                                                        |
-|             |           | needed.                         |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.015 | Access    | The Platform **must not**       |                                                        |
-|             |           | contain back door entries       |                                                        |
-|             |           | (unpublished access points,     |                                                        |
-|             |           | APIs,  etc.).                   |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.016 | Access    | Login access to the Platform’s  | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | components **must** be through  | security lcm`                                          |
-|             |           | encrypted protocols such as SSH |                                                        |
-|             |           | v2 or TLS v1.2 or higher. Note: |                                                        |
-|             |           | Hardened jump servers isolated  |                                                        |
-|             |           | from external networks are      |                                                        |
-|             |           | recommended                     |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.017 | Access    | The Platform **must** provide   | :ref:`ref_arch/openstack/chapters/chapter06:\          |
-|             |           | the capability of using digital | confidentiality and integrity`                         |
-|             |           | certificates that comply with   |                                                        |
-|             |           | X.509 standards issued by a     |                                                        |
-|             |           | trusted Certification           |                                                        |
-|             |           | Authority.                      |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.018 | Access    | The Platform **must** provide   |                                                        |
-|             |           | the capability of allowing      |                                                        |
-|             |           | certificate renewal and         |                                                        |
-|             |           | revocation.                     |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
-| sec.sys.019 | Access    | The Platform **must** provide   |                                                        |
-|             |           | the capability of testing the   |                                                        |
-|             |           | validity of a digital           |                                                        |
-|             |           | certificate (CA signature,      |                                                        |
-|             |           | validity period, non revocation |                                                        |
-|             |           | identity).                      |                                                        |
-+-------------+-----------+---------------------------------+--------------------------------------------------------+
+.. list-table:: Reference Model Requirements - Platform and Access
+   Requirements
+   :widths: 20 10 30 20
+   :header-rows: 1
 
-Table 2-7: Reference Model Requirements - Platform and Access
-Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.sys.001
+     - Access
+     - The Platform must support authenticated and secure access to API, GUI and command line interfaces
+     - :ref:`ref_arch/openstack/chapters/chapter06:rbac`
+   * - sec.sys.002
+     - Access
+     - The Platform must support Traffic Filtering for workloads (for example, Firewall).
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+   * - sec.sys.003
+     - Access
+     - The Platform must support Secure and encrypted communications, and confidentiality and integrity of network
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ confidentiality and integrity`
+   * - sec.sys.004
+     - Access
+     - The Cloud Infrastructure must support authentication, integrity and confidentiality on all network channels.
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ confidentiality and integrity` `
+   * - sec.sys.005
+     - Access
+     - The Cloud Infrastructure must segregate the underlay and overlay networks.
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ confidentiality and integrity`
+   * - sec.sys.006
+     - Access
+     - The Cloud Infrastructure must be able to utilise the Cloud Infrastructure Manager identity lifecycle management capabilities.
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ identity security`
+   * - sec.sys.007
+     - Access
+     - The Platform must implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control).
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ rbac`
+   * - sec.sys.008
+     - Access
+     - The Platform must be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.)
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ workload security`
+   * - sec.sys.009
+     - Access
+     - The Platform must support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts another domain (the "trusted domain") to authenticate users for them them or to allow access to its resources from the trusted domain. In a bidirectional relationship both domain are "trusting" and "trusted".
+     -
+   * - sec.sys.010
+     - Access
+     - For two or more domains without existing trust relationships, the Platform must not allow the effect of an attack on one domain to impact the other domains either directly or indirectly.
+     -
+   * - sec.sys.011
+     - Access
+     - The Platform must not reuse the same authentication credentials (e.g., key pairs) on different Platform components (e.g., different hosts, or different services).
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ system access`
+   * - sec.sys.012
+     - Access
+     - The Platform must protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component (e.g., in OpenStack Barbican)
+     -
+   * - sec.sys.013
+     - Access
+     - The Platform must generate secrets dynamically as and when needed.
+     -
+   * - sec.sys.015
+     - Access
+     - The Platform must not contain back door entries (unpublished access points, APIs, etc.).
+     -
+   * - sec.sys.016
+     - Access
+     - Login access to the Platform’s components must be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. Note: Hardened jump servers isolated from external networks are recommended
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ security lcm`
+   * - sec.sys.017
+     - Access
+     - The Platform must provide the capability of using digital certificates that comply with X.509 standards issued by a trusted Certification Authority.
+     - :ref:`ref_arch/openstack/chapters/chapter06:\ confidentiality and integrity`
+   * - sec.sys.018
+     - Access
+     - The Platform must provide the capability of allowing certificate renewal and revocation.
+     -
+   * - sec.sys.019
+     - Access
+     - The Platform must provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation identity).
+     -
 
 Confidentiality and Integrity Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
