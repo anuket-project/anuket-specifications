@@ -1,4 +1,4 @@
-Cloud Infrastructure + VIM Component Level Architecture
+Cloud Infrastructure & VIM Component Level Architecture
 =======================================================
 
 Introduction
@@ -1688,6 +1688,6 @@ number of open-source tools are available for the purpose including:
 -  `Triple-O <https://wiki.openstack.org/wiki/TripleO>`__: for
    installing, upgrading and operating OpenStack clouds
 
-The Reference Implementation (RI-1) is responsible to choose the tools
-for the implementation and shall specify implementation and usage
-details of the chosen tools.
+These installers are described in more details in
+:ref:`ref_arch/openstack/chapters/chapter07:\
+Operations and Life Cycle Management`. 
