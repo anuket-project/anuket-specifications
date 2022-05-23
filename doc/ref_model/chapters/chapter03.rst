@@ -145,7 +145,7 @@ A virtual machine and container can consume storage through a number of means. T
   containers) and is connected via cloud infrastructure underlay network and
 - Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
   The details of the tenant storage consumption model are covered in section 
- :ref:`Storage for Tenant Consumption`.
+  :ref:`Storage for Tenant Consumption`.
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity
 and behaviours. The set of selectable attributes includes:
@@ -1376,7 +1376,7 @@ The considerations will help to guide the build and deployment of the Storage so
 |    | General Considerations: What are the general considerations, irrespective     |
 |    | of the deployment stereotype/technology used in storage sub-system?           |
 |    +----+----+----------+----------------------------------------------------------+
-|    | 1  | Is there a need to support multiple clusters/ availability zones at the  |
+|    | 1  | Is there a need to support multiple clusters/availability zones at the   |
 |    |    | same site? If so then use "Data-Centre Storage" use case, otherwise,     |
 |    |    | consider how to put Virtual Machine & Container Hosting control plane    |
 |    |    | and Storage control plane on the same set of hosts to reduce footprint.  |
