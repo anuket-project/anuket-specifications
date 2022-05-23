@@ -315,6 +315,43 @@ When the CSP is actings as:
 These two stances will drive differing approaches to how a CSP would look to manage how it interacts within a
 Multi-Cloud environment.
 
+As a consumer of cloud services to support internal Business operations and BSS/OSS, the focus is on meeting the needs
+of the organisation's applications . Historically this came with the need to operate and support the organisation's
+infrastructure needs. The result was a split of the CIO organisation into Delivery and Operations groups. At the same
+time that the CIO application workloads are moving to SaaS and other Cloud Providers, the CTO Network Systems are
+migrating from running on custom dedicated infrastructure to run on virtualised COTS infrastructure; examples include
+IMS, 3GPP (4G & 5G) functions, IP Routers and Firewalls are being provided as VNFs and CNFs.  These network workloads
+are now also being deployed on private CSP clouds as well as public clouds.
+
+As outlined in section "8.2.2 Telco Cloud", the result is that the CSP "network" is now an interconnected set of
+distributed Cloud Infrastructure supported by different Cloud Providers, including the CSP, and, hence, the term
+"Hybrid Multi-Cloud", and the need for the CSP to be able to support and utilize this interconnected cloud is both
+inevitable and essential.
+
+As a consumer and provider of Cloud Services, the CSP will continue to need to build and manage its own Cloud
+Infrastructure as well as provide: 
+
+- cloud orchestration solutions to orchestrate the utilisation of cloud services and capabilities from its own and
+  other Cloud Providers;
+- network orchestration solutions to manage the interconnectivity across its own and other Cloud Provider networks. 
+
+The interactions for this are outlined in the "Multi-Cloud Interactions Model", however, to realise this, the CSP will
+need to adopt and sponsor a set of standards that are necessary to support these interactions. The identification of
+existing appliable standards and gaps across the interactions needs to be completed. As a first step, the following
+criteria for inclusion of a standard/technology is defined. These standards/technologies must:
+
+- provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
+- be already mature Open Standards that have either been adopted or nurtured by recognised bodies with the
+  telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations, (ANSI
+  etc,) NIST)
+- have reference implementations or an active open source project/s or consortia providing implementations (e.g.,
+  CNCF (Cloud Native Computing Foundation). Open Infrastructure Foundation)
+- allow the CSP to source delivery and support services based on these from multiple vendors
+- allow the CSP to actively contribute to and request capabilities/coverage of the standard/technology
+- not  be the sole proprietary property of a vendor/company
+- not be focused on "Transactions/Conversations" or "User/Data Plane" standards (typically IETF, IEEE,
+  MEF/Carrier Ethernet etc.)
+
 Hybrid, Edge, and Multi-Cloud unified management Platform 
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -471,44 +508,6 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Life Cycle Manage
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 
 Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Security Requirements
-	 
-
-As a consumer of cloud services to support internal Business operations and BSS/OSS, the focus is on meeting the needs
-of the organisation's applications . Historically this came with the need to operate and support the organisation's
-infrastructure needs. The result was a split of the CIO organisation into Delivery and Operations groups. At the same
-time that the CIO application workloads are moving to SaaS and other Cloud Providers, the CTO Network Systems are
-migrating from running on custom dedicated infrastructure to run on virtualised COTS infrastructure; examples include
-IMS, 3GPP (4G & 5G) functions, IP Routers and Firewalls are being provided as VNFs and CNFs.  These network workloads
-are now also being deployed on private CSP clouds as well as public clouds.
-
-As outlined in section "8.2.2 Telco Cloud", the result is that the CSP "network" is now an interconnected set of
-distributed Cloud Infrastructure supported by different Cloud Providers, including the CSP, and, hence, the term
-"Hybrid Multi-Cloud", and the need for the CSP to be able to support and utilize this interconnected cloud is both
-inevitable and essential.
-
-As a consumer and provider of Cloud Services, the CSP will continue to need to build and manage its own Cloud
-Infrastructure as well as provide: 
-
-- cloud orchestration solutions to orchestrate the utilisation of cloud services and capabilities from its own and
-  other Cloud Providers;
-- network orchestration solutions to manage the interconnectivity across its own and other Cloud Provider networks. 
-
-The interactions for this are outlined in the "Multi-Cloud Interactions Model", however, to realise this, the CSP will
-need to adopt and sponsor a set of standards that are necessary to support these interactions. The identification of
-existing appliable standards and gaps across the interactions needs to be completed. As a first step, the following
-criteria for inclusion of a standard/technology is defined. These standards/technologies must:
-
-- provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
-- be already mature Open Standards that have either been adopted or nurtured by recognised bodies with the
-  telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations, (ANSI
-  etc,) NIST)
-- have reference implementations or an active open source project/s or consortia providing implementations (e.g.,
-  CNCF (Cloud Native Computing Foundation). Open Infrastructure Foundation)
-- allow the CSP to source delivery and support services based on these from multiple vendors
-- allow the CSP to actively contribute to and request capabilities/coverage of the standard/technology
-- not  be the sole proprietary property of a vendor/company
-- not be focused on "Transactions/Conversations" or "User/Data Plane" standards (typically IETF, IEEE,
-  MEF/Carrier Ethernet etc.)
 
 
 Aspects of Multi-Cloud Security
