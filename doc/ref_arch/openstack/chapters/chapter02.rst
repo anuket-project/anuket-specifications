@@ -45,59 +45,59 @@ Cloud Infrastructure Software Profile Requirements for Compute
    :widths: 20 20 10 10 20
    :header-rows: 1
 
-* - Reference
-  - Description
-  - Requirement for Basic Profile
-  - Requirement for High-Performance Profile
-  - Specification Reference
-* - e.cap.001
-  - Max number of vCPU that can be assigned to a single instance by the Cloud Infrastructure
-  - At least 16
-  - At least 16
-  -
-* - e.cap.002
-  - Max memory that can be assigned to a single instance by the Cloud Infrastructure
-  - at least 32 GB
-  - at least 32 GB
-  -
-* - e.cap.003
-  - Max storage that can be assigned to a single instance by the Cloud Infrastructure
-  - at least 320 GB
-  - at least 320 GB
-  -
-* - e.cap.004
-  - Max number of connection points that can be assigned to a single instance by the Cloud Infrastructure
-  - 6
-  - 6
-  -
-* - e.cap.005
-  - Max storage that can be attached / mounted to an instance by the Cloud Infrastructure
-  - Up to 16TB:sup:`1`
-  - Up to 16TB:sup:`1`
-  -
-* - e.cap.006/infra.com.cfg.003
-  - CPU pinning support
-  - Not required
-  - Must support
-  -
-* - e.cap.007/infra.com.cfg.002
-  - NUMA support
-  - Not required
-  - Must support
-  -
-* - e.cap.018/infra.com.cfg.005
-  - Simultaneous Multithreading (SMT) enabled
-  - Must
-  - Optional support
-  -
-* - i.cap.018/infra.com.cfg.004
-  - Huge pages configured
-  - Not required
-  - Must support
-  -
+   * - Reference
+     - Description
+     - Requirement for Basic Profile
+     - Requirement for High-Performance Profile
+     - Specification Reference
+   * - e.cap.001
+     - Max number of vCPU that can be assigned to a single instance by the Cloud Infrastructure
+     - At least 16
+     - At least 16
+     -
+   * - e.cap.002
+     - Max memory that can be assigned to a single instance by the Cloud Infrastructure
+     - at least 32 GB
+     - at least 32 GB
+     -
+   * - e.cap.003
+     - Max storage that can be assigned to a single instance by the Cloud Infrastructure
+     - at least 320 GB
+     - at least 320 GB
+     -
+   * - e.cap.004
+     - Max number of connection points that can be assigned to a single instance by the Cloud Infrastructure
+     - 6
+     - 6
+     -
+   * - e.cap.005
+     - Max storage that can be attached / mounted to an instance by the Cloud Infrastructure
+     - Up to 16TB:sup:`1`
+     - Up to 16TB:sup:`1`
+     -
+   * - e.cap.006/infra.com.cfg.003
+     - CPU pinning support
+     - Not required
+     - Must support
+     -
+   * - e.cap.007/infra.com.cfg.002
+     - NUMA support
+     - Not required
+     - Must support
+     -
+   * - e.cap.018/infra.com.cfg.005
+     - Simultaneous Multithreading (SMT) enabled
+     - Must
+     - Optional support
+     -
+   * - i.cap.018/infra.com.cfg.004
+     - Huge pages configured
+     - Not required
+     - Must support
+     -
 
-   **:sup:`1`** Defined in the ``.bronze`` configuration in
-   :ref:`ref_model/chapters/chapter04:storage extensions`
+**:sup:`1`** Defined in the ``.bronze`` configuration in
+:ref:`ref_model/chapters/chapter04:storage extensions`
 
 Cloud Infrastructure Software Profile Extensions Requirements for Compute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

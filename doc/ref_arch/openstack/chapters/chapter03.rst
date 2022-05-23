@@ -122,10 +122,10 @@ VNF components. Profiles are defined in the
 Virtual Storage
 ~~~~~~~~~~~~~~~
 
-The Reference Model 
-:ref:`ref_model/chapters/chapter02:storage for tenant consumption` 
-details consumption models for tenants: Platform native, 
-object storage, shared file storage and archival. 
+The Reference Model
+:ref:`ref_model/chapters/chapter02:storage for tenant consumption`
+details consumption models for tenants: Platform native,
+object storage, shared file storage and archival.
 The choice of a solution will depend on the storage use case needs.
 
 The two storage services offered by Cloud Infrastructure are:
@@ -138,7 +138,7 @@ Storage, are discussed below in Section 3.3 “Cloud Infrastructure
 Management Software (VIM)”.
 
 Ephemeral data is typically stored on the compute host’s local disks,
-in the form of a file system as part of the provisioning. 
+in the form of a file system as part of the provisioning.
 This storage is volatile, it is deleted when instances are stopped.
 In environments that support live instance migration between
 compute hosts, the ephemeral data would need to be
@@ -157,19 +157,19 @@ design-storage-concepts.html#table-openstack-storage>`__
 explains the differences between the storage types and typical use
 cases.
 
-Block storage is dedicated to persistent data. Data is stored 
-in the form of volumes. Block storage is managed by OpenStack 
-Cinder service and storage Backends. `OpenStack compatible 
-storage backend drivers table 
+Block storage is dedicated to persistent data. Data is stored
+in the form of volumes. Block storage is managed by OpenStack
+Cinder service and storage Backends. `OpenStack compatible
+storage backend drivers table
 <https://docs.openstack.org/cinder/latest/reference/support-matrix.html>`__
-lists the storage backends compatible with Cinder and their capabilities. 
+lists the storage backends compatible with Cinder and their capabilities.
 
-The Object storage is a persistent data storage, not attached to an instance. 
-Data is accessed via API. Object storage is managed by OpenStack Swift. 
+The Object storage is a persistent data storage, not attached to an instance.
+Data is accessed via API. Object storage is managed by OpenStack Swift.
 
 Images are persistent data, stored using the OpenStack Glance service.
 
-Cinder, Swift, and Glance services are discussed in the section 
+Cinder, Swift, and Glance services are discussed in the section
 :ref:`ref_arch/openstack/chapters/chapter04:
 virtualised infrastructure manager (VIM)`.
 
@@ -645,10 +645,10 @@ up (in a shipping container), and what resources are required of the DC
 
 -  Storage
 
-   - Storage technologies are multiple, they are extensively 
-     described in 
-     :ref:`refm/chapters/chapter03:storage implementation stereotypes`. 
-     Storage backends are discussed in 
+   - Storage technologies are multiple, they are extensively
+     described in
+     :ref:`refm/chapters/chapter03:storage implementation stereotypes`.
+     Storage backends are discussed in
      :ref:`ref_arch/openstack/chapters/chapter04:storage backend`.
 
 -  Acceleration

@@ -1432,7 +1432,7 @@ set up the flavors as specified in the tables below.
      - infra.hw.nic.cfg.002
      - –property quota vif_inbound_average=1310720 and
        vif_outbound_average=1310720.
-         Note:10 Gbps = 1250000 kilobytes per second
+       Note:10 Gbps = 1250000 kilobytes per second
      - –property quota vif_inboundaverage=3125000 and
        vif_outbound_average=3125000 Note: 25 Gbps = 3125000 kilobytes per second
 
@@ -1667,7 +1667,7 @@ cached from the central site. Two ptions exist:
 - The instance images would be downloaded and
   cached in the Nova cache on first use; they will then be available for
   subsequent use.
-- Pre-caching the instance images for low time-to-boot latency. This has been supported 
+- Pre-caching the instance images for low time-to-boot latency. This has been supported
   in Nova since the OpenStack Ussuri release.
 
 Image caching and considerations for its use are discussed in the OpenStack document
