@@ -1183,92 +1183,79 @@ IaaC security Requirements
 
 **Continuous Delivery and Deployment Stage Requirements**
 
-+-------------+-------------------+----------------------------------+----------------------------+
-| Reference   | sub-category      | Description                      | Specification              |
-|             |                   |                                  | Reference                  |
-+=============+===================+==================================+============================+
-| sec.del.001 | IaaC              | Image Scan **must** be applied   |                            |
-|             |                   | during the Continuous            |                            |
-|             |                   | Delivery and Deployment stage    |                            |
-|             |                   | triggered by Publish to Artifact |                            |
-|             |                   | and Image Repository trigger.    |                            |
-|             |                   | Example: GitLab uses the open    |                            |
-|             |                   | source Clair engine for          |                            |
-|             |                   | container image scanning.        |                            |
-+-------------+-------------------+----------------------------------+----------------------------+
-| sec.del.002 | IaaC              | Code Signing **must** be         |                            |
-|             |                   | applied during the Continuous    |                            |
-|             |                   | Deliveryand Deployment stage     |                            |
-|             |                   | and Image Repository trigger.    |                            |
-|             |                   | Code Signing provides            |                            |
-|             |                   | authentication to assure that    |                            |
-|             |                   | downloaded files are form the    |                            |
-|             |                   | publisher named on the           |                            |
-|             |                   | certificate.                     |                            |
-+-------------+-------------------+----------------------------------+----------------------------+
-| sec.del.004 | IaaC              | Component Vulnerability Scan     |                            |
-|             |                   | **must** be applied during       |                            |
-|             |                   | the Continuous Delivery and      |                            |
-|             |                   | Deployment stage triggered  by   |                            |
-|             |                   | Instantiate Infrastructure       |                            |
-|             |                   | trigger. The vulnerability       |                            |
-|             |                   | scanning system is deployed on   |                            |
-|             |                   | the cloud platform to detect     |                            |
-|             |                   | security vulnerabilities of      |                            |
-|             |                   | specified components through     |                            |
-|             |                   | scanning and to provide timely   |                            |
-|             |                   | security protection.             |                            |
-|             |                   | Example:                         |                            |
-|             |                   | OWASP Zed Attack Proxy (ZAP).    |                            |
-+-------------+-------------------+----------------------------------+----------------------------+
+.. list-table:: Reference Model Requirements - IaaC Security Requirements,
+   Continuous Delivery and Deployment Stage
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-16: Reference Model Requirements - IaaC Security Requirements,
-Continuous Delivery and Deployment Stage
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.del.001
+     - IaaC
+     - Image Scan must be applied during the Continuous Delivery and
+       Deployment stage triggered by Publish to Artifact and Image
+       Repository trigger. Example: GitLab uses the open source Clair
+       engine for container image scanning.
+     -
+   * - sec.del.002
+     - IaaC
+     - Code Signing must be applied during the Continuous Deliveryand
+       Deployment stage and Image Repository trigger. Code Signing provides
+       authentication to assure that downloaded files are form the publisher
+       named on the certificate.
+     -
+   * - sec.del.004
+     - IaaC
+     - Component Vulnerability Scan must be applied during the Continuous
+       Delivery and Deployment stage triggered by Instantiate Infrastructure
+       trigger. The vulnerability scanning system is deployed on the cloud
+       platform to detect security vulnerabilities of specified components
+       through scanning and to provide timely security protection. Example:
+       OWASP Zed Attack Proxy (ZAP).
+     -
+ 
 
 **Runtime Defence and Monitoring Requirements**
 
-+-------------+-------------------+----------------------------------+----------------------------+
-| Reference   | sub-category      | Description                      | Specification              |
-|             |                   |                                  | Reference                  |
-+=============+===================+==================================+============================+
-| sec.run.001 | IaaC              | Component Vulnerability          |                            |
-|             |                   | Monitoring **must** be           |                            |
-|             |                   | continuously applied during the  |                            |
-|             |                   | Runtime Defence and monitoring   |                            |
-|             |                   | stage. Security technology       |                            |
-|             |                   | that monitors components like    |                            |
-|             |                   | virtual servers and assesses     |                            |
-|             |                   | data, applications, and          |                            |
-|             |                   | infrastructure forsecurity       |                            |
-|             |                   | risks.                           |                            |
-+-------------+-------------------+----------------------------------+----------------------------+
+.. list-table:: Reference Model Requirements - IaaC Security Requirements,
+   Runtime Defence and Monitoring Stage
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-17: Reference Model Requirements - IaaC Security Requirements,
-Runtime Defence and Monitoring Stage
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.run.001
+     - IaaC
+     - Component Vulnerability Monitoring must be continuously applied
+       during the Runtime Defence and monitoring stage. Security technology that
+       monitors components like virtual servers and assesses data, applications,
+       and infrastructure forsecurity risks.
+     -
 
 Compliance with Standards Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (source :ref:`ref_model/chapters/chapter07:compliance with standards`)
 
-+-------------+-------------------+----------------------------------+----------------------------+
-| Reference   | sub-category      | Description                      | Specification              |
-|             |                   |                                  | Reference                  |
-+=============+===================+==================================+============================+
-| sec.std.012 | Standards         | The Public Cloud Operator        |                            |
-|             |                   | **must**, and the Private Cloud  |                            |
-|             |                   | Operator **may** be certified    |                            |
-|             |                   | to be compliant with the         |                            |
-|             |                   | International Standard on        |                            |
-|             |                   | Awareness Engagements (ISAE)     |                            |
-|             |                   | 3402 (in the US:SSAE 16);        |                            |
-|             |                   | International Standard on        |                            |
-|             |                   | Awareness Engagements (ISAE)     |                            |
-|             |                   | 3402. US  Equivalent: SSAE16.    |                            |
-+-------------+-------------------+----------------------------------+----------------------------+
+.. list-table:: Reference Model Requirements: Compliance with Standards
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-18: Reference Model Requirements: Compliance with Standards
-Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - sec.std.012
+     - Standards
+     - The Public Cloud Operator must, and the Private Cloud Operator may be
+       certified to be compliant with the International Standard on Awareness
+       Engagements (ISAE) 3402 (in the US:SSAE 16); International Standard on
+       Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16.
+     -
 
 Architecture and OpenStack Requirements
 ---------------------------------------
@@ -1279,34 +1266,33 @@ to as NFVI by ETSI) + VIM (as specified in Reference Model Chapter 3).
 General Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| Reference   | sub-category      | Description                      | Specification                                 |
-|             |                   |                                  | Reference                                     |
-|             |                   |                                  |                                               |
-|             |                   |                                  |                                               |
-|             |                   |                                  |                                               |
-+=============+===================+==================================+===============================================+
-| gen.ost.01  | Open source       | The Architecture                 | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|             |                   | **must** use OpenStack APIs.     | consolidated set of apis`                     |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| gen.ost.02  | Open source       | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|             |                   | support dynamic request and      | consolidated set of apis`                     |
-|             |                   | configuration of virtual         |                                               |
-|             |                   | resources (compute, network,     |                                               |
-|             |                   | storage) through OpenStack APIs. |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| gen.rsl.01  | Resiliency        | The Architecture **must**        |                                               |
-|             |                   | support resilient OpenStack      |                                               |
-|             |                   | components that are required     |                                               |
-|             |                   | for the continued availability   |                                               |
-|             |                   | of running workloads.            |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
-| gen.avl.01  | Availability      | The Architecture **must**        | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|             |                   | provide High Availability        | underlying resources`                         |
-|             |                   | for OpenStack components.        |                                               |
-+-------------+-------------------+----------------------------------+-----------------------------------------------+
+.. list-table:: General Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-19: General Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - gen.ost.01
+     - Open source
+     - The Architecture must use OpenStack APIs.
+     - :ref:`ref_arch/openstack/chapters/chapter05:\ consolidated set of apis`
+   * - gen.ost.02
+     - Open source
+     - The Architecture must support dynamic request and configuration of
+        virtual resources (compute, network, storage) through OpenStack APIs.
+     - :ref:`ref_arch/openstack/chapters/chapter05:\ consolidated set of apis`
+   * - gen.rsl.01
+     - Resiliency
+     - The Architecture must support resilient OpenStack components that are
+       required for the continued availability of running workloads.
+     -
+   * - gen.avl.01
+     - Availability
+     - The Architecture must provide High Availability for OpenStack
+       components.
+     - :ref:`ref_arch/openstack/chapters/chapter04:\ underlying resources`
 
 Infrastructure Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1467,130 +1453,143 @@ VIM Requirements
 Interfaces & APIs Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| Reference  | sub-category | Description                            | Specification                                 |
-+============+==============+========================================+===============================================+
-| int.api.01 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | to access the authentication service   | keystone`                                     |
-|            |              | and the associated mandatory features  |                                               |
-|            |              | detailed in chapter 5                  |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| int.api.02 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | to access the image management service | glance`                                       |
-|            |              | and the associated mandatory features  |                                               |
-|            |              | detailed in chapter 5                  |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| int.api.03 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | to access the block storage management | cinder`                                       |
-|            |              | service and the associated mandatory   |                                               |
-|            |              | features detailed in chapter 5.        |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| int.api.04 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | to access the object storage           | swift`                                        |
-|            |              | management service and the associated  |                                               |
-|            |              | mandatory features detailed in         |                                               |
-|            |              | chapter 5.                             |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| int.api.05 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | to access the network management       | neutron`                                      |
-|            |              | service and the associated mandatory   |                                               |
-|            |              | features detailed in chapter 5.        |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| int.api.06 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | to access the compute resources        | nova`                                         |
-|            |              | management service and the associated  |                                               |
-|            |              | mandatory features detailed in chapter |                                               |
-|            |              | 5.                                     |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| int.api.07 | API          | The Architecture **must** provide GUI  | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | access to tenant facing cloud platform | horizon`                                      |
-|            |              | core services except at Edge/Far Edge  |                                               |
-|            |              | clouds.                                |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| int.api.08 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | needed to discover and manage Cloud    | placement`                                    |
-|            |              | Infrastructure resources.              |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| int.api.09 | API          | The Architecture **must** provide APIs | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | to access the orchestration service.   | heat`                                         |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| int.api.10 | API          | The Architecture must expose the       | :ref:`ref_arch/openstack/chapters/chapter05:\ |
-|            |              | latest version and microversion of the | core openstack services apis`                 |
-|            |              | APIs for the given Anuket OpenStack    |                                               |
-|            |              | release for each of the OpenStack core |                                               |
-|            |              | services.                              |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
+.. list-table:: Interfaces and APIs Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-22: Interfaces and APIs Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+
+   * - int.api.01
+     - API
+     - The Architecture must provide APIs to access the authentication service
+       and the associated mandatory features detailed in chapter 5
+     - :ref:`ref_arch/openstack/chapters/chapter05: keystone`
+   * - int.api.02
+     - API
+     - The Architecture must provide APIs to access the image management
+       service and the associated mandatory features detailed in chapter 5
+     - :ref:`ref_arch/openstack/chapters/chapter05: glance`
+   * - int.api.03
+     - API
+     - The Architecture must provide APIs to access the block storage
+       management service and the associated mandatory features detailed in chapter 5.
+     - :ref:`ref_arch/openstack/chapters/chapter05: cinder`
+   * - int.api.04
+     - API
+     - The Architecture must provide APIs to access the object storage
+       management service and the associated mandatory features detailed in chapter 5.
+     - :ref:`ref_arch/openstack/chapters/chapter05: swift`
+   * - int.api.05
+     - API
+     - The Architecture must provide APIs to access the network management
+       service and the associated mandatory features detailed in chapter 5.
+     - :ref:`ref_arch/openstack/chapters/chapter05: neutron`
+   * - int.api.06
+     - API
+     - The Architecture must provide APIs to access the compute resources
+       management service and the associated mandatory features detailed in chapter 5.
+     - :ref:`ref_arch/openstack/chapters/chapter05: nova`
+   * - int.api.07
+     - API
+     - The Architecture must provide GUI access to tenant facing cloud
+       platform core services except at Edge/Far Edge clouds.
+     - :ref:`ref_arch/openstack/chapters/chapter04: horizon`
+   * - int.api.08
+     - API
+     - The Architecture must provide APIs needed to discover and manage
+       Cloud Infrastructure resources.
+     - :ref:`ref_arch/openstack/chapters/chapter05: placement`
+   * - int.api.09
+     - API
+     - The Architecture must provide APIs to access the orchestration service.
+     - :ref:`ref_arch/openstack/chapters/chapter05: heat`
+   * - int.api.10
+     - API
+     - The Architecture must expose the latest version and microversion of the
+       APIs for the given Anuket OpenStack release for each of the OpenStack core
+       services.
+     - :ref:`ref_arch/openstack/chapters/chapter05: core openstack services apis`
+
 
 Tenant Requirements
 ~~~~~~~~~~~~~~~~~~~
 
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| Reference  | sub-category | Description                            | Specification Reference                       |
-+============+==============+========================================+===============================================+
-| tnt.gen.01 | General      | The Architecture **must** support      | :ref:`ref_arch/openstack/chapters/chapter04:\ |
-|            |              | self-service dashboard (GUI) and APIs  | horizon`                                      |
-|            |              | for users to deploy, configure and     |                                               |
-|            |              | manage their workloads.                | :ref:`ref_arch/openstack/chapters/chapter03:\ |
-|            |              |                                        | cloud workload services`                      |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
+.. list-table:: Tenant Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
 
-Table 2-23: Tenant Requirements
+   * - tnt.gen.01
+     - General
+     - The Architecture must support self-service dashboard (GUI) and
+       APIs for users to deploy, configure and manage their workloads.
+     - :ref:`ref_arch/openstack/chapters/chapter04:\ horizon`
+
+       :ref:`ref_arch/openstack/chapters/chapter03:\ cloud workload services`
 
 Operations and LCM
 ~~~~~~~~~~~~~~~~~~
 
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| Reference  | sub-category | Description                            | Specification Reference                       |
-+============+==============+========================================+===============================================+
-| lcm.gen.01 | General      | The Architecture **must** support      |                                               |
-|            |              | zero downtime of running workloads     |                                               |
-|            |              | when the number of compute hosts       |                                               |
-|            |              | and/or the storage capacity is being   |                                               |
-|            |              | expanded or unused capacity is being   |                                               |
-|            |              | removed.                               |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| lcm.adp.02 | Automated    | The Architecture **must** support      |                                               |
-|            | deployment   | upgrades of software, provided by the  |                                               |
-|            |              | cloud provider, so that the running    |                                               |
-|            |              | workloads are not impacted (viz.,      |                                               |
-|            |              | hitless upgrades). Please note that    |                                               |
-|            |              | this means that the existing data      |                                               |
-|            |              | plane services should not fail (go     |                                               |
-|            |              | down).                                 |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
+.. list-table:: LCM Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-24: LCM Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - lcm.gen.01
+     - General
+     - The Architecture must support zero downtime of running workloads when
+       the number of compute hosts and/or the storage capacity is being
+       expanded or unused capacity is being removed.
+     -
+   * - lcm.adp.02
+     - Automated deployment
+     - The Architecture must support upgrades of software, provided by the
+       cloud provider, so that the running workloads are not impacted
+       (viz., hitless upgrades). Please note that this means that the existing
+       data plane services should not fail (go down).
+     -
+ 
 
 Assurance Requirements
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| Reference  | sub-category | Description                            | Specification Reference                       |
-+============+==============+========================================+===============================================+
-| asr.mon.01 | Integration  | The Architecture **must** include      |                                               |
-|            |              | integration with various               |                                               |
-|            |              | infrastructure components to support   |                                               |
-|            |              | collection of telemetry for assurance  |                                               |
-|            |              | monitoring and network intelligence.   |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| asr.mon.03 | Monitoring   | The Architecture **must** allow for    |                                               |
-|            |              | the collection and dissemination of    |                                               |
-|            |              | of performance and fault information.  |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
-| asr.mon.04 | Network      | The Cloud Infrastructure Network       |                                               |
-|            |              | Fabric and Network Operating System    |                                               |
-|            |              | **must** provide network operational   |                                               |
-|            |              | visibility through alarming and        |                                               |
-|            |              | streaming telemetry services for       |                                               |
-|            |              | operational management, engineering    |                                               |
-|            |              | planning, troubleshooting, and         |                                               |
-|            |              | network performance optimisation.      |                                               |
-+------------+--------------+----------------------------------------+-----------------------------------------------+
+.. list-table:: Assurance Requirements
+   :widths: 15 15 30 20
+   :header-rows: 1
 
-Table 2-25: Assurance Requirements
+   * - Reference
+     - sub-category
+     - Description
+     - Specification Reference
+   * - asr.mon.01
+     - Integration
+     - The Architecture must include integration with various infrastructure
+       components to support collection of telemetry for assurance monitoring
+       and network intelligence.
+     -
+   * - asr.mon.03
+     - Monitoring
+     - The Architecture must allow for the collection and dissemination of
+       performance and fault information.
+     -
+   * - asr.mon.04
+     - Network
+     - The Cloud Infrastructure Network Fabric and Network Operating System
+       must provide network operational visibility through alarming and streaming
+       telemetry services for operational management, engineering planning,
+       troubleshooting, and network performance optimisation.
+     -
+
 
 Architecture and OpenStack Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
