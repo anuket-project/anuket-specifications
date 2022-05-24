@@ -13,7 +13,7 @@ community. This allows operators to have a common Kubernetes-based architecture
 that supports any conformant VNF or CNF deployed on it to operate as expected.
 The purpose of this chapter is to outline all the components required to provide
 Kubernetes in a consistent and reliable way. The specification of how to use
-these components is detailed in `Chapter 04 <chapter04.md>`__.
+these components is detailed in :ref:`chapter04:Chapter 04`.
 
 Kubernetes is already a well documented and widely deployed Open Source project
 managed by the Cloud Native Computing Foundation (CNCF). Full documentation of
@@ -30,14 +30,13 @@ reference architecture is on the abstracted interfaces and features that are
 required for telco type workload management and execution.
 
 Chapter 5 of the Reference Model (RM) describes the
-`hardware <../../../ref_model/chapters/chapter05.md#5.3>`__ and
-`software <../../../ref_model/chapters/chapter05.md#5.1>`__ profiles that are
+:ref:`ref_model/chapters/chapter05:hardware and software` profiles that are
 descriptions of the capabilities and features that the Cloud Infrastructure
 provide to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below)
 depicts a high level view of the software profile features that apply to each
 instance profile (Basic and High Performance). For more information on the
-instance profiles please refer to `RM Chapter 4, section
-4.2.4 <../../../ref_model/chapters/chapter04.md#4.2.4>`__.
+instance profiles please refer to :ref:`ref_model/chapters/chapter04:RM Chapter
+4, section 4.2.4`.
 
 .. image:: ../../../ref_model/figures/RM-ch05-sw-profile.png
    :alt: "Figure 5-3 (from RM): NFVI softwareprofiles"
@@ -56,8 +55,8 @@ that apply to each instance profile.
 
 The features and capabilities described in the software and hardware profiles
 are considered throughout this RA, with the RA requirements traceability to the
-RM requirements formally documented in `chapter 2, section
-2.2 <./chapter02.md#2.2>`__ of this RA.
+RM requirements formally documented in :ref:`ref_model/chapters/chapter02:
+chapter 2, section 2.2` of this RA.
 
 Infrastructure Services
 -----------------------
@@ -94,7 +93,7 @@ or containers is essential to the overall security posture of the entire system,
 and must be appropriately secured to ensure processes running in one container
 cannot escalate their privileges or otherwise affect processes running in an
 adjacent container. An example and more details of this concept can be found in
-`chapter 6 <./chapter06.md>`__.
+:ref:`chapter06:Chapter 06`.
 
 It is important to note that the container runtime itself is also a set of
 processes that run in user space, and therefore also interact with the kernel
@@ -126,7 +125,7 @@ includes details on how an implementation (i.e. an actual container runtime such
 as runc) must, for example, configure resource shares and limits (e.g. CPU,
 Memory, IOPS) for the containers that Kubernetes (via the kubelet) schedules on
 that host. This is important to ensure that the features and capabilities
-described in `chapter 5 of the RM <../../../ref_model/chapters/chapter05.md>`__ are
+described in :ref:`ref_model/chapters/chapter05:chapter 5 of the RM` are
 supported by this RA and delivered by any downstream Reference Implementations
 (RIs) to the instance types defined in the RM.
 
@@ -260,8 +259,8 @@ vendor-specific activation and life cycle management, and securely maps these de
 
 Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
 
--  1: During setup, the cluster administrator (more in `3.2.5.1 Operator Pattern <chapter03.md#operator-pattern>`__)
-   knows or discovers (as per `3.2.1.5 Node Feature Discovery <chapter03.md#node-feature-discovery>`__) what kind of
+-  1: During setup, the cluster administrator (more in :ref:`chapter03:3.2.5.1 Operator Pattern `)
+   knows or discovers (as per :ref:`chapter03:3.2.1.5 Node Feature Discovery `) what kind of
    devices are present on the different nodes, selects which devices to enable and deploys the associated device
    plugins.
 -  2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server
@@ -288,8 +287,8 @@ plugin, and on pod deletion releases the VF from the pod.
 Hardware Acceleration
 ^^^^^^^^^^^^^^^^^^^^^
 
-Hardware Acceleration Abstraction in RM
-`3.8 Hardware Acceleration Abstraction <../../../ref_model/chapters/chapter03.md#3.8>`__ describes types of hardware
+Hardware Acceleration Abstraction in RM 
+:ref:`ref_model/chapters/chapter03:3.8 Hardware Acceleration Abstraction ` describes types of hardware
 acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and
 SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
 
@@ -577,8 +576,8 @@ traffic require the capability to use a user space networking technology.
    Editors note: The possibility to SR-IOV for DPDK is under discussion.
 
    Refer to software profile features
-   `here <../../../ref_model/chapters/chapter05.md#5.1>`__ and hardware profile
-   features `here <../../../ref_model/chapters/chapter05.md#5.4>`__.
+   :ref:`ref_model/chapters/chapter05:here ` and hardware profile
+   features :ref:`ref_model/chapters/chapter05:here `.
 
 Kubernetes Networking Semantics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -830,8 +829,8 @@ Kubernetes-based workloads.
 There are no restrictions or constraints that Kubernetes places on the storage
 that can be consumed by a workload, in terms of the requirements that are
 defined in RM sections
-`5.2.2 <../../../ref_model/chapters/chapter05.md#virtual-storage>`__ (software)
-and `5.4.2 <../../../ref_model/chapters/chapter05.md#storage-configurations>`__
+:ref:`ref_model/chapters/chapter05:5.2.2 ` (software)
+and :ref:`ref_model/chapters/chapter05:5.4.2 `
 (hardware). The only point of difference is that Kubernetes does not have a
 native object storage offering, and addressing this capability gap directly is
 outside of the scope of this RA.
