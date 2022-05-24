@@ -149,8 +149,8 @@ of the RI:
 
 -  **Deployment on an Infrastructure-as-a-Service Layer**
    In this deployment scenario, the infrastructure hosts for the Kubernetes cluster are provided by an
-   Infrastructure-as-a-Service layer, for instance based on OpenStack running in a private or public cloud. This scenario
-   requires the RI installation tooling to request and configure compute resources via the API of the IaaS.
+   Infrastructure-as-a-Service layer, for instance based on OpenStack running in a private or public cloud. This
+   scenario requires the RI installation tooling to request and configure compute resources via the API of the IaaS.
 
 While all three deployment scenarios are in scope of RI2, the initial implementation focus is on bare-metal
 deployments. Support for the other two scenarios will be added subsequently based on available development resources.
