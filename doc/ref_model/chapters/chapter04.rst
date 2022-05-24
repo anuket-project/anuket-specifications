@@ -530,7 +530,7 @@ Extensions to build its overall functionality as discussed below.
 
    Cloud infrastructure Profiles
 
-The two :ref:`chapters/chapter02:profiles, profile extensions & flavours` are:
+The two :ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours` are:
 
 ::
 
