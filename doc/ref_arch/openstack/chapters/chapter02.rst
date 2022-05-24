@@ -166,7 +166,7 @@ specified below followed by networking bandwidth requirements.
      - Must support
      -
    * - infra.net.cfg.002
-     - The overlay network encapsulation protocol needs to enable ECMP in the 
+     - The overlay network encapsulation protocol needs to enable ECMP in the
        underlay to take advantage of the scale-out features of the network fabric
      - Must support VXLAN, MPLSoUDP, GENEVE, other
      - No requirement specified
@@ -328,7 +328,7 @@ Cloud Infrastructure Software Profile Extensions Requirements for Storage
      - Specification Reference
    * - infra.stg.acc.cfg.001
      - Storage IOPS oriented
-     - Storage Intensive High-performance storage	
+     - Storage Intensive High-performance storage
      -
      -
    * - infra.stg.acc.cfg.002
@@ -437,32 +437,32 @@ Cloud Infrastructure Hardware Profile-Extensions Requirements
      - GPU
      - N
      - Optional
-     - 
+     -
    * - e.cap.016/infra.hw.cac.cfg.002
      - FPGA/other Acceleration H/W
      - N
      - Optional
-     - 
+     -
    * - e.cap.009/infra.hw.nac.cfg.001
      - Crypto Acceleration
      - N
      - Optional
-     - 
+     -
    * - e.cap.015/infra.hw.nac.cfg.002
      - SmartNIC
      - N
      - Optional
-     - 
+     -
    * - infra.hw.nac.cfg.003
      - Compression
      - Optional
      - Optional
-     - 
+     -
    * - e.cap.013/infra.hw.nac.cfg.004
      - SR-IOV over PCI-PT
      - N
      - Yes
-     - 
+     -
 
 Cloud Infrastructure Management Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -670,7 +670,7 @@ Platform and Access Requirements
      - The Platform must support creation of Trust Relationships between trust domains. These
        maybe uni-directional relationships where the trusting domain trusts another domain (the
        "trusted domain") to authenticate users for them them or to allow access to its resources
-       from the trusted domain. In a bidirectional relationship both domain are "trusting" and 
+       from the trusted domain. In a bidirectional relationship both domain are "trusting" and
        "trusted".
      -
    * - sec.sys.010
@@ -742,25 +742,25 @@ Confidentiality and Integrity Requirements
      - Confidentiality/Integrity
      - The Platform must support Confidentiality and Integrity of data
        related metadata.
-     -  
+     -
    * - sec.ci.004
      - Confidentiality
      - The Platform must support Confidentiality of processes and restrict
        information sharing with only the process owner (e.g., tenant).
-     -  
+     -
    * - sec.ci.005
      - Confidentiality/Integrity
      - The Platform must support Confidentiality and Integrity of process-
-       related metadata and restrict information sharing with only the 
+       related metadata and restrict information sharing with only the
        process owner (e.g., tenant).
-     -  
+     -
    * - sec.ci.006
      - Confidentiality/Integrity
      - The Platform must support Confidentiality and Integrity of workload
-       resource utilisation (RAM, CPU, Storage, Network I/O, cache, 
-       hardware offload) and restrict information sharing with only the 
+       resource utilisation (RAM, CPU, Storage, Network I/O, cache,
+       hardware offload) and restrict information sharing with only the
        workload owner (e.g., tenant).
-     -  
+     -
    * - sec.ci.007
      - Confidentiality/Integrity
      - The Platform must not allow Memory Inspection by any actor other
@@ -769,7 +769,7 @@ Confidentiality and Integrity Requirements
        Inspection, and for secure monitoring services. Administrative
        access must be managed using Platform Identity Lifecycle
        Management.
-     -  
+     -
    * - sec.ci.008
      - Confidentiality
      - The Cloud Infrastructure must support tenant networks segregation.
@@ -1042,7 +1042,7 @@ can trigger alerts and notifications for appropriate action.
      - The Platform must Monitor and Audit running processes to detect
        unexpected or unauthorised processes and take corrective actions
        accordingly.
-     - :ref:`ref_arch/openstack/chapters/chapter06: monitoring and security 
+     - :ref:`ref_arch/openstack/chapters/chapter06: monitoring and security
        audit`
    * - sec.mon.011
      - Monitoring/Audit
@@ -1215,7 +1215,6 @@ IaaC security Requirements
        through scanning and to provide timely security protection. Example:
        OWASP Zed Attack Proxy (ZAP).
      -
- 
 
 **Runtime Defence and Monitoring Requirements**
 
@@ -1558,7 +1557,6 @@ Operations and LCM
        (viz., hitless upgrades). Please note that this means that the existing
        data plane services should not fail (go down).
      -
- 
 
 Assurance Requirements
 ~~~~~~~~~~~~~~~~~~~~~~
