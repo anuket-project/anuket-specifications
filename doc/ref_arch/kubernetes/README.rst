@@ -64,5 +64,5 @@ Required versions of most important components
 ========== ===================
 Component  Required version(s)
 ========== ===================
-Kubernetes 1.22
+Kubernetes 1.23
 ========== ===================
