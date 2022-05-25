@@ -143,14 +143,14 @@ The Infrastructure Profile Catalog contains the following attributes:
 
    -  A particular set of options is an instance type
    -  Compute flavors: .tiny, .small etc as defined in
-      :ref:`ref_model/chapters/chapter04:basic profile`
+      :ref:`ref_model/chapters/chapter04:profiles`
 
 -  NFVI performance profiles, for which NFVI validations will support
    and be verified against, are defined as basic and network intensive.
    Details for each of these profiles can be found in
    :ref:`ref_model/chapters/chapter02:analysis`.
 
-.. figure:: https://cntt.readthedocs.io/en/latest/ref_model/figures/RM-ch04-node-profiles.png
+.. figure:: ../figures/RM-ch04-node-profiles.png
    :alt: NFVI Profiles
 
    NFVI Profiles
