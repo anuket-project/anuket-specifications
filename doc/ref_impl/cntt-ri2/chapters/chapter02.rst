@@ -27,7 +27,7 @@ Reference Architecture Specification
       - RA2 Reference
       - Specification
       - Requirement for Basic Profile
-      - Requirement for Network Intensive Profile
+      - Requirement for High Performance Profile
       - RI2 Traceability
     * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes Node`
       - ``ra2.ch.001``
@@ -50,8 +50,8 @@ Reference Architecture Specification
     * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes Node`
       - ``ra2.ch.004``
       - CPU Simultaneous Multi-Threading (SMT)
-      - True
-      - True
+      - Must support
+      - Must support
       - :ref:`ref_impl/cntt-ri2/chapters/chapter03:Infrastructure Requirements`
     * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes Node`
       - ``ra2.ch.006``
@@ -97,13 +97,19 @@ Reference Architecture Specification
       - :ref:`ref_impl/cntt-ri2/chapters/chapter03:Infrastructure Requirements`
     * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes Node`
       - ``ra2.ch.015``
-      - Physical NIC Speed - Network Intensive Profile
+      - Physical NIC Speed - High Performance Profile
       - N/A
       - Must support
       - :ref:`ref_impl/cntt-ri2/chapters/chapter03:Infrastructure Requirements`
     * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes Node`
       - ``ra2.ch.017``
       - Immutable Infrastructure
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes Node`
+      - ``ra2.ch.018``
+      - NFD
       - Must support
       - Must support
       - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
@@ -129,6 +135,72 @@ Reference Architecture Specification
       - ``ra2.k8s.006``
       - NUMA Support
       - Not required
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.007``
+      - DevicePlugins Feature Gate
+      - Not required
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.008``
+      - System Resource Reservations
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.009``
+      - CPU Pinning
+      - Not required
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.012``
+      - Kubernetes APIs
+      - Must disable
+      - Must disable
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.013``
+      - Kubernetes APIs
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.014``
+      - Security Groups
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.015``
+      - Publishing Services (ServiceTypes)
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.016``
+      - Publishing Services (ServiceTypes)
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.017``
+      - Publishing Services (ServiceTypes)
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.018``
+      - Publishing Services (ServiceTypes)
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Kubernetes`
+      - ``ra2.k8s.019``
+      - Kubernetes APIs
+      - Must support
       - Must support
       - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
     * - :ref:`ref_arch/kubernetes/chapters/chapter04:Container Runtimes`
@@ -170,8 +242,8 @@ Reference Architecture Specification
     * - :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions`
       - ``ra2.ntw.005``
       - Multiplexer /meta-plugin
-      - Must support
-      - Must support
+      - May support
+      - May support
       - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
     * - :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions`
       - ``ra2.ntw.006``
@@ -187,7 +259,7 @@ Reference Architecture Specification
       - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
     * - :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions`
       - ``ra2.ntw.008``
-      - SR-IOV Device Plugin for Network Intensive
+      - SR-IOV Device Plugin for High Performance
       - Not required
       - Must support
       - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
@@ -204,8 +276,32 @@ Reference Architecture Specification
       - Must support
       - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
     * - :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions`
+      - ``ra2.ntw.011``
+      - NATless connectivity
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions`
       - ``ra2.ntw.012``
-      - Optional Device Plugins
+      - Device Plugins
       - Not required
       - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions`
+      - ``ra2.ntw.014``
+      - Security Groups
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Networking Solutions`
+      - ``ra2.ntw.015``
+      - IPAM plugin for multiplexer
+      - Must support
+      - Must support
+      - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch/kubernetes/chapters/chapter04:Storage Components`
+      - ``ra2.stg.004``
+      - Persistent Volumes
+      - May support
+      - May support
       - :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infratructure`
