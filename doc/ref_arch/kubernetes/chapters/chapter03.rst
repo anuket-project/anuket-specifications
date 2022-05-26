@@ -591,7 +591,7 @@ connect them all together.
 Kubernetes networking can be divided into two parts, built in network functionality available through the pod's
 mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
 
-Built in Kubernetes Network Functionality
+Built-in Kubernetes Network Functionality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Kubernetes currently only allows for one network, the *cluster* network, and one network attachment for each pod.
