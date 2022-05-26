@@ -329,7 +329,7 @@ Cloud Infrastructure Software Profile Requirements
 |/chapters/chapter05.md#vir|cfg.005   |                        |                 |                 |                  |
 |tual-networking>`__       |          |                        |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
-|`5.1.3 <../../../ref_model|infra.net.| Traffic patterns       | Must support    | Must support    | **N/A**          | 
+|`5.1.3 <../../../ref_model|infra.net.| Traffic patterns       | Must support    | Must support    | **N/A**          |
 |/chapters/chapter05.md#vir|cfg.006   | symmetry               |                 |                 |                  |
 |tual-networking>`__       |          |                        |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
@@ -430,7 +430,7 @@ Cloud Infrastructure Hardware Profile Requirements
 |`5.4.3 <../../../ref_model|infra.hw. | A SmartNIC that is     | Not required    | Optional (1)    | N/A              |
 |/chapters/chapter05.md#net|nac.cfg.  | used to offload        |                 |                 |                  |
 |work-resources>`__        |002       | vSwitch functionality  |                 |                 |                  |
-|                          |          | to hardware            |                 |                 |                  | 
+|                          |          | to hardware            |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
 |`5.4.3 <../../../ref_model|infra.hw. | Compression            | Optional        | Optional        | N/A              |
 |/chapters/chapter05.md#net|nac.cfg.  |                        |                 |                 |                  |
@@ -446,8 +446,8 @@ Edge Cloud Infrastructure Hardware Profile Requirements
 
 In the case of Telco Edge Cloud Deployments, hardware requirements can differ from the above to account for
 environmental and other constraints.
-The Reference Model :ref:`ref_model/chapters/chapter08:chapter 8 Hybrid Multi-Cloud: Data Centre to Edge` 
-includes considerations specific to deployments at the edge of the network. The infrastructure profiles "Basic" and 
+The Reference Model :ref:`ref_model/chapters/chapter08:chapter 8 Hybrid Multi-Cloud: Data Centre to Edge`
+includes considerations specific to deployments at the edge of the network. The infrastructure profiles "Basic" and
 "High Performance" as per :ref:`ref_model/chapters/chapter04:profiles and workload flavours` still apply, but a number
 of requirements of the above table are relaxed as follows:
 
@@ -1443,7 +1443,7 @@ machines or containers.
 |          |              |              |                                      | solutions>`__, `ra2.ntw.006 <chapte |
 |          |              |              |                                      | r04.md#networking-solutions>`__,    |
 |          |              |              |                                      | `ra2.ntw.007 <chapter04.md#networki |
-|          |              |              |                                      | ng-solutions>`__                    | 
+|          |              |              |                                      | ng-solutions>`__                    |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
 |inf.com.01|Infrastructure| Compute      | The Architecture **must** provide    | `ra2.k8s.004 <chapter04.md#kubernet |
 |          |              |              | compute resources for Pods.          | es>`__                              |
@@ -1587,5 +1587,5 @@ machines or containers.
 |          |              |              | must not be dropped, but the schema  |                                     |
 |          |              |              | or other details can change.         |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-  
+
 **Table 2-8:** Kubernetes Architecture Requirements
