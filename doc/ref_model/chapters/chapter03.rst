@@ -147,7 +147,7 @@ A virtual machine and container can consume storage through a number of means. T
   containers) and is connected via cloud infrastructure underlay network and
 - Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
   The details of the tenant storage consumption model are covered in section 
-  :ref:`Storage for Tenant Consumption`.
+  `Storage for Tenant Consumption`_.
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity
 and behaviours. The set of selectable attributes includes:
@@ -307,7 +307,7 @@ Hardware Accelerators can be used to offload software execution for purpose of a
 performance, or offloading the tasks to another execution entity to get more predictable execution times, efficient
 handling of the tasks or separation of authority regarding who can control the tasks execution.
 
-More details about Hardware Acceleration are in :ref:`ref_model/chapters/chapter03:hardware acceleration abstraction`.
+More details about Hardware Acceleration are in `hardware acceleration abstraction`_.
 
 Hardware Infrastructure Manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -961,8 +961,8 @@ pods.
 Storage
 -------
 
-Introduction
-~~~~~~~~~~~~
+Introduction to Storage
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The general function of storage subsystem is to provide the persistent data store required for the delivery of a network
 service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted
@@ -1007,7 +1007,7 @@ Implementations and Reference Conformance test suites:
   Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation
   Layers.
 - Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance
-  requirements (more in Virtual Resources 3.2.1.3 Storage).
+  requirements (more in section `Virtual Storage`_).
 - Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of
   workloads (VNF/CNF) onboarding.
 - Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound
@@ -1027,7 +1027,7 @@ Implementations and Reference Conformance test suites:
   Persistent Memory, integrated for multi-clouds, and Edge related technologies.
 
 The above principles should be understood as storage specific specialisations of the
-:ref:`common/chapter00:anuket general principles`.
+:doc:`common/chapter00:anuket general principles`.
 
 Storage Implementation Stereotypes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1058,7 +1058,7 @@ The first of these are for Data Centre Storage cases, with stereotypes of:
 
 Both of these stereotypes can be used to support very broad storage needs from: machine boot (via iSCSI), providing
 storage to the Cloud Platform Control and Management Planes, Platform Native (viz., Hypervisor Attached and Container
-Persistence storage, as defined in section "`3.6.3 Storage for Tenant Consumption <#3.6.3>`__") and Application/VNF/CNF
+Persistence storage, as defined in section `Storage for Tenant Consumption`__") and Application/VNF/CNF
 managed network storage. To provide this requires connectivity within the Cloud Infrastructure Underlay and Tenant
 Overlay networks.
 
@@ -1090,8 +1090,8 @@ For each of the defined stereotypes, the storage service uses physical Block sto
 Consumption -> OS File Systems Exposure (1) on stereotype diagrams). This is the primary use case for use of in chassis
 physical storage, that is not being used for consumption and exposure as network-based storage. In general it is
 desirable to use network based storage solution for provision of Cloud Infrastructure storage. The "Infrastructure
-Automation - PXE Server" is an exception to preference for use use of network based storage, as it is managing the
-bootstrap process, so it cannot be dependent on a separate storage system for maintaining its image cache.
+Automation - PXE Server" is an exception to the preferential use of network based storage, and as it is managing the
+bootstrap process, it cannot be dependent on a separate storage system for maintaining its image cache.
 
 Storage for Tenant Consumption
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1202,7 +1202,7 @@ Note that a sterotype for Network File Storage consumption is not illustrated as
 Application by doing a file systems mount.
 
 In cloud infrastructure, the storage types may manifest in various ways with substantive variations in the architecture
-models being used. Examples of this are provided in section "3.6.2 Storage Implementation Stereotypes", with stereotypes
+models being used. Examples of this are provided in section `Storage Implementation Stereotypes`_, with stereotypes
 for "Dedicated Storage Appliance" and "Software Defined Storage". In the consumption case, again there is use of
 in-chassis storage to support hypervisor and container host OS/Runtime boot, not for Tenant / User Plane storage
 consumption.
@@ -1225,7 +1225,7 @@ areas for consideration in such a deployment scenario. The structure of the tabl
   - Management Plane Needs - for Infrastructure Automation, Tenant VNF/CNF Orchestration and cloud infrastructure
     monitoring and assurance
 - Tenant / User - is the storage stereotype able to support Tenant / User Plane needs including: Platform Native, Shared
-  File Storage & Object Storage (as per section - "3.6.3 Storage for Tenant Consumption")
+  File Storage & Object Storage (as per section `Storage for Tenant Consumption`_)
 
 Where:
 
@@ -1506,14 +1506,14 @@ some form of network storage which can be provided by the:
 In general for the provision of storage as shared resource it is not desirable to use "in chassis storage" for anything
 other than in the storage devices for platform hypervisor/OS boot or for the hosts providing the storage sub-systems
 deployment itself. This is due to difficulty in resulting operational management (see principles section
-"3.6.1 Introduction" - "Operationally Amenable" above).
+`Introduction to Stotarge`_ - "Operationally Amenable" above).
 
 For cloud based storage "Ephemeral" storage (hypervisor attached or container images which are disposed when VNF/CNF is
 stopped) is often distinguished from other persistent storage, however this is a behaviour variation that is managed
 via the VNF descriptor rather than a specific Storage Type.
 
 Storage also follows the alignment of separated virtual and physical resources of Virtual Infrastructure Layer and HW
-Infrastructure Layer. Reasons for such alignment are described more in Section 3.5.
+Infrastructure Layer. Reasons for such alignment are described more in Section `Network`_.
 
 While there are new storage technologies being made available and a trend towards the use of flash for all physical
 storage needs, for the near future, the core storage architecture for Cloud Infrastructure is likely to remain
@@ -1542,7 +1542,7 @@ Also, this realization example would enable implementation of a programmable fab
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as
 defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in
-:ref:`ref_model/chapters/chapter03:network` of this Reference Model document.
+`network`_ of this Reference Model chapter.
 
 Hardware Acceleration Abstraction
 ---------------------------------
@@ -1616,7 +1616,7 @@ Infrastructure and Application Level Acceleration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :numref:`Fig-3-23` gives examples for the Hardware Accelerators shown in
-:numref:`Fig-3-21` (the `Sample reference model realization <#3.7>`__ diagram).
+:numref:`Fig-3-21` (the `Sample reference model realization`_ diagram).
 
 .. _Fig-3-23:
 .. figure:: ../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png
@@ -1841,7 +1841,7 @@ or Kaloom.
 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Decoupling :ref:`common/glossary:cloud platform abstraction related terminology:` applications from hardware accelerator
+Decoupling :doc:`common/glossary:cloud platform abstraction related terminology` applications from hardware accelerator
 is normally accomplished using drivers that, if available, are preferred with standardised interfaces across vendors and
 their products, or if not available then through drivers specific to the vendor hardware device. Decoupling
 infrastructure software from hardware accelerators is also preferred using standard interfaces. If those are not
@@ -1858,7 +1858,7 @@ Infrastructure:
 - a) Application functionality or application control requires infrastructure components beyond RM profiles or
      infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled
      with the infrastructure which results in an Appliance deployment model (see
-     :ref:`common/glossary:cloud platform abstraction related terminology:`).
+     :doc:`common/glossary:cloud platform abstraction related terminology`).
 - b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
      the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure
      components that make application work. Example is an application that to achieve latency requirements needs 
