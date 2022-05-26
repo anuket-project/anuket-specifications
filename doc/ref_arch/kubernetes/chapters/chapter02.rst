@@ -132,8 +132,8 @@ Cloud Infrastructure Software Profile Capabilities
 |                          |          |                        |                 |                 |ter04.md#networkin|
 |                          |          |                        |                 |                 |g-solutions>`__   |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
-|`4.1.2 <../../../ref_model|*e.cap.017| *Ability to monitor    | *n/a (2)*       | \*n/a (2) \*    | N/A              |
-|/chapters/chapter04.md#exp|*         | L2-L7 data from        |                 |                 |                  |
+|`4.1.2 <../../../ref_model|e.cap.017 | *Ability to monitor    | *n/a (2)*       | \*n/a (2) \*    | N/A              |
+|/chapters/chapter04.md#exp|          | L2-L7 data from        |                 |                 |                  |
 |osed-infrastructure-capabi|          | workload*              |                 |                 |                  |
 |lities>`__                |          |                        |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
