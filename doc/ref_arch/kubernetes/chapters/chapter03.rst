@@ -611,16 +611,16 @@ services and network policies for them that are not location aware and therefore
 | concepts/services-networking/ingress/> | the endpoints defined by a backend. An Ingress can be configured to give    |
 | `__                                    | services externally reachable URLs, load balance traffic, terminate SSL,    |
 |                                        | offer name based virtual hosting etc.                                       |
-+========================================+=============================================================================+
++----------------------------------------+-----------------------------------------------------------------------------+
 | `Service: <https://kubernetes.io/docs/ | Service is a named abstraction of an application running on a set of pods   |
 | concepts/services-networking/service/> | consisting of a local port (for example 3306) that the proxy listens on,    |
 | `__                                    | and the selector that determines which pods will answer requests sent       |
 |                                        | through the proxy.                                                          |
-+========================================+=============================================================================+
++----------------------------------------+-----------------------------------------------------------------------------+
 | `EndpointSlices: <https://kubernetes.i | Endpoints and Endpointslices are a collection of objects that contain the   |
 | o/docs/concepts/services-networking/en | ip address, v4 and v6, of the pods that represents a service.               |
 | dpoint-slices/>`__                     |                                                                             |
-+========================================+=============================================================================+
++----------------------------------------+-----------------------------------------------------------------------------+
 | `Network Policy: <https://kubernetes.i | Network Policy defines which network traffic is allowed to ingress and      |
 | o/docs/concepts/services-networking/en | egress from a set of pods.                                                  |
 | dpoint-slices/>`__                     |                                                                             |
