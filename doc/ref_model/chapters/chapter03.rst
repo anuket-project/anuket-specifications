@@ -146,7 +146,7 @@ A virtual machine and container can consume storage through a number of means. T
 - managed via the hypervisor and container runtime (Hypervisor Attached for virtual machine and Container Persistent for
   containers) and is connected via cloud infrastructure underlay network and
 - Shared File Storage and the Object storage which is connected via the tenant / user overlay network.
-  The details of the tenant storage consumption model are covered in section 
+  The details of the tenant storage consumption model are covered in section
   `Storage for Tenant Consumption`_.
 
 In managing the provision of virtual storage the tenant should be able to request alternate performance levels, capacity
@@ -511,7 +511,7 @@ VxLAN with their VNI Ranges. This separation must be done through an administrat
 by any of the individual Virtualisation Infrastructure Layer domains either by malicious or unintentional Underlay
 Network mapping or configuration.
 
-These concepts are very similar to how the Hyperscaler Cloud Providers (HCP) offer Virtual Private Clouds for users of 
+These concepts are very similar to how the Hyperscaler Cloud Providers (HCP) offer Virtual Private Clouds for users of
 Bare Metal deployment on the HCP shared pool of servers, storage and networking resources.
 
 The separation of Hardware and Virtual Infrastructure Layers administrative domains makes it important that the
@@ -904,20 +904,20 @@ Precise Synchronization require specialized card that can be on server or networ
 or both.
 
 OpenStack and Kubernetes clusters use Network Time Protocol (NTP)
-(`Protocol and Algorithms Specification <https://tools.ietf.org/html/rfc5905>`__\ [27],
-`Autokey Specification <https://tools.ietf.org/html/rfc5906>`__\ [28],
-`Managed Objects <https://tools.ietf.org/html/rfc5907>`__\ [29],
-`Server Option for DHCPv6 <https://tools.ietf.org/html/rfc5908>`__\ [30])
+(`Protocol and Algorithms Specification <https://tools.ietf.org/html/rfc5905>`__ [27],
+`Autokey Specification <https://tools.ietf.org/html/rfc5906>`__ [28],
+`Managed Objects <https://tools.ietf.org/html/rfc5907>`__ [29],
+`Server Option for DHCPv6 <https://tools.ietf.org/html/rfc5908>`__ [30])
 as the default time synchronization for the cluster. That level of synchronization is not sufficient for some
 network functions. Just like real-time operating systems instead of base OS, so is precision timing for clock
-synchronization. Precision Time Protocol version 2 `PTP <https://standards.ieee.org/standard/1588-2019.html>`__\ [31]
+synchronization. Precision Time Protocol version 2 `PTP <https://standards.ieee.org/standard/1588-2019.html>`__ [31]
 is commonly used for Time-Sensitive Networking. This allow synchronization in microsecond range rather than
 millisecond range that NTP provides.
 
-Some Network functions, like vDU, of vRAN, also require `SyncE <http://www.itu.int/rec/T-REC-G.8262>`__\ [32]. Control,
+Some Network functions, like vDU, of vRAN, also require `SyncE <http://www.itu.int/rec/T-REC-G.8262>`__ [32]. Control,
 User and Synchronization (CUS) Plane specification defines different topology options that provides Lower Layer Split
 Control plane 1-4 (LLS-C1 - LLS-C4) with different synchronization requirements
-(`ITU-T G.8275.2 <https://www.itu.int/rec/T-REC-G.8275.2/en>`__\ [33]).
+(`ITU-T G.8275.2 <https://www.itu.int/rec/T-REC-G.8275.2/en>`__ [33]).
 
 SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommendations:
 
@@ -952,10 +952,11 @@ Multiple Networks and Advanced Configurations
 
 Kubernetes does currently not in itself support multi networks, pod multi network attachments or network orchestration.
 This is supported by using a `Container Network Interface <https://github.com/containernetworking/cni>`__ multiplexer
-such as `Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__. 
+such as `Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__.
 The `Network Plumbing Working Group <https://github.com/k8snetworkplumbingwg/community>`__ has produced
-the `Kubernetes Network Custom Resource Definition De-facto Standard <https://docs.google.com/document/d/1Ny03h6IDVy_e_v
-mElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit>`__. This document describes how secondary networks can be defined and attached to
+the `Kubernetes Network Custom Resource Definition De-facto Standard
+<https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit>`__.
+This document describes how secondary networks can be defined and attached to
 pods.
 
 Storage
@@ -1058,9 +1059,9 @@ The first of these are for Data Centre Storage cases, with stereotypes of:
 
 Both of these stereotypes can be used to support very broad storage needs from: machine boot (via iSCSI), providing
 storage to the Cloud Platform Control and Management Planes, Platform Native (viz., Hypervisor Attached and Container
-Persistence storage, as defined in section `Storage for Tenant Consumption`__") and Application/VNF/CNF
-managed network storage. To provide this requires connectivity within the Cloud Infrastructure Underlay and Tenant
-Overlay networks.
+Persistence storage, as defined in section :ref:`chapters/chapter03/Storage for Tenant Consumption`") and
+Application/VNF/CNF managed network storage. To provide this requires connectivity within the Cloud Infrastructure
+Underlay and Tenant Overlay networks.
 
 Successful management of Cloud Infrastructure requires high levels of automation, including the ability to rapidly stand
 up new storage and hosting infrastructure. This Cloud Infrastructure boot-strapping process is managed through
@@ -1183,7 +1184,7 @@ for "Platform Native" stereotypes):
   QCOW file within File System), which is used for boot and exposure to virtual machine OS as Block Storage (3). The
   virtual machine OS in turn consumes this for use by Tenant Application via File System,
 - Platform Native - Container Persistent Consumption Stereotype (:numref:`Fig-3-20`) - is simpler case with Container
-  Runtime consuming Software Defined Storage (via RADOS backend (2)) and exposes this to Container as a file system 
+  Runtime consuming Software Defined Storage (via RADOS backend (2)) and exposes this to Container as a file system
   mount (3).
 
 .. _Fig-3-19:
@@ -1861,12 +1862,12 @@ Infrastructure:
      :doc:`common/glossary:cloud platform abstraction related terminology`).
 - b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
      the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure
-     components that make application work. Example is an application that to achieve latency requirements needs 
+     components that make application work. Example is an application that to achieve latency requirements needs
      certain hardware acceleration available in RM profile and is exposed through APIs specified by RA.
 - c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
      optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure
      component(s) that make application work better (like more performant) than without that infrastructure component.
-     Example is an application that would have better cost/performance with certain acceleration adapter but can also 
+     Example is an application that would have better cost/performance with certain acceleration adapter but can also
      work without it.
 - d) Application control using APIs specified by RA finds general profile nodes without any specific infrastructure
      components.

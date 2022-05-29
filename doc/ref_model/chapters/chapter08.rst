@@ -76,12 +76,12 @@ Characteristics of a Federated Cloud
 ------------------------------------
 
 In this section, we will further explore the characteristics of the federated cloud architecture, and architecture
-building blocks that constitute the federated cloud. For example, :numref:`Example Hybrid Multi-Cloud Component Cloud` 
-shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private 
-outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see 
-diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market 
-positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a 
-sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised 
+building blocks that constitute the federated cloud. For example, :numref:`Example Hybrid Multi-Cloud Component Cloud`
+shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private
+outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see
+diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market
+positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a
+sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised
 services.
 
 .. figure:: ../figures/RM-Ch08-HMC-Image-1.png
@@ -93,9 +93,9 @@ services.
 Telco Cloud
 -----------
 
-The :numref:`Telco Cloud: Data Centre to Edge` presents a visualisation of a Telco operator cloud (or simply, Telco 
-cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central 
-Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at 
+The :numref:`Telco Cloud: Data Centre to Edge` presents a visualisation of a Telco operator cloud (or simply, Telco
+cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central
+Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at
 the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
 
 .. figure:: ../figures/RM-Ch08-Multi-Cloud-DC-Edge.png
@@ -127,12 +127,13 @@ services, IT workloads, and external subscribers. The types of the component clo
 In general, a Telco Cloud consists of multiple interconnected very large data centres that serve trans-continental areas
 (Regions). A Telco Cloud Region may connect to multiple regions of another Telco Cloud via large capacity networks.
 A Telco Cloud also consists of interconnected local/metro sites (multiple possible scenarios). A local site cloud may
-connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large 
+connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large
 number of interconnected edge nodes where these edge nodes maybe impermanent. A Telco Cloud's Edge node may connect to
 multiple local sites within that Telco Cloud or another Telco Cloud; an Edge node may rarely connect to a Telco Cloud
 Region.
 
-Table 8-1 captures the essential information about the types of deployments, and responsible parties for cloud artefacts.
+Table 8-1 captures the essential information about the types of deployments, and responsible parties for cloud
+artefacts.
 
 +------------------+-------------------+--------------------+-----------------+------------------+---------------------+
 | Type             | System Developer  | System Maintenance | System Operated | Location where   | Primary Resource    |
@@ -405,7 +406,7 @@ requirements are in addition to the requirements in other chapters of this RM.
 | Ref         | Requirement                                     | Definition/Note                                      |
 +=============+=================================================+======================================================+
 | hem.gen.001 | HEMP should use only published APIs in managing | For example, to accomplish the example in            |
-|             | component clouds				                        | `hem.gen.003` it will use the published APIs of the  |
+|             | component clouds                                | `hem.gen.003` it will use the published APIs of the  |
 |             |                                                 | target cloud.                                        |
 +-------------+-------------------------------------------------+------------------------------------------------------+
 | hem.gen.002 | HEMP should publish all of the APIs used by any | For example, the provided GUI portal shall only use  |
@@ -479,7 +480,7 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Operability Requi
 | hem.lcm.001 | HEMP should monitor all environments and assets        |                                               |
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 | hem.lcm.002 | HEMP should provide visibility into the health of all  |                                               |
-|             | assets           				                               |                                               |
+|             | assets                                                 |                                               |
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 | hem.lcm.003 | HEMP should provide capabilities for a centralised     |                                               |
 |             | visibility and management of all alerts                |                                               |
@@ -500,7 +501,7 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Life Cycle Manage
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 | hem.sec.002 | HEMP should provide capabilities for the centralised   |                                               |
 |             | tracking of compliance of all security requirements    |                                               |
-|             | (:ref:`ref_model/chapters/chapter07:consolidated \     |                                               |
+|             | (:ref:`ref_model/chapters/chapter07:consolidated       |                                               |
 |             | security requirements`)                                |                                               |
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 | hem.sec.003 | HEMP should provide capabilities for insights into     |                                               |

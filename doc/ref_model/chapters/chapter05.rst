@@ -308,8 +308,8 @@ The table below specifies a set of requirements for the Load Balancer platform s
 +------------+--------------------------------------------------------+---------------------------------------------+
 | pas.lb.017 | The L7 Load Balancer may support QUIC                  |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
-**Table 5-7b:** Platform Services - Load Balancer Requirements.
 
+**Table 5-7b:** Platform Services - Load Balancer Requirements.
 
 Platform Services - Log Management Service (LMS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
