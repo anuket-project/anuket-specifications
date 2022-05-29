@@ -53,13 +53,13 @@ the following specifications:
 |              |Functions     |(VFs) **must** be configured within the       |e-software-profile-requ|apter04.md#installation|
 |              |              |Kubernetes Node OS, as the SR-IOV Device      |irements>`__           |-on-bare-metal-infratru|
 |              |              |Plugin does not manage the creation of these  |                       |cture>`__              |
-|              |              |VFs.                                          |                       |                       |      
+|              |              |VFs.                                          |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
 |``ra2.ch.004``|CPU Simultaneo|SMT **must** be enabled in the BIOS on the    |`infra.hw.cpu.cfg.004  |`3.3 <../../../ref_impl|
 |              |us Multi-Threa|physical machine on which the Kubernetes Node |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
 |              |ding (SMT)    |runs.                                         |nfrastructure-hardware-|ter03.md#infrastructure|
 |              |              |                                              |profile-require        |-requirements>`__      |
-|              |              |                                              |ments>`__              |                       |      
+|              |              |                                              |ments>`__              |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
 |``ra2.ch.005``|CPU Allocation|For Kubernetes nodes running as Virtual       |                       |                       |
 |              |Ratio - VMs   |Machines, the CPU allocation ratio between    |                       |                       |
@@ -73,7 +73,7 @@ the following specifications:
 |              |              |``requests.cpu < allocatable.cpu`` and        |                       |                       |
 |              |              |``limits.cpu < allocatable.cpu``).            |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.007``|IPv6DualStack |To support IPv4/IPv6 dual stack networking,   |                       |                       | 
+|``ra2.ch.007``|IPv6DualStack |To support IPv4/IPv6 dual stack networking,   |                       |                       |
 |              |              |the Kubernetes Node OS **must** support and   |                       |                       |
 |              |              |be allocated routable IPv4 and IPv6 addresses.|                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
@@ -93,7 +93,7 @@ the following specifications:
 |              |              |State Drives (SSDs).                          |d-infrastructure-hardwa|ter03.md#infrastructure|
 |              |              |                                              |re-profile-require     |-requirements>`__      |
 |              |              |                                              |ments>`__              |                       |
-|              |              |                                              |                       |                       |      
+|              |              |                                              |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
 |``ra2.ch.010``|Local         |The Kubernetes Nodes **must** be equipped     |`e.cap.003 <./chapter02|`3.3 <../../../ref_impl|
 |              |Filesystem    |with local filesystem capacity of at least    |.md#cloud-infrastructur|/cntt-ri2/chapters/chap|
@@ -720,7 +720,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  | (version 3) charts.                               |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-Helm version 3 has been chosen as the Application packaging mechanism to ensure compliance with the 
+Helm version 3 has been chosen as the Application packaging mechanism to ensure compliance with the
 `ONAP ASD NF descriptor specification <https://wiki.onap.org/display/DW/Application+Service+Descriptor+%28ASD%29+and+pac
 kaging+Proposals+for+CNF>`__ and `ETSI SOL0001 rel. 4 MCIOP specification <https://www.etsi.org/deliver/etsi_gs/NFV-SOL/
 001_099/001/04.02.01_60/gs_NFV-SOL001v040201p.pdf>`__.
