@@ -1506,7 +1506,7 @@ some form of network storage which can be provided by the:
 In general for the provision of storage as shared resource it is not desirable to use "in chassis storage" for anything
 other than in the storage devices for platform hypervisor/OS boot or for the hosts providing the storage sub-systems
 deployment itself. This is due to difficulty in resulting operational management (see principles section
-`Introduction to Stotarge`_ - "Operationally Amenable" above).
+`Introduction to Storage`_ - "Operationally Amenable" above).
 
 For cloud based storage "Ephemeral" storage (hypervisor attached or container images which are disposed when VNF/CNF is
 stopped) is often distinguished from other persistent storage, however this is a behaviour variation that is managed
