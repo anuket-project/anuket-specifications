@@ -123,7 +123,7 @@ Virtual Storage
 ~~~~~~~~~~~~~~~
 
 The Reference Model
-:ref:`ref_model/chapters/chapter02:storage for tenant consumption`
+:ref:`ref_model/chapters/chapter03:storage for tenant consumption`
 details consumption models for tenants: Platform native,
 object storage, shared file storage and archival.
 The choice of a solution will depend on the storage use case needs.
@@ -170,8 +170,8 @@ Data is accessed via API. Object storage is managed by OpenStack Swift.
 Images are persistent data, stored using the OpenStack Glance service.
 
 Cinder, Swift, and Glance services are discussed in the section
-:ref:`ref_arch/openstack/chapters/chapter04:
-virtualised infrastructure manager (VIM)`.
+:ref:`ref_arch/openstack/chapters/chapter04:virtualised infrastructure
+manager (VIM)`.
 
 
 Virtual Networking Neutron standalone
@@ -647,7 +647,7 @@ up (in a shipping container), and what resources are required of the DC
 
    - Storage technologies are multiple, they are extensively
      described in
-     :ref:`refm/chapters/chapter03:storage implementation stereotypes`.
+     :ref:`ref_model/chapters/chapter03:storage implementation stereotypes`.
      Storage backends are discussed in
      :ref:`ref_arch/openstack/chapters/chapter04:storage backend`.
 
@@ -765,8 +765,7 @@ Assumptions and conventions:
 -  Shared storage is optional, but it is important to ensure shared
    assets are distributed across serving clouds such as boot images.
    Storage needs, per deployment and use cases, can be found in
-   :ref:`ref_model/chapters/chapter03:
-   storage scenarios and architecture fit`.
+   :ref:`ref_model/chapters/chapter03:storage scenarios and architecture fit`.
 
 .. list-table:: Cloud Topology: Redundancy Models
    :widths: 8 15 8 8 8 8 8 17

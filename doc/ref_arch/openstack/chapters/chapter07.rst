@@ -117,8 +117,8 @@ for the same reasons of efficiency. Open-source installers are
 available to perform the deployments of the OpenStack services.
 A subset of these tools is described below.
 
-- `OpenStack TripleO <http://opendev.org/openstack/tripleo-commo>`_,
-  “OpenStack on OpenStack”
+- `OpenStack TripleO <http://opendev.org/openstack/tripleo-common>`_,
+  "OpenStack on OpenStack"
 
   TripleO is an official OpenStack project which allows to deploy and
   manage a production cloud onto bare metal hardware using a subset
@@ -127,9 +127,8 @@ A subset of these tools is described below.
   undercloud contains the necessary OpenStack components to deploy
   and manage an “overcloud”, representing the deployed cloud.
   The `architecture document
-  <https://docs.openstack.org/tripleo-docs/latest/install/\
-  introduction/architecture.html#project-architecture>`_ describes
-  the solution. Nova and Ironic are used in the undercloud to manage
+  <https://docs.openstack.org/tripleo-docs/latest/install/introduction/architecture.html#project-architecture>`_
+  describes the solution. Nova and Ironic are used in the undercloud to manage
   the servers in bare metal environment. TripleO leverages
   on Heat tempates.
 
