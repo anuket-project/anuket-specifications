@@ -1028,7 +1028,7 @@ Implementations and Reference Conformance test suites:
   Persistent Memory, integrated for multi-clouds, and Edge related technologies.
 
 The above principles should be understood as storage specific specialisations of the
-:doc:`common/chapter00:anuket general principles`.
+:ref:`common/chapter00:anuket general principles`.
 
 Storage Implementation Stereotypes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1059,7 +1059,7 @@ The first of these are for Data Centre Storage cases, with stereotypes of:
 
 Both of these stereotypes can be used to support very broad storage needs from: machine boot (via iSCSI), providing
 storage to the Cloud Platform Control and Management Planes, Platform Native (viz., Hypervisor Attached and Container
-Persistence storage, as defined in section :ref:`chapters/chapter03/Storage for Tenant Consumption`") and
+Persistence storage, as defined in section :ref:`chapters/chapter03:storage for tenant consumption`") and
 Application/VNF/CNF managed network storage. To provide this requires connectivity within the Cloud Infrastructure
 Underlay and Tenant Overlay networks.
 
@@ -1842,7 +1842,7 @@ or Kaloom.
 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Decoupling :doc:`common/glossary:cloud platform abstraction related terminology` applications from hardware accelerator
+Decoupling :ref:`common/glossary:cloud platform abstraction related terminology:` applications from hardware accelerator
 is normally accomplished using drivers that, if available, are preferred with standardised interfaces across vendors and
 their products, or if not available then through drivers specific to the vendor hardware device. Decoupling
 infrastructure software from hardware accelerators is also preferred using standard interfaces. If those are not
@@ -1859,7 +1859,7 @@ Infrastructure:
 - a) Application functionality or application control requires infrastructure components beyond RM profiles or
      infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled
      with the infrastructure which results in an Appliance deployment model (see
-     :doc:`common/glossary:cloud platform abstraction related terminology`).
+     :ref:`common/glossary:cloud platform abstraction related terminology:`).
 - b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
      the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure
      components that make application work. Example is an application that to achieve latency requirements needs

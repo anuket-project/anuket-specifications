@@ -181,10 +181,6 @@ specific industries.
 
 Multi-Cloud Interactions Model
 ------------------------------
-.. _introduction-1:
-
-Introduction
-~~~~~~~~~~~~~
 
 To realise a federated cloud requires the definition and agreement on a set of APIs. These APIs should allow each of the
 parties to interact cooperatively and need to cover the management layer: business management and service operations
@@ -391,9 +387,9 @@ capabilities to consistently:
 through a common set of governance and operational practices.
 
 GSMA's Operator Platform Group (OPG) specify a federated model and specify requirements for the Edge Platforms
-(Operator Platform Telco Edge Requirements v2.0
-(:ref:`https://infocentre2.gsma.com/gp/pr/FNW/OPG/OfficialDocuments/OPG.02%20Operator%20Platform%20Telco%20Edge%20Requir
-ements%20v2.0%20(Current)/OPG.02%20v2.0.pdf`); while the document is for Edge, most of the requirements are easily
+(`Operator Platform Telco Edge Requirements v2.0
+<https://infocentre2.gsma.com/gp/pr/FNW/OPG/OfficialDocuments/OPG.02%20Operator%20Platform%20Telco%20Edge%20Requir\
+ements%20v2.0%20(Current)/OPG.02%20v2.0.pdf>`__); while the document is for Edge, most of the requirements are easily
 applicable to other cloud deployments. Anuket RM is implementation agnostic, viz., whether the implementation uses
 agents, federations or some other mechanisms.
 
