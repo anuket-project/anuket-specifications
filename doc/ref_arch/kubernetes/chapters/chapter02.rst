@@ -446,7 +446,7 @@ Edge Cloud Infrastructure Hardware Profile Requirements
 
 In the case of Telco Edge Cloud Deployments, hardware requirements can differ from the above to account for
 environmental and other constraints.
-The Reference Model :ref:`ref_model/chapters/chapter08:chapter 8 Hybrid Multi-Cloud`
+The Reference Model :ref:`ref_model/chapters/chapter08:hybrid multi-cloud architecture`
 includes considerations specific to deployments at the edge of the network. The infrastructure profiles "Basic" and
 "High Performance" as per :ref:`ref_model/chapters/chapter04:profiles and workload flavours` still apply, but a number
 of requirements of the above table are relaxed as follows:
