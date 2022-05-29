@@ -94,71 +94,71 @@ automation:
    using PXE; again consider tooling to ensure consistency across all
    infrastructure components.
 
-To ensure operational efficiency and save cost and time, the lifecycle 
-management for physical and virtual servers must be automated using 
-tools which will handle the repetitive tasks like provisioning, 
-configuration, and monitoring. 
-`Foreman <https://www.theforeman.org/>`_ is commonly used 
-to automate the provisoning and management of bare metal infrastructure. 
+To ensure operational efficiency and save cost and time, the lifecycle
+management for physical and virtual servers must be automated using
+tools which will handle the repetitive tasks like provisioning,
+configuration, and monitoring.
+`Foreman <https://www.theforeman.org/>`_ is commonly used
+to automate the provisoning and management of bare metal infrastructure.
 Foreman is an open-source project, base of several commercial products.
 Foreman provides the full management of PXE configuration and the
-installation for many Operating Systems (CentOS, Fedora, Ubuntu, Debian, 
+installation for many Operating Systems (CentOS, Fedora, Ubuntu, Debian,
 Red Hat Entreprise Linux, OpenSUSE, etc.).
-Foreman service can be installed by Ansible `<https://docs.ansible.com/>`_ 
-playbooks. Ansible playbooks are basic tools for the automation of the 
+Foreman service can be installed by Ansible `<https://docs.ansible.com/>`_
+playbooks. Ansible playbooks are basic tools for the automation of the
 infrastructure virtualization layer deployments.
 
 VIM deployment
 ~~~~~~~~~~~~~~
 
-When the underlying resources are installed and configured, the VIM 
-software is deployed. An automated deployment is highly recommended 
-for the same reasons of efficiency. Open-source installers are 
-available to perform the deployments of the OpenStack services.  
+When the underlying resources are installed and configured, the VIM
+software is deployed. An automated deployment is highly recommended
+for the same reasons of efficiency. Open-source installers are
+available to perform the deployments of the OpenStack services.
 A subset of these tools is described below.
 
-- `OpenStack TripleO <http://opendev.org/openstack/tripleo-commo>`_,  
+- `OpenStack TripleO <http://opendev.org/openstack/tripleo-commo>`_,
   “OpenStack on OpenStack”
-  
-  TripleO is an official OpenStack project which allows to deploy and 
-  manage a production cloud onto bare metal hardware using a subset 
-  of existing OpenStack components. The first step of deployment is 
-  the creation of an “undercloud” or deployment cloud. The 
-  undercloud contains the necessary OpenStack components to deploy 
+
+  TripleO is an official OpenStack project which allows to deploy and
+  manage a production cloud onto bare metal hardware using a subset
+  of existing OpenStack components. The first step of deployment is
+  the creation of an “undercloud” or deployment cloud. The
+  undercloud contains the necessary OpenStack components to deploy
   and manage an “overcloud”, representing the deployed cloud.
-  The `architecture document 
+  The `architecture document
   <https://docs.openstack.org/tripleo-docs/latest/install/\
-  introduction/architecture.html#project-architecture>`_ describes 
-  the solution. Nova and Ironic are used in the undercloud to manage 
-  the servers in bare metal environment. TripleO leverages 
+  introduction/architecture.html#project-architecture>`_ describes
+  the solution. Nova and Ironic are used in the undercloud to manage
+  the servers in bare metal environment. TripleO leverages
   on Heat tempates.
-  
+
 - `Airship v2 <https://www.airshipit.org/>`_
 
-  Airship is supported by the OpenStack Foundation. 
-  It is a collection of interopable open-source components allowing 
-  to declaratively automate cloud provisioning. The 
-  configurations are defined by YAML documents. All services are 
-  running on containers. Airship v2 is aligned with maturing CNCF 
-  projects such as Kubernetes, Kubectl, Kubeadmin, Argo, Cluster API, 
-  Kustomize, and Metal3. Airship v2.1, released in November 2021, 
-  leverages on Kubernetes 1.21. It includes cloud provisioning at edge 
-  and for 3rd party cloud. The use of the OpenStack-Helm project allows 
-  the deployment of OpenStack on top of Kubernetes.Airship is not only 
-  a provisioning tool, but also a also a configuration management 
+  Airship is supported by the OpenStack Foundation.
+  It is a collection of interopable open-source components allowing
+  to declaratively automate cloud provisioning. The
+  configurations are defined by YAML documents. All services are
+  running on containers. Airship v2 is aligned with maturing CNCF
+  projects such as Kubernetes, Kubectl, Kubeadmin, Argo, Cluster API,
+  Kustomize, and Metal3. Airship v2.1, released in November 2021,
+  leverages on Kubernetes 1.21. It includes cloud provisioning at edge
+  and for 3rd party cloud. The use of the OpenStack-Helm project allows
+  the deployment of OpenStack on top of Kubernetes.Airship is not only
+  a provisioning tool, but also a also a configuration management
   system.
 
 - `StarlingX <https://www.starlingx.io/>`_
 
-  StarlingX is dedicated to cloud infrastructure deployment at 
-  the edge, taking into account the specific edge use cases requirements 
-  for low latency and precision clock synchronisation. It aims to install 
-  a containerisedversion of OpenStack services, leveraging on Kubernetes, 
-  Docker registry, Airship Armada, and Helm.    
+  StarlingX is dedicated to cloud infrastructure deployment at
+  the edge, taking into account the specific edge use cases requirements
+  for low latency and precision clock synchronisation. It aims to install
+  a containerised version of OpenStack services, leveraging on Kubernetes,
+  Docker registry, Airship Armada, and Helm.
 
-  OpenStack-Helm is used as a starting point. OpenStack is installed and 
-  managed as an Armada application. Armada Applications are a set of one or 
-  more interdependent Application Helm charts.   In the case of StarlingX, 
+  OpenStack-Helm is used as a starting point. OpenStack is installed and
+  managed as an Armada application. Armada Applications are a set of one or
+  more interdependent Application Helm charts.   In the case of StarlingX,
   there is generally a Helm chart for every OpenStack service.
 
 Configuration Management

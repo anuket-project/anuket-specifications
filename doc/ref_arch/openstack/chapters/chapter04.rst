@@ -1690,4 +1690,4 @@ number of open-source tools are available for the purpose including:
 
 These installers are described in more details in
 :ref:`ref_arch/openstack/chapters/chapter07:\
-Operations and Life Cycle Management`. 
+Operations and Life Cycle Management`.
