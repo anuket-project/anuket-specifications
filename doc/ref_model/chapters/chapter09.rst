@@ -192,7 +192,7 @@ Multi-Cloud environment, consisting of multiple on-premise and public clouds, su
 in many cases, impossible to execute in a controlled manner.  Hence, the need for automation.
 
 The goals of LCM are to provide a reliable administration of a system from its provisioning, through its operational
-stage, to its final retirement. 
+stage, to its final retirement.
 
 Key functions of Infrastructure LCM are:
 
@@ -210,7 +210,7 @@ Key benefits of the Infrastructure LCM Automation are:
 - Human related Risks Mitigation: automation reduces risks related to human errors, rogue activities, and safeguards
   the institutional knowledge from leakage in case any employee leaves the organization
 - Higher Efficiency: achieved by minimizing human inaccuracies and eliminating the lack of knowledge about
-  infrastructure installed base and its configuration, using the CI/CD techniques adapted to infrastructure 
+  infrastructure installed base and its configuration, using the CI/CD techniques adapted to infrastructure
 - Cost/time Saving: engineers save up on time and cost which can be wisely invested in performing higher-value jobs;
   additional cost savings on cloud more optimal use of cloud resources using LCM Automation
  
@@ -223,13 +223,13 @@ different scenarios: applications running as containers within virtual machines 
 running as containers on bare metal (CaaS on BM scenario) and a more traditional view of applications running as VNFs
 within virtual machines (IaaS scenario). The diagrams define the scope of the Infrastructure LCM Automation for each of
 these scenarios. The dotted lines symbolise the interactions between the layers of each of the model.
- 
+
 .. figure:: ../figures/RM-Ch09-LCM-Automation-CaaS-on-IaaS.png
    :name: Infrastructure Automation in CaaS on IaaS scenario
    :alt: "Infrastructure Automation in CaaS on IaaS scenario"
 
    Infrastructure Automation in CaaS on IaaS scenario
-   
+
 In the CaaS on IaaS scenario, the Infrastructure Automation scope covers the Site/Physical layer,  IaaS layer and CaaS
 layer. From the lifecycle perspective (the left hand side of the diagram), Site/Physical layer is entirely owned by the
 Infrastructure Owner, the virtualised infrastructure layer (IaaS) is shared between the Infrastructure Owner and the
@@ -238,25 +238,23 @@ Cloud Consumer / Tenant.   These relationships can be illustrated by a situation
 physical infrastructure on which an external cloud provider runs the virtualisation software (hypervisor).
 Sharing CaaS layer between the Cloud Provider and the Cloud Consumer reflects the fact that the container
 management/orchestration software like Kubernetes is lifecycled by the Cloud Provider (for instance when scaling out
-containers) but also by the Cloud Consumer because of the very close lifecycle relationship between an application and 
+containers) but also by the Cloud Consumer because of the very close lifecycle relationship between an application and
 a container in this model. For instance, destroying an application means also destroying related containers, Hence CaaS
-can be also considered as a part of the Application Orchestration layer. 
+can be also considered as a part of the Application Orchestration layer.
 
- 
 .. figure:: ../figures/RM-Ch09-LCM-Automation-CNF-on-BM.png
    :name: Infrastructure Automation in CaaS on BM scenario
    :alt: "Infrastructure Automation in CaaS on BM scenario"
 
    Infrastructure Automation in CaaS on BM scenario
-      
+
 The main and obvious difference in the Caas on BM scenario is lack of the IaaS layer, and hence the scope of the
 Infrastructure Automation is limited to only two layers: Site/Physical and CaaS.  From the lifecycle ownership
 perspective, the CaaS layer is now shared not only between the Cloud Provider and the Cloud Consumer (for the same
 reasons as in the CaaS on IaaS scenario) but also with the Infrastructure Owner.  The latter observation is related to
 the fact that in the bare metal deployments lacking the hypervisor separation, the CaaS layer is much more dependent on
-the underlying physical infrastructure. 
+the underlying physical infrastructure.
 
- 
 .. figure:: ../figures/RM-Ch09-LCM-Automation-VNF-on-IaaS.png
    :name: Infrastructure Automation in IaaS scenario
    :alt: "Infrastructure Automation in IaaS scenario"
@@ -311,7 +309,7 @@ The following principles should guide best practice in the area of the Infrastru
 
 - Everything Codified: use explicit coding to configure files not only for initial provisioning but also as a single
   source of truth for the whole infrastructure lifecycle, to ensure consistency with the intent configuration templates
-  and to eliminate configuration drift 
+  and to eliminate configuration drift
 - Version Controlled: use stringent version control for the infrastructure code to allow proper lifecycle automation
 - Self-Documentation: code itself represents the updated documentation of the infrastructure, to minimise the
   documentation maintenance burden and to ensure the documentation currency
@@ -324,10 +322,10 @@ The following principles should guide best practice in the area of the Infrastru
   testing processes
 - Unified Automation: use the same Infrastructure LCM Automation templates, toolsets and procedures across different
   environments such as Dev, Test, QA and Prod, to ensure consistency of the lifecycle results and to reduce operational
-  costs 
+  costs
 - Security Automation: security of infrastructure is critical for the overall security, dictating to use consistent
   automated security procedures for the threat detection, investigation and remediation through all infrastructure
-  lifecyle stages and all environments 
+  lifecyle stages and all environments
 
 Software Onboarding Automation and CI/CD Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -428,7 +426,7 @@ refers to Continuous Deployment.
 |               | requirements.                                     | security requirements`). Examples of such        |
 |               |                                                   | security requirements include only ingesting     |
 |               |                                                   | images, source code, configuration files, etc.   |
-|               |                                                   | only form trusted sources.                                         |
+|               |                                                   | only form trusted sources.                       |
 +---------------+---------------------------------------------------+--------------------------------------------------+
 | auto.cicd.008 | The CI pipeline must validate images and          | Example, different tests                         |
 |               | manifests                                         |                                                  |
@@ -744,8 +742,8 @@ Typical characteristics of a pull model are:
 
 - The consumers are required to discover the producers of the data
 - Once the producers are identified, there should be a tight relationship (synchronization) between the producer and
-  consumer. This makes the systems very complex in terms of configuration and management. For example, if a producer 
-  moves to a different location or reboots/restarts, the consumer must re-discover the producer and bind their 
+  consumer. This makes the systems very complex in terms of configuration and management. For example, if a producer
+  moves to a different location or reboots/restarts, the consumer must re-discover the producer and bind their
   relationship again.
 - Data are pulled explicitly by the consumer. The consumer must have appropriate bandwidth, compute power, and storage
   to deal with this data - example SNMP pull/walks
