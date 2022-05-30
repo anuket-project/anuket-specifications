@@ -126,21 +126,23 @@ implemented to allow installation of the latest patches to address
 security vulnerabilities in the following timescale from discovery
 (sec.gen.008, sec.lcm.011):
 
-+----------+-------------------+
-| Severity | Time to Remediate |
-+==========+===================+
-| Zero-Day | Immediately or as |
-|          | soon as practica\ |
-|          | lly possible      |
-+----------+-------------------+
-| Critical | 30 days           |
-+----------+-------------------+
-| High     | 60 days           |
-+----------+-------------------+
-| Medium   | 90 days           |
-+----------+-------------------+
-| Low      | 180 days          |
-+----------+-------------------+
+.. table:: Time to Remediate
+   :widths: auto
+
+   +----------+-------------------------+
+   | Severity | Time to Remediate       |
+   +==========+=========================+
+   | Zero-Day | Immediately or as soon  |
+   |          | as practically possible |
+   +----------+-------------------------+
+   | Critical | 30 days                 |
+   +----------+-------------------------+
+   | High     | 60 days                 |
+   +----------+-------------------------+
+   | Medium   | 90 days                 |
+   +----------+-------------------------+
+   | Low      | 180 days                |
+   +----------+-------------------------+
 
 **See** `Common Vulnerability Scoring System <https://cve.mitre.org/>`__
 and `NIST Vulnerability

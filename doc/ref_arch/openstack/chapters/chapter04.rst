@@ -76,13 +76,16 @@ profile defined in :ref:`ref_model/chapters/chapter05:\
 cloud infrastructure hardware profiles features and requirements.`.
 Additionally, for OpenStack we need to set the following boot parameters:
 
-================================= ===============
-BIOS/boot Parameter               Value
-================================= ===============
-Boot disks                        RAID 1
-CPU reservation for host (kernel) 1 core per NUMA
-CPU allocation ratio              2:1
-================================= ===============
+.. table:: Boot parameters
+   :widths: auto
+
+   ================================= ===============
+   BIOS/boot Parameter               Value
+   ================================= ===============
+   Boot disks                        RAID 1
+   CPU reservation for host (kernel) 1 core per NUMA
+   CPU allocation ratio              2:1
+   ================================= ===============
 
 -  How many nodes to meet SLA
 
@@ -117,11 +120,14 @@ tenant network (see more detail in section Neutron).
 
 -  BIOS requirements
 
-=================== ======
-BIOS/boot Parameter Value
-=================== ======
-Boot disks          RAID 1
-=================== ======
+.. table:: BIOS requirements
+   :widths: auto
+
+   =================== ======
+   BIOS/boot Parameter Value
+   =================== ======
+   Boot disks          RAID 1
+   =================== ======
 
 -  How many nodes to meet SLA
 
@@ -146,11 +152,14 @@ Storage nodes
 
 -  BIOS requirements
 
-=================== ======
-BIOS/boot Parameter Value
-=================== ======
-Boot disks          RAID 1
-=================== ======
+.. table:: BIOS requirements
+   :widths: auto
+
+   =================== ======
+   BIOS/boot Parameter Value
+   =================== ======
+   Boot disks          RAID 1
+   =================== ======
 
 -  HW specifications: please see :ref:`ref_model/chapters/chapter03:storage`
 -  How many nodes to meet SLA: Active-Passive is the default and
@@ -239,11 +248,14 @@ specifies the capabilities required to be configured. Please note that
 capabilities may need to be configured in multiple systems. For
 OpenStack, we also need to set the following boot parameters:
 
-=================== ====== ================
-BIOS/boot Parameter Basic  High Performance
-=================== ====== ================
-Boot disks          RAID 1 RAID 1
-=================== ====== ================
+.. table:: BIOS requirements
+   :widths: auto
+
+   =================== ====== ================
+   BIOS/boot Parameter Basic  High Performance
+   =================== ====== ================
+   Boot disks          RAID 1 RAID 1
+   =================== ====== ================
 
 -  How many nodes to meet SLA
 
@@ -255,7 +267,7 @@ Boot disks          RAID 1 RAID 1
 
 -  In case of DPDK usage:
 
-.. list-table::
+.. list-table:: DPDK usage
    :widths: 30 70
    :header-rows: 1
 
@@ -281,33 +293,42 @@ Boot disks          RAID 1 RAID 1
 
 -  Sizing rules
 
-========================= ========
-Description               Mnemonic
-========================= ========
-Number of CPU sockets     s
-Number of cores           c
-SMT                       t
-RAM                       rt
-Storage                   d
-Overcommit                o
-Average vCPU per instance v
-Average RAM per instance  ri
-========================= ========
+.. table:: Mnemonic
+   :widths: auto
 
-+----------------+-----------------+-----------------+------------------+
-|                |                 | Basic           | High-Performance |
-|                |                 |                 |                  |
-+================+=================+=================+==================+
-| # of VMs per   | (s              | 4               | (s \*c\* t)/v    |
-| node (vCPU)    | \*c\* t\*o)/v   | \*(sct)/v       |                  |
-+----------------+-----------------+-----------------+------------------+
-| # of VMs per   | rt/ri           | rt/ri           | rt/ri            |
-| node (RAM)     |                 |                 |                  |
-+----------------+-----------------+-----------------+------------------+
-| Max # of VMs   |                 | min(4\*(sct)/v, | min(\            |
-| per node       |                 | rt/ri)          | (s \*c\*\ t)/v,\ |
-|                |                 |                 | rt/ri)           |
-+----------------+-----------------+-----------------+------------------+
+   ========================= ========
+   Description               Mnemonic
+   ========================= ========
+   Number of CPU sockets     s
+   Number of cores           c
+   SMT                       t
+   RAM                       rt
+   Storage                   d
+   Overcommit                o
+   Average vCPU per instance v
+   Average RAM per instance  ri
+   ========================= ========
+
+.. list-table:: Sizing rules
+   :widths: auto
+   :header-rows: 1
+
+   * -
+     -
+     - Basic
+     - High-Performance
+   * - # of VMs per node (vCPU)
+     - (s*c*t*o)/v
+     - 4*(sct)/v
+     - (s*c*t)/v
+   * - # of VMs per node (RAM)
+     - rt/ri
+     - rt/ri
+     - rt/ri
+   * - Max # of VMs per node
+     -
+     - min(4*(sct)/v,rt/ri)
+     - min((s*c*t)/v,rt/ri)
 
 Caveats:
 
@@ -975,11 +996,14 @@ Figure 4-6: Ceph Storage System
 
 **BIOS Requirement for Ceph servers**
 
-=================== ======
-BIOS/boot Parameter Value
-=================== ======
-Boot disks          RAID 1
-=================== ======
+.. table:: BIOS Requirement for Ceph servers
+   :widths: auto
+
+   =================== ======
+   BIOS/boot Parameter Value
+   =================== ======
+   Boot disks          RAID 1
+   =================== ======
 
 How many nodes to meet SLA :
 
