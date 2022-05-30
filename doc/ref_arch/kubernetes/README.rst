@@ -6,7 +6,7 @@ This is Kubernetes based Reference Architecture (RA-2)
 Release Information
 -------------------
 
-**Bundle: 7**
+**Bundle: 8**
 
 **Version: 0**
 
@@ -24,6 +24,7 @@ Bundle.Version Date              Note
 5.0            29th Jan 2021     Elbrus Release
 6.0            1st Jul 2021      Kali Release
 7.0            4th Jan 2022      Lakelse Release
+8.0            14th Jun 2022     Moselle Release
 ============== ================= ===============
 
 Overall Status
@@ -37,9 +38,9 @@ Chapter 02                                                                      
 Chapter 03                                                                                          Lots of SME feedback
 Chapter 04                                                                                          Lots of SME feedback
 Chapter 05                                                                                          Lots of SME feedback
-Chapter 06                                                                                          Still developing content
+Chapter 06                                                                                          Lots of SME feedback
 Chapter 07                                                                                          Lots of SME feedback
-Appendix B - Guidance For workload isolation (Multitenancy) with Kubernetes for application vendors Still developing content
+Appendix B - Guidance For workload isolation (Multitenancy) with Kubernetes for application vendors Lots of SME feedback
 =================================================================================================== ========================
 
 Table of Contents

@@ -123,8 +123,8 @@ practices must be applied at all layers of the infrastructure stack and across a
 or with outside networks), APIs and contact points with the NFV network functions overlaying or interacting with that
 infrastructure.
 
-A good place to start to understand the security requirements is to use the widely accepted definitions and core 
-principles developed by the OWASP, Open Web Application Security Project: 
+A good place to start to understand the security requirements is to use the widely accepted definitions and core
+principles developed by the OWASP, Open Web Application Security Project:
 
 - Confidentiality – Only allow access to data for which the user is permitted.
 - Integrity – Ensure data is not tampered with or altered by unauthorized users.
@@ -134,7 +134,7 @@ These 3 principles are complemented for Cloud Infrastructure security by:
 
 - Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems
   or data.
-  
+
 Standards organizations with recommendations and best practices, and certifications that need to be taken into
 consideration include the following examples. However this is by no means an exhaustive list, just some of the more
 important standards in current use.
@@ -146,12 +146,12 @@ important standards in current use.
 - FedRAMP Certification `https://www.fedramp.gov/ <https://www.fedramp.gov/>`__
 - ETSI Cyber Security Technical Committee (TC CYBER) - `https://www.etsi.org/committee/cyber <https://www.etsi.org/commi
   ttee/cyber>`__
-- ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - `https://www.etsi.org/technologies/nfv 
+- ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - `https://www.etsi.org/technologies/nfv
   <https://www.etsi.org/technologies/nfv>`__
 - ETSI ISG NFV `SEC WG specifications <https://www.etsi.org/standards-search#page=1&search=NFV-SEC&title=0&etsiNumber=1&
   content=0&version=1&onApproval=0&published=1&historical=0&startDate=1988-01-15&endDate=2020-02-27&harmonized=0&keyword
   =&TB=&stdType=&frequency=&mandate=&collection=&sort=1>`__
-- ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - 
+- ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) -
   `www.iso.org <http://www.iso.org>`__. The following ISO standards are of particular interest for NFVI
 
   - ISO/IEC 27002:2013 - ISO/IEC 27001 are the international Standard for best-practice information security
@@ -179,9 +179,9 @@ virtualisation and open source software. The 2 following documents are in the sc
   rks/resources/open-networking-the-security-of-open-source-software-deployment/>`__, published in January 2021 [21],
   deals with open source software security, it highlights the importance of layered security defences and lists
   recommendations and security concepts able to secure deployments.
-- The “5G Security Guide”, FS.40 version 2.0, Oct. 2021 (non-binding Permanent Reference Document), covers 5G security, 
-  in a holistic way, from user equipment to networks. The document describes the new security features in 5G. 
-  It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualisation, cloud 
+- The “5G Security Guide”, FS.40 version 2.0, Oct. 2021 (non-binding Permanent Reference Document), covers 5G security,
+  in a holistic way, from user equipment to networks. The document describes the new security features in 5G.
+  It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualisation, cloud
   native applications and containerisation security.
 
 Cloud Infrastructure Security
@@ -261,7 +261,8 @@ Cloud Infrastructure general security requirements
 
 **Platform access**
 
-- Restrict traffic to only traffic that is necessary, and deny all other traffic, including traffic from and to 'Back-end'.
+- Restrict traffic to only traffic that is necessary, and deny all other traffic, including traffic from and to
+  'Back-end'.
 - Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
 - All host to host communications within the cloud provider network are to be cryptographically protected in transit.
 - Use cryptographically-protected protocols for administrative access to the platform.
@@ -532,7 +533,7 @@ The sections that follow define mechanisms to ensure the integrity of the infras
   the first 16, PCR 0 - PCR 15, are used to store measures created during the UEFI boot process.
 - Root of Trust for Measurement (RTM) is a computing engine capable of making integrity measurements.
 - Core Root of Trust for Measurements (CRTM) is a set of instructions executed when performing RTM.
-- Platform Attestation provides proof of validity of the platform’s integrity measurements. Please see Section 
+- Platform Attestation provides proof of validity of the platform’s integrity measurements. Please see Section
   `7.6.1 Remote Attestation/openCIT <#7.6.1>`__.
 
 Values stored in a PCR cannot be reset (or forged) as they can only be extended. Whenever a measurement is sent to a
@@ -628,109 +629,109 @@ components deployment.
 Software Supply Chain Security
 ------------------------------
 
-Software supply chain attacks are increasing worldwilde and can cause serious damages. Many entreprises and 
-organisations are experiencing these threats. Aqua security's experts estimated that `software supply chain attacks 
+Software supply chain attacks are increasing worldwilde and can cause serious damages. Many entreprises and
+organisations are experiencing these threats. Aqua security's experts estimated that `software supply chain attacks
 have more than tripled in 2021 <https://www.aquasec.com/news/aqua-securitys-argon-experts-find-software-supply-chain\
--attacks-more-than-tripled-in-2021/>`_. 
-Reuters reported in August 2021 that the `ransomware affecting Kaseya Virtual System Administration product 
+-attacks-more-than-tripled-in-2021/>`_.
+Reuters reported in August 2021 that the `ransomware affecting Kaseya Virtual System Administration product
 <https://www.reuters.com/technology/kaseya-ransomware-attack-sets-off-race-hack-service-providers-researchers-2021-08-03/>`_
-caused downtime for over 1500 companies. In the case of the `backdoor inserted in codecov software 
-<https://www.reuters.com/technology/codecov-hackers-breached-hundreds-restricted-customer-sites-sources-2021-04-19/>`_, 
-hundred of customers were affected. The Solarwinds attack detailed in `Defending against SolarWinds attacks 
-<https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_ 
+caused downtime for over 1500 companies. In the case of the `backdoor inserted in codecov software
+<https://www.reuters.com/technology/codecov-hackers-breached-hundreds-restricted-customer-sites-sources-2021-04-19/>`_,
+hundred of customers were affected. The Solarwinds attack detailed in `Defending against SolarWinds attacks
+<https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_
 is another example of how software suppliers are targeted and, by rebound, their customers affected.
 Open-source code weaknesses can also be utilised by attackers, the `Log4J <https://www.cisa.gov/uscert/apache-log4j-\
-vulnerability-guidance>`_ vulnerability, impacting many 
-applications, is a recent example in this field. When addressing cyber security, the vulnerabilities of 
-software supply chain are often not taken into account. Some governments are already alerting and requesting 
-actions to face these risks. The British government is hardening the law and standards of cyber security for 
-the supply chain. The US government requested actions to enhance the software supply chain security. 
-The security of the software supply chain is a also challenge pointed out by the European Network and 
-Information Security Agency, ENISA, in the report `NFV Security in 5G - Challenges and Best Practices 
+vulnerability-guidance>`_ vulnerability, impacting many
+applications, is a recent example in this field. When addressing cyber security, the vulnerabilities of
+software supply chain are often not taken into account. Some governments are already alerting and requesting
+actions to face these risks. The British government is hardening the law and standards of cyber security for
+the supply chain. The US government requested actions to enhance the software supply chain security.
+The security of the software supply chain is a also challenge pointed out by the European Network and
+Information Security Agency, ENISA, in the report `NFV Security in 5G - Challenges and Best Practices
 <https://www.enisa.europa.eu/publications/nfv-security-in-5g-challenges-and-best-practices>`_.
  
 
 Software security
 ~~~~~~~~~~~~~~~~~
 
-Software supply chain security is crucial and is made complex by the greater attack surface provided by the 
-many different supply chains in virtualised, containerised, and edge environments. 
-All software components must be trusted, from commercial software, open-source 
-code to proprietary software, as well as the integration of these components. 
-The SAFECode white paper `"Managing Security Risks Inherent in the Use of Third-party Components” 
-<https://safecode.org/wp-content/uploads/2017/05/SAFECode_TPC_Whitepaper.pdf>`_ provides 
+Software supply chain security is crucial and is made complex by the greater attack surface provided by the
+many different supply chains in virtualised, containerised, and edge environments.
+All software components must be trusted, from commercial software, open-source
+code to proprietary software, as well as the integration of these components.
+The SAFECode white paper `"Managing Security Risks Inherent in the Use of Third-party Components"
+<https://safecode.org/wp-content/uploads/2017/05/SAFECode_TPC_Whitepaper.pdf>`_ provides
 a detailed risk management approach.
 
 To secure software code, the following methods must be applied:
 
--  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`_ 
-   or `OWASP “Secure Coding Practices - Quick Reference Guide” <https://owasp.org/>`_
--  Do threat modelling, as described in the document `“Tactical Threat Modeling” 
+-  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`_
+   or `OWASP "Secure Coding Practices - Quick Reference Guide" <https://owasp.org/>`_
+-  Do threat modelling, as described in the document `"Tactical Threat Modeling"
    <https://safecode.org/wp-content/uploads/2017/05/SAFECode_TM_Whitepaper.pdf>`_ published by SAFECode
--  Use trusted, authenticated and identified software images that are provided by authenticated software 
-   distribution portals  
--  Require suppliers to provide a Software Bill of Materials to identify all the components part of their product’s 
+-  Use trusted, authenticated and identified software images that are provided by authenticated software
+   distribution portals
+-  Require suppliers to provide a Software Bill of Materials to identify all the components part of their product's
    software releases with their dependencies, and eventually identify the open source modules
 -  Test the software in a pre-production environment to validate integration
--  Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply 
+-  Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply
    remediation actions according to their severity rating
--  Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals   
--  Actively monitor the open source software repositories to determine if new versions have been released that address 
+-  Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
+-  Actively monitor the open source software repositories to determine if new versions have been released that address
    identified vulnerabilities discovered in the community
 -  Secure the integration process by securing the software production pipeline
--  Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, 
-   deployment, and runtime operation to perform automatic security check, as described in section ”Infrastructure 
+-  Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery,
+   deployment, and runtime operation to perform automatic security check, as described in section ”Infrastructure
    as a Code Security”
 
 Open-Source Software Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open-source code is present in Cloud Infrastructure software from BIOS, host Operating System to virtualisation layer 
-components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components 
-can also be composed of open source code. The proportion of open-source code to an application source code can vary. 
-It can be partial or total, visible or not. Open-source code can be upstream code coming directly from open-source 
-public repositories or code within a commercial application or network function. 
+Open-source code is present in Cloud Infrastructure software from BIOS, host Operating System to virtualisation layer
+components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components
+can also be composed of open source code. The proportion of open-source code to an application source code can vary.
+It can be partial or total, visible or not. Open-source code can be upstream code coming directly from open-source
+public repositories or code within a commercial application or network function.
 
-The strength of open-source code is the availability of code source developed by a community which maintains and improves it. 
-Open-source code integration with application source code helps to develop and produce applications faster. 
-But, in return, it can introduce security risks if a risk management DevSecOps approach is not implemented. 
-The GSMA white paper  `“Open Networking & the Security of Open Source Software Deployment - Future Networks” 
-<https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/>`_ 
-alerts on these risks and addresses the 
-challenges coming with open-source code usage. Amongst these risks for security, we can mention a poor code quality 
-containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open source 
-communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an inactive 
+The strength of open-source code is the availability of code source developed by a community which maintains and improves it.
+Open-source code integration with application source code helps to develop and produce applications faster.
+But, in return, it can introduce security risks if a risk management DevSecOps approach is not implemented.
+The GSMA white paper  `"Open Networking & the Security of Open Source Software Deployment - Future Networks"
+<https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/>`_
+alerts on these risks and addresses the
+challenges coming with open-source code usage. Amongst these risks for security, we can mention a poor code quality
+containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open source
+communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an inactive
 branch. The GSMA white paper develops means to mitigate these security issues.
 
-Poor code quality is a factor of risk. Open-source code advantage is its transparency, code can be inspected by tools 
+Poor code quality is a factor of risk. Open-source code advantage is its transparency, code can be inspected by tools
 with various capabilities such as open-source software discovery and static and dynamic code analysis.
 
-Each actor in the whole chain of software production must use a dedicated internal isolated repository separated from the 
-production environment to store vetted open-source content, which can include images, but also installer and utilities. 
-These software packages must be signed and the signature verified prior to packages or images installation. 
-Access to the repository must be granted by a dedicated authorization. The code must be inspected and vulnerabilities 
-identified as described previously. After validating the software, it can be moved to the appropriate production 
+Each actor in the whole chain of software production must use a dedicated internal isolated repository separated from
+the production environment to store vetted open-source content, which can include images, but also installer and
+utilities. These software packages must be signed and the signature verified prior to packages or images installation.
+Access to the repository must be granted by a dedicated authorization. The code must be inspected and vulnerabilities
+identified as described previously. After validating the software, it can be moved to the appropriate production
 repository.
 
 Software Bill of Materials (SBOM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to ensure software security, it is crucial to identify the software components and their origins. The 
-Software Bill of Materials (SBOM), described by `US NTIA <https://www.ntia.gov/SBOM>`__ (National 
-Telecommunications and Information Administration), is an efficient and highly recommended tool to identify software 
-components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to 
-establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the 
+In order to ensure software security, it is crucial to identify the software components and their origins. The
+Software Bill of Materials (SBOM), described by `US NTIA <https://www.ntia.gov/SBOM>`__ (National
+Telecommunications and Information Administration), is an efficient and highly recommended tool to identify software
+components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to
+establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the
 SBOM inventory is an effective means to identify the impacted component and enable remediation.
 
-A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management 
-and it provides assurance of the source and integrity of components. To achieve and benefit from this transparency, 
-a shared model must be supported by industry. This is the goal of the work performed by the US Department of Commerce 
-and the National Telecommunications and Information administration (NTIA) and published, in July 2021, in the report 
+A transparent software supply chain offers benefits for vulnerabilities remediation, but also for licensing management
+and it provides assurance of the source and integrity of components. To achieve and benefit from this transparency,
+a shared model must be supported by industry. This is the goal of the work performed by the US Department of Commerce
+and the National Telecommunications and Information administration (NTIA) and published, in July 2021, in the report
 `“The Minimum Elements for a Software Bill of Materials (SBOM)” <https://www.ntia.doc.gov/files/ntia/publications/sbom_\
-minimum_elements_report.pdf>`_ in July 2021. The document gives guidance and specifies the minimum elements for the SBOM, as 
-a starting point. 
+minimum_elements_report.pdf>`_ in July 2021. The document gives guidance and specifies the minimum elements for the
+SBOM, as a starting point.
 
-A piece of software can be modeled as a hierarchical tree with components and subcomponents, each 
+A piece of software can be modeled as a hierarchical tree with components and subcomponents, each
 component should have its SBOM including,  as a baseline, the information described in the following table.
 
 
@@ -760,60 +761,61 @@ component should have its SBOM including,  as a baseline, the information descri
 | **Timestamp**                | Record of the date and time of the SBOM data      |
 |                              | assembly.                                         |
 +------------------------------+---------------------------------------------------+
-**Table 7-2 **: SBOM Data Fields components, source `NTIA <https://www.ntia.doc.gov/files/ntia/publications/\
-sbom_minimum_elements_report.pdf>`_
+
+**Table 7-2**: SBOM Data Fields components, source
+`NTIA <https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`_
 
 Refer to the NTIA SBOM document for more details on each data field. Examples of commonly used identifiers are provided.
 
-In order to use SBOMs efficiently and spread their adoption, information must be generated and shared in a standard 
-format. This format must be machine-readable to allow automation. Proprietary formats should not be used. 
-Multiple data formats exist covering baseline SBOM information. The three key formats, Software Package Data 
-eXchange (SPDX), CycloneDX, and Software Identification Tags (SWID tags) are interoperable for the core data fields 
+In order to use SBOMs efficiently and spread their adoption, information must be generated and shared in a standard
+format. This format must be machine-readable to allow automation. Proprietary formats should not be used.
+Multiple data formats exist covering baseline SBOM information. The three key formats, Software Package Data
+eXchange (SPDX), CycloneDX, and Software Identification Tags (SWID tags) are interoperable for the core data fields
 and use common data syntax representations.
 
-- `SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux 
-  Foundation. 
-  
-  The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard 
-  ISO/IEC 5962:2021. It provides a language for communicating the data, licenses, copyrights, and security information 
-  associated with software components. With the SPDX specification 2.2, multiple file formats are available: YAML, 
+- `SPDX <https://spdx.dev/>`__ is an open-source machine-readable format developed under the umbrella of the Linux
+  Foundation.
+
+  The `SPDX specification 2.2 <https://spdx.dev/specifications/>`__ has been published as the standard
+  ISO/IEC 5962:2021. It provides a language for communicating the data, licenses, copyrights, and security information
+  associated with software components. With the SPDX specification 2.2, multiple file formats are available: YAML,
   JSON, RDF/XML, tag\:value flat text, and xls spreadsheets.
 
-- `CycloneDX <https://cyclonedx.org/>`_ was designed in 2017 for use with OWASP(Open Web Application Security Project) 
+- `CycloneDX <https://cyclonedx.org/>`_ was designed in 2017 for use with OWASP(Open Web Application Security Project)
   Dependency-Track tool, an open-source Component Analysis platform that identifies risk in the software supply chain.
-  
-  CycloneDX supports a wide range of software components, including: applications, containers, libraries, files, 
-  firmware,   frameworks, Operating Systems. The CycloneDX project provides standards in XML, JSON, and Protocol 
-  Buffers, as well as a large collection of official and community supported tools that create or interoperate with 
+
+  CycloneDX supports a wide range of software components, including: applications, containers, libraries, files,
+  firmware,   frameworks, Operating Systems. The CycloneDX project provides standards in XML, JSON, and Protocol
+  Buffers, as well as a large collection of official and community supported tools that create or interoperate with
   the standard.
 
-- `SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software 
-  publishers and has been published as the standard ISO/IEC 19770-2. 
-  
-  The specification defines four types of SWID tags: 
+- `SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software
+  publishers and has been published as the standard ISO/IEC 19770-2.
+
+  The specification defines four types of SWID tags:
   primary, patch, corpus, and supplemental to describe a software component.
 
-The SBOM should be integrated into the operations of the secure development life cycle, especially for vulnerabilities 
-management. It should also evolve in time. When a software component is updated, a new SBOM must be created. The 
-elements described in this section are part of an ongoing effort, improvements will be added in the future such as 
+The SBOM should be integrated into the operations of the secure development life cycle, especially for vulnerabilities
+management. It should also evolve in time. When a software component is updated, a new SBOM must be created. The
+elements described in this section are part of an ongoing effort, improvements will be added in the future such as
 SBOM integrity and authenticity.
 
 Vulnerability identification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Vulnerability management must be continuous: from development to runtime, not only on the development process, but during all 
-the life of the application or workload or service. When a public vulnerability on a component is released, the update of the 
-component must be triggered. When an SBOM recording the code composition is provided, the affected components will be easier 
-to identify. It is essential to remediate the affected components as soon as possible, because the vulnerability can be 
-exploited by attackers who can take the benefit of code weakness.
+Vulnerability management must be continuous: from development to runtime, not only on the development process, but
+during all the life of the application or workload or service. When a public vulnerability on a component is released,
+the update of the component must be triggered. When an SBOM recording the code composition is provided, the affected
+components will be easier to identify. It is essential to remediate the affected components as soon as possible,
+because the vulnerability can be exploited by attackers who can take the benefit of code weakness.
 
-The CVE and the CVSS must be used to identify vulnerabilities and their severity rating. The CVE identifies, defines, and 
-catalogues publicly disclosed cybersecurity vulnerabilities while the CVSS is an open framework to calculate the 
+The CVE and the CVSS must be used to identify vulnerabilities and their severity rating. The CVE identifies, defines,
+and catalogues publicly disclosed cybersecurity vulnerabilities while the CVSS is an open framework to calculate the
 vulnerabilities' severity score.
 
-Various images scanning tools, including open-source tools like Clair or Trivy, are useful to audit images from security 
-vulnerabilities. The results of vulnerabilities scan audit must be analysed carefully when it is applied to vendor offering 
-packaged solutions; as patches are not detected by scanning tools, some components can be detected as obsolete.
+Various images scanning tools, including open-source tools like Clair or Trivy, are useful to audit images from security
+vulnerabilities. The results of vulnerabilities scan audit must be analysed carefully when it is applied to vendor
+offering packaged solutions; as patches are not detected by scanning tools, some components can be detected as obsolete.
 
 .. _testing--certification:
 
@@ -864,120 +866,150 @@ Security certification should encompass the following elements:
 - Resiliency tests run (such as hardware failures or power failure tests)
 
 
-Cloud Infrastructure Regulatory Compliance 
+Cloud Infrastructure Regulatory Compliance
 ------------------------------------------
-Evolving cloud adoption in the telecom industry, now encroaching on its inner sanctum of network services, undoubtedly brings many benefits for the network operators 
-and their partners, and ultimately to the end consumers of the telecommunication services. However, it also brings compliance challenges that can seem overwhelming. 
-The telecommunication industry players can reduce this overwhelm by arming themselves with information about which laws they need to comply with, why, and how.  
+Evolving cloud adoption in the telecom industry, now encroaching on its inner sanctum of network services,
+undoubtedly brings many benefits for the network operators and their partners, and ultimately to the end consumers of
+the telecommunication services. However, it also brings compliance challenges that can seem overwhelming.
+The telecommunication industry players can reduce this overwhelm by arming themselves with information about which
+laws they need to comply with, why, and how.
 
-The costs of non-compliance can be very serious. Organisations may not only have to contend with hefty fines and possible lawsuits, but they may also even end up 
-losing their reputation and eventually losing customers, with an obvious adverse impact on revenues and profitability. 
+The costs of non-compliance can be very serious. Organisations may not only have to contend with hefty fines and
+possible lawsuits, but they may also even end up  losing their reputation and eventually losing customers, with an
+obvious adverse impact on revenues and profitability.
 
-Compliance means that an operator’s systems, processes, and workflows align with the requirements mandated by the regulatory regimes imposed by the relevant 
-governmental and industry regulatory bodies. The need for compliance extends to the cloud, so operators must ensure that any data transferred to and out, and stored 
-in their cloud infrastructure complies with all relevant data protection, including data residency, and privacy laws.
+Compliance means that an operator’s systems, processes, and workflows align with the requirements mandated by the
+regulatory regimes imposed by the relevant  governmental and industry regulatory bodies. The need for compliance
+extends to the cloud, so operators must ensure that any data transferred to and out, and stored  in their cloud
+infrastructure complies with all relevant data protection, including data residency, and privacy laws.
 
-To comply with the laws that apply to an operator’s business, the proper security controls need to be applied. The applicable laws have very specific rules and 
-constraints about how companies can collect, store and process data in the cloud. To satisfy these constraints and ensure compliance, the telecom operators should 
-work with their cloud providers and other partners to implement strong controls. To speed up this process, the operators may start from augmenting their existing 
-cybersecurity/information security frameworks to guide their security programs to implement controls to secure their cloud infrastructure and to achieve regulatory 
-compliance. This process can also be assisted by support from the cloud providers and third parties, who can offer their well-proven compliance offerings, resources, 
-audit reports, dashboards, and even some security controls as a service.
+To comply with the laws that apply to an operator’s business, the proper security controls need to be applied. The
+applicable laws have very specific rules and constraints about how companies can collect, store and process data in
+the cloud. To satisfy these constraints and ensure compliance, the telecom operators should work with their cloud
+providers and other partners to implement strong controls. To speed up this process, the operators may start from
+augmenting their existing  cybersecurity/information security frameworks to guide their security programs to implement
+controls to secure their cloud infrastructure and to achieve regulatory compliance. This process can also be assisted
+by support from the cloud providers and third parties, who can offer their well-proven compliance offerings,
+resources, audit reports, dashboards, and even some security controls as a service.
 
-After implementing these controls, companies need to train their employees and partners to use the controls properly to protect data and maintain the required 
-compliance posture. This is a critical requirement to maintain compliance via enforcing relevant security guiderails in all aspects of every-day operations, as well as
-for ensuring a process of regular assessment of the compliance posture.
+After implementing these controls, companies need to train their employees and partners to use the controls properly
+to protect data and maintain the required compliance posture. This is a critical requirement to maintain compliance
+via enforcing relevant security guiderails in all aspects of every-day operations, as well as for ensuring a process
+of regular assessment of the compliance posture.
 
-Because of the localised nature of the regulatory regimes, this document may not provide any specific compliance requirements.  However, some examples provided below,
-can be of assistance for an operator’ compliance considerations.
+Because of the localised nature of the regulatory regimes, this document may not provide any specific compliance
+requirements.  However, some examples provided below, can be of assistance for an operator’ compliance
+considerations.
 
-Commonly used (in many jurisdictions) compliance audit reports are based on SOC 2 report from the SOC (System and Organization Controls) suite of services,  
-standardised by the American Institute of Certified Public Accountants (AICPA) and meant for service organizations like cloud providers; see 
-`AICPA SOC <https://us.aicpa.org/content/aicpa/interestareas/frc/assuranceadvisoryservices/sorhome.html>`__. A SOC 2 report shows whether the cloud provider has implemented the security controls required to comply with the AICPA’s
-five “trust services criteria”: security, availability, confidentiality, processing integrity, and privacy. Operators should request SOC 2 report from their cloud 
-providers (public or internal to their organisations). There are two flavours of SOC 2:  type 1 report shows the status and suitability of the provider’s controls 
-at a particular moment, while type 2 report shows the operational effectiveness of these controls over a certain period. In cases when a cloud provider is not willing
-to share SOC 2 report because it may contain sensitive information, operators can ask for the SOC 3 report which is intended as a general-use report but can still 
-help assess the provider’s compliance posture.
+Commonly used (in many jurisdictions) compliance audit reports are based on SOC 2 report from the SOC (System and
+Organization Controls) suite of services,  standardised by the American Institute of Certified Public Accountants
+(AICPA) and meant for service organizations like cloud providers; see
+`AICPA SOC <https://us.aicpa.org/content/aicpa/interestareas/frc/assuranceadvisoryservices/sorhome.html>`__.
+A SOC 2 report shows whether the cloud provider has implemented the security controls required to comply with the
+AICPA’s five “trust services criteria”: security, availability, confidentiality, processing integrity, and privacy.
+Operators should request SOC 2 report from their cloud  providers (public or internal to their organisations).
+There are two flavours of SOC 2:  type 1 report shows the status and suitability of the provider’s controls at a
+particular moment, while type 2 report shows the operational effectiveness of these controls over a certain period.
+In cases when a cloud provider is not willing to share SOC 2 report because it may contain sensitive information,
+operators can ask for the SOC 3 report which is intended as a general-use report but can still help assess the
+provider’s compliance posture.
 
-Some cloud providers also provide attestations (or in case of private cloud, telecoms should seek such attestation) to show which of their cloud services have achieved
-compliance with different frameworks such as mentioned above SOC, but also commonly used frameworks like OWASP, ISAE, NIST, ETSI and ISO 27000 series, and more 
+Some cloud providers also provide attestations (or in case of private cloud, telecoms should seek such attestation)
+to show which of their cloud services have achieved compliance with different frameworks such as mentioned above
+SOC, but also commonly used frameworks like OWASP, ISAE, NIST, ETSI and ISO 27000 series, and more
 geographically localised standard frameworks like NIST (as used in the U.S.A.), ENISA, GDPR, ISM.
 
-The use of the ISO 2700s, OWASP, ISAE, NIST and ETSI security frameworks for cloud infrastructure is referenced in “Common Security Standards”, “Compliance with 
-Standards” and “Security References” sections of this chapter. 
+The use of the ISO 2700s, OWASP, ISAE, NIST and ETSI security frameworks for cloud infrastructure is referenced in
+“Common Security Standards”, “Compliance with  Standards” and “Security References” sections of this chapter.
 
-Examples of regulatory frameworks are briefly presented below. It is intended to expand this list of examples in the future releases to cover more jurisdictions and 
-to accommodate changes in the rapidly evolving security and regulatory landscape. 
+Examples of regulatory frameworks are briefly presented below. It is intended to expand this list of examples in the
+future releases to cover more jurisdictions and  to accommodate changes in the rapidly evolving security and
+regulatory landscape.
 
 
 U.S.A.
 ~~~~~~
 
-In the United States, the Federal Communications Commission  `(FCC) <https://www.fcc.gov/>`__ regulates interstate and international communications by radio, television, wire, satellite and 
-cable in all 50 states, the District of Columbia and U.S. territories. The FCC is an independent U.S. government agency overseen by 
-Congress. The Commission is the federal agency responsible for implementing and enforcing America’s communications 
+In the United States, the Federal Communications Commission  `(FCC) <https://www.fcc.gov/>`__ regulates interstate and
+international communications by radio, television, wire, satellite and cable in all 50 states, the District of
+Columbia and U.S. territories. The FCC is an independent U.S. government agency overseen by  Congress.
+The Commission is the federal agency responsible for implementing and enforcing America’s communications
 laws and regulations.
 
-National Institute of Standards and Technology `(NIST) Cybersecurity Framework <https://www.nist.gov/cyberframework/>`__,  
-compliance is mandatory for the supply chain for all U.S.A. federal government agencies.  Because this framework references globally accepted standards, guidelines 
-and practice, telecom organisations in the U.S.A. and 
-world-wide can use it to efficiently operate in a global environment and manage new and evolving cybersecurity risks in the cloud adoption area.
+National Institute of Standards and Technology
+`(NIST) Cybersecurity Framework <https://www.nist.gov/cyberframework/>`__,
+compliance is mandatory for the supply chain for all U.S.A. federal government agencies.  Because this framework
+references globally accepted standards, guidelines and practice, telecom organisations in the U.S.A. and
+world-wide can use it to efficiently operate in a global environment and manage new and evolving cybersecurity risks
+in the cloud adoption area.
 
 
 European Union (EU)
 ~~~~~~~~~~~~~~~~~~~
 
-The overall telecommunications regulatory framework in the European Union (EU) is provided in `The European Electronic Communications Code 
+The overall telecommunications regulatory framework in the European Union (EU) is provided in
+`The European Electronic Communications Code
 <https://digital-strategy.ec.europa.eu/en/policies/electronic-communications-laws/>`__.
 
-The European Union Agency for Cybersecurity `(ENISA) <https://www.enisa.europa.eu/>`__ contributes to EU cyber policy, enhances the trustworthiness of 
-Information and Communications Technology (ICT) products, services and processes with cybersecurity certification schemes, cooperates with Member States and EU bodies,
-and helps Europe prepare for the cyber challenges of tomorrow. In particular, ENISA is carrying out a risk assessment of cloud computing and works on the 
-European Cybersecurity Certification Scheme  `(EUCS) <https://www.enisa.europa.eu/publications/eucs-cloud-service-scheme/>`__ for Cloud Services scheme, which looks 
-into the certification of the cybersecurity of cloud services,
+The European Union Agency for Cybersecurity `(ENISA) <https://www.enisa.europa.eu/>`__ contributes to EU cyber policy,
+enhances the trustworthiness of  Information and Communications Technology (ICT) products, services and processes
+with cybersecurity certification schemes, cooperates with Member States and EU bodies, and helps Europe prepare for
+the cyber challenges of tomorrow. In particular, ENISA is carrying out a risk assessment of cloud computing and works
+on the European Cybersecurity Certification Scheme
+`(EUCS) <https://www.enisa.europa.eu/publications/eucs-cloud-service-scheme/>`__ for Cloud Services scheme, which
+looks into the certification of the cybersecurity of cloud services,
 
 The General Data Protection Regulation `(GDPR) <https://gdpr-info.eu/>`__ is a set of EU regulations that governs
-how data should be protected for EU citizens. It affects organisations that have EU-based customers, even if they're not based in the EU themselves. 
+how data should be protected for EU citizens. It affects organisations that have EU-based customers, even if they're
+not based in the EU themselves.
 
 
 UK
 ~~
 
-Office of Communications `(Ofcom) <https://www.ofcom.org.uk/>`__ is the regulator and competition authority for the UK communications industries. It regulates the TV 
-and radio sectors, fixed line telecoms, mobiles, postal services, plus the airwaves over which wireless devices operate.
+Office of Communications `(Ofcom) <https://www.ofcom.org.uk/>`__ is the regulator and competition authority for the UK
+communications industries. It regulates the TV and radio sectors, fixed line telecoms, mobiles, postal services, plus
+the airwaves over which wireless devices operate.
 
-Security of Networks & Information Systems `NIS Regulations in UK <https://www.gov.uk/government/collections/nis-directive-and-nis-regulations-2018/>`__, provide 
-legal measures to boost the level of security (both cyber & physical resilience) of network and information systems for the provision of essential services and digital
-services.
+Security of Networks & Information Systems
+`NIS Regulations in UK <https://www.gov.uk/government/collections/nis-directive-and-nis-regulations-2018/>`__, provide
+legal measures to boost the level of security (both cyber & physical resilience) of network and information systems
+for the provision of essential services and digital services.
 
-The UK’s National Cyber Security Centre `(NCSC) <https://www.ncsc.gov.uk/>`__ acts as a bridge between industry and government, providing a unified 
-source of advice, guidance and support on cyber security, including the management of cyber security incidents. From this perspective it is critical for the cloud 
-related security in the UK telecommunications industry. The NCSC is not a regulator. Within the general UK cyber security regulatory environment, including both NIS 
-and GDPR, the NCSC’s aim is to operate as a trusted, expert and impartial advisor to all interested parties. The NCSC supports Security of Networks & Information 
-Systems (NIS) Regulations
+The UK’s National Cyber Security Centre `(NCSC) <https://www.ncsc.gov.uk/>`__ acts as a bridge between industry and
+government, providing a unified source of advice, guidance and support on cyber security, including the management of
+cyber security incidents. From this perspective it is critical for the cloud related security in the UK
+telecommunications industry. The NCSC is not a regulator. Within the general UK cyber security regulatory environment,
+including both NIS and GDPR, the NCSC’s aim is to operate as a trusted, expert and impartial advisor to all
+interested parties. The NCSC supports Security of Networks & Information Systems (NIS) Regulations
 
-The data protection in UK is controlled by `Data Protection Act 2018 <https://www.legislation.gov.uk/ukpga/2018/12/contents/enacted/>`__, which is UK’s implementation
-of the General Data Protection Regulation (GDPR).
+The data protection in UK is controlled by
+`Data Protection Act 2018 <https://www.legislation.gov.uk/ukpga/2018/12/contents/enacted/>`__, which is UK’s
+implementation of the General Data Protection Regulation (GDPR).
 
 Australia
 ~~~~~~~~~
 
-In Australia, the telecommunication sector is regulated by the `Australian Competition & Consumer Commission (ACCC) <https://www.accc.gov.au/regulated-infrastructure/communications/>`__.  
-The ACCC is responsible for the economic regulation of the communications sector, including telecommunications and the National Broadband Network (NBN), broadcasting 
-and content sectors.
+In Australia, the telecommunication sector is regulated by the
+`Australian Competition & Consumer Commission (ACCC) <https://www.accc.gov.au/regulated-infrastructure/communications/>`__.
+The ACCC is responsible for the economic regulation of the communications sector, including telecommunications and the
+National Broadband Network (NBN), broadcasting and content sectors.
 
-From the cloud services security perspective, the Australian Cyber Security Centre (ACSC) produced `Information Security Manual (ISM) <https://www.cyber.gov.au/acsc/view-all-content/ism/>`__, 
-is of particular importance. The purpose of the ISM is to outline a cyber security framework that organisations can apply, using their risk management 
-framework, to protect their information and systems from cyber threats. The ISM is intended for Chief Information Security Officers, Chief Information Officers, cyber
-security professionals and information technology managers. While in general ISM provides guidelines rather than mandates, several security controls are by law 
-mandatory for cloud-based services used by the Australian telecommunication operators, in situation involving strategically important data and/or services. 
+From the cloud services security perspective, the Australian Cyber Security Centre (ACSC) produced
+`Information Security Manual (ISM) <https://www.cyber.gov.au/acsc/view-all-content/ism/>`__,
+is of particular importance. The purpose of the ISM is to outline a cyber security framework that organisations can
+apply, using their risk management framework, to protect their information and systems from cyber threats. The ISM is
+intended for Chief Information Security Officers, Chief Information Officers, cyber security professionals and
+information technology managers. While in general ISM provides guidelines rather than mandates, several security
+controls are by law mandatory for cloud-based services used by the Australian telecommunication operators, in
+situation involving strategically important data and/or services.
 
-Australia regulates data privacy and protection through a mix of federal, state and territory laws. The federal `Privacy Act 1988 <https://www.oaic.gov.au/privacy/the-privacy-act/>`__  
-(currently under review by The Australian Government) and the Australian Privacy Principles (APP) contained in the Privacy Act regulate the handling of 
-personal information by relevant entities and under the Privacy Act. The Privacy Commissioner has authority to conduct investigations, including own motion 
-investigations, to enforce the Privacy Act and seek civil penalties for serious and egregious breaches or for repeated breaches of the APPs where an entity has failed
-to implement remedial efforts.
+Australia regulates data privacy and protection through a mix of federal, state and territory laws. The federal
+`Privacy Act 1988 <https://www.oaic.gov.au/privacy/the-privacy-act/>`__ (currently under review by The Australian
+Government) and the Australian Privacy Principles (APP) contained in the Privacy Act regulate the handling of
+personal information by relevant entities and under the Privacy Act. The Privacy Commissioner has authority to conduct
+investigations, including own motion investigations, to enforce the Privacy Act and seek civil penalties for serious
+and egregious breaches or for repeated breaches of the APPs where an entity has failed to implement remedial efforts.
 
 
 
@@ -1019,7 +1051,7 @@ System Hardening
 +-----------------+--------------------------------------------------+-------------------------------------------------+
 | req.sec.gen.006 | The Platform **must** support Secure logging.    |                                                 |
 |                 | Logging with root account must be prohibited     |                                                 |
-|                 | when root privileges are not required.           |                                                 | 
+|                 | when root privileges are not required.           |                                                 |
 +-----------------+--------------------------------------------------+-------------------------------------------------+
 | req.sec.gen.007 | All servers part of Cloud Infrastructure         |                                                 |
 |                 | **must** be Time synchronized with authenticated |                                                 |
@@ -1053,7 +1085,7 @@ System Hardening
 +-----------------+--------------------------------------------------+-------------------------------------------------+
 | req.sec.gen.013 | The Platform **must** ensure that only           |                                                 |
 |                 | authorized actors have logical access to the     |                                                 |
-|                 | underlying infrastructure.                       |                                                 | 
+|                 | underlying infrastructure.                       |                                                 |
 +-----------------+--------------------------------------------------+-------------------------------------------------+
 | req.sec.gen.014 | All servers part of Cloud Infrastructure         |                                                 |
 |                 | **should** support measured boot and an          |                                                 |
@@ -1357,18 +1389,18 @@ both Prod-Platform and NonProd-Platform.
 +-----------------+----------------------------------------------------------------------------------+-----------------+
 | req.sec.mon.007 | The Prod-Platform and NonProd-Platform **must** Monitor and Audit operations by  |                 |
 |                 | authorized account access after login to detect malicious operational activity   |                 |
-|                 | and take corrective actions.                                                     |                 | 
+|                 | and take corrective actions.                                                     |                 |
 +-----------------+----------------------------------------------------------------------------------+-----------------+
 | req.sec.mon.008 | The Prod-Platform **must** Monitor and Audit security parameter configurations   |                 |
 |                 | for compliance with defined security policies.                                   |                 |
 +-----------------+----------------------------------------------------------------------------------+-----------------+
 | req.sec.mon.009 | The Prod-Platform and NonProd-Platform **must** Monitor and Audit externally     |                 |
 |                 | exposed interfaces for illegal access (attacks) and take corrective security     |                 |
-|                 | hardening measures.                                                              |                 | 
+|                 | hardening measures.                                                              |                 |
 +-----------------+----------------------------------------------------------------------------------+-----------------+
 | req.sec.mon.010 | The Prod-Platform **must** Monitor and Audit service for various attacks         |                 |
 |                 | (malformed messages, signalling flooding and replaying, etc.) and take           |                 |
-|                 | corrective actions accordingly.                                                  |                 | 
+|                 | corrective actions accordingly.                                                  |                 |
 +-----------------+----------------------------------------------------------------------------------+-----------------+
 | req.sec.mon.011 | The Prod-Platform **must** Monitor and Audit running processes to detect         |                 |
 |                 | unexpected or unauthorized processes and take corrective actions accordingly.    |                 |

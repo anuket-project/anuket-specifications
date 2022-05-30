@@ -144,7 +144,7 @@ updated to allow for a period of transitioning as and when requirements change.
 | Ref           | Name  | Description               | Valid | Rationale                               | Implication |
 |               |       |                           | Until |                                         |             |
 +===============+=======+===========================+=======+=========================================+=============+
-|ra1.exc.req.001|Req.   | xxxx                      |xxxxxxx|                                         |             |          
+|ra1.exc.req.001|Req.   | xxxx                      |xxxxxxx|                                         |             |
 +---------------+-------+---------------------------+-------+-----------------------------------------+-------------+
 
 Scope

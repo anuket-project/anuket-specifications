@@ -8,7 +8,7 @@ The CNCF has defined a
 `Testing Special Interest Group <https://github.com/kubernetes/community/blob/master/sig-testing/charter.md>`__ to make
 it easier for the community to write and run tests, and to contribute, analyse and act upon test results.
 This chapter maps the requirements written in the previous chapters as mandatory Special Interest Group Features. It
-enforces the overall requirements traceability to testing, especially those offered for 
+enforces the overall requirements traceability to testing, especially those offered for
 `End-to-End Testing <https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/
 e2e-tests.md>`__.
 The Anuket Reference Conformance (RC2) testing then matches the following Features tabs defined here.
@@ -286,7 +286,7 @@ storage.k8s.io               v1, v1beta1, v1alpha1
 | ExperimentalResourceUsageTracking       |             |                                                             |
 +-----------------------------------------+-------------+-------------------------------------------------------------+
 | Feature:GPUUpgrade                      |             | Master upgrade should NOT disrupt GPU Pod                   |
-+-----------------------------------------+-------------+-------------------------------------------------------------+ 
++-----------------------------------------+-------------+-------------------------------------------------------------+
 | Feature:PodGarbageCollector             |             | Should handle the creation of 1000 pods                     |
 +-----------------------------------------+-------------+-------------------------------------------------------------+
 | Feature:RegularResourceUsageTracking    |             | Resource tracking for 0 pods per node                       |

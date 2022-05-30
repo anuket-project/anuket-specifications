@@ -53,13 +53,13 @@ the following specifications:
 |              |Functions     |(VFs) **must** be configured within the       |e-software-profile-requ|apter04.md#installation|
 |              |              |Kubernetes Node OS, as the SR-IOV Device      |irements>`__           |-on-bare-metal-infratru|
 |              |              |Plugin does not manage the creation of these  |                       |cture>`__              |
-|              |              |VFs.                                          |                       |                       |      
+|              |              |VFs.                                          |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
 |``ra2.ch.004``|CPU Simultaneo|SMT **must** be enabled in the BIOS on the    |`infra.hw.cpu.cfg.004  |`3.3 <../../../ref_impl|
 |              |us Multi-Threa|physical machine on which the Kubernetes Node |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
 |              |ding (SMT)    |runs.                                         |nfrastructure-hardware-|ter03.md#infrastructure|
 |              |              |                                              |profile-require        |-requirements>`__      |
-|              |              |                                              |ments>`__              |                       |      
+|              |              |                                              |ments>`__              |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
 |``ra2.ch.005``|CPU Allocation|For Kubernetes nodes running as Virtual       |                       |                       |
 |              |Ratio - VMs   |Machines, the CPU allocation ratio between    |                       |                       |
@@ -73,7 +73,7 @@ the following specifications:
 |              |              |``requests.cpu < allocatable.cpu`` and        |                       |                       |
 |              |              |``limits.cpu < allocatable.cpu``).            |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.007``|IPv6DualStack |To support IPv4/IPv6 dual stack networking,   |                       |                       | 
+|``ra2.ch.007``|IPv6DualStack |To support IPv4/IPv6 dual stack networking,   |                       |                       |
 |              |              |the Kubernetes Node OS **must** support and   |                       |                       |
 |              |              |be allocated routable IPv4 and IPv6 addresses.|                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
@@ -93,7 +93,7 @@ the following specifications:
 |              |              |State Drives (SSDs).                          |d-infrastructure-hardwa|ter03.md#infrastructure|
 |              |              |                                              |re-profile-require     |-requirements>`__      |
 |              |              |                                              |ments>`__              |                       |
-|              |              |                                              |                       |                       |      
+|              |              |                                              |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
 |``ra2.ch.010``|Local         |The Kubernetes Nodes **must** be equipped     |`e.cap.003 <./chapter02|`3.3 <../../../ref_impl|
 |              |Filesystem    |with local filesystem capacity of at least    |.md#cloud-infrastructur|/cntt-ri2/chapters/chap|
@@ -720,7 +720,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  | (version 3) charts.                               |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
-Helm version 3 has been chosen as the Application packaging mechanism to ensure compliance with the 
+Helm version 3 has been chosen as the Application packaging mechanism to ensure compliance with the
 `ONAP ASD NF descriptor specification <https://wiki.onap.org/display/DW/Application+Service+Descriptor+%28ASD%29+and+pac
 kaging+Proposals+for+CNF>`__ and `ETSI SOL0001 rel. 4 MCIOP specification <https://www.etsi.org/deliver/etsi_gs/NFV-SOL/
 001_099/001/04.02.01_60/gs_NFV-SOL001v040201p.pdf>`__.
@@ -733,87 +733,481 @@ Kubernetes workloads
 In order for the Kubernetes workloads to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
 
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-| Ref       | Specification    | Details                                           | Requirement    | Reference       |
-|           |                  |                                                   | Trace          | Implementation  |
-|           |                  |                                                   |                | Trace           |
-+===========+==================+===================================================+================+=================+
-|ra2.app.001| `Root <https://g | Specifies the container's root filesystem.        | TBD            | N/A             |
-|           | ithub.com/openco |                                                   |                |                 |
-|           | ntainers/runtime |                                                   |                |                 |
-|           | -spec/blob/maste |                                                   |                |                 |
-|           | r/config.md>`__  |                                                   |                |                 |
-|           | Parameter Group  |                                                   |                |                 |
-|           | (OCI Spec)       |                                                   |                |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.app.002| `Mounts <https:/ | Specifies additional mounts beyond root.          |TBD             | N/A             |
-|           | /github.com/open |                                                   |                |                 |
-|           | containers/runti |                                                   |                |                 |
-|           | me-spec/blob/mas |                                                   |                |                 |
-|           | ter/config.md#mo |                                                   |                |                 |
-|           | unts>`__         |                                                   |                |                 |
-|           | Parameter Group  |                                                   |                |                 |
-|           | (OCI Spec)       |                                                   |                |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.app.003| `Process <https: | Specifies the container process.                  | TBD            | N/A             |
-|           | //github.com/ope |                                                   |                |                 |
-|           | ncontainers/runt |                                                   |                |                 |
-|           | ime-spec/blob/ma |                                                   |                |                 |
-|           | ster/config.md#p |                                                   |                |                 |
-|           | rocess>`__       |                                                   |                |                 |
-|           | Parameter Group  |                                                   |                |                 |
-|           | (OCI Spec)       |                                                   |                |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.app.004| `Hostname <https | Specifies the container's hostname as seen by     | TBD            | N/A             |
-|           | ://github.com/op | processes running inside the container.           |                |                 |
-|           | encontainers/run |                                                   |                |                 |
-|           | time-spec/blob/m |                                                   |                |                 |
-|           | aster/config.md# |                                                   |                |                 |
-|           | hostname>`__     |                                                   |                |                 |
-|           | Parameter Group  |                                                   |                |                 |
-|           | (OCI Spec)       |                                                   |                |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.app.005| `User <https://g | User for the process is a platform-specific       | TBD            | N/A             |
-|           | ithub.com/openco | structure that allows specific control over which |                |                 |
-|           | ntainers/runtime | user the process runs as.                         |                |                 |
-|           | -spec/blob/maste |                                                   |                |                 |
-|           | r/config.md#use  |                                                   |                |                 |
-|           | r>`__ Parameter  |                                                   |                |                 |
-|           | Group (OCI Spec) |                                                   |                |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.app.006| Consumption of   | The workload must request additional non-default  | `req.int.api.  | N/A             |
-|           | additional,      | connection points through the use of workload     | 01 <chapter02. |                 |
-|           | non-default      | annotations or resource requests and limits       | md#kubernetes- |                 |
-|           | connection       | within the container spec passed to the           | architecture-r |                 |
-|           | points           | Kubernetes API Server.                            | equirement     |                 |
-|           |                  |                                                   | s>`__          |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.app.007| Host Volumes     | Workloads should not use ``hostPath`` volumes, as | `req.kcm.gen.  | N/A             |
-|           |                  | `Pods with identical configuration <https://kuber | 02 <chapter02. |                 |
-|           |                  | netes.io/docs/concepts/storage/volumes/#hostpat   | md#kubernetes- |                 |
-|           |                  | h>`__ (such as those created from a PodTemplate)  | architecture-r |                 |
-|           |                  | may behave differently on different nodes due to  | equirement     |                 |
-|           |                  | different files on the nodes.                     | s>`__.         |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.app.008| Infrastructure   | Workloads must not rely on the availability of    | TBD            | N/A             |
-|           | dependency       | the master nodes for the successful execution of  |                |                 |
-|           |                  | their functionality (i.e. loss of the master      |                |                 |
-|           |                  | nodes may affect non-functional behaviours such   |                |                 |
-|           |                  | as healing and scaling, but components that are   |                |                 |
-|           |                  | already running will continue to do so without    |                |                 |
-|           |                  | issue).                                           |                |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.app.009| Device plugins   | Workload descriptors must use the resources       | TBD            | N/A             |
-|           |                  | advertised by the device plugins to indicate      |                |                 |
-|           |                  | their need for an FPGA, SR-IOV or other           |                |                 |
-|           |                  | acceleration device.                              |                |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.app.010| Node Feature     | Workload descriptors must use the labels          | TBD            | N/A             |
-|           | Discovery (NFD)  | advertised by `Node Feature Discovery <https://ku |                |                 |
-|           |                  | bernetes-sigs.github.io/node-feature-discovery/st |                |                 |
-|           |                  | able/get-started/index.html>`__ to indicate which |                |                 |
-|           |                  | node software of hardware features they need.     |                |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+| Ref       | Specification    | Details                                           | Requirement      | Reference      |
+|           |                  |                                                   | Trace            | Implementation |
+|           |                  |                                                   |                  | Trace          |
++===========+==================+===================================================+==================+================+
+|ra2.app.001| `Root <https://g | Specifies the container's root filesystem.        | TBD              | N/A            |
+|           | ithub.com/openco |                                                   |                  |                |
+|           | ntainers/runtime |                                                   |                  |                |
+|           | -spec/blob/maste |                                                   |                  |                |
+|           | r/config.md>`__  |                                                   |                  |                |
+|           | Parameter Group  |                                                   |                  |                |
+|           | (OCI Spec)       |                                                   |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.002| `Mounts <https:/ | Specifies additional mounts beyond root.          |TBD               | N/A            |
+|           | /github.com/open |                                                   |                  |                |
+|           | containers/runti |                                                   |                  |                |
+|           | me-spec/blob/mas |                                                   |                  |                |
+|           | ter/config.md#mo |                                                   |                  |                |
+|           | unts>`__         |                                                   |                  |                |
+|           | Parameter Group  |                                                   |                  |                |
+|           | (OCI Spec)       |                                                   |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.003| `Process <https: | Specifies the container process.                  | TBD              | N/A            |
+|           | //github.com/ope |                                                   |                  |                |
+|           | ncontainers/runt |                                                   |                  |                |
+|           | ime-spec/blob/ma |                                                   |                  |                |
+|           | ster/config.md#p |                                                   |                  |                |
+|           | rocess>`__       |                                                   |                  |                |
+|           | Parameter Group  |                                                   |                  |                |
+|           | (OCI Spec)       |                                                   |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.004| `Hostname <https | Specifies the container's hostname as seen by     | TBD              | N/A            |
+|           | ://github.com/op | processes running inside the container.           |                  |                |
+|           | encontainers/run |                                                   |                  |                |
+|           | time-spec/blob/m |                                                   |                  |                |
+|           | aster/config.md# |                                                   |                  |                |
+|           | hostname>`__     |                                                   |                  |                |
+|           | Parameter Group  |                                                   |                  |                |
+|           | (OCI Spec)       |                                                   |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.005| `User <https://g | User for the process is a platform-specific       | TBD              | N/A            |
+|           | ithub.com/openco | structure that allows specific control over which |                  |                |
+|           | ntainers/runtime | user the process runs as.                         |                  |                |
+|           | -spec/blob/maste |                                                   |                  |                |
+|           | r/config.md#use  |                                                   |                  |                |
+|           | r>`__ Parameter  |                                                   |                  |                |
+|           | Group (OCI Spec) |                                                   |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.006| Consumption of   | Any additional non-default connection points must | `req.int.api.01  | N/A            |
+|           | additional,      | be requested through the use of workload          | <chapter02.md#ku |                |
+|           | non-default      | annotations or resource requests and limits       | bernetes-archite |                |
+|           | connection       | within the container spec passed to the           | cture-requiremen |                |
+|           | points           | Kubernetes API Server.                            | ts>`__           |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.007| Host Volumes     | Workloads should not use ``hostPath`` volumes, as | `req.kcm.gen.02  | N/A            |
+|           |                  | `Pods with identical configuration <https://kuber | <chapter02.md#ku |                |
+|           |                  | netes.io/docs/concepts/storage/volumes/#hostpat   | bernetes-archite |                |
+|           |                  | h>`__ (such as those created from a PodTemplate)  | cture-requiremen |                |
+|           |                  | may behave differently on different nodes due to  | ts>`__.          |                |
+|           |                  | different files on the nodes.                     |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.008| Infrastructure   | Workloads must not rely on the availability of    | TBD              | N/A            |
+|           | dependency       | the master nodes for the successful execution of  |                  |                |
+|           |                  | their functionality (i.e. loss of the master      |                  |                |
+|           |                  | nodes may affect non-functional behaviours such   |                  |                |
+|           |                  | as healing and scaling, but components that are   |                  |                |
+|           |                  | already running will continue to do so without    |                  |                |
+|           |                  | issue).                                           |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.009| Device plugins   | Workload descriptors must use the resources       | TBD              | N/A            |
+|           |                  | advertised by the device plugins to indicate      |                  |                |
+|           |                  | their need for an FPGA, SR-IOV or other           |                  |                |
+|           |                  | acceleration device.                              |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.010| Node Feature     | Workload descriptors must use the labels          | TBD              | N/A            |
+|           | Discovery (NFD)  | advertised by `Node Feature Discovery <https://ku |                  |                |
+|           |                  | bernetes-sigs.github.io/node-feature-discovery/st |                  |                |
+|           |                  | able/get-started/index.html>`__ to indicate which |                  |                |
+|           |                  | node software of hardware features they need.     |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.011| Published helm   | Helm charts of the CNF must be published into a   | `CNCF CNF        | N/A            |
+|           | chart            | helm registry and must not be used from local     | Testsuite        |                |
+|           |                  | copies.                                           | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#te |                |
+|           |                  |                                                   | st-if-the-helm-c |                |
+|           |                  |                                                   | hart-is-publishe |                |
+|           |                  |                                                   | d-helm_chart_pub |                |
+|           |                  |                                                   | lished>`__       |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.012| Valid Helm chart | Helm charts of the CNF must be valid and should   | `CNCF CNF        | N/A            |
+|           |                  | pass the `helm lint` validation.                  | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#te |                |
+|           |                  |                                                   | st-if-the-helm-c |                |
+|           |                  |                                                   | hart-is-valid-he |                |
+|           |                  |                                                   | lm_chart_vali    |                |
+|           |                  |                                                   | d>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.013| Rolling update   | Rolling update of the CNF must be possible using  | `CNCF CNF        | N/A            |
+|           |                  | Kubernetes deployments.                           | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -test-if-the-cnf |                |
+|           |                  |                                                   | -can-perform-a-r |                |
+|           |                  |                                                   | olling-update-ro |                |
+|           |                  |                                                   | lling_update>`__ |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.014| Rolling          | Rolling downgrade of the CNF must be possible     | `CNCF CNF        | N/A            |
+|           | downgrade        | using Kubernetes deployments.                     | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-a-cnf- |                |
+|           |                  |                                                   | version-can-be-d |                |
+|           |                  |                                                   | owngraded-throug |                |
+|           |                  |                                                   | h-a-rolling_down |                |
+|           |                  |                                                   | grade-rolling_do |                |
+|           |                  |                                                   | wngrade>`__      |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.015| CNI              | The CNF must use CNI compatible networking        | `CNCF CNF        | N/A            |
+|           | compatibility    | plugins.                                          | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-the-cn |                |
+|           |                  |                                                   | f-is-compatible- |                |
+|           |                  |                                                   | with-different-c |                |
+|           |                  |                                                   | nis-cni_compatib |                |
+|           |                  |                                                   | ility>`__        |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.016| Kubernetes API   | The CNF must not use any Kubernetes alpha API-s.  | `CNCF CNF        | N/A            |
+|           | stability        |                                                   | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#po |                |
+|           |                  |                                                   | c-to-check-if-a- |                |
+|           |                  |                                                   | cnf-uses-kuberne |                |
+|           |                  |                                                   | tes-alpha-apis-a |                |
+|           |                  |                                                   | lpha_k8s_apis-al |                |
+|           |                  |                                                   | pha_k8s_apis>`__ |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.017| CNF resiliency   | CNF must not loose data, must continue to run and | `CNCF CNF        | N/A            |
+|           | (node drain)     | its readiness probe outcome must be Success even  | Testsuite        |                |
+|           |                  | in case of a node drain and rescheduling occurs.  | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#te |                |
+|           |                  |                                                   | st-if-the-cnf-cr |                |
+|           |                  |                                                   | ashes-when-node- |                |
+|           |                  |                                                   | drain-occurs-nod |                |
+|           |                  |                                                   | e_drain>`__      |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.018| CNF resiliency   | CNF must not loose data, must continue to run and | `CNCF CNF        | N/A            |
+|           | (network         | its readiness probe outcome must be Success even  | Testsuite        |                |
+|           | latency)         | in case of network latency up to 2000 ms occurs.  | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#te |                |
+|           |                  |                                                   | st-if-the-cnf-cr |                |
+|           |                  |                                                   | ashes-when-netwo |                |
+|           |                  |                                                   | rk-latency-occur |                |
+|           |                  |                                                   | s-pod_network_la |                |
+|           |                  |                                                   | tency>`__        |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.019| CNF resiliency   | CNF must not loose data, must continue to run and | `CNCF CNF        | N/A            |
+|           | (pod delete)     | its readiness probe outcome must be Success even  | Testsuite        |                |
+|           |                  | in case of pod delete occurs.                     | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#te |                |
+|           |                  |                                                   | st-if-the-cnf-cr |                |
+|           |                  |                                                   | ashes-when-disk- |                |
+|           |                  |                                                   | fill-occurs-disk |                |
+|           |                  |                                                   | _fill>`__        |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.020| CNF resiliency   | CNF must not loose data, must continue to run and | `CNCF CNF        | N/A            |
+|           | (pod memory hog) | its readiness probe outcome must be Success even  | Testsuite        |                |
+|           |                  | in case of pod memory hog occurs.                 | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#te |                |
+|           |                  |                                                   | st-if-the-cnf-cr |                |
+|           |                  |                                                   | ashes-when-pod-m |                |
+|           |                  |                                                   | emory-hog-occurs |                |
+|           |                  |                                                   | -pod_memory_ho   |                |
+|           |                  |                                                   | g>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.021| CNF resiliency   | CNF must not loose data, must continue to run and | `CNCF CNF        | N/A            |
+|           | (pod I/O stress) | its readiness probe outcome must be Success even  | Testsuite        |                |
+|           |                  | in case of pod I/O stress occurs.                 | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#te |                |
+|           |                  |                                                   | st-if-the-cnf-cr |                |
+|           |                  |                                                   | ashes-when-pod-i |                |
+|           |                  |                                                   | o-stress-occurs- |                |
+|           |                  |                                                   | pod_io_stres     |                |
+|           |                  |                                                   | s>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.022| CNF resiliency   | CNF must not loose data, must continue to run and | `CNCF CNF        | N/A            |
+|           | (pod network     | its readiness probe outcome must be Success even  | Testsuite        |                |
+|           | corruption)      | in case of pod network corruption occurs.         | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#te |                |
+|           |                  |                                                   | st-if-the-cnf-cr |                |
+|           |                  |                                                   | ashes-when-pod-n |                |
+|           |                  |                                                   | etwork-corruptio |                |
+|           |                  |                                                   | n-occurs-pod_net |                |
+|           |                  |                                                   | work_corruptio   |                |
+|           |                  |                                                   | n>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.023| CNF resiliency   | CNF must not loose data, must continue to run and | `CNCF CNF        | N/A            |
+|           | (pod network     | its readiness probe outcome must be Success even  | Testsuite        |                |
+|           | duplication)     | in case of pod network duplication occurs.        | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#te |                |
+|           |                  |                                                   | st-if-the-cnf-cr |                |
+|           |                  |                                                   | ashes-when-pod-n |                |
+|           |                  |                                                   | etwork-duplicati |                |
+|           |                  |                                                   | on-occurs-pod_ne |                |
+|           |                  |                                                   | twork_duplicatio |                |
+|           |                  |                                                   | n>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.024| CNF resiliency   | CNF must not loose data, must continue to run and |                  | N/A            |
+|           | (pod DNS error)  | its readiness probe outcome must be Success even  |                  |                |
+|           |                  | in case of pod DNS error occurs.                  |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.025| CNF local        | CNF must not use local storage.                   | `CNCF CNF        | N/A            |
+|           | storage          |                                                   | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -test-if-the-cnf |                |
+|           |                  |                                                   | -uses-local-stor |                |
+|           |                  |                                                   | age-no_local_vol |                |
+|           |                  |                                                   | ume_configuratio |                |
+|           |                  |                                                   | n>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.026| Liveness probe   | All Pods of the CNF must have `livenessProbe`     | `CNCF CNF        | N/A            |
+|           |                  | defined.                                          | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -test-if-there-i |                |
+|           |                  |                                                   | s-a-liveness-ent |                |
+|           |                  |                                                   | ry-in-the-helm-c |                |
+|           |                  |                                                   | hart-livenes     |                |
+|           |                  |                                                   | s>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.027| Readiness probe  | All Pods of the CNF must have `readinessProbe`    | `CNCF CNF        | N/A            |
+|           |                  | defined.                                          | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -test-if-there-i |                |
+|           |                  |                                                   | s-a-readiness-en |                |
+|           |                  |                                                   | try-in-the-helm- |                |
+|           |                  |                                                   | chart-readines   |                |
+|           |                  |                                                   | s>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.028| No access to     | The CNF must not have any of the container        |                  | N/A            |
+|           | container        | daemon sockets (e.g.: `/var/run/docker.sock`,     |                  |                |
+|           | daemon sockets   | `/var/run/containerd.sock` or                     |                  |                |
+|           |                  | `/var/run/crio.sock`) mounted.                    |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.029| No automatic     | Non specified service accounts must not be        | `CNCF CNF        | N/A            |
+|           | service account  | automatically mapped. To prevent this             | Testsuite        |                |
+|           | mapping          | `automountServiceAccountToken: false flag must be | <https://github. |                |
+|           |                  | set in all Pods of the CNF.                       | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-there- |                |
+|           |                  |                                                   | are-service-acco |                |
+|           |                  |                                                   | unts-that-are-au |                |
+|           |                  |                                                   | tomatically-mapp |                |
+|           |                  |                                                   | ed-application_c |                |
+|           |                  |                                                   | redentials>`__   |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.030| No host network  | Host network must not be attached to any of the   | `CNCF CNF        | N/A            |
+|           | access           | Pods of the CNF. hostNetwork attribute of the Pod | Testsuite        |                |
+|           |                  | specifications must be False or should not be     | <https://github. |                |
+|           |                  | specified.                                        | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-there- |                |
+|           |                  |                                                   | -is-a-host-netwo |                |
+|           |                  |                                                   | rk-attached-to-a |                |
+|           |                  |                                                   | -pod-host_networ |                |
+|           |                  |                                                   | k>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.031| Host process     | Pods of the CNF must not share the host process   | `CNCF CNF        | N/A            |
+|           | namespace        | ID namespace or the host IPC namespace. Pod       | Testsuite        |                |
+|           | separation       | manifests must not have the `hostPID` or the      | <https://github. |                |
+|           |                  | `hostIPC` attribute set to true.                  | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-contai |                |
+|           |                  |                                                   | ners-are-running |                |
+|           |                  |                                                   | -with-hostpid-or |                |
+|           |                  |                                                   | -hostipc-privile |                |
+|           |                  |                                                   | ges-host_pid_ipc |                |
+|           |                  |                                                   | _privileges>`__  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.032| Resource limits  | All containers and namespaces of the CNF must     | `CNCF CNF        | N/A            |
+|           |                  | have defined resource limits for at least CPU and | Testsuite        |                |
+|           |                  | memory resources.                                 | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-contai |                |
+|           |                  |                                                   | ners-have-resour |                |
+|           |                  |                                                   | ce-limits-define |                |
+|           |                  |                                                   | d-resource_polic |                |
+|           |                  |                                                   | ies>`__          |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.033| Read only        | All containers of the CNF must have a read only   | `CNCF CNF        | N/A            |
+|           | filesystem       | filesystem. The `readOnlyRootFilesystem`          | Testsuite        |                |
+|           |                  | attribute of the Pods in the their                | <https://github. |                |
+|           |                  | `securityContext` should be set to true.          | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-contai |                |
+|           |                  |                                                   | ners-have-immuta |                |
+|           |                  |                                                   | ble-file-systems |                |
+|           |                  |                                                   | -immutable_file_ |                |
+|           |                  |                                                   | systems>`__      |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.034| Container image  | All referred container images in the Pod          |                  | N/A            |
+|           | tags             | manifests must be referred by a version tag       |                  |                |
+|           |                  | pointing to a concrete version of the image.      |                  |                |
+|           |                  | `latest` tag must not be used.                    |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.035| No hardcoded IP  | The CNF must not have any hardcoded IP addresses  | `CNCF CNF        | N/A            |
+|           | addresses        | in its Pod specifications.                        | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -test-if-there-a |                |
+|           |                  |                                                   | re-any-non-decla |                |
+|           |                  |                                                   | rative-hardcoded |                |
+|           |                  |                                                   | -ip-addresses-or |                |
+|           |                  |                                                   | -subnet-masks-in |                |
+|           |                  |                                                   | -the-k8s-runtime |                |
+|           |                  |                                                   | -configuratio    |                |
+|           |                  |                                                   | n>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.036| No node ports    | Service declarations of the CNF must not contain  | `Kubernetes      | N/A            |
+|           |                  | `nodePort` definition.                            | documentation    |                |
+|           |                  |                                                   | <https://kuberne |                |
+|           |                  |                                                   | tes.io/docs/conc |                |
+|           |                  |                                                   | epts/services-ne |                |
+|           |                  |                                                   | tworking/service |                |
+|           |                  |                                                   | />`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.037| Immutable config |ConfigMaps used by the CNF must be immutable.      | `Kubernetes      | N/A            |
+|           | maps             |                                                   | documentation    |                |
+|           |                  |                                                   | <https://kuberne |                |
+|           |                  |                                                   | tes.io/docs/conc |                |
+|           |                  |                                                   | epts/configurati |                |
+|           |                  |                                                   | on/configmap/#co |                |
+|           |                  |                                                   | nfigmap-immutabl |                |
+|           |                  |                                                   | e>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+ 
+|ra2.app.038| Horizontal       | Increasing and decreasing of the CNF capacity     | TBD              | N/A            |
+|           | scaling          | should be implemented using horizontal scaling.   |                  |                |
+|           |                  | If horizontal scaling is supported, automatic     |                  |                |
+|           |                  | scaling must be possible using Kubernetes         |                  |                |
+|           |                  | `Horizontal Pod Autoscale (HPA) <https://kubernet |                  |                |
+|           |                  | es.io/docs/tasks/run-application/horizontal-pod-a |                  |                |
+|           |                  | utoscale/>`__ feature.                            |                  |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.039| CNF image size   | The different container images of the CNF should  | `CNCF CNF        | N/A            |
+|           |                  | not be bigger than 5GB.                           | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-the-cn |                |
+|           |                  |                                                   | f-has-a-reasonab |                |
+|           |                  |                                                   | le-image-size-re |                |
+|           |                  |                                                   | asonable_image_s |                |
+|           |                  |                                                   | ize>`__          |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.040| CNF startup time | Startup time of the Pods of a CNF should not be   | `CNCF CNF        | N/A            |
+|           |                  | more than 60s where startup time is the time      | Testsuite        |                |
+|           |                  | between starting the Pod until the readiness      | <https://github. |                |
+|           |                  | probe outcome is Success.                         | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-the-cn |                |
+|           |                  |                                                   | f-have-a-reasona |                |
+|           |                  |                                                   | ble-startup-time |                |
+|           |                  |                                                   | -reasonable_star |                |
+|           |                  |                                                   | tup_time>`__     |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.041| No privileged    | None of the Pods of the CNF should run in         | `CNCF CNF        | N/A            |
+|           | mode             | privileged mode.                                  | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-there- |                |
+|           |                  |                                                   | are-any-privileg |                |
+|           |                  |                                                   | ed-containers-ku |                |
+|           |                  |                                                   | bscape-version-p |                |
+|           |                  |                                                   | rivileged_contai |                |
+|           |                  |                                                   | ners>`__         |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.042| No root user     | None of the Pods of the CNF should run as a root  | `CNCF CNF        | N/A            |
+|           |                  | user.                                             | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-any-co |                |
+|           |                  |                                                   | ntainers-are-run |                |
+|           |                  |                                                   | ning-as-a-root-u |                |
+|           |                  |                                                   | ser-checks-the-u |                |
+|           |                  |                                                   | ser-outside-the- |                |
+|           |                  |                                                   | container-that-i |                |
+|           |                  |                                                   | s-running-docker |                |
+|           |                  |                                                   | d-non_root_use   |                |
+|           |                  |                                                   | r>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.043| No privilege     | None of the containers of the CNF should allow    | `CNCF CNF        | N/A            |
+|           | escalation       | privilege escalation.                             | Testsuite        |                |
+|           |                  |                                                   | <https://github. |                |
+|           |                  |                                                   | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-there- |                |
+|           |                  |                                                   | are-any-privileg |                |
+|           |                  |                                                   | ed-containers-ku |                |
+|           |                  |                                                   | bscape-version-p |                |
+|           |                  |                                                   | rivileged_contai |                |
+|           |                  |                                                   | ners>`__         |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.044| Non-root user    | All Pods of the CNF should be able to execute     | `CNCF CNF        | N/A            |
+|           |                  | with a non-root user having a non-root group.     | Testsuite        |                |
+|           |                  | Both `runAsUser` and `runAsGroup` attributes      | <https://github. |                |
+|           |                  | should be set to a greater value than 999.        | com/cncf/cnf-tes |                |
+|           |                  |                                                   | tsuite/blob/main |                |
+|           |                  |                                                   | /RATIONALE.md#to |                |
+|           |                  |                                                   | -check-if-contai |                |
+|           |                  |                                                   | ners-are-running |                |
+|           |                  |                                                   | -with-non-root-u |                |
+|           |                  |                                                   | ser-with-non-roo |                |
+|           |                  |                                                   | t-membership-non |                |
+|           |                  |                                                   | _root_container  |                |
+|           |                  |                                                   | s>`__            |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
+|ra2.app.045| Labels           | Pods of the CNF should define at least the        | `Kubernetes      | N/A            |
+|           |                  | following labels:  app.kubernetes.io/name,        | documentation    |                |
+|           |                  | app.kubernetes.io/version and                     | <https://kuberne |                |
+|           |                  | app.kubernetes.io/part-of                         | tes.io/docs/conc |                |
+|           |                  |                                                   | epts/overview/wo |                |
+|           |                  |                                                   | rking-with-objec |                |
+|           |                  |                                                   | ts/common-label  |                |
+|           |                  |                                                   | s/>`__           |                |
++-----------+------------------+---------------------------------------------------+------------------+----------------+
 
 **Table 4-9:** Kubernetes Workload Specifications
 
