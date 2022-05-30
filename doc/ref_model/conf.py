@@ -15,7 +15,9 @@ intersphinx_mapping = {
 }
 linkcheck_ignore = [
     'https://www.iso.org',
-    'https://www.etsi.org'
+    'https://www.etsi.org',
+    'https://infocentre2.gsma.com',
+    'https://nplang.org'
 ]
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 3
