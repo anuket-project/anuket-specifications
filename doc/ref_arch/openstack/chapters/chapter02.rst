@@ -54,47 +54,48 @@ Cloud Infrastructure Software Profile Requirements for Compute
      - Max number of vCPU that can be assigned to a single instance by the Cloud Infrastructure
      - At least 16
      - At least 16
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute nodes`
    * - e.cap.002
      - Max memory that can be assigned to a single instance by the Cloud Infrastructure
      - at least 32 GB
      - at least 32 GB
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:virtual storage`
    * - e.cap.003
      - Max storage that can be assigned to a single instance by the Cloud Infrastructure
      - at least 320 GB
      - at least 320 GB
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:virtual storage` and 
+       :ref:`ref_arch/openstack/chapters/chapter04:storage backend` 
    * - e.cap.004
      - Max number of connection points that can be assigned to a single instance by the Cloud Infrastructure
      - 6
      - 6
-     -
+     - Not Detailed
    * - e.cap.005
      - Max storage that can be attached / mounted to an instance by the Cloud Infrastructure
      - Up to 16TB:sup:`1`
      - Up to 16TB:sup:`1`
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:storage backend`
    * - e.cap.006/infra.com.cfg.003
      - CPU pinning support
      - Not required
      - Must support
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
    * - e.cap.007/infra.com.cfg.002
      - NUMA support
      - Not required
      - Must support
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
    * - e.cap.018/infra.com.cfg.005
      - Simultaneous Multithreading (SMT) enabled
      - Must
      - Optional support
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
    * - i.cap.018/infra.com.cfg.004
      - Huge pages configured
      - Not required
      - Must support
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
 
 **:sup:`1`** Defined in the ``.bronze`` configuration in
 :ref:`ref_model/chapters/chapter04:storage extensions`
@@ -115,32 +116,32 @@ Cloud Infrastructure Software Profile Extensions Requirements for Compute
      - IPSec Acceleration using the virtio-ipsec interface
      - Compute Intensive GPU
      -
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.010/infra.com.acc.cfg.002
      - Transcoding Acceleration
      - Compute Intensive GPU
      - Video Transcoding
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.011/infra.com.acc.cfg.003
      - Programmable Acceleration
      - Firmware-programmable adapter
      - Accelerator
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.012
      - Enhanced Cache Management: L=Lean; E=Equal; X=eXpanded
      - E
      - E
-     -
+     - Not detailed
    * - e.cap.014/infra.com.acc.cfg.004
      - Hardware coprocessor support (GPU/NPU)
      - Compute Intensive GPU
      -
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.016/infra.com.acc.cfg.005
      - FPGA/other Acceleration H/W
      - Firmware-programmable adapter
      -
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
 
 Cloud Infrastructure Software Profile Requirements for Networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -164,33 +165,33 @@ specified below followed by networking bandwidth requirements.
      - IO virtualisation using virtio1.1
      - Must support
      - Must support
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:virtualisation`
    * - infra.net.cfg.002
      - The overlay network encapsulation protocol needs to enable ECMP in the
        underlay to take advantage of the scale-out features of the network fabric
      - Must support VXLAN, MPLSoUDP, GENEVE, other
      - No requirement specified
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:network fabric`
    * - infra.net.cfg.003
      - Network Address Translation
      - Must support
      - Must support
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:network fabric`
    * - infra.net.cfg.004
      - Security Groups
      - Must support
      - Must support
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
    * - infra.net.cfg.005
      - SFC support
      - Not required
      - Must support
-     -
+     - Not detailed
    * - infra.net.cfg.006
      - Traffic patterns symmetry
      - Must support
      - Must support
-     -
+     - Not detailed
 
 The required number of connection points to an instance is described in
 ``e.cap.004`` `above <#2.2.1>`__. The table below specifies the required
@@ -209,27 +210,27 @@ bandwidth of those connection points.
      - 1, 2, 3, 4, 5, 6 Gbps
      - Must support
      - Must support
-     -
+     - Not detailed
    * - n10, n20, n30, n40, n50, n60
      - 10, 20, 30, 40, 50, 60 Gbps
      - Must support
      - Must support
-     -
+     - Not detailed
    * - n25, n50, n75, n100, n125, n150
      - 25, 50, 75, 100, 125, 150 Gbps
      - Optional
      - Must support
-     -
+     - Not detailed
    * - n50, n100, n150, n200, n250, n300
      - 50, 100, 150, 200, 250, 300 Gbps
      - Optional
      - Must support
-     -
+     - Not detailed
    * - n100, n200, n300, n400, n500, n600
      - 100, 200, 300, 400, 500, 600 Gbps
      - Optional
      - Must support
-     -
+     - Not detailed
 
 Cloud Infrastructure Software Profile Extensions Requirements for Networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -248,27 +249,28 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
      - SR-IOV over PCI-PT
      - N
      - Y
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute nodes`
    * - e.cap.019/infra.net.acc.cfg.001
      - vSwitch optimisation (DPDK)
      - N
      - Y
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute nodes` and 
+       :ref:`ref_arch/openstack/chapters/chapter04:network quality of service`
    * - e.cap.015/infra.net.acc.cfg.002
      - SmartNIC (for HW Offload)
      - N
      - Optional
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.009/infra.net.acc.cfg.003
      - Crypto acceleration
      - N
      - Optional
-     -
+     - Not detailed
    * - infra.net.acc.cfg.004
      - Crypto Acceleration Interface
      - N
      - Optional
-     -
+     - Not detailed
 
 Cloud Infrastructure Software Profile Requirements for Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -290,27 +292,29 @@ Cloud Infrastructure Software Profile Requirements for Storage
      - Storage Block
      - Must support
      - Must support
-     -
+     -:ref:`ref_arch/openstack/chapters/chapter03:storage` and 
+      :ref:`ref_arch/openstack/chapters/chapter04:cinder`
    * - infra.stg.cfg.003
      - Storage with replication
      - Not required
      - Must support
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage` and 
+       :ref:`ref_arch/openstack/chapters/chapter04:transaction volume considerations`
    * - infra.stg.cfg.004
      - Storage with encryption
      - Must support
      - Must support
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage
    * - infra.stg.acc.cfg.001
      - Storage IOPS oriented
      - Not required
      - Must support
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage
    * - infra.stg.acc.cfg.002
      - Storage capacity oriented
      - Not required
      - Not required
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage
 
 Cloud Infrastructure Software Profile Extensions Requirements for Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
