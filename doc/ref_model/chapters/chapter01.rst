@@ -108,7 +108,7 @@ represent the cloud infrastructure. :numref:`Scope of Reference Model` Scope of 
    :alt: Scope of Reference Model
    :name: Scope of Reference Model
 
-      :numref:`Scope of Reference Model` Scope of Reference Model
+      Scope of Reference Model
 
 This document specifies:
 
