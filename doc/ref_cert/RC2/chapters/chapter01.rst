@@ -9,7 +9,7 @@ established to ensure implementations of the Anuket Reference
 Architecture 2 (RA2), such as the Reference Implementation 2 (RI2), meet
 functional and performance requirements specified in RA2 and the Anuket
 Reference Model (RM). Cloud infrastructure and workload verification and
-validation will be utilised to evaluate **Conformance** (i.e. adherence)
+validation will be utilised to evaluate **Conformance** (i.e. adherence)
 to the RA2 and RM requirements. Conformance scope includes:
 
 -  Test cases, with traceability to requirements, to validate that the

@@ -38,14 +38,39 @@ This section focuses on the test cases covering the requirements in
 :ref:`ref_arch/kubernetes/chapters/chapter04:kubernetes workloads`
 for Kubernetes workloads.
 
-=========== ========================== ===================== ========
-RM/RA Ref   High-level test definition Test name and project Priority
-=========== ========================== ===================== ========
-ra2.app.001                                                  Must
-ra2.app.002                                                  Must
-ra2.app.003                                                  Must
-ra2.app.004                                                  Must
-ra2.app.005                                                  Must
-ra2.app.006                                                  Must
-ra2.app.007                                                  Must
-=========== ========================== ===================== ========
+.. list-table:: Traceability to RA2 Requirements
+   :widths: 35 35 30 30
+   :header-rows: 1
+
+   * - RM/RA Ref
+     - High-level test definition
+     - Test name and project
+     - Priority
+   * - ra2.app.001
+     -
+     -
+     - Must
+   * - ra2.app.002
+     -
+     -
+     - Must
+   * - ra2.app.003
+     -
+     -
+     - Must
+   * - ra2.app.004
+     -
+     -
+     - Must
+   * - ra2.app.005
+     -
+     -
+     - Must
+   * - ra2.app.006
+     -
+     -
+     - Must
+   * - ra2.app.007
+     -
+     -
+     - Must

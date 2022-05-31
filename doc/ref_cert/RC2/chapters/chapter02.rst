@@ -35,15 +35,15 @@ Non-Goals
 Definitions
 ~~~~~~~~~~~
 
-*must*: Test Cases that are marked as must are considered mandatory and
+**must**: Test Cases that are marked as must are considered mandatory and
 must pass successfully
 
-*should*: Test Cases that are marked as should are expected to be
+**should**: Test Cases that are marked as should are expected to be
 fulfilled by the cloud infrastructure but it is up to each service
 provider whether to accept a cloud infrastructure that is not fulfilling
 any of these requirements. The same applies to should not.
 
-*may*: Test cases that are marked as may are considered optional. The
+**may**: Test cases that are marked as may are considered optional. The
 same applies to may not.
 
 Traceability Matrix
@@ -341,71 +341,70 @@ Benchmarking <https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking
 `Functest
 xrally_kubernetes_full <https://artifacts.opnfv.org/functest-kubernetes/GFAB1XPJBRQT/functest-kubernetes-opnfv-functest-kubernetes-benchmarking-v1.23-xrally_kubernetes_full-run-2/xrally_kubernetes_full/xrally_kubernetes_full.html>`__:
 
-+--------------------------------------------------------+------------+
-| Scenarios                                              | Iterations |
-+========================================================+============+
-| Kubernetes.create_and_delete_deployment                | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_job                       | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_namespace                 | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_pod                       | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_pod_with_configmap_volume | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_pod_with_configmap_volume | 10         |
-| [2]                                                    |            |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_pod_with_emptydir_volume  | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_pod_with_emptydir_volume  | 10         |
-| [2]                                                    |            |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_pod_with_hostpath_volume  | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_pod_with_secret_volume    | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_pod_with_secret_volume    | 10         |
-| [2]                                                    |            |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_replicaset                | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_replication_controller    | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_and_delete_statefulset               | 10         |
-+--------------------------------------------------------+------------+
-| Kubernet                                               | 10         |
-| es.create_check_and_delete_pod_with_cluster_ip_service |            |
-+--------------------------------------------------------+------------+
-| Kubernet                                               | 10         |
-| es.create_check_and_delete_pod_with_cluster_ip_service |            |
-| [2]                                                    |            |
-+--------------------------------------------------------+------------+
-| Kuberne                                                | 10         |
-| tes.create_check_and_delete_pod_with_node_port_service |            |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_rollout_and_delete_deployment        | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_scale_and_delete_replicaset          | 10         |
-+--------------------------------------------------------+------------+
-| Kub                                                    | 10         |
-| ernetes.create_scale_and_delete_replication_controller |            |
-+--------------------------------------------------------+------------+
-| Kubernetes.create_scale_and_delete_statefulset         | 10         |
-+--------------------------------------------------------+------------+
-| Kubernetes.list_namespaces                             | 10         |
-+--------------------------------------------------------+------------+
+.. list-table:: Kubernetes API benchmarking
+   :widths: 80 20
+   :header-rows: 1
+
+   * - Scenarios
+     - Iterations
+   * - Kubernetes.create_and_delete_deployment
+     - 10
+   * - Kubernetes.create_and_delete_job
+     - 10
+   * - Kubernetes.create_and_delete_namespace
+     - 10
+   * - Kubernetes.create_and_delete_pod
+     - 10
+   * - Kubernetes.create_and_delete_pod_with_configmap_volume
+     - 10
+   * - Kubernetes.create_and_delete_pod_with_configmap_volume [2]
+     - 10
+   * - Kubernetes.create_and_delete_pod_with_emptydir_volume
+     - 10
+   * - Kubernetes.create_and_delete_pod_with_emptydir_volume [2]
+     - 10
+   * - Kubernetes.create_and_delete_pod_with_hostpath_volume
+     - 10
+   * - Kubernetes.create_and_delete_pod_with_secret_volume
+     - 10
+   * - Kubernetes.create_and_delete_pod_with_secret_volume [2]
+     - 10
+   * - Kubernetes.create_and_delete_replicaset
+     - 10
+   * - Kubernetes.create_and_delete_replication_controller
+     - 10
+   * - Kubernetes.create_and_delete_statefulset
+     - 10
+   * - Kubernetes.create_check_and_delete_pod_with_cluster_ip_service
+     - 10
+   * - Kubernetes.create_check_and_delete_pod_with_cluster_ip_service [2]
+     - 10
+   * - Kubernetes.create_check_and_delete_pod_with_node_port_service
+     - 10
+   * - Kubernetes.create_rollout_and_delete_deployment
+     - 10
+   * - Kubernetes.create_scale_and_delete_replicaset
+     - 10
+   * - Kubernetes.create_scale_and_delete_replication_controller
+     - 10
+   * - Kubernetes.create_scale_and_delete_statefulset
+     - 10
+   * - Kubernetes.list_namespaces
+     - 10
 
 The following software versions are considered to benchmark Kubernetes
 v1.23 (latest stable release) selected by Anuket:
 
-================= ===========
-software          version
-================= ===========
-Functest          v1.23
-xrally-kubernetes 1.1.1.dev12
-================= ===========
+.. list-table:: Software versions
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Software
+     - Version
+   * - Functest
+     - v1.23
+   * - xrally-kubernetes
+     - 1.1.1.dev12
 
 Dataplane benchmarking
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -481,13 +480,18 @@ Security <https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcas
 The following software versions are considered to verify Kubernetes
 v1.23 (latest stable release) selected by Anuket:
 
-=========== =======
-software    version
-=========== =======
-Functest    v1.23
-kube-hunter 0.3.1
-kube-bench  0.3.1
-=========== =======
+.. list-table:: Software versions
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Software
+     - Version
+   * - Functest
+     - v1.23
+   * - kube-hunter
+     - 0.3.1
+   * - kube-bench
+     - 0.3.1
 
 Opensource CNF onboarding and testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -505,89 +509,117 @@ upstream tests (see
 The following software versions are considered to verify Kubernetes
 v1.23 (latest stable release) selected by Anuket:
 
-========== ===========
-software   version
-========== ===========
-Functest   v1.23
-clearwater release-130
-Helm       v3.3.1
-========== ===========
+.. list-table:: Software versions
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Software
+     - Version
+   * - Functest
+     - v1.23
+   * - clearwater
+     - release-130
+   * - Helm
+     - v3.3.1
 
 Test Cases Traceability to Requirements
 ---------------------------------------
 
 The following test case must pass as they are for Reference Conformance:
 
-+-------------------------------+-------------------+------+------------------+
-| container                     | test suite        | cri\ | requirements     |
-|                               |                   | ter\ |                  |
-|                               |                   | ia   |                  |
-+===============================+===================+======+==================+
-| opnfv/functest-\              | xrally\_\         | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        | kubernetes        |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | k8s\_\            | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        | conformance       |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | k8s_confor\       | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        | mance_serial      |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig_api\_\        | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        | machinery         |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig_api\_\        | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        | machinery_serial  |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig_apps          | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        |                   |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig\_\            | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        | apps_serial       |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig_auth          | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        |                   |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig_cluster\_\    | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        | lifecycle         |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig\_\            | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        | instrumentation   |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig_network       | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        |                   |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig_node          | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        |                   |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig_scheduling\_\ | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        | serial            |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig_storage       | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        |                   |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | sig\_\            | PASS | Kubernetes API   |
-| kubernetes-smoke:v1.23        | storage_serial    |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | kube_hunter       | PASS | Security testing |
-| kubernetes-security:v1.23     |                   |      |                  |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | kube\_\           | PASS | Security testing |
-| kubernetes-security:v1.23     | bench_master      |      |                  |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | kube\_\           | PASS | Security testing |
-| kubernetes-security:v1.23     | bench_node        |      |                  |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | xrally\_\         | PASS | Kubernetes API   |
-| kubernetes-benchmarking:v1.23 | kubernetes_full   |      | benchmarking     |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | netperf           | PASS | Dataplane        |
-| kubernetes-benchmarking:v1.23 |                   |      | benchmarking     |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | k8s_vims          | PASS | Opensource CNF   |
-| kubernetes-cnf:v1.23          |                   |      | onboarding and   |
-|                               |                   |      | testing          |
-+-------------------------------+-------------------+------+------------------+
-| opnfv/functest-\              | helm_vims         | PASS | Opensource CNF   |
-| kubernetes-cnf:v1.23          |                   |      | onboarding and   |
-|                               |                   |      | testing          |
-+-------------------------------+-------------------+------+------------------+
+.. list-table:: Mandory test cases
+   :widths: 40 25 10 25
+   :header-rows: 1
+
+   * - Container
+     - Test suite
+     - Criteria
+     - Requirements
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - xrally_kubernetes
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - k8s_conformance
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - k8s_conformance_serial
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_api_machinery
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_api_machinery_serial
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_apps
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_apps_serial
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_auth
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_cluster_lifecycle
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_instrumentation
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_network
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_node
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_scheduling_serial
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_storage
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-smoke:v1.23
+     - sig_storage_serial
+     - PASS
+     - Kubernetes API testing
+   * - opnfv/functest-kubernetes-security:v1.23
+     - kube_hunter
+     - PASS
+     - Security testing
+   * - opnfv/functest-kubernetes-security:v1.23
+     - kube_bench_master
+     - PASS
+     - Security testing
+   * - opnfv/functest-kubernetes-security:v1.23
+     - kube_bench_node
+     - PASS
+     - Security testing
+   * - opnfv/functest-kubernetes-benchmarking:v1.23
+     - xrally_kubernetes_full
+     - PASS
+     - Kubernetes API benchmarking
+   * - opnfv/functest-kubernetes-benchmarking:v1.23
+     - netperf
+     - PASS
+     - Dataplane benchmarking
+   * - opnfv/functest-kubernetes-cnf:v1.23
+     - k8s_vims
+     - PASS
+     - Opensource CNF onboarding and testing
+   * - opnfv/functest-kubernetes-cnf:v1.23
+     - helm_vims
+     - PASS
+     - Opensource CNF onboarding and testing
