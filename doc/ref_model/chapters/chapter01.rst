@@ -108,8 +108,6 @@ represent the cloud infrastructure. :numref:`Scope of Reference Model` below hig
    :alt: Scope of Reference Model
    :name: Scope of Reference Model
 
-Diagram :numref:`Scope of Reference Model` Scope of Reference Model
-
 This document specifies:
 
 - **Cloud Infrastructure abstraction**: in context with how it interacts with the other components required to build a
