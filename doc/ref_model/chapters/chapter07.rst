@@ -631,8 +631,8 @@ Software Supply Chain Security
 
 Software supply chain attacks are increasing worldwilde and can cause serious damages. Many entreprises and
 organisations are experiencing these threats. Aqua security's experts estimated that `software supply chain attacks
-have more than tripled in 2021 <https://www.aquasec.com/news/aqua-securitys-argon-experts-find-software-supply-chain\
--attacks-more-than-tripled-in-2021/>`_.
+have more than tripled in 2021
+<https://www.aquasec.com/news/aqua-securitys-argon-experts-find-software-supply-chain-attacks-more-than-tripled-in-2021/>`_.
 Reuters reported in August 2021 that the `ransomware affecting Kaseya Virtual System Administration product
 <https://www.reuters.com/technology/kaseya-ransomware-attack-sets-off-race-hack-service-providers-researchers-2021-08-03/>`_
 caused downtime for over 1500 companies. In the case of the `backdoor inserted in codecov software
@@ -640,8 +640,8 @@ caused downtime for over 1500 companies. In the case of the `backdoor inserted i
 hundred of customers were affected. The Solarwinds attack detailed in `Defending against SolarWinds attacks
 <https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_
 is another example of how software suppliers are targeted and, by rebound, their customers affected.
-Open-source code weaknesses can also be utilised by attackers, the `Log4J <https://www.cisa.gov/uscert/apache-log4j-\
-vulnerability-guidance>`_ vulnerability, impacting many
+Open-source code weaknesses can also be utilised by attackers, the
+`Log4J <https://www.cisa.gov/uscert/apache-log4j-vulnerability-guidance>`_ vulnerability, impacting many
 applications, is a recent example in this field. When addressing cyber security, the vulnerabilities of
 software supply chain are often not taken into account. Some governments are already alerting and requesting
 actions to face these risks. The British government is hardening the law and standards of cyber security for
@@ -727,9 +727,9 @@ A transparent software supply chain offers benefits for vulnerabilities remediat
 and it provides assurance of the source and integrity of components. To achieve and benefit from this transparency,
 a shared model must be supported by industry. This is the goal of the work performed by the US Department of Commerce
 and the National Telecommunications and Information administration (NTIA) and published, in July 2021, in the report
-`“The Minimum Elements for a Software Bill of Materials (SBOM)” <https://www.ntia.doc.gov/files/ntia/publications/sbom_\
-minimum_elements_report.pdf>`_ in July 2021. The document gives guidance and specifies the minimum elements for the
-SBOM, as a starting point.
+`"The Minimum Elements for a Software Bill of Materials (SBOM)"
+<https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`_ in July 2021. The document gives
+guidance and specifies the minimum elements for the SBOM, as a starting point.
 
 A piece of software can be modeled as a hierarchical tree with components and subcomponents, each
 component should have its SBOM including,  as a baseline, the information described in the following table.
