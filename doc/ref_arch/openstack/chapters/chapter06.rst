@@ -126,21 +126,23 @@ implemented to allow installation of the latest patches to address
 security vulnerabilities in the following timescale from discovery
 (sec.gen.008, sec.lcm.011):
 
-+----------+-------------------+
-| Severity | Time to Remediate |
-+==========+===================+
-| Zero-Day | Immediately or as |
-|          | soon as practica\ |
-|          | lly possible      |
-+----------+-------------------+
-| Critical | 30 days           |
-+----------+-------------------+
-| High     | 60 days           |
-+----------+-------------------+
-| Medium   | 90 days           |
-+----------+-------------------+
-| Low      | 180 days          |
-+----------+-------------------+
+.. table:: Time to Remediate
+   :widths: auto
+
+   +----------+-------------------------+
+   | Severity | Time to Remediate       |
+   +==========+=========================+
+   | Zero-Day | Immediately or as soon  |
+   |          | as practically possible |
+   +----------+-------------------------+
+   | Critical | 30 days                 |
+   +----------+-------------------------+
+   | High     | 60 days                 |
+   +----------+-------------------------+
+   | Medium   | 90 days                 |
+   +----------+-------------------------+
+   | Low      | 180 days                |
+   +----------+-------------------------+
 
 **See** `Common Vulnerability Scoring System <https://cve.mitre.org/>`__
 and `NIST Vulnerability
@@ -560,8 +562,8 @@ operational (sec.lcm.003).
 Regarding the provisioning of servers, switches, routers and networking,
 tools must be used to automate the provisioning eliminating human error.
 For Infrastructure hardware resources, a set of recommendations is
-detailed in :ref:`ref_arch/openstack/chapters/chapter07:provisioning` to automate and secure
-their provisioning (sec.lcm.001).
+detailed in :ref:`ref_arch/openstack/chapters/chapter07:underlying resources
+provisioning` to automate and secure their provisioning (sec.lcm.001).
 
 For OpenStack services and software components, deployment tools or
 components must be used to automate the deployment and avoid errors. The
