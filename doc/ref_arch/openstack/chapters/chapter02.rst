@@ -64,8 +64,8 @@ Cloud Infrastructure Software Profile Requirements for Compute
      - Max storage that can be assigned to a single instance by the Cloud Infrastructure
      - at least 320 GB
      - at least 320 GB
-     - :ref:`ref_arch/openstack/chapters/chapter03:virtual storage` and 
-       :ref:`ref_arch/openstack/chapters/chapter04:storage backend` 
+     - :ref:`ref_arch/openstack/chapters/chapter03:virtual storage` and
+       :ref:`ref_arch/openstack/chapters/chapter04:storage backend`
    * - e.cap.004
      - Max number of connection points that can be assigned to a single instance by the Cloud Infrastructure
      - 6
@@ -236,7 +236,7 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table:: Cloud Infrastructure Software Profile Extensions Requirements
-   for Networking
+                for Networking
    :widths: 20 20 10 10 20
    :header-rows: 1
 
@@ -254,7 +254,7 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
      - vSwitch optimisation (DPDK)
      - N
      - Y
-     - :ref:`ref_arch/openstack/chapters/chapter04:compute nodes` and 
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute nodes` and
        :ref:`ref_arch/openstack/chapters/chapter04:network quality of service`
    * - e.cap.015/infra.net.acc.cfg.002
      - SmartNIC (for HW Offload)
@@ -278,8 +278,7 @@ Cloud Infrastructure Software Profile Requirements for Storage
 (source :ref:`ref_model/chapters/chapter05:cloud infrastructure software profiles features and requirements`)
 
 .. list-table:: Reference Model Requirements - Cloud Infrastructure Software
-   Profile Requirements for Storage
-   for Networking
+                Profile Requirements for Storage
    :widths: 20 20 10 10 20
    :header-rows: 1
 
@@ -292,13 +291,13 @@ Cloud Infrastructure Software Profile Requirements for Storage
      - Storage Block
      - Must support
      - Must support
-     -:ref:`ref_arch/openstack/chapters/chapter03:storage` and 
-      :ref:`ref_arch/openstack/chapters/chapter04:cinder`
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage` and
+       :ref:`ref_arch/openstack/chapters/chapter04:cinder`
    * - infra.stg.cfg.003
      - Storage with replication
      - Not required
      - Must support
-     - :ref:`ref_arch/openstack/chapters/chapter03:storage` and 
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage` and
        :ref:`ref_arch/openstack/chapters/chapter04:transaction volume considerations`
    * - infra.stg.cfg.004
      - Storage with encryption
@@ -503,7 +502,8 @@ Cloud Infrastructure Management Requirements
      - Must support
      -
    * - e.man.006
-     - Capability to provide information related to allocated virtualised resources per tenant
+     - Capability to provide information related to allocated virtualised
+       resources per tenant
      - Must support
      -
    * - e.man.007
@@ -511,11 +511,13 @@ Cloud Infrastructure Management Requirements
      - Must support
      -
    * - e.man.008
-     - Capability to collect and expose performance information on virtualised resources allocated
+     - Capability to collect and expose performance information on virtualised
+       resources allocated
      - Must support
      -
    * - e.man.009
-     - Capability to collect and notify fault information on virtualised resources
+     - Capability to collect and notify fault information on virtualised
+       resources
      - Must support
      -
 
