@@ -364,7 +364,7 @@ Cloud Infrastructure Hardware Profile Requirements
      - Minimum number of CPU (Sockets)
      - 2
      - 2
-     -
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute`
    * - infra.hw.cpu.cfg.002
      - Minimum number of Cores per CPU
      - 20
