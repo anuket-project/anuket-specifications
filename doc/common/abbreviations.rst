@@ -30,10 +30,12 @@ BGCF           Border Gateway Control Function
 BGP            Border Gateway Protocol
 BGPaaS         BGP as a Service
 BIOS           Basic Input Output System
+BLOB           Binary Large Object 
 BM             Bare Metal
 BMC            Baseband Management Controller
 BMRA           Bare Metal Reference Architecture
 BNG            Broadband Network Gateway
+BOOTP          Bootstrap Protocol
 BRAS           Broadband Remote Access Server
 BSS            Business Support Systems
 CaaS           Cloud Native Container as a Service
@@ -48,6 +50,7 @@ cgroups        Control Groups
 CHF            Charging Function (part of the converged charging system CCS)
 CI/CD          Continuous Integration / Continuous Deployment
 CIDR           Classless Inter-Domain Routing
+CIFS           Common Internet File System
 CIM            Cloud Infrastructure Management
 CIRV           Common Infrastructure Realization & Validation
 CIS            Center for Internet Security
@@ -107,9 +110,12 @@ EUD            End User Device
 EULA           End-User License Agreement
 EVPN           Ethernet Virtual Private Network
 EVPN           Ethernet VPN
+FAT            File Allocation Table
 F2F            Face-to-Face
 FC             Fiber Channel
 FCAPS          Fault, Configuration, Accounting, Performance, Security
+FC-AL          Fibre Channel Arbitrated Loop
+FCIP           Fibre Channel over IP
 FFA            Fixed Function Accelerator
 FPGA           Field Programmable Gate Array
 FTTx           Fiber to the x
@@ -128,6 +134,7 @@ GSMA           GSM Association
 GUI            Graphical User Interface
 GW             Gateway
 HA             High Availability
+HBA            Host Bus Adapter
 HCP            Hyperscaler Cloud Provider
 HDD            Hard Disk Drive
 HDFS           Hadoop Distributed File System
@@ -136,11 +143,14 @@ HLR            Home Location Register
 HOT            (OpenStack) Heat Orchestration Templates
 HSS            Home Subscriber Server
 HTML           Hyper Text Markup Language
+HTTP           Hypertext Transfer Protocol
+HTTP/S         Hypertext Transfer Protocol Secure
 HW             Hardware
 IaaS           Infrastructure as a Service
 IaC (IaaC)     Infrastructure as Code (or "as a")
 IAM            Identity and Access Management
 ICMP           Internet Control Message Protocol
+iSCSI          Internet Small Computer Systems Interface
 ID             Identifier
 IDF            (OPNFV) Installer Descriptor File
 IdP            Identity Provider
@@ -160,6 +170,7 @@ IPSec          Internet Protocol Security
 iSCSI          Internet Small Computer Systems Interface
 IT             Information Technology
 ITIL           IT Infrastructure Library
+JSON           JavaScript Object Notation
 K8s            Kubernetes
 KPI            Key Performance Indicator
 KVM            Keyboard, Video and Mouse
@@ -192,6 +203,7 @@ MSAN           MultiService Access Node
 MSC            Mobile Switching Center
 MTAS           Mobile Telephony Application Server
 MVNO           Mobile Virtual Network Operator
+NAS            Network Attached Storage
 NaaS           Network as a Service
 NAT            Network Address Translation
 NBI            North Bound Interface
@@ -260,12 +272,16 @@ PTP            Precision Time Protocol
 PV             Persistent Volumes
 PVC            Persistent Volume Claims
 PXE            Preboot Execution Environment
+QCW            QEMU copy-on-write
 QEMU           Quick EMUlator
 QoS            Quality of Service
 R/W            Read/Write
 RA             Reference Architecture
+RADOS          Reliable Autonomic Distributed Object Store
+RAID           Redundant Aray of Independent Disks
 RAM            Random Access Memory
 RAN            Radio Access Network
+RAW            Raw disk format
 RBAC           Role-bases Access Control
 RC             Reference Conformance
 Repo           Repository
@@ -286,6 +302,7 @@ SA             Service Assurance
 SaaS           Software as a Service
 SAML           Security Assertion Markup Language
 SAN            Storage Area Network
+SAS            Serial Attached SCSI
 SATA           Serial Advanced Technology Attachment
 SBA            Service Based Architecture
 SBC            Session Border Controller
@@ -368,6 +385,7 @@ VIM            Virtualised Infrastructure Manager
 vIPS           Virtualised IPS
 VLAN           Virtual LAN
 VM             Virtual Machine
+VMDK           VMware Virtual Machine Disk File
 VMM            Virtual Machine Monitor (or Manager)
 VNF            Virtualised Network Function
 VNFC           Virtualised Network Function Component
@@ -390,4 +408,5 @@ Wi-Fi          Wireless Fidelity
 WLAN           Wireless Local Area Network
 WLC            Wireless LAN Controller
 WS             WorkStream
-============== ==========================================================================
+XML            eXtensible Markup Language
+========================================================================================
