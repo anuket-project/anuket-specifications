@@ -688,7 +688,7 @@ Platform and Access Requirements
    * - sec.sys.010
      - Access
      - For two or more domains without existing trust relationships, the Platform 
-       **must** not allow the effect of an attack on one domain to impact the other 
+       **must not** allow the effect of an attack on one domain to impact the other 
        domains either directly or indirectly
      - :ref:`ref_arch/openstack/chapters/chapter04:logical segregation 
        and high availability`
@@ -726,7 +726,7 @@ Platform and Access Requirements
      - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.sys.018
      - Access
-     - The Platform must provide the capability of allowing certificate renewal 
+     - The Platform **must** provide the capability of allowing certificate renewal 
        and revocation
      - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.sys.019
@@ -773,7 +773,7 @@ Confidentiality and Integrity Requirements
      - Confidentiality/Integrity
      - The Platform **must** support Confidentiality and Integrity of process-
        related metadata and restrict information sharing with only the
-       process owner (e.g., tenant).
+       process owner (e.g., tenant)
      - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and
        integrity`
    * - sec.ci.006
@@ -794,7 +794,7 @@ Confidentiality and Integrity Requirements
      - :ref:`ref_arch/openstack/chapters/chapter06:platform access`
    * - sec.ci.008
      - Confidentiality
-     - The Cloud Infrastructure must support tenant networks segregation.
+     - The Cloud Infrastructure **must** support tenant networks segregation
      - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
 
 
@@ -1306,7 +1306,7 @@ General Requirements
    * - gen.ost.02
      - Open source
      - The Architecture **must** support dynamic request and configuration of
-        virtual resources (compute, network, storage) through OpenStack APIs
+       virtual resources (compute, network, storage) through OpenStack APIs
      - :ref:`ref_arch/openstack/chapters/chapter05:consolidated set of apis`
    * - gen.rsl.01
      - Resiliency
