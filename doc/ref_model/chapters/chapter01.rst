@@ -102,11 +102,13 @@ Scope
 -----
 
 This **Reference Model** document focuses on identifying the abstractions, and associated concepts, that are needed to
-represent the cloud infrastructure. The diagram below highlights its scope in more details.
+represent the cloud infrastructure. :numref:`Scope of Reference Model` Scope of Reference Model.
 
 .. figure:: ../figures/ch01_scope.png
    :alt: Scope of Reference Model
    :name: Scope of Reference Model
+
+      :numref:`Scope of Reference Model` Scope of Reference Model
 
 This document specifies:
 
