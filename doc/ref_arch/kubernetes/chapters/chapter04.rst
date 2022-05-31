@@ -36,40 +36,40 @@ the following specifications:
 | Ref          | Specification| Details                                      | Requirement           | Reference             |
 |              |              |                                              | Trace                 | Implementation Trace  |
 +==============+==============+==========+===================================+=======================+=======================+
-|``ra2.ch.001``|Huge pages    |When hosting workloads matching the High      |`infra.com.cfg.004 <./c|`4.3.1 <../../../ref_im|
-|              |              |Performance profile, it **must** be possible  |hapter02.md#cloud-infra|pl/cntt-ri2/chapters/ch|
-|              |              |to enable Huge pages (2048KiB and 1048576KiB) |structure-software-prof|apter04.md#installation|
-|              |              |within the Kubernetes Node OS, exposing schedu|ile-requirements>`__   |-on-bare-metal-infratru|
-|              |              |lable resources ``hugepages-2Mi`` and         |                       |cture>`__              |
+|``ra2.ch.001``|Huge pages    |When hosting workloads matching the High      |`infra.com.cfg.004`    |`RI2 4.3.1`            |
+|              |              |Performance profile, it **must** be possible  |                       |                       |
+|              |              |to enable Huge pages (2048KiB and 1048576KiB) |                       |                       |
+|              |              |within the Kubernetes Node OS, exposing schedu|                       |                       |
+|              |              |lable resources ``hugepages-2Mi`` and         |                       |                       |
 |              |              |``hugepages-1Gi``.                            |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.002``|SR-IOV capable|When hosting workloads matching the High      |`e.cap.013 <./chapter02|`3.3 <../../../ref_impl|
-|              |NICs          |Performance profile, the physical machines on |.md#cloud-infrastructur|/cntt-ri2/chapters/chap|
-|              |              |which the Kubernetes Nodes run **must** be    |e-software-profile-requ|ter03.md#infrastructure|
-|              |              |equipped with NICs that are SR-IOV capable.   |irements>`__           |-requirements>`__      |
+|``ra2.ch.002``|SR-IOV capable|When hosting workloads matching the High      |`e.cap.013`            |`RI2 3.3`              |
+|              |NICs          |Performance profile, the physical machines on |                       |                       |
+|              |              |which the Kubernetes Nodes run **must** be    |                       |                       |
+|              |              |equipped with NICs that are SR-IOV capable.   |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.003``|SR-IOV Virtual|When hosting workloads matching the High      |`e.cap.013 <./chapter02|`4.3.1 <../../../ref_im|
-|              |Functions     |Performance profile, SR-IOV virtual functions |.md#cloud-infrastructur|pl/cntt-ri2/chapters/ch|
-|              |Functions     |(VFs) **must** be configured within the       |e-software-profile-requ|apter04.md#installation|
-|              |              |Kubernetes Node OS, as the SR-IOV Device      |irements>`__           |-on-bare-metal-infratru|
-|              |              |Plugin does not manage the creation of these  |                       |cture>`__              |
+|``ra2.ch.003``|SR-IOV Virtual|When hosting workloads matching the High      |`e.cap.013`            |`RI2 4.3.1`            |
+|              |Functions     |Performance profile, SR-IOV virtual functions |                       |                       |
+|              |Functions     |(VFs) **must** be configured within the       |                       |                       |
+|              |              |Kubernetes Node OS, as the SR-IOV Device      |                       |                       |
+|              |              |Plugin does not manage the creation of these  |                       |                       |
 |              |              |VFs.                                          |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.004``|CPU Simultaneo|SMT **must** be enabled in the BIOS on the    |`infra.hw.cpu.cfg.004  |`3.3 <../../../ref_impl|
-|              |us Multi-Threa|physical machine on which the Kubernetes Node |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
-|              |ding (SMT)    |runs.                                         |nfrastructure-hardware-|ter03.md#infrastructure|
-|              |              |                                              |profile-require        |-requirements>`__      |
-|              |              |                                              |ments>`__              |                       |
+|``ra2.ch.004``|CPU Simultaneo|SMT **must** be enabled in the BIOS on the    |`infra.hw.cpu.cfg.004` |`RI2 3.3`              |
+|              |us Multi-Threa|physical machine on which the Kubernetes Node |                       |                       |
+|              |ding (SMT)    |runs.                                         |                       |                       |
+|              |              |                                              |                       |                       |
+|              |              |                                              |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
 |``ra2.ch.005``|CPU Allocation|For Kubernetes nodes running as Virtual       |                       |                       |
 |              |Ratio - VMs   |Machines, the CPU allocation ratio between    |                       |                       |
 |              |              |vCPU and physical CPU core **must** be 1:1.   |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.006``|CPU           |To ensure the CPU allocation ratio between    |`infra.com.cfg.001     |`3.3 <../../../ref_impl|
-|              |Allocation    |vCPU and physical CPU core is 1:1, the sum of |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
-|              |Ratio - Pods  |CPU requests and limits by containers in Pod  |nfrastructure-software-|ter03.md#infrastructure|
-|              |              |specifications **must** remain less than the  |profile-require        |-requirements>`__      |
-|              |              |allocatable quantity of CPU resources (i.e.   |ments>`__              |                       |
+|``ra2.ch.006``|CPU           |To ensure the CPU allocation ratio between    |`infra.com.cfg.001`    |`RI2 3.3`              |
+|              |Allocation    |vCPU and physical CPU core is 1:1, the sum of |                       |                       |
+|              |Ratio - Pods  |CPU requests and limits by containers in Pod  |                       |                       |
+|              |              |specifications **must** remain less than the  |                       |                       |
+|              |              |allocatable quantity of CPU resources (i.e.   |                       |                       |
 |              |              |``requests.cpu < allocatable.cpu`` and        |                       |                       |
 |              |              |``limits.cpu < allocatable.cpu``).            |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
@@ -77,82 +77,82 @@ the following specifications:
 |              |              |the Kubernetes Node OS **must** support and   |                       |                       |
 |              |              |be allocated routable IPv4 and IPv6 addresses.|                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.008``|Physical CPU  |The physical machines on which the Kubernetes |`infra.hw.cpu.cfg.001  |`3.3 <../../../ref_impl|
-|              |Quantity      |Nodes run **must** be equipped with at least  |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
-|              |              |2 physical sockets, each with at least 20     |nfrastructure-hardware-|ter03.md#infrastructure|
-|              |              |CPU cores.                                    |profile-require        |-requirements>`__      |
-|              |              |                                              |ments>`__,             |                       |
-|              |              |                                              |`infra.hw.cpu.cfg.002  |                       |
-|              |              |                                              |<./chapter02.md#cloud-i|                       |
-|              |              |                                              |nfrastructure-hardware-|                       |
-|              |              |                                              |profile-require        |                       |
-|              |              |                                              |ments>`__              |                       |
-+--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.009``|Physical      |The physical machines on which the Kubernetes |`infra.hw.stg.ssd.cfg.0|`3.3 <../../../ref_impl|
-|              |Storage       |Nodes run **should** be equipped with Sold    |02 <./chapter02.md#clou|/cntt-ri2/chapters/chap|
-|              |              |State Drives (SSDs).                          |d-infrastructure-hardwa|ter03.md#infrastructure|
-|              |              |                                              |re-profile-require     |-requirements>`__      |
-|              |              |                                              |ments>`__              |                       |
+|``ra2.ch.008``|Physical CPU  |The physical machines on which the Kubernetes |`infra.hw.cpu.cfg.001` |`RI2 3.3`              |
+|              |Quantity      |Nodes run **must** be equipped with at least  |`infra.hw.cpu.cfg.002` |                       |
+|              |              |2 physical sockets, each with at least 20     |                       |                       |
+|              |              |CPU cores.                                    |                       |                       |
+|              |              |                                              |                       |                       |
+|              |              |                                              |                       |                       |
+|              |              |                                              |                       |                       |
+|              |              |                                              |                       |                       |
+|              |              |                                              |                       |                       |
 |              |              |                                              |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.010``|Local         |The Kubernetes Nodes **must** be equipped     |`e.cap.003 <./chapter02|`3.3 <../../../ref_impl|
-|              |Filesystem    |with local filesystem capacity of at least    |.md#cloud-infrastructur|/cntt-ri2/chapters/chap|
-|              |Storage       |320GB for unpacking and executing containers. |e-software-profile-capa|ter03.md#infrastructure|
-|              |Quantity      |Note, extra should be provisioned to cater    |bilities>`__           |-requirements>`__      |
+|``ra2.ch.009``|Physical      |The physical machines on which the Kubernetes |`infra.hw.stg.ssd.cfg.0|`RI2 3.3`              |
+|              |Storage       |Nodes run **should** be equipped with Sold    |02`                    |                       |
+|              |              |State Drives (SSDs).                          |                       |                       |
+|              |              |                                              |                       |                       |
+|              |              |                                              |                       |                       |
+|              |              |                                              |                       |                       |
++--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
+|``ra2.ch.010``|Local         |The Kubernetes Nodes **must** be equipped     |`e.cap.003`            |`RI2 3.3`              |
+|              |Filesystem    |with local filesystem capacity of at least    |                       |                       |
+|              |Storage       |320GB for unpacking and executing containers. |                       |                       |
+|              |Quantity      |Note, extra should be provisioned to cater    |                       |                       |
 |              |              |for any overhead required by the Operating    |                       |                       |
 |              |              |System and any required OS processes such as  |                       |                       |
 |              |              |the container runtime, Kubernetes agents, etc.|                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.011``|Virtual Node  |If using VMs, the Kubernetes Nodes **must**   |`e.cap.001 <./chapter02|                       |
-|              |CPU Quantity  |be equipped with at least 16 vCPUs. Note,     |.md#cloud-infrastructur|                       |
-|              |              |extra should be provisioned to cater for any  |e-software-profile-capa|                       |
-|              |              |overhead required by the Operating System and |bilities>`__           |                       |
+|``ra2.ch.011``|Virtual Node  |If using VMs, the Kubernetes Nodes **must**   |`e.cap.001`            |                       |
+|              |CPU Quantity  |be equipped with at least 16 vCPUs. Note,     |                       |                       |
+|              |              |extra should be provisioned to cater for any  |                       |                       |
+|              |              |overhead required by the Operating System and |                       |                       |
 |              |              |any required OS processes such as the         |                       |                       |
 |              |              |container runtime, Kubernetes agents, etc.    |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.012``|Kubernetes    |The Kubernetes Nodes **must** be equipped     |`e.cap.002 <./chapter02|`3.3 <../../../ref_impl|
-|              |Node RAM      |with at least 32GB of RAM. Note, extra should |.md#cloud-infrastructur|/cntt-ri2/chapters/chap|
-|              |Quantity      |be provisioned to cater for any overhead      |e-software-profile-capa|ter03.md#infrastructure|
-|              |              |required by the Operating System and any      |bilities>`__           |-requirements>`__      |
+|``ra2.ch.012``|Kubernetes    |The Kubernetes Nodes **must** be equipped     |`e.cap.002`            |`RI2 3.3`              |
+|              |Node RAM      |with at least 32GB of RAM. Note, extra should |                       |                       |
+|              |Quantity      |be provisioned to cater for any overhead      |                       |                       |
+|              |              |required by the Operating System and any      |                       |                       |
 |              |              |required OS processes such as the container   |                       |                       |
 |              |              |runtime, Kubernetes agents, etc.              |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.013``|Physical      |The physical machines on which the Kubernetes |`infra.hw.nic.cfg.001  |`3.3 <../../../ref_impl|
-|              |NIC Quantity  |Nodes run **must** be equipped with at least  |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
-|              |              |four (4) Network Interface Card (NIC) ports.  |nfrastructure-hardware-|ter03.md#infrastructure|
-|              |              |                                              |profile-require        |-requirements>`__      |
-|              |              |                                              |ments>`__              |                       |
+|``ra2.ch.013``|Physical      |The physical machines on which the Kubernetes |`infra.hw.nic.cfg.001` |`RI2 3.3`              |
+|              |NIC Quantity  |Nodes run **must** be equipped with at least  |                       |                       |
+|              |              |four (4) Network Interface Card (NIC) ports.  |                       |                       |
+|              |              |                                              |                       |                       |
+|              |              |                                              |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.014``|Physical      |The speed of NIC ports housed in the physical |`infra.hw.nic.cfg.002  |`3.3 <../../../ref_impl|
-|              |NIC Speed -   |machines on which the Kubernetes Nodes run    |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
-|              |Basic Profile |for workloads matching the Basic Profile      |nfrastructure-hardware-|ter03.md#infrastructure|
-|              |              |**must** be at least 10Gbps.                  |profile-require        |-requirements>`__      |
-|              |              |                                              |ments>`__              |                       |
+|``ra2.ch.014``|Physical      |The speed of NIC ports housed in the physical |`infra.hw.nic.cfg.002` |`RI2 3.3`              |
+|              |NIC Speed -   |machines on which the Kubernetes Nodes run    |                       |                       |
+|              |Basic Profile |for workloads matching the Basic Profile      |                       |                       |
+|              |              |**must** be at least 10Gbps.                  |                       |                       |
+|              |              |                                              |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.015``|Physical      |The speed of NIC ports housed in the physical |`infra.hw.nic.cfg.002  |`3.3 <../../../ref_impl|
-|              |NIC Speed -   |machines on which the Kubernetes Nodes run    |<./chapter02.md#cloud-i|/cntt-ri2/chapters/chap|
-|              |High          |for workloads matching the High Performance   |nfrastructure-hardware-|ter03.md#infrastructure|
-|              |Performance   |profile **must** be at least 25Gbps.          |profile-require        |-requirements>`__      |
-|              |Profile       |                                              |ments>`__              |                       |
+|``ra2.ch.015``|Physical      |The speed of NIC ports housed in the physical |`infra.hw.nic.cfg.002` |`RI2 3.3`              |
+|              |NIC Speed -   |machines on which the Kubernetes Nodes run    |                       |                       |
+|              |High          |for workloads matching the High Performance   |                       |                       |
+|              |Performance   |profile **must** be at least 25Gbps.          |                       |                       |
+|              |Profile       |                                              |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
 |``ra2.ch.016``|Physical PCIe |The physical machines on which the Kubernetes |                       |                       |
 |              |slots         |Nodes run **must** be equipped with at least  |                       |                       |
 |              |              |eight (8) Gen3.0 PCIe slots, each with at     |                       |                       |
 |              |              |least eight (8) lanes.                        |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.017``|Immutable     |Whether physical or virtual machines are      |`req.gen.cnt.02 <./chap|`4.3.1 <../../../ref_im|
-|              |infrastructure|used, the Kubernetes Node **must not** be     |ter02.md#kubernetes-arc|pl/cntt-ri2/chapters/ch|
-|              |              |changed after it is instantiated. New changes |hitecture-require      |apter04.md#installation|
-|              |              |to the Kubernetes Node must be implemented as |ments>`__              |-on-bare-metal-infratru|
-|              |              |new Node instances. This covers any changes   |                       |cture>`__              |
+|``ra2.ch.017``|Immutable     |Whether physical or virtual machines are      |`req.gen.cnt.02`       |`RI2 4.3.1`            |
+|              |infrastructure|used, the Kubernetes Node **must not** be     |                       |                       |
+|              |              |changed after it is instantiated. New changes |                       |                       |
+|              |              |to the Kubernetes Node must be implemented as |                       |                       |
+|              |              |new Node instances. This covers any changes   |                       |                       |
 |              |              |from BIOS through Operating System to running |                       |                       |
 |              |              |processes and all associated configurations.  |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
-|``ra2.ch.018``|NFD           |`Node Feature Discovery <https://kubernetes-si|TBD                    |`4.3.1 <../../../ref_im|
-|              |              |gs.github.io/node-feature-discovery/stable/get|                       |pl/cntt-ri2/chapters/ch|
-|              |              |-started/index.html>`__ **must** be used to ad|                       |apter04.md#installa    |
-|              |              |vertise the detailed software and hardware    |                       |tion-on-bare-metal-infr|
-|              |              |capabilities of each node in the Kubernetes   |                       |atructure>`__          |
+|``ra2.ch.018``|NFD           |`Node Feature Discovery <https://kubernetes-si| tbd                   |`RI2 4.3.1`            |
+|              |              |gs.github.io/node-feature-discovery/stable/get|                       |                       |
+|              |              |-started/index.html>`__ **must** be used to ad|                       |                       |
+|              |              |vertise the detailed software and hardware    |                       |                       |
+|              |              |capabilities of each node in the Kubernetes   |                       |                       |
 |              |              |Cluster.                                      |                       |                       |
 +--------------+--------------+----------------------------------------------+-----------------------+-----------------------+
 
@@ -228,23 +228,23 @@ the following specifications:
 |           |                  |                                                   | Trace          | Implementation  |
 |           |                  |                                                   |                | Trace           |
 +===========+==================+===================================================+================+=================+
-|ra2.k8s.001| Kubernetes       | The Kubernetes distribution, product, or          | `req.gen.cnt.  | `4.3.1 <../../. |
-|           | Conformance      | installer used in the implementation **must** be  | 03 <./chapter0 | ./ref_impl/cntt |
-|           |                  | listed in the `Kubernetes Distributions and       | 2.md#kubernete | -ri2/chapters/c |
-|           |                  | Platforms document <https://docs.google.com/sprea | s-architecture | hapter04.md#ins |
-|           |                  | dsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlU | -requirement   | tallation-on-ba |
-|           |                  | UK2h0/edit#gid=0>`__ and marked (X) as conformant | s>`__          | re-metal-infrat |
-|           |                  | for the Kubernetes version defined in `README <.. |                | ructure>`__     |
+|ra2.k8s.001| Kubernetes       | The Kubernetes distribution, product, or          | `req.gen.cnt.  | `RI2 4.3.1`     |
+|           | Conformance      | installer used in the implementation **must** be  | 03`            |                 |
+|           |                  | listed in the `Kubernetes Distributions and       |                |                 |
+|           |                  | Platforms document <https://docs.google.com/sprea |                |                 |
+|           |                  | dsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlU |                |                 |
+|           |                  | UK2h0/edit#gid=0>`__ and marked (X) as conformant |                |                 |
+|           |                  | for the Kubernetes version defined in `README <.. |                |                 |
 |           |                  | /README.md#required-versions-of-most-important-co |                |                 |
 |           |                  | mponents>`__.                                     |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.k8s.002| Highly available | An implementation **must** consist of either      | `req.gen.rsl.  | `4.3.1 <../../. |
-|           | etcd             | three, five or seven nodes running the etcd       | 02 req.gen.avl | ./ref_impl/cntt |
-|           |                  | service (can be colocated on the master nodes, or | .01 <./chapter | -ri2/chapters/c |
-|           |                  | can run on separate nodes, but not on worker      | 02.md#kubernet | hapter04.md#ins |
-|           |                  | nodes).                                           | es-architectur | tallation-on-ba |
-|           |                  |                                                   | e-requirement  | re-metal-infrat |
-|           |                  |                                                   | s>`__          | ructure>`__     |
+|ra2.k8s.002| Highly available | An implementation **must** consist of either      | `req.gen.rsl.  | `RI2 4.3.1`     |
+|           | etcd             | three, five or seven nodes running the etcd       | 02`, `req.gen. |                 |
+|           |                  | service (can be colocated on the master nodes, or | avl.01`        |                 |
+|           |                  | can run on separate nodes, but not on worker      |                |                 |
+|           |                  | nodes).                                           |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.003| Highly available | An implementation **must** consist of at least    |                |                 |
 |           | control plane    | one master node per availability zone or fault    |                |                 |
@@ -252,43 +252,43 @@ the following specifications:
 |           |                  | resilience of the Kubernetes control plane        |                |                 |
 |           |                  | services.                                         |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.k8s.012| Control plane    | A master node **must** run at least the following | `req.gen.rsl.  | `4.3.1 <../../. |
-|           | services         | Kubernetes control plane services:                | 02 <./chapter0 | ./ref_impl/cntt |
-|           |                  | ``kube-apiserver``, ``kube-scheduler`` and        | 2.md#kubernete | -ri2/chapters/c |
-|           |                  | ``kube-controller-manager``.                      | s-architecture | hapter04.md#ins |
-|           |                  |                                                   | -requirement   | tallation-on-ba |
-|           |                  |                                                   | s>`__,         | re-metal-infrat |
-|           |                  |                                                   | `req.gen.avl.  | ructure>`__     |
-|           |                  |                                                   | 01 <./chapter0 |                 |
-|           |                  |                                                   | 2.md#kubernete |                 |
-|           |                  |                                                   | s-architecture |                 |
-|           |                  |                                                   | -requirement   |                 |
-|           |                  |                                                   | s>`__          |                 |
+|ra2.k8s.012| Control plane    | A master node **must** run at least the following | `req.gen.rsl.  | `RI2 4.3.1`     |
+|           | services         | Kubernetes control plane services:                | 02`,           |                 |
+|           |                  | ``kube-apiserver``, ``kube-scheduler`` and        | `req.gen.avl.  |                 |
+|           |                  | ``kube-controller-manager``.                      | 01`            |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.004| Highly available | An implementation **must** consist of at least    | `req.gen.rsl.  |                 |
-|           | worker nodes     | one worker node per availability zone or fault    | 01 <./chapter0 |                 |
-|           |                  | domain to ensure the high availability and        | 2.md#kubernete |                 |
-|           |                  | resilience of workloads managed by Kubernetes     | s-architecture |                 |
-|           |                  |                                                   | -requirement   |                 |
-|           |                  |                                                   | s>`__,         |                 |
-|           |                  |                                                   | `req.gen.avl.  |                 |
-|           |                  |                                                   | 01 <./chapter0 |                 |
-|           |                  |                                                   | 2.md#kubernete |                 |
-|           |                  |                                                   | s-architecture |                 |
-|           |                  |                                                   | -requirement   |                 |
-|           |                  |                                                   | s>`__,         |                 |
-|           |                  |                                                   | `req.kcm.gen.  |                 |
-|           |                  |                                                   | 02 <./chapter0 |                 |
-|           |                  |                                                   | 2.md#kubernete |                 |
-|           |                  |                                                   | s-architecture |                 |
-|           |                  |                                                   | -requirement   |                 |
-|           |                  |                                                   | s>`__,         |                 |
+|           | worker nodes     | one worker node per availability zone or fault    | 01`, `req.gen. |                 |
+|           |                  | domain to ensure the high availability and        | avl.01`, `req. |                 |
+|           |                  | resilience of workloads managed by Kubernetes     | kcm.gen.02`,   |                 |
 |           |                  |                                                   | `req.inf.com.  |                 |
-|           |                  |                                                   | 01 <./chapter0 |                 |
-|           |                  |                                                   | 2.md#kubernete |                 |
-|           |                  |                                                   | s-architecture |                 |
-|           |                  |                                                   | -requirement   |                 |
-|           |                  |                                                   | s>`__          |                 |
+|           |                  |                                                   | 02`            |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.005| Kubernetes API   | In alignment with the `Kubernetes version support |                |                 |
 |           | Version          | policy <https://kubernetes.io/docs/setup/release/ |                |                 |
@@ -298,60 +298,51 @@ the following specifications:
 |           |                  | <../README.md#required-versions-of-most-important |                |                 |
 |           |                  | -components>`__.                                  |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.k8s.006| NUMA Support     | When hosting workloads matching the High          | `e.cap.007 <ch |                 |
-|           |                  | Performance profile, the ``TopologyManager`` and  | apter02.md#clo |                 |
-|           |                  | ``CPUManager`` feature gates **must** be enabled  | ud-infrastruct |                 |
-|           |                  | and configured on the kubelet (note,              | ure-software-p |                 |
-|           |                  | TopologyManager is enabled by default in          | rofile-capabil |                 |
-|           |                  | Kubernetes v1.18 and later, with CPUManager       | ities>`__      |                 |
-|           |                  | enabled by default in Kubernetes v1.10 and        | `infra.com.cfg |                 |
-|           |                  | later). ``--feature-gates="...,                   | .002 <./chapte |                 |
-|           |                  | TopologyManager=true,CPUManager=true"             | r02.md#cloud-i |                 |
-|           |                  | --topology-manager-policy=single-numa-node        | nfrastructure- |                 |
-|           |                  | --cpu-manager-policy=static``                     | software-profi |                 |
-|           |                  |                                                   | le-requirement |                 |
-|           |                  |                                                   | s>`__          |                 |
-|           |                  |                                                   | `infra.hw.cpu. |                 |
-|           |                  |                                                   | cfg.003 <./cha |                 |
-|           |                  |                                                   | pter02.md#clou |                 |
-|           |                  |                                                   | d-infrastructu |                 |
-|           |                  |                                                   | re-hardware-pr |                 |
-|           |                  |                                                   | ofile-requirem |                 |
-|           |                  |                                                   | ents>`__       |                 |
+|ra2.k8s.006| NUMA Support     | When hosting workloads matching the High          | `e.cap.007`,   |                 |
+|           |                  | Performance profile, the ``TopologyManager`` and  | `infra.com.cfg |                 |
+|           |                  | ``CPUManager`` feature gates **must** be enabled  | .002`,         |                 |
+|           |                  | and configured on the kubelet (note,              | `infra.hw.cpu. |                 |
+|           |                  | TopologyManager is enabled by default in          | cfg.003`       |                 |
+|           |                  | Kubernetes v1.18 and later, with CPUManager       |                |                 |
+|           |                  | enabled by default in Kubernetes v1.10 and        |                |                 |
+|           |                  | later). ``--feature-gates="...,                   |                |                 |
+|           |                  | TopologyManager=true,CPUManager=true"             |                |                 |
+|           |                  | --topology-manager-policy=single-numa-node        |                |                 |
+|           |                  | --cpu-manager-policy=static``                     |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.k8s.007| DevicePlugins    | When hosting workloads matching the High          | Various, e.g.  | `4.3.1 <../../. |
-|           | Feature Gate     | Performance profile, the DevicePlugins feature    | `e.cap.013 <ch | ./ref_impl/cntt |
-|           |                  | gate **must** be enabled (note, this is enabled   | apter02.md#clo | -ri2/chapters/c |
-|           |                  | by default in Kubernetes v1.10 or later).         | ud-infrastruct | hapter04.md#ins |
-|           |                  | ``--feature-gates="...,DevicePlugins=true,..."``  | ure-software-p | tallation-on-ba |
-|           |                  |                                                   | rofile-capabil | re-metal-infrat |
-|           |                  |                                                   | ities>`__      | ructure>`__     |
+|ra2.k8s.007| DevicePlugins    | When hosting workloads matching the High          | Various, e.g.  | `RI2 4.3.1`     |
+|           | Feature Gate     | Performance profile, the DevicePlugins feature    | `e.cap.013`    |                 |
+|           |                  | gate **must** be enabled (note, this is enabled   |                |                 |
+|           |                  | by default in Kubernetes v1.10 or later).         |                |                 |
+|           |                  | ``--feature-gates="...,DevicePlugins=true,..."``  |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.k8s.008| System Resource  | To avoid resource starvation issues on nodes, the | `i.cap.014 <ch |                 |
-|           | Reservations     | implementation of the architecture **must**       | apter02.md#clo |                 |
-|           |                  | reserve compute resources for system daemons and  | ud-infrastruct |                 |
-|           |                  | Kubernetes system daemons such as kubelet,        | ure-software-p |                 |
-|           |                  | container runtime, etc. Use the following kubelet | rofile-capabil |                 |
-|           |                  | flags: ``--reserved-cpus=[a-z]``, using two of    | ities>`__      |                 |
+|ra2.k8s.008| System Resource  | To avoid resource starvation issues on nodes, the | `i.cap.014`    |                 |
+|           | Reservations     | implementation of the architecture **must**       |                |                 |
+|           |                  | reserve compute resources for system daemons and  |                |                 |
+|           |                  | Kubernetes system daemons such as kubelet,        |                |                 |
+|           |                  | container runtime, etc. Use the following kubelet |                |                 |
+|           |                  | flags: ``--reserved-cpus=[a-z]``, using two of    |                |                 |
 |           |                  | ``a-z`` to reserve 2 SMT threads.                 |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.009| CPU Pinning      | When hosting workloads matching the High          | `infra.com.cfg |                 |
-|           |                  | Performance profile, in order to support CPU      | .003 <./chapte |                 |
-|           |                  | Pinning, the kubelet **must** be started with the | r02.md#cloud-i |                 |
-|           |                  | ``--cpu-manager-policy=static`` option. (Note,    | nfrastructure- |                 |
-|           |                  | only containers in ``Guaranteed`` pods - where    | software-profi |                 |
-|           |                  | CPU resource ``requests`` and ``limits`` are      | le-requirement |                 |
-|           |                  | identical - and configured with positive-integer  | s>`__          |                 |
+|           |                  | Performance profile, in order to support CPU      | .003`          |                 |
+|           |                  | Pinning, the kubelet **must** be started with the |                |                 |
+|           |                  | ``--cpu-manager-policy=static`` option. (Note,    |                |                 |
+|           |                  | only containers in ``Guaranteed`` pods - where    |                |                 |
+|           |                  | CPU resource ``requests`` and ``limits`` are      |                |                 |
+|           |                  | identical - and configured with positive-integer  |                |                 |
 |           |                  | CPU ``requests`` will take advantage of this. All |                |                 |
 |           |                  | other Pods will run on CPUs in the remaining      |                |                 |
 |           |                  | shared pool.)                                     |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.010| IPv6DualStack    | To support IPv6 and IPv4, the ``IPv6DualStack``   | `req.inf.ntw.  |                 |
-|           |                  | feature gate **must** be enabled on various       | 04 <./chapter0 |                 |
-|           |                  | components (requires Kubernetes v1.16 or later).  | 2.md#kubernete |                 |
-|           |                  | kube-apiserver:                                   | s-architecture |                 |
-|           |                  | ``--feature-gates="IPv6DualStack=true"``.         | -requirement   |                 |
-|           |                  | kube-controller-manager:                          | s>`__          |                 |
+|           |                  | feature gate **must** be enabled on various       | 04`            |                 |
+|           |                  | components (requires Kubernetes v1.16 or later).  |                |                 |
+|           |                  | kube-apiserver:                                   |                |                 |
+|           |                  | ``--feature-gates="IPv6DualStack=true"``.         |                |                 |
+|           |                  | kube-controller-manager:                          |                |                 |
 |           |                  | ``--feature-gates="IPv6DualStack=true"            |                |                 |
 |           |                  | --cluster-cidr=<IPv4 CIDR>,<IPv6 CIDR>            |                |                 |
 |           |                  | --service-cluster-ip-range=<IPv4 CIDR>,           |                |                 |
@@ -398,11 +389,11 @@ the following specifications:
 |           | (ServiceTypes)   | vices-networking/ingress/>`__.                    |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.017| Publishing       | Kubernetes **should** support NodePort            | `req.inf.ntw.  |                 |
-|           | Services         | `Publishing Service (ServiceTypes) <https://kuber | 17 <chapter02. |                 |
-|           | (ServiceTypes)   | netes.io/docs/concepts/services-networking/servic | md#kubernetes- |                 |
-|           |                  | e/#publishing-services-service-types>`__.         | architecture-r |                 |
-|           |                  |                                                   | equirement     |                 |
-|           |                  |                                                   | s>`__          |                 |
+|           | Services         | `Publishing Service (ServiceTypes) <https://kuber | 17`            |                 |
+|           | (ServiceTypes)   | netes.io/docs/concepts/services-networking/servic |                |                 |
+|           |                  | e/#publishing-services-service-types>`__.         |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.018| Publishing       | Kubernetes **should** support ExternalName        |                |                 |
 |           | Services         | `Publishing Service (ServiceTypes) <https://kuber |                |                 |
@@ -410,11 +401,11 @@ the following specifications:
 |           |                  | e/#publishing-services-service-types>`__.         |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.019| Kubernetes APIs  | Kubernetes Beta APIs **must** be supported only   | `req.int.api.  |                 |
-|           |                  | when a stable GA of the same version doesn't      | 04 <./chapter0 |                 |
-|           |                  | exist.                                            | 2.md#kubernete |                 |
-|           |                  |                                                   | s-architecture |                 |
-|           |                  |                                                   | -requirement   |                 |
-|           |                  |                                                   | s>`__          |                 |
+|           |                  | when a stable GA of the same version doesn't      | 04`            |                 |
+|           |                  | exist.                                            |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
 **Table 4-4:** Kubernetes Specifications
@@ -427,21 +418,21 @@ Container runtimes
 |           |                  |                                                   | Trace          | Implementation  |
 |           |                  |                                                   |                | Trace           |
 +===========+==================+===================================================+================+=================+
-|ra2.crt.001| Conformance with | The container runtime **must** be implemented as  | `req.gen.ost.  | `4.3.1 <../../. |
-|           | OCI 1.0 runtime  | per the `OCI 1.0 <https://github.com/opencontaine | 01 <chapter02. | ./ref_impl/cntt |
-|           | spec             | rs/runtime-spec/blob/master/spec.md>`__ (Open     | md#kubernetes- | -ri2/chapters/c |
-|           |                  | Container Initiative 1.0) specification.          | architecture-r | hapter04.md#ins |
-|           |                  |                                                   | equirement     | tallation-on-ba |
-|           |                  |                                                   | s>`__          | re-metal-infrat |
-|           |                  |                                                   |                | ructure>`__     |
+|ra2.crt.001| Conformance with | The container runtime **must** be implemented as  | `req.gen.ost.  | `RI2 4.3.1`     |
+|           | OCI 1.0 runtime  | per the `OCI 1.0 <https://github.com/opencontaine | 01`            |                 |
+|           | spec             | rs/runtime-spec/blob/master/spec.md>`__ (Open     |                |                 |
+|           |                  | Container Initiative 1.0) specification.          |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.crt.002| Kubernetes       | The Kubernetes container runtime **must** be      | `req.gen.ost.  | `4.3.1 <../../. |
-|           | Container        | implemented as per the `Kubernetes Container      | 01 <chapter02. | ./ref_impl/cntt |
-|           | Runtime          | Runtime Interface (CRI) <https://kubernetes.io/bl | md#kubernetes- | -ri2/chapters/c |
-|           | Interface (CRI)  | og/2016/12/container-runtime-interface-cri-in-kub | architecture-r | hapter04.md#ins |
-|           |                  | ernetes/>`__                                      | equirement     | tallation-on-ba |
-|           |                  |                                                   | s>`__          | re-metal-infrat |
-|           |                  |                                                   |                | ructure>`__     |
+|ra2.crt.002| Kubernetes       | The Kubernetes container runtime **must** be      | `req.gen.ost.  | `RI2 4.3.1`     |
+|           | Container        | implemented as per the `Kubernetes Container      | 01`            |                 |
+|           | Runtime          | Runtime Interface (CRI) <https://kubernetes.io/bl |                |                 |
+|           | Interface (CRI)  | og/2016/12/container-runtime-interface-cri-in-kub |                |                 |
+|           |                  | ernetes/>`__                                      |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
 **Table 4-5:** Container Runtime Specifications
@@ -457,152 +448,137 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   | Trace          | Implementation  |
 |           |                  |                                                   |                | Trace           |
 +===========+==================+===================================================+================+=================+
-|ra2.ntw.001| Centralised      | The networking solution deployed within the       | `req.inf.ntw.  | `4.3.1 <../../. |
-|           | network          | implementation **must** be administered through   | 03 <chapter02. | ./ref_impl/cntt |
-|           | administration   | the Kubernetes API using native Kubernetes API    | md#kubernetes- | -ri2/chapters/c |
-|           |                  | resources and objects, or Custom Resources.       | architecture-r | hapter04.md#ins |
-|           |                  |                                                   | equirement     | tallation-on-ba |
-|           |                  |                                                   | s>`__          | re-metal-infrat |
-|           |                  |                                                   |                | ructure>`__     |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ntw.002| Default Pod      | The networking solution deployed within the       | `req.gen.ost.  | `4.3.1 <../../. |
-|           | Network - CNI    | implementation **must** use a CNI-conformant      | 01 <chapter02. | ./ref_impl/cntt |
-|           |                  | Network Plugin for the Default Pod Network, as    | md#kubernetes- | -ri2/chapters/c |
-|           |                  | the alternative (kubenet) does not support        | architecture-r | hapter04.md#ins |
-|           |                  | cross-node networking or Network Policies.        | equirement     | tallation-on-ba |
-|           |                  |                                                   | s>`__,         | re-metal-infrat |
-|           |                  |                                                   | `req.inf.ntw.  | ructure>`__     |
-|           |                  |                                                   | 08 <chapter02. |                 |
-|           |                  |                                                   | md#kubernetes- |                 |
-|           |                  |                                                   | architecture-r |                 |
-|           |                  |                                                   | equirement     |                 |
-|           |                  |                                                   | s>`__          |                 |
-|           |                  |                                                   |                |                 |
+|ra2.ntw.001| Centralised      | The networking solution deployed within the       | `req.inf.ntw.  | `RI2 4.3.1`     |
+|           | network          | implementation **must** be administered through   | 03`            |                 |
+|           | administration   | the Kubernetes API using native Kubernetes API    |                |                 |
+|           |                  | resources and objects, or Custom Resources.       |                |                 |
 |           |                  |                                                   |                |                 |
 |           |                  |                                                   |                |                 |
 |           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ntw.003| Multiple         | The networking solution deployed within the       | `e.cap.004 <ch | `4.3.1 <../../. |
-|           | connection       | implementation **must** support the capability to | apter02.md#clo | ./ref_impl/cntt |
-|           | points           | connect at least FIVE connection points to each   | ud-infrastruct | -ri2/chapters/c |
-|           |                  | Pod, which are additional to the default          | ure-software-p | hapter04.md#ins |
-|           |                  | connection point managed by the default Pod       | rofile-capabil | tallation-on-ba |
-|           |                  | network CNI plugin.                               | ities>`__      | re-metal-infrat |
-|           |                  |                                                   |                | ructure>`__     |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ntw.004| Multiple         | The networking solution deployed within the       | `req.inf.ntw.  | `4.3.1 <../../. |
-|           | connection       | implementation **must** ensure that all           | 03 <chapter02. | ./ref_impl/cntt |
-|           | points           | additional non-default connection points are      | md#kubernetes- | -ri2/chapters/c |
-|           | presentation     | requested by Pods using standard Kubernetes       | architecture-r | hapter04.md#ins |
-|           |                  | resource scheduling mechanisms such as            | equirement     | tallation-on-ba |
-|           |                  | annotations or container resource requests and    | s>`__          | re-metal-infrat |
-|           |                  | limits.                                           |                | ructure>`__     |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ntw.005| Multiplexer /    | The networking solution deployed within the       | `req.inf.ntw.  | `4.3.1 <../../. |
-|           | meta-plugin      | implementation **may** use a                      | 06 <chapter02. | ./ref_impl/cntt |
-|           |                  | multiplexer/meta-plugin.                          | md#kubernetes- | -ri2/chapters/c |
-|           |                  |                                                   | architecture-r | hapter04.md#ins |
-|           |                  |                                                   | equirement     | tallation-on-ba |
-|           |                  |                                                   | s>`__,         | re-metal-infrat |
-|           |                  |                                                   | `req.inf.ntw.  | ructure>`__     |
-|           |                  |                                                   | 07 <chapter02. |                 |
-|           |                  |                                                   | md#kubernetes- |                 |
-|           |                  |                                                   | architecture-r |                 |
-|           |                  |                                                   | equirement     |                 |
-|           |                  |                                                   | s>`__          |                 |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ntw.006| Multiplexer /    | If used, the selected multiplexer/meta-plugin     | `req.gen.ost.  | `4.3.1 <../../. |
-|           | meta-plugin CNI  | **must** integrate with the Kubernetes control    | 01 <chapter02. | ./ref_impl/cntt |
-|           | Conformance      | plane via CNI.                                    | md#kubernetes- | -ri2/chapters/c |
-|           |                  |                                                   | architecture-r | hapter04.md#ins |
-|           |                  |                                                   | equirement     | tallation-on-ba |
-|           |                  |                                                   | s>`__          | re-metal-infrat |
-|           |                  |                                                   |                | ructure>`__     |
-+-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ntw.007| Multiplexer /    | If used, the selected multiplexer/meta-plugin     | `req.gen.ost.  | `4.3.1 <../../. |
-|           | meta-plugin CNI  | **must** support the use of multiple              | 01 <chapter02. | ./ref_impl/cntt |
-|           | Plugins          | CNI-conformant Network Plugins.                   | md#kubernetes- | -ri2/chapters/c |
-|           |                  |                                                   | architecture-r | hapter04.md#ins |
-|           |                  |                                                   | equirement     | tallation-on-ba |
-|           |                  |                                                   | s>`__,         | re-metal-infrat |
-|           |                  |                                                   | `req.inf.ntw.  | ructure>`__     |
-|           |                  |                                                   | 06 <chapter02. |                 |
-|           |                  |                                                   | md#kubernetes- |                 |
-|           |                  |                                                   | architecture-r |                 |
-|           |                  |                                                   | equirement     |                 |
-|           |                  |                                                   | s>`__,         |                 |
+|ra2.ntw.002| Default Pod      | The networking solution deployed within the       | `req.gen.ost.  | `RI2 4.3.1`     |
+|           | Network - CNI    | implementation **must** use a CNI-conformant      | 01`            |                 |
+|           |                  | Network Plugin for the Default Pod Network, as    |                |                 |
+|           |                  | the alternative (kubenet) does not support        |                |                 |
+|           |                  | cross-node networking or Network Policies.        |                |                 |
+|           |                  |                                                   |                |                 |
 |           |                  |                                                   | `req.inf.ntw.  |                 |
-|           |                  |                                                   | 06 <chapter02. |                 |
-|           |                  |                                                   | md#kubernetes- |                 |
-|           |                  |                                                   | architecture-r |                 |
-|           |                  |                                                   | equirement     |                 |
-|           |                  |                                                   | s>`__          |                 |
+|           |                  |                                                   | 08`            |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ntw.008| SR-IOV Device    | When hosting workloads that match the High        | `e.cap.013 <ch | `4.3.1 <../../. |
-|           | Plugin for High  | Performance profile and require SR-IOV            | apter02.md#clo | ./ref_impl/cntt |
-|           | Performance      | acceleration, a Device Plugin for SR-IOV **must** | ud-infrastruct | -ri2/chapters/c |
-|           |                  | be used to configure the SR-IOV devices and       | ure-software-p | hapter04.md#ins |
-|           |                  | advertise them to the ``kubelet``.                | rofile-capabil | tallation-on-ba |
-|           |                  |                                                   | ities>`__      | re-metal-infrat |
-|           |                  |                                                   |                | ructure>`__     |
+|ra2.ntw.003| Multiple         | The networking solution deployed within the       | `e.cap.004`    | `RI2 4.3.1`     |
+|           | connection       | implementation **must** support the capability to |                |                 |
+|           | points           | connect at least FIVE connection points to each   |                |                 |
+|           |                  | Pod, which are additional to the default          |                |                 |
+|           |                  | connection point managed by the default Pod       |                |                 |
+|           |                  | network CNI plugin.                               |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ntw.009| Multiple         | When a multiplexer/meta-plugin is used, the       | `req.gen.ost.  | `4.3.1 <../../. |
-|           | connection       | additional non-default connection points **must** | 01 <chapter02. | ./ref_impl/cntt |
-|           | points with      | be managed by a CNI-conformant Network Plugin.    | md#kubernetes- | -ri2/chapters/c |
-|           | multiplexer /    |                                                   | architecture-r | hapter04.md#ins |
-|           | meta-plugin      |                                                   | equirement     | tallation-on-ba |
-|           |                  |                                                   | s>`__          | re-metal-infrat |
-|           |                  |                                                   |                | ructure>`__     |
+|ra2.ntw.004| Multiple         | The networking solution deployed within the       | `req.inf.ntw.  | `RI2 4.3.1`     |
+|           | connection       | implementation **must** ensure that all           | 03`            |                 |
+|           | points           | additional non-default connection points are      |                |                 |
+|           | presentation     | requested by Pods using standard Kubernetes       |                |                 |
+|           |                  | resource scheduling mechanisms such as            |                |                 |
+|           |                  | annotations or container resource requests and    |                |                 |
+|           |                  | limits.                                           |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ntw.010| User plane       | When hosting workloads matching the High          | `infra.net.acc | `4.3.1 <../../. |
-|           | networking       | Performance profile, CNI network plugins that     | .cfg.001 <chap | ./ref_impl/cntt |
-|           |                  | support the use of DPDK, VPP, and/or SR-IOV       | ter02.md#cloud | -ri2/chapters/c |
-|           |                  | **must** be deployed as part of the networking    | -infrastructur | hapter04.md#ins |
-|           |                  | solution.                                         | e-software-pro | tallation-on-ba |
-|           |                  |                                                   | file-requireme | re-metal-infrat |
-|           |                  |                                                   | nts>`__        | ructure>`__     |
+|ra2.ntw.005| Multiplexer /    | The networking solution deployed within the       | `req.inf.ntw.  | `RI2 4.3.1`     |
+|           | meta-plugin      | implementation **may** use a                      | 06`,           |                 |
+|           |                  | multiplexer/meta-plugin.                          | `req.inf.ntw.  |                 |
+|           |                  |                                                   | 07`            |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
++-----------+------------------+---------------------------------------------------+----------------+-----------------+
+|ra2.ntw.006| Multiplexer /    | If used, the selected multiplexer/meta-plugin     | `req.gen.ost.  | `RI2 4.3.1`     |
+|           | meta-plugin CNI  | **must** integrate with the Kubernetes control    | 01`             |                 |
+|           | Conformance      | plane via CNI.                                    |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
++-----------+------------------+---------------------------------------------------+----------------+-----------------+
+|ra2.ntw.007| Multiplexer /    | If used, the selected multiplexer/meta-plugin     | `req.gen.ost.  | `RI2 4.3.1`     |
+|           | meta-plugin CNI  | **must** support the use of multiple              | 01`,            |                 |
+|           | Plugins          | CNI-conformant Network Plugins.                   | `req.inf.ntw.  |                 |
+|           |                  |                                                   | 06`            |                 |
++-----------+------------------+---------------------------------------------------+----------------+-----------------+
+|ra2.ntw.008| SR-IOV Device    | When hosting workloads that match the High        | `e.cap.013`    | `RI2 4.3.1`     |
+|           | Plugin for High  | Performance profile and require SR-IOV            |                |                 |
+|           | Performance      | acceleration, a Device Plugin for SR-IOV **must** |                |                 |
+|           |                  | be used to configure the SR-IOV devices and       |                |                 |
+|           |                  | advertise them to the ``kubelet``.                |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
++-----------+------------------+---------------------------------------------------+----------------+-----------------+
+|ra2.ntw.009| Multiple         | When a multiplexer/meta-plugin is used, the       | `req.gen.ost.  | `RI2 4.3.1`     |
+|           | connection       | additional non-default connection points **must** | 01`            |                 |
+|           | points with      | be managed by a CNI-conformant Network Plugin.    |                |                 |
+|           | multiplexer /    |                                                   |                |                 |
+|           | meta-plugin      |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
++-----------+------------------+---------------------------------------------------+----------------+-----------------+
+|ra2.ntw.010| User plane       | When hosting workloads matching the High          | `infra.net.acc | `RI2 4.3.1`     |
+|           | networking       | Performance profile, CNI network plugins that     | .cfg.001`      |                 |
+|           |                  | support the use of DPDK, VPP, and/or SR-IOV       |                |                 |
+|           |                  | **must** be deployed as part of the networking    |                |                 |
+|           |                  | solution.                                         |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.ntw.011| NATless          | When hosting workloads that require source and    | `req.inf.ntw.  |                 |
-|           | connectivity     | destination IP addresses to be preserved in the   | 14 <chapter02. |                 |
-|           |                  | traffic headers, a NATless CNI plugin that        | md#kubernetes- |                 |
-|           |                  | exposes the pod IP directly to the external       | architecture-r |                 |
-|           |                  | networks (e.g. Calico, MACVLAN or IPVLAN CNI      | equirement     |                 |
-|           |                  | plugins) **must** be used.                        | s>`__          |                 |
+|           | connectivity     | destination IP addresses to be preserved in the   | 14`            |                 |
+|           |                  | traffic headers, a NATless CNI plugin that        |                |                 |
+|           |                  | exposes the pod IP directly to the external       |                |                 |
+|           |                  | networks (e.g. Calico, MACVLAN or IPVLAN CNI      |                |                 |
+|           |                  | plugins) **must** be used.                        |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
-|ra2.ntw.012| Device Plugins   | When hosting workloads matching the High          | `e.cap.016 <ch | `4.3.1 <../../. |
-|           |                  | Performance profile that require the use of FPGA, | apter02.md#clo | ./ref_impl/cntt |
-|           |                  | SR-IOV or other Acceleration Hardware, a Device   | ud-infrastruct | -ri2/chapters/c |
-|           |                  | Plugin for that FPGA or Acceleration Hardware     | ure-software-p | hapter04.md#ins |
-|           |                  | **must** be used.                                 | rofile-capabil | tallation-on-ba |
-|           |                  |                                                   | ities>`__,     | re-metal-infrat |
-|           |                  |                                                   | `e.cap.013 <ch | ructure>`__     |
-|           |                  |                                                   | apter02.md#clo |                 |
-|           |                  |                                                   | ud-infrastruct |                 |
-|           |                  |                                                   | ure-software-p |                 |
-|           |                  |                                                   | rofile-capabil |                 |
-|           |                  |                                                   | ities>`__      |                 |
+|ra2.ntw.012| Device Plugins   | When hosting workloads matching the High          | `e.cap.016`    | `RI2 4.3.1`     |
+|           |                  | Performance profile that require the use of FPGA, |                |                 |
+|           |                  | SR-IOV or other Acceleration Hardware, a Device   |                |                 |
+|           |                  | Plugin for that FPGA or Acceleration Hardware     |                |                 |
+|           |                  | **must** be used.                                 |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   | `e.cap.013`    |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.ntw.013| Dual stack CNI   | The networking solution deployed within the       | `req.inf.ntw.  |                 |
-|           |                  | implementation **must** use a CNI-conformant      | 04 <chapter02. |                 |
-|           |                  | Network Plugin that is able to support dual-stack | md#kubernetes- |                 |
-|           |                  | IPv4/IPv6 networking.                             | architecture-r |                 |
-|           |                  |                                                   | equirement     |                 |
-|           |                  |                                                   | s>`__          |                 |
+|           |                  | implementation **must** use a CNI-conformant      | 04`            |                 |
+|           |                  | Network Plugin that is able to support dual-stack |                |                 |
+|           |                  | IPv4/IPv6 networking.                             |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.ntw.014| Security Groups  | The networking solution deployed within the       | `infra.net.cfg |                 |
-|           |                  | implementation **must** support network policies. | .004 <chapter0 |                 |
-|           |                  |                                                   | 2.md#cloud-inf |                 |
-|           |                  |                                                   | rastructure-so |                 |
-|           |                  |                                                   | ftware-profile |                 |
-|           |                  |                                                   | -requirement   |                 |
-|           |                  |                                                   | s>`__          |                 |
+|           |                  | implementation **must** support network policies. | .004`          |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.ntw.015| IPAM plugin for  | When a multiplexer/meta-plugin is used, a         | `req.inf.ntw.  |                 |
-|           | multiplexer      | CNI-conformant IPAM Network Plugin **must** be    | 10 <chapter02. |                 |
-|           |                  | installed to allocate IP addresses for secondary  | md#kubernetes- |                 |
-|           |                  | network interfaces across all nodes of the        | architecture-r |                 |
-|           |                  | cluster.                                          | equirement     |                 |
-|           |                  |                                                   | s>`__          |                 |
+|           | multiplexer      | CNI-conformant IPAM Network Plugin **must** be    | 10`            |                 |
+|           |                  | installed to allocate IP addresses for secondary  |                |                 |
+|           |                  | network interfaces across all nodes of the        |                |                 |
+|           |                  | cluster.                                          |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 
 **Table 4-6:** Networking Solution Specifications
@@ -637,11 +613,11 @@ Architecture they must be implemented as per the following specifications:
 |           |                  | mounting of storage into a Pod.                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.stg.004| Persistent       | An implementation may support Kubernetes          | `req.inf.stg.  |                 |
-|           | Volumes          | Persistent Volumes (PV) to provide persistent     | 01 <chapter02. |                 |
-|           |                  | storage for Pods. Persistent Volumes exist        | md#kubernetes- |                 |
-|           |                  | independent of the lifecycle of containers        | architecture-r |                 |
-|           |                  | and/or pods.                                      | equirement     |                 |
-|           |                  |                                                   | s>`__          |                 |
+|           | Volumes          | Persistent Volumes (PV) to provide persistent     | 01`            |                 |
+|           |                  | storage for Pods. Persistent Volumes exist        |                |                 |
+|           |                  | independent of the lifecycle of containers        |                |                 |
+|           |                  | and/or pods.                                      |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.stg.005| Storage Volume   | An implementation must support the following      |                |                 |
 |           | Types            | Volume types: ``emptyDir``, ``ConfigMap``,        |                |                 |
@@ -710,11 +686,11 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   |                | Trace           |
 +===========+==================+===================================================+================+=================+
 |ra2.pkg.001| API-based        | A package manager must use the Kubernetes APIs to | `req.int.api.  |                 |
-|           | package          | manage application artifacts. Cluster-side        | 02 <./chapter0 |                 |
-|           | management       | components such as Tiller are not supported.      | 2.md#kubernete |                 |
-|           |                  |                                                   | s-archit       |                 |
-|           |                  |                                                   | ecture-require |                 |
-|           |                  |                                                   | ments>`__      |                 |
+|           | package          | manage application artifacts. Cluster-side        | 02`            |                 |
+|           | management       | components such as Tiller are not supported.      |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
+|           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.pkg.002| Helm version 3   | All workloads must be packaged using Helm         |                |                 |
 |           |                  | (version 3) charts.                               |                |                 |
@@ -781,17 +757,17 @@ Architecture they must be implemented as per the following specifications:
 |           | r>`__ Parameter  |                                                   |                  |                |
 |           | Group (OCI Spec) |                                                   |                  |                |
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
-|ra2.app.006| Consumption of   | Any additional non-default connection points must | `req.int.api.01  | N/A            |
-|           | additional,      | be requested through the use of workload          | <chapter02.md#ku |                |
-|           | non-default      | annotations or resource requests and limits       | bernetes-archite |                |
-|           | connection       | within the container spec passed to the           | cture-requiremen |                |
-|           | points           | Kubernetes API Server.                            | ts>`__           |                |
+|ra2.app.006| Consumption of   | Any additional non-default connection points must | `req.int.api.01` | N/A            |
+|           | additional,      | be requested through the use of workload          |                  |                |
+|           | non-default      | annotations or resource requests and limits       |                  |                |
+|           | connection       | within the container spec passed to the           |                  |                |
+|           | points           | Kubernetes API Server.                            |                  |                |
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
-|ra2.app.007| Host Volumes     | Workloads should not use ``hostPath`` volumes, as | `req.kcm.gen.02  | N/A            |
-|           |                  | `Pods with identical configuration <https://kuber | <chapter02.md#ku |                |
-|           |                  | netes.io/docs/concepts/storage/volumes/#hostpat   | bernetes-archite |                |
-|           |                  | h>`__ (such as those created from a PodTemplate)  | cture-requiremen |                |
-|           |                  | may behave differently on different nodes due to  | ts>`__.          |                |
+|ra2.app.007| Host Volumes     | Workloads should not use ``hostPath`` volumes, as | `req.kcm.gen.02` | N/A            |
+|           |                  | `Pods with identical configuration <https://kuber |                  |                |
+|           |                  | netes.io/docs/concepts/storage/volumes/#hostpat   |                  |                |
+|           |                  | h>`__ (such as those created from a PodTemplate)  |                  |                |
+|           |                  | may behave differently on different nodes due to  |                  |                |
 |           |                  | different files on the nodes.                     |                  |                |
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
 |ra2.app.008| Infrastructure   | Workloads must not rely on the availability of    | TBD              | N/A            |
