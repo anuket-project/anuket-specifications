@@ -304,17 +304,17 @@ Cloud Infrastructure Software Profile Requirements for Storage
      - Storage with encryption
      - Must support
      - Must support
-     - :ref:`ref_arch/openstack/chapters/chapter03:storage
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage`
    * - infra.stg.acc.cfg.001
      - Storage IOPS oriented
      - Not required
      - Must support
-     - :ref:`ref_arch/openstack/chapters/chapter03:storage
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage`
    * - infra.stg.acc.cfg.002
      - Storage capacity oriented
      - Not required
      - Not required
-     - :ref:`ref_arch/openstack/chapters/chapter03:storage
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage`
 
 Cloud Infrastructure Software Profile Extensions Requirements for Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
