@@ -556,7 +556,7 @@ System Hardening Requirements
    * - sec.gen.003
      - Hardening
      - All servers part of Cloud Infrastructure **must** support a root of
-       trust and secure boot.
+       trust and secure boot
      - :ref:`ref_arch/openstack/chapters/chapter06:server boot hardening`
    * - sec.gen.004
      - Hardening
@@ -969,7 +969,7 @@ Security LCM Requirements
      - LCM
      - The Platform **must** log all changes to geolocation along with the
        mechanisms and sources of location information (i.e. GPS, IP block,
-       and timing).
+       and timing)
      - Not detailed
    * - sec.lcm.011
      - LCM
