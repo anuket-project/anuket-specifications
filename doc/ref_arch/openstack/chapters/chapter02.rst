@@ -1635,7 +1635,7 @@ General Recommendations
      - Cloud nativeness
      - The Architecture **should** consist of stateless service components.
        However, where state is required it must be kept external to the
-       component.
+       component
      - OpenStack consists of both stateless and stateful services where the
        stateful services utilise a database. For latter see `Configuring the
        stateful services
@@ -1643,7 +1643,7 @@ General Recommendations
    * - gen.cnt.02
      - Cloud nativeness
      - The Architecture **should** consist of service components implemented
-       as microservices that are individually dynamically scalable.
+       as microservices that are individually dynamically scalable
      -
    * - gen.scl.01
      - Scalability
@@ -1651,11 +1651,11 @@ General Recommendations
      - This requirement is currently not addressed but will likely be
        supported through
        `Senlin <https://docs.openstack.org/senlin/wallaby/>`__, cluster
-       management service.
+       management service
    * - gen.rsl.02
      - Resiliency
      - The Architecture **should** support resilient OpenStack service
-       components that are not subject to gen.rsl.01.
+       components that are not subject to gen.rsl.01
      -
 
 Infrastructure Recommendations
@@ -1673,79 +1673,79 @@ Infrastructure Recommendations
      - Compute
      - The Architecture **should** include industry standard hardware
        management systems at both HW device level (embedded) and HW platform
-       level (external to device).
+       level (external to device)
      -
    * - inf.com.03
      - Compute
      - The Architecture **should** support Symmetric Multiprocessing with
-       shared memory access as well as Simultaneous Multithreading.
+       shared memory access as well as Simultaneous Multithreading
      -
    * - inf.stg.08
      - Storage
      - The Architecture **should** allow use of externally provided large
-       archival storage for its Backup / Restore / Archival needs.
+       archival storage for its Backup / Restore / Archival needs
      -
    * - inf.stg.09
      - Storage
      - The Architecture **should** make available all non-host OS / Hypervisor
        / Host systems storage as network-based Block, File or Object Storage
-       for tenant/management consumption.
+       for tenant/management consumption
      -
    * - inf.stg.10
      - Storage
-     - The Architecture **should** provide local Block storage for Instances.
+     - The Architecture **should** provide local Block storage for Instances
      - :ref:`ref_arch/openstack/chapters/chapter03:virtual storage`
    * - inf.nw.04
      - Network
-     - The Architecture **should** support service function chaining.
+     - The Architecture **should** support service function chaining
      -
    * - inf.nw.06
      - Network
      - The Architecture **should** support Distributed Virtual Routing (DVR)
-       to allow compute nodes to route traffic efficiently.
+       to allow compute nodes to route traffic efficiently
      -
    * - inf.nw.08
      - Network
      - The Cloud Infrastructure Network Fabric **should** embrace the concepts
        of open networking and disaggregation using commodity networking
-       hardware and disaggregated Network Operating Systems.
+       hardware and disaggregated Network Operating Systems
      -
    * - inf.nw.09
      - Network
      - The Cloud Infrastructure Network Fabric **should** embrace open-based
-       standards and technologies.
+       standards and technologies
      -
    * - inf.nw.11
      - Network
      - The Cloud Infrastructure Network Fabric **should** be architected to
        provide a standardised, scalable, and repeatable deployment model
-       across all applicable Cloud Infrastructure sites.
+       across all applicable Cloud Infrastructure sites
      -
    * - inf.nw.17
      - Network
      - The Architecture **should** use dual stack IPv4 and IPv6 for Cloud
-       Infrastructure internal networks.
+       Infrastructure internal networks
      -
    * - inf.acc.01
      - Acceleration
      - The Architecture **should** support Application Specific Acceleration
-       (exposed to VNFs).
+       (exposed to VNFs)
      - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - inf.acc.02
      - Acceleration
      - The Architecture **should** support Cloud Infrastructure Acceleration
-       (such as SmartNICs).
+       (such as SmartNICs)
      - `OpenStack Future - Specs defined
        <https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html>`__
    * - inf.acc.03
      - Acceleration
      - The Architecture **may** rely on on SR-IOV PCI-Pass through to provide
-       acceleration to VNFs.
+       acceleration to VNFs
      -
    * - inf.img.01
      - Image
      - The Architecture **should** make the immutable images available via
-       location independent means.
+       location independent means
      - :ref:`ref_arch/openstack/chapters/chapter04:glance`
 
 VIM Recommendations
@@ -1762,23 +1762,23 @@ VIM Recommendations
    * - vim.02
      - General
      - The Architecture **should** support deployment of OpenStack components
-       in containers.
+       in containers
      - :ref:`ref_arch/openstack/chapters/chapter04:\
        containerised openstack services`
    * - vim.04
      - General
      - The Architecture **should** support Enhanced Platform Awareness (EPA)
-       only for discovery of infrastructure resource capabilities.
+       only for discovery of infrastructure resource capabilities
      -
    * - vim.06
      - General
      - The Architecture **should** allow orchestration solutions to be integrated
-       with VIM.
+       with VIM
      -
    * - vim.09
      - General
      - The Architecture **should** support horizontal scaling of OpenStack core
-       services.
+       services
      -
 
 Interfaces and APIs Recommendations
@@ -1795,12 +1795,12 @@ Interfaces and APIs Recommendations
    * - int.acc.01
      - Acceleration
      - The Architecture **should** provide an open and standard acceleration
-       interface to VNFs.
+       interface to VNFs
      -
    * - int.acc.02
      - Acceleration
      - The Architecture **should not** rely on SR-IOV PCI-Pass through for
-       acceleration interface exposed to VNFs.”
+       acceleration interface exposed to VNFs
      - duplicate of inf.acc.03 under "Infrastructure Recommendation"
 
 Tenant Recommendations
@@ -1836,30 +1836,30 @@ Operations and LCM Recommendations
      - Automated deployment
      - The Architecture **should** allow for cookie cutter automated
        deployment, configuration, provisioning and management of multiple
-       Cloud Infrastructure sites.
+       Cloud Infrastructure sites
      -
    * - lcm.adp.03
      - Automated deployment
      - The Architecture **should** support hitless upgrade of all software
        provided by the cloud provider that are not covered by lcm.adp.02.
        Whenever hitless upgrades are not feasible, attempt should be made
-       to minimise the duration and nature of impact.
+       to minimise the duration and nature of impact
      -
    * - lcm.adp.04
      - Automated deployment
      - The Architecture **should** support declarative specifications of
        hardware and software assets for automated deployment, configuration,
-       maintenance and management.
+       maintenance and management
      -
    * - lcm.adp.05
      - Automated deployment
      - The Architecture **should** support automated process for Deployment
-       and life-cycle management of VIM Instances.
+       and life-cycle management of VIM Instances
      -
    * - lcm.cid.02
      - CI/CD
      - The Architecture **should** support integrating with CI/CD Toolchain
-       for Cloud Infrastructure and VIM components Automation.
+       for Cloud Infrastructure and VIM components Automation
      -
 
 Assurance Recommendations
@@ -1877,7 +1877,7 @@ Assurance Recommendations
      - Monitoring
      - The Architecture **should** support Network Intelligence capabilities
        that allow richer diagnostic capabilities which take as input broader
-       set of data across the network and from VNF workloads.
+       set of data across the network and from VNF workloads
      -
 
 Security Recommendations
@@ -1899,13 +1899,13 @@ System Hardening Recommendations
    * - sec.gen.011
      - Hardening
      - The Cloud Infrastructure **should** support Read and Write only storage
-       partitions (write only permission to one or more authorised actors).
+       partitions (write only permission to one or more authorised actors)
      -
    * - sec.gen.014
      - Hardening
      - All servers part of Cloud Infrastructure **should** support measured
        boot and an attestation server that monitors the measurements of the
-       servers.
+       servers
      -
 
 Platform and Access Recommendations
@@ -1924,12 +1924,12 @@ Platform and Access Recommendations
    * - sec.sys.014
      - Access
      - The Platform **should** use Linux Security Modules such as SELinux to
-       control access to resources.
+       control access to resources
      -
    * - sec.sys.020
      - Access
      - The Cloud Infrastructure architecture **should** rely on Zero Trust
-       principles to build a secure by design environment.
+       principles to build a secure by design environment
      - Zero Trust Architecture (ZTA) described in NIST SP 800-207
 
 Confidentiality and Integrity Recommendations
@@ -1947,13 +1947,13 @@ Confidentiality and Integrity Recommendations
      - Notes
    * - sec.ci.002
      - Confidentiality/Integrity
-     - The Platform **should** support self-encrypting storage devices.
+     - The Platform **should** support self-encrypting storage devices
      -
    * - sec.ci.009
      - Confidentiality/Integrity
      - For sensitive data encryption, the key management service **should**
        leverage a Hardware Security Module to manage and protect cryptographic
-       keys.
+       keys
      -
 
 Workload Security Recommendations
@@ -1972,7 +1972,7 @@ Workload Security Recommendations
    * - sec.wl.007
      - Workload
      - The Operator **should** implement processes and tools to verify VNF
-       authenticity and integrity.
+       authenticity and integrity
      -
 
 Image Security Recommendations
@@ -1992,11 +1992,11 @@ This section is left blank for future use.
      - Notes
    * - sec.img.009
      - Image
-     - CIS Hardened Images **should** be used whenever possible.
+     - CIS Hardened Images **should** be used whenever possible
      -
    * - sec.img.010
      - Image
-     - Minimalist base images **should** be used whenever possible.
+     - Minimalist base images **should** be used whenever possible
      -
 
 Security LCM Recommendations
@@ -2091,15 +2091,15 @@ IaaC security Recommendations
      - Threat Modelling methodologies and tools **should** be used during the
        Secure Design and Architecture stage triggered by Software Feature
        Design trigger. Methodology to identify and understand threats
-       impacting a resource or set of resources.
+       impacting a resource or set of resources
      - It may be done manually or using tools like open source OWASP Threat
        Dragon
    * - sec.arch.002
      - IaaC
      - Security Control Baseline Assessment **should** be performed during the
        Secure Design and Architecture stage triggered by Software Feature
-       Design trigger.
-     - Typically done manually by internal or independent assessors.
+       Design trigger
+     - Typically done manually by internal or independent assessors
 
 **Secure Code Stage Recommendations**
 
@@ -2116,8 +2116,8 @@ IaaC security Recommendations
      - SCA – Software Composition Analysis **should** be applied during
        Secure Coding stage triggered by Pull, Clone or Comment trigger.
        Security testing that analyses application source code or compiled code
-       for software components with known vulnerabilities.
-     - Example: open source OWASP range of tools.
+       for software components with known vulnerabilities
+     - Example: open source OWASP range of tools
    * - sec.code.003
      - IaaC
      - Source Code Review **should** be performed continuously during Secure
@@ -2128,13 +2128,13 @@ IaaC security Recommendations
      - Integrated SAST via IDE Plugins should be used during Secure Coding
        stage triggered by Developer Code trigger. On the local machine:
        through the IDE or integrated test suites; triggered on completion of
-       coding by developer.
+       coding by developer
      -
    * - sec.code.005
      - IaaC
      - SAST of Source Code Repo **should** be performed during Secure Coding
        stage triggered by Developer Code trigger. Continuous delivery
-       pre -deployment: scanning prior to deployment.
+       pre -deployment: scanning prior to deployment
      -
 
 **Continuous Build, Integration and Testing Stage Recommendations**
@@ -2152,30 +2152,30 @@ IaaC security Recommendations
      - IaaC
      - SAST -Static Application Security Testing **should** be applied during
        the Continuous Build, Integration and Testing stage triggered by Build
-       and Integrate trigger.
+       and Integrate trigger
      - Example: open source OWASP range of tools.
    * - sec.bld.002
      - IaaC
      - SCA – Software Composition Analysis **should** be applied during the
        Continuous Build, Integration and Testing stage triggered by Build and
-       Integrate trigger.
-     - Example: open source OWASP range of tools.
+       Integrate trigger
+     - Example: open source OWASP range of tools
    * - sec.bld.004
      - IaaC
      - SDAST – Dynamic Application Security Testing **should** be applied
        during the Continuous Build, Integration and Testing stage triggered
        by Stage & Test trigger. Security testing that analyses a running
        application by exercising application functionality and detecting
-       vulnerabilities based on application behaviour and response.
-     - Example: OWASP ZAP.
+       vulnerabilities based on application behaviour and response
+     - Example: OWASP ZAP
    * - sec.bld.005
      - IaaC
      - Fuzzing **should** be applied during the Continuous Build, Integration
        and testing stage triggered by Stage & Test trigger. Fuzzing or fuzz
        testing is an automated software testing technique that involves
        providing invalid, unexpected, or random data as inputs to a computer
-       program.
-     - Example: GitLab Open Sources Protocol Fuzzer Community Edition.
+       program
+     - Example: GitLab Open Sources Protocol Fuzzer Community Edition
    * - sec.bld.006
      - IaaC
      - IAST – Interactive Application Security Testing **should** be applied
@@ -2183,8 +2183,8 @@ IaaC security Recommendations
        Stage & Test trigger. Software component deployed with an application
        that assesses application behaviour and detects presence of
        vulnerabilities on an application being exercised in realistic testing
-       scenarios.
-     - Example: Contrast Community Edition.
+       scenarios
+     - Example: Contrast Community Edition
 
 **Continuous Delivery and Deployment Stage Recommendations**
 
@@ -2200,9 +2200,9 @@ IaaC security Recommendations
    * - sec.del.003
      - IaaC
      - Artifact and Image Repository Scan **should** be continuously applied
-       during the Continuous Delivery and Deployment stage.
+       during the Continuous Delivery and Deployment stage
      - Example: GitLab uses the open source Clair engine for container
-       scanning.
+       scanning
 
 **Runtime Defence and Monitoring Recommendations**
 
@@ -2220,7 +2220,7 @@ IaaC security Recommendations
      - RASP – Runtime Application Self-Protection **should** be continuously
        applied during the Runtime Defence and Monitoring stage. Security
        technology deployed within the target application in production for
-       detecting, alerting, and blocking attacks.
+       detecting, alerting, and blocking attacks
      -
    * - sec.run.003
      - IaaC
@@ -2228,13 +2228,13 @@ IaaC security Recommendations
        during the Runtime Defence and Monitoring stage. Fuzzing or fuzz
        testing is an automated software testing technique that involves
        providing invalid, unexpected, or random data as inputs to a computer
-       program.
-     - Example: GitLab Open Sources Protocol Fuzzer Community Edition.
+       program
+     - Example: GitLab Open Sources Protocol Fuzzer Community Edition
    * - sec.run.004
      - IaaC
      - Penetration Testing **should** be continuously applied during the
-       Runtime Defence and Monitoring stage.
-     - Typically done manually.
+       Runtime Defence and Monitoring stage
+     - Typically done manually
 
 Compliance with Standards Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
