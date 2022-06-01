@@ -278,7 +278,7 @@ QoS            Quality of Service
 R/W            Read/Write
 RA             Reference Architecture
 RADOS          Reliable Autonomic Distributed Object Store
-RAID           Redundant Aray of Independent Disks
+RAID           Redundant Array of Independent Disks
 RAM            Random Access Memory
 RAN            Radio Access Network
 RAW            Raw disk format
