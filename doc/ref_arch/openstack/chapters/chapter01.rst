@@ -39,7 +39,8 @@ Use Cases
 
 Several NFV use cases are documented in OpenStack. For more examples and
 details refer to the 
-` OpenStack docs <https://docs.openstack.org/arch-design/use-cases.html>`__.
+`OpenStack docs <https://docs.openstack.org/arch-design/use-cases.html>`__.
+
 Examples include:
 
 -  **Overlay networks**: The overlay functionality design includes
