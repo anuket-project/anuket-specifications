@@ -153,3 +153,11 @@ General terminology definitions can be found in
 :doc:`common/glossary` and specific terms relating
 to this reference architecture are to be found in 
 :ref:`common/glossary:openstack related terminology`.
+
+Conventions
+-----------
+
+The key words "must", "must not", "required", "shall", "shall not", 
+"should", "should not", "recommended", "may", and "optional" 
+in this document are to be interpreted as described in 
+`RFC 2119 <https://www.ietf.org/rfc/rfc2119.txt>`_.
