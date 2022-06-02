@@ -259,15 +259,16 @@ vendor-specific activation and life cycle management, and securely maps these de
 
 Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
 
--  1: During setup, the cluster administrator (more in :ref:`ref_arch/kubernetes/chapters/chapter03:3.2.5.1 Operator Pattern `)
-   knows or discovers (as per :ref:`ref_arch/kubernetes/chapters/chapter03:3.2.1.5 Node Feature Discovery `) what kind of
-   devices are present on the different nodes, selects which devices to enable and deploys the associated device
-   plugins.
--  2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server
-   to monitor the devices.
--  3: A user submits a pod specification (workload manifest file) requesting a certain type of device.
--  4: The scheduler determines a suitable node based on device availability and the local kubelet assigns a specific
-   device to the pod's containers.
+- 1: During setup, the cluster administrator
+  (more in :ref:`ref_arch/kubernetes/chapters/chapter03:3.2.5.1 Operator Pattern`)
+  knows or discovers (as per :ref:`ref_arch/kubernetes/chapters/chapter03:3.2.1.5 Node Feature Discovery`) what kind of
+  devices are present on the different nodes, selects which devices to enable and deploys the associated device
+  plugins.
+- 2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server
+  to monitor the devices.
+- 3: A user submits a pod specification (workload manifest file) requesting a certain type of device.
+- 4: The scheduler determines a suitable node based on device availability and the local kubelet assigns a specific
+  device to the pod's containers.
 
 .. image:: ../figures/Ch3_Figure_Device_Plugin_operation.png
    :alt: "Figure 3-2: Device Plugin Operation"
@@ -287,10 +288,10 @@ plugin, and on pod deletion releases the VF from the pod.
 Hardware Acceleration
 ^^^^^^^^^^^^^^^^^^^^^
 
-Hardware Acceleration Abstraction in RM 
-:doc:`ref_model/chapters/chapter03:3.8 Hardware Acceleration Abstraction ` describes types of hardware
-acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and
-SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
+Hardware Acceleration Abstraction in RM :doc:`ref_model/chapters/chapter03:3.8 Hardware Acceleration Abstraction`
+describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable
+adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level
+Acceleration.
 
 Scheduling pods that require or prefer to run on nodes with hardware accelerators will depend on type of accelerator
 used:
@@ -572,9 +573,7 @@ traffic require the capability to use a user space networking technology.
    an additional feature and still be conformant with Anuket.
 
 ..
-
    Editors note: The possibility to SR-IOV for DPDK is under discussion.
-
    Refer to software profile features
    :doc:`ref_model/chapters/chapter05:here ` and hardware profile
    features :doc:`ref_model/chapters/chapter05:here `.
@@ -828,11 +827,9 @@ Kubernetes-based workloads.
 
 There are no restrictions or constraints that Kubernetes places on the storage
 that can be consumed by a workload, in terms of the requirements that are
-defined in RM sections
-:doc:`ref_model/chapters/chapter05:5.2.2 ` (software)
-and :doc:`ref_model/chapters/chapter05:5.4.2 `
-(hardware). The only point of difference is that Kubernetes does not have a
-native object storage offering, and addressing this capability gap directly is
+defined in RM sections :doc:`ref_model/chapters/chapter05:5.2.2` (software)
+and :doc:`ref_model/chapters/chapter05:5.4.2` (hardware). The only point of difference is that Kubernetes does not have
+a native object storage offering, and addressing this capability gap directly is
 outside of the scope of this RA.
 
 Kubernetes Application package manager
