@@ -26,8 +26,8 @@ validate the required features through well-established mechanisms.
 Vision
 ~~~~~~
 
-The OpenStack-based Anuket Reference Architecture will host NFV
-workloads, primarily VNFs(Virtual Network Functions), 
+The OpenStack-based Reference Architecture will host NFV
+workloads, primarily VNFs (Virtual Network Functions), 
 of interest to the Anuket community. The
 Reference Architecture document can be used by operators to deploy
 Anuket conformant infrastructure; hereafter, “conformant” denotes that
@@ -38,8 +38,8 @@ Use Cases
 ---------
 
 Several NFV use cases are documented in OpenStack. For more examples and
-details refer to the OpenStack
-`docs <https://docs.openstack.org/arch-design/use-cases.html>`__.
+details refer to the 
+` OpenStack docs <https://docs.openstack.org/arch-design/use-cases.html>`__.
 Examples include:
 
 -  **Overlay networks**: The overlay functionality design includes
@@ -88,14 +88,14 @@ Examples include:
    higher-Class Selector to DNS to ensure faster delivery or a better
    spot in queuing algorithms.
 
-Anuket OpenStack Reference Release
-----------------------------------
+OpenStack Reference Release
+---------------------------
 
 This Reference Architecture document conforms to the `OpenStack
 Wallaby <https://docs.openstack.org/wallaby/projects.html>`__ release.
 While many features and capabilities are conformant with many OpenStack
 releases, this document will refer to features, capabilities and APIs
-that are part of the OpenStack Wallaby release. For ease, this Anuket
+that are part of the OpenStack Wallaby release. For ease, this 
 Reference Architecture document version can be referred to as “RA-1 OSTK
 Wallaby.”
 
@@ -103,9 +103,10 @@ Principles
 ----------
 
 OpenStack Reference Architecture must obey to the following set of
-principles:
+principles described in:
 
-- :ref:`common/chapter00:anuket general principles`
+- :ref:`common/chapter00:overall principles`
+- :ref:`common/chapter00:requirements principles`
 - :ref:`common/chapter00:architectural principles`
 
 OpenStack specific principles
@@ -149,5 +150,5 @@ Terminology
 
 General terminology definitions can be found in
 :doc:`common/glossary` and specific terms relating
-to this reference architecture are to be found in `OpenStack Related
-Terminology :ref:`common/glossary:openstack related terminology`.
+to this reference architecture are to be found in 
+:ref:`common/glossary:openstack related terminology`.
