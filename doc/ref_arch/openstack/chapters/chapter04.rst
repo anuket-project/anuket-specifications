@@ -4,18 +4,18 @@ Cloud Infrastructure & VIM Component Level Architecture
 Introduction
 ------------
 
-Chapter 3 introduced the components of an OpenStack-based IaaS
+Chapter 3 introduced the components of an OpenStack-based IaaS:
 
 -  Consumable Infrastructure Resources and Services
 -  Cloud Infrastructure Management Software (VIM: OpenStack) core
    services and architectural constructs needed to consume and manage
    the consumable resources
--  Underlying physical compute, storage and networking resources
+-  Underlying physical compute, storage, and networking resources
 
 This chapter delves deeper into the capabilities of these different
 resources and their needed configurations to create and operate an
 OpenStack-based IaaS cloud. This chapter specifies details on the
-structure of control and user planes, operating systems, hypervisors and
+structure of control and user planes, operating systems, hypervisors, and
 BIOS configurations, and architectural details of underlay and overlay
 networking, and storage, and the distribution of OpenStack service
 components among nodes. The chapter also covers implementation support
@@ -106,7 +106,7 @@ Additionally, for OpenStack we need to set the following boot parameters:
    -  The number of control nodes only needs to be increased in
       environments with a lot of changes, such as a testing lab, or a
       very large cloud footprint (rule of thumb: number of control nodes
-      = 3 + quotient(number of compute nodes/1000)).
+      = 3 + quotient (number of compute nodes/1000)).
    -  The `Services Placement Summary
       table <https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html>`__
       specifies the number of instances that are required based upon the
@@ -116,7 +116,7 @@ Network nodes
 ^^^^^^^^^^^^^
 
 Networks nodes are mainly used for L3 traffic management for overlay
-tenant network (see more detail in section Neutron).
+tenant network (see more detail in Neutron section).
 
 -  BIOS requirements
 
@@ -177,12 +177,14 @@ The cloud operator may choose to implement certain profile-extensions
 as a set of standard configurations, of a given profile, capturing some
 of the variability through different values or extra specifications.
 
--  The software and hardware configurations are as specified in the
-   :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
+-  The software and hardware configurations are as specified in the 
+   Reference Model 
+   :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements`.
 
 -  BIOS requirement
 
-   -  The general BIOS requirements are described in the
+   -  The general BIOS requirements are described in the 
+      Reference Model 
       :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
 
 **Example Profiles and their Extensions**
@@ -242,7 +244,7 @@ extensions and some of their capabilities.
 **BIOS Settings**
 
 A number of capabilities need to be enabled in the BIOS (such as NUMA
-and SMT); the Reference Model section on
+and SMT); the Reference Model section 
 :ref:`ref_model/chapters/chapter05:cloud infrastructure software profile description`
 specifies the capabilities required to be configured. Please note that
 capabilities may need to be configured in multiple systems. For
@@ -357,8 +359,8 @@ Compute Resource Pooling Considerations
 Reservation of Compute Node Cores
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The :ref:`ref_arch/openstack/chapters/chapter02:infrastructure requirements`
-``inf.com.08`` requires the allocation of “certain number of host
+The Infrastructure Requirement 
+**inf.com.08** requires the allocation of “certain number of host
 cores/threads to non-tenant workloads such as for OpenStack services.” A
 number (“n”) of random cores can be reserved for host services
 (including OpenStack services) by specifying the following in nova.conf:
@@ -453,7 +455,8 @@ CPU Allocation Ratio and CPU Pinning
 
 A given host (compute node) can only support a single CPU Allocation
 Ratio. Thus, to support the B1 and B4 Basic profile extensions (Section
-4.2.2.5) with CPU Allocation Ratios of 1.0 and 4.0 we will need to
+:ref:`ref_arch/openstack/chapters/chapter04:compute nodes`) 
+with CPU Allocation Ratios of 1.0 and 4.0 we will need to
 create 2 different host profiles and separate host aggregates for each
 of the host profiles. The CPU Allocation Ratio is set in the hypervisor
 on the host.
@@ -466,8 +469,8 @@ Server Configurations
 
 The different networking choices – OVS-Kernel, OVS-DPDK, SR-IOV – result
 in different NIC port, LAG (Link Aggregation Group), and other
-configurations. Some of these are shown diagrammatically in section
-4.2.9.5.
+configurations. Some of these are shown diagrammatically in section 
+:ref:`ref_arch/openstack/chapters/chapter04:compute nodes`.
 
 Leaf and Compute Ports for Server Flavors must align
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -514,8 +517,8 @@ ToR/Leafs, Guest automation and server placement necessarily involves
 the Leaf switches (e.g., access VLAN outer tag mapping with VXLAN EVPN).
 
 -  Local VXLAN tunneling over IP-switched fabric implemented between
-   VTEPs on Leaf switches.
--  Leaf configuration controlled by SDN-Fabric/Global Controller.
+   VTEPs on Leaf switches
+-  Leaf configuration controlled by SDN-Fabric/Global Controller
 -  Underlay uses VXLAN-enabled switches for EVPN support
 
 SR-IOV-based networking for Tenant Use Cases is required where
@@ -534,7 +537,7 @@ Figure 4-1: Basic Profile Host Configuration (example and simplified)
 
 Let us refer to the data traffic networking configuration of Figure 4-1
 to be part of the hp-B1-a and hp-B4-a host profiles and this requires
-the configurations as Table 4-3.
+the configurations as the following Table.
 
 .. list-table:: Configuration of Basic Flavor Capabilities
    :widths: 20 10 10 10
@@ -581,7 +584,7 @@ networking (example and simplified)
 
 Let us refer to the above networking set up to be part of the hp-B1-b
 and hp-B4-b host profiles but the basic configurations as specified in
-Table 4-3.
+the provious table.
 
 In our example, the Profile Extensions B1 and B4, are each mapped to two
 different host profiles hp-B1-a and hp-B1-b, and hp-B4-a and hp-B4-b
@@ -609,9 +612,9 @@ configured:
 The above examples of host networking configurations for the B1 and B4
 Profile Extensions are also suitable for the HV Profile Extensions;
 however, the hypervisor and BIOS settings will be different (see table
-below) and hence there will be a need for different host profiles. Table
-4-4 gives examples of three different host profiles; one each for HV, HD
-and HS Profile Extensions.
+below) and hence there will be a need for different host profiles. 
+The following table gives examples of three different host profiles; 
+one each for HV, HD and HS Profile Extensions.
 
 .. list-table:: Configuration of High Performance Flavor Capabilities
    :widths: 15 29 12 12 12
@@ -755,7 +758,7 @@ Figure 4-5: Indicative OpenStack Network Layout
      - Characteristics
    * - Provisioning & Management
      - Initial OS bootstrapping of the servers via PXE, deployment of software
-       and thereafter for access from within the control plane.
+       and thereafter for access from within the control plane
      -   - Security Domain: Management
          - Externally Routable: No
          - Connected to: All nodes
@@ -786,19 +789,22 @@ Figure 4-5: Indicative OpenStack Network Layout
          - Externally routable: Yes
          - Connected to: controllers
    * - External Provider (FIP)
-     - Network with a pool of externally routable IP addresses used by neutron routers to NAT to/from the tenant RFC1918
-       private networks
+     - Network with a pool of externally routable IP addresses used by neutron routers 
+       to NAT to/from the tenant RFC1918 private networks
      -   - Security Domain: Data Centre
          - Externally routable: Yes
          - Connected to: controllers, OVS computes
    * - External Provider (VLAN)
-     - External Data Centre L2 networks (VLANs) that are directly accessible to the project.
-         Note: External IP address management is required
+     - External Data Centre L2 networks (VLANs) that are directly accessible 
+       to the project.
+       
+       Note: External IP address management is required
      -   - Security Domain: Data Centre
          - Externally routable: Yes
          - Connected to: OVS DPDK computes
    * - IPMI / Out of Band
-     - The remote “lights-out” management port of the servers e.g., iLO, IDRAC / IPMI / Redfish
+     - The remote “lights-out” management port of the servers e.g., iLO, 
+       IDRAC / IPMI / Redfish
      -   - Security Domain: Management
          - Externally routable: No
          - Connected to: IPMI port on all servers
@@ -1065,7 +1071,7 @@ the control nodes and no services running on the compute nodes:
 -  Glance API
 -  Glance Registry
 
-*The Glance backends include Swift, Ceph RBD and NFS.*
+*The Glance backends include Swift, Ceph RBD, and NFS.*
 
 Cinder
 ^^^^^^
@@ -1077,8 +1083,8 @@ control nodes and no services running on the compute nodes: - Cinder API
 - Cinder Scheduler - Cinder Volume – the Cinder volume process needs to
 talk to its backends
 
-*The Cinder backends include SAN/NAS storage, iSCSI drives, Ceph RBD and
-NFS.*
+*The Cinder backends include SAN/NAS storage, iSCSI drives, Ceph RBD, 
+and NFS.*
 
 Swift
 ^^^^^
@@ -1093,7 +1099,7 @@ running on the control nodes and the compute nodes:
 -  Container Services
 -  Account Services
 
-*The Swift backends include iSCSI drives, Ceph RBD and NFS.*
+*The Swift backends include iSCSI drives, Ceph RBD, and NFS.*
 
 Neutron
 ^^^^^^^
@@ -1403,7 +1409,7 @@ infrastructure. To implement these profiles and sizes, it is required to
 set up the flavors as specified in the tables below.
 
 .. list-table:: Neutron Services Placement
-   :widths: 10 15 20 35
+   :widths: 10 17 20 33
    :header-rows: 1
 
    * - Flavor Capabilities
@@ -1412,7 +1418,8 @@ set up the flavors as specified in the tables below.
      - High-Performance
    * - CPU allocation ratio (custom extra_specs)
      - infra.com.cfg.001
-     - In flavor create or flavor set –property cpu_all ocation_ratio=4.0
+     - In flavor create or flavor 
+       set –property cpu_all ocation_ratio=4.0
      - In flavor create or flavor set –property cpu_allocation_ratio=1.0
    * - NUMA Awareness
      - infra.com.cfg.002
@@ -1426,11 +1433,14 @@ set up the flavors as specified in the tables below.
            across multiple NUMA nodes: –property hw:numa_nodes=2
    * - CPU Pinning
      - infra.com.cfg.003
-     - In flavor create or flavor set specify –property hw: cpu_policy=shared
+     - In flavor create or 
+       flavor set specify 
+       –property hw: cpu_policy=shared
        (default)
-     -   - In flavor create or flavor set specify –property
-           hw:cpu_policy=dedicated and –property hw:cpu_thread_policy=<prefer,
-           require, isolate>.
+     -   - In flavor create 
+           or flavor set specify –property
+           hw:cpu_policy=dedicated and –property 
+           hw:cpu_thread_policy=<prefer,require, isolate>.
          - Use “isolate” thread policy for very high
            compute intensive workloads that require that each vCPU be placed on a
            different physical core
@@ -1446,8 +1456,9 @@ set up the flavors as specified in the tables below.
    * - OVS-DPDK
      - infra.net.acc.cfg.001
      -
-     - ml2.conf.ini configured to support [OVS] datapath_type=netdev Note:
-       huge pages should be configured to large
+     - ml2.conf.ini configured to support [OVS] datapath_type=netdev 
+     
+       Note:huge pages should be configured to large
    * - Local Storage SSD
      - infra.hw.stg.ssd.cfg.002
      - trait:STORAGEDISK_SSD=required
@@ -1456,9 +1467,12 @@ set up the flavors as specified in the tables below.
      - infra.hw.nic.cfg.002
      - –property quota vif_inbound_average=1310720 and
        vif_outbound_average=1310720.
+       
        Note:10 Gbps = 1250000 kilobytes per second
      - –property quota vif_inboundaverage=3125000 and
-       vif_outbound_average=3125000 Note: 25 Gbps = 3125000 kilobytes per second
+       vif_outbound_average=3125000 
+       
+       Note: 25 Gbps = 3125000 kilobytes per second
 
 ..
 
@@ -1471,8 +1485,8 @@ set up the flavors as specified in the tables below.
       quota:disk_read_iops_sec=<IOPS#>.
 
 The flavor create command and the mandatory and optional configuration
-parameters is documented in
-https://docs.openstack.org/nova/latest/user/flavors.html.
+parameters is documented in 
+`Flavors <https://docs.openstack.org/nova/latest/user/flavors.html>`.
 
 Logical segregation and high availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
