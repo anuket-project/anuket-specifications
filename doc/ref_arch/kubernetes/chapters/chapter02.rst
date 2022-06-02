@@ -4,8 +4,8 @@ Architecture Requirements
 Introduction
 ------------
 
-This chapter will use the requirements defined in the overall Reference Model and only make additional entries in section
-`2.3 <#2.3>`__ if there are additional requirements needed for this Reference Architecture.
+This chapter will use the requirements defined in the overall Reference Model and only make additional entries in
+section `2.3 <#2.3>`__ if there are additional requirements needed for this Reference Architecture.
 
 Definitions
 -----------
@@ -19,8 +19,8 @@ Reference Model Requirements
 The tables below contain the requirements from the Reference Model to cover the Basic and High-Performance profiles.
 The table also includes a reference to the specification from
 :ref:`ref_arch/kubernetes/chapters/chapter04:Chapter 04 - Component Level Architecture` and from
-:ref:`ref_arch/kubernetes/chapters/chapter05:Chapter 05 - Security Guidance` to ensure traceability. If the related Specification does not
-exist, the reference will read "N/A" (and in bold "**N/A**" for mandatory requirements).
+:ref:`ref_arch/kubernetes/chapters/chapter05:Chapter 05 - Security Guidance` to ensure traceability. If the related
+Specification does not exist, the reference will read "N/A" (and in bold "**N/A**" for mandatory requirements).
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
 
@@ -330,7 +330,7 @@ Cloud Infrastructure Software Profile Requirements
 |                          |cfg.005   |                        |                 |                 |                  |
 |                          |          |                        |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
-|`5.1.3`                   |infra.net.| Traffic patterns       | Must support    | Must support    | **N/A**          | 
+|`5.1.3`                   |infra.net.| Traffic patterns       | Must support    | Must support    | **N/A**          |
 |                          |cfg.006   | symmetry               |                 |                 |                  |
 |                          |          |                        |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
@@ -354,10 +354,10 @@ Cloud Infrastructure Software Profile Requirements
 **Table 2-3:** Reference Model Requirements: Cloud Infrastructure Software Profile Requirements
 :doc:`ref_model/chapters/chapter05:Reference`
 
-**(1)** :ref:`ref_arch/kubernetes/chapters/appendix-a:Workload Transition Guidelines` might have other interfaces (such as SR-IOV VFs
-to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until more mature
-solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU
-and energy consumption).
+**(1)** :ref:`ref_arch/kubernetes/chapters/appendix-a:Workload Transition Guidelines` might have other interfaces (such
+as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed
+until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for
+example regarding CPU and energy consumption).
 
 **(2)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)
 
@@ -432,7 +432,7 @@ Cloud Infrastructure Hardware Profile Requirements
 |`5.4.3`                   |infra.hw. | A SmartNIC that is     | Not required    | Optional (1)    | N/A              |
 |                          |nac.cfg.  | used to offload        |                 |                 |                  |
 |                          |002       | vSwitch functionality  |                 |                 |                  |
-|                          |          | to hardware            |                 |                 |                  | 
+|                          |          | to hardware            |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
 |`5.4.3`                   |infra.hw. | Compression            | Optional        | Optional        | N/A              |
 |                          |nac.cfg.  |                        |                 |                 |                  |
@@ -860,7 +860,7 @@ Cloud Infrastructure Security Requirements
 |                                        |           | versions.                            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.5`                                 |sec.img.008| Images **must not** include any      | `5.12 Secrets           |
-|                                        |           | secrets. Secrets include passwords,  |  Management`            |
+|                                        |           | secrets. Secrets include passwords,  | Management`             |
 |                                        |           | cloud provider credentials, SSH      |                         |
 |                                        |           | keys, TLS certificate keys, etc.     |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
@@ -878,8 +878,8 @@ Cloud Infrastructure Security Requirements
 |                                        |           | against virus or other attacks.      |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.6`                                 |sec.lcm.002| Cloud operations staff and systems   | `5.4 Securing           |
-|                                        |           | **must** use management protocols    | Kubernetes orchestrator |
-|                                        |           | limiting security risk such as       |                         |
+|                                        |           | **must** use management protocols    | Kubernetes              |
+|                                        |           | limiting security risk such as       | orchestrator`           |
 |                                        |           | SNMPv3, SSH v2, ICMP, NTP, syslog    |                         |
 |                                        |           | and TLS v1.2 or higher.              |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
@@ -896,7 +896,7 @@ Cloud Infrastructure Security Requirements
 |                                        |           | changes.                             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.6`                                 |sec.lcm.005| Platform **must** provide logs and   | `5.10 Enable Logging    |
-|                                        |           | these logs must be regularly         | and Monitoring <./chapt |
+|                                        |           | these logs must be regularly         | and Monitoring`         |
 |                                        |           | monitored for anomalous behavior.    |                         |
 |                                        |           |                                      |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
@@ -905,8 +905,8 @@ Cloud Infrastructure Security Requirements
 |                                        |           | requests.                            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.6`                                 |sec.lcm.007| The Platform **must** be able to     | `5.4 Securing           |
-|                                        |           | update newly instantiated,           | Kubernetes orchestrator |
-|                                        |           | suspended, hibernated, migrated and  |                         |
+|                                        |           | update newly instantiated,           | Kubernetes              |
+|                                        |           | suspended, hibernated, migrated and  | orchestrator`           |
 |                                        |           | restarted images with current time   |                         |
 |                                        |           | information.                         |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
@@ -1387,7 +1387,8 @@ Kubernetes Architecture Requirements
 ------------------------------------
 
 The requirements in this section are to be delivered in addition to those in section 2.2, and have been
-created to support the Principles defined in :ref:`ref_arch/kubernetes/chapters/chapter01:Chapter 1 of this Reference Architecture`.
+created to support the Principles defined in
+:ref:`ref_arch/kubernetes/chapters/chapter01:Chapter 1 of this Reference Architecture`.
 
 The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised
 resources and a software management system.
