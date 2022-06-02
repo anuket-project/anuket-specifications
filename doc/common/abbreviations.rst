@@ -30,7 +30,7 @@ BGCF           Border Gateway Control Function
 BGP            Border Gateway Protocol
 BGPaaS         BGP as a Service
 BIOS           Basic Input Output System
-BLOB           Binary Large Object 
+BLOB           Binary Large Object
 BM             Bare Metal
 BMC            Baseband Management Controller
 BMRA           Bare Metal Reference Architecture
@@ -410,3 +410,4 @@ WLC            Wireless LAN Controller
 WS             WorkStream
 XML            eXtensible Markup Language
 ============== ==========================================================================
+
