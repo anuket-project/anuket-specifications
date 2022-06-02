@@ -143,8 +143,7 @@ some other operational items. Please note that Chapter 7 is not a
 replacement for the implementation, configuration and operational
 documentation that accompanies the different OpenStack distributions.
 Chapter 8 identifies certain Gaps that currently exist and plans on how
-to address them. For example, Service Function Chaining support needs to
-be addressed to realise the full potential and value of SDN and NFV.
+to address them (for example, resources autoscaling).
 
 Terminology
 -----------
