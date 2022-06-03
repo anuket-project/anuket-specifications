@@ -104,8 +104,8 @@ Foreman is an open-source project, base of several commercial products.
 Foreman provides the full management of PXE configuration and the
 installation for many Operating Systems (CentOS, Fedora, Ubuntu, Debian,
 Red Hat Entreprise Linux, OpenSUSE, etc.).
-Foreman service can be installed by `Ansible playbooks 
-<https://docs.ansible.com/>`_. 
+Foreman service can be installed by `Ansible playbooks
+<https://docs.ansible.com/>`_.
 Ansible playbooks are basic tools for the automation of the
 infrastructure virtualization layer deployments.
 
