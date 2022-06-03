@@ -778,8 +778,8 @@ Figure 4-5: Indicative OpenStack Network Layout
          - Externally Routable: No
          - Connected to: All nodes except foundation
    * - Tenant
-     - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918 re-usable private networks as controlled
-       by cloud administrator
+     - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918 
+       re-usable private networks as controlled by cloud administrator
      -   - Security Domain: Underlay
          - Externally Routable: No
          - Connected to: controllers and computes
@@ -796,7 +796,7 @@ Figure 4-5: Indicative OpenStack Network Layout
          - Connected to: controllers, OVS computes
    * - External Provider (VLAN)
      - External Data Centre L2 networks (VLANs) that are directly accessible 
-       to the project.
+       to the project
        
        Note: External IP address management is required
      -   - Security Domain: Data Centre
@@ -1386,7 +1386,7 @@ services be containerised for resiliency and resource efficiency.
 In Chapter 3, `Figure
 3.2 <../figures/RA1-Ch03-OpenStack-Services-Topology.png>`__ shows a
 high level Virtualised OpenStack services topology. The containerised
-OpenStack services topology version is shown in Figure 4-7.
+OpenStack services topology version is shown in Figure below.
 
 .. figure:: ../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png
    :alt: Containerised OpenStack Services Topology
@@ -1486,7 +1486,7 @@ set up the flavors as specified in the tables below.
 
 The flavor create command and the mandatory and optional configuration
 parameters is documented in 
-`Flavors <https://docs.openstack.org/nova/latest/user/flavors.html>`.
+`OpenStack Flavors <https://docs.openstack.org/nova/latest/user/flavors.html>`_.
 
 Logical segregation and high availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1534,7 +1534,7 @@ been creating intermediate data centres in central office locations,
 colocation centres, and now edge centres at the physical edge of their
 networks because of the demand for low latency and high throughput for
 5G, IoT and connected devices (including autonomous driverless vehicles
-and connected vehicles). Chapter 3.5 of this document, discusses
+and connected vehicles). Chapter 3 of this document, discusses
 :ref:`ref_arch/openstack/chapters/chapter03:cloud topology`
 and lists 3 types of data centres: Large, Intermediate and Edge.
 
@@ -1561,8 +1561,8 @@ In the Intermediate and Edge cloud centres, there may be limitations on
 the resource capacity, as in the number of servers, and the capacity of
 these servers in terms of # of cores, RAM, etc. restricting the set of
 services that can be deployed and, thus, creating a dependency between
-other data centres. In :ref:`ref_model/chapters/chapter08:telco edge cloud`,
-Table 8-5
+other data centres. In the Reference Model 
+:ref:`ref_model/chapters/chapter08:telco edge cloud` section, Table 8-5
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.
 
@@ -1589,8 +1589,8 @@ with a single control plane in the Centralised Control Plane scenario.
 Thus, in addition to the control plane and controller services deployed
 at the Central Cloud Centre, Local Control Planes hosting a full-set or
 subset of the controller services are also deployed on the Intermediate
-and Edge Cloud Centres. Table 4-5 presents examples of such deployment
-choices.
+and Edge Cloud Centres. The following table presents examples of 
+such deployment choices.
 
 .. list-table:: Distribution of OpenStack services on different nodes
                 depending upon Control Plane Scenario
@@ -1652,34 +1652,34 @@ choices.
 Edge Cloud Topology
 ~~~~~~~~~~~~~~~~~~~
 
-The Reference Model Chapter
-:ref:`ref_model/chapters/chapter08:telco edge cloud`,
+The Reference Model 
+:ref:`ref_model/chapters/chapter08:telco edge cloud` section,
 presents the deployment environment characteristics, infrastructure
 characteristics and new values for the Infrastructure Profiles at the Edge.
 
-The `Edge computing
-whitepaper <https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/>`__
+The `Edge computing whitepaper 
+<https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/>`__
 includes information such as the services that run on various nodes. The
 information from the whitepaper coupled with that from the `OpenStack
-Reference
-Architecture <https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary>`__
+Reference Architecture 
+<https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary>`__
 for 100, 300 and 500 nodes will help in deciding which OpenStack and
 other services (such as database, messaging) run on which nodes in what
 Cloud Centre and the number of copies that should be deployed. These
 references also present the pros and cons of DCP and CCP and designs to
 address some of the challenges of each of the models.
 
-Table 8-4 in the Reference Model
-:ref:`ref_model/chapters/chapter08:telco edge cloud: platform services deployment`
-lists the Platform Services that may be placed in the different node types
+In the Reference Mode, the 
+:ref:`ref_model/chapters/chapter08:telco edge cloud: platform services deployment` 
+table lists the Platform Services that may be placed in the different node types
 (control, compute and storage). Depending upon the capacity and
 resources available only the compute nodes may exist at the Edge thereby
 impacting operations.
 
-Table 8-3 in the Reference Model Chapter
-:ref:`ref_model/chapters/chapter08:telco edge cloud: infrastructure profiles`
-lists a number of Infrastructure Profile characteristics and the changes that
-may need to be made for certain Edge clouds depending upon their
+In the Reference Model, the  
+:ref:`ref_model/chapters/chapter08:telco edge cloud: infrastructure profiles` 
+table lists a number of Infrastructure Profile characteristics and the changes 
+that may need to be made for certain Edge clouds depending upon their
 resource capabilities. It should be noted that none of these changes
 affect the definition of OpenStack flavors.
 
@@ -1728,4 +1728,4 @@ number of open-source tools are available for the purpose including:
 
 These installers are described in more details in
 :ref:`ref_arch/openstack/chapters/chapter07:\
-Operations and Life Cycle Management`.
+Operations and Life Cycle Management` section.
