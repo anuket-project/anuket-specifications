@@ -85,7 +85,7 @@ Cloud Infrastructure Software Profile Requirements for Compute
      - Must support
      - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
 
-[*] Defined in the .bronze configuration in the Reference Model 
+[*] Defined in the .bronze configuration in the Reference Model
 :ref:`ref_model/chapters/chapter04:storage extensions`
 
 Cloud Infrastructure Software Profile Extensions Requirements for Compute
