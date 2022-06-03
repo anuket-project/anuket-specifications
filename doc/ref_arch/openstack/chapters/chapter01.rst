@@ -13,8 +13,8 @@ vendors that support it, the OpenInfra Foundation for managing the
 community, and, most importantly, it is widely deployed by the global
 operator community for both internal infrastructure and external facing
 products and services. This means that the operators have existing staff
-with the right skill sets to support a Cloud Infrastructure 
-(or Network Function Virtualisation Infrastructure, 
+with the right skill sets to support a Cloud Infrastructure
+(or Network Function Virtualisation Infrastructure,
 `NFVI <https://www.etsi.org/deliver/etsi_gs/NFV-INF/001_099/001/01.01.01_60/gs_NFV-INF001v010101p.pdf>`__)
 deployment into development, test and production. Another reason to
 choose OpenStack is that it has a large active community of vendors and
@@ -27,7 +27,7 @@ Vision
 ~~~~~~
 
 The OpenStack-based Reference Architecture will host NFV
-workloads, primarily VNFs (Virtual Network Functions), 
+workloads, primarily VNFs (Virtual Network Functions),
 of interest to the Anuket community. The
 Reference Architecture document can be used by operators to deploy
 Anuket conformant infrastructure; hereafter, “conformant” denotes that
@@ -38,7 +38,7 @@ Use Cases
 ---------
 
 Several NFV use cases are documented in OpenStack. For more examples and
-details refer to the 
+details refer to the
 `OpenStack docs <https://docs.openstack.org/arch-design/use-cases.html>`__.
 
 Examples include:
@@ -96,7 +96,7 @@ This Reference Architecture document conforms to the `OpenStack
 Wallaby <https://docs.openstack.org/wallaby/projects.html>`__ release.
 While many features and capabilities are conformant with many OpenStack
 releases, this document will refer to features, capabilities and APIs
-that are part of the OpenStack Wallaby release. For ease, this 
+that are part of the OpenStack Wallaby release. For ease, this
 Reference Architecture document version can be referred to as “RA-1 OSTK
 Wallaby.”
 
@@ -150,13 +150,13 @@ Terminology
 
 General terminology definitions can be found in
 :doc:`common/glossary` and specific terms relating
-to this reference architecture are to be found in 
+to this reference architecture are to be found in
 :ref:`common/glossary:openstack related terminology`.
 
 Conventions
 -----------
 
-The key words "must", "must not", "required", "shall", "shall not", 
-"should", "should not", "recommended", "may", and "optional" 
-in this document are to be interpreted as described in 
+The key words "must", "must not", "required", "shall", "shall not",
+"should", "should not", "recommended", "may", and "optional"
+in this document are to be interpreted as described in
 `RFC 2119 <https://www.ietf.org/rfc/rfc2119.txt>`_.
