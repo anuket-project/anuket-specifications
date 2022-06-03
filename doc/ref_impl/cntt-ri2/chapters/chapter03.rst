@@ -93,6 +93,7 @@ Each server shall meet the following minimum specifications:
 -  Network
 
    -  25Gbps+ network solution
+   -  At least 4 Network Interface Card (NIC) ports
    -  Additional NICs/ports (10Gbps+) can be present
    -  Ideally at least 2 ports per socket (NUMA)
    -  NICs must be SR-IOV capable
