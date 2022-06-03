@@ -9,7 +9,7 @@ corresponding to the ETSI NFV Nf-Vi, Vi-Vnfm and Or-Vi interfaces. The
 OpenStack Wallaby version is used as the baseline for these APIs and
 CLIs in this Reference Architecture (RA-1) version. Any Cloud
 Infrastructure + VIM reference implementations that **get certified by
-RC** can be considered as Anuket RA Conformant.
+RC** (Reference Conformance) can be considered as Anuket RA Conformant.
 
 The Chapter presents the APIs for the core OpenStack services defined in
 Chapter 3 and a consolidated view of these and other APIs that are of
