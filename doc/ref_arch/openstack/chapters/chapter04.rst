@@ -797,7 +797,7 @@ Figure 4-5: Indicative OpenStack Network Layout
    * - External Provider (VLAN)
      - External Data Centre L2 networks (VLANs) that are directly accessible
        to the project
-       
+
        Note: External IP address management is required
      -   - Security Domain: Data Centre
          - Externally routable: Yes
@@ -1467,11 +1467,11 @@ set up the flavors as specified in the tables below.
      - infra.hw.nic.cfg.002
      - –property quota vif_inbound_average=1310720 and
        vif_outbound_average=1310720.
-   
+
        Note:10 Gbps = 1250000 kilobytes per second
      - –property quota vif_inboundaverage=3125000 and
        vif_outbound_average=3125000
-   
+
        Note: 25 Gbps = 3125000 kilobytes per second
 
 ..
