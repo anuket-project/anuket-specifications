@@ -114,7 +114,7 @@ NUMA alignment, and SMT.
 
 The configuration of the virtual resources will depend on the software
 and hardware profiles and the flavour (resource sizing) needed to host
-VNF components. Profiles are defined in the Reference Model 
+VNF components. Profiles are defined in the Reference Model
 :ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours`.
 
 Virtual Storage
@@ -396,7 +396,7 @@ Cloud Controller Services
 The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
-also maps the OpenStack core services to the Reference Model 
+also maps the OpenStack core services to the Reference Model
 :ref:`ref_model/chapters/chapter03:virtual infrastructure manager`.
 
 .. list-table:: OpenStack components deployment
@@ -538,8 +538,8 @@ the resources of a project are not affected by resources of another
 project.
 
 This document uses the term "project" when referring to OpenStack
-services and "tenant" (see Reference Model 
-:ref:`ref_model/chapters/chapter03:virtual resources` section) 
+services and "tenant" (see Reference Model
+:ref:`ref_model/chapters/chapter03:virtual resources` section)
 to represent an independently manageable logical pool of resources.
 
 Cloud partitioning: Host Aggregates, Availability Zones
@@ -644,7 +644,7 @@ up (in a shipping container), and what resources are required of the DC
 -  Storage
 
    - Storage technologies are multiple, they are extensively
-     described in the Reference Model 
+     described in the Reference Model
      :ref:`ref_model/chapters/chapter03:storage implementation stereotypes`.
      Storage backends are discussed in
      :ref:`ref_arch/openstack/chapters/chapter04:storage backend` section.
@@ -762,9 +762,9 @@ Assumptions and conventions:
    quorum (aligned with vendor implementation).
 -  Shared storage is optional, but it is important to ensure shared
    assets are distributed across serving clouds such as boot images.
-   Storage needs, per deployment and use cases, can be found in 
-   the Reference Model 
-   :ref:`ref_model/chapters/chapter03:storage scenarios and architecture fit` 
+   Storage needs, per deployment and use cases, can be found in
+   the Reference Model
+   :ref:`ref_model/chapters/chapter03:storage scenarios and architecture fit`
    section.
 
 .. list-table:: Cloud Topology: Redundancy Models
@@ -823,8 +823,8 @@ hypervisor anti-affinity) there would be no service impact.
 *Important to consider:*
 
 -  Where possible servers should be distributed and cabled to reduce the
-   impact of any failure e.g., PDU (Power Distribution Unit), rack 
-   failure. Because each operator 
+   impact of any failure e.g., PDU (Power Distribution Unit), rack
+   failure. Because each operator
    has individual site constraints this document will not propose a
    standard rack layout.
 -  During maintenance of the control plane, whilst the data (forwarding)
