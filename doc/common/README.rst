@@ -8,7 +8,6 @@ Available Specifications
 -  `Reference Architectures <../ref_arch>`__
 -  `Reference Implementations <../ref_impl>`__
 -  `Reference Conformances <../ref_cert>`__
--  `Vendor Implementations <../ven_impl>`__
 
 Introduction
 ------------

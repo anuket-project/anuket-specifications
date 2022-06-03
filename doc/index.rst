@@ -9,7 +9,6 @@ Anuket Specifications
     Reference Model </ref_model/index>
     Reference Architectures </ref_arch/index>
     Reference Implementation </ref_impl/index>
-    Vendor Implementations </ven_impl/index>
     Reference Conformance </ref_cert/index>
 
 - `Terms of Reference <../GSMA_CNTT_Terms_of_Reference.pdf>`_

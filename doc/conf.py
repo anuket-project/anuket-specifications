@@ -34,7 +34,6 @@ direct_copy_directories = ['/gov/figures',
                            '/ref_cert/RC2/figures', 
                            '/ref_impl/cntt-ri/figures', 
                            '/ref_impl/cntt-ri2/figures',
-                           '/ven_impl/figures', 
                            '/common/figures'] 
 
 html_theme_path = sphinx_material.html_theme_path()
