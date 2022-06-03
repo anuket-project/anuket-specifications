@@ -148,16 +148,16 @@ important standards in current use.
 - The National Institute of Standards and Technology (NIST) with the special publications:
 
   - NIST SP 800-123 `Guide to General Server Security <https://nvlpubs.nist.gov/nistpubs/Legacy 
-    /SP/nistspecialpublication800-123.pdf>`_
+    /SP/nistspecialpublication800-123.pdf>`__
     
   - NIST SP 800-204A `Building Secure Microservices-based Applications Using Service-Mesh Architecture
-    <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf>`_
+    <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf>`__
      
   - NIST SP 800-204B `Attribute-based Access Control for Microservices-based Applications Using a Service Mesh 
-    <https://csrc.nist.gov/publications/detail/sp/800-204b/final>`_
+    <https://csrc.nist.gov/publications/detail/sp/800-204b/final>`__
      
   - NIST SP 800-207 `Zero Trust Architecture 
-    <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf>`_
+    <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf>`__
 
 - FedRAMP Certification `https://www.fedramp.gov/ <https://www.fedramp.gov/>`__
 
@@ -165,7 +165,7 @@ important standards in current use.
   ttee/cyber>`__
   
 - `ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) 
-  <https://www.etsi.org/technologies/nfv>`_ and its Security Working Group NFV-SEC
+  <https://www.etsi.org/technologies/nfv>`__ and its Security Working Group NFV-SEC
 
 - ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) -
   `www.iso.org <http://www.iso.org>`__. The following ISO standards are of particular interest for NFVI
@@ -650,23 +650,23 @@ Software Supply Chain Security
 Software supply chain attacks are increasing worldwilde and can cause serious damages. Many entreprises and
 organisations are experiencing these threats. Aqua security's experts estimated that `software supply chain attacks
 have more than tripled in 2021
-<https://www.aquasec.com/news/aqua-securitys-argon-experts-find-software-supply-chain-attacks-more-than-tripled-in-2021/>`_.
+<https://www.aquasec.com/news/aqua-securitys-argon-experts-find-software-supply-chain-attacks-more-than-tripled-in-2021/>`__.
 Reuters reported in August 2021 that the `ransomware affecting Kaseya Virtual System Administration product
-<https://www.reuters.com/technology/kaseya-ransomware-attack-sets-off-race-hack-service-providers-researchers-2021-08-03/>`_
+<https://www.reuters.com/technology/kaseya-ransomware-attack-sets-off-race-hack-service-providers-researchers-2021-08-03/>`__
 caused downtime for over 1500 companies. In the case of the `backdoor inserted in codecov software
-<https://www.reuters.com/technology/codecov-hackers-breached-hundreds-restricted-customer-sites-sources-2021-04-19/>`_,
+<https://www.reuters.com/technology/codecov-hackers-breached-hundreds-restricted-customer-sites-sources-2021-04-19/>`__,
 hundred of customers were affected. The Solarwinds attack detailed in `Defending against SolarWinds attacks
-<https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`_
+<https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`__
 is another example of how software suppliers are targeted and, by rebound, their customers affected.
 Open-source code weaknesses can also be utilised by attackers, the
-`Log4J <https://www.cisa.gov/uscert/apache-log4j-vulnerability-guidance>`_ vulnerability, impacting many
+`Log4J <https://www.cisa.gov/uscert/apache-log4j-vulnerability-guidance>`__ vulnerability, impacting many
 applications, is a recent example in this field. When addressing cyber security, the vulnerabilities of
 software supply chain are often not taken into account. Some governments are already alerting and requesting
 actions to face these risks. The British government is hardening the law and standards of cyber security for
 the supply chain. The US government requested actions to enhance the software supply chain security.
 The security of the software supply chain is a also challenge pointed out by the European Network and
 Information Security Agency, ENISA, in the report `NFV Security in 5G - Challenges and Best Practices
-<https://www.enisa.europa.eu/publications/nfv-security-in-5g-challenges-and-best-practices>`_.
+<https://www.enisa.europa.eu/publications/nfv-security-in-5g-challenges-and-best-practices>`__.
  
 
 Software security
@@ -677,15 +677,15 @@ many different supply chains in virtualised, containerised, and edge environment
 All software components must be trusted, from commercial software, open-source
 code to proprietary software, as well as the integration of these components.
 The SAFECode white paper `"Managing Security Risks Inherent in the Use of Third-party Components"
-<https://safecode.org/wp-content/uploads/2017/05/SAFECode_TPC_Whitepaper.pdf>`_ provides
+<https://safecode.org/wp-content/uploads/2017/05/SAFECode_TPC_Whitepaper.pdf>`__ provides
 a detailed risk management approach.
 
 To secure software code, the following methods must be applied:
 
--  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`_
-   or `OWASP "Secure Coding Practices - Quick Reference Guide" <https://owasp.org/>`_
+-  Use best practices coding such as design pattern recommended in the `Twelve-Factor App <https://12factor.net/>`__
+   or `OWASP "Secure Coding Practices - Quick Reference Guide" <https://owasp.org/>`__
 -  Do threat modelling, as described in the document `"Tactical Threat Modeling"
-   <https://safecode.org/wp-content/uploads/2017/05/SAFECode_TM_Whitepaper.pdf>`_ published by SAFECode
+   <https://safecode.org/wp-content/uploads/2017/05/SAFECode_TM_Whitepaper.pdf>`__ published by SAFECode
 -  Use trusted, authenticated and identified software images that are provided by authenticated software
    distribution portals
 -  Require suppliers to provide a Software Bill of Materials to identify all the components part of their product's
@@ -714,7 +714,7 @@ The strength of open-source code is the availability of code source developed by
 Open-source code integration with application source code helps to develop and produce applications faster.
 But, in return, it can introduce security risks if a risk management DevSecOps approach is not implemented.
 The GSMA white paper  `"Open Networking & the Security of Open Source Software Deployment - Future Networks"
-<https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/>`_
+<https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/>`__
 alerts on these risks and addresses the
 challenges coming with open-source code usage. Amongst these risks for security, we can mention a poor code quality
 containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open source
@@ -746,7 +746,7 @@ and it provides assurance of the source and integrity of components. To achieve 
 a shared model must be supported by industry. This is the goal of the work performed by the US Department of Commerce
 and the National Telecommunications and Information administration (NTIA) and published, in July 2021, in the report
 `"The Minimum Elements for a Software Bill of Materials (SBOM)"
-<https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`_ in July 2021. The document gives
+<https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`__ in July 2021. The document gives
 guidance and specifies the minimum elements for the SBOM, as a starting point.
 
 A piece of software can be modeled as a hierarchical tree with components and subcomponents, each
@@ -781,7 +781,7 @@ component should have its SBOM including,  as a baseline, the information descri
 +------------------------------+---------------------------------------------------+
 
 **Table 7-2**: SBOM Data Fields components, source
-`NTIA <https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`_
+`NTIA <https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`__
 
 Refer to the NTIA SBOM document for more details on each data field. Examples of commonly used identifiers are provided.
 
@@ -797,7 +797,7 @@ and use common data syntax representations.
   associated with software components. With the SPDX specification 2.2, multiple file formats are available: YAML,
   JSON, RDF/XML, tag\:value flat text, and xls spreadsheets.
 
-- `CycloneDX <https://cyclonedx.org/>`_ was designed in 2017 for use with OWASP(Open Web Application Security Project)
+- `CycloneDX <https://cyclonedx.org/>`__ was designed in 2017 for use with OWASP(Open Web Application Security Project)
   Dependency-Track tool, an open-source Component Analysis platform that identifies risk in the software supply chain.
   CycloneDX supports a wide range of software components, including: applications, containers, libraries, files,
   firmware,   frameworks, Operating Systems. The CycloneDX project provides standards in XML, JSON, and Protocol
@@ -847,7 +847,7 @@ is a small sample of some of the testing methodologies and frameworks available.
 - OWASP testing guide
 - Penetration Testing Execution Standard, PTES
 - Technical Guide to Information Security Testing and Assessment, `NIST 800-115 
-  <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf>`_
+  <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf>`__
 - VULCAN, Vulnerability Assessment Framework for Cloud Computing, IEEE 2013
 - Penetration Testing Framework, VulnerabilityAssessment.co.uk
 - Information Systems Security Assessment Framework (ISSAF)
@@ -1242,8 +1242,9 @@ Confidentiality and Integrity
 +----------------+----------------------------------------------------------------------------+------------------------+
 | req.sec.ci.008 | The Cloud Infrastructure **must** support tenant networks segregation.     |                        |
 +----------------+----------------------------------------------------------------------------+------------------------+
-| req.sec.ci.009 | For sensitive data encryption, the key management service **should** leverage a Hardware Security   |
-|                | Module to manage and protect cryptographic keys.                           |                        |
+| req.sec.ci.009 | For sensitive data encryption, the key management service **should**       |                        |
+|                | leverage a Hardware Security Module to manage and protect cryptographic    |                        |
+|                | keys.                                                                      |                        |
 +----------------+----------------------------------------------------------------------------+------------------------+
 
 **Table 7-5:** Confidentiality and integrity requirements
@@ -1484,7 +1485,7 @@ Open Source Software
 |                 | maintained to identify the software components and their origins.         | components, `https://w |
 |                 |                                                                           | ww.ntia.gov/SBOM <http |
 |                 |                                                                           | s://www.ntia.gov/SBO   |
-|                 |                                                                           | M>`__.                 |
+|                 |                                                                           | M>`__                  |
 +-----------------+---------------------------------------------------------------------------+------------------------+
 
 **Table 7-10:** Open Source Software requirements
@@ -1498,13 +1499,13 @@ IaaC - Secure Design and Architecture Stage Requirements
 | req.sec.arch.001 | Threat Modelling methodologies and tools    | Methodology to identify and understand threats      |
 |                  | **should** be used during the               | impacting a resource or set of resources. It may be |
 |                  | Secure Design and Architecture stage        | done manually or using tools like open source OWASP |
-|                  | triggered by Software Feature Design        | Threat Dragon                                       |
-|                  | trigger                                     |                                                     |
+|                  | triggered by Software Feature Design        | Threat Dragon.                                      |
+|                  | trigger.                                    |                                                     |
 +------------------+---------------------------------------------+-----------------------------------------------------+
 | req.sec.arch.002 | Security Control Baseline Assessment        | Typically done manually by internal or independent  |
 |                  | **should** be performed during the Secure   | assessors.                                          |
 |                  | Design and Architecture stage triggered by  |                                                     |
-|                  | Software Feature Design trigger             |                                                     |
+|                  | Software Feature Design trigger.            |                                                     |
 +------------------+---------------------------------------------+-----------------------------------------------------+
 
 **Table 7-11:** IaaC - Secure Design and Architecture Stage Requirements
@@ -1720,4 +1721,61 @@ Compliance with Standards
 +-----------------+----------------------------------------------+-----------------------------------------------------+
 
 **Table 7-16:** Compliance with standards requirements
+
+Additional Security References
+------------------------------ 
+
+In addition to the security standards used throughout this specification, 
+the following lists gather additional standards of interest for Cloud Infrastructure security.
+
+**ETSI Documents**
+
+- Network Functions Virtualisation (NFV);NFV Security; Problem Statement, ETSI GS NFV-SEC 001 V1.1.1 (2014-10)
+
+- Network Functions Virtualisation (NFV);NFV Security; Security and Trust Guidance, ETSI GS NFV-SEC 003 V1.1.1
+  (2014-12)
+
+- Network Functions Virtualisation (NFV) Release 3; Security; Security Management and Monitoring specification,
+  ETSI GS NFV-SEC 013 V3.1.1 (2017-02)
+
+- Network Functions Virtualisation (NFV) Release 3; NFV Security; Security Specification for MANO Components and 
+  Reference points, ETSI GS NFV-SEC 014 V3.1.1 (2018-04)
+
+- Network Functions Virtualisation (NFV) Release 2; Security; VNF Package Security Specification,
+  ETSI GS NFV-SEC 021 V2.6.1 (2019-06)
+
+**NIST Documents**
+
+- `NIST SP 800-53 Security and Privacy Controls for Federal Information Systems and Organizations
+  <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf>`__
+
+- `NIST SP 800-53A Assessing Security and Privacy Controls in Federal Information Systems and Organizations: Building
+  Effective Assessment Plans
+  <https://www.serdp-estcp.org/content/download/47513/453118/file/NIST%20SP%20800-53A%20Rev%204%202013.pdf>`__
+
+- `NIST SP 800-63B Digital Identity Guidelines
+  <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf>`__
+
+- `NIST SP 800-115 Technical Guide to Information Security Testing and Assessment
+  <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf>`__
+
+- `NIST SP 800-125 Guide to Security for Full Virtualization Technologies
+  <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-125.pdf>`__
+
+- `NIST SP 800-125a Security Recommendations for Server-based Hypervisor Platforms
+  <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125Ar1.pdf>`__
+
+- `NIST SP 800-125b Secure Virtual Network Configuration for Virtual Machine (VM) Protection
+  <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf>`__
+
+- `NIST SP 800-137 Information Security Continuous Monitoring for Federal Information 
+  Systems and Organizations
+  <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf>`__
+
+- `NIST SP 800-145 The NIST Definition of Cloud Computing
+  <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf>`__
+
+- `NIST SP 800-190 Application Container Security Guide
+  <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf>`__
+
 
