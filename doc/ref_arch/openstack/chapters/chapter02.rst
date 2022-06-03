@@ -592,7 +592,7 @@ System Hardening Requirements
      - Hardening
      - The Operator **must** ensure that only authorised actors have physical
        access to the underlying infrastructure
-     - This requirement's verification must be part of the organisation security process
+     - This requirement's verification must be part of the organisation's security process
    * - sec.gen.013
      - Hardening
      - The Platform **must** ensure that only authorised actors have logical
@@ -735,13 +735,13 @@ Confidentiality and Integrity Requirements
    * - sec.ci.001
      - Confidentiality/
        Integrity
-     - Confidentiality/Integrity
      - The Platform **must** support Confidentiality and Integrity of data
        at rest and in transit
      - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and
        integrity`
    * - sec.ci.003
-     - Confidentiality/Integrity
+     - Confidentiality/
+       Integrity
      - The Platform **must** support Confidentiality and Integrity of data
        related metadata
      - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and
@@ -754,21 +754,24 @@ Confidentiality and Integrity Requirements
      - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and
        integrity`
    * - sec.ci.005
-     - Confidentiality/Integrity
+     - Confidentiality/
+       Integrity
      - The Platform **must** support Confidentiality and Integrity of process-
        related metadata and restrict information sharing with only the
        process owner (e.g., tenant)
      - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and
        integrity`
    * - sec.ci.006
-     - Confidentiality/Integrity
+     - Confidentiality/
+       Integrity
      - The Platform **must** support Confidentiality and Integrity of
        workload resource utilisation (RAM, CPU, Storage, Network I/O, cache,
        hardware offload) and restrict information sharing with only the
        workload owner (e.g., tenant)
      - :ref:`ref_arch/openstack/chapters/chapter06:platform access`
    * - sec.ci.007
-     - Confidentiality/Integrity
+     - Confidentiality/
+       Integrity
      - The Platform **must not** allow Memory Inspection by any actor
        other than the authorised actors for the Entity to which Memory is
        assigned (e.g., tenants owning the workload), for Lawful
