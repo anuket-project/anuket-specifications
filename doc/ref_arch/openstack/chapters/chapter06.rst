@@ -15,10 +15,10 @@ guide.
 Security Requirements
 ---------------------
 
-In the chapter 2, the 
+In the chapter 2, the
 :ref:`ref_arch/openstack/chapters/chapter02:cloud infrastructure security requirements`
-and :ref:`ref_arch/openstack/chapters/chapter02:security recommendations` 
-sections gather all requirements and recommendations regarding security topics 
+and :ref:`ref_arch/openstack/chapters/chapter02:security recommendations`
+sections gather all requirements and recommendations regarding security topics
 developed in this chapter.
 
 Cloud Infrastructure and VIM Security
