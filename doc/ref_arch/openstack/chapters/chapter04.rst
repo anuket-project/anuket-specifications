@@ -177,14 +177,14 @@ The cloud operator may choose to implement certain profile-extensions
 as a set of standard configurations, of a given profile, capturing some
 of the variability through different values or extra specifications.
 
--  The software and hardware configurations are as specified in the 
-   Reference Model 
+-  The software and hardware configurations are as specified in the
+   Reference Model
    :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements`.
 
 -  BIOS requirement
 
-   -  The general BIOS requirements are described in the 
-      Reference Model 
+   -  The general BIOS requirements are described in the
+      Reference Model
       :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
 
 **Example Profiles and their Extensions**
@@ -244,7 +244,7 @@ extensions and some of their capabilities.
 **BIOS Settings**
 
 A number of capabilities need to be enabled in the BIOS (such as NUMA
-and SMT); the Reference Model section 
+and SMT); the Reference Model section
 :ref:`ref_model/chapters/chapter05:cloud infrastructure software profile description`
 specifies the capabilities required to be configured. Please note that
 capabilities may need to be configured in multiple systems. For
@@ -359,7 +359,7 @@ Compute Resource Pooling Considerations
 Reservation of Compute Node Cores
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Infrastructure Requirement 
+The Infrastructure Requirement
 **inf.com.08** requires the allocation of “certain number of host
 cores/threads to non-tenant workloads such as for OpenStack services.” A
 number (“n”) of random cores can be reserved for host services
@@ -455,7 +455,7 @@ CPU Allocation Ratio and CPU Pinning
 
 A given host (compute node) can only support a single CPU Allocation
 Ratio. Thus, to support the B1 and B4 Basic profile extensions (Section
-:ref:`ref_arch/openstack/chapters/chapter04:compute nodes`) 
+:ref:`ref_arch/openstack/chapters/chapter04:compute nodes`)
 with CPU Allocation Ratios of 1.0 and 4.0 we will need to
 create 2 different host profiles and separate host aggregates for each
 of the host profiles. The CPU Allocation Ratio is set in the hypervisor
@@ -469,7 +469,7 @@ Server Configurations
 
 The different networking choices – OVS-Kernel, OVS-DPDK, SR-IOV – result
 in different NIC port, LAG (Link Aggregation Group), and other
-configurations. Some of these are shown diagrammatically in section 
+configurations. Some of these are shown diagrammatically in section
 :ref:`ref_arch/openstack/chapters/chapter04:compute nodes`.
 
 Leaf and Compute Ports for Server Flavors must align
@@ -612,8 +612,8 @@ configured:
 The above examples of host networking configurations for the B1 and B4
 Profile Extensions are also suitable for the HV Profile Extensions;
 however, the hypervisor and BIOS settings will be different (see table
-below) and hence there will be a need for different host profiles. 
-The following table gives examples of three different host profiles; 
+below) and hence there will be a need for different host profiles.
+The following table gives examples of three different host profiles;
 one each for HV, HD and HS Profile Extensions.
 
 .. list-table:: Configuration of High Performance Flavor Capabilities
@@ -778,7 +778,7 @@ Figure 4-5: Indicative OpenStack Network Layout
          - Externally Routable: No
          - Connected to: All nodes except foundation
    * - Tenant
-     - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918 
+     - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918
        re-usable private networks as controlled by cloud administrator
      -   - Security Domain: Underlay
          - Externally Routable: No
@@ -789,13 +789,13 @@ Figure 4-5: Indicative OpenStack Network Layout
          - Externally routable: Yes
          - Connected to: controllers
    * - External Provider (FIP)
-     - Network with a pool of externally routable IP addresses used by neutron routers 
+     - Network with a pool of externally routable IP addresses used by neutron routers
        to NAT to/from the tenant RFC1918 private networks
      -   - Security Domain: Data Centre
          - Externally routable: Yes
          - Connected to: controllers, OVS computes
    * - External Provider (VLAN)
-     - External Data Centre L2 networks (VLANs) that are directly accessible 
+     - External Data Centre L2 networks (VLANs) that are directly accessible
        to the project
        
        Note: External IP address management is required
@@ -803,7 +803,7 @@ Figure 4-5: Indicative OpenStack Network Layout
          - Externally routable: Yes
          - Connected to: OVS DPDK computes
    * - IPMI / Out of Band
-     - The remote “lights-out” management port of the servers e.g., iLO, 
+     - The remote “lights-out” management port of the servers e.g., iLO,
        IDRAC / IPMI / Redfish
      -   - Security Domain: Management
          - Externally routable: No
@@ -1083,7 +1083,7 @@ control nodes and no services running on the compute nodes: - Cinder API
 - Cinder Scheduler - Cinder Volume – the Cinder volume process needs to
 talk to its backends
 
-*The Cinder backends include SAN/NAS storage, iSCSI drives, Ceph RBD, 
+*The Cinder backends include SAN/NAS storage, iSCSI drives, Ceph RBD,
 and NFS.*
 
 Swift
@@ -1418,7 +1418,7 @@ set up the flavors as specified in the tables below.
      - High-Performance
    * - CPU allocation ratio (custom extra_specs)
      - infra.com.cfg.001
-     - In flavor create or flavor 
+     - In flavor create or flavor
        set –property cpu_all ocation_ratio=4.0
      - In flavor create or flavor set –property cpu_allocation_ratio=1.0
    * - NUMA Awareness
@@ -1433,13 +1433,13 @@ set up the flavors as specified in the tables below.
            across multiple NUMA nodes: –property hw:numa_nodes=2
    * - CPU Pinning
      - infra.com.cfg.003
-     - In flavor create or 
-       flavor set specify 
+     - In flavor create or
+       flavor set specify
        –property hw: cpu_policy=shared
        (default)
-     -   - In flavor create 
+     -   - In flavor create
            or flavor set specify –property
-           hw:cpu_policy=dedicated and –property 
+           hw:cpu_policy=dedicated and –property
            hw:cpu_thread_policy=<prefer,require, isolate>.
          - Use “isolate” thread policy for very high
            compute intensive workloads that require that each vCPU be placed on a
@@ -1456,8 +1456,8 @@ set up the flavors as specified in the tables below.
    * - OVS-DPDK
      - infra.net.acc.cfg.001
      -
-     - ml2.conf.ini configured to support [OVS] datapath_type=netdev 
-     
+     - ml2.conf.ini configured to support [OVS] datapath_type=netdev
+
        Note:huge pages should be configured to large
    * - Local Storage SSD
      - infra.hw.stg.ssd.cfg.002
@@ -1467,11 +1467,11 @@ set up the flavors as specified in the tables below.
      - infra.hw.nic.cfg.002
      - –property quota vif_inbound_average=1310720 and
        vif_outbound_average=1310720.
-       
+   
        Note:10 Gbps = 1250000 kilobytes per second
      - –property quota vif_inboundaverage=3125000 and
-       vif_outbound_average=3125000 
-       
+       vif_outbound_average=3125000
+   
        Note: 25 Gbps = 3125000 kilobytes per second
 
 ..
@@ -1485,7 +1485,7 @@ set up the flavors as specified in the tables below.
       quota:disk_read_iops_sec=<IOPS#>.
 
 The flavor create command and the mandatory and optional configuration
-parameters is documented in 
+parameters is documented in
 `OpenStack Flavors <https://docs.openstack.org/nova/latest/user/flavors.html>`_.
 
 Logical segregation and high availability
@@ -1561,7 +1561,7 @@ In the Intermediate and Edge cloud centres, there may be limitations on
 the resource capacity, as in the number of servers, and the capacity of
 these servers in terms of # of cores, RAM, etc. restricting the set of
 services that can be deployed and, thus, creating a dependency between
-other data centres. In the Reference Model 
+other data centres. In the Reference Model
 :ref:`ref_model/chapters/chapter08:telco edge cloud` section, Table 8-5
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.
@@ -1589,7 +1589,7 @@ with a single control plane in the Centralised Control Plane scenario.
 Thus, in addition to the control plane and controller services deployed
 at the Central Cloud Centre, Local Control Planes hosting a full-set or
 subset of the controller services are also deployed on the Intermediate
-and Edge Cloud Centres. The following table presents examples of 
+and Edge Cloud Centres. The following table presents examples of
 such deployment choices.
 
 .. list-table:: Distribution of OpenStack services on different nodes
@@ -1652,16 +1652,16 @@ such deployment choices.
 Edge Cloud Topology
 ~~~~~~~~~~~~~~~~~~~
 
-The Reference Model 
+The Reference Model
 :ref:`ref_model/chapters/chapter08:telco edge cloud` section,
 presents the deployment environment characteristics, infrastructure
 characteristics and new values for the Infrastructure Profiles at the Edge.
 
-The `Edge computing whitepaper 
+The `Edge computing whitepaper
 <https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/>`__
 includes information such as the services that run on various nodes. The
 information from the whitepaper coupled with that from the `OpenStack
-Reference Architecture 
+Reference Architecture
 <https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary>`__
 for 100, 300 and 500 nodes will help in deciding which OpenStack and
 other services (such as database, messaging) run on which nodes in what
@@ -1669,16 +1669,16 @@ Cloud Centre and the number of copies that should be deployed. These
 references also present the pros and cons of DCP and CCP and designs to
 address some of the challenges of each of the models.
 
-In the Reference Mode, the 
-:ref:`ref_model/chapters/chapter08:telco edge cloud: platform services deployment` 
+In the Reference Mode, the
+:ref:`ref_model/chapters/chapter08:telco edge cloud: platform services deployment`
 table lists the Platform Services that may be placed in the different node types
 (control, compute and storage). Depending upon the capacity and
 resources available only the compute nodes may exist at the Edge thereby
 impacting operations.
 
-In the Reference Model, the  
-:ref:`ref_model/chapters/chapter08:telco edge cloud: infrastructure profiles` 
-table lists a number of Infrastructure Profile characteristics and the changes 
+In the Reference Model, the
+:ref:`ref_model/chapters/chapter08:telco edge cloud: infrastructure profiles`
+table lists a number of Infrastructure Profile characteristics and the changes
 that may need to be made for certain Edge clouds depending upon their
 resource capabilities. It should be noted that none of these changes
 affect the definition of OpenStack flavors.
