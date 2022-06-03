@@ -18,9 +18,9 @@ Autoscaling
 ~~~~~~~~~~~
 
 With regards to resource autoscaling
-(gen.scl.01
-:ref:`ref_arch/openstack/chapters/chapter02:general recommendations`) it is
-recommended that the NFVO/VNFM manages the policy and triggers a
+(gen.scl.01 in 
+:ref:`ref_arch/openstack/chapters/chapter02:general recommendations`),  
+it is recommended that the NFVO/VNFM manages the policy and triggers a
 scale-up or scale-down action based on application telemetry, event, AI,
 or ML etc. While the use of telemetry and alarming system can trigger a
 scaling operation based on resource utilisation, without application
@@ -29,8 +29,9 @@ by the application. It is therefore suggested that an OpenStack scaling
 operation is called using an appropriate autoscaling web-hook by the
 NFVO/VNFM.
 
-For more information on auto-scaling with Heat please see:
-https://docs.openstack.org/senlin/latest/scenarios/autoscaling_heat.html.
+For more information on auto-scaling with Heat please see the OpenStack 
+document "`Autoscaling with heat 
+<https://docs.openstack.org/senlin/latest/scenarios/autoscaling_heat.html>`_".
 Please note that the OpenStack Senlin service is still under development
 with major architectural changes made in the OpenStack Ussuri release.
 
