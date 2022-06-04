@@ -312,7 +312,8 @@ required for Cloud Infrastructure/VIM use cases. Other components are
 optional and provide functionality above and beyond Cloud
 Infrastructure/VIM requirements.
 
-The architecture consists of the core services shown in the Figure 3-1;
+The architecture consists of the core services shown in the
+:numref:`OpenStack Core Services`;
 Ironic is an optional OpenStack service needed only for bare-metal
 containers. The rest of this document will address the specific Anuket
 conformant implementation requirements and recommendations for the core
@@ -321,8 +322,9 @@ services.
 .. figure:: ../figures/RA1-Ch03-Core-Cloud-Infra-Services.png
    :alt: OpenStack Core Services
    :align: center
+   :name: OpenStack Core Services
 
-Figure 3-1: OpenStack Core Services
+   OpenStack Core Services
 
 We will refer to the functions above as falling into the following
 categories to avoid any confusion with other terminology that may be
@@ -359,21 +361,23 @@ of nodes associated with specific roles:
    flat files)
 
 The data plane consists of the compute nodes. It is typical to consider
-the other node types to be part of the control plane. Figure 3-2 depicts
+the other node types to be part of the control plane.
+:numref:`OpenStack Services Topology` depicts
 the 4 types of nodes constitutive of the Infrastructure: control,
 compute, network and storage nodes.
 
 .. figure:: ../figures/RA1-Ch03-OpenStack-Services-Topology.png
    :alt: OpenStack Services Topology
    :align: center
+   :name: OpenStack Services Topology
 
-Figure 3-2: OpenStack Services Topology
+   OpenStack Services Topology
 
 Deployments can be structured using the distribution of services amongst
-the 4 node types as depicted in Figure 3-2, but depending on workloads
-requirements, OpenStack services can also be hosted on the same nodes.
-For instance, services related to Controller, network and storage roles
-can be hosted on controller nodes.
+the 4 node types as depicted in :numref:`OpenStack Services Topology`,
+but depending on workloads requirements, OpenStack services can also be
+hosted on the same nodes. For instance, services related to Controller,
+network and storage roles can be hosted on controller nodes.
 
 Foundation Services
 ^^^^^^^^^^^^^^^^^^^
@@ -677,12 +681,13 @@ The recommended network architecture is spine and leaf topology.
 .. figure:: ../figures/RA1-Ch03-Network-Fabric.png
    :alt: Network Fabric – Physical
    :align: center
+   :name: Network Fabric – Physical
 
-Figure 3-3: Network Fabric – Physical
+   Network Fabric – Physical
 
-Figure 3-3 shows a physical network layout where each physical server is
-dual homed to TOR (Leaf/Access) switches with redundant (2x)
-connections. The Leaf switches are dual homed with redundant connections
+:numref:`Network Fabric – Physical` shows a physical network layout where each
+physical server is dual homed to TOR (Leaf/Access) switches with redundant
+(2x) connections. The Leaf switches are dual homed with redundant connections
 to spines.
 
 Storage
