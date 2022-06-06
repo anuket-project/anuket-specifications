@@ -510,7 +510,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.ntw.007| Multiplexer /    | If used, the selected multiplexer/meta-plugin     | `req.gen.ost.  | `RI2 4.3.1`     |
-|           | meta-plugin CNI  | **must** support the use of multiple              | 01`,            |                 |
+|           | meta-plugin CNI  | **must** support the use of multiple              | 01`,           |                 |
 |           | Plugins          | CNI-conformant Network Plugins.                   | `req.inf.ntw.  |                 |
 |           |                  |                                                   | 06`            |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
