@@ -34,17 +34,17 @@ related issues:
 Here are the possible new test cases which could be integrated in the
 existing Anuket projects to improve RC:
 
-+-------------------------------------------------+-------------------+
-| issues                                          | requirements      |
-+=================================================+===================+
-| `integrate KloudBuster in                       | disk benchmarking |
-| Functest                                        |                   |
-| <https://github.com/cntt-n/CNTT/issues/508>`__  |                   |
-+-------------------------------------------------+-------------------+
-| `add tempest-stress in                          | stress testing    |
-| Functest                                        |                   |
-| <https://github.com/cntt-n/CNTT/issues/916>`__  |                   |
-+-------------------------------------------------+-------------------+
+.. list-table:: Possible new test cases
+   :widths: auto
+
+   * - Issues
+     - Requirements
+   * - `integrate KloudBuster in Functest
+       <https://github.com/cntt-n/CNTT/issues/508>`__
+     - disk benchmarking
+   * - `add tempest-stress in Functest
+       <https://github.com/cntt-n/CNTT/issues/916>`__
+     - stress testing
 
 Framework Gaps
 --------------

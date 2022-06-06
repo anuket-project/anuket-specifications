@@ -83,48 +83,57 @@ integrated in Functest Smoke (see `Functest daily
 jobs <https://build.opnfv.org/ci/view/functest/job/functest-wallaby-daily/17/>`__
 for more details):
 
-================= ==================
-Testcases         Gates
-================= ==================
-tempest_neutron   Neutron
-tempest_cinder    Cinder
-tempest_keystone  Keystone
-rally_sanity      General
-refstack_defcore  General
-tempest_full      General
-tempest_slow      General
-tempest_scenario  General
-patrole           Patrole
-tempest_barbican  Barbican
-networking-bgpvpn Networking BGP VPN
-networking-sfc    Networking SFC
-================= ==================
+.. table:: Functional tests
+   :widths: auto
+
+   ================= ==================
+   Testcases         Gates
+   ================= ==================
+   tempest_neutron   Neutron
+   tempest_cinder    Cinder
+   tempest_keystone  Keystone
+   rally_sanity      General
+   refstack_defcore  General
+   tempest_full      General
+   tempest_slow      General
+   tempest_scenario  General
+   patrole           Patrole
+   tempest_barbican  Barbican
+   networking-bgpvpn Networking BGP VPN
+   networking-sfc    Networking SFC
+   ================= ==================
 
 To complete functional testing, Functest also integrates a few
 `performance
 tools <https://docs.openstack.org/developer/performance-docs/methodologies/tools.html>`__
 (2-3 hours) as proposed by OpenStack:
 
-========== ===========================
-Testcases  Benchmarking
-========== ===========================
-rally_full Control Plane (API) testing
-rally_jobs Control Plane (API) testing
-vmtp       Data Plane testing
-shaker     Data Plane testing
-========== ===========================
+.. table:: Performance tools
+   :widths: auto
+
+   ========== ===========================
+   Testcases  Benchmarking
+   ========== ===========================
+   rally_full Control Plane (API) testing
+   rally_jobs Control Plane (API) testing
+   vmtp       Data Plane testing
+   shaker     Data Plane testing
+   ========== ===========================
 
 And VNFs automatically deployed and tested :
 
-============ ===================================
-Testcases    Benchmarking
-============ ===================================
-cloudify     Cloudify deployment
-cloudify_ims Clearwater IMS deployed via Coudify
-heat_ims     Clearwater IMS deployed via Heat
-vyos_vrouter VyOS deployed via Cloudify
-juju_epc     OAI deployed via Juju
-============ ===================================
+.. table:: VNFs
+   :widths: auto
+
+   ============ ===================================
+   Testcases    Benchmarking
+   ============ ===================================
+   cloudify     Cloudify deployment
+   cloudify_ims Clearwater IMS deployed via Coudify
+   heat_ims     Clearwater IMS deployed via Heat
+   vyos_vrouter VyOS deployed via Cloudify
+   juju_epc     OAI deployed via Juju
+   ============ ===================================
 
 Functest should be considered as a whole as it meets multiple objectives
 about the reference implementation:
