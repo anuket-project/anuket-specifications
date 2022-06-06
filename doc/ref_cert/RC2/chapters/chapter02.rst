@@ -333,7 +333,7 @@ which iterates 10 times the mainline
 `xrally-kubernetes <https://github.com/xrally/xrally-kubernetes>`__
 scenarios.
 
-At the time of writing, no KPI is defined in :doc:`ref_arch/kubernetes/README`
+At the time of writing, no KPI is defined in :doc:`ref_arch/kubernetes/index`
 which would have asked for an update of the default SLA (maximum failure
 rate of 0%) proposed in `Functest Kubernetes
 Benchmarking <https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking/testcases.yaml?h=stable%2Fv1.23>`__

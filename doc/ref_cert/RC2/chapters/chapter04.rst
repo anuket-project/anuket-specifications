@@ -5,7 +5,7 @@ Introduction
 ------------
 
 The scope of this chapter is to identify and list test cases based on
-requirements defined in :doc:`ref_arch/kubernetes/README`.
+requirements defined in :doc:`ref_arch/kubernetes/index`.
 This will serve as traceability between test cases and requirements for
 Kubernetes platform interoperability.
 
