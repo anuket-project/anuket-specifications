@@ -328,7 +328,8 @@ of VNF developer teams.
 4. Control plane components: Validations for RabbitMQ, Ceph, MariaDB
    etc. and OpenStack components like Nova/Glance/Heat etc. APIs.
 5. Security: Validation for use RBAC roles and user group policies. See
-   :doc:`ref_cert/RC1/chapters/chapter07` for complete list.
+   :ref:`ref_cert/RC1/chapters/chapter07:vnf testing cookbook` for complete
+   list.
 
 The following **Optional Test Categories** which can be considered by
 the Operator, or Supplier, for targeted validations to complement
@@ -433,54 +434,37 @@ The below figure shows the targeted badge for NFVI.
 **Specifics**. More specifically, suppliers of NFVI testing seeking
 infrastructure Conformance are required to furnish the following:
 
-+-----------------------+-----------------------+-----------------------+
-| Category              | OVP/CVC Expectation   | Supporting            |
-|                       |                       | Artifact(s)           |
-+=======================+=======================+=======================+
-| Lab                   | Verification that the | Bare-metal H/W        |
-|                       | delivered test lab    | Validations           |
-|                       | conforms to RI-x lab  |                       |
-|                       | requirements for      |                       |
-|                       | topology, # of nodes, |                       |
-|                       | network fabric, etc   |                       |
-+-----------------------+-----------------------+-----------------------+
-| Compliance            | Verification that the | Manifest S/W          |
-|                       | installed software    | Validations           |
-|                       | conforms to RM/RA     |                       |
-|                       | requirements for      |                       |
-|                       | required components   |                       |
-|                       | and configured        |                       |
-|                       | options and           |                       |
-|                       | extensions, etc       |                       |
-+-----------------------+-----------------------+-----------------------+
-| Validation            | FR Validation of      | API & Platform Test   |
-|                       | Component and API     | Results               |
-|                       | functional behavior   |                       |
-|                       | meets requirements    |                       |
-|                       | specified in RM/RA-x  |                       |
-|                       | requirements          |                       |
-|                       | documents             |                       |
-+-----------------------+-----------------------+-----------------------+
-| Performance           | NFR Validation of     | Performance Test      |
-|                       | Component, Interface, | Results               |
-|                       | and API, results are  |                       |
-|                       | within tolerance, or  |                       |
-|                       | achieve baseline      |                       |
-|                       | measurements          |                       |
-+-----------------------+-----------------------+-----------------------+
-| Results Reporting     | Published of Test     | Normalized Results    |
-|                       | Results into          | per Standards         |
-|                       | centralized and       |                       |
-|                       | common repository and |                       |
-|                       | reporting portal      |                       |
-+-----------------------+-----------------------+-----------------------+
-| Release Notes         | Supplier provides     | Release Notes         |
-|                       | concluding remarks,   |                       |
-|                       | links to artifacts,   |                       |
-|                       | and demonstration of  |                       |
-|                       | having met exit       |                       |
-|                       | criteria for testing  |                       |
-+-----------------------+-----------------------+-----------------------+
+.. list-table:: OVP/CVC Expectation
+   :widths: 30 40 30
+   :header-rows: 1
+
+   * - Category
+     - OVP/CVC Expectation
+     - Supporting Artifact(s)
+   * - Lab
+     - Verification that the delivered test lab conforms to RI-x lab
+       requirements for topology, # of nodes, network fabric, etc
+     - Bare-metal H/W Validations
+   * - Compliance
+     - Verification that the installed software conforms to RM/RA requirements
+       for required components and configured options and extensions, etc
+     - Manifest S/W Validations
+   * - Validation
+     - FR Validation of Component and API functional behavior meets
+       requirements specified in RM/RA-x requirements documents
+     - API & Platform Test Results
+   * - Performance
+     - NFR Validation of Component, Interface, and API, results are within
+       tolerance, or achieve baseline measurements
+     - Performance Test Results
+   * - Results Reporting
+     - Published of Test Results into centralized and common repository and
+       reporting portal
+     - Normalized Results per Standards
+   * - Release Notes
+     - Supplier provides concluding remarks, links to artifacts, and
+       demonstration of having met exit criteria for testing
+     - Release Notes
 
 **Conformance Process**
 
@@ -519,41 +503,39 @@ Generic Requirements on Test Cases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All test cases must fulfill the generic requirements listed in Section
-`Test Case Selection
-Requirements :ref:`ref_model/chapters/chapter08:multi-cloud interactions model`
+:ref:`ref_model/chapters/chapter08:multi-cloud interactions model`
 of the reference model.
 
 In addition, for test cases targeting the NFVI compliance program, the
 following requirements must be met:
 
-+--------+-------------------------------------------------------------+
-| Ref    | Description                                                 |
-| erence |                                                             |
-+========+=============================================================+
-| x      | All NFVI test cases *must* be automated. Once the           |
-|        | pre-conditions of a test case are met, i.e., the system     |
-|        | under test is configured and in a state according to the    |
-|        | pre-conditions of the particular test case, no manual steps |
-|        | must be required to run a test case to completion.          |
-+--------+-------------------------------------------------------------+
-| x      | All NFVI test cases *must* be implemented using publicly    |
-|        | available open source tools. This enables access to test    |
-|        | tools and test case implementations to all interested       |
-|        | parties and organizations.                                  |
-+--------+-------------------------------------------------------------+
-| x      | All NFVI test cases *must* be integrated and run in the     |
-|        | Anuket CI/CD pipeline. This requirement ensures that test   |
-|        | cases are functionally correct, reliable, mature and pass   |
-|        | on the NFVI reference implementation.                       |
-+--------+-------------------------------------------------------------+
-| x      | All NFVI test cases *must* treat the NFVI platform as a     |
-|        | black box. In particular, test cases must not perform       |
-|        | actions on or change the state of the system under test     |
-|        | outside the scope of well-defined APIs as listed by RA1.    |
-|        | This requirement ensures applicability of test cases across |
-|        | different implementations: reference implementations as     |
-|        | well as commercial implementations.                         |
-+--------+-------------------------------------------------------------+
+.. list-table:: NFVI compliance requirements
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Reference
+     - Description
+   * - x
+     - All NFVI test cases *must* be automated. Once the pre-conditions of a
+       test case are met, i.e., the system under test is configured and in a
+       state according to the pre-conditions of the particular test case, no
+       manual steps must be required to run a test case to completion.
+   * - x
+     - All NFVI test cases *must* be implemented using publicly available open
+       source tools. This enables access to test tools and test case
+       implementations to all interested parties and organizations.
+   * - x
+     - All NFVI test cases *must* be integrated and run in the Anuket CI/CD
+       pipeline. This requirement ensures that test cases are functionally
+       correct, reliable, mature and pass on the NFVI reference
+       implementation.
+   * - x
+     - All NFVI test cases *must* treat the NFVI platform as a black box. In
+       particular, test cases must not perform actions on or change the state
+       of the system under test outside the scope of well-defined APIs as
+       listed by RA1. This requirement ensures applicability of test cases
+       across different implementations: reference implementations as well as
+       commercial implementations.
 
 Requirement Types
 ~~~~~~~~~~~~~~~~~
@@ -632,25 +614,25 @@ of the compliance and Conformance test suite must be capable of running
 across all of those environments. This results in the following list of
 requirements:
 
-+--------+-------------------------------------------------------------+
-| Ref    | Description                                                 |
-| erence |                                                             |
-+========+=============================================================+
-| x      | NFVI test cases *must not* interact with remote (Internet)  |
-|        | services apart from downloading container or VM images. In  |
-|        | particular, test tools and test cases must not              |
-|        | automatically upload test data to any system or service run |
-|        | by LFN or GSMA. The purpose of this requirement is to       |
-|        | protect the confidentially of (intermediate) test data.     |
-+--------+-------------------------------------------------------------+
-| x      | NFVI test cases *must* support a means of running in an     |
-|        | internal enterprise lab environment. This could be achieved |
-|        | by either i) natively supporting proxied Internet           |
-|        | connectivity and non-public DNS servers or ii) by providing |
-|        | a high-level description of remote dependencies (e.g.,      |
-|        | container and VM images, network services (DNS), etc.) such |
-|        | that local mirrors can be set up.                           |
-+--------+-------------------------------------------------------------+
+.. list-table:: Test case requirements
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Reference
+     - Description
+   * - x
+     - NFVI test cases *must not* interact with remote (Internet) services
+       apart from downloading container or VM images. In particular, test
+       tools and test cases must not automatically upload test data to any
+       system or service run by LFN or GSMA. The purpose of this requirement
+       is to protect the confidentially of (intermediate) test data.
+   * - x
+     - NFVI test cases *must* support a means of running in an internal
+       enterprise lab environment. This could be achieved by either i)
+       natively supporting proxied Internet connectivity and non-public DNS
+       servers or ii) by providing a high-level description of remote
+       dependencies (e.g., container and VM images, network services (DNS),
+       etc.) such that local mirrors can be set up.
 
 Options & Extensions
 ~~~~~~~~~~~~~~~~~~~~
@@ -771,86 +753,95 @@ related to either the VNF domain or the NFVI domain itself:
 The following table contains the list of performance metrics related to
 the VNF domain.
 
-+-------------------+-----------------+-----------+---------------------------+
-| Reference         | Name            | Unit      | Definition/Notes          |
-+===================+=================+===========+===========================+
-| vnf.nfvi.perf.001 | vNIC throughput | bits/s    | Throughput per vNIC       |
-+-------------------+-----------------+-----------+---------------------------+
-| vnf.nfvi.perf.002 | vNIC latency    | second    | Frame transfer time to    |
-|                   |                 |           | vNIC at the throughput    |
-|                   |                 |           | (vnf.nfvi.perf.001)       |
-+-------------------+-----------------+-----------+---------------------------+
-| vnf.nfvi.perf.003 | vNIC delay      | second    | Frame Delay Variation     |
-|                   | variation       |           | (FDV) to vNIC at the      |
-|                   |                 |           | throughput                |
-|                   |                 |           | (vnf.nfvi.perf.001)       |
-+-------------------+-----------------+-----------+---------------------------+
-| vnf.nfvi.perf.004 | vNIC            | number    | Simultaneous active L3/L4 |
-|                   | simultaneous    |           | flows per vNIC before a   |
-|                   | active flows    |           | new flow is dropped       |
-+-------------------+-----------------+-----------+---------------------------+
-| vnf.nfvi.perf.005 | vNIC new flows  | flows/s   | New L3/L4 flows rate per  |
-|                   | rate            |           | vNIC                      |
-+-------------------+-----------------+-----------+---------------------------+
-| vnf.nfvi.perf.006 | Storage         | bytes/s   | Throughput per virtual    |
-|                   | throughput      |           | storage unit              |
-+-------------------+-----------------+-----------+---------------------------+
-| vnf.nfvi.perf.007 | vCPU capacity   | test-\    | Compute capacity per vCPU |
-|                   |                 | specifics |                           |
-|                   |                 | core      |                           |
-+-------------------+-----------------+-----------+---------------------------+
+.. list-table:: Performance metrics related to the VNF domain
+   :widths: 20 20 20 40
+   :header-rows: 1
+
+   * - Reference
+     - Name
+     - Unit
+     - Definition/Notes
+   * - vnf.nfvi.perf.001
+     - vNIC throughput
+     - bits/s
+     - Throughput per vNIC
+   * - vnf.nfvi.perf.002
+     - vNIC latency
+     - second
+     - Frame transfer time to vNIC at the throughput (vnf.nfvi.perf.001)
+   * - vnf.nfvi.perf.003
+     - vNIC delay variation
+     - second
+     - Frame Delay Variation (FDV) to vNIC at the throughput
+       (vnf.nfvi.perf.001)
+   * - vnf.nfvi.perf.004
+     - vNIC simultaneous active flows
+     - number
+     - Simultaneous active L3/L4 flows per vNIC before a new flow is dropped
+   * - vnf.nfvi.perf.005
+     - vNIC new flows rate
+     - flows/s
+     - New L3/L4 flows rate per vNIC
+   * - vnf.nfvi.perf.006
+     - Storage throughput
+     - bytes/s
+     - Throughput per virtual storage unit
+   * - vnf.nfvi.perf.007
+     - vCPU capacity
+     - test-specifics core
+     - Compute capacity per vCPU
 
 The following table contains the list of performance metrics related to
 the NFVI domain.
 
-+---------------------+-----------------+-----------+-------------------------+
-| Reference           | Name            | Unit      | Definition/Notes        |
-+=====================+=================+===========+=========================+
-| infra.nfvi.perf.001 | Node network    | bits/s    | Network throughput per  |
-|                     | throughput      |           | node                    |
-+---------------------+-----------------+-----------+-------------------------+
-| infra.nfvi.perf.002 | Node            | number    | Simultaneous active     |
-|                     | simultaneous    |           | L3/L4 flows per node    |
-|                     | active flows    |           | before a new flow is    |
-|                     |                 |           | dropped                 |
-+---------------------+-----------------+-----------+-------------------------+
-| infra.nfvi.perf.003 | Node new flows  | flows/s   | New L3/L4 flows rate    |
-|                     | rate            |           | per node                |
-+---------------------+-----------------+-----------+-------------------------+
-| infra.nfvi.perf.004 | Node storage    | bytes/s   | Storage throughput per  |
-|                     | throughput      |           | node                    |
-+---------------------+-----------------+-----------+-------------------------+
-| infra.nfvi.perf.005 | Physical core   | test\-\   | Compute capacity per    |
-|                     | capacity        | specifics | physical core usable by |
-|                     |                 | core      | VNFs                    |
-+---------------------+-----------------+-----------+-------------------------+
-| infra.nfvi.perf.006 | Energy          | W         | Energy consumption of   |
-|                     | consumption     |           | the node without        |
-|                     |                 |           | hosting any VNFC        |
-+---------------------+-----------------+-----------+-------------------------+
-| infra.nfvi.perf.007 | Network energy  | W/bits/s  | Energy consumption of   |
-|                     | efficiency      |           | the node at the network |
-|                     |                 |           | throughput,             |
-|                     |                 |           | (infra.nfvi.perf.001),  |
-|                     |                 |           | normalized to the       |
-|                     |                 |           | measured bit rate       |
-+---------------------+-----------------+-----------+-------------------------+
-| infra.nfvi.perf.008 | Storage energy  | W/bits/s  | Energy consumption of   |
-|                     | efficiency      |           | the node at the storage |
-|                     |                 |           | throughput              |
-|                     |                 |           | (infra.nfvi.perf.004),  |
-|                     |                 |           | normalized to the       |
-|                     |                 |           | measured byte rate      |
-+---------------------+-----------------+-----------+-------------------------+
-| infra.nfvi.perf.009 | Compute energy  | W/core    | Energy consumption of   |
-|                     | efficiency      |           | the node during compute |
-|                     |                 |           | capacity test           |
-|                     |                 |           | (vnf.nfvi.perf.007 or   |
-|                     |                 |           | infra.nfvi.perf.005),   |
-|                     |                 |           | normalized to the       |
-|                     |                 |           | number of physical      |
-|                     |                 |           | cores usable by VNFs    |
-+---------------------+-----------------+-----------+-------------------------+
+.. list-table:: Performance metrics related to the NFVI domain
+   :widths: 20 20 20 40
+   :header-rows: 1
+
+   * - Reference
+     - Name
+     - Unit
+     - Definition/Notes
+   * - infra.nfvi.perf.001
+     - Node network throughput
+     - bits/s
+     - Network throughput per node
+   * - infra.nfvi.perf.002
+     - Node simultaneous active flows
+     - number
+     - Simultaneous active L3/L4 flows per node before a new flow is dropped
+   * - infra.nfvi.perf.003
+     - Node new flows rate
+     - flows/s
+     - New L3/L4 flows rate per node
+   * - infra.nfvi.perf.004
+     - Node storage throughput
+     - bytes/s
+     - Storage throughput per node
+   * - infra.nfvi.perf.005
+     - Physical core capacity
+     - test-specifics core
+     - Compute capacity per physical core usable by VNFs
+   * - infra.nfvi.perf.006
+     - Energy consumption
+     - W
+     - Energy consumption of the node without hosting any VNFC
+   * - infra.nfvi.perf.007
+     - Network energy efficiency
+     - W/bits/s
+     - Energy consumption of the node at the network throughput,
+       (infra.nfvi.perf.001), normalized to the measured bit rate
+   * - infra.nfvi.perf.008
+     - Storage energy efficiency
+     - W/bits/s
+     - Energy consumption of the node at the storage throughput
+       (infra.nfvi.perf.004), normalized to the measured byte rate
+   * - infra.nfvi.perf.009
+     - Compute energy efficiency
+     - W/core
+     - Energy consumption of the node during compute capacity test
+       (vnf.nfvi.perf.007 or infra.nfvi.perf.005), normalized to the number of
+       physical cores usable by VNFs
 
 **MVP Metrics**
 
@@ -962,49 +953,115 @@ This optimization should be based on the following principles:
 The following table proposed a possible optimized matrix model of the
 test cases against the metrics to be measured.
 
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-|           | **NFVI      | **B**   |         |       |       | **N** |       |
-|           | Profiles**  |         |         |       |       |       |       |
-+===========+=============+=========+=========+=======+=======+=======+=======+
-|           | **Test      | V2V -   | VPV -   | PVP - | PVP - | PVP - | PVP - |
-|           | Cases**     | L2 -    | L3 -    | L2 -  | L4 -  | L2-   | L2 -  |
-|           |             | SRV     | SRV     | SRV   | SRV   | SRV   | FWD   |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-|           |             |         |         |       |       |       |       |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-| **MVP     | vnf.nfvi.\  | 50\     | 20\     | 20\   | 10\   | 40\   | 40\   |
-| Metrics** | perf.001    | Gbps    | Gbps    | Gbps  | Gbps  | Gbps  | Gbps  |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-|           | vnf.nfvi.\  | n/a (4) | n/a (4) | ?     | ?     | ?     | 0.5ms |
-|           | perf.002    |         |         |       |       |       |       |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-|           | infra.\     | n/a (1) | n/a (1) | 40\   | 20\   | 60\   | 80\   |
-|           | nfvi.\      |         |         | Gbps  | Gbps  | Gbps  | Gbps  |
-|           | perf.001    |         |         |       |       |       |       |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-|           | infra.\     | n/a (1) | n/a (1) | ?     | ?     | ?     | ?     |
-|           | nfvi.\      |         |         | W/\   | W/\   | W/\   | W/\   |
-|           | perf.007    |         |         | Gbps  | Gbps  | Gbps  | Gbps  |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-|           |             |         |         |       |       |       |       |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-| **Non-MVP | vnf.nfvi.\  | n/a (4) | n/a (4) | ?     | ?     | ?     | 1ms   |
-| Metrics** | perf.003    |         |         |       |       |       |       |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-|           | vnf.nfvi.\  | n/a (4) | n/a (4) | ?     | ?     | ?     | 500k  |
-|           | perf.004    |         |         |       |       |       |       |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-|           | vnf.nfvi.\  | n/a (4) | n/a (4) | ?     | ?     | ?     | 110\  |
-|           | perf.005    |         |         |       |       |       | kfps  |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-|           | infra.\     | n/a (1) | n/a (1) | ?     | ?     | ?     | 1G    |
-|           | nfvi.\      |         |         |       |       |       |       |
-|           | perf.002    |         |         |       |       |       |       |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
-|           | infra.\     | n/a     | n/a     | ?     | ?     | ?     | 200\  |
-|           | nfvi.\      | (1)     | (1)     |       |       |       | kfps  |
-|           | perf.003    |         |         |       |       |       |       |
-+-----------+-------------+---------+---------+-------+-------+-------+-------+
+.. list-table:: Optimized matrix model of the test cases against the metrics
+                to be measured
+   :widths: 20 20 10 10 10 10 10 10
+   :header-rows: 1
+
+   * -
+     - NFVI Profiles
+     - B
+     -
+     -
+     -
+     - N
+     -
+   * -
+     - Test Cases
+     - V2V - L2 - SRV
+     - VPV - L3 - SRV
+     - PVP - L2 - SRV
+     - PVP - L4 - SRV
+     - PVP - L2 - SRV
+     - PVP - L2 - FWD
+   * -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+   * - MVP Metrics
+     - vnf.nfvi.perf.001
+     - 50Gbps
+     - 20Gbps
+     - 20Gbps
+     - 10Gbps
+     - 40Gbps
+     - 40Gbps
+   * -
+     - vnf.nfvi.perf.002
+     - n/a (4)
+     - n/a (4)
+     - ?
+     - ?
+     - ?
+     - 0.5ms
+   * -
+     - infra.nfvi.perf.001
+     - n/a (1)
+     - n/a (1)
+     - 40Gbps
+     - 20Gbps
+     - 60Gbps
+     - 80Gbps
+   * -
+     - infra.nfvi.perf.007
+     - n/a (1)
+     - n/a (1)
+     - ? W/Gbps
+     - ? W/Gbps
+     - ? W/Gbps
+     - ? W/Gbps
+   * -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+   * - Non-MVP Metrics
+     - vnf.nfvi.perf.003
+     - n/a (4)
+     - n/a (4)
+     - ?
+     - ?
+     - ?
+     - 1ms
+   * -
+     - vnf.nfvi.perf.004
+     - n/a (4)
+     - n/a (4)
+     - ?
+     - ?
+     - ?
+     - 500k
+   * -
+     - vnf.nfvi.perf.005
+     - n/a (4)
+     - n/a (4)
+     - ?
+     - ?
+     - ?
+     - 110kfps
+   * -
+     - infra.nfvi.perf.002
+     - n/a (1)
+     - n/a (1)
+     - ?
+     - ?
+     - ?
+     - 1G
+   * -
+     - infra.nfvi.perf.003
+     - n/a (1)
+     - n/a (1)
+     - ?
+     - ?
+     - ?
+     - 200kfps
 
 *Table notes*:
 

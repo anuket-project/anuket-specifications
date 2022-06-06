@@ -25,7 +25,7 @@ given VNF.
    End-End framework
 
 Here, the steps 1-4 are NFVI related steps are covered in detail in
-:doc:`ref_cert/RC1/chapters/chapter02`.
+:ref:`ref_cert/RC1/chapters/chapter02:nfvi conformance requirements`.
 
 Step-5. Interoperability validations for VNF functional testing defined.
 
@@ -124,91 +124,52 @@ testing performed confirms:
    cases pass) on NFVI with acceptable levels of stability and
    performance.
 
-Following table shows the bading requirements with scope of mandatory
+Following table shows the badging requirements with scope of mandatory
 (must) or optional.
 
-+--------------------------------------+------------+-----------------+
-| Requirement id                       | scope      | details         |
-+======================================+============+=================+
-| CVreq.VNF.001                        | must       | Receive NFVi    |
-|                                      |            | badge in lab    |
-|                                      |            | setup per RI-1  |
-|                                      |            | standards,      |
-|                                      |            | performing h/w  |
-|                                      |            | validations,    |
-|                                      |            | performing s/w  |
-|                                      |            | manifest        |
-|                                      |            | validations,    |
-|                                      |            | running nfvi    |
-|                                      |            | compliance,     |
-|                                      |            | validation, and |
-|                                      |            | performance     |
-|                                      |            | checks          |
-+--------------------------------------+------------+-----------------+
-| CVreq.VNF.002                        | must       | met all entry   |
-|                                      |            | and exit        |
-|                                      |            | criteria        |
-+--------------------------------------+------------+-----------------+
-| CVreq.VNF.003                        | must       | run             |
-|                                      |            | i               |
-|                                      |            | nteroperability |
-|                                      |            | validations,    |
-|                                      |            | including       |
-|                                      |            | instantiation,  |
-|                                      |            | communication / |
-|                                      |            | health, and     |
-|                                      |            | removal         |
-+--------------------------------------+------------+-----------------+
-| CVreq.VNF.004                        | shall      | utilize         |
-|                                      |            | automation      |
-|                                      |            | frameworks to   |
-|                                      |            | run all         |
-|                                      |            | required tests. |
-|                                      |            | Conformance     |
-|                                      |            | process would   |
-|                                      |            | improve, if     |
-|                                      |            | test framework  |
-|                                      |            | satisfy the     |
-|                                      |            | required        |
-|                                      |            | defined in this |
-|                                      |            | chapter under   |
-|                                      |            | *VNF Test       |
-|                                      |            | Conformance     |
-|                                      |            | platform        |
-|                                      |            | requirements*   |
-|                                      |            | section         |
-+--------------------------------------+------------+-----------------+
-| CVreq.VNF.005                        | must       | pass all        |
-|                                      |            | required tests  |
-+--------------------------------------+------------+-----------------+
-| CVreq.VNF.006                        | must       | prepare release |
-|                                      |            | notes, with     |
-|                                      |            | issues known,   |
-|                                      |            | their severity  |
-|                                      |            | and magnitude,  |
-|                                      |            | mitigation plan |
-+--------------------------------------+------------+-----------------+
-| CVreq.VNF.007                        | must       | publish results |
-|                                      |            | in defined      |
-|                                      |            | normalized      |
-|                                      |            | output          |
-+--------------------------------------+------------+-----------------+
-| CVreq.VNF.008                        | must       | respond /closed |
-|                                      |            | badging         |
-|                                      |            | inquiries       |
-+--------------------------------------+------------+-----------------+
-| CVReq.VNF.010                        | optional   | for bading VNF  |
-|                                      |            | supplier can    |
-|                                      |            | choose to run   |
-|                                      |            | their own test  |
-|                                      |            | h               |
-|                                      |            | arnesses/suites |
-|                                      |            | to validate VNF |
-|                                      |            | functional and  |
-|                                      |            | performance     |
-|                                      |            | behaviors and   |
-|                                      |            | performance     |
-+--------------------------------------+------------+-----------------+
+.. list-table:: The badging requirements
+   :widths: 20 10 70
+   :header-rows: 1
+
+   * - Requirement id
+     - Scope
+     - Details
+   * - CVreq.VNF.001
+     - must
+     - Receive NFVi badge in lab setup per RI-1 standards, performing h/w
+       validations, performing s/w manifest validations, running nfvi
+       compliance, validation, and performance checks
+   * - CVreq.VNF.002
+     - must
+     - met all entry and exit criteria
+   * - CVreq.VNF.003
+     - must
+     - run interoperability validations, including instantiation,
+       communication / health, and removal
+   * - CVreq.VNF.004
+     - shall
+     - utilize automation frameworks to run all required tests. Conformance
+       process would improve, if test framework satisfy the required defined
+       in this chapter under
+       *VNF Test Conformance platform requirements section*
+   * - CVreq.VNF.005
+     - must
+     - pass all required tests
+   * - CVreq.VNF.006
+     - must
+     - prepare release notes, with issues known, their severity and magnitude,
+       mitigation plan
+   * - CVreq.VNF.007
+     - must
+     - publish results in defined normalized output
+   * - CVreq.VNF.008
+     - must
+     - respond /closed badging inquiries
+   * - CVreq.VNF.010
+     - optional
+     - for bading VNF supplier can choose to run their own test
+       harnesses/suites to validate VNF functional and performance behaviors
+       and performance
 
 Badging Scope
 ~~~~~~~~~~~~~
@@ -607,50 +568,34 @@ identify whether the test passed or failed.
 Anuket defines the following four category testing which should be
 consistent with the VNF test category defined by OVP.
 
-+-----------------+-----------------+-----------------+-----------------+
-| VNF Test Case   | Requirement     | Type            | Definit         |
-| Category        | Number          | (Measu          | ion/Description |
-|                 |                 | rement/Boolean) |                 |
-+=================+=================+=================+=================+
-| Compliance      | VNF.COMPreq.001 | Boolean         | Test case       |
-|                 |                 | (               | “must”perform a |
-|                 |                 | i.e. Pass/Fail) | platform check  |
-|                 |                 |                 | against the     |
-|                 |                 |                 | Open Stack      |
-|                 |                 |                 | requirements    |
-|                 |                 |                 | and VNF package |
-|                 |                 |                 | structure and   |
-|                 |                 |                 | syntax          |
-|                 |                 |                 | requirements    |
-+-----------------+-----------------+-----------------+-----------------+
-| Verification    | VN              | Boolean         | Test case       |
-|                 | F.VERIFYreq.001 | (               | “must” perform  |
-|                 |                 | i.e. Pass/Fail) | on-boarding/    |
-|                 |                 |                 | verification    |
-|                 |                 |                 | life cycle      |
-|                 |                 |                 | operation       |
-|                 |                 |                 | validation      |
-+-----------------+-----------------+-----------------+-----------------+
-| Validation      | V               | Boolean         | Test case       |
-|                 | NF.VALIDreq.001 | (               | “must” perform  |
-|                 |                 | i.e. Pass/Fail) | API validation  |
-|                 |                 |                 | tests to verify |
-|                 |                 |                 | operability     |
-+-----------------+-----------------+-----------------+-----------------+
-| Performance     | VNF.PERFreq.001 | Measurement     | Test case       |
-|                 |                 |                 | “must” execute  |
-|                 |                 |                 | various         |
-|                 |                 |                 | performance     |
-|                 |                 |                 | related testing |
-|                 |                 |                 | and facilitate  |
-|                 |                 |                 | for             |
-|                 |                 |                 | benchmarking    |
-|                 |                 |                 | the VNF         |
-|                 |                 |                 | performance on  |
-|                 |                 |                 | different       |
-|                 |                 |                 | profile and     |
-|                 |                 |                 | scenarios       |
-+-----------------+-----------------+-----------------+-----------------+
+.. list-table:: VNF Test Case categories
+   :widths: 20 20 20 40
+   :header-rows: 1
+
+   * - VNF Test Case Category
+     - Requirement Number
+     - Type (Measurement/Boolean)
+     - Definition/Description
+   * - Compliance
+     - VNF.COMPreq.001
+     - Boolean (i.e. Pass/Fail)
+     - Test case "must" perform a platform check against the OpenStack
+       requirements and VNF package structure and syntax requirements
+   * - Verification
+     - VNF.VERIFYreq.001
+     - Boolean (i.e. Pass/Fail)
+     - Test case "must" perform on-boarding/ verification life cycle operation
+       validation
+   * - Validation
+     - VNF.VALIDreq.001
+     - Boolean (i.e. Pass/Fail)
+     - Test case "must" perform API validation tests to verify operability
+   * - Performance
+     - VNF.PERFreq.001
+     - Measurement
+     - Test case "must" execute various performance related testing and
+       facilitate for benchmarking the VNF performance on different profile
+       and scenarios
 
 Note: The four category testing can be gradually supported and in the
 future, will also cover secutiry and other test category.
@@ -677,38 +622,27 @@ The communication network usually consists of three parts: access
 network, transmission network/bearer network and core network. Following
 are some examples of network elements for each type of network
 
-+---------------------------------------+------------------------------+
-| Network Type                          | Network Elements             |
-+=======================================+==============================+
-| Access Network                        | Including mobile access      |
-|                                       | network, wireless access     |
-|                                       | network, wired access        |
-|                                       | network                      |
-+---------------------------------------+------------------------------+
-| Transport network & Bearer network    | Including Trunk Optical      |
-|                                       | Transport Network, Metro     |
-|                                       | transport network, IP        |
-|                                       | backbone network, etc.       |
-+---------------------------------------+------------------------------+
-| Core Network                          | Circuit domain, including    |
-|                                       | MSC / VLR, GMSC, MGW, NPMSC, |
-|                                       | HLR / AUC, NPHLR,            |
-|                                       | HSS, etc, Packet domain      |
-|                                       | devices, including MME, SAE  |
-|                                       | GW, EPC CG, EPC DNS,         |
-|                                       | PCC, etc; Core network       |
-|                                       | equipment for IoT private    |
-|                                       | network, including           |
-|                                       | PGW/                         |
-|                                       | GGSN, PCRF, HSS/HLR, etc, 5G |
-|                                       | core network                 |
-|                                       | element,including            |
-|                                       | AMF, SMF, UPF, UDM/UDR/AUS   |
-|                                       | F, PCF, NSSF, NRF, SMSF, etc |
-+---------------------------------------+------------------------------+
+.. list-table:: Communication network
+   :widths: 40 60
+   :header-rows: 1
+
+   * - Network Type
+     - Network Elements
+   * - Access Network
+     - Including mobile access network, wireless access network, wired access
+       network
+   * - Transport network & Bearer network
+     - Including Trunk Optical Transport Network, Metro transport network, IP
+       backbone network, etc.
+   * - Core Network
+     - Circuit domain, including MSC/VLR, GMSC, MGW, NPMSC, HLR/AUC,
+       NPHLR, HSS, etc, Packet domain devices, including MME, SAE GW, EPC CG,
+       EPC DNS, PCC, etc; Core network equipment for IoT private network,
+       including PGW/GGSN, PCRF, HSS/HLR, etc, 5G core network element,
+       including AMF, SMF, UPF, UDM/UDR/AUS F, PCF, NSSF, NRF, SMSF, etc
 
 In addition to the above network elements, there are some other data
-communication network element, including FW, DNS, Router, GW, etc\|
+communication network element, including FW, DNS, Router, GW, etc
 
 According to the current level of the entire network virtualization, the
 core network already has many VNFs, and also includes some
@@ -755,18 +689,16 @@ cases(compliance check based on TOSCA using ETSI SOL004 &
 SOL001; OpenStack HOT using ONAP VNFREQS; GSMA profile), all the OVP
 supported test case can be found in the following two link:
 
-+----------------------------------+------------------------------------------+
-| Test Cases                       | Link                                     |
-+==================================+==========================================+
-| Heat Test Cases                  | https://onap.readthedocs.io\             |
-|                                  | /en/latest/submodules/vnfrqts/testcases\ |
-|                                  | .git/docs/Appendix.html#list-of-r\       |
-|                                  | equirements-with-associated-tests        |
-+----------------------------------+------------------------------------------+
-| Tosca Test Cases                 | https://onap.readthedocs.io\             |
-|                                  | /en/latest/submodules/vnfsdk/model.gi\   |
-|                                  | t/docs/files/csar-validation.html        |
-+----------------------------------+------------------------------------------+
+.. list-table:: OVP supported test case
+   :widths: 40 60
+   :header-rows: 1
+
+   * - Test Cases
+     - Link
+   * - Heat Test Cases
+     - https://docs.onap.org/projects/onap-vnfrqts-testcases/en/istanbul/Appendix.html#list-of-requirements-with-associated-tests
+   * - Tosca Test Cases
+     - https://docs.onap.org/projects/onap-vnfsdk-model/en/istanbul/files/csar-validation.html
 
 Above compliance test cases defination can be found
 https://github.com/onap/vnfsdk-validation/tree/master/csarvalidation/src/main/resources/open-cli-schema

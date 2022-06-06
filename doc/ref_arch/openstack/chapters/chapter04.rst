@@ -532,13 +532,16 @@ Example Host Configurations
 .. figure:: ../figures/RA1-Ch04-Basic-host-config.png
    :alt: Basic Profile Host Configuration
    :align: center
+   :name: Basic Profile Host Configuration
 
-Figure 4-1: Basic Profile Host Configuration (example and simplified)
+   Basic Profile Host Configuration (example and simplified)
 
-Let us refer to the data traffic networking configuration of Figure 4-1
-to be part of the hp-B1-a and hp-B4-a host profiles and this requires
-the configurations as the following Table.
+Let us refer to the data traffic networking configuration of
+:numref:`Basic Profile Host Configuration` to be part of the hp-B1-a and
+hp-B4-a host profiles and this requires the configurations as Table
+:ref:`Configuration of Basic Flavor Capabilities`.
 
+.. _Configuration of Basic Flavor Capabilities:
 .. list-table:: Configuration of Basic Flavor Capabilities
    :widths: 20 10 10 10
    :header-rows: 1
@@ -572,19 +575,21 @@ the configurations as the following Table.
      - B1
      - B4
 
-Figure 4-2 shows the networking configuration where the storage and OAM
-share networking but are independent of the PXE network.
+:numref:`Basic Profile Host Config with shared Storage and OAM networking`
+shows the networking configuration where the storage and OAM share networking
+but are independent of the PXE network.
 
 .. figure:: ../figures/RA1-Ch04-Basic-host-config-w-Storage-Network.png
    :alt: Basic Profile Host Config with shared Storage and OAM networking
    :align: center
+   :name: Basic Profile Host Config with shared Storage and OAM networking
 
-Figure 4-2: Basic Profile Host Configuration with shared Storage and OAM
-networking (example and simplified)
+   Basic Profile Host Configuration with shared Storage and OAM
+   networking (example and simplified)
 
 Let us refer to the above networking set up to be part of the hp-B1-b
 and hp-B4-b host profiles but the basic configurations as specified in
-the provious table.
+Table :ref:`Configuration of Basic Flavor Capabilities`.
 
 In our example, the Profile Extensions B1 and B4, are each mapped to two
 different host profiles hp-B1-a and hp-B1-b, and hp-B4-a and hp-B4-b
@@ -612,10 +617,11 @@ configured:
 The above examples of host networking configurations for the B1 and B4
 Profile Extensions are also suitable for the HV Profile Extensions;
 however, the hypervisor and BIOS settings will be different (see table
-below) and hence there will be a need for different host profiles.
-The following table gives examples of three different host profiles;
-one each for HV, HD and HS Profile Extensions.
+below) and hence there will be a need for different host profiles. Table
+:ref:`Configuration of High Performance Flavor Capabilities` gives examples of
+three different host profiles; one each for HV, HD and HS Profile Extensions.
 
+.. _Configuration of High Performance Flavor Capabilities:
 .. list-table:: Configuration of High Performance Flavor Capabilities
    :widths: 15 29 12 12 12
    :header-rows: 2
@@ -659,14 +665,16 @@ one each for HV, HD and HS Profile Extensions.
 *Host Networking configuration for HD Profile Extensions*
 
 An example of the data traffic configuration for the HD (OVS-DPDK)
-Profile Extensions is shown in Figure 4-3.
+Profile Extensions is shown in
+:numref:`High Performance Profile Host Conf with DPDK`.
 
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-DPDK.png
    :alt: High Performance Profile Host Conf with DPDK
    :align: center
+   :name: High Performance Profile Host Conf with DPDK
 
-Figure 4-3: High Performance Profile Host Configuration with DPDK
-acceleration (example and simplified)
+   High Performance Profile Host Configuration with DPDK acceleration
+   (example and simplified)
 
 To ensure Tenant and DPDK CPU isolation from the host services
 (Operating System (OS), hypervisor and OpenStack agents), the following
@@ -680,21 +688,24 @@ needs to be configured:
      - Description
      - Values
    * - isolcpus (Applicable only on Compute Servers)
-     - A set of cores isolated from the host processes. Contains vCPUs reserved for Tenants and DPDK
+     - A set of cores isolated from the host processes. Contains vCPUs
+       reserved for Tenants and DPDK
      - isolcpus=3-19, 23-39, 43-59, 63-79
 
 
 *Host Networking configuration for HS Profile Extensions*
 
 An example of the data traffic configuration for the HS (SR-IOV) Profile
-Extensions is shown in Figure 4-4.
+Extensions is shown in
+:numref:`High Performance Profile Host Configuration with SR-IOV`.
 
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-SRIOV.png
    :alt: High Performance Profile Host Configuration with SR-IOV
    :align: center
+   :name: High Performance Profile Host Configuration with SR-IOV
 
-Figure 4-4: High Performance Profile Host Configuration with SR-IOV
-(example and simplified)
+   High Performance Profile Host Configuration with SR-IOV
+   (example and simplified)
 
 To ensure Tenant CPU isolation from the host services (Operating System
 (OS), hypervisor and OpenStack agents), the following needs to be
@@ -747,7 +758,7 @@ High Level Logical Network Layout
    :alt: Indicative OpenStack Network Layout
    :align: center
 
-Figure 4-5: Indicative OpenStack Network Layout
+   Indicative OpenStack Network Layout
 
 .. list-table:: OpenStack Network Characteristics
    :widths: 15 35 30
@@ -998,7 +1009,7 @@ RESTful gateway with a Swift-compatible API for Object Storage.
    :alt: Ceph Storage System
    :align: center
 
-Figure 4-6: Ceph Storage System
+   Ceph Storage System
 
 **BIOS Requirement for Ceph servers**
 
@@ -1383,16 +1394,17 @@ efficient resource utilisation. Kubernetes auto manages scaling,
 recovery from failures, etc. Thus, it is recommended that the OpenStack
 services be containerised for resiliency and resource efficiency.
 
-In Chapter 3, `Figure
-3.2 <../figures/RA1-Ch03-OpenStack-Services-Topology.png>`__ shows a
+In Chapter 3, :numref:`OpenStack Services Topology` shows a
 high level Virtualised OpenStack services topology. The containerised
-OpenStack services topology version is shown in Figure below.
+OpenStack services topology version is shown in
+:numref:`Containerised OpenStack Services Topology`.
 
 .. figure:: ../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png
    :alt: Containerised OpenStack Services Topology
    :align: center
+   :name: Containerised OpenStack Services Topology
 
-Figure 4-7: Containerised OpenStack Services Topology
+   Containerised OpenStack Services Topology
 
 Consumable Infrastructure Resources and Services
 ------------------------------------------------
