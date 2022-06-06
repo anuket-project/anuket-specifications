@@ -328,7 +328,8 @@ of VNF developer teams.
 4. Control plane components: Validations for RabbitMQ, Ceph, MariaDB
    etc. and OpenStack components like Nova/Glance/Heat etc. APIs.
 5. Security: Validation for use RBAC roles and user group policies. See
-   :doc:`ref_cert/RC1/chapters/chapter07` for complete list.
+   :ref:`ref_cert/RC1/chapters/chapter07:vnf testing cookbook` for complete
+   list.
 
 The following **Optional Test Categories** which can be considered by
 the Operator, or Supplier, for targeted validations to complement
