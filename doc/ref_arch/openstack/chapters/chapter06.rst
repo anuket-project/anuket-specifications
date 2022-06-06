@@ -553,9 +553,10 @@ Security LCM
 
 Cloud Infrastructure LCM encompasses provisioning, deployment,
 configuration and management (resources scaling, services upgrades,
-etc.) as described in :doc:`ref_arch/openstack/chapters/chapter07`. These operations
-must be securely performed in order to keep the infrastructure safe and
-operational (sec.lcm.003).
+etc.) as described in
+:ref:`ref_arch/openstack/chapters/chapter07:operations and life cycle management`.
+These operations must be securely performed in order to keep the
+infrastructure safe and operational (sec.lcm.003).
 
 **Provisioning/Deployment**
 
