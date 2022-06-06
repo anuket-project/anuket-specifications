@@ -5,7 +5,7 @@ Introduction
 ------------
 
 The scope of this chapter is to identify and list down test cases based
-on requirements defined in :doc:`ref_arch/openstack/README`.
+on requirements defined in :doc:`ref_arch/openstack/index`.
 This will serve as traceability between test cases and requirements.
 
 Note that each requirement may have one or more test cases associated
@@ -1325,7 +1325,8 @@ Test Cases Traceability to Requirements
 RM/RA-1 Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
-According to :doc:`ref_cert/RC1/chapters/chapter04`
+According to
+:ref:`ref_cert/RC1/chapters/chapter04:openstack-based cloud infrastructure testing cookbook`
 the following test cases must pass as they are for Anuket NFVI Conformance:
 
 .. table:: Anuket NFVI Conformance

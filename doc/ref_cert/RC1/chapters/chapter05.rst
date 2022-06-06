@@ -25,7 +25,7 @@ given VNF.
    End-End framework
 
 Here, the steps 1-4 are NFVI related steps are covered in detail in
-:doc:`ref_cert/RC1/chapters/chapter02`.
+:ref:`ref_cert/RC1/chapters/chapter02:nfvi conformance requirements`.
 
 Step-5. Interoperability validations for VNF functional testing defined.
 
