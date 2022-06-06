@@ -14,7 +14,7 @@ Introduction
 Reference Architecture Requirement
 ----------------------------------
 
-This is the reference implementation for OpenStack based RA. Please refer to :doc:`Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement <ref_arch/openstack/chapters/chapter02>` for the details of the RA requirements.
+This is the reference implementation for OpenStack based RA. Please refer to :doc:`Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement <ref_arch_openstack:chapters/chapter02>` for the details of the RA requirements.
 
 The implementation should follow all the requirement identified in the RA chapter.
 

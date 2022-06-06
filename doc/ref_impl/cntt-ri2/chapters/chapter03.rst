@@ -8,8 +8,8 @@ The purpose of this chapter is to list and describe the requirements on labs use
 the RI2 serves the following purposes which guide the definition of requirements in this chapter:
 
 1. RI2 is an implementation of and a proving ground for the :doc:`Reference Architecture 2
-   <ref_arch/kubernetes/chapters/chapter01>`. RI2 is verified against RA2 through the :doc:`Reference Conformance 2
-   <ref_cert/RC2/chapters/chapter01>`.
+   <ref_arch_kubernetes:chapters/chapter01>`. RI2 is verified against RA2 through the :doc:`Reference Conformance 2
+   <ref_cert_RC2:chapters/chapter01>`.
 2. RI2 will align itself with the requirements of the Anuket Assured Program.
 3. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their
    environment to develop and validate against.
@@ -100,7 +100,7 @@ Each server shall meet the following minimum specifications:
 
 Note that the minimum specifications listed above map to the recommended specifications. Additional devices, such as
 FPGA, GPU, QAT, etc., may also be added depending on the configuration. For more details on the requirements per
-infrastructure profile, please refer to :doc:`ref_arch/kubernetes/chapters/chapter02`.
+infrastructure profile, please refer to :doc:`ref_arch_kubernetes:chapters/chapter02`.
 
 A virtual jump / test host can be a VM with the following specifications:
 

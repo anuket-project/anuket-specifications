@@ -93,7 +93,7 @@ and services used in the client software stack.
 Terminology
 ~~~~~~~~~~~
 
-Terminology in this document will follow :doc:`common/glossary`.
+Terminology in this document will follow :doc:`cntt:common/glossary`.
 
 Scope
 -----
@@ -231,10 +231,10 @@ place of older, stale projects.
 **NFVI+VNF Instance Type:**
 
 -  Standard compute flavours to be tested are defined in
-   :ref:`ref_model/chapters/chapter04:virtual network interface specifications`
+   :ref:`ref_model:chapters/chapter04:virtual network interface specifications`
 -  Performance profiles come in the form of Basic, Network Intensive,
    and Compute intensive. Refer to
-   :ref:`ref_model/chapters/chapter02:analysis`
+   :ref:`ref_model:chapters/chapter02:analysis`
    for details on these profiles.
 
 Results Collation & Presentation

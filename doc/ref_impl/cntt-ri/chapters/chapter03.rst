@@ -312,7 +312,7 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 | ``req.sec.ntw.04`` | **must** configure all of the underlay network components to ensure the complete separation from the overlay customer deployments.                                             |
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-:doc:`RA1: Chapter 5 Interfaces and APIs <ref_arch/openstack/chapters/chapter05>` describes the baseline version regarding to OpenStack Service APIs.
+:doc:`RA1: Chapter 5 Interfaces and APIs <ref_arch_openstack:chapters/chapter05>` describes the baseline version regarding to OpenStack Service APIs.
 
 ===================== =========================================================================================== ================ ========================
 OpenStack Service     Link for API list                                                                           Baseline Version Minimal API Microversion
@@ -330,7 +330,7 @@ Acceleration: Cyborg  https://docs.openstack.org/cyborg/pike/userdoc/api.html   
 Cloud Infrastructure and VIM Architecture
 -----------------------------------------
 
-This sections concludes the expectation for Cloud Infrastructure and VIM architecture according to :doc:`RA1: Chapter 3 Cloud Infrastructure + VIM Architecture <ref_arch/openstack/chapters/chapter03>`
+This sections concludes the expectation for Cloud Infrastructure and VIM architecture according to :doc:`RA1: Chapter 3 Cloud Infrastructure + VIM Architecture <ref_arch_openstack:chapters/chapter03>`
 
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Requirement Area                            | Description                                                                                                                                           |
@@ -370,7 +370,7 @@ This sections concludes the expectation for Cloud Infrastructure and VIM archite
 Cloud Infrastructure and VIM Component Level Architecture
 ---------------------------------------------------------
 
-This sections concludes the expectation for Cloud Infrastructure and VIM component level architecture according to :doc:`RA1: Chapter 4 Cloud Infrastructure + VIM Component Level Architecture <ref_arch/openstack/chapters/chapter04>`
+This sections concludes the expectation for Cloud Infrastructure and VIM component level architecture according to :doc:`RA1: Chapter 4 Cloud Infrastructure + VIM Component Level Architecture <ref_arch_openstack:chapters/chapter04>`
 
 Requirement for control node:
 
@@ -405,7 +405,7 @@ Consumable Infrastructure Resources and Services
 | Requirement Area                                | Description                                                                                                                                       |
 +=================================================+===================================================================================================================================================+
 | Support for Profiles and T-shirt instance types | should follow tabels specified in `RA1: 4.4.1 Support for Profiles and T-shirt instance                                                           |
-|                                                 | types <ref_arch/openstack/chapters/chapter04#4.4.1>`                                                                                              |
+|                                                 | types <ref_arch_openstack:chapters/chapter04#4.4.1>`                                                                                              |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Availability                                    | The NFVI doesn’t provide any resiliency mechanisms at the service level. Any VM restart shall be triggered by the VNF Manager instead of          |
 |                                                 | OpenStack                                                                                                                                         |
