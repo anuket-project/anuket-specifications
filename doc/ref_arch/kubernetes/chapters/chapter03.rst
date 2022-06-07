@@ -574,8 +574,8 @@ traffic require the capability to use a user space networking technology.
    Editors note: The possibility to SR-IOV for DPDK is under discussion.
 
    Refer to software profile features
-   :ref:`ref_model/chapters/chapter05` and hardware profile
-   features :ref:`ref_model/chapters/chapter05`.
+   :doc:`ref_model/chapters/chapter05` and hardware profile
+   features :doc:`ref_model/chapters/chapter05`.
 
 Kubernetes Networking Semantics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
