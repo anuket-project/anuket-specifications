@@ -368,7 +368,7 @@ security activities need to determine whether the requirements of the process ch
 of the security activities meets the requirements, the next set of security activities are performed as the process
 transitions to the next checkpoint, or, alternatively, to the next stage if the checkpoint is the last one in the
 current stage. If, on the other hand, the outcome of the security activities does not meet the requirements, then the
-process should not be allowed to advance to the next checkpoint. In the section 
+process should not be allowed to advance to the next checkpoint. In the section
 ":ref:`ref_model/chapters/chapter07:consolidated security requirements`", the IaaC
 security activities are presented as security requirements mapped to particular stages and trigger points.
 
@@ -396,8 +396,8 @@ the same level as in the production environment (typically of **must** type), le
 
 In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered to be
 Infrastructure as a Code (IaaC). This fact implies that many aspects of code related security automatically apply to
-IaaC. Security aspects of IaaC in the telco context is discussed in the previous section 
-":ref:`ref_model/chapters/chapter07:infrastructure as a code`", 
+IaaC. Security aspects of IaaC in the telco context is discussed in the previous section
+":ref:`ref_model/chapters/chapter07:infrastructure as a code security`",
 which introduces the relevant framework for security automation and programmatic execution and monitoring of
 security controls. Organisations need to identify which of the stages or activities within these stages should be
 performed within the non-production versus production environments. This mapping will then dictate which security
@@ -560,7 +560,7 @@ TPM will be unable to decrypt the data.
 Static Root of Trust for Measurement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Static Root of Trust for Measurement (SRTM) begins with measuring and verifying the integrity of the BIOS firmware. 
+Static Root of Trust for Measurement (SRTM) begins with measuring and verifying the integrity of the BIOS firmware.
 It then measures additional
 firmware modules, verifies their integrity, and adds each component’s measure to an SRTM value. The final value
 represents the expected state of boot path loads. SRTM stores results as one or more values stored in PCR storage. In
@@ -608,7 +608,7 @@ platform.
 Zero Trust Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The sections ":ref:`ref_model/chapters/chapter07:remote attestation/opencit`" and 
+The sections ":ref:`ref_model/chapters/chapter07:remote attestation/opencit`" and
 ":ref:`ref_model/chapters/chapter07:root of trust for measurements`" provide
 methods to ensure the integrity of the infrastructure. The Zero Trust concept moves a step forward enabling to build
 secure by design cloud infrastructure, from hardware to applications. The adoption of Zero Trust principles mitigates
