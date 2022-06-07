@@ -54,7 +54,7 @@ that apply to each instance profile.
 
 The features and capabilities described in the software and hardware profiles
 are considered throughout this RA, with the RA requirements traceability to the
-RM requirements formally documented in :ref:`ref_model/chapters/chapter02` of this RA.
+RM requirements formally documented in :ref:`ref_arch/kubernetes/chapters/chapter02` of this RA.
 
 Infrastructure Services
 -----------------------
