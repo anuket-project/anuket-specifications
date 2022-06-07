@@ -734,6 +734,7 @@ Confidentiality and Integrity Requirements
      - Specification Reference
    * - sec.ci.001
      - Confidentiality/
+
        Integrity
      - The Platform **must** support Confidentiality and Integrity of data
        at rest and in transit
@@ -741,6 +742,7 @@ Confidentiality and Integrity Requirements
        integrity`
    * - sec.ci.003
      - Confidentiality/
+
        Integrity
      - The Platform **must** support Confidentiality and Integrity of data
        related metadata
@@ -755,6 +757,7 @@ Confidentiality and Integrity Requirements
        integrity`
    * - sec.ci.005
      - Confidentiality/
+
        Integrity
      - The Platform **must** support Confidentiality and Integrity of process-
        related metadata and restrict information sharing with only the
@@ -763,6 +766,7 @@ Confidentiality and Integrity Requirements
        integrity`
    * - sec.ci.006
      - Confidentiality/
+
        Integrity
      - The Platform **must** support Confidentiality and Integrity of
        workload resource utilisation (RAM, CPU, Storage, Network I/O, cache,
@@ -771,6 +775,7 @@ Confidentiality and Integrity Requirements
      - :ref:`ref_arch/openstack/chapters/chapter06:platform access`
    * - sec.ci.007
      - Confidentiality/
+
        Integrity
      - The Platform **must not** allow Memory Inspection by any actor
        other than the authorised actors for the Entity to which Memory is
