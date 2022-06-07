@@ -1,8 +1,6 @@
 Gaps, Innovation, and Development
 =================================
 
-Introduction
-------------
 
 The purpose of this chapter is to identify the gaps between what is
 required for automated deployment of VNFs on Cloud Infrastructure
