@@ -27,6 +27,7 @@ Bundle.Version Date                Note
 6.0            1 July 2021         Kali Release work finished
 6.1            1 July 2021         Lakelse Release work started
 7.0            4 January 2022      Lakelse Release work finished
+8.0.           14th June 2022.     Moselle Release 
 ============== =================== =============================
 
 Overall Status
