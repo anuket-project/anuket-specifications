@@ -330,7 +330,7 @@ Cloud Infrastructure Software Profile Requirements
 |                          |cfg.005   |                        |                 |                 |                  |
 |                          |          |                        |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
-|`5.1.3`                   |infra.net.| Traffic patterns       | Must support    | Must support    | **N/A**          | 
+|`5.1.3`                   |infra.net.| Traffic patterns       | Must support    | Must support    | **N/A**          |
 |                          |cfg.006   | symmetry               |                 |                 |                  |
 |                          |          |                        |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
@@ -432,7 +432,7 @@ Cloud Infrastructure Hardware Profile Requirements
 |`5.4.3`                   |infra.hw. | A SmartNIC that is     | Not required    | Optional (1)    | N/A              |
 |                          |nac.cfg.  | used to offload        |                 |                 |                  |
 |                          |002       | vSwitch functionality  |                 |                 |                  |
-|                          |          | to hardware            |                 |                 |                  | 
+|                          |          | to hardware            |                 |                 |                  |
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
 |`5.4.3`                   |infra.hw. | Compression            | Optional        | Optional        | N/A              |
 |                          |nac.cfg.  |                        |                 |                 |                  |
