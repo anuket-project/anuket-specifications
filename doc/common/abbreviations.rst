@@ -144,7 +144,7 @@ HOT            (OpenStack) Heat Orchestration Templates
 HSS            Home Subscriber Server
 HTML           Hyper Text Markup Language
 HTTP           Hypertext Transfer Protocol
-HTTPS         Hypertext Transfer Protocol Secure
+HTTPS          Hypertext Transfer Protocol Secure
 HW             Hardware
 IaaS           Infrastructure as a Service
 IaC (IaaC)     Infrastructure as Code (or "as a")
