@@ -878,7 +878,7 @@ extensions for these standard attributes automatically incorporated.
 Additions to resources, such as additional attributes, must be
 accompanied by an extension.
 
-:doc:`ref_arch/openstack/chapters/chapter05` of this Reference
+:ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis` of this Reference
 Architecture provides a list of :ref:`Neutron Extensions<ref_arch/openstack/chapters/chapter05:neutron>`.
 The current available
 extensions can be obtained using the `List Extensions
@@ -1049,8 +1049,8 @@ VIM Services
 ~~~~~~~~~~~~
 
 A high-level overview of the core OpenStack Services was provided in
-:doc:`ref_arch/openstack/chapters/chapter03`. In this section we describe the core and
-other needed services in more detail.
+:ref:`ref_arch/openstack/chapters/chapter03:modelling`. In this section we
+describe the core and other needed services in more detail.
 
 Keystone
 ^^^^^^^^
