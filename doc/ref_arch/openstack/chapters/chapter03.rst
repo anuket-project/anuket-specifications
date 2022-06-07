@@ -1,8 +1,6 @@
 Cloud Infrastructure Architecture - OpenStack
 =============================================
 
-Introduction
-------------
 
 This Reference Architecture (RA-1) aims to provide an OpenStack
 distribution agnostic reference architecture that includes the Network
