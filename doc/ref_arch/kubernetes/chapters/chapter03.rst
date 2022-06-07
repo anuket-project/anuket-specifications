@@ -123,7 +123,7 @@ includes details on how an implementation (i.e. an actual container runtime such
 as runc) must, for example, configure resource shares and limits (e.g. CPU,
 Memory, IOPS) for the containers that Kubernetes (via the kubelet) schedules on
 that host. This is important to ensure that the features and capabilities
-described in :ref:`ref_model/chapters/chapter05` are
+described in :doc:`ref_model/chapters/chapter05` are
 supported by this RA and delivered by any downstream Reference Implementations
 (RIs) to the instance types defined in the RM.
 
