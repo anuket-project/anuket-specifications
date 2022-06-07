@@ -650,7 +650,7 @@ Profiles Specifications & Capability Mapping
 
 ..
 
-   1 See Figure 5-1 :ref:`ref_model/chapters/chapter05:cloud infrastructure software profile description`.
+   1 See :numref:`Cloud Infrastructure software layers`.
 
 Profile Extensions
 ~~~~~~~~~~~~~~~~~~
