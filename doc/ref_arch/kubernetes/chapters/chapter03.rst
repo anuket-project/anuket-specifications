@@ -827,7 +827,7 @@ Kubernetes-based workloads.
 There are no restrictions or constraints that Kubernetes places on the storage
 that can be consumed by a workload, in terms of the requirements that are
 defined in RM sections
-:ref:`ref_model/chapters/chapter05:storage configuration` (software)
+:ref:`ref_model/chapters/chapter05:storage configurations` (software)
 and :ref:`ref_model/chapters/chapter05:virtual storage`
 (hardware). The only point of difference is that Kubernetes does not have a
 native object storage offering, and addressing this capability gap directly is
