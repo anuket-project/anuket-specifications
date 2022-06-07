@@ -286,7 +286,7 @@ plugin, and on pod deletion releases the VF from the pod.
 Hardware Acceleration
 ^^^^^^^^^^^^^^^^^^^^^
 
-Hardware Acceleration Abstraction in RM 
+Hardware Acceleration Abstraction in RM
 :ref:`ref_model/chapters/chapter03:hardware acceleration abstraction` describes types of hardware
 acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and
 SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.

@@ -878,7 +878,7 @@ Cloud Infrastructure Security Requirements
 |                                        |           | against virus or other attacks.      |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.6`                                 |sec.lcm.002| Cloud operations staff and systems   | `5.4 Securing           |
-|                                        |           | **must** use management protocols    | Kubernetes orchestrator |
+|                                        |           | **must** use management protocols    | Kubernetes orchestrator`|
 |                                        |           | limiting security risk such as       |                         |
 |                                        |           | SNMPv3, SSH v2, ICMP, NTP, syslog    |                         |
 |                                        |           | and TLS v1.2 or higher.              |                         |
@@ -896,7 +896,7 @@ Cloud Infrastructure Security Requirements
 |                                        |           | changes.                             |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.6`                                 |sec.lcm.005| Platform **must** provide logs and   | `5.10 Enable Logging    |
-|                                        |           | these logs must be regularly         | and Monitoring <./chapt |
+|                                        |           | these logs must be regularly         | and Monitoring`         |
 |                                        |           | monitored for anomalous behavior.    |                         |
 |                                        |           |                                      |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
@@ -905,7 +905,7 @@ Cloud Infrastructure Security Requirements
 |                                        |           | requests.                            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 |`7.9.6`                                 |sec.lcm.007| The Platform **must** be able to     | `5.4 Securing           |
-|                                        |           | update newly instantiated,           | Kubernetes orchestrator |
+|                                        |           | update newly instantiated,           | Kubernetes orchestrator`|
 |                                        |           | suspended, hibernated, migrated and  |                         |
 |                                        |           | restarted images with current time   |                         |
 |                                        |           | information.                         |                         |
