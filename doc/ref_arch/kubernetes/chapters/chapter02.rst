@@ -859,8 +859,8 @@ Cloud Infrastructure Security Requirements
 |                                        |           | of vulnerable and out of date        |                         |
 |                                        |           | versions.                            |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
-|`7.9.5`                                 |sec.img.008| Images **must not** include any      | `5.12 Secrets           |
-|                                        |           | secrets. Secrets include passwords,  |  Management`            |
+|`7.9.5`                                 |sec.img.008| Images **must not** include any      | `5.12 Secrets Mgmt.`    |
+|                                        |           | secrets. Secrets include passwords,  |                         |
 |                                        |           | cloud provider credentials, SSH      |                         |
 |                                        |           | keys, TLS certificate keys, etc.     |                         |
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
