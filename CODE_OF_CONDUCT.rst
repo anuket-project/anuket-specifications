@@ -1,0 +1,1 @@
+doc/CODE_OF_CONDUCT.rst
