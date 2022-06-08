@@ -113,25 +113,22 @@ Technology Exceptions
 The list of Technology Exceptions will be updated or removed when alternative technologies, aligned with the principles
 of Anuket specifications, develop and mature.
 
-+---------------+-------+---------------------------+-------+-----------------------------------------+-------------+
-| Ref           | Name  | Description               | Valid | Rationale                               | Implication |
-|               |       |                           | Until |                                         |             |
-+===============+=======+===========================+=======+=========================================+=============+
-|ra2.exc.tec.001|SR-IOV | This exception allows     | TBD   | Emulation of virtual devices for each   |             |
-|               |       | workloads to use SR-IOV   |       | virtual  machine creates an I/O         |             |
-|               |       | over PCI-PassThrough      |       | bottleneck resulting in poor performance|             |
-|               |       | technology.               |       | and limits the number of virtual        |             |
-|               |       |                           |       | machines a physical server can support. |             |
-|               |       |                           |       | SR-IOV implements virtual devices in    |             |
-|               |       |                           |       | hardware, and by avoiding the use of a  |             |
-|               |       |                           |       | switch, near maximal performance can be |             |
-|               |       |                           |       | achieved. For containerisation the      |             |
-|               |       |                           |       | downsides of creating dependencies on   |             |
-|               |       |                           |       | hardware is reduced as Kubernetes nodes |             |
-|               |       |                           |       | are either physical, or if virtual have |             |
-|               |       |                           |       | no need to "live migrate" as a VNF VM   |             |
-|               |       |                           |       | might.                                  |             |
-+---------------+-------+---------------------------+-------+-----------------------------------------+-------------+
+.. list-table:: Technology Exceptions
+   :widths: 10 10 20 5 50 5
+   :header-rows: 1
+
+   * - Ref
+     - Name
+     - Description
+     - Valid Until
+     - Rationale
+     - Implication
+   * - ra2.exc.tec.001
+     - SR-IOV
+     - This exception allows workloads to use SR-IOV over PCI-PassThrough technology.
+     - TBD
+     - Emulation of virtual devices for each virtual machine creates an I/O bottleneck resulting in poor performance and limits the number of virtual machines a physical server can support. SR-IOV implements virtual devices in hardware, and by avoiding the use of a switch, near maximal performance can be achieved. For containerisation the downsides of creating dependencies on hardware is reduced as Kubernetes nodes are either physical, or if virtual have no need to "live migrate" as a VNF VM might.
+     -
 
 Requirements Exceptions
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -140,12 +137,22 @@ The Requirements Exceptions lists the Reference Model (RM) requirements and/or R
 that will be either waived or be only partially implemented in this version of the RA. The exception list will be
 updated to allow for a period of transitioning as and when requirements change.
 
-+---------------+-------+---------------------------+-------+-----------------------------------------+-------------+
-| Ref           | Name  | Description               | Valid | Rationale                               | Implication |
-|               |       |                           | Until |                                         |             |
-+===============+=======+===========================+=======+=========================================+=============+
-|ra1.exc.req.001|Req.   | xxxx                      |xxxxxxx|                                         |             |
-+---------------+-------+---------------------------+-------+-----------------------------------------+-------------+
+.. list-table:: Requirements Exceptions
+   :widths: 10 10 20 5 50 5
+   :header-rows: 1
+
+   * - Ref
+     - Name
+     - Description
+     - Valid Until
+     - Rationale
+     - Implication
+   * - ra1.exc.req.001
+     - Req.
+     - xxxx
+     - xxxxxxx
+     -
+     -
 
 Scope
 -----
