@@ -127,7 +127,13 @@ of Anuket specifications, develop and mature.
      - SR-IOV
      - This exception allows workloads to use SR-IOV over PCI-PassThrough technology.
      - TBD
-     - Emulation of virtual devices for each virtual machine creates an I/O bottleneck resulting in poor performance and limits the number of virtual machines a physical server can support. SR-IOV implements virtual devices in hardware, and by avoiding the use of a switch, near maximal performance can be achieved. For containerisation the downsides of creating dependencies on hardware is reduced as Kubernetes nodes are either physical, or if virtual have no need to "live migrate" as a VNF VM might.
+     - Emulation of virtual devices for each virtual machine creates an I/O
+       bottleneck resulting in poor performance and limits the number of virtual
+       machines a physical server can support. SR-IOV implements virtual devices
+       in hardware, and by avoiding the use of a switch, near maximal performance
+       can be achieved. For containerisation the downsides of creating dependencies
+       on hardware is reduced as Kubernetes nodes are either physical, or if virtual
+       have no need to "live migrate" as a VNF VM might.
      -
 
 Requirements Exceptions
