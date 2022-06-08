@@ -143,14 +143,16 @@ User namespaces in Kubernetes
 
 **Related requirements:**
 
-+-----------+---------------------------------------------------------------------------------------------------------+
-| Reference | Requirement                                                                                             |
-+===========+=========================================================================================================+
-| e.man.004 | Capability to isolate resources between tenants                                                         |
-+-----------+---------------------------------------------------------------------------------------------------------+
-|sec.sys.007| The Platform must implement controls enforcing separation of duties and privileges, least privilege use |
-|           | and least common mechanism (Role-Based Access Control).                                                 |
-+-----------+---------------------------------------------------------------------------------------------------------+
+.. list-table:: API Machinery Special Interest Group
+   :widths: 20 60
+   :header-rows: 1
+
+   * - Reference
+     - Requirement
+   * - e.man.004
+     - Capability to isolate resources between tenants
+   * - sec.sys.007
+     - The Platform must implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control).
 
 **Baseline project:** *Kubernetes*
 
