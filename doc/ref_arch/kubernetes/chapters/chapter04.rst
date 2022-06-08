@@ -502,7 +502,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.ntw.006| Multiplexer /    | If used, the selected multiplexer/meta-plugin     | `req.gen.ost.  | `RI2 4.3.1`     |
-|           | meta-plugin CNI  | **must** integrate with the Kubernetes control    | 01`             |                 |
+|           | meta-plugin CNI  | **must** integrate with the Kubernetes control    | 01`            |                 |
 |           | Conformance      | plane via CNI.                                    |                |                 |
 |           |                  |                                                   |                |                 |
 |           |                  |                                                   |                |                 |
@@ -510,7 +510,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.ntw.007| Multiplexer /    | If used, the selected multiplexer/meta-plugin     | `req.gen.ost.  | `RI2 4.3.1`     |
-|           | meta-plugin CNI  | **must** support the use of multiple              | 01`,            |                 |
+|           | meta-plugin CNI  | **must** support the use of multiple              | 01`,           |                 |
 |           | Plugins          | CNI-conformant Network Plugins.                   | `req.inf.ntw.  |                 |
 |           |                  |                                                   | 06`            |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
@@ -989,9 +989,9 @@ Architecture they must be implemented as per the following specifications:
 |           |                  | `/var/run/crio.sock`) mounted.                    |                  |                |
 +-----------+------------------+---------------------------------------------------+------------------+----------------+
 |ra2.app.029| No automatic     | Non specified service accounts must not be        | `CNCF CNF        | N/A            |
-|           | service account  | automatically mapped. To prevent this             | Testsuite        |                |
-|           | mapping          | `automountServiceAccountToken: false flag must be | <https://github. |                |
-|           |                  | set in all Pods of the CNF.                       | com/cncf/cnf-tes |                |
+|           | service account  | automatically mapped. To prevent this the         | Testsuite        |                |
+|           | mapping          | `automountServiceAccountToken: false` flag must   | <https://github. |                |
+|           |                  | be set in all Pods of the CNF.                    | com/cncf/cnf-tes |                |
 |           |                  |                                                   | tsuite/blob/main |                |
 |           |                  |                                                   | /RATIONALE.md#to |                |
 |           |                  |                                                   | -check-if-there- |                |
@@ -1086,7 +1086,7 @@ Architecture they must be implemented as per the following specifications:
 |           |                  |                                                   | on/configmap/#co |                |
 |           |                  |                                                   | nfigmap-immutabl |                |
 |           |                  |                                                   | e>`__            |                |
-+-----------+------------------+---------------------------------------------------+------------------+----------------+ 
++-----------+------------------+---------------------------------------------------+------------------+----------------+
 |ra2.app.038| Horizontal       | Increasing and decreasing of the CNF capacity     | TBD              | N/A            |
 |           | scaling          | should be implemented using horizontal scaling.   |                  |                |
 |           |                  | If horizontal scaling is supported, automatic     |                  |                |

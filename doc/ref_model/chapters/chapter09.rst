@@ -174,9 +174,6 @@ Automation
 Infrastructure LCM Automation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Introduction
-^^^^^^^^^^^^
-
 In a typical telecom operator environment, infrastructure Life Cycle Management is highly complex and error-prone. The
 environment, with its multiple vendors and products, is maintenance expensive (both in terms of time and costs) because
 of the need for complex planning, testing, and the out-of-business-hours execution required to perform disruptive

@@ -32,7 +32,6 @@ within its domain of origin.
 **Internal:** Effectively the opposite of Exposed; objects are exclusively available for use within the Cloud
 Infrastructure.
 
-.. :name: Exposed vs. Internal Scope
 .. figure:: ../figures/Exposed_vs_Internal_Diagram.png
    :alt: "Exposed vs. Internal Scope"
 
@@ -524,7 +523,6 @@ profile, specifies a predefined standard set of infrastructure capabilities that
 workloads for deployment on conformant cloud infrastructure. A workload can use several profiles and associated
 Extensions to build its overall functionality as discussed below.
 
-.. :name:  Cloud infrastructure Profiles
 .. figure:: ../figures/RM-ch04-node-profiles.png
    :alt: "Cloud infrastructure Profiles"
 
@@ -652,7 +650,7 @@ Profiles Specifications & Capability Mapping
 
 ..
 
-   1 See Figure 5-1 :ref:`ref_model/chapters/chapter05:cloud infrastructure software profile description`.
+   1 See :numref:`Cloud Infrastructure software layers`.
 
 Profile Extensions
 ~~~~~~~~~~~~~~~~~~

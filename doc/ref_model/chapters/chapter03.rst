@@ -39,9 +39,9 @@ The abstraction model for the cloud infrastructure is divided into two logical l
 and the hardware infrastructure layer, with the intention that only the virtual infrastructure layer will be directly
 exposed to workloads (VNFs/CNFs):
 
-.. _Fig-3-1:
 .. figure:: ../figures/ch03-model-overview.png
-   :alt: "Cloud Infrastructure Model Overview"
+   :alt: Cloud Infrastructure Model Overview
+   :name: Cloud Infrastructure Model Overview
 
    Cloud Infrastructure Model Overview
 
@@ -81,7 +81,7 @@ The virtual infrastructure resources provided by the Cloud Infrastructure can be
 in the diagram below:
 
 .. figure:: ../figures/ch03-model-virtual-resources.png
-   :alt: "Virtual Infrastructure Resources provide virtual compute, storage and networks in a tenant context"
+   :alt: Virtual Infrastructure Resources provide virtual compute, storage and networks in a tenant context
 
    Virtual Infrastructure Resources provide virtual compute, storage and networks in a tenant context
 
@@ -215,7 +215,7 @@ The virtual infrastructure manager allows:
 - provision, manage, monitor and delete virtual resources.
 
 .. figure:: ../figures/ch03-model-virtual-manager.png
-   :alt: "Virtual Infrastructure Manager"
+   :alt: Virtual Infrastructure Manager
 
    Virtual Infrastructure Manager
 
@@ -248,7 +248,7 @@ by a set of networked Host Operating Systems in a cluster that normally handles 
 offering Virtual Machines or Containers where the application workloads (VNFs/CNFs) runs.
 
 .. figure:: ../figures/ch03-model-hardware-resources.png
-   :alt: "Cloud Infrastructure Hardware Resources"
+   :alt: Cloud Infrastructure Hardware Resources
 
    Cloud Infrastructure Hardware Resources
 
@@ -329,7 +329,7 @@ been allocated a physical hardware resource or a more advanced resource Composit
 Compute, Storage and Network resources on demand from the pools of physical hardware resources.
 
 .. figure:: ../figures/ch03-model-hardware-manager.png
-   :alt: "Hardware Infrastructure Manager"
+   :alt: Hardware Infrastructure Manager
 
    Hardware Infrastructure Manager
 
@@ -378,10 +378,11 @@ interfaces between the virtual resources (referred to as Software (SW) Virtualis
 (referred to as Hardware (HW) Infrastructure Layer), as well as on related integration into the various MANO reference
 points (hardware/network infrastructure management, orchestration). The identification of these two different layers
 (SW Virtualisation Layer and HW Infrastructure Layer) remains in alignment with the separation of resources into virtual
-and physical resources, generally used in this document, see e.g., :numref:`Fig-3-1`. The importance of understanding
-the separation of concerns between SW Virtualisation Layer and HW Infrastructure Layer is important because without it,
-the cardinality of having multiple CaaS and IaaS instances executing on their own private virtual resources from the
-single shared HW Infrastructure Layer cannot be expressed into separate administrative domains.
+and physical resources, generally used in this document, see e.g., :numref:`Cloud Infrastructure Model Overview`. The
+importance of understanding the separation of concerns between SW Virtualisation Layer and HW Infrastructure Layer is
+important because without it, the cardinality of having multiple CaaS and IaaS instances executing on their own private
+virtual resources from the single shared HW Infrastructure Layer cannot be expressed into separate administrative
+domains.
 
 Network Principles
 ~~~~~~~~~~~~~~~~~~
@@ -609,7 +610,8 @@ Fabric could be L3 as a Service, Firewall as a Service and Load Balancing as a S
 Networking Reference Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Cloud Infrastructure Networking Reference Model depicted in :numref:`Fig-3-6` is based on the ETSI NFV model
+The Cloud Infrastructure Networking Reference Model depicted in
+:numref:`Networking Reference Model based on the ETSI NFV` is based on the ETSI NFV model
 enhanced with Container Virtualisation support and a strict separation of the HW Infrastructure and Virtualization
 Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous
 Virtualisation instances and domains allowing a mix of IaaS, CaaS on IaaS and CaaS on Bare Metal on top of a shared HW
@@ -618,9 +620,9 @@ Infrastructure.
 It is up to any deployment of the Cloud Infrastructure to decide what Networking related objects to use, but all
 Reference Architectures have to be able to map into this model.
 
-.. _Fig-3-6:
 .. figure:: ../figures/RM-Ch03_5-Networking-Reference-Model-based-on-the-ETSI-NFV.png
-   :alt: "Networking Reference Model based on the ETSI NFV"
+   :alt: Networking Reference Model based on the ETSI NFV
+   :name: Networking Reference Model based on the ETSI NFV
 
    Networking Reference Model based on the ETSI NFV
 
@@ -647,11 +649,11 @@ with appropriate Underlay Networking separation for each of the Virtualization a
    Architecture without interfering with the authoritative Underlay separation laid out in the Reference Model.
 
 Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer
-can be seen in :numref:`Fig-3-7` below.
+can be seen in :numref:`Underlay Networking separation examples` below.
 
-.. _Fig-3-7:
 .. figure:: ../figures/RM-Ch03_5-Underlay-Networking-separation-examples.png
-   :alt: "Underlay Networking separation examples"
+   :alt: Underlay Networking separation examples
+   :name: Underlay Networking separation examples
 
    Underlay Networking separation examples
 
@@ -660,24 +662,24 @@ SDN Overlay and SDN Underlay layering and relationship example
 
 Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in
 the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling
-SR-IOV) are described in :numref:`Fig-3-8` (below). The examples are showing how the encapsulation and mapping could be
-done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another
-example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of
-SmartNICs.
+SR-IOV) are described in :numref:`SDN Controller relationship examples` (below). The examples are showing how the
+encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned
+underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay
+switching fabric without usage of SmartNICs.
 
-.. _Fig-3-8:
 .. figure:: ../figures/RM-Ch03_5-SDN-Controller-relationship-examples.png
-   :alt: "SDN Controller relationship examples"
+   :alt: SDN Controller relationship examples
+   :name: SDN Controller relationship examples
 
    SDN Controller relationship examples
 
 Example of IaaS and CaaS Virtualization Infrastructure Instances on a Shared HW Infrastructure With SDN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A Networking Reference Model deployment example is depicted in :numref:`Fig-3-9` (below) to demonstrate the mapping to
-ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed
-reference points. The example illustrates individual responsibilities of a complex organization with multiple separated
-administrative domains represented with separate colours.
+A Networking Reference Model deployment example is depicted in :numref:`Networking Reference Model deployment example`
+(below) to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the
+infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a
+complex organization with multiple separated administrative domains represented with separate colours.
 
 The example is or will be a common scenario for operators that modernise their network functions during a rather long
 period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS
@@ -687,9 +689,9 @@ since it is not foreseen any generic standard of a CaaS implementation that will
 from any vendor. It is also expected that many CNFs will have dependencies to a particular CaaS version or instances
 which then will prohibit a separation of Life Cycle Management in between individual CNFs and CaaS instances.
 
-.. _Fig-3-9:
 .. figure:: ../figures/RM-Ch03_5-Networking-Reference-Model-deployment-example.png
-   :alt: "Networking Reference Model deployment example"
+   :alt: Networking Reference Model deployment example
+   :name: Networking Reference Model deployment example
 
    Networking Reference Model deployment example
 
@@ -780,21 +782,21 @@ The table below highlights areas under which common SFC functional components ca
 
 The SFC Architecture components can be viewed as:-
 
-:numref:`Fig-3-10` shows a simple architecture of an SFC with multiple VNFs, as SF data plane components, along with SFC
-management and NFV MANO components.
+:numref:`SFC Architecture for VNF based SFs` shows a simple architecture of an SFC with multiple VNFs, as SF data
+plane components, along with SFC management and NFV MANO components.
 
-.. _Fig-3-10:
 .. figure:: ../figures/ch03-model-sfc-architecture-vnf-2.png
-   :alt: "SFC Architecture for VNF based SFs"
+   :alt: SFC Architecture for VNF based SFs
+   :name: SFC Architecture for VNF based SFs
 
    SFC Architecture for VNF based SFs
 
-:numref:`Fig-3-11` shows a simple architecture of an SFC with multiple CNFs, as SF data plane components, along with SFC
-management and CNF MANO components.
+:numref:`SFC Architecture for CNF based SFs` shows a simple architecture of an SFC with multiple CNFs, as SF data
+plane components, along with SFC management and CNF MANO components.
 
-.. _Fig-3-11:
 .. figure:: ../figures/ch03-model-sfc-architecture-cnf-2.png
-   :alt: "SFC Architecture for CNF based SFs"
+   :alt: SFC Architecture for CNF based SFs
+   :name: SFC Architecture for CNF based SFs
 
    SFC Architecture for CNF based SFs
 
@@ -814,11 +816,11 @@ The creation of the SFC might include design/preparation phase as:
 - The service functions that are included in the SFC.
 - The routing order in the service function, if the SFC is composed of more than one service function.
 
-:numref:`Fig-3-12` shows SFC creation call flow, separated logically in two steps.
+:numref:`Creation of Service Function Chain` shows SFC creation call flow, separated logically in two steps.
 
-.. _Fig-3-12:
 .. figure:: ../figures/ch03-model-sfc-info-create-flow.png
-   :alt: "Creation of Service Function Chain"
+   :alt: Creation of Service Function Chain
+   :name: Creation of Service Function Chain
 
    Creation of Service Function Chain
 
@@ -862,11 +864,11 @@ SFP or SFC can be updated for various reasons and some of them are:
 Data Steering in Service Function Chain
 '''''''''''''''''''''''''''''''''''''''
 
-:numref:`Fig-3-13` shows traffic steering along SFP.
+:numref:`Data steering in Service Function Chain` shows traffic steering along SFP.
 
-.. _Fig-3-13:
 .. figure:: ../figures/ch03-model-sfc-data-flow.png
-   :alt: "Data steering in Service Function Chain"
+   :alt: Data steering in Service Function Chain
+   :name: Data steering in Service Function Chain
 
    Data steering in Service Function Chain
 
@@ -980,8 +982,8 @@ have common and specific needs for storage in terms of performance, capacity and
 The combination of common but diverse needs in conjunction with the differences in the hosting environments (from large
 data-centres to small edge deployments) has resulted in the proliferation of storage technologies and their deployment
 architectures. To address this the "Reference Model" outlines a "General Cloud Storage Model"
-(see :numref:`Fig-3-14` - "General Cloud Storage Model"). The model will outline the different types of storage
-technologies and how they can be used to meet the need for:
+(see :numref:`General Cloud Storage Model` - "General Cloud Storage Model"). The model will outline the different
+types of storage technologies and how they can be used to meet the need for:
 
 - providing storage via dedicated storage systems,
 - multi-tenant cloud storage,
@@ -990,9 +992,9 @@ technologies and how they can be used to meet the need for:
 across both large data-centres and small edge deployments; the model can then be used for implementing Reference
 Architectures.
 
-.. _Fig-3-14:
 .. figure:: ../figures/rm-chap3.6-general-cloud-storage-model-01.png
-   :alt: "General Cloud Storage Model"
+   :alt: General Cloud Storage Model
+   :name: General Cloud Storage Model
 
    General Cloud Storage Model
 
@@ -1037,23 +1039,23 @@ The following set of storage implementations outline some of the most prevalent 
 
 The first of these are for Data Centre Storage cases, with stereotypes of:
 
-- Dedicated storage appliance (:numref:`Fig-3-15`) - that provide network based storage via iSCSI (2), NFS/CIFS (3)
-  with potentially virtual NAS (vNAS) (4) capability. Having virtual network software (4) allows the establishment of
-  storage tenancies, where storage tenancy have their own virtual storage services which are exposed on their own
-  network,
-- Software defined storage (:numref:`Fig-3-16`) - which is able to provide similar capabilities as the dedicated storage
-  appliance (see (3),(4) & (5) in diagram). In this case this is provided as a software solution on top of a
-  hyper-converged infrastructure.
+- Dedicated storage appliance (:numref:`Storage Appliance Stereotype`) - that provide network based storage via
+  iSCSI (2), NFS/CIFS (3) with potentially virtual NAS (vNAS) (4) capability. Having virtual network software (4)
+  allows the establishment of storage tenancies, where storage tenancy have their own virtual storage services which
+  are exposed on their own network,
+- Software defined storage (:numref:`Software Defined Storage Stereotype`) - which is able to provide similar
+  capabilities as the dedicated storage appliance (see (3),(4) & (5) in diagram). In this case this is provided as a
+  software solution on top of a hyper-converged infrastructure.
 
-.. _Fig-3-15:
 .. figure:: ../figures/rm-chap3.6-general-cloud-storage-appliance-sterotype-01.png
-   :alt: "Storage Appliance Stereotype"
+   :alt: Storage Appliance Stereotype
+   :name: Storage Appliance Stereotype
 
    Storage Appliance Stereotype
 
-.. _Fig-3-16:
 .. figure:: ../figures/rm-chap3.6-general-cloud-storage-software-defined-sterotype-01.png
-   :alt: "Figure 3-16: Software Defined Storage Stereotype"
+   :alt: Software Defined Storage Stereotype
+   :name: Software Defined Storage Stereotype
 
    Software Defined Storage Stereotype
 
@@ -1069,16 +1071,17 @@ Infrastructure Automation tooling. A typical part of the boot-strap process is t
 of initial images to physical hosts and a similar approach is used for "Bare Metal-as-a-Service" provisioning. The
 storage stereotype that covers this use case is:
 
-- Infrastructure Automation (:numref:`Fig-3-17`) - where PXE Boot Server provides a cache of boot images that are stored
-  in local storage (2) which are then conditionally served up as PXE boot images (3). The PXE boot server can run within
-  bootstrap management hosting in data-centre or within the routing / switch layer for an edge deployment case aimed to
-  minimise physical footprint. The Infrastructure Automation PXE server is aware of the provisioning status of the
-  physical infrastructure and will serve specific images or even not respond to PXE boot requests for hosts which have
-  already been provisioned and are considered "in service".
+- Infrastructure Automation (:numref:`Infrastructure Automation - PXE Boot Server Stereotype`) - where PXE Boot Server
+  provides a cache of boot images that are stored in local storage (2) which are then conditionally served up as PXE
+  boot images (3). The PXE boot server can run within bootstrap management hosting in data-centre or within the
+  routing / switch layer for an edge deployment case aimed to minimise physical footprint. The Infrastructure
+  Automation PXE server is aware of the provisioning status of the physical infrastructure and will serve specific
+  images or even not respond to PXE boot requests for hosts which have already been provisioned and are considered
+  "in service".
 
-.. _Fig-3-17:
 .. figure:: ../figures/rm-chap3.6-general-cloud-storage-infrastructure-automation-pxe-server-sterotype-01.png
-   :alt: "Infrastructure Automation - PXE Boot Server Stereotype"
+   :alt: Infrastructure Automation - PXE Boot Server Stereotype
+   :name: Infrastructure Automation - PXE Boot Server Stereotype
 
    Infrastructure Automation - PXE Boot Server Stereotype
 
@@ -1101,7 +1104,7 @@ Storage is made avaiable for tenant consumption through a number of models. A si
 following illustrative model.
 
 .. figure:: ../figures/rm-ch3.6-storage-model-02.png
-   :alt: "Storage Model - Cost vs Performance with Consumption Model Overlay"
+   :alt: Storage Model - Cost vs Performance with Consumption Model Overlay
 
    Storage Model - Cost vs Performance with Consumption Model Overlay
 
@@ -1179,23 +1182,25 @@ In section "3.6.2 Storage Implementation Stereotypes" the General Cloud Storage 
 provision of storage. The model can also be used to illustrate the consumption of storage for use by Tenants (see below
 for "Platform Native" stereotypes):
 
-- Platform Native - Hypervisor Attached Consumption Stereotype (:numref:`Fig-3-19`) - where hypervisor consumes Software
+- Platform Native - Hypervisor Attached Consumption Stereotype
+  (:numref:`Platform Native - Hypervisor Attached Consumption Stereotype`) - where hypervisor consumes Software
   Defined Storage via Network (RA-1 - Cinder backend (2)) and the Block Image is attached to Virtual Machine (RAW or
   QCOW file within File System), which is used for boot and exposure to virtual machine OS as Block Storage (3). The
   virtual machine OS in turn consumes this for use by Tenant Application via File System,
-- Platform Native - Container Persistent Consumption Stereotype (:numref:`Fig-3-20`) - is simpler case with Container
+- Platform Native - Container Persistent Consumption Stereotype
+  (:numref:`Platform Native - Container Persistent Consumption Stereotype`) - is simpler case with Container
   Runtime consuming Software Defined Storage (via RADOS backend (2)) and exposes this to Container as a file system
   mount (3).
 
-.. _Fig-3-19:
 .. figure:: ../figures/rm-chap3.6-general-cloud-storage-hypervisor-attached-stereotype-01.png
-   :alt: "Platform Native - Hypervisor Attached Consumption Stereotype"
+   :alt: Platform Native - Hypervisor Attached Consumption Stereotype
+   :name: Platform Native - Hypervisor Attached Consumption Stereotype
 
    Platform Native - Hypervisor Attached Consumption Stereotype
 
-.. _Fig-3-20:
 .. figure:: ../figures/rm-chap3.6-general-cloud-storage-container-persistent-stereotype-01.png
-   :alt: "Platform Native - Container Persistent Consumption Stereotype"
+   :alt: Platform Native - Container Persistent Consumption Stereotype
+   :name: Platform Native - Container Persistent Consumption Stereotype
 
    Platform Native - Container Persistent Consumption Stereotype
 
@@ -1535,9 +1540,9 @@ hardware infrastructure manager. The latter situation may occur for instance whe
 management client) is involved in provisioning the physical network resources with the assistance of the controllers.
 Also, this realization example would enable implementation of a programmable fabric.
 
-.. _Fig-3-21:
 .. figure:: ../figures/ch03-model-realization-diagram-2.png
-   :alt: "Reference model realization example"
+   :alt: Reference model realization example
+   :name: reference model realization example
 
    Reference model realization example
 
@@ -1609,19 +1614,20 @@ get activated, life cycle managed and supported in running infrastructure.
 **Table 3-10:** Hardware acceleration categories, implementation, activation/LCM/support and usage
 
 .. figure:: ../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png
-   :alt: "Examples of server- and SmartSwitch-based nodes (for illustration only)"
+   :alt: Examples of server- and SmartSwitch-based nodes (for illustration only)
 
    Examples of server- and SmartSwitch-based nodes (for illustration only)
 
 Infrastructure and Application Level Acceleration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:numref:`Fig-3-23` gives examples for the Hardware Accelerators shown in
-:numref:`Fig-3-21` (the `Sample reference model realization`_ diagram).
+:numref:`Hardware Acceleration in RM Realization Diagram` gives examples for the Hardware Accelerators shown in
+:numref:`Reference model realization example`
+(the :ref:`ref_model/chapters/chapter03:sample reference model realization` diagram).
 
-.. _Fig-3-23:
 .. figure:: ../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png
-   :alt: "Hardware Acceleration in RM Realization Diagram"
+   :alt: Hardware Acceleration in RM Realization Diagram
+   :name: Hardware Acceleration in RM Realization Diagram
 
    Hardware Acceleration in RM Realization Diagram
 
@@ -1666,7 +1672,7 @@ application-level interface, as the recommended way of decoupling software vendo
 hardware accelerator implementations.
 
 .. figure:: ../figures/ch03-hardware-acceleration-in-rm-realization-diagram_AAL.png
-   :alt: "AAL Interface in RM Realization Diagram"
+   :alt: AAL Interface in RM Realization Diagram
 
    AAL Interface in RM Realization Diagram
 
@@ -1762,7 +1768,7 @@ underlay networking separation and trusted forwarding functions, infrastructure 
 as well as part of an application functions control plane.
 
 .. figure:: ../figures/ch03-example-smartnic-deployment-model.png
-   :alt: Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management"
+   :alt: Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management
 
    Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management
 
