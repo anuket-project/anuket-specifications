@@ -19,7 +19,7 @@ structure of control and user planes, operating systems, hypervisors, and
 BIOS configurations, and architectural details of underlay and overlay
 networking, and storage, and the distribution of OpenStack service
 components among nodes. The chapter also covers implementation support
-for the :ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours`;
+for the :ref:`ref_model:chapters/chapter02:profiles, profile extensions & flavours`;
 the OpenStack flavor types capture both the sizing and the profile
 configuration (of the host).
 
@@ -72,7 +72,7 @@ OpenStack Control Plane Servers (Control Nodes)
 -  BIOS Requirements
 
 For OpenStack control nodes we use the BIOS parameters for the basic
-profile defined in :ref:`ref_model/chapters/chapter05:\
+profile defined in :ref:`ref_model:chapters/chapter05:\
 cloud infrastructure hardware profiles features and requirements.`.
 Additionally, for OpenStack we need to set the following boot parameters:
 
@@ -161,7 +161,7 @@ Storage nodes
    Boot disks          RAID 1
    =================== ======
 
--  HW specifications: please see :ref:`ref_model/chapters/chapter03:storage`
+-  HW specifications: please see :ref:`ref_model:chapters/chapter03:storage`
 -  How many nodes to meet SLA: Active-Passive is the default and
    recently OpenStack started to support Active-Active
 -  Sizing rules: minimum 2 x 1 TB; recommended 2 x 10 TB
@@ -173,19 +173,17 @@ This section specifies the compute node configurations to support the
 Basic and High-Performance profiles; in OpenStack this would be
 accomplished by specifying the configurations when creating “flavors”.
 The cloud operator may choose to implement certain profile-extensions
-(:ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`)
+(:ref:`ref_model:chapters/chapter02:profile extensions (specialisations)`)
 as a set of standard configurations, of a given profile, capturing some
 of the variability through different values or extra specifications.
 
 -  The software and hardware configurations are as specified in the
-   Reference Model
-   :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements`.
+   :ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
 
 -  BIOS requirement
 
    -  The general BIOS requirements are described in the
-      Reference Model
-      :ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
+      :ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
 
 **Example Profiles and their Extensions**
 
@@ -244,8 +242,8 @@ extensions and some of their capabilities.
 **BIOS Settings**
 
 A number of capabilities need to be enabled in the BIOS (such as NUMA
-and SMT); the Reference Model section
-:ref:`ref_model/chapters/chapter05:cloud infrastructure software profile description`
+and SMT); the Reference Model section on
+:ref:`ref_model:chapters/chapter05:cloud infrastructure software profile description`
 specifies the capabilities required to be configured. Please note that
 capabilities may need to be configured in multiple systems. For
 OpenStack, we also need to set the following boot parameters:
@@ -359,8 +357,8 @@ Compute Resource Pooling Considerations
 Reservation of Compute Node Cores
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Infrastructure Requirement
-**inf.com.08** requires the allocation of “certain number of host
+The :ref:`chapters/chapter02:infrastructure requirements`
+``inf.com.08`` requires the allocation of “certain number of host
 cores/threads to non-tenant workloads such as for OpenStack services.” A
 number (“n”) of random cores can be reserved for host services
 (including OpenStack services) by specifying the following in nova.conf:
@@ -884,8 +882,8 @@ extensions for these standard attributes automatically incorporated.
 Additions to resources, such as additional attributes, must be
 accompanied by an extension.
 
-:ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis` of this Reference
-Architecture provides a list of :ref:`Neutron Extensions<ref_arch/openstack/chapters/chapter05:neutron>`.
+:ref:`chapters/chapter05:interfaces and apis` of this Reference
+Architecture provides a list of :ref:`Neutron Extensions<chapters/chapter05:neutron>`.
 The current available
 extensions can be obtained using the `List Extensions
 API <https://docs.openstack.org/api-ref/network/v2/#list-extensions>`__
@@ -1055,7 +1053,7 @@ VIM Services
 ~~~~~~~~~~~~
 
 A high-level overview of the core OpenStack Services was provided in
-:ref:`ref_arch/openstack/chapters/chapter03:modelling`. In this section we
+:ref:`chapters/chapter03:modelling`. In this section we
 describe the core and other needed services in more detail.
 
 Keystone
@@ -1225,7 +1223,7 @@ Telco workload requirements requires SDN to offload Neutron calls.
 SDN provides a truly scalable and preferred solution to suport dynamic,
 very large-scale, high-density, telco cloud environments. OpenStack
 Neutron, with its plugin architecture, provides the ability to integrate
-SDN controllers (:ref:`ref_arch/openstack/chapters/chapter03:virtual networking – 3rd party sdn solution`).
+SDN controllers (:ref:`chapters/chapter03:virtual networking – 3rd party sdn solution`).
 With SDN incorporated in OpenStack, changes to the network is triggered
 by workloads (and users), translated into Neutron APIs and then handled
 through neutron plugins by the corresponding SDN agents.
@@ -1490,7 +1488,7 @@ set up the flavors as specified in the tables below.
 
    -  To configure profile-extensions, for example, the “Storage
       Intensive High Performance” profile, as defined in
-      :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`,
+      :ref:`ref_model:chapters/chapter02:profile extensions (specialisations)`,
       in addition to the above, need to configure the storage IOPS: the
       following two parameters need to be specified in the flavor
       create: –property quota:disk_write_iops_sec=<IOPS#> and –property
@@ -1546,8 +1544,8 @@ been creating intermediate data centres in central office locations,
 colocation centres, and now edge centres at the physical edge of their
 networks because of the demand for low latency and high throughput for
 5G, IoT and connected devices (including autonomous driverless vehicles
-and connected vehicles). Chapter 3 of this document, discusses
-:ref:`ref_arch/openstack/chapters/chapter03:cloud topology`
+and connected vehicles).
+:ref:`chapters/chapter03:cloud topology` discusses
 and lists 3 types of data centres: Large, Intermediate and Edge.
 
 For ease of convenience, unless specifically required, in this section
@@ -1557,7 +1555,7 @@ centralised large data centres, Telco edge locations and for locations
 with capacity somewhere in between the large data centres and edge
 locations, respectively. The mapping of various terms, including the
 Reference Model terminology specified in Table `8-5
-:ref:`ref_model/chapters/chapter08:comparison of deployment topologies and edge terms`
+:ref:`ref_model:chapters/chapter08:comparison of deployment topologies and edge terms`
 and `Open Glossary of Edge Computing
 <https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md>`__
 is as follows:
@@ -1573,12 +1571,12 @@ In the Intermediate and Edge cloud centres, there may be limitations on
 the resource capacity, as in the number of servers, and the capacity of
 these servers in terms of # of cores, RAM, etc. restricting the set of
 services that can be deployed and, thus, creating a dependency between
-other data centres. In the Reference Model
-:ref:`ref_model/chapters/chapter08:telco edge cloud` section, Table 8-5
+other data centres.
+:ref:`ref_model:chapters/chapter08:telco edge cloud`
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.
 
-:ref:`ref_arch/openstack/chapters/chapter03:openstack services topology`
+:ref:`chapters/chapter03:openstack services topology`
 of this document, specifies the differences between the Control Plane and Data
 Plane, and specifies which of the control nodes, compute nodes, storage
 nodes (optional) and network nodes (optional) are components of these
@@ -1664,8 +1662,8 @@ such deployment choices.
 Edge Cloud Topology
 ~~~~~~~~~~~~~~~~~~~
 
-The Reference Model
-:ref:`ref_model/chapters/chapter08:telco edge cloud` section,
+The Reference Model Chapter
+:ref:`ref_model:chapters/chapter08:telco edge cloud`
 presents the deployment environment characteristics, infrastructure
 characteristics and new values for the Infrastructure Profiles at the Edge.
 
@@ -1681,17 +1679,15 @@ Cloud Centre and the number of copies that should be deployed. These
 references also present the pros and cons of DCP and CCP and designs to
 address some of the challenges of each of the models.
 
-In the Reference Model, the
-:ref:`ref_model/chapters/chapter08:telco edge cloud: platform services deployment`
-table lists the Platform Services that may be placed in the different node types
+:ref:`ref_model:chapters/chapter08:telco edge cloud: platform services deployment`
+lists the Platform Services that may be placed in the different node types
 (control, compute and storage). Depending upon the capacity and
 resources available only the compute nodes may exist at the Edge thereby
 impacting operations.
 
-In the Reference Model, the
-:ref:`ref_model/chapters/chapter08:telco edge cloud: infrastructure profiles`
-table lists a number of Infrastructure Profile characteristics and the changes
-that may need to be made for certain Edge clouds depending upon their
+:ref:`ref_model:chapters/chapter08:telco edge cloud: infrastructure profiles`
+lists a number of Infrastructure Profile characteristics and the changes that
+may need to be made for certain Edge clouds depending upon their
 resource capabilities. It should be noted that none of these changes
 affect the definition of OpenStack flavors.
 
@@ -1739,5 +1735,6 @@ number of open-source tools are available for the purpose including:
    installing, upgrading and operating OpenStack clouds
 
 These installers are described in more details in
-:ref:`ref_arch/openstack/chapters/chapter07:\
-Operations and Life Cycle Management` section.
+
+:ref:`chapters/chapter07:\
+Operations and Life Cycle Management`.

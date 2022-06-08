@@ -15,11 +15,10 @@ guide.
 Security Requirements
 ---------------------
 
-In the chapter 2, the
-:ref:`ref_arch/openstack/chapters/chapter02:cloud infrastructure security requirements`
-and :ref:`ref_arch/openstack/chapters/chapter02:security recommendations`
-sections gather all requirements and recommendations regarding security topics
-developed in this chapter.
+:ref:`chapters/chapter02:cloud infrastructure security requirements`
+and :ref:`chapters/chapter02:security recommendations` gather
+all requirements and recommendations regarding security topics developed
+in this chapter.
 
 Cloud Infrastructure and VIM Security
 -------------------------------------
@@ -555,7 +554,7 @@ Security LCM
 Cloud Infrastructure LCM encompasses provisioning, deployment,
 configuration and management (resources scaling, services upgrades,
 etc.) as described in
-:ref:`ref_arch/openstack/chapters/chapter07:operations and life cycle management`.
+:ref:`chapters/chapter07:operations and life cycle management`.
 These operations must be securely performed in order to keep the
 infrastructure safe and operational (sec.lcm.003).
 
@@ -564,8 +563,8 @@ infrastructure safe and operational (sec.lcm.003).
 Regarding the provisioning of servers, switches, routers and networking,
 tools must be used to automate the provisioning eliminating human error.
 For Infrastructure hardware resources, a set of recommendations is
-detailed in :ref:`ref_arch/openstack/chapters/chapter07:underlying resources
-provisioning` section to automate and secure their provisioning (sec.lcm.001).
+detailed in :ref:`chapters/chapter07:underlying resources
+provisioning` to automate and secure their provisioning (sec.lcm.001).
 
 For OpenStack services and software components, deployment tools or
 components must be used to automate the deployment and avoid errors. The

@@ -94,7 +94,7 @@ confusingly “Projects” in OpenStack are isolated environments that
 enable workloads to be logically separated from each other with:
 
 -  differentiated set of associated users
--  role-based access of two levels – admin or member (see :ref:`ref_arch/openstack/chapters/chapter06:rbac`).
+-  role-based access of two levels – admin or member (see :ref:`chapters/chapter06:rbac`).
 -  quota system to provide maximum resources that can be consumed.
 
 This RA does not intend to restrict how workloads are distributed across
@@ -114,14 +114,14 @@ NUMA alignment, and SMT.
 
 The configuration of the virtual resources will depend on the software
 and hardware profiles and the flavour (resource sizing) needed to host
-VNF components. Profiles are defined in the Reference Model
-:ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours`.
+VNF components. Profiles are defined in the
+:ref:`ref_model:chapters/chapter02:profiles, profile extensions & flavours`.
 
 Virtual Storage
 ~~~~~~~~~~~~~~~
 
 The Reference Model
-:ref:`ref_model/chapters/chapter03:storage for tenant consumption`
+:ref:`ref_model:chapters/chapter03:storage for tenant consumption`
 details consumption models for tenants: Platform native,
 object storage, shared file storage and archival.
 The choice of a solution will depend on the storage use case needs.
@@ -168,7 +168,7 @@ Data is accessed via API. Object storage is managed by OpenStack Swift.
 Images are persistent data, stored using the OpenStack Glance service.
 
 Cinder, Swift, and Glance services are discussed in the section
-:ref:`ref_arch/openstack/chapters/chapter04:virtualised infrastructure
+:ref:`chapters/chapter04:virtualised infrastructure
 manager (VIM)`.
 
 
@@ -268,7 +268,7 @@ over the native networking implementations of orchestrators, including:
    privately managed customer networks and service provider networks
 
 Based on the network layering concepts introduced in the Reference
-Model Section :ref:`ref_model/chapters/chapter03:network`, the
+Model Section :ref:`ref_model:chapters/chapter03:network`, the
 Tungsten Fabric Controller performs functions of both the SDN underlay
 (SDNu) and overlay (SDNo) controllers.
 
@@ -400,8 +400,8 @@ Cloud Controller Services
 The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
-also maps the OpenStack core services to the Reference Model
-:ref:`ref_model/chapters/chapter03:virtual infrastructure manager`.
+also maps the OpenStack core services to the Reference Model (RM)
+:ref:`ref_model:chapters/chapter03:virtual infrastructure manager`.
 
 .. list-table:: OpenStack components deployment
    :widths: 20 10 20 10 10 10
@@ -495,7 +495,7 @@ The services can be containerised or VM hosted as long as they provide
 the high availability principles described above.
 
 The APIs for these OpenStack services are listed in
-:ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis` section.
+:ref:`chapters/chapter05:interfaces and apis`.
 
 Cloud Workload Services
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -541,9 +541,9 @@ project are placed on the host. Overall, tenant isolation ensures that
 the resources of a project are not affected by resources of another
 project.
 
-This document uses the term "project" when referring to OpenStack
-services and "tenant" (see Reference Model
-:ref:`ref_model/chapters/chapter03:virtual resources` section)
+This document uses the term “project” when referring to OpenStack
+services and “tenant” (RM Section
+:ref:`ref_model:chapters/chapter03:virtual resources`)
 to represent an independently manageable logical pool of resources.
 
 Cloud partitioning: Host Aggregates, Availability Zones
@@ -585,7 +585,7 @@ of nova instances. When instances are spawned, they are mapped to
 flavors which define the available hardware configuration for them. For
 simplicity, operators may create named flavors specifying both the
 sizing and the
-:doc:`software and hardware profile configurations <ref_model/chapters/chapter05>`.
+:doc:`software and hardware profile configurations <ref_model:chapters/chapter05>`.
 
 Underlying Resources
 --------------------
@@ -648,10 +648,10 @@ up (in a shipping container), and what resources are required of the DC
 -  Storage
 
    - Storage technologies are multiple, they are extensively
-     described in the Reference Model
-     :ref:`ref_model/chapters/chapter03:storage implementation stereotypes`.
+     described in
+     :ref:`ref_model:chapters/chapter03:storage implementation stereotypes`.
      Storage backends are discussed in
-     :ref:`ref_arch/openstack/chapters/chapter04:storage backend` section.
+     :ref:`chapters/chapter04:storage backend`.
 
 -  Acceleration
 
@@ -667,9 +667,9 @@ Cloud Infrastructure physical Nodes
 The physical resources required for the Cloud Infrastructure are mainly
 based on COTS x86 hardware for control and data plane nodes. HW profiles
 are defined in Reference Model chapters
-:ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profile description`
+:ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profile description`
 and
-:ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`.
+:ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`.
 
 Network
 ^^^^^^^
@@ -768,9 +768,7 @@ Assumptions and conventions:
 -  Shared storage is optional, but it is important to ensure shared
    assets are distributed across serving clouds such as boot images.
    Storage needs, per deployment and use cases, can be found in
-   the Reference Model
-   :ref:`ref_model/chapters/chapter03:storage scenarios and architecture fit`
-   section.
+   :ref:`ref_model:chapters/chapter03:storage scenarios and architecture fit`.
 
 .. list-table:: Cloud Topology: Redundancy Models
    :widths: 8 15 8 8 8 8 8 17

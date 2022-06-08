@@ -105,7 +105,7 @@ the tests, it will not be moved to the next workflow for Conformance.
 The Cloud Infrastructure+VNF conformance consist of a three part process
 for Compliance, Validation, and Performance. Adherence to Security
 standards are equally important and addressed in
-:doc:`ref_model/chapters/chapter07`.
+:doc:`ref_model:chapters/chapter07`.
 
 The three part conformance process includes NFVI Manifest conformance,
 Empirical Baseline measurements against targeted VNF families, and
@@ -143,12 +143,12 @@ The Infrastructure Profile Catalog contains the following attributes:
 
    -  A particular set of options is an instance type
    -  Compute flavors: .tiny, .small etc as defined in
-      :ref:`ref_model/chapters/chapter04:profiles`
+      :ref:`ref_model:chapters/chapter04:profiles`
 
 -  NFVI performance profiles, for which NFVI validations will support
    and be verified against, are defined as basic and network intensive.
    Details for each of these profiles can be found in
-   :ref:`ref_model/chapters/chapter02:analysis`.
+   :ref:`ref_model:chapters/chapter02:analysis`.
 
 .. figure:: ../figures/RM-ch04-node-profiles.png
    :alt: NFVI Profiles
@@ -176,7 +176,7 @@ categorized into below profiles:
 
 To cater to different needs from multiple NFVI vendors, Anuket allows
 different types of NFVI Conformance based on their types of
-profile :ref:`ref_model/chapters/chapter02:analysis`
+profile :ref:`ref_model:chapters/chapter02:analysis`
 
 - Certify Vendor NFVI Hardware solution: This allows for Conformance of
   only NFVI.
@@ -328,7 +328,7 @@ of VNF developer teams.
 4. Control plane components: Validations for RabbitMQ, Ceph, MariaDB
    etc. and OpenStack components like Nova/Glance/Heat etc. APIs.
 5. Security: Validation for use RBAC roles and user group policies. See
-   :ref:`ref_cert/RC1/chapters/chapter07:vnf testing cookbook` for complete
+   :ref:`chapters/chapter07:vnf testing cookbook` for complete
    list.
 
 The following **Optional Test Categories** which can be considered by
@@ -389,7 +389,7 @@ Performance based.
    comparing Non-Functional (NFR) NFVI KPIs (obtained after testing)
    with the Golden KPIs. Some of the examples of performance KPIs
    include, but not limited to: TCP bandwidth, UDP throughput, Memory
-   latency, Jitter, IOPS etc. See :doc:`ref_model/chapters/chapter04`
+   latency, Jitter, IOPS etc. See :doc:`ref_model:chapters/chapter04`
    for a complete list of metrics and requirements.
 -  **Measurement Results**. Baseline Measurements will be performed when
    there are no benchmark standards to compare results, or established
@@ -496,14 +496,14 @@ determines the scope of the compliance program and the corresponding
 list of test cases included in the compliance program. In particular,
 this chapter extends the generic list of NFVI test case requirements
 which is provided in Section Test Case Selection Requirements
-:ref:`ref_model/chapters/chapter08:multi-cloud interactions model`
+:ref:`ref_model:chapters/chapter08:multi-cloud interactions model`
 of the reference model.
 
 Generic Requirements on Test Cases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All test cases must fulfill the generic requirements listed in Section
-:ref:`ref_model/chapters/chapter08:multi-cloud interactions model`
+:ref:`ref_model:chapters/chapter08:multi-cloud interactions model`
 of the reference model.
 
 In addition, for test cases targeting the NFVI compliance program, the
@@ -547,7 +547,7 @@ different types of requirements and system properties:
    validating the functional correctness of the system under test. API
    compliance test cases exercise only the specific well-defined APIs
    described in the reference architecture (see `Interfaces and
-   APIs :doc:`ref_arch/openstack/chapters/chapter05`).
+   APIs :doc:`ref_arch_openstack:chapters/chapter05`).
 
 -  Performance: Test cases covering this type of requirement measure
    specific performance characteristics of the system under test as
@@ -578,7 +578,7 @@ Profile Catalog
 ~~~~~~~~~~~~~~~
 
 Section Infrastructure Profiles Catalogue
-:ref:`ref_model/chapters/chapter04:profiles and workload flavours`
+:ref:`ref_model:chapters/chapter04:profiles and workload flavours`
 of the reference model defines two software profiles, targeting two
 different use cases:
 
@@ -588,9 +588,9 @@ different use cases:
 The test cases selected for validating compliance of the two profiles
 must cover the functional and non-functional requirements as listed in
 Section Instance Capabilities Mapping
-:ref:`ref_model/chapters/chapter04:virtual network interface specifications`
+:ref:`ref_model:chapters/chapter04:virtual network interface specifications`
 and Section `Instance Performance Measurement Mapping
-:ref:`ref_model/chapters/chapter04:storage extensions`
+:ref:`ref_model:chapters/chapter04:storage extensions`
 of the reference model.
 
 TODO: what actually needs to be done here is to reference the table from

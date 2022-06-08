@@ -15,7 +15,7 @@ How to participate
 
 Participating in Anuket does not need any formal membership, and nothing to sign except the `CLA <https://anuket.io/cla/>`__. Participation is open to anyone, whether you are an employee of an LFN member company, supporter, or observer. By participating, you automatically accept the individual anti-trust policies of LFN and GSMA, the joint Terms of Reference of LFN and GSMA the LFN Code of Conduct, as well as the LFN Trademark policy.
 
--  `LFN Anti-Trust Policy <https://lfnetworking.org/Antitrust%20Slide.pdf>`__
+-  `LFN Anti-Trust Policy <https://r.lfnetworking.org/Antitrust%20Slide.pdf>`__
 
 -  `GSMA Anti-Trust Policy <https://github.com/cntt-n/CNTT/blob/master/Anti-Trust_Notice_GSMA_20190911.png>`__
 

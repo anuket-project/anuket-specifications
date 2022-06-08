@@ -160,7 +160,7 @@ and behaviours. The set of selectable attributes includes:
 - Enhanced features - set of selectable features such as: auto-replicate, encryption, snapshot support.
 
 Note that approximate numeric ranges for the qualitative values used above are given in the
-:ref:`ref_model/chapters/chapter04:storage extensions` section.
+:ref:`chapters/chapter04:storage extensions` section.
 
 Storage resources have the following attributes, with metric definitions that support verification through passive
 measurements (telemetry) where appropriate:

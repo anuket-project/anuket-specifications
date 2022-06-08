@@ -42,8 +42,8 @@ Adherence to these principles will provide the following:
 Requirement Principles
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Requirement Principles can be found in the `Anuket
-Principles <https://cntt.readthedocs.io/en/latest/common/chapter00.html#requirements-principles>`__
+Requirement Principles can be found in the
+:ref:`cntt:common/chapter00:requirements principles`
 
 Testing Principles
 ~~~~~~~~~~~~~~~~~~
@@ -214,5 +214,5 @@ and the network settings:
 Available Programs
 ------------------
 
--  :doc:`ref_cert/RC1/index`
--  :doc:`ref_cert/RC2/index`
+-  :doc:`ref_cert_RC1:index`
+-  :doc:`ref_cert_RC2:index`

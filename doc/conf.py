@@ -1,14 +1,4 @@
-import os
-import sys
 import sphinx_material
-
-from recommonmark.parser import CommonMarkParser
-source_parsers = {
-'.md': CommonMarkParser,
-}
-source_suffix = ['.rst', '.md']
-
-templates_path = ['_templates']
 
 master_doc = 'index'
 project = "Anuket Specifications"
@@ -16,29 +6,12 @@ html_title = "Anuket Specifications"
 copyright = '2021, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 
-extensions = ['sphinxcontrib.readme-to-index', 
-              'sphinxcontrib.relative-link-corrector',
-              'sphinxcontrib.direct-copy',
-              'sphinx.ext.intersphinx',
-              'sphinx.ext.autosectionlabel',
-              'sphinx_markdown_tables',
-              'sphinx_material'
+extensions = ['sphinx.ext.intersphinx',
+              'sphinx.ext.autosectionlabel'
              ]
-
-direct_copy_directories = ['/gov/figures', 
-                           '/ref_model/figures', 
-                           '/ref_arch/figures', 
-                           '/ref_arch/kubernetes/figures', 
-                           '/ref_arch/openstack/figures', 
-                           '/ref_cert/RC1/figures', 
-                           '/ref_cert/RC2/figures', 
-                           '/ref_impl/cntt-ri/figures', 
-                           '/ref_impl/cntt-ri2/figures',
-                           '/common/figures'] 
-
+html_theme = "sphinx_material"
 html_theme_path = sphinx_material.html_theme_path()
 html_context = sphinx_material.get_html_context()
-html_theme = "sphinx_material"
 
 html_sidebars = {
     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
@@ -75,10 +48,27 @@ html_favicon = '_static/favicon.ico'
 
 exclude_patterns = [
     '**/.tox',
+    'ref_arch',
+    'ref_cert',
+    'ref_impl',
+    'ref_model',
+    'tech'
 ]
 
+linkcheck_ignore = [
+    'https://github.com/cncf/telecom-user-group/blob/master/whitepaper/cloud_native_thinking_for_telecommunications.md#1.4',
+    'https://static1.squarespace.com/static/5ad774cce74940d7115044b0/t/5db36ffa820b8d29022b6d08/1572040705841/ORAN-WG4.IOT.0-v01.00.pdf/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf'
+]
+
+
 intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/latest/', None)
+    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None),
+    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None),
+    'ref_arch_kubernetes': ('https://cntt.readthedocs.io/projects/ra2/en/latest/', None),
+    'ref_cert_RC1': ('https://cntt.readthedocs.io/projects/rc1/en/latest/', None),
+    'ref_cert_RC2': ('https://cntt.readthedocs.io/projects/rc2/en/latest/', None),
+    'ref_impl_cntt-ri': ('https://cntt.readthedocs.io/projects/ri1/en/latest/', None),
+    'ref_impl_cntt-ri2': ('https://cntt.readthedocs.io/projects/ri2/en/latest/', None)
 }
 
 autosectionlabel_prefix_document = True

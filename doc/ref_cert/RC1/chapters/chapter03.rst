@@ -5,7 +5,7 @@ Introduction
 ------------
 
 The scope of this chapter is to identify and list down test cases based
-on requirements defined in :doc:`ref_arch/openstack/index`.
+on requirements defined in :doc:`ref_arch_openstack:index`.
 This will serve as traceability between test cases and requirements.
 
 Note that each requirement may have one or more test cases associated
@@ -66,7 +66,7 @@ conform to this model which also fits the heterogeneous user
 deployments.
 
 From a Anuket Compliance state point, the capabilities are well
-described in :doc:`ref_arch/openstack/chapters/chapter05`
+described in :doc:`ref_arch_openstack:chapters/chapter05`
 which allows tuning the test configurations and the test lists to avoid
 skipping any test. It results that all tests covering optional
 capabilities and all upstream skipped tests due to known bugs are not
@@ -83,7 +83,7 @@ Functest containers.
 The next subsections only detail the Tempest tests which must not be
 executed from a Compliance state point. The remaining tests have to pass
 successfully. They cover all together the API testing requirements as
-asked by :doc:`ref_arch/openstack/chapters/chapter05`
+asked by :doc:`ref_arch_openstack:chapters/chapter05`
 
 The following software versions are considered here to verify OpenStack
 Wallaby selected by Anuket:
@@ -118,7 +118,7 @@ Keystone API is covered in the OpenStack Gates via
 as integrated in `Functest Smoke
 CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby>`__.
 
-According to :doc:`ref_arch/openstack/chapters/chapter05`
+According to :doc:`ref_arch_openstack:chapters/chapter05`
 the following test names must not be executed:
 
 .. list-table:: Keystone API testing
@@ -171,7 +171,7 @@ Glance API is covered in the OpenStack Gates via
 `Functest Smoke
 CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml>`__.
 
-According to :doc:`ref_arch/openstack/chapters/chapter05`
+According to :doc:`ref_arch_openstack:chapters/chapter05`
 the following test names must not be executed:
 
 .. list-table:: Glance API testing
@@ -222,7 +222,7 @@ Cinder API is covered in the OpenStack Gates via
 as integrated in `Functest Smoke
 CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby>`__.
 
-According to :doc:`ref_arch/openstack/chapters/chapter05`
+According to :doc:`ref_arch_openstack:chapters/chapter05`
 the following test names must not be executed:
 
 .. list-table:: Cinder API testing
@@ -292,7 +292,7 @@ Swift API is covered in the OpenStack Gates via
 `Functest Smoke
 CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby>`__.
 
-According to :doc:`ref_arch/openstack/chapters/chapter05`
+According to :doc:`ref_arch_openstack:chapters/chapter05`
 the following test names must not be executed:
 
 .. list-table:: Swift API testing
@@ -335,7 +335,7 @@ Neutron API is covered in the OpenStack Gates via
 as integrated in `Functest Smoke
 CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby>`__.
 
-According to :doc:`ref_arch/openstack/chapters/chapter05`
+According to :doc:`ref_arch_openstack:chapters/chapter05`
 the following test names must not be executed:
 
 .. list-table:: Neutron API testing
@@ -535,7 +535,7 @@ Nova API is covered in the OpenStack Gates via
 `Functest Smoke
 CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby>`__.
 
-According to :doc:`ref_arch/openstack/chapters/chapter05`
+According to :doc:`ref_arch_openstack:chapters/chapter05`
 the following test names must not be executed:
 
 .. list-table:: Nova API testing
@@ -809,7 +809,7 @@ Heat API is covered in the OpenStack Gates via
 as integrated in `Functest Smoke
 CNTT <https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby>`__
 
-According to :doc:`ref_arch/openstack/chapters/chapter05`
+According to :doc:`ref_arch_openstack:chapters/chapter05`
 the following test names must not be executed:
 
 .. list-table:: Heat API testing
@@ -878,7 +878,7 @@ CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yam
    Neutron scenarios executed in the OpenStack gates
 
 At the time of writing, no KPI is defined in
-:doc:`ref_arch/openstack/chapters/chapter05`
+:doc:`ref_arch_openstack:chapters/chapter05`
 which would have asked for an update of the default SLA (maximum failure
 rate of 0%) proposed in `Functest Benchmarking
 CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__
@@ -1326,7 +1326,7 @@ RM/RA-1 Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
 According to
-:ref:`ref_cert/RC1/chapters/chapter04:openstack-based cloud infrastructure testing cookbook`
+:ref:`chapters/chapter04:openstack-based cloud infrastructure testing cookbook`
 the following test cases must pass as they are for Anuket NFVI Conformance:
 
 .. table:: Anuket NFVI Conformance
