@@ -5,7 +5,7 @@ Introduction
 ------------
 
 The scope of this chapter is to identify and list test cases based on
-requirements defined in :doc:`ref_arch/kubernetes/index`.
+requirements defined in :doc:`ref_arch_kubernetes:index`.
 This will serve as traceability between test cases and requirements for
 Kubernetes platform interoperability.
 
@@ -35,7 +35,7 @@ Test Case Traceability to RA2 Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section focuses on the test cases covering the requirements in
-:ref:`ref_arch/kubernetes/chapters/chapter04:kubernetes workloads`
+:ref:`ref_arch_kubernetes:chapters/chapter04:kubernetes workloads`
 for Kubernetes workloads.
 
 .. list-table:: Traceability to RA2 Requirements

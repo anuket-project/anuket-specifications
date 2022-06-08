@@ -434,9 +434,9 @@ the CNTT requirements which induces that the validation is composed of:
 -  the basic test cases as asked by the OPNFV release criteria
 -  the functional tests checking all OpenStack services and capabilities even if
    they are considered as optional in
-   :doc:`RA1 Core OpenStack Services APIs <ref_arch/openstack/chapters/chapter05>`
+   :doc:`RA1 Core OpenStack Services APIs <ref_arch_openstack:chapters/chapter05>`
 -  all test cases listed in
-   :doc:`RC1 TC Requirements <ref_cert/RC1/chapters/chapter03>`
+   :doc:`RC1 TC Requirements <ref_cert_RC1:chapters/chapter03>`
 
 Like the
 `classical Functest containers <https://functest.readthedocs.io/en/stable-hunter/testing/user/configguide/configguide.html>`__,
@@ -536,8 +536,8 @@ opnfv/functest-smoke:hunter networking-sfc    Success
 opnfv/functest-smoke:hunter tempest_barbican  Success
 =========================== ================= ==================
 
-According to :doc:`RA1 Core OpenStack Services APIs <ref_arch/openstack/chapters/chapter05>`
-and :doc:`RC1 TC Requirements <ref_cert/RC1/chapters/chapter03>`
+According to :doc:`RA1 Core OpenStack Services APIs <ref_arch_openstack:chapters/chapter05>`
+and :doc:`RC1 TC Requirements <ref_cert_RC1:chapters/chapter03>`
 the following test cases are executed at the end.
 
 ======================================= ===================== ==================
@@ -575,8 +575,8 @@ all changes published in `Gerrit <https://gerrit.opnfv.org/>`__ must be
 automatically voted -1 by Jenkins in case of failures.
 
 At the time writing, CNTT RI is not compliant
-with :doc:`RA1 Core OpenStack Services APIs <ref_arch/openstack/chapters/chapter05>`
-and then a part of the containers selected in :doc:`RC1 TC Requirements <ref_cert/RC1/chapters/chapter03>`
+with :doc:`RA1 Core OpenStack Services APIs <ref_arch_openstack:chapters/chapter05>`
+and then a part of the containers selected in :doc:`RC1 TC Requirements <ref_cert_RC1:chapters/chapter03>`
 cannot be executed successfully.
 
 ======================================= ================= ==================

@@ -4,7 +4,7 @@ Hybrid Multi-Cloud: Data Centre to Edge
 Introduction
 ------------
 
-The :doc:`ref_model/chapters/chapter03` focuses on cloud infrastructure abstractions. While these are generic
+The :ref:`chapters/chapter03:modelling` focuses on cloud infrastructure abstractions. While these are generic
 abstractions they and the associated capabilities of the cloud infrastructure are specified for data centres, central
 office and colocation centres. The environmental conditions, facility and other constraints, and the variability of
 deployments on the edge are significantly different and, thus, require separate consideration.
@@ -16,7 +16,7 @@ interconnected. In a multi-cloud, the distinct cloud infrastructures of the hybr
 more technologies. The hybrid multi-cloud infrastructure has differences requiring different abstractions. These hybrid
 multi-clouds can be considered to be federated.
 
-In the :doc:`ref_model/chapters/chapter03`, the cloud infrastructure is defined. The tenants are required to provide
+In the :ref:`chapters/chapter03:modelling`, the cloud infrastructure is defined. The tenants are required to provide
 certain needed services (such as Load Balancer (LB), messaging). Thus, the VNF/CNFs incorporate different versions of
 the same services with the resultant issues related to an explosion of services, their integration and management
 complexities. To mitigate these issues, the Reference Model must specify the common services that every Telco cloud must
@@ -497,7 +497,7 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Life Cycle Manage
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 | hem.sec.002 | HEMP should provide capabilities for the centralised   |                                               |
 |             | tracking of compliance of all security requirements    |                                               |
-|             | (:ref:`ref_model/chapters/chapter07:consolidated       |                                               |
+|             | (:ref:`chapters/chapter07:consolidated                 |                                               |
 |             | security requirements`)                                |                                               |
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 | hem.sec.003 | HEMP should provide capabilities for insights into     |                                               |
@@ -647,7 +647,7 @@ different form factors.
 Telco Edge Cloud: Infrastructure Profiles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :ref:`ref_model/chapters/chapter04:profiles and workload flavours` section specifies two infrastructure profiles:
+The :ref:`chapters/chapter04:profiles and workload flavours` section specifies two infrastructure profiles:
 
 The **Basic** cloud infrastructure profile is intended for use by both IT and Network Function workloads that have low
 to medium network throughput requirements.
@@ -656,10 +656,11 @@ The **High Performance** cloud infrastructure profile is intended for use by app
 throughput requirements (up to 50Gbps).
 
 The High Performance profile can specify extensions for hardware offloading; please see
-:ref:`ref_model/chapters/chapter03:hardware acceleration abstraction`. The Reference Model High Performance profile
-includes an initial set of :ref:`ref_model/chapters/chapter04:profile extensions`.
+:ref:`chapters/chapter03:hardware acceleration abstraction`. The Reference Model High Performance profile
+includes an initial set of :ref:`chapters/chapter04:profile extensions`.
 
-Based on the infrastructure deployed at the edge, Table 8-3 specifies the :doc:`ref_model/chapters/chapter05` that would
+Based on the infrastructure deployed at the edge, Table 8-3 specifies the
+:ref:`chapters/chapter05:feature set and requirements from infrastructure` that would
 need to be relaxed.
 
 +----------------------+--------------+----------------------+-----------------------------+---------------------------+

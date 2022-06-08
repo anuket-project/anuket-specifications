@@ -138,12 +138,12 @@ Expectations of Trials Participants
 
 Trials participants will be expected to commit to establishing an RA1 compliant NFVI ot RA2 comp;iant CaaS, in whatever manner best suited to the participant. The first step is for the participant to secure appropriate environment space from pre-existing space, newly built space or securing LaaS. The environment can exist in any mix of participant owned, private or community hardware infrastructure.
 
-Second, the participant will build/setup/configure the environment space using their preferred method. This can include the use of a cookbook, automated install, and/or build from RA1/RI1 or RA2/RC2 requirements and specifications. CNTT `RI1 Chapter 3 <../../ref_impl/cntt-ri/chapters/chapter03.md>`__ and `RI2 Chapter 3 <../../ref_impl/cntt-ri2/chapters/chapter03.md>`__ documentations provide the matching RI requirements for the build.
+Second, the participant will build/setup/configure the environment space using their preferred method. This can include the use of a cookbook, automated install, and/or build from RA1/RI1 or RA2/RC2 requirements and specifications. CNTT :doc:`RI1 Chapter 3 <ref_impl_cntt-ri:chapters/chapter03>` and :doc:`RI2 Chapter 3 <ref_impl_cntt-ri2:chapters/chapter03>` documentations provide the matching RI requirements for the build.
 
 Expectation 2: Execute the RC1 or RC2 Test suites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Anuket will provide the participants with the community `RC1 <../../ref_cert/RC1/chapters/chapter01.md>`__ or `RC2 <../../ref_cert/RC2/chapters/chapter01.md>`__ test suites. The participants will execute test cases per instructions and record the quantitative results.
+Anuket will provide the participants with the community :doc:`ref_cert_RC1:index` or :doc:`ref_cert_RC2:index` test suites. The participants will execute test cases per instructions and record the quantitative results.
 
 Test case suite should be executed successfully at least three (3) times, because this number represents the recommended number of test suite runs to eliminate false positives in results. A triage process will be used to determine and manage root cause analysis of any failures encountered. If the failures are determined to be issues with the participant’s VI, Anuket will convey the issues to the RI work stream and make available SMEs to assist the participant in resolving the issues. When failures are deemed to be caused by an issue or gap in the RA/RI/RC, the community will work to determine the resolution, and modify the RA/RI/RC accordingly.
 
@@ -369,8 +369,6 @@ Quantitative Outcomes
 ^^^^^^^^^^^^^^^^^^^^^
 
 Technical outcomes i.e. technical test results will be collected and managed by RI1/RC1 work streams based upon participants privacy preferences.
-
-.. _deliverables-1:
 
 Deliverables
 ^^^^^^^^^^^^

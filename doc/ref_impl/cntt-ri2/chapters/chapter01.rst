@@ -9,8 +9,8 @@ About the Kubernetes Reference Implementation
 
 This document includes the requirements and deployment details of the Kubernetes-based Reference Implementation (RI2).
 This RI will conform to the architecture specification as defined in the :doc:`Reference Architecture 2
-<ref_arch/kubernetes/chapters/chapter01>`, including alignment with the principles and requirements of the
-:doc:`Reference Model <ref_model/chapters/chapter01>`.
+<ref_arch_kubernetes:chapters/chapter01>`, including alignment with the principles and requirements of the
+:doc:`Reference Model <ref_model:chapters/chapter01>`.
 
 The RI will be used as follows:
 
@@ -26,13 +26,13 @@ Structure of the document
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The document first consolidates the requirements that need to be addressed by this RI in
-:ref:`ref_impl/cntt-ri2/chapters/chapter02:Reference Implementation Requirements`.
-:ref:`ref_impl/cntt-ri2/chapters/chapter03:Requirements for Labs` then details the requirements that need to be met in
+:ref:`chapters/chapter02:Reference Implementation Requirements`.
+:ref:`chapters/chapter03:Requirements for Labs` then details the requirements that need to be met in
 order for anyone to be able to install the RI, whether that be into a community lab, their own corporate or personal
 lab or some other environment such as CNF Testbed or a public cloud provider. An operational runbook is documented in
-:ref:`ref_impl/cntt-ri2/chapters/chapter04:Operational Runbook` to aid the deployment of the RI into a chosen
+:ref:`chapters/chapter04:Operational Runbook` to aid the deployment of the RI into a chosen
 environment and includes step-by-step instructions for a selection of installers as well as steps on how to validate
-the deployment. Finally, :ref:`ref_impl/cntt-ri2/chapters/chapter05:Gap Analysis and Development` is a placeholder to
+the deployment. Finally, :ref:`chapters/chapter05:Gap Analysis and Development` is a placeholder to
 allow the documentation of any gaps found during the development of this document and the associated artifacts.
 
 Terminology
@@ -128,7 +128,7 @@ locations on which the RI can be installed.
 
 The following subsections provide an overview of the provisioning stages as they are currently planned. However, that's
 not to say full end-to-end installers aren't welcome, but if used we must be clear on the limitations and compromises
-made when we document them in :ref:`ref_impl/cntt-ri2/chapters/chapter04:Operational Runbook`.
+made when we document them in :ref:`chapters/chapter04:Operational Runbook`.
 
 Infrastructure Provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

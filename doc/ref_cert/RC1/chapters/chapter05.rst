@@ -25,7 +25,7 @@ given VNF.
    End-End framework
 
 Here, the steps 1-4 are NFVI related steps are covered in detail in
-:ref:`ref_cert/RC1/chapters/chapter02:nfvi conformance requirements`.
+:ref:`chapters/chapter02:nfvi conformance requirements`.
 
 Step-5. Interoperability validations for VNF functional testing defined.
 
@@ -90,7 +90,7 @@ from any vendor on a unified consistent Infrastructure. so as part of
 VNF Conformance, its important to certify the VNF based on profiled
 defined in :doc:ref_model/chapters/chapter02`.
 
-In :doc:`ref_model/chapters/chapter02`,
+In :doc:`ref_model:chapters/chapter02`,
 following NFVi profiles are proposed as reference:
 
 -  **Basic**: for VNF that can tolerate resource over-subscription and

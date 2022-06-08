@@ -42,11 +42,8 @@ A Version:
 
 .. _roadmap-1:
 
-Roadmap
--------
-
 High Level Roadmap
-~~~~~~~~~~~~~~~~~~
+------------------
 
 .. image:: ./figures/cntt_roadmap.png
    :alt: "Figure 2: The Anuket Project Technical Specification Roadmap"
@@ -54,14 +51,14 @@ High Level Roadmap
 **Figure 2:** The Anuket Project Technical Specification Roadmap
 
 Detailed Roadmap
-~~~~~~~~~~~~~~~~
+----------------
 
 Please refer to individual `release plans <https://wiki.anuket.io/display/HOME/Releases>`__ and features for detailed roadmap.
 
 .. _milestones:
 
 Detailed Milestones
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 ========================================= ========= ================================================================================================================================================================================================================================================================================== ============================================================================================================================================================================================================================================================================================================================== ========
 Review                                    Milestone Description                                                                                                                                                                                                                                                                        Activities                                                                                                                                                                                                                                                                                                                     Comments

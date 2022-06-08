@@ -1,16 +1,19 @@
 Anuket Specifications
 =====================
+
 .. toctree::
     :maxdepth: 1
 
-    Governance & Community Guidelines </gov/index>
-    Technical Specifications </common/index>
-    Introduction </common/chapter00>
-    Reference Model </ref_model/index>
-    Reference Architectures </ref_arch/index>
-    Reference Implementation </ref_impl/index>
-    Reference Conformance </ref_cert/index>
+    common/README.rst
+    gov/README.rst
 
-- `Terms of Reference <../GSMA_CNTT_Terms_of_Reference.pdf>`_
-- `Code of Conduct <../CODE_OF_CONDUCT.md>`_
+-  :doc:`ref_model:index`
+-  :doc:`ref_arch_openstack:index`
+-  :doc:`ref_arch_kubernetes:index`
+-  :doc:`ref_cert_RC1:index`
+-  :doc:`ref_cert_RC2:index`
+-  :doc:`ref_impl_cntt-ri:index`
+-  :doc:`ref_impl_cntt-ri2:index`
+- `Terms of Reference <GSMA_CNTT_Terms_of_Reference.pdf>`_
+- `Code of Conduct <CODE_OF_CONDUCT.md>`_
 - `The License (Creative Commons Attribution 4.0 International) <https://creativecommons.org/licenses/by/4.0/legalcode>`_

@@ -19,7 +19,7 @@ Autoscaling
 
 With regards to resource autoscaling
 (gen.scl.01
-:ref:`ref_arch/openstack/chapters/chapter02:general recommendations`) it is
+:ref:`chapters/chapter02:general recommendations`) it is
 recommended that the NFVO/VNFM manages the policy and triggers a
 scale-up or scale-down action based on application telemetry, event, AI,
 or ML etc. While the use of telemetry and alarming system can trigger a
