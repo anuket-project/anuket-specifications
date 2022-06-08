@@ -1681,7 +1681,7 @@ Cloud Centre and the number of copies that should be deployed. These
 references also present the pros and cons of DCP and CCP and designs to
 address some of the challenges of each of the models.
 
-In the Reference Mode, the
+In the Reference Model, the
 :ref:`ref_model/chapters/chapter08:telco edge cloud: platform services deployment`
 table lists the Platform Services that may be placed in the different node types
 (control, compute and storage). Depending upon the capacity and
