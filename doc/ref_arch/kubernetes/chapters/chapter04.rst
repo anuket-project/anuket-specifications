@@ -301,7 +301,7 @@ the following specifications:
    * - ra2.k8s.010
      - IPv6DualStack
      - To support IPv6 and IPv4, the IPv6DualStack feature gate must be enabled on various components (requires Kubernetes
-       v1.16 or later). kube-apiserver: --feature-gates="IPv6DualStack=true". kube-controller-manager: 
+       v1.16 or later). kube-apiserver: --feature-gates="IPv6DualStack=true". kube-controller-manager:
        --feature-gates="IPv6DualStack=true" --cluster-cidr=<IPv4 CIDR>,<IPv6 CIDR> --service-cluster-ip-range=<IPv4 CIDR>,
        <IPv6 CIDR> --node-cidr-mask-size-ipv4 ¦ --node-cidr-mask-size-ipv6 defaults to /24 for IPv4 and /64 for IPv6. kubelet:
        --feature-gates="IPv6DualStack=true". kube-proxy: --cluster-cidr=<IPv4 CIDR>, <IPv6 CIDR> --feature-gates="IPv6DualStack=true"
@@ -891,5 +891,6 @@ Architecture they must be implemented as per the following specifications:
 Additional required components
 ------------------------------
 
-   This chapter should list any additional components needed to provide the services defined in Chapter :ref:`chapters/chapter03:infrastructure services` (e.g., Prometheus).
+   This chapter should list any additional components needed to provide the services defined in Chapter
+   :ref:`chapters/chapter03:infrastructure services` (e.g., Prometheus).
 
