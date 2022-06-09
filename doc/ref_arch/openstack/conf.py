@@ -15,8 +15,8 @@ linkcheck_ignore = [
     "https://www.iso.org/obp/ui/",
 ]
 intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
-    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None)
+    'cntt': ('https://cntt.readthedocs.io/en/stable-moselle/', None),
+    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/stable-moselle/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
