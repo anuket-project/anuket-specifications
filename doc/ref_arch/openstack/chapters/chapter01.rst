@@ -6,7 +6,7 @@ Overview
 
 This Reference Architecture is focussed on OpenStack as the Virtualised
 Infrastructure Manager (VIM) chosen based on the criteria laid out in
-the :doc:`ref_model/chapters/chapter01`.
+the :doc:`ref_model:chapters/chapter01`.
 `OpenStack <https://docs.openstack.org>`__ has the advantage of being a
 mature and widely accepted open-source technology; a strong ecosystem of
 vendors that support it, the OpenInfra Foundation for managing the
@@ -14,7 +14,8 @@ community, and, most importantly, it is widely deployed by the global
 operator community for both internal infrastructure and external facing
 products and services. This means that the operators have existing staff
 with the right skill sets to support a Cloud Infrastructure
-(`NFVI <https://www.etsi.org/deliver/etsi_gs/NFV-INF/001_099/001/01.01.01_60/gs_NFV-INF001v010101p.pdf>`__)
+(or Network Function Virtualisation Infrastructure,
+`NFVI <https://www.etsi.org/deliver/etsi_gs/NFV-INF/001_099/001/01.01.01_60/gs_NFV-INF001v010101p.pdf>`__)
 deployment into development, test and production. Another reason to
 choose OpenStack is that it has a large active community of vendors and
 operators, which means that any code or component changes needed to
@@ -25,8 +26,9 @@ validate the required features through well-established mechanisms.
 Vision
 ~~~~~~
 
-The OpenStack-based Anuket Reference Architecture will host NFV
-workloads, primarily VNFs, of interest to the Anuket community. The
+The OpenStack-based Reference Architecture will host NFV
+workloads, primarily VNFs (Virtual Network Functions),
+of interest to the Anuket community. The
 Reference Architecture document can be used by operators to deploy
 Anuket conformant infrastructure; hereafter, “conformant” denotes that
 the resource can satisfy tests conducted to verify conformance with this
@@ -36,8 +38,9 @@ Use Cases
 ---------
 
 Several NFV use cases are documented in OpenStack. For more examples and
-details refer to the OpenStack
-`docs <https://docs.openstack.org/arch-design/use-cases.html>`__.
+details refer to the
+`OpenStack docs <https://docs.openstack.org/arch-design/use-cases.html>`__.
+
 Examples include:
 
 -  **Overlay networks**: The overlay functionality design includes
@@ -86,14 +89,14 @@ Examples include:
    higher-Class Selector to DNS to ensure faster delivery or a better
    spot in queuing algorithms.
 
-Anuket OpenStack Reference Release
-----------------------------------
+OpenStack Reference Release
+---------------------------
 
 This Reference Architecture document conforms to the `OpenStack
 Wallaby <https://docs.openstack.org/wallaby/projects.html>`__ release.
 While many features and capabilities are conformant with many OpenStack
 releases, this document will refer to features, capabilities and APIs
-that are part of the OpenStack Wallaby release. For ease, this Anuket
+that are part of the OpenStack Wallaby release. For ease, this
 Reference Architecture document version can be referred to as “RA-1 OSTK
 Wallaby.”
 
@@ -101,10 +104,10 @@ Principles
 ----------
 
 OpenStack Reference Architecture must obey to the following set of
-principles:
+principles described in:
 
-- :ref:`common/chapter00:anuket general principles`
-- :ref:`common/chapter00:architectural principles`
+- :ref:`cntt:common/chapter00:anuket general principles`
+- :ref:`cntt:common/chapter00:architectural principles`
 
 OpenStack specific principles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -139,13 +142,20 @@ some other operational items. Please note that Chapter 7 is not a
 replacement for the implementation, configuration and operational
 documentation that accompanies the different OpenStack distributions.
 Chapter 8 identifies certain Gaps that currently exist and plans on how
-to address them. For example, Service Function Chaining support needs to
-be addressed to realise the full potential and value of SDN and NFV.
+to address them (for example, resources autoscaling).
 
 Terminology
 -----------
 
 General terminology definitions can be found in
-:doc:`common/glossary` and specific terms relating
+:doc:`cntt:common/glossary` and specific terms relating
 to this reference architecture are to be found in `OpenStack Related
-Terminology :ref:`common/glossary:openstack related terminology`.
+Terminology :ref:`cntt:common/glossary:openstack related terminology`.
+
+Conventions
+-----------
+
+The key words "must", "must not", "required", "shall", "shall not",
+"should", "should not", "recommended", "may", and "optional"
+in this document are to be interpreted as described in
+`RFC 2119 <https://www.ietf.org/rfc/rfc2119.txt>`_.

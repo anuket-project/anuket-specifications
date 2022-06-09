@@ -4,8 +4,8 @@ Architecture Requirements
 Introduction
 ------------
 
-This chapter will use the requirements defined in the overall Reference Model and only make additional entries in section
-`2.3 <#2.3>`__ if there are additional requirements needed for this Reference Architecture.
+This chapter will use the requirements defined in the overall Reference Model and only make additional entries in
+section `2.3 <#2.3>`__ if there are additional requirements needed for this Reference Architecture.
 
 Definitions
 -----------
@@ -18,9 +18,9 @@ Reference Model Requirements
 
 The tables below contain the requirements from the Reference Model to cover the Basic and High-Performance profiles.
 The table also includes a reference to the specification from
-:ref:`ref_arch/kubernetes/chapters/chapter04:Chapter 04 - Component Level Architecture` and from
-:ref:`ref_arch/kubernetes/chapters/chapter05:Chapter 05 - Security Guidance` to ensure traceability. If the related Specification does not
-exist, the reference will read "N/A" (and in bold "**N/A**" for mandatory requirements).
+:ref:`chapters/chapter04:component level architecture` and from
+:ref:`chapters/chapter05:security guidance` to ensure traceability. If the related Specification
+does not exist, the reference will read "N/A" (and in bold "**N/A**" for mandatory requirements).
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
 
@@ -223,9 +223,10 @@ Cloud Infrastructure Software Profile Capabilities
      - Must support
      - ra2.ch.004
 
-:doc:`ref_model/chapters/chapter04:Reference`
+:ref:`ref_model:chapters/chapter04:capabilities and performance measurements`
 
-**(1)** Defined in the ``.bronze`` configuration in RM section :doc:`ref_model/chapters/chapter04:4.2.6 Storage Ext`
+
+**(1)** Defined in the ``.bronze`` configuration in RM section :ref:`ref_model:chapters/chapter04:storage extensions`
 
 **(2)** In Kubernetes based infrastructures packet monitoring is out of the scope for the infrastructure.
 
@@ -276,7 +277,8 @@ required bandwidth of those connection points.
      - Must support
      - N/A
 
-:doc:`ref_model/chapters/chapter04:Reference`
+:ref:`ref_model:chapters/chapter04:virtual network interface specifications`
+
 
 Cloud Infrastructure Software Profile Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -406,12 +408,11 @@ Cloud Infrastructure Software Profile Requirements
      - Optional
      - N/A
 
-:doc:`ref_model/chapters/chapter05:Reference`
+:ref:`ref_model:chapters/chapter05:virtual networking`
 
-**(1)** :ref:`ref_arch/kubernetes/chapters/appendix-a:Workload Transition Guidelines` might have other interfaces (such as SR-IOV VFs
-to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until more mature
-solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU
-and energy consumption).
+**(1)** Might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers
+on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency
+to support telecom workloads (for example regarding CPU and energy consumption).
 
 **(2)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)
 
@@ -522,7 +523,7 @@ Cloud Infrastructure Hardware Profile Requirements
      - Optional
      - N/A
 
-:doc:`ref_model/chapters/chapter05:Reference`
+:ref:`ref_model:chapters/chapter05:network acceleration configurations`
 
 **(1)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.
 
@@ -531,9 +532,9 @@ Edge Cloud Infrastructure Hardware Profile Requirements
 
 In the case of Telco Edge Cloud Deployments, hardware requirements can differ from the above to account for
 environmental and other constraints.
-The Reference Model :doc:`ref_model/chapters/chapter08:hybrid multi-cloud architecture`
+The Reference Model :ref:`ref_model:chapters/chapter08:hybrid multi-cloud architecture`
 includes considerations specific to deployments at the edge of the network. The infrastructure profiles "Basic" and
-"High Performance" as per :doc:`ref_model/chapters/chapter04:profiles and workload flavours` still apply, but a number
+"High Performance" as per :ref:`ref_model:chapters/chapter04:profiles and workload flavours` still apply, but a number
 of requirements of the above table are relaxed as follows:
 
 .. list-table:: Reference Model Requirements: Edge Cloud Infrastructure Hardware Profile Requirements
@@ -565,7 +566,8 @@ of requirements of the above table are relaxed as follows:
      - Y (1)
      - ra2.ch.008
 
-:doc:`ref_model/chapters/chapter08:Reference`.
+:ref:`ref_model:chapters/chapter08:telco edge cloud: infrastructure profiles`.
+
 
 **(1)** immaterial if the number of CPU sockets (infra.hw.cpu.cfg.001) is 1.
 
@@ -627,7 +629,8 @@ Cloud Infrastructure Management Requirements
      - Must support
      - N/A
 
-:doc:`ref_model/chapters/chapter04:Reference`.
+:ref:`ref_model:chapters/chapter04:cloud infrastructure management capabilities`.
+
 
 
 Cloud Infrastructure Security Requirements
@@ -1249,13 +1252,14 @@ Cloud Infrastructure Security Requirements
         Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16.
      -
 
-:doc:`ref_model/chapters/chapter07:Reference`
+:ref:`ref_model:chapters/chapter07:consolidated security requirements`
 
 Kubernetes Architecture Requirements
 ------------------------------------
 
 The requirements in this section are to be delivered in addition to those in section 2.2, and have been
-created to support the Principles defined in :ref:`ref_arch/kubernetes/chapters/chapter01:Chapter 1 of this Reference Architecture`.
+created to support the Principles defined in the :ref:`chapters/chapter01:Overview` of this
+Reference Architecture.
 
 The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised
 resources and a software management system.

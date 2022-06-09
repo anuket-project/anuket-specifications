@@ -160,7 +160,7 @@ and behaviours. The set of selectable attributes includes:
 - Enhanced features - set of selectable features such as: auto-replicate, encryption, snapshot support.
 
 Note that approximate numeric ranges for the qualitative values used above are given in the
-:ref:`ref_model/chapters/chapter04:storage extensions` section.
+:ref:`chapters/chapter04:storage extensions` section.
 
 Storage resources have the following attributes, with metric definitions that support verification through passive
 measurements (telemetry) where appropriate:
@@ -1623,7 +1623,7 @@ Infrastructure and Application Level Acceleration
 
 :numref:`Hardware Acceleration in RM Realization Diagram` gives examples for the Hardware Accelerators shown in
 :numref:`Reference model realization example`
-(the :ref:`ref_model/chapters/chapter03:sample reference model realization` diagram).
+(the :ref:`chapters/chapter03:sample reference model realization` diagram).
 
 .. figure:: ../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png
    :alt: Hardware Acceleration in RM Realization Diagram

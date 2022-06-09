@@ -1,8 +1,6 @@
 Operations and Life Cycle Management
 ====================================
 
-Introduction
-------------
 
 To create an Infrastructure as a Service (IaaS) cloud requires the
 provisioning and deployment of the underlying infrastructure (compute,
@@ -31,7 +29,7 @@ Operators may choose certain paradigms with respect to how they
 provision and configure their IaaS cloud. These paradigms will drive the
 selection of the provisioning and configuration tools. In this chapter
 we will discuss the capabilities of provisioning and configuration
-management systems; some Open Source tools may be mentioned but their
+management systems; some open-source tools may be mentioned but their
 capabilities are beyond the scope of this chapter.
 
 Procedural versus Declarative code
@@ -65,7 +63,7 @@ Cloud Infrastructure provisioning and configuration management
 --------------------------------------------------------------
 
 In the Reference Model,
-:ref:`ref_model/chapters/chapter09:configuration and lifecycle management`
+:ref:`ref_model:chapters/chapter09:configuration and lifecycle management`
 defines the functions of Configuration and Life Cycle Management (LCM).
 To operate and manage a scalable cloud, that minimizes operational
 costs, requires tools that incorporates systems for automated
@@ -104,8 +102,9 @@ Foreman is an open-source project, base of several commercial products.
 Foreman provides the full management of PXE configuration and the
 installation for many Operating Systems (CentOS, Fedora, Ubuntu, Debian,
 Red Hat Entreprise Linux, OpenSUSE, etc.).
-Foreman service can be installed by Ansible `<https://docs.ansible.com/>`_
-playbooks. Ansible playbooks are basic tools for the automation of the
+Foreman service can be installed by `Ansible playbooks
+<https://docs.ansible.com/>`_.
+Ansible playbooks are basic tools for the automation of the
 infrastructure virtualization layer deployments.
 
 VIM deployment
@@ -243,7 +242,7 @@ workloads so that appropriate actions can be taken. For example,
    resources.
 
 Some of the data is to support the metrics collection specified in the
-:doc:`ref_model/chapters/chapter04`.
+:doc:`ref_model:chapters/chapter04`.
 
 Logs have multiple operational uses including for:
 

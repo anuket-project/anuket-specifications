@@ -76,7 +76,7 @@ single tests:
    Groups <https://github.com/kubernetes/community/blob/master/sig-testing/charter.md>`__
    in sub-sections below
 -  skip excludes the SIG labels listed as optional in
-   :doc:`ref_arch/kubernetes/chapters/chapter06`.
+   :doc:`ref_arch_kubernetes:chapters/chapter06`.
 
 The Reference Conformance suites must be stable and executed on real
 deployments. Then all the following labels are defacto skipped in
@@ -122,7 +122,7 @@ skip:
 
 See `API Machinery Special Interest
 Group <https://github.com/kubernetes/community/tree/master/sig-api-machinery>`__
-and :doc:`ref_arch/kubernetes/chapters/chapter06` for more details.
+and :doc:`ref_arch_kubernetes:chapters/chapter06` for more details.
 
 Apps Testing
 ^^^^^^^^^^^^
@@ -143,7 +143,7 @@ skip:
 
 See `Apps Special Interest
 Group <https://github.com/kubernetes/community/tree/master/sig-apps>`__
-and :doc:`ref_arch/kubernetes/chapters/chapter06` for more details.
+and :doc:`ref_arch_kubernetes:chapters/chapter06` for more details.
 
 Auth Testing
 ^^^^^^^^^^^^
@@ -160,7 +160,7 @@ skip:
 
 See `Auth Special Interest
 Group <https://github.com/kubernetes/community/tree/master/sig-auth>`__
-and :doc:`ref_arch/kubernetes/chapters/chapter06` for more details.
+and :doc:`ref_arch_kubernetes:chapters/chapter06` for more details.
 
 Cluster Lifecycle Testing
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -175,7 +175,7 @@ skip:
 
 See `Cluster Lifecycle Special Interest
 Group <https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle>`__
-and :doc:`ref_arch/kubernetes/chapters/chapter06` for more details.
+and :doc:`ref_arch_kubernetes:chapters/chapter06` for more details.
 
 Instrumentation Testing
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -196,7 +196,7 @@ skip:
 
 See `Instrumentation Special Interest
 Group <https://github.com/kubernetes/community/tree/master/sig-instrumentation>`__
-and :doc:`ref_arch/kubernetes/chapters/chapter06` for more details.
+and :doc:`ref_arch_kubernetes:chapters/chapter06` for more details.
 
 Network Testing
 ^^^^^^^^^^^^^^^
@@ -237,7 +237,7 @@ skip:
 
 See `Network Special Interest
 Group <https://github.com/kubernetes/community/tree/master/sig-network>`__
-and :doc:`ref_arch/kubernetes/chapters/chapter06`.
+and :doc:`ref_arch_kubernetes:chapters/chapter06`.
 
 Node Testing
 ^^^^^^^^^^^^
@@ -259,7 +259,7 @@ skip:
 
 See `Node Special Interest
 Group <https://github.com/kubernetes/community/tree/master/sig-node>`__
-and :doc:`ref_arch/kubernetes/chapters/chapter06`.
+and :doc:`ref_arch_kubernetes:chapters/chapter06`.
 
 Scheduling Testing
 ^^^^^^^^^^^^^^^^^^
@@ -276,7 +276,7 @@ skip:
 
 See `Scheduling Special Interest
 Group <https://github.com/kubernetes/community/tree/master/sig-scheduling>`__
-and :doc:`ref_arch/kubernetes/chapters/chapter06`.
+and :doc:`ref_arch_kubernetes:chapters/chapter06`.
 
 Storage Testing
 ^^^^^^^^^^^^^^^
@@ -317,7 +317,7 @@ skip:
 
 See `Storage Special Interest
 Group <https://github.com/kubernetes/community/tree/master/sig-storage>`__
-and :doc:`ref_arch/kubernetes/chapters/chapter06`.
+and :doc:`ref_arch_kubernetes:chapters/chapter06`.
 
 Kubernetes API benchmarking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -333,7 +333,7 @@ which iterates 10 times the mainline
 `xrally-kubernetes <https://github.com/xrally/xrally-kubernetes>`__
 scenarios.
 
-At the time of writing, no KPI is defined in :doc:`ref_arch/kubernetes/index`
+At the time of writing, no KPI is defined in :doc:`ref_arch_kubernetes:index`
 which would have asked for an update of the default SLA (maximum failure
 rate of 0%) proposed in `Functest Kubernetes
 Benchmarking <https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking/testcases.yaml?h=stable%2Fv1.23>`__
