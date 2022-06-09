@@ -13,8 +13,8 @@ guide.
 Security Requirements
 ---------------------
 
-Chapter 2 (:ref:`chapters/chapter02:cloud infrastructure security requirements`
-and :ref:`chapters/chapter02:security recommendations`) gathers
+:ref:`chapters/chapter02:cloud infrastructure security requirements`
+and :ref:`chapters/chapter02:security recommendations` gather
 all requirements and recommendations regarding security topics developed
 in this chapter.
 

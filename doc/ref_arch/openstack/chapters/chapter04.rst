@@ -2,18 +2,18 @@ Cloud Infrastructure & VIM Component Level Architecture
 =======================================================
 
 
-Chapter 3 introduced the components of an OpenStack-based IaaS
+Chapter 3 introduced the components of an OpenStack-based IaaS:
 
 -  Consumable Infrastructure Resources and Services
 -  Cloud Infrastructure Management Software (VIM: OpenStack) core
    services and architectural constructs needed to consume and manage
    the consumable resources
--  Underlying physical compute, storage and networking resources
+-  Underlying physical compute, storage, and networking resources
 
 This chapter delves deeper into the capabilities of these different
 resources and their needed configurations to create and operate an
 OpenStack-based IaaS cloud. This chapter specifies details on the
-structure of control and user planes, operating systems, hypervisors and
+structure of control and user planes, operating systems, hypervisors, and
 BIOS configurations, and architectural details of underlay and overlay
 networking, and storage, and the distribution of OpenStack service
 components among nodes. The chapter also covers implementation support
@@ -104,7 +104,7 @@ Additionally, for OpenStack we need to set the following boot parameters:
    -  The number of control nodes only needs to be increased in
       environments with a lot of changes, such as a testing lab, or a
       very large cloud footprint (rule of thumb: number of control nodes
-      = 3 + quotient(number of compute nodes/1000)).
+      = 3 + quotient (number of compute nodes/1000)).
    -  The `Services Placement Summary
       table <https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html>`__
       specifies the number of instances that are required based upon the
@@ -114,7 +114,7 @@ Network nodes
 ^^^^^^^^^^^^^
 
 Networks nodes are mainly used for L3 traffic management for overlay
-tenant network (see more detail in section Neutron).
+tenant network (see more detail in Neutron section).
 
 -  BIOS requirements
 
@@ -451,7 +451,8 @@ CPU Allocation Ratio and CPU Pinning
 
 A given host (compute node) can only support a single CPU Allocation
 Ratio. Thus, to support the B1 and B4 Basic profile extensions (Section
-4.2.2.5) with CPU Allocation Ratios of 1.0 and 4.0 we will need to
+:ref:`ref_arch/openstack/chapters/chapter04:compute nodes`)
+with CPU Allocation Ratios of 1.0 and 4.0 we will need to
 create 2 different host profiles and separate host aggregates for each
 of the host profiles. The CPU Allocation Ratio is set in the hypervisor
 on the host.
@@ -465,7 +466,7 @@ Server Configurations
 The different networking choices – OVS-Kernel, OVS-DPDK, SR-IOV – result
 in different NIC port, LAG (Link Aggregation Group), and other
 configurations. Some of these are shown diagrammatically in section
-4.2.9.5.
+:ref:`ref_arch/openstack/chapters/chapter04:compute nodes`.
 
 Leaf and Compute Ports for Server Flavors must align
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -512,8 +513,8 @@ ToR/Leafs, Guest automation and server placement necessarily involves
 the Leaf switches (e.g., access VLAN outer tag mapping with VXLAN EVPN).
 
 -  Local VXLAN tunneling over IP-switched fabric implemented between
-   VTEPs on Leaf switches.
--  Leaf configuration controlled by SDN-Fabric/Global Controller.
+   VTEPs on Leaf switches
+-  Leaf configuration controlled by SDN-Fabric/Global Controller
 -  Underlay uses VXLAN-enabled switches for EVPN support
 
 SR-IOV-based networking for Tenant Use Cases is required where
@@ -764,7 +765,7 @@ High Level Logical Network Layout
      - Characteristics
    * - Provisioning & Management
      - Initial OS bootstrapping of the servers via PXE, deployment of software
-       and thereafter for access from within the control plane.
+       and thereafter for access from within the control plane
      -   - Security Domain: Management
          - Externally Routable: No
          - Connected to: All nodes
@@ -784,8 +785,8 @@ High Level Logical Network Layout
          - Externally Routable: No
          - Connected to: All nodes except foundation
    * - Tenant
-     - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918 re-usable private networks as controlled
-       by cloud administrator
+     - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918
+       re-usable private networks as controlled by cloud administrator
      -   - Security Domain: Underlay
          - Externally Routable: No
          - Connected to: controllers and computes
@@ -795,19 +796,22 @@ High Level Logical Network Layout
          - Externally routable: Yes
          - Connected to: controllers
    * - External Provider (FIP)
-     - Network with a pool of externally routable IP addresses used by neutron routers to NAT to/from the tenant RFC1918
-       private networks
+     - Network with a pool of externally routable IP addresses used by neutron routers
+       to NAT to/from the tenant RFC1918 private networks
      -   - Security Domain: Data Centre
          - Externally routable: Yes
          - Connected to: controllers, OVS computes
    * - External Provider (VLAN)
-     - External Data Centre L2 networks (VLANs) that are directly accessible to the project.
-         Note: External IP address management is required
+     - External Data Centre L2 networks (VLANs) that are directly accessible
+       to the project
+
+       Note: External IP address management is required
      -   - Security Domain: Data Centre
          - Externally routable: Yes
          - Connected to: OVS DPDK computes
    * - IPMI / Out of Band
-     - The remote “lights-out” management port of the servers e.g., iLO, IDRAC / IPMI / Redfish
+     - The remote “lights-out” management port of the servers e.g., iLO,
+       IDRAC / IPMI / Redfish
      -   - Security Domain: Management
          - Externally routable: No
          - Connected to: IPMI port on all servers
@@ -1074,7 +1078,7 @@ the control nodes and no services running on the compute nodes:
 -  Glance API
 -  Glance Registry
 
-*The Glance backends include Swift, Ceph RBD and NFS.*
+*The Glance backends include Swift, Ceph RBD, and NFS.*
 
 Cinder
 ^^^^^^
@@ -1086,8 +1090,8 @@ control nodes and no services running on the compute nodes: - Cinder API
 - Cinder Scheduler - Cinder Volume – the Cinder volume process needs to
 talk to its backends
 
-*The Cinder backends include SAN/NAS storage, iSCSI drives, Ceph RBD and
-NFS.*
+*The Cinder backends include SAN/NAS storage, iSCSI drives, Ceph RBD,
+and NFS.*
 
 Swift
 ^^^^^
@@ -1102,7 +1106,7 @@ running on the control nodes and the compute nodes:
 -  Container Services
 -  Account Services
 
-*The Swift backends include iSCSI drives, Ceph RBD and NFS.*
+*The Swift backends include iSCSI drives, Ceph RBD, and NFS.*
 
 Neutron
 ^^^^^^^
@@ -1413,7 +1417,7 @@ infrastructure. To implement these profiles and sizes, it is required to
 set up the flavors as specified in the tables below.
 
 .. list-table:: Neutron Services Placement
-   :widths: 10 15 20 35
+   :widths: 10 17 20 33
    :header-rows: 1
 
    * - Flavor Capabilities
@@ -1422,7 +1426,8 @@ set up the flavors as specified in the tables below.
      - High-Performance
    * - CPU allocation ratio (custom extra_specs)
      - infra.com.cfg.001
-     - In flavor create or flavor set –property cpu_all ocation_ratio=4.0
+     - In flavor create or flavor
+       set –property cpu_all ocation_ratio=4.0
      - In flavor create or flavor set –property cpu_allocation_ratio=1.0
    * - NUMA Awareness
      - infra.com.cfg.002
@@ -1436,11 +1441,14 @@ set up the flavors as specified in the tables below.
            across multiple NUMA nodes: –property hw:numa_nodes=2
    * - CPU Pinning
      - infra.com.cfg.003
-     - In flavor create or flavor set specify –property hw: cpu_policy=shared
+     - In flavor create or
+       flavor set specify
+       –property hw: cpu_policy=shared
        (default)
-     -   - In flavor create or flavor set specify –property
-           hw:cpu_policy=dedicated and –property hw:cpu_thread_policy=<prefer,
-           require, isolate>.
+     -   - In flavor create
+           or flavor set specify –property
+           hw:cpu_policy=dedicated and –property
+           hw:cpu_thread_policy=<prefer,require, isolate>.
          - Use “isolate” thread policy for very high
            compute intensive workloads that require that each vCPU be placed on a
            different physical core
@@ -1456,8 +1464,9 @@ set up the flavors as specified in the tables below.
    * - OVS-DPDK
      - infra.net.acc.cfg.001
      -
-     - ml2.conf.ini configured to support [OVS] datapath_type=netdev Note:
-       huge pages should be configured to large
+     - ml2.conf.ini configured to support [OVS] datapath_type=netdev
+
+       Note:huge pages should be configured to large
    * - Local Storage SSD
      - infra.hw.stg.ssd.cfg.002
      - trait:STORAGEDISK_SSD=required
@@ -1466,9 +1475,12 @@ set up the flavors as specified in the tables below.
      - infra.hw.nic.cfg.002
      - –property quota vif_inbound_average=1310720 and
        vif_outbound_average=1310720.
+
        Note:10 Gbps = 1250000 kilobytes per second
      - –property quota vif_inboundaverage=3125000 and
-       vif_outbound_average=3125000 Note: 25 Gbps = 3125000 kilobytes per second
+       vif_outbound_average=3125000
+
+       Note: 25 Gbps = 3125000 kilobytes per second
 
 ..
 
@@ -1482,7 +1494,7 @@ set up the flavors as specified in the tables below.
 
 The flavor create command and the mandatory and optional configuration
 parameters is documented in
-https://docs.openstack.org/nova/latest/user/flavors.html.
+`OpenStack Flavors <https://docs.openstack.org/nova/latest/user/flavors.html>`_.
 
 Logical segregation and high availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1530,8 +1542,8 @@ been creating intermediate data centres in central office locations,
 colocation centres, and now edge centres at the physical edge of their
 networks because of the demand for low latency and high throughput for
 5G, IoT and connected devices (including autonomous driverless vehicles
-and connected vehicles). Chapter 3.5 of this document, discusses
-:ref:`chapters/chapter03:cloud topology`
+and connected vehicles).
+:ref:`chapters/chapter03:cloud topology` discusses
 and lists 3 types of data centres: Large, Intermediate and Edge.
 
 For ease of convenience, unless specifically required, in this section
@@ -1557,8 +1569,8 @@ In the Intermediate and Edge cloud centres, there may be limitations on
 the resource capacity, as in the number of servers, and the capacity of
 these servers in terms of # of cores, RAM, etc. restricting the set of
 services that can be deployed and, thus, creating a dependency between
-other data centres. In :ref:`ref_model:chapters/chapter08:telco edge cloud`,
-Table 8-5
+other data centres.
+:ref:`ref_model:chapters/chapter08:telco edge cloud`
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.
 
@@ -1585,8 +1597,8 @@ with a single control plane in the Centralised Control Plane scenario.
 Thus, in addition to the control plane and controller services deployed
 at the Central Cloud Centre, Local Control Planes hosting a full-set or
 subset of the controller services are also deployed on the Intermediate
-and Edge Cloud Centres. Table 4-5 presents examples of such deployment
-choices.
+and Edge Cloud Centres. The following table presents examples of
+such deployment choices.
 
 .. list-table:: Distribution of OpenStack services on different nodes
                 depending upon Control Plane Scenario
@@ -1649,30 +1661,28 @@ Edge Cloud Topology
 ~~~~~~~~~~~~~~~~~~~
 
 The Reference Model Chapter
-:ref:`ref_model:chapters/chapter08:telco edge cloud`,
+:ref:`ref_model:chapters/chapter08:telco edge cloud`
 presents the deployment environment characteristics, infrastructure
 characteristics and new values for the Infrastructure Profiles at the Edge.
 
-The `Edge computing
-whitepaper <https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/>`__
+The `Edge computing whitepaper
+<https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/>`__
 includes information such as the services that run on various nodes. The
 information from the whitepaper coupled with that from the `OpenStack
-Reference
-Architecture <https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary>`__
+Reference Architecture
+<https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary>`__
 for 100, 300 and 500 nodes will help in deciding which OpenStack and
 other services (such as database, messaging) run on which nodes in what
 Cloud Centre and the number of copies that should be deployed. These
 references also present the pros and cons of DCP and CCP and designs to
 address some of the challenges of each of the models.
 
-Table 8-4 in the Reference Model
 :ref:`ref_model:chapters/chapter08:telco edge cloud: platform services deployment`
 lists the Platform Services that may be placed in the different node types
 (control, compute and storage). Depending upon the capacity and
 resources available only the compute nodes may exist at the Edge thereby
 impacting operations.
 
-Table 8-3 in the Reference Model Chapter
 :ref:`ref_model:chapters/chapter08:telco edge cloud: infrastructure profiles`
 lists a number of Infrastructure Profile characteristics and the changes that
 may need to be made for certain Edge clouds depending upon their
@@ -1723,5 +1733,6 @@ number of open-source tools are available for the purpose including:
    installing, upgrading and operating OpenStack clouds
 
 These installers are described in more details in
+
 :ref:`chapters/chapter07:\
 Operations and Life Cycle Management`.
