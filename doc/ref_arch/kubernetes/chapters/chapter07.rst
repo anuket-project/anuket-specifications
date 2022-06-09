@@ -52,6 +52,30 @@ still centrally administered and maintained. Beyond just security, this also pre
 deploy too many CNFs into the same cluster could result in version conflicts, configuration conflicts, and problems with
 software life cycle management. Finally, without proper isolation there is an increased risk of cascading failures.
 
+**Proposals & Resolution:** Kubernetes is not a single cluster solution. This has been demonstrated across the
+industry from case studies at prominent companies like
+`Twitter <https://www.alibabacloud.com/blog/what-can-we-learn-from-twitters-move-to-kubernetes_595156>`__,
+`USA Today <https://medium.com/usa-today-network/there-and-back-again-scaling-multi-tenant-kubernetes-cluster-s-
+67afb437716c>`__,
+`Zalando <https://www.youtube.com/watch?v=LpFApeaGv7A>`__, and
+`Alibaba <https://www.cncf.io/blog/2019/12/12/demystifying-kubernetes-as-a-service-how-does-alibaba-cloud-manage-10000s
+-of-kubernetes-clusters/>`__ to the bi-annual CNCF survey that finds that the number of clusters being deployed within
+an organization is growing. While there are many reasons behind the multi cluster paradigm, examining the gap above we
+find that a multi cluster solution can address many of these problems like security and software life cycle management.
+
+Without multi tenancy within a clusters, separate clusters must be used to provide adequate separation for CNFs that
+require strong isolation. Putting CNFs may need to be separated for various reasons including different types of
+workloads based on their vendors, type like production vs. non production, per categorization, or supporting
+independent lifecycles. Having multiple clusters to deploy CNFs into allows operators to chose similar CNFs together
+while segregating those with different lifecycles from each other. CNFs deployed into the same cluster can be upgraded
+together to reduce the operational load while CNFs that require different versions, configurations, and dependencies
+can run in separate clusters and be upgraded independently if needed.
+
+If running multiple clusters is the only solution to meeting these workload and infrastructure requirements, the
+operational burden of this model must also be considered. Running a multitude of clusters at scale could be a massive
+operational challenge if done manually. Any operator considering running Kubernetes at scale should carefully evaluate
+their multi cluster management strategy including the management of the applications within those clusters.
+
 Kubernetes as a VM-based VNF Orchestrator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -161,40 +185,3 @@ to provide random system UIDs. Randomised UIDs result in errors when the applica
 "privileged mode" solution is not secure while "random UID" solution is error prone, and therefore these techniques
 should not be used. Support for proper user namespaces in Kubernetes is
 `under discussion <https://github.com/kubernetes/enhancements/pull/2101>`__.
-
-.. _proposals--resolution:
-
-Proposals & Resolution
-----------------------
-
-.. _multi-tenancy-and-workload-isolation-with-kubernetes-1:
-
-Multi-tenancy and workload isolation with Kubernetes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Kubernetes is not a single cluster solution. This has been demonstrated across the industry from case studies at
-prominent companies like
-`Twitter <https://www.alibabacloud.com/blog/what-can-we-learn-from-twitters-move-to-kubernetes_595156>`__,
-`USA Today <https://medium.com/usa-today-network/there-and-back-again-scaling-multi-tenant-kubernetes-cluster-s-
-67afb437716c>`__,
-`Zalando <https://www.youtube.com/watch?v=LpFApeaGv7A>`__, and
-`Alibaba <https://www.cncf.io/blog/2019/12/12/demystifying-kubernetes-as-a-service-how-does-alibaba-cloud-manage-10000s
--of-kubernetes-clusters/>`__ to the bi-annual CNCF survey that finds that the number of clusters being deployed within
-an organization is growing. While there are many reasons behind the multi cluster paradigm, examining the gap above we
-find that a multi cluster solution can address many of these problems like security and software life cycle management.
-
-Without multi tenancy within a clusters, separate clusters must be used to provide adequate separation for CNFs that
-require strong isolation. Putting CNFs may need to be separated for various reasons including different types of
-workloads based on their vendors, type like production vs. non production, per categorization, or supporting
-independent lifecycles. Having multiple clusters to deploy CNFs into allows operators to chose similar CNFs together
-while segregating those with different lifecycles from each other. CNFs deployed into the same cluster can be upgraded
-together to reduce the operational load while CNFs that require different versions, configurations, and dependencies
-can run in separate clusters and be upgraded independently if needed.
-
-If running multiple clusters is the only solution to meeting these workload and infrastructure requirements, the
-operational burden of this model must also be considered. Running a multitude of clusters at scale could be a massive
-operational challenge if done manually. Any operator considering running Kubernetes at scale should carefully evaluate
-their multi cluster management strategy including the management of the applications within those clusters.
-
-Development Efforts
--------------------

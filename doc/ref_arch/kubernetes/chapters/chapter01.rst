@@ -7,7 +7,7 @@ Introduction
 The intention of this Reference Architecture is to develop a usable Kubernetes based platform for the Telecom operator
 community. The RA will be based on the standard Kubernetes platform wherever possible. This Reference Architecture
 for Kubernetes will describe the high level system components and their interactions, taking the goals and requirements
-at :doc:`common/chapter00` and mapping them to real-world Kubernetes (and related)
+at :doc:`cntt:common/chapter00` and mapping them to real-world Kubernetes (and related)
 components. This document needs to be sufficiently detailed and robust such that it can be used to guide the production
 deployment of Kubernetes within an operator, whilst being flexible enough to evolve with and remain aligned with the
 wider Kubernetes ecosystem outside of Telco.
@@ -41,12 +41,12 @@ Kubernetes-based workloads, and Kubernetes cluster lifecycle management.
 Terminology
 ~~~~~~~~~~~
 
-For terminology used in this document refer to the :ref:`common/glossary:glossary`.
+For terminology used in this document refer to the :ref:`cntt:common/glossary:glossary`.
 
 Principles
 ----------
 
-This Reference Architecture conforms with the principles defined here: :ref:`common/chapter00:overview`.
+This Reference Architecture conforms with the principles defined here: :ref:`cntt:common/chapter00:overview`.
 
 Cloud Native Principles
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,11 +95,11 @@ are many similarities, but the key principles from both, which are applicable to
 Exceptions
 ~~~~~~~~~~
 
-Anuket specifications define certain policies and :ref:`common/chapter00:anuket general principles` and strive to
+Anuket specifications define certain policies and :ref:`cntt:common/chapter00:anuket general principles` and strive to
 coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently
 available technology options, incompatibilities, performance and operator constraints (including costs), these
 policies and principles may not always be achievable and, thus, require an exception process. These policies
-describe how to handle :ref:`common/policies:anuket project policies for managing non-conforming technologies`.
+describe how to handle :ref:`cntt:common/policies:anuket project policies for managing non-conforming technologies`.
 In general, non-conformance with policies is handled through a set of exceptions (please also see
 :ref:`gov/chapters/chapter09:exception types`).
 
