@@ -91,8 +91,7 @@ Kubernetes as a VM-based VNF Orchestrator
 Multiple network interfaces on Pods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Related requirements:** `RM Chapter 4.2.2 <../../../ref_model/chapters/chapter04.md#virtual-network-interface-spec
-   ifications>`__
+   **Related requirements:** :ref:`ref_model:chapters/chapter04:virtual network interface specifications`
 
 ..
 
@@ -107,7 +106,7 @@ Multiple network interfaces on Pods
 Dynamic network management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Related requirements:** `req.inf.ntw.03 <chapter02.md#kubernetes-architecture-requirements>`__
+   **Related requirements:** :ref:`req.inf.ntw.03 <chapters/chapter02:kubernetes architecture requirements>`
 
 ..
 
@@ -160,7 +159,7 @@ HW topology aware huge pages
 **Baseline project:** *Kubernetes*
 
 **Gap description:** Memory Manager was added in v1.21 as alpha feature. More in
-`3.2.1.3 Memory and Huge Pages Resources Management <chapter03.md#memory-and-huge-pages-resources-management>`__.
+:ref:`chapters/chapter03:memory and huge pages resources management`.
 
 User namespaces in Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

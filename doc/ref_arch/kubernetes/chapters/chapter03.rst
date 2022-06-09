@@ -389,7 +389,7 @@ agreed between the CNF vendors and the CNF operators:
    `DANM <https://github.com/nokia/danm>`__)
 -  An external, **federated networking manager** that uses the Kubernetes API Server
    to create and manage additional connections for Pods (e.g. `Network Service
-   Mesh <https://networkservicemesh.io/docs/concepts/what-is-nsm/>`__)
+   Mesh <https://networkservicemesh.io>`__)
 
 +----------------------+---------------------+----------------------+----------------------+---------------------------+
 | Requirement          | Networking Solution | Networking Solution  | Networking Solution  | Networking Solution       |
