@@ -32,7 +32,7 @@ required for telco type workload management and execution.
 Chapter 5 of the Reference Model (RM) describes the
 hardware and software profiles that are
 descriptions of the capabilities and features that the Cloud Infrastructure
-provide to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below)
+provide to the workloads. The NFVI Software Profile figure below
 depicts a high level view of the software profile features that apply to each
 instance profile (Basic and High Performance). For more information on the
 instance profiles please refer to :ref:`ref_model:chapters/chapter04:profiles`.
@@ -420,22 +420,22 @@ agreed between the CNF vendors and the CNF operators:
      - Supported via a CNI Network Plugin that supports Network Policies
      - Supported via a CNI Network Plugin that supports Network Policies
      - Supported via a CNI Network Plugin that supports Network Policies
-   * - Traffic patterns symmetry (infra. net.cfg.006)
+   * - Traffic patterns symmetry (infra.net.cfg.006)
      - Depends on CNI plugin used
      - Depends on CNI plugin used
      - Depends on CNI plugin used
      - Depends on CNI plugin used
-   * - Centrally administrated and configured (req. inf.ntw.03)
+   * - Centrally administrated and configured (req.inf.ntw.03)
      - Supported via Kubernetes API Server
      - Supported via Kubernetes API Server
      - Supported via Kubernetes API Server
      - Supported via Kubernetes API Server
-   * - Dual stack IPv4 and IPv6 for Kubernetes workloads (req. inf.ntw.04)
+   * - Dual stack IPv4 and IPv6 for Kubernetes workloads (req.inf.ntw.04)
      - Supported via the additional CNI plugin
      - Supported
      - Supported
      - Supported
-   * - Integrating SDN controllers (req. inf.ntw.05)
+   * - Integrating SDN controllers (req.inf.ntw.05)
      - Supported via the additional CNI plugin
      - Supported via the additional CNI plugin
      - TF is an SDN controller
@@ -445,12 +445,12 @@ agreed between the CNF vendors and the CNF operators:
      - Supported
      - Supported
      - Supported
-   * - Choose whether or not to deploy more than one networking solution (req.inf .ntw.07)
+   * - Choose whether or not to deploy more than one networking solution (req.inf.ntw.07)
      - Supported
      - Supported
      - Supported
      - Supported
-   * - Kubernetes network model (req.inf. ntw.08)
+   * - Kubernetes network model (req.inf.ntw.08)
      - Supported via the additional CNI plugin
      - Supported via the additional CNI plugin
      - Supported
@@ -698,7 +698,7 @@ This defacto standard defines among other things
    * - Kubernetes Cluster-Wide default network
      - A network to which all pods are attached following the current behavior and requirements of Kubernetes, this done by attaching the eth0 interface to the pod namespace.
    * - Network Attachment
-     - A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not necessarily) each attachment takes the form of a kernel network interface placed into the pod’s network namespace. Each attachment may result in zero or more IP addresses being assigned to the pod.
+     - A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not necessarily) each attachment takes the form of a kernel network interface placed into the pod's network namespace. Each attachment may result in zero or more IP addresses being assigned to the pod.
    * - NetworkAttachmentDefinition object
      - This defines resource object that describes how to attach a pod to a logical or physical network, the annotation name is "k8s.v1.cni.cncf.io/networks"
    * - Network Attachment Selection Annotation
