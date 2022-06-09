@@ -251,12 +251,12 @@ the following specifications:
    * - ra2.k8s.009
      - CPU Pinning
      - When hosting workloads matching the High Performance profile, in order to support CPU Pinning, the kubelet must be started with the --cpu-manager-policy=static option. (Note, only containers in Guaranteed pods - where CPU resource requests and limits are identical - and configured with positive-integer CPU requests will take advantage of this. All other Pods will run on CPUs in the remaining shared pool.)
-     - infra.com.cfg .003
+     - infra.com.cfg.003
      -
    * - ra2.k8s.010
      - IPv6DualStack
      - To support IPv6 and IPv4, the IPv6DualStack feature gate must be enabled on various components (requires Kubernetes v1.16 or later). kube-apiserver: --feature-gates="IPv6DualStack=true". kube-controller-manager: --feature-gates="IPv6DualStack=true" --cluster-cidr=<IPv4 CIDR>,<IPv6 CIDR> --service-cluster-ip-range=<IPv4 CIDR>, <IPv6 CIDR> --node-cidr-mask-size-ipv4 ¦ --node-cidr-mask-size-ipv6 defaults to /24 for IPv4 and /64 for IPv6. kubelet: --feature-gates="IPv6DualStack=true". kube-proxy: --cluster-cidr=<IPv4 CIDR>, <IPv6 CIDR> --feature-gates="IPv6DualStack=true"
-     - req.inf.ntw. 04
+     - req.inf.ntw.004
      -
    * - ra2.k8s.011
      - Anuket profile labels
