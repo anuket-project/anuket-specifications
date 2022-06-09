@@ -14,7 +14,7 @@ linkcheck_ignore = [
     'http://127.0.0.1'
 ]
 intersphinx_mapping = {
-    'ref_arch_kubernetes': ('https://cntt.readthedocs.io/projects/ra2/en/latest/', None)
+    'ref_arch_kubernetes': ('https://cntt.readthedocs.io/projects/ra2/en/stable-moselle/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4

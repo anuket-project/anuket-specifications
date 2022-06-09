@@ -18,9 +18,9 @@ linkcheck_ignore = [
     'https://www.sdxcentral.com'
 ]
 intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
-    'ref_cert_RC1': ('https://cntt.readthedocs.io/projects/rc1/en/latest/', None),
-    'ref_cert_RC2': ('https://cntt.readthedocs.io/projects/rc2/en/latest/', None)
+    'cntt': ('https://cntt.readthedocs.io/en/stable-moselle/', None),
+    'ref_cert_RC1': ('https://cntt.readthedocs.io/projects/rc1/en/stable-moselle/', None),
+    'ref_cert_RC2': ('https://cntt.readthedocs.io/projects/rc2/en/stable-moselle/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
