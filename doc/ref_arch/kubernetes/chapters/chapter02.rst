@@ -5,7 +5,7 @@ Introduction
 ------------
 
 This chapter will use the requirements defined in the overall Reference Model and only make additional entries in
-section `2.3 <#2.3>`__ if there are additional requirements needed for this Reference Architecture.
+section `2.3 <#kubernetes-architecture-requirements>`__ if there are additional requirements needed for this Reference Architecture.
 
 Definitions
 -----------
@@ -1385,7 +1385,7 @@ Cloud Infrastructure Security Requirements
 Kubernetes Architecture Requirements
 ------------------------------------
 
-The requirements in this section are to be delivered in addition to those in section 2.2, and have been
+The requirements in this section are to be delivered in addition to those in section `2.2 <#reference-model-requirements>`_, and have been
 created to support the Principles defined in the :ref:`chapters/chapter01:Overview` of this
 Reference Architecture.
 
@@ -1461,7 +1461,7 @@ machines or containers.
 |          |              |              | to the Kubernetes nodes, leveraging  |                                     |
 |          |              |              | multiple network connections.        |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
-|inf.ntw.03|Infrastructure| Network      | The networking solution **should**   | `ra2.ntw.001, `ra2.ntw.004`         |
+|inf.ntw.03|Infrastructure| Network      | The networking solution **should**   | `ra2.ntw.001`, `ra2.ntw.004`         |
 |          |              |              | be able to be centrally              |                                     |
 |          |              |              | administrated and configured.        |                                     |
 +----------+--------------+--------------+--------------------------------------+-------------------------------------+
