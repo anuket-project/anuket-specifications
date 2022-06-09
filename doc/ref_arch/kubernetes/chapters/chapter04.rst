@@ -205,7 +205,7 @@ the following specifications:
      - Reference Implementation Trace
    * - ra2.k8s.001
      - Kubernetes Conformance
-     - The Kubernetes distribution, product, or installer used in the implementation must be listed in the `Kubernetes Distributions and Platforms document <https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlUUK2h0/edit#gid=0>`__ and marked (X) as conformantfor the Kubernetes version defined in :ref:`ref_arch/kubernetes/README:required versions of most important components`.
+     - The Kubernetes distribution, product, or installer used in the implementation must be listed in the `Kubernetes Distributions and Platforms document <https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlUUK2h0/edit#gid=0>`__ and marked (X) as conformantfor the Kubernetes version defined in :ref:`index:required versions of most important components`.
      - req.gen.cnt.03
      - RI2 4.3.1
    * - ra2.k8s.002
@@ -230,7 +230,7 @@ the following specifications:
      -
    * - ra2.k8s.005
      - Kubernetes API Version
-     - In alignment with the `Kubernetes version support policy <https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions>`__, an implementation must use a Kubernetes version as per the subcomponent versions table in :ref:`ref_arch/kubernetes/README:required versions of most important components`.
+     - In alignment with the `Kubernetes version support policy <https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions>`__, an implementation must use a Kubernetes version as per the subcomponent versions table in :ref:`index:required versions of most important components`.
      -
      -
    * - ra2.k8s.006
@@ -260,7 +260,7 @@ the following specifications:
      -
    * - ra2.k8s.011
      - Anuket profile labels
-     - To clearly identify which worker nodes are compliant with the different profiles defined by Anuket the worker nodes must be labelled according to the following pattern: an anuket.io/profile/basic label must be set to true on the worker node if it can fulfil the requirements of the basic profile and an anuket.io/profile/network-intensive label must be set to true on the worker node if it can fulfil the requirements of the High Performance profile. The requirements for both profiles can be found in :doc:`ref_arch/kubernetes/chapters/chapter02`.
+     - To clearly identify which worker nodes are compliant with the different profiles defined by Anuket the worker nodes must be labelled according to the following pattern: an anuket.io/profile/basic label must be set to true on the worker node if it can fulfil the requirements of the basic profile and an anuket.io/profile/network-intensive label must be set to true on the worker node if it can fulfil the requirements of the High Performance profile. The requirements for both profiles can be found in :ref:`chapters/chapter02:architecture requirements`.
      -
      -
    * - ra2.k8s.012
