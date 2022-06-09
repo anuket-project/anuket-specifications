@@ -5,7 +5,8 @@ Introduction
 ------------
 
 This chapter will use the requirements defined in the overall Reference Model and only make additional entries in
-section `2.3 <#2.3>`__ if there are additional requirements needed for this Reference Architecture.
+section `Kubernetes Architecture Requirements <#kubernetes-architecture-requirements>`__ if there are additional
+requirements needed for this Reference Architecture.
 
 Definitions
 -----------
@@ -146,7 +147,8 @@ Cloud Infrastructure Software Profile Capabilities
      - N/A
    * - 4.1.4
      - i.cap.014
-     - Specifies the proportion of CPU cores consumed by the Cloud Infrastructure system on the worker nodes. If SMT is used, it indicates the number of consumed SMT threads.
+     - Specifies the proportion of CPU cores consumed by the Cloud Infrastructure system on the
+       worker nodes. If SMT is used, it indicates the number of consumed SMT threads.
      - 2
      - 2
      - ra2.k8s.008
@@ -355,7 +357,8 @@ Cloud Infrastructure Software Profile Requirements
      - N/A
    * - 5.1.3
      - infra.net.cfg.002
-     - The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric.(2)
+     - The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the
+       scale-out features of the network fabric.(2)
      - Must support VXLAN, MPLSoUDP, GENEVE, other
      - No requirement specified
      - N/A
@@ -671,7 +674,8 @@ Cloud Infrastructure Security Requirements
      - `5.3 Node Hardening`
    * - `7.9.1`
      - sec.gen.006
-     - The Platform **must** support Secure logging. Logging with root account must be prohibited when root privileges are not required.
+     - The Platform **must** support Secure logging. Logging with root account must be prohibited when root
+       privileges are not required.
      - `5.3.2 Restrict direct access to nodes`
    * - `7.9.1`
      - sec.gen.007
@@ -683,7 +687,8 @@ Cloud Infrastructure Security Requirements
      - `5.3.3 Vulnerability assessment`
    * - `7.9.1`
      - sec.gen.009
-     - The Platform **must** support Software integrity protection and verification and **must** scan source code and manifests.
+     - The Platform **must** support Software integrity protection and verification and **must** scan source code
+       and manifests.
      - `5.4 Securing Kubernetes orchestrator`
    * - `7.9.1`
      - sec.gen.010
@@ -693,7 +698,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.1`
      - sec.gen.011
-     - The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors).
+     - The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission
+       to one or more authorized actors).
      -
    * - `7.9.1`
      - sec.gen.012
@@ -705,7 +711,8 @@ Cloud Infrastructure Security Requirements
      - `5.4 Securing Kubernetes orchestrator`
    * - `7.9.1`
      - sec.gen.014
-     - All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers.
+     - All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors
+       the measurements of the servers.
      -
    * - `7.9.1`
      - sec.gen.015
@@ -722,7 +729,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.2`
      - sec.sys.003
-     - The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic.
+     - The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of
+       network traffic.
      - `5.4.3 Use Transport Layer Security and Service Mesh`
    * - `7.9.2`
      - sec.sys.004
@@ -734,11 +742,13 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.2`
      - sec.sys.006
-     - The Cloud Infrastructure must be able to utilise the Cloud Infrastructure Manager identity lifecycle management capabilities.
+     - The Cloud Infrastructure must be able to utilise the Cloud Infrastructure Manager identity lifecycle
+       management capabilities.
      - `5.2 Principles`
    * - `7.9.2`
      - sec.sys.007
-     - The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control).
+     - The Platform **must** implement controls enforcing separation of duties and privileges, least privilege
+       use and least common mechanism (Role-Based Access Control).
      - `5.2 Principles` `5.4 Securing Kubernetes orchestrator`
    * - `7.9.2`
      - sec.sys.008
@@ -756,11 +766,13 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.2`
      - sec.sys.011
-     - The Platform **must not** reuse the same authentication credential (e.g., key-pair) on different Platform components (e.g., on different hosts, or different services).
+     - The Platform **must not** reuse the same authentication credential (e.g., key-pair) on different Platform
+       components (e.g., on different hosts, or different services).
      -
    * - `7.9.2`
      - sec.sys.012
-     - The Platform **must** protect all secrets by using strong encryption techniques, and storing the protected secrets externally from the component
+     - The Platform **must** protect all secrets by using strong encryption techniques, and storing the protected
+       secrets externally from the component
      -
    * - `7.9.2`
      - sec.sys.013
@@ -781,7 +793,8 @@ Cloud Infrastructure Security Requirements
      - `5.4 Securing Kubernetes orchestrator`
    * - `7.9.2`
      - sec.sys.017
-     - The Platform **must** provide the capability of using digital certificates that comply with X.509 standards issued by a trusted
+     - The Platform **must** provide the capability of using digital certificates that comply with X.509 standards
+       issued by a trusted
      -
    * - `7.9.2`
      - sec.sys.018
@@ -789,7 +802,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.2`
      - sec.sys.019
-     - The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity).
+     - The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature,
+       validity period, non revocation, identity).
      -
    * - `7.9.2`
      - sec.sys.020
@@ -809,11 +823,13 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.3`
      - sec.ci.004
-     - The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant).
+     - The Platform **must** support Confidentiality of processes and restrict information sharing with only the process
+       owner (e.g., tenant).
      -
    * - `7.9.3`
      - sec.ci.005
-     - The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant).
+     - The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information
+       sharing with only the process owner (e.g., tenant).
      -
    * - `7.9.3`
      - sec.ci.006
@@ -833,7 +849,8 @@ Cloud Infrastructure Security Requirements
      - `5.7 Create and define Network Policies`
    * - `7.9.3`
      - sec.ci.009
-     - For sensitive data encryption, the key management service **should** leverage a Hardware Security Module to manage and protect cryptographic keys.
+     - For sensitive data encryption, the key management service **should** leverage a Hardware Security Module
+       to manage and protect cryptographic keys.
      -
    * - `7.9.4`
      - sec.wl.001
@@ -841,7 +858,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.4`
      - sec.wl.002
-     - The Cloud Infrastructure **must** provide methods to ensure the platform's trust status and integrity (e.g. remote attestation, Trusted Platform Module).
+     - The Cloud Infrastructure **must** provide methods to ensure the platform's trust status and integrity
+       (e.g., remote attestation, Trusted Platform Module).
      -
    * - `7.9.4`
      - sec.wl.003
@@ -857,7 +875,8 @@ Cloud Infrastructure Security Requirements
      - `5.4 Securing Kubernetes orchestrator`
    * - `7.9.4`
      - sec.wl.006
-     - The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.).
+     - The Platform **must** support the separation of Workloads based on their categorisation (for example,
+       payment card information, healthcare, etc.).
      - `5.4 Securing Kubernetes orchestrator`
    * - `7.9.4`
      - sec.wl.007
@@ -873,7 +892,8 @@ Cloud Infrastructure Security Requirements
      - `5.13 Trusted Registry`
    * - `7.9.5`
      - sec.img.003
-     - Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them.
+     - Images **must not** be configured to run with privileges higher than the privileges of the actor
+       authorized to run them.
      - `5.11 Run-Time Security`
    * - `7.9.5`
      - sec.img.004
@@ -885,7 +905,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.5`
      - sec.img.006
-     - Image Registries **must** only be accessible over secure networks that enforce authentication, integrity and confidentiality.
+     - Image Registries **must** only be accessible over secure networks that enforce authentication,
+       integrity and confidentiality.
      - `5.13 Trusted Registry`
    * - `7.9.5`
      - sec.img.007
@@ -893,7 +914,8 @@ Cloud Infrastructure Security Requirements
      - `5.13 Trusted Registry`
    * - `7.9.5`
      - sec.img.008
-     - Images **must not** include any secrets. Secrets include passwords, cloud provider credentials, SSH keys, TLS certificate keys, etc.
+     - Images **must not** include any secrets. Secrets include passwords, cloud provider credentials,
+       SSH keys, TLS certificate keys, etc.
      - `5.12 Secrets Management`
    * - `7.9.5`
      - sec.img.009
@@ -910,7 +932,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.6`
      - sec.lcm.002
-     - Cloud operations staff and systems **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher.
+     - Cloud operations staff and systems **must** use management protocols limiting security risk such as
+       SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher.
      - `5.4 Securing Kubernetes orchestrator`
    * - `7.9.6`
      - sec.lcm.003
@@ -932,23 +955,28 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.6`
      - sec.lcm.007
-     - The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information.
+     - The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and
+       restarted images with current time information.
      - `5.4 Securing Kubernetes orchestrator`
    * - `7.9.6`
      - sec.lcm.008
-     - The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information.
+     - The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and
+       restarted images with relevant DNS information.
      -
    * - `7.9.6`
      - sec.lcm.009
-     - The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information.
+     - The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated,
+       migrated and restarted images with relevant geolocation (geographical) information.
      -
    * - `7.9.6`
      - sec.lcm.010
-     - The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing).
+     - The Platform **must** log all changes to geolocation along with the mechanisms and sources of
+       location information (i.e. GPS, IP block, and timing).
      -
    * - `7.9.6`
      - sec.lcm.011
-     - The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software.
+     - The Platform **must** implement Security life cycle management processes including the proactive
+       update and patching of all deployed Cloud Infrastructure software.
      -
    * - `7.9.6`
      - sec.lcm.012
@@ -958,7 +986,8 @@ Cloud Infrastructure Security Requirements
      - sec.mon.001
      - Platform **must** provide logs and these logs must be regularly monitored for events of interest.
        The logs **must** contain the following fields: event type, date/time, protocol, service or program
-       used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved.
+       used for access, success/failure, login ID or process ID, IP address and ports (source and destination)
+       involved.
      -
    * - `7.9.7`
      - sec.mon.002
@@ -970,7 +999,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.7`
      - sec.mon.004
-     - The Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest.
+     - The Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit
+       and at rest.
      -
    * - `7.9.7`
      - sec.mon.005
@@ -979,35 +1009,43 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.7`
      - sec.mon.006
-     - The Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions accordingly.
+     - The Platform **must** Monitor and Audit operations by authorized account access after login to
+       detect malicious operational activity and take corrective actions accordingly.
      -
    * - `7.9.7`
      - sec.mon.007
-     - The Platform **must** Monitor and Audit security parameter configurations for compliance with defined security policies.
+     - The Platform **must** Monitor and Audit security parameter configurations for compliance with
+       defined security policies.
      -
    * - `7.9.7`
      - sec.mon.008
-     - The Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures.
+     - The Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks)
+       and take corrective security hardening measures.
      -
    * - `7.9.7`
      - sec.mon.009
-     - The Platform **must** Monitor and Audit service handling for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly.
+     - The Platform **must** Monitor and Audit service handling for various attacks (malformed messages,
+       signalling flooding and replaying, etc.) and take corrective actions accordingly.
      -
    * - `7.9.7`
      - sec.mon.010
-     - The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly.
+     - The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized
+       processes and take corrective actions accordingly.
      -
    * - `7.9.7`
      - sec.mon.011
-     - The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly.
+     - The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to
+       detected anomalies in the system components and take corrective actions accordingly.
      -
    * - `7.9.7`
      - sec.mon.012
-     - The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts.
+     - The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware
+       download attempts.
      -
    * - `7.9.7`
      - sec.mon.013
-     - The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries).
+     - The monitoring system **must not** affect the security (integrity and confidentiality) of
+       the infrastructure, workloads, or the user data (through back door entries).
      -
    * - `7.9.7`
      - sec.mon.014
@@ -1015,11 +1053,13 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.7`
      - sec.mon.015
-     - The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold.
+     - The Platform **must** ensure that the Monitoring systems are never starved of resources and **must**
+       activate alarms when resource utilisation exceeds a configurable threshold.
      -
    * - `7.9.7`
      - sec.mon.016
-     - The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing.
+     - The Platform Monitoring components **should** follow security best practices for auditing,
+       including secure logging and tracing.
      -
    * - `7.9.7`
      - sec.mon.017
@@ -1027,15 +1067,18 @@ Cloud Infrastructure Security Requirements
      - `5.3.3 Vulnerability assessment`
    * - `7.9.7`
      - sec.mon.018
-     - The Platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system.
+     - The Platform, starting from initialization, **must** collect and analyze logs to identify security
+       events, and store these events in an external system.
      - `5.3.4 Patch management`
    * - `7.9.7`
      - sec.mon.019
-     - The Platform's components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted.
+     - The Platform's components **must not** include an authentication credential, e.g., password, in any
+       logs, even if encrypted.
      -
    * - `7.9.7`
      - sec.mon.020
-     - The Platform's logging system **must** support the storage of security audit logs for a configurable period of time.
+     - The Platform's logging system **must** support the storage of security audit logs for a configurable
+       period of time.
      -
    * - `7.9.7`
      - sec.mon.021
@@ -1060,11 +1103,13 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.8`
      - sec.oss.004
-     - A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content.
+     - A dedicated internal isolated repository separated from the production environment **must** be used to
+       store vetted open source content.
      - `5.13 Trusted Registry`
    * - `7.9.8`
      - sec.oss.005
-     - A Software Bill of Materials (`SBOM <https://www.ntia.gov/SBOM>`__) **should** be provided or build, and maintained to identify the software components and their origins.
+     - A Software Bill of Materials (`SBOM <https://www.ntia.gov/SBOM>`__) **should** be provided or build,
+       and maintained to identify the software components and their origins.
      -
    * - `7.9.9`
      - sec.arch.001
@@ -1102,7 +1147,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.10`
      - sec.code.005
-     - SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. Continuous delivery pre-deployment: scanning prior to deployment.
+     - SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger.
+       Continuous delivery pre-deployment: scanning prior to deployment.
      -
    * - `7.9.11`
      - sec.bld.001
@@ -1187,11 +1233,13 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.13`
      - sec.run.004
-     - Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage. Typically done manually.
+     - Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage.
+       Typically done manually.
      -
    * - `7.9.14`
      - sec.std.001
-     - The Cloud Operator **should** comply with Center for Internet Security CIS Controls (`https://www.cisecur ity.org/ <https://www.cisecurity.org/>`__)
+     - The Cloud Operator **should** comply with Center for Internet Security CIS Controls
+       (`https://www.cisecurity.org <https://www.cisecurity.org/>`__)
      -
    * - `7.9.14`
      - sec.std.002
@@ -1201,7 +1249,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.14`
      - sec.std.003
-     - The Platform and Workloads **should** follow the guidance in the `OWASP Cheat Sheet Series (OCSS) <https://github.com/OWASP/CheatSheetSeries>`__
+     - The Platform and Workloads **should** follow the guidance in the 
+       `OWASP Cheat Sheet Series (OCSS) <https://github.com/OWASP/CheatSheetSeries>`__
      -
    * - `7.9.14`
      - sec.std.004
@@ -1216,7 +1265,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.14`
      - sec.std.006
-     - The Cloud Operator, Platform and Workloads **should** utilize the `OW ASP Web Security Testing Guide <https://github.com/OWASP/wstg/tree/master/document>`__
+     - The Cloud Operator, Platform and Workloads **should** utilize the
+       `OWASP Web Security Testing Guide <https://github.com/OWASP/wstg/tree/master/document>`__
      -
    * - `7.9.14`
      - sec.std.007
@@ -1238,7 +1288,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.14`
      - sec.std.010
-     - The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management. ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management.
+     - The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management.
+       ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management.
      -
    * - `7.9.14`
      - sec.std.011
@@ -1257,7 +1308,8 @@ Cloud Infrastructure Security Requirements
 Kubernetes Architecture Requirements
 ------------------------------------
 
-The requirements in this section are to be delivered in addition to those in section 2.2, and have been
+The requirements in this section are to be delivered in addition to those in section `Reference Model
+Requirements <#reference-model-requirements>`_, and have been
 created to support the Principles defined in the :ref:`chapters/chapter01:Overview` of this
 Reference Architecture.
 
@@ -1300,7 +1352,8 @@ machines or containers.
    * - gen.cnt.05
      - General
      - Cloud nativeness
-     - The Architecture should support configuration of all components in an automated manner using openly published API definitions.
+     - The Architecture should support configuration of all components in an automated manner
+       using openly published API definitions.
      -
    * - gen.scl.01
      - General
@@ -1310,12 +1363,14 @@ machines or containers.
    * - gen.rsl.01
      - General
      - Resiliency
-     - The Architecture must support resilient Kubernetes components that are required for the continued availability of running workloads.
+     - The Architecture must support resilient Kubernetes components that are required for the
+       continued availability of running workloads.
      - ra2.k8s.004
    * - gen.rsl.02
      - General
      - Resiliency
-     - The Architecture should support resilient Kubernetes service components that are not subject to gen.rsl.01.
+     - The Architecture should support resilient Kubernetes service components that are not
+       subject to gen.rsl.01.
      - ra2.k8s.002, ra2.k8s.003
    * - gen.avl.01
      - General
@@ -1335,7 +1390,8 @@ machines or containers.
    * - inf.stg.01
      - Infrastructure
      - Storage
-     - The Architecture must support the ability for an operator to choose whether or not to deploy persistent storage for Pods.
+     - The Architecture must support the ability for an operator to choose whether or
+       not to deploy persistent storage for Pods.
      - ra2.stg.004
    * - inf.ntw.01
      - Infrastructure
@@ -1345,7 +1401,8 @@ machines or containers.
    * - inf.ntw.02
      - Infrastructure
      - Network
-     - The Architecture must support fully redundant network connectivity to the Kubernetes nodes, leveraging multiple network connections.
+     - The Architecture must support fully redundant network connectivity to the Kubernetes
+       nodes, leveraging multiple network connections.
      -
    * - inf.ntw.03
      - Infrastructure
@@ -1370,7 +1427,8 @@ machines or containers.
    * - inf.ntw.07
      - Infrastructure
      - Network
-     - The Architecture must support the ability for an operator to choose whether or not to deploy more than one networking solution.
+     - The Architecture must support the ability for an operator to choose whether or not
+       to deploy more than one networking solution.
      - ra2.ntw.005
    * - inf.ntw.08
      - Infrastructure
@@ -1380,7 +1438,8 @@ machines or containers.
    * - inf.ntw.09
      - Infrastructure
      - Network
-     - The networking solution must not interfere with or cause interference to any interface or network it does not own.
+     - The networking solution must not interfere with or cause interference to any interface or
+       network it does not own.
      -
    * - inf.ntw.10
      - Infrastructure
@@ -1390,12 +1449,17 @@ machines or containers.
    * - inf.ntw.13
      - Infrastructure
      - Network
-     - The platform must allow specifying multiple separate IP pools. Tenants are required to select at least one IP pool that is different from the control infrastructure IP pool or other tenant IP pools.
+     - The platform must allow specifying multiple separate IP pools. Tenants are required to
+       select at least one IP pool that is different from the control infrastructure IP pool or
+       other tenant IP pools.
      -
    * - inf.ntw.14
      - Infrastructure
      - Network
-     - The platform must allow NATless traffic (i.e. exposing the pod IP address directly to the outside), allowing source and destination IP addresses to be preserved in the traffic headers from workloads to external networks. This is needed e.g. for signaling applications, using SIP and Diameter protocols.
+     - The platform must allow NATless traffic (i.e. exposing the pod IP address directly to the
+       outside), allowing source and destination IP addresses to be preserved in the traffic headers
+       from workloads to external networks. This is needed e.g. for signaling applications, using SIP
+       and Diameter protocols.
      - ra2.ntw.011
    * - inf.ntw.15
      - Infrastructure
@@ -1420,12 +1484,14 @@ machines or containers.
    * - inf.vir.01
      - Infrastructure
      - Virtual Infr astructure
-     - The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine.
+     - The Architecture must support the capability for Containers to consume infrastructure resources
+       abstracted by Host Operating Systems that are running within a virtual machine.
      - ra2.ch.005, ra2.ch.011
    * - inf.phy.01
      - Infrastructure
      - Physical Infrastructu re
-     - The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server.
+     - The Architecture must support the capability for Containers to consume infrastructure resources
+       abstracted by Host Operating Systems that are running within a physical server.
      - ra2.ch.008
    * - kcm.gen.01
      - Kubernetes Cluster
@@ -1440,12 +1506,14 @@ machines or containers.
    * - int.api.01
      - API
      - General
-     - The Architecture must leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage.
+     - The Architecture must leverage the Kubernetes APIs to discover and declaratively manage compute
+       (virtual and bare metal resources), network, and storage.
      - For Networking: ra2.ntw.001, ra2.ntw.008, ra2.app.006. Compute/storage not yet met.
    * - int.api.02
      - API
      - General
-     - The Architecture must support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. network, and storage.
+     - The Architecture must support the usage of a Kubernetes Application package manager using the
+       Kubernetes API, like Helm v3. network, and storage.
      - ra2.pkg.001
    * - int.api.03
      - API
@@ -1455,5 +1523,6 @@ machines or containers.
    * - int.api.04
      - API
      - General
-     - The Architecture must support limited backward compatibility in its APIs. Support for the whole API must not be dropped, but the schema or other details can change.
+     - The Architecture must support limited backward compatibility in its APIs. Support for the whole
+       API must not be dropped, but the schema or other details can change.
      -
