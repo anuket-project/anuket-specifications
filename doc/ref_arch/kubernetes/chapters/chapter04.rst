@@ -188,7 +188,7 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
      - tbd
    * - ra2.os.004
      - Disposable OS
-     - In order to support req.gen.cnt.03 (immutable infrastructure), the Host OS must be disposable, meaning the configuration
+     - In order to support gen.cnt.03 (immutable infrastructure), the Host OS must be disposable, meaning the configuration
        of the Host OS (and associated infrastructure such as VM or bare metal server) must be consistent - e.g., the system
        software and configuration of that software must be identical apart from those areas of configuration that must be
        different such as IP addresses and hostnames.
