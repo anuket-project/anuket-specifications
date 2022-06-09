@@ -1,8 +1,6 @@
 Architecture Requirements
 =========================
 
-Introduction
-------------
 
 **must**: Requirements that are marked as *must* are considered
 mandatory and must exist in the reference architecture and reflected in

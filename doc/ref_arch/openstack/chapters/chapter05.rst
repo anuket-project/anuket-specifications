@@ -1,8 +1,6 @@
 Interfaces and APIs
 ===================
 
-Introduction
-------------
 
 This chapter presents a consolidated set of OpenStack Service APIs
 corresponding to the ETSI NFV Nf-Vi, Vi-Vnfm and Or-Vi interfaces. The

@@ -1,8 +1,6 @@
 Operations and Life Cycle Management
 ====================================
 
-Introduction
-------------
 
 To create an Infrastructure as a Service (IaaS) cloud requires the
 provisioning and deployment of the underlying infrastructure (compute,

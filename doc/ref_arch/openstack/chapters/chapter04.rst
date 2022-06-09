@@ -1,8 +1,6 @@
 Cloud Infrastructure & VIM Component Level Architecture
 =======================================================
 
-Introduction
-------------
 
 Chapter 3 introduced the components of an OpenStack-based IaaS
 

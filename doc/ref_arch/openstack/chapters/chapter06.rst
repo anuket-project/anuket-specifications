@@ -1,8 +1,6 @@
 Security
 ========
 
-Introduction
-------------
 
 This guide is intended to provide basic security requirements to
 architects who are implementing Cloud Infrastructure using
