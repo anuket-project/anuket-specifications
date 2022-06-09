@@ -1421,7 +1421,7 @@ machines or containers.
      - Infrastructure
      - Virtual Infr astructure
      - The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine.
-     - ra2.ch.005 ra2.ch.011
+     - ra2.ch.005, ra2.ch.011
    * - inf.phy.01
      - Infrastructure
      - Physical Infrastructu re
