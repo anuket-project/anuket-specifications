@@ -647,7 +647,9 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.1`
      - sec.gen.002
-     - All systems part of Cloud Infrastructure **must** support password hardening as defined in `CIS Password Policy Guide <https://www.cisecurity.org/white-papers/cis-policy-guide/>`__. Hardening: CIS Password Policy Guide
+     - All systems part of Cloud Infrastructure **must** support password hardening as defined in
+       `CIS Password Policy Guide <https://www.cisecurity.org/white-papers/cis-policy-guide/>`__.
+       Hardening: CIS Password Policy Guide
      - `5.3.1 Node Hardening: Securing Kubernetes Hosts`
    * - `7.9.1`
      - sec.gen.003
@@ -655,7 +657,10 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.1`
      - sec.gen.004
-     - The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened by removing or disabling unnecessary services, applications and network protocols, configuring operating system user authentication, configuring resource controls, installing and configuring additional security controls where needed, and testing the security of the Operating System. (NIST SP 800-123)
+     - The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened by removing or
+       disabling unnecessary services, applications and network protocols, configuring operating system user
+       authentication, configuring resource controls, installing and configuring additional security controls where
+       needed, and testing the security of the Operating System. (NIST SP 800-123)
      - `5.2 Principles` and `5.3 Node Hardening`
    * - `7.9.1`
      - sec.gen.005
@@ -679,7 +684,9 @@ Cloud Infrastructure Security Requirements
      - `5.4 Securing Kubernetes orchestrator`
    * - `7.9.1`
      - sec.gen.010
-     - The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. `Controlled Access Based on the Need to Know <https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/>`__
+     - The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage,
+        with access to encryption keys restricted based on a need to know. `Controlled Access Based on the Need
+        to Know <https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/>`__
      -
    * - `7.9.1`
      - sec.gen.011
@@ -699,7 +706,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.1`
      - sec.gen.015
-     - Any change to the Platform must be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change.
+     - Any change to the Platform must be logged as a security event, and the logged event must include
+        the identity of the entity making the change, the change, the date and the time of the change.
      -
    * - `7.9.2`
      - sec.sys.001
@@ -731,7 +739,8 @@ Cloud Infrastructure Security Requirements
      - `5.2 Principles` `5.4 Securing Kubernetes orchestrator`
    * - `7.9.2`
      - sec.sys.008
-     - The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. Communication between different trust domains is not allowed, by default.
+     - The Platform **must** be able to assign the Entities that comprise the tenant networks to different
+        trust domains. Communication between different trust domains is not allowed, by default.
      -
    * - `7.9.2`
      - sec.sys.009
@@ -739,7 +748,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.2`
      - sec.sys.010
-     - For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly.
+     - For two or more domains without existing trust relationships, the Platform **must not** allow the effect
+        of an attack on one domain to impact the other domains either directly or indirectly.
      -
    * - `7.9.2`
      - sec.sys.011
@@ -763,7 +773,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.2`
      - sec.sys.016
-     - Login access to the platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. Note: Hardened jump servers isolated from external networks are recommended
+     - Login access to the platform's components **must** be through encrypted protocols such as SSH v2
+        or TLS v1.2 or higher. Note: Hardened jump servers isolated from external networks are recommended
      - `5.4 Securing Kubernetes orchestrator`
    * - `7.9.2`
      - sec.sys.017
@@ -803,11 +814,15 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.3`
      - sec.ci.006
-     - The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant).
+     - The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU,
+        Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload
+        owner (e.g., tenant).
      -
    * - `7.9.3`
      - sec.ci.007
-     - The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services.
+     - The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the
+        Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by
+        secure monitoring services.
      -
    * - `7.9.3`
      - sec.ci.008
@@ -887,7 +902,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.6`
      - sec.lcm.001
-     - The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks.
+     - The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up)
+        of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks.
      -
    * - `7.9.6`
      - sec.lcm.002
@@ -895,7 +911,9 @@ Cloud Infrastructure Security Requirements
      - `5.4 Securing Kubernetes orchestrator`
    * - `7.9.6`
      - sec.lcm.003
-     - The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware.
+     - The Cloud Operator **must** implement and strictly follow change management processes for Cloud
+        Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change
+        control on hardware.
      -
    * - `7.9.6`
      - sec.lcm.004
@@ -935,7 +953,9 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.7`
      - sec.mon.001
-     - Platform **must** provide logs and these logs must be regularly monitored for events of interest. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved.
+     - Platform **must** provide logs and these logs must be regularly monitored for events of interest.
+        The logs **must** contain the following fields: event type, date/time, protocol, service or program
+        used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved.
      -
    * - `7.9.7`
      - sec.mon.002
@@ -951,7 +971,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.7`
      - sec.mon.005
-     - The Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly.
+     - The Platform **must** Monitor and Audit various behaviours of connection and login attempts to
+        detect access attacks and potential access attempts and take corrective actions accordingly.
      -
    * - `7.9.7`
      - sec.mon.006
@@ -1015,7 +1036,8 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.7`
      - sec.mon.021
-     - The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful.
+     - The Platform **must** store security events locally if the external logging system is unavailable and
+        shall periodically attempt to send these to the external logging system until successful.
      -
    * - `7.9.8`
      - sec.oss.001
@@ -1023,11 +1045,15 @@ Cloud Infrastructure Security Requirements
      - `5.3.3 Vulnerability assessment`
    * - `7.9.8`
      - sec.oss.002
-     - The `CVE (Common Vulnerabilities and Exposures) <https://cve.mitre.org/>`__ **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software.
+     - The `CVE (Common Vulnerabilities and Exposures) <https://cve.mitre.org/>`__ **must** be used to identify
+        vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads
+        software.
      -
    * - `7.9.8`
      - sec.oss.003
-     - Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the `CVSS (Common Vulnerability Scoring System <https://www.first.org/cvss/>`__ to know a vulnerability score and its associated rate (low, medium, high, or critical).
+     - Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the
+        `CVSS (Common Vulnerability Scoring System <https://www.first.org/cvss/>`__ to know a vulnerability
+        score and its associated rate (low, medium, high, or critical).
      -
    * - `7.9.8`
      - sec.oss.004
@@ -1039,19 +1065,27 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.9`
      - sec.arch.001
-     - Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger. It may be done manually or using tools like open source OWASP Threat Dragon
+     - Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture
+        stage triggered by Software Feature Design trigger. It may be done manually or using tools like open source
+        OWASP Threat Dragon
      -
    * - `7.9.9`
      - sec.arch.002
-     - Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger. Typically done manually by internal or independent assessors.
+     - Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture
+        stage triggered by Software Feature Design trigger. Typically done manually by internal or independent
+        assessors.
      -
    * - `7.9.10`
      - sec.code.001
-     - SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code for software vulnerabilities and gaps against best practices. Example: open source OWASP range of tools.
+     - SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull,
+        Clone or Comment trigger. Security testing that analyses application source code for software vulnerabilities
+        and gaps against best practices. Example: open source OWASP range of tools.
      -
    * - `7.9.10`
      - sec.code.002
-     - SCA - Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code or compiled code for software components with known vulnerabilities. Example: open source OWASP range of tools.
+     - SCA - Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull,
+        Clone or Comment trigger. Security testing that analyses application source code or compiled code for
+        software components with known vulnerabilities. Example: open source OWASP range of tools.
      -
    * - `7.9.10`
      - sec.code.003
@@ -1059,7 +1093,9 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.10`
      - sec.code.004
-     - Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. On the local machine: through the IDE or integrated test suites; triggered on completion of coding be developer.
+     - Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code
+        trigger. On the local machine: through the IDE or integrated test suites; triggered on completion of coding be
+        developer.
      -
    * - `7.9.10`
      - sec.code.005
@@ -1067,55 +1103,84 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.11`
      - sec.bld.001
-     - SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. Example: open source OWASP range of tools.
+     - SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and
+        Testing stage triggered by Build and Integrate trigger. Example: open source OWASP range of tools.
      -
    * - `7.9.11`
      - sec.bld.002
-     - SCA - Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. Example: open source OWASP range of tools.
+     - SCA - Software Composition Analysis **should** be applied during the Continuous Build, Integration and
+        Testing stage triggered by Build and Integrate trigger. Example: open source OWASP range of tools.
      -
    * - `7.9.11`
      - sec.bld.003
-     - Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.
+     - Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by
+        Package trigger. Example: A push of a container image to a container registry may trigger a vulnerability
+        scan before the image becomes available in the registry.
      -
    * - `7.9.11`
      - sec.bld.004
-     - DAST - Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. Security testing that analyses a running application by exercising application functionality and detecting vulnerabilities based on application behaviour and response. Example: OWASP ZAP.
+     - DAST - Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration
+        and Testing stage triggered by Stage & Test trigger. Security testing that analyses a running application by
+        exercising application functionality and detecting vulnerabilities based on application behaviour and response.
+        Example: OWASP ZAP.
      -
    * - `7.9.11`
      - sec.bld.005
-     - Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition.
+     - Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by
+        Stage & Test trigger. Fuzzing or fuzz testing is an automated software testing technique that involves
+        providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open
+        Sources Protocol Fuzzer Community Edition.
      -
    * - `7.9.11`
      - sec.bld.006
-     - IAST - Interactive Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. Software component deployed with an application that assesses application behaviour and detects presence of vulnerabilities on an application being exercised in realistic testing scenarios. Example: Contrast Community Edition.
+     - IAST - Interactive Application Security Testing **should** be applied during the Continuous Build, Integration
+        and Testing stage triggered by Stage & Test trigger. Software component deployed with an application that
+        assesses application behaviour and detects presence of vulnerabilities on an application being exercised in
+        realistic testing scenarios. Example: Contrast Community Edition.
      -
    * - `7.9.12`
      - sec.del.001
-     - Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. Example: GitLab uses the open-source Clair engine for container image scanning.
+     - Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by
+        Publish to Artifact and Image Repository trigger. Example: GitLab uses the open-source Clair engine for
+        container image scanning.
      -
    * - `7.9.12`
      - sec.del.002
-     - Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. Code Signing provides authentication to assure that downloaded files are form the publisher named on the certificate.
+     - Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by
+        Publish to Artifact and Image Repository trigger. Code Signing provides authentication to assure that
+        downloaded files are from the publisher named on the certificate.
      -
    * - `7.9.12`
      - sec.del.003
-     - Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. Example: GitLab uses the open source Clair engine for container scanning.
+     - Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery
+        and Deployment stage. Example: GitLab uses the open source Clair engine for container scanning.
      -
    * - `7.9.12`
      - sec.del.004
-     - Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Instantiate Infrastructure trigger. The vulnerability scanning system is deployed on the cloud platform to detect security vulnerabilities of specified components through scanning and to provide timely security protection. Example: OWASP Zed Attack Proxy (ZAP).
+     - Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage
+        triggered by Instantiate Infrastructure trigger. The vulnerability scanning system is deployed on the cloud
+        platform to detect security vulnerabilities of specified components through scanning and to provide timely
+        security protection. Example: OWASP Zed Attack Proxy (ZAP).
      -
    * - `7.9.13`
      - sec.run.001
-     - Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage and remediation actions **must** be applied for high severity rated vulnerabilities. Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.
+     - Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and
+        Monitoring stage and remediation actions **must** be applied for high severity rated vulnerabilities.
+        Security technology that monitors components like virtual servers and assesses data, applications, and
+        infrastructure for security risks.
      -
    * - `7.9.13`
      - sec.run.002
-     - RASP - Runtime Application Self- Protection **should** be continuously applied during the Runtime Defence and Monitoring stage. Security technology deployed within the target application in production for detecting, alerting, and blocking attacks.
+     - RASP - Runtime Application Self- Protection **should** be continuously applied during the Runtime Defence
+        and Monitoring stage. Security technology deployed within the target application in production for detecting,
+        alerting, and blocking attacks.
      -
    * - `7.9.13`
      - sec.run.003
-     - Application testing and Fuzzing **should** be continuously applied during the Runtime Defence and Monitoring stage. Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition.
+     - Application testing and Fuzzing **should** be continuously applied during the Runtime Defence
+        and Monitoring stage. Fuzzing or fuzz testing is an automated software testing technique that
+        involves providing invalid, unexpected, or random data as inputs to a computer program.
+        Example: GitLab Open Sources Protocol Fuzzer Community Edition.
      -
    * - `7.9.13`
      - sec.run.004
@@ -1127,7 +1192,9 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.14`
      - sec.std.002
-     - The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) `https://cloudsecurityalliance. org/ <https://cloudsecurityalliance.org/>`__
+     - The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security
+        Guidance for Critical Areas of Focus in Cloud Computing (latest version)
+        `https://cloudsecurityalliance. org/ <https://cloudsecurityalliance.org/>`__
      -
    * - `7.9.14`
      - sec.std.003
@@ -1135,11 +1202,14 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.14`
      - sec.std.004
-     - The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks `https://owasp.org/www-project-top-t en/ <https://owasp.org/www-project-top-ten/>`__
+     - The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the
+        OWASP Top Ten Security Risks `https://owasp.org/www-project-top-t en/
+        <https://owasp.org/www-project-top-ten/>`__
      -
    * - `7.9.14`
      - sec.std.005
-     - The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the `OWASP Software Maturity Model (SAMM) <https://owaspsamm.org/blog/2019/12/20/version2-community-release/>`__
+     - The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the
+        `OWASP Software Maturity Model (SAMM) <https://owaspsamm.org/blog/2019/12/20/version2-community-release/>`__
      -
    * - `7.9.14`
      - sec.std.006
@@ -1147,15 +1217,21 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.14`
      - sec.std.007
-     - The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in `ISO/IEC 27001 <https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en>`__. ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs).
+     - The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems
+        specified in `ISO/IEC 27001 <https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en>`__. ISO/IEC
+        27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management
+        systems (ISMSs).
      -
    * - `7.9.14`
      - sec.std.008
-     - The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified `ISO/IEC 27002:2013 (or la test) <https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en>`__
+     - The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified
+        `ISO/IEC 27002:2013 (or la test) <https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en>`__
      -
    * - `7.9.14`
      - sec.std.009
-     - The Cloud Operator, and Platform **should** implement the `ISO/IEC 27 032:2012 (or latest) <https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en>`__ Guidelines for Cybersecurity techniques. ISO/IEC 27032 - ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity.
+     - The Cloud Operator, and Platform **should** implement the `ISO/IEC 27 032:2012 (or latest)
+        <https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en>`__ Guidelines for Cybersecurity techniques.
+        ISO/IEC 27032 - ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity.
      -
    * - `7.9.14`
      - sec.std.010
@@ -1163,11 +1239,14 @@ Cloud Infrastructure Security Requirements
      -
    * - `7.9.14`
      - sec.std.011
-     - The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity. ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.
+     - The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity. ISO/IEC 27031 -
+        ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.
      -
    * - `7.9.14`
      - sec.std.012
-     - The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16.
+     - The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant
+        with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). International
+        Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16.
      -
 
 :doc:`ref_model/chapters/chapter07:Reference`
