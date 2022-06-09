@@ -18,8 +18,8 @@ Reference Model Requirements
 
 The tables below contain the requirements from the Reference Model to cover the Basic and High-Performance profiles.
 The table also includes a reference to the specification from
-:ref:`ref_arch/kubernetes/chapters/chapter04:component level architecture` and from
-:ref:`ref_arch/kubernetes/chapters/chapter05:security guidance` to ensure traceability. If the related Specification
+:ref:`chapters/chapter04:component level architecture` and from
+:ref:`chapters/chapter05:security guidance` to ensure traceability. If the related Specification
 does not exist, the reference will read "N/A" (and in bold "**N/A**" for mandatory requirements).
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
@@ -211,9 +211,9 @@ Cloud Infrastructure Software Profile Capabilities
 
 
 **Table 2-1:** Reference Model Requirements: Internal Performance Measurement Capabilities
-:ref:`ref_model/chapters/chapter04:capabilities and performance measurements`
+:ref:`ref_model:chapters/chapter04:capabilities and performance measurements`
 
-**(1)** Defined in the ``.bronze`` configuration in RM section :ref:`ref_model/chapters/chapter04:storage extensions`
+**(1)** Defined in the ``.bronze`` configuration in RM section :ref:`ref_model:chapters/chapter04:storage extensions`
 
 **(2)** In Kubernetes based infrastructures packet monitoring is out of the scope for the infrastructure.
 
@@ -257,7 +257,7 @@ required bandwidth of those connection points.
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
 
 **Table 2-2:** Reference Model Requirements: Network Interface Specifications
-:ref:`ref_model/chapters/chapter04:virtual network interface specifications`
+:ref:`ref_model:chapters/chapter04:virtual network interface specifications`
 
 Cloud Infrastructure Software Profile Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -352,7 +352,7 @@ Cloud Infrastructure Software Profile Requirements
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
 
 **Table 2-3:** Reference Model Requirements: Cloud Infrastructure Software Profile Requirements
-:ref:`ref_model/chapters/chapter05:virtual networking`
+:ref:`ref_model:chapters/chapter05:virtual networking`
 
 **(1)** Might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers
 on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency
@@ -439,7 +439,7 @@ Cloud Infrastructure Hardware Profile Requirements
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
 
 **Table 2-4:** Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements
-:ref:`ref_model/chapters/chapter05:network acceleration configurations`
+:ref:`ref_model:chapters/chapter05:network acceleration configurations`
 
 **(1)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.
 
@@ -448,9 +448,9 @@ Edge Cloud Infrastructure Hardware Profile Requirements
 
 In the case of Telco Edge Cloud Deployments, hardware requirements can differ from the above to account for
 environmental and other constraints.
-The Reference Model :ref:`ref_model/chapters/chapter08:hybrid multi-cloud architecture`
+The Reference Model :ref:`ref_model:chapters/chapter08:hybrid multi-cloud architecture`
 includes considerations specific to deployments at the edge of the network. The infrastructure profiles "Basic" and
-"High Performance" as per :ref:`ref_model/chapters/chapter04:profiles and workload flavours` still apply, but a number
+"High Performance" as per :ref:`ref_model:chapters/chapter04:profiles and workload flavours` still apply, but a number
 of requirements of the above table are relaxed as follows:
 
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
@@ -471,7 +471,7 @@ of requirements of the above table are relaxed as follows:
 +--------------------------+----------+------------------------+-----------------+-----------------+------------------+
 
 **Table 2-5:** Reference Model Requirements: Edge Cloud Infrastructure Hardware Profile Requirements.
-:ref:`ref_model/chapters/chapter08:telco edge cloud: infrastructure profiles`.
+:ref:`ref_model:chapters/chapter08:telco edge cloud: infrastructure profiles`.
 
 **(1)** immaterial if the number of CPU sockets (infra.hw.cpu.cfg.001) is 1.
 
@@ -523,7 +523,7 @@ Cloud Infrastructure Management Requirements
 +----------------------------------+-----------+--------------------------------+-----------------+-------------------+
 
 **Table 2-6:** Reference Model Requirements: Cloud Infrastructure Management Requirements
-:ref:`ref_model/chapters/chapter04:cloud infrastructure management capabilities`.
+:ref:`ref_model:chapters/chapter04:cloud infrastructure management capabilities`.
 
 
 Cloud Infrastructure Security Requirements
@@ -1380,13 +1380,13 @@ Cloud Infrastructure Security Requirements
 +----------------------------------------+-----------+--------------------------------------+-------------------------+
 
 **Table 2-7:** Reference Model Requirements: Cloud Infrastructure Security Requirements
-:ref:`ref_model/chapters/chapter07:consolidated security requirements`
+:ref:`ref_model:chapters/chapter07:consolidated security requirements`
 
 Kubernetes Architecture Requirements
 ------------------------------------
 
 The requirements in this section are to be delivered in addition to those in section 2.2, and have been
-created to support the Principles defined in the :ref:`ref_arch/kubernetes/chapters/chapter01:Overview` of this
+created to support the Principles defined in the :ref:`chapters/chapter01:Overview` of this
 Reference Architecture.
 
 The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised
