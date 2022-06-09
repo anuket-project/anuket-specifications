@@ -451,7 +451,7 @@ CPU Allocation Ratio and CPU Pinning
 
 A given host (compute node) can only support a single CPU Allocation
 Ratio. Thus, to support the B1 and B4 Basic profile extensions (Section
-:ref:`ref_arch/openstack/chapters/chapter04:compute nodes`)
+:ref:`chapters/chapter04:compute nodes`)
 with CPU Allocation Ratios of 1.0 and 4.0 we will need to
 create 2 different host profiles and separate host aggregates for each
 of the host profiles. The CPU Allocation Ratio is set in the hypervisor
@@ -466,7 +466,7 @@ Server Configurations
 The different networking choices – OVS-Kernel, OVS-DPDK, SR-IOV – result
 in different NIC port, LAG (Link Aggregation Group), and other
 configurations. Some of these are shown diagrammatically in section
-:ref:`ref_arch/openstack/chapters/chapter04:compute nodes`.
+:ref:`chapters/chapter04:compute nodes`.
 
 Leaf and Compute Ports for Server Flavors must align
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
