@@ -151,7 +151,7 @@ the following specifications:
    * - ra2.ch.018
      - NFD
      - `Node Feature Discovery <https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html>`__
-       must be used to ad vertise the detailed software and hardware capabilities of each node in the Kubernetes Cluster.
+       must be used to advertise the detailed software and hardware capabilities of each node in the Kubernetes Cluster.
      - tbd
      - RI2 4.3.1
 
@@ -183,20 +183,20 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
      - tbd
    * - ra2.os.003
      - Windows Server
-     - Windows Server (this can be used for worker nodes, but be aware of the limitations).
+     - Windows Server (this can be used for worker nodes, but beware of the limitations).
      - tbd
      - tbd
    * - ra2.os.004
      - Disposable OS
      - In order to support req.gen.cnt.03 (immutable infrastructure), the Host OS must be disposable, meaning the configuration
-       of the Host OS (and associated infrastructure such as VM or bare metal server) must be consistent - e.g. the system
+       of the Host OS (and associated infrastructure such as VM or bare metal server) must be consistent - e.g., the system
        software and configuration of that software must be identical apart from those areas of configuration that must be
        different such as IP addresses and hostnames.
      - tbd
      - tbd
    * - ra2.os.005
      - Automated Deployment
-     - This approach to configuration management supports req.lcm.gen.01 (automated deployments)
+     - This approach to configuration management supports lcm.gen.01 (automated deployments)
      - tbd
      - tbd
 
@@ -235,7 +235,7 @@ the following specifications:
      - Kubernetes Conformance
      - The Kubernetes distribution, product, or installer used in the implementation must be listed in the `Kubernetes Distributions
        and Platforms document <https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlUUK2h0/edit#gid=0>`__
-       and marked (X) as conformantfor the Kubernetes version defined in :ref:`index:required versions of most important components`.
+       and marked (X) as conformant for the Kubernetes version defined in :ref:`index:required versions of most important components`.
      - gen.cnt.03
      - RI2 4.3.1
    * - ra2.k8s.002
@@ -260,7 +260,7 @@ the following specifications:
      - Highly available worker nodes
      - An implementation must consist of at least one worker node per availability zone or fault domain to ensure the high
        availability and resilience of workloads managed by Kubernetes
-     - gen.rsl.01, gen.avl.01, kcm.gen.02, inf.com.02
+     - gen.rsl.01, gen.avl.01, lcm.gen.02, inf.com.02
      -
    * - ra2.k8s.005
      - Kubernetes API Version
@@ -275,7 +275,7 @@ the following specifications:
        be enabled and configured on the kubelet (note, TopologyManager is enabled by default in Kubernetes v1.18 and later,
        with CPUManager enabled by default in Kubernetes v1.10 and later). --feature-gates="..., TopologyManager=true,CPUManager=true"
        --topology-manager-policy=single-numa-node --cpu-manager-policy=static
-     - e.cap.007, infra.com.cfg .002, infra.hw.cpu. cfg.003
+     - e.cap.007, infra.com.cfg.002, infra.hw.cpu.cfg.003
      -
    * - ra2.k8s.007
      - DevicePlugins Feature Gate
@@ -305,7 +305,7 @@ the following specifications:
        --feature-gates="IPv6DualStack=true" --cluster-cidr=<IPv4 CIDR>,<IPv6 CIDR> --service-cluster-ip-range=<IPv4 CIDR>,
        <IPv6 CIDR> --node-cidr-mask-size-ipv4 ¦ --node-cidr-mask-size-ipv6 defaults to /24 for IPv4 and /64 for IPv6. kubelet:
        --feature-gates="IPv6DualStack=true". kube-proxy: --cluster-cidr=<IPv4 CIDR>, <IPv6 CIDR> --feature-gates="IPv6DualStack=true"
-     - req.inf.ntw.004
+     - inf.ntw.004
      -
    * - ra2.k8s.011
      - Anuket profile labels
