@@ -159,35 +159,26 @@ infrastructure itself from the workloads compute resources.
 The basic semantics of Kubernetes, and the information found in manifests, defines the built-in Kubernetes objects and
 their desired state.
 
-Kubernetes built in objects
+.. list-table:: Kubernetes built-in objects
+   :widths: 20 80
+   :header-rows: 1
 
-+----------------------------------------------------------+----------------------------------------------------------+
-| Pod and workloads                                        | Description                                              |
-+==========================================================+==========================================================+
-|`Pod: <https://kubernetes.io/docs/concepts/workloads/pods | Pod is a collection of containers that can run on        |
-|/>`__                                                     | a node. This resource is created by clients and          |
-|                                                          | scheduled onto nodes.                                    |
-+----------------------------------------------------------+----------------------------------------------------------+
-|`ReplicaSet: <https://kubernetes.io/docs/concepts/workload| ReplicaSet ensures that a specified number of pod        |
-|s/controllers/replicaset/>`__                             | replicas are running at any given time.                  |
-+----------------------------------------------------------+----------------------------------------------------------+
-|`Deployment: <https://kubernetes.io/docs/concepts/workload| Deployment enables declarative updates for Pods and      |
-|s/controllers/deployment/>`__                             | ReplicaSets.                                             |
-+----------------------------------------------------------+----------------------------------------------------------+
-|`DaemonSet: <https://kubernetes.io/docs/concepts/workloads| A Daemon set ensures that the correct nodes run a copy   |
-|/controllers/daemonset/>`__                               | of a Pod.                                                |
-+----------------------------------------------------------+----------------------------------------------------------+
-|`Job: <https://kubernetes.io/docs/concepts/workloads/contr| A Job represent a task, it creates one or more Pods and  |
-|ollers/job/>`__                                           | will continue to retry until the expected number of      |
-|                                                          | successful completions is reached.                       |
-+----------------------------------------------------------+----------------------------------------------------------+
-|`CronJob: <https://kubernetes.io/docs/concepts/workloads/c| A CronJob manages time-based Jobs, namely: once at a     |
-|ontrollers/cron-jobs/>`__                                 | specified point in time and repeatedly at a specified    |
-|                                                          | point in time.                                           |
-+----------------------------------------------------------+----------------------------------------------------------+
-|`StatefulSet: <https://kubernetes.io/docs/concepts/workloa| StatefulSet represents a set of pods with consistent     |
-|ds/controllers/statefulset/>`__                           | identities. Identities are defined as: network, storage. |
-+----------------------------------------------------------+----------------------------------------------------------+
+   * - Pod and workloads
+     - Description
+   * - `Pod <https://kubernetes.io/docs/concepts/workloads/pods/>`__
+     - Pod is a collection of containers that can run on a node. This resource is created by clients and scheduled onto nodes.
+   * - `ReplicaSet <https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/>`__
+     - ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+   * - `Deployment <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>`__
+     - Deployment enables declarative updates for Pods and ReplicaSets.
+   * - `DaemonSet <https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/>`__
+     - A Daemon set ensures that the correct nodes run a copy of a Pod.
+   * - `Job <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__
+     - A Job represent a task, it creates one or more Pods and will continue to retry until the expected number of successful completions is reached.
+   * - `CronJob <https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/>`__
+     - A CronJob manages time-based Jobs, namely: once at a specified point in time and repeatedly at a specified point in time.
+   * - `StatefulSet <https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/>`__
+     - StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage.
 
 CPU Management
 ^^^^^^^^^^^^^^
@@ -305,31 +296,40 @@ Non-resilient applications are sensitive to platform impairments on Compute like
 because of OS scheduler) or Networking like packet drops, reordering or latencies. Such applications need to be
 carefully scheduled on nodes and preferably still decoupled from infrastructure details of those nodes.
 
-+---+--------------+------------------+-------------------------------+-----------------------------------------------+
-| # | Intensive on | Not intensive on | Using hardware acceleration   | Requirements for optimised pod scheduling     |
-+===+==============+==================+===============================+===============================================+
-| 1 | Compute      | Networking       | No                            | CPU Manager                                   |
-|   |              | (dataplane)      |                               |                                               |
-+---+--------------+------------------+-------------------------------+-----------------------------------------------+
-| 2 | Compute      | Networking       | CPU instructions              | CPU Manager, NFD                              |
-|   |              | (dataplane)      |                               |                                               |
-+---+--------------+------------------+-------------------------------+-----------------------------------------------+
-| 3 | Compute      | Networking       | Fixed function acceleration,  | CPU Manager, Device Plugin                    |
-|   |              | (dataplane)      | Firmware-programmable network |                                               |
-|   |              |                  | adapters or SmartNICs         |                                               |
-+---+--------------+------------------+-------------------------------+-----------------------------------------------+
-| 4 | Networking   |                  | No, or Fixed function         | Huge pages (for DPDK-based applications); CPU |
-|   | (dataplane)  |                  | acceleration, Firmware-       | Manager with configuration for isolcpus and   |
-|   |              |                  | programmable network adapters | SMT; Multiple interfaces; NUMA topology;      |
-|   |              |                  | or SmartNICs                  | Device Plugin                                 |
-+---+--------------+------------------+-------------------------------+-----------------------------------------------+
-| 5 | Networking   |                  | CPU instructions              | Huge pages (for DPDK-based applications); CPU |
-|   | (dataplane)  |                  |                               | Manager with configuration for isolcpus and   |
-|   |              |                  |                               | SMT; Multiple interfaces; NUMA topology;      |
-|   |              |                  |                               | Device Plugin; NFD                            |
-+---+--------------+------------------+-------------------------------+-----------------------------------------------+
+.. list-table:: Categories of applications, requirements for scheduling pods and Kubernetes features
+   :widths: 10 20 20 25 25
+   :header-rows: 1
 
-**Table 3-1:** Categories of applications, requirements for scheduling pods and Kubernetes features
+   * - No.
+     - Intensive on
+     - Not intensive on
+     - Using hardware acceleration
+     - Requirements for optimised pod scheduling
+   * - 1
+     - Compute
+     - Networking (dataplane)
+     - No
+     - CPU Manager
+   * - 2
+     - Compute
+     - Networking (dataplane)
+     - CPU instructions
+     - CPU Manager, NFD
+   * - 3
+     - Compute
+     - Networking (dataplane)
+     - Fixed function acceleration, Firmware-programmable network adapters or SmartNICs
+     - CPU Manager, Device Plugin
+   * - 4
+     - Networking (dataplane)
+     -
+     - No, or Fixed function acceleration, Firmware- programmable network adapters or SmartNICs
+     - Huge pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin
+   * - 5
+     - Networking (dataplane)
+     -
+     - CPU instructions
+     - Huge pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin; NFD
 
 Virtual Machine based Clusters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -391,75 +391,80 @@ agreed between the CNF vendors and the CNF operators:
    to create and manage additional connections for Pods (e.g. `Network Service
    Mesh <https://networkservicemesh.io>`__)
 
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| Requirement          | Networking Solution | Networking Solution  | Networking Solution  | Networking Solution       |
-|                      | with Multus         | with DANM            | with Tungsten Fabric | with NSM                  |
-+======================+=====================+======================+======================+===========================+
-| Additional network   | Multiplexer/meta-   | Multiplexer/meta-    | Federated networking | Default CNI Plugin        |
-| connections provider | plugin              | plugin               | manager              |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| The overlay network  | Supported via the   | Supported via the    | Supported            | TBC                       |
-| encapsulation        | additional CNI      | additional CNI       |                      |                           |
-| protocol needs to    | plugin              | plugin               |                      |                           |
-| enable ECMP in the   |                     |                      |                      |                           |
-| underlay (``infra.   |                     |                      |                      |                           |
-| net.cfg.002``)       |                     |                      |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| NAT (``infra.net.    | Supported via the   | Supported            | Supported            | TBC                       |
-| cfg.003``)           | additional CNI      |                      |                      |                           |
-|                      | plugin              |                      |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| Network Policies     | Supported via a CNI | Supported via a CNI  | Supported via a CNI  | Supported via a CNI       |
-| (Security Groups)    | Network Plugin that | Network Plugin that  | Network Plugin that  | Network Plugin that       |
-| (``infra.net.cfg.    | supports Network    | supports Network     | supports Network     | supports Network Policies |
-| 004``)               | Policies            | Policies             | Policies             |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| Traffic patterns     | Depends on CNI      | Depends on CNI       | Depends on CNI       | Depends on CNI plugin     |
-| symmetry (``infra.   | plugin used         | plugin used          | plugin used          | used                      |
-| net.cfg.006``)       |                     |                      |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| Centrally            | Supported via       | Supported via        | Supported via        | Supported via Kubernetes  |
-| administrated and    | Kubernetes API      | Kubernetes API       | Kubernetes API       | API Server                |
-| configured (``req.   | Server              | Server               | Server               |                           |
-| inf.ntw.03``)        |                     |                      |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| Dual stack IPv4 and  | Supported via the   | Supported            | Supported            | Supported                 |
-| IPv6 for Kubernetes  | additional CNI      |                      |                      |                           |
-| workloads (``req.    | plugin              |                      |                      |                           |
-| inf.ntw.04``)        |                     |                      |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| Integrating SDN      | Supported via the   | Supported via the    | TF is an SDN         | TBC                       |
-| controllers (``req.  | additional CNI      | additional CNI       | controller           |                           |
-| inf.ntw.05``)        | plugin              | plugin               |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| More than one        | Supported           | Supported            | Supported            | Supported                 |
-| networking solution  |                     |                      |                      |                           |
-| (``req.inf.ntw.06``) |                     |                      |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| Choose whether or    | Supported           | Supported            | Supported            | Supported                 |
-| not to deploy more   |                     |                      |                      |                           |
-| than one networking  |                     |                      |                      |                           |
-| solution (``req.inf  |                     |                      |                      |                           |
-| .ntw.07``)           |                     |                      |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| Kubernetes network   | Supported via the   | Supported via the    | Supported            | Supported via the default |
-| model (``req.inf.    | additional CNI      | additional CNI       |                      | CNI plugin                |
-| ntw.08``)            | plugin              | plugin               |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| Do not interfere     | Supported           | Supported            | Supported            | Supported                 |
-| with or cause        |                     |                      |                      |                           |
-| interference to any  |                     |                      |                      |                           |
-| interface or network |                     |                      |                      |                           |
-| it does not own      |                     |                      |                      |                           |
-| (``req.inf.ntw.09``) |                     |                      |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
-| Cluster wide         | Supported via IPAM  | Supported            | Supported            | Supported via IPAM CNI    |
-| coordination of IP   | CNI plugin          |                      |                      | plugin                    |
-| address assignment   |                     |                      |                      |                           |
-| (``req.inf.ntw.10``) |                     |                      |                      |                           |
-+----------------------+---------------------+----------------------+----------------------+---------------------------+
+.. list-table:: Comparison of example Kubernetes networking solutions
+   :widths: 20 20 20 20 20
+   :header-rows: 1
 
-**Table 3-1:** Comparison of example networking solutions
+   * - Requirement
+     - Networking Solution with Multus
+     - Networking Solution with DANM
+     - Networking Solution with Tungsten Fabric
+     - Networking Solution with NSM
+   * - Additional network connections provider
+     - Multiplexer/meta- plugin
+     - Multiplexer/meta- plugin
+     - Federated networking manager
+     - Default CNI Plugin
+   * - The overlay network encapsulation protocol needs to enable ECMP in the underlay (infra. net.cfg.002)
+     - Supported via the additional CNI plugin
+     - Supported via the additional CNI plugin
+     - Supported
+     - TBC
+   * - NAT (infra.net. cfg.003)
+     - Supported via the additional CNI plugin
+     - Supported
+     - Supported
+     - TBC
+   * - Network Policies (Security Groups) (infra.net.cfg. 004)
+     - Supported via a CNI Network Plugin that supports Network Policies
+     - Supported via a CNI Network Plugin that supports Network Policies
+     - Supported via a CNI Network Plugin that supports Network Policies
+     - Supported via a CNI Network Plugin that supports Network Policies
+   * - Traffic patterns symmetry (infra. net.cfg.006)
+     - Depends on CNI plugin used
+     - Depends on CNI plugin used
+     - Depends on CNI plugin used
+     - Depends on CNI plugin used
+   * - Centrally administrated and configured (req. inf.ntw.03)
+     - Supported via Kubernetes API Server
+     - Supported via Kubernetes API Server
+     - Supported via Kubernetes API Server
+     - Supported via Kubernetes API Server
+   * - Dual stack IPv4 and IPv6 for Kubernetes workloads (req. inf.ntw.04)
+     - Supported via the additional CNI plugin
+     - Supported
+     - Supported
+     - Supported
+   * - Integrating SDN controllers (req. inf.ntw.05)
+     - Supported via the additional CNI plugin
+     - Supported via the additional CNI plugin
+     - TF is an SDN controller
+     - TBC
+   * - More than one networking solution (req.inf.ntw.06)
+     - Supported
+     - Supported
+     - Supported
+     - Supported
+   * - Choose whether or not to deploy more than one networking solution (req.inf .ntw.07)
+     - Supported
+     - Supported
+     - Supported
+     - Supported
+   * - Kubernetes network model (req.inf. ntw.08)
+     - Supported via the additional CNI plugin
+     - Supported via the additional CNI plugin
+     - Supported
+     - Supported via the default CNI plugin
+   * - Do not interfere with or cause interference to any interface or network it does not own (req.inf.ntw.09)
+     - Supported
+     - Supported
+     - Supported
+     - Supported
+   * - Cluster wide coordination of IP address assignment (req.inf.ntw.10)
+     - Supported via IPAM CNI plugin
+     - Supported
+     - Supported
+     - Supported via IPAM CNI plugin
 
 For hardware resources that are needed by Kubernetes applications, `Device
 Plugins <https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/>`__
@@ -600,27 +605,20 @@ The basic semantics of Kubernetes, and the information found in manifests, defin
 without any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW
 services and network policies for them that are not location aware and therefore can be executed more or less anywhere.
 
-+------------------------------------------------+--------------------------------------------------------------------+
-| Network objects                                | Description                                                        |
-+================================================+====================================================================+
-| `Ingress: <https://kubernetes.io/docs/concepts/| Ingress is a collection of rules that allow inbound connections to |
-| services-networking/ingress/>`__               | reach the endpoints defined by a backend. An Ingress can be        |
-|                                                | configured to give services externally reachable URLs, load balance|
-|                                                | traffic, terminate SSL, offer name based virtual hosting etc.      |
-+------------------------------------------------+--------------------------------------------------------------------+
-| `Service: <https://kubernetes.io/docs/concepts/| Service is a named abstraction of an application running on a set  |
-| services-networking/service/>`__               | of pods consisting of a local port (for example 3306) that the     |
-|                                                | proxy listens on, and the selector that determines which pods will |
-|                                                | answer requests sent through the proxy.                            |
-+------------------------------------------------+--------------------------------------------------------------------+
-| `EndpointSlices: <https://kubernetes.io/docs/  | Endpoints and Endpointslices are a collection of objects that      |
-| concepts/services-networking/endpoint-         | contain the ip address, v4 and v6, of the pods that represents a   |
-| slices/>`__                                    | service.                                                           |
-+------------------------------------------------+--------------------------------------------------------------------+
-| `Network Policies: <https://kubernetes.io/     | Network Policy defines which network traffic is allowed to ingress |
-| docs/concepts/services-networking/             | and egress from a set of pods.                                     |
-| network-policies/>`__                          |                                                                    |
-+------------------------------------------------+--------------------------------------------------------------------+
+.. list-table:: Kubernetes networking built-in objects
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Network objects
+     - Description
+   * - `Ingress <https://kubernetes.io/docs/concepts/services-networking/ingress/>`__
+     - Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally reachable URLs, load balance traffic, terminate SSL, offer name based virtual hosting etc.
+   * - `Service <https://kubernetes.io/docs/concepts/services-networking/service/>`__
+     - Service is a named abstraction of an application running on a set of pods consisting of a local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
+   * - `EndpointSlices <https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/>`__
+     - Endpoints and Endpointslices are a collection of objects that contain the ip address, v4 and v6, of the pods that represents a service.
+   * - `Network Policies <https://kubernetes.io/docs/concepts/services-networking/network-policies/>`__
+     - Network Policy defines which network traffic is allowed to ingress and egress from a set of pods.
 
 There is no need to explicitly define internal load balancers, server pools, service monitors, firewalls and so on.
 The Kubernetes semantics and relation between the different objects defined in the object manifests contains all the
@@ -691,25 +689,20 @@ This document describes how secondary networks can be defined and attached to po
 
 This defacto standard defines among other things
 
-+-----------------------------------------+----------------------------------------------------------------------------+
-| Definition                              | Description                                                                |
-+=========================================+============================================================================+
-| Kubernetes Cluster-Wide default network | A network to which all pods are attached following the current behavior    |
-|                                         | and requirements of Kubernetes, this done by attaching the *eth0*          |
-|                                         | interface to the pod namespace.                                            |
-+-----------------------------------------+----------------------------------------------------------------------------+
-| Network Attachment                      | A means of allowing a pod to directly communicate with a given logical     |
-|                                         | or physical network. Typically (but not necessarily) each attachment takes |
-|                                         | the form of a kernel network interface placed into the pod’s network       |
-|                                         | namespace. Each attachment may result in zero or more IP addresses being   |
-|                                         | assigned to the pod.                                                       |
-+-----------------------------------------+----------------------------------------------------------------------------+
-| NetworkAttachmentDefinition object      | This defines resource object that describes how to attach a pod to a       |
-|                                         | logical or physical network, the annotation name is                        |
-|                                         | *"k8s.v1.cni.cncf.io/networks"*                                            |
-+-----------------------------------------+----------------------------------------------------------------------------+
-| Network Attachment Selection Annotation | Selects one or more networks that a pod should be attached to.             |
-+-----------------------------------------+----------------------------------------------------------------------------+
+.. list-table:: Kubernetes multiple network concepts
+   :widths: 40 60
+   :header-rows: 1
+
+   * - Definition
+     - Description
+   * - Kubernetes Cluster-Wide default network
+     - A network to which all pods are attached following the current behavior and requirements of Kubernetes, this done by attaching the eth0 interface to the pod namespace.
+   * - Network Attachment
+     - A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not necessarily) each attachment takes the form of a kernel network interface placed into the pod’s network namespace. Each attachment may result in zero or more IP addresses being assigned to the pod.
+   * - NetworkAttachmentDefinition object
+     - This defines resource object that describes how to attach a pod to a logical or physical network, the annotation name is "k8s.v1.cni.cncf.io/networks"
+   * - Network Attachment Selection Annotation
+     - Selects one or more networks that a pod should be attached to.
 
 Example: Define three network attachments and attach the three networks to a pod.
 
