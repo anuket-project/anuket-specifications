@@ -1,8 +1,6 @@
 Gaps, Innovation, and Development
 =================================
 
-Introduction
-------------
 
 The purpose of this chapter is to identify the gaps between what is
 required for automated deployment of VNFs on Cloud Infrastructure
@@ -29,8 +27,9 @@ by the application. It is therefore suggested that an OpenStack scaling
 operation is called using an appropriate autoscaling web-hook by the
 NFVO/VNFM.
 
-For more information on auto-scaling with Heat please see:
-https://docs.openstack.org/senlin/latest/scenarios/autoscaling_heat.html.
+For more information on auto-scaling with Heat please see the OpenStack
+document "`Autoscaling with heat
+<https://docs.openstack.org/senlin/latest/scenarios/autoscaling_heat.html>`_".
 Please note that the OpenStack Senlin service is still under development
 with major architectural changes made in the OpenStack Ussuri release.
 

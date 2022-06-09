@@ -233,10 +233,10 @@ the following specifications:
 |           |                  | listed in the `Kubernetes Distributions and       |                |                 |
 |           |                  | Platforms document <https://docs.google.com/sprea |                |                 |
 |           |                  | dsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlU |                |                 |
-|           |                  | UK2h0/edit#gid=0>`__ and marked (X) as conformant |                |                 |
-|           |                  | for the Kubernetes version defined in `README <.. |                |                 |
-|           |                  | /README.md#required-versions-of-most-important-co |                |                 |
-|           |                  | mponents>`__.                                     |                |                 |
+|           |                  | UK2h0/edit>`__ and marked (X) as conformant       |                |                 |
+|           |                  | for the Kubernetes version defined in             |                |                 |
+|           |                  | :ref:`index:required versions of most important   |                |                 |
+|           |                  | components`.                                      |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.002| Highly available | An implementation **must** consist of either      | `req.gen.rsl.  | `RI2 4.3.1`     |
 |           | etcd             | three, five or seven nodes running the etcd       | 02`, `req.gen. |                 |
@@ -294,9 +294,9 @@ the following specifications:
 |           | Version          | policy <https://kubernetes.io/docs/setup/release/ |                |                 |
 |           |                  | version-skew-policy/#supported-versions>`__, an   |                |                 |
 |           |                  | implementation **must** use a Kubernetes version  |                |                 |
-|           |                  | as per the subcomponent versions table in `README |                |                 |
-|           |                  | <../README.md#required-versions-of-most-important |                |                 |
-|           |                  | -components>`__.                                  |                |                 |
+|           |                  | as per the subcomponent versions table in         |                |                 |
+|           |                  | :ref:`index:required versions of most important   |                |                 |
+|           |                  | components`.                                      |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.006| NUMA Support     | When hosting workloads matching the High          | `e.cap.007`,   |                 |
 |           |                  | Performance profile, the ``TopologyManager`` and  | `infra.com.cfg |                 |
@@ -365,8 +365,9 @@ the following specifications:
 |           |                  | must be set to ``true`` on the worker node if it  |                |                 |
 |           |                  | can fulfil the requirements of the High           |                |                 |
 |           |                  | Performance profile. The requirements for both    |                |                 |
-|           |                  | profiles can be found in `chapter 2 <./chapter02. |                |                 |
-|           |                  | md#reference-model-requirements>`__               |                |                 |
+|           |                  | profiles can be found in                          |                |                 |
+|           |                  | :ref:`chapters/chapter02:reference model          |                |                 |
+|           |                  | requirements`                                     |                |                 |
 +-----------+------------------+---------------------------------------------------+----------------+-----------------+
 |ra2.k8s.012| Kubernetes APIs  | Kubernetes `Alpha API <https://kubernetes.io/docs |                |                 |
 |           |                  | /reference/using-api/#api-versioning>`__ are      |                |                 |
@@ -669,7 +670,7 @@ Service meshes
 Application service meshes are not in scope for the architecture. The service mesh is a dedicated infrastructure layer
 for handling service-to-service communication, and it is recommended to secure service-to-service communications within
 a cluster and to reduce the attack surface. The benefits of the service mesh framework are described in
-`5.4.3 <./chapter05.md#use-transport-layer-security-and-service-mesh>`__. In addition to securing communications, the
+:ref:`chapters/chapter05:use transport layer security and service mesh`. In addition to securing communications, the
 use of a service mesh extends Kubernetes capabilities regarding observability and reliability.
 
 Network service mesh specifications are handled in section `4.5 Networking solutions <#networking-solutions>`__.

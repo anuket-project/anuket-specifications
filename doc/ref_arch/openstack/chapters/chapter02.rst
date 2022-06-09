@@ -1,22 +1,6 @@
 Architecture Requirements
 =========================
 
-Introduction
-------------
-
-**must**: Requirements that are marked as *must* are considered
-mandatory and must exist in the reference architecture and reflected in
-any implementation targeting this reference architecture. The same
-applies to *must not*.
-
-**should**: Requirements that are marked as *should* are expected to be
-fulfilled by the reference architecture but it is up to each service
-provider to accept an implementation targeting this reference
-architecture that is not reflecting on any of those requirements. The
-same applies to *should not*. > RFC2119
-
-**may**: Requirements that are marked as *may* are considered optional.
-The same applies to *may not*.
 
 This chapter includes both "Requirements" that must be satisifed in an
 RA-1 conformant implementation and "Recommendations" that are optional
@@ -39,10 +23,8 @@ following requirements are referenced through:
 Cloud Infrastructure Software Profile Requirements for Compute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(source :ref:`ref_model:chapters/chapter05:cloud infrastructure software profiles features and requirements`)
-
 .. list-table:: Reference Model Requirements: Cloud Infrastructure Software Profile Capabilities
-   :widths: 20 20 10 10 20
+   :widths: 16 20 12 12 20
    :header-rows: 1
 
    * - Reference
@@ -73,8 +55,8 @@ Cloud Infrastructure Software Profile Requirements for Compute
      - Not Detailed
    * - e.cap.005
      - Max storage that can be attached / mounted to an instance by the Cloud Infrastructure
-     - Up to 16TB:sup:`1`
-     - Up to 16TB:sup:`1`
+     - Up to 16TB [*]
+     - Up to 16TB [*]
      - :ref:`chapters/chapter04:storage backend`
    * - e.cap.006/infra.com.cfg.003
      - CPU pinning support
@@ -97,14 +79,15 @@ Cloud Infrastructure Software Profile Requirements for Compute
      - Must support
      - :ref:`chapters/chapter04:consumable infrastructure resources and services`
 
-**:sup:`1`** Defined in the ``.bronze`` configuration in
+[*] Defined in the .bronze configuration in
 :ref:`ref_model:chapters/chapter04:storage extensions`
+
 
 Cloud Infrastructure Software Profile Extensions Requirements for Compute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table:: Cloud Infrastructure Software Profile Extensions Requirements for Compute
-   :widths: 20 20 10 10 20
+   :widths: 16 20 12 12 20
    :header-rows: 1
 
    * - Reference
@@ -112,7 +95,8 @@ Cloud Infrastructure Software Profile Extensions Requirements for Compute
      - Profile Extensions
      - Profile Extra-Specs
      - Specification Reference
-   * - e.cap.008/infra.com.acc.cfg.001
+   * - e.cap.008/
+       infra.com.acc.cfg.001
      - IPSec Acceleration using the virtio-ipsec interface
      - Compute Intensive GPU
      -
@@ -132,7 +116,8 @@ Cloud Infrastructure Software Profile Extensions Requirements for Compute
      - E
      - E
      - Not detailed
-   * - e.cap.014/infra.com.acc.cfg.004
+   * - e.cap.014/
+       infra.com.acc.cfg.004
      - Hardware coprocessor support (GPU/NPU)
      - Compute Intensive GPU
      -
@@ -146,14 +131,12 @@ Cloud Infrastructure Software Profile Extensions Requirements for Compute
 Cloud Infrastructure Software Profile Requirements for Networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(source :ref:`ref_model:chapters/chapter05:virtual networking`)
-
 The features and configuration requirements related to virtual
 networking for the two (2) types of Cloud Infrastructure Profiles are
 specified below followed by networking bandwidth requirements.
 
 .. list-table:: Reference Model Requirements - Virtual Networking
-   :widths: 20 30 10 10 10
+   :widths: 16 20 12 12 20
    :header-rows: 1
 
    * - Reference
@@ -198,7 +181,7 @@ The required number of connection points to an instance is described in
 bandwidth of those connection points.
 
 .. list-table:: Reference Model Requirements - Network Interface Specifications
-   :widths: 20 20 10 10 20
+   :widths: 20 20 12 12 16
    :header-rows: 1
 
    * - Reference
@@ -237,7 +220,7 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
 
 .. list-table:: Cloud Infrastructure Software Profile Extensions Requirements
                 for Networking
-   :widths: 20 20 10 10 20
+   :widths: 16 20 12 12 20
    :header-rows: 1
 
    * - Reference
@@ -245,7 +228,8 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
      - Requirement for Basic Profile
      - Requirement for High-Performance Profile
      - Specification Reference
-   * - e.cap.013/infra.hw.nac.cfg.004
+   * - e.cap.013/
+       infra.hw.nac.cfg.004
      - SR-IOV over PCI-PT
      - N
      - Y
@@ -275,11 +259,9 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
 Cloud Infrastructure Software Profile Requirements for Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(source :ref:`ref_model:chapters/chapter05:cloud infrastructure software profiles features and requirements`)
-
 .. list-table:: Reference Model Requirements - Cloud Infrastructure Software
                 Profile Requirements for Storage
-   :widths: 20 20 10 10 20
+   :widths: 16 20 12 12 20
    :header-rows: 1
 
    * - Reference
@@ -321,7 +303,7 @@ Cloud Infrastructure Software Profile Extensions Requirements for Storage
 .. list-table:: Reference Model Requirements - Cloud Infrastructure Software
    Profile Extensions Requirements for Storage
    for Networking
-   :widths: 15 15 20 10 20
+   :widths: 20 15 15 15 15
    :header-rows: 1
 
    * - Reference
@@ -343,11 +325,9 @@ Cloud Infrastructure Software Profile Extensions Requirements for Storage
 Cloud Infrastructure Hardware Profile Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(source :ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`)
-
 .. list-table:: Reference Model Requirements - Cloud Infrastructure Hardware
    Profile Requirements
-   :widths: 20 20 10 10 20
+   :widths: 20 20 12 12 16
    :header-rows: 1
 
    * - Reference
@@ -424,11 +404,9 @@ Cloud Infrastructure Hardware Profile Requirements
 Cloud Infrastructure Hardware Profile-Extensions Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`)
-
 .. list-table:: Reference Model Requirements - Cloud Infrastructure Hardware
    Profile Extensions Requirements
-   :widths: 20 20 10 10 20
+   :widths: 16 20 12 12 20
    :header-rows: 1
 
    * - Reference
@@ -436,7 +414,8 @@ Cloud Infrastructure Hardware Profile-Extensions Requirements
      - Requirement for Basic Profile
      - Requirement for High-Performance Profile
      - Specification Reference
-   * - e.cap.014/infra.hw.cac.cfg.001
+   * - e.cap.014/
+       infra.hw.cac.cfg.001
      - GPU
      - N
      - Optional
@@ -471,11 +450,9 @@ Cloud Infrastructure Hardware Profile-Extensions Requirements
 Cloud Infrastructure Management Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(source :ref:`ref_model:chapters/chapter04:cloud infrastructure management capabilities`)
-
 .. list-table:: Reference Model Requirements - Cloud Infrastructure
    Management Requirements
-   :widths: 20 30 10 20
+   :widths: 16 30 14 20
    :header-rows: 1
 
    * - Reference
@@ -530,8 +507,6 @@ Cloud Infrastructure Security Requirements
 
 System Hardening Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source :ref:`ref_model:chapters/chapter07:system hardening`)
 
 .. list-table:: Reference Model Requirements - System Hardening Requirements
    :widths: 15 15 40 30
@@ -606,7 +581,7 @@ System Hardening Requirements
      - Hardening
      - The Operator **must** ensure that only authorised actors have physical
        access to the underlying infrastructure
-     - This requirement's verification must be part of the organisation security process
+     - This requirement's verification must be part of the organisation's security process
    * - sec.gen.013
      - Hardening
      - The Platform **must** ensure that only authorised actors have logical
@@ -621,8 +596,6 @@ System Hardening Requirements
 
 Platform and Access Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source :ref:`ref_model:chapters/chapter07:platform and access`)
 
 .. list-table:: Reference Model Requirements - Platform and Access
    Requirements
@@ -739,11 +712,9 @@ Platform and Access Requirements
 Confidentiality and Integrity Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model:chapters/chapter07:confidentiality and integrity`)
-
 .. list-table:: Reference Model Requirements - Confidentiality and Integrity
    Requirements
-   :widths: 15 15 30 20
+   :widths: 12 20 30 18
    :header-rows: 1
 
    * - Reference
@@ -751,13 +722,17 @@ Confidentiality and Integrity Requirements
      - Description
      - Specification Reference
    * - sec.ci.001
-     - Confidentiality/Integrity
+     - Confidentiality/
+
+       Integrity
      - The Platform **must** support Confidentiality and Integrity of data
        at rest and in transit
      - :ref:`chapters/chapter06:confidentiality and
        integrity`
    * - sec.ci.003
-     - Confidentiality/Integrity
+     - Confidentiality/
+
+       Integrity
      - The Platform **must** support Confidentiality and Integrity of data
        related metadata
      - :ref:`chapters/chapter06:confidentiality and
@@ -770,21 +745,27 @@ Confidentiality and Integrity Requirements
      - :ref:`chapters/chapter06:confidentiality and
        integrity`
    * - sec.ci.005
-     - Confidentiality/Integrity
+     - Confidentiality/
+
+       Integrity
      - The Platform **must** support Confidentiality and Integrity of process-
        related metadata and restrict information sharing with only the
        process owner (e.g., tenant)
      - :ref:`chapters/chapter06:confidentiality and
        integrity`
    * - sec.ci.006
-     - Confidentiality/Integrity
+     - Confidentiality/
+
+       Integrity
      - The Platform **must** support Confidentiality and Integrity of
        workload resource utilisation (RAM, CPU, Storage, Network I/O, cache,
        hardware offload) and restrict information sharing with only the
        workload owner (e.g., tenant)
      - :ref:`chapters/chapter06:platform access`
    * - sec.ci.007
-     - Confidentiality/Integrity
+     - Confidentiality/
+
+       Integrity
      - The Platform **must not** allow Memory Inspection by any actor
        other than the authorised actors for the Entity to which Memory is
        assigned (e.g., tenants owning the workload), for Lawful
@@ -800,8 +781,6 @@ Confidentiality and Integrity Requirements
 
 Workload Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source :ref:`ref_model:chapters/chapter07:workload security requirements`)
 
 .. list-table:: Reference Model Requirements - Workload Security
    Requirements
@@ -851,8 +830,6 @@ Workload Security Requirements
 
 Image Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source :ref:`ref_model:chapters/chapter07:image security`)
 
 .. list-table:: Reference Model Requirements - Image Security
    Requirements
@@ -905,8 +882,6 @@ Image Security Requirements
 
 Security LCM Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source :ref:`ref_model:chapters/chapter07:security lcm`)
 
 .. list-table:: Reference Model Requirements - Security LCM
    Requirements
@@ -985,9 +960,6 @@ Security LCM Requirements
 
 Monitoring and Security Audit Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source
-:ref:`ref_model:chapters/chapter07:monitoring and security audit`)
 
 The Platform is assumed to provide configurable alerting and
 notification capability and the operator is assumed to have automated
@@ -1126,8 +1098,6 @@ can trigger alerts and notifications for appropriate action.
 Open-Source Software Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model:chapters/chapter07:open-source software security`)
-
 .. list-table:: Reference Model Requirements - Open-Source Software Security
    Requirements
    :widths: 15 15 30 20
@@ -1163,9 +1133,6 @@ Open-Source Software Security Requirements
 
 IaaC security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source
-:ref:`ref_model:chapters/chapter07:iaac - secure design and architecture stage requirements`)
 
 **Secure Code Stage Requirements**
 
@@ -1264,8 +1231,6 @@ IaaC security Requirements
 Compliance with Standards Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model:chapters/chapter07:compliance with standards`)
-
 .. list-table:: Reference Model Requirements: Compliance with Standards
    :widths: 15 15 30 20
    :header-rows: 1
@@ -1286,7 +1251,7 @@ Architecture and OpenStack Requirements
 ---------------------------------------
 
 “Architecture” in this chapter refers to Cloud Infrastructure (referred
-to as NFVI by ETSI) + VIM (as specified in Reference Model Chapter 3).
+to as NFVI by ETSI) and VIM, as specified in Reference Model Chapter 3.
 
 General Requirements
 ~~~~~~~~~~~~~~~~~~~~
@@ -1886,8 +1851,6 @@ Security Recommendations
 System Hardening Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model:chapters/chapter07:system hardening`)
-
 .. list-table:: System Hardening Recommendations
    :widths: 15 15 40 30
    :header-rows: 1
@@ -1911,8 +1874,6 @@ System Hardening Recommendations
 Platform and Access Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model:chapters/chapter07:platform and access`)
-
 .. list-table:: Platform and Access Recommendations
    :widths: 15 15 40 30
    :header-rows: 1
@@ -1934,8 +1895,6 @@ Platform and Access Recommendations
 
 Confidentiality and Integrity Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source :ref:`ref_model:chapters/chapter07:confidentiality and integrity`)
 
 .. list-table:: Confidentiality and Integrity Recommendations
    :widths: 15 15 40 30
@@ -1959,8 +1918,6 @@ Confidentiality and Integrity Recommendations
 Workload Security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model:chapters/chapter07:workload security`)
-
 .. list-table:: Workload Security Recommendations
    :widths: 15 15 40 30
    :header-rows: 1
@@ -1977,10 +1934,6 @@ Workload Security Recommendations
 
 Image Security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source :ref:`ref_model:chapters/chapter07:image security`)
-
-This section is left blank for future use.
 
 .. list-table:: Image Security Recommendations
    :widths: 15 15 40 30
@@ -2002,8 +1955,6 @@ This section is left blank for future use.
 Security LCM Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model:chapters/chapter07:security lcm`)
-
 .. list-table:: LCM Security Recommendations
    :widths: 15 15 40 30
    :header-rows: 1
@@ -2020,9 +1971,6 @@ Security LCM Recommendations
 
 Monitoring and Security Audit Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source
-:ref:`ref_model:chapters/chapter07:monitoring and security audit`)
 
 The Platform is assumed to provide configurable alerting and
 notification capability and the operator is assumed to have automated
@@ -2052,8 +2000,6 @@ can trigger alerts and notifications for appropriate action.
 Open-Source Software Security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(source :ref:`ref_model:chapters/chapter07:open source software`)
-
 .. list-table:: Open-Source Software Security Recommendations
    :widths: 15 15 40 30
    :header-rows: 1
@@ -2071,9 +2017,6 @@ Open-Source Software Security Recommendations
 
 IaaC security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source
-:ref:`ref_model:chapters/chapter07:iaac - secure design and architecture stage requirements`)
 
 **Secure Design and Architecture Stage**
 
@@ -2238,8 +2181,6 @@ IaaC security Recommendations
 
 Compliance with Standards Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(source :ref:`ref_model:chapters/chapter07:compliance with standards`)
 
 .. list-table:: Compliance with Security Recommendations
    :widths: 15 15 40 30
