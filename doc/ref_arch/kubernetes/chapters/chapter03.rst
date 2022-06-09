@@ -166,7 +166,8 @@ their desired state.
    * - Pod and workloads
      - Description
    * - `Pod <https://kubernetes.io/docs/concepts/workloads/pods/>`__
-     - Pod is a collection of containers that can run on a node. This resource is created by clients and scheduled onto nodes.
+     - Pod is a collection of containers that can run on a node. This resource is created by clients and scheduled onto
+       nodes.
    * - `ReplicaSet <https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/>`__
      - ReplicaSet ensures that a specified number of pod replicas are running at any given time.
    * - `Deployment <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>`__
@@ -174,20 +175,22 @@ their desired state.
    * - `DaemonSet <https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/>`__
      - A Daemon set ensures that the correct nodes run a copy of a Pod.
    * - `Job <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__
-     - A Job represent a task, it creates one or more Pods and will continue to retry until the expected number of successful completions is reached.
+     - A Job represent a task, it creates one or more Pods and will continue to retry until the expected number of
+       successful completions is reached.
    * - `CronJob <https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/>`__
-     - A CronJob manages time-based Jobs, namely: once at a specified point in time and repeatedly at a specified point in time.
+     - A CronJob manages time-based Jobs, namely: once at a specified point in time and repeatedly at a specified point
+       in time.
    * - `StatefulSet <https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/>`__
      - StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage.
 
 CPU Management
 ^^^^^^^^^^^^^^
 
-CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache affinity
-or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some workloads
-are sensitive to differences between physical cores and SMT, while others (like DPDK-based workloads) are designed to
-run on isolated CPUs (like on Linux with cpuset-based selection of CPUs and isolcpus kernel parameter specifying cores
-isolated from general SMP balancing and scheduler algorithms).
+CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache
+affinity or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some
+workloads are sensitive to differences between physical cores and SMT, while others (like DPDK-based workloads) are
+designed to run on isolated CPUs (like on Linux with cpuset-based selection of CPUs and isolcpus kernel parameter
+specifying cores isolated from general SMP balancing and scheduler algorithms).
 
 Kubernetes `CPU Manager <https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/>`__ works with
 Topology Manager. Special care needs to be taken of:
@@ -224,13 +227,13 @@ for applications that require optimisations of CPU isolation, memory and device 
 Kubernetes supports Topology policy per node as beta feature
 (`documentation <https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/>`__) and not per pod.
 The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server
-system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class
-having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU
-and the Device Manager would provide hints for the requested device.
+system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS
+class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive
+CPU and the Device Manager would provide hints for the requested device.
 
 If case that memory or huge pages are not considered by the Topology Manager, it can be done by the operating system
-providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node,
-or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
+providing best-effort local page allocation for containers as long as there is sufficient free local memory on the
+node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
 
 Node Feature Discovery
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -324,12 +327,14 @@ carefully scheduled on nodes and preferably still decoupled from infrastructure 
      - Networking (dataplane)
      -
      - No, or Fixed function acceleration, Firmware- programmable network adapters or SmartNICs
-     - Huge pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin
+     - Huge pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple
+       interfaces; NUMA topology; Device Plugin
    * - 5
      - Networking (dataplane)
      -
      - CPU instructions
-     - Huge pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin; NFD
+     - Huge pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple
+       interfaces; NUMA topology; Device Plugin; NFD
 
 Virtual Machine based Clusters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -612,11 +617,16 @@ services and network policies for them that are not location aware and therefore
    * - Network objects
      - Description
    * - `Ingress <https://kubernetes.io/docs/concepts/services-networking/ingress/>`__
-     - Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally reachable URLs, load balance traffic, terminate SSL, offer name based virtual hosting etc.
+     - Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An
+       Ingress can be configured to give services externally reachable URLs, load balance traffic, terminate SSL, offer
+       name based virtual hosting etc.
    * - `Service <https://kubernetes.io/docs/concepts/services-networking/service/>`__
-     - Service is a named abstraction of an application running on a set of pods consisting of a local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
+     - Service is a named abstraction of an application running on a set of pods consisting of a local port
+       (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests
+       sent through the proxy.
    * - `EndpointSlices <https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/>`__
-     - Endpoints and Endpointslices are a collection of objects that contain the ip address, v4 and v6, of the pods that represents a service.
+     - Endpoints and Endpointslices are a collection of objects that contain the ip address, v4 and v6, of the pods
+       that represents a service.
    * - `Network Policies <https://kubernetes.io/docs/concepts/services-networking/network-policies/>`__
      - Network Policy defines which network traffic is allowed to ingress and egress from a set of pods.
 
@@ -696,11 +706,15 @@ This defacto standard defines among other things
    * - Definition
      - Description
    * - Kubernetes Cluster-Wide default network
-     - A network to which all pods are attached following the current behavior and requirements of Kubernetes, this done by attaching the eth0 interface to the pod namespace.
+     - A network to which all pods are attached following the current behavior and requirements of Kubernetes, this
+       done by attaching the eth0 interface to the pod namespace.
    * - Network Attachment
-     - A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not necessarily) each attachment takes the form of a kernel network interface placed into the pod's network namespace. Each attachment may result in zero or more IP addresses being assigned to the pod.
+     - A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not
+       necessarily) each attachment takes the form of a kernel network interface placed into the pod's network
+       namespace. Each attachment may result in zero or more IP addresses being assigned to the pod.
    * - NetworkAttachmentDefinition object
-     - This defines resource object that describes how to attach a pod to a logical or physical network, the annotation name is "k8s.v1.cni.cncf.io/networks"
+     - This defines resource object that describes how to attach a pod to a logical or physical network, the annotation
+       name is "k8s.v1.cni.cncf.io/networks"
    * - Network Attachment Selection Annotation
      - Selects one or more networks that a pod should be attached to.
 
@@ -766,8 +780,9 @@ Pod my-pod
        k8s.v1.cni.cncf.io/networks: blue-network, green-network, red-network
 
 This is enough to support basic network configuration management, it is possible to map up L2 networks from an external
-network infrastructure into a Kubernetes system and attach pods to these networks. The support for IPv4 and IPv6 address
-management is however limited. The address must be assigned by the CNI plugin as part of the pod creation process.
+network infrastructure into a Kubernetes system and attach pods to these networks. The support for IPv4 and IPv6
+address management is however limited. The address must be assigned by the CNI plugin as part of the pod creation
+process.
 
 Container Storage Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -845,8 +860,8 @@ Custom Resources
 ~~~~~~~~~~~~~~~~
 
 `Custom resources <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/>`__ are
-extensions of the Kubernetes API that represent customizations of Kubernetes installation. Core Kubernetes functions are
-also built using custom resources which makes Kubernetes more modular.
+extensions of the Kubernetes API that represent customizations of Kubernetes installation. Core Kubernetes functions
+are also built using custom resources which makes Kubernetes more modular.
 Two ways to add custom resources are:
 
 -  `Custom Resource Definitions
