@@ -16,7 +16,8 @@ linkcheck_ignore = [
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
     'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None),
-    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None)
+    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None),
+    'ref_impl_cntt-ri': ('https://cntt.readthedocs.io/projects/ri1/en/latest/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4

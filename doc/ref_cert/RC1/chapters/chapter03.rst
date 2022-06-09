@@ -41,7 +41,7 @@ domains: general(gen), infrastructure(inf), VIM(vim), Interface &
 API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
 
 For detailed information on RM & RA-1 NFVI and VNF requirements, please
-refer to :doc:`ref_impl/cntt-ri/chapters/chapter03`.
+refer to :doc:`ref_impl_cntt-ri:chapters/chapter03`.
 
 Architecture and OpenStack Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

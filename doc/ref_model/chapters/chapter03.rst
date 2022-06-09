@@ -1623,7 +1623,7 @@ Infrastructure and Application Level Acceleration
 
 :numref:`Hardware Acceleration in RM Realization Diagram` gives examples for the Hardware Accelerators shown in
 :numref:`Reference model realization example`
-(the :ref:`ref_model/chapters/chapter03:sample reference model realization` diagram).
+(the :ref:`chapters/chapter03:sample reference model realization` diagram).
 
 .. figure:: ../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png
    :alt: Hardware Acceleration in RM Realization Diagram

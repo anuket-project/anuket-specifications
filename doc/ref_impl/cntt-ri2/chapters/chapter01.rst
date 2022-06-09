@@ -38,7 +38,7 @@ allow the documentation of any gaps found during the development of this documen
 Terminology
 ~~~~~~~~~~~
 
-Terminology in this document will follow :doc:`common/glossary`.
+Terminology in this document will follow :doc:`cntt:common/glossary`.
 
 Scope
 -----
