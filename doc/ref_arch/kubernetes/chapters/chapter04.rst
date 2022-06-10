@@ -55,7 +55,7 @@ the following specifications:
      - e.cap.013
      - RI2 3.3
    * - ra2.ch.003
-     - SR-IOV Virtual Functions Functions
+     - SR-IOV Virtual Functions
      - When hosting workloads matching the High Performance profile, SR-IOV virtual functions
        (VFs) must be configured within the Kubernetes Node OS, as the SR-IOV Device Plugin does
        not manage the creation of these VFs.
@@ -74,7 +74,7 @@ the following specifications:
      -
    * - ra2.ch.006
      - CPU Allocation Ratio - Pods
-     - To ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1, the sum of CPU
+     - To ensure the CPU allocation is sufficient for any workload, the sum of CPU
        requests and limits by containers in Pod specifications must remain less than the allocatable
        quantity of CPU resources (i.e. requests.cpu < allocatable.cpu and limits.cpu < allocatable.cpu).
      - infra.com.cfg.001
@@ -87,9 +87,9 @@ the following specifications:
      -
    * - ra2.ch.008
      - Physical CPU Quantity
-     - The physical machines on which the Kubernetes Nodes run must be equipped with at least 2 physical
-       sockets, each with at least 20 CPU cores.
-     - infra.hw.cpu.cfg.001 infra.hw.cpu.cfg.002
+     - The physical machines on which the Kubernetes Nodes run must be equipped with at least 2 physical CPUs, each
+       with at least 20 CPU cores. (N.B. this doesn't apply for Edge nodes.)
+     - infra.hw.cpu.cfg.001, infra.hw.cpu.cfg.002
      - RI2 3.3
    * - ra2.ch.009
      - Physical Storage
@@ -99,12 +99,12 @@ the following specifications:
    * - ra2.ch.010
      - Local Filesystem Storage Quantity
      - The Kubernetes Nodes must be equipped with local filesystem capacity of at least 320GB for unpacking and
-       executing containers. Note, extra should be provisioned to cater for any overhead required by the Operating
-       System and any required OS processes such as the container runtime, Kubernetes agents, etc.
+       executing containers. Note, extra storage capacity should be provisioned to cater for any overhead required by
+       the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.
      - e.cap.003
      - RI2 3.3
    * - ra2.ch.011
-     - Virtual Node CPU Quantity
+     - Virtual Machine CPU Quantity
      - If using VMs, the Kubernetes Nodes must be equipped with at least 16 vCPUs. Note, extra should be provisioned
        to cater for any overhead required by the Operating System and any required OS processes such as the container
        runtime, Kubernetes agents, etc.
