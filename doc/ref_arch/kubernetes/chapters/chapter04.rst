@@ -205,7 +205,7 @@ the following specifications:
      - Reference Implementation Trace
    * - ra2.k8s.001
      - Kubernetes Conformance
-     - The Kubernetes distribution, product, or installer used in the implementation must be listed in the `Kubernetes Distributions and Platforms document <https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlUUK2h0/edit#gid=0>`__ and marked (X) as conformantfor the Kubernetes version defined in :ref:`index:required versions of most important components`.
+     - The Kubernetes distribution, product, or installer used in the implementation must be listed in the `Kubernetes Distributions and Platforms document <https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlUUK2h0/edit>`__ and marked (X) as conformantfor the Kubernetes version defined in :ref:`index:required versions of most important components`.
      - req.gen.cnt.03
      - RI2 4.3.1
    * - ra2.k8s.002
