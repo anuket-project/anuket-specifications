@@ -6,11 +6,11 @@ Introduction
 
 This chapter describes in detail the Kubernetes Reference Architecture in terms
 of the functional capabilities and how they relate to the Reference Model
-requirements, i.e. how the infrastructure profiles are determined, documented
+requirements, i.e., how the infrastructure profiles are determined, documented
 and delivered.
 
 The specifications defined in this chapter will be detailed with unique
-identifiers, which will follow the pattern: ``ra2.<section>.<index>``, e.g.
+identifiers, which will follow the pattern: ``ra2.<section>.<index>``, e.g.,
 ``ra2.ch.001`` for the first requirement in the Kubernetes Node section. These
 specifications will then be used as requirements input for the Kubernetes
 Reference Implementation and any vendor or community implementations.
@@ -53,8 +53,8 @@ the following specifications:
        run must be equipped with NICs that are SR-IOV capable.
      - e.cap.013
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
-   * - ra2.ch.003 CaaS Manager - Cluster Lifecycle Management
-     - SR-IOV Virtual Functions Functions
+   * - ra2.ch.003
+     - SR-IOV Virtual Functions
      - When hosting workloads matching the High Performance profile, SR-IOV virtual functions (VFs) must be configured
        within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.
      - e.cap.013
@@ -145,7 +145,7 @@ the following specifications:
      - Whether physical or virtual machines are used, the Kubernetes Node must not be changed after it is instantiated.
        New changes to the Kubernetes Node must be implemented as new Node instances. This covers any changes from BIOS
        through Operating System to running processes and all associated configurations.
-     - req.gen.cnt.02
+     - gen.cnt.02
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.ch.018
@@ -187,7 +187,7 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
      - tbd
    * - ra2.os.003
      - Windows Server
-     - Windows Server (this can be used for worker nodes, but be aware of the limitations).
+     - Windows Server (this can be used for worker nodes, but beware of the limitations).
      - tbd
      - tbd
    * - ra2.os.004
@@ -200,7 +200,7 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
      - tbd
    * - ra2.os.005
      - Automated Deployment
-     - This approach to configuration management supports req.lcm.gen.01 (automated deployments)
+     - This approach to configuration management supports lcm.gen.01 (automated deployments)
      - tbd
      - tbd
 
@@ -261,14 +261,14 @@ the following specifications:
      - Control plane services
      - A master node must run at least the following Kubernetes control plane services: kube-apiserver, kube-scheduler
        and kube-controller-manager.
-     - req.gen.rsl.02, req.gen.avl.01
+     - gen.rsl.02, gen.avl.01
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.k8s.004
      - Highly available worker nodes
      - An implementation must consist of at least one worker node per availability zone or fault domain to ensure the
        high availability and resilience of workloads managed by Kubernetes
-     - req.gen.rsl.01, req.gen.avl.01, req.kcm.gen.02, req.inf.com.02
+     - en.rsl.01, gen.avl.01, kcm.gen.02, inf.com.02
      -
    * - ra2.k8s.005
      - Kubernetes API Version
@@ -284,7 +284,7 @@ the following specifications:
        and later, with CPUManager enabled by default in Kubernetes v1.10 and later).
        --feature-gates="..., TopologyManager=true,CPUManager=true" --topology-manager-policy=single-numa-node
        --cpu-manager-policy=static
-     - e.cap.007, infra.com.cfg .002, infra.hw.cpu. cfg.003
+     - e.cap.007, infra.com.cfg .002, infra.hw.cpu.cfg.003
      -
    * - ra2.k8s.007
      - DevicePlugins Feature Gate
@@ -360,7 +360,7 @@ the following specifications:
      - Publishing Services (ServiceTypes)
      - Kubernetes should support NodePort `Service (ServiceTypes)
        <https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types>`__.
-     - req.inf.ntw. 17
+     - inf.ntw.17
      -
    * - ra2.k8s.018
      - Publishing Services (ServiceTypes)
@@ -371,7 +371,7 @@ the following specifications:
    * - ra2.k8s.019
      - Kubernetes APIs
      - Kubernetes Beta APIs must be supported only when a stable GA of the same version doesn't exist.
-     - req.int.api. 04
+     - int.api.04
      -
 
 Container runtimes
@@ -391,7 +391,7 @@ Container runtimes
      - The container runtime must be implemented as per the
        `OCI 1.0 <https://github.com/opencontainers/runtime-spec/blob/master/spec.md>`__ (Open Container Initiative 1.0)
        specification.
-     - req.gen.ost. 01
+     - gen.ost.01
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.crt.002
@@ -399,7 +399,7 @@ Container runtimes
      - The Kubernetes container runtime must be implemented as per the
        `Kubernetes Container Runtime Interface (CRI)
        <https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/>`__
-     - req.gen.ost. 01
+     - gen.ost.01
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
 
@@ -422,7 +422,7 @@ Architecture they must be implemented as per the following specifications:
      - Centralised network administration
      - The networking solution deployed within the implementation must be administered through the Kubernetes API using
        native Kubernetes API resources and objects, or Custom Resources.
-     - req.inf.ntw. 03
+     - inf.ntw.03
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.ntw.002
@@ -445,25 +445,25 @@ Architecture they must be implemented as per the following specifications:
      - The networking solution deployed within the implementation must ensure that all additional non-default connection
        points are requested by Pods using standard Kubernetes resource scheduling mechanisms such as annotations or
        container resource requests and limits.
-     - req.inf.ntw. 03
+     - inf.ntw.03
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.ntw.005
      - Multiplexer / meta-plugin
      - The networking solution deployed within the implementation may use a multiplexer/meta-plugin.
-     - req.inf.ntw. 06, req.inf.ntw. 07
+     - inf.ntw.06, inf.ntw.07
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.ntw.006
      - Multiplexer / meta-plugin CNI Conformance
      - If used, the selected multiplexer/meta-plugin must integrate with the Kubernetes control plane via CNI.
-     - req.gen.ost. 01
+     - gen.ost.01
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.ntw.007
      - Multiplexer / meta-plugin CNI Plugins
      - If used, the selected multiplexer/meta-plugin must support the use of multiple CNI-conformant Network Plugins.
-     - req.gen.ost. 01, req.inf.ntw. 06
+     - gen.ost.01, inf.ntw.06
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.ntw.008
@@ -477,7 +477,7 @@ Architecture they must be implemented as per the following specifications:
      - Multiple connection points with multiplexer / meta-plugin
      - When a multiplexer/meta-plugin is used, the additional non-default connection points must be managed by a
        CNI-conformant Network Plugin.
-     - req.gen.ost. 01
+     - gen.ost.01
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.ntw.010
@@ -505,18 +505,18 @@ Architecture they must be implemented as per the following specifications:
      - Dual stack CNI
      - The networking solution deployed within the implementation must use a CNI-conformant Network Plugin that is able
        to support dual-stack IPv4/IPv6 networking.
-     - req.inf.ntw. 04
+     - inf.ntw.04
      -
    * - ra2.ntw.014
      - Security Groups
      - The networking solution deployed within the implementation must support network policies.
-     - infra.net.cfg .004
+     - infra.net.cfg.004
      -
    * - ra2.ntw.015
      - IPAM plugin for multiplexer
      - When a multiplexer/meta-plugin is used, a CNI-conformant IPAM Network Plugin must be installed to allocate IP
        addresses for secondary network interfaces across all nodes of the cluster.
-     - req.inf.ntw. 10
+     - inf.ntw.10
      -
 
 Storage components
@@ -557,7 +557,7 @@ Architecture they must be implemented as per the following specifications:
      - Persistent Volumes
      - An implementation may support Kubernetes Persistent Volumes (PV) to provide persistent storage for Pods.
        Persistent Volumes exist independent of the lifecycle of containers and/or pods.
-     - req.inf.stg. 01
+     - inf.stg.01
      -
    * - ra2.stg.005
      - Storage Volume Types
@@ -592,9 +592,9 @@ A note on object storage:
 
 ..
 
-   Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and
-   horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if
-   applicable) and req.sec.zon.03 (data encryption at rest).
+   Todo: specifications/commentary to support inf.stg.04 (SDS) and inf.stg.05 (high performance and
+   horizontally scalable storage). Also sec.gen.06 (storage resource isolation), sec.gen.10 (CIS - if
+   applicable) and sec.zon.03 (data encryption at rest).
 
 Service meshes
 --------------
@@ -605,7 +605,7 @@ a cluster and to reduce the attack surface. The benefits of the service mesh fra
 :ref:`chapters/chapter05:use transport layer security and service mesh`. In addition to securing communications, the
 use of a service mesh extends Kubernetes capabilities regarding observability and reliability.
 
-Network service mesh specifications are handled in section `4.5 Networking solutions <#networking-solutions>`__.
+Network service mesh specifications are handled in section `Networking solutions <#networking-solutions>`__.
 
 Kubernetes Application package manager
 --------------------------------------
@@ -626,7 +626,7 @@ Architecture they must be implemented as per the following specifications:
      - API-based package management
      - A package manager must use the Kubernetes APIs to manage application artifacts. Cluster-side components such as
        Tiller are not supported.
-     - req.int.api. 02
+     - int.api.02
      -
    * - ra2.pkg.002
      - Helm version 3
@@ -662,20 +662,20 @@ Architecture they must be implemented as per the following specifications:
      - TBD
      - N/A
    * - ra2.app.002
-     - `Mounts <https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts>`__ Parameter Group (OCI
-       Spec)
+     - `Mounts <https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts>`__ Parameter Group
+       (OCI Spec)
      - Specifies additional mounts beyond root.
      - TBD
      - N/A
    * - ra2.app.003
-     - `Process <https://github.com/opencontainers/runtime-spec/blob/master/config.md#process>`__ Parameter Group (OCI
-       Spec)
+     - `Process <https://github.com/opencontainers/runtime-spec/blob/master/config.md#process>`__ Parameter Group
+       (OCI Spec)
      - Specifies the container process.
      - TBD
      - N/A
    * - ra2.app.004
-     - `Hostname <https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname>`__ Parameter Group (OCI
-       Spec)
+     - `Hostname <https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname>`__ Parameter Group
+       (OCI Spec)
      - Specifies the container's hostname as seen by processes running inside the container.
      - TBD
      - N/A
@@ -687,16 +687,16 @@ Architecture they must be implemented as per the following specifications:
      - N/A
    * - ra2.app.006
      - Consumption of additional, non-default connection points
-     - Any additional non-default connection points must be requested through the use of workload annotations or
-       resource requests and limits within the container spec passed to the Kubernetes API Server.
-     - req.int.api.01
+     - Any additional non-default connection points must be requested through the use of workload annotations
+       or resource requests and limits within the container spec passed to the Kubernetes API Server.
+     - int.api.01
      - N/A
    * - ra2.app.007
      - Host Volumes
      - Workloads should not use hostPath volumes, as `Pods with identical configuration
-       <https://kubernetes.io/docs/concepts/storage/volumes/#hostpath>`__ (such as those created from a PodTemplate) may
-       behave differently on different nodes due to different files on the nodes.
-     - req.kcm.gen.02
+       <https://kubernetes.io/docs/concepts/storage/volumes/#hostpath>`__ (such as those created from a PodTemplate)
+       may behave differently on different nodes due to different files on the nodes.
+     - kcm.gen.02
      - N/A
    * - ra2.app.008
      - Infrastructure dependency
@@ -892,7 +892,8 @@ Architecture they must be implemented as per the following specifications:
    * - ra2.app.038
      - Horizontal scaling
      - Increasing and decreasing of the CNF capacity should be implemented using horizontal scaling. If horizontal
-       scaling is supported, automatic scaling must be possible using Kubernetes `Horizontal Pod Autoscale (HPA) <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>`__ feature.
+       scaling is supported, automatic scaling must be possible using Kubernetes `Horizontal Pod Autoscale (HPA)
+       <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>`__ feature.
      - TBD
      - N/A
    * - ra2.app.039
@@ -943,6 +944,6 @@ Architecture they must be implemented as per the following specifications:
 Additional required components
 ------------------------------
 
-   This chapter should list any additional components needed to provide the services defined in Chapter 3.2 (e.g.,
-   Prometheus)
+   This chapter should list any additional components needed to provide the services defined in Chapter
+   :ref:`chapters/chapter03:infrastructure services` (e.g., Prometheus).
 
