@@ -257,8 +257,8 @@ Vendor Solicitation/Commitment
 
 Vendor members will be solicited for participation in the trials. The vendors will be required to commit fully to the assessment and evaluation processes. As previously mentioned, additional discussion is needed to define what results data and at what level of detail is acceptable to be shared.
 
-Deliverable
-^^^^^^^^^^^
+RI1/RC1 Trial Deliverable
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Initiate Field Trial Stage will deliver execution and assessment plans including:
 
@@ -308,8 +308,8 @@ Anuket will staff the plan by soliciting volunteers from the participants. The l
 
 The participants that volunteer for the roles will be expected to provide the appropriate amount of time to support the trials initiative.
 
-Deliverables
-^^^^^^^^^^^^
+Execution Stage Deliverables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The deliverables of the execute stage will be:
 
@@ -370,9 +370,7 @@ Quantitative Outcomes
 
 Technical outcomes i.e. technical test results will be collected and managed by RI1/RC1 work streams based upon participants privacy preferences.
 
-Deliverables
-^^^^^^^^^^^^
-
+Deliverables:
 -  Feedback is provided from the participants on their outcomes to Anuket.
 -  Completed Questionnaire and test case results (Participant)
 
@@ -382,11 +380,6 @@ Evaluation Stage
 Proving the ‘right’ value to the operator and vendor community is ultimately what will ensure adoption of Anuket requirements. These field trials are intended to verify and validate the requirements and methods developed by Anuket so that adjustments can be made to ensure the intended value is being delivered.
 
 Anuket shall evaluate all feedback and test results to understand whether Anuket methods and measures are meeting intended objectives. If a method or measure is not meeting its intended purpose, it shall be identified as a gap or an issue for resolution. Determinations if and when adjustments or adaptations are needed shall be made to by the Anuket community.
-
-.. _deliverables-2:
-
-Deliverables
-^^^^^^^^^^^^
 
 All identified gaps and issues shall be captured in the `Anuket reference specifications GitHub repository <https://github.com/cntt-n/CNTT>`__. Decisions and determinations will be captured and logged accordingly.
 
