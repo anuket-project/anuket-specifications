@@ -47,7 +47,7 @@ This chapter is organised as follows:
 
       -  Tenant Separation
       -  Host aggregates providing resource pooling
-      -  Flavor [*]_ management
+      -  Flavor [#]_ management
 
 -  Underlying Resources: are what provides the resources that allow the
    Consumable Infrastructure Resources and Services to be created and
@@ -61,12 +61,12 @@ This chapter is organised as follows:
       -  Network: Spine/Leaf; East/West and North/South traffic
       -  Storage
 
-.. [*] Please note “flavours” is used in the Reference Model and shall
+.. [#] Please note "flavours" is used in the Reference Model and shall
    continue to be used in the context of specifying the geometry of
    the virtual resources. The term “flavor” is used in this document
    in the OpenStack context including when specifying configurations;
    the OpenStack term flavor includes the profile configuration
-   information as “extra specs”.
+   information as "extra specs".
 
 Consumable Infrastructure Resources and Services
 ------------------------------------------------
