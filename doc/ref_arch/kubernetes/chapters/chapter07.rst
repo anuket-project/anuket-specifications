@@ -18,7 +18,7 @@ Gap analysis
 Gap template
 ~~~~~~~~~~~~
 
-   **Related requirements:** List the requirement references ``req.abc.xyz.00`` from RA2 or RM which this gap tries to
+   **Related requirements:** List the requirement references ``abc.xyz.00`` from RA2 or RM which this gap tries to
    address.
 
 ..
@@ -36,12 +36,12 @@ Container run-time Interfaces towards NFVI resources
 
 ..
 
-   e.g. network interface type that is presented to a running container.
+   e.g., network interface type that is presented to a running container.
 
 Multi-tenancy and workload isolation with Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Related requirements:** ``e.man.004`` ``sec.ci.008`` :literal:`sec.wl.005``sec.wl.006`
+**Related requirements:** ``e.man.004``, ``sec.ci.008``, :literal:`sec.wl.005`, `sec.wl.006`
 
 **Baseline project:** *Kubernetes*
 
@@ -91,7 +91,7 @@ Kubernetes as a VM-based VNF Orchestrator
 Multiple network interfaces on Pods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Related requirements:** :ref:`ref_model:chapters/chapter04:virtual network interface specifications`
+   **Related requirements:** :ref:`cntt:ref_model:chapters/chapter04:virtual network interface specifications`
 
 ..
 
@@ -106,7 +106,7 @@ Multiple network interfaces on Pods
 Dynamic network management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Related requirements:** :ref:`req.inf.ntw.03 <chapters/chapter02:kubernetes architecture requirements>`
+   **Related requirements:** :ref:`inf.ntw.03 <chapters/chapter02:kubernetes architecture requirements>`
 
 ..
 
