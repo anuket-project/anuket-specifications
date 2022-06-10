@@ -119,7 +119,8 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - Feature:ComprehensiveNamespaceDraining
      - X
      - Namespaces should always delete fast (ALL of 100 namespaces in 150 seconds)
-   * - Feature:`CrossNamespacePodAffinity <https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#namespace-selector>`__
+   * - Feature:`CrossNamespacePodAffinity <https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#name
+       space-selector>`__
      -
      - Should verify ResourceQuota with cross namespace pod affinity scope using scope-selectors
    * - Feature:Feature:`PodPriority <https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/>`__
@@ -128,7 +129,8 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - Feature:ScopeSelectors
      - X
      - Verify ResourceQuota with terminating scopes through scope selectors
-   * - Feature:`StorageVersionAPI <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#storageversion-v1alpha1-internal-apiserver-k8s-io>`__
+   * - Feature:`StorageVersionAPI <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#storageversion-v
+       1alpha1-internal-apiserver-k8s-io>`__
      -
      -
 
@@ -148,7 +150,8 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - None
      - X
      - Kubernetes mainstream features
-   * - Feature:`DaemonSetUpdateSurge <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#rollingupdatedaemonset-v1-apps>`__
+   * - Feature:`DaemonSetUpdateSurge <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#rollingupdate
+       daemonset-v1-apps>`__
      -
      - Daemon set should surge pods onto nodes when spec was updated and update strategy is RollingUpdate
    * - Feature:`IndexedJob <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__
@@ -163,9 +166,11 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - Feature:`SuspendJob <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__
      -
      - Should not create pods when created in suspend state
-   * - Feature:`TaintEviction <https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#taint-based-evictions>`__
+   * - Feature:`TaintEviction <https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#taint-based
+       -evictions>`__
      -
-     - All pods on the unreachable node should be marked as NotReady upon the node turn NotReady AND all pods should be evicted after eviction timeout passes
+     - All pods on the unreachable node should be marked as NotReady upon the node turn NotReady AND all pods should be
+       evicted after eviction timeout passes
    * - Feature:`TTLAfterFinished <https://kubernetes.io/docs/concepts/workloads/controllers/ttlafterfinished/>`__
      - X
      - Job should be deleted once it finishes after TTL seconds
@@ -186,7 +191,8 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - None
      - X
      - Kubernetes mainstream features
-   * - Feature:`BoundServiceAccountTokenVolume <https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/1205-bound-service-account-tokens/README.md>`__
+   * - Feature:`BoundServiceAccountTokenVolume <https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/120
+       5-bound-service-account-tokens/README.md>`__
      -
      - ServiceAccount admission controller migration master upgrade should maintain a functioning cluster
    * - Feature:NodeAuthenticator
@@ -282,7 +288,9 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
      - Should prevent Ingress creation if more than 1 IngressClass marked as default
    * - Feature:`IPv6DualStack <https://kubernetes.io/docs/concepts/services-networking/dual-stack/>`__
      -
-     - IPv4/IPv6 dual-stack networking enables the allocation of both IPv4 and IPv6 addresses to Pods and Services. IPv4/IPv6 dual-stack networking is enabled by default for your Kubernetes cluster starting in 1.21, allowing the simultaneous assignment of both IPv4 and IPv6 addresses.
+     - IPv4/IPv6 dual-stack networking enables the allocation of both IPv4 and IPv6 addresses to Pods and Services.
+       IPv4/IPv6 dual-stack networking is enabled by default for your Kubernetes cluster starting in 1.21, allowing the
+       simultaneous assignment of both IPv4 and IPv6 addresses.
    * - Feature:kubemci
      -
      - Should create ingress with pre-shared certificate
@@ -309,7 +317,8 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
      - run iperf2
    * - Feature:NetworkPolicy
      -
-     - NetworkPolicy between server and client should enforce policy to allow traffic only from a different namespace, based on NamespaceSelector
+     - NetworkPolicy between server and client should enforce policy to allow traffic only from a different namespace,
+       based on NamespaceSelector
    * - Feature:PerformanceDNS
      -
      - Should answer DNS query for maximum number of services per cluster
@@ -351,13 +360,17 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - Feature:RegularResourceUsageTracking
      -
      - Resource tracking for 0 pods per node
-   * - Feature:`ProbeTerminationGracePeriod <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#probe-level-terminationgraceperiodseconds>`__
+   * - Feature:`ProbeTerminationGracePeriod <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness
+       -readiness-startup-probes/#probe-level-terminationgraceperiodseconds>`__
      - X
      - Probing container should override timeoutGracePeriodSeconds when LivenessProbe field is set
-   * - NodeFeature:`DownwardAPIHugePages <https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information>`__
+   * - NodeFeature:`DownwardAPIHugePages <https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-e
+       xpose-pod-information>`__
      -
-     - Downward API tests for huge pages should provide container's limits.hugepages-pagesize; and requests.hugepages-pagesize& as env vars
-   * - NodeFeature:`PodReadinessGate <https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-readiness-gate>`__
+     - Downward API tests for huge pages should provide container's limits.hugepages-pagesize; and requests.hugepages-pa
+       gesize& as env vars
+   * - NodeFeature:`PodReadinessGate <https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-readiness-ga
+       te>`__
      - X
      - Pods should support pod readiness gates
    * - NodeFeature:RuntimeHandler
@@ -386,7 +399,8 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - Feature:GPUDevicePlugin
      -
      - Run Nvidia GPU Device Plugin tests
-   * - Feature:`LocalStorageCapacityIsolation <https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/>`__
+   * - Feature:`LocalStorageCapacityIsolation <https://kubernetes.io/docs/concepts/configuration/manage-resources-contai
+       ners/>`__
      - X
      - Validates local ephemeral storage resource limits of pods that are allowed to run
    * - Feature:Recreate
