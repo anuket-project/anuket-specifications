@@ -163,7 +163,7 @@ Cloud Infrastructure Software Profile Capabilities
      - Number of virtual cores per physical core; also known as CPU overbooking ratio that is required
      - 01:01
      - 01:01
-     - ra2.ch.004 ra2.ch.005
+     - ra2.ch.004 :ref:`ra2.ch.005 <chapters/chapter04:Kubernetes Node>`
    * - :ref:`ref_model:chapters/chapter04:internal infrastructure capabilities`
      - i.cap.017
      - QoS enablement of the connection point (vNIC or interface)
@@ -300,7 +300,7 @@ Cloud Infrastructure Software Profile Requirements
      - CPU allocation ratio
      - 1:1
      - 1:1
-     - ra2.ch.005 ra2.ch.006
+     - :ref:`ra2.ch.005 <chapters/chapter04:Kubernetes Node>` ra2.ch.006
    * - :ref:`ref_model:chapters/chapter05:virtual compute`
      - infra.com. cfg.002
      - NUMA awareness
@@ -324,7 +324,7 @@ Cloud Infrastructure Software Profile Requirements
      - Storage Block
      - Must support
      - Must support
-     - ra2.stg.004
+     - :ref:`ra2.stg.004 <chapters/chapter04:Storage components>`
    * - :ref:`ref_model:chapters/chapter05:virtual storage`
      - infra.stg. cfg.003
      - Storage with replication
@@ -440,19 +440,19 @@ Cloud Infrastructure Hardware Profile Requirements
      - Minimum number of CPU sockets
      - 2
      - 2
-     - ra2.ch.008
+     - :ref:`ra2.ch.008 <chapters/chapter04:Kubernetes Node>`
    * - :ref:`ref_model:chapters/chapter05:compute resources`
      - infra.hw.cpu.cfg.002
      - Minimum number of Cores per CPU
      - 20
      - 20
-     - ra2.ch.008
+     - :ref:`ra2.ch.008 <chapters/chapter04:Kubernetes Node>`
    * - :ref:`ref_model:chapters/chapter05:compute resources`
      - infra.hw.cpu.cfg.003
      - NUMA Alignment
      - N
      - Y
-     - ra2.ch.008
+     - :ref:`ra2.ch.008 <chapters/chapter04:Kubernetes Node>`
    * - :ref:`ref_model:chapters/chapter05:compute resources`
      - infra.hw.cpu.cfg.004
      - Simultaneous Multithreading/ Symmetric Multiprocessing (SMT/SMP)
@@ -561,13 +561,13 @@ of requirements of the above table are relaxed as follows:
      - Minimum number of Cores per CPU
      - 1
      - 1
-     - ra2.ch.008
+     - :ref:`ra2.ch.008 <chapters/chapter04:Kubernetes Node>`
    * - :ref:`ref_model:chapters/chapter08:telco edge cloud: infrastructure profiles`
      - infra.hw.cpu.cfg.003
      - NUMA Alignment
      - N
      - Y (1)
-     - ra2.ch.008
+     - :ref:`ra2.ch.008 <chapters/chapter04:Kubernetes Node>`
 
 :ref:`ref_model:chapters/chapter08:telco edge cloud: infrastructure profiles`.
 
@@ -1338,12 +1338,13 @@ machines or containers.
      - General
      - Cloud nativeness
      - The Architecture must support immutable infrastructure.
-     - ra2.ch.017
+     - :ref:`ra2.ch.017 <chapters/chapter04:Kubernetes Node>`
    * - gen.cnt.03
      - General
      - Cloud nativeness
-     - The Architecture must run conformant Kubernetes as defined by the `CNCF <https://github.com/cncf/k8s-conformance>`__.
-     - ra2.k8s.001
+     - The Architecture must run conformant Kubernetes as defined by the
+       `CNCF <https://github.com/cncf/k8s-conformance>`__.
+     - :ref:`ra2.k8s.001 <chapters/chapter04:Kubernetes>`
    * - gen.cnt.04
      - General
      - Cloud nativeness
@@ -1365,34 +1366,39 @@ machines or containers.
      - Resiliency
      - The Architecture must support resilient Kubernetes components that are required for the
        continued availability of running workloads.
-     - ra2.k8s.004
+     - :ref:`ra2.k8s.004 <chapters/chapter04:Kubernetes>`
    * - gen.rsl.02
      - General
      - Resiliency
      - The Architecture should support resilient Kubernetes service components that are not
        subject to gen.rsl.01.
-     - ra2.k8s.002, ra2.k8s.003
+     - :ref:`ra2.k8s.002 <chapters/chapter04:Kubernetes>`, :ref:`ra2.k8s.003 <chapters/chapter04:Kubernetes>`
    * - gen.avl.01
      - General
      - Availability
      - The Architecture must provide High Availability for Kubernetes components.
-     - ra2.k8s.002, ra2.k8s.003, ra2.k8s.004
+     - :ref:`ra2.k8s.002 <chapters/chapter04:Kubernetes>`, :ref:`ra2.k8s.003 <chapters/chapter04:Kubernetes>`,
+       :ref:`ra2.k8s.004 <chapters/chapter04:Kubernetes>`
    * - gen.ost.01
      - Openness
      - Availability
      - The Architecture should embrace open-based standards and technologies.
-     - ra2.crt.001, ra2.crt.002, ra2.ntw.002, ra2.ntw.006, ra2.ntw.007
+     - :ref:`ra2.crt.001 <chapters/chapter04:Container runtimes>`,
+       :ref:`ra2.crt.002 <chapters/chapter04:Container runtimes>`,
+       :ref:`ra2.ntw.002 <chapters/chapter04:Networking solutions>`,
+       :ref:`ra2.ntw.006 <chapters/chapter04:Networking solutions>`,
+       :ref:`ra2.ntw.007 <chapters/chapter04:Networking solutions>`
    * - inf.com.01
      - Infrastructure
      - Compute
      - The Architecture must provide compute resources for Pods. technologies.
-     - ra2.k8s.004
+     - :ref:`ra2.k8s.004 <chapters/chapter04:Kubernetes>`
    * - inf.stg.01
      - Infrastructure
      - Storage
      - The Architecture must support the ability for an operator to choose whether or
        not to deploy persistent storage for Pods.
-     - ra2.stg.004
+     - :ref:`ra2.stg.004 <chapters/chapter04:Storage components>`
    * - inf.ntw.01
      - Infrastructure
      - Network
@@ -1408,12 +1414,14 @@ machines or containers.
      - Infrastructure
      - Network
      - The networking solution should be able to be centrally administrated and configured.
-     - ra2.ntw.001, ra2.ntw.004
+     - :ref:`ra2.ntw.001 <chapters/chapter04:Networking solutions>`,
+       :ref:`ra2.ntw.004 <chapters/chapter04:Networking solutions>`
    * - inf.ntw.04
      - Infrastructure
      - Network
      - The Architecture must support dual stack IPv4 and IPv6 for Kubernetes workloads.
-     - ra2.ch.007, ra2.k8s.010
+     - :ref:`ra2.ch.007 <chapters/chapter04:Kubernetes Node>`,
+       :ref:`ra2.k8s.010 <chapters/chapter04:Kubernetes>`
    * - inf.ntw.05
      - Infrastructure
      - Network
@@ -1423,18 +1431,19 @@ machines or containers.
      - Infrastructure
      - Network
      - The Architecture must support more than one networking solution.
-     - ra2.ntw.005, ra2.ntw.007
+     - :ref:`ra2.ntw.005 <chapters/chapter04:Networking solutions>`,
+       :ref:`ra2.ntw.007 <chapters/chapter04:Networking solutions>`
    * - inf.ntw.07
      - Infrastructure
      - Network
      - The Architecture must support the ability for an operator to choose whether or not
        to deploy more than one networking solution.
-     - ra2.ntw.005
+     - :ref:`ra2.ntw.005 <chapters/chapter04:Networking solutions>`
    * - inf.ntw.08
      - Infrastructure
      - Network
      - The Architecture must provide a default network which implements the Kubernetes network model.
-     - ra2.ntw.002
+     - :ref:`ra2.ntw.002 <chapters/chapter04:Networking solutions>`
    * - inf.ntw.09
      - Infrastructure
      - Network
@@ -1460,7 +1469,7 @@ machines or containers.
        outside), allowing source and destination IP addresses to be preserved in the traffic headers
        from workloads to external networks. This is needed e.g. for signaling applications, using SIP
        and Diameter protocols.
-     - ra2.ntw.011
+     - :ref:`ra2.ntw.011 <chapters/chapter04:Networking solutions>`
    * - inf.ntw.15
      - Infrastructure
      - Network
@@ -1486,13 +1495,14 @@ machines or containers.
      - Virtual Infr astructure
      - The Architecture must support the capability for Containers to consume infrastructure resources
        abstracted by Host Operating Systems that are running within a virtual machine.
-     - ra2.ch.005, ra2.ch.011
+     - :ref:`ra2.ch.005 <chapters/chapter04:Kubernetes Node>`,
+       :ref:`ra2.ch.011 <chapters/chapter04:Kubernetes Node>`
    * - inf.phy.01
      - Infrastructure
      - Physical Infrastructu re
      - The Architecture must support the capability for Containers to consume infrastructure resources
        abstracted by Host Operating Systems that are running within a physical server.
-     - ra2.ch.008
+     - :ref:`ra2.ch.008 <chapters/chapter04:Kubernetes Node>`
    * - kcm.gen.01
      - Kubernetes Cluster
      - General
@@ -1502,19 +1512,21 @@ machines or containers.
      - Kubernetes Cluster
      - General
      - The Architecture must enable workload resiliency.
-     - ra2.k8s.004
+     - :ref:`ra2.k8s.004 <chapters/chapter04:Kubernetes>`
    * - int.api.01
      - API
      - General
      - The Architecture must leverage the Kubernetes APIs to discover and declaratively manage compute
        (virtual and bare metal resources), network, and storage.
-     - For Networking: ra2.ntw.001, ra2.ntw.008, ra2.app.006. Compute/storage not yet met.
+     - For Networking: :ref:`ra2.ntw.001 <chapters/chapter04:Networking solutions>`,
+       :ref:`ra2.ntw.008 <chapters/chapter04:Networking solutions>`,
+       :ref:`ra2.app.006 <chapters/chapter04:Kubernetes workloads>`. Compute/storage not yet met.
    * - int.api.02
      - API
      - General
      - The Architecture must support the usage of a Kubernetes Application package manager using the
        Kubernetes API, like Helm v3. network, and storage.
-     - ra2.pkg.001
+     - :ref:`ra2.pkg.001 <chapters/chapter04:Kubernetes Application package manager>`
    * - int.api.03
      - API
      - General
