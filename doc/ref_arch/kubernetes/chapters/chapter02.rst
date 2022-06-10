@@ -465,13 +465,13 @@ Cloud Infrastructure Hardware Profile Requirements
      - Not required
      - Optional
      - N/A
-   * - :ref:`ref_model:chapters/chapter05:storage resources`
+   * - :ref:`ref_model:chapters/chapter05:storage configurations`
      - infra.hw.stg.hdd.cfg.001
      - Local Storage HDD
      - No requirement specified
      - No requirement specified
      - N/A
-   * - :ref:`ref_model:chapters/chapter05:storage resources`
+   * - :ref:`ref_model:chapters/chapter05:storage configurations`
      - infra.hw.stg.ssd.cfg.002
      - Local Storage SSD
      - Should support

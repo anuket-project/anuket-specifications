@@ -35,7 +35,7 @@ descriptions of the capabilities and features that the Cloud Infrastructure
 provide to the workloads. The NFVI Software Profile figure below
 depicts a high level view of the software profile features that apply to each
 instance profile (Basic and High Performance). For more information on the
-instance profiles please refer to :ref:`cntt:ref_model:chapters/chapter04:profiles`.
+instance profiles please refer to :ref:`ref_model:chapters/chapter04:profiles`.
 
 .. image:: ../../../ref_model/figures/RM-ch05-sw-profile.png
    :alt: "Figure 5-3 (from RM): NFVI softwareprofiles"
@@ -281,7 +281,7 @@ Hardware Acceleration
 ^^^^^^^^^^^^^^^^^^^^^
 
 Hardware Acceleration Abstraction in RM
-:ref:`cntt:ref_model:chapters/chapter03:hardware acceleration abstraction` describes types of hardware
+:ref:`ref_model:chapters/chapter03:hardware acceleration abstraction` describes types of hardware
 acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and
 SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
 
@@ -834,8 +834,8 @@ Kubernetes-based workloads.
 There are no restrictions or constraints that Kubernetes places on the storage
 that can be consumed by a workload, in terms of the requirements that are
 defined in RM sections
-:ref:`cntt:ref_model:chapters/chapter05:storage configurations` (software)
-and :ref:`cntt:ref_model:chapters/chapter05:virtual storage`
+:ref:`ref_model:chapters/chapter05:storage configurations` (software)
+and :ref:`ref_model:chapters/chapter05:virtual storage`
 (hardware). The only point of difference is that Kubernetes does not have a
 native object storage offering, and addressing this capability gap directly is
 outside of the scope of this RA.

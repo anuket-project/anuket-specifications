@@ -91,7 +91,7 @@ Kubernetes as a VM-based VNF Orchestrator
 Multiple network interfaces on Pods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Related requirements:** :ref:`cntt:ref_model:chapters/chapter04:virtual network interface specifications`
+   **Related requirements:** :ref:`ref_model:chapters/chapter04:virtual network interface specifications`
 
 ..
 
