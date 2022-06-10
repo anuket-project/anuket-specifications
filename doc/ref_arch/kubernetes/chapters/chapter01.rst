@@ -101,7 +101,7 @@ available technology options, incompatibilities, performance and operator constr
 policies and principles may not always be achievable and, thus, require an exception process. These policies
 describe how to handle :ref:`cntt:common/policies:anuket project policies for managing non-conforming technologies`.
 In general, non-conformance with policies is handled through a set of exceptions (please also see
-:ref:`gov/chapters/chapter09:exception types`).
+:ref:`cntt:gov/chapters/chapter09:exception types`).
 
 The following sub-sections list the exceptions to the principles of Anuket specifications and shall be updated whenever
 technology choices, versions and requirements change. The Exceptions have an associated period of validity and this

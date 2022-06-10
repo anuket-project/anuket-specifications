@@ -35,7 +35,7 @@ descriptions of the capabilities and features that the Cloud Infrastructure
 provide to the workloads. The NFVI Software Profile figure below
 depicts a high level view of the software profile features that apply to each
 instance profile (Basic and High Performance). For more information on the
-instance profiles please refer to :ref:`ref_model:chapters/chapter04:profiles`.
+instance profiles please refer to :ref:`cntt:ref_model:chapters/chapter04:profiles`.
 
 .. image:: ../../../ref_model/figures/RM-ch05-sw-profile.png
    :alt: "Figure 5-3 (from RM): NFVI softwareprofiles"
@@ -121,7 +121,7 @@ higher-level runtimes and is considered a reference implementation of the `Open
 Container Initiative (OCI) runtime
 spec <https://github.com/opencontainers/runtime-spec>`__. This specification
 includes details on how an implementation (i.e. an actual container runtime such
-as runc) must, for example, configure resource shares and limits (e.g. CPU,
+as runc) must, for example, configure resource shares and limits (e.g., CPU,
 Memory, IOPS) for the containers that Kubernetes (via the kubelet) schedules on
 that host. This is important to ensure that the features and capabilities
 described in :doc:`ref_model:chapters/chapter05` are
@@ -133,7 +133,7 @@ the more complex/complete high-level container runtimes are used for the general
 management of container images - moving them to where they need to be executed,
 unpacking them, and then passing them to the low-level runtime, which then
 executes the container. These high-level runtimes also include a comprehensive
-API that other applications (e.g. Kubernetes) can use to interact and manage the
+API that other applications (e.g., Kubernetes) can use to interact and manage the
 containers. An example of this type of runtime is containerd, which provides the
 features described above, before passing off the unpacked container image to
 runc for execution.
@@ -145,7 +145,7 @@ This is an interface specification for any container runtime so that it is able
 to integrate with the kubelet on a Kubernetes Node. The CRI decouples the
 kubelet from the runtime that is running in the Host OS, meaning that the code
 required to integrate kubelet with a container runtime is not part of the
-kubelet itself (i.e. if a new container runtime is needed and it uses CRI, it
+kubelet itself (i.e., if a new container runtime is needed and it uses CRI, it
 will work with kubelet). Examples of this type of runtime include containerd
 (with CRI plugin) and cri-o, which is built specifically to work with
 Kubernetes.
@@ -156,8 +156,8 @@ which provides the isolation of Operating System kernels.
 The architecture must support a way to isolate the compute resources of the
 infrastructure itself from the workloads compute resources.
 
-The basic semantics of Kubernetes, and the information found in manifests, defines the built-in Kubernetes objects and
-their desired state.
+The basic semantics of Kubernetes, and the information found in manifests, defines the built-in
+Kubernetes objects and their desired state.
 
 .. list-table:: Kubernetes built-in objects
    :widths: 20 80
@@ -281,7 +281,7 @@ Hardware Acceleration
 ^^^^^^^^^^^^^^^^^^^^^
 
 Hardware Acceleration Abstraction in RM
-:ref:`ref_model:chapters/chapter03:hardware acceleration abstraction` describes types of hardware
+:ref:`cntt:ref_model:chapters/chapter03:hardware acceleration abstraction` describes types of hardware
 acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and
 SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
 
@@ -410,17 +410,17 @@ agreed between the CNF vendors and the CNF operators:
      - Multiplexer/meta- plugin
      - Federated networking manager
      - Default CNI Plugin
-   * - The overlay network encapsulation protocol needs to enable ECMP in the underlay (infra. net.cfg.002)
+   * - The overlay network encapsulation protocol needs to enable ECMP in the underlay (infra.net.cfg.002)
      - Supported via the additional CNI plugin
      - Supported via the additional CNI plugin
      - Supported
      - TBC
-   * - NAT (infra.net. cfg.003)
+   * - NAT (infra.net.cfg.003)
      - Supported via the additional CNI plugin
      - Supported
      - Supported
      - TBC
-   * - Network Policies (Security Groups) (infra.net.cfg. 004)
+   * - Network Policies (Security Groups) (infra.net.cfg.004)
      - Supported via a CNI Network Plugin that supports Network Policies
      - Supported via a CNI Network Plugin that supports Network Policies
      - Supported via a CNI Network Plugin that supports Network Policies
@@ -430,42 +430,42 @@ agreed between the CNF vendors and the CNF operators:
      - Depends on CNI plugin used
      - Depends on CNI plugin used
      - Depends on CNI plugin used
-   * - Centrally administrated and configured (req.inf.ntw.03)
+   * - Centrally administrated and configured (inf.ntw.03)
      - Supported via Kubernetes API Server
      - Supported via Kubernetes API Server
      - Supported via Kubernetes API Server
      - Supported via Kubernetes API Server
-   * - Dual stack IPv4 and IPv6 for Kubernetes workloads (req.inf.ntw.04)
+   * - Dual stack IPv4 and IPv6 for Kubernetes workloads (inf.ntw.04)
      - Supported via the additional CNI plugin
      - Supported
      - Supported
      - Supported
-   * - Integrating SDN controllers (req.inf.ntw.05)
+   * - Integrating SDN controllers (inf.ntw.05)
      - Supported via the additional CNI plugin
      - Supported via the additional CNI plugin
      - TF is an SDN controller
      - TBC
-   * - More than one networking solution (req.inf.ntw.06)
+   * - More than one networking solution (inf.ntw.06)
      - Supported
      - Supported
      - Supported
      - Supported
-   * - Choose whether or not to deploy more than one networking solution (req.inf.ntw.07)
+   * - Choose whether or not to deploy more than one networking solution (inf.ntw.07)
      - Supported
      - Supported
      - Supported
      - Supported
-   * - Kubernetes network model (req.inf.ntw.08)
+   * - Kubernetes network model (inf.ntw.08)
      - Supported via the additional CNI plugin
      - Supported via the additional CNI plugin
      - Supported
      - Supported via the default CNI plugin
-   * - Do not interfere with or cause interference to any interface or network it does not own (req.inf.ntw.09)
+   * - Do not interfere with or cause interference to any interface or network it does not own (inf.ntw.09)
      - Supported
      - Supported
      - Supported
      - Supported
-   * - Cluster wide coordination of IP address assignment (req.inf.ntw.10)
+   * - Cluster wide coordination of IP address assignment (inf.ntw.10)
      - Supported via IPAM CNI plugin
      - Supported
      - Supported
@@ -522,13 +522,13 @@ Figure 3-3 below shows the main building blocks of a Kubernetes networking solut
    networking solution as a whole, may be delivered by the **"Default CNI Plugin"**,
    or the **"CNI multiplexer/meta-plugin"** if it is deployed. For example:
 
-   -  The integration of SDN solutions required by ``req.inf.ntw.05`` is enabled
+   -  The integration of SDN solutions required by ``inf.ntw.05`` is enabled
       via CNI integration.
    -  IP Address Management (**IPAM**) of the various networks can be provided
       by one or more IPAM plugins, which can be part of a CNI plugin, or some other
       component (i.e. external SDN solution) - it is key that there are no overlapping
       IP addresses within a Cluster, and if multiple IPAM solutions are used that
-      they are co-ordinated in some way (as required by ``req.inf.ntw.10``).
+      they are co-ordinated in some way (as required by ``inf.ntw.10``).
 
 -  **Service Mesh**: The well known service meshes are "application service meshes"
    that address and interact with the application layer 7 protocols (eg.: HTTP)
@@ -551,20 +551,20 @@ There are a number of different methods involved in managing, configuring and
 consuming networking resources in Kubernetes, including:
 
 -  The Default Cluster Network can be installed and managed by config files,
-   Kubernetes API Server (e.g. Custom Resource Definitions) or a combination of the
+   Kubernetes API Server (e.g., Custom Resource Definitions) or a combination of the
    two.
--  Additional networking management plane (e.g. CNI multiplexer/meta-plugin or
+-  Additional networking management plane (e.g., CNI multiplexer/meta-plugin or
    federated networking manager) can be installed and managed by config files,
    Kubernetes API Server (e.g. Custom Resource Definitions) or a combination of the
    two.
 -  The connecting of Pods to the Default Cluster Network is handled by the Default
    CNI Plugin (Cluster Network).
 -  The connecting of Pods to the additional networks is handled by the additional
-   networking management plane through the Kubernetes API (e.g. Custom Resource
+   networking management plane through the Kubernetes API (e.g., Custom Resource
    Definitions, Device Plugin API).
--  Configuration of these additional network connections to Pods (i.e. provision of
+-  Configuration of these additional network connections to Pods (i.e., provision of
    an IP address to a Pod) can either be managed through the Kubernetes API (e.g.
-   Custom Resource Definitions) or an external management plane (e.g. dynamic
+   Custom Resource Definitions) or an external management plane (e.g., dynamic
    address assignment from a VPN server).
 
 There are several types of low latency and high throughput networks required by
@@ -584,7 +584,7 @@ traffic require the capability to use a user space networking technology.
    Editors note: The possibility to SR-IOV for DPDK is under discussion.
 
    Refer to software and hardware profile features at
-   :ref:`ref_model:chapters/chapter05:cloud infrastructure software profiles features and requirements`.
+   :ref:`cntt:ref_model:chapters/chapter05:cloud infrastructure software profiles features and requirements`.
 
 Kubernetes Networking Semantics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -798,14 +798,14 @@ from). This ephemeral storage lives and dies with the container and is a
 directory on the worker node on which the container is running. Note, this
 means that the ephemeral storage is mounted locally in the worker node
 filesystem. The filesystem can be physically external to the worker node
-(e.g. iSCSI, NFS, FC) but the container will still reference it as part of the
+(e.g., iSCSI, NFS, FC) but the container will still reference it as part of the
 local filesystem.
 
 Additional storage might also be attached to a container through the use of
 Kubernetes Volumes - this can be storage from the worker node filesystem
 (through hostPaths - not recommended), or it can be external storage that is
 accessed through the use of a Volume Plugin. Volume Plugins allow the use of a
-storage protocol (e.g. iSCSI, NFS) or management API (e.g. Cinder, EBS) for the
+storage protocol (e.g., iSCSI, NFS) or management API (e.g.m Cinder, EBS) for the
 attaching and mounting of storage into a Pod. This additional storage, that is
 attached to a container using a Kubernetes Volume, does not live and die with
 the container but instead follows the lifecycle of the Pod that the container is
@@ -834,8 +834,8 @@ Kubernetes-based workloads.
 There are no restrictions or constraints that Kubernetes places on the storage
 that can be consumed by a workload, in terms of the requirements that are
 defined in RM sections
-:ref:`ref_model:chapters/chapter05:storage configurations` (software)
-and :ref:`ref_model:chapters/chapter05:virtual storage`
+:ref:`cntt:ref_model:chapters/chapter05:storage configurations` (software)
+and :ref:`cntt:ref_model:chapters/chapter05:virtual storage`
 (hardware). The only point of difference is that Kubernetes does not have a
 native object storage offering, and addressing this capability gap directly is
 outside of the scope of this RA.
@@ -843,7 +843,7 @@ outside of the scope of this RA.
 Kubernetes Application package manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To manage the lifecycle (e.g. install and configure, upgrade, uninstall) of complex
+To manage the lifecycle (e.g., install and configure, upgrade, uninstall) of complex
 applications consisting of several Pods and other Kubernetes
 objects, the Reference Architecture mandates the use of a specific Kubernetes
 Application package manager. The Package Manager must be able to manage the
@@ -853,8 +853,8 @@ requirement for the Clusters is to expose a Kubernetes API for the package
 managers to use in the lifecycle management of the applications they manage.
 This must comply with the CNCF CNF Conformance test. As it is not recommended
 to use a Kubernetes Application package manager with a server side component
-installed to the Kubernetes Cluster (e.g.: Tiller), `Helm v3 <https://helm.sh/docs/>`__ is the chosen
-Kubernetes Application package manager.
+installed to the Kubernetes Cluster (e.g., Tiller), `Helm v3 <https://helm.sh/docs/>`__
+is the chosen Kubernetes Application package manager.
 
 Custom Resources
 ~~~~~~~~~~~~~~~~
@@ -911,11 +911,11 @@ Specifically, the scope of the CaaS Manager includes:
    -  LCM of control/worker VM nodes - via IaaS API
    -  or Baremetal provisioning for physical nodes
 
--  Control plane installation (i.e. Kubernetes control plane components on the nodes)
+-  Control plane installation (i.e., Kubernetes control plane components on the nodes)
 
--  Node Host OS customisation (e.g. Kernel customisation)
+-  Node Host OS customisation (e.g., Kernel customisation)
 
--  Management of Cluster add-ons (eg CNIs, CSIs, Service Meshes)
+-  Management of Cluster add-ons (e.g., CNIs, CSIs, Service Meshes)
 
 The CaaS Manager maintains a catalogue of **clusters templates**, used to create clusters specific to the requirements
 of workloads, the underlying virtualisation provider and/or the specific server hardware to be used for the cluster.
