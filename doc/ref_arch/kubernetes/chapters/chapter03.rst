@@ -37,20 +37,20 @@ depicts a high level view of the software profile features that apply to each
 instance profile (Basic and High Performance). For more information on the
 instance profiles please refer to :ref:`ref_model:chapters/chapter04:profiles`.
 
-.. image:: ../../../ref_model/figures/RM-ch05-sw-profile.png
-   :alt: "Figure 5-3 (from RM): NFVI softwareprofiles"
+.. figure:: ../../../ref_model/figures/RM-ch05-sw-profile.png
+   :alt: (from RM): NFVI softwareprofiles
+   :name: (from RM): NFVI softwareprofiles
 
+   (from RM): NFVI softwareprofiles"
 
-**Figure 5-3 (from RM):** NFVI softwareprofiles
+In addition, the RM Figure (:numref:`(from RM): NFVI hardwareprofiles and host associated capabilities` shown below)
+depicts the hardware profile features that apply to each instance profile.
 
-In addition, the RM Figure 5-4 (shown below) depicts the hardware profile features
-that apply to each instance profile.
+.. figure:: ../../../ref_model/figures/RM_chap5_fig_5_4_HW_profile.png
+   :alt: (from RM): NFVI hardwareprofiles and host associated capabilities
+   :name: (from RM): NFVI hardwareprofiles and host associated capabilities
 
-.. image:: ../../../ref_model/figures/RM_chap5_fig_5_4_HW_profile.png
-   :alt: "Figure 5-4 (from RM): NFVI hardwareprofiles and host associated capabilities"
-
-
-**Figure 5-4 (from RM):** NFVI hardwareprofiles and host associated capabilities
+   (from RM): NFVI hardwareprofiles and host associated capabilities
 
 The features and capabilities described in the software and hardware profiles
 are considered throughout this RA, with the RA requirements traceability to the
@@ -67,13 +67,13 @@ The primary interface between the Physical / Virtual Infrastructure and any
 container-relevant components is the Kubernetes Node Operating System. This is
 the OS within which the container runtime exists, and within which the
 containers run (and therefore, the OS whose kernel is shared by the referenced
-containers). This is shown in Figure 3-1 below.
+containers). This is shown in :numref:`Kubernetes Node Operating System` below.
 
-.. image:: ../figures/ch03_hostOS.png
-   :alt: "Figure 3-1: Kubernetes Node Operating System"
+.. figure:: ../figures/ch03_hostOS.png
+   :alt: Kubernetes Node Operating System
+   :name: Kubernetes Node Operating System
 
-
-**Figure 3-1:** Kubernetes Node Operating System
+   Kubernetes Node Operating System
 
 The Kubernetes Node OS (as with any OS) consists of two main components:
 
@@ -250,7 +250,7 @@ Device Plugin Framework
 advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require
 vendor-specific activation and life cycle management, and securely maps these devices to containers.
 
-Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
+:numref:`Device Plugin Operation` shows in four steps how device plugins operate on a Kubernetes node:
 
 -  1: During setup, the cluster administrator (more in :ref:`chapters/chapter03:operator pattern`)
    knows or discovers (as per :ref:`chapters/chapter03:node feature discovery`) what kind of
@@ -262,11 +262,11 @@ Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
 -  4: The scheduler determines a suitable node based on device availability and the local kubelet assigns a specific
    device to the pod's containers.
 
-.. image:: ../figures/Ch3_Figure_Device_Plugin_operation.png
-   :alt: "Figure 3-2: Device Plugin Operation"
+.. figure:: ../figures/Ch3_Figure_Device_Plugin_operation.png
+   :alt: Device Plugin Operation
+   :name: Device Plugin Operation
 
-
-**Figure 3-2:** Device Plugin Operation
+   Device Plugin Operation
 
 An example of often used device plugin is the
 `SR-IOV Network Device Plugin <https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin>`__, that discovers
@@ -377,13 +377,12 @@ virtual vs physical gateways) infrastructure outside of the Cluster:
    nodes with the DC network underlay, allowing each pod or service IP to be
    announced independently.
 
-However, for more complex requirements such as providing connectivity through
-acceleration hardware, there are three approaches that can be taken, with Table 3-1
-showing some of the differences between networking solutions that consist of
-these options. It is important to note that different networking solutions require
-different descriptors from the Kubernetes workloads (specifically, the deployment
-artefacts such as YAML files, etc.), therefore the networking solution should be
-agreed between the CNF vendors and the CNF operators:
+However, for more complex requirements such as providing connectivity through acceleration hardware, there are three
+approaches that can be taken, with :numref:`Comparison of example Kubernetes networking solutions` showing some of the
+differences between networking solutions that consist of these options. It is important to note that different
+networking solutions require different descriptors from the Kubernetes workloads (specifically, the deployment
+artefacts such as YAML files, etc.), therefore the networking solution should be agreed between the CNF vendors and the
+CNF operators:
 
 -  The **Default CNI Plugin** through the use of deployment specific configuration (e.g. `Tungsten Fabric
    <https://tungstenfabric.github.io/website/Tungsten-Fabric-Architecture.html#vrouter-deployment-options>`__)
@@ -396,6 +395,7 @@ agreed between the CNF vendors and the CNF operators:
    to create and manage additional connections for Pods (e.g. `Network Service
    Mesh <https://networkservicemesh.io>`__)
 
+.. _Comparison of example Kubernetes networking solutions:
 .. list-table:: Comparison of example Kubernetes networking solutions
    :widths: 20 20 20 20 20
    :header-rows: 1
@@ -479,7 +479,7 @@ high-performance NICs, FPGAs, InfiniBand adapters, and other similar computing
 resources that may require vendor specific initialisation and setup" to be
 managed and consumed via standard interfaces.
 
-Figure 3-3 below shows the main building blocks of a Kubernetes networking solution:
+:numref:`Kubernetes Networking Architecture` below shows the main building blocks of a Kubernetes networking solution:
 
 -  **Kubernetes Control Plane**: this is the core of a Kubernetes Cluster - the
    apiserver, etcd cluster, kube-scheduler and the various controller-managers. The
@@ -536,16 +536,16 @@ Figure 3-3 below shows the main building blocks of a Kubernetes networking solut
    service meshes are outside the scope of the infrastructure layer of this
    architecture.
 
-.. image:: ../figures/ch03_networking.png
-   :alt: "Figure 3-3: Kubernetes Networking Architecture"
+.. figure:: ../figures/ch03_networking.png
+   :alt: Kubernetes Networking Architecture
+   :name: Kubernetes Networking Architecture
 
+   Kubernetes Networking Architecture
 
 .. raw:: html
 
    <!--The above diagram is maintained here:
    https://wiki.lfnetworking.org/display/LN/CNTT+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
-
-**Figure 3-3:** Kubernetes Networking Architecture
 
 There are a number of different methods involved in managing, configuring and
 consuming networking resources in Kubernetes, including:

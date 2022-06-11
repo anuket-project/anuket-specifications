@@ -17,9 +17,11 @@ the operating system kernel level.
 
 .. image:: ../figures/Model2-cluster-isolation.png
    :alt: "Cluster Isolation"
+   :name: "Cluster Isolation"
 
 .. image:: ../figures/Model1-ns.png
    :alt: "Network Service"
+   :name: "Network Service"
 
 Use cases:
 

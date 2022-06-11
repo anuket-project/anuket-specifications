@@ -164,7 +164,7 @@ Scope
 -----
 
 The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be
-listed and described in subsequent chapters), also shown in Figure 1-1:
+listed and described in subsequent chapters), also shown in :numref:`Kubernetes Reference Architecture scope`
 
 -  Kubernetes capabilities required to conform to the Reference Model requirements
 -  Support for CNFs that consist wholly of containers
@@ -181,10 +181,11 @@ The following items are considered **out of scope**:
    client application and set of libraries that would be part of a modern/cloud native VNFM, not part of the
    infrastructure itself.
 
-.. image:: ../figures/ch01_scope_k8s.png
-   :alt: "Figure 1-1:: Kubernetes Reference Architecture scope"
+.. figure:: ../figures/ch01_scope_k8s.png
+   :alt: Kubernetes Reference Architecture scope
+   :name: Kubernetes Reference Architecture scope
 
-**Figure 1-1:**: Kubernetes Reference Architecture scope
+   Kubernetes Reference Architecture scope
 
 Approach
 --------
