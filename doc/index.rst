@@ -2,13 +2,13 @@ Anuket Specifications
 =====================
 
 -  :ref:`Introduction <common/README:anuket project>`
--  :doc:`ref_model:index`
--  :doc:`ref_arch_openstack:index`
--  :doc:`ref_arch_kubernetes:index`
--  :doc:`ref_cert_RC1:index`
--  :doc:`ref_cert_RC2:index`
--  :doc:`ref_impl_cntt-ri:index`
--  :doc:`ref_impl_cntt-ri2:index`
+-  :doc:`Reference Model (RM) <ref_model:index>`
+-  :doc:`OpenStack based Reference Architecture (RA1) <ref_arch_openstack:index>`
+-  :doc:`Kubernetes based Reference Architecture (RA2) <ref_arch_kubernetes:index>`
+-  :doc:`Reference Conformance for OpenStack (RC1) <ref_cert_RC1:index>`
+-  :doc:`Reference Conformance for Kubernertes (RC2) <ref_cert_RC2:index>`
+-  :doc:`Reference Implementation based on OpenStack (RI1) <ref_impl_cntt-ri:index>`
+-  :doc:`Reference Implementation based on Kubernetes (RI2) <ref_impl_cntt-ri2:index>`
 -  :ref:`Community Guidelines <gov/README:cloud infrastructure telco taskforce - community guidelines>`
 -  :doc:`Code of Conduct <CODE_OF_CONDUCT>`
 - `Terms of Reference <https://github.com/cntt-n/CNTT/raw/master/doc/GSMA_CNTT_Terms_of_Reference.pdf>`_
