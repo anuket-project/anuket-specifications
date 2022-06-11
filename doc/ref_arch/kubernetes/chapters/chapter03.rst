@@ -584,7 +584,7 @@ traffic require the capability to use a user space networking technology.
    Editors note: The possibility to SR-IOV for DPDK is under discussion.
 
    Refer to software and hardware profile features at
-   :ref:`cntt:ref_model:chapters/chapter05:cloud infrastructure software profiles features and requirements`.
+   :ref:`ref_model:chapters/chapter05:cloud infrastructure software profiles features and requirements`.
 
 Kubernetes Networking Semantics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
