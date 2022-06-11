@@ -82,43 +82,152 @@ Ref  Doc Number                Title
 Security Related References
 ---------------------------
 
-===== ==================================== ==========================================================================================================================================================================================================================================================================================================================================================================================
-Ref   Doc Number                           Title
-===== ==================================== ==========================================================================================================================================================================================================================================================================================================================================================================================
-[S1]                                       CSA's Information Security Management through Reflexive Security. Available at `https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/ <https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/>`__.
-[S2]                                       Common Vulnerabilities and Exposures (CVE). Available at `https://cve.mitre.org/ <https://cve.mitre.org/>`__.
-[S3]                                       ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV). Available at `https://www.etsi.org/committee/1427-nfv <https://www.etsi.org/committee/1427-nfv>`__.
-[S4]                                       ETSI Cyber Security Technical Committee (TC CYBER). Available at `https://www.etsi.org/committee/cyber <https://www.etsi.org/committee/cyber>`__
-[S5]  ETSI GS NFV-SEC 014 V3.1.1 (2018-04) Network Functions Virtualisation (NFV) Release 3; "NFV Security; Security Specification for MANO Components and Reference points"; ETSI GS NFV-SEC 014 V3.1.1 (2018-04). Available at `https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/014/03.01.01_60/gs_NFV-SEC014v030101p.pdf <https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/014/03.01.01_60/gs_NFV-SEC014v030101p.pdf>`__.
-[S6]  ETSI GS NFV-SEC 021 V2.6.1 (2019-06) Network Functions Virtualisation (NFV) Release 2; Security; "VNF Package Security Specification"; ETSI GS NFV-SEC 021 V2.6.1 (2019-06). Available at `https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf <https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf>`__.
-[S7]                                       Information Security Management through Reflexive Security. Available at `https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/ <https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/>`__.
-[S8]  ISO/IEC 27000:2018                   Information technology — Security techniques — Information security management systems — Overview and vocabulary. Available at `https://www.iso.org/standard/73906.html <https://www.iso.org/standard/73906.html>`__.
-[S9]                                       "Open Networking & the Security of Open Source Software deployment". Available at `https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/ <https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/>`__.
-[S10]                                      OWASP "Secure Coding Practices - Quick Reference Guide". Available at `https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content <https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content>`__.
-[S11]                                      Software Bill of Materials (SBOM) described by US National Telecommunications and Information Administration (NTIA). Available at `https://www.ntia.gov/SBOM <https://www.ntia.gov/SBOM>`__.
-[S12]                                      Twelve-Factor App. Available at `https://12factor.net/ <https://12factor.net/>`__.
-[S13] ETSI TS 103 457 V1.1.1 (2018-10)     CYBER; Trusted Cross-Domain Interface: Interface to offload sensitive functions to a trusted domain. Available at `http://www.etsi.org/standards-search <http://www.etsi.org/standards-search>`__.
-[S14] MITRE ATT&CK®Framework               CYBER; MITRE ATT&CK: Design and Philosophy, MITRE, March 2020. Available at `https://www.mitre.org/sites/default/files/publications/mitre-getting-started-with-attack-october-2019.pdf <https://www.mitre.org/sites/default/files/publications/mitre-getting-started-with-attack-october-2019.pdf>`__.
-===== ==================================== ==========================================================================================================================================================================================================================================================================================================================================================================================
+.. list-table:: Security Related References
+   :widths: 5 15 80
+   :header-rows: 1
 
-.. _security-related-references-1:
-
-Security Related References
----------------------------
-
-====== ================ ====================================================================================================================================================================================================================================================================================================================================================
-Ref    Doc Number       Title
-====== ================ ====================================================================================================================================================================================================================================================================================================================================================
-[NI1]  NIST SP 800-53   Security and Privacy Controls for Federal Information Systems and Organizations `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf>`__.
-[NI2]  NIST SP 800-53A  Assessing Security and Privacy Controls in Federal Information Systems and Organizations: Building Effective Assessment Plans `https://www.serdp-estcp.org/content/download/47513/453118/file/NIST%20SP%20800-53A%20Rev%204%202013.pdf <https://www.serdp-estcp.org/content/download/47513/453118/file/NIST%20SP%20800-53A%20Rev%204%202013.pdf>`__.
-[NI3]  NIST SP 800-63B  Digital Identity Guidelines `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf>`__.
-[NI4]  NIST SP 800-63B  Digital Identity Guidelines `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf>`__.
-[NI5]  NIST SP 800-123  Guide to General Server Security `https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf>`__.
-[NI6]  NIST SP 800-125  Guide to Security for Full Virtualization Technologies `https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-125.pdf <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-125.pdf>`__.
-[NI7]  NIST SP 800-125a Security Recommendations for Server-based Hypervisor Platforms `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125Ar1.pdf <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125Ar1.pdf>`__.
-[NI8]  NIST SP 800-125b Secure Virtual Network Configuration for Virtual Machine (VM) Protection `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf>`__.
-[NI9]  NIST SP 800-137  Information Security Continuous Monitoring for Federal Information Systems and Organizations `https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf>`__.
-[NI10] NIST SP 800-145  The NIST Definition of Cloud Computing `https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf>`__.
-[NI11] NIST SP 800-190  Application Container Security Guide `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf>`__.
-[NI12] NIST IR 8320A    Hardware-Enabled Security: Container Platform Security Prototype `https://doi.org/10.6028/NIST.IR.8320A <https://doi.org/10.6028/NIST.IR.8320A>`__.
-====== ================ ====================================================================================================================================================================================================================================================================================================================================================
+   * - Ref
+     - Doc Number
+     - Title
+   * - [S1]
+     -
+     - CSA's Information Security Management through Reflexive Security.
+       Available at `https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/
+       <https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/>`__.
+   * - [S2]
+     -
+     - Common Vulnerabilities and Exposures (CVE).
+       Available at `https://cve.mitre.org/
+       <https://cve.mitre.org/>`__.
+   * - [S3]
+     -
+     - ETSI Industry Specification Group Network Functions Virtualisation
+       (ISG NFV).
+       Available at `https://www.etsi.org/committee/1427-nfv
+       <https://www.etsi.org/committee/1427-nfv>`__.
+   * - [S4]
+     -
+     - ETSI Cyber Security Technical Committee (TC CYBER).
+       Available at `https://www.etsi.org/committee/cyber
+       <https://www.etsi.org/committee/cyber>`__.
+   * - [S5]
+     - ETSI GS NFV-SEC 014 V3.1.1 (2018-04)
+     - Network Functions Virtualisation (NFV) Release 3;
+       "NFV Security; Security Specification for MANO Components and Reference
+       points"; ETSI GS NFV-SEC 014 V3.1.1 (2018-04).
+       Available at `https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/014/03.01.01_60/gs_NFV-SEC014v030101p.pdf
+       <https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/014/03.01.01_60/gs_NFV-SEC014v030101p.pdf>`__.
+   * - [S6]
+     - EETSI GS NFV-SEC 021 V2.6.1 (2019-06)
+     - Network Functions Virtualisation (NFV) Release 2; Security;
+       "VNF Package Security Specification";
+       ETSI GS NFV-SEC 021 V2.6.1 (2019-06).
+       Available at `https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf
+       <https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf>`__.
+   * - [S7]
+     -
+     - Information Security Management through Reflexive Security.
+       Available at `https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/
+       <https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/>`__.
+   * - [S8]
+     - ISO/IEC 27000:2018
+     - Information technology - Security techniques -
+       Information security management systems - Overview and vocabulary.
+       Available at `https://www.iso.org/standard/73906.html
+       <https://www.iso.org/standard/73906.html>`__.
+   * - [S9]
+     -
+     - "Open Networking & the Security of Open Source Software deployment".
+       Available at `https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/
+       <https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/>`__.
+   * - [S10]
+     -
+     - OWASP "Secure Coding Practices - Quick Reference Guide".
+       Available at `https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content
+       <https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content>`__.
+   * - [S11]
+     -
+     - Software Bill of Materials (SBOM) described by US National
+       Telecommunications and Information Administration (NTIA).
+       Available at `https://www.ntia.gov/SBOM
+       <https://www.ntia.gov/SBOM>`__.
+   * - [S12]
+     -
+     - Twelve-Factor App.
+       Available at `https://12factor.net/
+       <https://12factor.net/>`__.
+   * - [S13]
+     - ETSI TS 103 457 V1.1.1 (2018-10)
+     - CYBER; Trusted Cross-Domain Interface: Interface to offload sensitive
+       functions to a trusted domain.
+       Available at `http://www.etsi.org/standards-search
+       <http://www.etsi.org/standards-search>`__.
+   * - [S14]
+     - MITRE ATT&CK®Framework
+     - CYBER; MITRE ATT&CK: Design and Philosophy, MITRE, March 2020.
+       Available at `https://www.mitre.org/sites/default/files/publications/mitre-getting-started-with-attack-october-2019.pdf
+       <https://www.mitre.org/sites/default/files/publications/mitre-getting-started-with-attack-october-2019.pdf>`__.
+   * - [NI1]
+     - NIST SP 800-53
+     - Security and Privacy Controls for Federal Information Systems and
+       Organizations.
+       Available at `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf
+       <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf>`__.
+   * - [NI2]
+     - NIST SP 800-53A
+     - Assessing Security and Privacy Controls in Federal Information Systems
+       and Organizations: Building Effective Assessment Plans.
+       Available at `https://www.serdp-estcp.org/content/download/47513/453118/file/NIST%20SP%20800-53A%20Rev%204%202013.pdf
+       <https://www.serdp-estcp.org/content/download/47513/453118/file/NIST%20SP%20800-53A%20Rev%204%202013.pdf>`__.
+   * - [NI3]
+     - NIST SP 800-63B
+     - Digital Identity Guidelines.
+       Available at `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf
+       <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf>`__.
+   * - [NI4]
+     - NIST SP 800-63B
+     - Digital Identity Guidelines.
+       Available at `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf
+       <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf>`__.
+   * - [NI5]
+     - NIST SP 800-123
+     - Guide to General Server Security.
+       Available at `https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf
+       <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf>`__.
+   * - [NI6]
+     - NIST SP 800-125
+     - Guide to Security for Full Virtualization Technologies.
+       Available at `https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-125.pdf
+       <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-125.pdf>`__.
+   * - [NI7]
+     - NIST SP 800-125a
+     - Security Recommendations for Server-based Hypervisor Platforms.
+       Available at `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125Ar1.pdf
+       <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125Ar1.pdf>`__.
+   * - [NI8]
+     - NIST SP 800-125b
+     - Secure Virtual Network Configuration for Virtual Machine (VM)
+       Protection.
+       Available at `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf
+       <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf>`__.
+   * - [NI9]
+     - NIST SP 800-137
+     - Information Security Continuous Monitoring for Federal Information
+       Systems and Organizations.
+       Available at `https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf
+       <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf>`__.
+   * - [NI10]
+     - NIST SP 800-145
+     - The NIST Definition of Cloud Computing.
+       Available at `https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf
+       <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf>`__.
+   * - [NI11]
+     - NIST SP 800-190
+     - Application Container Security Guide.
+       Available at `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf
+       <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf>`__.
+   * - [NI12]
+     - NIST IR 8320A
+     - Hardware-Enabled Security: Container Platform Security Prototype.
+       Available at `https://doi.org/10.6028/NIST.IR.8320A
+       <https://doi.org/10.6028/NIST.IR.8320A>`__.

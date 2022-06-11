@@ -546,8 +546,8 @@ different types of requirements and system properties:
 -  API compliance: This is the most relevant type of test case,
    validating the functional correctness of the system under test. API
    compliance test cases exercise only the specific well-defined APIs
-   described in the reference architecture (see `Interfaces and
-   APIs :doc:`ref_arch_openstack:chapters/chapter05`).
+   described in the reference architecture (see Interfaces and
+   APIs in :doc:`ref_arch_openstack:chapters/chapter05`).
 
 -  Performance: Test cases covering this type of requirement measure
    specific performance characteristics of the system under test as
@@ -589,7 +589,7 @@ The test cases selected for validating compliance of the two profiles
 must cover the functional and non-functional requirements as listed in
 Section Instance Capabilities Mapping
 :ref:`ref_model:chapters/chapter04:virtual network interface specifications`
-and Section `Instance Performance Measurement Mapping
+and Section Instance Performance Measurement Mapping in
 :ref:`ref_model:chapters/chapter04:storage extensions`
 of the reference model.
 

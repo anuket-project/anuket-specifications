@@ -1,10 +1,8 @@
 Cloud Infrastructure Architecture - OpenStack
 =============================================
 
-Introduction
-------------
 
-This Reference Architecture (RA-1) aims to provide an OpenStack
+This Reference Architecture aims to provide an OpenStack
 distribution agnostic reference architecture that includes the Network
 Function Virtualisation Infrastructure (NFVI) and Virtual Infrastructure
 Manager (VIM). The different OpenStack distributions, without the not
@@ -45,11 +43,11 @@ This chapter is organised as follows:
 -  Cloud Infrastructure Management Software (VIM): is how we manage the
    Consumable Infrastructure Resources and Services
 
-   -  VIM Core services (keystone, cinder, nova, neutron etc.)
+   -  VIM Core services (keystone, cinder, nova, neutron, etc.)
 
       -  Tenant Separation
       -  Host aggregates providing resource pooling
-      -  Flavor\* management
+      -  Flavor [#]_ management
 
 -  Underlying Resources: are what provides the resources that allow the
    Consumable Infrastructure Resources and Services to be created and
@@ -63,14 +61,12 @@ This chapter is organised as follows:
       -  Network: Spine/Leaf; East/West and North/South traffic
       -  Storage
 
-..
-
-   -  Please note “flavours” is used in the Reference Model and shall
-      continue to be used in the context of specifying the geometry of
-      the virtual resources. The term “flavor” is used in this document
-      in the OpenStack context including when specifying configurations;
-      the OpenStack term flavor includes the profile configuration
-      information as “extra specs”.
+.. [#] Please note "flavours" is used in the Reference Model and shall
+   continue to be used in the context of specifying the geometry of
+   the virtual resources. The term “flavor” is used in this document
+   in the OpenStack context including when specifying configurations;
+   the OpenStack term flavor includes the profile configuration
+   information as "extra specs".
 
 Consumable Infrastructure Resources and Services
 ------------------------------------------------
@@ -134,8 +130,8 @@ The two storage services offered by Cloud Infrastructure are:
 -  Ephemeral storage
 
 The OpenStack services, Cinder for block storage and Swift for Object
-Storage, are discussed below in Section 3.3 “Cloud Infrastructure
-Management Software (VIM)”.
+Storage, are discussed below in Section "Cloud Infrastructure
+Management Software (VIM)".
 
 Ephemeral data is typically stored on the compute host’s local disks,
 in the form of a file system as part of the provisioning.
@@ -180,14 +176,14 @@ Virtual Networking Neutron standalone
 Neutron is an OpenStack project that provides “network connectivity as a
 service” between interface devices (e.g., vNICs) managed by other
 OpenStack services (e.g., Nova). Neutron allows users to create
-networks, subnets, ports, routers etc. Neutron also facilitates traffic
+networks, subnets, ports, routers, etc. Neutron also facilitates traffic
 isolation between different subnets - within as well as across
 project(s) by using different type drivers/mechanism drivers that use
-VLANs, VxLANs, GRE (Generic Routing Encapsulation) tunnels etc. For
+VLANs, VxLANs, GRE (Generic Routing Encapsulation) tunnels, etc. For
 Neutron API consumer, this is abstracted and provided by Neutron.
 Multiple network segments are supported by Neutron via ML2 plugins to
 simultaneously utilise variety of layer 2 networking technologies like
-VLAN, VxLAN, GRE etc. Neutron also allows to create routers to connect
+VLAN, VxLAN, GRE, etc. Neutron also allows to create routers to connect
 layer 2 networks via “neutron-l3-agent”. In addition, floating IP
 support is also provided that allows a project VM to be accessed using a
 public IP.
@@ -211,8 +207,8 @@ The key messages of the SDN definition are:
 -  Decoupling of control and forwarding functions into control plane and
    data plane
 -  Networking capabilities that can be instantiated, deployed,
-   configured and managed like software. Network control is programmable
-   and supports dynamic, manageable and adaptable networking.
+   configured, and managed like software. Network control is programmable
+   and supports dynamic, manageable, and adaptable networking.
 -  Support for both overlay and underlay networking
 
 OpenStack Neutron supports open APIs and a pluggable backend where
@@ -251,7 +247,7 @@ plane functions with its two components:
 It is based on proven, standards-based networking technologies but
 repurposed to work with virtualised workloads and cloud automation in
 data centres that can range from large scale enterprise data centres to
-much smaller telco DC (aka POPs) . It provides many enhanced features
+much smaller telco DC (aka POPs). It provides many enhanced features
 over the native networking implementations of orchestrators, including:
 
 -  Highly scalable, multi-tenant networking
@@ -286,7 +282,7 @@ Hardware acceleration is the use of specialised hardware to perform some
 function faster than is possible by executing the same function on a
 general-purpose CPU or on a traditional networking (or other I/O) device
 (e.g., NIC, switch, storage controller, etc.). The hardware accelerator
-covers the options for ASICs, SmartNIC, FPGAs, GPU etc. to offload the
+covers the options for ASICs, SmartNIC, FPGAs, GPU, etc. to offload the
 main CPU, and to accelerate workload performance. Cloud Infrastructure
 should manage the accelerators by plugins and provide the acceleration
 capabilities to VNFs.
@@ -333,7 +329,7 @@ used:
 -  Foundation node
 -  Control nodes
 -  Compute nodes
--  Other supporting service nodes e.g. network, shared storage, logging,
+-  Other supporting service nodes, e.g. network, shared storage, logging,
    monitoring and alerting.
 
 Each deployment of OpenStack should be a unique cloud with its own API
@@ -531,7 +527,7 @@ glossary <https://docs.openstack.org/doc-contrib-guide/common/glossary.html>`__,
 Projects represent the base unit of resources (compute, storage and
 network) in OpenStack, in that all assigned resources in OpenStack are
 owned by a specific project. OpenStack offers multi-tenancy by means of
-resource (compute, network and storage)separation via projects.
+resource (compute, network and storage) separation via projects.
 OpenStack offers ways to share virtual resources between projects while
 maintaining logical separation. As an example, traffic separation is
 provided by creating different VLAN ids for neutron networks of
@@ -596,7 +592,7 @@ The number of Compute nodes (for workloads) determines the load on the
 controller nodes and networking traffic and, hence, the number of
 controller nodes needed in the OpenStack cloud; the number of controller
 nodes required is determined on the load placed on these controller
-nodes and the need for High availability and quorum requires at least 3
+nodes and the need for High Availability and quorum requires at least 3
 instances of many of the services on these controller nodes.
 
 Virtualisation
@@ -828,7 +824,8 @@ hypervisor anti-affinity) there would be no service impact.
 *Important to consider:*
 
 -  Where possible servers should be distributed and cabled to reduce the
-   impact of any failure e.g., PDU, rack failure. Because each operator
+   impact of any failure e.g., PDU (Power Distribution Unit), rack
+   failure. Because each operator
    has individual site constraints this document will not propose a
    standard rack layout.
 -  During maintenance of the control plane, whilst the data (forwarding)

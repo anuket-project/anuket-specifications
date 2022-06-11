@@ -14,7 +14,7 @@ In order to promote quick deployment of RI and not re-invent wheels, the CNTT co
 Terminology
 ~~~~~~~~~~~
 
-Terminology in this document will follow :doc:`common/glossary`.
+Terminology in this document will follow :doc:`cntt:common/glossary`.
 
 Scope
 -----
