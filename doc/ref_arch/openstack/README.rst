@@ -6,7 +6,7 @@ OpenStack based Reference Architecture
 Release Information
 -------------------
 
-**Bundle: 8**
+**Bundle: 7**
 
 **Version: 0**
 
@@ -18,13 +18,14 @@ Bundle/Version History
 ============== ================= ===============
 Bundle.Version Date              Note
 ============== ================= ===============
-1.0-alpha      10th January 2020 Snezka Release
-3.0            15th May 2020     Baldy Release
-4.0            25th Sep 2020     Baraque Release
-5.0            29th Jan 2021     Elbrus Release
-6.0            1st Jul 2021      Kali Release
-7.0            4th Jan 2022      Lakelse Release
-8.0            14th Jun 2022     Moselle Release
+1.0            20th Sep 2019     Botrange Release
+2.0-alpha      10th Jan 2020     Snezka Release
+2.0            15th May 2020     Baldy Release
+3.0            25th Sep 2020     Baraque Release
+4.0            29th Jan 2021     Elbrus Release
+5.0            1st Jul 2021      Kali Release
+6.0            4th Jan 2022      Lakelse Release
+7.0            14th Jun 2022     Moselle Release
 ============== ================= ===============
 
 
