@@ -242,7 +242,7 @@ the following specifications:
      - The Kubernetes distribution, product, or installer used in the implementation must be listed in the
        `Kubernetes Distributions and Platforms document <https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMh
        uythuq_GL3N1mlUUK2h0/edit>`__ and marked (X) as conformantfor the Kubernetes version defined in
-       :ref:`index:required versions of most important components`.
+       :ref:`index:required component versions`.
      - :ref:`gen.cnt.03 <chapters/chapter02:Kubernetes Architecture Requirements>`
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
@@ -282,7 +282,7 @@ the following specifications:
      - In alignment with the `Kubernetes version support policy
        <https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions>`__, an implementation must use
        a Kubernetes version as per the subcomponent versions table in
-       :ref:`index:required versions of most important components`.
+       :ref:`index:required component versions`.
      -
      -
    * - ra2.k8s.006
