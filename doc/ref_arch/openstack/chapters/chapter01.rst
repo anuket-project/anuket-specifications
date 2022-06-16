@@ -146,10 +146,51 @@ to address them (for example, resources autoscaling).
 Terminology
 -----------
 
-General terminology definitions can be found in
-:doc:`cntt:common/glossary` and specific terms relating
-to this reference architecture are to be found in OpenStack Related
-Terminology :ref:`cntt:common/glossary:openstack related terminology`.
+.. glossary::
+
+    Cloud Infrastructure
+      A generic term covering **NFVI**, **IaaS** and **CaaS** capabilities -
+      essentially the infrastructure on which a **Workload** can be executed.
+
+.. note::
+
+  `The official OpenStack Glossary <https://docs.openstack.org/image-guide/common/glossary.html>`__
+  is an extensive list of OpenStack-related concepts. Some additional terms
+  used in the Reference Architecture RA-1 or used to relate RA-1 terms with
+  terms defined elsewhere.
+
+
+.. glossary::
+
+    Core (physical)
+      An independent computer processing unit that can independently execute
+      CPU instructions and is integrated with other cores on a multiprocessor
+      (chip, integrated circuit die). Please note that the multiprocessor chip
+      is also referred to as a CPU that is placed in a socket of a computer
+      motherboard.
+
+    Flavor Capability
+      The capability of the Cloud Infrastructure Profile, such as CPU Pinning,
+      NUMA or huge pages.
+
+    Flavor Geometry
+
+      Flavor sizing such as number of vCPUs, RAM, disk, etc.
+
+    Huge pages
+      Physical memory is partitioned and accessed using the basic page unit (in
+      Linux default size of 4 KB). Huge pages, typically 2 MB and 1GB size,
+      allows large amounts of memory to be utilised with reduced overhead. In
+      an NFV environment, huge pages are critical to support large memory pool
+      allocation for data packet buffers. This results in fewer Translation
+      Lookaside Buffers (TLB) lookups, which reduces the virtual to physical
+      pages address translations. Without huge pages enabled high TLB miss
+      rates would occur thereby degrading performance.
+
+    Server
+
+      For the OpenStack Compute API, a server is a virtual machine (VM), a
+      physical machine (bare metal) or a container.
 
 Conventions
 -----------
