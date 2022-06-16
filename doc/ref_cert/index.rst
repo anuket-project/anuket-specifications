@@ -162,7 +162,7 @@ Testing Cookbooks
 leverages the common test case execution proposed by Xtesting. Thanks to
 a simple test case list, this tool deploys plug-and-play `CI/CD
 toolchains in a few
-commands <https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004>`__.
+commands <https://github.com/collivier/ansible-role-xtesting#readme>`__.
 In addition, it supports multiple components such as Jenkins and Gitlab
 CI (test schedulers) and `multiple deployment
 models <https://lists.opnfv.org/g/opnfv-tsc/message/5702>`__ such as
@@ -197,7 +197,7 @@ Here are a couple of publicly available playbooks :
 `Xtesting CI <https://galaxy.ansible.com/collivier/xtesting>`__ only
 requires GNU/Linux as Operating System and asks for a few dependencies
 as described in `Deploy your own Xtesting CI/CD
-toolchains <https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004>`__:
+toolchains <https://github.com/collivier/ansible-role-xtesting#readme>`__:
 
 -  python-virtualenv
 -  git

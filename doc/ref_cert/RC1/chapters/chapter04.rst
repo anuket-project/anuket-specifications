@@ -159,9 +159,9 @@ Additional links:
 
 -  `Homepage <https://functest.readthedocs.io/en/stable-iruya/>`__
 -  `Run Alpine Functest containers
-   (Iruya) <https://wiki.opnfv.org/pages/viewpage.action?pageId=35291769>`__
+   (Wallaby) <https://wiki.anuket.io/display/HOME/Functest+Wallaby>`__
 -  `Deploy your own Functest CI/CD
-   toolchains <https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004>`__
+   toolchains <https://github.com/collivier/ansible-role-xtesting#readme>`__
 -  `Functest gates <https://build.opnfv.org/ci/view/functest/>`__
 
 Yardstick
