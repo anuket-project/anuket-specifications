@@ -48,5 +48,5 @@ Version history
    * - Lakelse
      - 4th Jan 2022
    * - Moselle
-     - 21th Jun 2022
+     - 21st Jun 2022
 
