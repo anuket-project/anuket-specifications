@@ -97,8 +97,8 @@ Wallaby <https://docs.openstack.org/wallaby/projects.html>`__ release.
 While many features and capabilities are conformant with many OpenStack
 releases, this document will refer to features, capabilities and APIs
 that are part of the OpenStack Wallaby release. For ease, this
-Reference Architecture document version can be referred to as “RA-1 OSTK
-Wallaby.”
+Reference Architecture document version can be referred to as "RA-1 OSTK
+Wallaby."
 
 Principles
 ----------
@@ -149,7 +149,7 @@ Terminology
 
 General terminology definitions can be found in
 :doc:`cntt:common/glossary` and specific terms relating
-to this reference architecture are to be found in `OpenStack Related
+to this reference architecture are to be found in OpenStack Related
 Terminology :ref:`cntt:common/glossary:openstack related terminology`.
 
 Conventions
@@ -158,4 +158,10 @@ Conventions
 The key words "must", "must not", "required", "shall", "shall not",
 "should", "should not", "recommended", "may", and "optional"
 in this document are to be interpreted as described in
-`RFC 2119 <https://www.ietf.org/rfc/rfc2119.txt>`_.
+RFC 2119 :cite:p:`rfc2119`.
+
+References
+----------
+
+.. bibliography::
+   :cited:

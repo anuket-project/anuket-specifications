@@ -785,7 +785,7 @@ High Level Logical Network Layout
          - Externally Routable: No
          - Connected to: All nodes except foundation
    * - Tenant
-     - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918
+     - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918 :cite:p:`rfc1918`
        re-usable private networks as controlled by cloud administrator
      -   - Security Domain: Underlay
          - Externally Routable: No
@@ -797,7 +797,7 @@ High Level Logical Network Layout
          - Connected to: controllers
    * - External Provider (FIP)
      - Network with a pool of externally routable IP addresses used by neutron routers
-       to NAT to/from the tenant RFC1918 private networks
+       to NAT to/from the tenant RFC1918 :cite:p:`rfc1918` private networks
      -   - Security Domain: Data Centre
          - Externally routable: Yes
          - Connected to: controllers, OVS computes
