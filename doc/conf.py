@@ -32,34 +32,29 @@ autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
 
 html_theme = "sphinx_material"
-html_sidebars = {
-    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
-}
+#html_sidebars = {
+#    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
+#}
 
 html_static_path = ['_static']
-html_css_files = [
-    'css/custom.css',
-]
-
+#html_css_files = [
+#    'css/custom.css',
+#]
+html_show_sourcelink = False
 html_theme_options = {
-    'repo_name': 'Material for Sphinx',
-    'nav_title': 'Anuket Specifications',
+#    'nav_title': 'Anuket Specifications',
      # Set the color and the accent color
-    'color_primary': 'white',
-    'color_accent': 'teal',
+#    'color_primary': 'white',
+#    'color_accent': 'teal',
     # Visible levels of the global TOC; -1 means unlimited
     'globaltoc_depth': 1,
     # If False, expand all TOC entries
     'globaltoc_collapse': False,
     # If True, show hidden TOC entries
     'globaltoc_includehidden': False,
-    'nav_links': [
-        {
-            'href': 'https://docs.opnfv.org/',
-            'internal': False,
-            'title': 'Anuket Project Documentation'
-        }
-    ]
+    'repo_url': 'https://github.com/cntt-n/cntt',
+    'repo_name': '',
+    'repo_type': 'github',
 }
 
 html_logo = '_static/anuket-logo.png'
