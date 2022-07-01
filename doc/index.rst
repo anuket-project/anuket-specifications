@@ -7,7 +7,7 @@ Anuket Specifications
 -  :doc:`Kubernetes based Reference Architecture (RA2) <ref_arch_kubernetes:index>`
 -  :doc:`Reference Conformance for OpenStack (RC1) <ref_cert_RC1:index>`
 -  :doc:`Reference Conformance for Kubernertes (RC2) <ref_cert_RC2:index>`
--  :doc:`Reference Implementation based on OpenStack (RI1) <ref_impl_cntt-ri:index>`
+-  :doc:`Reference Implementation based on RA1 specifications (RI1) <ref_impl_cntt-ri:index>`
 -  :doc:`Reference Implementation based on RA2 specifications (RI2) <ref_impl_cntt-ri2:index>`
 -  :ref:`Community Guidelines <gov/README:cloud infrastructure telco taskforce - community guidelines>`
 -  :doc:`Code of Conduct <CODE_OF_CONDUCT>`
