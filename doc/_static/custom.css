@@ -8,10 +8,14 @@
     background-color: #16326c;
 }
 
-
 /* Color of links */
 .md-typeset a {
     color: #16326c;
+}
+
+.md-typeset h1 {
+    font-size: 1.8rem;
+    color: rgba(0,0,0,.87);
 }
 
 /* Hiding the content from left side navbar */
