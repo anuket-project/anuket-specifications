@@ -20,6 +20,6 @@
 }
 
 /* Hiding the content from the top navbar */
-.md-tabs__link {
+.md-tabs__list {
     display: none;
 }
