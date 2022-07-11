@@ -39,18 +39,18 @@ instance profiles please refer to :ref:`ref_model:chapters/chapter04:profiles`.
 
 .. figure:: ../../../ref_model/figures/RM-ch05-sw-profile.png
    :alt: (from RM): NFVI softwareprofiles
-   :name: (from RM): NFVI softwareprofiles
+   :name: (from RM): NFVI software profiles
 
-   (from RM): NFVI softwareprofiles"
+   (from RM): NFVI software profiles
 
 In addition, the RM Figure (:numref:`(from RM): NFVI hardwareprofiles and host associated capabilities` shown below)
 depicts the hardware profile features that apply to each instance profile.
 
 .. figure:: ../../../ref_model/figures/RM_chap5_fig_5_4_HW_profile.png
-   :alt: (from RM): NFVI hardwareprofiles and host associated capabilities
-   :name: (from RM): NFVI hardwareprofiles and host associated capabilities
+   :alt: (from RM): NFVI hardware profiles and host associated capabilities
+   :name: (from RM): NFVI hardware profiles and host associated capabilities
 
-   (from RM): NFVI hardwareprofiles and host associated capabilities
+   (from RM): NFVI hardware profiles and host associated capabilities
 
 The features and capabilities described in the software and hardware profiles
 are considered throughout this RA, with the RA requirements traceability to the
