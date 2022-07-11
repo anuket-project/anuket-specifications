@@ -15,13 +15,17 @@ Kubernetes Namespace is a logical representation of namespace(boundary for resou
 This is different from the `linux namespaces <https://en.wikipedia.org/wiki/Linux_namespaces>`__ which are defined at
 the operating system kernel level.
 
-.. image:: ../figures/Model1-ns.png
+.. figure:: ../figures/Model1-ns.png
    :alt: "Network Service"
    :name: "Network Service"
 
-.. image:: ../figures/Model2-cluster-isolation.png
+   Network Service
+
+.. figure:: ../figures/Model2-cluster-isolation.png
    :alt: "Cluster Isolation"
    :name: "Cluster Isolation"
+
+   Cluster Isolation
 
 Use cases:
 

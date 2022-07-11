@@ -150,7 +150,7 @@ will work with kubelet). Examples of this type of runtime include containerd
 (with CRI plugin) and cri-o, which is built specifically to work with
 Kubernetes.
 
-To fulfil ``req.inf.vir.01`` the architecture should support a container runtime
+To fulfil ``inf.vir.01`` the architecture should support a container runtime
 which provides the isolation of Operating System kernels.
 
 The architecture must support a way to isolate the compute resources of the
