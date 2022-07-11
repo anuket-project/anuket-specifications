@@ -43,7 +43,7 @@ instance profiles please refer to :ref:`ref_model:chapters/chapter04:profiles`.
 
    (from RM): NFVI software profiles
 
-In addition, the RM Figure (:numref:`(from RM): NFVI hardwareprofiles and host associated capabilities` shown below)
+In addition, the RM Figure (:numref:`(from RM): NFVI hardware profiles and host associated capabilities` shown below)
 depicts the hardware profile features that apply to each instance profile.
 
 .. figure:: ../../../ref_model/figures/RM_chap5_fig_5_4_HW_profile.png
@@ -542,8 +542,7 @@ managed and consumed via standard interfaces.
 
    Kubernetes Networking Architecture
 
-.. raw:: html
-
+..
    <!--The above diagram is maintained here:
    https://wiki.lfnetworking.org/display/LN/CNTT+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
 

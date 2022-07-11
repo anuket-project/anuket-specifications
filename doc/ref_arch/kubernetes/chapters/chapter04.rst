@@ -327,7 +327,7 @@ the following specifications:
        --node-cidr-mask-size-ipv6 defaults to /24 for IPv4 and /64 for IPv6. kubelet:
        --feature-gates="IPv6DualStack=true". kube-proxy: --cluster-cidr=<IPv4 CIDR>, <IPv6 CIDR>
        --feature-gates="IPv6DualStack=true"
-     - req.inf.ntw.004
+     - inf.ntw.004
      -
    * - ra2.k8s.011
      - Anuket profile labels
