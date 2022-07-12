@@ -3,26 +3,6 @@ Reference Implementation 1 - OpenStack
 
 This is the OpenStack based Reference Implementation (RI-1)
 
-Release Information
--------------------
-
-**Bundle: 3**
-
-**Version: 0**
-
-**Release Date: 25th September 2020**
-
-Bundle/Version History
-----------------------
-
-============== ================= ===============
-Bundle.Version Date              Note
-============== ================= ===============
-1.0-alpha      10th January 2020 Snezka Release
-3.0-alpha      15th May 2020     Baldy Release
-3.0-alpha      25th Sep 2020     Baraque Release
-============== ================= ===============
-
 Overall Status
 --------------
 
