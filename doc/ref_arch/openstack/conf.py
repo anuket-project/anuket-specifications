@@ -7,7 +7,8 @@ exclude_patterns = [
 ]
 extensions = [
     'sphinx.ext.intersphinx',
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'sphinxcontrib.bibtex'
 ]
 html_theme = "sphinx_material"
 linkcheck_ignore = [
@@ -24,3 +25,5 @@ numfig = True
 numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
                  'code-block': 'Listing %s', 'section': 'Section %s'}
 latex_theme = 'howto'
+bibtex_bibfiles = ['refs.bib']
+bibtex_default_style = 'unsrt'
