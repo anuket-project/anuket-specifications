@@ -16,14 +16,12 @@ This is different from the `linux namespaces <https://en.wikipedia.org/wiki/Linu
 the operating system kernel level.
 
 .. figure:: ../figures/Model1-ns.png
-   :alt: "Network Service"
-   :name: "Network Service"
+   :alt: Network Service
 
    Network Service
 
 .. figure:: ../figures/Model2-cluster-isolation.png
-   :alt: "Cluster Isolation"
-   :name: "Cluster Isolation"
+   :alt: Cluster Isolation
 
    Cluster Isolation
 
