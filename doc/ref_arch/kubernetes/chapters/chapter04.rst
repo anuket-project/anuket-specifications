@@ -650,7 +650,7 @@ Architecture they must be implemented as per the following specifications:
 
 Helm version 3 has been chosen as the Application packaging mechanism to ensure compliance with the
 `ONAP ASD NF descriptor specification <https://wiki.onap.org/display/DW/Application+Service+Descriptor+%28ASD%29+and+pac
-kaging+Proposals+for+CNF>`__ and `ETSI SOL0001 rel. 4 MCIOP specification <https://www.etsi.org/deliver/etsi_gs/NFV-SOL/
+kaging+Proposals+for+CNF>`__ and `ETSI SOL001 rel. 4 MCIOP specification <https://www.etsi.org/deliver/etsi_gs/NFV-SOL/
 001_099/001/04.02.01_60/gs_NFV-SOL001v040201p.pdf>`__.
 
 **Table 4-8:** Kubernetes Application Package Manager Specifications
