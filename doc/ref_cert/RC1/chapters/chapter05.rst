@@ -268,9 +268,11 @@ Refer *chapter RC-06* for more details on test case requirements defined
 for VNF under Anuket. Platform should support to managed and execute
 these test cases.
 
-NOTE: For Conformance, only compliance and verification test cases will
-be considered, but in future, it could be extent to validation and
-Performance related testing.
+.. note::
+
+  For Conformance, only compliance and verification test cases will
+  be considered, but in future, it could be extent to validation and
+  Performance related testing.
 
 Compliance
 ^^^^^^^^^^
@@ -597,8 +599,10 @@ consistent with the VNF test category defined by OVP.
        facilitate for benchmarking the VNF performance on different profile
        and scenarios
 
-Note: The four category testing can be gradually supported and in the
-future, will also cover secutiry and other test category.
+.. note::
+
+  The four category testing can be gradually supported and in the
+  future, will also cover secutiry and other test category.
 
 Interaction Type
 ~~~~~~~~~~~~~~~~
@@ -752,4 +756,3 @@ protocol level that VNF operates, it can include:
 
 ETSI spec has also defined the testing method
 https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/001/01.01.01_60/gs_nfv-tst001v010101p.pdf
-

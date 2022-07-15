@@ -61,7 +61,7 @@ completed by Rally scenarios in a few cases. Skipping tests is allowed
 in all OpenStack Gates and only failures rate the review -1 because of
 the multiple capabilities and backends selected in the different Gate
 jobs. The classical `Functest
-containers <https://wiki.opnfv.org/pages/viewpage.action?pageId=29098314>`__
+containers <https://wiki.anuket.io/display/HOME/Functest+Wallaby>`__
 conform to this model which also fits the heterogeneous user
 deployments.
 
@@ -1175,9 +1175,9 @@ Specification of Networking Benchmarks and Measurement Methods for
 NFVI <https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf>`__.
 This type of testing is better suited to measure the networking
 capabilities of a compute node. The `rapid
-scripts <https://wiki.opnfv.org/display/SAM/Rapid+scripting>`__ in
+scripts <https://git.opnfv.org/samplevnf>`__ in
 conjunction with the `PROX
-tool <https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840>`__
+tool <https://docs.anuket.io/projects/samplevnf/en/latest/testing/user/userguide/index.html>`__
 offers an open source implementation for this type of testing.
 
 VMTP

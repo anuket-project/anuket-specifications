@@ -1092,7 +1092,9 @@ implementation.
 
 Metric (MVP): vnf.nfvi.perf.006 and infra.nfvi.perf.004,008
 
-   **Note:**\ *to be completed*
+.. note:
+
+  to be completed
 
 **Compute Metrics Measurement Test Cases**
 
@@ -1110,11 +1112,11 @@ the node to run a workload. In this case, the result is normalized:
    capacity and compute energy efficiency measurements
    infra.nfvi.perf.004,009)
 
-..
+.. note:
 
-   **Note:**\ *to be studied: how to define the different possible test
-   cases, especially the different workload profiles (i.e., pseudo-VNF)
-   to consider*
+  to be studied: how to define the different possible test
+  cases, especially the different workload profiles (i.e., pseudo-VNF)
+  to consider
 
 Resiliency Measurements
 ^^^^^^^^^^^^^^^^^^^^^^^

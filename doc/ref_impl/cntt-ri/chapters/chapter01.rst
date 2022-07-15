@@ -57,7 +57,7 @@ a) OPNFV CIRV project.
 This project is the 'landing' place for CNTT in OPNFV. It is responsible for driving activities of CNTT within OPNFV, working with multiple projects, including Airship, Functest, Dovetail, and ext.. The project team is working closely with the CNTT RI WSs.
 
 Detailed information of this project can be found here:
-https://wiki.opnfv.org/pages/viewpage.action?pageId=47284396
+https://wiki.anuket.io/display/HOME/CIRV
 
 b) OPNFV Infra WG.
 
