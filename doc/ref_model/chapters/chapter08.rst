@@ -191,7 +191,7 @@ Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Br
 these interface points need to provide are defined by the :numref:`Multi-Cloud Interactions Model` below. This provides
 a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-02.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-03.png
    :name: Multi-Cloud Interactions Model
    :alt: Multi-Cloud Interactions Model
 
@@ -208,7 +208,7 @@ The model defines the following core roles:
 
 The set of high level interactions cover:
 
-- Manage Account - covering Account, Users, Subscription, Billing
+- Manage Account & Catalog - covering Account, Users, Subscription, Billing & Catalog of Available Services
 - Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge/Cloud Connection Configuration,
   Connection Security Profile
 - Manage Resource - Resource Pool Management, VM/VNF Management (CPU, Memory, Storage, Network), Image Repository
@@ -260,7 +260,7 @@ The following patterns are visible:
 
 A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in the following diagram:
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-02.png
    :name: Disaggregated SaaS Stereo-Typical Interaction
    :alt: Disaggregated SaaS Stereo-Typical Interaction
 
@@ -284,13 +284,13 @@ The different means of integrating with and managing Cloud Providers is broadly 
 
 The API and Cloud Brokerage models are illustrated in the following diagrams:
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-02.png
    :name: API Brokerage Multi-Cloud Stereo-Typical Interaction
    :alt: API Brokerage Multi-Cloud Stereo-Typical Interaction
 
    API Brokerage Multi-Cloud Stereo-Typical Interaction
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-01.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-02.png
    :name: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
    :alt: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
 
