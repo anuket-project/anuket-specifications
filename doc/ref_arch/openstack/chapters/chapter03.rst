@@ -13,7 +13,7 @@ deployed and operated as expected. The purpose of this chapter is to
 outline all the components required to provide the Cloud Infrastructure
 (NFVI and the VIM) in a consistent and reliable way.
 
-`OpenStack <http://docs.openstack.org>`__ is already very well
+OpenStack :cite:p:`openstack` is already very well
 documented and, hence, this document will describe the specific
 OpenStack services and features, Cloud Infrastructure features and how
 we expect them to be implemented.
@@ -147,17 +147,14 @@ Three types of persistent data storage are supported in OpenStack:
 - Object storage
 - Shared file systems storage
 
-The `OpenStack Storage Table
-<https://docs.openstack.org/arch-design/design-storage/
-design-storage-concepts.html#table-openstack-storage>`__
+The OpenStack Storage Table :cite:p:`openstackstor`
 explains the differences between the storage types and typical use
 cases.
 
 Block storage is dedicated to persistent data. Data is stored
 in the form of volumes. Block storage is managed by OpenStack
-Cinder service and storage Backends. `OpenStack compatible
-storage backend drivers table
-<https://docs.openstack.org/cinder/latest/reference/support-matrix.html>`__
+Cinder service and storage Backends. OpenStack compatible
+storage backend drivers table :cite:p:`openstackcind`
 lists the storage backends compatible with Cinder and their capabilities.
 
 The Object storage is a persistent data storage, not attached to an instance.
@@ -228,7 +225,7 @@ that can be consumed by VNF/CNF.
 Tungsten Fabric (SDN Controller)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Tungsten Fabric <https://tungsten.io/>`__, an open source SDN in Linux
+Tungsten Fabric :cite:p:`tungsten`, an open source SDN in Linux
 Foundation Networking, offers neutron networking through ML2 based
 plugin, additionally it supports advanced networking features beyond
 basic neutron networking via monolithic plugin. It also supports the
@@ -522,8 +519,8 @@ Tenant Isolation
 
 In Keystone v1 and v2 (both deprecated), the term “tenant” was used in
 OpenStack. With Keystone v3, the term “project” got adopted and both the
-terms became interchangeable. According to `OpenStack
-glossary <https://docs.openstack.org/doc-contrib-guide/common/glossary.html>`__,
+terms became interchangeable. According to OpenStack
+glossary :cite:p:`openstackglos`,
 Projects represent the base unit of resources (compute, storage and
 network) in OpenStack, in that all assigned resources in OpenStack are
 owned by a specific project. OpenStack offers multi-tenancy by means of
@@ -607,8 +604,8 @@ of another VM. Such virtualisation is supported by various hypervisors
 available as open-source (KVM, Xen, etc.) as well as commercial
 (Hyper-V, Citrix XenServer, etc.). Selecting a hypervisor depends on the
 workload needs and the features provided by various hypervisors as
-illustrated in Hypervisor `Feature Support
-Matrix <https://docs.openstack.org/nova/latest/user/support-matrix.html>`__.
+illustrated in Hypervisor Feature Support
+Matrix :cite:p:`openstackfeat`.
 OpenStack (Nova) allows the use of various hypervisors within a single
 installation by means of scheduler filters like ComputeFilter,
 ImagePropertiesFilter etc.
@@ -689,8 +686,8 @@ to spines.
 Storage
 ^^^^^^^
 
-`OpenStack <https://docs.openstack.org/arch-design/design-storage.html>`__
-supports many different storage architectures and backends. The choice
+OpenStack supports many different storage architectures and 
+backends :cite:p:`openstackstar`. The choice
 of a particular backend storage is driven by a number of factors
 including: scalability, resiliency, availability, data durability,
 capacity and performance.
