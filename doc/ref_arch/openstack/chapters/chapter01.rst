@@ -38,8 +38,7 @@ Use Cases
 ---------
 
 Several NFV use cases are documented in OpenStack. For more examples and
-details refer to the 
-OpenStack Use cases :cite:p:`openstackuc`.
+details refer to the OpenStack Use cases :cite:p:`openstackuc`.
 
 Examples include:
 
