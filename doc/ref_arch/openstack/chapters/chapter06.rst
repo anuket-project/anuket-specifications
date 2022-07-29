@@ -21,8 +21,8 @@ in this chapter.
 Cloud Infrastructure and VIM Security
 -------------------------------------
 
-In the "Security boundaries and threats" section :cite:p:`openstacksecb`of the 
-OpenStack security guide :cite:p:`openstacksecg`,
+In the "Security boundaries and threats" section :cite:p:`openstacksecb` 
+of the OpenStack security guide :cite:p:`openstacksecg`,
 there is extensive description on security domains, threat
 classifications, and attack vectors. The following only touches on some
 of the topics and at a high level.
