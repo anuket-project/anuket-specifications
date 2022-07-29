@@ -14,7 +14,7 @@ community, and, most importantly, it is widely deployed by the global
 operator community for both internal infrastructure and external facing
 products and services. This means that the operators have existing staff
 with the right skill sets to support a Cloud Infrastructure
-(or Network Function Virtualisation Infrastructure, 
+(or Network Function Virtualisation Infrastructure,
 NFVI :cite:p:`etsinfvinf`)
 deployment into development, test and production. Another reason to
 choose OpenStack is that it has a large active community of vendors and
