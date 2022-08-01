@@ -686,7 +686,7 @@ to spines.
 Storage
 ^^^^^^^
 
-OpenStack supports many different storage architectures and 
+OpenStack supports many different storage architectures and
 backends :cite:p:`openstackstar`. The choice
 of a particular backend storage is driven by a number of factors
 including: scalability, resiliency, availability, data durability,
