@@ -526,7 +526,8 @@ System Hardening Requirements
      - Hardening
      - All systems part of Cloud Infrastructure **must** support hardening as
        defined in CIS Password Policy Guide :cite:p:`cispwd`
-           - :ref:`chapters/chapter06:password policy`
+     - :ref:`chapters/chapter06:password policy`
+
    * - sec.gen.003
      - Hardening
      - All servers part of Cloud Infrastructure **must** support a root of
