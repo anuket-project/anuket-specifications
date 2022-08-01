@@ -654,7 +654,7 @@ Platform and Access Requirements
        authenticate users for them them or to allow access to its resources
        from the trusted domain. In a bidirectional relationship both domain
        are "trusting" and "trusted"
-     - :ref:`chapters/chapter04:logical segregation 
+     - :ref:`chapters/chapter04:logical segregation
        and high availability`
    * - sec.sys.010
      - Access
@@ -1328,7 +1328,7 @@ Infrastructure Requirements
      - The Architecture **must** support allocating certain number of host
        cores for all non-tenant workloads such as for OpenStack services.
        SMT threads can be allocated to individual OpenStack services or their
-       components. Dedicating host cores to certain 
+       components. Dedicating host cores to certain
        workloads (e.g., OpenStack services) :cite:p:`openstackcpu`.
        Please see example, Configuring libvirt compute nodes for CPU pinning
        :cite:p:`openstackcputopo`
@@ -2191,7 +2191,7 @@ Compliance with Standards Recommendations
      - Standards
      - The Cloud Operator, Platform and Workloads **should** follow the
        guidance in the CSA Security Guidance for Critical Areas of Focus in
-       Cloud Computing (latest version)- CSA, 
+       Cloud Computing (latest version)- CSA,
        Cloud Security Alliance :cite:p:`csa`
      -
    * - sec.std.003
