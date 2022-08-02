@@ -1,7 +1,6 @@
 Architecture Requirements
 =========================
 
-
 This chapter includes both "Requirements" that must be satisfied in an
 RA-1 conformant implementation and "Recommendations" that are optional
 for implementation.

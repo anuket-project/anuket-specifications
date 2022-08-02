@@ -1,7 +1,6 @@
 Cloud Infrastructure Architecture - OpenStack
 =============================================
 
-
 This Reference Architecture aims to provide an OpenStack
 distribution agnostic reference architecture that includes the Network
 Function Virtualisation Infrastructure (NFVI) and Virtual Infrastructure
