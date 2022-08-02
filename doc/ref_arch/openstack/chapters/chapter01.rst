@@ -6,8 +6,8 @@ Overview
 
 This Reference Architecture is focussed on OpenStack as the Virtualised
 Infrastructure Manager (VIM) chosen based on the criteria laid out in
-the :doc:`ref_model:chapters/chapter01`.
-`OpenStack <https://docs.openstack.org>`__ has the advantage of being a
+the Reference Model :doc:`ref_model:chapters/chapter01`.
+OpenStack :cite:p:`openstack` has the advantage of being a
 mature and widely accepted open-source technology; a strong ecosystem of
 vendors that support it, the OpenInfra Foundation for managing the
 community, and, most importantly, it is widely deployed by the global
@@ -15,7 +15,7 @@ operator community for both internal infrastructure and external facing
 products and services. This means that the operators have existing staff
 with the right skill sets to support a Cloud Infrastructure
 (or Network Function Virtualisation Infrastructure,
-`NFVI <https://www.etsi.org/deliver/etsi_gs/NFV-INF/001_099/001/01.01.01_60/gs_NFV-INF001v010101p.pdf>`__)
+NFVI :cite:p:`etsinfvinf`)
 deployment into development, test and production. Another reason to
 choose OpenStack is that it has a large active community of vendors and
 operators, which means that any code or component changes needed to
@@ -38,14 +38,13 @@ Use Cases
 ---------
 
 Several NFV use cases are documented in OpenStack. For more examples and
-details refer to the
-`OpenStack docs <https://docs.openstack.org/arch-design/use-cases.html>`__.
+details refer to the OpenStack Use cases :cite:p:`openstackuc`.
 
 Examples include:
 
 -  **Overlay networks**: The overlay functionality design includes
-   OpenStack Networking in `Open
-   vSwitch <https://www.openvswitch.org>`__ GRE tunnel mode. In this
+   OpenStack Networking in Open vSwitch :cite:p:`ovs`
+   GRE tunnel mode. In this
    case, the layer-3 external routers pair with VRRP, and switches pair
    with an implementation of MLAG to ensure that you do not lose
    connectivity with the upstream routing infrastructure.
@@ -92,8 +91,8 @@ Examples include:
 OpenStack Reference Release
 ---------------------------
 
-This Reference Architecture document conforms to the `OpenStack
-Wallaby <https://docs.openstack.org/wallaby/projects.html>`__ release.
+This Reference Architecture document conforms to the OpenStack
+Wallaby :cite:p:`wallaby` release.
 While many features and capabilities are conformant with many OpenStack
 releases, this document will refer to features, capabilities and APIs
 that are part of the OpenStack Wallaby release. For ease, this

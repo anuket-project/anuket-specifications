@@ -28,8 +28,7 @@ operation is called using an appropriate autoscaling web-hook by the
 NFVO/VNFM.
 
 For more information on auto-scaling with Heat please see the OpenStack
-document "`Autoscaling with heat
-<https://docs.openstack.org/senlin/latest/scenarios/autoscaling_heat.html>`_".
+document "Autoscaling with heat :cite:p:`autosc`".
 Please note that the OpenStack Senlin service is still under development
 with major architectural changes made in the OpenStack Ussuri release.
 
