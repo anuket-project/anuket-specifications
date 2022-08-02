@@ -96,14 +96,14 @@ To ensure operational efficiency and save cost and time, the lifecycle
 management for physical and virtual servers must be automated using
 tools which will handle the repetitive tasks like provisioning,
 configuration, and monitoring.
-`Foreman <https://www.theforeman.org/>`_ is commonly used
+Foreman :cite:p:`forem` is commonly used
 to automate the provisoning and management of bare metal infrastructure.
 Foreman is an open-source project, base of several commercial products.
 Foreman provides the full management of PXE configuration and the
 installation for many Operating Systems (CentOS, Fedora, Ubuntu, Debian,
 Red Hat Entreprise Linux, OpenSUSE, etc.).
-Foreman service can be installed by `Ansible playbooks
-<https://docs.ansible.com/>`_.
+Foreman service can be installed by Ansible playbooks
+:cite:p:`ansib`.
 Ansible playbooks are basic tools for the automation of the
 infrastructure virtualization layer deployments.
 
@@ -116,8 +116,7 @@ for the same reasons of efficiency. Open-source installers are
 available to perform the deployments of the OpenStack services.
 A subset of these tools is described below.
 
-- `OpenStack TripleO <http://opendev.org/openstack/tripleo-common>`_,
-  "OpenStack on OpenStack"
+- OpenStack TripleO :cite:p:`tripl`, "OpenStack on OpenStack"
 
   TripleO is an official OpenStack project which allows to deploy and
   manage a production cloud onto bare metal hardware using a subset
@@ -125,13 +124,12 @@ A subset of these tools is described below.
   the creation of an “undercloud” or deployment cloud. The
   undercloud contains the necessary OpenStack components to deploy
   and manage an “overcloud”, representing the deployed cloud.
-  The `architecture document
-  <https://docs.openstack.org/tripleo-docs/latest/install/introduction/architecture.html#project-architecture>`_
+  The architecture document :cite:p:`trarch`
   describes the solution. Nova and Ironic are used in the undercloud to manage
   the servers in bare metal environment. TripleO leverages
   on Heat tempates.
 
-- `Airship v2 <https://www.airshipit.org/>`_
+- Airship v2 :cite:p:`airsh`
 
   Airship is supported by the OpenStack Foundation.
   It is a collection of interopable open-source components allowing
@@ -146,7 +144,7 @@ A subset of these tools is described below.
   a provisioning tool, but also a also a configuration management
   system.
 
-- `StarlingX <https://www.starlingx.io/>`_
+- StarlingX :cite:p:`starl`
 
   StarlingX is dedicated to cloud infrastructure deployment at
   the edge, taking into account the specific edge use cases requirements

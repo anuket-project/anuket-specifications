@@ -31,7 +31,7 @@ In OpenStack, KVM is configured as the default hypervisor for compute
 nodes.
 
 -  Configuration:
-   `OpenStack <https://docs.openstack.org/nova/wallaby/admin/configuration/hypervisor-kvm.html>`__
+   OpenStack :cite:p:`ostk_wallaby_hypervisor_config`
    specifies the steps/instructions to configure KVM:
 
    -  Enable KVM based hardware virtualisation in BIOS. OpenStack
@@ -48,8 +48,8 @@ nodes.
 
    -  KVM Performance Tweaks
 
--  `Hardening the virtualisation
-   layers <https://docs.openstack.org/security-guide/compute/hardening-the-virtualization-layers.html>`__
+-  Hardening the virtualisation
+   layers :cite:p:`ostk_sec_guide_hardening_virt_lyrs`
 
    -  OpenStack recommends minimizing the code base by removing unused
       components
@@ -105,8 +105,8 @@ Additionally, for OpenStack we need to set the following boot parameters:
       environments with a lot of changes, such as a testing lab, or a
       very large cloud footprint (rule of thumb: number of control nodes
       = 3 + quotient (number of compute nodes/1000)).
-   -  The `Services Placement Summary
-      table <https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html>`__
+   -  The Services Placement Summary
+      table :cite:p:`fuel_ref_arch_100`
       specifies the number of instances that are required based upon the
       cloud size (number of nodes).
 
@@ -276,8 +276,8 @@ OpenStack, we also need to set the following boot parameters:
        the I/O, memory, and storage across both sockets), and configuration of
        NIC features. Server BIOS and Host OS kernel command line settings are
        described in
-       `DPDK release notes <http://doc.dpdk.org/guides/rel_notes/>`__ and
-       `DPDK performance reports <http://core.dpdk.org/perf-reports/>`__.
+       DPDK release notes :cite:p:`dpdk_rel_notes` and
+       DPDK performance reports :cite:p:`dpdk_perf`.
        Disabling power settings (like Intel Turbo Boost Technology) brings
        stable performance results, although understanding if and when they
        benefit workloads and enabling them can achieve better performance
@@ -826,7 +826,7 @@ Octavia v2 API conformant Load Balancing
 
 Load balancing is needed for automatic scaling, managing availability
 and changes.
-`Octavia <https://docs.openstack.org/octavia/latest/reference/introduction.html>`__
+Octavia :cite:p:`ostk_latest_octavia`
 is an open-source load balancer for OpenStack, based on HAProxy, and
 replaces the deprecated (as of OpenStack Queens release) Neutron LBaaS.
 The Octavia v2 API is a superset of the deprecated Neutron LBaaS v2 API
@@ -865,16 +865,16 @@ the actions on these resources. Plugins implement these resources and
 actions.
 
 This Reference Architecture supports the ML2 plugin (see below) as well
-as the service plugins including for `LBaaS (Load Balancer as a
-Service) <https://governance.openstack.org/tc/reference/projects/octavia.html>`__,
-and `VPNaaS (VPN as a
-Service) <https://opendev.org/openstack/neutron-vpnaas/>`__. The
-OpenStack wiki provides a list of `Neutron
-plugins <https://wiki.openstack.org/wiki/Neutron#Plugins>`__.
+as the service plugins including for LBaaS (Load Balancer as a
+Service) :cite:p:`ostk_octavia_gov`,
+and VPNaaS (VPN as a
+Service) :cite:p:`ostk_neutron_vpnaas`. The
+OpenStack wiki provides a list of Neutron
+plugins :cite:p:`ostk_neutron_plugins`.
 
-Every Neutron plugin needs to implement a minimum set of common `methods
+Every Neutron plugin needs to implement a minimum set of common methods
 (actions for Wallaby
-release) <https://docs.openstack.org/neutron/latest/contributor/internals/api_extensions.html>`__.
+release) :cite:p:`ostk_neutron_api_ext`.
 Resources can inherit Standard Attributes and thereby have the
 extensions for these standard attributes automatically incorporated.
 Additions to resources, such as additional attributes, must be
@@ -883,18 +883,18 @@ accompanied by an extension.
 :ref:`chapters/chapter05:interfaces and apis` of this Reference
 Architecture provides a list of :ref:`Neutron Extensions<chapters/chapter05:neutron>`.
 The current available
-extensions can be obtained using the `List Extensions
-API <https://docs.openstack.org/api-ref/network/v2/#list-extensions>`__
-and details about an extension using the `Show extension details
-API <https://docs.openstack.org/api-ref/network/v2/#show-extension-details>`__.
+extensions can be obtained using the List Extensions
+API :cite:p:`ostk_nw_ext`
+and details about an extension using the Show extension details
+API :cite:p:`ostk_nw_ext_details`.
 
 **Neutron ML2 integration** The OpenStack Modular Layer 2 (ML2) plugin
 simplifies adding networking technologies by utilising drivers that
 implement these network types and methods for accessing them. Each
 network type is managed by an ML2 type driver and the mechanism driver
 exposes interfaces to support the actions that can be performed on the
-network type resources. The `OpenStack ML2
-documentation <https://wiki.openstack.org/wiki/Neutron/ML2>`__ lists
+network type resources. The OpenStack ML2
+documentation :cite:p:`ostk_neutron_ml2` lists
 example mechanism drivers.
 
 Network quality of service
@@ -944,8 +944,8 @@ Storage systems are available from multiple vendors and can also utilise
 commodity hardware from any number of open-source based storage packages
 (such as LVM, Ceph, NFS, etc.). The proprietary and open-source storage
 systems are supported in Cinder through specific plugin drivers. The
-OpenStack `Cinder
-documentation <https://docs.openstack.org/cinder/latest/reference/support-matrix.html>`__
+OpenStack Cinder
+documentation :cite:p:`ostk_latest_cinder_support`
 specifies the minimum functionality that all storage drivers must
 support. The functions include:
 
@@ -962,22 +962,22 @@ storage requirements helps determine the backends that should be
 deployed by the cloud operator. The common storage backend attachment
 methods include iSCSI, NFS, local disk, etc. and the matrix lists the
 supported methods for each of the vendor drivers. The OpenStack Cinder
-`Available
-Drivers <https://docs.openstack.org/cinder/latest/drivers.html>`__
+Available
+Drivers :cite:p:`ostk_latest_cinder_drivers`
 documentation provides a list of all OpenStack compatible drivers and
 their configuration options.
 
-The `Cinder
-Configuration <https://docs.openstack.org/cinder/latest/configuration/index.html>`__
+The Cinder
+Configuration :cite:p:`ostk_latest_cinder_config`
 document provides information on how to configure Cinder including
 Anuket required capabilities for volume encryption, Policy
-configuration, quotas, etc. The `Cinder
-Administration <https://docs.openstack.org/cinder/latest/admin/index.html>`__
+configuration, quotas, etc. The Cinder
+Administration :cite:p:`ostk_latest_cinder`
 document provides information on the capabilities required by Anuket
 including managing volumes, snapshots, multi-storage backends, migrate
 volumes, etc.
 
-`Ceph <https://ceph.io/en/>`__ is the default Anuket Reference Architecture
+Ceph :cite:p:`ceph` is the default Anuket Reference Architecture
 storage backend and is discussed below.
 
 Ceph Storage Cluster
@@ -1057,7 +1057,7 @@ describe the core and other needed services in more detail.
 Keystone
 ^^^^^^^^
 
-`Keystone <https://docs.openstack.org/keystone/wallaby/>`__ is the
+Keystone :cite:p:`ostk_wallaby_keystone` is the
 authentication service, the foundation of identity management in
 OpenStack. Keystone needs to be the first deployed service. Keystone has
 services running on the control nodes and no services running on the
@@ -1070,7 +1070,7 @@ compute nodes:
 Glance
 ^^^^^^
 
-`Glance <https://docs.openstack.org/glance/wallaby/>`__ is the image
+Glance :cite:p:`ostk_wallaby_glance` is the image
 management service. Glance has only a dependency on the Keystone service
 therefore it is the second one deployed. Glance has services running on
 the control nodes and no services running on the compute nodes:
@@ -1083,7 +1083,7 @@ the control nodes and no services running on the compute nodes:
 Cinder
 ^^^^^^
 
-`Cinder <https://docs.openstack.org/cinder/wallaby/>`__ is the block
+Cinder :cite:p:`ostk_wallaby_cinder` is the block
 device management service, depends on Keystone and possibly Glance to be
 able to create volumes from images. Cinder has services running on the
 control nodes and no services running on the compute nodes: - Cinder API
@@ -1096,7 +1096,7 @@ and NFS.*
 Swift
 ^^^^^
 
-`Swift <https://docs.openstack.org/swift/wallaby/>`__ is the object
+Swift :cite:p:`ostk_wallaby_swift` is the object
 storage management service, Swift depends on Keystone and possibly
 Glance to be able to create volumes from images. Swift has services
 running on the control nodes and the compute nodes:
@@ -1111,7 +1111,7 @@ running on the control nodes and the compute nodes:
 Neutron
 ^^^^^^^
 
-`Neutron <https://docs.openstack.org/neutron/wallaby/>`__ is the
+Neutron :cite:p:`ostk_wallaby_neutron` is the
 networking service, depends on Keystone and has services running on the
 control nodes and the compute nodes. Depending upon the workloads to be
 hosted by the Infrastructure, and the expected load on the controller
@@ -1198,8 +1198,8 @@ With DVR, each compute node also hosts the L3-agent (providing the
 distributed router capability) and this then allows direct instance to
 instance (East-West) communications.
 
-The OpenStack “`High Availability Using Distributed Virtual Routing
-(DVR) <https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html>`__”
+The OpenStack “High Availability Using Distributed Virtual Routing
+(DVR) :cite:p:`ostk_nw_liberty_dvr_ovs`"
 provides an in-depth view into how DVR works and the traffic flow
 between the various nodes and interfaces for three different use cases.
 Please note that DVR was introduced in the OpenStack Juno release and,
@@ -1208,8 +1208,8 @@ out of character for OpenStack documentation.
 
 DVR addresses both scalability and high availability for some L3
 functions but is not fully fault tolerant. For example, North/South SNAT
-traffic is vulnerable to single node (network node) failures. `DVR with
-VRRP <https://docs.openstack.org/neutron/wallaby/admin/config-dvr-ha-snat.html>`__
+traffic is vulnerable to single node (network node) failures. DVR with
+VRRP :cite:p:`ostk_wallaby_nw_svr_snat_config`
 addresses this vulnerability.
 
 Software Defined Networking (SDN)
@@ -1229,7 +1229,7 @@ through neutron plugins by the corresponding SDN agents.
 Nova
 ^^^^
 
-`Nova <https://docs.openstack.org/nova/wallaby/>`__ is the compute
+Nova :cite:p:`ostk_wallaby_nova` is the compute
 management service, depends on all above components and is deployed
 after their deployment. Nova has services running on the control nodes
 and the compute nodes:
@@ -1248,7 +1248,7 @@ configured prior to nova compute starts.
 Ironic
 ^^^^^^
 
-`Ironic <https://docs.openstack.org/ironic/wallaby/>`__ is the bare
+Ironic :cite:p:`ostk_wallaby_ironic` is the bare
 metal provisioning service. Ironic depends on all above components and
 is deployed after them. Ironic has services running on the control nodes
 and the compute nodes:
@@ -1256,14 +1256,14 @@ and the compute nodes:
 -  Ironic API
 -  ironic-conductor which executes operation on bare metal nodes
 
-Note: This is an optional service. The `Ironic
-APIs <https://docs.openstack.org/api-ref/baremetal/>`__ are still under
+Note: This is an optional service. The Ironic
+APIs :cite:p:`ostk_bm` are still under
 development.
 
 Heat
 ^^^^
 
-`Heat <https://docs.openstack.org/heat/wallaby/>`__ is the orchestration
+Heat :cite:p:`ostk_wallaby_heat` is the orchestration
 service using templates to provision cloud resources, Heat integrates
 with all OpenStack services. Heat has services running on the control
 nodes and no services running on the compute nodes:
@@ -1275,15 +1275,15 @@ nodes and no services running on the compute nodes:
 Horizon
 ^^^^^^^
 
-`Horizon <https://docs.openstack.org/horizon/wallaby/>`__ is the Web
+Horizon :cite:p:`ostk_wallaby_horizon` is the Web
 User Interface to all OpenStack services. Horizon has services running
 on the control nodes and no services running on the compute nodes.
 
 Placement
 ^^^^^^^^^
 
-The OpenStack `Placement
-service <https://docs.openstack.org/placement/wallaby/index.html>`__
+The OpenStack Placement
+service :cite:p:`ostk_wallaby_placement`
 enables tracking (or accounting) and scheduling of resources. It
 provides a RESTful API and a data model for the managing of resource
 provider inventories and usage for different classes of resources. In
@@ -1293,10 +1293,10 @@ DISK_GB, the Placement service supports custom resource classes
 as a shared storage pool provided by, say, Ceph. The placement service
 is primarily utilised by nova-compute and nova-scheduler. Other
 OpenStack services such as Neutron or Cyborg can also utilise placement
-and do so by creating `Provider
-Trees <https://docs.openstack.org/placement/latest/user/provider-tree.html>`__.
-The following data objects are utilised in the `placement
-service <https://docs.openstack.org/placement/latest/user/index.html>`__:
+and do so by creating Provider
+Trees :cite:p:`ostk_latest_placement_provider_tree`.
+The following data objects are utilised in the placement
+service :cite:p:`ostk_latest_placement`:
 
 -  Resource Providers provide consumable inventory of one or more
    classes of resources (CPU, memory or disk). A resource provider can
@@ -1326,7 +1326,7 @@ Placement has services running on the control node: - nova-placement-api
 Barbican
 ^^^^^^^^
 
-`Barbican <https://docs.openstack.org/barbican/wallaby/>`__ is the
+Barbican :cite:p:`ostk_wallaby-barbican` is the
 OpenStack Key Manager service. It is an optional service hosted on
 controller nodes. It provides secure storage, provisioning, and
 management of secrets as passwords, encryption keys and X.509
@@ -1344,20 +1344,19 @@ Confidentiality and Integrity of data at rest and in transit.”.
 Cyborg
 ^^^^^^
 
-`Cyborg <https://docs.openstack.org/cyborg/wallaby/>`__ is the OpenStack
+Cyborg :cite:p:`ostk_wallaby_cyborg` is the OpenStack
 project for the general purpose management framework for accelerators
 (including GPUs, FPGAs, ASIC-based devices, etc.), and their lifecycle
 management.
 
-Cyborg will support only a subset of the `Nova
-operations <https://docs.openstack.org/api-guide/compute/server_concepts.html>`__;
+Cyborg will support only a subset of the Nova
+operations :cite:p:`ostk_svr`;
 the set of Nova operations supported in Cyborg depends upon the merge of
 a set of Nova patches in Cyborg. In Wallaby, not all the required Nova
 patches have been merged. The list of Cyborg operations with Nova
-dependencies supported in Wallaby is listed
-`here <https://docs.openstack.org/cyborg/wallaby/reference/support-matrix.html>`__;
-the Nova operations supported in Cyborg at any given time is also
-`available <https://docs.openstack.org/cyborg/latest/reference/support-matrix.html>`__.
+dependencies supported in Wallaby are listed in :cite:p:`ostk_wallaby_cyborg_support`;
+the Nova operations supported in Cyborg at any given time are also
+available in :cite:p:`ostk_latest_cyborg_support`.
 
 Cyborg supports:
 
@@ -1370,8 +1369,8 @@ Accelerators can be of type:
 -  Hardware (device types): FPGA, GPU, ARM SoC, NVMe SSD, CCIX based
    Caches, …
 
-The `Cyborg
-architecture <https://docs.openstack.org/cyborg/latest/user/architecture.html>`__
+The Cyborg
+architecture :cite:p:`ostk_latest_cyborg_arch`
 consists of the cyborg-api, cyborg-conductor, cyborg-db, cyborg-agent,
 and generic device type drivers. cyborg-api, cyborg-conductor and
 cyborg-db are hosted on control nodes. cyborg-agent, which runs on
@@ -1379,8 +1378,8 @@ compute nodes, interacts with generic device type drivers on those
 nodes. These generic device type drivers are an abstraction of the
 vendor specific drivers; there is a generic device type driver for each
 device type (see above for list of some of the device types). The
-current list of the supported vendor drivers is listed under “`Driver
-Support <https://docs.openstack.org/cyborg/latest/reference/support-matrix.html>`__”.
+current list of the supported vendor drivers is listed under “Driver
+Support :cite:p:`ostk_latest_cyborg_support`”.
 
 Containerised OpenStack Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1494,7 +1493,7 @@ set up the flavors as specified in the tables below.
 
 The flavor create command and the mandatory and optional configuration
 parameters is documented in
-`OpenStack Flavors <https://docs.openstack.org/nova/latest/user/flavors.html>`_.
+OpenStack Flavors :cite:p:`ostk_latest_nova_flavors`.
 
 Logical segregation and high availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1554,8 +1553,8 @@ with capacity somewhere in between the large data centres and edge
 locations, respectively. The mapping of various terms, including the
 Reference Model terminology specified in Table `8-5
 :ref:`ref_model:chapters/chapter08:comparison of deployment topologies and edge terms`
-and `Open Glossary of Edge Computing
-<https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md>`__
+and Open Glossary of Edge Computing
+:cite:p:`edge_glossary`
 is as follows:
 
 -  Central Cloud Centre: Large Centralised Data Centre, Regional Data
@@ -1665,12 +1664,12 @@ The Reference Model Chapter
 presents the deployment environment characteristics, infrastructure
 characteristics and new values for the Infrastructure Profiles at the Edge.
 
-The `Edge computing whitepaper
-<https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/>`__
+The Edge computing whitepaper
+:cite:p:`ostk_uses_edge_arch_design`
 includes information such as the services that run on various nodes. The
-information from the whitepaper coupled with that from the `OpenStack
+information from the whitepaper coupled with that from the OpenStack
 Reference Architecture
-<https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary>`__
+:cite:p:`fuel_ref_arch_100_svcs_placement`
 for 100, 300 and 500 nodes will help in deciding which OpenStack and
 other services (such as database, messaging) run on which nodes in what
 Cloud Centre and the number of copies that should be deployed. These
@@ -1715,7 +1714,7 @@ cached from the central site. Two ptions exist:
   in Nova since the OpenStack Ussuri release.
 
 Image caching and considerations for its use are discussed in the OpenStack document
-`Image Caching <https://docs.openstack.org/nova/latest/admin/image-caching.html#image-pre-caching>`_.
+Image Caching :cite:p:`ostk_latest_nova_pre_caching`.
 
 
 Edge Cloud Deployment Tools
@@ -1724,12 +1723,12 @@ Edge Cloud Deployment Tools
 Deployment at the Edge requires support for large scale deployment. A
 number of open-source tools are available for the purpose including:
 
--  `Airship <https://docs.airshipit.org/>`__: declaratively configure,
+-  Airship :cite:p:`airsh`: declaratively configure,
    deploy and maintain an integrated virtualisation and containerisation
    platform
--  `Starling-X <https://www.starlingx.io/>`__: cloud infrastructure
+-  Starling-X :cite:p:`starl`: cloud infrastructure
    software stack for the edge
--  `Triple-O <https://wiki.openstack.org/wiki/TripleO>`__: for
+-  Triple-O :cite:p:`tripl`: for
    installing, upgrading and operating OpenStack clouds
 
 These installers are described in more details in

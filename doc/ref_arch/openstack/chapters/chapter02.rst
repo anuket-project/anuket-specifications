@@ -1,8 +1,7 @@
 Architecture Requirements
 =========================
 
-
-This chapter includes both "Requirements" that must be satisifed in an
+This chapter includes both "Requirements" that must be satisfied in an
 RA-1 conformant implementation and "Recommendations" that are optional
 for implementation.
 
@@ -525,9 +524,9 @@ System Hardening Requirements
    * - sec.gen.002
      - Hardening
      - All systems part of Cloud Infrastructure **must** support hardening as
-       defined in `CIS Password Policy Guide
-       <https://www.cisecurity.org/white-papers/cis-password-policy-guide/>`__
+       defined in CIS Password Policy Guide :cite:p:`cispwd`
      - :ref:`chapters/chapter06:password policy`
+
    * - sec.gen.003
      - Hardening
      - All servers part of Cloud Infrastructure **must** support a root of
@@ -573,8 +572,7 @@ System Hardening Requirements
      - The Cloud Infrastructure **must** support encrypted storage, for
        example, block, object and file storage, with access to encryption
        keys restricted based on a need to know
-       (`Controlled Access Based on the Need to Know
-       <https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/>`__)
+       (Controlled Access Based on the Need to Know :cite:p:`ciscontrols`)
      - :ref:`chapters/chapter06:\
        confidentiality and integrity`
    * - sec.gen.012
@@ -1330,11 +1328,10 @@ Infrastructure Requirements
      - The Architecture **must** support allocating certain number of host
        cores for all non-tenant workloads such as for OpenStack services.
        SMT threads can be allocated to individual OpenStack services or their
-       components. `Dedicating host cores to certain workloads
-       (e.g., OpenStack services)
-       <https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set>`__.
-       Please see example, `Configuring libvirt compute nodes for CPU pinning
-       <https://docs.openstack.org/nova/latest/admin/cpu-topologies.html>`__
+       components. Dedicating host cores to certain
+       workloads (e.g., OpenStack services) :cite:p:`openstackcpu`.
+       Please see example, Configuring libvirt compute nodes for CPU pinning
+       :cite:p:`openstackcputopo`
      - :ref:`chapters/chapter03:\
        cloud partitioning: host aggregates, availability zones`
    * - inf.com.09
@@ -1395,9 +1392,8 @@ Infrastructure Requirements
      - The Architecture **must** support multiple networking options for Cloud
        Infrastructure to support various infrastructure profiles (Basic and
        High Performance)
-     - :ref:`chapters/chapter04:\
-       neutron extensions` and `OpenStack Neutron Plugins
-       <https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers>`__
+     - :ref:`chapters/chapter04:neutron extensions`
+        and OpenStack Neutron Plugins :cite:p:`openstackneut`
    * - inf.nw.16
      - Network
      - The Architecture **must** support dual stack IPv4 and IPv6 for tenant
@@ -1437,8 +1433,7 @@ VIM Requirements
    * - vim.08
      - General
      - The Architecture **must** support resource tagging
-     - `OpenStack Resource Tags
-       <https://specs.openstack.org/openstack/api-wg/guidelines/tags.html>`__
+     - OpenStack Resource Tags :cite:p:`openstacktags`
 
 Interfaces & APIs Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1602,9 +1597,8 @@ General Recommendations
        However, where state is required it must be kept external to the
        component
      - OpenStack consists of both stateless and stateful services where the
-       stateful services utilise a database. For latter see `Configuring the
-       stateful services
-       <https://docs.openstack.org/ha-guide/control-plane-stateful.html>`__
+       stateful services utilise a database. For latter see Configuring the
+       stateful services :cite:p:`openstackha`
    * - gen.cnt.02
      - Cloud nativeness
      - The Architecture **should** consist of service components implemented
@@ -1615,8 +1609,7 @@ General Recommendations
      - The Architecture **should** support policy driven auto-scaling.
      - This requirement is currently not addressed but will likely be
        supported through
-       `Senlin <https://docs.openstack.org/senlin/wallaby/>`__, cluster
-       management service
+       Senlin :cite:p:`openstacksen`, cluste management service
    * - gen.rsl.02
      - Resiliency
      - The Architecture **should** support resilient OpenStack service
@@ -1700,8 +1693,7 @@ Infrastructure Recommendations
      - Acceleration
      - The Architecture **should** support Cloud Infrastructure Acceleration
        (such as SmartNICs)
-     - `OpenStack Future - Specs defined
-       <https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html>`__
+     - OpenStack Future - Specs defined :cite:p:`openstackneutovs`
    * - inf.acc.03
      - Acceleration
      - The Architecture **may** rely on on SR-IOV PCI-Pass through to provide
@@ -2013,7 +2005,7 @@ Open-Source Software Security Recommendations
      - A Software Bill of Materials (SBOM) **should** be provided or build,
        and maintained to identify the software components and their origins.
        Inventory of software components
-     - `NTIA SBOM <https://www.ntia.gov/SBOM>`__
+     - NTIA SBOM :cite:p:`ntiasbom`
 
 IaaC security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2192,46 +2184,44 @@ Compliance with Standards Recommendations
      - Notes
    * - sec.std.001
      - Standards
-     - The Cloud Operator **should** comply with `Center for Internet Security
-       CIS Controls <https://www.cisecurity.org/>`__
+     - The Cloud Operator **should** comply with Center for Internet Security
+       CIS Controls :cite:p:`cis`
      -
    * - sec.std.002
      - Standards
      - The Cloud Operator, Platform and Workloads **should** follow the
        guidance in the CSA Security Guidance for Critical Areas of Focus in
-       Cloud Computing (latest version)- CSA, `Cloud Security Alliance
-       <https://cloudsecurityalliance.org/>`__
+       Cloud Computing (latest version)- CSA,
+       Cloud Security Alliance :cite:p:`csa`
      -
    * - sec.std.003
      - Standards
      - The Platform and Workloads **should** follow the guidance in the
-       `OWASP Cheat Sheet Series (OCSS)
-       <https://github.com/OWASP/CheatSheetSeries>`__ - OWASP, `Open Web
-       Application Security Project <https://www.owasp.org>`__
+       OWASP Cheat Sheet Series (OCSS) :cite:p:`ocss` - OWASP,
+       Open Web Application Security Project :cite:p:`owasp`
      -
    * - sec.std.004
      - Standards
      - The Cloud Operator, Platform and Workloads **should** ensure that their
-       code is not vulnerable to the `OWASP Top Ten Security Risks
-       <https://owasp.org/www-project-top-ten/>`__
+       code is not vulnerable to the OWASP Top Ten Security Risks
+       :cite:p:`owaspten`
      -
    * - sec.std.005
      - Standards
      - The Cloud Operator, Platform and Workloads **should** strive to improve
-       their maturity on the `OWASP Software Maturity Model (SAMM)
-       <https://owaspsamm.org/blog/2019/12/20/version2-community-release/>`__
+       their maturity on the OWASP Software Maturity Model (SAMM)
+       :cite:p:`samm`
      -
    * - sec.std.006
      - Standards
      - The Cloud Operator, Platform and Workloads should utilise the
-       `OWASP Web Security Testing Guide
-       <https://github.com/OWASP/wstg/tree/master/document>`__
+       OWASP Web Security Testing Guide :cite:p:`wstg`
      -
    * - sec.std.007
      - Standards
      - The Cloud Operator, and Platform **should** satisfy the requirements
-       for Information Management Systems specified in `ISO/IEC 27001
-       <https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en>`__;
+       for Information Management Systems specified in ISO/IEC 27001
+       :cite:p:`isoiec27001`;
        ISO/IEC 27001 is the international Standard for best-practice
        information security management systems (ISMSs)
      -
@@ -2239,14 +2229,13 @@ Compliance with Standards Recommendations
      - Standards
      - The Cloud Operator, and Platform **should** implement the Code of
        practice for Security Controls specified
-       `ISO/IEC 27002:2013 (or latest)
-       <https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en>`__
+       ISO/IEC 27002:2013 (or latest) :cite:p:`isoiec27002`
      -
    * - sec.std.009
      - Standards
      - The Cloud Operator, and Platform **should** implement the
-       `ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques
-       <https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en>`__;
+       ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques
+       :cite:p:`isoiec27032`;
        ISO/IEC 27032 is the international Standard focusing explicitly on
        cybersecurity
      -
