@@ -1,0 +1,29 @@
+/* Color of the top header */
+.md-header {
+    background-color: #16326c;
+}
+
+/* Color of the bottom header */
+.md-tabs {
+    background-color: #16326c;
+}
+
+/* Color of links */
+.md-typeset a {
+    color: #16326c;
+}
+
+.md-typeset h1 {
+    font-size: 1.8rem;
+    color: rgba(0,0,0,.87);
+}
+
+/* Hiding the content from left side navbar */
+.md-nav__title {
+    display: none;
+}
+
+/* Hiding the content from the top navbar */
+.md-tabs__list {
+    display: none;
+}

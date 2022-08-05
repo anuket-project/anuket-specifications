@@ -2,13 +2,11 @@
 {% extends "!layout.html" %}
 
 {# Custom CSS overrides #}
-{% set css_files = css_files + ['_static/css/custom.css'] %}
-
+{% set css_files = css_files + ['_static/custom.css'] %}
 
 {%- block extrahead %}
-    <link rel="apple-touch-icon" sizes="180x180" href="_static/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="_static/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="_static/favicon-16x16.png">
-    <link rel="manifest" href="_static/site.webmanifest">    
-    {{ super() }}
-{% endblock %}
+{# Add custom things to the head HTML tag #}
+{# Call the parent block #}
+
+{{ super() }}
+{%- endblock %}
