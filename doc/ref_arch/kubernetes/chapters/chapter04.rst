@@ -15,14 +15,14 @@ identifiers, which will follow the pattern: ``ra2.<section>.<index>``, e.g.,
 specifications will then be used as requirements input for the Kubernetes
 Reference Implementation and any vendor or community implementations.
 
-Figure 4-1 below shows the architectural components that are described in the
+:numref:`Kubernetes Reference Architecture` below shows the architectural components that are described in the
 subsequent sections of this chapter.
 
-.. image:: ../figures/ch04_k8s_architecture.png
-   :alt: "Figure 4-1: Kubernetes Reference Architecture"
+.. figure:: ../figures/ch04_k8s_architecture.png
+   :alt: Kubernetes Reference Architecture
+   :name: Kubernetes Reference Architecture
 
-
-**Figure 4-1:** Kubernetes Reference Architecture
+   Kubernetes Reference Architecture
 
 Kubernetes Node
 ---------------
@@ -327,7 +327,7 @@ the following specifications:
        --node-cidr-mask-size-ipv6 defaults to /24 for IPv4 and /64 for IPv6. kubelet:
        --feature-gates="IPv6DualStack=true". kube-proxy: --cluster-cidr=<IPv4 CIDR>, <IPv6 CIDR>
        --feature-gates="IPv6DualStack=true"
-     - req.inf.ntw.004
+     - inf.ntw.004
      -
    * - ra2.k8s.011
      - Anuket profile labels
@@ -652,8 +652,6 @@ Helm version 3 has been chosen as the Application packaging mechanism to ensure 
 `ONAP ASD NF descriptor specification <https://wiki.onap.org/display/DW/Application+Service+Descriptor+%28ASD%29+and+pac
 kaging+Proposals+for+CNF>`__ and `ETSI SOL001 rel. 4 MCIOP specification <https://www.etsi.org/deliver/etsi_gs/NFV-SOL/
 001_099/001/04.02.01_60/gs_NFV-SOL001v040201p.pdf>`__.
-
-**Table 4-8:** Kubernetes Application Package Manager Specifications
 
 Kubernetes workloads
 --------------------
