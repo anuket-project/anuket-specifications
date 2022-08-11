@@ -1,5 +1,5 @@
-project = 'Anuket Reference Implementation for Kubernetes'
-html_title = "Anuket Reference Implementation for Kubernetes"
+project = 'Anuket Reference Implementation based on RA1 specifications (RI1)'
+html_title = "Anuket Reference Implementation based on RA1 specifications (RI1)"
 copyright = '2021, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
