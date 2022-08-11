@@ -4,7 +4,7 @@ OpenStack based Reference Architecture
 
 .. toctree::
    :glob:
-   :maxdepth: 1
+   :maxdepth: 3
    :numbered:
 
    chapters/*
