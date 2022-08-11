@@ -1,4 +1,4 @@
-project = 'Anuket Kubernetes based Reference Architecture (RA2)'
+project = 'Anuket Reference Architecture for Kubernetes based cloud infrastructure (RA2)'
 copyright = '2022, Anuket'
 author = 'Anuket'
 exclude_patterns = [
