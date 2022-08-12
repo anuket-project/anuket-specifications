@@ -1,6 +1,8 @@
-================================================
-Anuket Reference Conformance for OpenStack (RC1)
-================================================
+=========================================================
+Reference Conformance for RA1 based Implementations (RC1)
+=========================================================
+
+This is the OpenStack based reference conformance (RC1)
 
 .. toctree::
    :glob:
