@@ -1,5 +1,6 @@
-Cloud iNfrastructure Telco Taskforce - Community Guidelines
-===========================================================
+====================
+Community Guidelines
+====================
 
 Table of contents
 -----------------
