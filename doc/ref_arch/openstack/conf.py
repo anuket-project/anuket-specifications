@@ -1,4 +1,4 @@
-project = 'Anuket OpenStack based Reference Architecture'
+project = 'Anuket Reference Architecture for OpenStack based cloud infrastructure (RA1)'
 copyright = '2021, Anuket'
 author = 'Anuket'
 exclude_patterns = [
