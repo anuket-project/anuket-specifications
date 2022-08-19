@@ -1,5 +1,5 @@
 =====================================================================
-Reference Architecture for OpenStack based cloud infrastructure (RA1)
+Reference Architecture for OpenStack based Cloud Infrastructure (RA1)
 =====================================================================
 
 .. toctree::
