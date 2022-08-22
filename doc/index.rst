@@ -5,7 +5,7 @@ Anuket Specifications
     :maxdepth: 1
 
     common/README
-    gov/README
+    gov/index
     CODE_OF_CONDUCT
 
 -  :doc:`ref_model:index`
