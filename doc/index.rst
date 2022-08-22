@@ -15,7 +15,7 @@ Anuket Specifications
 -  :doc:`ref_cert_RC2:index`
 -  :doc:`ref_impl_cntt-ri:index`
 -  :doc:`ref_impl_cntt-ri2:index`
-- `Terms of Reference <GSMA_CNTT_Terms_of_Reference.pdf>`_
+- `Terms of Reference <https://github.com/cntt-n/CNTT/raw/master/doc/GSMA_CNTT_Terms_of_Reference.pdf>`_
 - `The License (Creative Commons Attribution 4.0 International) <https://creativecommons.org/licenses/by/4.0/legalcod
   e>`_
 
