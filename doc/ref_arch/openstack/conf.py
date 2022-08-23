@@ -1,6 +1,6 @@
 project = 'Anuket Reference Architecture for OpenStack based cloud infrastructure (RA1)'
-copyright = '2021, Anuket'
-author = 'Anuket'
+copyright = '2022, Anuket. Licensed under CC BY 4.0'
+author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
     '.tox',
     'README.rst'
