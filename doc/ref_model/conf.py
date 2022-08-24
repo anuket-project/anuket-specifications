@@ -7,7 +7,8 @@ exclude_patterns = [
 ]
 extensions = [
     'sphinx.ext.intersphinx',
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'sphinxcontrib.bibtex'
 ]
 html_theme = "sphinx_material"
 intersphinx_mapping = {
@@ -24,3 +25,5 @@ autosectionlabel_maxdepth = 4
 numfig = True
 numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
                  'code-block': 'Listing %s', 'section': 'Section %s'}
+bibtex_bibfiles = ['refs.bib']
+bibtex_default_style = 'unsrt'
