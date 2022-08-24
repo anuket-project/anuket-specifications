@@ -6,7 +6,7 @@ Overview
 
 This Reference Architecture is focussed on OpenStack as the Virtualised
 Infrastructure Manager (VIM) chosen based on the criteria laid out in
-the Reference Model :doc:`ref_model:chapters/chapter01`.
+the Cloud Infrastructure Reference Model :cite:p:`refmodel`.
 OpenStack :cite:p:`openstack` has the advantage of being a
 mature and widely accepted open-source technology; a strong ecosystem of
 vendors that support it, the OpenInfra Foundation for managing the
