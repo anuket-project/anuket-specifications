@@ -548,6 +548,7 @@ System Hardening Requirements
 .. list-table:: Reference Model Requirements - System Hardening Requirements
    :widths: 15 20 45 20
    :header-rows: 1
+   :class: longtable
 
    * - Reference
      - sub-category
@@ -637,6 +638,7 @@ Platform and Access Requirements
                 Requirements
    :widths: 15 20 45 20
    :header-rows: 1
+   :class: longtable
 
    * - Reference
      - sub-category
@@ -1007,6 +1009,7 @@ can trigger alerts and notifications for appropriate action.
                 Requirements
    :widths: 15 20 45 20
    :header-rows: 1
+   :class: longtable
 
    * - Reference
      - sub-category
@@ -1326,6 +1329,7 @@ Infrastructure Requirements
 .. list-table:: Infrastructure Requirements
    :widths: 15 20 45 20
    :header-rows: 1
+   :class: longtable
 
    * - Reference
      - sub-category
@@ -1660,6 +1664,7 @@ Infrastructure Recommendations
 .. list-table:: Infrastructure Recommendations
    :widths: 15 20 45 20
    :header-rows: 1
+   :class: longtable
 
    * - Reference
      - sub-category
@@ -2219,6 +2224,7 @@ Compliance with Standards Recommendations
 .. list-table:: Compliance with Security Recommendations
    :widths: 15 20 45 20
    :header-rows: 1
+   :class: longtable
 
    * - Reference
      - sub-category
