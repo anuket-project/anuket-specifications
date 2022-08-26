@@ -159,23 +159,12 @@ Terminology
   used in the Reference Architecture RA-1 or used to relate RA-1 terms with
   terms defined elsewhere.
 
-
-.. glossary::
-
     Core (physical)
       An independent computer processing unit that can independently execute
       CPU instructions and is integrated with other cores on a multiprocessor
       (chip, integrated circuit die). Please note that the multiprocessor chip
       is also referred to as a CPU that is placed in a socket of a computer
       motherboard.
-
-    Flavor Capability
-      The capability of the Cloud Infrastructure Profile, such as CPU Pinning,
-      NUMA or huge pages.
-
-    Flavor Geometry
-
-      Flavor sizing such as number of vCPUs, RAM, disk, etc.
 
     Huge pages
       Physical memory is partitioned and accessed using the basic page unit (in
