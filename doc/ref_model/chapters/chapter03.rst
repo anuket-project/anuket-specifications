@@ -906,10 +906,10 @@ Precise Synchronization require specialized card that can be on server or networ
 or both.
 
 OpenStack and Kubernetes clusters use Network Time Protocol (NTP)
-(`Protocol and Algorithms Specification <https://tools.ietf.org/html/rfc5905>`__ [27],
-`Autokey Specification <https://tools.ietf.org/html/rfc5906>`__ [28],
-`Managed Objects <https://tools.ietf.org/html/rfc5907>`__ [29],
-`Server Option for DHCPv6 <https://tools.ietf.org/html/rfc5908>`__ [30])
+(Protocol and Algorithms Specification :cite:p:`rfc5905`,
+Autokey Specification :cite:p:`rfc5906`,
+Managed Objects :cite:p:`rfc5907`,
+Server Option for DHCPv6 :cite:p:`rfc5908`)
 as the default time synchronization for the cluster. That level of synchronization is not sufficient for some
 network functions. Just like real-time operating systems instead of base OS, so is precision timing for clock
 synchronization. Precision Time Protocol version 2 `PTP <https://standards.ieee.org/standard/1588-2019.html>`__ [31]
@@ -1263,7 +1263,7 @@ Where:
 |                              | Edge Cloud for Apps Storage         | NA   | O    | NA   | Y          | Y          | O      | O     | O   | O    | Y      |
 |                              +-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
 |                              | Edge Cloud for Content Mgt Storage  | NA   | O    | NA   | Y          | Y          | O      | O     | O   | O    | Y      |
-+------------------------------+-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+ 
++------------------------------+-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
 | Split Control/User Plane     | Split Edge Ctrl Plane Storage       | NA   | N    | NA   | Y          | Y          | O      | O     | O   | O    | O      |
 | Edge Cloud                   +-------------------------------------+------+------+------+------------+------------+--------+-------+-----+------+--------+
 |                              + Split Edge User Plane Storage       + NA   | N    | NA   | N          | N          | N      | N     | N   | N    | N      |

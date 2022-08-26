@@ -1,13 +1,14 @@
 project = 'Anuket Reference Model (RM)'
-copyright = '2022, Anuket'
-author = 'Anuket'
+copyright = '2022, Anuket. Licensed under CC BY 4.0'
+author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
     '.tox',
     'README.rst'
 ]
 extensions = [
     'sphinx.ext.intersphinx',
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'sphinxcontrib.bibtex'
 ]
 html_theme = "sphinx_material"
 intersphinx_mapping = {
@@ -24,3 +25,5 @@ autosectionlabel_maxdepth = 4
 numfig = True
 numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
                  'code-block': 'Listing %s', 'section': 'Section %s'}
+bibtex_bibfiles = ['refs.bib']
+bibtex_default_style = 'unsrt'
