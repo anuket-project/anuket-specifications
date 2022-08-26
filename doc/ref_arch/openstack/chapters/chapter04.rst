@@ -17,7 +17,7 @@ structure of control and user planes, operating systems, hypervisors, and
 BIOS configurations, and architectural details of underlay and overlay
 networking, and storage, and the distribution of OpenStack service
 components among nodes. The chapter also covers implementation support
-for the :ref:`ref_model:chapters/chapter02:profiles, profile extensions & flavours`;
+for the "Profiles, Profile Extensions & Flavours" :cite:p:`refmodel`;
 the OpenStack flavor types capture both the sizing and the profile
 configuration (of the host).
 
@@ -70,8 +70,8 @@ OpenStack Control Plane Servers (Control Nodes)
 -  BIOS Requirements
 
 For OpenStack control nodes we use the BIOS parameters for the basic
-profile defined in :ref:`ref_model:chapters/chapter05:\
-cloud infrastructure hardware profiles features and requirements.`.
+profile defined in "Cloud Infrastructure Hardware Profiles Features and
+Requirements" :cite:p:`refmodel`.
 Additionally, for OpenStack we need to set the following boot parameters:
 
 .. table:: Boot parameters
@@ -159,7 +159,7 @@ Storage nodes
    Boot disks          RAID 1
    =================== ======
 
--  HW specifications: please see :ref:`ref_model:chapters/chapter03:storage`
+-  HW specifications: please see "Storage" in :cite:p:`refmodel`
 -  How many nodes to meet SLA: Active-Passive is the default and
    recently OpenStack started to support Active-Active
 -  Sizing rules: minimum 2 x 1 TB; recommended 2 x 10 TB
@@ -171,17 +171,19 @@ This section specifies the compute node configurations to support the
 Basic and High-Performance profiles; in OpenStack this would be
 accomplished by specifying the configurations when creating “flavors”.
 The cloud operator may choose to implement certain profile-extensions
-(:ref:`ref_model:chapters/chapter02:profile extensions (specialisations)`)
+(Profile Extensions (Specialisations) :cite:p:`refmodel`)
 as a set of standard configurations, of a given profile, capturing some
 of the variability through different values or extra specifications.
 
 -  The software and hardware configurations are as specified in the
-   :ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
+   Cloud Infrastructure Hardware Profiles Features and Requirements
+   in :cite:p:`refmodel`.
 
 -  BIOS requirement
 
    -  The general BIOS requirements are described in the
-      :ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`
+      Cloud Infrastructure Hardware Profiles Features and Requirements
+      :cite:p:`refmodel`.
 
 **Example Profiles and their Extensions**
 
@@ -240,11 +242,11 @@ extensions and some of their capabilities.
 **BIOS Settings**
 
 A number of capabilities need to be enabled in the BIOS (such as NUMA
-and SMT); the Reference Model section on
-:ref:`ref_model:chapters/chapter05:cloud infrastructure software profile description`
-specifies the capabilities required to be configured. Please note that
-capabilities may need to be configured in multiple systems. For
-OpenStack, we also need to set the following boot parameters:
+and SMT); the "Cloud Infrastructure Software Profile Description"
+section in the Reference Model specifies the capabilities
+required to be configured. Please note that capabilities may need to
+be configured in multiple systems. For OpenStack, we also need to set
+the following boot parameters:
 
 .. table:: BIOS requirements
    :widths: auto
@@ -1407,7 +1409,7 @@ Consumable Infrastructure Resources and Services
 Support for Cloud Infrastructure Profiles and flavors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reference Model Chapter 4 and 5 provide information about the Cloud
+Chapters 4 and 5 in :cite:p:`refmodel` provide information about the Cloud
 Infrastructure Profiles and their size information. OpenStack flavors
 with their set of properties describe the server capabilities and size
 required to determine the compute host which will run this server. The
@@ -1485,7 +1487,7 @@ set up the flavors as specified in the tables below.
 
    -  To configure profile-extensions, for example, the “Storage
       Intensive High Performance” profile, as defined in
-      :ref:`ref_model:chapters/chapter02:profile extensions (specialisations)`,
+      Profile Extensions (Specialisations) :cite:p:`refmodel`,
       in addition to the above, need to configure the storage IOPS: the
       following two parameters need to be specified in the flavor
       create: –property quota:disk_write_iops_sec=<IOPS#> and –property
@@ -1551,10 +1553,9 @@ Cloud Centre as representative terms for cloud services hosted at
 centralised large data centres, Telco edge locations and for locations
 with capacity somewhere in between the large data centres and edge
 locations, respectively. The mapping of various terms, including the
-Reference Model terminology specified in Table `8-5
-:ref:`ref_model:chapters/chapter08:comparison of deployment topologies and edge terms`
-and Open Glossary of Edge Computing
-:cite:p:`edge_glossary`
+Reference Model terminology specified in the chapter
+"Comparison of Deployment Topologies and Edge Terms"
+and Open Glossary of Edge Computing :cite:p:`edge_glossary`,
 is as follows:
 
 -  Central Cloud Centre: Large Centralised Data Centre, Regional Data
@@ -1569,7 +1570,7 @@ the resource capacity, as in the number of servers, and the capacity of
 these servers in terms of # of cores, RAM, etc. restricting the set of
 services that can be deployed and, thus, creating a dependency between
 other data centres.
-:ref:`ref_model:chapters/chapter08:telco edge cloud`
+"Telco Edge Cloud" chapter in :cite:p:`refmodel`
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.
 
@@ -1659,8 +1660,7 @@ such deployment choices.
 Edge Cloud Topology
 ~~~~~~~~~~~~~~~~~~~
 
-The Reference Model Chapter
-:ref:`ref_model:chapters/chapter08:telco edge cloud`
+The Reference Model "Telco Edge Cloud" chapter :cite:p:`refmodel`
 presents the deployment environment characteristics, infrastructure
 characteristics and new values for the Infrastructure Profiles at the Edge.
 
@@ -1676,13 +1676,13 @@ Cloud Centre and the number of copies that should be deployed. These
 references also present the pros and cons of DCP and CCP and designs to
 address some of the challenges of each of the models.
 
-:ref:`ref_model:chapters/chapter08:telco edge cloud: platform services deployment`
+"Telco Edge Cloud: Platform Services Deployment" :cite:p:`refmodel`
 lists the Platform Services that may be placed in the different node types
 (control, compute and storage). Depending upon the capacity and
 resources available only the compute nodes may exist at the Edge thereby
 impacting operations.
 
-:ref:`ref_model:chapters/chapter08:telco edge cloud: infrastructure profiles`
+"Telco Edge Cloud: Infrastructure Profiles" :cite:p:`refmodel`
 lists a number of Infrastructure Profile characteristics and the changes that
 may need to be made for certain Edge clouds depending upon their
 resource capabilities. It should be noted that none of these changes

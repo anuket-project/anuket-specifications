@@ -62,9 +62,9 @@ version and then the old servers are undeployed.
 Cloud Infrastructure provisioning and configuration management
 --------------------------------------------------------------
 
-In the Reference Model,
-:ref:`ref_model:chapters/chapter09:configuration and lifecycle management`
-defines the functions of Configuration and Life Cycle Management (LCM).
+In the Reference Model :cite:p:`refmodel`, the "Configuration and
+Lifecycle Management" chapter defines the functions of Configuration
+and Life Cycle Management (LCM).
 To operate and manage a scalable cloud, that minimizes operational
 costs, requires tools that incorporates systems for automated
 provisioning and deployment, and managing configurations that ensures
@@ -240,7 +240,7 @@ workloads so that appropriate actions can be taken. For example,
    resources.
 
 Some of the data is to support the metrics collection specified in the
-:doc:`ref_model:chapters/chapter04`.
+Reference Model :cite:p:`refmodel`.
 
 Logs have multiple operational uses including for:
 
