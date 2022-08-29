@@ -250,7 +250,7 @@ Abbreviations
      - Open Web Application Security Project
    * - PCIe
      - Peripheral Component Interconnect Express
-   * - PCI - PT
+   * - PCI-PT
      - PCIe PassThrough
    * - PXE
      - Preboot Execution Environment
