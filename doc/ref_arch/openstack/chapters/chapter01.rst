@@ -353,7 +353,7 @@ A **VM** consists of all of the components (processor (CPU),
 memory, storage, interfaces/ports, etc.) of a physical computer/server.
 It is created using sizing information or Compute Flavour.
 
-**Virtual Network Function (VNF):** A software implementation of a
+**Virtualised Network Function (VNF):** A software implementation of a
 Network Function, capable of running on the Cloud Infrastructure.
 **VNFs** are built from one or more VNF Components (VNFC) and, in most
 cases, the VNFC is hosted on a single VM or Container.
