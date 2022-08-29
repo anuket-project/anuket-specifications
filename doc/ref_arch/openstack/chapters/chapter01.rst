@@ -209,7 +209,7 @@ Abbreviations
    * - IPMI
      - Intelligent Platform Management Interface
    * - KVM
-     - Kernel - based Virtual Machine
+     - Kernel-based Virtual Machine
    * - LCM
      - LifeCycle Management
    * - LDAP
