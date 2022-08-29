@@ -257,7 +257,7 @@ Abbreviations
    * - RA - 1
      - Reference Architecture - 1
    * - RBAC
-     - Role - based Access Control
+     - Role-based Access Control
    * - RBD
      - RADOS Block Device
    * - REST
