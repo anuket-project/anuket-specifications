@@ -167,7 +167,7 @@ Abbreviations
    * - DPDK
      - Data Plane Development Kit
    * - ECMP
-     - Equal Cost Multi     - Path routing
+     - Equal Cost Multi-Path routing
    * - ETSI
      - European Telecommunications Standards Institute
    * - FPGA
