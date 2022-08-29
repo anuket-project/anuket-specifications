@@ -277,7 +277,7 @@ Abbreviations
    * - SMP
      - Symmetric Multiprocessing
    * - SMT
-     - Simultaneous multithreading
+     - Simultaneous MultiThreading
    * - SNAT
      - Source Network Address Translation
    * - SNMP
