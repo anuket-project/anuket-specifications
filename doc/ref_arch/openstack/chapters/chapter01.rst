@@ -275,7 +275,7 @@ Abbreviations
    * - SLA
      - Service Level Agreement
    * - SMP
-     - Symmetric Multiprocessing
+     - Symmetric MultiProcessing
    * - SMT
      - Simultaneous MultiThreading
    * - SNAT
