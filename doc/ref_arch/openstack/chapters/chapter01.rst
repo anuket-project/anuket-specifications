@@ -239,7 +239,7 @@ Abbreviations
    * - NTP
      - Network Time Protocol
    * - NUMA
-     - Non - Uniform Memory Access
+     - Non-Uniform Memory Access
    * - OS
      - Operating System
    * - OSTK
