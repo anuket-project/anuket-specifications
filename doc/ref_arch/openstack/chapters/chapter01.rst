@@ -180,6 +180,8 @@ Abbreviations
      - Graphics Processing Unit
    * - GRE
      - Generic Routing Encapsulation
+   * - GSM
+     - Global System for Mobile Communications (originally Groupe Spécial Mobile)
    * - GSMA
      - GSM Association
    * - GSLB
