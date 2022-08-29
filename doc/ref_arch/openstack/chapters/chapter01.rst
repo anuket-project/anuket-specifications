@@ -20,7 +20,7 @@ deployment into development, test and production. Another reason to
 choose OpenStack is that it has a large active community of vendors and
 operators, which means that any code or component changes needed to
 support the Common Telco Cloud Infrastructure requirements can be
-managed through the existing project communities’ processes to add and
+managed through the existing project communities' processes to add and
 validate the required features through well-established mechanisms.
 
 Vision
@@ -30,7 +30,7 @@ The OpenStack-based Reference Architecture will host NFV
 workloads, primarily VNFs (Virtual Network Functions),
 of interest to the Anuket community. The
 Reference Architecture document can be used by operators to deploy
-Anuket conformant infrastructure; hereafter, “conformant” denotes that
+Anuket conformant infrastructure; hereafter, "conformant" denotes that
 the resource can satisfy tests conducted to verify conformance with this
 reference architecture.
 
@@ -57,12 +57,12 @@ Examples include:
    application generates larger packets with longer-lived connections,
    you can optimize bandwidth utilization for long duration TCP. Normal
    bandwidth planning applies here with regards to benchmarking a
-   session’s usage multiplied by the expected number of concurrent
+   session's usage multiplied by the expected number of concurrent
    sessions with overhead.
 
 -  **Network functions**: Network functions is a broad category but
    encompasses workloads that support the exchange of information (data,
-   voice, multi-media) over a system’s network. Some of these workloads
+   voice, multi-media) over a system's network. Some of these workloads
    tend to consist of a large number of small-sized packets that are
    short lived, such as DNS queries or SNMP traps. These messages need
    to arrive quickly and, thus, do not handle packet loss. Network
@@ -130,8 +130,8 @@ Document Organisation
 Chapter 2 defines the Reference Architecture requirements and, when
 appropriate, provides references to where these requirements are
 addressed in this document. The intent of this document is to address
-all of the mandatory (“must”) requirements and the most useful of the
-other optional (“should”) requirements. Chapter 3 and 4 cover the Cloud
+all of the mandatory ("must") requirements and the most useful of the
+other optional ("should") requirements. Chapter 3 and 4 cover the Cloud
 Infrastructure resources and the core OpenStack services, while the APIs
 are covered in Chapter 5. Chapter 6 covers the implementation and
 enforcement of security capabilities and controls. Life Cycle Management
