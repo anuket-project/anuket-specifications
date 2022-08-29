@@ -164,7 +164,7 @@ Abbreviations
      - Application Programming Interface
    * - DNS
      - Domain Name System
-   * -  DPDK
+   * - DPDK
      - Data Plane Development Kit
    * - ECMP
      - Equal Cost Multi     - Path routing
