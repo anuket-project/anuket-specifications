@@ -8,7 +8,8 @@ for implementation.
 Reference Model Requirements
 ----------------------------
 
-The tables below contain the requirements from the Reference Model to
+The tables below contain the requirements from the Reference Model
+:cite:p:`refmodel` to
 cover the Basic and High-Performance profiles.
 
 To ensure alignment with the infrastructure profile catalogue, the
@@ -92,8 +93,8 @@ Cloud Infrastructure Software Profile Requirements for Compute
      - Must support
      - :ref:`chapters/chapter04:consumable infrastructure resources and services`
 
-[*] Defined in the .bronze configuration in
-:ref:`ref_model:chapters/chapter04:storage extensions`
+[*] Defined in the .bronze configuration in "Storage extensions"
+in :cite:p:`refmodel`.
 
 
 Cloud Infrastructure Software Profile Extensions Requirements for Compute
