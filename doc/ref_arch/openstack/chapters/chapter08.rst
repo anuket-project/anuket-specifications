@@ -191,7 +191,7 @@ Functest in a nutshell
 initially created to verify OPNFV Installers and Scenarios and then to
 publish fair, trustable and public results regarding the status of the
 different opensource technologies, especially for Neutron backends
-(e.g. Neutron agents, OpenDaylight, OVN, etc.). It has been continuously
+(e.g., Neutron agents, OpenDaylight, OVN, etc.). It has been continuously
 updated to offer the best testing coverage for any kind of OpenStack and
 Kubernetes deployments including production environments. It also
 ensures that the platforms meet Network Functions Virtualization
