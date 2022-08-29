@@ -223,7 +223,7 @@ Abbreviations
    * - MANO
      - Management ANd Orchestration
    * - MLAG
-     - Multi - chassis Link Aggregation Group
+     - Multi-chassis Link Aggregation Group
    * - NAT
      - Network Address Translation
    * - NFS
