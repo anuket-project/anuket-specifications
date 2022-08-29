@@ -162,6 +162,8 @@ Abbreviations
      - Definition
    * - API
      - Application Programming Interface
+   * - CPU
+     - Central Processing Unit
    * - DNS
      - Domain Name System
    * - DPDK
