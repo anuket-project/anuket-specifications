@@ -14,6 +14,8 @@ html_theme = "sphinx_material"
 linkcheck_ignore = [
     "https://www.cisecurity.org/cis-benchmarks/",
     "https://www.iso.org/obp/ui/",
+    'http://127.0.0.1',
+    'https://www.sdxcentral.com'
 ]
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/stable-moselle/', None),
