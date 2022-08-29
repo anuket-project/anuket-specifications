@@ -16,7 +16,7 @@ interest.
 OpenStack is a multi-project framework composed of independently
 evolving services. It is not enough to rely only on the OpenStack
 release to characterise the capabilities supported by these services.
-Regarding OpenStack services APIs, an “API version” is associated with
+Regarding OpenStack services APIs, an "API version" is associated with
 each OpenStack service. In addition to major API versions, some
 OpenStack services (Nova, Glance, Keystone, Cinder…) support
 microversions. The microversions allow new features to be introduced
@@ -31,16 +31,16 @@ Core OpenStack Services APIs
 ----------------------------
 
 Please note that OpenStack provides a maximum microversion to be used
-with an OpenStack release. In the following sections the “Maximal API
-Version” refers to this maximum microversion specified for the OpenStack
+with an OpenStack release. In the following sections the "Maximal API
+Version" refers to this maximum microversion specified for the OpenStack
 Wallaby release. Please note that in Reference Conformance (RC-1)
 testing, the System Under Test (SUT) can utilise newer microversions
 because of the OpenStack microversion policies. As per multiple
 OpenStack services documentation, for example the `Compute
 Service <https://docs.openstack.org/api-guide/compute/microversions.html>`__,
-“A cloud that is upgraded to support newer microversions will still
+"A cloud that is upgraded to support newer microversions will still
 support all older microversions to maintain the backward compatibility
-for those users who depend on older microversions.”
+for those users who depend on older microversions."
 
 Keystone
 ~~~~~~~~

@@ -50,7 +50,7 @@ Platform Module).
 System Access
 ^^^^^^^^^^^^^
 
-Access to all the platform’s components must be restricted (sec.gen.013)
+Access to all the platform's components must be restricted (sec.gen.013)
 applying the following rules:
 
 -  Remove, or at a minimal, disable all unnecessary user accounts
@@ -87,7 +87,7 @@ permitting a password change.
 Passwords must be encrypted at rest and in-transit. Password files must
 be stored separately from application system data.
 
-Password’s composition, complexity and policy should follow the
+Password's composition, complexity and policy should follow the
 recommendations consolidated within the CIS Password Policy
 guide :cite:p:`cispwd` such as:
 
@@ -184,7 +184,7 @@ front end (sec.sys.006).
 OpenStack Keystone can work with an Identity service that your
 enterprise may already have, such as LDAP with Active Directory. In
 those cases, the recommendation is to integrate Keystone with the cloud
-provider’s Identity Services.
+provider's Identity Services.
 
 Authentication
 ^^^^^^^^^^^^^^
@@ -199,11 +199,11 @@ OpenStack Authentication Methods :cite:p:`openstackaut`.
 Limiting the number of repeated failed login attempts (configurable)
 reduces the risk of unauthorised access via password guessing (Bruce
 force attack) - sec.mon.006. The restriction on the number of
-consecutive failed login attempts (“lockout_failure_attempts”) and any
+consecutive failed login attempts ("lockout_failure_attempts") and any
 actions post such access attempts (such as locking the account where the
-“lockout_duration” is left unspecified) should abide by the operator’s
+"lockout_duration" is left unspecified) should abide by the operator's
 policies. For example, an operator may restrict the number of
-consecutive failed login attempts to 3 (“lockout_failure_attempts = 3”)
+consecutive failed login attempts to 3 ("lockout_failure_attempts = 3")
 and lock the account preventing any further access and where the account
 is unlocked by getting necessary approvals.
 
@@ -213,7 +213,7 @@ Keystone Tokens
 Once a user is authenticated, a token is generated for authorisation and
 access to an OpenStack environment and resources. By default, the token
 is set to expire in one hour. This setting can be changed based on the
-business and operational needs, but it’s highly recommended to set the
+business and operational needs, but it's highly recommended to set the
 expiration to the shortest possible value without dramatically impacting
 your operations.
 
@@ -231,7 +231,7 @@ user belongs to groups and each group has a list of roles that permits
 certain actions on certain resources. OpenStack services reference the
 roles of the user attempting to access the service. OpenStack policy
 enforcer middleware takes into consideration the policy rules associated
-with each resource and the user’s group/roles and association to
+with each resource and the user's group/roles and association to
 determine if access will be permitted for the requested resource. For
 more details on policies, please refer to the OpenStack
 Policies :cite:p:`openstackpol`.
@@ -348,7 +348,7 @@ concerns are raised:
 
 -  confidentiality and integrity of the Cloud Infrastructure components
    (networks, hypervisor, OpenStack services)
--  confidentiality and integrity of the tenant’s data
+-  confidentiality and integrity of the tenant's data
 
 The Cloud Infrastructure must also provide the mechanism to identify
 corrupted data.
@@ -506,10 +506,10 @@ Image Security
 
 Images from untrusted sources must not be used (sec.img.001). Valuable
 guidance on trusted image creation process and image signature
-verification is provided in the “Trusted Images” section of the
+verification is provided in the "Trusted Images" section of the
 OpenStack Security Guide :cite:p:`openstackti`.
-The OpenStack Security Guide includes reference to the “`OpenStack
-Virtual Machine Image Guide :cite:p:`openstackim`” that describes how
+The OpenStack Security Guide includes reference to the "`OpenStack
+Virtual Machine Image Guide :cite:p:`openstackim`" that describes how
 to obtain, create, and modify OpenStack compatible virtual machine
 images.
 
@@ -604,7 +604,7 @@ Regular review of security logs that record user access, as well as
 session (sec.mon.010) and network activity (sec.mon.012), is critical in
 preventing and detecting intrusions that could disrupt business
 operations. This monitoring process also allows administrators to
-retrace an intruder’s activity and may help correct any damage caused by
+retrace an intruder's activity and may help correct any damage caused by
 the intrusion (sec.mon.011).
 
 The logs have to be continuously monitored and analysed with alerts
@@ -709,7 +709,7 @@ The security audit log must contain at minimum the following fields
 -  Success/failure
 -  Login ID — Where the Login ID is defined on the
    system/application/authentication server; otherwise, the field should
-   contain ‘unknown’, in order to protect authentication credentials
+   contain ‘unknown', in order to protect authentication credentials
    accidentally entered at the Login ID prompt from appearing in the
    security audit log.
 -  Source and destination IP Addresses and ports
