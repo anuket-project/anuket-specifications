@@ -258,7 +258,7 @@ Abbreviations
      - Quality of Service
    * - RA
      - Reference Architecture
-   * - RA - 1
+   * - RA-1
      - Reference Architecture - 1
    * - RBAC
      - Role-based Access Control
