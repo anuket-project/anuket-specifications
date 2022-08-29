@@ -329,7 +329,7 @@ Tenants represent an independently manageable logical pool of
 compute, storage and network resources abstracted from physical
 hardware.
 
-**Tenant Instance:** refers to a single **Tenant**.
+**Tenant Instance:** refers to an Instance owned by or dedicated for use by a single **Tenant**.
 
 **Tenant (Internal) Networks:** Virtual networks that are internal to
 **Tenant Instances**.
