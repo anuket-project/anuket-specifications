@@ -173,7 +173,7 @@ Abbreviations
    * - FPGA
      - Field Programmable Gate Array
    * - MB/GB/TB
-     - GigaByte/TeraByte
+     - MegaByte/GigaByte/TeraByte
    * - GPU
      - Graphics Processing Unit
    * - GRE
