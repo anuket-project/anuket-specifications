@@ -349,7 +349,7 @@ test configurations and the default test lists. Any optional capability
 or services (e.g. Barbican) can be still verified by the classical
 Functest containers.
 
-The next subsections only detail the Tempest tests which must not be
+The next subsections detail the Tempest tests which must not be
 executed from a compliance state point. The remaining tests have to pass
 successfully. They cover all together the API testing requirements as
 asked by :ref:`chapters/chapter05:interfaces and apis`
