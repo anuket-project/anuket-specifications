@@ -172,7 +172,7 @@ Abbreviations
      - European Telecommunications Standards Institute
    * - FPGA
      - Field Programmable Gate Array
-   * - GB/TB
+   * - MB/GB/TB
      - GigaByte/TeraByte
    * - GPU
      - Graphics Processing Unit
