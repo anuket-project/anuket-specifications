@@ -282,7 +282,7 @@ Abbreviations
      - Source Network Address Translation
    * - SNMP
      - Simple Network Management Protocol
-   * - SR - IOV
+   * - SR-IOV
      - Single Root Input Output Virtualisation
    * - SSD
      - Solid State Drive
