@@ -121,9 +121,9 @@ A subset of these tools is described below.
   TripleO is an official OpenStack project which allows to deploy and
   manage a production cloud onto bare metal hardware using a subset
   of existing OpenStack components. The first step of deployment is
-  the creation of an “undercloud” or deployment cloud. The
+  the creation of an "undercloud" or deployment cloud. The
   undercloud contains the necessary OpenStack components to deploy
-  and manage an “overcloud”, representing the deployed cloud.
+  and manage an "overcloud", representing the deployed cloud.
   The architecture document :cite:p:`trarch`
   describes the solution. Nova and Ironic are used in the undercloud to manage
   the servers in bare metal environment. TripleO leverages
@@ -207,7 +207,7 @@ cloned, and appropriate changes made to get to the desired state.
 **Configuration and Version Changes**
 
 Configuration and Version Changes are made in a similar fashion to the
-“Deployment of infrastructure components” except that the IaC tools used
+"Deployment of infrastructure components" except that the IaC tools used
 maybe different.
 
 Logging, Monitoring and Analytics
@@ -260,7 +260,7 @@ Monitoring
 ~~~~~~~~~~
 
 Monitoring is the process of collecting, aggregating, and analysing
-values that improve awareness of the components’ characteristics and
+values that improve awareness of the components' characteristics and
 behavior. The data from various parts of the environment are collected
 into a monitoring system that is responsible for storage, aggregation,
 visualisation, and initiating automated responses when the values meet

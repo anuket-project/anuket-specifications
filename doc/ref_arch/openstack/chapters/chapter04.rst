@@ -169,7 +169,7 @@ Compute Nodes
 
 This section specifies the compute node configurations to support the
 Basic and High-Performance profiles; in OpenStack this would be
-accomplished by specifying the configurations when creating “flavors”.
+accomplished by specifying the configurations when creating "flavors".
 The cloud operator may choose to implement certain profile-extensions
 (Profile Extensions (Specialisations) :cite:p:`refmodel`)
 as a set of standard configurations, of a given profile, capturing some
@@ -358,9 +358,9 @@ Reservation of Compute Node Cores
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The :ref:`chapters/chapter02:infrastructure requirements`
-``inf.com.08`` requires the allocation of “certain number of host
-cores/threads to non-tenant workloads such as for OpenStack services.” A
-number (“n”) of random cores can be reserved for host services
+``inf.com.08`` requires the allocation of "certain number of host
+cores/threads to non-tenant workloads such as for OpenStack services." A
+number ("n") of random cores can be reserved for host services
 (including OpenStack services) by specifying the following in nova.conf:
 
          reserved_host_cpus = n
@@ -383,15 +383,15 @@ configuration.
 
 Let us consider a compute host with 20 cores with SMT enabled (let us
 disregard NUMA) and the following parameters specified. The physical
-cores are numbered ‘0’ to ‘19’ while the sibling threads are numbered
-‘20’ to ‘39’ where the vCPUs numbered ‘0’ and ‘20’, ‘1’ and ‘21’, etc.
+cores are numbered ‘0' to ‘19' while the sibling threads are numbered
+‘20' to ‘39' where the vCPUs numbered ‘0' and ‘20', ‘1' and ‘21', etc.
 are siblings:
 
          cpu_shared_set = 1-7,9-19,21-27,29-39          (can also be
 specified as cpu_shared_set = 1-19,\&8,21-39,\&28)
 
-This implies that the two physical cores ‘0’ and ‘8’ and their sibling
-threads ‘20’ and ‘28’ are dedicated to the host services, and 19 cores
+This implies that the two physical cores ‘0' and ‘8' and their sibling
+threads ‘20' and ‘28' are dedicated to the host services, and 19 cores
 and their sibling threads are available for Guest instances and can be
 over allocated as per the specified cpu_allocation_ratio in nova.conf.
 
@@ -401,11 +401,11 @@ Pinned and Unpinned CPUs
 When a server (viz., an instance) is created the vCPUs are, by default,
 not assigned to a particular host CPU. Certain workloads require
 real-time or near real-time behavior viz., uninterrupted access to their
-cores. For such workloads, CPU pinning allows us to bind an instance’s
+cores. For such workloads, CPU pinning allows us to bind an instance's
 vCPUs to particular host cores or SMT threads. To configure a flavor to
 use pinned vCPUs, we use a dedicated CPU policy.
 
-         openstack flavor set .xlarge –property hw:cpu_policy=dedicated
+         openstack flavor set .xlarge -property hw:cpu_policy=dedicated
 
 While an instance with pinned CPUs cannot use CPUs of another pinned
 instance, this does not apply to unpinned instances; an unpinned
@@ -424,13 +424,13 @@ profiles and flavors.
 Cloud Infrastructure Hardware Profile
 '''''''''''''''''''''''''''''''''''''
 
-The Cloud Infrastructure Hardware (or simply “host”) profile and
+The Cloud Infrastructure Hardware (or simply "host") profile and
 configuration parameters are utilised in the reference architecture to
 define different hardware profiles; these are used to configure the BIOS
 settings on a physical server and configure utility software (such as
 Operating System and Hypervisor).
 
-An OpenStack flavor defines the characteristics (“capabilities”) of a
+An OpenStack flavor defines the characteristics ("capabilities") of a
 server (viz., VMs or instances) that will be deployed on hosts assigned
 a host-profile. A many to many relationship exists between flavors and
 host profiles. Multiple flavors can be defined with overlapping
@@ -465,7 +465,7 @@ on the host.
 Server Configurations
 '''''''''''''''''''''
 
-The different networking choices – OVS-Kernel, OVS-DPDK, SR-IOV – result
+The different networking choices - OVS-Kernel, OVS-DPDK, SR-IOV - result
 in different NIC port, LAG (Link Aggregation Group), and other
 configurations. Some of these are shown diagrammatically in section
 :ref:`chapters/chapter04:compute nodes`.
@@ -488,7 +488,7 @@ These packets are then routed on the underlay network GRT.
 Server Flavors: B1, B4, HV, HD
 
 **Compute SR-IOV Port:** TOR port maps VLANs with bridge domains that
-extend to IRBs, using VXLAN VNI. The TOR port associates each packet’s
+extend to IRBs, using VXLAN VNI. The TOR port associates each packet's
 outer VLAN tag with a bridge domain to support VNF interface adjacencies
 over the local EVPN/MAC bridge domain. This model also applies to direct
 physical connections with transport elements.
@@ -741,7 +741,7 @@ Networking Fabric consists of:
 -  Switch OS
 -  Minimum number of switches
 -  Dimensioning for East/West and North/South
--  Spine / Leaf topology – east – west
+-  Spine / Leaf topology - east - west
 -  Global Network parameters
 -  OpenStack control plane VLAN / VXLAN layout
 -  Provider VLANs
@@ -787,7 +787,7 @@ High Level Logical Network Layout
          - Externally Routable: No
          - Connected to: All nodes except foundation
    * - Tenant
-     - VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e., RFC1918 :cite:p:`rfc1918`
+     - VXLAN / Geneve project overlay networks (OVS kernel mode) - i.e., RFC1918 :cite:p:`rfc1918`
        re-usable private networks as controlled by cloud administrator
      -   - Security Domain: Underlay
          - Externally Routable: No
@@ -812,7 +812,7 @@ High Level Logical Network Layout
          - Externally routable: Yes
          - Connected to: OVS DPDK computes
    * - IPMI / Out of Band
-     - The remote “lights-out” management port of the servers e.g., iLO,
+     - The remote "lights-out" management port of the servers e.g., iLO,
        IDRAC / IPMI / Redfish
      -   - Security Domain: Management
          - Externally routable: No
@@ -821,7 +821,7 @@ High Level Logical Network Layout
 A VNF application network topology is expressed in terms of servers,
 vNIC interfaces with vNet access networks, and WAN Networks while the
 VNF Application Servers require multiple vNICs, VLANs, and host routes
-configured within the server’s Kernel.
+configured within the server's Kernel.
 
 Octavia v2 API conformant Load Balancing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -917,7 +917,7 @@ importance):
    to handle tenant networks.
 -  Capacity planning: FW, physical links, switches, routers, NIC
    interfaces and DCGW dimensioning (+ load monitoring: each link within
-   a LAG or a bond shouldn’t be loaded over 50% of its maximum capacity
+   a LAG or a bond shouldn't be loaded over 50% of its maximum capacity
    to guaranty service continuity in case of individual failure).
 -  Hardware choice: e.g., ToR/fabric switches, DCGW and NIC cards should
    have appropriate buffering and queuing capacity.
@@ -1066,7 +1066,7 @@ services running on the control nodes and no services running on the
 compute nodes:
 
 -  Keystone admin API
--  Keystone public API – in Keystone V3 this is the same as the admin
+-  Keystone public API - in Keystone V3 this is the same as the admin
    API
 
 Glance
@@ -1089,7 +1089,7 @@ Cinder :cite:p:`ostk_wallaby_cinder` is the block
 device management service, depends on Keystone and possibly Glance to be
 able to create volumes from images. Cinder has services running on the
 control nodes and no services running on the compute nodes: - Cinder API
-- Cinder Scheduler - Cinder Volume – the Cinder volume process needs to
+- Cinder Scheduler - Cinder Volume - the Cinder volume process needs to
 talk to its backends
 
 *The Cinder backends include SAN/NAS storage, iSCSI drives, Ceph RBD,
@@ -1200,7 +1200,7 @@ With DVR, each compute node also hosts the L3-agent (providing the
 distributed router capability) and this then allows direct instance to
 instance (East-West) communications.
 
-The OpenStack “High Availability Using Distributed Virtual Routing
+The OpenStack "High Availability Using Distributed Virtual Routing
 (DVR) :cite:p:`ostk_nw_liberty_dvr_ovs`"
 provides an in-depth view into how DVR works and the traffic flow
 between the various nodes and interfaces for three different use cases.
@@ -1223,7 +1223,7 @@ Telco workload requirements requires SDN to offload Neutron calls.
 SDN provides a truly scalable and preferred solution to suport dynamic,
 very large-scale, high-density, telco cloud environments. OpenStack
 Neutron, with its plugin architecture, provides the ability to integrate
-SDN controllers (:ref:`chapters/chapter03:virtual networking – 3rd party sdn solution`).
+SDN controllers (:ref:`chapters/chapter03:virtual networking - 3rd party sdn solution`).
 With SDN incorporated in OpenStack, changes to the network is triggered
 by workloads (and users), translated into Neutron APIs and then handled
 through neutron plugins by the corresponding SDN agents.
@@ -1291,7 +1291,7 @@ provides a RESTful API and a data model for the managing of resource
 provider inventories and usage for different classes of resources. In
 addition to standard resource classes, such as vCPU, MEMORY_MB and
 DISK_GB, the Placement service supports custom resource classes
-(prefixed with “CUSTOM\_”) provided by some external resource pools such
+(prefixed with "CUSTOM\_") provided by some external resource pools such
 as a shared storage pool provided by, say, Ceph. The placement service
 is primarily utilised by nova-compute and nova-scheduler. Other
 OpenStack services such as Neutron or Cyborg can also utilise placement
@@ -1309,7 +1309,7 @@ service :cite:p:`ostk_latest_placement`:
    quantity of one or more classes of resources. For example, RP_1 has
    available inventory of 16 vCPU, 16384 MEMORY_MB and 1024 DISK_GB.
 -  Traits are qualitative characteristics of the resources from a
-   resource provider. For example, the trait for RPA_1 “is_SSD” to
+   resource provider. For example, the trait for RPA_1 "is_SSD" to
    indicate that the DISK_GB provided by RP_1 are solid state drives.
 -  Allocations represent resources that have been assigned/used by some
    consumer of that resource.
@@ -1338,10 +1338,10 @@ storage encryption or Object Storage encryption or asymmetric keys and
 certificates used for Glance image signing and verification.
 
 Barbican usage provides a means to fulfill security requirements such as
-sec.sys.012 “The Platform **must** protect all secrets by using strong
+sec.sys.012 "The Platform **must** protect all secrets by using strong
 encryption techniques and storing the protected secrets externally from
-the component” and sec.ci.001 “The Platform **must** support
-Confidentiality and Integrity of data at rest and in transit.”.
+the component" and sec.ci.001 "The Platform **must** support
+Confidentiality and Integrity of data at rest and in transit.".
 
 Cyborg
 ^^^^^^
@@ -1380,8 +1380,8 @@ compute nodes, interacts with generic device type drivers on those
 nodes. These generic device type drivers are an abstraction of the
 vendor specific drivers; there is a generic device type driver for each
 device type (see above for list of some of the device types). The
-current list of the supported vendor drivers is listed under “Driver
-Support :cite:p:`ostk_latest_cyborg_support`”.
+current list of the supported vendor drivers is listed under "Driver
+Support :cite:p:`ostk_latest_cyborg_support`".
 
 Containerised OpenStack Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1418,7 +1418,7 @@ infrastructure. To implement these profiles and sizes, it is required to
 set up the flavors as specified in the tables below.
 
 .. list-table:: Neutron Services Placement
-   :widths: 10 17 20 33
+   :widths: 14 14 36 36
    :header-rows: 1
 
    * - Flavor Capabilities
@@ -1426,71 +1426,87 @@ set up the flavors as specified in the tables below.
      - Basic
      - High-Performance
    * - CPU allocation ratio (custom extra_specs)
-     - infra.com.cfg.001
+     - infra.com.cfg.\
+
+       001
      - In flavor create or flavor
-       set –property cpu_all ocation_ratio=4.0
-     - In flavor create or flavor set –property cpu_allocation_ratio=1.0
+       set -property cpu_all ocation_ratio=4.0
+     - In flavor create or flavor set -property cpu_allocation_ratio=1.0
    * - NUMA Awareness
-     - infra.com.cfg.002
+     - infra.com.cfg.\
+
+       002
      -
-     -   - In flavor create or flavor set specify –property hw:numa_nodes=<integer
-           range of 0 to #numa_nodes – 1>.
-         - To restrict an instance’s vCPUs to a
-           single host NUMA node, specify: –property hw:numa_nodes=1.
-         - Some compute intensive* workloads with highly sensitive memory latency
-           or bandwidth requirements, the instance may benefit from spreading
-           across multiple NUMA nodes: –property hw:numa_nodes=2
+     - In flavor create or flavor set specify -property hw:numa_nodes=<integer
+       range of 0 to #numa_nodes - 1>.
+       To restrict an instance's vCPUs to a
+       single host NUMA node, specify: -property hw:numa_nodes=1.
+       Some compute intensive* workloads with highly sensitive memory latency
+       or bandwidth requirements, the instance may benefit from spreading
+       across multiple NUMA nodes: -property hw:numa_nodes=2
    * - CPU Pinning
-     - infra.com.cfg.003
+     - infra.com.cfg.\
+
+       003
      - In flavor create or
        flavor set specify
-       –property hw: cpu_policy=shared
+       -property hw: cpu_policy=shared
        (default)
-     -   - In flavor create
-           or flavor set specify –property
-           hw:cpu_policy=dedicated and –property
-           hw:cpu_thread_policy=<prefer,require, isolate>.
-         - Use “isolate” thread policy for very high
-           compute intensive workloads that require that each vCPU be placed on a
-           different physical core
+     - In flavor create
+       or flavor set specify -property
+       hw:cpu_policy=dedicated and -property
+       hw:cpu_thread_policy=<prefer, require, isolate>.
+       Use "isolate" thread policy for very high
+       compute intensive workloads that require that each vCPU be placed on a
+       different physical core
    * - Huge pages
-     - infra.com.cfg.004
+     - infra.com.cfg.\
+
+       004
      -
-     - –property hw:mem_page_size=<small \|large \| size>
+     - -property hw:mem_page_size=<small \|large \| size>
    * - SMT
-     - infra.com.cfg.005
+     - infra.com.cfg.\
+
+       005
      -
-     - In flavor create or flavor set specify –property
+     - In flavor create or flavor set specify -property
        hw:cpu_threads=<integer#threads (usually 1 or 2)>
    * - OVS-DPDK
-     - infra.net.acc.cfg.001
+     - infra.net.acc.\
+
+       cfg.001
      -
      - ml2.conf.ini configured to support [OVS] datapath_type=netdev
 
-       Note:huge pages should be configured to large
+       Note: huge pages should be configured to large
    * - Local Storage SSD
-     - infra.hw.stg.ssd.cfg.002
+     - infra.hw.stg.\
+
+       ssd.cfg.002
      - trait:STORAGEDISK_SSD=required
      - trait:STORAGE_DISK_SSD=required
    * - Port speed
-     - infra.hw.nic.cfg.002
-     - –property quota vif_inbound_average=1310720 and
+     - infra.hw.nic.\
+
+       cfg.002
+     - -property quota vif_inbound_average=1310720 and
        vif_outbound_average=1310720.
 
        Note:10 Gbps = 1250000 kilobytes per second
-     - –property quota vif_inboundaverage=3125000 and
+     - -property quota vif_inboundaverage=3125000 and
        vif_outbound_average=3125000
 
        Note: 25 Gbps = 3125000 kilobytes per second
 
 ..
 
-   -  To configure profile-extensions, for example, the “Storage
-      Intensive High Performance” profile, as defined in
+   -  To configure profile-extensions, for example, the "Storage
+      Intensive High Performance" profile, as defined in
       Profile Extensions (Specialisations) :cite:p:`refmodel`,
       in addition to the above, need to configure the storage IOPS: the
       following two parameters need to be specified in the flavor
-      create: –property quota:disk_write_iops_sec=<IOPS#> and –property
+      create: -property quota:disk_write_iops_sec=<IOPS#> and -property
       quota:disk_read_iops_sec=<IOPS#>.
 
 The flavor create command and the mandatory and optional configuration
@@ -1510,11 +1526,11 @@ will rely on the following principles:
 -  Affinity-groups: allow tenants to make sure that VNFC instances are
    on the same compute node or are on different compute nodes.
 
-Note: The Cloud Infrastructure doesn’t provide any resiliency mechanisms
+Note: The Cloud Infrastructure doesn't provide any resiliency mechanisms
 at the service level. Any server restart shall be triggered by the VNF
 Manager instead of OpenStack:
 
--  It doesn’t implement Instance High Availability which could allow
+-  It doesn't implement Instance High Availability which could allow
    OpenStack Platform to automatically re-spawn instances on a different
    compute node when their host compute node breaks.
 -  Physical host reboot does not trigger automatic server recovery.
@@ -1614,7 +1630,7 @@ such deployment choices.
      - Network Management
      - Storage Management
    * - CCP
-     - Centralised DC – control nodes
+     - Centralised DC - control nodes
      - heat-api, heat-engine, nova-placement-api
      - Identity Provider (IdP), Keystone API
      - Glance API, Glance Registry

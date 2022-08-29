@@ -21,7 +21,7 @@ deployment into development, test and production. Another reason to
 choose OpenStack is that it has a large active community of vendors and
 operators, which means that any code or component changes needed to
 support the Common Telco Cloud Infrastructure requirements can be
-managed through the existing project communities’ processes to add and
+managed through the existing project communities' processes to add and
 validate the required features through well-established mechanisms.
 
 Vision
@@ -31,7 +31,7 @@ The OpenStack-based Reference Architecture will host NFV
 workloads, primarily VNFs (Virtual Network Functions),
 of interest to the Anuket community. The
 Reference Architecture document can be used by operators to deploy
-Anuket conformant infrastructure; hereafter, “conformant” denotes that
+Anuket conformant infrastructure; hereafter, "conformant" denotes that
 the resource can satisfy tests conducted to verify conformance with this
 reference architecture.
 
@@ -58,12 +58,12 @@ Examples include:
    application generates larger packets with longer-lived connections,
    you can optimize bandwidth utilization for long duration TCP. Normal
    bandwidth planning applies here with regards to benchmarking a
-   session’s usage multiplied by the expected number of concurrent
+   session's usage multiplied by the expected number of concurrent
    sessions with overhead.
 
 -  **Network functions**: Network functions is a broad category but
    encompasses workloads that support the exchange of information (data,
-   voice, multi-media) over a system’s network. Some of these workloads
+   voice, multi-media) over a system's network. Some of these workloads
    tend to consist of a large number of small-sized packets that are
    short lived, such as DNS queries or SNMP traps. These messages need
    to arrive quickly and, thus, do not handle packet loss. Network
@@ -131,8 +131,8 @@ Document Organisation
 Chapter 2 defines the Reference Architecture requirements and, when
 appropriate, provides references to where these requirements are
 addressed in this document. The intent of this document is to address
-all of the mandatory (“must”) requirements and the most useful of the
-other optional (“should”) requirements. Chapter 3 and 4 cover the Cloud
+all of the mandatory ("must") requirements and the most useful of the
+other optional ("should") requirements. Chapter 3 and 4 cover the Cloud
 Infrastructure resources and the core OpenStack services, while the APIs
 are covered in Chapter 5. Chapter 6 covers the implementation and
 enforcement of security capabilities and controls. Life Cycle Management
@@ -151,6 +151,174 @@ General terminology definitions can be found in
 :doc:`cntt:common/glossary` and specific terms relating
 to this reference architecture are to be found in OpenStack Related
 Terminology :ref:`cntt:common/glossary:openstack related terminology`.
+
+Abbreviations
+-------------
+
+.. list-table:: 
+   :widths: 20 60
+   :header-rows: 1
+
+   * - Abbreviation/Acronym
+     - Definition
+   * - API
+     - Application Programming Interface
+   * - CPU
+     - Central Processing Unit
+   * - DNS
+     - Domain Name System
+   * - DPDK
+     - Data Plane Development Kit
+   * - ECMP
+     - Equal Cost Multi-Path routing
+   * - ETSI
+     - European Telecommunications Standards Institute
+   * - FPGA
+     - Field Programmable Gate Array
+   * - MB/GB/TB
+     - MegaByte/GigaByte/TeraByte
+   * - GPU
+     - Graphics Processing Unit
+   * - GRE
+     - Generic Routing Encapsulation
+   * - GSM
+     - Global System for Mobile Communications (originally Groupe Spécial Mobile)
+   * - GSMA
+     - GSM Association
+   * - GSLB
+     - Global Service Load Balancer
+   * - GUI
+     - Graphical User Interface
+   * - HA
+     - High Availability
+   * - HDD
+     - Hard Disk Drive
+   * - HTTP
+     - HyperText Transfer Protocol
+   * - HW
+     - Hardware
+   * - IaaC (also IaC)
+     - Infrastructure as a Code
+   * - IaaS
+     - Infrastructure as a Service
+   * - ICMP
+     - Internet Control Message Protocol
+   * - IO
+     - Input/Output
+   * - IOPS
+     - Input/Output per Second
+   * - IPMI
+     - Intelligent Platform Management Interface
+   * - KVM
+     - Kernel-based Virtual Machine
+   * - LCM
+     - LifeCycle Management
+   * - LDAP
+     - Lightweight Directory Access Protocol
+   * - LFN
+     - Linux Foundation Networking
+   * - LMA
+     - Logging, Monitoring and Analytics
+   * - LVM
+     - Logical Volume Management
+   * - MANO
+     - Management ANd Orchestration
+   * - MLAG
+     - Multi-chassis Link Aggregation Group
+   * - NAT
+     - Network Address Translation
+   * - NFS
+     - Network File System
+   * - NFV
+     - Network Function Virtualisation
+   * - NFVI
+     - Network Function Virtualisation Infrastructure
+   * - NIC
+     - Network Interface Card
+   * - NPU
+     - Numeric Processing Unit
+   * - NTP
+     - Network Time Protocol
+   * - NUMA
+     - Non-Uniform Memory Access
+   * - OS
+     - Operating System
+   * - OSTK
+     - OpenStack
+   * - OVS
+     - Open vSwitch
+   * - OWASP
+     - Open Web Application Security Project
+   * - PCIe
+     - Peripheral Component Interconnect Express
+   * - PCI-PT
+     - PCIe PassThrough
+   * - PXE
+     - Preboot Execution Environment
+   * - QoS
+     - Quality of Service
+   * - RA
+     - Reference Architecture
+   * - RA-1
+     - Reference Architecture 1 (i.e., Reference Architecture for OpenStack-based Cloud Infrastructure)
+   * - RBAC
+     - Role-based Access Control
+   * - RBD
+     - RADOS Block Device
+   * - REST
+     - Representational state transfer
+   * - RI
+     - Reference Implementation
+   * - RM
+     - Reference Model
+   * - SAST
+     - Static Application Security Testing
+   * - SDN
+     - Software Defined Networking
+   * - SFC
+     - Service Function Chaining
+   * - SLA
+     - Service Level Agreement
+   * - SMP
+     - Symmetric MultiProcessing
+   * - SMT
+     - Simultaneous MultiThreading
+   * - SNAT
+     - Source Network Address Translation
+   * - SNMP
+     - Simple Network Management Protocol
+   * - SR-IOV
+     - Single Root Input Output Virtualisation
+   * - SSD
+     - Solid State Drive
+   * - SSL
+     - Secure Sockets Layer
+   * - TCP
+     - Transmission Control Protocol
+   * - TLS
+     - Transport Layer Security
+   * - ToR
+     - Top of Rack
+   * - TPM
+     - Trusted Platform Module
+   * - VIM
+     - Virtualised Infrastructure Manager
+   * - VLAN
+     - Virtual LAN
+   * - VM
+     - Virtual Machine
+   * - VNF
+     - Virtual Network Function
+   * - VRRP
+     - Virtual Router Redundancy Protocol
+   * - VTEP
+     - VXLAN Tunnel End Point
+   * - VXLAN
+     - Virtual Extensible LAN
+   * - WAN
+     - Wide Area Network
+   * - ZTA
+     - Zero Trust Architecture
 
 Conventions
 -----------
