@@ -333,7 +333,7 @@ containers <https://wiki.anuket.io/display/HOME/Functest+Wallaby>`__
 conform to this model which also fits the heterogeneous user
 deployments.
 
-From an OpenStack based cloud infrastructure Conformance state point,
+From an OpenStack based cloud infrastructure conformance state point,
 the capabilities are well described in
 :ref:`chapters/chapter05:interfaces and apis` which allows tuning the test
 configurations and the test lists to avoid
