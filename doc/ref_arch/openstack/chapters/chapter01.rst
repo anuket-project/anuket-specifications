@@ -259,7 +259,7 @@ Abbreviations
    * - RA
      - Reference Architecture
    * - RA-1
-     - Reference Architecture - 1
+     - Reference Architecture 1 (i.e., Reference Architecture for OpenStack-based Cloud Infrastructure)
    * - RBAC
      - Role-based Access Control
    * - RBD
