@@ -178,8 +178,6 @@ Here are a couple of publicly available playbooks :
    verification <https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/wallaby>`__
 -  `Anuket
    RC1 <https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/wallaby>`__
--  `Kubernetes
-   verification <https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/v1.22>`__
 
 Conformance Test Suite
 ----------------------
@@ -221,11 +219,6 @@ they are in Functest in the next 3 dedicated testcases:
 -  refstack_object (OpenStack Powered Object Storage)
 -  refstack_platform (OpenStack Powered Platform)
 
-Functest also integrates `Kubernetes End-to-end
-tests <https://kubernetes.io/blog/2019/03/22/kubernetes-end-to-end-testing-for-everyone/>`__
-and allows verifying Kubernetes Conformance (see
-`k8s-conformance <https://build.opnfv.org/ci/job/functest-kubernetes-opnfv-functest-kubernetes-smoke-v1.22-k8s_conformance-run/25/console>`__).
-
 Then Functest conforms with the upstream rules (versions, code quality,
 etc.) and especially their
 `gates <https://docs.opendev.org/opendev/system-config/latest/devstack-gate.html>`__
@@ -234,7 +227,7 @@ the quality between code and deployment. In that case, Functest can be
 considered as a smooth and lightweight integration of tests developed
 upstream (and the Functest team directly contributes in these projects:
 `Rally <https://github.com/openstack/rally-openstack>`__,
-`Tempest <https://github.com/openstack/tempest>`__, etc.). It’s worth
+`Tempest <https://github.com/openstack/tempest>`__, etc.). It is worth
 mentioning that, as opposed to the OpenStack Gates leveraging on
 `DevStack <https://docs.openstack.org/devstack/latest/>`__, it can check
 the same already deployed SUT over and over even from a `Raspberry
