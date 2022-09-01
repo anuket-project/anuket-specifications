@@ -1140,7 +1140,7 @@ CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yam
    Neutron scenarios executed in the OpenStack gates
 
 The default SLA proposed in `Functest Benchmarking
-CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__
+Anuket <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__
 is a maximum failure rate of 0%.
 
 Identity - Keystone API benchmarking
