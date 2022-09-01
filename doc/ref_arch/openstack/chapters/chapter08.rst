@@ -165,7 +165,7 @@ conformance:
    Releng <https://git.opnfv.org/releng/tree/jjb/functest>`__
    to verify conformance with Anuket specifications
 -  deploy local CI/CD toolchains everywhere to check compliance with
-   Anuket
+   Anuket specifications
 -  `dump all test case results and
    logs <http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip>`__ for
    third-party conformance review
