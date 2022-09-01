@@ -164,7 +164,7 @@ conformance:
 -  generate the Jenkins jobs in `Anuket
    Releng <https://git.opnfv.org/releng/tree/jjb/functest>`__
    to verify conformance with Anuket specifications
--  deploy local CI/CD toolchains everywhere to check compliance with
+-  deploy local CI/CD toolchains everywhere to check conformance with
    Anuket specifications
 -  `dump all test case results and
    logs <http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip>`__ for
