@@ -163,7 +163,7 @@ conformance:
 -  smoothly assemble multiple heterogeneous test cases
 -  generate the Jenkins jobs in `Anuket
    Releng <https://git.opnfv.org/releng/tree/jjb/functest>`__
-   to verify Anuket Reference Conformance
+   to verify conformance with Anuket specifications
 -  deploy local CI/CD toolchains everywhere to check compliance with
    Anuket
 -  `dump all test case results and
