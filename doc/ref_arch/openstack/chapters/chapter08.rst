@@ -1425,7 +1425,7 @@ OpenStack instances and networks in different topologies.
 specifies the deployment and list of tests to execute.
 
 The SLA is the default SLA proposed in `Functest Benchmarking
-CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__.
+Anuket <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__.
 
 On top of this dataplane benchmarking described in VMTP & Shaker, we
 need to integrate testing as described in `ETSI GS NFV-TST 009:
