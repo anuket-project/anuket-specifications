@@ -162,8 +162,7 @@ Data is accessed via API. Object storage is managed by OpenStack Swift.
 Images are persistent data, stored using the OpenStack Glance service.
 
 Cinder, Swift, and Glance services are discussed in the section
-:ref:`chapters/chapter04:virtualised infrastructure
-manager (VIM)`.
+:ref:`chapters/chapter04:virtualised infrastructure manager (VIM)`.
 
 
 Virtual Networking Neutron standalone
@@ -395,7 +394,7 @@ The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
 also maps the OpenStack core services to the Virtual Infrastructure
- Manager in the Reference Model (RM) :cite:p:`refmodel`.
+Manager in the Reference Model (RM) :cite:p:`refmodel`.
 
 .. list-table:: OpenStack components deployment
    :widths: 20 10 20 10 10 10
