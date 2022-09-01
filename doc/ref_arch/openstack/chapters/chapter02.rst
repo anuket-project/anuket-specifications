@@ -1361,7 +1361,7 @@ Infrastructure Requirements
      - Network
      - The Architecture **must** provide virtual network interfaces to
        instances
-     - :ref:`chapters/chapter05:neutron`
+     - :ref:`chapters/chapter05:neutron api`
    * - inf.nw.02
      - Network
      - The Architecture **must** include capabilities for integrating SDN
@@ -1421,11 +1421,11 @@ VIM Requirements
      - General
      - The Architecture **must** allow VIM to discover and manage Cloud
        Infrastructure resources
-     - :ref:`chapters/chapter05:placement`
+     - :ref:`chapters/chapter05:placement api`
    * - vim.05
      - General
      - The Architecture **must** include image repository management
-     - :ref:`chapters/chapter05:glance`
+     - :ref:`chapters/chapter05:glance api`
    * - vim.07
      - General
      - The Architecture **must** support multi-tenancy
@@ -1451,32 +1451,32 @@ Interfaces & APIs Requirements
      - API
      - The Architecture **must** provide APIs to access the authentication service
        and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:keystone`
+     - :ref:`chapters/chapter05:keystone api`
    * - int.api.02
      - API
      - The Architecture **must** provide APIs to access the image management
        service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:glance`
+     - :ref:`chapters/chapter05:glance api`
    * - int.api.03
      - API
      - The Architecture **must** provide APIs to access the block storage
        management service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:cinder`
+     - :ref:`chapters/chapter05:cinder api`
    * - int.api.04
      - API
      - The Architecture **must** provide APIs to access the object storage
        management service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:swift`
+     - :ref:`chapters/chapter05:swift api`
    * - int.api.05
      - API
      - The Architecture **must** provide APIs to access the network management
        service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:neutron`
+     - :ref:`chapters/chapter05:neutron api`
    * - int.api.06
      - API
      - The Architecture **must** provide APIs to access the compute resources
        management service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:nova`
+     - :ref:`chapters/chapter05:nova api`
    * - int.api.07
      - API
      - The Architecture **must** provide GUI access to tenant facing cloud
@@ -1486,11 +1486,11 @@ Interfaces & APIs Requirements
      - API
      - The Architecture **must** provide APIs needed to discover and manage
        Cloud Infrastructure resources
-     - :ref:`chapters/chapter05:placement`
+     - :ref:`chapters/chapter05:placement api`
    * - int.api.09
      - API
      - The Architecture **must** provide APIs to access the orchestration service
-     - :ref:`chapters/chapter05:heat`
+     - :ref:`chapters/chapter05:heat api`
    * - int.api.10
      - API
      - The Architecture **must** expose the latest version and microversion of the
