@@ -620,6 +620,7 @@ below) and hence there will be a need for different host profiles. Table
 three different host profiles; one each for HV, HD and HS Profile Extensions.
 
 .. _Configuration of High Performance Flavor Capabilities:
+
 .. list-table:: Configuration of High Performance Flavor Capabilities
    :widths: 15 29 12 12 12
    :header-rows: 2
@@ -1053,8 +1054,8 @@ VIM Services
 ~~~~~~~~~~~~
 
 A high-level overview of the core OpenStack Services was provided in
-:ref:`chapters/chapter03:modelling`. In this section we
-describe the core and other needed services in more detail.
+:ref:`chapters/chapter03:cloud infrastructure architecture - openStack`.
+In this section we describe the core and other needed services in more detail.
 
 Keystone
 ^^^^^^^^
