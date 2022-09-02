@@ -21,11 +21,11 @@ for the "Profiles, Profile Extensions & Flavours" :cite:p:`refmodel`;
 the OpenStack flavor types capture both the sizing and the profile
 configuration (of the host).
 
-Underlying Resources
---------------------
+Underlying Resources Configuartion and Dimensioning
+---------------------------------------------------
 
-Virtualisation
-~~~~~~~~~~~~~~
+Virtualisation layer
+~~~~~~~~~~~~~~~~~~~~
 
 In OpenStack, KVM is configured as the default hypervisor for compute
 nodes.
@@ -1041,8 +1041,8 @@ Sizing rules :
 -  1 Core-GHz per OSD
 -  16GB RAM baseline + 2-3 GB per OSD
 
-Virtualised Infrastructure Manager (VIM)
-----------------------------------------
+VIM OpenStack Services
+----------------------
 
 This section covers:
 
@@ -1053,8 +1053,9 @@ VIM Services
 ~~~~~~~~~~~~
 
 A high-level overview of the core OpenStack Services was provided in
-:ref:`chapters/chapter03:modelling`. In this section we
-describe the core and other needed services in more detail.
+:ref:`chapters/chapter03:virtualised-infrastructure-manager-vim`.
+In this section we describe the core and other needed services in
+more detail.
 
 Keystone
 ^^^^^^^^
