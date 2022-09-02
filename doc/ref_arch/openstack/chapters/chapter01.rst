@@ -166,7 +166,7 @@ Abbreviations
    * - BGP VPN
      - Border gateway Protocol Virtual Private network
    * - CI/CD
-     - Continuous Integration/ Continuous Deployment
+     - Continuous Integration/Continuous Deployment
    * - CNTT
      - Cloud iNfrastructure Task Force
    * - CPU
