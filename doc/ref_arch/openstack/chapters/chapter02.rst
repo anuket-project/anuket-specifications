@@ -482,8 +482,7 @@ Cloud Infrastructure Hardware Profile-Extensions Requirements
      - SR-IOV over PCI-PT
      - N
      - Yes
-     - :ref:`chapters/chapter04:compute node configurations
-       for profiles and openstack flavors`
+     - :ref:`chapters/chapter04:compute node configurations for profiles and openstack flavors`
 
 Cloud Infrastructure Management Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -500,18 +499,15 @@ Cloud Infrastructure Management Requirements
    * - e.man.001
      - Capability to allocate virtual compute resources to a workload
      - Must support
-     - :ref:`chapters/chapter03:consumable infrastructure
-       resources and services`
+     - :ref:`chapters/chapter03:consumable infrastructure resources and services`
    * - e.man.002
      - Capability to allocate virtual storage resources to a workload
      - Must support
-     - :ref:`chapters/chapter03:consumable infrastructure
-       resources and services`
+     - :ref:`chapters/chapter03:consumable infrastructure resources and services`
    * - e.man.003
      - Capability to allocate virtual networking resources to a workload
      - Must support
-     - :ref:`chapters/chapter03:consumable infrastructure
-       resources and services`
+     - :ref:`chapters/chapter03:consumable infrastructure resources and services`
    * - e.man.004
      - Capability to isolate resources between tenants
      - Must support
@@ -559,8 +555,7 @@ System Hardening Requirements
      - Hardening
      - The Platform **must** maintain the specified configuration
      - :ref:`chapters/chapter06:security lcm` and
-       :ref:`chapters/chapter07:\
-       cloud infrastructure provisioning and configuration management`
+       :ref:`chapters/chapter07:cloud infrastructure provisioning and configuration management`
    * - sec.gen.002
      - Hardening
      - All systems part of Cloud Infrastructure **must** support hardening as
@@ -594,8 +589,7 @@ System Hardening Requirements
      - Hardening
      - All servers part of Cloud Infrastructure **must** be Time synchronised
        with authenticated Time service
-     - :ref:`chapters/chapter06:\
-       security logs time synchronisation`
+     - :ref:`chapters/chapter06:security logs time synchronisation`
    * - sec.gen.008
      - Hardening
      - All servers part of Cloud Infrastructure **must** be regularly updated
@@ -605,16 +599,14 @@ System Hardening Requirements
      - Hardening
      - The Platform **must** support software integrity protection and
        verification
-     - :ref:`chapters/chapter06:\
-       integrity of openstack components configuration`
+     - :ref:`chapters/chapter06:integrity of openstack components configuration`
    * - sec.gen.010
      - Hardening
      - The Cloud Infrastructure **must** support encrypted storage, for
        example, block, object and file storage, with access to encryption
        keys restricted based on a need to know
        (Controlled Access Based on the Need to Know :cite:p:`ciscontrols`)
-     - :ref:`chapters/chapter06:\
-       confidentiality and integrity`
+     - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.gen.012
      - Hardening
      - The Operator **must** ensure that only authorised actors have physical
@@ -695,15 +687,13 @@ Platform and Access Requirements
        authenticate users for them them or to allow access to its resources
        from the trusted domain. In a bidirectional relationship both domain
        are "trusting" and "trusted"
-     - :ref:`chapters/chapter04:logical segregation
-       and high availability`
+     - :ref:`chapters/chapter04:logical segregation and high availability`
    * - sec.sys.010
      - Access
      - For two or more domains without existing trust relationships, the Platform
        **must not** allow the effect of an attack on one domain to impact the other
        domains either directly or indirectly
-     - :ref:`chapters/chapter04:logical segregation
-       and high availability`
+     - :ref:`chapters/chapter04:logical segregation and high availability`
    * - sec.sys.011
      - Access
      - The Platform **must not** reuse the same authentication credentials
@@ -766,23 +756,20 @@ Confidentiality and Integrity Requirements
        Integrity
      - The Platform **must** support Confidentiality and Integrity of data
        at rest and in transit
-     - :ref:`chapters/chapter06:confidentiality and
-       integrity`
+     - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.ci.003
      - Confidentiality /
 
        Integrity
      - The Platform **must** support Confidentiality and Integrity of data
        related metadata
-     - :ref:`chapters/chapter06:confidentiality and
-       integrity`
+     - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.ci.004
      - Confidentiality
      - The Platform **must** support Confidentiality of processes and
        restrict information sharing with only the process owner (e.g.,
        tenant)
-     - :ref:`chapters/chapter06:confidentiality and
-       integrity`
+     - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.ci.005
      - Confidentiality /
 
@@ -790,8 +777,7 @@ Confidentiality and Integrity Requirements
      - The Platform **must** support Confidentiality and Integrity of process-
        related metadata and restrict information sharing with only the
        process owner (e.g., tenant)
-     - :ref:`chapters/chapter06:confidentiality and
-       integrity`
+     - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.ci.006
      - Confidentiality /
 
@@ -839,8 +825,7 @@ Workload Security Requirements
      - The Cloud Infrastructure **must** provide methods to ensure the
        platform's trust status and integrity (e.g., remote attestation,
        Trusted Platform Module)
-     - :ref:`chapters/chapter06:cloud
-       infrastructure and vim security`
+     - :ref:`chapters/chapter06:cloud infrastructure and vim security`
    * - sec.wl.003
      - Workload
      - The Platform **must** support secure provisioning of Workloads
@@ -896,19 +881,16 @@ Image Security Requirements
    * - sec.img.004
      - Image
      - Images **must** only be accessible to authorised actors
-     - :ref:`chapters/chapter06:integrity of openstack
-       components configuration`
+     - :ref:`chapters/chapter06:integrity of openstack components configuration`
    * - sec.img.005
      - Image
      - Image Registries **must** only be accessible to authorised actors
-     - :ref:`chapters/chapter06:integrity of openstack
-       components configuration`
+     - :ref:`chapters/chapter06:integrity of openstack components configuration`
    * - sec.img.006
      - Image
      - Image Registries **must** only be accessible over networks that
        enforce authentication, integrity and confidentiality
-     - :ref:`chapters/chapter06:integrity of openstack
-       components configuration`
+     - :ref:`chapters/chapter06:integrity of openstack components configuration`
    * - sec.img.007
      - Image
      - Image registries **must** be clear of vulnerable and out of date versions
@@ -936,8 +918,7 @@ Security LCM Requirements
      - The Platform **must** support Secure Provisioning, Availability, and
        Deprovisioning (Secure Clean-Up) of workload resources where Secure
        Clean-Up includes tear-down, defense against virus or other attacks
-     - :ref:`chapters/chapter06:monitoring and security
-       audit`
+     - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.lcm.002
      - LCM
      - The Cloud Operator **must** use management protocols limiting security
@@ -949,20 +930,17 @@ Security LCM Requirements
        management processes for Cloud Infrastructure, Infrastructure
        Manager and othercomponents of the cloud, and Platform change control
        on hardware
-     - :ref:`chapters/chapter06:monitoring and security
-       audit`
+     - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.lcm.005
      - LCM
      - Platform **must** provide logs and these logs must be monitored for
        anomalous behaviour
-     - :ref:`chapters/chapter06:monitoring and security
-       audit`
+     - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.lcm.006
      - LCM
      - The Platform **must** verify the integrity of all Resource management
        requests
-     - :ref:`chapters/chapter06:confidentiality and
-       integrity of tenant data (sec.ci.001)`
+     - :ref:`chapters/chapter06:confidentiality and integrity of tenant data (sec.ci.001)`
    * - sec.lcm.007
      - LCM
      - The Platform **must** be able to update newly instantiated, suspended,
@@ -994,8 +972,7 @@ Security LCM Requirements
    * - sec.lcm.012
      - LCM
      - The Platform **must** log any access privilege escalation
-     - :ref:`chapters/chapter06:what to log / what not
-       to log`
+     - :ref:`chapters/chapter06:what to log / what not to log`
 
 Monitoring and Security Audit Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1027,14 +1004,12 @@ can trigger alerts and notifications for appropriate action.
    * - sec.mon.002
      - Monitoring
      - Security logs **must** be time synchronised
-     - :ref:`chapters/chapter06:security logs time
-       synchronisation`
+     - :ref:`chapters/chapter06:security logs time synchronisation`
    * - sec.mon.003
      - Monitoring
      - The Platform **must** log all changes to time server source, time,
        date and time zones
-     - :ref:`chapters/chapter06:security logs time
-       synchronisation`
+     - :ref:`chapters/chapter06:security logs time synchronisation`
    * - sec.mon.004
      - Audit
      - The Platform **must** secure and protect Audit logs (containing
@@ -1045,42 +1020,36 @@ can trigger alerts and notifications for appropriate action.
      - The Platform **must** Monitor and Audit various behaviours of
        connection and login attempts to detect access attacks and potential
        access attempts and take corrective accordingly actions
-     - :ref:`chapters/chapter06:what to log / what not
-       to log`
+     - :ref:`chapters/chapter06:what to log / what not to log`
    * - sec.mon.006
      - Monitoring / Audit
      - The Platform **must** Monitor and Audit operations by authorised
        account access after login to detect malicious operational activity
        and take corrective actions
-     - :ref:`chapters/chapter06:monitoring and security
-       audit`
+     - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.mon.007
      - Monitoring / Audit
      - The Platform **must** Monitor and Audit security parameter
        configurations for compliance with defined security policies
-     - :ref:`chapters/chapter06:integrity of openstack
-       components configuration`
+     - :ref:`chapters/chapter06:integrity of openstack components configuration`
    * - sec.mon.008
      - Monitoring / Audit
      - The Platform **must** Monitor and Audit externally exposed interfaces
        for illegal access (attacks) and take corrective security hardening
        measures
-     - :ref:`chapters/chapter06:confidentiality and
-       integrity of communications (sec.ci.001)`
+     - :ref:`chapters/chapter06:confidentiality and integrity of communications (sec.ci.001)`
    * - sec.mon.009
      - Monitoring / Audit
      - The Platform **must** Monitor and Audit service for various attacks
        (malformed messages, signalling flooding and replaying, etc.) and take
        corrective actions accordingly
-     - :ref:`chapters/chapter06:monitoring and security
-       audit`
+     - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.mon.010
      - Monitoring / Audit
      - The Platform **must** Monitor and Audit running processes to detect
        unexpected or unauthorised processes and take corrective actions
        accordingly
-     - :ref:`chapters/chapter06:monitoring and security
-       audit`
+     - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.mon.011
      - Monitoring / Audit
      - The Platform **must** Monitor and Audit logs from infrastructure elements
@@ -1091,8 +1060,7 @@ can trigger alerts and notifications for appropriate action.
      - Monitoring / Audit
      - The Platform **must** Monitor and Audit Traffic patterns and volumes to
        prevent malware download attempts
-     - :ref:`chapters/chapter06:confidentiality and
-       integrity`
+     - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.mon.013
      - Monitoring
      - The monitoring system **must not** affect the security (integrity and
@@ -1104,8 +1072,7 @@ can trigger alerts and notifications for appropriate action.
      - The Platform **must** ensure that the Monitoring systems are never
        starved of resources and must activate alarms when resource utilisation
        exceeds a configurable threshold
-     - :ref:`chapters/chapter06:monitoring and security
-       audit`
+     - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.mon.017
      - Audit
      - The Platform **must** audit systems for any missing security patches
@@ -1121,8 +1088,7 @@ can trigger alerts and notifications for appropriate action.
      - Monitoring
      - The Platform's components **must not** include an authentication
        credential, e.g., password, in any logs, even if encrypted
-     - :ref:`chapters/chapter06:what to log / what not
-       to log`
+     - :ref:`chapters/chapter06:what to log / what not to log`
    * - sec.mon.020
      - Monitoring / Audit
      - The Platform's logging system **must** support the storage of security
@@ -1345,27 +1311,23 @@ Infrastructure Requirements
      - The Architecture **must** be able to support multiple CPU type options
        to support various infrastructure profiles (Basic and High
        Performance)
-     - :ref:`chapters/chapter04:\
-       support for cloud infrastructure profiles and flavors`
+     - :ref:`chapters/chapter04:support for cloud infrastructure profiles and flavors`
    * - inf.com.05
      - Compute
      - The Architecture **must** support Hardware Platforms with NUMA
        capabilities
-     - :ref:`chapters/chapter04:\
-       support for cloud infrastructure profiles and flavors`
+     - :ref:`chapters/chapter04:support for cloud infrastructure profiles and flavors`
    * - inf.com.06
      - Compute
      - The Architecture **must** support CPU Pinning of the vCPUs of an
        instance
-     - :ref:`chapters/chapter04:\
-       support for cloud infrastructure profiles and flavors`
+     - :ref:`chapters/chapter04:support for cloud infrastructure profiles and flavors`
    * - inf.com.07
      - Compute
      - The Architecture **must** support different hardware configurations
        to support various infrastructure profiles (Basic and High
        Performance)
-     - :ref:`chapters/chapter03:\
-       cloud partitioning: host aggregates, availability zones`
+     - :ref:`chapters/chapter03:cloud partitioning: host aggregates, availability zones`
    * - inf.com.08
      - Compute
      - The Architecture **must** support allocating certain number of host
@@ -1375,16 +1337,14 @@ Infrastructure Requirements
        workloads (e.g., OpenStack services) :cite:p:`openstackcpu`.
        Please see example, Configuring libvirt compute nodes for CPU pinning
        :cite:p:`openstackcputopo`
-     - :ref:`chapters/chapter03:\
-       cloud partitioning: host aggregates, availability zones`
+     - :ref:`chapters/chapter03:cloud partitioning: host aggregates, availability zones`
    * - inf.com.09
      - Compute
      - The Architecture **must** ensure that the host cores assigned to
        non-tenant and tenant workloads are SMT aware: that is, a host core and
        its associated SMT threads are either all assigned to non-tenant
        workloads or all assigned to tenant workloads
-     - :ref:`chapters/chapter04:\
-       pinned and unpinned cpus`
+     - :ref:`chapters/chapter04:pinned and unpinned cpus`
    * - inf.stg.01
      - Storage
      - The Architecture **must** provide remote (not directly attached to the
@@ -1401,15 +1361,14 @@ Infrastructure Requirements
      - Network
      - The Architecture **must** provide virtual network interfaces to
        instances
-     - :ref:`chapters/chapter05:neutron`
+     - :ref:`chapters/chapter05:neutron api`
    * - inf.nw.02
      - Network
      - The Architecture **must** include capabilities for integrating SDN
        controllers to support provisioning of network services, from the SDN
        OpenStack Neutron service, such as networking of VTEPs to the Border
        Edge based VRFs
-     - :ref:`chapters/chapter03:\
-       virtual networking - 3rd party sdn solution`
+     - :ref:`chapters/chapter03:virtual networking - 3rd party sdn solution`
    * - inf.nw.03
      - Network
      - The Architecture **must** support low latency and high throughput
@@ -1422,8 +1381,8 @@ Infrastructure Requirements
      - :ref:`chapters/chapter04:network fabric`
    * - inf.nw.07
      - Network
-     - The Architecture must support network :ref:`resiliency
-       <cntt:common/glossary:cloud platform abstraction related terminology:>`
+     - The Architecture must support network
+       :ref:`resiliency <cntt:common/glossary:cloud platform abstraction related terminology:>`
      - :ref:`chapters/chapter03:network`
    * - inf.nw.10
      - Network
@@ -1457,22 +1416,20 @@ VIM Requirements
    * - vim.01
      - General
      - The Architecture **must** allow infrastructure resource sharing
-     - :ref:`chapters/chapter03:consumable
-       infrastructure resources and services`
+     - :ref:`chapters/chapter03:consumable infrastructure resources and services`
    * - vim.03
      - General
      - The Architecture **must** allow VIM to discover and manage Cloud
        Infrastructure resources
-     - :ref:`chapters/chapter05:placement`
+     - :ref:`chapters/chapter05:placement api`
    * - vim.05
      - General
      - The Architecture **must** include image repository management
-     - :ref:`chapters/chapter05:glance`
+     - :ref:`chapters/chapter05:glance api`
    * - vim.07
      - General
      - The Architecture **must** support multi-tenancy
-     - :ref:`chapters/chapter03:multi-tenancy
-       (execution environment)`
+     - :ref:`chapters/chapter03:multi-tenancy (execution environment)`
    * - vim.08
      - General
      - The Architecture **must** support resource tagging
@@ -1494,32 +1451,32 @@ Interfaces & APIs Requirements
      - API
      - The Architecture **must** provide APIs to access the authentication service
        and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:keystone`
+     - :ref:`chapters/chapter05:keystone api`
    * - int.api.02
      - API
      - The Architecture **must** provide APIs to access the image management
        service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:glance`
+     - :ref:`chapters/chapter05:glance api`
    * - int.api.03
      - API
      - The Architecture **must** provide APIs to access the block storage
        management service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:cinder`
+     - :ref:`chapters/chapter05:cinder api`
    * - int.api.04
      - API
      - The Architecture **must** provide APIs to access the object storage
        management service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:swift`
+     - :ref:`chapters/chapter05:swift api`
    * - int.api.05
      - API
      - The Architecture **must** provide APIs to access the network management
        service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:neutron`
+     - :ref:`chapters/chapter05:neutron api`
    * - int.api.06
      - API
      - The Architecture **must** provide APIs to access the compute resources
        management service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:nova`
+     - :ref:`chapters/chapter05:nova api`
    * - int.api.07
      - API
      - The Architecture **must** provide GUI access to tenant facing cloud
@@ -1529,11 +1486,11 @@ Interfaces & APIs Requirements
      - API
      - The Architecture **must** provide APIs needed to discover and manage
        Cloud Infrastructure resources
-     - :ref:`chapters/chapter05:placement`
+     - :ref:`chapters/chapter05:placement api`
    * - int.api.09
      - API
      - The Architecture **must** provide APIs to access the orchestration service
-     - :ref:`chapters/chapter05:heat`
+     - :ref:`chapters/chapter05:heat api`
    * - int.api.10
      - API
      - The Architecture **must** expose the latest version and microversion of the
@@ -1764,8 +1721,7 @@ VIM Recommendations
      - General
      - The Architecture **should** support deployment of OpenStack components
        in containers
-     - :ref:`chapters/chapter04:\
-       containerised openstack services`
+     - :ref:`chapters/chapter04:containerised openstack services`
    * - vim.04
      - General
      - The Architecture **should** support Enhanced Platform Awareness (EPA)

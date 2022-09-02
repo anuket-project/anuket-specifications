@@ -42,8 +42,8 @@ Service <https://docs.openstack.org/api-guide/compute/microversions.html>`__,
 support all older microversions to maintain the backward compatibility
 for those users who depend on older microversions."
 
-Keystone
-~~~~~~~~
+Keystone API
+~~~~~~~~~~~~
 
 .. table:: Keystone
    :widths: auto
@@ -79,8 +79,8 @@ https://docs.openstack.org/api-ref/identity/v3-ext/
 Security compliance and PCI-DSS:
 https://docs.openstack.org/keystone/train/admin/configuration.html#security-compliance-and-pci-dss
 
-Glance
-~~~~~~
+Glance API
+~~~~~~~~~~
 
 .. table:: Glance
    :widths: auto
@@ -105,8 +105,8 @@ Glance
 Image Service Versions:
 https://docs.openstack.org/api-ref/image/versions/index.html#version-history
 
-Cinder
-~~~~~~
+Cinder API
+~~~~~~~~~~
 
 .. table:: Cinder
    :widths: auto
@@ -140,8 +140,8 @@ Block Storage API: https://docs.openstack.org/api-ref/block-storage/
 REST API Version History:
 https://docs.openstack.org/cinder/latest/contributor/api_microversion_history.html
 
-Swift
-~~~~~
+Swift API
+~~~~~~~~~
 
 .. table:: Swift
    :widths: auto
@@ -182,8 +182,8 @@ https://docs.openstack.org/api-ref/object-store/index.html
 Discoverability:
 https://docs.openstack.org/swift/latest/api/discoverability.html
 
-Neutron
-~~~~~~~
+Neutron API
+~~~~~~~~~~~
 
 .. table:: Neutron
    :widths: auto
@@ -295,8 +295,8 @@ Networking Service APIs: https://docs.openstack.org/api-ref/network/
 The exhaustive list of extensions is available at
 https://docs.openstack.org/api-ref/network/v2/
 
-Nova
-~~~~
+Nova API
+~~~~~~~~
 
 .. table:: Nova
    :widths: auto
@@ -346,8 +346,8 @@ Compute API: https://docs.openstack.org/api-ref/compute/
 REST API Version History:
 https://docs.openstack.org/nova/latest/reference/api-microversion-history.html
 
-Placement
-~~~~~~~~~
+Placement API
+~~~~~~~~~~~~~
 
 .. table:: Placement
    :widths: auto
@@ -363,8 +363,8 @@ Placement API: https://docs.openstack.org/api-ref/placement/
 REST API Version History:
 https://docs.openstack.org/placement/latest/placement-api-microversion-history.html
 
-Heat
-~~~~
+Heat API
+~~~~~~~~
 
 .. table:: Heat
    :widths: auto
@@ -455,8 +455,8 @@ Libvirt Interfaces
 
 The Libvirt APIs are documented in https://libvirt.org/html/index.html.
 
-Barbican
-~~~~~~~~
+Barbican API
+~~~~~~~~~~~~
 
 .. table:: Barbican
    :widths: auto

@@ -3,7 +3,8 @@ copyright = '2022, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
     '.tox',
-    'README.rst'
+    'README.rst',
+    'tmp/index.rst'
 ]
 extensions = [
     'sphinx.ext.intersphinx',

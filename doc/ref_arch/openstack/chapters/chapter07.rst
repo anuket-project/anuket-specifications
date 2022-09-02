@@ -33,7 +33,7 @@ management systems; some open-source tools may be mentioned but their
 capabilities are beyond the scope of this chapter.
 
 Procedural versus Declarative code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 The procedural style IaC tools require code that specifies how to
 achieve the desired state. Whilst the declarative style IaC tools
@@ -51,7 +51,7 @@ figured by tracing the created code files and the order in which they
 were applied.
 
 Mutable versus Immutable infrastructure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 In the mutable infrastructure paradigm, software updates are made in
 place. Over time this can lead to configuration drift where each server
