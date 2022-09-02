@@ -67,8 +67,8 @@ This chapter is organised as follows:
    the OpenStack term flavor includes the profile configuration
    information as "extra specs".
 
-Consumable Infrastructure Resources and Services
-------------------------------------------------
+Resources and Services exposed to VNFs
+--------------------------------------
 
 This section will describe the different services that are exposed for
 the VNF consumption within the execution zone:
@@ -162,8 +162,7 @@ Data is accessed via API. Object storage is managed by OpenStack Swift.
 Images are persistent data, stored using the OpenStack Glance service.
 
 Cinder, Swift, and Glance services are discussed in the section
-:ref:`chapters/chapter04:virtualised infrastructure
-manager (VIM)`.
+:ref:`chapters/chapter04:vim openstack services`.
 
 
 Virtual Networking Neutron standalone
@@ -395,7 +394,7 @@ The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
 also maps the OpenStack core services to the Virtual Infrastructure
- Manager in the Reference Model (RM) :cite:p:`refmodel`.
+Manager in the Reference Model (RM) :cite:p:`refmodel`.
 
 .. list-table:: OpenStack components deployment
    :widths: 20 10 20 10 10 10
@@ -590,8 +589,8 @@ nodes required is determined on the load placed on these controller
 nodes and the need for High Availability and quorum requires at least 3
 instances of many of the services on these controller nodes.
 
-Virtualisation
-~~~~~~~~~~~~~~
+Virtualisation and hypervisors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Virtualisation is a technology that enables a guest Operating System
 (OS) to be abstracted from the underlying hardware and software. This
@@ -651,8 +650,8 @@ up (in a shipping container), and what resources are required of the DC
    -  GPU
    -  FPGA
 
-Compute
-^^^^^^^
+Physical nodes
+^^^^^^^^^^^^^^
 
 Cloud Infrastructure physical Nodes
 

@@ -21,11 +21,11 @@ for the "Profiles, Profile Extensions & Flavours" :cite:p:`refmodel`;
 the OpenStack flavor types capture both the sizing and the profile
 configuration (of the host).
 
-Underlying Resources
---------------------
+Underlying Resources Configuration and Dimensioning
+---------------------------------------------------
 
-Virtualisation
-~~~~~~~~~~~~~~
+Virtualisation layer
+~~~~~~~~~~~~~~~~~~~~
 
 In OpenStack, KVM is configured as the default hypervisor for compute
 nodes.
@@ -537,7 +537,7 @@ Example Host Configurations
 Let us refer to the data traffic networking configuration of
 :numref:`Basic Profile Host Configuration` to be part of the hp-B1-a and
 hp-B4-a host profiles and this requires the configurations as Table
-:ref:`Configuration of Basic Flavor Capabilities`.
+`Configuration of Basic Flavor Capabilities`_.
 
 .. _Configuration of Basic Flavor Capabilities:
 .. list-table:: Configuration of Basic Flavor Capabilities
@@ -587,7 +587,7 @@ but are independent of the PXE network.
 
 Let us refer to the above networking set up to be part of the hp-B1-b
 and hp-B4-b host profiles but the basic configurations as specified in
-Table :ref:`Configuration of Basic Flavor Capabilities`.
+Table `Configuration of Basic Flavor Capabilities`_.
 
 In our example, the Profile Extensions B1 and B4, are each mapped to two
 different host profiles hp-B1-a and hp-B1-b, and hp-B4-a and hp-B4-b
@@ -616,10 +616,11 @@ The above examples of host networking configurations for the B1 and B4
 Profile Extensions are also suitable for the HV Profile Extensions;
 however, the hypervisor and BIOS settings will be different (see table
 below) and hence there will be a need for different host profiles. Table
-:ref:`Configuration of High Performance Flavor Capabilities` gives examples of
+`Configuration of High Performance Flavor Capabilities`_ gives examples of
 three different host profiles; one each for HV, HD and HS Profile Extensions.
 
 .. _Configuration of High Performance Flavor Capabilities:
+
 .. list-table:: Configuration of High Performance Flavor Capabilities
    :widths: 15 29 12 12 12
    :header-rows: 2
@@ -883,7 +884,7 @@ Additions to resources, such as additional attributes, must be
 accompanied by an extension.
 
 :ref:`chapters/chapter05:interfaces and apis` of this Reference
-Architecture provides a list of :ref:`Neutron Extensions<chapters/chapter05:neutron>`.
+Architecture provides a list of :ref:`chapters/chapter04:neutron extensions`.
 The current available
 extensions can be obtained using the List Extensions
 API :cite:p:`ostk_nw_ext`
@@ -1041,8 +1042,8 @@ Sizing rules :
 -  1 Core-GHz per OSD
 -  16GB RAM baseline + 2-3 GB per OSD
 
-Virtualised Infrastructure Manager (VIM)
-----------------------------------------
+VIM OpenStack Services
+----------------------
 
 This section covers:
 
@@ -1053,8 +1054,9 @@ VIM Services
 ~~~~~~~~~~~~
 
 A high-level overview of the core OpenStack Services was provided in
-:ref:`chapters/chapter03:modelling`. In this section we
-describe the core and other needed services in more detail.
+:ref:`chapters/chapter03:virtualised infrastructure manager (vim)`.
+In this section we describe the core and other needed services in
+more detail.
 
 Keystone
 ^^^^^^^^
@@ -1749,5 +1751,4 @@ number of open-source tools are available for the purpose including:
 
 These installers are described in more details in
 
-:ref:`chapters/chapter07:\
-Operations and Life Cycle Management`.
+:ref:`chapters/chapter07:Operations and Life Cycle Management`.

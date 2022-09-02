@@ -155,7 +155,7 @@ Terminology :ref:`cntt:common/glossary:openstack related terminology`.
 Abbreviations
 -------------
 
-.. list-table:: 
+.. list-table::
    :widths: 20 60
    :header-rows: 1
 
