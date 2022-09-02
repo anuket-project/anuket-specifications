@@ -106,7 +106,7 @@ Principles
 Architectural principles
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This OpenStack Reference Architecture must obey to the following
+This Reference Architecture for OpenStack based Cloud Infrastructure must obey the following
 set of architectural principles:
 
 #. **Open-source preference:** To ensure, by building on
