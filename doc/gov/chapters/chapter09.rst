@@ -210,7 +210,7 @@ Success Indicators
    -  Community (Anuket)
    -  LaaS (e.g. UNH)
 
-3. Engaged vendors successfully configure their VI and run the RC-1 test suite and are able to provide expert feedback
+3. Engaged vendors successfully configure their VI and run the RC-1 or RC-2 test suite and are able to provide expert feedback
 
 4. Engaged vendors are able to validate that they can instantiate and run rudimentary validation of VNF functionality on more than one conformant cloud infrastructure (NFVI)
 
@@ -220,11 +220,11 @@ Initiation
 Objectives of RI1/RC1 Trials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The object is to quantitively and qualitatively assess and evaluate the following CNTT requirements, methods, and support processes:
+The object is to quantitively and qualitatively assess and evaluate the following Anuket requirements, methods, and support processes:
 
--  RI1 Specifications
--  VI1 implementation support methods ( i.e. cookbooks, installation manuals, how to guides etc.)
--  RC1 Test Suite
+-  RI1 or RI2 Specifications
+-  VI implementation support methods ( i.e. cookbooks, installation manuals, how to guides etc.)
+-  RC1 or RC2 Test Suite
 -  TC Traceability
 -  Test Pass Criteria
 -  Benchmark Data
@@ -277,7 +277,7 @@ Activities include the deployment and configuration of VI and execution of the R
 
 1. Secure appropriate environment space (pre-existing, new build, LaaS)
 2. VI per published RI1 Specifications
-3. RC1 Test suite will be provided to the participants
+3. RC1 or RC2 Test suite will be provided to the participants
 4. Trial Participants ensure a complete understanding of the test suite actions and expected outcomes.
 
 Running the Field Trial
@@ -285,8 +285,8 @@ Running the Field Trial
 
 The field trial will run the Test Suite for 3 Iterations. For each iteration:
 
--  Vendor RC1 test results are documented. Vendor provide feedback to Anuket
--  Anuket RC1 test results are documented feadback is recorded.
+-  Vendor RC1 or RC2 test results are documented. Vendor provide feedback to Anuket
+-  Anuket RC1 or RC2 test results are documented. Feedback is recorded.
 
 The Community shall review Issues/Gaps during the evaluate stage and do one of the following:
 
@@ -301,9 +301,9 @@ Anuket will staff the plan by soliciting volunteers from the participants. The l
 -  Overall Field Trial Lead
 -  Technical Field Trial Steering Lead
 -  Vendor lead from each supplier
--  SME(s) for RC1 supporting suppliers
--  SME(s) for RI1 supporting suppliers
--  OPNVF lead for RI1/RC1
+-  SME(s) for RC1 or RC2 supporting suppliers
+-  SME(s) for RI1 or RI2 supporting suppliers
+-  SME(s) for RI1/RC1 or RI2/RC2
 -  Other support roles such as Governance, technical writers, etc.
 
 The participants that volunteer for the roles will be expected to provide the appropriate amount of time to support the trials initiative.
@@ -313,8 +313,8 @@ Execution Stage Deliverables
 
 The deliverables of the execute stage will be:
 
--  Implemented Participant RA1 Labs which have been tested.
--  RC1 Test cases are run.
+-  Implemented Participant RA1 or RA2 Labs which have been tested.
+-  RC1 or RC2 Test cases are run.
 
 Assessment
 ~~~~~~~~~~
@@ -325,8 +325,8 @@ Required Assessments
 ^^^^^^^^^^^^^^^^^^^^
 
 -  VI Implementation methods and procedures (cookbook, etc)
--  RI1 Specifications
--  RC1 Test Suite
+-  RI1 or RI2 Specifications
+-  RC1 or RC2 Test Suite
 -  TC Traceability
 -  Test Pass Criteria
 -  Benchmark Data
