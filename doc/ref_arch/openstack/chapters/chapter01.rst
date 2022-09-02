@@ -152,6 +152,9 @@ lower-level details or attributes or common properties in the study of
 systems to focus attention on topics of greater importance or general
 concepts. It can be the result of decoupling.
 
+**Anuket:** A LFN open-source project developing open reference
+infrastructure models, architectures, tools, and programs.
+
 **Cloud Infrastructure:** A generic term covering **NFVI**, **IaaS** and
 **CaaS** capabilities - essentially the infrastructure on which a
 **Workload** can be executed.
@@ -229,6 +232,10 @@ a cloud infrastructure tenant to resources outside of the tenant space.
 logging layer, which allows data collection and consumption for better
 use and understanding of data. **Fluentd** is a CNCF graduated project.
 
+**Functest:** An open-source project part of Anuket LFN project.
+It addresses functional testing with a collection of state-of-the-art
+virtual infrastructure test suites, including automatic VNF testing.
+
 **Hardware resources:** Compute/Storage/Network hardware resources on
 which the cloud infrastructure platform software, virtual machines and
 containers run on.
@@ -252,6 +259,9 @@ running or suspended, that can be used like a physical server.
 It can be used to specify VM Instance or Container Instance.
 
 **Kibana:** An open-source data visualisation system.
+
+**Kubernetes:** An open-source system for automating deployment, scaling,
+and management of containerised applications.
 
 **Monitoring (Capability):** Monitoring capabilities are used for the
 passive observation of workload-specific traffic traversing the Cloud
@@ -291,6 +301,23 @@ components are sub-entities of these two main entities.
 and/or **Network Service**\ (s), defined by its functional and
 behavioural specification, including the service lifecycle.
 
+**Open Network Automation Platform (ONAP):** A LFN project developing a
+comprehensive platform for orchestration, management, and automation
+of network and edge computing services for network operators,
+cloud providers, and enterprises.
+
+**ONAP OpenLab:** ONAP community lab.
+
+**Open Platform for NFV (OPNFV):** A collaborative project under
+the Linux Foundation. OPNFV is now part of the LFN Anuket project.
+It aims to implement, test, and deploy tools for conformance and
+performance of NFV infrastructure.
+
+**OPNFV Verification Program (OVP):** An open-source,
+community-led compliance and verification program aiming to demonstrate
+the readiness and availability of commercial NFV products and services
+using OPNFV and ONAP components.
+
 **Platform:** A cloud capabilities type in which the cloud service user
 can deploy, manage and run customer-created or customer-acquired
 applications using one or more programming languages and one or more
@@ -317,6 +344,8 @@ is a technique for improving the overall efficiency of superscalar CPUs
 with hardware multithreading. SMT permits multiple independent threads
 of execution on a single core to better utilise the resources provided
 by modern processor architectures.
+
+**Shaker:** A distributed data-plane testing tool built for OpenStack.
 
 **Software Defined Storage (SDS):** An architecture which consists of
 the storage software that is independent from the underlying storage
@@ -369,6 +398,9 @@ to a virtualised computation environment hosting a **VNFC**.
 **Virtual Networking resource:** routes information among the network
 interfaces of a virtual compute resource and physical network
 interfaces, providing the necessary connectivity.
+
+**VMTP:** A data path performance measurement tool built specifically
+for OpenStack clouds.
 
 **Workload:** an application (for example **VNF**, or **CNF**) that
 performs certain task(s) for the users. In the Cloud Infrastructure,
