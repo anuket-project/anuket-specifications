@@ -163,12 +163,20 @@ Abbreviations
      - Definition
    * - API
      - Application Programming Interface
+   * - BGP VPN
+     - Border gateway Protocol Virtual Private network
+   * - CI/CD
+     - Continuous Integration/ Continuous Deployment
+   * - CNTT
+     - Cloud iNfrastructure Task Force
    * - CPU
      - Central Processing Unit
    * - DNS
      - Domain Name System
    * - DPDK
      - Data Plane Development Kit
+   * - DHCP
+     - Dynamic Host Configuration Protocol
    * - ECMP
      - Equal Cost Multi-Path routing
    * - ETSI
@@ -203,6 +211,8 @@ Abbreviations
      - Infrastructure as a Service
    * - ICMP
      - Internet Control Message Protocol
+   * - IMS
+     - IP Multimedia Sub System
    * - IO
      - Input/Output
    * - IOPS
@@ -241,10 +251,14 @@ Abbreviations
      - Network Time Protocol
    * - NUMA
      - Non-Uniform Memory Access
+   * - OAI
+     - Open Air Interface
    * - OS
      - Operating System
    * - OSTK
      - OpenStack
+   * - OPNFV
+     - Open Platform for NFV
    * - OVS
      - Open vSwitch
    * - OWASP
@@ -277,6 +291,8 @@ Abbreviations
      - Software Defined Networking
    * - SFC
      - Service Function Chaining
+   * - SG
+     - Security Group
    * - SLA
      - Service Level Agreement
    * - SMP
@@ -293,6 +309,8 @@ Abbreviations
      - Solid State Drive
    * - SSL
      - Secure Sockets Layer
+   * - SUT
+     - System Under Test
    * - TCP
      - Transmission Control Protocol
    * - TLS
@@ -301,6 +319,8 @@ Abbreviations
      - Top of Rack
    * - TPM
      - Trusted Platform Module
+   * - UDP
+     - User Data Protocol
    * - VIM
      - Virtualised Infrastructure Manager
    * - VLAN
