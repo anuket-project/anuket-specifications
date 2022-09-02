@@ -3,7 +3,8 @@ copyright = '2022, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
     '.tox',
-    'README.rst'
+    'README.rst',
+    'tmp/index.rst'
 ]
 extensions = [
     'sphinx.ext.intersphinx',
@@ -14,6 +15,8 @@ html_theme = "sphinx_material"
 linkcheck_ignore = [
     "https://www.cisecurity.org/cis-benchmarks/",
     "https://www.iso.org/obp/ui/",
+    'http://127.0.0.1',
+    'https://www.sdxcentral.com'
 ]
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
