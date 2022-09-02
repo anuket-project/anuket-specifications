@@ -171,7 +171,7 @@ specified below followed by networking bandwidth requirements.
      - IO virtualisation using virtio1.1
      - Must support
      - Must support
-     - :ref:`chapters/chapter04:virtualisation`
+     - :ref:`chapters/chapter04:virtualisation layer`
    * - infra.net.cfg.002
      - The overlay network encapsulation protocol needs to enable ECMP in the
        underlay to take advantage of the scale-out features of the network fabric
@@ -499,15 +499,15 @@ Cloud Infrastructure Management Requirements
    * - e.man.001
      - Capability to allocate virtual compute resources to a workload
      - Must support
-     - :ref:`chapters/chapter03:consumable infrastructure resources and services`
+     - :ref:`chapters/chapter03:resources and services exposed to vnfs`
    * - e.man.002
      - Capability to allocate virtual storage resources to a workload
      - Must support
-     - :ref:`chapters/chapter03:consumable infrastructure resources and services`
+     - :ref:`chapters/chapter03:resources and services exposed to vnfs`
    * - e.man.003
      - Capability to allocate virtual networking resources to a workload
      - Must support
-     - :ref:`chapters/chapter03:consumable infrastructure resources and services`
+     - :ref:`chapters/chapter03:resources and services exposed to vnfs`
    * - e.man.004
      - Capability to isolate resources between tenants
      - Must support
@@ -1288,7 +1288,7 @@ General Requirements
      - Availability
      - The Architecture **must** provide High Availability for OpenStack
        components
-     - :ref:`chapters/chapter04:underlying resources`
+     - :ref:`chapters/chapter04:underlying resources configuration and dimensioning`
 
 Infrastructure Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1416,7 +1416,7 @@ VIM Requirements
    * - vim.01
      - General
      - The Architecture **must** allow infrastructure resource sharing
-     - :ref:`chapters/chapter03:consumable infrastructure resources and services`
+     - :ref:`chapters/chapter03:resources and services exposed to vnfs`
    * - vim.03
      - General
      - The Architecture **must** allow VIM to discover and manage Cloud

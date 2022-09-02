@@ -162,7 +162,7 @@ Data is accessed via API. Object storage is managed by OpenStack Swift.
 Images are persistent data, stored using the OpenStack Glance service.
 
 Cinder, Swift, and Glance services are discussed in the section
-:ref:`chapters/chapter04:virtualised infrastructure manager (VIM)`.
+:ref:`chapters/chapter04:vim openstack services`.
 
 
 Virtual Networking Neutron standalone

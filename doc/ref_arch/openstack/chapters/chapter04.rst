@@ -21,7 +21,7 @@ for the "Profiles, Profile Extensions & Flavours" :cite:p:`refmodel`;
 the OpenStack flavor types capture both the sizing and the profile
 configuration (of the host).
 
-Underlying Resources Configuartion and Dimensioning
+Underlying Resources Configuration and Dimensioning
 ---------------------------------------------------
 
 Virtualisation layer
@@ -1054,7 +1054,7 @@ VIM Services
 ~~~~~~~~~~~~
 
 A high-level overview of the core OpenStack Services was provided in
-:ref:`chapters/chapter03:virtualised-infrastructure-manager-vim`.
+:ref:`chapters/chapter03:virtualised infrastructure manager (vim)`.
 In this section we describe the core and other needed services in
 more detail.
 
