@@ -67,8 +67,8 @@ This chapter is organised as follows:
    the OpenStack term flavor includes the profile configuration
    information as "extra specs".
 
-Consumable Infrastructure Resources and Services
-------------------------------------------------
+Resources and Services exposed to VNFs
+--------------------------------------
 
 This section will describe the different services that are exposed for
 the VNF consumption within the execution zone:
@@ -589,8 +589,8 @@ nodes required is determined on the load placed on these controller
 nodes and the need for High Availability and quorum requires at least 3
 instances of many of the services on these controller nodes.
 
-Virtualisation
-~~~~~~~~~~~~~~
+Virtualisation and hypervisors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Virtualisation is a technology that enables a guest Operating System
 (OS) to be abstracted from the underlying hardware and software. This
@@ -650,8 +650,8 @@ up (in a shipping container), and what resources are required of the DC
    -  GPU
    -  FPGA
 
-Compute
-^^^^^^^
+Physical nodes
+^^^^^^^^^^^^^^
 
 Cloud Infrastructure physical Nodes
 
