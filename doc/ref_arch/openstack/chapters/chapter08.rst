@@ -1607,15 +1607,15 @@ TC Mapping to Requirements
 +-----------------------+----------------------------------------------------+
 | shaker                | Dataplane benchmarking                             |
 +-----------------------+----------------------------------------------------+
-| cloudify              | open-source VNF onboarding and testing              |
+| cloudify              | open-source VNF onboarding and testing             |
 +-----------------------+----------------------------------------------------+
-| cloudify_ims          | open-source VNF onboarding and testing              |
+| cloudify_ims          | open-source VNF onboarding and testing             |
 +-----------------------+----------------------------------------------------+
-| heat_ims              | open-source VNF onboarding and testing              |
+| heat_ims              | open-source VNF onboarding and testing             |
 +-----------------------+----------------------------------------------------+
-| vyos_vrouter          | open-source VNF onboarding and testing              |
+| vyos_vrouter          | open-source VNF onboarding and testing             |
 +-----------------------+----------------------------------------------------+
-| juju_epc              | open-source VNF onboarding and testing              |
+| juju_epc              | open-source VNF onboarding and testing             |
 +-----------------------+----------------------------------------------------+
 
 OpenStack Testing Cookbook
