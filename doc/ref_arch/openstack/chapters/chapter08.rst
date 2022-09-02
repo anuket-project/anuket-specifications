@@ -178,6 +178,10 @@ Here are a couple of publicly available playbooks :
    verification <https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/wallaby>`__
 -  `Anuket
    RC1 <https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/wallaby>`__
+-  `Kubernetes
+   verification <https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/v1.22>`__
+   (it can be used prior to the deployment of OpenStack services when 
+   OpenStack services are containerised)
 
 Conformance Test Suite
 ----------------------
