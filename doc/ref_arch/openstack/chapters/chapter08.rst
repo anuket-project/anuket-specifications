@@ -5,9 +5,9 @@ The objective of this chapter is to provide an automated mechanism
 to validate OpenStack based cloud infrastructure
 against the standard set of requirements defined in
 :ref:`chapters/chapter02:Architecture Requirements`. Through this validation
-mechanism, a provider of cloud infrastructure will be able
-to test their conformance to this reference architecture. This will ease the
-integration of network functions into operator environments that host
+mechanism, a provider of cloud infrastructure will be able to test their
+cloud infrastructure's conformance to this reference architecture. This will 
+ease the integration of network functions into operator environments that host
 compatible cloud infrastructures, thereby reducing cost, complexity, and time
 of integration.
 
@@ -25,13 +25,13 @@ Requirements and Testing Principles
 -----------------------------------
 
 If there is no clear traceability and strong links between **Requirements**,
-**Tests** and **Conformance Specifications**, then it becomes difficult to
+**Tests**, and **Conformance Specifications**, then it becomes difficult to
 determine if a cloud infrastructure is compliant. With this in mind, below are
 the set of recommended principles for each of the three components to follow.
 Adherence to these principles will provide the following:
 
 -  Enable clear progress tracking and linkage between independent
-   projects (i.e. know what has and hasn’t been covered, and track
+   projects (i.e. know what has and has not been covered, and track
    changes over time)
 -  Help users better understand if they meet requirements
 -  Provide a stable set of point-in-time requirements and tests to
@@ -44,7 +44,7 @@ Testing Principles:
   validated
 - Failures should provide additional content to inform the user where
   or how the requirement was violated (e.g. which file or resource
-  violated the requirement). Put another way, don't require the user to
+  violated the requirement). Put another way, do not require the user to
   read the test to understand what went wrong
 - Testing tools should support selection of tests based on category or
   profile.
@@ -69,7 +69,7 @@ Conformance Specifications:
 Test Case Integration and Tooling
 ---------------------------------
 
-The OpenStack based cloud infrastructure suite must utilize the Anuket test
+The OpenStack based cloud infrastructure suite must utilise the Anuket test
 case integration toolchain to deliver overall integration, the same end user
 actions, and a unique test result format (e.g. Anuket test result
 database) needed by the end users and any test case result verification
@@ -93,7 +93,7 @@ The verification, validation, and conformance processes leverage
 existing Anuket testing knowledge (projects) and experience (history) by
 utilising the toolchain design already in-place. The conformance
 toolchain only requires for the local deployment of the components instead of
-leveraging the common Anuket centralized services. However, the
+leveraging the common Anuket centralised services. However, the
 interfaces remain unchanged for leveraging test jobs, the common test
 case execution, the test result database and the S3 protocol to publish
 the artifacts. It’s worth mentioning that dumping all results and logs
@@ -102,7 +102,7 @@ required for conformance is already in place in Functest daily jobs (see
 
 It should be noted that `Xtesting
 CI <https://galaxy.ansible.com/collivier/xtesting>`__ supports both
-centralized and distributed deployment models as described before. It
+centralised and distributed deployment models as described before. It
 has deployed the full toolchain in one small virtual machine to verify
 ONAP Openlab via Functest.
 
@@ -153,7 +153,7 @@ commands <https://github.com/collivier/ansible-role-xtesting#readme>`__.
 In addition, it supports multiple components such as Jenkins and Gitlab
 CI (test schedulers) and `multiple deployment
 models <https://lists.opnfv.org/g/opnfv-tsc/message/5702>`__ such as
-all-in-one or centralized services.
+all-in-one or centralised services.
 
 `Xtesting <https://xtesting.readthedocs.io/en/latest/>`__ and `Xtesting
 CI <https://galaxy.ansible.com/collivier/xtesting>`__ combined meet the
@@ -163,9 +163,9 @@ conformance:
 -  smoothly assemble multiple heterogeneous test cases
 -  generate the Jenkins jobs in `Anuket
    Releng <https://git.opnfv.org/releng/tree/jjb/functest>`__
-   to verify Anuket RC1 and RC2
--  deploy local CI/CD toolchains everywhere to check compliance with
-   Anuket
+   to verify conformance with Anuket specifications
+-  deploy local CI/CD toolchains everywhere to check conformance with
+   Anuket specifications
 -  `dump all test case results and
    logs <http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip>`__ for
    third-party conformance review
@@ -180,6 +180,8 @@ Here are a couple of publicly available playbooks :
    RC1 <https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/wallaby>`__
 -  `Kubernetes
    verification <https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/v1.22>`__
+   (it can be used prior to the deployment of OpenStack services when 
+   OpenStack services are containerised)
 
 Conformance Test Suite
 ----------------------
@@ -189,19 +191,19 @@ Functest in a nutshell
 
 `Functest <https://functest.readthedocs.io/en/stable-xena/>`__ was
 initially created to verify OPNFV Installers and Scenarios and then to
-publish fair, trustable and public results regarding the status of the
-different opensource technologies, especially for Neutron backends
+publish fair, trustable, and public results regarding the status of the
+different open-source technologies, especially for Neutron backends
 (e.g., Neutron agents, OpenDaylight, OVN, etc.). It has been continuously
 updated to offer the best testing coverage for any kind of OpenStack and
 Kubernetes deployments including production environments. It also
-ensures that the platforms meet Network Functions Virtualization
+ensures that the platforms meet Network Functions Virtualisation
 requirements by running and testing VNFs amongst all tests available.
 
 Functest is driven by a true verification of the platform under test as
 opposed to the interoperability programs such as
 `RefStack <https://refstack.openstack.org/>`__ or `OPNFV Verification
 Program <https://www.opnfv.org/verification>`__ which select a small
-subset of Functional tests passing in many different opensource software
+subset of Functional tests passing in many different open-source software
 combinations:
 
 -  tests are skipped if an optional support is missing (e.g.
@@ -210,7 +212,7 @@ combinations:
    interconnection <https://docs.openstack.org/networking-bgpvpn/latest/>`__
    or `Service Function
    Chaining <https://docs.openstack.org/networking-sfc/latest/>`__)
--  tests are parameterized (e.g. shared vs non-shared live migration)
+-  tests are parameterised (e.g. shared vs non-shared live migration)
 -  blacklist mechanisms are available if needed
 
 It should be noted that `the RefStack
@@ -221,11 +223,6 @@ they are in Functest in the next 3 dedicated testcases:
 -  refstack_object (OpenStack Powered Object Storage)
 -  refstack_platform (OpenStack Powered Platform)
 
-Functest also integrates `Kubernetes End-to-end
-tests <https://kubernetes.io/blog/2019/03/22/kubernetes-end-to-end-testing-for-everyone/>`__
-and allows verifying Kubernetes Conformance (see
-`k8s-conformance <https://build.opnfv.org/ci/job/functest-kubernetes-opnfv-functest-kubernetes-smoke-v1.22-k8s_conformance-run/25/console>`__).
-
 Then Functest conforms with the upstream rules (versions, code quality,
 etc.) and especially their
 `gates <https://docs.opendev.org/opendev/system-config/latest/devstack-gate.html>`__
@@ -234,7 +231,7 @@ the quality between code and deployment. In that case, Functest can be
 considered as a smooth and lightweight integration of tests developed
 upstream (and the Functest team directly contributes in these projects:
 `Rally <https://github.com/openstack/rally-openstack>`__,
-`Tempest <https://github.com/openstack/tempest>`__, etc.). It’s worth
+`Tempest <https://github.com/openstack/tempest>`__, etc.). It is worth
 mentioning that, as opposed to the OpenStack Gates leveraging on
 `DevStack <https://docs.openstack.org/devstack/latest/>`__, it can check
 the same already deployed SUT over and over even from a `Raspberry
@@ -291,9 +288,9 @@ And VNFs automatically deployed and tested :
 
    ============ ===================================
    Testcases    Benchmarking
-   ============ ===================================
+   ============ ====================================
    cloudify     Cloudify deployment
-   cloudify_ims Clearwater IMS deployed via Coudify
+   cloudify_ims Clearwater IMS deployed via Cloudify
    heat_ims     Clearwater IMS deployed via Heat
    vyos_vrouter VyOS deployed via Cloudify
    juju_epc     OAI deployed via Juju
@@ -355,7 +352,7 @@ successfully. They cover all together the API testing requirements as
 asked by :ref:`chapters/chapter05:interfaces and apis`
 
 The following software versions are considered here to verify OpenStack
-Wallaby selected by Anuket:
+Wallaby:
 
 .. list-table:: Software versions
    :widths: 60 40
@@ -1146,11 +1143,9 @@ CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yam
 -  `rally_jobs <http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_jobs_cntt-run-5/rally_jobs_cntt/rally_jobs_cntt.html>`__:
    Neutron scenarios executed in the OpenStack gates
 
-At the time of writing, no KPI is defined in
-:ref:`chapters/chapter05:interfaces and apis`
-which would have asked for an update of the default SLA (maximum failure
-rate of 0%) proposed in `Functest Benchmarking
-CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__
+The default SLA proposed in `Functest Benchmarking
+Anuket <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__
+is a maximum failure rate of 0%.
 
 Identity - Keystone API benchmarking
 ''''''''''''''''''''''''''''''''''''
@@ -1433,10 +1428,8 @@ OpenStack instances and networks in different topologies.
 `Shaker <https://pyshaker.readthedocs.io/en/latest/>`__ scenario
 specifies the deployment and list of tests to execute.
 
-At the time of writing, no KPIs are defined in Anuket specifications
-which would have asked for an update of the default SLA proposed in
-`Functest Benchmarking
-CNTT <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__
+The SLA is the default SLA proposed in `Functest Benchmarking
+Anuket <https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby>`__.
 
 On top of this dataplane benchmarking described in VMTP & Shaker, we
 need to integrate testing as described in `ETSI GS NFV-TST 009:
@@ -1447,7 +1440,7 @@ capabilities of a compute node. The `rapid
 scripts <https://git.opnfv.org/samplevnf>`__ in
 conjunction with the `PROX
 tool <https://docs.anuket.io/projects/samplevnf/en/latest/testing/user/userguide/index.html>`__
-offers an open source implementation for this type of testing.
+offers an open-source implementation for this type of testing.
 
 VMTP
 ''''
@@ -1526,14 +1519,14 @@ Here are all samples:
    UDP            packets (pps)
    ============== ======================
 
-Opensource VNF onboarding and testing
+Open-source VNF onboarding and testing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Running opensource VNFs is a key technical solution to ensure that the
-platforms meet Network Functions Virtualization requirements. `Functest
+Running open-source VNFs is a key technical solution to ensure that the
+platforms meet Network Functions Virtualisation requirements. `Functest
 VNF <https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml?h=stable%2Fwallaby>`__
 offers 5 test cases which automatically onboard and test the following 3
-opensource VNFs:
+open-source VNFs:
 
 -  `Clearwater IMS <https://clearwater.readthedocs.io/en/stable/>`__
 -  `VyOS vRouter <https://www.vyos.io/>`__
@@ -1618,15 +1611,15 @@ TC Mapping to Requirements
 +-----------------------+----------------------------------------------------+
 | shaker                | Dataplane benchmarking                             |
 +-----------------------+----------------------------------------------------+
-| cloudify              | opensource VNF onboarding and testing              |
+| cloudify              | open-source VNF onboarding and testing             |
 +-----------------------+----------------------------------------------------+
-| cloudify_ims          | opensource VNF onboarding and testing              |
+| cloudify_ims          | open-source VNF onboarding and testing             |
 +-----------------------+----------------------------------------------------+
-| heat_ims              | opensource VNF onboarding and testing              |
+| heat_ims              | open-source VNF onboarding and testing             |
 +-----------------------+----------------------------------------------------+
-| vyos_vrouter          | opensource VNF onboarding and testing              |
+| vyos_vrouter          | open-source VNF onboarding and testing             |
 +-----------------------+----------------------------------------------------+
-| juju_epc              | opensource VNF onboarding and testing              |
+| juju_epc              | open-source VNF onboarding and testing             |
 +-----------------------+----------------------------------------------------+
 
 OpenStack Testing Cookbook
@@ -1690,7 +1683,7 @@ archive containing all test results and artifacts will be printed in
 functest-wallaby-zip’s console. Be free to download it and then to send
 it to any reviewer committee.
 
-To clean your working dir:
+To clean your working directory:
 
 .. code:: bash
 
