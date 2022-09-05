@@ -288,7 +288,7 @@ And VNFs automatically deployed and tested :
 
    ============ ===================================
    Testcases    Benchmarking
-   ============ ===================================
+   ============ ====================================
    cloudify     Cloudify deployment
    cloudify_ims Clearwater IMS deployed via Cloudify
    heat_ims     Clearwater IMS deployed via Heat
