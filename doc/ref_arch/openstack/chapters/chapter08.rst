@@ -424,7 +424,7 @@ Image - Glance API testing
 ''''''''''''''''''''''''''
 
 Glance API is covered in the OpenStack Gates via
-:cite:p:`rally` as integrated in
+:cite:p:`tempest` as integrated in
 Functest Smoke CNTT :cite:p:`functestsmokecntt`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
