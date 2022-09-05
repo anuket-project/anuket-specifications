@@ -103,11 +103,39 @@ Wallaby."
 Principles
 ----------
 
-OpenStack Reference Architecture must obey to the following set of
-principles described in:
+Architectural principles
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :ref:`cntt:common/chapter00:anuket general principles`
-- :ref:`cntt:common/chapter00:architectural principles`
+This Reference Architecture for OpenStack based Cloud Infrastructure must obey the following
+set of architectural principles:
+
+#. **Open-source preference:** To ensure, by building on
+   technology available in open-source projects, that
+   suppliers’ and operators’ investment have a tangible pathway
+   towards a standard and production ready Cloud Infrastructure
+   solution portfolio.
+#. **Open APIs:** To enable interoperability and component
+   substitution, and minimise integration efforts by using openly
+   published API definitions.
+#. **Separation of concerns:** To promote lifecycle independence of
+   different architectural layers and modules (e.g. disaggregation of
+   software from hardware).
+#. **Automated lifecycle management:** To minimise costs of the
+   end-to-end lifecycle, maintenance downtime (target zero downtime),
+   avoid errors and discrepancies resulting from manual processes.
+#. **Automated scalability:** To minimise costs and operational
+   impacts through automated policy-driven scaling of workloads by
+   enabling automated horizontal scalability of workloads.
+#. **Automated closed loop assurance:** To minimise operational
+   costs and simplify Cloud Infrastructure platform operations by
+   using automated fault resolution and performance optimisation.
+#. **Cloud nativeness:** To optimise the utilisation of resources
+   and enable operational efficiencies.
+#. **Security compliance:** To ensure the architecture follows
+   the industry best security practices and is at all levels compliant
+   to relevant security regulations.
+#. **Resilience and Availability:** To allow High Availability and
+   Resilience for hosted VNFs, and to avoid Single Point of Failure.
 
 OpenStack specific principles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,8 +169,11 @@ on Logging, Monitoring and Analytics (LMA), configuration management and
 some other operational items. Please note that Chapter 7 is not a
 replacement for the implementation, configuration and operational
 documentation that accompanies the different OpenStack distributions.
-Chapter 8 identifies certain Gaps that currently exist and plans on how
-to address them (for example, resources autoscaling).
+Chapter 8 addresses the conformance. It provides an automated validation
+mechanism to test the conformance of a deployed cloud infrastructure to
+this reference architecture. Finally, Chapter 9 identifies certain Gaps
+that currently exist and plans on howto address them (for example,
+resources autoscaling).
 
 Terminology
 -----------
