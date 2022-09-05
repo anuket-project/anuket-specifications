@@ -6,7 +6,7 @@ to validate OpenStack based cloud infrastructure
 against the standard set of requirements defined in
 :ref:`chapters/chapter02:Architecture Requirements`. Through this validation
 mechanism, a provider of cloud infrastructure will be able to test their
-cloud infrastructure's conformance to this reference architecture. This will 
+cloud infrastructure's conformance to this reference architecture. This will
 ease the integration of network functions into operator environments that host
 compatible cloud infrastructures, thereby reducing cost, complexity, and time
 of integration.
@@ -180,7 +180,7 @@ Here are a couple of publicly available playbooks :
    RC1 <https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/wallaby>`__
 -  `Kubernetes
    verification <https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/v1.22>`__
-   (it can be used prior to the deployment of OpenStack services when 
+   (it can be used prior to the deployment of OpenStack services when
    OpenStack services are containerised)
 
 Conformance Test Suite
@@ -286,7 +286,7 @@ And VNFs automatically deployed and tested :
 .. table:: VNFs
    :widths: auto
 
-   ============ ===================================
+   ============ ====================================
    Testcases    Benchmarking
    ============ ====================================
    cloudify     Cloudify deployment
@@ -294,7 +294,7 @@ And VNFs automatically deployed and tested :
    heat_ims     Clearwater IMS deployed via Heat
    vyos_vrouter VyOS deployed via Cloudify
    juju_epc     OAI deployed via Juju
-   ============ ===================================
+   ============ ====================================
 
 Functest should be considered as a whole as it meets multiple objectives
 about the reference implementation:
@@ -1520,7 +1520,7 @@ Here are all samples:
    ============== ======================
 
 Open-source VNF onboarding and testing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Running open-source VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualisation requirements. `Functest
