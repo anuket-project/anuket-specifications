@@ -84,7 +84,7 @@ continuously deploying and testing cloud infrastructure.
 As for all installer projects,
 Jenkins :cite:p:`jenkins` triggers scenario
 deployments, runs the Anuket gating test cases and then publishes all
-test results in the centralized test
+test results in the centralised test
 database :cite:p:`testdb`
 and all artifacts (reports, logs, etc.) to an S3 compatible storage
 service :cite:p:`s3storageservice`.

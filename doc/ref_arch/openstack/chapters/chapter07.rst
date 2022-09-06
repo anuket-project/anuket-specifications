@@ -65,7 +65,7 @@ Cloud Infrastructure provisioning and configuration management
 In the Reference Model :cite:p:`refmodel`, the "Configuration and
 Lifecycle Management" chapter defines the functions of Configuration
 and Life Cycle Management (LCM).
-To operate and manage a scalable cloud, that minimizes operational
+To operate and manage a scalable cloud, that minimises operational
 costs, requires tools that incorporates systems for automated
 provisioning and deployment, and managing configurations that ensures
 the correctness and integrity of the deployed and configured systems.
@@ -105,7 +105,7 @@ Red Hat Entreprise Linux, OpenSUSE, etc.).
 Foreman service can be installed by Ansible playbooks
 :cite:p:`ansib`.
 Ansible playbooks are basic tools for the automation of the
-infrastructure virtualization layer deployments.
+infrastructure virtualisation layer deployments.
 
 VIM deployment
 ~~~~~~~~~~~~~~
@@ -247,7 +247,7 @@ Logs have multiple operational uses including for:
 1. Regulatory Compliance and Security Information and Event Management
    (SIEM) featuring the automated gathering, analysis and correlation of
    log data across all systems and devices across an operator to provide
-   real-time analysis, event prioritization, reporting, notification and
+   real-time analysis, event prioritisation, reporting, notification and
    alerting.
 2. Monitoring across systems in real-time to detect particular log
    events, patterns, anomalies or inactivity to gauge system and
