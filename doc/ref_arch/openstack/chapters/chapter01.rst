@@ -13,13 +13,12 @@ mature and widely accepted open-source technology; a strong ecosystem of
 vendors that support it, the OpenInfra Foundation for managing the
 community, and, most importantly, it is widely deployed by the global
 operator community for both internal infrastructure and external facing
-products and services. This means that the operators have existing staff
-with the right skill sets to support a Cloud Infrastructure
-(or Network Function Virtualisation Infrastructure,
-NFVI :cite:p:`etsinfvinf`)
-deployment into development, test and production. Another reason to
-choose OpenStack is that it has a large active community of vendors and
-operators, which means that any code or component changes needed to
+products and services. This means that resources with the right skill
+sets to support a Cloud Infrastructure (or Network Function Virtualisation
+Infrastructure, NFVI :cite:p:`etsinfvinf`) are available.
+Another reason to choose OpenStack is that it has a large active
+community of vendors and operators, which means that any code or
+component changes needed to
 support the Common Telco Cloud Infrastructure requirements can be
 managed through the existing project communities' processes to add and
 validate the required features through well-established mechanisms.
@@ -27,9 +26,9 @@ validate the required features through well-established mechanisms.
 Vision
 ~~~~~~
 
-The OpenStack-based Reference Architecture will host NFV
-workloads, primarily VNFs (Virtual Network Functions),
-of interest to the Anuket community. The
+This Reference Architecture specifies OpenStack based Cloud
+Infrastructure for hosting NFV workloads, primarily VNFs
+(Virtual Network Functions). The
 Reference Architecture document can be used by operators to deploy
 Anuket conformant infrastructure; hereafter, "conformant" denotes that
 the resource can satisfy tests conducted to verify conformance with this
@@ -61,9 +60,9 @@ Examples include:
    session's usage multiplied by the expected number of concurrent
    sessions with overhead.
 
--  **Network functions**: Network functions is a broad category but
-   encompasses workloads that support the exchange of information (data,
-   voice, multi-media) over a system's network. Some of these workloads
+-  **Network functions**: are software components that support the
+   exchange of information (data, voice, multi-media)
+   over a system's network. Some of these workloads
    tend to consist of a large number of small-sized packets that are
    short lived, such as DNS queries or SNMP traps. These messages need
    to arrive quickly and, thus, do not handle packet loss. Network
