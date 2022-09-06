@@ -53,10 +53,10 @@ Examples include:
 -  **Performance tuning**: Network level tuning for this workload is
    minimal. Quality of Service (QoS) applies to these workloads for a
    middle ground Class Selector depending on existing policies. It is
-   higher than a best effort queue but lower than an Expedited
+   higher than a best effort queue, but lower than an Expedited
    Forwarding or Assured Forwarding queue. Since this type of
    application generates larger packets with longer-lived connections,
-   you can optimize bandwidth utilization for long duration TCP. Normal
+   you can optimise bandwidth utilisation for long duration TCP. Normal
    bandwidth planning applies here with regards to benchmarking a
    session's usage multiplied by the expected number of concurrent
    sessions with overhead.
