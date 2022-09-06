@@ -210,7 +210,7 @@ Success Indicators
    -  Community (Anuket)
    -  LaaS (e.g. UNH)
 
-3. Engaged vendors successfully configure their VI and run the RC-1 or RC-2 test suite and are able to provide expert feedback
+3. Engaged vendors successfully configure their VI and run the RC1 or RC2 test suite and are able to provide expert feedback
 
 4. Engaged vendors are able to validate that they can instantiate and run rudimentary validation of VNF functionality on more than one conformant cloud infrastructure (NFVI)
 
