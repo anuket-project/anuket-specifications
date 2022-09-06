@@ -100,14 +100,8 @@ the artifacts. It’s worth mentioning that dumping all results and logs
 required for conformance is already in place in Functest daily jobs (see
 functest-wallaby-zip :cite:p:`functestwallabyzip`.
 
-<<<<<<< HEAD
-It should be noted that `Xtesting
-CI <https://galaxy.ansible.com/collivier/xtesting>`__ supports both
-centralised and distributed deployment models as described before. It
-=======
 It should be noted that Xtesting CI :cite:p:`xtestingci` supports both
-centralized and distributed deployment models as described before. It
->>>>>>> f8c87ca3 (Add biblio for chapter 8)
+centralised and distributed deployment models as described before. It
 has deployed the full toolchain in one small virtual machine to verify
 ONAP Openlab via Functest.
 
@@ -152,14 +146,8 @@ leverages the common test case execution proposed by Xtesting. Thanks to
 a simple test case list, this tool deploys plug-and-play CI/CD
 toolchains in a few commands :cite:p:`cicdtoolchainsinafewcommands`.
 In addition, it supports multiple components such as Jenkins and Gitlab
-<<<<<<< HEAD
-CI (test schedulers) and `multiple deployment
-models <https://lists.opnfv.org/g/opnfv-tsc/message/5702>`__ such as
-all-in-one or centralised services.
-=======
 CI (test schedulers) and multiple deployment models
-:cite:p:`cicddeploymentmodels` such as all-in-one or centralized services.
->>>>>>> f8c87ca3 (Add biblio for chapter 8)
+:cite:p:`cicddeploymentmodels` such as all-in-one or centralised services.
 
 Xtesting :cite:p:`xtesting` and Xtesting CI :cite:p:`xtestingci` combined meet
 the requirements about verification, validation, compliance, and
