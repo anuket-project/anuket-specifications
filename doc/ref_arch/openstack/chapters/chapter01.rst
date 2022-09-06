@@ -17,7 +17,7 @@ products and services. This means that resources with the right skill
 sets to support a Cloud Infrastructure (or Network Function Virtualisation
 Infrastructure, NFVI :cite:p:`etsinfvinf`) are available.
 Another reason to choose OpenStack is that it has a large active
-community of vendors andoperators, which means that any code or
+community of vendors and operators, which means that any code or
 component changes needed to
 support the Common Telco Cloud Infrastructure requirements can be
 managed through the existing project communities' processes to add and
