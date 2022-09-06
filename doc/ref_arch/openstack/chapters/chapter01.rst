@@ -13,13 +13,12 @@ mature and widely accepted open-source technology; a strong ecosystem of
 vendors that support it, the OpenInfra Foundation for managing the
 community, and, most importantly, it is widely deployed by the global
 operator community for both internal infrastructure and external facing
-products and services. This means that the operators have existing staff
-with the right skill sets to support a Cloud Infrastructure
-(or Network Function Virtualisation Infrastructure,
-NFVI :cite:p:`etsinfvinf`)
-deployment into development, test and production. Another reason to
-choose OpenStack is that it has a large active community of vendors and
-operators, which means that any code or component changes needed to
+products and services. This means that resources with the right skill
+sets to support a Cloud Infrastructure (or Network Function Virtualisation
+Infrastructure, NFVI :cite:p:`etsinfvinf`) are available.
+Another reason to choose OpenStack is that it has a large active
+community of vendors and operators, which means that any code or
+component changes needed to
 support the Common Telco Cloud Infrastructure requirements can be
 managed through the existing project communities' processes to add and
 validate the required features through well-established mechanisms.
@@ -27,9 +26,9 @@ validate the required features through well-established mechanisms.
 Vision
 ~~~~~~
 
-The OpenStack-based Reference Architecture will host NFV
-workloads, primarily VNFs (Virtual Network Functions),
-of interest to the Anuket community. The
+This Reference Architecture specifies OpenStack based Cloud
+Infrastructure for hosting NFV workloads, primarily VNFs
+(Virtual Network Functions). The
 Reference Architecture document can be used by operators to deploy
 Anuket conformant infrastructure; hereafter, "conformant" denotes that
 the resource can satisfy tests conducted to verify conformance with this
@@ -53,17 +52,17 @@ Examples include:
 -  **Performance tuning**: Network level tuning for this workload is
    minimal. Quality of Service (QoS) applies to these workloads for a
    middle ground Class Selector depending on existing policies. It is
-   higher than a best effort queue but lower than an Expedited
+   higher than a best effort queue, but lower than an Expedited
    Forwarding or Assured Forwarding queue. Since this type of
    application generates larger packets with longer-lived connections,
-   you can optimize bandwidth utilization for long duration TCP. Normal
+   you can optimise bandwidth utilisation for long duration TCP. Normal
    bandwidth planning applies here with regards to benchmarking a
    session's usage multiplied by the expected number of concurrent
    sessions with overhead.
 
--  **Network functions**: Network functions is a broad category but
-   encompasses workloads that support the exchange of information (data,
-   voice, multi-media) over a system's network. Some of these workloads
+-  **Network functions**: are software components that support the
+   exchange of information (data, voice, multi-media)
+   over a system's network. Some of these workloads
    tend to consist of a large number of small-sized packets that are
    short lived, such as DNS queries or SNMP traps. These messages need
    to arrive quickly and, thus, do not handle packet loss. Network
@@ -103,11 +102,39 @@ Wallaby."
 Principles
 ----------
 
-OpenStack Reference Architecture must obey to the following set of
-principles described in:
+Architectural principles
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :ref:`cntt:common/chapter00:anuket general principles`
-- :ref:`cntt:common/chapter00:architectural principles`
+This Reference Architecture for OpenStack based Cloud Infrastructure must obey the following
+set of architectural principles:
+
+#. **Open-source preference:** To ensure, by building on
+   technology available in open-source projects, that
+   suppliers’ and operators’ investment have a tangible pathway
+   towards a standard and production ready Cloud Infrastructure
+   solution portfolio.
+#. **Open APIs:** To enable interoperability and component
+   substitution, and minimise integration efforts by using openly
+   published API definitions.
+#. **Separation of concerns:** To promote lifecycle independence of
+   different architectural layers and modules (e.g. disaggregation of
+   software from hardware).
+#. **Automated lifecycle management:** To minimise costs of the
+   end-to-end lifecycle, maintenance downtime (target zero downtime),
+   avoid errors and discrepancies resulting from manual processes.
+#. **Automated scalability:** To minimise costs and operational
+   impacts through automated policy-driven scaling of workloads by
+   enabling automated horizontal scalability of workloads.
+#. **Automated closed loop assurance:** To minimise operational
+   costs and simplify Cloud Infrastructure platform operations by
+   using automated fault resolution and performance optimisation.
+#. **Cloud nativeness:** To optimise the utilisation of resources
+   and enable operational efficiencies.
+#. **Security compliance:** To ensure the architecture follows
+   the industry best security practices and is at all levels compliant
+   to relevant security regulations.
+#. **Resilience and Availability:** To allow High Availability and
+   Resilience for hosted VNFs, and to avoid Single Point of Failure.
 
 OpenStack specific principles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,16 +168,274 @@ on Logging, Monitoring and Analytics (LMA), configuration management and
 some other operational items. Please note that Chapter 7 is not a
 replacement for the implementation, configuration and operational
 documentation that accompanies the different OpenStack distributions.
-Chapter 8 identifies certain Gaps that currently exist and plans on how
-to address them (for example, resources autoscaling).
+Chapter 8 addresses the conformance. It provides an automated validation
+mechanism to test the conformance of a deployed cloud infrastructure to
+this reference architecture. Finally, Chapter 9 identifies certain Gaps
+that currently exist and plans on howto address them (for example,
+resources autoscaling).
 
 Terminology
 -----------
 
-General terminology definitions can be found in
-:doc:`cntt:common/glossary` and specific terms relating
-to this reference architecture are to be found in OpenStack Related
-Terminology :ref:`cntt:common/glossary:openstack related terminology`.
+**Abstraction:** Process of removing concrete, fine-grained or
+lower-level details or attributes or common properties in the study of
+systems to focus attention on topics of greater importance or general
+concepts. It can be the result of decoupling.
+
+**Anuket:** A LFN open-source project developing open reference
+infrastructure models, architectures, tools, and programs.
+
+**Cloud Infrastructure:** A generic term covering **NFVI**, **IaaS** and
+**CaaS** capabilities - essentially the infrastructure on which a
+**Workload** can be executed.
+**NFVI**, **IaaS** and **CaaS** layers can be built on top of each
+other. In case of CaaS some cloud infrastructure features (e.g.: HW
+management or multitenancy) are implemented by using an underlying
+**IaaS** layer.
+
+**Cloud Infrastructure Hardware Profile:** defines the behaviour,
+capabilities, configuration, and metrics provided by a cloud
+infrastructure hardware layer resources available for the workloads.
+
+**Host Profile:** is another term for a Cloud Infrastructure Hardware
+Profile.
+
+**Cloud Infrastructure Profile:** The combination of the Cloud
+Infrastructure Software Profile and the Cloud Infrastructure Hardware
+Profile that defines the capabilities and configuration of the Cloud
+Infrastructure resources available for the workloads.
+
+**Cloud Infrastructure Software Profile:** defines the behaviour,
+capabilities and metrics provided by a Cloud Infrastructure Software
+Layer on resources available for the workloads.
+
+**Cloud Native Network Function (CNF):** A cloud native network function
+(CNF) is a cloud native application that implements network
+functionality. A CNF consists of one or more microservices. All layers
+of a CNF are developed using Cloud Native Principles including immutable
+infrastructure, declarative APIs, and a “repeatable deployment process”.
+This definition is derived from the Cloud Native Thinking for
+Telecommunications Whitepaper, which also includes further detail
+and examples.
+
+**Compute Node:** An abstract definition of a server.
+A compute node can refer to a set of hardware and software that
+support the VMs or Containers running on it.
+
+**Container:** A lightweight and portable executable image that contains
+software and all of its dependencies.
+OCI defines **Container** as "An environment for executing
+processes with configurable isolation and resource limitations. For
+example, namespaces, resource limits, and mounts are all part of the
+container environment." A **Container** provides operating-system-level
+virtualisation by abstracting the “user space”. One big difference
+between **Containers** and **VMs** is that unlike VMs, where each **VM**
+is self-contained with all the operating systems components are within
+the **VM** package, containers "share" the host system’s kernel with
+other containers.
+
+**Container Image:** Stored instance of a container that holds a set of
+software needed to run an application.
+
+**Core (physical):** An independent computer processing unit that can
+independently execute CPU instructions and is integrated with other
+cores on a multiprocessor (chip, integrated circuit die). Please note
+that the multiprocessor chip is also referred to as a CPU that is placed
+in a socket of a computer motherboard.
+
+**CPU Type:** A classification of CPUs by features needed for the
+execution of computer programs; for example, instruction sets, cache
+size, number of cores.
+
+**Decoupling, Loose Coupling:** Loosely coupled system is one in which
+each of its components has, or makes use of, little or no knowledge of
+the implementation details of other separate components. Loose coupling
+is the opposite of tight coupling
+
+**Encapsulation:** Restricting of direct access to some of an object's
+components.
+
+**External Network:** External networks provide network connectivity for
+a cloud infrastructure tenant to resources outside of the tenant space.
+
+**Fluentd:** An open-source data collector for unified
+logging layer, which allows data collection and consumption for better
+use and understanding of data. **Fluentd** is a CNCF graduated project.
+
+**Functest:** An open-source project part of Anuket LFN project.
+It addresses functional testing with a collection of state-of-the-art
+virtual infrastructure test suites, including automatic VNF testing.
+
+**Hardware resources:** Compute/Storage/Network hardware resources on
+which the cloud infrastructure platform software, virtual machines and
+containers run on.
+
+**Huge pages:** Physical memory is partitioned and accessed using the
+basic page unit (in Linux default size of 4 KB). Hugepages, typically 2
+MB and 1GB size, allows large amounts of memory to be utilised with
+reduced overhead. In an NFV environment, huge pages are critical to
+support large memory pool allocation for data packet buffers. This
+results in fewer Translation Lookaside Buffers (TLB) lookups, which
+reduces the virtual to physical pages’ address translations. Without
+huge pages enabled high TLB miss rates would occur thereby degrading
+performance.
+
+**Hypervisor:** a software that abstracts and isolates workloads with
+their own operating systems from the underlying physical resources. Also
+known as a virtual machine monitor (VMM).
+
+**Instance:** is a virtual compute resource, in a known state such as
+running or suspended, that can be used like a physical server.
+It can be used to specify VM Instance or Container Instance.
+
+**Kibana:** An open-source data visualisation system.
+
+**Kubernetes:** An open-source system for automating deployment, scaling,
+and management of containerised applications.
+
+**Monitoring (Capability):** Monitoring capabilities are used for the
+passive observation of workload-specific traffic traversing the Cloud
+Infrastructure. Note, as with all capabilities, Monitoring may be
+unavailable or intentionally disabled for security reasons in a given
+cloud infrastructure instance.
+
+**Multi-tenancy:** feature where physical, virtual or service resources
+are allocated in such a way that multiple tenants and their computations
+and data are isolated from and inaccessible by each other.
+
+**Network Function (NF):** functional block or application that has
+well-defined external interfaces and well-defined functional behaviour.
+Within **NFV**, a **Network Function** is implemented in a form of
+**Virtualised NF** (VNF) or a **Cloud Native NF** (CNF).
+
+**NFV Orchestrator (NFVO):** Manages the VNF lifecycle and **Cloud
+Infrastructure** resources (supported by the **VIM**) to ensure an
+optimised allocation of the necessary resources and connectivity.
+
+**Network Function Virtualisation (NFV):** The concept of separating
+network functions from the hardware they run on by using a virtual
+hardware abstraction layer.
+
+**Network Function Virtualisation Infrastructure (NFVI):** The totality
+of all hardware and software components used to build the environment in
+which a set of virtual applications (VAs) are deployed; also referred to
+as cloud infrastructure.
+The NFVI can span across many locations, e.g., places where data
+centres or edge nodes are operated. The network providing connectivity
+between these locations is regarded to be part of the cloud
+infrastructure. **NFVI** and **VNF** are the top-level conceptual
+entities in the scope of Network Function Virtualisation. All other
+components are sub-entities of these two main entities.
+
+**Network Service (NS):** composition of **Network Function**\ (s)
+and/or **Network Service**\ (s), defined by its functional and
+behavioural specification, including the service lifecycle.
+
+**Open Network Automation Platform (ONAP):** A LFN project developing a
+comprehensive platform for orchestration, management, and automation
+of network and edge computing services for network operators,
+cloud providers, and enterprises.
+
+**ONAP OpenLab:** ONAP community lab.
+
+**Open Platform for NFV (OPNFV):** A collaborative project under
+the Linux Foundation. OPNFV is now part of the LFN Anuket project.
+It aims to implement, test, and deploy tools for conformance and
+performance of NFV infrastructure.
+
+**OPNFV Verification Program (OVP):** An open-source,
+community-led compliance and verification program aiming to demonstrate
+the readiness and availability of commercial NFV products and services
+using OPNFV and ONAP components.
+
+**Platform:** A cloud capabilities type in which the cloud service user
+can deploy, manage and run customer-created or customer-acquired
+applications using one or more programming languages and one or more
+execution environments supported by the cloud service provider. Adapted
+from ITU-T Y.3500.
+This includes the physical infrastructure, Operating Systems,
+virtualisation/containerisation software and other orchestration,
+security, monitoring/logging and life-cycle management software.
+
+**Prometheus:** An open-source monitoring and alerting system.
+
+**Quota:** An imposed upper limit on specific types of resources,
+usually used to prevent excessive resource consumption by a given
+consumer (tenant, VM, container).
+
+**Resource pool:** A logical grouping of cloud infrastructure hardware
+and software resources. A resource pool can be based on a certain
+resource type (for example, compute, storage and network) or a
+combination of resource types. A **Cloud Infrastructure** resource can
+be part of none, one or more resource pools.
+
+**Simultaneous Multithreading (SMT):** Simultaneous multithreading (SMT)
+is a technique for improving the overall efficiency of superscalar CPUs
+with hardware multithreading. SMT permits multiple independent threads
+of execution on a single core to better utilise the resources provided
+by modern processor architectures.
+
+**Shaker:** A distributed data-plane testing tool built for OpenStack.
+
+**Software Defined Storage (SDS):** An architecture which consists of
+the storage software that is independent from the underlying storage
+hardware. The storage access software provides data request interfaces
+(APIs) and the SDS controller software provides storage access services
+and networking.
+
+**Tenant:** cloud service users sharing access to a set of physical and
+virtual resources, ITU-T Y.3500.
+Tenants represent an independently manageable logical pool of
+compute, storage and network resources abstracted from physical
+hardware.
+
+**Tenant Instance:** refers to an Instance owned by or dedicated for use by a single **Tenant**.
+
+**Tenant (Internal) Networks:** Virtual networks that are internal to
+**Tenant Instances**.
+
+**User**: Natural person, or entity acting on their behalf, associated
+with a cloud service customer that uses cloud services.
+Examples of such entities include devices and applications.
+
+**Virtual CPU (vCPU):** Represents a portion of the host's computing
+resources allocated to a virtualised resource, for example, to a virtual
+machine or a container. One or more vCPUs can be assigned to a
+virtualised resource.
+
+**Virtualised Infrastructure Manager (VIM):** Responsible for
+controlling and managing the Network Function Virtualisation
+Infrastructure (NFVI) compute, storage and network resources.
+
+**Virtual Machine (VM):** virtualised computation environment that
+behaves like a physical computer/server.
+A **VM** consists of all of the components (processor (CPU),
+memory, storage, interfaces/ports, etc.) of a physical computer/server.
+It is created using sizing information or Compute Flavour.
+
+**Virtualised Network Function (VNF):** A software implementation of a
+Network Function, capable of running on the Cloud Infrastructure.
+**VNFs** are built from one or more VNF Components (VNFC) and, in most
+cases, the VNFC is hosted on a single VM or Container.
+
+**Virtual Compute resource (a.k.a. virtualisation container):**
+partition of a compute node that provides an isolated virtualised
+computation environment.
+
+**Virtual Storage resource:** virtualised non-volatile storage allocated
+to a virtualised computation environment hosting a **VNFC**.
+
+**Virtual Networking resource:** routes information among the network
+interfaces of a virtual compute resource and physical network
+interfaces, providing the necessary connectivity.
+
+**VMTP:** A data path performance measurement tool built specifically
+for OpenStack clouds.
+
+**Workload:** an application (for example **VNF**, or **CNF**) that
+performs certain task(s) for the users. In the Cloud Infrastructure,
+these applications run on top of compute resources such as **VMs** or
+**Containers**.
 
 Abbreviations
 -------------
@@ -163,12 +448,20 @@ Abbreviations
      - Definition
    * - API
      - Application Programming Interface
+   * - BGP VPN
+     - Border gateway Protocol Virtual Private network
+   * - CI/CD
+     - Continuous Integration/Continuous Deployment
+   * - CNTT
+     - Cloud iNfrastructure Task Force
    * - CPU
      - Central Processing Unit
    * - DNS
      - Domain Name System
    * - DPDK
      - Data Plane Development Kit
+   * - DHCP
+     - Dynamic Host Configuration Protocol
    * - ECMP
      - Equal Cost Multi-Path routing
    * - ETSI
@@ -203,6 +496,8 @@ Abbreviations
      - Infrastructure as a Service
    * - ICMP
      - Internet Control Message Protocol
+   * - IMS
+     - IP Multimedia Sub System
    * - IO
      - Input/Output
    * - IOPS
@@ -241,10 +536,14 @@ Abbreviations
      - Network Time Protocol
    * - NUMA
      - Non-Uniform Memory Access
+   * - OAI
+     - Open Air Interface
    * - OS
      - Operating System
    * - OSTK
      - OpenStack
+   * - OPNFV
+     - Open Platform for NFV
    * - OVS
      - Open vSwitch
    * - OWASP
@@ -277,6 +576,8 @@ Abbreviations
      - Software Defined Networking
    * - SFC
      - Service Function Chaining
+   * - SG
+     - Security Group
    * - SLA
      - Service Level Agreement
    * - SMP
@@ -293,6 +594,8 @@ Abbreviations
      - Solid State Drive
    * - SSL
      - Secure Sockets Layer
+   * - SUT
+     - System Under Test
    * - TCP
      - Transmission Control Protocol
    * - TLS
@@ -301,6 +604,8 @@ Abbreviations
      - Top of Rack
    * - TPM
      - Trusted Platform Module
+   * - UDP
+     - User Data Protocol
    * - VIM
      - Virtualised Infrastructure Manager
    * - VLAN

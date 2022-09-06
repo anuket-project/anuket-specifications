@@ -22,9 +22,9 @@ Navigation tips
    selection <https://cntt.readthedocs.io/projects/ra1/en/latest/chapters/chapter05.html>`__.
 -  **check the Anuket conformance of your OpenStack-based deployments?**
    You would be primarily interested in `the OpenStack Testing
-   Cookbook <https://cntt.readthedocs.io/projects/rc1/en/latest/chapters/chapter04.html>`__
+   Cookbook <https://cntt.readthedocs.io/projects/ra1/en/latest/chapters/chapter08.html#openstack-testing-cookbook>`__
    and `the test case descriptions and
-   selection <https://cntt.readthedocs.io/projects/rc1/en/latest/chapters/chapter03.html>`__
+   selection <https://cntt.readthedocs.io/projects/ra1/en/latest/chapters/chapter08.html#conformance-test-suite>`__
    for more details.
 -  **check the Anuket conformance of your Kubernetes-based
    deployments?** You would be primarily interested in `Kubernetes
