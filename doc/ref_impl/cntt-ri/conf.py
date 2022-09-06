@@ -17,8 +17,7 @@ linkcheck_ignore = [
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/stable-moselle/', None),
     'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/stable-moselle/', None),
-    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/stable-moselle/', None),
-    'ref_cert_RC1': ('https://cntt.readthedocs.io/projects/rc1/en/stable-moselle/', None)
+    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/stable-moselle/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
