@@ -5,7 +5,6 @@ Anuket Specifications
 -  :doc:`Reference Model (RM) <ref_model:index>`
 -  :doc:`Reference Architecture (RA1) for OpenStack based cloud infrastructure <ref_arch_openstack:index>`
 -  :doc:`Reference Architecture (RA2) for Kubernetes based cloud infrastructure <ref_arch_kubernetes:index>`
--  :doc:`Reference Conformance (RC1) for RA1 based Implementations <ref_cert_RC1:index>`
 -  :doc:`Reference Conformance (RC2) for RA2 based Implementations <ref_cert_RC2:index>`
 -  :doc:`Reference Implementation based on RA1 specifications (RI1) <ref_impl_cntt-ri:index>`
 -  :doc:`Reference Implementation based on RA2 specifications (RI2) <ref_impl_cntt-ri2:index>`
