@@ -6,3 +6,4 @@ doc/.DS_Store
 _build/
 .tox/
 .vscode/
+*.dic
