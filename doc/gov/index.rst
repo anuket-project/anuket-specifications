@@ -1,4 +1,4 @@
-Cloud iNfrastructure Telco Taskforce - Community Guidelines
+Anuket Project - Community Guidelines
 ===========================================================
 
 Table of contents
