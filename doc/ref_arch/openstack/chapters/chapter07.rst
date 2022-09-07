@@ -33,7 +33,7 @@ management systems; some open-source tools may be mentioned but their
 capabilities are beyond the scope of this chapter.
 
 Procedural versus Declarative code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 The procedural style IaC tools require code that specifies how to
 achieve the desired state. Whilst the declarative style IaC tools
@@ -51,7 +51,7 @@ figured by tracing the created code files and the order in which they
 were applied.
 
 Mutable versus Immutable infrastructure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 In the mutable infrastructure paradigm, software updates are made in
 place. Over time this can lead to configuration drift where each server
@@ -62,10 +62,10 @@ version and then the old servers are undeployed.
 Cloud Infrastructure provisioning and configuration management
 --------------------------------------------------------------
 
-In the Reference Model,
-:ref:`ref_model:chapters/chapter09:configuration and lifecycle management`
-defines the functions of Configuration and Life Cycle Management (LCM).
-To operate and manage a scalable cloud, that minimizes operational
+In the Reference Model :cite:p:`refmodel`, the "Configuration and
+Lifecycle Management" chapter defines the functions of Configuration
+and Life Cycle Management (LCM).
+To operate and manage a scalable cloud, that minimises operational
 costs, requires tools that incorporates systems for automated
 provisioning and deployment, and managing configurations that ensures
 the correctness and integrity of the deployed and configured systems.
@@ -105,7 +105,7 @@ Red Hat Entreprise Linux, OpenSUSE, etc.).
 Foreman service can be installed by Ansible playbooks
 :cite:p:`ansib`.
 Ansible playbooks are basic tools for the automation of the
-infrastructure virtualization layer deployments.
+infrastructure virtualisation layer deployments.
 
 VIM deployment
 ~~~~~~~~~~~~~~
@@ -121,9 +121,9 @@ A subset of these tools is described below.
   TripleO is an official OpenStack project which allows to deploy and
   manage a production cloud onto bare metal hardware using a subset
   of existing OpenStack components. The first step of deployment is
-  the creation of an “undercloud” or deployment cloud. The
+  the creation of an "undercloud" or deployment cloud. The
   undercloud contains the necessary OpenStack components to deploy
-  and manage an “overcloud”, representing the deployed cloud.
+  and manage an "overcloud", representing the deployed cloud.
   The architecture document :cite:p:`trarch`
   describes the solution. Nova and Ironic are used in the undercloud to manage
   the servers in bare metal environment. TripleO leverages
@@ -207,7 +207,7 @@ cloned, and appropriate changes made to get to the desired state.
 **Configuration and Version Changes**
 
 Configuration and Version Changes are made in a similar fashion to the
-“Deployment of infrastructure components” except that the IaC tools used
+"Deployment of infrastructure components" except that the IaC tools used
 maybe different.
 
 Logging, Monitoring and Analytics
@@ -240,14 +240,14 @@ workloads so that appropriate actions can be taken. For example,
    resources.
 
 Some of the data is to support the metrics collection specified in the
-:doc:`ref_model:chapters/chapter04`.
+Reference Model :cite:p:`refmodel`.
 
 Logs have multiple operational uses including for:
 
 1. Regulatory Compliance and Security Information and Event Management
    (SIEM) featuring the automated gathering, analysis and correlation of
    log data across all systems and devices across an operator to provide
-   real-time analysis, event prioritization, reporting, notification and
+   real-time analysis, event prioritisation, reporting, notification and
    alerting.
 2. Monitoring across systems in real-time to detect particular log
    events, patterns, anomalies or inactivity to gauge system and
@@ -260,7 +260,7 @@ Monitoring
 ~~~~~~~~~~
 
 Monitoring is the process of collecting, aggregating, and analysing
-values that improve awareness of the components’ characteristics and
+values that improve awareness of the components' characteristics and
 behavior. The data from various parts of the environment are collected
 into a monitoring system that is responsible for storage, aggregation,
 visualisation, and initiating automated responses when the values meet

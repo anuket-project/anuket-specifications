@@ -34,9 +34,9 @@ This chapter is organised as follows:
 
       -  Virtual compute: vCPU / vRAM
       -  Virtual storage: Ephemeral, Persistent and Image
-      -  Virtual networking – neutron standalone: network plugin,
+      -  Virtual networking - neutron standalone: network plugin,
          virtual switch, accelerator features
-      -  Virtual networking – 3rd party SDN solution
+      -  Virtual networking - 3rd party SDN solution
       -  Additional network services: Firewall, DC Gateway
 
 -  Cloud Infrastructure Management Software (VIM): is how we manage the
@@ -62,13 +62,13 @@ This chapter is organised as follows:
 
 .. [#] Please note "flavours" is used in the Reference Model and shall
    continue to be used in the context of specifying the geometry of
-   the virtual resources. The term “flavor” is used in this document
+   the virtual resources. The term "flavor" is used in this document
    in the OpenStack context including when specifying configurations;
    the OpenStack term flavor includes the profile configuration
    information as "extra specs".
 
-Consumable Infrastructure Resources and Services
-------------------------------------------------
+Resources and Services exposed to VNFs
+--------------------------------------
 
 This section will describe the different services that are exposed for
 the VNF consumption within the execution zone:
@@ -87,11 +87,11 @@ Multi-Tenancy (execution environment)
 
 The multi tenancy service permits hosting of several VNF projects with
 the assurance of isolated environments for each project. Tenants or
-confusingly “Projects” in OpenStack are isolated environments that
+confusingly "Projects" in OpenStack are isolated environments that
 enable workloads to be logically separated from each other with:
 
 -  differentiated set of associated users
--  role-based access of two levels – admin or member (see :ref:`chapters/chapter06:rbac`).
+-  role-based access of two levels - admin or member (see :ref:`chapters/chapter06:rbac`).
 -  quota system to provide maximum resources that can be consumed.
 
 This RA does not intend to restrict how workloads are distributed across
@@ -111,14 +111,14 @@ NUMA alignment, and SMT.
 
 The configuration of the virtual resources will depend on the software
 and hardware profiles and the flavour (resource sizing) needed to host
-VNF components. Profiles are defined in the
-:ref:`ref_model:chapters/chapter02:profiles, profile extensions & flavours`.
+VNF components. Profiles are defined in "Profiles, Profile Extensions
+& Flavours" in :cite:p:`refmodel`.
 
 Virtual Storage
 ~~~~~~~~~~~~~~~
 
-The Reference Model
-:ref:`ref_model:chapters/chapter03:storage for tenant consumption`
+In the Reference Model :cite:p:`refmodel`, the
+"Storage for tenant consumption" section
 details consumption models for tenants: Platform native,
 object storage, shared file storage and archival.
 The choice of a solution will depend on the storage use case needs.
@@ -132,7 +132,7 @@ The OpenStack services, Cinder for block storage and Swift for Object
 Storage, are discussed below in Section "Cloud Infrastructure
 Management Software (VIM)".
 
-Ephemeral data is typically stored on the compute host’s local disks,
+Ephemeral data is typically stored on the compute host's local disks,
 in the form of a file system as part of the provisioning.
 This storage is volatile, it is deleted when instances are stopped.
 In environments that support live instance migration between
@@ -162,15 +162,14 @@ Data is accessed via API. Object storage is managed by OpenStack Swift.
 Images are persistent data, stored using the OpenStack Glance service.
 
 Cinder, Swift, and Glance services are discussed in the section
-:ref:`chapters/chapter04:virtualised infrastructure
-manager (VIM)`.
+:ref:`chapters/chapter04:vim openstack services`.
 
 
 Virtual Networking Neutron standalone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Neutron is an OpenStack project that provides “network connectivity as a
-service” between interface devices (e.g., vNICs) managed by other
+Neutron is an OpenStack project that provides "network connectivity as a
+service" between interface devices (e.g., vNICs) managed by other
 OpenStack services (e.g., Nova). Neutron allows users to create
 networks, subnets, ports, routers, etc. Neutron also facilitates traffic
 isolation between different subnets - within as well as across
@@ -180,23 +179,23 @@ Neutron API consumer, this is abstracted and provided by Neutron.
 Multiple network segments are supported by Neutron via ML2 plugins to
 simultaneously utilise variety of layer 2 networking technologies like
 VLAN, VxLAN, GRE, etc. Neutron also allows to create routers to connect
-layer 2 networks via “neutron-l3-agent”. In addition, floating IP
+layer 2 networks via "neutron-l3-agent". In addition, floating IP
 support is also provided that allows a project VM to be accessed using a
 public IP.
 
-Virtual Networking – 3rd party SDN solution
+Virtual Networking - 3rd party SDN solution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 SDN (Software Defined Networking) controllers separate control and data
 (user) plane functions where the control plane programmatically
 configures and controls all network data path elements via open APIs.
-Open Networking Forum (ONF) defines SDN as “Software-Defined Networking
+Open Networking Forum (ONF) defines SDN as "Software-Defined Networking
 (SDN) is an emerging architecture that is dynamic, manageable,
 cost-effective, and adaptable, making it ideal for the high-bandwidth,
-dynamic nature of today’s applications. This architecture decouples the
+dynamic nature of today's applications. This architecture decouples the
 network control and forwarding functions enabling the network control to
 become directly programmable and the underlying infrastructure to be
-abstracted for applications and network services.”
+abstracted for applications and network services."
 
 The key messages of the SDN definition are:
 
@@ -233,10 +232,10 @@ it works as a multi-stack SDN to support VMs, containers, and baremetal
 workloads. It provides separation of control plane functions and data
 plane functions with its two components:
 
--  Tungsten Fabric Controller– a set of software services that maintains
+-  Tungsten Fabric Controller- a set of software services that maintains
    a model of networks and network policies, typically running on
    several servers for high availability
--  Tungsten Fabric vRouter– installed in each host that runs workloads
+-  Tungsten Fabric vRouter- installed in each host that runs workloads
    (virtual machines or containers), the vRouter performs packet
    forwarding and enforces network and security policies
 
@@ -261,8 +260,8 @@ over the native networking implementations of orchestrators, including:
 -  BGP as a Service (BGPaaS) for distribution of routes between
    privately managed customer networks and service provider networks
 
-Based on the network layering concepts introduced in the Reference
-Model Section :ref:`ref_model:chapters/chapter03:network`, the
+Based on the network layering concepts introduced in the
+"Network" section in :cite:p:`refmodel`, the
 Tungsten Fabric Controller performs functions of both the SDN underlay
 (SDNu) and overlay (SDNo) controllers.
 
@@ -394,8 +393,8 @@ Cloud Controller Services
 The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
-also maps the OpenStack core services to the Reference Model (RM)
-:ref:`ref_model:chapters/chapter03:virtual infrastructure manager`.
+also maps the OpenStack core services to the Virtual Infrastructure
+Manager in the Reference Model (RM) :cite:p:`refmodel`.
 
 .. list-table:: OpenStack components deployment
    :widths: 20 10 20 10 10 10
@@ -496,7 +495,7 @@ Cloud Workload Services
 
 This section describes the core set of services and service components
 needed to run workloads; instances (such as VMs), their networks and
-storage are referred to as the “Compute Node Services” (a.k.a. user or
+storage are referred to as the "Compute Node Services" (a.k.a. user or
 data plane services). Contrast this with the Controller nodes which host
 OpenStack services used for cloud administration and management. The
 Compute Node Services include virtualisation, hypervisor instance
@@ -516,8 +515,8 @@ scheduling, networking and cinder volume creation/attachment.
 Tenant Isolation
 ~~~~~~~~~~~~~~~~
 
-In Keystone v1 and v2 (both deprecated), the term “tenant” was used in
-OpenStack. With Keystone v3, the term “project” got adopted and both the
+In Keystone v1 and v2 (both deprecated), the term "tenant" was used in
+OpenStack. With Keystone v3, the term "project" got adopted and both the
 terms became interchangeable. According to OpenStack
 glossary :cite:p:`openstackglos`,
 Projects represent the base unit of resources (compute, storage and
@@ -535,9 +534,8 @@ project are placed on the host. Overall, tenant isolation ensures that
 the resources of a project are not affected by resources of another
 project.
 
-This document uses the term “project” when referring to OpenStack
-services and “tenant” (RM Section
-:ref:`ref_model:chapters/chapter03:virtual resources`)
+This document uses the term "project" when referring to OpenStack
+services and "tenant" (RM Section "Virtual resources")
 to represent an independently manageable logical pool of resources.
 
 Cloud partitioning: Host Aggregates, Availability Zones
@@ -558,12 +556,12 @@ Availability Zones (AZs) rely on Host Aggregates and make the
 partitioning visible to tenants. They are defined by attaching specific
 metadata information to an aggregate, making the aggregate visible for
 tenants. Hosts can only be in a single Availability Zone. By default a
-host is part of a default Availability Zone, even if it doesn’t belong
+host is part of a default Availability Zone, even if it doesn't belong
 to an aggregate. Availability Zones can be used to provide resiliency
 and fault tolerance for workloads deployments, for example by means of
 physical hosting distribution of Compute Nodes in separate racks with
 separate power supply and eventually in different rooms. They permit
-rolling upgrades – an AZ at a time upgrade with enough time between AZ
+rolling upgrades - an AZ at a time upgrade with enough time between AZ
 upgrades to allow recovery of tenant workloads on the upgraded AZ. AZs
 can also be used to seggregate workloads.
 
@@ -578,8 +576,8 @@ In OpenStack a flavor defines the compute, memory, and storage capacity
 of nova instances. When instances are spawned, they are mapped to
 flavors which define the available hardware configuration for them. For
 simplicity, operators may create named flavors specifying both the
-sizing and the
-:doc:`software and hardware profile configurations <ref_model:chapters/chapter05>`.
+sizing and the "Software and Hardware Profile Configurations"
+:cite:p:`refmodel`.
 
 Underlying Resources
 --------------------
@@ -591,8 +589,8 @@ nodes required is determined on the load placed on these controller
 nodes and the need for High Availability and quorum requires at least 3
 instances of many of the services on these controller nodes.
 
-Virtualisation
-~~~~~~~~~~~~~~
+Virtualisation and hypervisors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Virtualisation is a technology that enables a guest Operating System
 (OS) to be abstracted from the underlying hardware and software. This
@@ -635,15 +633,14 @@ up (in a shipping container), and what resources are required of the DC
 
    -  Data centre gateway
    -  Firewall (around the control plane, storage, etc.)
-   -  Data centre network fabric / Clos (spine/leaf) – Horizontal scale
+   -  Data centre network fabric / Clos (spine/leaf) - Horizontal scale
    -  Storage networking, control plane and data plane
-   -  Raw packet – tenant networking allowing “wild west” connection
+   -  Raw packet - tenant networking allowing "wild west" connection
 
 -  Storage
 
    - Storage technologies are multiple, they are extensively
-     described in
-     :ref:`ref_model:chapters/chapter03:storage implementation stereotypes`.
+     described in "Storage Implementation Stereotypes" :cite:p:`refmodel`.
      Storage backends are discussed in
      :ref:`chapters/chapter04:storage backend`.
 
@@ -653,17 +650,16 @@ up (in a shipping container), and what resources are required of the DC
    -  GPU
    -  FPGA
 
-Compute
-^^^^^^^
+Physical nodes
+^^^^^^^^^^^^^^
 
 Cloud Infrastructure physical Nodes
 
 The physical resources required for the Cloud Infrastructure are mainly
 based on COTS x86 hardware for control and data plane nodes. HW profiles
-are defined in Reference Model chapters
-:ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profile description`
-and
-:ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profiles features and requirements.`.
+are defined in the chapters "Cloud Infrastructure Hardware Profile
+Description" and "Cloud Infrastructure Hardware Profiles Features and
+Requirements" in :cite:p:`refmodel`.
 
 Network
 ^^^^^^^
@@ -671,13 +667,13 @@ Network
 The recommended network architecture is spine and leaf topology.
 
 .. figure:: ../figures/RA1-Ch03-Network-Fabric.png
-   :alt: Network Fabric – Physical
+   :alt: Network Fabric - Physical
    :align: center
-   :name: Network Fabric – Physical
+   :name: Network Fabric - Physical
 
-   Network Fabric – Physical
+   Network Fabric - Physical
 
-:numref:`Network Fabric – Physical` shows a physical network layout where each
+:numref:`Network Fabric - Physical` shows a physical network layout where each
 physical server is dual homed to TOR (Leaf/Access) switches with redundant
 (2x) connections. The Leaf switches are dual homed with redundant connections
 to spines.
@@ -704,7 +700,7 @@ techniques ensure high-performance, high availability storage system.
 Cloud Topology
 --------------
 
-A telco cloud will typically be deployed in multiple locations (“sites”)
+A telco cloud will typically be deployed in multiple locations ("sites")
 of varying size and capabilities (HVAC, for example); or looking at this
 in the context of OpenStack, multiple clouds (i.e. OpenStack end-points)
 will be deployed that do not rely on each other, by design; each cloud
@@ -735,9 +731,9 @@ data centre capabilities, economics and risks.
 Availability of any single OpenStack cloud is dependent on a number of
 factors including:
 
--  environmental – dual connected power and PDUs, redundant cooling,
+-  environmental - dual connected power and PDUs, redundant cooling,
    rack distribution, etc.
--  resilient network fabric – ToR (leaf), spine, overlay networking,
+-  resilient network fabric - ToR (leaf), spine, overlay networking,
    underlay networking, etc. It is assumed that all network components
    are designed to be fault tolerant and all OpenStack controllers,
    computes and storage are dual-homed to alternate leaf switches.
@@ -753,7 +749,7 @@ factors including:
 Assumptions and conventions:
 
 -  Region is represented by a single OpenStack control plane.
--  Resource Failure Domain is effectively the “blast radius” of any
+-  Resource Failure Domain is effectively the "blast radius" of any
    major infrastructure failure such as loss of PDU or network leafs.
 -  Control plane includes redundant network nodes where OVS-kernel is
    used.
@@ -762,7 +758,7 @@ Assumptions and conventions:
 -  Shared storage is optional, but it is important to ensure shared
    assets are distributed across serving clouds such as boot images.
    Storage needs, per deployment and use cases, can be found in
-   :ref:`ref_model:chapters/chapter03:storage scenarios and architecture fit`.
+   "Storage Scenarios and Architecture Fit" :cite:p:`refmodel`.
 
 .. list-table:: Cloud Topology: Redundancy Models
    :widths: 8 15 8 8 8 8 8 17
