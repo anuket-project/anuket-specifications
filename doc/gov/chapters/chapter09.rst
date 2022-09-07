@@ -220,7 +220,8 @@ experience. This survey will be used to measure the feasibility, utility, and ef
 installation/configuration methods and RC-1 Test case efficacy. The survey will be in an Agile User Story format. The
 Table below provides an example of the survey questions:
 
-![\ **Table 1:** Survey/Questionnaire example](../figures/Table 1-1.png)
+.. image:: ../figures/Table_1-1.png
+   :alt: "Table 1: Survey/Questionnaire example"
 
 **Table 1:** Survey/Questionnaire example
 
