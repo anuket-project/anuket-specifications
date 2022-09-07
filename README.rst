@@ -10,32 +10,32 @@ Available Specifications
 
 -  `Governance <https://github.com/cntt-n/CNTT/tree/master/doc/gov>`__
 -  `Technical
-   Specifications <https://cntt.readthedocs.io/en/latest/common/#available-specifications>`__
+   Specifications <https://cntt.readthedocs.io/en/stable-moselle/common/#available-specifications>`__
 
 Navigation tips
 ---------------
 
 -  **design your OpenStack product?** You would be primarily interested
    in `the OpenStack requirement
-   list <https://cntt.readthedocs.io/projects/ra1/en/latest/chapters/chapter02.html>`__
+   list <https://cntt.readthedocs.io/projects/ra1/en/stable-moselle/chapters/chapter02.html>`__
    and `OpenStack API descriptions and
-   selection <https://cntt.readthedocs.io/projects/ra1/en/latest/chapters/chapter05.html>`__.
+   selection <https://cntt.readthedocs.io/projects/ra1/en/stable-moselle/chapters/chapter05.html>`__.
 -  **check the Anuket conformance of your OpenStack-based deployments?**
    You would be primarily interested in `the OpenStack Testing
-   Cookbook <https://cntt.readthedocs.io/projects/ra1/en/latest/chapters/chapter08.html#openstack-testing-cookbook>`__
+   Cookbook <https://cntt.readthedocs.io/projects/ra1/en/stable-moselle/chapters/chapter08.html#openstack-testing-cookbook>`__
    and `the test case descriptions and
-   selection <https://cntt.readthedocs.io/projects/ra1/en/latest/chapters/chapter08.html#conformance-test-suite>`__
+   selection <https://cntt.readthedocs.io/projects/ra1/en/stable-moselle/chapters/chapter08.html#conformance-test-suite>`__
    for more details.
 -  **check the Anuket conformance of your Kubernetes-based
    deployments?** You would be primarily interested in `Kubernetes
    Testing
-   Cookbook <https://cntt.readthedocs.io/projects/rc2/en/latest/chapters/chapter03.html>`__
+   Cookbook <https://cntt.readthedocs.io/projects/rc2/en/stable-moselle/chapters/chapter03.html>`__
    and `the test case descriptions and
-   selection <https://cntt.readthedocs.io/projects/rc2/en/latest/chapters/chapter02.html>`__
+   selection <https://cntt.readthedocs.io/projects/rc2/en/stable-moselle/chapters/chapter02.html>`__
    for more details.
 -  **deploy OpenStack to onboard your VNFs?** You would be primarily
    interested in `the Anuket reference
-   implementation <https://cntt.readthedocs.io/projects/ri1/en/latest/chapters/chapter01.html>`__
+   implementation <https://cntt.readthedocs.io/projects/ri1/en/stable-moselle/chapters/chapter01.html>`__
 
 Terms of Reference & License
 ----------------------------
@@ -51,4 +51,4 @@ Read the Docs
 -------------
 
 -  `Wiki <https://wiki.anuket.io/>`__
--  `Doc <https://cntt.readthedocs.io/en/latest/>`__
+-  `Doc <https://cntt.readthedocs.io/en/stable-moselle/>`__
