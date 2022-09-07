@@ -43,6 +43,6 @@ Recommended checklist for participating in the Anuket community:
 *  Review all legal policies, terms, and conditions
 *  Create a `LF ID <https://sso.linuxfoundation.org/login/?state=g6Fo2SBEbDAzLVFFN18teXdLMWZlUlVmWlVrMFpwZElHaUFtTqN0aWTZIGxCNVo3NExGOVpxNzJGT25YRW5vSkxMTlAwTENaLVdSo2NpZNkgcFZ0QzZ2R2ZmMnFBd0lxOXZVWGlhdTZzN3h6OWR3UUI&client=pVtC6vGff2qAwIq9vUXiau6s7xz9dwQB&protocol=oauth2&audience=https:%2F%2Fapi-gw.platform.linuxfoundation.org%2F&scope=openid%20profile%20email&response_type=code&response_mode=query&nonce=VldNTTJZdzc1UX5HVzBFMFd0dXBzTlc1UXpyQnJpVFlzfnY5WHA3OTl6SQ%3D%3D&redirect_uri=https:%2F%2Fmyprofile.lfx.linuxfoundation.org&code_challenge=VzQLzce3RLtJjTo1QmtKvZ3hrYd6J5U1yyQ4FXVodZ4&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjEuMTMuMiJ9>`__
 *  Create a `GitHub ID <https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home>`__
-*  Signup for a `GitLab ID <https://gitlab.com/users/sign_up>`__
+*  Create a `GitLab ID <https://gitlab.com/users/sign_up>`__
 *  `Choose a sub-project <https://wiki.anuket.io/display/HOME/Projects>`__ and begin contributing; review the sub-project information and on how to participate including `meetings <https://wiki.anuket.io/display/HOME/Anuket+Meetings>`__.
 *  Start engaging!
