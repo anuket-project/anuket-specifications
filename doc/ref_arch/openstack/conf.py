@@ -7,7 +7,6 @@ exclude_patterns = [
     'tmp/index.rst'
 ]
 extensions = [
-    'sphinx.ext.intersphinx',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.bibtex'
 ]
@@ -18,10 +17,6 @@ linkcheck_ignore = [
     'http://127.0.0.1',
     'https://www.sdxcentral.com'
 ]
-intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
-    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None)
-}
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
 numfig = True
