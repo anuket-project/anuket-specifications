@@ -914,13 +914,7 @@ the following test names must not be executed:
 
        SecurityGroupsNegativeTestJSON.\\
 
-       test_update_security_group_with_invalid_sg_description
-     - neutron
-   * - .*test_security_groups_negative.\\
-
-       SecurityGroupsNegativeTestJSON.\\
-
-       test_update_security_group_with_invalid_sg_description
+       test_update_security_group_with_invalid_sg_desc
      - neutron
    * - .*test_security_groups_negative.\\
 
@@ -1063,7 +1057,7 @@ the following test names must not be executed:
    * - .*functional.test_lbaasv2
      - lbaasv2
    * - .*functional.test_encryption_vol_type
-     - OpenStack story :cite:p:`story2007804`
+     - OpenStack story 2007804 :cite:p:`story2007804`
    * - .*RemoteStackTest.\\
 
        test_stack_create_with_cloud_credential
@@ -1079,7 +1073,7 @@ the following test names must not be executed:
    * - .*test_volumes.\\
 
        VolumeBackupRestoreIntegrationTest
-     - Functest review 69926 :cite:p:`review69931`
+     - Functest review 69931 :cite:p:`review69931`
    * - .*scenario.test_octavia_lbaas
      - octavia
    * - .*scenario.test_server_cfn_init
