@@ -28,8 +28,8 @@ HEADER_BIBLIOGRAPHY = """Bibliography
      - Source
 """
 
-with open("tmp/references.rst", "w", encoding='utf-8') as references, open(
-        "tmp/bibliography.rst", "w", encoding='utf-8') as bibliography:
+with open("gsma/references.rst", "w", encoding='utf-8') as references, open(
+        "gsma/bibliography.rst", "w", encoding='utf-8') as bibliography:
     references.write(HEADER_REFERENCES)
     bibliography.write(HEADER_BIBLIOGRAPHY)
     i = 0
@@ -50,13 +50,13 @@ with open("tmp/references.rst", "w", encoding='utf-8') as references, open(
         i = i + 1
 
 filenames = ['chapters/chapter01.rst',
-             'tmp/references.rst', 'tmp/bibliography.rst',
+             'gsma/references.rst', 'gsma/bibliography.rst',
              'chapters/chapter02.rst', 'chapters/chapter03.rst',
              'chapters/chapter04.rst', 'chapters/chapter05.rst',
              'chapters/chapter06.rst', 'chapters/chapter07.rst',
              'chapters/chapter08.rst', 'chapters/chapter09.rst']
 
-with open('tmp/index.rst', 'w', encoding='utf-8') as outfile:
+with open('gsma/index.rst', 'w', encoding='utf-8') as outfile:
     for fname in filenames:
         with open(fname, encoding='utf-8') as infile:
             for line in infile:
@@ -65,7 +65,7 @@ with open('tmp/index.rst', 'w', encoding='utf-8') as outfile:
                     outfile.write(line)
             outfile.write('\n')
 
-with open('tmp/index.rst', 'r', encoding='utf-8') as infile:
+with open('gsma/index.rst', 'r', encoding='utf-8') as infile:
     filedata = infile.read()
     i = 0
     for key in bib_data.entries:
@@ -79,8 +79,8 @@ with open('tmp/index.rst', 'r', encoding='utf-8') as infile:
                 f"`[{i}] <{bib_data.entries[key].fields['url']}>`__")
         i = i + 1
 
-with open('tmp/index.rst', 'w', encoding='utf-8') as outfile:
+with open('gsma/index.rst', 'w', encoding='utf-8') as outfile:
     outfile.write(filedata)
 
-os.remove("tmp/references.rst")
-os.remove("tmp/bibliography.rst")
+os.remove("gsma/references.rst")
+os.remove("gsma/bibliography.rst")

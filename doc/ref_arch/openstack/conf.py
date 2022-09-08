@@ -4,7 +4,7 @@ author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
     '.tox',
     'README.rst',
-    'tmp/index.rst'
+    'gsma/index.rst'
 ]
 extensions = [
     'sphinx.ext.autosectionlabel',
