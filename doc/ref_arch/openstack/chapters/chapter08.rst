@@ -1387,7 +1387,7 @@ application that will automatically perform ping connectivity, round
 trip time measurement (latency) and TCP/UDP throughput measurement on
 any OpenStack deployment.
 
-`:cite:p:`shaker` wraps around
+:cite:p:`shaker` wraps around
 popular system network testing tools like iperf, iperf3 and netperf
 (with help of flent).
 :cite:p:`shaker` is able to deploy
