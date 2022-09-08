@@ -33,3 +33,6 @@ Please note that the OpenStack Senlin service is still under development
 with major architectural changes made in the OpenStack Ussuri release.
 
 Please note: physical compute node autoscaling is out of scope.
+
+.. bibliography::
+   :cited:

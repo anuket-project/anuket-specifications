@@ -4,10 +4,9 @@ author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
     '.tox',
     'README.rst',
-    'tmp/index.rst'
+    'gsma/index.rst'
 ]
 extensions = [
-    'sphinx.ext.intersphinx',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.bibtex'
 ]
@@ -18,10 +17,6 @@ linkcheck_ignore = [
     'http://127.0.0.1',
     'https://www.sdxcentral.com'
 ]
-intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/stable-moselle/', None),
-    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/stable-moselle/', None)
-}
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
 numfig = True

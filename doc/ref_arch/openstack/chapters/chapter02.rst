@@ -1381,8 +1381,7 @@ Infrastructure Requirements
      - :ref:`chapters/chapter04:network fabric`
    * - inf.nw.07
      - Network
-     - The Architecture must support network
-       :ref:`resiliency <cntt:common/glossary:cloud platform abstraction related terminology:>`
+     - The Architecture must support network resiliency
      - :ref:`chapters/chapter03:network`
    * - inf.nw.10
      - Network

@@ -632,9 +632,3 @@ The key words "must", "must not", "required", "shall", "shall not",
 "should", "should not", "recommended", "may", and "optional"
 in this document are to be interpreted as described in
 RFC 2119 :cite:p:`rfc2119`.
-
-References
-----------
-
-.. bibliography::
-   :cited:
