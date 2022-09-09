@@ -245,7 +245,7 @@ can be also considered as a part of the Application Orchestration layer.
 
    Infrastructure Automation in CaaS on BM scenario
 
-The main and obvious difference in the Caas on BM scenario is lack of the IaaS layer, and hence the scope of the
+The main and obvious difference in the CaaS on BM scenario is lack of the IaaS layer, and hence the scope of the
 Infrastructure Automation is limited to only two layers: Site/Physical and CaaS.  From the lifecycle ownership
 perspective, the CaaS layer is now shared not only between the Cloud Provider and the Cloud Consumer (for the same
 reasons as in the CaaS on IaaS scenario) but also with the Infrastructure Owner.  The latter observation is related to
@@ -418,7 +418,7 @@ refers to Continuous Deployment.
 |               | of images and deployment manifests from source    |                                                  |
 |               | code and configuration files.                     |                                                  |
 +---------------+---------------------------------------------------+--------------------------------------------------+
-| auto.cicd.007 | The CI pipeline must scan images and manifests to | See section 7.9 (                                |
+| auto.cicd.007 | The CI pipeline must scan images and manifests to | See section 7.10 (                                |
 |               | validate for compliance with security             | :ref:`chapters/chapter07:consolidated            |
 |               | requirements.                                     | security requirements`). Examples of such        |
 |               |                                                   | security requirements include only ingesting     |
