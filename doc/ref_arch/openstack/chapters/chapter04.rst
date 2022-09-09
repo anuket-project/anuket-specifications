@@ -694,7 +694,7 @@ needs to be configured:
 *Host Networking configuration for HS Profile Extensions*
 
 An example of the data traffic configuration for the HS (SR-IOV) Profile
-Extensions is shown in the figure above.
+Extensions is shown in the figure below.
 
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-SRIOV.png
    :alt: High Performance Profile Host Configuration with SR-IOV
