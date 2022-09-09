@@ -1495,7 +1495,7 @@ The considerations will help to guide the build and deployment of the Storage so
 |    +----+----+----------+----------------------------------------------------------+
 |    | Embedded Shared File Storage                                                  |
 +----+----+----+----------+----------------------------------------------------------+
-|         | 1  | What is the best way to achieve some level of data resilence, while |
+|         | 1  | What is the best way to achieve some level of data resilience, while |
 |         |    | minimising required infrastructure? (i.e do not have luxury of     |
 |         |    | having host (VMs) dedicated to supporting storage control and      |
 |         |    | storage data needs)                                                 |
@@ -1676,9 +1676,7 @@ hardware accelerator implementations.
 
    AAL Interface in RM Realization Diagram
 
-The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” (O-RAN.WG6.AAL-GAnP-v01.00,
-November 2020, available to the public upon agreement to the O-RAN Alliance Adopter License, from
-`https://www.o-ran.org <https://www.o-ran.org>`__):
+The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” [35]:
 
 - Describes the functions conveyed over the AAL interface, including configuration and management functions.
 - Identifies the requirements as well as general procedures and operations.
