@@ -53,8 +53,6 @@ A generic Telco cloud is a hybrid multi-cloud. A better designation would be a f
 - a collection of cooperating, interoperable autonomous component clouds
 - the component clouds perform their local operations (internal requests) while also participating in the federation and
   responding to other component clouds (external requests)
-- the component clouds perform their local operations (internal requests) while also participating in the federation and
-  responding to other component clouds (external requests)
 
   - the component clouds are autonomous in terms of, for example, execution autonomy; please note that in a centralised
     control plane scenario (please see the section "Centralised Control Plane" in the
@@ -274,12 +272,12 @@ integration across the Cloud Providers.
 To make this manageable and avoid integration complexity, there are a number of models:
 
 - Industry Standard APIs that allow consistent consumption across Cloud Providers,
-- API Brokage which provide consistent set of Consumer facings APIs that manage adaption to prorietry APIs
+- API Brokerage which provide consistent set of Consumer facings APIs that manage adaption to proprietary APIs
 - Cloud Brokerage where the Brokerage function is provided "as a Service" and allow "single pane of glass" to be
   presented for management of the multi-cloud environment
 
 The different means of integrating with and managing Cloud Providers is broadly covered under the umbrella topic of
-"Cloud Management Platforms". A survey of applicable standards to achieve this is provided in section 8.2.4.3
+"Cloud Management Platforms". A survey of applicable standards to achieve this is provided in section 8.5.2.
 "Requirements, Reference Architecture & Industry Standards Intersect".
 
 The API and Cloud Brokerage models are illustrated in the following diagrams:
@@ -301,8 +299,8 @@ The API and Cloud Brokerage models are illustrated in the following diagrams:
 Requirements, Reference Architecture & Industry Standards Intersect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Communcations Service Provider (CSP) is both a provider and consumer of Cloud based services.
-When the CSP is actings as:
+The Communications Service Provider (CSP) is both a provider and consumer of Cloud based services.
+When the CSP is acting as:
 
 - consumer, in which case the typical consideration is total cost of ownership as the consumption is to usually to
   support internal business operations: BSS/OSS systems;
@@ -320,7 +318,7 @@ migrating from running on custom dedicated infrastructure to run on virtualised 
 IMS, 3GPP (4G & 5G) functions, IP Routers and Firewalls are being provided as VNFs and CNFs.  These network workloads
 are now also being deployed on private CSP clouds as well as public clouds.
 
-As outlined in section "8.2.2 Telco Cloud", the result is that the CSP "network" is now an interconnected set of
+As outlined in section "8.4 Telco Cloud", the result is that the CSP "network" is now an interconnected set of
 distributed Cloud Infrastructure supported by different Cloud Providers, including the CSP, and, hence, the term
 "Hybrid Multi-Cloud", and the need for the CSP to be able to support and utilize this interconnected cloud is both
 inevitable and essential.
@@ -334,13 +332,12 @@ Infrastructure as well as provide:
 
 The interactions for this are outlined in the "Multi-Cloud Interactions Model", however, to realise this, the CSP will
 need to adopt and sponsor a set of standards that are necessary to support these interactions. The identification of
-existing appliable standards and gaps across the interactions needs to be completed. As a first step, the following
+existing applicable standards and gaps across the interactions needs to be completed. As a first step, the following
 criteria for inclusion of a standard/technology is defined. These standards/technologies must:
 
 - provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
 - be already mature Open Standards that have either been adopted or nurtured by recognised bodies with the
-  telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiations, (ANSI
-  etc,) NIST)
+  telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiasations, (ANSI, NIST, etc)
 - have reference implementations or an active open source project/s or consortia providing implementations (e.g.,
   CNCF (Cloud Native Computing Foundation). Open Infrastructure Foundation)
 - allow the CSP to source delivery and support services based on these from multiple vendors
@@ -377,7 +374,7 @@ capabilities to consistently:
 
 - manage accounts, credentials, resources and services
 
-  - across facilities (regions, data centers, edge locations)
+  - across facilities (regions, data centres, edge locations)
 
 - interoperate the different clouds
 - implement common policies and governance standards
@@ -387,9 +384,7 @@ capabilities to consistently:
 through a common set of governance and operational practices.
 
 GSMA's Operator Platform Group (OPG) specify a federated model and specify requirements for the Edge Platforms
-(`Operator Platform Telco Edge Requirements v2.0
-<https://infocentre2.gsma.com/gp/pr/FNW/OPG/OfficialDocuments/OPG.02%20Operator%20Platform%20Telco%20Edge%20Requirements%20v2.0%20(Current)/OPG.02%20v2.0.pdf>`__
-); while the document is for Edge, most of the requirements are easily
+(`Operator Platform Telco Edge Requirements v2.0 [34])
 applicable to other cloud deployments. Anuket RM is implementation agnostic, viz., whether the implementation uses
 agents, federations or some other mechanisms.
 
@@ -412,7 +407,7 @@ requirements are in addition to the requirements in other chapters of this RM.
 |             | interaction with its constituent clouds         | clouds                                               |
 +-------------+-------------------------------------------------+------------------------------------------------------+
 | hem.gen.004 | HEMP should generalise and define a common set  | Example resources: hosts (including BareMetal),      |
-|             | of resources available to be managed            | Virtual Machines (VM), vCPU, Memory, Storage,        |
+|             | of resources available to be managed in           | Virtual Machines (VM), vCPU, Memory, Storage,        |
 |             | inconstituent clouds                            | Network, kubernetes clusters, kubernetes nodes,      |
 |             |                                                 | Images (OS, and others), credentials. For private    |
 |             |                                                 | cloud additional example resources: Racks, ToR/CE    |
@@ -430,7 +425,8 @@ requirements are in addition to the requirements in other chapters of this RM.
 | hem.gen.008 | HEMP should support multi-tenancy               |                                                      |
 +-------------+-------------------------------------------------+------------------------------------------------------+
 
-Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requirements
+
+**Table 8-2:** Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requirements
 
 **HEMP Operations Requirements**
 
@@ -466,7 +462,7 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) General Requireme
 |             | and resources                                          |                                               |
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 
-Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Operability Requirements
+**Table 8-3:**  Hybrid, Edge, and Multi cloud operator Platform (HEMP) Operability Requirements
 
 **HEMP LCM Requirements**
 
@@ -504,7 +500,7 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Life Cycle Manage
 |             | changes that resulted for resource non-compliance      |                                               |
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 
-Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Security Requirements
+**Table 8-4:**  Hybrid, Edge, and Multi cloud operator Platform (HEMP) Security Requirements
 
 
 Aspects of Multi-Cloud Security
@@ -520,7 +516,7 @@ business partnerships, the responsibility for managing these different cloud env
 cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an
 environment, there are additional security principles to be considered. These principles, see the table below, are
 drawn from the collaboration with the GSMA Fraud and Security Group (FASG) and the "5G security Guide",
-FS.40 v2.0 document.
+FS.40 v2.0 document [36].
 
 +--------------------------------+-------------------------------------------------------------------------------------+
 | Multi-cloud Security Principle | Description                                                                         |
@@ -549,7 +545,7 @@ FS.40 v2.0 document.
 |                                | established overall security operations model                                       |
 +--------------------------------+-------------------------------------------------------------------------------------+
 
-Table : Multi-Cloud Security Principles
+**Table 8-5:**  Multi-Cloud Security Principles
 
 For telco operators to run their network functions in a multi-cloud environment, and specifically, in public clouds, the
 industry will need a set of new standards and new security tools to manage and regulate the interactions between
@@ -574,7 +570,7 @@ Transferring cryptography functionality:
 - Secure storage
 - Search capabilities
 
-As described in Sec. 1 (Scope) of the TS 103 457 document, it specifies "… a high-level service-oriented interface, as
+As described in Sec. 1 (Scope) of the TS 103 457 document [37], it specifies "… a high-level service-oriented interface, as
 an application layer with a set of mandatory functions, to access secured services provided by, and executed in a More
 Trusted Domain. The transport layer is out of scope and left to the architecture implementation". The standard provides
 extra security features for sensitive functions down to individual Virtual Machines or Containers. As such, it is
@@ -627,7 +623,7 @@ characteristics are captured in Table 8-2.
 |                 |                 | pollution       |                |            |                |                 |
 +-----------------+-----------------+-----------------+----------------+------------+----------------+-----------------+
 
-**Table 8-3. TEC Deployment Location Characteristics & Capabilities**
+**Table 8-6:** TEC Deployment Location Characteristics & Capabilities**
 
 Telco Edge Cloud: Infrastructure Characteristics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
