@@ -158,7 +158,7 @@ Virtual Networking Profiles
 | Reference         | Feature              | Type            | Description                              | Capabilities |
 |                   |                      |                 |                                          | Reference    |
 +===================+======================+=================+==========================================+==============+
-| infra.net.cfg.001 | Connection Point     | e.g. virtio1.1  |                                          |              |
+| infra.net.cfg.001 | Connection Point     |IO virtualisation|  eg. virtio1.1                           |              |
 |                   | interface IO         |                 |                                          |              |
 |                   | virtualisation       |                 |                                          |              |
 +-------------------+----------------------+-----------------+------------------------------------------+--------------+
@@ -303,7 +303,7 @@ The table below specifies a set of requirements for the Load Balancer platform s
 | pas.lb.014 | The Load Balancer may support Level 7                  | OSI Level 7 (application characteristics    |
 |            | load balancing                                         | based) should support HTTP and HTTPS        |
 +------------+--------------------------------------------------------+---------------------------------------------+
-| pas.lb.0156 | The L7 Load Balancer may support HTTP2                |                                             |
+| pas.lb.015 | The L7 Load Balancer may support HTTP2                |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
 | pas.lb.016 | The L7 Load Balancer may support HTTP3                 |                                             |
 +------------+--------------------------------------------------------+---------------------------------------------+
@@ -630,10 +630,9 @@ Compute Resources
 | infra.hw.cpu.cfg.003 | NUMA alignment                  | NUMA alignment enabled and BIOS | N           | Y           |
 |                      |                                 | configured to enable NUMA       |             |             |
 +----------------------+---------------------------------+---------------------------------+-------------+-------------+
-| infra.hw.cpu.cfg.004 | Simultaneous Multithreading     | Y                               | Optional    |             |
-|                      | (SMT) SMT enabled that allows   |                                 |             |             |
-|                      | each core to work multiple      |                                 |             |             |
-|                      | streams of data simultaneously  |                                 |             |             |
+| infra.hw.cpu.cfg.004 | Simultaneous Multithreading     | SMT enabled that allows each    | Y           |Optional     |
+|                      | (SMT)                           | core to work multiple streams   |             |             |
+|                      |                                 | of data simultaneously          |             |             | 
 +----------------------+---------------------------------+---------------------------------+-------------+-------------+
 
 **Table 5-14:** Minimum sizing and capability configurations for general purpose servers.
