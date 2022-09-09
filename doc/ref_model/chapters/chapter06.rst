@@ -210,7 +210,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                       |                        |       |        | ata           |                                    |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
 | DeRegisterForAccEvent | DeRegisterForAccEventR | VNF → | Input  | accEvent      | Event VNF is deregistering from    |
-| Response              | esponse                | NFVI  |        |               |                                    |
+| Request               | esponse                | NFVI  |        |               |                                    |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
 | ReleaseAccRequest     | ReleaseAccResponse     | VNF → |        |               |                                    |
 |                       |                        | NFVI  |        |               |                                    |
@@ -218,7 +218,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                       |                        | VNF → | Input  | accConfigurat | Config data for accelerator        |
 |                       |                        | NFVI  |        | ionData       |                                    |
 | ModifyAccConfiguratio | ModifyAccConfiguration |       +--------+---------------+------------------------------------+
-| nResponse             | Response               |       | Input  | accSubSysConf | Config data for accelerator        |
+| nRequest              | Response               |       | Input  | accSubSysConf | Config data for accelerator        |
 |                       |                        |       |        | igurationData | sub-system                         |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
 |                       |                        |       | Input  | accFilter     | Filter for subsystems from which   |
