@@ -57,8 +57,8 @@ are supported. For the scope of the reference model the relevant interface point
 
 
 +-----------+----------------+---------------------------------------+-------------------------------------------------+
-| Interface | Point Cloud    | Interface Between                     | Description                                     |
-|           | Infrastructure |                                       |                                                 |
+| Interface |       Cloud    | Interface Between                     | Description                                     |
+| Point   | Infrastructure   |                                       |                                                 |
 |           | Exposure       |                                       |                                                 |
 +===========+================+=======================================+=================================================+
 | Vi-Ha     | Internal NFVI  | Software Layer and Hardware Resources | 1. Discover/collect resources and their         |
@@ -188,7 +188,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 | Request               | Response               | From, | Type   | Parameter     | Description                        |
 |                       |                        | To    |        |               |                                    |
 +=======================+========================+=======+========+===============+====================================+ 
-| InitAccRequest        | InitAccResponse        | VNF → | Input  | accFilter     | the accelartor sub-system(s) to    |
+| InitAccRequest        | InitAccResponse        | VNF → | Input  | accFilter     | the accelarator sub-system(s) to    |
 |                       |                        | NFVI  |        |               | initialize and retrieve their      |
 |                       |                        |       |        |               | capabilities.                      | 
 |                       |                        |       +--------+---------------+------------------------------------+
@@ -237,7 +237,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 | st                    | se                     |       | Input  | accConfigSele | attributes of config types whose   |
 |                       |                        |       |        | ctor          | values will be reset               |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
-|                       |                        |       | Input  | accData       | Data (metadata) sent too           |
+|                       |                        |       | Input  | accData       | Data (metadata) sent to           |
 |                       |                        |       |        |               | accelerator                        |
 |                       |                        |       +--------+---------------+------------------------------------+
 | AccDataRequest        | AccDataResponse        | VNF → | Input  | accChannel    | Channel data is to be sent to      |
