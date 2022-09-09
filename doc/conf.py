@@ -13,7 +13,8 @@ exclude_patterns = [
     'ref_cert',
     'ref_impl',
     'ref_model',
-    'tech'
+    'tech',
+    'gov/README.rst'
 ]
 linkcheck_ignore = [
     'https://github.com/cncf/telecom-user-group/blob/master/whitepaper/cloud_native_thinking_for_telecommunications.md#1.4',
@@ -29,6 +30,10 @@ intersphinx_mapping = {
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
+
+numfig = True
+numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
+                 'code-block': 'Listing %s', 'section': 'Section %s'}
 
 html_theme = "sphinx_material"
 #html_sidebars = {
