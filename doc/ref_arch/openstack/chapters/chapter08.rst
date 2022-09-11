@@ -198,7 +198,7 @@ combinations:
    networking features such as such as BGPVPN interconnection
    :cite:p:`networkingbgpvpn` or
    Service Function Chaining :cite:p:`networkingsfc`)
--  tests are parameterised (e.g. shared vs non-shared live migration)
+-  tests are parameterised (e.g., shared vs non-shared live migration)
 -  blacklist mechanisms are available if needed
 
 It should be noted that the RefStack
@@ -263,7 +263,7 @@ performance tools :cite:p:`osperformancetools`
    shaker     Data Plane testing
    ========== ===========================
 
-And VNFs automatically deployed and tested :
+And VNFs automatically deployed and tested:
 
 .. table:: VNFs
    :widths: auto
@@ -284,7 +284,7 @@ about the reference implementation:
 -  verify all APIs (services, advances, features, etc.) exposed by the
    reference implementation
 -  compare the reference implementation and local deployments from a
-   functional standpoint and from OpenStack control plane and dataplane
+   functional standpoint and from OpenStack control plane and data plane
    capabilities
 
 Additional links:
@@ -323,7 +323,7 @@ successfully.
 New Functest containers :cite:p:`newfunctestcnttcontainers` have
 been proposed for Anuket Compliance which simply override the default
 test configurations and the default test lists. Any optional capability
-or services (e.g. Barbican) can be still verified by the classical
+or services (e.g., Barbican) can be still verified by the classical
 Functest containers.
 
 The next subsections detail the Tempest tests which must not be
@@ -1479,7 +1479,7 @@ open-source VNFs:
 -  VyOS vRouter :cite:p:`vyosvrouter`
 -  OpenAirInterface vEPC :cite:p:`oaivepc`
 
-Here are the full list of orchestrators used for all these deployments:
+Here is the full list of orchestrators used for all these deployments:
 
 -  Cloudify :cite:p:`cloudify`
 -  Heat :cite:p:`ostk_wallaby_heat`

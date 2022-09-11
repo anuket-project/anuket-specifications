@@ -740,7 +740,7 @@ factors including:
 -  controller nodes setup in-line with the vendor recommendation (e.g.,
    min 3 physical nodes)
 -  network nodes (where applicable)
--  backend storage nodes setup for highly availablility based on quorum
+-  backend storage nodes setup for highly availability based on quorum
    (aligned with vendor implementation)
 -  compute nodes sized to handle the entire workload following local
    failure scenario
@@ -821,9 +821,9 @@ hypervisor anti-affinity) there would be no service impact.
    has individual site constraints this document will not propose a
    standard rack layout.
 -  During maintenance of the control plane, whilst the data (forwarding)
-   plane remains unaffected, the control plane API may not be available
-   and some applications may be relying on it during normal application
-   operation for example for scaling. Additionally if the upgrade
+   plane remains unaffected, the control plane APIs may not be available
+   and applications relying on these APIs for normal application
+   operations (such as, scaling) will be impacted. Additionally, if the upgrade
    involves updating OpenStack services on the compute nodes care needs
    to be taken. OVS-kernel networking operations may also be impacted
    during this time.
@@ -850,7 +850,7 @@ third AZ or arbitrator.
    with 2 controllers the OpenStack services would be impacted as quorum
    cannot be gained with a single controller node. It is also possible
    to use more than 3 controller nodes and co-locate one with each
-   compute AZ allowing lower-risk maintenance but care must be taken to
+   compute AZ allowing lower-risk maintenance, but care must be taken to
    avoid split brain.
 -  The distributed network fabric must support L2 for the OpenStack
    control plane VIPs.

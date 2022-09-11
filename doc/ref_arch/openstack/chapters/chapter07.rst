@@ -12,7 +12,7 @@ need to be performed.
 Instead of deploying the infrastructure components and services
 manually, the current best practice is to write *code* (Infrastructure
 as Code, IaC) to define, provision, deploy, configure and manage the
-IaaS cloud infrastructure and services. IaC tools allows the entire
+IaaS cloud infrastructure and services. IaC tools allow the entire
 provisioning, configuration and management processes to be automated.
 The desired state of the infrastructure and services is represented in a
 set of human readable, machine executable, and version-controlled files.
@@ -97,11 +97,11 @@ management for physical and virtual servers must be automated using
 tools which will handle the repetitive tasks like provisioning,
 configuration, and monitoring.
 Foreman :cite:p:`forem` is commonly used
-to automate the provisoning and management of bare metal infrastructure.
+to automate the provisioning and management of bare metal infrastructure.
 Foreman is an open-source project, base of several commercial products.
 Foreman provides the full management of PXE configuration and the
 installation for many Operating Systems (CentOS, Fedora, Ubuntu, Debian,
-Red Hat Entreprise Linux, OpenSUSE, etc.).
+Red Hat Enterprise Linux, OpenSUSE, etc.).
 Foreman service can be installed by Ansible playbooks
 :cite:p:`ansib`.
 Ansible playbooks are basic tools for the automation of the
@@ -111,7 +111,7 @@ VIM deployment
 ~~~~~~~~~~~~~~
 
 When the underlying resources are installed and configured, the VIM
-software is deployed. An automated deployment is highly recommended
+software is deployed. Automated deployment is highly recommended
 for the same reasons of efficiency. Open-source installers are
 available to perform the deployments of the OpenStack services.
 A subset of these tools is described below.
@@ -132,15 +132,15 @@ A subset of these tools is described below.
 - Airship v2 :cite:p:`airsh`
 
   Airship is supported by the OpenStack Foundation.
-  It is a collection of interopable open-source components allowing
-  to declaratively automate cloud provisioning. The
-  configurations are defined by YAML documents. All services are
-  running on containers. Airship v2 is aligned with maturing CNCF
+  It is a collection of interopable open-source components
+  for declarative automation of cloud provisioning. The
+  configurations are defined by YAML documents. All services
+  run on containers. Airship v2 is aligned with maturing CNCF
   projects such as Kubernetes, Kubectl, Kubeadmin, Argo, Cluster API,
   Kustomize, and Metal3. Airship v2.1, released in November 2021,
   leverages on Kubernetes 1.21. It includes cloud provisioning at edge
   and for 3rd party cloud. The use of the OpenStack-Helm project allows
-  the deployment of OpenStack on top of Kubernetes.Airship is not only
+  the deployment of OpenStack on top of Kubernetes. Airship is not only
   a provisioning tool, but also a also a configuration management
   system.
 
@@ -172,7 +172,7 @@ Configuration Management is composed of the following activities:
    their configurations. Depending upon the configuration management
    system these configurations are specified in cookbooks, playbooks,
    manifests, etc. The configuration specifications in these artefacts
-   is used to configure the different types of nodes, BIOS, operating
+   are used to configure the different types of nodes, BIOS, operating
    systems, hypervisor and OpenStack services (through settings within
    their config files such as nova.conf, etc.).
 -  Current State: the current configuration of software and hardware as
@@ -208,7 +208,7 @@ cloned, and appropriate changes made to get to the desired state.
 
 Configuration and Version Changes are made in a similar fashion to the
 "Deployment of infrastructure components" except that the IaC tools used
-maybe different.
+may be different.
 
 Logging, Monitoring and Analytics
 ---------------------------------
@@ -225,14 +225,14 @@ A log, in the context of computing, is the automatically produced and
 time-stamped documentation of events relevant to a particular system.
 All software, including operating systems, middleware and applications
 produce log files. Enterprises and vendors may have custom monitoring
-and logging solutions. The intent of the logging and monitoring is to
+and logging solutions. The intent of logging and monitoring is to
 capture events and data of interest to the Cloud Infrastructure and
 workloads so that appropriate actions can be taken. For example,
 
 -  Operating systems and web servers maintain an access log of all
    access requests, session details and file access.
 -  Databases maintain a transaction log of all transaction executed
-   including an added, changed and deleted data.
+   including added, changed and deleted data.
 -  Audit logs record chronological documentation of any activities that
    could have affected a particular operation or event. Data typically
    includes resources accessed, destination and source addresses, and a
