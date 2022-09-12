@@ -309,26 +309,21 @@ the following boot parameters:
    Average RAM per instance  ri
    ========================= ========
 
-.. list-table:: Sizing rules
+.. table:: Sizing rules
    :widths: auto
-   :header-rows: 1
 
-   * -
-     -
-     - Basic
-     - High-Performance
-   * - # of VMs per node (vCPU)
-     - (s*c*t*o)/v
-     - 4*(sct)/v
-     - (s*c*t)/v
-   * - # of VMs per node (RAM)
-     - rt/ri
-     - rt/ri
-     - rt/ri
-   * - Max # of VMs per node
-     -
-     - min(4*(sct)/v,rt/ri)
-     - min((s*c*t)/v,rt/ri)
+   +--------------+-------------+------------------------+---------------------+
+   |              |             | Basic                  | High-Performance    |
+   +==============+=============+========================+=====================+
+   | # of VMs per | (s*c*t*o)/v | 4*(s*c*t)/v            | (s*c*t)/v           |
+   | node (vCPU)  |             |                        |                     |
+   +--------------+-------------+------------------------+---------------------+
+   | # of VMs per | rt/ri       | rt/ri                  | rt/ri               |
+   | node (RAM)   |             |                        |                     |
+   +--------------+-------------+------------------------+---------------------+
+   | Max # of VMs |             | min(4*(s*c*t)/v,rt/ri) | min((sc*t)/v,rt/ri) |
+   | per node     |             |                        |                     |
+   +--------------+-------------+------------------------+---------------------+
 
 Caveats:
 
@@ -363,7 +358,7 @@ cores/threads to non-tenant workloads such as for OpenStack services." A
 number ("n") of random cores can be reserved for host services
 (including OpenStack services) by specifying the following in nova.conf:
 
-         reserved_host_cpus = n
+        reserved_host_cpus = n
 
 where n is any positive integer.
 
@@ -383,15 +378,15 @@ configuration.
 
 Let us consider a compute host with 20 cores with SMT enabled (let us
 disregard NUMA) and the following parameters specified. The physical
-cores are numbered ‘0' to ‘19' while the sibling threads are numbered
-‘20' to ‘39' where the vCPUs numbered ‘0' and ‘20', ‘1' and ‘21', etc.
+cores are numbered '0' to '19' while the sibling threads are numbered
+'20' to '39' where the vCPUs numbered '0' and '20', '1' and '21', etc.
 are siblings:
 
-         cpu_shared_set = 1-7,9-19,21-27,29-39          (can also be
-specified as cpu_shared_set = 1-19,\&8,21-39,\&28)
+        cpu_shared_set = 1-7,9-19,21-27,29-39
+        (can also be specified as cpu_shared_set = 1-19,\&8,21-39,\&28)
 
-This implies that the two physical cores ‘0' and ‘8' and their sibling
-threads ‘20' and ‘28' are dedicated to the host services, and 19 cores
+This implies that the two physical cores '0' and '8' and their sibling
+threads '20' and '28' are dedicated to the host services, and 19 cores
 and their sibling threads are available for Guest instances and can be
 over allocated as per the specified cpu_allocation_ratio in nova.conf.
 
@@ -405,7 +400,7 @@ cores. For such workloads, CPU pinning allows us to bind an instance's
 vCPUs to particular host cores or SMT threads. To configure a flavor to
 use pinned vCPUs, we use a dedicated CPU policy.
 
-         openstack flavor set .xlarge -property hw:cpu_policy=dedicated
+        openstack flavor set .xlarge -property hw:cpu_policy=dedicated
 
 While an instance with pinned CPUs cannot use CPUs of another pinned
 instance, this does not apply to unpinned instances; an unpinned
