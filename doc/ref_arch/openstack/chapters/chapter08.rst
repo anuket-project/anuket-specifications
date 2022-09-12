@@ -914,13 +914,7 @@ the following test names must not be executed:
 
        SecurityGroupsNegativeTestJSON.\\
 
-       test_update_security_group_with_invalid_sg_description
-     - neutron
-   * - .*test_security_groups_negative.\\
-
-       SecurityGroupsNegativeTestJSON.\\
-
-       test_update_security_group_with_invalid_sg_description
+       test_update_security_group_with_invalid_sg_desc
      - neutron
    * - .*test_security_groups_negative.\\
 
@@ -1063,7 +1057,7 @@ the following test names must not be executed:
    * - .*functional.test_lbaasv2
      - lbaasv2
    * - .*functional.test_encryption_vol_type
-     - OpenStack story :cite:p:`story2007804`
+     - OpenStack story 2007804 :cite:p:`story2007804`
    * - .*RemoteStackTest.\\
 
        test_stack_create_with_cloud_credential
@@ -1079,7 +1073,7 @@ the following test names must not be executed:
    * - .*test_volumes.\\
 
        VolumeBackupRestoreIntegrationTest
-     - Functest review 69926 :cite:p:`review69931`
+     - Functest review 69931 :cite:p:`review69931`
    * - .*scenario.test_octavia_lbaas
      - octavia
    * - .*scenario.test_server_cfn_init
@@ -1532,48 +1526,60 @@ infrastructure Conformance:
 TC Mapping to Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------+----------------------------------------------------+
-| test case             | requirements                                       |
-+=======================+====================================================+
-| tempest_horizon       | Horizon testing                                    |
-+-----------------------+----------------------------------------------------+
-| tempest_neutron_cntt  | Neutron API testing                                |
-+-----------------------+----------------------------------------------------+
-| tempest_cinder_cntt   | Cinder API testing                                 |
-+-----------------------+----------------------------------------------------+
-| tempest_keystone_cntt | Keystone API testing                               |
-+-----------------------+----------------------------------------------------+
-| rally_sanity_cntt     | Keystone, Glance, Cinder, Swift, Neutron, Nova and |
-|                       | Heat API testing                                   |
-+-----------------------+----------------------------------------------------+
-| tempest_full_cntt     | Keystone, Glance, Cinder, Swift, Neutron and Nova  |
-|                       | API testing                                        |
-+-----------------------+----------------------------------------------------+
-| tempest_scenario_cntt | Keystone, Glance, Cinder, Swift, Neutron and Nova  |
-|                       | API testing                                        |
-+-----------------------+----------------------------------------------------+
-| tempest_slow_cntt     | Keystone, Glance, Cinder, Swift, Neutron and Nova  |
-|                       | API testing                                        |
-+-----------------------+----------------------------------------------------+
-| rally_full_cntt       | Keystone, Glance, Cinder, Swift, Neutron, Nova and |
-|                       | Heat API benchmarking                              |
-+-----------------------+----------------------------------------------------+
-| rally_jobs_cntt       | Neutron API benchmarking                           |
-+-----------------------+----------------------------------------------------+
-| vmtp                  | Dataplane benchmarking                             |
-+-----------------------+----------------------------------------------------+
-| shaker                | Dataplane benchmarking                             |
-+-----------------------+----------------------------------------------------+
-| cloudify              | open-source VNF onboarding and testing             |
-+-----------------------+----------------------------------------------------+
-| cloudify_ims          | open-source VNF onboarding and testing             |
-+-----------------------+----------------------------------------------------+
-| heat_ims              | open-source VNF onboarding and testing             |
-+-----------------------+----------------------------------------------------+
-| vyos_vrouter          | open-source VNF onboarding and testing             |
-+-----------------------+----------------------------------------------------+
-| juju_epc              | open-source VNF onboarding and testing             |
-+-----------------------+----------------------------------------------------+
+
+.. list-table:: Test Case Mapping to Requirements
+   :widths: 30 70
+
+   * - test case
+     - requirements
+   * - tempest_horizon
+     - Horizon testing (int.api.07 in
+       :ref:`chapters/chapter02:interfaces & apis requirements`)
+   * - tempest_neutron_cntt
+     - Neutron API testing (int.api.05 in
+       :ref:`chapters/chapter02:interfaces & apis requirements`)
+   * - tempest_cinder_cntt
+     - Cinder API testing (int.api.03 in
+       :ref:`chapters/chapter02:interfaces & apis requirements`)
+   * - tempest_keystone_cntt
+     - Keystone API testing (int.api.01 in
+       :ref:`chapters/chapter02:interfaces & apis requirements`)
+   * - rally_sanity_cntt
+     - Keystone, Glance, Cinder, Swift, Neutron, Nova and
+       Heat API testing (int.api.* in
+       :ref:`chapters/chapter02:interfaces & apis requirements`)
+   * - tempest_full_cntt
+     - Keystone, Glance, Cinder, Swift, Neutron and Nova
+       API testing (int.api.* in
+       :ref:`chapters/chapter02:interfaces & apis requirements`)
+   * - tempest_scenario_cntt
+     - Keystone, Glance, Cinder, Swift, Neutron and Nova
+       API testing (int.api.* in
+       :ref:`chapters/chapter02:interfaces & apis requirements`)
+   * - tempest_slow_cntt
+     - Keystone, Glance, Cinder, Swift, Neutron and Nova
+       API testing (int.api.* in
+       :ref:`chapters/chapter02:interfaces & apis requirements`)
+   * - rally_full_cntt
+     - Keystone, Glance, Cinder, Swift, Neutron, Nova and
+       Heat API benchmarking (int.api.* in
+       :ref:`chapters/chapter02:interfaces & apis requirements`)
+   * - rally_jobs_cntt
+     - Neutron API benchmarking
+   * - vmtp
+     - Dataplane benchmarking
+   * - shaker
+     - Dataplane benchmarking
+   * - cloudify
+     - open-source VNF onboarding and testing
+   * - cloudify_ims
+     - open-source VNF onboarding and testing
+   * - heat_ims
+     - open-source VNF onboarding and testing
+   * - vyos_vrouter
+     - open-source VNF onboarding and testing
+   * - juju_epc
+     - open-source VNF onboarding and Testing
 
 OpenStack Testing Cookbook
 --------------------------
