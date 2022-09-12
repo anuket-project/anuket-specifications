@@ -384,7 +384,7 @@ capabilities to consistently:
 through a common set of governance and operational practices.
 
 GSMA's Operator Platform Group (OPG) specify a federated model and specify requirements for the Edge Platforms
-(`Operator Platform Telco Edge Requirements v2.0 [34])
+(Operator Platform Telco Edge Requirements v2.0 [34])
 applicable to other cloud deployments. Anuket RM is implementation agnostic, viz., whether the implementation uses
 agents, federations or some other mechanisms.
 
@@ -407,7 +407,7 @@ requirements are in addition to the requirements in other chapters of this RM.
 |             | interaction with its constituent clouds         | clouds                                               |
 +-------------+-------------------------------------------------+------------------------------------------------------+
 | hem.gen.004 | HEMP should generalise and define a common set  | Example resources: hosts (including BareMetal),      |
-|             | of resources available to be managed in           | Virtual Machines (VM), vCPU, Memory, Storage,        |
+|             | of resources available to be managed in         | Virtual Machines (VM), vCPU, Memory, Storage,        |
 |             | inconstituent clouds                            | Network, kubernetes clusters, kubernetes nodes,      |
 |             |                                                 | Images (OS, and others), credentials. For private    |
 |             |                                                 | cloud additional example resources: Racks, ToR/CE    |

@@ -261,7 +261,7 @@ Internal Performance Measurement Capabilities
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Table 4-8** shows possible performance measurement capabilities for the Cloud Infrastructure. The availability of
-these capabilities will be determined by the Cloud Infrastructure Profile used by the workloads. These measurements 
+these capabilities will be determined by the Cloud Infrastructure Profile used by the workloads. These measurements
 or events should be collected and monitored by monitoring tools.
 
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
@@ -284,47 +284,47 @@ or events should be collected and monitored by monitoring tools.
 |         | utilisation         |           |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.005 | Network metric,     | Number of | Number of successfully transmitted or received packets per physical or   |
-|         | Packet count        | packets   | virtual interface, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]           |
+|         | Packet count        | packets   | virtual interface, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]         |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.006 | Network metric,     | 8-bit     | Number of 8-bit bytes that constitute successfully transmitted or        |
 |         | Octet count         | bytes     | received packets per physical or virtual interface, as defined in ETSI   |
-|         |                     |           | GS NFV-TST 008 V3.5.1 [5]                                                  |
+|         |                     |           | GS NFV-TST 008 V3.5.1 [5]                                                |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.007 | Network metric,     | Number of | Number of discarded packets per physical or virtual interface,  as       |
-|         | Dropped Packet      | packets   | defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                                 |
+|         | Dropped Packet      | packets   | defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                               |
 |         | count               |           |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.008 | Network metric,     | Number of | Number of erroneous packets per physical or virtual                      |
-|         | Errored Packet      | packets   | interface, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                    |
+|         | Errored Packet      | packets   | interface, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                 |
 |         | count               |           |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.009 | Memory buffered     | KiB       | Amount of temporary storage for raw disk blocks, as defined in ETSI GS   |
-|         |                     |           | NFV-TST 008 V3.5.1 [5]                                                       |
+|         |                     |           | NFV-TST 008 V3.5.1 [5]                                                   |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
-|i.pm.010 | Memory cached       | KiB       | Amount of RAM used as cache memory, as defined in ETSI GS  NFV-TST 008   | 
-|         |                     |           | V3.5.1 [5]                                                                 |
+|i.pm.010 | Memory cached       | KiB       | Amount of RAM used as cache memory, as defined in ETSI GS  NFV-TST 008   |
+|         |                     |           | V3.5.1 [5]                                                               |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
-|i.pm.011 | Memory free         | KiB       | Amount of RAM unused, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]           |
+|i.pm.011 | Memory free         | KiB       | Amount of RAM unused, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]      |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.012 | Memory slab         | KiB       | Amount of memory used as a data structure cache by the kernel,           |
-|         |                     |           | as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                                 |
+|         |                     |           | as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                            |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
-|i.pm.013 | Memory total        | KiB       | Amount of usable RAM, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]           |
+|i.pm.013 | Memory total        | KiB       | Amount of usable RAM, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]      |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.014 | Storage free space  | Bytes     | for a given storage system, amount of unused storage as defined in       |
-|         |                     |           | ETSI GS NFV-TST 008 V3.5.1 [5]                                               |
+|         |                     |           | ETSI GS NFV-TST 008 V3.5.1 [5]                                           |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.015 | Storage used space  | Bytes     | for a given storage system, amount of storage used as defined in         |
-|         |                     |           | ETSI GS NFV-TST 008 V3.5.1 [5]                                               |
+|         |                     |           | ETSI GS NFV-TST 008 V3.5.1 [5]                                           |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.016 | Storage reserved    | Bytes     | for a given storage system, amount of storage reserved as defined in     |
-|         | space               |           | ETSI GS NFV-TST 008 V3.5.1 [5]                                               |
+|         | space               |           | ETSI GS NFV-TST 008 V3.5.1 [5]                                           |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.017 | Storage Read        | Millisec\ | for a given storage system, average amount of time to perform a Read     |
-|         | latency             | onds      | operation as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                      |
+|         | latency             | onds      | operation as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                  |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.018 | Storage Read        | operatio\ | for a given storage system, average rate of performing Read operations   |
-|         | IOPS                | ns per    | as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                                |
+|         | IOPS                | ns per    | as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                            |
 |         |                     | second    |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.019 | Storage Read        | Bytes per | for a given storage system, average rate of performing Read operations   |
@@ -334,11 +334,11 @@ or events should be collected and monitored by monitoring tools.
 |         | latency             | onds      | operation as defined in  ETSI GS NFV-TST 008 V3.5.1                      |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.021 | Storage Write       | operatio\ | for a given storage system, average rate of performing Write operations  |
-|         | IOPS                | ns per    | as defined in ETSI GS NFV-TST 008 V3.5.1 [5]                                 |
+|         | IOPS                | ns per    | as defined in ETSI GS NFV-TST 008 V3.5.1 [5]                             |
 |         |                     | second    |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.022 | Storage Write       | Bytes per | for a given storage system, average rate of performing Write operations  |
-|         | Throughput          | second    | as defined in ETSI GS NFV-TST 008 V3.5.1 [5]                                 |
+|         | Throughput          | second    | as defined in ETSI GS NFV-TST 008 V3.5.1 [5]                             |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 
 **Table 4-8:** Internal Measurement Capabilities of Cloud Infrastructure
@@ -524,7 +524,8 @@ workloads for deployment on conformant cloud infrastructure. A workload can use 
 Extensions to build its overall functionality as discussed below.
 
 .. figure:: ../figures/RM-ch04-node-profiles.png
-   :alt: "Cloud infrastructure Profiles"
+   :alt: Cloud infrastructure Profiles
+   :name: Cloud infrastructure Profiles
 
    Cloud infrastructure Profiles
 
@@ -638,7 +639,7 @@ Profiles Specifications & Capability Mapping
 |         |                                         |           |             | depending on technology.               |
 +---------+-----------------------------------------+-----------+-------------+----------------------------------------+
 |e.cap.023| Huge page support                       | No        | Yes         | Internal performance capabilities as   |
-|         | per Table 4-7.                          |           |             | per Table 4-7.                                       |
+|         | per Table 4-7.                          |           |             | per Table 4-7.                         |
 +---------+-----------------------------------------+-----------+-------------+----------------------------------------+
 |i.cap.019| CPU Clock Speed                         | <value>   | <value>     | Specifies the Cloud Infrastructure CPU |
 |         |                                         |           |             | Clock Speed (in GHz).                  |
@@ -738,9 +739,9 @@ profile. Profile Extensions provide workloads a more granular control over what 
 |                   |                         |           |             | Network/storage          |                   |
 |                   |                         |           |             | adapter).                |                   |
 +-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| SmartNIC enabled  | network-smartnic        | ❌        | ✅         | Labels a host/node that  |                   |
+| SmartNIC enabled  | network-smartnic        | ❌        | ✅          | Labels a host/node that  |                   |
 |                   |                         |           |             | includes a Programmable  |                   |
-|                   |                         |           |             |accelerator               |                   |
+|                   |                         |           |             | accelerator              |                   |
 +-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
 | SmartSwitch       | network-smartswitch     | ❌        | ✅          | Labels a host/node that  |                   |
 | enabled           |                         |           |             | is connected to a        |                   |

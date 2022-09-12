@@ -57,8 +57,8 @@ are supported. For the scope of the reference model the relevant interface point
 
 
 +-----------+----------------+---------------------------------------+-------------------------------------------------+
-| Interface |       Cloud    | Interface Between                     | Description                                     |
-| Point   | Infrastructure   |                                       |                                                 |
+| Interface | Cloud          | Interface Between                     | Description                                     |
+| Point     | Infrastructure |                                       |                                                 |
 |           | Exposure       |                                       |                                                 |
 +===========+================+=======================================+=================================================+
 | Vi-Ha     | Internal NFVI  | Software Layer and Hardware Resources | 1. Discover/collect resources and their         |
@@ -128,7 +128,7 @@ capacity parameters are specified. IP addresses and storage volumes can be attac
 +--------------+------+----+------+------+------+----------------------------------------------------------------------+
 | Resource     |Create|List|Attach|Detach|Delete| Notes                                                                |
 +==============+======+====+======+======+======+======================================================================+
-| Flavour      | +    | +  |      |      | +    |                                                                      |  
+| Flavour      | +    | +  |      |      | +    |                                                                      |
 +--------------+------+----+------+------+------+----------------------------------------------------------------------+
 | Image        | +    | +  |      |      | +    | Create/delete by appropriate administrators                          |
 +--------------+------+----+------+------+------+----------------------------------------------------------------------+
@@ -154,7 +154,7 @@ capacity parameters are specified. IP addresses and storage volumes can be attac
 | Virtual      | +    | +  |      | +    | +    | Create/delete by VDC users with appropriate role. Additional         |
 | compute      |      |    |      |      |      | operations would include suspend/unsuspend                           |
 +--------------+------+----+------+------+------+----------------------------------------------------------------------+
-| Virtual      | +    | +  | +    | +    | +    | Create/delete by VDC users with appropriate role                     | 
+| Virtual      | +    | +  | +    | +    | +    | Create/delete by VDC users with appropriate role                     |
 | network      |      |    |      |      |      |                                                                      |
 +--------------+------+----+------+------+------+----------------------------------------------------------------------+
 
@@ -187,10 +187,10 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
 | Request               | Response               | From, | Type   | Parameter     | Description                        |
 |                       |                        | To    |        |               |                                    |
-+=======================+========================+=======+========+===============+====================================+ 
-| InitAccRequest        | InitAccResponse        | VNF → | Input  | accFilter     | the accelarator sub-system(s) to    |
++=======================+========================+=======+========+===============+====================================+
+| InitAccRequest        | InitAccResponse        | VNF → | Input  | accFilter     | the accelarator sub-system(s) to   |
 |                       |                        | NFVI  |        |               | initialize and retrieve their      |
-|                       |                        |       |        |               | capabilities.                      | 
+|                       |                        |       |        |               | capabilities.                      |
 |                       |                        |       +--------+---------------+------------------------------------+
 |                       |                        |       | Filter | accAttributeS | attribute names of accelerator     |
 |                       |                        |       |        | elector       | capabilities                       |
@@ -198,9 +198,9 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                       |                        |       | Output | accCapabiliti | acceleration sub-system            |
 |                       |                        |       |        | es            | capabilities                       |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
-| RegisterForAccEventRe | RegisterForAccEventRes | VNF → | Input  | accEvent      |event the VNF is interested in      |
+| RegisterForAccEventRe | RegisterForAccEventRes | VNF → | Input  | accEvent      | event the VNF is interested in     |
 | quest                 | ponse                  | NFVI  +--------+---------------+------------------------------------+
-|                       |                        |       | Input  | vnfEventHandl | the handler for NFVI to use when   | 
+|                       |                        |       | Input  | vnfEventHandl | the handler for NFVI to use when   |
 |                       |                        |       |        | erId          | notifying the VNF of the event     |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
 | AccEventNotificationR | AccEventNotificationRe | NFVI  | Input  | vnfEventHandl | Handler used by VNF registering    |
@@ -237,7 +237,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 | st                    | se                     |       | Input  | accConfigSele | attributes of config types whose   |
 |                       |                        |       |        | ctor          | values will be reset               |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
-|                       |                        |       | Input  | accData       | Data (metadata) sent to           |
+|                       |                        |       | Input  | accData       | Data (metadata) sent to            |
 |                       |                        |       |        |               | accelerator                        |
 |                       |                        |       +--------+---------------+------------------------------------+
 | AccDataRequest        | AccDataResponse        | VNF → | Input  | accChannel    | Channel data is to be sent to      |
@@ -298,7 +298,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                       |                        |       |        |               | filter located in the selected     |
 |                       |                        |       |        |               | host.                              |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
-| ResetAccStatisticsReq | ResetAccStatisticsResp | VIM → | Input  | accFilter     | Accelerator subsystems for which   | 
+| ResetAccStatisticsReq | ResetAccStatisticsResp | VIM → | Input  | accFilter     | Accelerator subsystems for which   |
 | uest                  | onse                   | NFVI  |        |               | data is to be reset                |
 |                       |                        |       +--------+---------------+------------------------------------+
 |                       |                        |       | Input  | accStatSelect | attributes of AccStatistics whose  |
@@ -314,7 +314,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                       |                        |       | Output | Subscriptio   | Identifier of the successfully     |
 |                       |                        |       |        | nId           | created subscription.              |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
-| UnsubscribeRequest    | UnsubscribeResponse    | VIM → | Input  | hostId        | Id of specified host               | 
+| UnsubscribeRequest    | UnsubscribeResponse    | VIM → | Input  | hostId        | Id of specified host               |
 |                       |                        | NFVI  +--------+---------------+------------------------------------+
 |                       |                        |       | Input  | Subscription  | Identifier of the subscription to  |
 |                       |                        |       |        | Id            | be unsubscribed.                   |
@@ -332,7 +332,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                       |                        |       | Output | Alarm         | Information about the alarms if    |
 |                       |                        |       |        |               | filter matches an alarm.           |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
-| AccResourcesDiscovery | AccResourcesDiscoveryR | VIM → | Input  | hostId        | Id of specified host               | 
+| AccResourcesDiscovery | AccResourcesDiscoveryR | VIM → | Input  | hostId        | Id of specified host               |
 | Request               | esponse                | NFVI  +--------+---------------+------------------------------------+
 |                       |                        |       | Output | discoveredAcc | Information on the acceleration    |
 |                       |                        |       |        | ResourceInfo  | resources discovered within the    |

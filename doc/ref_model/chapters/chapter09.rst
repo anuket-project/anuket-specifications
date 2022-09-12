@@ -418,7 +418,7 @@ refers to Continuous Deployment.
 |               | of images and deployment manifests from source    |                                                  |
 |               | code and configuration files.                     |                                                  |
 +---------------+---------------------------------------------------+--------------------------------------------------+
-| auto.cicd.007 | The CI pipeline must scan images and manifests to | See section 7.10 (                                |
+| auto.cicd.007 | The CI pipeline must scan images and manifests to | See section 7.10 (                               |
 |               | validate for compliance with security             | :ref:`chapters/chapter07:consolidated            |
 |               | requirements.                                     | security requirements`). Examples of such        |
 |               |                                                   | security requirements include only ingesting     |
