@@ -630,7 +630,7 @@ Compute Resources
 | infra.hw.cpu.cfg.003 | NUMA alignment                  | NUMA alignment enabled and BIOS | N           | Y           |
 |                      |                                 | configured to enable NUMA       |             |             |
 +----------------------+---------------------------------+---------------------------------+-------------+-------------+
-| infra.hw.cpu.cfg.004 | Simultaneous Multithreading     | SMT enabled that allows each    | Y           |Optional     |
+| infra.hw.cpu.cfg.004 | Simultaneous Multithreading     | SMT enabled that allows each    | Y           | Y    |
 |                      | (SMT)                           | core to work multiple streams   |             |             |
 |                      |                                 | of data simultaneously          |             |             | 
 +----------------------+---------------------------------+---------------------------------+-------------+-------------+
