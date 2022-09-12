@@ -301,7 +301,7 @@ Elasticsearch and Kibana is given as an example only.
    Monitoring and Logging Framework
 
 The monitoring and logging framework
-(:numref:`Monitoring and Logging Framework`) leverages
+(figure above) leverages
 Prometheus as the monitoring engine and Fluentd for logging. In
 addition, the framework uses Elasticsearch to store and organise logs
 for easy access. Prometheus agents pull information from individual
