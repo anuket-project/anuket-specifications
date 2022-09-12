@@ -190,8 +190,8 @@ of the variability through different values or extra specifications.
 The Reference Model specifies the Basic (B) and High-Performance (H)
 profile types. The Reference Model also provides a choice of network
 acceleration capabilities utilising, for example, DPDK and SR-IOV
-technologies. The Table :numref:` Profile Extensions and Capabilities`
-(below) lists a few simple examples of profile
+technologies. The table
+below lists a few simple examples of profile
 extensions and some of their capabilities.
 
 .. list-table:: Profile Extensions and Capabilities
@@ -534,8 +534,8 @@ Example Host Configurations
 
    Basic Profile Host Configuration (example and simplified)
 
-Let us refer to the data traffic networking configuration of
-:numref:`Basic Profile Host Configuration` to be part of the hp-B1-a and
+Let us refer to the data traffic networking configuration
+depicted in the figure above to be part of the hp-B1-a and
 hp-B4-a host profiles and this requires the configurations as Table
 `Configuration of Basic Flavor Capabilities`_.
 
@@ -573,7 +573,7 @@ hp-B4-a host profiles and this requires the configurations as Table
      - B1
      - B4
 
-:numref:`Basic Profile Host Config with shared Storage and OAM networking`
+The figure below
 shows the networking configuration where the storage and OAM share networking
 but are independent of the PXE network.
 
@@ -664,8 +664,7 @@ three different host profiles; one each for HV, HD and HS Profile Extensions.
 *Host Networking configuration for HD Profile Extensions*
 
 An example of the data traffic configuration for the HD (OVS-DPDK)
-Profile Extensions is shown in
-:numref:`High Performance Profile Host Conf with DPDK`.
+Profile Extensions is shown in the figure below.
 
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-DPDK.png
    :alt: High Performance Profile Host Conf with DPDK
@@ -695,8 +694,7 @@ needs to be configured:
 *Host Networking configuration for HS Profile Extensions*
 
 An example of the data traffic configuration for the HS (SR-IOV) Profile
-Extensions is shown in
-:numref:`High Performance Profile Host Configuration with SR-IOV`.
+Extensions is shown in the figure below.
 
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-SRIOV.png
    :alt: High Performance Profile Host Configuration with SR-IOV
@@ -1393,10 +1391,10 @@ efficient resource utilisation. Kubernetes auto manages scaling,
 recovery from failures, etc. Thus, it is recommended that the OpenStack
 services be containerised for resiliency and resource efficiency.
 
-In Chapter 3, :numref:`OpenStack Services Topology` shows a
+The Chapter 3 shows a
 high level Virtualised OpenStack services topology. The containerised
 OpenStack services topology version is shown in
-:numref:`Containerised OpenStack Services Topology`.
+the figure below.
 
 .. figure:: ../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png
    :alt: Containerised OpenStack Services Topology

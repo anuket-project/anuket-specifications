@@ -304,7 +304,7 @@ optional and provide functionality above and beyond Cloud
 Infrastructure/VIM requirements.
 
 The architecture consists of the core services shown in the
-:numref:`OpenStack Core Services`;
+figure below;
 Ironic is an optional OpenStack service needed only for bare-metal
 containers. The rest of this document will address the specific Anuket
 conformant implementation requirements and recommendations for the core
@@ -353,7 +353,7 @@ of nodes associated with specific roles:
 
 The data plane consists of the compute nodes. It is typical to consider
 the other node types to be part of the control plane.
-:numref:`OpenStack Services Topology` depicts
+The following figure depicts
 the 4 types of nodes constitutive of the Infrastructure: control,
 compute, network and storage nodes.
 
@@ -365,7 +365,7 @@ compute, network and storage nodes.
    OpenStack Services Topology
 
 Deployments can be structured using the distribution of services amongst
-the 4 node types as depicted in :numref:`OpenStack Services Topology`,
+the 4 node types as depicted in the figure above,
 but depending on workloads requirements, OpenStack services can also be
 hosted on the same nodes. For instance, services related to Controller,
 network and storage roles can be hosted on controller nodes.
@@ -673,7 +673,7 @@ The recommended network architecture is spine and leaf topology.
 
    Network Fabric - Physical
 
-:numref:`Network Fabric - Physical` shows a physical network layout where each
+The figure above shows a physical network layout where each
 physical server is dual homed to TOR (Leaf/Access) switches with redundant
 (2x) connections. The Leaf switches are dual homed with redundant connections
 to spines.
