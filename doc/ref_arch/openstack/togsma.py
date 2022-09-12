@@ -32,7 +32,7 @@ with open("gsma/references.rst", "w", encoding='utf-8') as references, open(
         "gsma/bibliography.rst", "w", encoding='utf-8') as bibliography:
     references.write(HEADER_REFERENCES)
     bibliography.write(HEADER_BIBLIOGRAPHY)
-    i = 0
+    i = 1
 
     for key in bib_data.entries:
         if 'howpublished' in bib_data.entries[key].fields:
@@ -67,7 +67,7 @@ with open('gsma/index.rst', 'w', encoding='utf-8') as outfile:
 
 with open('gsma/index.rst', 'r', encoding='utf-8') as infile:
     filedata = infile.read()
-    i = 0
+    i = 1
     for key in bib_data.entries:
         if 'howpublished' in bib_data.entries[key].fields:
             filedata = filedata.replace(
