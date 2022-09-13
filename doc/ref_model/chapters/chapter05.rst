@@ -158,7 +158,7 @@ Virtual Networking Profiles
 | Reference         | Feature              | Type            | Description                              | Capabilities |
 |                   |                      |                 |                                          | Reference    |
 +===================+======================+=================+==========================================+==============+
-| infra.net.cfg.001 | Connection Point     |IO virtualisation|  eg. virtio1.1                           |              |
+| infra.net.cfg.001 | Connection Point     |IO virtualisation|  e.g., virtio1.1                         |              |
 |                   | interface IO         |                 |                                          |              |
 |                   | virtualisation       |                 |                                          |              |
 +-------------------+----------------------+-----------------+------------------------------------------+--------------+
