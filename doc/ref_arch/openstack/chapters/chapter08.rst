@@ -4,7 +4,7 @@ Conformance
 The objective of this chapter is to provide an automated mechanism
 to validate OpenStack based cloud infrastructure
 against the standard set of requirements defined in
-:ref:`chapters/chapter02:Architecture Requirements`. Through this validation
+:ref:`chapters/chapter02:architecture requirements`. Through this validation
 mechanism, a provider of cloud infrastructure will be able to test their
 cloud infrastructure's conformance to this reference architecture. This will
 ease the integration of network functions into operator environments that host
