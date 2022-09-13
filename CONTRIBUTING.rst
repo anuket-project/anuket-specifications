@@ -169,6 +169,13 @@ Pull Requests Approval Process
 
    PR Approval Process
 
+- If the PR is only introducing minor changes which to not change the original meaning of the text or if the PR changes
+  only the files used to compile the documentation and automate the compilation
+
+  - There is only one approval is needed to get the PR merged. 
+  - The approver needs work for a different company than the creator of the PR
+  
+
 Idle Pull Requests Policy
 -------------------------
 
