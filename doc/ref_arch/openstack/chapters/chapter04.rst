@@ -1744,4 +1744,4 @@ number of open-source tools are available for this purpose including:
    installing, upgrading and operating OpenStack clouds
 
 These installers are described in more details in
-:ref:`chapters/chapter07:Operations and Life Cycle Management`.
+:ref:`chapters/chapter07:operations and life cycle management`.

@@ -1,10 +1,29 @@
-# pylint: disable=missing-module-docstring
+# pylint: disable=missing-module-docstring,missing-class-docstring
 
 import os
+import shutil
+import sys
 
 from pybtex.database import parse_file
+from sphinx.ext import intersphinx
 
-bib_data = parse_file('refs.bib')
+
+class MockConfig:
+    # pylint: disable=too-few-public-methods
+    intersphinx_timeout: int = None
+    tls_verify = False
+    user_agent = None
+
+
+class MockApp:
+    # pylint: disable=too-few-public-methods,no-self-use
+    # pylint: disable=missing-function-docstring
+    srcdir = ''
+    config = MockConfig()
+
+    def warn(self, msg: str) -> None:
+        print(msg, file=sys.stderr)
+
 
 HEADER_REFERENCES = """References
 ----------
@@ -27,6 +46,15 @@ HEADER_BIBLIOGRAPHY = """Bibliography
      - Document Title
      - Source
 """
+
+invdata = intersphinx.fetch_inventory(MockApp(), '', "build/objects.inv")
+bib_data = parse_file('refs.bib')
+
+shutil.rmtree('gsma', ignore_errors=True)
+os.mkdir('gsma')
+shutil.copytree('figures', 'gsma/figures')
+shutil.copy('conf.py', 'gsma/conf.py')
+shutil.copy('refs.bib', 'gsma/refs.bib')
 
 with open("gsma/references.rst", "w", encoding='utf-8') as references, open(
         "gsma/bibliography.rst", "w", encoding='utf-8') as bibliography:
@@ -60,8 +88,8 @@ with open('gsma/index.rst', 'w', encoding='utf-8') as outfile:
     for fname in filenames:
         with open(fname, encoding='utf-8') as infile:
             for line in infile:
-                if (".. bibliography::" not in line.strip("\n") and 
-                    ":cited:" not in line.strip("\n")):
+                if (".. bibliography::" not in line.strip("\n") and
+                        ":cited:" not in line.strip("\n")):
                     outfile.write(line)
             outfile.write('\n')
 
@@ -78,6 +106,16 @@ with open('gsma/index.rst', 'r', encoding='utf-8') as infile:
                 f":cite:p:`{bib_data.entries[key].key}`",
                 f"`[{i}] <{bib_data.entries[key].fields['url']}>`__")
         i = i + 1
+
+    for key in sorted(invdata or {}):
+        if 'std:label' in key:
+            for entry, einfo in sorted(invdata[key].items()):
+                if "chapters/" in entry:
+                    filedata = filedata.replace(
+                        f":ref:`{entry}`",
+                        f"`{einfo[3]}`_")
+
+    filedata = filedata.replace("../figures", "figures")
 
 with open('gsma/index.rst', 'w', encoding='utf-8') as outfile:
     outfile.write(filedata)
