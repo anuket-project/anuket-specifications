@@ -13,9 +13,9 @@ guide.
 Security Requirements
 ---------------------
 
-:ref:`chapters/chapter02:cloud infrastructure security requirements`
+The sections :ref:`chapters/chapter02:cloud infrastructure security requirements`
 and :ref:`chapters/chapter02:security recommendations` gather
-all requirements and recommendations regarding security topics developed
+all the requirements and recommendations regarding security topics developed
 in this chapter.
 
 Cloud Infrastructure and VIM Security
@@ -53,7 +53,7 @@ System Access
 Access to all the platform's components must be restricted (sec.gen.013)
 applying the following rules:
 
--  Remove, or at a minimal, disable all unnecessary user accounts
+-  Remove, or at a minimum disable all unnecessary user accounts
 -  Change all default user accounts where technically feasible
 -  Change all default credentials
 -  Prohibit logging with root account when root privileges are not
@@ -72,7 +72,7 @@ strict password policy must be applied (sec.gen.002).
 
 Passwords must be strengthened:
 
--  All vendors default passwords must be changed
+-  All vendors' default passwords must be changed
 -  Passwords must contain at least 8 characters as a minimal value, 14
    characters length passwords are recommended
 -  Passwords must contain at least one upper case letter, one lower case
@@ -225,7 +225,7 @@ Authorisation
 ^^^^^^^^^^^^^
 
 Authorisation serves as the next level of defence. At its core, it
-checks if the authenticated users have the permission to execute an
+checks if the authenticated users have permission to execute an
 action. Most Identity Services support the notion of groups and roles. A
 user belongs to groups and each group has a list of roles that permits
 certain actions on certain resources. OpenStack services reference the
@@ -253,8 +253,8 @@ following personas consistently across its API.
 
 -  The reader role provides read-only access to resources within the
    system, a domain, or a project.
--  The member role is the same as reader in Keystone, but allows to
-   introduce granularity between admin and reader to other OpenStack
+-  The member role, same as reader in Keystone,
+   introduces granularity between admin and reader to other OpenStack
    services.
 -  The admin role is reserved for the most privileged operations within
    a given scope for managing resources.
@@ -296,7 +296,7 @@ Recommended Default Roles to Start
 
 **site_admin_viewer**
 
--  *Site Level Admin Read Only* - usually assign to groups who need to
+-  *Site Level Admin Read Only* - usually assigned to groups who need to
    view all resources, such as Capacity Planners
 -  Permission to read all tenants and resources at the site
 -  Cannot create/update/delete
@@ -308,7 +308,7 @@ Recommended Default Roles to Start
 
 **tenant_member**
 
--  *Tenant Level Admin* - typically assign to majority of tenant users
+-  *Tenant Level Admin* - typically assigned to majority of tenant users
    to manage their resources
 -  Permission to create/read/update/delete to all resources at the
    tenant project level
@@ -317,21 +317,21 @@ Recommended Default Roles to Start
 
 **tenant_snapshot_member**
 
--  *Tenant Level Admin with Snapshot* - typically assign to tenant users
+-  *Tenant Level Admin with Snapshot* - typically assigned to tenant users
    who need to create snapshot via special request to Operations Staff
 -  Permission is same as tenant_member except the user can also create
    snapshots
 
 **tenant_support_member**
 
--  *Tenant Level Support* - typically assign to tenant users who need to
+-  *Tenant Level Support* - typically assigned to tenant users who need to
    create resource in the project space
 -  Permission to create/read all resources at the tenant project level
 -  Cannot update/delete or create snapshots
 
 **tenant_viewer**
 
--  *Tenant Level Read Only* - typically assign to tenant users who need
+-  *Tenant Level Read Only* - typically assigned to tenant users who need
    to read all resources in the project space
 -  Permission to read all resources at the tenant level
 -  Cannot create/update/delete
@@ -393,7 +393,7 @@ dedicated network (VLAN).
 
 Configuration files contain sensitive information. These files must be
 protected from malicious or accidental modifications or deletions by
-configuring strict access permissions for such files. All access, failed
+configuring strict access permissions for such files. All access failed
 attempts to change and all changes (pre-change, post-change and by who)
 must be securely logged, and all failed access and failed changes must
 be alerted on (sec.mon.005).
@@ -410,7 +410,7 @@ corrupted data (sec.gen.009):
    to check the compliance of systems configuration against respective
    CIS benchmarks :cite:p:`cisben`.
 
-It is strongly recommend to protect all repositories, such as Linux
+It is strongly recommended to protect all repositories, such as Linux
 repositories and Docker registries, against the corruption of their data
 and unauthorised access, by adopting protection measures such as hosting
 a local repository/registry with restricted and controlled access, and
@@ -508,7 +508,7 @@ Images from untrusted sources must not be used (sec.img.001). Valuable
 guidance on trusted image creation process and image signature
 verification is provided in the "Trusted Images" section of the
 OpenStack Security Guide :cite:p:`openstackti`.
-The OpenStack Security Guide includes reference to the "`OpenStack
+The OpenStack Security Guide includes reference to the "OpenStack
 Virtual Machine Image Guide :cite:p:`openstackim`" that describes how
 to obtain, create, and modify OpenStack compatible virtual machine
 images.
@@ -561,7 +561,7 @@ applied:
    protected
 -  Integrity of the deployment images must be checked, before starting
    deployment
--  Deployment must be done through dedicated network (e.g. VLAN)
+-  Deployment must be done through a dedicated network (e.g. VLAN)
 -  When the deployment is finished, the deployment tool must be
    turned-off, if the tool is only dedicated to deployment. Otherwise,
    any access to the deployment tool must be restricted.
@@ -728,7 +728,7 @@ Security Logs Time Synchronisation
 The host and various system clocks must be synchronised with an
 authenticated time service/NTP server (sec.gen.007).
 
-In any time synchronisation, we need to specify the synchronisation
+For time synchronisation, we need to specify the synchronisation
 interval and the tolerance where the latter specifies the permissible
 difference the local time can be out of synchronisation. Whenever the
 time synchronisation forces the local time to change or the use of
