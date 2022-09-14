@@ -173,8 +173,6 @@ Pull Requests Approval Process
   only the files used to compile the documentation and automate the compilation, then:
 
   - only one approval is needed to get the PR merged
-  - The approver needs work for a different company than the creator of the PR
-  
 
 Idle Pull Requests Policy
 -------------------------
