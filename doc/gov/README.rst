@@ -1,6 +1,6 @@
-====================
-Community Guidelines
-====================
+==========================================================
+Community Guidelines for Anuket Specifications Development
+==========================================================
 
 Table of contents
 -----------------
