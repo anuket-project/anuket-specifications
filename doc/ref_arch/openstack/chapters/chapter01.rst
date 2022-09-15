@@ -108,33 +108,27 @@ Architectural principles
 This Reference Architecture for OpenStack based Cloud Infrastructure must obey the following
 set of architectural principles:
 
-#. **Open-source preference:** To ensure, by building on
-   technology available in open-source projects, that
-   suppliers’ and operators’ investment have a tangible pathway
-   towards a standard and production ready Cloud Infrastructure
-   solution portfolio.
-#. **Open APIs:** To enable interoperability and component
-   substitution, and minimise integration efforts by using openly
-   published API definitions.
-#. **Separation of concerns:** To promote lifecycle independence of
-   different architectural layers and modules (e.g. disaggregation of
+#. **Open-source preference:** for building Cloud Infrastructure
+   solutions, components and tools, using open-source technology.
+#. **Open APIs:** to enable interoperability, component
+   substitution, and minimise integration efforts.
+#. **Separation of concerns:** to promote lifecycle independence of
+   different architectural layers and modules (e.g., disaggregation of
    software from hardware).
-#. **Automated lifecycle management:** To minimise costs of the
-   end-to-end lifecycle, maintenance downtime (target zero downtime),
-   avoid errors and discrepancies resulting from manual processes.
-#. **Automated scalability:** To minimise costs and operational
-   impacts through automated policy-driven scaling of workloads by
-   enabling automated horizontal scalability of workloads.
-#. **Automated closed loop assurance:** To minimise operational
-   costs and simplify Cloud Infrastructure platform operations by
-   using automated fault resolution and performance optimisation.
-#. **Cloud nativeness:** To optimise the utilisation of resources
+#. **Automated lifecycle management:** to minimise the
+   end-to-end lifecycle costs, maintenance downtime (target zero
+   downtime), and errors resulting from manual processes.
+#. **Automated scalability:** of workloads to minimise costs and
+   operational impacts.
+#. **Automated closed loop assurance:** for fault resolution,
+   simplification, and cost reduction of cloud operations.
+#. **Cloud nativeness:** to optimise the utilisation of resources
    and enable operational efficiencies.
-#. **Security compliance:** To ensure the architecture follows
+#. **Security compliance:** to ensure the architecture follows
    the industry best security practices and is at all levels compliant
    to relevant security regulations.
-#. **Resilience and Availability:** To allow High Availability and
-   Resilience for hosted VNFs, and to avoid Single Point of Failure.
+#. **Resilience and Availability:** to withstand
+   Single Point of Failure.
 
 OpenStack specific principles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -632,9 +626,3 @@ The key words "must", "must not", "required", "shall", "shall not",
 "should", "should not", "recommended", "may", and "optional"
 in this document are to be interpreted as described in
 RFC 2119 :cite:p:`rfc2119`.
-
-References
-----------
-
-.. bibliography::
-   :cited:

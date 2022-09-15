@@ -1,1155 +1,1069 @@
-@misc{rfc1918,
-	series =	{Request for Comments},
-	number =	1918,
-	howpublished =	{RFC 1918},
-	publisher =	{RFC Editor},
-	doi =		{10.17487/RFC1918},
-	url =		{https://www.rfc-editor.org/info/rfc1918},
-        author =	{Robert Moskowitz and Daniel Karrenberg and Yakov Rekhter and Eliot Lear and Geert Jan de Groot},
-	title =		{Address Allocation for Private Internets},
-	pagetotal =	9,
-	year =		1996,
-	month =		feb,
-	abstract =	{This document describes address allocation for private internets. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.},
-}
-
-@misc{rfc2119,
-	series =	{Request for Comments},
-	number =	2119,
-	howpublished =	{RFC 2119},
-	publisher =	{RFC Editor},
-	doi =		{10.17487/RFC2119},
-	url =		{https://www.rfc-editor.org/info/rfc2119},
-        author =	{Scott O. Bradner},
-	title =		{Key words for use in RFCs to Indicate Requirement Levels},
-	pagetotal =	3,
-	year =		1997,
-	month =		mar,
-	abstract =	{In many standards track documents several words are used to signify the requirements in the specification. These words are often capitalized. This document defines these words as they should be interpreted in IETF documents. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.},
-}
-
-@misc{rfc5905,
-	series =	{Request for Comments},
-	number =	5905,
-	howpublished =	{RFC 5905},
-	publisher =	{RFC Editor},
-	doi =		{10.17487/RFC5905},
-	url =		{https://www.rfc-editor.org/info/rfc5905},
-        author =	{Jim Martin and Jack Burbank and William Kasch and Professor David L. Mills},
-	title =		{Network Time Protocol Version 4: Protocol and Algorithms Specification},
-	pagetotal =	110,
-	year =		2010,
-	month =		jun,
-	abstract =	{The Network Time Protocol (NTP) is widely used to synchronize computer clocks in the Internet. This document describes NTP version 4 (NTPv4), which is backwards compatible with NTP version 3 (NTPv3), described in RFC 1305, as well as previous versions of the protocol. NTPv4 includes a modified protocol header to accommodate the Internet Protocol version 6 address family. NTPv4 includes fundamental improvements in the mitigation and discipline algorithms that extend the potential accuracy to the tens of microseconds with modern workstations and fast LANs. It includes a dynamic server discovery scheme, so that in many cases, specific server configuration is not required. It corrects certain errors in the NTPv3 design and implementation and includes an optional extension mechanism. {[}STANDARDS-TRACK{]}},
-}
-
-@misc{rfc5906,
-	series =	{Request for Comments},
-	number =	5906,
-	howpublished =	{RFC 5906},
-	publisher =	{RFC Editor},
-	doi =		{10.17487/RFC5906},
-	url =		{https://www.rfc-editor.org/info/rfc5906},
-        author =	{Professor David L. Mills and Brian Haberman},
-	title =		{Network Time Protocol Version 4: Autokey Specification},
-	pagetotal =	58,
-	year =		2010,
-	month =		jun,
-	abstract =	{This memo describes the Autokey security model for authenticating servers to clients using the Network Time Protocol (NTP) and public key cryptography. Its design is based on the premise that IPsec schemes cannot be adopted intact, since that would preclude stateless servers and severely compromise timekeeping accuracy. In addition, Public Key Infrastructure (PKI) schemes presume authenticated time values are always available to enforce certificate lifetimes; however, cryptographically verified timestamps require interaction between the timekeeping and authentication functions. This memo includes the Autokey requirements analysis, design principles, and protocol specification. A detailed description of the protocol states, events, and transition functions is included. A prototype of the Autokey design based on this memo has been implemented, tested, and documented in the NTP version 4 (NTPv4) software distribution for the Unix, Windows, and Virtual Memory System (VMS) operating systems at http://www.ntp.org. This document is not an Internet Standards Track specification; it is published for informational purposes.},
-}
-
-@misc{rfc5907,
-	series =	{Request for Comments},
-	number =	5907,
-	howpublished =	{RFC 5907},
-	publisher =	{RFC Editor},
-	doi =		{10.17487/RFC5907},
-	url =		{https://www.rfc-editor.org/info/rfc5907},
-        author =	{Chris Elliott and Brian Haberman and Heiko Gerstung},
-	title =		{Definitions of Managed Objects for Network Time Protocol Version 4 (NTPv4)},
-	pagetotal =	26,
-	year =		2010,
-	month =		jun,
-	abstract =	{The Network Time Protocol (NTP) is used in networks of all types and sizes for time synchronization of servers, workstations, and other networked equipment. As time synchronization is more and more a mission-critical service, standardized means for monitoring and management of this subsystem of a networked host are required to allow operators of such a service to set up a monitoring system that is platform- and vendor-independent. This document provides a standardized collection of data objects for monitoring the NTP entity of such a network participant and it is part of the NTP version 4 standardization effort. {[}STANDARDS-TRACK{]}},
-}
-
-@misc{rfc5908,
-	series =	{Request for Comments},
-	number =	5908,
-	howpublished =	{RFC 5908},
-	publisher =	{RFC Editor},
-	doi =		{10.17487/RFC5908},
-	url =		{https://www.rfc-editor.org/info/rfc5908},
-        author =	{Benoit Lourdelet and Richard Gayraud},
-	title =		{Network Time Protocol (NTP) Server Option for DHCPv6},
-	pagetotal =	9,
-	year =		2010,
-	month =		jun,
-	abstract =	{The NTP Server Option for Dynamic Host Configuration Protocol for IPv6 (DHCPv6) provides NTPv4 (Network Time Protocol version 4) server location information to DHCPv6 hosts. {[}STANDARDS-TRACK{]}},
-}
-
 % Datatracker information for RFCs on the Legacy Stream is unfortunately often
 % incorrect. Please correct the bibtex below based on the information in the
 % actual RFC at https://rfc-editor.org/rfc/rfc2544.txt
 
-@misc{rfc2544,
-	series =	{Request for Comments},
-	number =	2544,
-	howpublished =	{RFC 2544},
-	publisher =	{RFC Editor},
-	doi =		{10.17487/RFC2544},
-	url =		{https://www.rfc-editor.org/info/rfc2544},
-        author =	{},
-	title =		{Benchmarking Methodology for Network Interconnect Devices},
-	pagetotal =	31,
-	year =		1999,
-	month =		mar,
-	abstract =	{This document is a republication of RFC 1944 correcting the values for the IP addresses which were assigned to be used as the default addresses for networking test equipment. This memo provides information for the Internet community.},
-}
-
 % Chapter 1 References
 
 @misc{refmodel,
-	title =	{Cloud Infrastructure Reference Model},
-	howpublished = {GSMA PRD NG.126 v3.0},
-	publisher = {GSM Association},
-	year = 2022
+    title = {Cloud Infrastructure Reference Model},
+    howpublished = {GSMA PRD NG.126 v3.0},
+    publisher = {GSM Association},
+    year = 2022
 }
 
 @misc{openstack,
-	title =	{OpenStack Documentation},
-	url = {https://docs.openstack.org/}
+    title = {OpenStack Documentation},
+    url = {https://docs.openstack.org/}
 }
 
 @misc{etsinfvinf,
-	title = {Network Functions Virtualisation (NFV); Infrastructure Overview},
-	howpublished = {ETSI GS NFV-INF 001 V1.1.1},
-	url = {https://www.etsi.org/deliver/etsi_gs/NFV-INF/001_099/001/01.01.01_60/gs_NFV-INF001v010101p.pdf},
-	year = 2015,
-	month =	 jan
+    title = {Network Functions Virtualisation (NFV); Infrastructure Overview},
+    howpublished = {ETSI GS NFV-INF 001 V1.1.1},
+    url = {https://www.etsi.org/deliver/etsi_gs/NFV-INF/001_099/001/01.01.01_60/gs_NFV-INF001v010101p.pdf},
+    year = 2015,
+    month =     jan
 }
 
 @misc{openstackuc,
-	title = {OpenStack Use cases},
-	url = {https://docs.openstack.org/arch-design/use-cases.html}
+    title = {OpenStack Use cases},
+    url = {https://docs.openstack.org/arch-design/use-cases.html}
 }
 
 @misc{ovs,
-	title = {Open vSwitch},
-	url = {https://www.openvswitch.org/}
+    title = {Open vSwitch},
+    url = {https://www.openvswitch.org/}
 }
 
 @misc{wallaby,
-	title = {OpenStack Wallaby projects},
-	url = {https://docs.openstack.org/wallaby/projects.html},
-	author = {OpenStack Community}
+    title = {OpenStack Wallaby projects},
+    url = {https://docs.openstack.org/wallaby/projects.html},
+    author = {OpenStack Community}
+}
+
+@misc{rfc2119,
+    series = {Request for Comments},
+    number = 2119,
+    howpublished = {RFC 2119},
+    publisher = {RFC Editor},
+    doi = {10.17487/RFC2119},
+    url = {https://www.rfc-editor.org/info/rfc2119},
+    author = {Scott O. Bradner},
+    title = {Key words for use in RFCs to Indicate Requirement Levels},
+    pagetotal = 3,
+    year = 1997,
+    month = mar,
+    abstract = {In many standards track documents several words are used to signify the requirements in the specification. These words are often capitalized. This document defines these words as they should be interpreted in IETF documents. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.},
 }
 
 % Chapter 2 References
 
 @misc{cispwd,
-	title =	{Center for Internet Security - Password Policy Guide},
-	url = {https://www.cisecurity.org/insights/white-papers/cis-password-policy-guide},
-	author = {H. Philip White},
-	year = 2020
+    title = {Center for Internet Security - Password Policy Guide},
+    url = {https://www.cisecurity.org/insights/white-papers/cis-password-policy-guide},
+    author = {H. Philip White},
+    year = 2020
 }
 
 @misc{ciscontrols,
-	title =	{Center for Internet Security - Controls V7.1},
-	url = {https://www.cisecurity.org/controls/cis-controls-list}
+    title = {Center for Internet Security - Controls V7.1},
+    url = {https://www.cisecurity.org/controls/cis-controls-list}
 }
 
 @misc{openstackcpu,
-	title = {OpenStack - CPU Dedicated Set},
-	url = {https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set}
+    title = {OpenStack - CPU Dedicated Set},
+    url = {https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set}
 }
 
 @misc{openstackcputopo,
-	title = {OpenStack - CPU Topologies},
-	url = {https://docs.openstack.org/nova/latest/admin/cpu-topologies.html}
+    title = {OpenStack - CPU Topologies},
+    url = {https://docs.openstack.org/nova/latest/admin/cpu-topologies.html}
 }
 
 @misc{openstackneut,
-	title = {OpenStack - Neutron Plugins and Drivers},
-	url = {https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers}
+    title = {OpenStack - Neutron Plugins and Drivers},
+    url = {https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers}
 }
 
 @misc{openstacktags,
-	title = {OpenStack - Tags},
-	url = {https://specs.openstack.org/openstack/api-wg/guidelines/tags.html}
+    title = {OpenStack - Tags},
+    url = {https://specs.openstack.org/openstack/api-wg/guidelines/tags.html}
 }
 
 @misc{openstackha,
-	title = {OpenStack - Configuring the stateful services},
-	url = {https://docs.openstack.org/ha-guide/control-plane-stateful.html}
+    title = {OpenStack - Configuring the stateful services},
+    url = {https://docs.openstack.org/ha-guide/control-plane-stateful.html}
 }
 
 @misc{openstacksen,
-	title = {OpenStack - Senlin documentation},
-	url = {https://docs.openstack.org/senlin/wallaby/}
+    title = {OpenStack - Senlin documentation},
+    url = {https://docs.openstack.org/senlin/wallaby/}
 }
 
 @misc{openstackneutovs,
-	title = {OpenStack - Neutron OVS Agent Support for Baremetal with Smart NIC},
-	url = {https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html}
+    title = {OpenStack - Neutron OVS Agent Support for Baremetal with Smart NIC},
+    url = {https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html}
 }
 
 @misc{ntiasbom,
-	title = {National Telecommunications and Information Administration - Software Bill Of Materials},
-	url = {https://www.ntia.gov/SBOM}
+    title = {National Telecommunications and Information Administration - Software Bill Of Materials},
+    url = {https://www.ntia.gov/SBOM}
 }
 
 @misc{cis,
-	title = {Center for Internet Security},
-	url = {https://www.cisecurity.org/}
+    title = {Center for Internet Security},
+    url = {https://www.cisecurity.org/}
 }
 
 @misc{csa,
-	title = {Cloud Security Alliance},
-	url = {https://cloudsecurityalliance.org/}
+    title = {Cloud Security Alliance},
+    url = {https://cloudsecurityalliance.org/}
 }
 
 @misc{ocss,
-	title = {Open Web Application Security Project - Cheat Sheet Series},
-	url = {https://github.com/OWASP/CheatSheetSeries}
+    title = {Open Web Application Security Project - Cheat Sheet Series},
+    url = {https://github.com/OWASP/CheatSheetSeries}
 }
 
 @misc{owasp,
-	title = {Open Web Application Security Project},
-	url = {https://www.owasp.org}
+    title = {Open Web Application Security Project},
+    url = {https://www.owasp.org}
 }
 
 @misc{owaspten,
-	title = {Open Web Application Security Project - Top Ten Security Risks},
-	url = {https://owasp.org/www-project-top-ten/}
+    title = {Open Web Application Security Project - Top Ten Security Risks},
+    url = {https://owasp.org/www-project-top-ten/}
 }
 
 @misc{samm,
-	title = {Open Web Application Security Project - Software Maturity Model (SAMM)},
-	url = {https://owaspsamm.org/blog/2019/12/20/version2-community-release/}
+    title = {Open Web Application Security Project - Software Maturity Model (SAMM)},
+    url = {https://owaspsamm.org/blog/2019/12/20/version2-community-release/}
 }
 
 @misc{wstg,
-	title = {Open Web Application Security Project - Web Security Testing Guide},
-	url = {https://github.com/OWASP/wstg/tree/master/document}
+    title = {Open Web Application Security Project - Web Security Testing Guide},
+    url = {https://github.com/OWASP/wstg/tree/master/document}
 }
 
 @misc{isoiec27001,
-	title = {ISO (International Organization for Standardization) and IEC (International Electrotechnical Commission) ISO/IEC 27001:2013},
-	url = {https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en},
-	year = 2013
+    title = {ISO (International Organization for Standardization) and IEC (International Electrotechnical Commission) ISO/IEC 27001:2013},
+    url = {https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en},
+    year = 2013
 }
 
 @misc{isoiec27002,
-	title = {ISO (International Organization for Standardization) and IEC (International Electrotechnical Commission) ISO/IEC 27002:2013},
-	url = {https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en},
-	year = 2013
+    title = {ISO (International Organization for Standardization) and IEC (International Electrotechnical Commission) ISO/IEC 27002:2013},
+    url = {https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en},
+    year = 2013
 }
 
 @misc{isoiec27032,
-	title = {ISO (International Organization for Standardization) and IEC (International Electrotechnical Commission) ISO/IEC 7032:2012},
-	url = {https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en},
-	year = 2012
+    title = {ISO (International Organization for Standardization) and IEC (International Electrotechnical Commission) ISO/IEC 7032:2012},
+    url = {https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en},
+    year = 2012
 }
 
 % Chapter 3 References
 
 @misc{openstackstor,
-	title = {OpenStack Storage},
-	url = {https://docs.openstack.org/arch-design/design-storage/design-storage-concepts.html#table-openstack-storage}
+    title = {OpenStack Storage},
+    url = {https://docs.openstack.org/arch-design/design-storage/design-storage-concepts.html#table-openstack-storage}
 }
 
 @misc{openstackcind,
-	title = {OpenStack Cinder Driver Support Matrix},
-	url = {https://docs.openstack.org/cinder/latest/reference/support-matrix.html}
+    title = {OpenStack Cinder Driver Support Matrix},
+    url = {https://docs.openstack.org/cinder/latest/reference/support-matrix.html}
 }
 
 @misc{tungsten,
 
-	title = {Tungsten Fabric - Multicloud Multistack SDN},
-	url = {https://tungsten.io}
+    title = {Tungsten Fabric - Multicloud Multistack SDN},
+    url = {https://tungsten.io}
 }
 
 @misc{openstackglos,
-	title = {OpenStack Glossary},
-	url = {https://docs.openstack.org/doc-contrib-guide/common/glossary.html}
+    title = {OpenStack Glossary},
+    url = {https://docs.openstack.org/doc-contrib-guide/common/glossary.html}
 }
 
 @misc{openstackfeat,
-	title = {OpenStack Feature Support Matrix},
-	url = {https://docs.openstack.org/nova/latest/user/support-matrix.html}
+    title = {OpenStack Feature Support Matrix},
+    url = {https://docs.openstack.org/nova/latest/user/support-matrix.html}
 }
 
 @misc{openstackstar,
-	title = {OpenStack Storage Architecture Design},
-	url = {https://docs.openstack.org/arch-design/design-storage.html}
+    title = {OpenStack Storage Architecture Design},
+    url = {https://docs.openstack.org/arch-design/design-storage.html}
 }
 
 % Chapter 4 References
 
-@misc{dpdk_rel_notes,
-	title = {(DPDK) Release Notes},
-	url = {http://doc.dpdk.org/guides/rel_notes}
-}
-
-@misc{dpdk_perf,
-	title = {(DPDK) Performance Reports},
-	url = {http://core.dpdk.org/perf-reports/}
-}
-
-@misc{ceph,
-	title = {Ceph - The Future of Storage},
-	url = {https://ceph.io/en}
-}
-
-@misc{ostk_svr,
-	title = {OpenStack Compute API Guide 2.1.0: Server concepts},
-	url = {https://docs.openstack.org/api-guide/compute/server_concepts.html}
-}
-
-@misc{ostk_bm,
-	title = {OpenStack Ironic API Reference: Bare Metal API},
-	url = {https://docs.openstack.org/api-ref/baremetal/}
-}
-
-@misc{ostk_nw_ext,
-	title = {OpenStack Networking API v2.0: List extensions},
-	url = {https://docs.openstack.org/api-ref/network/v2/#list-extensions}
-}
-
-@misc{ostk_nw_ext_details,
-	title = {OpenStack Networking API v2.0: Show extension details},
-	url = {https://docs.openstack.org/api-ref/network/v2/#show-extension-details}
-}
-
-@misc{ostk_wallaby-barbican,
-	title = {OpenStack Key Manager (barbican)},
-	url = {https://docs.openstack.org/barbican/wallaby/}
-}
-
-@misc{ostk_latest_cinder,
-	title = {OpenStack Cinder Administration},
-	url = {https://docs.openstack.org/cinder/latest/admin/index.html}
-}
-
-@misc{ostk_latest_cinder_config,
-	title = {OpenStack Cinder Service Configuration},
-	url = {https://docs.openstack.org/cinder/latest/configuration/index.html}
-}
-
-@misc{ostk_latest_cinder_drivers,
-	title = {OpenStack (Cinder) Available Drivers},
-	url = {https://docs.openstack.org/cinder/latest/drivers.html}
-}
-
-@misc{ostk_latest_cinder_support,
-	title = {OpenStack Cinder Driver Support Matrix},
-	url = {https://docs.openstack.org/cinder/latest/reference/support-matrix.html}
-}
-
-@misc{ostk_wallaby_cinder,
-	title = {OpenStack Block Storage (Cinder) documentation},
-	url = {https://docs.openstack.org/cinder/wallaby/}
-}
-
-@misc{ostk_latest_cyborg_support,
-	title = {OpenStack Cyborg Support Matrix},
-	url = {https://docs.openstack.org/cyborg/latest/reference/support-matrix.html}
-}
-
-@misc{ostk_latest_cyborg_arch,
-	title = {OpenStack Cyborg architecture},
-	url = {https://docs.openstack.org/cyborg/latest/user/architecture.html}
-}
-
-@misc{ostk_wallaby_cyborg,
-	title = {OpenStack Accelerator (Cyborg)},
-	url = {https://docs.openstack.org/cyborg/wallaby/}
-}
-
-@misc{ostk_wallaby_cyborg_support,
-	title = {OpenStack Cyborg Support Matrix (Wallaby)},
-	url = {https://docs.openstack.org/cyborg/wallaby/reference/support-matrix.html}
-}
-
-@misc{ostk_wallaby_glance,
-	title = {OpenStack - Welcome to Glance’s documentation!},
-	url = {https://docs.openstack.org/glance/wallaby/}
-}
-
-@misc{ostk_wallaby_heat,
-	title = {OpenStack - Welcome to the Heat documentation!},
-	url = {https://docs.openstack.org/heat/wallaby/}
-}
-
-@misc{ostk_wallaby_horizon,
-	title = {Horizon: The OpenStack Dashboard Project},
-	url = {https://docs.openstack.org/horizon/wallaby/}
-}
-
-@misc{ostk_wallaby_ironic,
-	title = {OpenStack - Welcome to Ironic’s documentation!},
-	url = {https://docs.openstack.org/ironic/wallaby/}
-}
-
-@misc{ostk_wallaby_keystone,
-	title = {Keystone, the OpenStack Identity Service},
-	url = {https://docs.openstack.org/keystone/wallaby/}
-}
-
-@misc{ostk_nw_liberty_dvr_ovs,
-	title = {OpenStack - Scenario: High Availability using Distributed Virtual Routing (DVR)},
-	url = {https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html}
-}
-
-@misc{ostk_neutron_api_ext,
-	title = {OpenStack Neutron: API Extensions},
-	url = {https://docs.openstack.org/neutron/latest/contributor/internals/api_extensions.html}
-}
-
-@misc{ostk_wallaby_neutron,
-	title = {OpenStack - Welcome to Neutron’s documentation!},
-	url = {https://docs.openstack.org/neutron/wallaby/ }
-}
-
-@misc{ostk_wallaby_nw_svr_snat_config,
-	title = {OpenStack Neutron: Distributed Virtual Routing with VRRP},
-	url = {https://docs.openstack.org/neutron/wallaby/admin/config-dvr-ha-snat.html}
-}
-
-@misc{ostk_latest_nova_pre_caching,
-	title = {OpenStack Nova: Image pre-caching},
-	url = {https://docs.openstack.org/nova/latest/admin/image-caching.html#image-pre-caching}
-}
-
-@misc{ostk_latest_nova_flavors,
-	title = {OpenStack Nova: Flavors},
-	url = {https://docs.openstack.org/nova/latest/user/flavors.html}
-}
-
-@misc{ostk_wallaby_nova,
-	title = {OpenStack Compute (nova)},
-	url = {https://docs.openstack.org/nova/wallaby/}
-}
-
 @misc{ostk_wallaby_hypervisor_config,
-	title = {OpenStack Nova: KVM},
-	url = {https://docs.openstack.org/nova/wallaby/admin/configuration/hypervisor-kvm.html}
-}
-
-@misc{ostk_latest_octavia,
-	title = {OpenStack - Introducing Octavia},
-	url = {https://docs.openstack.org/octavia/latest/reference/introduction.html}
-}
-
-@misc{ostk_latest_placement,
-	title = {OpenStack - Placement Usage},
-	url = {https://docs.openstack.org/placement/latest/user/index.html}
-}
-
-@misc{ostk_latest_placement_provider_tree,
-	title = {OpenStack - Placement: Modeling with Provider Trees},
-	url = {https://docs.openstack.org/placement/latest/user/provider-tree.html}
-}
-
-@misc{ostk_wallaby_placement,
-	title = {OpenStack - Placement},
-	url = {https://docs.openstack.org/placement/wallaby/index.html}
-
+    title = {OpenStack Nova: KVM},
+    url = {https://docs.openstack.org/nova/wallaby/admin/configuration/hypervisor-kvm.html}
 }
 
 @misc{ostk_sec_guide_hardening_virt_lyrs,
-	title = {OpenStack - Hardening the virtualization layers},
-	url = {https://docs.openstack.org/security-guide/compute/hardening-the-virtualization-layers.html}
-}
-
-@misc{ostk_wallaby_swift,
-	title = {OpenStack - Welcome to Swift’s documentation!},
-	url = {https://docs.openstack.org/swift/wallaby/}
+    title = {OpenStack - Hardening the virtualization layers},
+    url = {https://docs.openstack.org/security-guide/compute/hardening-the-virtualization-layers.html}
 }
 
 @misc{fuel_ref_arch_100,
-	title = {OpenStack Reference Architecture For 100, 300 and 500 Nodes},
-	url = {https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html}
+    title = {OpenStack Reference Architecture For 100, 300 and 500 Nodes},
+    url = {https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html}
 }
 
-@misc{fuel_ref_arch_100_svcs_placement,
-	title = {OpenStack Reference Architecture For 100, 300 and 500 Nodes: Services Placement Summary},
-	url = {https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary}
+@misc{dpdk_rel_notes,
+    title = {(DPDK) Release Notes},
+    url = {http://doc.dpdk.org/guides/rel_notes}
 }
 
-@misc{edge_glossary,
-	title = {Open Glossary of Edge Computing},
-	url = {https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md}
+@misc{dpdk_perf,
+    title = {(DPDK) Performance Reports},
+    url = {http://core.dpdk.org/perf-reports/}
+}
+
+@misc{rfc1918,
+    series = {Request for Comments},
+    number = 1918,
+    howpublished = {RFC 1918},
+    publisher = {RFC Editor},
+    doi = {10.17487/RFC1918},
+    url = {https://www.rfc-editor.org/info/rfc1918},
+    author = {Robert Moskowitz and Daniel Karrenberg and Yakov Rekhter and Eliot Lear and Geert Jan de Groot},
+    title = {Address Allocation for Private Internets},
+    pagetotal = 9,
+    year = 1996,
+    month = feb,
+    abstract = {This document describes address allocation for private internets. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.},
+}
+
+@misc{ostk_latest_octavia,
+    title = {OpenStack - Introducing Octavia},
+    url = {https://docs.openstack.org/octavia/latest/reference/introduction.html}
 }
 
 @misc{ostk_octavia_gov,
-	title = {OpenStack Octavia (Load-balancer service)},
-	url = {https://governance.openstack.org/tc/reference/projects/octavia.html}
+    title = {OpenStack Octavia (Load-balancer service)},
+    url = {https://governance.openstack.org/tc/reference/projects/octavia.html}
 }
 
 @misc{ostk_neutron_vpnaas,
-	title = {openstack/neutron-vpnaas},
-	url = {https://opendev.org/openstack/neutron-vpnaas}
+    title = {openstack/neutron-vpnaas},
+    url = {https://opendev.org/openstack/neutron-vpnaas}
 }
 
 @misc{ostk_neutron_plugins,
-	title = {OpenStack Neutron: Plugins},
-	url = {https://wiki.openstack.org/wiki/Neutron#Plugins}
+    title = {OpenStack Neutron: Plugins},
+    url = {https://wiki.openstack.org/wiki/Neutron#Plugins}
+}
+
+@misc{ostk_neutron_api_ext,
+    title = {OpenStack Neutron: API Extensions},
+    url = {https://docs.openstack.org/neutron/latest/contributor/internals/api_extensions.html}
+}
+
+@misc{ostk_nw_ext,
+    title = {OpenStack Networking API v2.0: List extensions},
+    url = {https://docs.openstack.org/api-ref/network/v2/#list-extensions}
+}
+
+@misc{ostk_nw_ext_details,
+    title = {OpenStack Networking API v2.0: Show extension details},
+    url = {https://docs.openstack.org/api-ref/network/v2/#show-extension-details}
 }
 
 @misc{ostk_neutron_ml2,
-	title = {OpenStack Neutron/ML2},
-	url = {https://wiki.openstack.org/wiki/Neutron/ML2}
+    title = {OpenStack Neutron/ML2},
+    url = {https://wiki.openstack.org/wiki/Neutron/ML2}
+}
+
+@misc{ostk_latest_cinder_support,
+    title = {OpenStack Cinder Driver Support Matrix},
+    url = {https://docs.openstack.org/cinder/latest/reference/support-matrix.html}
+}
+
+@misc{ostk_latest_cinder_drivers,
+    title = {OpenStack (Cinder) Available Drivers},
+    url = {https://docs.openstack.org/cinder/latest/drivers.html}
+}
+
+@misc{ostk_latest_cinder_config,
+    title = {OpenStack Cinder Service Configuration},
+    url = {https://docs.openstack.org/cinder/latest/configuration/index.html}
+}
+
+@misc{ostk_latest_cinder,
+    title = {OpenStack Cinder Administration},
+    url = {https://docs.openstack.org/cinder/latest/admin/index.html}
+}
+
+@misc{ceph,
+    title = {Ceph - The Future of Storage},
+    url = {https://ceph.io/en}
+}
+
+@misc{ostk_wallaby_keystone,
+    title = {Keystone, the OpenStack Identity Service},
+    url = {https://docs.openstack.org/keystone/wallaby/}
+}
+
+@misc{ostk_wallaby_glance,
+    title = {OpenStack - Welcome to Glance's documentation!},
+    url = {https://docs.openstack.org/glance/wallaby/}
+}
+
+@misc{ostk_wallaby_cinder,
+    title = {OpenStack Block Storage (Cinder) documentation},
+    url = {https://docs.openstack.org/cinder/wallaby/}
+}
+
+@misc{ostk_wallaby_swift,
+    title = {OpenStack - Welcome to Swift's documentation!},
+    url = {https://docs.openstack.org/swift/wallaby/}
+}
+
+@misc{ostk_wallaby_neutron,
+    title = {OpenStack - Welcome to Neutron's documentation!},
+    url = {https://docs.openstack.org/neutron/wallaby/ }
+}
+
+@misc{ostk_nw_liberty_dvr_ovs,
+    title = {OpenStack - Scenario: High Availability using Distributed Virtual Routing (DVR)},
+    url = {https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html}
+}
+
+@misc{ostk_wallaby_nw_svr_snat_config,
+    title = {OpenStack Neutron: Distributed Virtual Routing with VRRP},
+    url = {https://docs.openstack.org/neutron/wallaby/admin/config-dvr-ha-snat.html}
+}
+
+@misc{ostk_wallaby_nova,
+    title = {OpenStack Compute (nova)},
+    url = {https://docs.openstack.org/nova/wallaby/}
+}
+
+@misc{ostk_wallaby_ironic,
+    title = {OpenStack - Welcome to Ironic's documentation!},
+    url = {https://docs.openstack.org/ironic/wallaby/}
+}
+
+@misc{ostk_bm,
+    title = {OpenStack Ironic API Reference: Bare Metal API},
+    url = {https://docs.openstack.org/api-ref/baremetal/}
+}
+
+@misc{ostk_wallaby_heat,
+    title = {OpenStack - Welcome to the Heat documentation!},
+    url = {https://docs.openstack.org/heat/wallaby/}
+}
+
+@misc{ostk_wallaby_horizon,
+    title = {Horizon: The OpenStack Dashboard Project},
+    url = {https://docs.openstack.org/horizon/wallaby/}
+}
+
+@misc{ostk_wallaby_placement,
+    title = {OpenStack - Placement},
+    url = {https://docs.openstack.org/placement/wallaby/index.html}
+
+}
+
+@misc{ostk_latest_placement_provider_tree,
+    title = {OpenStack - Placement: Modeling with Provider Trees},
+    url = {https://docs.openstack.org/placement/latest/user/provider-tree.html}
+}
+
+@misc{ostk_latest_placement,
+    title = {OpenStack - Placement Usage},
+    url = {https://docs.openstack.org/placement/latest/user/index.html}
+}
+
+@misc{ostk_wallaby-barbican,
+    title = {OpenStack Key Manager (barbican)},
+    url = {https://docs.openstack.org/barbican/wallaby/}
+}
+
+@misc{ostk_wallaby_cyborg,
+    title = {OpenStack Accelerator (Cyborg)},
+    url = {https://docs.openstack.org/cyborg/wallaby/}
+}
+
+@misc{ostk_svr,
+    title = {OpenStack Compute API Guide 2.1.0: Server concepts},
+    url = {https://docs.openstack.org/api-guide/compute/server_concepts.html}
+}
+
+@misc{ostk_wallaby_cyborg_support,
+    title = {OpenStack Cyborg Support Matrix (Wallaby)},
+    url = {https://docs.openstack.org/cyborg/wallaby/reference/support-matrix.html}
+}
+
+@misc{ostk_latest_cyborg_support,
+    title = {OpenStack Cyborg Support Matrix},
+    url = {https://docs.openstack.org/cyborg/latest/reference/support-matrix.html}
+}
+
+@misc{ostk_latest_cyborg_arch,
+    title = {OpenStack Cyborg architecture},
+    url = {https://docs.openstack.org/cyborg/latest/user/architecture.html}
+}
+
+@misc{ostk_latest_nova_flavors,
+    title = {OpenStack Nova: Flavors},
+    url = {https://docs.openstack.org/nova/latest/user/flavors.html}
+}
+
+@misc{edge_glossary,
+    title = {Open Glossary of Edge Computing},
+    url = {https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md}
 }
 
 @misc{ostk_uses_edge_arch_design,
-	title = {OpenStack - Edge Computing: Next Steps in Architecture, Design and Testing},
-	url = {https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing}
+    title = {OpenStack - Edge Computing: Next Steps in Architecture, Design and Testing},
+    url = {https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing}
+}
+
+@misc{fuel_ref_arch_100_svcs_placement,
+    title = {OpenStack Reference Architecture For 100, 300 and 500 Nodes: Services Placement Summary},
+    url = {https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary}
+}
+
+@misc{ostk_latest_nova_pre_caching,
+    title = {OpenStack Nova: Image pre-caching},
+    url = {https://docs.openstack.org/nova/latest/admin/image-caching.html#image-pre-caching}
+}
+
+@misc{airsh,
+    title = {Airship v2},
+    url = {https://www.airshipit.org/}
+}
+
+@misc{starl,
+    title = {StarlingX - Deploy Your Edge Cloud Now},
+    url = {https://www.starlingx.io/}
+}
+
+@misc{tripl,
+    title = {OpenStack TripleO},
+    url = {http://opendev.org/openstack/tripleo-common}
 }
 
 % Chapter 5 References
 
 @misc{oscomputemicroversions,
-	title = {{OpenStack Compute Microversions}},
-	url = {https://docs.openstack.org/api-guide/compute/microversions.html}
+    title = {OpenStack Compute Microversions},
+    url = {https://docs.openstack.org/api-guide/compute/microversions.html}
 }
 
 @misc{osidentityapiv3,
-	title = {{Identity API v3}},
-	url = {https://docs.openstack.org/api-ref/identity/v3/index.html}
+    title = {Identity API v3},
+    url = {https://docs.openstack.org/api-ref/identity/v3/index.html}
 }
 
 @misc{osidentityapiv3ext,
-	title = {{Identity API v3 extensions}},
-	url = {https://docs.openstack.org/api-ref/identity/v3-ext/}
+    title = {Identity API v3 extensions},
+    url = {https://docs.openstack.org/api-ref/identity/v3-ext/}
 }
 
 @misc{ossecuritycomplianceandpcidss,
-	title = {{Security compliance and PCI-DSS}},
-	url = {https://docs.openstack.org/keystone/wallaby/admin/configuration.html#security-compliance-and-pci-dss}
+    title = {Security compliance and PCI-DSS},
+    url = {https://docs.openstack.org/keystone/wallaby/admin/configuration.html#security-compliance-and-pci-dss}
 }
 
 @misc{osimageserviceapi,
-	title = {{Image Service API}},
-	url = {https://docs.openstack.org/api-ref/image/v2/}
+    title = {Image Service API},
+    url = {https://docs.openstack.org/api-ref/image/v2/}
 }
 
 @misc{osimageserviceversions,
-	title = {{Image Service Versions}},
-	url = {https://docs.openstack.org/api-ref/image/versions/index.html#version-history}
+    title = {Image Service Versions},
+    url = {https://docs.openstack.org/api-ref/image/versions/index.html#version-history}
 }
 
 @misc{osblockstorageapi,
-	title = {{Block Storage API}},
-	url = {https://docs.openstack.org/api-ref/block-storage/}
+    title = {Block Storage API},
+    url = {https://docs.openstack.org/api-ref/block-storage/}
 }
 
 @misc{oscinderrestapiversionhistory,
-	title = {{Cinder REST API Version History}},
-	url = {https://docs.openstack.org/cinder/latest/contributor/api_microversion_history.html}
+    title = {Cinder REST API Version History},
+    url = {https://docs.openstack.org/cinder/latest/contributor/api_microversion_history.html}
 }
 
 @misc{osobjectstorageapi,
-	title = {{Object Storage API}},
-	url = {https://docs.openstack.org/api-ref/object-store/index.html}
+    title = {Object Storage API},
+    url = {https://docs.openstack.org/api-ref/object-store/index.html}
 }
 
 @misc{osdiscoverability,
-	title = {{Discoverability}},
-	url = {https://docs.openstack.org/swift/latest/api/discoverability.html}
+    title = {Discoverability},
+    url = {https://docs.openstack.org/swift/latest/api/discoverability.html}
 }
 
 @misc{osnetworkingserviceapis,
-	title = {{Networking Service APIs}},
-	url = {https://docs.openstack.org/api-ref/network/}
+    title = {Networking Service APIs},
+    url = {https://docs.openstack.org/api-ref/network/}
 }
 
 @misc{osnetworkingapiv20,
-	title = {{Networking API v2.0}},
-	url = {https://docs.openstack.org/api-ref/network/v2/}
+    title = {Networking API v2.0},
+    url = {https://docs.openstack.org/api-ref/network/v2/}
 }
 
 @misc{oscomputeapi,
-	title = {{Compute API}},
-	url = {https://docs.openstack.org/api-ref/compute/}
+    title = {Compute API},
+    url = {https://docs.openstack.org/api-ref/compute/}
 }
 
 @misc{oscomputerestapiversionhistory,
-	title = {{Compute REST API Version History}},
-	url = {https://docs.openstack.org/nova/latest/reference/api-microversion-history.html}
+    title = {Compute REST API Version History},
+    url = {https://docs.openstack.org/nova/latest/reference/api-microversion-history.html}
 }
 
 @misc{osplacementapi,
-	title = {{Placement API}},
-	url = {https://docs.openstack.org/api-ref/placement/}
+    title = {Placement API},
+    url = {https://docs.openstack.org/api-ref/placement/}
 }
 
 @misc{osplacementrestapiversionhistory,
-	title = {{Placement REST API Version History}},
-	url = {https://docs.openstack.org/placement/latest/placement-api-microversion-history.html}
+    title = {Placement REST API Version History},
+    url = {https://docs.openstack.org/placement/latest/placement-api-microversion-history.html}
 }
 
 @misc{osorchestrationserviceapi,
-	title = {{Orchestration Service API}},
-	url = {https://docs.openstack.org/api-ref/orchestration/}
+    title = {Orchestration Service API},
+    url = {https://docs.openstack.org/api-ref/orchestration/}
 }
 
 @misc{ostemplateversionhistory,
-	title = {{Template version history}},
-	url = {https://docs.openstack.org/heat/latest/template_guide/hot_spec.html}
+    title = {Template version history},
+    url = {https://docs.openstack.org/heat/latest/template_guide/hot_spec.html}
 }
 
 @misc{oshotspecification,
-	title = {{Heat Orchestration Template (HOT) specification}},
-	url = {https://docs.openstack.org/heat/latest/template_guide/hot_spec.html#rocky}
+    title = {Heat Orchestration Template (HOT) specification},
+    url = {https://docs.openstack.org/heat/latest/template_guide/hot_spec.html#rocky}
 }
 
 @misc{osapis,
-	title = {{OpenStack APIs}},
-	url = {https://docs.openstack.org/api-ref/}
+    title = {OpenStack APIs},
+    url = {https://docs.openstack.org/api-ref/}
 }
 
 @misc{kubernetesapis,
-	title = {{Kubernetes APIs}},
-	url = {https://kubernetes.io/docs/concepts/overview/kubernetes-api/}
+    title = {Kubernetes APIs},
+    url = {https://kubernetes.io/docs/concepts/overview/kubernetes-api/}
 }
 
 @misc{kvmapis,
-	title = {{KVM APIs}},
-	url = {https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt}
+    title = {KVM APIs},
+    url = {https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt}
 }
 
 @misc{libvirtapis,
-	title = {{Libvirt APIs}},
-	url = {https://libvirt.org/html/index.html}
+    title = {Libvirt APIs},
+    url = {https://libvirt.org/html/index.html}
 }
 
 @misc{osbarbicanapi,
-	title = {{Barbican API}},
-	url = {https://docs.openstack.org/barbican/latest/api/}
+    title = {Barbican API},
+    url = {https://docs.openstack.org/barbican/latest/api/}
 }
 
 % Chapter 6 References
 
 @misc{openstacksecb,
-	title = {OpenStack - Security Boundaries and Threats},
-	url = {https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html}
+    title = {OpenStack - Security Boundaries and Threats},
+    url = {https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html}
 }
 
 @misc{openstacksecg,
-	title = {OpenStack Security Guide},
-	url = {https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html}
+    title = {OpenStack Security Guide},
+    url = {https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html}
 }
 
 @misc{cve,
-	title = {Mitre - Common Vulnerabilities and Exposures},
-	url = {https://cve.mitre.org/}
+    title = {Mitre - Common Vulnerabilities and Exposures},
+    url = {https://cve.mitre.org/}
 }
 
 @misc{nistvm,
-	title = {National Institute of Standards and Technology Vulnerabilities Metrics},
-	url = {https://nvd.nist.gov/vuln-metrics/cvss}
+    title = {National Institute of Standards and Technology Vulnerabilities Metrics},
+    url = {https://nvd.nist.gov/vuln-metrics/cvss}
 }
 
 @misc{openstackseci,
-	title = {OpenStack Security Guide - Identity},
-	url = {https://docs.openstack.org/security-guide/identity.html}
+    title = {OpenStack Security Guide - Identity},
+    url = {https://docs.openstack.org/security-guide/identity.html}
 }
 
 @misc{openstackaut,
-	title = {OpenStack Security Guide - Authentication Methods},
-	url = {https://docs.openstack.org/security-guide/identity/authentication-methods.html}
+    title = {OpenStack Security Guide - Authentication Methods},
+    url = {https://docs.openstack.org/security-guide/identity/authentication-methods.html}
 }
 
 @misc{openstackpol,
-	title = {OpenStack Security Guide - Policies},
-	url = {https://docs.openstack.org/security-guide/identity/policies.html#policy-section}
+    title = {OpenStack Security Guide - Policies},
+    url = {https://docs.openstack.org/security-guide/identity/policies.html#policy-section}
 }
 
 @misc{openstackdr,
-	title = {OpenStack KeyStone Default Roles},
-	url = {https://docs.openstack.org/keystone/latest/admin/service-api-protection.html}
+    title = {OpenStack KeyStone Default Roles},
+    url = {https://docs.openstack.org/keystone/latest/admin/service-api-protection.html}
 }
 
 @misc{openstackseccom,
-	title = {OpenStack - Introduction to TLS and SSL},
-	url = {https://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html}
+    title = {OpenStack - Introduction to TLS and SSL},
+    url = {https://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html}
 }
 
 @misc{ciscat,
-	title = {Center for Internet Security CIS-CAT Pro},
-	url = {https://www.cisecurity.org/cybersecurity-tools/cis-cat-pro/}
+    title = {Center for Internet Security CIS-CAT Pro},
+    url = {https://www.cisecurity.org/cybersecurity-tools/cis-cat-pro/}
 }
 
 @misc{cisben,
-	title = {Center for Internet Security Benchmarks},
-	url = {https://www.cisecurity.org/cis-benchmarks/}
+    title = {Center for Internet Security Benchmarks},
+    url = {https://www.cisecurity.org/cis-benchmarks/}
 }
 
 @misc{openstackisv,
-	title = {OpenStack Image Signature Verification},
-	url = {https://docs.openstack.org/glance/wallaby/user/signature.html}
+    title = {OpenStack Image Signature Verification},
+    url = {https://docs.openstack.org/glance/wallaby/user/signature.html}
 }
 
 @misc{openstacksr,
-	title = {OpenStack - SR-IOV Passthrough For Networking},
-	url = {https://wiki.openstack.org/wiki/SR-IOV-Passthrough-For-Networking}
+    title = {OpenStack - SR-IOV Passthrough For Networking},
+    url = {https://wiki.openstack.org/wiki/SR-IOV-Passthrough-For-Networking}
 }
 
 @misc{openstackti,
-	title = {OpenStack Trusted Images},
-	url = {https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images}
+    title = {OpenStack Trusted Images},
+    url = {https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images}
 }
 
 @misc{openstackim,
-	title = {OpenStack Virtual Machine Image Guide},
-	url = {https://docs.openstack.org/image-guide/}
+    title = {OpenStack Virtual Machine Image Guide},
+    url = {https://docs.openstack.org/image-guide/}
 }
 
 @misc{openstackasi,
-	title = {Adding Signed Images},
-	url = {https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images}
+    title = {Adding Signed Images},
+    url = {https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images}
 }
 
 @misc{etsisol4,
-	title = {Network Functions Virtualisation (NFV) Release 4; Protocols and Data Models; VNF Package and PNFD Archive specification},
-	howpublished = {ETSI GS NFV-SOL 004 V4.3.1},
-	url = {https://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/004/04.03.01_60/gs_NFV-SOL004v040301p.pdf},
-	year = 2022,
-	month =	 jul
+    title = {Network Functions Virtualisation (NFV) Release 4; Protocols and Data Models; VNF Package and PNFD Archive specification},
+    howpublished = {ETSI GS NFV-SOL 004 V4.3.1},
+    url = {https://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/004/04.03.01_60/gs_NFV-SOL004v040301p.pdf},
+    year = 2022,
+    month =     jul
 }
 
 @misc{etsisec21,
-	title = {Network Functions Virtualisation (NFV) Release 2; Security; VNF Package Security Specification},
-	howpublished = {ETSI GS NFV-SEC 021 V2.6.1},
-	url = {https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf},
-	year = 2019,
-	month =	 jun
+    title = {Network Functions Virtualisation (NFV) Release 2; Security; VNF Package Security Specification},
+    howpublished = {ETSI GS NFV-SEC 021 V2.6.1},
+    url = {https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf},
+    year = 2019,
+    month =     jun
 }
 
 % Chapter 7 References
 
 @misc{forem,
-	title = {Foreman},
-	url = {https://www.theforeman.org/}
+    title = {Foreman},
+    url = {https://www.theforeman.org/}
 }
 
 @misc{ansib,
-	title = {Ansible Documentation},
-	url = {https://docs.ansible.com/}
-}
-
-@misc{tripl,
-	title = {OpenStack TripleO},
-	url = {http://opendev.org/openstack/tripleo-common}
+    title = {Ansible Documentation},
+    url = {https://docs.ansible.com/}
 }
 
 @misc{trarch,
-	title = {OpenStack TripleO Architecture},
-	url = {https://docs.openstack.org/tripleo-docs/latest/install/introduction/architecture.html#project-architecture}
-}
-
-@misc{airsh,
-	title = {Airship v2},
-	url = {https://www.airshipit.org/}
-}
-
-@misc{starl,
-	title = {StarlingX - Deploy Your Edge Cloud Now},
-	url = {https://www.starlingx.io/}
+    title = {OpenStack TripleO Architecture},
+    url = {https://docs.openstack.org/tripleo-docs/latest/install/introduction/architecture.html#project-architecture}
 }
 
 % Chapter 8 References
 
 @misc{ovp,
-	title = {OVP},
-	url = {https://www.opnfv.org/verification}
+    title = {OVP},
+    url = {https://www.opnfv.org/verification}
 }
 
 @misc{jenkins,
-	title = {jenkins},
-	url = {https://build.opnfv.org/}
+    title = {jenkins},
+    url = {https://build.opnfv.org/}
 }
 
 @misc{testdb,
-	title = {Test Dabase},
-	url = {https://docs.opnfv.org/en/stable-hunter/_images/OPNFV_testing_working_group.png}
+    title = {Test Dabase},
+    url = {https://docs.opnfv.org/en/stable-hunter/_images/OPNFV_testing_working_group.png}
 }
 
 @misc{s3storageservice,
-	title = {S3 compatible storage service},
-	url = {http://artifacts.opnfv.org/}
+    title = {S3 compatible storage service},
+    url = {http://artifacts.opnfv.org/}
 }
 
 @misc{functestwallabyzip,
-	title = {functest-wallaby-zip},
-	url = {https://build.opnfv.org/ci/job/functest-wallaby-zip/4/console}
+    title = {functest-wallaby-zip},
+    url = {https://build.opnfv.org/ci/job/functest-wallaby-zip/4/console}
 }
 
 @misc{xtestingci,
-	title = {Xtesting CI},
-	url = {https://galaxy.ansible.com/collivier/xtesting}
+    title = {Xtesting CI},
+    url = {https://galaxy.ansible.com/collivier/xtesting}
 }
 
 @misc{docker,
-	title = {Docker},
-	url = {https://www.docker.com/}
+    title = {Docker},
+    url = {https://www.docker.com/}
 }
 
 @misc{xtesting,
-	title = {Xtesting},
-	url = {https://xtesting.readthedocs.io/en/latest/}
+    title = {Xtesting},
+    url = {https://xtesting.readthedocs.io/en/latest/}
 }
 
 @misc{opnfvfraser,
-	title = {OPNFV Fraser},
-	url = {https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/}
+    title = {OPNFV Fraser},
+    url = {https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/}
 }
 
 @misc{xtestingpythonpackage,
-	title = {Xtesting Python package},
-	url = {https://pypi.org/project/xtesting/}
+    title = {Xtesting Python package},
+    url = {https://pypi.org/project/xtesting/}
 }
 
 @misc{testcasedescription,
-	title = {Test case execution description},
-	url = {https://git.opnfv.org/functest-xtesting/tree/docker/core/testcases.yaml}
+    title = {Test case execution description},
+    url = {https://git.opnfv.org/functest-xtesting/tree/docker/core/testcases.yaml}
 }
 
 @misc{cicdtoolchainsinafewcommands,
-	title = {CI/CD toolchains in a few commands},
-	url = {https://github.com/collivier/ansible-role-xtesting#readme}
+    title = {CI/CD toolchains in a few commands},
+    url = {https://github.com/collivier/ansible-role-xtesting#readme}
 }
 
 @misc{cicddeploymentmodels,
-	title = {CI/CD deployment models},
-	url = {https://lists.opnfv.org/g/opnfv-tsc/message/5702}
+    title = {CI/CD deployment models},
+    url = {https://lists.opnfv.org/g/opnfv-tsc/message/5702}
 }
 
 @misc{anuketreleng,
-	title = {Anuket Releng},
-	url = {https://git.opnfv.org/releng/tree/jjb/functest}
+    title = {Anuket Releng},
+    url = {https://git.opnfv.org/releng/tree/jjb/functest}
 }
 
 @misc{testcaseresultdump,
-	title = {Test Case result dump},
-	url = {http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip}
+    title = {Test Case result dump},
+    url = {http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip}
 }
 
 @misc{xtestingsamples,
-	title = {Xtesting Samples},
-	url = {https://git.opnfv.org/functest-xtesting/plain/ansible/site.yml?h=stable/wallaby}
+    title = {Xtesting Samples},
+    url = {https://git.opnfv.org/functest-xtesting/plain/ansible/site.yml?h=stable/wallaby}
 }
 
 @misc{openstackverification,
-	title = {OpenStack verification},
-	url = {https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/wallaby}
+    title = {OpenStack verification},
+    url = {https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/wallaby}
 }
 
 @misc{anuketrc1,
-	title = {Anuket RC1},
-	url = {https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/wallaby}
+    title = {Anuket RC1},
+    url = {https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/wallaby}
 }
 
 @misc{kubernetesverification,
-	title = {Kubernetes verification},
-	url = {https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/v1.22}
+    title = {Kubernetes verification},
+    url = {https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/v1.22}
 }
 
 @misc{functest,
-	title = {Functest},
-	url = {https://functest.readthedocs.io/en/stable-wallaby/}
+    title = {Functest},
+    url = {https://functest.readthedocs.io/en/stable-wallaby/}
 }
 
 @misc{refstack,
-	title = {RefStack},
-	url = {https://refstack.openstack.org/}
+    title = {RefStack},
+    url = {https://refstack.openstack.org/}
 }
 
 @misc{networkingbgpvpn,
-	title = {Networking BGPVPN},
-	url = {https://docs.openstack.org/networking-bgpvpn/latest/}
+    title = {Networking BGPVPN},
+    url = {https://docs.openstack.org/networking-bgpvpn/latest/}
 }
 
 @misc{networkingsfc,
-	title = {Networking SFC},
-	url = {https://docs.openstack.org/networking-sfc/latest/}
-}
-
-@misc{k8se2etests,
-	title = {Kubernetes End-to-end tests},
-	url = {https://kubernetes.io/blog/2019/03/22/kubernetes-end-to-end-testing-for-everyone/}
-}
-
-@misc{k8sconformance,
-	title = {k8s-conformance},
-	url = {https://build.opnfv.org/ci/job/functest-kubernetes-opnfv-functest-kubernetes-smoke-v1.22-k8s_conformance-run/25/console}
+    title = {Networking SFC},
+    url = {https://docs.openstack.org/networking-sfc/latest/}
 }
 
 @misc{devstackgates,
-	title = {DevStack Gates},
-	url = {https://docs.opendev.org/opendev/system-config/latest/devstack-gate.html}
+    title = {DevStack Gates},
+    url = {https://docs.opendev.org/opendev/system-config/latest/devstack-gate.html}
 }
 
 @misc{rally,
-	title = {Rally},
-	url = {https://github.com/openstack/rally-openstack}
+    title = {Rally},
+    url = {https://github.com/openstack/rally-openstack}
 }
 
 @misc{tempest,
-	title = {Temptest},
-	url = {https://github.com/openstack/tempest}
+    title = {Temptest},
+    url = {https://github.com/openstack/tempest}
 }
 
 @misc{devstack,
-	title = {Temptest},
-	url = {https://docs.openstack.org/devstack/latest/}
+    title = {Temptest},
+    url = {https://docs.openstack.org/devstack/latest/}
 }
 
 @misc{raspberrypi,
-	title = {Raspberry PI},
-	url = {https://www.raspberrypi.org/}
+    title = {Raspberry PI},
+    url = {https://www.raspberrypi.org/}
 }
 
 @misc{functestdailyjobs,
-	title = {Functest daily jobs},
-	url = {https://build.opnfv.org/ci/view/functest/job/functest-wallaby-daily/17/}
+    title = {Functest daily jobs},
+    url = {https://build.opnfv.org/ci/view/functest/job/functest-wallaby-daily/17/}
 }
 
 @misc{osperformancetools,
-	title = {OpenStack performance tools},
-	url = {https://docs.openstack.org/developer/performance-docs/methodologies/tools.html}
-}
-
-@misc{functestgates,
-	title = {Functest gates},
-	url = {https://build.opnfv.org/ci/view/functest}
+    title = {OpenStack performance tools},
+    url = {https://docs.openstack.org/developer/performance-docs/methodologies/tools.html}
 }
 
 @misc{runalpinefunctestcontainers,
-	title = {Run Alpine Functest containers (Wallaby)},
-	url = {https://wiki.anuket.io/display/HOME/Functest+Wallaby}
+    title = {Run Alpine Functest containers (Wallaby)},
+    url = {https://wiki.anuket.io/display/HOME/Functest+Wallaby}
+}
+
+@misc{functestgates,
+    title = {Functest gates},
+    url = {https://build.opnfv.org/ci/view/functest}
 }
 
 @misc{newfunctestcnttcontainers,
-	title = {New Functest CNTT containers},
-	url = {https://lists.opnfv.org/g/opnfv-tsc/message/5717}
+    title = {New Functest CNTT containers},
+    url = {https://lists.opnfv.org/g/opnfv-tsc/message/5717}
 }
 
 @misc{keystonetempestplugin,
-	title = {keystone-tempest-plugin},
-	url = {https://opendev.org/openstack/keystone-tempest-plugin}
+    title = {keystone-tempest-plugin},
+    url = {https://opendev.org/openstack/keystone-tempest-plugin}
 }
 
 @misc{functestsmokecntt,
-	title = {Functest Smoke CNTT},
-	url = {https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby}
+    title = {Functest Smoke CNTT},
+    url = {https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby}
 }
 
 @misc{cindertempestplugin,
-	title = {cinder-tempest-plugin},
-	url = {https://opendev.org/openstack/cinder-tempest-plugin}
-}
-
-@misc{neutrontempestplugin,
-	title = {neutron-tempest-plugin},
-	url = {https://opendev.org/openstack/neutron-tempest-plugin}
-}
-
-@misc{heattempestplugin,
-	title = {heat-tempest-plugin},
-	url = {https://opendev.org/openstack/heat-tempest-plugin}
-}
-
-@misc{tempesthorizon,
-	title = {tempest-horizon},
-	url = {https://github.com/openstack/tempest-horizon}
-}
-
-@misc{functesthealthcheck,
-	title = {Functest Healthcheck},
-	url = {https://git.opnfv.org/functest/tree/docker/healthcheck/testcases.yaml?h=stable%2Fwallaby}
-}
-
-@misc{functestbenchmarkingcntt,
-	title = {Functest Benchmarking CNTT},
-	url = {https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby}
-}
-
-@misc{rallyfullcntt,
-	title = {rally_full_cntt},
-	url = {http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html}
-}
-
-@misc{rallyjobscntt,
-	title = {rally_jobs_cntt},
-	url = {http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_jobs_cntt-run-5/rally_jobs_cntt/rally_jobs_cntt.html}
-}
-
-@misc{vmtp,
-	title = {VMTP},
-	url = {http://vmtp.readthedocs.io/en/latest}
-}
-
-@misc{shaker,
-	title = {Shaker},
-	url = {https://pyshaker.readthedocs.io/en/latest/}
-}
-
-@misc{vmtpscenarios,
-	title = {VMTP scenarios},
-	url = {http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-vmtp-run-8/vmtp/vmtp.json}
-}
-
-@misc{functestvmtp,
-	title = {Functest VMTP},
-	url = {http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-vmtp-run-8/vmtp/vmtp.html}
-}
-
-@misc{shakerscenarios,
-	title = {Shaker scenarios},
-	url = {http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-shaker-run-8/shaker/report.json}
-}
-
-@misc{functestvnf,
-	title = {Functest VNF},
-	url = {https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml?h=stable%2Fwallaby}
-}
-
-@misc{clearwaterims,
-	title = {Clearwater IMS},
-	url = {https://clearwater.readthedocs.io/en/stable/}
-}
-
-@misc{vyosvrouter,
-	title = {VyOS vRouter},
-	url = {https://www.vyos.io/}
-}
-
-@misc{oaivepc,
-	title = {OpenAirInterface vEPC},
-	url = {https://www.openairinterface.org/}
-}
-
-@misc{cloudify,
-	title = {Cloudify},
-	url = {https://cloudify.co}
-}
-
-@misc{juju,
-	title = {Juju},
-	url = {https://jaas.ai/}
-}
-
-@misc{clearwaterlivetest,
-	title = {clearwater-live-test},
-	url = {https://github.com/Metaswitch/clearwater-live-test}
-}
-
-@misc{dockerproxy,
-	title = {Docker HTTP/HTTPS proxy},
-	url = {https://docs.docker.com/config/daemon/systemd/#httphttps-proxy}
+    title = {cinder-tempest-plugin},
+    url = {https://opendev.org/openstack/cinder-tempest-plugin}
 }
 
 @misc{review68881,
-	title = {Functest review 68881},
-	url = {https://gerrit.opnfv.org/gerrit/68881}
+    title = {Functest review 68881},
+    url = {https://gerrit.opnfv.org/gerrit/68881}
 }
 
 @misc{review71011,
-	title = {Functest review 71011},
-	url = {https://gerrit.opnfv.org/gerrit/71011}
+    title = {Functest review 71011},
+    url = {https://gerrit.opnfv.org/gerrit/71011}
 }
 
 @misc{bug1770179,
-	title = {OpenStack bug 1770179},
-	url = {https://launchpad.net/bugs/1770179}
+    title = {OpenStack bug 1770179},
+    url = {https://launchpad.net/bugs/1770179}
 }
 
 @misc{bug1677525,
-	title = {OpenStack bug 1677525},
-	url = {https://launchpad.net/bugs/1677525}
+    title = {OpenStack bug 1677525},
+    url = {https://launchpad.net/bugs/1677525}
 }
 
 @misc{bug1317133,
-	title = {OpenStack bug 1317133},
-	url = {https://launchpad.net/bugs/1317133}
+    title = {OpenStack bug 1317133},
+    url = {https://launchpad.net/bugs/1317133}
 }
 
 @misc{bug1905432,
-	title = {OpenStack bug 1905432},
-	url = {https://launchpad.net/bugs/1905432}
+    title = {OpenStack bug 1905432},
+    url = {https://launchpad.net/bugs/1905432}
 }
 
+@misc{neutrontempestplugin,
+    title = {neutron-tempest-plugin},
+    url = {https://opendev.org/openstack/neutron-tempest-plugin}
+}
 @misc{bug1863707,
-	title = {OpenStack bug 1863707},
-	url = {https://launchpad.net/bugs/1863707}
+    title = {OpenStack bug 1863707},
+    url = {https://launchpad.net/bugs/1863707}
 }
 
 @misc{review69105,
-	title = {Functest review 69105},
-	url = {https://gerrit.opnfv.org/gerrit/69105}
+    title = {Functest review 69105},
+    url = {https://gerrit.opnfv.org/gerrit/69105}
 }
 
 @misc{bug1676207,
-	title = {OpenStack bug 1676207},
-	url = {https://launchpad.net/bugs/1676207}
+    title = {OpenStack bug 1676207},
+    url = {https://launchpad.net/bugs/1676207}
 }
 
 @misc{bug1836595,
-	title = {OpenStack bug 1836595},
-	url = {https://launchpad.net/bugs/1836595}
+    title = {OpenStack bug 1836595},
+    url = {https://launchpad.net/bugs/1836595}
 }
 
 @misc{bug1186354,
-	title = {OpenStack bug 1186354},
-	url = {https://launchpad.net/bugs/1186354}
+    title = {OpenStack bug 1186354},
+    url = {https://launchpad.net/bugs/1186354}
 }
 
 @misc{bug1014647,
-	title = {OpenStack bug 1014647},
-	url = {https://launchpad.net/bugs/1014647}
+    title = {OpenStack bug 1014647},
+    url = {https://launchpad.net/bugs/1014647}
 }
 
 @misc{bug1311500,
-	title = {OpenStack bug 1311500},
-	url = {https://launchpad.net/bugs/1311500}
+    title = {OpenStack bug 1311500},
+    url = {https://launchpad.net/bugs/1311500}
 }
 
 @misc{bug1161411,
-	title = {OpenStack bug 1161411},
-	url = {https://launchpad.net/bugs/1161411}
+    title = {OpenStack bug 1161411},
+    url = {https://launchpad.net/bugs/1161411}
 }
 
 @misc{bug1540645,
-	title = {OpenStack bug 1540645},
-	url = {https://launchpad.net/bugs/1540645}
+    title = {OpenStack bug 1540645},
+    url = {https://launchpad.net/bugs/1540645}
+}
+
+@misc{heattempestplugin,
+    title = {heat-tempest-plugin},
+    url = {https://opendev.org/openstack/heat-tempest-plugin}
 }
 
 @misc{story2007804,
-	title = {OpenStack story 2007804},
-	url = {https://storyboard.openstack.org/#!/story/2007804}
+    title = {OpenStack story 2007804},
+    url = {https://storyboard.openstack.org/#!/story/2007804}
 }
 
 @misc{review69926,
-	title = {Functest review 69926},
-	url = {https://gerrit.opnfv.org/gerrit/69926}
+    title = {Functest review 69926},
+    url = {https://gerrit.opnfv.org/gerrit/69926}
 }
 
 @misc{review69931,
-	title = {Functest review 69931},
-	url = {https://gerrit.opnfv.org/gerrit/69931}
+    title = {Functest review 69931},
+    url = {https://gerrit.opnfv.org/gerrit/69931}
 }
 
 @misc{review70004,
-	title = {Functest review 70004},
-	url = {https://gerrit.opnfv.org/gerrit/70004}
+    title = {Functest review 70004},
+    url = {https://gerrit.opnfv.org/gerrit/70004}
+}
+
+@misc{tempesthorizon,
+    title = {tempest-horizon},
+    url = {https://github.com/openstack/tempest-horizon}
+}
+
+@misc{functesthealthcheck,
+    title = {Functest Healthcheck},
+    url = {https://git.opnfv.org/functest/tree/docker/healthcheck/testcases.yaml?h=stable%2Fwallaby}
+}
+
+@misc{functestbenchmarkingcntt,
+    title = {Functest Benchmarking CNTT},
+    url = {https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby}
+}
+
+@misc{rallyfullcntt,
+    title = {rally_full_cntt},
+    url = {http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html}
+}
+
+@misc{rallyjobscntt,
+    title = {rally_jobs_cntt},
+    url = {http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_jobs_cntt-run-5/rally_jobs_cntt/rally_jobs_cntt.html}
+}
+
+@misc{vmtp,
+    title = {VMTP},
+    url = {http://vmtp.readthedocs.io/en/latest}
+}
+
+@misc{shaker,
+    title = {Shaker},
+    url = {https://pyshaker.readthedocs.io/en/latest/}
+}
+
+@misc{vmtpscenarios,
+    title = {VMTP scenarios},
+    url = {http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-vmtp-run-8/vmtp/vmtp.json}
+}
+
+@misc{functestvmtp,
+    title = {Functest VMTP},
+    url = {http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-vmtp-run-8/vmtp/vmtp.html}
+}
+
+@misc{shakerscenarios,
+    title = {Shaker scenarios},
+    url = {http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-shaker-run-8/shaker/report.json}
+}
+
+@misc{functestvnf,
+    title = {Functest VNF},
+    url = {https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml?h=stable%2Fwallaby}
+}
+
+@misc{clearwaterims,
+    title = {Clearwater IMS},
+    url = {https://clearwater.readthedocs.io/en/stable/}
+}
+
+@misc{vyosvrouter,
+    title = {VyOS vRouter},
+    url = {https://www.vyos.io/}
+}
+
+@misc{oaivepc,
+    title = {OpenAirInterface vEPC},
+    url = {https://www.openairinterface.org/}
+}
+
+@misc{cloudify,
+    title = {Cloudify},
+    url = {https://cloudify.co}
+}
+
+@misc{juju,
+    title = {Juju},
+    url = {https://jaas.ai/}
+}
+
+@misc{clearwaterlivetest,
+    title = {clearwater-live-test},
+    url = {https://github.com/Metaswitch/clearwater-live-test}
+}
+
+@misc{dockerproxy,
+    title = {Docker HTTP/HTTPS proxy},
+    url = {https://docs.docker.com/config/daemon/systemd/#httphttps-proxy}
 }
 
 % Chapter 9 References
 
 @misc{autosc,
-	title = {OpenStack Autoscaling with Heat},
-	url = {https://docs.openstack.org/senlin/latest/scenarios/autoscaling_heat.html}
+    title = {OpenStack Autoscaling with Heat},
+    url = {https://docs.openstack.org/senlin/latest/scenarios/autoscaling_heat.html}
 }

@@ -84,7 +84,7 @@ specification will in its next releases address this important area.
 Hybrid Multi-Cloud: APIs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Section "8.2.4 Multi-Cloud Interactions Model" defines several core roles within the Multi-Cloud Model and discusses
+Section "8.5 Multi-Cloud Interactions Model" defines several core roles within the Multi-Cloud Model and discusses
 stereo-typical interactions between them. However, the Model realises that a federated cloud requires the definition and
 agreement on a set of APIs. The current fragmentation in the industry is caused by various factors:
 

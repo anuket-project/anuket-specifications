@@ -304,7 +304,7 @@ optional and provide functionality above and beyond Cloud
 Infrastructure/VIM requirements.
 
 The architecture consists of the core services shown in the
-:numref:`OpenStack Core Services`;
+figure below;
 Ironic is an optional OpenStack service needed only for bare-metal
 containers. The rest of this document will address the specific Anuket
 conformant implementation requirements and recommendations for the core
@@ -353,7 +353,7 @@ of nodes associated with specific roles:
 
 The data plane consists of the compute nodes. It is typical to consider
 the other node types to be part of the control plane.
-:numref:`OpenStack Services Topology` depicts
+The following figure depicts
 the 4 types of nodes constitutive of the Infrastructure: control,
 compute, network and storage nodes.
 
@@ -365,7 +365,7 @@ compute, network and storage nodes.
    OpenStack Services Topology
 
 Deployments can be structured using the distribution of services amongst
-the 4 node types as depicted in :numref:`OpenStack Services Topology`,
+the 4 node types as depicted in the figure above,
 but depending on workloads requirements, OpenStack services can also be
 hosted on the same nodes. For instance, services related to Controller,
 network and storage roles can be hosted on controller nodes.
@@ -673,7 +673,7 @@ The recommended network architecture is spine and leaf topology.
 
    Network Fabric - Physical
 
-:numref:`Network Fabric - Physical` shows a physical network layout where each
+The figure above shows a physical network layout where each
 physical server is dual homed to TOR (Leaf/Access) switches with redundant
 (2x) connections. The Leaf switches are dual homed with redundant connections
 to spines.
@@ -740,7 +740,7 @@ factors including:
 -  controller nodes setup in-line with the vendor recommendation (e.g.,
    min 3 physical nodes)
 -  network nodes (where applicable)
--  backend storage nodes setup for highly availablility based on quorum
+-  backend storage nodes setup for highly availability based on quorum
    (aligned with vendor implementation)
 -  compute nodes sized to handle the entire workload following local
    failure scenario
@@ -821,9 +821,9 @@ hypervisor anti-affinity) there would be no service impact.
    has individual site constraints this document will not propose a
    standard rack layout.
 -  During maintenance of the control plane, whilst the data (forwarding)
-   plane remains unaffected, the control plane API may not be available
-   and some applications may be relying on it during normal application
-   operation for example for scaling. Additionally if the upgrade
+   plane remains unaffected, the control plane APIs may not be available
+   and applications relying on these APIs for normal application
+   operations (such as, scaling) will be impacted. Additionally, if the upgrade
    involves updating OpenStack services on the compute nodes care needs
    to be taken. OVS-kernel networking operations may also be impacted
    during this time.
@@ -850,7 +850,7 @@ third AZ or arbitrator.
    with 2 controllers the OpenStack services would be impacted as quorum
    cannot be gained with a single controller node. It is also possible
    to use more than 3 controller nodes and co-locate one with each
-   compute AZ allowing lower-risk maintenance but care must be taken to
+   compute AZ allowing lower-risk maintenance, but care must be taken to
    avoid split brain.
 -  The distributed network fabric must support L2 for the OpenStack
    control plane VIPs.

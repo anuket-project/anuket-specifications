@@ -23,7 +23,7 @@ Anuket Specifications
     :hidden:
 
     common/README
-    gov/README
+    gov/index
     CODE_OF_CONDUCT
 
 Version information

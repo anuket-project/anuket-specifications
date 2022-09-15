@@ -129,7 +129,7 @@ tenant network (see more detail in Neutron section).
 
 -  How many nodes to meet SLA
 
-   -  Minimum 2 nodes for high availibility using VRRP.
+   -  Minimum 2 nodes for high availability using VRRP.
 
 -  HW specifications
 
@@ -190,8 +190,8 @@ of the variability through different values or extra specifications.
 The Reference Model specifies the Basic (B) and High-Performance (H)
 profile types. The Reference Model also provides a choice of network
 acceleration capabilities utilising, for example, DPDK and SR-IOV
-technologies. The Table :numref:` Profile Extensions and Capabilities`
-(below) lists a few simple examples of profile
+technologies. The table
+below lists a few simple examples of profile
 extensions and some of their capabilities.
 
 .. list-table:: Profile Extensions and Capabilities
@@ -286,7 +286,7 @@ the following boot parameters:
        results.
    * - Workload
      - DPDK uses core affinity along with 1G or 2M huge pages, NUMA settings
-       (to avoid crossing inteconnect between CPUs), and DPDK Poll Mode
+       (to avoid crossing interconnect between CPUs), and DPDK Poll Mode
        Drivers (PMD, on reserved cores) to get the best performance. DPDK
        versions xx.11 are Long-Term Support maintained stable release with
        back-ported bug fixes for a two-year period.
@@ -309,26 +309,21 @@ the following boot parameters:
    Average RAM per instance  ri
    ========================= ========
 
-.. list-table:: Sizing rules
+.. table:: Sizing rules
    :widths: auto
-   :header-rows: 1
 
-   * -
-     -
-     - Basic
-     - High-Performance
-   * - # of VMs per node (vCPU)
-     - (s*c*t*o)/v
-     - 4*(sct)/v
-     - (s*c*t)/v
-   * - # of VMs per node (RAM)
-     - rt/ri
-     - rt/ri
-     - rt/ri
-   * - Max # of VMs per node
-     -
-     - min(4*(sct)/v,rt/ri)
-     - min((s*c*t)/v,rt/ri)
+   +--------------+-------------+------------------------+---------------------+
+   | Item         | Formula     | Basic                  | High-Performance    |
+   +==============+=============+========================+=====================+
+   | # of VMs per | (s*c*t*o)/v | 4*(s*c*t)/v            | (s*c*t)/v           |
+   | node (vCPU)  |             |                        |                     |
+   +--------------+-------------+------------------------+---------------------+
+   | # of VMs per | rt/ri       | rt/ri                  | rt/ri               |
+   | node (RAM)   |             |                        |                     |
+   +--------------+-------------+------------------------+---------------------+
+   | Max # of VMs |             | min(4*(s*c*t)/v,rt/ri) | min((sc*t)/v,rt/ri) |
+   | per node     |             |                        |                     |
+   +--------------+-------------+------------------------+---------------------+
 
 Caveats:
 
@@ -363,7 +358,7 @@ cores/threads to non-tenant workloads such as for OpenStack services." A
 number ("n") of random cores can be reserved for host services
 (including OpenStack services) by specifying the following in nova.conf:
 
-         reserved_host_cpus = n
+        reserved_host_cpus = n
 
 where n is any positive integer.
 
@@ -383,15 +378,15 @@ configuration.
 
 Let us consider a compute host with 20 cores with SMT enabled (let us
 disregard NUMA) and the following parameters specified. The physical
-cores are numbered ‘0' to ‘19' while the sibling threads are numbered
-‘20' to ‘39' where the vCPUs numbered ‘0' and ‘20', ‘1' and ‘21', etc.
+cores are numbered '0' to '19' while the sibling threads are numbered
+'20' to '39' where the vCPUs numbered '0' and '20', '1' and '21', etc.
 are siblings:
 
-         cpu_shared_set = 1-7,9-19,21-27,29-39          (can also be
-specified as cpu_shared_set = 1-19,\&8,21-39,\&28)
+        cpu_shared_set = 1-7,9-19,21-27,29-39
+        (can also be specified as cpu_shared_set = 1-19,\&8,21-39,\&28)
 
-This implies that the two physical cores ‘0' and ‘8' and their sibling
-threads ‘20' and ‘28' are dedicated to the host services, and 19 cores
+This implies that the two physical cores '0' and '8' and their sibling
+threads '20' and '28' are dedicated to the host services, and 19 cores
 and their sibling threads are available for Guest instances and can be
 over allocated as per the specified cpu_allocation_ratio in nova.conf.
 
@@ -405,7 +400,7 @@ cores. For such workloads, CPU pinning allows us to bind an instance's
 vCPUs to particular host cores or SMT threads. To configure a flavor to
 use pinned vCPUs, we use a dedicated CPU policy.
 
-         openstack flavor set .xlarge -property hw:cpu_policy=dedicated
+        openstack flavor set .xlarge -property hw:cpu_policy=dedicated
 
 While an instance with pinned CPUs cannot use CPUs of another pinned
 instance, this does not apply to unpinned instances; an unpinned
@@ -432,13 +427,13 @@ Operating System and Hypervisor).
 
 An OpenStack flavor defines the characteristics ("capabilities") of a
 server (viz., VMs or instances) that will be deployed on hosts assigned
-a host-profile. A many to many relationship exists between flavors and
+a host-profile. A many-to-many relationship exists between flavors and
 host profiles. Multiple flavors can be defined with overlapping
 capability specifications with only slight variations that servers of
-these flavor types can be hosted on similary configured (host profile)
+these flavor types can be hosted on similarly configured (host profile)
 compute hosts. Similarly, a server can be specified with a flavor that
 allows it to be hosted on, say, a host configured as per the Basic
-profile or a host configured as per the High-Performance profile. Please
+profile, or a host configured as per the High-Performance profile. Please
 note that workloads that specify a server flavor so as to be hosted on a
 host configured as per the High-Performance profile, may not be able to
 run (adequately with expected performance) on a host configured as per
@@ -534,12 +529,13 @@ Example Host Configurations
 
    Basic Profile Host Configuration (example and simplified)
 
-Let us refer to the data traffic networking configuration of
-:numref:`Basic Profile Host Configuration` to be part of the hp-B1-a and
-hp-B4-a host profiles and this requires the configurations as Table
-`Configuration of Basic Flavor Capabilities`_.
+Let us refer to the data traffic networking configuration
+depicted in the figure above to be part of the hp-B1-a and
+hp-B4-a host profiles and this requires the configurations
+as Table `Configuration of Basic Flavor Capabilities`_.
 
-.. _Configuration of Basic Flavor Capabilities:
+.. _`Configuration of Basic Flavor Capabilities`:
+
 .. list-table:: Configuration of Basic Flavor Capabilities
    :widths: 20 10 10 10
    :header-rows: 1
@@ -573,7 +569,7 @@ hp-B4-a host profiles and this requires the configurations as Table
      - B1
      - B4
 
-:numref:`Basic Profile Host Config with shared Storage and OAM networking`
+The figure below
 shows the networking configuration where the storage and OAM share networking
 but are independent of the PXE network.
 
@@ -616,10 +612,11 @@ The above examples of host networking configurations for the B1 and B4
 Profile Extensions are also suitable for the HV Profile Extensions;
 however, the hypervisor and BIOS settings will be different (see table
 below) and hence there will be a need for different host profiles. Table
-`Configuration of High Performance Flavor Capabilities`_ gives examples of
+`Configuration of High Performance Flavor Capabilities`_
+gives examples of
 three different host profiles; one each for HV, HD and HS Profile Extensions.
 
-.. _Configuration of High Performance Flavor Capabilities:
+.. _`Configuration of High Performance Flavor Capabilities`:
 
 .. list-table:: Configuration of High Performance Flavor Capabilities
    :widths: 15 29 12 12 12
@@ -664,8 +661,7 @@ three different host profiles; one each for HV, HD and HS Profile Extensions.
 *Host Networking configuration for HD Profile Extensions*
 
 An example of the data traffic configuration for the HD (OVS-DPDK)
-Profile Extensions is shown in
-:numref:`High Performance Profile Host Conf with DPDK`.
+Profile Extensions is shown in the figure below.
 
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-DPDK.png
    :alt: High Performance Profile Host Conf with DPDK
@@ -695,8 +691,7 @@ needs to be configured:
 *Host Networking configuration for HS Profile Extensions*
 
 An example of the data traffic configuration for the HS (SR-IOV) Profile
-Extensions is shown in
-:numref:`High Performance Profile Host Configuration with SR-IOV`.
+Extensions is shown in the figure below.
 
 .. figure:: ../figures/RA1-Ch04-Network-Intensive-SRIOV.png
    :alt: High Performance Profile Host Configuration with SR-IOV
@@ -725,7 +720,7 @@ configured:
 Using Hosts of a Host Profile type
 ''''''''''''''''''''''''''''''''''
 
-As we have seen Profile Extensions are supported by configuring hosts in
+As we have seen, Profile Extensions are supported by configuring hosts in
 accordance with the Profile Extensions specifications. For example, an
 instance of flavor type B1 can be hosted on a compute node that is
 configured as an hp-B1-a or hp-B1-b host profile. All compute nodes
@@ -883,7 +878,7 @@ extensions for these standard attributes automatically incorporated.
 Additions to resources, such as additional attributes, must be
 accompanied by an extension.
 
-:ref:`chapters/chapter05:interfaces and apis` of this Reference
+The section :ref:`chapters/chapter05:interfaces and apis` of this Reference
 Architecture provides a list of :ref:`chapters/chapter04:neutron extensions`.
 The current available
 extensions can be obtained using the List Extensions
@@ -929,13 +924,12 @@ Integration Interfaces
 
 -  DHCP:
 
-When the Neutron-DHCP agent is hosted in controller nodes, then for the
-servers, on a Tenant network, that need to acquire an IPv4 and/or IPv6
-address, the VLAN for the Tenant must be extended to the control plane
-servers so that the Neutron agent can receive the DHCP requests from the
-server and send the response to the server with the IPv4 and/or IPv6
-addresses and the lease time. Please see OpenStack provider Network.
-
+   When the Neutron-DHCP agent is hosted in controller nodes, then
+   for the servers, on a Tenant network, that need to acquire an IPv4 and/or
+   IPv6 address, the VLAN for the Tenant must be extended to the control plane
+   servers so that the Neutron agent can receive the DHCP requests from the
+   server and send the response to the server with the IPv4 and/or IPv6
+   addresses and the lease time. Please see OpenStack provider Network.
 -  DNS
 -  LDAP
 -  IPAM
@@ -961,7 +955,7 @@ The document also includes a matrix for a number of proprietary drivers
 and some of the optional functions that these drivers support. This
 matrix is a handy tool to select storage backends that have the optional
 storage functions needed by the cloud operator. The cloud workload
-storage requirements helps determine the backends that should be
+storage requirements help determine the backends that should be
 deployed by the cloud operator. The common storage backend attachment
 methods include iSCSI, NFS, local disk, etc. and the matrix lists the
 supported methods for each of the vendor drivers. The OpenStack Cinder
@@ -1021,21 +1015,21 @@ RESTful gateway with a Swift-compatible API for Object Storage.
    Boot disks          RAID 1
    =================== ======
 
-How many nodes to meet SLA :
+How many nodes to meet SLA:
 
 -  minimum: three bare metal servers where Monitors are collocated with
    OSD. Note: at least 3 Monitors and 3 OSDs are required for High
    Availability.
 
-HW specifications :
+HW specifications:
 
 -  Boot disks are dedicated with Flash technology disks
--  For an IOPS oriented cluster (Flash technology ), the journal can be
+-  For an IOPS oriented cluster (Flash technology), the journal can be
    hosted on OSD disks
 -  For a capacity-oriented cluster (HDD), the journal must be hosted on
    dedicated Flash technology disks
 
-Sizing rules :
+Sizing rules:
 
 -  Minimum of 6 disks per server
 -  Replication factor : 3
@@ -1118,9 +1112,9 @@ Neutron
 Neutron :cite:p:`ostk_wallaby_neutron` is the
 networking service, depends on Keystone and has services running on the
 control nodes and the compute nodes. Depending upon the workloads to be
-hosted by the Infrastructure, and the expected load on the controller
+hosted by the infrastructure, and the expected load on the controller
 node, some of the Neutron services can run on separate network node(s).
-Factors affecting controller node load include number of compute nodes
+Factors affecting controller node load include the number of compute nodes
 and the number of API calls being served for the various OpenStack
 services (nova, neutron, cinder, glance etc.). To reduce controller node
 load, network nodes are widely added to manage L3 traffic for overlay
@@ -1179,7 +1173,7 @@ The network node performs both routing and NAT functions and represents
 both a scaling bottleneck and a single point of failure.
 
 Consider two servers on different compute nodes and using different
-project networks (a.k.a. tenant networks) where the both of the project
+project networks (a.k.a. tenant networks) where both of the project
 networks are connected by a project router. For communication between
 the two servers (instances with a fixed or floating IP address), the
 network node routes East-West network traffic among project networks
@@ -1192,14 +1186,14 @@ the network node provides a degree of scaling it is not a truly scalable
 solution. We can either add additional cores/compute-power or network
 node to the network node cluster, but, eventually, it runs out of
 processing power especially with high throughput requirement. Therefore,
-for scaled deployments, there are multiple options including use of
+for scaled deployments, there are multiple options including the use of
 Dynamic Virtual Routing (DVR) and Software Defined Networking (SDN).
 
 Distributed Virtual Routing (DVR)
 '''''''''''''''''''''''''''''''''
 
-With DVR, each compute node also hosts the L3-agent (providing the
-distributed router capability) and this then allows direct instance to
+With DVR, each compute node also hosts the L3-agent (provides the
+distributed router capability), and this then allows direct instance to
 instance (East-West) communications.
 
 The OpenStack "High Availability Using Distributed Virtual Routing
@@ -1222,11 +1216,11 @@ Software Defined Networking (SDN)
 For the most reliable solution that addresses all the above issues and
 Telco workload requirements requires SDN to offload Neutron calls.
 
-SDN provides a truly scalable and preferred solution to suport dynamic,
+SDN provides a truly scalable and preferred solution to support dynamic,
 very large-scale, high-density, telco cloud environments. OpenStack
 Neutron, with its plugin architecture, provides the ability to integrate
 SDN controllers (:ref:`chapters/chapter03:virtual networking - 3rd party sdn solution`).
-With SDN incorporated in OpenStack, changes to the network is triggered
+With SDN incorporated in OpenStack, changes to the network are triggered
 by workloads (and users), translated into Neutron APIs and then handled
 through neutron plugins by the corresponding SDN agents.
 
@@ -1309,7 +1303,7 @@ service :cite:p:`ostk_latest_placement`:
    DISK_GB or CUSTOM_*)
 -  Inventory: Each resource provider maintains the total and reserved
    quantity of one or more classes of resources. For example, RP_1 has
-   available inventory of 16 vCPU, 16384 MEMORY_MB and 1024 DISK_GB.
+   an available inventory of 16 vCPU, 16384 MEMORY_MB and 1024 DISK_GB.
 -  Traits are qualitative characteristics of the resources from a
    resource provider. For example, the trait for RPA_1 "is_SSD" to
    indicate that the DISK_GB provided by RP_1 are solid state drives.
@@ -1318,7 +1312,7 @@ service :cite:p:`ostk_latest_placement`:
 -  Allocation candidates is the collection of resource providers that
    can satisfy an allocation request.
 
-The Placement API is stateless and, thus, resiliency, availability and
+The Placement API is stateless and, thus, resiliency, availability, and
 scaling, it is possible to deploy as many servers as needed. On start,
 the nova-compute service will attempt to make a connection to the
 Placement API and keep attempting to connect to the Placement API,
@@ -1336,7 +1330,7 @@ controller nodes. It provides secure storage, provisioning, and
 management of secrets as passwords, encryption keys and X.509
 Certificates. Barbican API is used to centrally manage secrets used by
 OpenStack services, e.g., symmetric encryption keys used for Block
-storage encryption or Object Storage encryption or asymmetric keys and
+Storage encryption or Object Storage encryption, and asymmetric keys and
 certificates used for Glance image signing and verification.
 
 Barbican usage provides a means to fulfill security requirements such as
@@ -1388,15 +1382,15 @@ Support :cite:p:`ostk_latest_cyborg_support`".
 Containerised OpenStack Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Containers are lightweight compared to Virtual Machines and leads to
+Containers are lightweight compared to Virtual Machines, and lead to
 efficient resource utilisation. Kubernetes auto manages scaling,
 recovery from failures, etc. Thus, it is recommended that the OpenStack
 services be containerised for resiliency and resource efficiency.
 
-In Chapter 3, :numref:`OpenStack Services Topology` shows a
+The Chapter 3 shows a
 high level Virtualised OpenStack services topology. The containerised
 OpenStack services topology version is shown in
-:numref:`Containerised OpenStack Services Topology`.
+the figure below.
 
 .. figure:: ../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png
    :alt: Containerised OpenStack Services Topology
@@ -1696,7 +1690,7 @@ address some of the challenges of each of the models.
 
 "Telco Edge Cloud: Platform Services Deployment" :cite:p:`refmodel`
 lists the Platform Services that may be placed in the different node types
-(control, compute and storage). Depending upon the capacity and
+(control, compute, and storage). Depending upon the capacity and
 resources available only the compute nodes may exist at the Edge thereby
 impacting operations.
 
@@ -1712,8 +1706,8 @@ this chapter, at least 3 controller nodes should be deployed for HA.  Compute
 nodes may also exist at the sites where controller nodes are deployed.
 
 Control plane services are not hosted at edge sites. Each edge site can be
-treated as its own OpenStack AZ. The compute nodes, will host `nova-compute`,
-a component of the the Compute Service (Nova), and `neutron-L2-agent`,
+treated as its own OpenStack AZ. The compute nodes will host `nova-compute`,
+a component of the Compute Service (Nova), and `neutron-L2-agent`,
 a component of the Network Service (Neutron).
 
 The Edge sites may or may not contain local storage. If the edge sites contain
@@ -1722,8 +1716,8 @@ in an active/active mode with the centrally deployed Block Storage service.
 Instance images are downloaded and stored locally; they can be downloaded even
 prior to use.
 
-If the edge site doesn't contain storage then the images would need to be
-cached from the central site. Two ptions exist:
+If the edge site doesn't contain storage, then the images would need to be
+cached from the central site. Two options exist:
 
 - The instance images would be downloaded and
   cached in the Nova cache on first use; they will then be available for
@@ -1739,7 +1733,7 @@ Edge Cloud Deployment Tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Deployment at the Edge requires support for large scale deployment. A
-number of open-source tools are available for the purpose including:
+number of open-source tools are available for this purpose including:
 
 -  Airship :cite:p:`airsh`: declaratively configure,
    deploy and maintain an integrated virtualisation and containerisation
@@ -1750,5 +1744,4 @@ number of open-source tools are available for the purpose including:
    installing, upgrading and operating OpenStack clouds
 
 These installers are described in more details in
-
-:ref:`chapters/chapter07:Operations and Life Cycle Management`.
+:ref:`chapters/chapter07:operations and life cycle management`.

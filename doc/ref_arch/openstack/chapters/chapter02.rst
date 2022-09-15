@@ -928,7 +928,7 @@ Security LCM Requirements
      - LCM
      - The Cloud Operator **must** implement and strictly follow change
        management processes for Cloud Infrastructure, Infrastructure
-       Manager and othercomponents of the cloud, and Platform change control
+       Manager and other components of the cloud, and Platform change control
        on hardware
      - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.lcm.005
@@ -1381,8 +1381,7 @@ Infrastructure Requirements
      - :ref:`chapters/chapter04:network fabric`
    * - inf.nw.07
      - Network
-     - The Architecture must support network
-       :ref:`resiliency <cntt:common/glossary:cloud platform abstraction related terminology:>`
+     - The Architecture must support network resiliency
      - :ref:`chapters/chapter03:network`
    * - inf.nw.10
      - Network
@@ -1764,19 +1763,6 @@ Tenant Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This section is left blank for future use.
-
-.. list-table:: Tenant Recommendations
-   :widths: 15 20 45 20
-   :header-rows: 1
-
-   * - Reference
-     - sub-category
-     - Description
-     - Notes
-   * -
-     -
-     -
-     -
 
 Operations and LCM Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
