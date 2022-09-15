@@ -1,5 +1,6 @@
-Reference Model
-===============
+=============================================
+Reference Model for Cloud Infrastructure (RM)
+=============================================
 
 Overall Status
 --------------

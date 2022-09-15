@@ -1,10 +1,10 @@
-======================================
-OpenStack based Reference Architecture
-======================================
+=====================================================================
+Reference Architecture for OpenStack based Cloud Infrastructure (RA1)
+=====================================================================
 
 .. toctree::
    :glob:
-   :maxdepth: 1
+   :maxdepth: 3
    :numbered:
 
    chapters/*

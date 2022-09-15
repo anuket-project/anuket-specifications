@@ -13,9 +13,9 @@ guide.
 Security Requirements
 ---------------------
 
-:ref:`chapters/chapter02:cloud infrastructure security requirements`
+The sections :ref:`chapters/chapter02:cloud infrastructure security requirements`
 and :ref:`chapters/chapter02:security recommendations` gather
-all requirements and recommendations regarding security topics developed
+all the requirements and recommendations regarding security topics developed
 in this chapter.
 
 Cloud Infrastructure and VIM Security
@@ -50,10 +50,10 @@ Platform Module).
 System Access
 ^^^^^^^^^^^^^
 
-Access to all the platform’s components must be restricted (sec.gen.013)
+Access to all the platform's components must be restricted (sec.gen.013)
 applying the following rules:
 
--  Remove, or at a minimal, disable all unnecessary user accounts
+-  Remove, or at a minimum disable all unnecessary user accounts
 -  Change all default user accounts where technically feasible
 -  Change all default credentials
 -  Prohibit logging with root account when root privileges are not
@@ -72,7 +72,7 @@ strict password policy must be applied (sec.gen.002).
 
 Passwords must be strengthened:
 
--  All vendors default passwords must be changed
+-  All vendors' default passwords must be changed
 -  Passwords must contain at least 8 characters as a minimal value, 14
    characters length passwords are recommended
 -  Passwords must contain at least one upper case letter, one lower case
@@ -87,7 +87,7 @@ permitting a password change.
 Passwords must be encrypted at rest and in-transit. Password files must
 be stored separately from application system data.
 
-Password’s composition, complexity and policy should follow the
+Password's composition, complexity and policy should follow the
 recommendations consolidated within the CIS Password Policy
 guide :cite:p:`cispwd` such as:
 
@@ -184,7 +184,7 @@ front end (sec.sys.006).
 OpenStack Keystone can work with an Identity service that your
 enterprise may already have, such as LDAP with Active Directory. In
 those cases, the recommendation is to integrate Keystone with the cloud
-provider’s Identity Services.
+provider's Identity Services.
 
 Authentication
 ^^^^^^^^^^^^^^
@@ -199,11 +199,11 @@ OpenStack Authentication Methods :cite:p:`openstackaut`.
 Limiting the number of repeated failed login attempts (configurable)
 reduces the risk of unauthorised access via password guessing (Bruce
 force attack) - sec.mon.006. The restriction on the number of
-consecutive failed login attempts (“lockout_failure_attempts”) and any
+consecutive failed login attempts ("lockout_failure_attempts") and any
 actions post such access attempts (such as locking the account where the
-“lockout_duration” is left unspecified) should abide by the operator’s
+"lockout_duration" is left unspecified) should abide by the operator's
 policies. For example, an operator may restrict the number of
-consecutive failed login attempts to 3 (“lockout_failure_attempts = 3”)
+consecutive failed login attempts to 3 ("lockout_failure_attempts = 3")
 and lock the account preventing any further access and where the account
 is unlocked by getting necessary approvals.
 
@@ -213,7 +213,7 @@ Keystone Tokens
 Once a user is authenticated, a token is generated for authorisation and
 access to an OpenStack environment and resources. By default, the token
 is set to expire in one hour. This setting can be changed based on the
-business and operational needs, but it’s highly recommended to set the
+business and operational needs, but it's highly recommended to set the
 expiration to the shortest possible value without dramatically impacting
 your operations.
 
@@ -225,13 +225,13 @@ Authorisation
 ^^^^^^^^^^^^^
 
 Authorisation serves as the next level of defence. At its core, it
-checks if the authenticated users have the permission to execute an
+checks if the authenticated users have permission to execute an
 action. Most Identity Services support the notion of groups and roles. A
 user belongs to groups and each group has a list of roles that permits
 certain actions on certain resources. OpenStack services reference the
 roles of the user attempting to access the service. OpenStack policy
 enforcer middleware takes into consideration the policy rules associated
-with each resource and the user’s group/roles and association to
+with each resource and the user's group/roles and association to
 determine if access will be permitted for the requested resource. For
 more details on policies, please refer to the OpenStack
 Policies :cite:p:`openstackpol`.
@@ -253,8 +253,8 @@ following personas consistently across its API.
 
 -  The reader role provides read-only access to resources within the
    system, a domain, or a project.
--  The member role is the same as reader in Keystone, but allows to
-   introduce granularity between admin and reader to other OpenStack
+-  The member role, same as reader in Keystone,
+   introduces granularity between admin and reader to other OpenStack
    services.
 -  The admin role is reserved for the most privileged operations within
    a given scope for managing resources.
@@ -296,7 +296,7 @@ Recommended Default Roles to Start
 
 **site_admin_viewer**
 
--  *Site Level Admin Read Only* - usually assign to groups who need to
+-  *Site Level Admin Read Only* - usually assigned to groups who need to
    view all resources, such as Capacity Planners
 -  Permission to read all tenants and resources at the site
 -  Cannot create/update/delete
@@ -308,7 +308,7 @@ Recommended Default Roles to Start
 
 **tenant_member**
 
--  *Tenant Level Admin* - typically assign to majority of tenant users
+-  *Tenant Level Admin* - typically assigned to majority of tenant users
    to manage their resources
 -  Permission to create/read/update/delete to all resources at the
    tenant project level
@@ -317,21 +317,21 @@ Recommended Default Roles to Start
 
 **tenant_snapshot_member**
 
--  *Tenant Level Admin with Snapshot* - typically assign to tenant users
+-  *Tenant Level Admin with Snapshot* - typically assigned to tenant users
    who need to create snapshot via special request to Operations Staff
 -  Permission is same as tenant_member except the user can also create
    snapshots
 
 **tenant_support_member**
 
--  *Tenant Level Support* - typically assign to tenant users who need to
+-  *Tenant Level Support* - typically assigned to tenant users who need to
    create resource in the project space
 -  Permission to create/read all resources at the tenant project level
 -  Cannot update/delete or create snapshots
 
 **tenant_viewer**
 
--  *Tenant Level Read Only* - typically assign to tenant users who need
+-  *Tenant Level Read Only* - typically assigned to tenant users who need
    to read all resources in the project space
 -  Permission to read all resources at the tenant level
 -  Cannot create/update/delete
@@ -348,7 +348,7 @@ concerns are raised:
 
 -  confidentiality and integrity of the Cloud Infrastructure components
    (networks, hypervisor, OpenStack services)
--  confidentiality and integrity of the tenant’s data
+-  confidentiality and integrity of the tenant's data
 
 The Cloud Infrastructure must also provide the mechanism to identify
 corrupted data.
@@ -393,7 +393,7 @@ dedicated network (VLAN).
 
 Configuration files contain sensitive information. These files must be
 protected from malicious or accidental modifications or deletions by
-configuring strict access permissions for such files. All access, failed
+configuring strict access permissions for such files. All access failed
 attempts to change and all changes (pre-change, post-change and by who)
 must be securely logged, and all failed access and failed changes must
 be alerted on (sec.mon.005).
@@ -410,7 +410,7 @@ corrupted data (sec.gen.009):
    to check the compliance of systems configuration against respective
    CIS benchmarks :cite:p:`cisben`.
 
-It is strongly recommend to protect all repositories, such as Linux
+It is strongly recommended to protect all repositories, such as Linux
 repositories and Docker registries, against the corruption of their data
 and unauthorised access, by adopting protection measures such as hosting
 a local repository/registry with restricted and controlled access, and
@@ -506,10 +506,10 @@ Image Security
 
 Images from untrusted sources must not be used (sec.img.001). Valuable
 guidance on trusted image creation process and image signature
-verification is provided in the “Trusted Images” section of the
+verification is provided in the "Trusted Images" section of the
 OpenStack Security Guide :cite:p:`openstackti`.
-The OpenStack Security Guide includes reference to the “`OpenStack
-Virtual Machine Image Guide :cite:p:`openstackim`” that describes how
+The OpenStack Security Guide includes reference to the "OpenStack
+Virtual Machine Image Guide :cite:p:`openstackim`" that describes how
 to obtain, create, and modify OpenStack compatible virtual machine
 images.
 
@@ -548,8 +548,8 @@ infrastructure safe and operational (sec.lcm.003).
 Regarding the provisioning of servers, switches, routers and networking,
 tools must be used to automate the provisioning eliminating human error.
 For Infrastructure hardware resources, a set of recommendations is
-detailed in :ref:`chapters/chapter07:underlying resources
-provisioning` to automate and secure their provisioning (sec.lcm.001).
+detailed in :ref:`chapters/chapter07:underlying resources provisioning`
+to automate and secure their provisioning (sec.lcm.001).
 
 For OpenStack services and software components, deployment tools or
 components must be used to automate the deployment and avoid errors. The
@@ -561,7 +561,7 @@ applied:
    protected
 -  Integrity of the deployment images must be checked, before starting
    deployment
--  Deployment must be done through dedicated network (e.g. VLAN)
+-  Deployment must be done through a dedicated network (e.g. VLAN)
 -  When the deployment is finished, the deployment tool must be
    turned-off, if the tool is only dedicated to deployment. Otherwise,
    any access to the deployment tool must be restricted.
@@ -604,7 +604,7 @@ Regular review of security logs that record user access, as well as
 session (sec.mon.010) and network activity (sec.mon.012), is critical in
 preventing and detecting intrusions that could disrupt business
 operations. This monitoring process also allows administrators to
-retrace an intruder’s activity and may help correct any damage caused by
+retrace an intruder's activity and may help correct any damage caused by
 the intrusion (sec.mon.011).
 
 The logs have to be continuously monitored and analysed with alerts
@@ -709,7 +709,7 @@ The security audit log must contain at minimum the following fields
 -  Success/failure
 -  Login ID — Where the Login ID is defined on the
    system/application/authentication server; otherwise, the field should
-   contain ‘unknown’, in order to protect authentication credentials
+   contain ‘unknown', in order to protect authentication credentials
    accidentally entered at the Login ID prompt from appearing in the
    security audit log.
 -  Source and destination IP Addresses and ports
@@ -728,7 +728,7 @@ Security Logs Time Synchronisation
 The host and various system clocks must be synchronised with an
 authenticated time service/NTP server (sec.gen.007).
 
-In any time synchronisation, we need to specify the synchronisation
+For time synchronisation, we need to specify the synchronisation
 interval and the tolerance where the latter specifies the permissible
 difference the local time can be out of synchronisation. Whenever the
 time synchronisation forces the local time to change or the use of

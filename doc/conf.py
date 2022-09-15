@@ -13,7 +13,8 @@ exclude_patterns = [
     'ref_cert',
     'ref_impl',
     'ref_model',
-    'tech'
+    'tech',
+    'gov/README.rst'
 ]
 linkcheck_ignore = [
     'https://github.com/cncf/telecom-user-group/blob/master/whitepaper/cloud_native_thinking_for_telecommunications.md#1.4',
@@ -23,13 +24,16 @@ intersphinx_mapping = {
     'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None),
     'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None),
     'ref_arch_kubernetes': ('https://cntt.readthedocs.io/projects/ra2/en/latest/', None),
-    'ref_cert_RC1': ('https://cntt.readthedocs.io/projects/rc1/en/latest/', None),
     'ref_cert_RC2': ('https://cntt.readthedocs.io/projects/rc2/en/latest/', None),
     'ref_impl_cntt-ri': ('https://cntt.readthedocs.io/projects/ri1/en/latest/', None),
     'ref_impl_cntt-ri2': ('https://cntt.readthedocs.io/projects/ri2/en/latest/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
+
+numfig = True
+numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
+                 'code-block': 'Listing %s', 'section': 'Section %s'}
 
 html_theme = "sphinx_material"
 #html_sidebars = {

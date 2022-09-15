@@ -193,7 +193,7 @@ virtualisation and open source software. The 2 following documents are in the sc
   rks/resources/open-networking-the-security-of-open-source-software-deployment/>`__, published in January 2021 [21],
   deals with open source software security, it highlights the importance of layered security defences and lists
   recommendations and security concepts able to secure deployments.
-- The “5G Security Guide”, FS.40 version 2.0, Oct. 2021 (non-binding Permanent Reference Document), covers 5G security,
+- The “5G Security Guide”, FS.40 version 2.0, Oct. 2021 [36](non-binding Permanent Reference Document), covers 5G security,
   in a holistic way, from user equipment to networks. The document describes the new security features in 5G.
   It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualisation, cloud
   native applications and containerisation security.
@@ -260,7 +260,7 @@ Cloud Infrastructure general security requirements
   known vulnerabilities. The CVE is a list of publicly disclosed vulnerabilities and exposures that is maintained by
   `MITRE <https://www.mitre.org/>`__. Each vulnerability is characterised by an identifier, a description, a date, and
   comments.
-- When a vulnerability is discovered on a component (from Operating Systems to virtualisation layer components) the
+- When a vulnerability is discovered on a component (from Operating Systems to virtualisation layer components), the
   remediation action will depend on its severity. The `Common Vulnerability Scoring System (CVSS)
   <https://www.first.org/cvss/>`__ allows to calculate a vulnerability score. It is an open framework widely used in
   vulnerability management tools. CVSS is owned and managed by FIRST (Forum of Incident Response and Security Teams).
@@ -334,7 +334,7 @@ Infrastructure as a Code security
 
 Infrastructure as a Code (IaaC) (or equivalently called Infrastructure as Code IaC) refers to the software used for the
 declarative management of cloud infrastructure resources. In order to dynamically address user requirements, release
-featues incrementally, and deliver at a faster pace, DevSecOps teams utilise best practices including continuous
+features incrementally, and deliver at a faster pace, DevSecOps teams utilise best practices including continuous
 integration and continuous delivery and integrate information security controls and scanning tools into these processes,
 with the aim of providing timely and meaningful feedback including identifying vulnerabilities and security policy
 violations. With this automated security testing and analysis capabilities it will be of critical value to detecting
@@ -378,7 +378,7 @@ Security of Production and Non-production Environments
 Telecommunications operators often focus their security efforts on the production environments actively used by their
 customers and/or their employees. This is of course critical because a breach of such systems can seriously damage the
 company and its customers. In addition, production systems often contain the most valuable data, making them attractive
-targets for intruders. But an insecure non-production (development, testing) environment can also create real problems
+targets for intruders. However, an insecure non-production (development, testing) environment can also create real problems
 because they may leave a company open to corporate espionage, sabotage by competitors, and theft of sensitive data.
 
 Security is about mitigating risk. If operators do not have the same level of security regime in their non-production
@@ -394,7 +394,7 @@ when dealing with such dilemma, the focus has been placed on those non-productio
 the same level as in the production environment (typically of **must** type), leaving relaxed requirements (typically of
 **should** or **may**) in cases there is no such necessity.
 
-In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered to be
+In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered 
 Infrastructure as a Code (IaaC). This fact implies that many aspects of code related security automatically apply to
 IaaC. Security aspects of IaaC in the telco context is discussed in the previous section
 ":ref:`chapters/chapter07:infrastructure as a code security`",
@@ -499,7 +499,7 @@ upon CIS benchmarks for various operating systems. Another best practice is to u
 possible.
 
 Images are stored in registries. The images registry must contain only vetted images. The registry must remain a source
-of trust for images over time, images therefore must be continuously scanned to identify vulnerabilities and out-of-date
+of trust for images over time; images therefore must be continuously scanned to identify vulnerabilities and out-of-date
 versions as described previously. Access to the registry is an important security risk. It must be granted by a
 dedicated authorisation and through secure networks enforcing authentication, integrity and confidentiality.
 
@@ -647,7 +647,7 @@ components deployment.
 Software Supply Chain Security
 ------------------------------
 
-Software supply chain attacks are increasing worldwilde and can cause serious damages. Many entreprises and
+Software supply chain attacks are increasing worldwide and can cause serious damages. Many enterprises and
 organisations are experiencing these threats. Aqua security's experts estimated that `software supply chain attacks
 have more than tripled in 2021
 <https://www.aquasec.com/news/aqua-securitys-argon-experts-find-software-supply-chain-attacks-more-than-tripled-in-2021/>`__.
@@ -655,7 +655,7 @@ Reuters reported in August 2021 that the `ransomware affecting Kaseya Virtual Sy
 <https://www.reuters.com/technology/kaseya-ransomware-attack-sets-off-race-hack-service-providers-researchers-2021-08-03/>`__
 caused downtime for over 1500 companies. In the case of the `backdoor inserted in codecov software
 <https://www.reuters.com/technology/codecov-hackers-breached-hundreds-restricted-customer-sites-sources-2021-04-19/>`__,
-hundred of customers were affected. The Solarwinds attack detailed in `Defending against SolarWinds attacks
+hundreds of customers were affected. The Solarwinds attack detailed in `Defending against SolarWinds attacks
 <https://www.techtarget.com/searchsecurity/news/252494495/Defending-against-SolarWinds-attacks-What-can-be-done>`__
 is another example of how software suppliers are targeted and, by rebound, their customers affected.
 Open-source code weaknesses can also be utilised by attackers, the
@@ -664,7 +664,7 @@ applications, is a recent example in this field. When addressing cyber security,
 software supply chain are often not taken into account. Some governments are already alerting and requesting
 actions to face these risks. The British government is hardening the law and standards of cyber security for
 the supply chain. The US government requested actions to enhance the software supply chain security.
-The security of the software supply chain is a also challenge pointed out by the European Network and
+The security of the software supply chain is a challenge also pointed out by the European Network and
 Information Security Agency, ENISA, in the report `NFV Security in 5G - Challenges and Best Practices
 <https://www.enisa.europa.eu/publications/nfv-security-in-5g-challenges-and-best-practices>`__.
  
@@ -749,7 +749,7 @@ and the National Telecommunications and Information administration (NTIA) and pu
 <https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`__ in July 2021. The document gives
 guidance and specifies the minimum elements for the SBOM, as a starting point.
 
-A piece of software can be modeled as a hierarchical tree with components and subcomponents, each
+A piece of software can be modelled as a hierarchical tree with components and subcomponents, each
 component should have its SBOM including,  as a baseline, the information described in the following table.
 
 
@@ -954,7 +954,7 @@ National Institute of Standards and Technology
 `(NIST) Cybersecurity Framework <https://www.nist.gov/cyberframework/>`__,
 compliance is mandatory for the supply chain for all U.S.A. federal government agencies.  Because this framework
 references globally accepted standards, guidelines and practice, telecom organisations in the U.S.A. and
-world-wide can use it to efficiently operate in a global environment and manage new and evolving cybersecurity risks
+worldwide can use it to efficiently operate in a global environment and manage new and evolving cybersecurity risks
 in the cloud adoption area.
 
 
@@ -974,7 +974,7 @@ on the European Cybersecurity Certification Scheme
 looks into the certification of the cybersecurity of cloud services,
 
 The General Data Protection Regulation `(GDPR) <https://gdpr-info.eu/>`__ is a set of EU regulations that governs
-how data should be protected for EU citizens. It affects organisations that have EU-based customers, even if they're
+how data should be protected for EU citizens. It affects organisations that have EU-based customers, even if they are
 not based in the EU themselves.
 
 
@@ -1371,7 +1371,7 @@ Monitoring and Security Audit
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have
 systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring
 and logging capabilities can trigger alerts and notifications for appropriate action. In general, it is a good practice
-to have the same security monitoring and auditing capabilities in both production and non-production environements.
+to have the same security monitoring and auditing capabilities in both production and non-production environments.
 However, we distinguish between requirements for Production Platform (Prod-Platform) and Non-production Platform
 (NonProd-Platform) as some of the requirements may in practice need to differ, see section
 :ref:`chapters/chapter07:security of production and non-production environments` for the general discussion
