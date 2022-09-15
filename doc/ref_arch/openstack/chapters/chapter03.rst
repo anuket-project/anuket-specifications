@@ -726,7 +726,8 @@ characteristics of each. Ultimately the decision rests with the operator
 to achieve specific availability target taking into account use case,
 data centre capabilities, economics and risks.
 
-**Topology Overview**
+Topology Overview
+~~~~~~~~~~~~~~~~~
 
 Availability of any single OpenStack cloud is dependent on a number of
 factors including:
@@ -800,8 +801,6 @@ Assumptions and conventions:
      - Required
      - Suitable where local and region application HA is required Control plane
        could be kept available in one site during upgrades
-
-**Topology Overview**
 
 **Topology 1 - Local Redundancy**
 
