@@ -442,7 +442,7 @@ The KVM APIs are documented in Section 4 of the document
 :cite:p:`kvmapis`.
 
 Libvirt Interfaces
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The Libvirt APIs are documented in :cite:p:`libvirtapis`.
 
