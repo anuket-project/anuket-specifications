@@ -430,8 +430,8 @@ Cloud Infrastructure Hardware Profile Requirements
      - No requirement specified
      - Not detailed
 
-Cloud Infrastructure Hardware Profile-Extensions Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cloud Infrastructure Hardware Profile Extensions Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table:: Reference Model Requirements - Cloud Infrastructure Hardware
                 Profile Extensions Requirements
@@ -1574,7 +1574,7 @@ Assurance Requirements
 
 
 Architecture and OpenStack Recommendations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
 The requirements listed in this section are optional, and are not
 required in order to be deemed a conformant implementation.
