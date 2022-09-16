@@ -277,9 +277,9 @@ Hardware acceleration is the use of specialised hardware to perform some
 function faster than is possible by executing the same function on a
 general-purpose CPU or on a traditional networking (or other I/O) device
 (e.g., NIC, switch, storage controller, etc.). The hardware accelerator
-covers the options for ASICs, SmartNIC, FPGAs, GPU, etc. to offload the
+covers the options for ASICs, SmartNIC, FPGAs, GPU, etc. to offload the
 main CPU, and to accelerate workload performance. Cloud Infrastructure
-should manage the accelerators by plugins and provide the acceleration
+should manage the accelerators by plugins and provide the acceleration
 capabilities to VNFs.
 
 With the acceleration abstraction layer defined, hardware accelerators
@@ -324,7 +324,7 @@ used:
 -  Foundation node
 -  Control nodes
 -  Compute nodes
--  Other supporting service nodes, e.g. network, shared storage, logging,
+-  Other supporting service nodes, e.g., network, shared storage, logging,
    monitoring and alerting.
 
 Each deployment of OpenStack should be a unique cloud with its own API
@@ -481,7 +481,7 @@ Manager in the Reference Model (RM) :cite:p:`refmodel`.
 
 All components must be deployed within a high available architecture
 that can withstand at least a single node failure and respects the
-anti-affinity rules for the location of the services (i.e. instances of
+anti-affinity rules for the location of the services (i.e., instances of
 a same service must run on different nodes).
 
 The services can be containerised or VM hosted as long as they provide
@@ -596,7 +596,7 @@ Virtualisation is a technology that enables a guest Operating System
 (OS) to be abstracted from the underlying hardware and software. This
 allows to run multiple Virtual Machines(VMs) on the same hardware. Each
 such VMs have their own OS and are isolated from each other
-i.e. application running on one VM does not have the access to resources
+i.e., an application running on one VM does not have access to the resources
 of another VM. Such virtualisation is supported by various hypervisors
 available as open-source (KVM, Xen, etc.) as well as commercial
 (Hyper-V, Citrix XenServer, etc.). Selecting a hypervisor depends on the
@@ -702,7 +702,7 @@ Cloud Topology
 
 A telco cloud will typically be deployed in multiple locations ("sites")
 of varying size and capabilities (HVAC, for example); or looking at this
-in the context of OpenStack, multiple clouds (i.e. OpenStack end-points)
+in the context of OpenStack, multiple clouds (i.e., OpenStack end-points)
 will be deployed that do not rely on each other, by design; each cloud
 consists of a set of resources isolated from resources of the other
 clouds. The application layer must span such end-points in order to
