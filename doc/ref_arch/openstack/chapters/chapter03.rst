@@ -702,7 +702,7 @@ Cloud Topology
 
 A telco cloud will typically be deployed in multiple locations ("sites")
 of varying size and capabilities (HVAC, for example); or looking at this
-in the context of OpenStack, multiple clouds (i.e. OpenStack end-points)
+in the context of OpenStack, multiple clouds (i.e., OpenStack end-points)
 will be deployed that do not rely on each other, by design; each cloud
 consists of a set of resources isolated from resources of the other
 clouds. The application layer must span such end-points in order to
