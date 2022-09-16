@@ -323,7 +323,7 @@ successfully.
 New Functest containers :cite:p:`newfunctestcnttcontainers` have
 been proposed for Anuket Compliance which simply override the default
 test configurations and the default test lists. Any optional capability
-or services (e.g., Barbican) can be still verified by the classical
+or services (e.g., Barbican) can be still verified by the classical
 Functest containers.
 
 The next subsections detail the Tempest tests which must not be
