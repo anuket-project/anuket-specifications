@@ -691,7 +691,7 @@ Where to Log
    manner where the event can be linked to the resource on which it
    occurred.
 -  Where technically feasible, events must be recorded on the device
-   (e.g. VM, physical node, etc.) where the event occurs, if the
+   (e.g., VM, physical node, etc.) where the event occurs, if the
    external logging system is not available (sec.mon.021).
 -  Security audit logs must be protected in transit and at rest
    (sec.mon.004).
