@@ -481,7 +481,7 @@ Manager in the Reference Model (RM) :cite:p:`refmodel`.
 
 All components must be deployed within a high available architecture
 that can withstand at least a single node failure and respects the
-anti-affinity rules for the location of the services (i.e. instances of
+anti-affinity rules for the location of the services (i.e., instances of
 a same service must run on different nodes).
 
 The services can be containerised or VM hosted as long as they provide
