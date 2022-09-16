@@ -324,7 +324,7 @@ used:
 -  Foundation node
 -  Control nodes
 -  Compute nodes
--  Other supporting service nodes, e.g. network, shared storage, logging,
+-  Other supporting service nodes, e.g., network, shared storage, logging,
    monitoring and alerting.
 
 Each deployment of OpenStack should be a unique cloud with its own API
