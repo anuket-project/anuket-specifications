@@ -596,7 +596,7 @@ Virtualisation is a technology that enables a guest Operating System
 (OS) to be abstracted from the underlying hardware and software. This
 allows to run multiple Virtual Machines(VMs) on the same hardware. Each
 such VMs have their own OS and are isolated from each other
-i.e. application running on one VM does not have the access to resources
+i.e., an application running on one VM does not have access to the resources
 of another VM. Such virtualisation is supported by various hypervisors
 available as open-source (KVM, Xen, etc.) as well as commercial
 (Hyper-V, Citrix XenServer, etc.). Selecting a hypervisor depends on the
