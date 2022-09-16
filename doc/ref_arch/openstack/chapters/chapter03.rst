@@ -563,7 +563,7 @@ physical hosting distribution of Compute Nodes in separate racks with
 separate power supply and eventually in different rooms. They permit
 rolling upgrades - an AZ at a time upgrade with enough time between AZ
 upgrades to allow recovery of tenant workloads on the upgraded AZ. AZs
-can also be used to seggregate workloads.
+can also be used to segregate workloads.
 
 An over use of Host Aggregates and Availability Zones can result in a
 granular partition of the cloud and, hence, operational complexities and

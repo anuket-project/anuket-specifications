@@ -1333,7 +1333,7 @@ OpenStack services, e.g., symmetric encryption keys used for Block
 Storage encryption or Object Storage encryption, and asymmetric keys and
 certificates used for Glance image signing and verification.
 
-Barbican usage provides a means to fulfill security requirements such as
+Barbican usage provides a means to fulfil security requirements such as
 sec.sys.012 "The Platform **must** protect all secrets by using strong
 encryption techniques and storing the protected secrets externally from
 the component" and sec.ci.001 "The Platform **must** support
