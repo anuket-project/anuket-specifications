@@ -45,30 +45,39 @@ for those users who depend on older microversions."
 Keystone API
 ~~~~~~~~~~~~
 
-.. table:: Keystone
+.. list-table:: Keystone
    :widths: auto
+   :header-rows: 1
 
-   ===================== =============== ============================
-   **OpenStack Service** **API Version** **Maximal API Microversion**
-   ===================== =============== ============================
-   Identity: Keystone    v3              3.14
-   ===================== =============== ============================
+   * - OpenStack Service
+     - API Version
+     - Maximal API Microversion
+   * - Identity: Keystone
+     - v3
+     - 3.14
 
-.. table:: Keystone Features
+.. list-table:: Keystone Features
    :widths: auto
+   :header-rows: 1
 
-   ======================= =============
-   **Keystone Features**   **Mandatory**
-   ======================= =============
-   access_rules
-   application_credentials X
-   external_idp
-   federation
-   oauth1
-   project_tags            X
-   security_compliance     X
-   trust                   X
-   ======================= =============
+   * - Keystone Features
+     - Mandatory
+   * - access_rules
+     -
+   * - application_credentials
+     - X
+   * - external_idp
+     -
+   * - federation
+     -
+   * - oauth1
+     -
+   * - project_tags
+     - X
+   * - security_compliance
+     - X
+   * - trust
+     - X
 
 Identity API v3: :cite:p:`osidentityapiv3`
 
@@ -79,25 +88,29 @@ Security compliance and PCI-DSS: :cite:p:`ossecuritycomplianceandpcidss`
 Glance API
 ~~~~~~~~~~
 
-.. table:: Glance
+.. list-table:: Glance
    :widths: auto
+   :header-rows: 1
 
-   ===================== =============== ============================
-   **OpenStack Service** **API Version** **Maximal API Microversion**
-   ===================== =============== ============================
-   Image: Glance         v2              2.9
-   ===================== =============== ============================
+   * - OpenStack Service
+     - API Version
+     - Maximal API Microversion
+   * - Image: Glance
+     - v2
+     - 2.9
 
-.. table:: Glance Features
+.. list-table:: Glance Features
    :widths: auto
+   :header-rows: 1
 
-   =================== =============
-   **Glance Features** **Mandatory**
-   =================== =============
-   import_image
-   os_glance_reserved
-   web-download import
-   =================== =============
+   * - Glance Features
+     - Mandatory
+   * - import_image
+     -
+   * - os_glance_reserved
+     -
+   * - web-download import
+     -
 
 Image Service API: :cite:p:`osimageserviceapi`
 
@@ -106,32 +119,43 @@ Image Service Versions: :cite:p:`osimageserviceversions`
 Cinder API
 ~~~~~~~~~~
 
-.. table:: Cinder
+.. list-table:: Cinder
    :widths: auto
+   :header-rows: 1
 
-   ===================== =============== ============================
-   **OpenStack Service** **API Version** **Maximal API Microversion**
-   ===================== =============== ============================
-   Block Storage: Cinder v3              3.64
-   ===================== =============== ============================
+   * - OpenStack Service
+     - API Version
+     - Maximal API Microversion
+   * - Block Storage: Cinder
+     - v3
+     - 3.64
 
-.. table:: Cinder Features
+.. list-table:: Cinder Features
    :widths: auto
+   :header-rows: 1
 
-   ================================ =============
-   **Cinder Features**              **Mandatory**
-   ================================ =============
-   backup                           X
-   clone                            X
-   consistency_group
-   extend_attached_volume
-   extend_attached_encrypted_volume
-   manage_snapshot                  X
-   manage_volume                    X
-   multi_backend
-   snapshot                         X
-   volume_revert                    X
-   ================================ =============
+   * - Cinder Features
+     - Mandatory
+   * - backup
+     - X
+   * - clone
+     - X
+   * - consistency_group
+     -
+   * - extend_attached_volume
+     -
+   * - extend_attached_encrypted_volume
+     -
+   * - manage_snapshot
+     - X
+   * - manage_volume
+     - X
+   * - multi_backend
+     -
+   * - snapshot
+     - X
+   * - volume_revert
+     - X
 
 Block Storage API: :cite:p:`osblockstorageapi`
 
@@ -140,38 +164,53 @@ Cinder REST API Version History: :cite:p:`oscinderrestapiversionhistory`
 Swift API
 ~~~~~~~~~
 
-.. table:: Swift
+.. list-table:: Swift
    :widths: auto
+   :header-rows: 1
 
-   ===================== ===============
-   **OpenStack Service** **API Version**
-   ===================== ===============
-   Object Storage: Swift v1
-   ===================== ===============
+   * - OpenStack Service
+     - API Version
+   * - Object Storage: Swift
+     - v1
 
-.. table:: Swift Features
+.. list-table:: Swift Features
    :widths: auto
+   :header-rows: 1
 
-   ================== =============
-   **Swift Features** **Mandatory**
-   ================== =============
-   account_quotas     X
-   bulk_delete        X
-   bulk_upload        X
-   container_quotas   X
-   container_sync
-   crossdomain        X
-   discoverability    X
-   form_post          X
-   ratelimit          X
-   s3api
-   slo                X
-   staticweb          X
-   symlink            X
-   temp_url           X
-   tempauth           X
-   versioned_writes   X
-   ================== =============
+   * - Swift Features
+     - Mandatory
+   * - account_quotas
+     - X
+   * - bulk_delete
+     - X
+   * - bulk_upload
+     - X
+   * - container_quotas
+     - X
+   * - container_sync
+     -
+   * - crossdomain
+     - X
+   * - discoverability
+     - X
+   * - form_post
+     - X
+   * - ratelimit
+     - X
+   * - s3api
+     -
+   * - slo
+     - X
+   * - staticweb
+     - X
+   * - symlink
+     - X
+   * - temp_url
+     - X
+   * - tempauth
+     - X
+   * - versioned_writes
+     - X
 
 Object Storage API: :cite:p:`osobjectstorageapi`
 
@@ -180,110 +219,188 @@ Discoverability: :cite:p:`osdiscoverability`
 Neutron API
 ~~~~~~~~~~~
 
-.. table:: Neutron
+.. list-table:: Neutron
    :widths: auto
+   :header-rows: 1
 
-   ===================== ===============
-   **OpenStack Service** **API Version**
-   ===================== ===============
-   Networking: Neutron   v2.0
-   ===================== ===============
+   * - OpenStack Service
+     - API Version
+   * - Networking: Neutron
+     - v2.0
 
-.. table:: Neutron Extensions
+.. list-table:: Neutron Extensions
    :widths: auto
+   :header-rows: 1
 
-   ============================== =============
-   **Neutron Extensions**         **Mandatory**
-   ============================== =============
-   address-scope                  X
-   agent                          X
-   allowed-address-pairs          X
-   auto-allocated-topology        X
-   availability_zone              X
-   availability_zone_filter       X
-   binding                        X
-   binding-extended               X
-   default-subnetpools            X
-   dhcp_agent_scheduler
-   dns-domain-ports
-   dns-integration
-   dvr
-   empty-string-filtering         X
-   ext-gw-mode                    X
-   external-net                   X
-   extra_dhcp_opt                 X
-   extraroute                     X
-   extraroute-atomic
-   flavors                        X
-   filter-validation
-   fip-port-details
-   floating-ip-port-forwarding
-   floatingip-pools
-   ip-substring-filtering         X
-   l3_agent_scheduler
-   l3-flavors
-   l3-ha
-   logging
-   metering
-   multi-provider                 X
-   net-mtu                        X
-   net-mtu-writable               X
-   network_availability_zone      X
-   network-ip-availability        X
-   network-segment-range
-   pagination                     X
-   port-mac-address-regenerate
-   port-resource-request
-   port-security                  X
-   port-security-groups-filtering X
-   project-id                     X
-   provider                       X
-   rbac-policies                  X
-   router                         X
-   router_availability_zone       X
-   qos                            X
-   qos-bw-limit-direction         X
-   qos-bw-minimum-ingress         X
-   qos-default                    X
-   qos-fip                        X
-   qos-gateway-ip                 X
-   qos-rule-type-details          X
-   qos-rules-alias                X
-   quotas                         X
-   quota_details                  X
-   revision-if-match              X
-   rbac-address-scope
-   rbac-security-groups
-   rbac-subnetpool
-   router-interface-fip
-   security-group                 X
-   service-type                   X
-   sorting                        X
-   standard-attr-description      X
-   standard-attr-revisions        X
-   standard-attr-tag              X
-   standard-attr-timestamp        X
-   subnet_allocation              X
-   subnet-service-types           X
-   subnetpool-prefix-ops
-   tag-ext
-   tag-ports-during-bulk-creation
-   trunk                          X
-   trunk-details                  X
-   uplink-status-propagation
-   ============================== =============
+   * - Neutron Extensions
+     - Mandatory
+   * - address-scope
+     - X
+   * - agent
+     - X
+   * - allowed-address-pairs
+     - X
+   * - auto-allocated-topology
+     - X
+   * - availability_zone
+     - X
+   * - availability_zone_filter
+     - X
+   * - binding
+     - X
+   * - binding-extended
+     - X
+   * - default-subnetpools
+     - X
+   * - dhcp_agent_scheduler
+     -
+   * - dns-domain-ports
+     -
+   * - dns-integration
+     -
+   * - dvr
+     -
+   * - empty-string-filtering
+     - X
+   * - ext-gw-mode
+     - X
+   * - external-net
+     - X
+   * - extra_dhcp_opt
+     - X
+   * - extraroute
+     - X
+   * - extraroute-atomic
+     -
+   * - flavors
+     - X
+   * - filter-validation
+     -
+   * - fip-port-details
+     -
+   * - floating-ip-port-forwarding
+     -
+   * - floatingip-pools
+     -
+   * - ip-substring-filtering
+     - X
+   * - l3_agent_scheduler
+     -
+   * - l3-flavors
+     -
+   * - l3-ha
+     -
+   * - logging
+     -
+   * - metering
+     -
+   * - multi-provider
+     - X
+   * - net-mtu
+     - X
+   * - net-mtu-writable
+     - X
+   * - network_availability_zone
+     - X
+   * - network-ip-availability
+     - X
+   * - network-segment-range
+     -
+   * - pagination
+     - X
+   * - port-mac-address-regenerate
+     -
+   * - port-resource-request
+     -
+   * - port-security
+     - X
+   * - port-security-groups-filtering
+     - X
+   * - project-id
+     - X
+   * - provider
+     - X
+   * - rbac-policies
+     - X
+   * - router
+     - X
+   * - router_availability_zone
+     - X
+   * - qos
+     - X
+   * - qos-bw-limit-direction
+     - X
+   * - qos-bw-minimum-ingress
+     - X
+   * - qos-default
+     - X
+   * - qos-fip
+     - X
+   * - qos-gateway-ip
+     - X
+   * - qos-rule-type-details
+     - X
+   * - qos-rules-alias
+     - X
+   * - quotas
+     - X
+   * - quota_details
+     - X
+   * - revision-if-match
+     - X
+   * - rbac-address-scope
+     -
+   * - rbac-security-groups
+     -
+   * - rbac-subnetpool
+     -
+   * - router-interface-fip
+     -
+   * - security-group
+     - X
+   * - service-type
+     - X
+   * - sorting
+     - X
+   * - standard-attr-description
+     - X
+   * - standard-attr-revisions
+     - X
+   * - standard-attr-tag
+     - X
+   * - standard-attr-timestamp
+     - X
+   * - subnet_allocation
+     - X
+   * - subnet-service-types
+     - X
+   * - subnetpool-prefix-ops
+     -
+   * - tag-ext
+     -
+   * - tag-ports-during-bulk-creation
+     -
+   * - trunk
+     - X
+   * - trunk-details
+     - X
+   * - uplink-status-propagation
+     -
 
-.. table:: Neutron Type Drivers
+.. list-table:: Neutron Type Drivers
    :widths: auto
+   :header-rows: 1
 
-   ======================== =============
-   **Neutron Type Drivers** **Mandatory**
-   ======================== =============
-   geneve
-   gre
-   vlan                     X
-   vxlan
-   ======================== =============
+   * - Neutron Type Drivers
+     - Mandatory
+   * - geneve
+     -
+   * - gre
+     -
+   * - vlan
+     - X
+   * - vxlan
+     -
 
 Networking Service APIs: :cite:p:`osnetworkingserviceapis`
 
@@ -293,48 +410,75 @@ The exhaustive list of extensions is available at
 Nova API
 ~~~~~~~~
 
-.. table:: Nova
+.. list-table:: Nova
    :widths: auto
+   :header-rows: 1
 
-   ===================== =============== ============================
-   **OpenStack Service** **API Version** **Maximal API Microversion**
-   ===================== =============== ============================
-   Compute: Nova         v2.1            2.88
-   ===================== =============== ============================
+   * - OpenStack Service
+     - API Version
+     - Maximal API Microversion
+   * - Compute: Nova
+     - v2.1
+     - 2.88
 
-.. table:: Nova Features
+.. list-table:: Nova Features
    :widths: auto
+   :header-rows: 1
 
-   ======================= =============
-   **Nova Features**       **Mandatory**
-   ======================= =============
-   attach_encrypted_volume
-   cert
-   change_password
-   cold_migration          X
-   console_output          X
-   disk_config             X
-   instance_password       X
-   interface_attach        X
-   live_migration          X
-   metadata_service        X
-   pause                   X
-   personality
-   rdp_console
-   rescue                  X
-   resize                  X
-   serial_console
-   shelve                  X
-   shelve_migrate
-   snapshot                X
-   stable_rescue
-   spice_console
-   suspend                 X
-   swap_volume
-   vnc_console
-   volume_multiattach
-   xenapi_apis
-   ======================= =============
+   * - Nova Features
+     - Mandatory
+   * - attach_encrypted_volume
+     -
+   * - cert
+     -
+   * - change_password
+     -
+   * - cold_migration
+     - X
+   * - console_output
+     - X
+   * - disk_config
+     - X
+   * - instance_password
+     - X
+   * - interface_attach
+     - X
+   * - live_migration
+     - X
+   * - metadata_service
+     - X
+   * - pause
+     - X
+   * - personality
+     -
+   * - rdp_console
+     -
+   * - rescue
+     - X
+   * - resize
+     - X
+   * - serial_console
+     -
+   * - shelve
+     - X
+   * - shelve_migrate
+     -
+   * - snapshot
+     - X
+   * - stable_rescue
+     -
+   * - spice_console
+     -
+   * - suspend
+     - X
+   * - swap_volume
+     -
+   * - vnc_console
+     -
+   * - volume_multiattach
+     -
+   * - xenapi_apis
+     -
 
 Compute API: :cite:p:`oscomputeapi`
 
@@ -343,14 +487,16 @@ Compute REST API Version History: :cite:p:`oscomputerestapiversionhistory`
 Placement API
 ~~~~~~~~~~~~~
 
-.. table:: Placement
+.. list-table:: Placement
    :widths: auto
+   :header-rows: 1
 
-   ===================== =============== ============================
-   **OpenStack Service** **API Version** **Maximal API Microversion**
-   ===================== =============== ============================
-   Placement             v1              1.36
-   ===================== =============== ============================
+   * - OpenStack Service
+     - API Version
+     - Maximal API Microversion
+   * - Placement
+     - v1
+     - 1.36
 
 Placement API: :cite:p:`osplacementapi`
 
@@ -359,14 +505,16 @@ Placement REST API Version History: :cite:p:`osplacementrestapiversionhistory`
 Heat API
 ~~~~~~~~
 
-.. table:: Heat
+.. list-table:: Heat
    :widths: auto
+   :header-rows: 1
 
-   ===================== =============== ============================
-   **OpenStack Service** **API Version** **Maximal Template Version**
-   ===================== =============== ============================
-   Orchestration: Heat   v1              2021-04-16
-   ===================== =============== ============================
+   * - OpenStack Service
+     - API Version
+     - Maximal Template Version
+   * - Orchestration: Heat
+     - v1
+     - 2021-04-16
 
 Orchestration Service API: :cite:p:`osorchestrationserviceapi`
 
@@ -449,13 +597,13 @@ The Libvirt APIs are documented in :cite:p:`libvirtapis`.
 Barbican API
 ~~~~~~~~~~~~
 
-.. table:: Barbican
+.. list-table:: Barbican
    :widths: auto
+   :header-rows: 1
 
-   ===================== ===============
-   **OpenStack Service** **API Version**
-   ===================== ===============
-   Key Manager: Barbican v1
-   ===================== ===============
+   * - OpenStack Service
+     - API Version
+   * - Key Manager: Barbican
+     - v1
 
 Barbican API: :cite:p:`osbarbicanapi`
