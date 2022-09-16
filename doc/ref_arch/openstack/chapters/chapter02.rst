@@ -200,7 +200,7 @@ specified below followed by networking bandwidth requirements.
      - Not detailed
 
 The required number of connection points to an instance is described in
-``e.cap.004`` `above <#2.2.1>`__. The table below specifies the required
+``e.cap.004`` above. The table below specifies the required
 bandwidth of those connection points.
 
 .. list-table:: Reference Model Requirements - Network Interface Specifications
