@@ -561,7 +561,7 @@ applied:
    protected
 -  Integrity of the deployment images must be checked, before starting
    deployment
--  Deployment must be done through a dedicated network (e.g. VLAN)
+-  Deployment must be done through a dedicated network (e.g., VLAN)
 -  When the deployment is finished, the deployment tool must be
    turned-off, if the tool is only dedicated to deployment. Otherwise,
    any access to the deployment tool must be restricted.
