@@ -382,94 +382,64 @@ approaches that can be taken, with :numref:`Comparison of example Kubernetes net
 differences between networking solutions that consist of these options. It is important to note that different
 networking solutions require different descriptors from the Kubernetes workloads (specifically, the deployment
 artefacts such as YAML files, etc.), therefore the networking solution should be agreed between the CNF vendors and the
-CNF operators:
+CNF operators. To allow easy integration of CNF-s and the platforms it is recommended to use either the plain CNI API
+resources or the API resources defined in the v1.2 of the `Kubernetes Network Custom Resource Definition De-facto
+Standard <https://github.com/k8snetworkplumbingwg/multi-net-spec/tree/master/v1.2>`__.
 
 -  The **Default CNI Plugin** through the use of deployment specific configuration (e.g. `Tungsten Fabric
    <https://tungstenfabric.github.io/website/Tungsten-Fabric-Architecture.html#vrouter-deployment-options>`__)
 -  A **multiplexer/meta-plugin** that integrates with the Kubernetes control plane
    via CNI (Container Network Interface) and allows for use of multiple CNI plugins
    in order to provide this specific connectivity that the default Network Plugin may
-   not be able to provide (e.g. `Multus <https://github.com/intel/multus-cni>`__,
-   `DANM <https://github.com/nokia/danm>`__)
--  An external, **federated networking manager** that uses the Kubernetes API Server
-   to create and manage additional connections for Pods (e.g. `Network Service
-   Mesh <https://networkservicemesh.io>`__)
+   not be able to provide (e.g. `Multus <https://github.com/intel/multus-cni>`__)
 
 .. _Comparison of example Kubernetes networking solutions:
 .. list-table:: Comparison of example Kubernetes networking solutions
-   :widths: 20 20 20 20 20
+   :widths: 33 33 33
    :header-rows: 1
 
    * - Requirement
      - Networking Solution with Multus
-     - Networking Solution with DANM
      - Networking Solution with Tungsten Fabric
-     - Networking Solution with NSM
    * - Additional network connections provider
      - Multiplexer/meta- plugin
-     - Multiplexer/meta- plugin
      - Federated networking manager
-     - Default CNI Plugin
    * - The overlay network encapsulation protocol needs to enable ECMP in the underlay (infra.net.cfg.002)
      - Supported via the additional CNI plugin
-     - Supported via the additional CNI plugin
      - Supported
-     - TBC
    * - NAT (infra.net.cfg.003)
      - Supported via the additional CNI plugin
      - Supported
-     - Supported
-     - TBC
    * - Network Policies (Security Groups) (infra.net.cfg.004)
-     - Supported via a CNI Network Plugin that supports Network Policies
-     - Supported via a CNI Network Plugin that supports Network Policies
      - Supported via a CNI Network Plugin that supports Network Policies
      - Supported via a CNI Network Plugin that supports Network Policies
    * - Traffic patterns symmetry (infra.net.cfg.006)
      - Depends on CNI plugin used
      - Depends on CNI plugin used
-     - Depends on CNI plugin used
-     - Depends on CNI plugin used
    * - Centrally administrated and configured (inf.ntw.03)
-     - Supported via Kubernetes API Server
-     - Supported via Kubernetes API Server
      - Supported via Kubernetes API Server
      - Supported via Kubernetes API Server
    * - Dual stack IPv4 and IPv6 for Kubernetes workloads (inf.ntw.04)
      - Supported via the additional CNI plugin
      - Supported
-     - Supported
-     - Supported
    * - Integrating SDN controllers (inf.ntw.05)
      - Supported via the additional CNI plugin
-     - Supported via the additional CNI plugin
      - TF is an SDN controller
-     - TBC
    * - More than one networking solution (inf.ntw.06)
-     - Supported
-     - Supported
      - Supported
      - Supported
    * - Choose whether or not to deploy more than one networking solution (inf.ntw.07)
      - Supported
      - Supported
-     - Supported
-     - Supported
    * - Kubernetes network model (inf.ntw.08)
      - Supported via the additional CNI plugin
-     - Supported via the additional CNI plugin
      - Supported
-     - Supported via the default CNI plugin
    * - Do not interfere with or cause interference to any interface or network it does not own (inf.ntw.09)
-     - Supported
-     - Supported
      - Supported
      - Supported
    * - Cluster wide coordination of IP address assignment (inf.ntw.10)
      - Supported via IPAM CNI plugin
      - Supported
-     - Supported
-     - Supported via IPAM CNI plugin
 
 For hardware resources that are needed by Kubernetes applications, `Device
 Plugins <https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/>`__
@@ -693,7 +663,7 @@ coordinated through the kubernetes
 groups. One such group, the `Network Plumbing Working Group <https://github.com/k8snetworkplumbingwg/community>`__ has
 produced the
 `Kubernetes Network Custom Resource Definition De-facto Standard
-<https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit>`__.
+<https://github.com/k8snetworkplumbingwg/multi-net-spec>`__.
 This document describes how secondary networks can be defined and attached to pods.
 
 This defacto standard defines among other things
