@@ -10,7 +10,6 @@ Anuket Specifications
 -  :doc:`Reference Implementation based on RA2 specifications (RI2) <ref_impl_cntt-ri2:index>`
 -  :ref:`Community Guidelines <gov/README:cloud infrastructure telco taskforce - community guidelines>`
 -  :doc:`Code of Conduct <CODE_OF_CONDUCT>`
-- `Terms of Reference <https://github.com/cntt-n/CNTT/raw/master/doc/GSMA_CNTT_Terms_of_Reference.pdf>`_
 - `The License (Creative Commons Attribution 4.0 International) <https://creativecommons.org/licenses/by/4.0/
   legalcode>`_
 
