@@ -35,7 +35,7 @@ numfig = True
 numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
                  'code-block': 'Listing %s', 'section': 'Section %s'}
 
-html_theme = "sphinx_material"
+html_theme = "alabaster"
 #html_sidebars = {
 #    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
 #}
@@ -46,31 +46,28 @@ templates_path = ['_templates']
 #    'css/custom.css',
 #]
 html_show_sourcelink = False
+hto_name = 'Anuket Specifications'
+hto_anchor_color = '16326c'
+hto_font_family = '"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif'
 html_theme_options = {
-    'nav_title': '',
-     # Set the color and the accent color
-    'color_primary': 'blue-grey,',
-    'color_accent': 'white',
-    # Visible levels of the global TOC; -1 means unlimited
-    'globaltoc_depth': 0,
-    # If False, expand all TOC entries
-    'globaltoc_collapse': False,
-    # If True, show hidden TOC entries
-    'globaltoc_includehidden': False,
-    'base_url': "https://cntt.readthedocs.io",
-    'repo_url': 'https://github.com/cntt-n/cntt',
-    'repo_name': '',
-    'repo_type': 'github',
-# This is not needed for the root document, but will be needed for the rest of the docs.
-#    'nav_links': [
-#        {
-#            "href": "https://cntt.readthedocs.io",
-#            "title": "Anuket Specifications",
-#            "internal": "False"
-#        },
-#    ]
+    # As defined in https://alabaster.readthedocs.io/en/latest/customization.html#theme-options
+    'description': '',
+    'fixed_sidebar': 'true',
+    'logo': 'anuket-logo.png',
+    'logo_name': '',
+    'github_button': 'true',
+    'github_repo': 'https://github.com/cntt-n/cntt',
+    'github_user': '',
+    'show_powered_by': 'true',
+    'anchor': hto_anchor_color, 
+    'anchor_hover_fg': hto_anchor_color,
+    'anchor_hover_bg': 'a58345',
+    'caption_font_family': hto_font_family,
+    'font_family': hto_font_family,
+    'logo_text_align': 'center',
+
 }
 
 # Inverse png
-html_logo = '_static/anuket-logo.png'
+#html_logo = '_static/anuket-logo.png'
 html_favicon = '_static/favicon.ico'

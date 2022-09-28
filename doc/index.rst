@@ -8,7 +8,7 @@ Anuket Specifications
 -  :doc:`Reference Conformance (RC2) for RA2 based Implementations <ref_cert_RC2:index>`
 -  :doc:`Reference Implementation based on RA1 specifications (RI1) <ref_impl_cntt-ri:index>`
 -  :doc:`Reference Implementation based on RA2 specifications (RI2) <ref_impl_cntt-ri2:index>`
--  :ref:`Community Guidelines <gov/README:cloud infrastructure telco taskforce - community guidelines>`
+-  :doc:`Community Guidelines <gov/index>`
 -  :doc:`Code of Conduct <CODE_OF_CONDUCT>`
 - `The License (Creative Commons Attribution 4.0 International) <https://creativecommons.org/licenses/by/4.0/
   legalcode>`_
