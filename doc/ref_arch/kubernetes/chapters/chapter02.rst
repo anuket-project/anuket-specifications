@@ -1408,7 +1408,9 @@ machines or containers.
      - Infrastructure
      - Network
      - The Architecture must support fully redundant network connectivity to the Kubernetes
-       nodes, leveraging multiple network connections.
+       nodes, leveraging at least two physical network connections per node. If the node is
+       virtualised, the redundant network interfaces must be implemented on the Hypervisor
+       host.
      -
    * - inf.ntw.03
      - Infrastructure
