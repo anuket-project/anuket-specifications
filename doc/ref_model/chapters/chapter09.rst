@@ -32,6 +32,58 @@ Capacity Management                    Configuration      Fulfilment Capacity Ma
    Cloud Infrastructure Lifecycle Management capabilities to any of these frameworks is beyond the scope of this
    document.
 
+Infrastructure Lifecycle Model
+------------------------------
+
+The following diagrams provide mapping between different stages of the infrastructure lifecycle across all layers of the
+stack, to owners of infrastructure and cloud and the tenant as the consumer of the cloud services, in three very
+different scenarios: applications running as containers within virtual machines (CaaS on IaaS scenario), application
+running as containers on bare metal (CaaS on BM scenario) and a more traditional view of applications running as VNFs
+within virtual machines (IaaS scenario). The diagrams define also the scope of the Infrastructure LCM Automation for each of
+these scenarios. The dotted lines symbolise the interactions between the layers of each of the model.
+
+.. figure:: ../figures/RM-Ch09-LCM-Automation-CaaS-on-IaaS.png
+   :name: Infrastructure Automation in CaaS on IaaS scenario
+   :alt: "Infrastructure Automation in CaaS on IaaS scenario"
+
+   Infrastructure LCM in CaaS on IaaS scenario
+
+In the CaaS on IaaS scenario, the Infrastructure LCM scope covers the Site/Physical layer,  IaaS layer and CaaS
+layer. From the lifecycle perspective (the left hand side of the diagram), Site/Physical layer is entirely owned by the
+Infrastructure Owner, the virtualised infrastructure layer (IaaS) is shared between the Infrastructure Owner and the
+Cloud Provider. Similarly,  the container orchestration layer (CaaS) is shared between the Cloud Provider and the
+Cloud Consumer / Tenant.   These relationships can be illustrated by a situation, where a telecom operator owns the
+physical infrastructure on which an external cloud provider runs the virtualisation software (hypervisor).
+Sharing CaaS layer between the Cloud Provider and the Cloud Consumer reflects the fact that the container
+management/orchestration software like Kubernetes is lifecycled by the Cloud Provider (for instance when scaling out
+containers) but also by the Cloud Consumer because of the very close lifecycle relationship between an application and
+a container in this model. For instance, destroying an application means also destroying related containers, Hence CaaS
+can be also considered as a part of the Application Orchestration layer.
+
+.. figure:: ../figures/RM-Ch09-LCM-Automation-CNF-on-BM.png
+   :name: Infrastructure Automation in CaaS on BM scenario
+   :alt: "Infrastructure Automation in CaaS on BM scenario"
+
+   Infrastructure LCM in CaaS on BM scenario
+
+The main and obvious difference in the CaaS on BM scenario is lack of the IaaS layer, and hence the scope of the
+Infrastructure LCM and its automation is limited to only two layers: Site/Physical and CaaS.  From the lifecycle ownership
+perspective, the CaaS layer is now shared not only between the Cloud Provider and the Cloud Consumer (for the same
+reasons as in the CaaS on IaaS scenario) but also with the Infrastructure Owner.  The latter observation is related to
+the fact that in the bare metal deployments lacking the hypervisor separation, the CaaS layer is much more dependent on
+the underlying physical infrastructure.
+
+.. figure:: ../figures/RM-Ch09-LCM-Automation-VNF-on-IaaS.png
+   :name: Infrastructure Automation in IaaS scenario
+   :alt: "Infrastructure Automation in IaaS scenario"
+
+   Infrastructure LCM in IaaS scenario
+
+In this "classical" scenario the scope of the Infrastructure LCM and its automation is defined by the Site/Physical and IaaS layers.
+From the lifecycle perspective the ownership of IaaS is shared between the Infrastructure Owner and the Cloud Provider.
+This scenario is characterised by a clear separation between the lifecycle (and hence its automation) of infrastructure
+and the application lifecycle owned by the Cloud Consumer / Tenant in the role of the Application Owner.
+
 Configuration and Lifecycle Management
 --------------------------------------
 
@@ -214,54 +266,7 @@ Key benefits of the Infrastructure LCM Automation are:
 Infrastructure LCM Automation Framework
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
-The following diagrams provide mapping between different stages of the lifecycle automation across all layers of the
-stack, to owners of infrastructure and cloud and the tenant as the consumer of the cloud services, in three very
-different scenarios: applications running as containers within virtual machines (CaaS on IaaS scenario), application
-running as containers on bare metal (CaaS on BM scenario) and a more traditional view of applications running as VNFs
-within virtual machines (IaaS scenario). The diagrams define the scope of the Infrastructure LCM Automation for each of
-these scenarios. The dotted lines symbolise the interactions between the layers of each of the model.
 
-.. figure:: ../figures/RM-Ch09-LCM-Automation-CaaS-on-IaaS.png
-   :name: Infrastructure Automation in CaaS on IaaS scenario
-   :alt: "Infrastructure Automation in CaaS on IaaS scenario"
-
-   Infrastructure Automation in CaaS on IaaS scenario
-
-In the CaaS on IaaS scenario, the Infrastructure Automation scope covers the Site/Physical layer,  IaaS layer and CaaS
-layer. From the lifecycle perspective (the left hand side of the diagram), Site/Physical layer is entirely owned by the
-Infrastructure Owner, the virtualised infrastructure layer (IaaS) is shared between the Infrastructure Owner and the
-Cloud Provider. Similarly,  the container orchestration layer (CaaS) is shared between the Cloud Provider and the
-Cloud Consumer / Tenant.   These relationships can be illustrated by a situation, where a telecom operator owns the
-physical infrastructure on which an external cloud provider runs the virtualisation software (hypervisor).
-Sharing CaaS layer between the Cloud Provider and the Cloud Consumer reflects the fact that the container
-management/orchestration software like Kubernetes is lifecycled by the Cloud Provider (for instance when scaling out
-containers) but also by the Cloud Consumer because of the very close lifecycle relationship between an application and
-a container in this model. For instance, destroying an application means also destroying related containers, Hence CaaS
-can be also considered as a part of the Application Orchestration layer.
-
-.. figure:: ../figures/RM-Ch09-LCM-Automation-CNF-on-BM.png
-   :name: Infrastructure Automation in CaaS on BM scenario
-   :alt: "Infrastructure Automation in CaaS on BM scenario"
-
-   Infrastructure Automation in CaaS on BM scenario
-
-The main and obvious difference in the CaaS on BM scenario is lack of the IaaS layer, and hence the scope of the
-Infrastructure Automation is limited to only two layers: Site/Physical and CaaS.  From the lifecycle ownership
-perspective, the CaaS layer is now shared not only between the Cloud Provider and the Cloud Consumer (for the same
-reasons as in the CaaS on IaaS scenario) but also with the Infrastructure Owner.  The latter observation is related to
-the fact that in the bare metal deployments lacking the hypervisor separation, the CaaS layer is much more dependent on
-the underlying physical infrastructure.
-
-.. figure:: ../figures/RM-Ch09-LCM-Automation-VNF-on-IaaS.png
-   :name: Infrastructure Automation in IaaS scenario
-   :alt: "Infrastructure Automation in IaaS scenario"
-
-   Infrastructure Automation in IaaS scenario
-
-In this "classical" scenario the scope of the Infrastructure Automation is defined by the Site/Physical and IaaS layers.
-From the lifecycle perspective the ownership of IaaS is shared between the Infrastructure Owner and the Cloud Provider.
-This scenario is characterised by a clear separation between the lifecycle (and hence its automation) of infrastructure
-and the application lifecycle owned by the Cloud Consumer / Tenant in the role of the Application Owner.
 
 Essential foundation functional blocks for Infrastructure LCM automation:
  
