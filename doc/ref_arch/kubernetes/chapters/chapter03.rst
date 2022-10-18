@@ -6,8 +6,8 @@ Introduction
 
 The Anuket Kubernetes Reference Architecture (RA) is intended to be an industry
 standard-independent Kubernetes reference architecture that is not tied to any
-specific offering or distribution. No vendor-specific enhancements are required,
-in order to achieve conformance to the principles of Anuket specifications.
+specific offering or distribution. No vendor-specific enhancements are required
+to achieve conformance with the Anuket specifications.
 Conformance is achieved by using upstream components or features that are
 developed by the open source community. This allows operators to have a common
 Kubernetes-based architecture that supports any conformant VNF or CNF deployed on
@@ -21,18 +21,18 @@ managed by the Cloud Native Computing Foundation (CNCF). Full documentation of
 the Kubernetes code and project can be found at
 `https://kubernetes.io/docs/home/ <https://kubernetes.io/docs/home/>`__.
 The following chapters only describe the specific features required by the
-Anuket Reference Architecture, and how they would be expected to be implemented.
+Anuket Reference Architecture, and how they are expected to be implemented.
 For information related to standard Kubernetes features and capabilities, see
 the standard Kubernetes documentation.
 
 While this reference architecture provides options for pluggable components,
-such as service mesh and other plugins, the focus of the reference architecture
+such as service mesh, the focus of the reference architecture
 is on the abstracted interfaces and features that are required for Telco-type
 workload management and execution.
 
 Chapter 5 of the Reference Model (RM) describes the hardware and software profiles
 that are descriptions of the capabilities and features that the Cloud Infrastructure
-provide to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below)
+provides to the workloads. Figure 5-3 in the RM (also shown below)
 depicts a high-level view of the software profile features that apply to each
 instance profile (basic and high-performance). For more information on the instance profiles,
 see :ref:`ref_model:chapters/chapter04:profiles`.
@@ -82,9 +82,9 @@ The Kubernetes Node OS (as with any OS) consists of two main components:
 
 The Kernel is the tightly controlled space that provides an API to applications
 running in the user space (which usually has its own southbound interface in an
-interpreter or libraries). Key containerization capabilities, such as control
-groups (cgroups) and namespaces, are kernel features, and are used and managed
-by the container runtime, in order to provide isolation between the user space
+interpreter or libraries). Key containerisation capabilities, such as control
+groups (cgroups) and namespaces, are kernel features, used and managed
+by the container runtime, to provide isolation between the user space
 processes. This would also include the container itself, as well as any processes
 running within it. The security of the Kubernetes Node OS and its relationship
 to the container and the applications running within the container, or containers,
@@ -123,7 +123,7 @@ Container Initiative (OCI) runtime
 spec <https://github.com/opencontainers/runtime-spec>`__. This specification includes
 details on how an implementation (that is, an actual container runtime such as runc)
 must, for example, configure resource shares and limits (such as CPU, Memory, IOPS)
-for the containers that Kubernetes (via the kubelet) schedules on that host. This is
+for the containers that Kubernetes (via the kubelet) schedules on that node. This is
 important to ensure that the features and capabilities described in :doc:`ref_model:chapters/chapter05`
 are supported by this RA and delivered by any downstream Reference Implementations
 (RIs) to the instance types defined in the RM.
@@ -188,8 +188,8 @@ built-in Kubernetes objects and their desired state.
    * - `DaemonSet <https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/>`__
      - A DaemonSet ensures that the correct nodes run a copy of a pod.
    * - `Job <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__
-     - A job represents a task. It creates one or more pods and will continue to retry until the
-       expected number of successful completions is reached.
+     - A job represents a task. It creates one or more pods and ensures that the
+      specified number of successful completions is completed.
    * - `CronJob <https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/>`__
      - AA CronJob manages time-based jobs, namely, once at a specified time and repeatedly at specified times.
    * - `StatefulSet <https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/>`__
@@ -203,7 +203,7 @@ affinity or latency. Therefore, the workloads must not be moved by the OS schedu
 Additionally, some workloads are sensitive to differences between the physical cores and the SMT, while others
 (such as DPDK-based workloads) are designed to run on isolated CPUs (such as on Linux with a cpuset-based
 selection of CPUs and isolcpus kernel parameters specifying cores isolated from the general SMP balancing and
-scheduler algorithms)
+scheduler algorithms).
 
 Kubernetes `CPU Manager <https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/>`__ works with
 Topology Manager. Special care needs to be taken of:
