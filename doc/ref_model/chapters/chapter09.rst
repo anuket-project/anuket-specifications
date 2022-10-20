@@ -236,7 +236,7 @@ and protocols cannot be avoided. By adding the multi-vendor approach in implemen
 a system with a remarkably high level of complexity that requires significant effort for managing and operating
 it.
 
-To ensure proper support and flawless work in the large ecosystem of end user services, a formalized approach directed
+A large and complex ecosystem of end-user services requires a formalized approach
 towards high reliability and scalability of systems is required. The discipline which applies well known practices of
 software engineering to operations is called Site Reliability Engineering. It was conceived at Google, as a means to
 overcome limitations of the common DevOps approach.
