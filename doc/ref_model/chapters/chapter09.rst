@@ -225,8 +225,8 @@ software, and management components (e.g. changing of number of hypervisor hosts
 Telemetry and Observability
 ---------------------------
 
-Operating complex distributed systems, such as a Telco network, is a demanding and challenging task that is continuously
-being increased as the network complexity and the production excellence requirements grow. There are multiple reasons
+Operating complex distributed systems, such as a Telco network, is a challenging job that is becoming
+even harder as the technology sophistication and the operational quality requirements grow. There are multiple reasons
 why it is so, but they originate in the nature of the system concept. To reach the ability of providing Telco services,
 a complex system is decomposed into multiple different functional blocks, called network functions. Internal
 communication between the diverse network functions of a distributed system is based on message exchange. To formalize
