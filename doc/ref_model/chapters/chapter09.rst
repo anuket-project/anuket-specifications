@@ -241,7 +241,7 @@ for achieving high reliability and scalability. The discipline which applies wel
 software engineering to operations is called Site Reliability Engineering. It was conceived at Google, as a means to
 overcome limitations of the common DevOps approach.
 
-Common supporting system (OSS – Operation Support System, BSS – Business Support System) requirements are redefined,
+Common support system (such as, OSS – Operation Support System, BSS – Business Support System) requirements are redefined,
 driven by introduction of new technologies in computing infrastructure and modern data centres with abstraction of
 resources – known as virtualization and cloud computing. This brings many advantages – such as easy scaling, error
 recovery, reaching a high level of operational autonomy etc., but also many new challenges in the Telecom network
