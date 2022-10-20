@@ -233,7 +233,7 @@ communication between the diverse network functions of a distributed system is b
 this communication, clearly defined interfaces are introduced, and protocols designed. Even though the architecture of
 a Telco network is systematically formalized on the worldwide level, heterogeneity of services, functions, interfaces,
 and protocols cannot be avoided. By adding the multi-vendor approach in implementation of Telco networks, the outcome is
-indeed a system with remarkably high level of complexity which requires significant efforts for managing and operating
+a system with a remarkably high level of complexity that requires significant effort for managing and operating
 it.
 
 To ensure proper support and flawless work in the large ecosystem of end user services, a formalized approach directed
