@@ -237,7 +237,7 @@ a system with a remarkably high level of complexity that requires significant ef
 it.
 
 A large and complex ecosystem of end-user services requires a formalized approach
-towards high reliability and scalability of systems is required. The discipline which applies well known practices of
+for achieving high reliability and scalability. The discipline which applies well-known practices of
 software engineering to operations is called Site Reliability Engineering. It was conceived at Google, as a means to
 overcome limitations of the common DevOps approach.
 
