@@ -180,7 +180,7 @@ analysing data about the infrastructure that is running, and calculating when ad
 required, or when infrastructure might need to be decommissioned.
 
 As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration
-and Lifecycle Management sections above. The Assurance section deals with the collection of data - there is no reason to
+and Lifecycle Management sections below. The Assurance section deals with the collection of data - there is no reason to
 consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the
 Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware,
 software, and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
