@@ -172,6 +172,20 @@ Infrastructure Hardware   Redfish API                  DMTF RedFish specificatio
 
 **Table 9-3:** Interface Standards for Configuration Management
 
+Capacity Management
+-------------------
+
+Capacity Management is a potentially wide ranging process that includes taking demand across lines of business,
+analysing data about the infrastructure that is running, and calculating when additional infrastructure might be
+required, or when infrastructure might need to be decommissioned.
+
+As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration
+and Lifecycle Management sections above. The Assurance section deals with the collection of data - there is no reason to
+consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the
+Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware,
+software, and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
+
+
 Assurance
 ---------
 
@@ -207,23 +221,8 @@ Note that the above only refers to components - it is expected that any "service
 further requirements onto the infrastructure, but rather takes the data extracted and builds service models based on the
 knowledge it has of the services being offered.
 
-Capacity Management
--------------------
-
-Capacity Management is a potentially wide ranging process that includes taking demand across lines of business,
-analysing data about the infrastructure that is running, and calculating when additional infrastructure might be
-required, or when infrastructure might need to be decommissioned.
-
-As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration
-and Lifecycle Management sections above. The Assurance section deals with the collection of data - there is no reason to
-consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the
-Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware,
-software, and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
-
-
-
 Telemetry and Observability
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Operating complex distributed systems, such as a Telco network, is a challenging job that is becoming
 even harder as the technology sophistication and the operational quality requirements grow. There are multiple reasons
@@ -250,7 +249,7 @@ towards microservices instead of a silo approach, and huge amounts of data which
 understand the internal status of the system. Hence the need of improved ways to monitor systems - observability.
 
 Why Observability
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act
 fast, ideally pro-actively before users notice and, most importantly, before they call the help desk.
@@ -358,7 +357,7 @@ is usually customizable according to the needs of users. The concept of Schema R
 world of big data, is helpful here to make sure that message structures and formats are consistently used.
 
 The Architecture
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 In geographically dispersed large cloud deployments, a given telco cloud may have several cloud infrastructure
 components as well a large set of virtualized workloads (VNF/CNFs). It is important to monitor all of these workloads
