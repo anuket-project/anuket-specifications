@@ -98,10 +98,15 @@ Multiple network interfaces on Pods
    **Baseline project:** *Kubernetes*
 
    **Gap description:** Kubernetes does not have native support for multiple Pod interfaces, therefore a CNI
-   multiplexer, like `DANM <https://github.com/nokia/danm>`__ or
-   `Multus <https://github.com/intel/multus-cni>`__ is needed to provision multiple interfaces. Implementation of
-   different network services for the interfaces, like Network Policies, Ingress, Egress or Load Balancers depends on
-   the feature set of the CNI multiplexer and the CNI plugins it uses, therefore it is inconsistent.
+   multiplexer, like `Multus <https://github.com/intel/multus-cni>`__ is needed to provision multiple interfaces.
+   Implementation of different network services for the interfaces, like Network Policies, Ingress, Egress or Load
+   Balancers depends on the feature set of the CNI multiplexer and the CNI plugins it uses, therefore it is
+   inconsistent.
+
+   **Status:** There is a `draft KEP
+   <https://docs.google.com/document/d/1ztx9TOQ9Hiyj9PG9aPv6jyDLhe_FB7haV_yjJIcb-0Y/>`__
+   created to support multiple Pod interfaces natively. The group working on the KEP have `regular meetings
+   <https://docs.google.com/document/d/1pe_0aOsI35BEsQJ-FhFH9Z_pWQcU2uqwAnOx2NIx6OY/>`__.
 
 Dynamic network management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
