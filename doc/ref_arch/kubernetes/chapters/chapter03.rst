@@ -272,10 +272,10 @@ An example of often used device plugin is the
 `SR-IOV Network Device Plugin <https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin>`__, that discovers
 and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is used to map VFs to scheduled pods.
 To use it, the SR-IOV CNI is required, as well as a CNI multiplexer plugin (such as
-`Multus CNI <https://github.com/k8snetworkplumbingwg/multus-cni>`__ or `DANM <https://github.com/nokia/danm>`__),
-to provision additional secondary network interfaces for VFs (beyond the primary network interface). The SR-IOV CNI
-during pod creation allocates a SR-IOV VF to a pod's network namespace using the VF information given by the meta
-plugin, and on pod deletion releases the VF from the pod.
+`Multus CNI <https://github.com/k8snetworkplumbingwg/multus-cni>`__), to provision additional secondary network
+interfaces for VFs (beyond the primary network interface). The SR-IOV CNI during pod creation allocates a SR-IOV VF to a
+pod's network namespace using the VF information given by the meta plugin, and on pod deletion releases the VF from the
+pod.
 
 Hardware Acceleration
 ^^^^^^^^^^^^^^^^^^^^^
@@ -468,8 +468,8 @@ managed and consumed via standard interfaces.
    the Pod. Note that the different network characteristics of the interfaces might
    require different networking technologies, which would potentially require
    different CNI plugins. Also note that this is only required for the High Performance
-   profile. Example CNI implementations which meet these requirements
-   include Multus and DANM.
+   profile. Example CNI implementations which meet these requirements is
+   `Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__.
 
 -  **CNI Plugin (Additional)**: this is a CNI plugin that is used to provide
    additional networking needs to Pods, that aren't provided by the default CNI plugin.
