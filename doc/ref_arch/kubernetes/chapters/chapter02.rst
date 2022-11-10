@@ -1349,7 +1349,7 @@ machines or containers.
      - General
      - Cloud nativeness
      - The Architecture must support clearly defined abstraction layers - from the hardware
-       infrastructure (supporting the platform) to cloud platform (main concern of this
+       infrastructure (supporting the platform) to the containerisation platform (the main concern of this
        Architecture) to application (workloads running on the platform).
      -
    * - gen.cnt.05
