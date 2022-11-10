@@ -5,37 +5,42 @@ Introduction
 ------------
 
 The Anuket Kubernetes Reference Architecture (RA) is intended to be an industry
-standard independent Kubernetes reference architecture that is not tied to any
+standard-independent Kubernetes reference architecture that is not tied to any
 specific offering or distribution. No vendor-specific enhancements are required
-in order to achieve conformance to the principles of Anuket specifications; conformance is achieved by
-using upstream components or features that are developed by the open source
-community. This allows operators to have a common Kubernetes-based architecture
-that supports any conformant VNF or CNF deployed on it to operate as expected.
-The purpose of this chapter is to outline all the components required to provide
-Kubernetes in a consistent and reliable way. The specification of how to use
-these components is detailed in Chapter 04 :ref:`chapters/chapter04:component level architecture`.
+to achieve conformance with the Anuket specifications.
+Conformance to these specifications can be ensured by doing the following:
 
-Kubernetes is already a well documented and widely deployed Open Source project
+* Successfully running RC2.
+* Using upstream components or features that are developed by the open source
+  community.
+
+Using the RA2 Kubernetes-based architecture specifications, operators can deploy
+infrastructure that will run any  VNF or CNF that has successfully run on an
+RA2-conformant infrastructure. The purpose of this chapter is to outline all the
+components required to provide Kubernetes in a consistent and reliable way. The
+specification of how to use these components is detailed in Chapter 04
+:ref:`chapters/chapter04:component level architecture`.
+
+Kubernetes is already a well-documented and widely deployed open-source project
 managed by the Cloud Native Computing Foundation (CNCF). Full documentation of
 the Kubernetes code and project can be found at
-`https://kubernetes.io/docs/home/ <https://kubernetes.io/docs/home/>`__. The
-following chapters will only describe the specific features required by the Anuket
-Reference Architecture, and how they would be expected to be implemented. For
-any information related to standard Kubernetes features and capabilities, refer
-back to the standard Kubernetes documentation.
+`https://kubernetes.io/docs/home/ <https://kubernetes.io/docs/home/>`__.
+The following chapters only describe the specific features required by the
+Anuket Reference Architecture, and how they are expected to be implemented.
+For information related to standard Kubernetes features and capabilities, see
+the standard Kubernetes documentation.
 
-While this reference architecture provides options for pluggable components such
-as service mesh and other plugins that might be used, the focus of the
-reference architecture is on the abstracted interfaces and features that are
-required for telco type workload management and execution.
+While this reference architecture provides options for pluggable components,
+such as service mesh, the focus of the reference architecture
+is on the abstracted interfaces and features that are required for Telco-type
+workload management and execution.
 
-Chapter 5 of the Reference Model (RM) describes the
-hardware and software profiles that are
-descriptions of the capabilities and features that the Cloud Infrastructure
-provide to the workloads. The NFVI Software Profile figure below
-depicts a high level view of the software profile features that apply to each
-instance profile (Basic and High Performance). For more information on the
-instance profiles please refer to :ref:`ref_model:chapters/chapter04:profiles`.
+Chapter 5 of the Reference Model (RM) describes the hardware and software profiles
+that are descriptions of the capabilities and features that the Cloud Infrastructure
+provides to the workloads. Figure 5-3 in the RM (also shown below)
+depicts a high-level view of the software profile features that apply to each
+instance profile (basic and high-performance). For more information on the instance profiles,
+see :ref:`ref_model:chapters/chapter04:profiles`.
 
 .. figure:: ../../../ref_model/figures/RM-ch05-sw-profile.png
    :alt: (from RM): NFVI softwareprofiles
@@ -63,11 +68,11 @@ Infrastructure Services
 Container Compute Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The primary interface between the Physical / Virtual Infrastructure and any
-container-relevant components is the Kubernetes Node Operating System. This is
-the OS within which the container runtime exists, and within which the
-containers run (and therefore, the OS whose kernel is shared by the referenced
-containers). This is shown in :numref:`Kubernetes Node Operating System` below.
+The primary interface between the physical/virtual infrastructure and any
+container-relevant components is the Kubernetes Node Operating System. This
+is the OS within which the container runtime exists, and within which the
+containers run, and therefore, the OS whose kernel is shared by the referenced
+containers. This is shown in :numref:`Kubernetes Node Operating System` below.
 
 .. figure:: ../figures/ch03_hostOS.png
    :alt: Kubernetes Node Operating System
@@ -81,83 +86,82 @@ The Kubernetes Node OS (as with any OS) consists of two main components:
 -  User space
 
 The Kernel is the tightly controlled space that provides an API to applications
-running in the user space (which usually have their own southbound interface in
-an interpreter or libraries). Key containerisation capabilities such as Control
-Groups (cgroups) and namespaces are kernel features, and are used and managed by
-the container runtime in order to provide isolation between the user space
-processes, which would also include the container itself as well as any
-processes running within it. The security of the Kubernetes Node OS and its
-relationship to the container and the applications running within the container
-or containers is essential to the overall security posture of the entire system,
-and must be appropriately secured to ensure processes running in one container
-cannot escalate their privileges or otherwise affect processes running in an
-adjacent container. An example and more details of this concept can be found in
-:ref:`chapters/chapter06:api and feature testing requirements`.
+running in the user space (which usually has its own southbound interface provided
+by an interpreter or libraries). Key containerisation capabilities, such as control
+groups (cgroups) and namespaces, are kernel features, used and managed by the
+container runtime, to provide isolation between the user space processes. This isolation
+would also include the container itself, as well as any processes running within it.
+The security of the Kubernetes Node OS and its relationship to the container and the
+applications running within the container, or containers, is essential to the overall
+security posture of the entire system, and must be appropriately secured to ensure
+that the processes running in one container cannot escalate their privileges on the
+node or otherwise affect processes running in an adjacent container. An example of
+this concept, together with further details, can be found
+in :ref:`chapters/chapter06:api and feature testing requirements`.
 
-It is important to note that the container runtime itself is also a set of
-processes that run in user space, and therefore also interact with the kernel
-via system calls. Many diagrams will show containers as running on top of the
-runtime, or inside the runtime. More accurately, the containers themselves are
-simply processes running within an OS, the container runtime is simply another
-set of processes that are used to manage these containers (pull, run, delete,
-etc.), and the kernel features required to provide the isolation mechanisms
-(cgroups, namespaces, filesystems, etc.) between the components.
+It is important to note that the container runtime itself is also a set of processes
+that run in user space, and therefore also interact with the kernel via system calls.
+Many diagrams show containers as running on top of the runtime, or inside the runtime.
+More accurately, the containers themselves are simply processes running within an OS.
+The container runtime is simply another set of processes that are used to manage
+these containers (pull, run, delete, and so on) and the kernel features required
+to provide the isolation mechanisms (cgroups, namespaces, filesystems, and so on)
+between the containers.
 
 Container Runtime Services
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Container Runtime is the component that runs within a Kubernetes Node
-Operating System (OS) and manages the underlying OS functionality, such as
+The Container Runtime is a component that runs within a Kubernetes Node
+Operating System (OS). It manages the underlying OS functionality, such as
 cgroups and namespaces (in Linux), in order to provide a service within which
-container images can be executed and make use of the infrastructure resources
-(compute, storage, networking and other I/O devices) abstracted by the Container
-Host OS, based on API instructions from the kubelet.
+container images can be executed. It also makes use of the infrastructure
+resources, such as compute, storage, networking and other I/O devices,
+abstracted by the Node node OS, based on API instructions from the kubelet.
 
-There are a number of different container runtimes. The simplest form, low-level
-container runtimes, just manage the OS capabilities such as cgroups and
-namespaces, and then run commands from within those cgroups and namespaces. An
-example of this type of runtime is runc, which underpins many of the
-higher-level runtimes and is considered a reference implementation of the `Open
+There are a number of different container runtimes. The simplest form of runtimes,
+the low-level container runtimes, only manage the operating system capabilities,
+such as cgroups and namespaces, and then run commands from within those cgroups
+and namespaces. An example of this type of runtime is runc, which underpins many
+of the higher-level runtimes and is considered a reference implementation of the
+`Open
 Container Initiative (OCI) runtime
-spec <https://github.com/opencontainers/runtime-spec>`__. This specification
-includes details on how an implementation (i.e. an actual container runtime such
-as runc) must, for example, configure resource shares and limits (e.g., CPU,
-Memory, IOPS) for the containers that Kubernetes (via the kubelet) schedules on
-that host. This is important to ensure that the features and capabilities
-described in :doc:`ref_model:chapters/chapter05` are
-supported by this RA and delivered by any downstream Reference Implementations
+spec <https://github.com/opencontainers/runtime-spec>`__. This specification includes
+details on how an implementation (that is, an actual container runtime such as runc)
+must, for example, configure resource shares and limits (such as CPU, Memory, IOPS)
+for the containers that Kubernetes (via the kubelet) schedules on that node. This is
+important to ensure that the features and capabilities described in :doc:`ref_model:chapters/chapter05`
+are supported by this RA and delivered by any downstream Reference Implementations
 (RIs) to the instance types defined in the RM.
 
-Where low-level runtimes are used for the execution of a container within an OS,
-the more complex/complete high-level container runtimes are used for the general
-management of container images - moving them to where they need to be executed,
-unpacking them, and then passing them to the low-level runtime, which then
-executes the container. These high-level runtimes also include a comprehensive
-API that other applications (e.g., Kubernetes) can use to interact and manage the
-containers. An example of this type of runtime is containerd, which provides the
-features described above, before passing off the unpacked container image to
-runc for execution.
+Where low-level runtimes are used for the execution of a container within an operating
+system, the more complex and complete high-level container runtimes are used for the
+general management of container images - moving them to where they need to be executed,
+unpacking them, and then passing them to the low-level runtime, which then executes the
+container. These high-level runtimes also include a comprehensive API that other
+applications, such as Kubernetes, can use to interact and manage the containers. An
+example of this type of runtime is containerd, which provides the features described
+above, and depends on runc for execution.
 
-For Kubernetes the important interface to consider for container management is
-the `Kubernetes Container Runtime Interface
+For Kubernetes, the important interface to consider for container management is the
+`Kubernetes Container Runtime Interface
 (CRI) <https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/>`__.
-This is an interface specification for any container runtime so that it is able
-to integrate with the kubelet on a Kubernetes Node. The CRI decouples the
-kubelet from the runtime that is running in the Host OS, meaning that the code
-required to integrate kubelet with a container runtime is not part of the
-kubelet itself (i.e., if a new container runtime is needed and it uses CRI, it
-will work with kubelet). Examples of this type of runtime include containerd
-(with CRI plugin) and cri-o, which is built specifically to work with
-Kubernetes.
+This is an interface specification for any container runtime to enable it to integrate
+with the kubelet on a Kubernetes Node. The CRI decouples the kubelet from the runtime
+that is running in the node OS. This means that the code required to integrate the
+kubelet with a container runtime is not part of the kubelet itself (that is, if a new
+container runtime is needed and it uses CRI, it will work with the kubelet). Examples of
+this type of runtime include containerd (with a CRI plugin) and cri-o, which are built
+specifically to work with Kubernetes.
 
-To fulfil ``inf.vir.01`` the architecture should support a container runtime
-which provides the isolation of Operating System kernels.
+To fulfill ``inf.vir.01``, the architecture should support a container runtime which
+provides the isolation of the Operating System kernels.
 
-The architecture must support a way to isolate the compute resources of the
-infrastructure itself from the workloads compute resources.
+The architecture must support a way to isolate the compute resources of the infrastructure
+itself from the compute resources of the workloads.
 
-The basic semantics of Kubernetes, and the information found in manifests, defines the built-in
-Kubernetes objects and their desired state.
+
+The basic semantics of Kubernetes, and the information found in the manifests, define the
+built-in Kubernetes objects and their desired state.
 
 .. list-table:: Kubernetes built-in objects
    :widths: 20 80
@@ -166,31 +170,31 @@ Kubernetes objects and their desired state.
    * - Pod and workloads
      - Description
    * - `Pod <https://kubernetes.io/docs/concepts/workloads/pods/>`__
-     - Pod is a collection of containers that can run on a node. This resource is created by clients and scheduled onto
-       nodes.
+     - A pod is a collection of containers that can run on a node. This resource is created by clients
+       and scheduled onto nodes.
    * - `ReplicaSet <https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/>`__
-     - ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+     - A ReplicaSet ensures that a specified number of pod replicas are running at any given time.
    * - `Deployment <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>`__
-     - Deployment enables declarative updates for Pods and ReplicaSets.
+     - A deployment enables declarative updates for pods and ReplicaSets.
    * - `DaemonSet <https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/>`__
-     - A Daemon set ensures that the correct nodes run a copy of a Pod.
+     - A DaemonSet ensures that the correct nodes run a copy of a pod.
    * - `Job <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__
-     - A Job represent a task, it creates one or more Pods and will continue to retry until the expected number of
-       successful completions is reached.
+     - A job represents a task. It creates one or more pods and ensures that the
+       specified number of successful completions is completed.
    * - `CronJob <https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/>`__
-     - A CronJob manages time-based Jobs, namely: once at a specified point in time and repeatedly at a specified point
-       in time.
+     - A CronJob manages time-based jobs, namely, once or repeatedly at specified times.
    * - `StatefulSet <https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/>`__
-     - StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage.
+     - A StatefulSet represents a set of pods with consistent identities. Identities are defined as network and storage.
 
-CPU Management
-^^^^^^^^^^^^^^
+CPU Management Policies
+^^^^^^^^^^^^^^^^^^^^^^^
 
 CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache
-affinity or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some
-workloads are sensitive to differences between physical cores and SMT, while others (like DPDK-based workloads) are
-designed to run on isolated CPUs (like on Linux with cpuset-based selection of CPUs and isolcpus kernel parameter
-specifying cores isolated from general SMP balancing and scheduler algorithms).
+affinity or latency. Therefore, These workloads must not be throttled by the kubelet and their processes must not be
+scheduled across the CPU cores by the OS scheduler. Additionally, some workloads are sensitive to differences between
+the physical cores and the SMT, while others (such as DPDK-based workloads) are designed to run on isolated CPUs
+(such as on Linux with a cpuset-based selection of CPUs and isolcpus kernel parameters specifying cores isolated
+from the general SMP balancing and scheduler algorithms).
 
 Kubernetes `CPU Manager <https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/>`__ works with
 Topology Manager. Special care needs to be taken of:
@@ -912,7 +916,7 @@ Specifically, the scope of the CaaS Manager includes:
 
 -  Control plane installation (i.e., Kubernetes control plane components on the nodes)
 
--  Node Host OS customisation (e.g., Kernel customisation)
+-  Node node OS customisation (e.g., Kernel customisation)
 
 -  Management of Cluster add-ons (e.g., CNIs, CSIs, Service Meshes)
 
