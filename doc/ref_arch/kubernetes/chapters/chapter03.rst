@@ -8,13 +8,18 @@ The Anuket Kubernetes Reference Architecture (RA) is intended to be an industry
 standard-independent Kubernetes reference architecture that is not tied to any
 specific offering or distribution. No vendor-specific enhancements are required
 to achieve conformance with the Anuket specifications.
-Conformance to these specifications can be ensured by successfully running RC2
-and by using upstream components or features that are developed by the open source
-community. This allows operators to have a common Kubernetes-based architecture
-that supports any conformant VNF or CNF deployed on it.
-The purpose of this chapter is to outline all the components required to provide
-Kubernetes in a consistent and reliable way. The specification of how to use these
-components is detailed in Chapter 04 :ref:`chapters/chapter04:component level architecture`.
+Conformance to these specifications can be ensured by doing the following:
+
+* Successfully running RC2.
+* Using upstream components or features that are developed by the open source
+  community.
+
+Using the RA2 Kubernetes-based architecture specifications, operators can deploy
+infrastructure that will run any  VNF or CNF that has successfully run on an
+RA2-conformant infrastructure. The purpose of this chapter is to outline all the
+components required to provide Kubernetes in a consistent and reliable way. The
+specification of how to use these components is detailed in Chapter 04
+:ref:`chapters/chapter04:component level architecture`.
 
 Kubernetes is already a well-documented and widely deployed open-source project
 managed by the Cloud Native Computing Foundation (CNCF). Full documentation of
