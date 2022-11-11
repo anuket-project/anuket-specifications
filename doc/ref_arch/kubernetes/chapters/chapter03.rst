@@ -387,12 +387,11 @@ CNF operators. To allow easy integration of CNF-s and the platforms it is recomm
 resources or the API resources defined in the v1.2 of the `Kubernetes Network Custom Resource Definition De-facto
 Standard <https://github.com/k8snetworkplumbingwg/multi-net-spec/tree/master/v1.2>`__.
 
--  The **Default CNI Plugin** through the use of deployment specific configuration (e.g. `Tungsten Fabric
-   <https://tungstenfabric.github.io/website/Tungsten-Fabric-Architecture.html#vrouter-deployment-options>`__)
--  A **multiplexer/meta-plugin** that integrates with the Kubernetes control plane
-   via CNI (Container Network Interface) and allows the use of multiple CNI plugins
-   in order to provide this specific connectivity that the default Network Plugin may
-   not be able to provide.
+- The **Default CNI Plugin** through the use of deployment specific configuration (e.g. `Tungsten Fabric
+  <https://tungstenfabric.github.io/website/Tungsten-Fabric-Architecture.html#vrouter-deployment-options>`__)
+- A **multiplexer/meta-plugin** that integrates with the Kubernetes control plane via CNI (Container Network Interface)
+  and allows the use of multiple CNI plugins in order to provide multiple connections to a Pod, that the Default CNI
+  Plugin may not be able to provide.
 
 .. _Comparison of example Kubernetes networking solutions:
 .. list-table:: Comparison of example Kubernetes networking solutions
