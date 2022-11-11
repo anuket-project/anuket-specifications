@@ -271,9 +271,10 @@ vendor-specific activation and life cycle management, and securely maps these de
 An example of often used device plugin is the
 `SR-IOV Network Device Plugin <https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin>`__, that discovers
 and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is used to map VFs to scheduled pods.
-To use it, the SR-IOV CNI is required, as well as a CNI multiplexer plugin (such as
-`Multus CNI <https://github.com/k8snetworkplumbingwg/multus-cni>`__), to provision additional secondary network
-interfaces for VFs (beyond the primary network interface). The SR-IOV CNI during pod creation allocates a SR-IOV VF to a
+To use it, an SR-IOV CNI is required. A CNI multiplexer plugin (such as
+`Multus CNI <https://github.com/k8snetworkplumbingwg/multus-cni>`__) is also required to provision
+additional secondary network
+interfaces for VFs (beyond the primary network interface). The SR-IOV CNI, during pod creation, allocates an SR-IOV VF to a
 pod's network namespace using the VF information given by the meta plugin, and on pod deletion releases the VF from the
 pod.
 
@@ -389,9 +390,9 @@ Standard <https://github.com/k8snetworkplumbingwg/multi-net-spec/tree/master/v1.
 -  The **Default CNI Plugin** through the use of deployment specific configuration (e.g. `Tungsten Fabric
    <https://tungstenfabric.github.io/website/Tungsten-Fabric-Architecture.html#vrouter-deployment-options>`__)
 -  A **multiplexer/meta-plugin** that integrates with the Kubernetes control plane
-   via CNI (Container Network Interface) and allows for use of multiple CNI plugins
+   via CNI (Container Network Interface) and allows the use of multiple CNI plugins
    in order to provide this specific connectivity that the default Network Plugin may
-   not be able to provide (e.g. `Multus <https://github.com/intel/multus-cni>`__)
+   not be able to provide.
 
 .. _Comparison of example Kubernetes networking solutions:
 .. list-table:: Comparison of example Kubernetes networking solutions
@@ -468,7 +469,7 @@ managed and consumed via standard interfaces.
    the Pod. Note that the different network characteristics of the interfaces might
    require different networking technologies, which would potentially require
    different CNI plugins. Also note that this is only required for the High Performance
-   profile. Example CNI implementations which meet these requirements is
+   profile. An example CNI implementation that meets these requirements is the
    `Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__.
 
 -  **CNI Plugin (Additional)**: this is a CNI plugin that is used to provide
