@@ -952,6 +952,33 @@ Architecture they must be implemented as per the following specifications:
        and app.kubernetes.io/part-of
      - `Kubernetes documentation <https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/>`__
      - N/A
+   * - ra2.app.046
+     - Log output
+     - Pods of the CNF shold direct their logs to sdout or stderr. This enables the treating of logs as event steams.
+     - `The Twelve Factor App <https://12factor.net/logs>`__
+     - N/A
+   * - ra2.app.047
+     - Host ports
+     - Pods of the CNF shold not use host ports. Using host ports ties the CNF to a specific node and therefore makes
+       the CNF less portable and scalable.
+     -
+     - N/A
+   * - ra2.app.048
+     - SELinux options
+     - If SELInux is used in the Pods of the CNF, the options used to escalate privileges should not be allowed. Options
+       spec.securityContext.seLinuxOptions.type, spec.containers[*].securityContext.seLinuxOptions.type,
+       spec.initContainers[*].securityContext.seLinuxOptions,
+       and spec.ephemeralContainers[*].securityContext.seLinuxOptions.type must either be unset or set to one of the
+       allowed values (container_t, container_init_t, or container_kvm_t).
+     -
+     - N/A
+   * - ra2.app.049
+     - Image tags
+     - The :latest tag should not be used in the images of the Pods of the CNF as it does not specify a concrete version
+       of the container.
+     - `Kubernetes documentation <https://kubernetes.io/docs/concepts/containers/images/>`__
+     - N/A
+
 
 Additional required components
 ------------------------------
