@@ -105,8 +105,7 @@ Multiple network interfaces on Pods
 
    **Status:** There is a `draft KEP
    <https://docs.google.com/document/d/1ztx9TOQ9Hiyj9PG9aPv6jyDLhe_FB7haV_yjJIcb-0Y/>`__
-   created to support multiple Pod interfaces natively. The group working on the KEP have `regular meetings
-   <https://docs.google.com/document/d/1pe_0aOsI35BEsQJ-FhFH9Z_pWQcU2uqwAnOx2NIx6OY/>`__.
+   created to support multiple Pod interfaces natively.
 
 Dynamic network management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
