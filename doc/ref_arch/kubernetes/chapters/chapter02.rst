@@ -1409,8 +1409,10 @@ machines or containers.
    * - inf.ntw.02
      - Infrastructure
      - Network
-     - The Architecture must support fully redundant network connectivity to the Kubernetes
-       nodes, leveraging multiple network connections.
+     - The Architecture must support redundant network connectivity to the Kubernetes 
+       nodes. At least two physical network connections are required for each physical Kubernetes node.
+       For virtualized Kubernetes nodes, redundant network interfaces backed by redundant physical
+       connections, are required on each virtualised Kubernetes node.
      -
    * - inf.ntw.03
      - Infrastructure
