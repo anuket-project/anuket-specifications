@@ -1409,7 +1409,7 @@ machines or containers.
      - Network
      - The Architecture must support redundant network connectivity to the Kubernetes 
        nodes. At least two physical network connections per Kubernetes node are required.
-       For virtualised nodes, redundant network interfaces backed by redundant physical
+       For virtualized Kubernetes nodes, redundant network interfaces backed by redundant physical
        connections, are required on each virtualised Kubernetes node.
      -
    * - inf.ntw.03
