@@ -1408,7 +1408,7 @@ machines or containers.
      - Infrastructure
      - Network
      - The Architecture must support redundant network connectivity to the Kubernetes 
-       nodes. At least two physical network connections per Kubernetes node are required.
+       nodes. At least two physical network connections are required for each physical Kubernetes node.
        For virtualized Kubernetes nodes, redundant network interfaces backed by redundant physical
        connections, are required on each virtualised Kubernetes node.
      -
