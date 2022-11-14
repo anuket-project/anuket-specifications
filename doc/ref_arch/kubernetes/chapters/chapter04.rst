@@ -242,7 +242,7 @@ the following specifications:
      - The Kubernetes distribution, product, or installer used in the implementation must be listed in the
        `Kubernetes Distributions and Platforms document <https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMh
        uythuq_GL3N1mlUUK2h0/edit>`__ and marked (X) as conformantfor the Kubernetes version defined in
-       :ref:`index:required versions of most important components`.
+       :ref:`index:required component versions`.
      - :ref:`gen.cnt.03 <chapters/chapter02:Kubernetes Architecture Requirements>`
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
@@ -380,7 +380,8 @@ the following specifications:
      -
    * - ra2.k8s.019
      - Kubernetes APIs
-     - Kubernetes Beta APIs must be supported only when a stable GA of the same version doesn't exist.
+     - Kubernetes Beta APIs must be disabled, except for existing APIs as of Kubernetes 1.24 and only when a stable GA
+       of the same version doesn't exist.
      - :ref:`int.api.04 <chapters/chapter02:Kubernetes Architecture Requirements>`
      -
 
