@@ -23,13 +23,14 @@ run with different Feature Gate settings.
 A feature can be in Alpha, Beta or GA stage:
 
 - Alpha features are disabled by default, may be buggy, and support may be dropped
-- Beta features are enabled by default, are well tested, and support will not be dropped (although breaking API
-  changes may happen)
+- Beta features are disabled by default, are well tested, and support will not be dropped (although breaking API
+  changes may happen). Any existing Beta feature as of 1.24 will continue to be enabled by default, but new beta APIs
+  and features will not be enabled by default.
 - GA features are stable, always enabled and cannot be disabled.
 
 The policy for RA2 to include Kubernetes features as mandatory is:
 
-   Only features that are either in Beta or GA stage can be made mandatory, subject to RA2 requirements.
+   Only features that are either in GA stage (or Beta before 1.24) can be made mandatory, subject to RA2 requirements.
 
 A list of feature gates is available
 `here <https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/#feature-gates>`__.
@@ -46,7 +47,7 @@ or GA/Stable).
 
 The policy for RA2 to include Kubernetes APIs as mandatory is:
 
-   Only APIs that are either in Beta or Stable stage can be made mandatory, subject to RA2 requirements.
+   Only APIs that are Stable stage (or Beta before 1.24) can be made mandatory, subject to RA2 requirements.
 
 The Kubernetes API reference is available `here <https://kubernetes.io/docs/reference/kubernetes-api/>`__.
 
