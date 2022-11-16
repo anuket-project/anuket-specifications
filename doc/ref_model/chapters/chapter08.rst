@@ -223,7 +223,7 @@ scenarios help highlight needs for the Cloud Service Broker and Cloud Resources 
 :numref:`Conceptual Architecture of a Telco Operator Platform`) and hence extent of orchestration required to manage the
 interactions.
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-03.png
    :name: Simple Stereo-Typical Interactions
    :alt: Simple Stereo-Typical Interactions
 
