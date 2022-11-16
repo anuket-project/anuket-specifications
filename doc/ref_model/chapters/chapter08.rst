@@ -509,12 +509,26 @@ Aspects of Multi-Cloud Security
 Cloud infrastructures, emerging as a key element in the telco operator ecosystem, are part of the attack surface
 landscape. This is particularly worrying with the 5G rollout becoming a critical business necessity. It is important to
 be vigilant of Cloud-focused threats and associated adversarial behaviours, methods, tools, and strategies that cyber
-threat actors use.
+threat actors use. In the multi-cloud ecosystem comprised of different security postures and policies,
+network domains, products, and business partnerships, the responsibility for managing these different
+cloud environments necessary to support 5G use cases falls to different enterprises, creating
+new levels of complexities and a new range of security risks.
 
-In the multi-cloud ecosystem comprised of different security postures and policies, network domains, products, and
-business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use
-cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an
-environment, there are additional security principles to be considered. These principles, see the table below, are
+For services deployed on hybrid multi-cloud environments, the security responsibility can be
+delegated to cloud service providers, but the Telco operator is always accountable for its
+customers data protection (at rest, in transit, and in use) and for the security posture of
+the deployments. It implies that a consistent security posture is ensured across multiple
+cloud service providers. The white paper "Evolving 5G security for the cloud",5G Americas,
+September 2022, addresses this issue. A Mobile Network Operator (MNO) deploying 5G networks
+in hybrid multi-cloud environment is a cloud consumer and is accountable for the security
+of all layers of the cloud stack. The white paper details the cloud shared security model
+in the three cloud service models: IaaS, PaaS, and SaaS. The MNO must ensure the cloud
+service agreement articulation of the security responsibilities. The white paper also
+highlights on the importance of applying a zero trust mindset for cloud based deployment
+for RAN and core functions to secure the networks.
+
+In hybrid multi-cloud environment, there are additional security principles to be considered.
+These principles, see the table below, are
 drawn from the collaboration with the GSMA Fraud and Security Group (FASG) and the "5G security Guide",
 FS.40 v2.0 document [36].
 
@@ -737,7 +751,7 @@ Comparison of Deployment Topologies and Edge terms
 +--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+------+
 | This   | Comp-  | Stor-  | Netwo- | RTT    | Secur- | Scala- | Elast- | Resi- | Pref- | Upgr- | Open- | OPNFV | Edge |
 | Speci- | ute    | age    | rking  |        | ity    | bility | icity  | lie-  | erred | ades  | Stack | Edge  | Glo- |
-| ficat- |        |        |        |        |        |        |        | ncy   | Work- |       |       |       | ssa- | 
+| ficat- |        |        |        |        |        |        |        | ncy   | Work- |       |       |       | ssa- |
 | ion    |        |        |        |        |        |        |        |       | load  |       |       |       | ry   |
 |        |        |        |        |        |        |        |        |       | Arch- |       |       |       |      |
 |        |        |        |        |        |        |        |        |       | itec- |       |       |       |      |
@@ -787,13 +801,13 @@ Comparison of Deployment Topologies and Edge terms
 |        |        |        |        |        |        |        |        | HA    |       |       |       |       |      |
 +--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+------+
 | Edge,  | 10's,  | 100    | 50 Gb- | ~5 ms  | Low    | Horiz- | Rapid  | Appl- | Micr- | Firm- | Far   | Medi- | Acc- |
-| Fixed  | Some   | TB,    | ps,    |        | Level  | ontal  | spin   | icat- | oser- | ware: | Edge  | um    | ess  |  
-| /      | Varia- | Stand- | Stand- |        | of     | but    | up     | ions  | vices | When  | Site  | Edge  | Edge | 
-| Mobile | bili-  | ardis- | ardi-  |        | Trust  | highly | (when  | desi- | bas-  | requ- |       |       | /    | 
-|        | ty,    | ed,    | sed    |        |        | const- | possi- | gned  | ed,   | ired, |       |       | Agg- | 
-|        | >=1    | NVMe   |        |        |        | rained | ble)   | for   | Stat- | Plat- |       |       | rega-| 
-|        | CPU,   | on     |        |        |        | scal-  | and    | resi- | ele-  | form  |       |       | tion | 
-|        | >10    | PCIe,  |        |        |        | ing,   | down   | lien- | ss,   | SW:   |       |       | Edge | 
+| Fixed  | Some   | TB,    | ps,    |        | Level  | ontal  | spin   | icat- | oser- | ware: | Edge  | um    | ess  |
+| /      | Varia- | Stand- | Stand- |        | of     | but    | up     | ions  | vices | When  | Site  | Edge  | Edge |
+| Mobile | bili-  | ardis- | ardi-  |        | Trust  | highly | (when  | desi- | bas-  | requ- |       |       | /    |
+|        | ty,    | ed,    | sed    |        |        | const- | possi- | gned  | ed,   | ired, |       |       | Agg- |
+|        | >=1    | NVMe   |        |        |        | rained | ble)   | for   | Stat- | Plat- |       |       | rega-|
+|        | CPU,   | on     |        |        |        | scal-  | and    | resi- | ele-  | form  |       |       | tion |
+|        | >10    | PCIe,  |        |        |        | ing,   | down   | lien- | ss,   | SW:   |       |       | Edge |
 |        | cores  | Perma- |        |        |        | if any |        | cy    | Host- | CD    |       |       |      |
 |        | / CPU  | nence  |        |        |        |        |        | agai- | ed on |       |       |       |      |
 |        |        | /      |        |        |        |        |        | nst   | Cont- |       |       |       |      |
