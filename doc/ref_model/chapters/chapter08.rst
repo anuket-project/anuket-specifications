@@ -518,7 +518,7 @@ For services deployed on hybrid multi-cloud environments, the security responsib
 delegated to cloud service providers, but the Telco operator is always accountable for its
 customers data protection (at rest, in transit, and in use) and for the security posture of
 the deployments. It implies that a consistent security posture is ensured across multiple
-cloud service providers. The white paper "Evolving 5G security for the cloud",5G Americas,
+cloud service providers. The white paper "Evolving 5G security for the cloud", 5G Americas,
 September 2022, addresses this issue. A Mobile Network Operator (MNO) deploying 5G networks
 in hybrid multi-cloud environment is a cloud consumer and is accountable for the security
 of all layers of the cloud stack. The white paper details the cloud shared security model
