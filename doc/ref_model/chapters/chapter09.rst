@@ -35,6 +35,9 @@ Capacity Management                    Configuration      Fulfilment Capacity Ma
 Infrastructure Lifecycle Model
 ------------------------------
 
+The model discussed in this chapter is focused on the Cloud Infrastructure lifecyle. It provides a complementary view to 
+the cloud consumption model presented in Chapter 8.
+
 The following diagrams provide mapping between different stages of the infrastructure lifecycle across all layers of the
 stack, to owners of infrastructure and cloud and the tenant as the consumer of the cloud services, in three very
 different scenarios: applications running as containers within virtual machines (CaaS on IaaS scenario), application
