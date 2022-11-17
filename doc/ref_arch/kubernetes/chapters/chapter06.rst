@@ -124,7 +124,7 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
        space-selector>`__
      -
      - Should verify ResourceQuota with cross namespace pod affinity scope using scope-selectors
-   * - Feature:Feature:`PodPriority <https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/>`__
+   * - Feature:`PodPriority <https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/>`__
      - X
      - Verify ResourceQuota's priority class scope against a pod with different priority class
    * - Feature:ScopeSelectors
