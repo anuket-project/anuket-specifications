@@ -189,7 +189,7 @@ Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Br
 these interface points need to provide are defined by the :numref:`Multi-Cloud Interactions Model` below. This provides
 a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-02.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-03.png
    :name: Multi-Cloud Interactions Model
    :alt: Multi-Cloud Interactions Model
 
@@ -206,13 +206,18 @@ The model defines the following core roles:
 
 The set of high level interactions cover:
 
-- Manage Account - covering Account, Users, Subscription, Billing
+- Manage Account & Catalog - covering Account, Users, Subscription, Billing & Catalog of Available Services
 - Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge/Cloud Connection Configuration,
   Connection Security Profile
 - Manage Resource - Resource Pool Management, VM/VNF Management (CPU, Memory, Storage, Network), Image Repository
   Management, Storage Management, VNF/CNF LCM, Monitor Resources
 - Manage App/VNF - Image/Container/Registry Management, Deploy/Configure/Scale/Start/Stop App/VNF, Monitor App/VNFs
 - Transactions / Conversations - Use Communications Services, Use Edge Applications Services, Use Cloud Services
+
+This model, its actors (roles), and the interactions discussed below, are focused on the provision and 
+consumption of cloud services in different stereo-typical deployment scenarios: IaaS, SaaS, CaaS, and Edge. The model 
+presented in Chapter 9 deals with the cloud build and maintenance processes in different scenarios. It also defines
+the boundaries of the automation domains. These two views complement each other.
 
 Stereo-Typical Scenarios
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -223,7 +228,7 @@ scenarios help highlight needs for the Cloud Service Broker and Cloud Resources 
 :numref:`Conceptual Architecture of a Telco Operator Platform`) and hence extent of orchestration required to manage the
 interactions.
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-03.png
    :name: Simple Stereo-Typical Interactions
    :alt: Simple Stereo-Typical Interactions
 
@@ -258,7 +263,7 @@ The following patterns are visible:
 
 A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in the following diagram:
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-02.png
    :name: Disaggregated SaaS Stereo-Typical Interaction
    :alt: Disaggregated SaaS Stereo-Typical Interaction
 
@@ -282,13 +287,13 @@ The different means of integrating with and managing Cloud Providers is broadly 
 
 The API and Cloud Brokerage models are illustrated in the following diagrams:
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-02.png
    :name: API Brokerage Multi-Cloud Stereo-Typical Interaction
    :alt: API Brokerage Multi-Cloud Stereo-Typical Interaction
 
    API Brokerage Multi-Cloud Stereo-Typical Interaction
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-01.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-02.png
    :name: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
    :alt: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
 
@@ -509,12 +514,26 @@ Aspects of Multi-Cloud Security
 Cloud infrastructures, emerging as a key element in the telco operator ecosystem, are part of the attack surface
 landscape. This is particularly worrying with the 5G rollout becoming a critical business necessity. It is important to
 be vigilant of Cloud-focused threats and associated adversarial behaviours, methods, tools, and strategies that cyber
-threat actors use.
+threat actors use. In the multi-cloud ecosystem comprised of different security postures and policies,
+network domains, products, and business partnerships, the responsibility for managing these different
+cloud environments necessary to support 5G use cases falls to different enterprises, creating
+new levels of complexities and a new range of security risks.
 
-In the multi-cloud ecosystem comprised of different security postures and policies, network domains, products, and
-business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use
-cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an
-environment, there are additional security principles to be considered. These principles, see the table below, are
+For services deployed on hybrid multi-cloud environments, the security responsibility can be
+delegated to cloud service providers, but the Telco operator is always accountable for its
+customers data protection (at rest, in transit, and in use) and for the security posture of
+the deployments. It implies that a consistent security posture is ensured across multiple
+cloud service providers. The white paper "Evolving 5G security for the cloud", 5G Americas,
+September 2022, addresses this issue. A Mobile Network Operator (MNO) deploying 5G networks
+in hybrid multi-cloud environment is a cloud consumer and is accountable for the security
+of all layers of the cloud stack. The white paper details the cloud shared security model
+in the three cloud service models: IaaS, PaaS, and SaaS. The MNO must ensure the cloud
+service agreement articulation of the security responsibilities. The white paper also
+highlights on the importance of applying a zero trust mindset for cloud based deployment
+for RAN and core functions to secure the networks.
+
+In hybrid multi-cloud environment, there are additional security principles to be considered.
+These principles, see the table below, are
 drawn from the collaboration with the GSMA Fraud and Security Group (FASG) and the "5G security Guide",
 FS.40 v2.0 document [36].
 
@@ -737,7 +756,7 @@ Comparison of Deployment Topologies and Edge terms
 +--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+------+
 | This   | Comp-  | Stor-  | Netwo- | RTT    | Secur- | Scala- | Elast- | Resi- | Pref- | Upgr- | Open- | OPNFV | Edge |
 | Speci- | ute    | age    | rking  |        | ity    | bility | icity  | lie-  | erred | ades  | Stack | Edge  | Glo- |
-| ficat- |        |        |        |        |        |        |        | ncy   | Work- |       |       |       | ssa- | 
+| ficat- |        |        |        |        |        |        |        | ncy   | Work- |       |       |       | ssa- |
 | ion    |        |        |        |        |        |        |        |       | load  |       |       |       | ry   |
 |        |        |        |        |        |        |        |        |       | Arch- |       |       |       |      |
 |        |        |        |        |        |        |        |        |       | itec- |       |       |       |      |
@@ -787,13 +806,13 @@ Comparison of Deployment Topologies and Edge terms
 |        |        |        |        |        |        |        |        | HA    |       |       |       |       |      |
 +--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+------+
 | Edge,  | 10's,  | 100    | 50 Gb- | ~5 ms  | Low    | Horiz- | Rapid  | Appl- | Micr- | Firm- | Far   | Medi- | Acc- |
-| Fixed  | Some   | TB,    | ps,    |        | Level  | ontal  | spin   | icat- | oser- | ware: | Edge  | um    | ess  |  
-| /      | Varia- | Stand- | Stand- |        | of     | but    | up     | ions  | vices | When  | Site  | Edge  | Edge | 
-| Mobile | bili-  | ardis- | ardi-  |        | Trust  | highly | (when  | desi- | bas-  | requ- |       |       | /    | 
-|        | ty,    | ed,    | sed    |        |        | const- | possi- | gned  | ed,   | ired, |       |       | Agg- | 
-|        | >=1    | NVMe   |        |        |        | rained | ble)   | for   | Stat- | Plat- |       |       | rega-| 
-|        | CPU,   | on     |        |        |        | scal-  | and    | resi- | ele-  | form  |       |       | tion | 
-|        | >10    | PCIe,  |        |        |        | ing,   | down   | lien- | ss,   | SW:   |       |       | Edge | 
+| Fixed  | Some   | TB,    | ps,    |        | Level  | ontal  | spin   | icat- | oser- | ware: | Edge  | um    | ess  |
+| /      | Varia- | Stand- | Stand- |        | of     | but    | up     | ions  | vices | When  | Site  | Edge  | Edge |
+| Mobile | bili-  | ardis- | ardi-  |        | Trust  | highly | (when  | desi- | bas-  | requ- |       |       | /    |
+|        | ty,    | ed,    | sed    |        |        | const- | possi- | gned  | ed,   | ired, |       |       | Agg- |
+|        | >=1    | NVMe   |        |        |        | rained | ble)   | for   | Stat- | Plat- |       |       | rega-|
+|        | CPU,   | on     |        |        |        | scal-  | and    | resi- | ele-  | form  |       |       | tion |
+|        | >10    | PCIe,  |        |        |        | ing,   | down   | lien- | ss,   | SW:   |       |       | Edge |
 |        | cores  | Perma- |        |        |        | if any |        | cy    | Host- | CD    |       |       |      |
 |        | / CPU  | nence  |        |        |        |        |        | agai- | ed on |       |       |       |      |
 |        |        | /      |        |        |        |        |        | nst   | Cont- |       |       |       |      |

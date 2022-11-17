@@ -32,6 +32,61 @@ Capacity Management                    Configuration      Fulfilment Capacity Ma
    Cloud Infrastructure Lifecycle Management capabilities to any of these frameworks is beyond the scope of this
    document.
 
+Infrastructure Lifecycle Model
+------------------------------
+
+The model discussed in this chapter is focused on the Cloud Infrastructure lifecyle. It provides a complementary view to 
+the cloud consumption model presented in Chapter 8.
+
+The following diagrams provide mapping between different stages of the infrastructure lifecycle across all layers of the
+stack, to owners of infrastructure and cloud and the tenant as the consumer of the cloud services, in three very
+different scenarios: applications running as containers within virtual machines (CaaS on IaaS scenario), application
+running as containers on bare metal (CaaS on BM scenario) and a more traditional view of applications running as VNFs
+within virtual machines (IaaS scenario). The diagrams define also the scope of the Infrastructure LCM Automation for each of
+these scenarios. The dotted lines symbolise the interactions between the layers of each of the model.
+
+.. figure:: ../figures/RM-Ch09-LCM-Automation-CaaS-on-IaaS.png
+   :name: Infrastructure Automation in CaaS on IaaS scenario
+   :alt: "Infrastructure Automation in CaaS on IaaS scenario"
+
+   Infrastructure LCM in CaaS on IaaS scenario
+
+In the CaaS on IaaS scenario, the Infrastructure LCM scope covers the Site/Physical layer,  IaaS layer and CaaS
+layer. From the lifecycle perspective (the left hand side of the diagram), Site/Physical layer is entirely owned by the
+Infrastructure Owner, the virtualised infrastructure layer (IaaS) is shared between the Infrastructure Owner and the
+Cloud Provider. Similarly,  the container orchestration layer (CaaS) is shared between the Cloud Provider and the
+Cloud Consumer / Tenant.   These relationships can be illustrated by a situation, where a telecom operator owns the
+physical infrastructure on which an external cloud provider runs the virtualisation software (hypervisor).
+Sharing CaaS layer between the Cloud Provider and the Cloud Consumer reflects the fact that the container
+management/orchestration software like Kubernetes is lifecycled by the Cloud Provider (for instance when scaling out
+containers) but also by the Cloud Consumer because of the very close lifecycle relationship between an application and
+a container in this model. For instance, destroying an application means also destroying related containers, Hence CaaS
+can be also considered as a part of the Application Orchestration layer.
+
+.. figure:: ../figures/RM-Ch09-LCM-Automation-CNF-on-BM.png
+   :name: Infrastructure Automation in CaaS on BM scenario
+   :alt: "Infrastructure Automation in CaaS on BM scenario"
+
+   Infrastructure LCM in CaaS on BM scenario
+
+The main and obvious difference in the CaaS on BM scenario is lack of the IaaS layer, and hence the scope of the
+Infrastructure LCM and its automation is limited to only two layers: Site/Physical and CaaS.  From the lifecycle ownership
+perspective, the CaaS layer is now shared not only between the Cloud Provider and the Cloud Consumer (for the same
+reasons as in the CaaS on IaaS scenario) but also with the Infrastructure Owner.  The latter observation is related to
+the fact that in the bare metal deployments lacking the hypervisor separation, the CaaS layer is much more dependent on
+the underlying physical infrastructure.
+
+.. figure:: ../figures/RM-Ch09-LCM-Automation-VNF-on-IaaS.png
+   :name: Infrastructure Automation in IaaS scenario
+   :alt: "Infrastructure Automation in IaaS scenario"
+
+   Infrastructure LCM in IaaS scenario
+
+In this "classical" scenario the scope of the Infrastructure LCM and its automation is defined by the Site/Physical and IaaS layers.
+From the lifecycle perspective the ownership of IaaS is shared between the Infrastructure Owner and the Cloud Provider.
+This scenario is characterised by a clear separation between the lifecycle (and hence its automation) of infrastructure
+and the application lifecycle owned by the Cloud Consumer / Tenant in the role of the Application Owner.
+
 Configuration and Lifecycle Management
 --------------------------------------
 
@@ -120,6 +175,20 @@ Infrastructure Hardware   Redfish API                  DMTF RedFish specificatio
 
 **Table 9-3:** Interface Standards for Configuration Management
 
+Capacity Management
+-------------------
+
+Capacity Management is a potentially wide ranging process that includes taking demand across lines of business,
+analysing data about the infrastructure that is running, and calculating when additional infrastructure might be
+required, or when infrastructure might need to be decommissioned.
+
+As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration
+and Lifecycle Management sections below. The Assurance section deals with the collection of data - there is no reason to
+consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the
+Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware,
+software, and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
+
+
 Assurance
 ---------
 
@@ -155,19 +224,227 @@ Note that the above only refers to components - it is expected that any "service
 further requirements onto the infrastructure, but rather takes the data extracted and builds service models based on the
 knowledge it has of the services being offered.
 
-Capacity Management
--------------------
+Telemetry and Observability
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Capacity Management is a potentially wide ranging process that includes taking demand across lines of business,
-analysing data about the infrastructure that is running, and calculating when additional infrastructure might be
-required, or when infrastructure might need to be decommissioned.
+Operating complex distributed systems, such as a Telco network, is a challenging job that is becoming
+even harder as the technology sophistication and the operational quality requirements grow. There are multiple reasons
+why it is so, but they originate in the nature of the system concept. To reach the ability of providing Telco services,
+a complex system is decomposed into multiple different functional blocks, called network functions. Internal
+communication between the diverse network functions of a distributed system is based on message exchange. To formalize
+this communication, clearly defined interfaces are introduced, and protocols designed. Even though the architecture of
+a Telco network is systematically formalized on the worldwide level, heterogeneity of services, functions, interfaces,
+and protocols cannot be avoided. By adding the multi-vendor approach in implementation of Telco networks, the outcome is
+a system with a remarkably high level of complexity that requires significant effort for managing and operating
+it.
 
-As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration
-and Lifecycle Management sections above. The Assurance section deals with the collection of data - there is no reason to
-consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the
-Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware,
-software, and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
+A large and complex ecosystem of end-user services requires a formalized approach
+for achieving high reliability and scalability. The discipline which applies well-known practices of
+software engineering to operations is called Site Reliability Engineering. It was conceived at Google, as a means to
+overcome limitations of the common DevOps approach.
 
+Common support system (such as, OSS – Operation Support System, BSS – Business Support System) requirements are redefined,
+driven by introduction of new technologies in computing infrastructure and modern data centres with abstraction of
+resources – known as virtualization and cloud computing. This brings many advantages – such as easy scaling, error
+recovery, reaching a high level of operational autonomy etc., but also many new challenges in the Telecom network
+management space. Those novel challenges are mostly directed towards the dynamical nature of the system, orientation
+towards microservices instead of a silo approach, and huge amounts of data which have to be processed in order to
+understand the internal status of the system. Hence the need of improved ways to monitor systems - observability.
+
+Why Observability
+^^^^^^^^^^^^^^^^^
+
+Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act
+fast, ideally pro-actively before users notice and, most importantly, before they call the help desk.
+
+Common approach to understand the aforementioned Telco network status in conventional non-cloud environments is referred
+to as monitoring. Usually it would include metric information related to resources, such as CPU, memory, HDD, Network
+I/O, but also business related technical key performance indicators (KPIs) such as number of active users, number of
+registrations, etc. This monitoring data are represented as a time series, retrieved in regular intervals, usually with
+granulation of 5 to 30 minutes. In addition, asynchronous messages such as alarms and notifications are exposed by the
+monitored systems in order to provide information about foreseen situations. It is worth noting that metric data provide
+approximation of the health of the system, while the alarms and notifications try to bring more information about the
+problem. In general, they provide information about known unknowns - anticipated situations occurring at random time.
+However, this would very rarely be sufficient information for understanding the problem (RCA - root cause analysis),
+therefore it is necessary to retrieve more data related to the problem - logs and network signalization. Logs are
+application output information to get more granular information about the code execution. Network packet captures/traces
+are useful since telecommunication networks are distributed systems where components communicate utilizing various
+protocols, and the communication can be examined to get details of the problem.
+
+As the transition towards cloud environments takes place simultaneously with the introduction of DevOps mindset, the
+conventional monitoring approach becomes suboptimal. Cloud environments allow greater flexibility as the microservice
+architecture is embraced to bring improvements in operability, therefore the automation can be utilized to a higher
+extent than ever before. Automation in telecom networks usually supposes actions based on decisions derived from system
+output data (system observation). In order to derive useful decisions, data with rich context are necessary. Obviously,
+the conventional monitoring approach has to be improved in order to retrieve sufficient data, not only from the wider
+context, but also without delays - as soon as data are produced or available. The new, enhanced approach was introduced
+as a concept of observability, borrowed from the control theory which states that it is possible to make conclusions
+about a system's internal state based on external outputs.
+
+This requires the collection of alarms and telemetry data from the physical layer (wires), the cloud infrastructure up
+to the network, applications and services (virtualized network functions (VNF)) running on top of the cloud
+infrastructure, typically isolated by tenants.
+
+Long term trending data are essential for capacity planning purposes and typically collected, aggregated and kept over
+the full lifespan. To keep the amount of data collected manageable, automatic data reduction algorithms are typically
+used, e.g. by merging data points from the smallest intervals to more granular intervals.
+
+The telco cloud infrastructure typically consists of one or more regional data centres, central offices, and edge sites.
+These are managed from redundant central management sites, each hosted in their own data centres.
+
+The network services and applications deployed on a Telco Cloud, and the Telco Cloud infrastructure are usually managed
+by separate teams, and, thus, the monitoring solution must be capable of keeping the access to the monitoring data
+isolated between tenants and Cloud Infrastructure operations. Some monitoring data from the Cloud Infrastructure layer
+must selectively be available to tenant monitoring applications in order to correlate, say, the Network
+Functions/Services data with the underlying cloud infrastructure data.
+
+What to observe
+^^^^^^^^^^^^^^^
+
+Typically, when it comes to data collection, three questions arise:
+
+1. What data to collect?
+2. Where to send the data?
+3. Which protocol/interface/format to use?
+
+What data to collect
+^^^^^^^^^^^^^^^^^^^^
+
+Assessment on what data to collect should start by iterating over the physical and virtual infrastructure components:
+
+- Network Services across sites and tenants
+- Virtualized functions per site and tenant
+- Individual Virtual Machines and Containers
+- Virtualization infrastructure components
+- Physical servers (compute) and network elements
+- Tool servers with their applications (DNS, Identity Management, Zero Touch Provisioning, etc.)
+- Cabling
+
+Data categories
+^^^^^^^^^^^^^^^
+
+There are four main observability categories: metrics, events, logs and traces:
+
+1. **Metrics** or telemetry report counters and gauge levels and can either be pulled periodically e.g. via SNMP or
+   REST, or pushed as streams using gRPC, NETCONF, which receivers registered for certain sensors, or by registering as
+   a publisher to a message broker. These messages must be structured in order to get parsed successfully.
+2. **Events** indicate state variance beyond some specified threshold, are categorized by severity, often with a
+   description of what just
+   happened. Most common transport protocol is SNMP with its trap and inform messages). These messages are generated by
+   network elements (physical and logical). In addition, the messages can also be generated by monitoring applications
+   with statically configured thresholds or dynamically by Machine Learning (ML) algorithms - generally, they are
+   describing anomalies.
+3. **Logs** are a record messages generated by software for most devices (compute and network) and virtual
+   applications and transported over SYSLOG and tend to come in high volumes.
+4. **Traces** are end-to-end signalling messages (events) created to fulfil execution of requests on
+   the distributed system services. OTHER WORDS: Traces are all action points executed in
+   order to provide response to the request set to the distributed system service. Even the call
+   can be thought of as a request which starts by INVITE message of the SIP protocol.
+
+Where to send the data
+^^^^^^^^^^^^^^^^^^^^^^
+
+If the observability data have to be sent from their sources (or producers) to specific destinations (or consumers),
+then this creates high degree of dependency between producers and consumers, and is extremely prone to errors,
+especially in case of configuration changes. Ideally, the data producers must not be impacted with any change in the
+data consumers and vice versa.
+This is achieved by decoupling data producers from data consumers through the use of Brokers. The Producers always send
+their data to the same endpoint - the Broker. While the Consumers register with the Broker for data that is of interest
+to them and always receive their data from the Broker.
+
+Which protocol, interface, and format to use
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While protocols and interfaces are dictated by the selection of the message broker (common data bus) system, data format
+is usually customizable according to the needs of users. The concept of Schema Registry mechanism, well known in the
+world of big data, is helpful here to make sure that message structures and formats are consistently used.
+
+The Architecture
+^^^^^^^^^^^^^^^^^
+
+In geographically dispersed large cloud deployments, a given telco cloud may have several cloud infrastructure
+components as well a large set of virtualized workloads (VNF/CNFs). It is important to monitor all of these workloads
+and infrastructure components. Furthermore, it is even more important to be able to correlate between the metrics
+provided by these entities to determine the performance and/or issues in such deployments.
+
+The cloud deployment tends to shrink and expand based upon the customer demand. Therefore, an architecture is required
+that can scale on demand and does not force a strong tie between various entities. This means, the workloads and cloud
+infrastructure components that provide telemetry and performance metrics must not be burdened to discover each other.
+The capacity (e.g. speed, storage) of one component must not force overrun or underrun situations that would cause
+critical data to be lost or delayed to a point to render them useless.
+
+Operators in charge of the cloud infrastructure (physical infra plus virtualization platform) require very detailed
+alarms and metrics to efficiently run their platform. While they need indicators about how well or poorly individual
+virtual machines and containers run, they don’t need a view inside these workloads. In fact, what and how workloads do
+should not be accessible to NFVI operators. The architecture must allow for different consumers to grant or deny access
+to available resources.
+
+Multiple workloads or network services can be deployed onto one or more sites. These workloads require logical
+separation so that their metrics don’t mix by accident or simply based on security and privacy requirements. This is
+achieved by deploying these workloads within their own tenant space. All virtualization platforms offer such isolation
+down to virtual networks per tenant.
+
+.. _push-vs-pull:
+
+Push vs. Pull
+^^^^^^^^^^^^^
+
+Two widely deployed models for providing telemetry data are pull and push.
+
+Pull Model
+''''''''''
+
+Typical characteristics of a pull model are:
+
+- The consumers are required to discover the producers of the data
+- Once the producers are identified, there should be a tight relationship (synchronization) between the producer and
+  consumer. This makes the systems very complex in terms of configuration and management. For example, if a producer
+  moves to a different location or reboots/restarts, the consumer must re-discover the producer and bind their
+  relationship again.
+- Data are pulled explicitly by the consumer. The consumer must have appropriate bandwidth, compute power, and storage
+  to deal with this data - example SNMP pull/walks
+- A problem with Pull is that both consumers and producers have to have means for load/performance regulation in cases
+  where the set of consumers overload the pull request serving capabilities of the producer.
+
+Push Model
+''''''''''
+
+Typical characteristics of a push model are:
+
+- Declarative definition of destination - The producers of data know explicitly where to stream/push their data
+- A “well known” data broker is utilized - all consumers and producers know about it through declarative definition.
+  The data broker can be a bus such as RabitMQ, Apache Kafka, Apache Pulsar
+- No restrictions on the bandwidth or data storage constraints on producers or consumers. Producers produce the data and
+  stream/push it to the broker and consumers pull the data from the broker. No explicit sync is required between
+  producers and consumers.
+- LCM (Life Cycle Management) events, such as moves, reboot/restarts, of consumers or producers have no impact on
+  others.
+- Producers and consumers can be added/removed at will. No impact on the system. This makes this model very flexible and
+  scalable and better suited for large (or small) geographically dispersed telco clouds.
+- Example of push model are gRPC, SNMP traps, syslogs
+
+Producers, Consumers, and Message broker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In an ideal case, observability data will be sent directly to the message broker in agreed format, so that consumers can
+take and "understand“ the data without additional logic. Message brokers do not limit on the data types:
+
+Enforcing correct message structures (carrying the data) is performed using Schema Registry concepts. Even though it is
+not necessary to use a Schema Registry, it is highly recommended.
+
+.. figure:: ../figures/RM-Ch09-Fig-Producers-Consumers.png
+   :name: Producers and Consumers
+   :alt: Producers and Consumers
+
+   Producers and Consumers
+
+.. figure:: ../figures/RM-Ch09-Fig-Broker-Service.png
+   :alt: Figure 9-3: Broker Services
+   :name: Broker Services
+
+   Broker Services
+   
+   
 Automation
 ----------
 
@@ -214,54 +491,7 @@ Key benefits of the Infrastructure LCM Automation are:
 Infrastructure LCM Automation Framework
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
-The following diagrams provide mapping between different stages of the lifecycle automation across all layers of the
-stack, to owners of infrastructure and cloud and the tenant as the consumer of the cloud services, in three very
-different scenarios: applications running as containers within virtual machines (CaaS on IaaS scenario), application
-running as containers on bare metal (CaaS on BM scenario) and a more traditional view of applications running as VNFs
-within virtual machines (IaaS scenario). The diagrams define the scope of the Infrastructure LCM Automation for each of
-these scenarios. The dotted lines symbolise the interactions between the layers of each of the model.
 
-.. figure:: ../figures/RM-Ch09-LCM-Automation-CaaS-on-IaaS.png
-   :name: Infrastructure Automation in CaaS on IaaS scenario
-   :alt: "Infrastructure Automation in CaaS on IaaS scenario"
-
-   Infrastructure Automation in CaaS on IaaS scenario
-
-In the CaaS on IaaS scenario, the Infrastructure Automation scope covers the Site/Physical layer,  IaaS layer and CaaS
-layer. From the lifecycle perspective (the left hand side of the diagram), Site/Physical layer is entirely owned by the
-Infrastructure Owner, the virtualised infrastructure layer (IaaS) is shared between the Infrastructure Owner and the
-Cloud Provider. Similarly,  the container orchestration layer (CaaS) is shared between the Cloud Provider and the
-Cloud Consumer / Tenant.   These relationships can be illustrated by a situation, where a telecom operator owns the
-physical infrastructure on which an external cloud provider runs the virtualisation software (hypervisor).
-Sharing CaaS layer between the Cloud Provider and the Cloud Consumer reflects the fact that the container
-management/orchestration software like Kubernetes is lifecycled by the Cloud Provider (for instance when scaling out
-containers) but also by the Cloud Consumer because of the very close lifecycle relationship between an application and
-a container in this model. For instance, destroying an application means also destroying related containers, Hence CaaS
-can be also considered as a part of the Application Orchestration layer.
-
-.. figure:: ../figures/RM-Ch09-LCM-Automation-CNF-on-BM.png
-   :name: Infrastructure Automation in CaaS on BM scenario
-   :alt: "Infrastructure Automation in CaaS on BM scenario"
-
-   Infrastructure Automation in CaaS on BM scenario
-
-The main and obvious difference in the CaaS on BM scenario is lack of the IaaS layer, and hence the scope of the
-Infrastructure Automation is limited to only two layers: Site/Physical and CaaS.  From the lifecycle ownership
-perspective, the CaaS layer is now shared not only between the Cloud Provider and the Cloud Consumer (for the same
-reasons as in the CaaS on IaaS scenario) but also with the Infrastructure Owner.  The latter observation is related to
-the fact that in the bare metal deployments lacking the hypervisor separation, the CaaS layer is much more dependent on
-the underlying physical infrastructure.
-
-.. figure:: ../figures/RM-Ch09-LCM-Automation-VNF-on-IaaS.png
-   :name: Infrastructure Automation in IaaS scenario
-   :alt: "Infrastructure Automation in IaaS scenario"
-
-   Infrastructure Automation in IaaS scenario
-
-In this "classical" scenario the scope of the Infrastructure Automation is defined by the Site/Physical and IaaS layers.
-From the lifecycle perspective the ownership of IaaS is shared between the Infrastructure Owner and the Cloud Provider.
-This scenario is characterised by a clear separation between the lifecycle (and hence its automation) of infrastructure
-and the application lifecycle owned by the Cloud Consumer / Tenant in the role of the Application Owner.
 
 Essential foundation functional blocks for Infrastructure LCM automation:
  
@@ -565,222 +795,3 @@ Topics include:
    - Using a proto- or Tenant provided HEAT-template/Helm-chart for a NF and perform sanity test (e.g., using scripts
      test creation of VM/container, ping test, etc.)
 
-Telemetry and Observability
----------------------------
-
-Operating complex distributed systems, such as a Telco network, is a demanding and challenging task that is continuously
-being increased as the network complexity and the production excellence requirements grow. There are multiple reasons
-why it is so, but they originate in the nature of the system concept. To reach the ability of providing Telco services,
-a complex system is decomposed into multiple different functional blocks, called network functions. Internal
-communication between the diverse network functions of a distributed system is based on message exchange. To formalize
-this communication, clearly defined interfaces are introduced, and protocols designed. Even though the architecture of
-a Telco network is systematically formalized on the worldwide level, heterogeneity of services, functions, interfaces,
-and protocols cannot be avoided. By adding the multi-vendor approach in implementation of Telco networks, the outcome is
-indeed a system with remarkably high level of complexity which requires significant efforts for managing and operating
-it.
-
-To ensure proper support and flawless work in the large ecosystem of end user services, a formalized approach directed
-towards high reliability and scalability of systems is required. The discipline which applies well known practices of
-software engineering to operations is called Site Reliability Engineering. It was conceived at Google, as a means to
-overcome limitations of the common DevOps approach.
-
-Common supporting system (OSS – Operation Support System, BSS – Business Support System) requirements are redefined,
-driven by introduction of new technologies in computing infrastructure and modern data centres with abstraction of
-resources – known as virtualization and cloud computing. This brings many advantages – such as easy scaling, error
-recovery, reaching a high level of operational autonomy etc., but also many new challenges in the Telecom network
-management space. Those novel challenges are mostly directed towards the dynamical nature of the system, orientation
-towards microservices instead of a silo approach, and huge amounts of data which have to be processed in order to
-understand the internal status of the system. Hence the need of improved ways to monitor systems - observability.
-
-Why Observability
-~~~~~~~~~~~~~~~~~
-
-Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act
-fast, ideally pro-actively before users notice and, most importantly, before they call the help desk.
-
-Common approach to understand the aforementioned Telco network status in conventional non-cloud environments is referred
-to as monitoring. Usually it would include metric information related to resources, such as CPU, memory, HDD, Network
-I/O, but also business related technical key performance indicators (KPIs) such as number of active users, number of
-registrations, etc. This monitoring data are represented as a time series, retrieved in regular intervals, usually with
-granulation of 5 to 30 minutes. In addition, asynchronous messages such as alarms and notifications are exposed by the
-monitored systems in order to provide information about foreseen situations. It is worth noting that metric data provide
-approximation of the health of the system, while the alarms and notifications try to bring more information about the
-problem. In general, they provide information about known unknowns - anticipated situations occurring at random time.
-However, this would very rarely be sufficient information for understanding the problem (RCA - root cause analysis),
-therefore it is necessary to retrieve more data related to the problem - logs and network signalization. Logs are
-application output information to get more granular information about the code execution. Network packet captures/traces
-are useful since telecommunication networks are distributed systems where components communicate utilizing various
-protocols, and the communication can be examined to get details of the problem.
-
-As the transition towards cloud environments takes place simultaneously with the introduction of DevOps mindset, the
-conventional monitoring approach becomes suboptimal. Cloud environments allow greater flexibility as the microservice
-architecture is embraced to bring improvements in operability, therefore the automation can be utilized to a higher
-extent than ever before. Automation in telecom networks usually supposes actions based on decisions derived from system
-output data (system observation). In order to derive useful decisions, data with rich context are necessary. Obviously,
-the conventional monitoring approach has to be improved in order to retrieve sufficient data, not only from the wider
-context, but also without delays - as soon as data are produced or available. The new, enhanced approach was introduced
-as a concept of observability, borrowed from the control theory which states that it is possible to make conclusions
-about a system's internal state based on external outputs.
-
-This requires the collection of alarms and telemetry data from the physical layer (wires), the cloud infrastructure up
-to the network, applications and services (virtualized network functions (VNF)) running on top of the cloud
-infrastructure, typically isolated by tenants.
-
-Long term trending data are essential for capacity planning purposes and typically collected, aggregated and kept over
-the full lifespan. To keep the amount of data collected manageable, automatic data reduction algorithms are typically
-used, e.g. by merging data points from the smallest intervals to more granular intervals.
-
-The telco cloud infrastructure typically consists of one or more regional data centres, central offices, and edge sites.
-These are managed from redundant central management sites, each hosted in their own data centres.
-
-The network services and applications deployed on a Telco Cloud, and the Telco Cloud infrastructure are usually managed
-by separate teams, and, thus, the monitoring solution must be capable of keeping the access to the monitoring data
-isolated between tenants and Cloud Infrastructure operations. Some monitoring data from the Cloud Infrastructure layer
-must selectively be available to tenant monitoring applications in order to correlate, say, the Network
-Functions/Services data with the underlying cloud infrastructure data.
-
-What to observe
-^^^^^^^^^^^^^^^
-
-Typically, when it comes to data collection, three questions arise:
-
-1. What data to collect?
-2. Where to send the data?
-3. Which protocol/interface/format to use?
-
-What data to collect
-^^^^^^^^^^^^^^^^^^^^
-
-Assessment on what data to collect should start by iterating over the physical and virtual infrastructure components:
-
-- Network Services across sites and tenants
-- Virtualized functions per site and tenant
-- Individual Virtual Machines and Containers
-- Virtualization infrastructure components
-- Physical servers (compute) and network elements
-- Tool servers with their applications (DNS, Identity Management, Zero Touch Provisioning, etc.)
-- Cabling
-
-Data categories
-^^^^^^^^^^^^^^^
-
-There are four main observability categories: metrics, events, logs and traces:
-
-1. **Metrics** or telemetry report counters and gauge levels and can either be pulled periodically e.g. via SNMP or
-   REST, or pushed as streams using gRPC, NETCONF, which receivers registered for certain sensors, or by registering as
-   a publisher to a message broker. These messages must be structured in order to get parsed successfully.
-2. **Events** indicate state variance beyond some specified threshold, are categorized by severity, often with a
-   description of what just
-   happened. Most common transport protocol is SNMP with its trap and inform messages). These messages are generated by
-   network elements (physical and logical). In addition, the messages can also be generated by monitoring applications
-   with statically configured thresholds or dynamically by Machine Learning (ML) algorithms - generally, they are
-   describing anomalies.
-3. **Logs** are a record messages generated by software for most devices (compute and network) and virtual
-   applications and transported over SYSLOG and tend to come in high volumes.
-4. **Traces** are end-to-end signalling messages (events) created to fulfil execution of requests on
-   the distributed system services. OTHER WORDS: Traces are all action points executed in
-   order to provide response to the request set to the distributed system service. Even the call
-   can be thought of as a request which starts by INVITE message of the SIP protocol.
-
-Where to send the data
-^^^^^^^^^^^^^^^^^^^^^^
-
-If the observability data have to be sent from their sources (or producers) to specific destinations (or consumers),
-then this creates high degree of dependency between producers and consumers, and is extremely prone to errors,
-especially in case of configuration changes. Ideally, the data producers must not be impacted with any change in the
-data consumers and vice versa.
-This is achieved by decoupling data producers from data consumers through the use of Brokers. The Producers always send
-their data to the same endpoint - the Broker. While the Consumers register with the Broker for data that is of interest
-to them and always receive their data from the Broker.
-
-Which protocol, interface, and format to use
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-While protocols and interfaces are dictated by the selection of the message broker (common data bus) system, data format
-is usually customizable according to the needs of users. The concept of Schema Registry mechanism, well known in the
-world of big data, is helpful here to make sure that message structures and formats are consistently used.
-
-The Architecture
-~~~~~~~~~~~~~~~~
-
-In geographically dispersed large cloud deployments, a given telco cloud may have several cloud infrastructure
-components as well a large set of virtualized workloads (VNF/CNFs). It is important to monitor all of these workloads
-and infrastructure components. Furthermore, it is even more important to be able to correlate between the metrics
-provided by these entities to determine the performance and/or issues in such deployments.
-
-The cloud deployment tends to shrink and expand based upon the customer demand. Therefore, an architecture is required
-that can scale on demand and does not force a strong tie between various entities. This means, the workloads and cloud
-infrastructure components that provide telemetry and performance metrics must not be burdened to discover each other.
-The capacity (e.g. speed, storage) of one component must not force overrun or underrun situations that would cause
-critical data to be lost or delayed to a point to render them useless.
-
-Operators in charge of the cloud infrastructure (physical infra plus virtualization platform) require very detailed
-alarms and metrics to efficiently run their platform. While they need indicators about how well or poorly individual
-virtual machines and containers run, they don’t need a view inside these workloads. In fact, what and how workloads do
-should not be accessible to NFVI operators. The architecture must allow for different consumers to grant or deny access
-to available resources.
-
-Multiple workloads or network services can be deployed onto one or more sites. These workloads require logical
-separation so that their metrics don’t mix by accident or simply based on security and privacy requirements. This is
-achieved by deploying these workloads within their own tenant space. All virtualization platforms offer such isolation
-down to virtual networks per tenant.
-
-.. _push-vs-pull:
-
-Push vs. Pull
-^^^^^^^^^^^^^
-
-Two widely deployed models for providing telemetry data are pull and push.
-
-Pull Model
-''''''''''
-
-Typical characteristics of a pull model are:
-
-- The consumers are required to discover the producers of the data
-- Once the producers are identified, there should be a tight relationship (synchronization) between the producer and
-  consumer. This makes the systems very complex in terms of configuration and management. For example, if a producer
-  moves to a different location or reboots/restarts, the consumer must re-discover the producer and bind their
-  relationship again.
-- Data are pulled explicitly by the consumer. The consumer must have appropriate bandwidth, compute power, and storage
-  to deal with this data - example SNMP pull/walks
-- A problem with Pull is that both consumers and producers have to have means for load/performance regulation in cases
-  where the set of consumers overload the pull request serving capabilities of the producer.
-
-Push Model
-''''''''''
-
-Typical characteristics of a push model are:
-
-- Declarative definition of destination - The producers of data know explicitly where to stream/push their data
-- A “well known” data broker is utilized - all consumers and producers know about it through declarative definition.
-  The data broker can be a bus such as RabitMQ, Apache Kafka, Apache Pulsar
-- No restrictions on the bandwidth or data storage constraints on producers or consumers. Producers produce the data and
-  stream/push it to the broker and consumers pull the data from the broker. No explicit sync is required between
-  producers and consumers.
-- LCM (Life Cycle Management) events, such as moves, reboot/restarts, of consumers or producers have no impact on
-  others.
-- Producers and consumers can be added/removed at will. No impact on the system. This makes this model very flexible and
-  scalable and better suited for large (or small) geographically dispersed telco clouds.
-- Example of push model are gRPC, SNMP traps, syslogs
-
-Producers, Consumers, and Message broker
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-In an ideal case, observability data will be sent directly to the message broker in agreed format, so that consumers can
-take and "understand“ the data without additional logic. Message brokers do not limit on the data types:
-
-Enforcing correct message structures (carrying the data) is performed using Schema Registry concepts. Even though it is
-not necessary to use a Schema Registry, it is highly recommended.
-
-.. figure:: ../figures/RM-Ch09-Fig-Producers-Consumers.png
-   :name: Producers and Consumers
-   :alt: Producers and Consumers
-
-   Producers and Consumers
-
-.. figure:: ../figures/RM-Ch09-Fig-Broker-Service.png
-   :alt: Figure 9-3: Broker Services
-   :name: Broker Services
-
-   Broker Services

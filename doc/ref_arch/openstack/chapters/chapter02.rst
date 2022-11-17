@@ -200,7 +200,7 @@ specified below followed by networking bandwidth requirements.
      - Not detailed
 
 The required number of connection points to an instance is described in
-``e.cap.004`` `above <#2.2.1>`__. The table below specifies the required
+``e.cap.004`` above. The table below specifies the required
 bandwidth of those connection points.
 
 .. list-table:: Reference Model Requirements - Network Interface Specifications
@@ -430,8 +430,8 @@ Cloud Infrastructure Hardware Profile Requirements
      - No requirement specified
      - Not detailed
 
-Cloud Infrastructure Hardware Profile-Extensions Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cloud Infrastructure Hardware Profile Extensions Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table:: Reference Model Requirements - Cloud Infrastructure Hardware
                 Profile Extensions Requirements
@@ -553,24 +553,24 @@ System Hardening Requirements
      - Specification Reference
    * - sec.gen.001
      - Hardening
-     - The Platform **must** maintain the specified configuration
+     - The Platform **MUST** maintain the specified configuration
      - :ref:`chapters/chapter06:security lcm` and
        :ref:`chapters/chapter07:cloud infrastructure provisioning and configuration management`
    * - sec.gen.002
      - Hardening
-     - All systems part of Cloud Infrastructure **must** support hardening as
+     - All systems part of Cloud Infrastructure **MUST** support hardening as
        defined in CIS Password Policy Guide :cite:p:`cispwd`
      - :ref:`chapters/chapter06:password policy`
 
    * - sec.gen.003
      - Hardening
-     - All servers part of Cloud Infrastructure **must** support a root of
+     - All servers part of Cloud Infrastructure **MUST** support a root of
        trust and secure boot
      - :ref:`chapters/chapter06:server boot hardening`
    * - sec.gen.004
      - Hardening
      - The Operating Systems of all the servers part of Cloud Infrastructure
-       **must** be hardened by removing or disabling unnecessary services,
+       **MUST** be hardened by removing or disabling unnecessary services,
        applications and network protocols, configuring operating system user
        authentication, configuring resource controls, installing and
        configuring additional security controls where needed, and testing the
@@ -578,49 +578,49 @@ System Hardening Requirements
      - :ref:`chapters/chapter06:function and software`
    * - sec.gen.005
      - Hardening
-     - The Platform **must** support Operating System level access control
+     - The Platform **MUST** support Operating System level access control
      - :ref:`chapters/chapter06:system access`
    * - sec.gen.006
      - Hardening
-     - The Platform **must** support Secure logging. Logging with root account
-       must be prohibited when root privileges are not required
+     - The Platform **MUST** support Secure logging. Logging with root account
+       **MUST** be prohibited when root privileges are not required
      - :ref:`chapters/chapter06:system access`
    * - sec.gen.007
      - Hardening
-     - All servers part of Cloud Infrastructure **must** be Time synchronised
+     - All servers part of Cloud Infrastructure **MUST** be Time synchronised
        with authenticated Time service
      - :ref:`chapters/chapter06:security logs time synchronisation`
    * - sec.gen.008
      - Hardening
-     - All servers part of Cloud Infrastructure **must** be regularly updated
+     - All servers part of Cloud Infrastructure **MUST** be regularly updated
        to address security vulnerabilities
      - :ref:`chapters/chapter06:security lcm`
    * - sec.gen.009
      - Hardening
-     - The Platform **must** support software integrity protection and
+     - The Platform **MUST** support software integrity protection and
        verification
      - :ref:`chapters/chapter06:integrity of openstack components configuration`
    * - sec.gen.010
      - Hardening
-     - The Cloud Infrastructure **must** support encrypted storage, for
+     - The Cloud Infrastructure **MUST** support encrypted storage, for
        example, block, object and file storage, with access to encryption
        keys restricted based on a need to know
        (Controlled Access Based on the Need to Know :cite:p:`ciscontrols`)
      - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.gen.012
      - Hardening
-     - The Operator **must** ensure that only authorised actors have physical
+     - The Operator **MUST** ensure that only authorised actors have physical
        access to the underlying infrastructure
-     - This requirement's verification must be part of the organisation's security process
+     - This requirement's verification **MUST** be part of the organisation's security process
    * - sec.gen.013
      - Hardening
-     - The Platform **must** ensure that only authorised actors have logical
+     - The Platform **MUST** ensure that only authorised actors have logical
        access to the underlying infrastructure
      - :ref:`chapters/chapter06:system access`
    * - sec.gen.015
      - Hardening
-     - Any change to the Platform **must** be logged as a security event, and
-       the logged event must include the identity of the entity making the
+     - Any change to the Platform **MUST** be logged as a security event, and
+       the logged event **MUST** include the identity of the entity making the
        change, the change, the date and the time of the change
      - :ref:`chapters/chapter06:security lcm`
 
@@ -639,49 +639,49 @@ Platform and Access Requirements
      - Specification Reference
    * - sec.sys.001
      - Access
-     - The Platform **must** support authenticated and secure access to API, GUI
+     - The Platform **MUST** support authenticated and secure access to API, GUI
        and command line interfaces
      - :ref:`chapters/chapter06:rbac`
    * - sec.sys.002
      - Access
-     - The Platform **must** support Traffic Filtering for workloads
+     - The Platform **MUST** support Traffic Filtering for workloads
        (for example, Firewall)
      - :ref:`chapters/chapter06:workload security`
    * - sec.sys.003
      - Access
-     - The Platform **must** support Secure and encrypted communications, and
+     - The Platform **MUST** support Secure and encrypted communications, and
        confidentiality and integrity of network
      - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.sys.004
      - Access
-     - The Cloud Infrastructure **must** support authentication, integrity and
+     - The Cloud Infrastructure **MUST** support authentication, integrity and
        confidentiality on all network channels
      - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.sys.005
      - Access
-     - The Cloud Infrastructure **must** segregate the underlay and overlay
+     - The Cloud Infrastructure **MUST** segregate the underlay and overlay
        networks
      - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.sys.006
      - Access
-     - The Cloud Infrastructure **must** be able to utilise the Cloud
+     - The Cloud Infrastructure **MUST** be able to utilise the Cloud
        Infrastructure Manager identity lifecycle management capabilities
      - :ref:`chapters/chapter06:identity security`
    * - sec.sys.007
      - Access
-     - The Platform **must** implement controls enforcing separation of duties
+     - The Platform **MUST** implement controls enforcing separation of duties
        and privileges, least privilege use and least common mechanism
        (Role-Based Access Control)
      - :ref:`chapters/chapter06:rbac`
    * - sec.sys.008
      - Access
-     - The Platform **must** be able to assign the Entities that comprise the
+     - The Platform **MUST** be able to assign the Entities that comprise the
        tenant networks to different trust domains. Communication between
        different trust domains is not allowed, by default
      - :ref:`chapters/chapter06:workload security`
    * - sec.sys.009
      - Access
-     - The Platform **must** support creation of Trust Relationships between
+     - The Platform **MUST** support creation of Trust Relationships between
        trust domains. These maybe uni-directional relationships where the
        trusting domain trusts another domain (the "trusted domain") to
        authenticate users for them them or to allow access to its resources
@@ -691,49 +691,49 @@ Platform and Access Requirements
    * - sec.sys.010
      - Access
      - For two or more domains without existing trust relationships, the Platform
-       **must not** allow the effect of an attack on one domain to impact the other
+       **MUST NOT** allow the effect of an attack on one domain to impact the other
        domains either directly or indirectly
      - :ref:`chapters/chapter04:logical segregation and high availability`
    * - sec.sys.011
      - Access
-     - The Platform **must not** reuse the same authentication credentials
+     - The Platform **MUST NOT** reuse the same authentication credentials
        (e.g., key pairs) on different Platform components (e.g., different
        hosts, or different services)
      - :ref:`chapters/chapter06:system access`
    * - sec.sys.012
      - Access
-     - The Platform **must** protect all secrets by using strong encryption
+     - The Platform **MUST** protect all secrets by using strong encryption
        techniques and storing the protected secrets externally from the
        component (e.g., in OpenStack Barbican)
      - :ref:`chapters/chapter04:barbican`
    * - sec.sys.013
      - Access
-     - The Platform **must** generate secrets dynamically as and when needed
+     - The Platform **MUST** generate secrets dynamically as and when needed
      - :ref:`chapters/chapter04:barbican`
    * - sec.sys.015
      - Access
-     - The Platform **must not** contain back door entries (unpublished access
+     - The Platform **MUST NOT** contain back door entries (unpublished access
        points, APIs, etc.)
      - Not detailed
    * - sec.sys.016
      - Access
-     - Login access to the Platform's components **must** be through encrypted
+     - Login access to the Platform's components **MUST** be through encrypted
        protocols such as SSH v2 or TLS v1.2 or higher. Note: Hardened jump
        servers isolated from external networks are recommended
      - :ref:`chapters/chapter06:security lcm`
    * - sec.sys.017
      - Access
-     - The Platform **must** provide the capability of using digital certificates
+     - The Platform **MUST** provide the capability of using digital certificates
        that comply with X.509 standards issued by a trusted Certification Authority
      - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.sys.018
      - Access
-     - The Platform **must** provide the capability of allowing certificate renewal
+     - The Platform **MUST** provide the capability of allowing certificate renewal
        and revocation
      - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.sys.019
      - Access
-     - The Platform **must** provide the capability of testing the validity
+     - The Platform **MUST** provide the capability of testing the validity
        of a digital certificate (CA signature, validity period, non revocation
        identity)
      - :ref:`chapters/chapter06:confidentiality and integrity`
@@ -754,19 +754,19 @@ Confidentiality and Integrity Requirements
      - Confidentiality /
 
        Integrity
-     - The Platform **must** support Confidentiality and Integrity of data
+     - The Platform **MUST** support Confidentiality and Integrity of data
        at rest and in transit
      - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.ci.003
      - Confidentiality /
 
        Integrity
-     - The Platform **must** support Confidentiality and Integrity of data
+     - The Platform **MUST** support Confidentiality and Integrity of data
        related metadata
      - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.ci.004
      - Confidentiality
-     - The Platform **must** support Confidentiality of processes and
+     - The Platform **MUST** support Confidentiality of processes and
        restrict information sharing with only the process owner (e.g.,
        tenant)
      - :ref:`chapters/chapter06:confidentiality and integrity`
@@ -774,7 +774,7 @@ Confidentiality and Integrity Requirements
      - Confidentiality /
 
        Integrity
-     - The Platform **must** support Confidentiality and Integrity of process-
+     - The Platform **MUST** support Confidentiality and Integrity of process-
        related metadata and restrict information sharing with only the
        process owner (e.g., tenant)
      - :ref:`chapters/chapter06:confidentiality and integrity`
@@ -782,7 +782,7 @@ Confidentiality and Integrity Requirements
      - Confidentiality /
 
        Integrity
-     - The Platform **must** support Confidentiality and Integrity of
+     - The Platform **MUST** support Confidentiality and Integrity of
        workload resource utilisation (RAM, CPU, Storage, Network I/O, cache,
        hardware offload) and restrict information sharing with only the
        workload owner (e.g., tenant)
@@ -791,16 +791,16 @@ Confidentiality and Integrity Requirements
      - Confidentiality /
 
        Integrity
-     - The Platform **must not** allow Memory Inspection by any actor
+     - The Platform **MUST NOT** allow Memory Inspection by any actor
        other than the authorised actors for the Entity to which Memory is
        assigned (e.g., tenants owning the workload), for Lawful
        Inspection, and for secure monitoring services. Administrative
-       access must be managed using Platform Identity Lifecycle
+       access **MUST** be managed using Platform Identity Lifecycle
        Management
      - :ref:`chapters/chapter06:platform access`
    * - sec.ci.008
      - Confidentiality
-     - The Cloud Infrastructure **must** support tenant networks segregation
+     - The Cloud Infrastructure **MUST** support tenant networks segregation
      - :ref:`chapters/chapter06:workload security`
 
 
@@ -818,37 +818,37 @@ Workload Security Requirements
      - Specification Reference
    * - sec.wl.001
      - Workload
-     - The Platform **must** support Workload placement policy
+     - The Platform **MUST** support Workload placement policy
      - :ref:`chapters/chapter06:workload security`
    * - sec.wl.002
      - Workload
-     - The Cloud Infrastructure **must** provide methods to ensure the
+     - The Cloud Infrastructure **MUST** provide methods to ensure the
        platform's trust status and integrity (e.g., remote attestation,
        Trusted Platform Module)
      - :ref:`chapters/chapter06:cloud infrastructure and vim security`
    * - sec.wl.003
      - Workload
-     - The Platform **must** support secure provisioning of Workloads
+     - The Platform **MUST** support secure provisioning of Workloads
      - :ref:`chapters/chapter06:workload security`
    * - sec.wl.004
      - Workload
-     - The Platform **must** support Location assertion (for mandated in-
+     - The Platform **MUST** support Location assertion (for mandated in-
        country or location requirements)
      - :ref:`chapters/chapter06:workload security`
    * - sec.wl.005
      - Workload
-     - The Platform **must** support the separation of production and non-
+     - The Platform **MUST** support the separation of production and non-
        production Workloads
      - :ref:`chapters/chapter06:workload security`
    * - sec.wl.006
      - Workload
-     - The Platform **must** support the separation of Workloads based on
+     - The Platform **MUST** support the separation of Workloads based on
        their categorisation (for example, payment card information,
        healthcare, etc.)
      - :ref:`chapters/chapter06:workload security`
    * - sec.wl.007
      - Workload
-     - The Operator **must** implement processes and tools to verify
+     - The Operator **MUST** implement processes and tools to verify
        NF authenticity and integrity
      - :ref:`chapters/chapter06:image security`
 
@@ -866,38 +866,38 @@ Image Security Requirements
      - Specification Reference
    * - sec.img.001
      - Image
-     - Images from untrusted sources **must not** be used
+     - Images from untrusted sources **MUST NOT** be used
      - :ref:`chapters/chapter06:image security`
    * - sec.img.002
      - Image
-     - Images **must** be scanned to be maintained free from known
+     - Images **MUST** be scanned to be maintained free from known
        vulnerabilities
      - :ref:`chapters/chapter06:image security`
    * - sec.img.003
      - Image
-     - Images **must not** be configured to run with privileges higher
+     - Images **MUST NOT** be configured to run with privileges higher
        than the privileges of the actor authorised to run them
      - :ref:`chapters/chapter06:image security`
    * - sec.img.004
      - Image
-     - Images **must** only be accessible to authorised actors
+     - Images **MUST** only be accessible to authorised actors
      - :ref:`chapters/chapter06:integrity of openstack components configuration`
    * - sec.img.005
      - Image
-     - Image Registries **must** only be accessible to authorised actors
+     - Image Registries **MUST** only be accessible to authorised actors
      - :ref:`chapters/chapter06:integrity of openstack components configuration`
    * - sec.img.006
      - Image
-     - Image Registries **must** only be accessible over networks that
+     - Image Registries **MUST** only be accessible over networks that
        enforce authentication, integrity and confidentiality
      - :ref:`chapters/chapter06:integrity of openstack components configuration`
    * - sec.img.007
      - Image
-     - Image registries **must** be clear of vulnerable and out of date versions
+     - Image registries **MUST** be clear of vulnerable and out of date versions
      - :ref:`chapters/chapter06:image security`
    * - sec.img.008
      - Image
-     - Images **must not** include any secrets. Secrets include passwords,
+     - Images **MUST NOT** include any secrets. Secrets include passwords,
        cloud provider credentials, SSH keys, TLS certificate keys, etc.
      - :ref:`chapters/chapter06:image security`
 
@@ -915,63 +915,63 @@ Security LCM Requirements
      - Specification Reference
    * - sec.lcm.001
      - LCM
-     - The Platform **must** support Secure Provisioning, Availability, and
+     - The Platform **MUST** support Secure Provisioning, Availability, and
        Deprovisioning (Secure Clean-Up) of workload resources where Secure
        Clean-Up includes tear-down, defense against virus or other attacks
      - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.lcm.002
      - LCM
-     - The Cloud Operator **must** use management protocols limiting security
+     - The Cloud Operator **MUST** use management protocols limiting security
        risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher
      - :ref:`chapters/chapter06:security lcm`
    * - sec.lcm.003
      - LCM
-     - The Cloud Operator **must** implement and strictly follow change
+     - The Cloud Operator **MUST** implement and strictly follow change
        management processes for Cloud Infrastructure, Infrastructure
        Manager and other components of the cloud, and Platform change control
        on hardware
      - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.lcm.005
      - LCM
-     - Platform **must** provide logs and these logs must be monitored for
+     - Platform **MUST** provide logs and these logs **MUST** be monitored for
        anomalous behaviour
      - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.lcm.006
      - LCM
-     - The Platform **must** verify the integrity of all Resource management
+     - The Platform **MUST** verify the integrity of all Resource management
        requests
      - :ref:`chapters/chapter06:confidentiality and integrity of tenant data (sec.ci.001)`
    * - sec.lcm.007
      - LCM
-     - The Platform **must** be able to update newly instantiated, suspended,
+     - The Platform **MUST** be able to update newly instantiated, suspended,
        hibernated, migrated and restarted images with current time information
      - Not detailed
    * - sec.lcm.008
      - LCM
-     - The Platform **must** be able to update newly instantiated, suspended,
+     - The Platform **MUST** be able to update newly instantiated, suspended,
        hibernated, migrated and restarted images with relevant DNS information
      - Not detailed
    * - sec.lcm.009
      - LCM
-     - The Platform **must** be able to update the tag of newly instantiated,
+     - The Platform **MUST** be able to update the tag of newly instantiated,
        suspended, hibernated, migrated and restarted images with relevant
        geolocation (geographical) information
      - Not detailed
    * - sec.lcm.010
      - LCM
-     - The Platform **must** log all changes to geolocation along with the
+     - The Platform **MUST** log all changes to geolocation along with the
        mechanisms and sources of location information (i.e. GPS, IP block,
        and timing)
      - Not detailed
    * - sec.lcm.011
      - LCM
-     - The Platform **must** implement Security life cycle management
+     - The Platform **MUST** implement Security life cycle management
        processes including the proactive update and patching of all
        deployed Cloud Infrastructure software
      - :ref:`chapters/chapter06:patches`
    * - sec.lcm.012
      - LCM
-     - The Platform **must** log any access privilege escalation
+     - The Platform **MUST** log any access privilege escalation
      - :ref:`chapters/chapter06:what to log / what not to log`
 
 Monitoring and Security Audit Requirements
@@ -995,109 +995,109 @@ can trigger alerts and notifications for appropriate action.
      - Specification Reference
    * - sec.mon.001
      - Monitoring / Audit
-     - Platform **must** provide logs and these logs must be regularly
-       monitored for events of interest. The logs must contain the following
+     - Platform **MUST** provide logs and these logs **MUST** be regularly
+       monitored for events of interest. The logs **MUST** contain the following
        fields: event type, date/time, protocol, service or program used for
        access, success/failure, login ID or process ID, IP address and ports
        (source and destination) involved
      - :ref:`chapters/chapter06:required fields`
    * - sec.mon.002
      - Monitoring
-     - Security logs **must** be time synchronised
+     - Security logs **MUST** be time synchronised
      - :ref:`chapters/chapter06:security logs time synchronisation`
    * - sec.mon.003
      - Monitoring
-     - The Platform **must** log all changes to time server source, time,
+     - The Platform **MUST** log all changes to time server source, time,
        date and time zones
      - :ref:`chapters/chapter06:security logs time synchronisation`
    * - sec.mon.004
      - Audit
-     - The Platform **must** secure and protect Audit logs (containing
+     - The Platform **MUST** secure and protect Audit logs (containing
        sensitive information) both in-transit and at rest
      - :ref:`chapters/chapter06:security lcm`
    * - sec.mon.005
      - Monitoring / Audit
-     - The Platform **must** Monitor and Audit various behaviours of
+     - The Platform **MUST** Monitor and Audit various behaviours of
        connection and login attempts to detect access attacks and potential
        access attempts and take corrective accordingly actions
      - :ref:`chapters/chapter06:what to log / what not to log`
    * - sec.mon.006
      - Monitoring / Audit
-     - The Platform **must** Monitor and Audit operations by authorised
+     - The Platform **MUST** Monitor and Audit operations by authorised
        account access after login to detect malicious operational activity
        and take corrective actions
      - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.mon.007
      - Monitoring / Audit
-     - The Platform **must** Monitor and Audit security parameter
+     - The Platform **MUST** Monitor and Audit security parameter
        configurations for compliance with defined security policies
      - :ref:`chapters/chapter06:integrity of openstack components configuration`
    * - sec.mon.008
      - Monitoring / Audit
-     - The Platform **must** Monitor and Audit externally exposed interfaces
+     - The Platform **MUST** Monitor and Audit externally exposed interfaces
        for illegal access (attacks) and take corrective security hardening
        measures
      - :ref:`chapters/chapter06:confidentiality and integrity of communications (sec.ci.001)`
    * - sec.mon.009
      - Monitoring / Audit
-     - The Platform **must** Monitor and Audit service for various attacks
+     - The Platform **MUST** Monitor and Audit service for various attacks
        (malformed messages, signalling flooding and replaying, etc.) and take
        corrective actions accordingly
      - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.mon.010
      - Monitoring / Audit
-     - The Platform **must** Monitor and Audit running processes to detect
+     - The Platform **MUST** Monitor and Audit running processes to detect
        unexpected or unauthorised processes and take corrective actions
        accordingly
      - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.mon.011
      - Monitoring / Audit
-     - The Platform **must** Monitor and Audit logs from infrastructure elements
+     - The Platform **MUST** Monitor and Audit logs from infrastructure elements
        and workloads to detected anomalies in the system components and take
        corrective actions accordingly
      - :ref:`chapters/chapter06:creating logs`
    * - sec.mon.012
      - Monitoring / Audit
-     - The Platform **must** Monitor and Audit Traffic patterns and volumes to
+     - The Platform **MUST** Monitor and Audit Traffic patterns and volumes to
        prevent malware download attempts
      - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.mon.013
      - Monitoring
-     - The monitoring system **must not** affect the security (integrity and
+     - The monitoring system **MUST NOT** affect the security (integrity and
        confidentiality) of the infrastructure, workloads, or the user data
        (through back door entries)
      - Not detailed
    * - sec.mon.015
      - Monitoring
-     - The Platform **must** ensure that the Monitoring systems are never
-       starved of resources and must activate alarms when resource utilisation
+     - The Platform **MUST** ensure that the Monitoring systems are never
+       starved of resources and **MUST** activate alarms when resource utilisation
        exceeds a configurable threshold
      - :ref:`chapters/chapter06:monitoring and security audit`
    * - sec.mon.017
      - Audit
-     - The Platform **must** audit systems for any missing security patches
+     - The Platform **MUST** audit systems for any missing security patches
        and take appropriate actions
      - :ref:`chapters/chapter06:patches`
    * - sec.mon.018
      - Monitoring
-     - The Platform, starting from initialisation, **must** collect and
+     - The Platform, starting from initialisation, **MUST** collect and
        analyse logs to identify security events, and store these events
        in an external system
      - :ref:`chapters/chapter06:where to log`
    * - sec.mon.019
      - Monitoring
-     - The Platform's components **must not** include an authentication
+     - The Platform's components **MUST NOT** include an authentication
        credential, e.g., password, in any logs, even if encrypted
      - :ref:`chapters/chapter06:what to log / what not to log`
    * - sec.mon.020
      - Monitoring / Audit
-     - The Platform's logging system **must** support the storage of security
+     - The Platform's logging system **MUST** support the storage of security
        audit logs for a configurable period of time
      - :ref:`chapters/chapter06:data retention`
    * - sec.mon.021
      - Monitoring
-     - The Platform **must** store security events locally if the external
-       logging system is unavailable and shall periodically attempt to send
+     - The Platform **MUST** store security events locally if the external
+       logging system is unavailable and **SHALL** periodically attempt to send
        these to the external logging system until successful
      - :ref:`chapters/chapter06:where to log`
 
@@ -1115,18 +1115,18 @@ Open-Source Software Security Requirements
      - Specification Reference
    * - sec.oss.001
      - Software
-     - Open-source code **must** be inspected by tools with various capabilities
+     - Open-source code **MUST** be inspected by tools with various capabilities
        for static and dynamic code analysis
      - :ref:`chapters/chapter06:image security`
    * - sec.oss.002
      - Software
-     - The CVE (Common Vulnerabilities and Exposures) **must** be used to
+     - The CVE (Common Vulnerabilities and Exposures) **MUST** be used to
        identify vulnerabilities and their severity rating for open-source
        code part of Cloud Infrastructure and workloads software
      - :ref:`chapters/chapter06:patches`
    * - sec.oss.003
      - Software
-     - Critical and high severity rated vulnerabilities **must** be
+     - Critical and high severity rated vulnerabilities **MUST** be
        fixed in a timely manner. Refer to the CVSS (Common Vulnerability
        Scoring System) to know a vulnerability score and its associated rate
        (low, medium, high, or critical)
@@ -1134,7 +1134,7 @@ Open-Source Software Security Requirements
    * - sec.oss.004
      - Software
      - A dedicated internal isolated repository separated from the production
-       environment **must** be used to store vetted open-source content
+       environment **MUST** be used to store vetted open-source content
      - :ref:`chapters/chapter06:workload security`
 
 IaaC security Requirements
@@ -1153,7 +1153,7 @@ IaaC security Requirements
      - Specification Reference
    * - sec.code.001
      - IaaC
-     - SAST -Static Application Security Testing **must** be applied during
+     - SAST -Static Application Security Testing **MUST** be applied during
        Secure Coding stage triggered by Pull, Clone or Comment trigger.
        Security testing that analyses application source code for software
        vulnerabilities and gaps against bestpractices. Example: open source
@@ -1173,9 +1173,9 @@ IaaC security Requirements
      - Specification Reference
    * - sec.bld.003
      - IaaC
-     - Image Scan **must** be applied during the Continuous Build,
+     - Image Scan **MUST** be applied during the Continuous Build,
        Integration and Testing stage triggered by Package trigger,
-       example: A push of a container image to a containerregistry may
+       example: A push of a container image to a containerregistry **MAY**
        trigger a vulnerability scan before the image becomes available in
        the registry
      - :ref:`chapters/chapter06:image security`
@@ -1193,21 +1193,21 @@ IaaC security Requirements
      - Specification Reference
    * - sec.del.001
      - IaaC
-     - Image Scan **must** be applied during the Continuous Delivery and
+     - Image Scan **MUST** be applied during the Continuous Delivery and
        Deployment stage triggered by Publish to Artifact and Image
        Repository trigger. Example: GitLab uses the open source Clair
        engine for container image scanning
      - :ref:`chapters/chapter06:image security`
    * - sec.del.002
      - IaaC
-     - Code Signing **must** be applied during the Continuous Deliveryand
+     - Code Signing **MUST** be applied during the Continuous Deliveryand
        Deployment stage and Image Repository trigger. Code Signing provides
        authentication to assure that downloaded files are form the publisher
        named on the certificate
      - :ref:`chapters/chapter06:image security`
    * - sec.del.004
      - IaaC
-     - Component Vulnerability Scan **must** be applied during the Continuous
+     - Component Vulnerability Scan **MUST** be applied during the Continuous
        Delivery and Deployment stage triggered by Instantiate Infrastructure
        trigger. The vulnerability scanning system is deployed on the cloud
        platform to detect security vulnerabilities of specified components
@@ -1228,7 +1228,7 @@ IaaC security Requirements
      - Specification Reference
    * - sec.run.001
      - IaaC
-     - Component Vulnerability Monitoring **must** be continuously applied
+     - Component Vulnerability Monitoring **MUST** be continuously applied
        during the Runtime Defence and monitoring stage. Security technology that
        monitors components like virtual servers and assesses data, applications,
        and infrastructure forsecurity risks
@@ -1247,8 +1247,8 @@ Compliance with Standards Requirements
      - Specification Reference
    * - sec.std.012
      - Standards
-     - The Public Cloud Operator **must**, and the Private Cloud Operator
-       **may** be certified to be compliant with the International Standard
+     - The Public Cloud Operator **MUST**, and the Private Cloud Operator
+       **MAY** be certified to be compliant with the International Standard
        on Awareness Engagements (ISAE) 3402 (in the US:SSAE 16); International
        Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16
      - Not detailed
@@ -1272,21 +1272,21 @@ General Requirements
      - Specification Reference
    * - gen.ost.01
      - Open source
-     - The Architecture **must** use OpenStack APIs
+     - The Architecture **MUST** use OpenStack APIs
      - :ref:`chapters/chapter05:consolidated set of apis`
    * - gen.ost.02
      - Open source
-     - The Architecture **must** support dynamic request and configuration of
+     - The Architecture **MUST** support dynamic request and configuration of
        virtual resources (compute, network, storage) through OpenStack APIs
      - :ref:`chapters/chapter05:consolidated set of apis`
    * - gen.rsl.01
      - Resiliency
-     - The Architecture **must** support resilient OpenStack components that are
+     - The Architecture **MUST** support resilient OpenStack components that are
        required for the continued availability of running workloads
      - :ref:`chapters/chapter04:containerised openstack services`
    * - gen.avl.01
      - Availability
-     - The Architecture **must** provide High Availability for OpenStack
+     - The Architecture **MUST** provide High Availability for OpenStack
        components
      - :ref:`chapters/chapter04:underlying resources configuration and dimensioning`
 
@@ -1304,33 +1304,33 @@ Infrastructure Requirements
      - Specification Reference
    * - inf.com.01
      - Compute
-     - The Architecture **must** provide compute resources for instances
+     - The Architecture **MUST** provide compute resources for instances
      - :ref:`chapters/chapter03:cloud workload services`
    * - inf.com.04
      - Compute
-     - The Architecture **must** be able to support multiple CPU type options
+     - The Architecture **MUST** be able to support multiple CPU type options
        to support various infrastructure profiles (Basic and High
        Performance)
      - :ref:`chapters/chapter04:support for cloud infrastructure profiles and flavors`
    * - inf.com.05
      - Compute
-     - The Architecture **must** support Hardware Platforms with NUMA
+     - The Architecture **MUST** support Hardware Platforms with NUMA
        capabilities
      - :ref:`chapters/chapter04:support for cloud infrastructure profiles and flavors`
    * - inf.com.06
      - Compute
-     - The Architecture **must** support CPU Pinning of the vCPUs of an
+     - The Architecture **MUST** support CPU Pinning of the vCPUs of an
        instance
      - :ref:`chapters/chapter04:support for cloud infrastructure profiles and flavors`
    * - inf.com.07
      - Compute
-     - The Architecture **must** support different hardware configurations
+     - The Architecture **MUST** support different hardware configurations
        to support various infrastructure profiles (Basic and High
        Performance)
      - :ref:`chapters/chapter03:cloud partitioning: host aggregates, availability zones`
    * - inf.com.08
      - Compute
-     - The Architecture **must** support allocating certain number of host
+     - The Architecture **MUST** support allocating certain number of host
        cores for all non-tenant workloads such as for OpenStack services.
        SMT threads can be allocated to individual OpenStack services or their
        components. Dedicating host cores to certain
@@ -1340,64 +1340,64 @@ Infrastructure Requirements
      - :ref:`chapters/chapter03:cloud partitioning: host aggregates, availability zones`
    * - inf.com.09
      - Compute
-     - The Architecture **must** ensure that the host cores assigned to
+     - The Architecture **MUST** ensure that the host cores assigned to
        non-tenant and tenant workloads are SMT aware: that is, a host core and
        its associated SMT threads are either all assigned to non-tenant
        workloads or all assigned to tenant workloads
      - :ref:`chapters/chapter04:pinned and unpinned cpus`
    * - inf.stg.01
      - Storage
-     - The Architecture **must** provide remote (not directly attached to the
+     - The Architecture **MUST** provide remote (not directly attached to the
        host) Block storage for Instances
      - :ref:`chapters/chapter03:storage`
    * - inf.stg.02
      - Storage
-     - The Architecture **must** provide Object storage for Instances.
-       Operators **may** choose not to implement Object Storage but must be
+     - The Architecture **MUST** provide Object storage for Instances.
+       Operators **MAY** choose not to implement Object Storage but **MUST** be
        cognizant of the the risk of "Compliant VNFs" failing in their
        environment
      - :ref:`chapters/chapter04:swift`
    * - inf.nw.01
      - Network
-     - The Architecture **must** provide virtual network interfaces to
+     - The Architecture **MUST** provide virtual network interfaces to
        instances
      - :ref:`chapters/chapter05:neutron api`
    * - inf.nw.02
      - Network
-     - The Architecture **must** include capabilities for integrating SDN
+     - The Architecture **MUST** include capabilities for integrating SDN
        controllers to support provisioning of network services, from the SDN
        OpenStack Neutron service, such as networking of VTEPs to the Border
        Edge based VRFs
      - :ref:`chapters/chapter03:virtual networking - 3rd party sdn solution`
    * - inf.nw.03
      - Network
-     - The Architecture **must** support low latency and high throughput
+     - The Architecture **MUST** support low latency and high throughput
        traffic needs
      - :ref:`chapters/chapter04:network fabric`
    * - inf.nw.05
      - Network
-     - The Architecture **must** allow for East/West tenant traffic within the
+     - The Architecture **MUST** allow for East/West tenant traffic within the
        cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve)
      - :ref:`chapters/chapter04:network fabric`
    * - inf.nw.07
      - Network
-     - The Architecture must support network resiliency
+     - The Architecture **MUST** support network resiliency
      - :ref:`chapters/chapter03:network`
    * - inf.nw.10
      - Network
-     - The Cloud Infrastructure Network Fabric **must** be capable of enabling
+     - The Cloud Infrastructure Network Fabric **MUST** be capable of enabling
        highly available (Five 9's or better) Cloud Infrastructure
      - :ref:`chapters/chapter03:network`
    * - inf.nw.15
      - Network
-     - The Architecture **must** support multiple networking options for Cloud
+     - The Architecture **MUST** support multiple networking options for Cloud
        Infrastructure to support various infrastructure profiles (Basic and
        High Performance)
      - :ref:`chapters/chapter04:neutron extensions`
        and OpenStack Neutron Plugins :cite:p:`openstackneut`
    * - inf.nw.16
      - Network
-     - The Architecture **must** support dual stack IPv4 and IPv6 for tenant
+     - The Architecture **MUST** support dual stack IPv4 and IPv6 for tenant
        networks and workloads
      - Not detailed
 
@@ -1414,24 +1414,24 @@ VIM Requirements
      - Specification Reference
    * - vim.01
      - General
-     - The Architecture **must** allow infrastructure resource sharing
+     - The Architecture **MUST** allow infrastructure resource sharing
      - :ref:`chapters/chapter03:resources and services exposed to vnfs`
    * - vim.03
      - General
-     - The Architecture **must** allow VIM to discover and manage Cloud
+     - The Architecture **MUST** allow VIM to discover and manage Cloud
        Infrastructure resources
      - :ref:`chapters/chapter05:placement api`
    * - vim.05
      - General
-     - The Architecture **must** include image repository management
+     - The Architecture **MUST** include image repository management
      - :ref:`chapters/chapter05:glance api`
    * - vim.07
      - General
-     - The Architecture **must** support multi-tenancy
+     - The Architecture **MUST** support multi-tenancy
      - :ref:`chapters/chapter03:multi-tenancy (execution environment)`
    * - vim.08
      - General
-     - The Architecture **must** support resource tagging
+     - The Architecture **MUST** support resource tagging
      - OpenStack Resource Tags :cite:p:`openstacktags`
 
 Interfaces & APIs Requirements
@@ -1448,51 +1448,51 @@ Interfaces & APIs Requirements
 
    * - int.api.01
      - API
-     - The Architecture **must** provide APIs to access the authentication service
+     - The Architecture **MUST** provide APIs to access the authentication service
        and the associated mandatory features detailed in chapter 5
      - :ref:`chapters/chapter05:keystone api`
    * - int.api.02
      - API
-     - The Architecture **must** provide APIs to access the image management
+     - The Architecture **MUST** provide APIs to access the image management
        service and the associated mandatory features detailed in chapter 5
      - :ref:`chapters/chapter05:glance api`
    * - int.api.03
      - API
-     - The Architecture **must** provide APIs to access the block storage
+     - The Architecture **MUST** provide APIs to access the block storage
        management service and the associated mandatory features detailed in chapter 5
      - :ref:`chapters/chapter05:cinder api`
    * - int.api.04
      - API
-     - The Architecture **must** provide APIs to access the object storage
+     - The Architecture **MUST** provide APIs to access the object storage
        management service and the associated mandatory features detailed in chapter 5
      - :ref:`chapters/chapter05:swift api`
    * - int.api.05
      - API
-     - The Architecture **must** provide APIs to access the network management
+     - The Architecture **MUST** provide APIs to access the network management
        service and the associated mandatory features detailed in chapter 5
      - :ref:`chapters/chapter05:neutron api`
    * - int.api.06
      - API
-     - The Architecture **must** provide APIs to access the compute resources
+     - The Architecture **MUST** provide APIs to access the compute resources
        management service and the associated mandatory features detailed in chapter 5
      - :ref:`chapters/chapter05:nova api`
    * - int.api.07
      - API
-     - The Architecture **must** provide GUI access to tenant facing cloud
+     - The Architecture **MUST** provide GUI access to tenant facing cloud
        platform core services except at Edge/Far Edge clouds
      - :ref:`chapters/chapter04:horizon`
    * - int.api.08
      - API
-     - The Architecture **must** provide APIs needed to discover and manage
+     - The Architecture **MUST** provide APIs needed to discover and manage
        Cloud Infrastructure resources
      - :ref:`chapters/chapter05:placement api`
    * - int.api.09
      - API
-     - The Architecture **must** provide APIs to access the orchestration service
+     - The Architecture **MUST** provide APIs to access the orchestration service
      - :ref:`chapters/chapter05:heat api`
    * - int.api.10
      - API
-     - The Architecture **must** expose the latest version and microversion of the
+     - The Architecture **MUST** expose the latest version and microversion of the
        APIs for the given Anuket OpenStack release for each of the OpenStack core
        services
      - :ref:`chapters/chapter05:core openstack services apis`
@@ -1512,7 +1512,7 @@ Tenant Requirements
 
    * - tnt.gen.01
      - General
-     - The Architecture **must** support self-service dashboard (GUI) and
+     - The Architecture **MUST** support self-service dashboard (GUI) and
        APIs for users to deploy, configure and manage their workloads
      - :ref:`chapters/chapter04:horizon` and
        :ref:`chapters/chapter03:cloud workload services`
@@ -1530,16 +1530,16 @@ Operations and LCM
      - Specification Reference
    * - lcm.gen.01
      - General
-     - The Architecture **must** support zero downtime of running workloads when
+     - The Architecture **MUST** support zero downtime of running workloads when
        the number of compute hosts and/or the storage capacity is being
        expanded or unused capacity is being removed
      - Not detailed
    * - lcm.adp.02
      - Automated deployment
-     - The Architecture **must** support upgrades of software, provided by the
+     - The Architecture **MUST** support upgrades of software, provided by the
        cloud provider, so that the running workloads are not impacted
        (viz., hitless upgrades). Please note that this means that the existing
-       data plane services should not fail (go down)
+       data plane services **SHOULD** not fail (go down)
      - :ref:`chapters/chapter04:containerised openstack services`
 
 Assurance Requirements
@@ -1555,26 +1555,26 @@ Assurance Requirements
      - Specification Reference
    * - asr.mon.01
      - Integration
-     - The Architecture **must** include integration with various infrastructure
+     - The Architecture **MUST** include integration with various infrastructure
        components to support collection of telemetry for assurance monitoring
        and network intelligence
      - :ref:`chapters/chapter07:logging, monitoring and analytics`
    * - asr.mon.03
      - Monitoring
-     - The Architecture **must** allow for the collection and dissemination of
+     - The Architecture **MUST** allow for the collection and dissemination of
        performance and fault information
      - :ref:`chapters/chapter07:logging, monitoring and analytics`
    * - asr.mon.04
      - Network
      - The Cloud Infrastructure Network Fabric and Network Operating System
-       **must** provide network operational visibility through alarming and
+       **MUST** provide network operational visibility through alarming and
        streaming telemetry services for operational management, engineering
        planning, troubleshooting, and network performance optimisation
      - :ref:`chapters/chapter07:logging, monitoring and analytics`
 
 
 Architecture and OpenStack Recommendations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
 The requirements listed in this section are optional, and are not
 required in order to be deemed a conformant implementation.
@@ -1592,26 +1592,26 @@ General Recommendations
      - Notes
    * - gen.cnt.01
      - Cloud nativeness
-     - The Architecture **should** consist of stateless service components.
-       However, where state is required it must be kept external to the
+     - The Architecture **SHOULD** consist of stateless service components.
+       However, where state is required it **MUST** be kept external to the
        component
      - OpenStack consists of both stateless and stateful services where the
        stateful services utilise a database. For latter see Configuring the
        stateful services :cite:p:`openstackha`
    * - gen.cnt.02
      - Cloud nativeness
-     - The Architecture **should** consist of service components implemented
+     - The Architecture **SHOULD** consist of service components implemented
        as microservices that are individually dynamically scalable
      -
    * - gen.scl.01
      - Scalability
-     - The Architecture **should** support policy driven auto-scaling.
+     - The Architecture **SHOULD** support policy driven auto-scaling.
      - This requirement is currently not addressed but will likely be
        supported through
        Senlin :cite:p:`openstacksen`, cluste management service
    * - gen.rsl.02
      - Resiliency
-     - The Architecture **should** support resilient OpenStack service
+     - The Architecture **SHOULD** support resilient OpenStack service
        components that are not subject to gen.rsl.01
      -
 
@@ -1629,79 +1629,79 @@ Infrastructure Recommendations
      - Notes
    * - inf.com.02
      - Compute
-     - The Architecture **should** include industry standard hardware
+     - The Architecture **SHOULD** include industry standard hardware
        management systems at both HW device level (embedded) and HW platform
        level (external to device)
      -
    * - inf.com.03
      - Compute
-     - The Architecture **should** support Symmetric Multiprocessing with
+     - The Architecture **SHOULD** support Symmetric Multiprocessing with
        shared memory access as well as Simultaneous Multithreading
      -
    * - inf.stg.08
      - Storage
-     - The Architecture **should** allow use of externally provided large
+     - The Architecture **SHOULD** allow use of externally provided large
        archival storage for its Backup / Restore / Archival needs
      -
    * - inf.stg.09
      - Storage
-     - The Architecture **should** make available all non-host OS / Hypervisor
+     - The Architecture **SHOULD** make available all non-host OS / Hypervisor
        / Host systems storage as network-based Block, File or Object Storage
        for tenant/management consumption
      -
    * - inf.stg.10
      - Storage
-     - The Architecture **should** provide local Block storage for Instances
+     - The Architecture **SHOULD** provide local Block storage for Instances
      - :ref:`chapters/chapter03:virtual storage`
    * - inf.nw.04
      - Network
-     - The Architecture **should** support service function chaining
+     - The Architecture **SHOULD** support service function chaining
      -
    * - inf.nw.06
      - Network
-     - The Architecture **should** support Distributed Virtual Routing (DVR)
+     - The Architecture **SHOULD** support Distributed Virtual Routing (DVR)
        to allow compute nodes to route traffic efficiently
      -
    * - inf.nw.08
      - Network
-     - The Cloud Infrastructure Network Fabric **should** embrace the concepts
+     - The Cloud Infrastructure Network Fabric **SHOULD** embrace the concepts
        of open networking and disaggregation using commodity networking
        hardware and disaggregated Network Operating Systems
      -
    * - inf.nw.09
      - Network
-     - The Cloud Infrastructure Network Fabric **should** embrace open-based
+     - The Cloud Infrastructure Network Fabric **SHOULD** embrace open-based
        standards and technologies
      -
    * - inf.nw.11
      - Network
-     - The Cloud Infrastructure Network Fabric **should** be architected to
+     - The Cloud Infrastructure Network Fabric **SHOULD** be architected to
        provide a standardised, scalable, and repeatable deployment model
        across all applicable Cloud Infrastructure sites
      -
    * - inf.nw.17
      - Network
-     - The Architecture **should** use dual stack IPv4 and IPv6 for Cloud
+     - The Architecture **SHOULD** use dual stack IPv4 and IPv6 for Cloud
        Infrastructure internal networks
      -
    * - inf.acc.01
      - Acceleration
-     - The Architecture **should** support Application Specific Acceleration
+     - The Architecture **SHOULD** support Application Specific Acceleration
        (exposed to VNFs)
      - :ref:`chapters/chapter03:acceleration`
    * - inf.acc.02
      - Acceleration
-     - The Architecture **should** support Cloud Infrastructure Acceleration
+     - The Architecture **SHOULD** support Cloud Infrastructure Acceleration
        (such as SmartNICs)
      - OpenStack Future - Specs defined :cite:p:`openstackneutovs`
    * - inf.acc.03
      - Acceleration
-     - The Architecture **may** rely on on SR-IOV PCI-Pass through to provide
+     - The Architecture **MAY** rely on on SR-IOV PCI-Pass through to provide
        acceleration to VNFs
      -
    * - inf.img.01
      - Image
-     - The Architecture **should** make the immutable images available via
+     - The Architecture **SHOULD** make the immutable images available via
        location independent means
      - :ref:`chapters/chapter04:glance`
 
@@ -1718,22 +1718,22 @@ VIM Recommendations
      - Notes
    * - vim.02
      - General
-     - The Architecture **should** support deployment of OpenStack components
+     - The Architecture **SHOULD** support deployment of OpenStack components
        in containers
      - :ref:`chapters/chapter04:containerised openstack services`
    * - vim.04
      - General
-     - The Architecture **should** support Enhanced Platform Awareness (EPA)
+     - The Architecture **SHOULD** support Enhanced Platform Awareness (EPA)
        only for discovery of infrastructure resource capabilities
      -
    * - vim.06
      - General
-     - The Architecture **should** allow orchestration solutions to be integrated
+     - The Architecture **SHOULD** allow orchestration solutions to be integrated
        with VIM
      -
    * - vim.09
      - General
-     - The Architecture **should** support horizontal scaling of OpenStack core
+     - The Architecture **SHOULD** support horizontal scaling of OpenStack core
        services
      -
 
@@ -1750,12 +1750,12 @@ Interfaces and APIs Recommendations
      - Notes
    * - int.acc.01
      - Acceleration
-     - The Architecture **should** provide an open and standard acceleration
+     - The Architecture **SHOULD** provide an open and standard acceleration
        interface to VNFs
      -
    * - int.acc.02
      - Acceleration
-     - The Architecture **should not** rely on SR-IOV PCI-Pass through for
+     - The Architecture **SHOULD NOT** rely on SR-IOV PCI-Pass through for
        acceleration interface exposed to VNFs
      - duplicate of inf.acc.03 under "Infrastructure Recommendation"
 
@@ -1777,31 +1777,31 @@ Operations and LCM Recommendations
      - Notes
    * - lcm.adp.01
      - Automated deployment
-     - The Architecture **should** allow for cookie cutter automated
+     - The Architecture **SHOULD** allow for cookie cutter automated
        deployment, configuration, provisioning and management of multiple
        Cloud Infrastructure sites
      -
    * - lcm.adp.03
      - Automated deployment
-     - The Architecture **should** support hitless upgrade of all software
+     - The Architecture **SHOULD** support hitless upgrade of all software
        provided by the cloud provider that are not covered by lcm.adp.02.
-       Whenever hitless upgrades are not feasible, attempt should be made
+       Whenever hitless upgrades are not feasible, attempt **SHOULD** be made
        to minimise the duration and nature of impact
      -
    * - lcm.adp.04
      - Automated deployment
-     - The Architecture **should** support declarative specifications of
+     - The Architecture **SHOULD** support declarative specifications of
        hardware and software assets for automated deployment, configuration,
        maintenance and management
      -
    * - lcm.adp.05
      - Automated deployment
-     - The Architecture **should** support automated process for Deployment
+     - The Architecture **SHOULD** support automated process for Deployment
        and life-cycle management of VIM Instances
      -
    * - lcm.cid.02
      - CI/CD
-     - The Architecture **should** support integrating with CI/CD Toolchain
+     - The Architecture **SHOULD** support integrating with CI/CD Toolchain
        for Cloud Infrastructure and VIM components Automation
      -
 
@@ -1818,7 +1818,7 @@ Assurance Recommendations
      - Notes
    * - asr.mon.02
      - Monitoring
-     - The Architecture **should** support Network Intelligence capabilities
+     - The Architecture **SHOULD** support Network Intelligence capabilities
        that allow richer diagnostic capabilities which take as input broader
        set of data across the network and from VNF workloads
      -
@@ -1839,12 +1839,12 @@ System Hardening Recommendations
      - Notes
    * - sec.gen.011
      - Hardening
-     - The Cloud Infrastructure **should** support Read and Write only storage
+     - The Cloud Infrastructure **SHOULD** support Read and Write only storage
        partitions (write only permission to one or more authorised actors)
      -
    * - sec.gen.014
      - Hardening
-     - All servers part of Cloud Infrastructure **should** support measured
+     - All servers part of Cloud Infrastructure **SHOULD** support measured
        boot and an attestation server that monitors the measurements of the
        servers
      -
@@ -1862,12 +1862,12 @@ Platform and Access Recommendations
      - Notes
    * - sec.sys.014
      - Access
-     - The Platform **should** use Linux Security Modules such as SELinux to
+     - The Platform **SHOULD** use Linux Security Modules such as SELinux to
        control access to resources
      -
    * - sec.sys.020
      - Access
-     - The Cloud Infrastructure architecture **should** rely on Zero Trust
+     - The Cloud Infrastructure architecture **SHOULD** rely on Zero Trust
        principles to build a secure by design environment
      - Zero Trust Architecture (ZTA) described in NIST SP 800-207
 
@@ -1886,13 +1886,13 @@ Confidentiality and Integrity Recommendations
      - Confidentiality /
 
        Integrity
-     - The Platform **should** support self-encrypting storage devices
+     - The Platform **SHOULD** support self-encrypting storage devices
      -
    * - sec.ci.009
      - Confidentiality /
 
        Integrity
-     - For sensitive data encryption, the key management service **should**
+     - For sensitive data encryption, the key management service **SHOULD**
        leverage a Hardware Security Module to manage and protect cryptographic
        keys
      -
@@ -1910,7 +1910,7 @@ Workload Security Recommendations
      - Notes
    * - sec.wl.007
      - Workload
-     - The Operator **should** implement processes and tools to verify VNF
+     - The Operator **SHOULD** implement processes and tools to verify VNF
        authenticity and integrity
      -
 
@@ -1927,11 +1927,11 @@ Image Security Recommendations
      - Notes
    * - sec.img.009
      - Image
-     - CIS Hardened Images **should** be used whenever possible
+     - CIS Hardened Images **SHOULD** be used whenever possible
      -
    * - sec.img.010
      - Image
-     - Minimalist base images **should** be used whenever possible
+     - Minimalist base images **SHOULD** be used whenever possible
      -
 
 Security LCM Recommendations
@@ -1947,7 +1947,7 @@ Security LCM Recommendations
      - Notes
    * - sec.lcm.004
      - LCM
-     - The Cloud Operator **should** support automated templated approved
+     - The Cloud Operator **SHOULD** support automated templated approved
        changes; Templated approved changes for automation where available
      -
 
@@ -1970,12 +1970,12 @@ can trigger alerts and notifications for appropriate action.
      - Notes
    * - sec.mon.014
      - Monitoring
-     - The Monitoring systems **should** not impact IaaS, PaaS, and SaaS SLAs
+     - The Monitoring systems **SHOULD** not impact IaaS, PaaS, and SaaS SLAs
        including availability SLAs
      -
    * - sec.mon.016
      - Monitoring
-     - The Platform Monitoring components **should** follow security best
+     - The Platform Monitoring components **SHOULD** follow security best
        practices for auditing, including secure logging and tracing
      -
 
@@ -1992,7 +1992,7 @@ Open-Source Software Security Recommendations
      - Notes
    * - sec.oss.005
      - Software
-     - A Software Bill of Materials (SBOM) **should** be provided or build,
+     - A Software Bill of Materials (SBOM) **SHOULD** be provided or build,
        and maintained to identify the software components and their origins.
        Inventory of software components
      - NTIA SBOM :cite:p:`ntiasbom`
@@ -2013,15 +2013,15 @@ IaaC security Recommendations
      - Notes
    * - sec.arch.001
      - IaaC
-     - Threat Modelling methodologies and tools **should** be used during the
+     - Threat Modelling methodologies and tools **SHOULD** be used during the
        Secure Design and Architecture stage triggered by Software Feature
        Design trigger. Methodology to identify and understand threats
        impacting a resource or set of resources
-     - It may be done manually or using tools like open source OWASP Threat
+     - It **MAY** be done manually or using tools like open source OWASP Threat
        Dragon
    * - sec.arch.002
      - IaaC
-     - Security Control Baseline Assessment **should** be performed during the
+     - Security Control Baseline Assessment **SHOULD** be performed during the
        Secure Design and Architecture stage triggered by Software Feature
        Design trigger
      - Typically done manually by internal or independent assessors
@@ -2038,26 +2038,26 @@ IaaC security Recommendations
      - Notes
    * - sec.code.002
      - IaaC
-     - SCA - Software Composition Analysis **should** be applied during
+     - SCA - Software Composition Analysis **SHOULD** be applied during
        Secure Coding stage triggered by Pull, Clone or Comment trigger.
        Security testing that analyses application source code or compiled code
        for software components with known vulnerabilities
      - Example: open source OWASP range of tools
    * - sec.code.003
      - IaaC
-     - Source Code Review **should** be performed continuously during Secure
+     - Source Code Review **SHOULD** be performed continuously during Secure
        Coding stage.
      - Typically done manually.
    * - sec.code.004
      - IaaC
-     - Integrated SAST via IDE Plugins should be used during Secure Coding
+     - Integrated SAST via IDE Plugins **SHOULD** be used during Secure Coding
        stage triggered by Developer Code trigger. On the local machine:
        through the IDE or integrated test suites; triggered on completion of
        coding by developer
      -
    * - sec.code.005
      - IaaC
-     - SAST of Source Code Repo **should** be performed during Secure Coding
+     - SAST of Source Code Repo **SHOULD** be performed during Secure Coding
        stage triggered by Developer Code trigger. Continuous delivery
        pre -deployment: scanning prior to deployment
      -
@@ -2075,19 +2075,19 @@ IaaC security Recommendations
      - Notes
    * - sec.bld.001
      - IaaC
-     - SAST -Static Application Security Testing **should** be applied during
+     - SAST -Static Application Security Testing **SHOULD** be applied during
        the Continuous Build, Integration and Testing stage triggered by Build
        and Integrate trigger
      - Example: open source OWASP range of tools.
    * - sec.bld.002
      - IaaC
-     - SCA - Software Composition Analysis **should** be applied during the
+     - SCA - Software Composition Analysis **SHOULD** be applied during the
        Continuous Build, Integration and Testing stage triggered by Build and
        Integrate trigger
      - Example: open source OWASP range of tools
    * - sec.bld.004
      - IaaC
-     - SDAST - Dynamic Application Security Testing **should** be applied
+     - SDAST - Dynamic Application Security Testing **SHOULD** be applied
        during the Continuous Build, Integration and Testing stage triggered
        by Stage & Test trigger. Security testing that analyses a running
        application by exercising application functionality and detecting
@@ -2095,7 +2095,7 @@ IaaC security Recommendations
      - Example: OWASP ZAP
    * - sec.bld.005
      - IaaC
-     - Fuzzing **should** be applied during the Continuous Build, Integration
+     - Fuzzing **SHOULD** be applied during the Continuous Build, Integration
        and testing stage triggered by Stage & Test trigger. Fuzzing or fuzz
        testing is an automated software testing technique that involves
        providing invalid, unexpected, or random data as inputs to a computer
@@ -2103,7 +2103,7 @@ IaaC security Recommendations
      - Example: GitLab Open Sources Protocol Fuzzer Community Edition
    * - sec.bld.006
      - IaaC
-     - IAST - Interactive Application Security Testing **should** be applied
+     - IAST - Interactive Application Security Testing **SHOULD** be applied
        during the Continuous Build, Integration and Testing stage triggered by
        Stage & Test trigger. Software component deployed with an application
        that assesses application behaviour and detects presence of
@@ -2124,7 +2124,7 @@ IaaC security Recommendations
      - Notes
    * - sec.del.003
      - IaaC
-     - Artifact and Image Repository Scan **should** be continuously applied
+     - Artifact and Image Repository Scan **SHOULD** be continuously applied
        during the Continuous Delivery and Deployment stage
      - Example: GitLab uses the open source Clair engine for container
        scanning
@@ -2142,14 +2142,14 @@ IaaC security Recommendations
      - Notes
    * - sec.run.002
      - IaaC
-     - RASP - Runtime Application Self-Protection **should** be continuously
+     - RASP - Runtime Application Self-Protection **SHOULD** be continuously
        applied during the Runtime Defence and Monitoring stage. Security
        technology deployed within the target application in production for
        detecting, alerting, and blocking attacks
      -
    * - sec.run.003
      - IaaC
-     - Application testing and Fuzzing **should** be continuously applied
+     - Application testing and Fuzzing **SHOULD** be continuously applied
        during the Runtime Defence and Monitoring stage. Fuzzing or fuzz
        testing is an automated software testing technique that involves
        providing invalid, unexpected, or random data as inputs to a computer
@@ -2157,7 +2157,7 @@ IaaC security Recommendations
      - Example: GitLab Open Sources Protocol Fuzzer Community Edition
    * - sec.run.004
      - IaaC
-     - Penetration Testing **should** be continuously applied during the
+     - Penetration Testing **SHOULD** be continuously applied during the
        Runtime Defence and Monitoring stage
      - Typically done manually
 
@@ -2175,42 +2175,42 @@ Compliance with Standards Recommendations
      - Notes
    * - sec.std.001
      - Standards
-     - The Cloud Operator **should** comply with Center for Internet Security
+     - The Cloud Operator **SHOULD** comply with Center for Internet Security
        CIS Controls :cite:p:`cis`
      -
    * - sec.std.002
      - Standards
-     - The Cloud Operator, Platform and Workloads **should** follow the
+     - The Cloud Operator, Platform and Workloads **SHOULD** follow the
        guidance in the CSA Security Guidance for Critical Areas of Focus in
        Cloud Computing (latest version)- CSA,
        Cloud Security Alliance :cite:p:`csa`
      -
    * - sec.std.003
      - Standards
-     - The Platform and Workloads **should** follow the guidance in the
+     - The Platform and Workloads **SHOULD** follow the guidance in the
        OWASP Cheat Sheet Series (OCSS) :cite:p:`ocss` - OWASP,
        Open Web Application Security Project :cite:p:`owasp`
      -
    * - sec.std.004
      - Standards
-     - The Cloud Operator, Platform and Workloads **should** ensure that their
+     - The Cloud Operator, Platform and Workloads **SHOULD** ensure that their
        code is not vulnerable to the OWASP Top Ten Security Risks
        :cite:p:`owaspten`
      -
    * - sec.std.005
      - Standards
-     - The Cloud Operator, Platform and Workloads **should** strive to improve
+     - The Cloud Operator, Platform and Workloads **SHOULD** strive to improve
        their maturity on the OWASP Software Maturity Model (SAMM)
        :cite:p:`samm`
      -
    * - sec.std.006
      - Standards
-     - The Cloud Operator, Platform and Workloads should utilise the
+     - The Cloud Operator, Platform and Workloads **SHOULD** utilise the
        OWASP Web Security Testing Guide :cite:p:`wstg`
      -
    * - sec.std.007
      - Standards
-     - The Cloud Operator, and Platform **should** satisfy the requirements
+     - The Cloud Operator, and Platform **SHOULD** satisfy the requirements
        for Information Management Systems specified in ISO/IEC 27001
        :cite:p:`isoiec27001`;
        ISO/IEC 27001 is the international Standard for best-practice
@@ -2218,13 +2218,13 @@ Compliance with Standards Recommendations
      -
    * - sec.std.008
      - Standards
-     - The Cloud Operator, and Platform **should** implement the Code of
+     - The Cloud Operator, and Platform **SHOULD** implement the Code of
        practice for Security Controls specified
        ISO/IEC 27002:2013 (or latest) :cite:p:`isoiec27002`
      -
    * - sec.std.009
      - Standards
-     - The Cloud Operator, and Platform **should** implement the
+     - The Cloud Operator, and Platform **SHOULD** implement the
        ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques
        :cite:p:`isoiec27032`;
        ISO/IEC 27032 is the international Standard focusing explicitly on
@@ -2232,13 +2232,13 @@ Compliance with Standards Recommendations
      -
    * - sec.std.010
      - Standards
-     - The Cloud Operator **should** conform to the ISO/IEC 27035 standard for
+     - The Cloud Operator **SHOULD** conform to the ISO/IEC 27035 standard for
        incidence management; ISO/IEC 27035 is the international Standard for
        incident management
      -
    * - sec.std.011
      - Standards
-     - The Cloud Operator **should** conform to the ISO/IEC 27031 standard for
+     - The Cloud Operator **SHOULD** conform to the ISO/IEC 27031 standard for
        business continuity; ISO/IEC 27031 - ISO/IEC 27031 is the international
        Standard for ICT readiness for business continuity
      -

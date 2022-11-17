@@ -1,7 +1,6 @@
-Kubernetes based Reference Architecture
-=======================================
-
-This is Kubernetes based Reference Architecture (RA-2)
+======================================================================
+Reference Architecture for Kubernetes based cloud infrastructure (RA2)
+======================================================================
 
 Overall Status
 --------------
