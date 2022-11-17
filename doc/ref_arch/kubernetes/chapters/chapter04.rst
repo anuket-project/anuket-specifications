@@ -965,7 +965,7 @@ Architecture they must be implemented as per the following specifications:
      - N/A
    * - ra2.app.048
      - SELinux options
-     - If SELInux is used in the Pods of the CNF, the options used to escalate privileges should not be allowed. Options
+     - If SELinux is used in the Pods of the CNF, the options used to escalate privileges should not be allowed. Options
        spec.securityContext.seLinuxOptions.type, spec.containers[*].securityContext.seLinuxOptions.type,
        spec.initContainers[*].securityContext.seLinuxOptions,
        and spec.ephemeralContainers[*].securityContext.seLinuxOptions.type must either be unset or set to one of the
@@ -974,7 +974,7 @@ Architecture they must be implemented as per the following specifications:
      - N/A
    * - ra2.app.049
      - Image tags
-     - The :latest tag should not be used in the images of the Pods of the CNF as it does not specify a concrete version
+     - The `latest` tag should not be used in the images of the Pods of the CNF as it does not specify a concrete version
        of the container.
      - `Kubernetes documentation <https://kubernetes.io/docs/concepts/containers/images/>`__
      - N/A
