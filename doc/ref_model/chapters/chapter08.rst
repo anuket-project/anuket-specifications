@@ -214,6 +214,11 @@ The set of high level interactions cover:
 - Manage App/VNF - Image/Container/Registry Management, Deploy/Configure/Scale/Start/Stop App/VNF, Monitor App/VNFs
 - Transactions / Conversations - Use Communications Services, Use Edge Applications Services, Use Cloud Services
 
+This model, its actors (roles), and the interactions discussed below, are focused on the provision and 
+consumption of cloud services in different stereo-typical deployment scenarios: IaaS, SaaS, CaaS, and Edge. The model 
+presented in Chapter 9 deals with the cloud build and maintenance processes in different scenarios. It also defines
+the boundaries of the automation domains. These two views complement each other.
+
 Stereo-Typical Scenarios
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
