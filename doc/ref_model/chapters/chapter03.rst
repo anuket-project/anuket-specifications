@@ -1887,3 +1887,23 @@ Platform Services:
      Balancer being hardware-accelerated).
 - c) Application is designed and can be configured for running with defined Platform Services. Example is application
      that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
+
+Energy efficiency
+-----------------
+
+| The energy efficiency should be considered as an overall requirement for both the cloud infrastructure and the inftrastructure-hosted workloads.
+| It can be defined as "the relation between the useful output (telecom service, etc.) and energy consumption" (as specified by ETSI EN 303 471).
+| As an example, the energy efficiency of a traffic forwarding function can be measured in W/Mbps (or Wh/GB).
+Thus, the energy efficiency measurement requires the infrastructure to provide energy consumption metrics which can be an amount of consumed energy (measured in Joule or Watt.hour) or a real-time power utilization (measured in Watt or Joule/second).
+
+The following documents are relevant references for this subject:
+
+| ETSI EN 303 471 V1.1.1 (2019-01)
+| Environmental Engineering (EE); Energy Efficiency measurement methodology and metrics for Network Function Virtualisation
+https://www.etsi.org/deliver/etsi_en/303400_303499/303471/01.01.01_60/en_303471v010101p.pdf
+
+| QuEST Forum - TL 9000 Quality Management System - NFV Workload Efficiency Whitepaper (2016-10)
+https://tl9000.org/resources/documents/NFV%20Workload%20Efficiency%20Whitepaper.pdf
+
+| Open RAN Technical Priority - Focus on Energy Efficiency (2022-03)
+| https://www.o-ran.org/ecosystem-resources
