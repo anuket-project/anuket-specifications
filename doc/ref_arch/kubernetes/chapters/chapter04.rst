@@ -954,12 +954,12 @@ Architecture they must be implemented as per the following specifications:
      - N/A
    * - ra2.app.046
      - Log output
-     - Pods of the CNF shold direct their logs to sdout or stderr. This enables the treating of logs as event steams.
+     - Pods of the CNF should direct their logs to sdout or stderr. This enables the treating of logs as event steams.
      - `The Twelve Factor App <https://12factor.net/logs>`__
      - N/A
    * - ra2.app.047
      - Host ports
-     - Pods of the CNF shold not use host ports. Using host ports ties the CNF to a specific node and therefore makes
+     - Pods of the CNF should not use host ports. Using host ports ties the CNF to a specific node and therefore makes
        the CNF less portable and scalable.
      -
      - N/A
