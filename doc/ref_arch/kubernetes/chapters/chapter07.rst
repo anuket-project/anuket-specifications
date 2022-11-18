@@ -103,7 +103,7 @@ Multiple network interfaces on Pods
    Balancers depends on the feature set of the CNI multiplexer and the CNI plugins it uses, therefore it is
    inconsistent.
 
-   **Status:** There is a `draft KEP
+   **Status:** There is a `draft Kubernetes Enhancement Proposal (KEP)
    <https://docs.google.com/document/d/1ztx9TOQ9Hiyj9PG9aPv6jyDLhe_FB7haV_yjJIcb-0Y/>`__
    created to support multiple Pod interfaces natively.
 
