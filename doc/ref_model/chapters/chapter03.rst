@@ -1887,3 +1887,25 @@ Platform Services:
      Balancer being hardware-accelerated).
 - c) Application is designed and can be configured for running with defined Platform Services. Example is application
      that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
+
+
+Energy efficiency
+-----------------
+
+| The energy efficiency should be an overall requirement for both the cloud infrastructure itself and the workloads hosted by this infratructure.
+It is "the relation between the useful output and energy consumption" as defined by `ETSI EN 303 471 <https://www.etsi.org/deliver/etsi_en/303400_303499/303471/01.01.01_60/en_303471v010101p.pdf>`__ [ref].
+
+| As an example, the useful output of a traffic forwarding function can be the traffic throughput (e.g., measured in bit/second) and its energy efficiency is then the ratio between this throughput and the power required for processing it (e.g., measured in Watt) :
+Energy Efficicency (bps/W) = Throughput / Power
+
+| Thus, **the energy efficiency measurement requires the infrastructure to provide energy consumption metrics** which can be an amount of consumed energy (measured
+in Joule or Watt.hour) or a real-time power utilization (measured in Watt or Joule/second).
+For instance, `DMTF Redfish DSP0268 2022.2 <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ [ref] specifies metrics EnergykWh and PowerWatts which could be used for this purpose.
+
+| The following documents are relevant references for this subject (objectives, methodologies etc.):
+
+- `Open RAN Technical Priority - Focus on Energy Efficiency (March 2022) <https://www.o-ran.org/ecosystem-resources>`__ [ref]
+
+- `ETSI EN 303 471 v1.1.1 - Energy Efficiency measurement methodology and metrics for NFV (January 2019) <https://www.etsi.org/deliver/etsi_en/303400_303499/303471/01.01.01_60/en_303471v010101p.pdf>`__ [ref]
+
+- `QuEST Forum - NFV Workload Efficiency Whitepaper (October 2016) <https://tl9000.org/resources/documents/NFV%20Workload%20Efficiency%20Whitepaper.pdf>`__ [ref]
