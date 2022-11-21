@@ -1399,6 +1399,21 @@ the figure below.
 
    Containerised OpenStack Services Topology
 
+Containerisation Support
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Kubernetes :cite:p:`kubernetes` is currently the *de facto* container
+orchestration platform. The Anuket Kubernetes Reference Architecture
+:cite:p:`refarch2` Section 4, specifies that the Kubernetes Master
+and Worker nodes can be deployed on physical or virtual machines.
+For the latter, OpenStack services can be used for the virtual 
+nfrastructure management (please see the Figure
+"Kubernetes Reference Architecture"). It should be noted that in public
+clouds and also many Telco operator on-premise cloud deployments, it is
+common to use virtual machines to deploy Kubernetes services (containers,
+workloads, etc.). Containers and containerised workloads running on top of
+virtual machines need to follow the specifications :cite:p:`refarch2`.
+
 Consumable Infrastructure Resources and Services
 ------------------------------------------------
 
