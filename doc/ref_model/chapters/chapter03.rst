@@ -1898,8 +1898,7 @@ It is "the relation between the useful output and energy consumption" as defined
 | As an example, the useful output of a traffic forwarding function can be the traffic throughput (e.g., measured in bit/second) and its energy efficiency is then the ratio between this throughput and the power required for processing it (e.g., measured in Watt) :
 Energy Efficicency (bps/W) = Throughput / Power
 
-| Thus, **the energy efficiency measurement requires the infrastructure to provide energy consumption metrics** which can be an amount of consumed energy (measured
-in Joule or Watt.hour) or a real-time power utilization (measured in Watt or Joule/second).
+| Thus, **the energy efficiency measurement requires the infrastructure to provide energy consumption metrics** which can be an amount of consumed energy (measured in Joule or Watt.hour) or a real-time power utilization (measured in Watt or Joule/second).
 For instance, `DMTF Redfish DSP0268 2022.2 <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ [ref] specifies metrics EnergykWh and PowerWatts which could be used for this purpose.
 
 | The following documents are relevant references for this subject (objectives, methodologies etc.):
