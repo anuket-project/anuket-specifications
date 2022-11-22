@@ -83,10 +83,10 @@ for Kubernetes workloads.
      - Must
    * - ra2.app.008
      - Infrastructure dependency
-     - Workloads must not rely on the availability of the master nodes for the successful execution of their
+     - Workloads **must not** rely on the availability of the master nodes for the successful execution of their
        functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling,
        but components that are already running will continue to do so without issue).     
-     - Must
+     - Must (Not)
    * - ra2.app.009
      - Device plugins
      - Workload descriptors must use the resources advertised by the device plugins to indicate their need for an FPGA,
@@ -102,4 +102,36 @@ for Kubernetes workloads.
      - Published helm chart:  Helm charts of the CNF must be published into a helm registry and must not be used from local copies.
      - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-helm-chart-is-publi
        shed-helm_chart_published>`__
-     - Must      
+     - Should      
+   * - ra2.app.012
+     - Valid Helm chart:  Helm charts of the CNF must be valid and should pass the helm lint validation.
+     - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-helm-chart-is-valid
+       -helm_chart_valid>`__
+     - Should  
+   * - ra2.app.013
+     - Rolling update: Rolling update of the CNF must be possible using Kubernetes deployments.
+     - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-test-if-the-cnf-can-perform-
+       a-rolling-update-rolling_update>`__
+     - Must     
+   * - ra2.app.014
+     - Rolling downgrade: Rolling downgrade of the CNF must be possible using Kubernetes deployments.
+     - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-a-cnf-version-can-b
+       e-downgraded-through-a-rolling_downgrade-rolling_downgrade>`__
+     - Must
+   * - ra2.app.015
+     - CNI compatibility: The CNF must use CNI compatible networking plugins.
+     - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-the-cnf-is-compatib
+       le-with-different-cnis-cni_compatibility>`__
+     - Must
+   * - ra2.app.016
+     - Kubernetes API stability: The CNF must not use any Kubernetes alpha API-s.
+     - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#poc-to-check-if-a-cnf-uses-kube
+       rnetes-alpha-apis-alpha_k8s_apis-alpha_k8s_apis>`__
+     - Must (Not)
+   * - ra2.app.017
+     - CNF resiliency (node drain): CNF must not loose data, must continue to run and its readiness probe outcome must be Success even in case of a
+       node drain and rescheduling occurs.
+     - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-cnf-crashes-when-no
+       de-drain-occurs-node_drain>`__
+     - Must (Not)
+     
