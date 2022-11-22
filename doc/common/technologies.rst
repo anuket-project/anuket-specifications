@@ -53,7 +53,7 @@ Once an IO device is directly assigned to a workload, that workload will then ha
 
 This method provides better performance than the para-virtualised one as no hypervisor is involved but provides less flexibility and less portability.
 
-Having an IO device directly assigned to a workload means that the workload needs to run vendor specific drivers and libraries to be able to access that device which makes the workload less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of the Anuket Project and hence this method of IO Virtualisation must not be used unless explicitly allowed as an exception as part of the transitional plan adopted by the Anuket Project.
+Having an IO device directly assigned to a workload means that the workload needs to run vendor specific drivers and libraries to be able to access that device which makes the workload less portable and dependent on a specific hardware type from a specific vendor.
 
 .. image:: ./figures/tech_vtd.png
    :alt: "Figure 3: Direct Assignment with Virtual Technology"
@@ -72,7 +72,7 @@ For this method to be possible, the IO device need to support Single Root Input 
 
 Each of those Virtual Functions can then be independently assigned exclusively to a workload (with the appropriate hardware support of an IOMMU).
 
-Similar to the previous method ("Direct Assignment"), this method provides better performance than para-virtualisation, but lacks the flexibility and the portability sought and therefore must also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by the Anuket Project.
+Similar to the previous method ("Direct Assignment"), this method provides better performance than para-virtualisation, but lacks the flexibility and the portability sought.
 
 .. image:: ./figures/tech_sriov.png
    :alt: "Figure 4: Device Sharing with SR-IOV & Direct Assignment"
@@ -87,7 +87,7 @@ This method basically is a mixture between the software only para-virtualisation
 
 Unlike the software only para-virtualised interfaces, this method provides better performance as it by-passes the hypervisor and unlike Direct Assignment methods, this method doesn’t require proprietary drivers to run in the workload and hence this method makes workloads portable.
 
-However, this method doesn’t provide the same level of flexibility as the software only para-virtualisation method as migrating workloads from one host to another is more challenging due to the hardware presence and the state it holds for the workloads using it and therefore should also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by the Anuket Project.
+However, this method doesn’t provide the same level of flexibility as the software only para-virtualisation method as migrating workloads from one host to another is more challenging due to the hardware presence and the state it holds for the workloads using it.
 
 .. image:: ./figures/tech_virtio_hw.png
    :alt: "Figure 5: Para-Virtualisation method (with hardware support)"
