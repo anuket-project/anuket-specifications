@@ -324,7 +324,7 @@ It's expected with technology evolution (e.g. 6G) that use cases will be more de
     - Enterprise
     - Factory (make use of high level of automation).
     
-     - **Architecture**
+   - **Architecture**
 
     - Demands very low latency (<<1ms) and high reliabilit. 
     - Trustworthiness needs to be guaranteed, which are usually associated to performance, security and resource efficiency/cost and subsequently productivity
