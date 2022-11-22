@@ -326,7 +326,7 @@ It is expected that with the technology evolution (e.g. 6G) the use cases will b
     
    - **Architecture**
 
-    - Demands very low latency (<<1ms) and high reliabilit. 
+    - Demands very low latency (<<1ms) and high reliability. 
     - Trustworthiness needs to be guaranteed, which are usually associated to performance, security and resource efficiency/cost and subsequently productivity
     - Processing cabaility of massive volumes of data.
     
