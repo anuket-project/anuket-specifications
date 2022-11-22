@@ -174,7 +174,7 @@ Breakout / Termination are common mandating that Value Added Services (VASs) & A
 hosted at the Edge. The Telco Edge is a perfect fit for centralized vRAN deployment and vDU/vCU hosting that satisfy the
 latency requirements.
 
-It's expected with technology evolution (e.g. 6G) that use cases will be more demanding. For instance either  to meet less than 1 ms latency, or ultra ultra fast data rate, it will be required an architectural evolution. These use cases once available can take action for life saving decisions, for instance remote automation on environments that life is not supported (e.g. deep space communication), car autonomous driving can be done in real time, and even holographic communications. Such use cases, which can be seen as an evolution of 5G Use Cases but that were not possible to be desgined due to the constrains created by the respective requirements, can now be considered.
+It is expected that with the technology evolution (e.g. 6G) the use cases will be more demanding. For instance, either to meet less than 1 ms latency, or ultra ultra fast data rate, it will be required to evolve the architecture. These use cases, once available, can be used for life saving decisions, for instance for the remote automation in environments not supporting life (e.g., in deep space communication), to ensure that the car autonomous driving can be done in real time, and even for holographic communications. Such use cases can be seen as the evolution of 5G use cases, where such requirements could not be met due to the technology constrains.
 
 - **Use Case #1 - Edge CDN with eMBB Core Network Slicing**
 
