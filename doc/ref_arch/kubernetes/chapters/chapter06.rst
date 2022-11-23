@@ -30,7 +30,7 @@ A feature can be in Alpha, Beta or GA stage:
 
 The policy for RA2 to include Kubernetes features as mandatory is:
 
-   Only features that are either in GA stage (or Beta before 1.24) can be made mandatory, subject to RA2 requirements.
+   Only features that are in GA stage (or Beta before 1.24) can be made mandatory, subject to RA2 requirements.
 
 A list of feature gates is available
 `here <https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/#feature-gates>`__.
