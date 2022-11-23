@@ -1910,14 +1910,15 @@ a method for production environment in `ETSI EN 303 471
 in `ETSI ES 203 539 <https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=47210>`__ [ref] (which is
 a common work with ITU-T which published as `ITU-T L.1361 <https://www.itu.int/rec/T-REC-L.1361>`__ [ref]).
 
-Whatever the method and the service, it requires the infrastructure to provide some **energy consumption metrics**
-for different parts of the cloud infrastructure hardware (server, CPU etc.).
+Whatever the method and the service, it requires the cloud infrastructure to provide some **energy consumption metrics**
+for different parts of the infrastructure hardware (server, CPU etc.) as included in
+:ref:`chapters/chapter04:internal performance measurement capabilities:`.
 These metrics can be an amount of consumed energy (measured in Joule or Watt.hour) or a real-time power utilisation
 (measured in Watt or Joule/second) as proposed by `DMTF Redfish DSP0268 2022.2
 <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ [11] which specifies metrics
 EnergykWh and PowerWatts for this purpose.
 
 Some relevant information regarding NFV energy efficiency can also be found in `Open RAN Technical Priority - Focus
-on Energy Efficiency (March 2022) <https://www.o-ran.org/ecosystem-resources>`__ [ref] and `QuEST Forum - NFV
+on Energy Efficiency (March 2022) <https://www.o-ran.org/ecosystem-resources>`__ and `QuEST Forum - NFV
 Workload Efficiency Whitepaper (October 2016)
-<https://tl9000.org/resources/documents/NFV%20Workload%20Efficiency%20Whitepaper.pdf>`__ [ref].
+<https://tl9000.org/resources/documents/NFV%20Workload%20Efficiency%20Whitepaper.pdf>`__.
