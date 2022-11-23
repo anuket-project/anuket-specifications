@@ -1887,3 +1887,38 @@ Platform Services:
      Balancer being hardware-accelerated).
 - c) Application is designed and can be configured for running with defined Platform Services. Example is application
      that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
+
+
+Energy efficiency
+-----------------
+
+The energy efficiency should be an overall requirement for both the cloud infrastructure itself and the workloads
+hosted by this infrastructure. It is defined as "the relation between the useful output and energy consumption" by
+`ITU-T L.1330 <https://www.itu.int/rec/T-REC-L.1330>`__ [ref] for telecommunication networks and
+`ETSI EN 303 471 <https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ [ref] for NFV,
+the useful output being a metric which represents the capacity provided by the service whose energy efficiency is
+assessed.
+
+As an example, the useful output of a traffic forwarding function can be the data volume forwarded (e.g., measured
+in Byte) and the assessment of its energy efficiency is then based on the ratio between this volume and the energy
+consumed for processing it (e.g., measured in Watt.hour) :
+Energy Efficicency (B/Wh) = Traffic Volume / Consumed Energy
+
+The method for assessing energy efficiency depends on the service targeted and the objectives. For NFV, ETSI proposes
+a method for production environment in `ETSI EN 303 471
+<https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ [ref] and another one for laboratory one
+in `ETSI ES 203 539 <https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=47210>`__ [ref] (which is
+a common work with ITU-T which published as `ITU-T L.1361 <https://www.itu.int/rec/T-REC-L.1361>`__ [ref]).
+
+Whatever the method and the service, it requires the cloud infrastructure to provide some **energy consumption metrics**
+for different parts of the infrastructure hardware (server, CPU etc.) as included in
+:ref:`chapters/chapter04:internal performance measurement capabilities:`.
+These metrics can be an amount of consumed energy (measured in Joule or Watt.hour) or a real-time power utilisation
+(measured in Watt or Joule/second) as proposed by `DMTF Redfish DSP0268 2022.2
+<https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ [11] which specifies metrics
+EnergykWh and PowerWatts for this purpose.
+
+Some relevant information regarding NFV energy efficiency can also be found in `Open RAN Technical Priority - Focus
+on Energy Efficiency (March 2022) <https://www.o-ran.org/ecosystem-resources>`__ and `QuEST Forum - NFV
+Workload Efficiency Whitepaper (October 2016)
+<https://tl9000.org/resources/documents/NFV%20Workload%20Efficiency%20Whitepaper.pdf>`__.
