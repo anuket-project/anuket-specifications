@@ -147,24 +147,27 @@ important standards in current use.
 
 - The National Institute of Standards and Technology (NIST) with the special publications:
 
-  - NIST SP 800-123 `Guide to General Server Security <https://nvlpubs.nist.gov/nistpubs/Legacy 
+  - NIST SP 800-123 `Guide to General Server Security <https://nvlpubs.nist.gov/nistpubs/Legacy
     /SP/nistspecialpublication800-123.pdf>`__
-    
+
   - NIST SP 800-204A `Building Secure Microservices-based Applications Using Service-Mesh Architecture
     <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf>`__
-     
-  - NIST SP 800-204B `Attribute-based Access Control for Microservices-based Applications Using a Service Mesh 
+
+  - NIST SP 800-204B `Attribute-based Access Control for Microservices-based Applications Using a Service Mesh
     <https://csrc.nist.gov/publications/detail/sp/800-204b/final>`__
-     
-  - NIST SP 800-207 `Zero Trust Architecture 
+
+  - NIST SP 800-207 `Zero Trust Architecture
     <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf>`__
+
+  - NIST SP 800-218 `Secure Software Development Framework (SSDF)
+    <https://doi.org/10.6028/NIST.SP.800-218>`__
 
 - FedRAMP Certification `https://www.fedramp.gov/ <https://www.fedramp.gov/>`__
 
 - ETSI Cyber Security Technical Committee (TC CYBER) - `https://www.etsi.org/committee/cyber <https://www.etsi.org/commi
   ttee/cyber>`__
-  
-- `ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) 
+
+- `ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV)
   <https://www.etsi.org/technologies/nfv>`__ and its Security Working Group NFV-SEC
 
 - ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) -
@@ -185,6 +188,10 @@ of experts have developed a set of documents specifying how to secure the global
   security roles, organizational policies, business continuity management…) to technological controls (for user
   equipment, networks, operations…) covering all areas of mobile network, including Cloud Infrastructure. A checklist of
   questions allows to improve the security of a deployed network.
+- The document "Network Equipment Security Assurance Scheme – Development and Lifecycle Security Requirements",
+  FS.16, v2.1, Jan. 2022 [ ], is part of a set of documents aiming to build a security assurance scheme
+  for network equipment. Focusing on critical controls, it defines a set of requirements
+  to be met by vendors development and product lifecycle processes.
 
 The GSMA security activities are currently focussed around 5G services and the new challenges posed by network functions
 virtualisation and open source software. The 2 following documents are in the scope of Cloud Infrastructure security:
@@ -394,7 +401,7 @@ when dealing with such dilemma, the focus has been placed on those non-productio
 the same level as in the production environment (typically of **must** type), leaving relaxed requirements (typically of
 **should** or **may**) in cases there is no such necessity.
 
-In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered 
+In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered
 Infrastructure as a Code (IaaC). This fact implies that many aspects of code related security automatically apply to
 IaaC. Security aspects of IaaC in the telco context is discussed in the previous section
 ":ref:`chapters/chapter07:infrastructure as a code security`",
@@ -667,7 +674,7 @@ the supply chain. The US government requested actions to enhance the software su
 The security of the software supply chain is a challenge also pointed out by the European Network and
 Information Security Agency, ENISA, in the report `NFV Security in 5G - Challenges and Best Practices
 <https://www.enisa.europa.eu/publications/nfv-security-in-5g-challenges-and-best-practices>`__.
- 
+
 
 Software security
 ~~~~~~~~~~~~~~~~~
@@ -805,7 +812,7 @@ and use common data syntax representations.
   the standard.
 
 - `SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software
-  publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID 
+  publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID
   tags: primary, patch, corpus, and supplemental to describe a software component.
 
 The SBOM should be integrated into the operations of the secure development life cycle, especially for vulnerabilities
@@ -846,7 +853,7 @@ is a small sample of some of the testing methodologies and frameworks available.
 
 - OWASP testing guide
 - Penetration Testing Execution Standard, PTES
-- Technical Guide to Information Security Testing and Assessment, `NIST 800-115 
+- Technical Guide to Information Security Testing and Assessment, `NIST 800-115
   <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf>`__
 - VULCAN, Vulnerability Assessment Framework for Cloud Computing, IEEE 2013
 - Penetration Testing Framework, VulnerabilityAssessment.co.uk
@@ -1723,9 +1730,9 @@ Compliance with Standards
 **Table 7-16:** Compliance with standards requirements
 
 Additional Security References
------------------------------- 
+------------------------------
 
-In addition to the security standards used throughout this specification, 
+In addition to the security standards used throughout this specification,
 the following lists gather additional standards of interest for Cloud Infrastructure security.
 
 **ETSI Documents**
@@ -1738,7 +1745,7 @@ the following lists gather additional standards of interest for Cloud Infrastruc
 - Network Functions Virtualisation (NFV) Release 3; Security; Security Management and Monitoring specification,
   ETSI GS NFV-SEC 013 V3.1.1 (2017-02)
 
-- Network Functions Virtualisation (NFV) Release 3; NFV Security; Security Specification for MANO Components and 
+- Network Functions Virtualisation (NFV) Release 3; NFV Security; Security Specification for MANO Components and
   Reference points, ETSI GS NFV-SEC 014 V3.1.1 (2018-04)
 
 - Network Functions Virtualisation (NFV) Release 2; Security; VNF Package Security Specification,
@@ -1768,7 +1775,7 @@ the following lists gather additional standards of interest for Cloud Infrastruc
 - `NIST SP 800-125b Secure Virtual Network Configuration for Virtual Machine (VM) Protection
   <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf>`__
 
-- `NIST SP 800-137 Information Security Continuous Monitoring for Federal Information 
+- `NIST SP 800-137 Information Security Continuous Monitoring for Federal Information
   Systems and Organizations
   <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf>`__
 
