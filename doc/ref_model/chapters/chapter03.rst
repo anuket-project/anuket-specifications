@@ -1906,7 +1906,7 @@ Energy Efficicency (B/Wh) = Traffic Volume / Consumed Energy
 
 The method for assessing energy efficiency depends on the service targeted and the objectives. For NFV, ETSI proposes
 a method for production environment in `ETSI EN 303 471
-<https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ [ref] and another for laboratory one
+<https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ [ref] and another one for laboratory one
 in `ETSI ES 203 539 <https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=47210>`__ [ref] (which is
 a common work with ITU-T which published as `ITU-T L.1361 <https://www.itu.int/rec/T-REC-L.1361>`__ [ref]).
 
