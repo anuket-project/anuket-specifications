@@ -43,20 +43,21 @@ the following specifications:
      - Reference Implementation Trace
    * - ra2.ch.001
      - Huge pages
-     - When hosting workloads matching the High Performance profile, it must be possible to enable Huge pages (2048KiB
-       and 1048576KiB) within the Kubernetes Node OS, exposing schedu lable resources hugepages-2Mi and hugepages-1Gi.
+     - In order for the platform to qualify as a High Performance profile, it must be possible to enable Huge pages
+       (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources hugepages-2Mi and
+       hugepages-1Gi.
      - :ref:`infra.com.cfg.004 <ref_model:chapters/chapter05:Virtual Compute Profiles>`
      - :ref:`RI2 Introduction <ref_impl2:chapters/chapter03:Introduction>`
    * - ra2.ch.002
      - SR-IOV capable NICs
-     - When hosting workloads matching the High Performance profile, the physical machines on which the Kubernetes Nodes
-       run must be equipped with NICs that are SR-IOV capable.
+     - In order for the platform to qualify as a High Performance profile, the physical machines on which the Kubernetes
+       Nodes run must be equipped with NICs that are SR-IOV capable.
      - :ref:`e.cap.013 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.003
      - SR-IOV Virtual Functions
-     - When hosting workloads matching the High Performance profile, SR-IOV virtual functions (VFs) must be configured
-       within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.
+     - In order for the platform to qualify as a High Performance profile, SR-IOV virtual functions (VFs) must be
+       configured within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.
      - :ref:`e.cap.013 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
