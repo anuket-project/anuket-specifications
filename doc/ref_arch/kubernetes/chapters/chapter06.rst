@@ -195,7 +195,7 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - Feature:`BoundServiceAccountTokenVolume <https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/120
        5-bound-service-account-tokens/README.md>`__
      -
-     - ServiceAccount admission controller migration master upgrade should maintain a functioning cluster
+     - ServiceAccount admission controller migration upgrade should maintain a functioning cluster
    * - Feature:NodeAuthenticator
      - X
      - The kubelet's main port 10250 should reject requests with no credentials
@@ -354,7 +354,7 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
      - Resource tracking for 100 pods per node
    * - Feature:GPUUpgrade
      -
-     - Master upgrade should NOT disrupt GPU Pod
+     - Control Plane node upgrade should NOT disrupt GPU Pod
    * - Feature:PodGarbageCollector
      -
      - Should handle the creation of 1000 pods
