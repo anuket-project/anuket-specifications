@@ -532,6 +532,14 @@ Architecture they must be implemented as per the following specifications:
        addresses for secondary network interfaces across all nodes of the cluster.
      - :ref:`inf.ntw.10 <chapters/chapter02:Kubernetes Architecture Requirements>`
      -
+   * - ra2.ntw.016
+     - Kubernetes Network Custom Resource Definition De-facto Standard compliant multiplexer / meta-plugin
+     - When a multiplexer/meta-plugin is used, the multiplexed / meta-plugin must implement version 1.2 of the
+       `Kubernetes Network Custom Resource Definition De-facto Standard
+       <https://github.com/k8snetworkplumbingwg/multi-net-spec/tree/master/v1.2>`__.
+     - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
+     - :ref:`RI2 Installation on Bare Metal Infratructure
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
 
 Storage components
 ------------------
