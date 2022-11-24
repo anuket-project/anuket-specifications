@@ -659,7 +659,9 @@ operations and management complexity.
 At the edge, the infrastructure may further include ruggedised hardware for harsh environments and hardware with
 different form factors.
 
-Finally, there is a need to integrate, and to consider extreme-edge devices which can be part of the ecosystem, and offer programability and processing capabilities. Ultimately, can be considered for the end-to-end orchestration, and can be used to comply with extreme requirements for some of the use cases. 
+Finally, there is a need to integrate, and to consider extreme-edge devices which can be part of the ecosystem,
+ and offer programability and processing capabilities. Ultimately, can be considered for the end-to-end 
+ orchestration, and can be used to comply with extreme requirements for some of the use cases. 
 
 Telco Edge Cloud: Infrastructure Profiles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
