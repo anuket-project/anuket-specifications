@@ -351,7 +351,9 @@ criteria for inclusion of a standard/technology is defined. These standards/tech
 - not be focused on "Transactions/Conversations" or "User/Data Plane" standards (typically IETF, IEEE,
   MEF/Carrier Ethernet etc.)
   
-The different orchestration solutions that can be found either in different techonlogy domains (e.g. Core, Edge, Radio), or different planes (Management and Control) for Service, Network and Resource layers shall consider the following attributes (not limited to the below ones):
+The different orchestration solutions that can be found either in different techonlogy domains (e.g. Core, Edge, 
+Radio), or different planes (Management and Control) for Service, Network and Resource layers shall consider 
+the following attributes (not limited to the below ones):
 
 - Interoperability: Necessary integration among the orchestration components which would guarantee either the lifecycle management operations or related operation delegation to different orchestration components across the orchestration
 - Flexibiliy: There are use cases which can only be executed if the operations can run disaggregated, otherwise, extreme requirements brough by the use cases could be challenging to achieve taking in account technological constrains (e.g. use cases demanding less than 1 ms of latency)
