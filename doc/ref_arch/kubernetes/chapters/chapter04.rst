@@ -44,7 +44,7 @@ the following specifications:
    * - ra2.ch.001
      - Huge pages
      - In order for the platform to qualify as a High Performance profile, it must be possible to enable Huge pages
-       (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedu lable resources hugepages-2Mi and
+       (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources hugepages-2Mi and
        hugepages-1Gi.
      - :ref:`infra.com.cfg.004 <ref_model:chapters/chapter05:Virtual Compute Profiles>`
      - :ref:`RI2 Introduction <ref_impl2:chapters/chapter03:Introduction>`
