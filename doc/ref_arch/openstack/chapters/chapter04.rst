@@ -1379,9 +1379,11 @@ device type (see above for list of some of the device types). The
 current list of the supported vendor drivers is listed under "Driver
 Support :cite:p:`ostk_latest_cyborg_support`".
 
-Containerised OpenStack Services
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Containerisation
+~~~~~~~~~~~~~~~~
 
+Containerised OpenStack Services
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Containers are lightweight compared to Virtual Machines, and lead to
 efficient resource utilisation. Kubernetes auto manages scaling,
 recovery from failures, etc. Thus, it is recommended that the OpenStack
@@ -1399,8 +1401,8 @@ the figure below.
 
    Containerised OpenStack Services Topology
 
-Containerisation Support
-^^^^^^^^^^^^^^^^^^^^^^^^
+Containerisation Support for Workloads
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Kubernetes :cite:p:`kubernetes` is currently the *de facto* container
 orchestration platform. The Anuket Kubernetes Reference Architecture
