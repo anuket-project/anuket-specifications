@@ -170,7 +170,7 @@ Component                 Interface Standard           Link
 ========================= ============================ ===============================
 Infrastructure Management Defined in RA specifications RA-1, RA-2
 Infrastructure Software   Defined in RA specifications RA-1, RA-2
-Infrastructure Hardware   Redfish API                  DMTF RedFish specification [11]
+Infrastructure Hardware   Redfish API                  DMTF RedFish specification :cite:p:`dmtfredfish`
 ========================= ============================ ===============================
 
 **Table 9-3:** Interface Standards for Configuration Management

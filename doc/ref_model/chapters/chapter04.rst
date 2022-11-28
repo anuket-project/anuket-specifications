@@ -172,7 +172,7 @@ e.cap.017 Monitoring of L2-7 data         Yes/No Ability to monitor L2-L7 data f
 .. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. The following table of exposed Performance Measurements shows PMs per VM or Pod, vNIC or vCPU. Network test setups
-   are aligned with ETSI GS NFV-TST 009 [14]. Specifically exposed PMs use a single workload (PVP) dataplane test setup
+   are aligned with ETSI GS NFV-TST 009 :cite:p:`etsigsnfvtst009`. Specifically exposed PMs use a single workload (PVP) data plane test setup
    in a single host.
 
 .. ======== ================================ ===== ===================
@@ -269,62 +269,62 @@ or events should be collected and monitored by monitoring tools.
 |         | Infrastructure      |           |                                                                          |
 |         | Capability          |           |                                                                          |
 +=========+=====================+===========+==========================================================================+
-|i.pm.001 | Host CPU usage      |nanoseconds| Per Compute node. It maps to ETSI GS NFV-TST 008 V3.5.1 [5] clause 6,    |
+|i.pm.001 | Host CPU usage      |nanoseconds| Per Compute node. It maps to ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008` clause 6,    |
 |         |                     |           | processor usage metric (Cloud Infrastructure internal).                  |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
-|i.pm.002 | Virtual compute     |nanoseconds| Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean vCPU usage |
+|i.pm.002 | Virtual compute     |nanoseconds| Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 :cite:p:`etsigsnfvifa027` Mean vCPU usage |
 |         | resource (vCPU)     |           | and Peak vCPU usage (Cloud Infrastructure external).                     |
 |         | usage               |           |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
-|i.pm.003 | Host CPU            | %         | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.5.1 [5] clause 6,    |
+|i.pm.003 | Host CPU            | %         | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008` clause 6,    |
 |         | utilisation         |           | processor usage metric (Cloud Infrastructure internal).                  |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
-|i.pm.004 | Virtual compute     | %         | Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean vCPU usage |
+|i.pm.004 | Virtual compute     | %         | Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 :cite:p:`etsigsnfvifa027` Mean vCPU usage |
 |         | resource (vCPU)     |           | and Peak vCPU usage (Cloud Infrastructure external).                     |
 |         | utilisation         |           |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.005 | Network metric,     | Number of | Number of successfully transmitted or received packets per physical or   |
-|         | Packet count        | packets   | virtual interface, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]         |
+|         | Packet count        | packets   | virtual interface, as defined in  ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`         |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.006 | Network metric,     | 8-bit     | Number of 8-bit bytes that constitute successfully transmitted or        |
 |         | Octet count         | bytes     | received packets per physical or virtual interface, as defined in ETSI   |
-|         |                     |           | GS NFV-TST 008 V3.5.1 [5]                                                |
+|         |                     |           | GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                                                |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.007 | Network metric,     | Number of | Number of discarded packets per physical or virtual interface,  as       |
-|         | Dropped Packet      | packets   | defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                               |
+|         | Dropped Packet      | packets   | defined in  ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                               |
 |         | count               |           |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.008 | Network metric,     | Number of | Number of erroneous packets per physical or virtual                      |
-|         | Errored Packet      | packets   | interface, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                 |
+|         | Errored Packet      | packets   | interface, as defined in  ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                 |
 |         | count               |           |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.009 | Memory buffered     | KiB       | Amount of temporary storage for raw disk blocks, as defined in ETSI GS   |
-|         |                     |           | NFV-TST 008 V3.5.1 [5]                                                   |
+|         |                     |           | NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                                                   |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.010 | Memory cached       | KiB       | Amount of RAM used as cache memory, as defined in ETSI GS  NFV-TST 008   |
-|         |                     |           | V3.5.1 [5]                                                               |
+|         |                     |           | V3.5.1 :cite:p:`etsigsnfvtst008`                                                               |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
-|i.pm.011 | Memory free         | KiB       | Amount of RAM unused, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]      |
+|i.pm.011 | Memory free         | KiB       | Amount of RAM unused, as defined in  ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`      |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.012 | Memory slab         | KiB       | Amount of memory used as a data structure cache by the kernel,           |
-|         |                     |           | as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                            |
+|         |                     |           | as defined in  ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                            |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
-|i.pm.013 | Memory total        | KiB       | Amount of usable RAM, as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]      |
+|i.pm.013 | Memory total        | KiB       | Amount of usable RAM, as defined in  ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`      |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.014 | Storage free space  | Bytes     | for a given storage system, amount of unused storage as defined in       |
-|         |                     |           | ETSI GS NFV-TST 008 V3.5.1 [5]                                           |
+|         |                     |           | ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                                           |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.015 | Storage used space  | Bytes     | for a given storage system, amount of storage used as defined in         |
-|         |                     |           | ETSI GS NFV-TST 008 V3.5.1 [5]                                           |
+|         |                     |           | ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                                           |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.016 | Storage reserved    | Bytes     | for a given storage system, amount of storage reserved as defined in     |
-|         | space               |           | ETSI GS NFV-TST 008 V3.5.1 [5]                                           |
+|         | space               |           | ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                                           |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.017 | Storage Read        | Millisec\ | for a given storage system, average amount of time to perform a Read     |
-|         | latency             | onds      | operation as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                  |
+|         | latency             | onds      | operation as defined in  ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                  |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.018 | Storage Read        | operatio\ | for a given storage system, average rate of performing Read operations   |
-|         | IOPS                | ns per    | as defined in  ETSI GS NFV-TST 008 V3.5.1 [5]                            |
+|         | IOPS                | ns per    | as defined in  ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                            |
 |         |                     | second    |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.019 | Storage Read        | Bytes per | for a given storage system, average rate of performing Read operations   |
@@ -334,11 +334,11 @@ or events should be collected and monitored by monitoring tools.
 |         | latency             | onds      | operation as defined in  ETSI GS NFV-TST 008 V3.5.1                      |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.021 | Storage Write       | operatio\ | for a given storage system, average rate of performing Write operations  |
-|         | IOPS                | ns per    | as defined in ETSI GS NFV-TST 008 V3.5.1 [5]                             |
+|         | IOPS                | ns per    | as defined in ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                             |
 |         |                     | second    |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.022 | Storage Write       | Bytes per | for a given storage system, average rate of performing Write operations  |
-|         | Throughput          | second    | as defined in ETSI GS NFV-TST 008 V3.5.1 [5]                             |
+|         | Throughput          | second    | as defined in ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`                             |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.023 | Host power          | Watt      | Real-time electrical power used by a node (1)                            |
 |         | utilization         | (Joule/s) |                                                                          |
@@ -446,7 +446,7 @@ Cloud Infrastructure Management Performance Measurements
 Resources Management Measurements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Table 4-11** shows resource management measurements of CIM as aligned with ETSI GR NFV IFA-012 [15]. The intention of
+**Table 4-11** shows resource management measurements of CIM as aligned with ETSI GR NFV IFA-012 :cite:p:`etsigrnfvifa012`. The intention of
 this table is to provide a list of measurements to be used in the Reference Architecture specifications, where the
 values allowed for these measurements in the context of a particular Reference Architecture will be defined.
 
@@ -789,7 +789,7 @@ Workload Flavours and Other Capabilities Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The workload requests a set of resource capabilities needed by it, including its components, to run successfully.
-The GSMA document OPG.02 "Operator Platform Technical Requirements" [34] defines "Resource Flavour" as this set of
+The GSMA document OPG.02 "Operator Platform Technical Requirements" :cite:p:`gsmaopg02` defines "Resource Flavour" as this set of
 capabilities. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources
 needed (workload flavour), and extra specifications for workload placement; as defined in
 `Section 4.2 Profiles and Workload Flavours <#profiles-and-workload-flavours>`__ above.
