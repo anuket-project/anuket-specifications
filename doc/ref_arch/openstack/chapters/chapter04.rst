@@ -1379,7 +1379,7 @@ device type (see above for list of some of the device types).
 For Wallaby release, the list of the supported vendor drivers is
 provided under "Driver Support :cite:p:`ostk_wallaby_cyborg_support`"
 and into the "setup.cfg file
-cite:p:`ostk_wallaby_cyborg_driver`".
+:cite:p:`ostk_wallaby_cyborg_driver`".
 
 Containerised OpenStack Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
