@@ -12,6 +12,10 @@ Kubernetes platform interoperability.
 Note that each requirement may have one or more test cases associated
 with it.
 
+The Anuket Assured Workload badge requires that workloads are expected 
+to return **Must/Must Not** results all of the tests/suites identified
+as priority (see table).
+
 Selection Criteria
 ------------------
 
