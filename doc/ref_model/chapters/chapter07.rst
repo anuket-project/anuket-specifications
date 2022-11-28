@@ -183,13 +183,13 @@ In mobile network field, the GSM Association (`GSMA <https://www.gsma.com/>`__) 
 of experts have developed a set of documents specifying how to secure the global mobile ecosystem.
 
 - The document “Baseline Security controls”, `FS.31 v2.0 <https://www.gsma.com/security/resources/fs-31-gsma-baseline-se
-  curity-controls/>`__\ [20], published in February 2020, is a practical guide intended for operators and stakeholders
+  curity-controls/>`__ :cite:p:`gsmafs31`, published in February 2020, is a practical guide intended for operators and stakeholders
   to check mobile network’s internal security. It lists a set of security controls from business controls (including
   security roles, organizational policies, business continuity management…) to technological controls (for user
   equipment, networks, operations…) covering all areas of mobile network, including Cloud Infrastructure. A checklist of
   questions allows to improve the security of a deployed network.
-- The document "Network Equipment Security Assurance Scheme – Development and Lifecycle Security Requirements",
-  FS.16, v2.1, Jan. 2022 [ ], is part of a set of documents aiming to build a security assurance scheme
+- The document "Network Equipment Security Assurance Scheme – Development and Lifecycle Security Requirements" :cite:p:`gsmafs16`,
+  is part of a set of documents aiming to build a security assurance scheme
   for network equipment. Focusing on critical controls, it defines a set of requirements
   to be met by vendors development and product lifecycle processes.
 
@@ -197,10 +197,10 @@ The GSMA security activities are currently focussed around 5G services and the n
 virtualisation and open source software. The 2 following documents are in the scope of Cloud Infrastructure security:
 
 - The white paper `“Open Networking & the Security of Open Source Software deployment” <https://www.gsma.com/futurenetwo
-  rks/resources/open-networking-the-security-of-open-source-software-deployment/>`__, published in January 2021 [21],
+  rks/resources/open-networking-the-security-of-open-source-software-deployment/>`__ :cite:p:`gsmaopensourcesecurity`,
   deals with open source software security, it highlights the importance of layered security defences and lists
   recommendations and security concepts able to secure deployments.
-- The “5G Security Guide”, FS.40 version 2.0, Oct. 2021 [36](non-binding Permanent Reference Document), covers 5G security,
+- The “5G Security Guide” :cite:p:`gsmafs40` (non-binding Permanent Reference Document), covers 5G security,
   in a holistic way, from user equipment to networks. The document describes the new security features in 5G.
   It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualisation, cloud
   native applications and containerisation security.
@@ -355,11 +355,11 @@ and integrated with the native DevOps and DevSecOps tools and procedures.
 The DevSecOps Automation best practice advocates implementing a framework for security automation and programmatic
 execution and monitoring of security controls to identify, protect, detect, respond, and recover from cyber threats. The
 framework used for the IaaC security is based on, the joint publication of Cloud Security Alliance (CSA) and SAFECode,
-"`The Six Pillars of DevSecOps: Automation (2020) <https://cloudsecurityalliance.org/blog/2021/09/09/six-pillars-of-devs
-ecops-series/>`__" [22]. The document utilises the base definitions and constructs from
-`ISO 27000 <https://www.iso.org/standard/73906.html>`__ [23], and CSA's
+"`The Six Pillars of DevSecOps: Automation (2020) <https://safecode.org/resource-secure-development-practices/the-six-pillars-of-devsecops-automation>`__"
+:cite:p:`safecodesixpillarsdevsecops`. The document utilises the base definitions and constructs from
+`ISO 27000 <https://www.iso.org/standard/73906.html>`__ :cite:p:`isoiec270002018`, and CSA's
 `Information Security Management through Reflexive Security <https://cloudsecurityalliance.org/artifacts/information-sec
-urity-management-through-reflexive-security/>`__ [24].
+urity-management-through-reflexive-security/>`__ :cite:p:`csaeflexivesec`.
 
 The framework identifies the following five distinct stages:
 
@@ -623,7 +623,7 @@ the threats and attacks within an enterprise, a network or an infrastructure, en
 between each component of the system.
 
 Zero Trust Architecture (ZTA), described in `NIST SP 800-207 publication <https://nvlpubs.nist.gov/nistpubs/SpecialPubli
-cations/NIST.SP.800-207.pdf>`__ [25], assumes there is no implicit trust granted to assets or user accounts whatever
+cations/NIST.SP.800-207.pdf>`__ :cite:p:`nistsp800207`, assumes there is no implicit trust granted to assets or user accounts whatever
 their location or ownership. Zero trust approach focuses on protecting all types of resources: data, services, devices,
 infrastructure components, virtual and cloud components. Trust is never granted implicitly, and must be evaluated
 continuously.

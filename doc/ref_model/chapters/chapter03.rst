@@ -444,8 +444,8 @@ enable the pooled usage of Compute and Storage from a managed shared pool.
 Throughout this chapter and its figures a number of references to ETSI NFV are made and they explicitly are made towards
 the ETSI NFV models in the Architectural Framework:
 
-- ETSI GS NFV 002 V1.2.1 [3]
-- ETSI GR NFV-IFA 029 V3.3.1 [4]
+- ETSI GS NFV 002 V1.2.1 cite:p:`etsigsnfv002`
+- ETSI GR NFV-IFA 029 V3.3.1 :cite:p:`etsigrnfvifa029`
 
 Cloud and Telco networking are layered, and it is very important to keep the dependencies between the layers low to
 enable security, separation and portability in between multiple implementations and generations.
@@ -912,14 +912,14 @@ Managed Objects :cite:p:`rfc5907`,
 Server Option for DHCPv6 :cite:p:`rfc5908`)
 as the default time synchronization for the cluster. That level of synchronization is not sufficient for some
 network functions. Just like real-time operating systems instead of base OS, so is precision timing for clock
-synchronization. Precision Time Protocol version 2 `PTP <https://standards.ieee.org/standard/1588-2019.html>`__ [31]
+synchronization. Precision Time Protocol version 2 `PTP <https://standards.ieee.org/standard/1588-2019.html>`__ cite:p:`ieee1588dash2019`
 is commonly used for Time-Sensitive Networking. This allow synchronization in microsecond range rather than
 millisecond range that NTP provides.
 
-Some Network functions, like vDU, of vRAN, also require `SyncE <http://www.itu.int/rec/T-REC-G.8262>`__ [32]. Control,
+Some Network functions, like vDU, of vRAN, also require `SyncE <http://www.itu.int/rec/T-REC-G.8262>`__ :cite:p:`itutg8262`. Control,
 User and Synchronization (CUS) Plane specification defines different topology options that provides Lower Layer Split
 Control plane 1-4 (LLS-C1 - LLS-C4) with different synchronization requirements
-(`ITU-T G.8275.2 <https://www.itu.int/rec/T-REC-G.8275.2/en>`__ [33]).
+(`ITU-T G.8275.2 <https://www.itu.int/rec/T-REC-G.8275.2/en>`__ :cite:p:`itutg82752`).
 
 SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommendations:
 
@@ -1547,7 +1547,7 @@ Also, this realization example would enable implementation of a programmable fab
    Reference model realization example
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as
-defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in
+defined in ETSI GR NFV-IFA 029 V3.3.1 :cite:p:`etsigrnfvifa029`. More detailed deployment examples can be found in
 `network`_ of this Reference Model chapter.
 
 Hardware Acceleration Abstraction
@@ -1676,7 +1676,8 @@ hardware accelerator implementations.
 
    AAL Interface in RM Realization Diagram
 
-The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” [35], and in the latest O-RAN WG6 Cloudification and Orchestration Workgroup specfications [39]:
+The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” :cite:p:`oranwg6aalganp`,
+and in the latest O-RAN WG6 Cloudification and Orchestration Workgroup specfications :cite:p:`oranwg6cloudorchwg``:
 
 - Describes the functions conveyed over the AAL interface, including configuration and management functions.
 - Identifies the requirements as well as general procedures and operations.
@@ -1894,8 +1895,8 @@ Energy efficiency
 
 The energy efficiency should be an overall requirement for both the cloud infrastructure itself and the workloads
 hosted by this infrastructure. It is defined as "the relation between the useful output and energy consumption" by
-`ITU-T L.1330 <https://www.itu.int/rec/T-REC-L.1330>`__ [ref] for telecommunication networks and
-`ETSI EN 303 471 <https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ [ref] for NFV,
+`ITU-T L.1330 <https://www.itu.int/rec/T-REC-L.1330>`__ :cite:p:`itutl1330` for telecommunication networks and
+`ETSI EN 303 471 <https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ :cite:p:`etsien303sp471` for NFV,
 the useful output being a metric which represents the capacity provided by the service whose energy efficiency is
 assessed.
 
@@ -1906,19 +1907,19 @@ Energy Efficicency (B/Wh) = Traffic Volume / Consumed Energy
 
 The method for assessing energy efficiency depends on the service targeted and the objectives. For NFV, ETSI proposes
 a method for production environment in `ETSI EN 303 471
-<https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ [ref] and another one for laboratory one
-in `ETSI ES 203 539 <https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=47210>`__ [ref] (which is
-a common work with ITU-T which published as `ITU-T L.1361 <https://www.itu.int/rec/T-REC-L.1361>`__ [ref]).
+<https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ :cite:p:`etsien303sp471` and another one for laboratory one
+in `ETSI ES 203 539 <https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=47210>`__ :cite:p:`etsies203sp539` (which is
+a common work with ITU-T which published as `ITU-T L.1361 <https://www.itu.int/rec/T-REC-L.1361>`__ :cite:p:`itutl1361`).
 
 Whatever the method and the service, it requires the cloud infrastructure to provide some **energy consumption metrics**
 for different parts of the infrastructure hardware (server, CPU etc.) as included in
 :ref:`chapters/chapter04:internal performance measurement capabilities:`.
 These metrics can be an amount of consumed energy (measured in Joule or Watt.hour) or a real-time power utilisation
 (measured in Watt or Joule/second) as proposed by `DMTF Redfish DSP0268 2022.2
-<https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ [11] which specifies metrics
+<https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ :cite:p:`dmtfredfish` which specifies metrics
 EnergykWh and PowerWatts for this purpose.
 
 Some relevant information regarding NFV energy efficiency can also be found in `Open RAN Technical Priority - Focus
-on Energy Efficiency (March 2022) <https://www.o-ran.org/ecosystem-resources>`__ and `QuEST Forum - NFV
+on Energy Efficiency (March 2022) <https://www.o-ran.org/ecosystem-resources>`__ :cite:p:`oranenergyeff` and `QuEST Forum - NFV
 Workload Efficiency Whitepaper (October 2016)
-<https://tl9000.org/resources/documents/NFV%20Workload%20Efficiency%20Whitepaper.pdf>`__.
+<https://tl9000.org/resources/documents/NFV%20Workload%20Efficiency%20Whitepaper.pdf>`__ :cite:p:`questnfvwlenergyeff`.
