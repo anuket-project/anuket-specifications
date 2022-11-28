@@ -206,7 +206,8 @@ The model defines the following core roles:
 
 The set of high level interactions cover:
 
-- Manage Account & Catalog - covering Account, Users, Subscription, Billing & Catalog of Available Services
+- Manage Account & Catalog - covering Account, Users, Subscription, Billing & Catalog of Available Services (where
+  Service Provider (not necessarily CSP only) is responsible for creation and publication of catalog contents)
 - Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge/Cloud Connection Configuration,
   Connection Security Profile
 - Manage Resource - Resource Pool Management, VM/VNF Management (CPU, Memory, Storage, Network), Image Repository
