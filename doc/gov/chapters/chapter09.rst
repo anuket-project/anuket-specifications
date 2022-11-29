@@ -304,7 +304,7 @@ Objectives of RI1/RC1 Trials
 The object is to quantitively and qualitatively assess and evaluate the following Anuket requirements,
 methods, and support processes:
 
--  RI1 or RI2 Specifications
+-  RA1 or RA2 Specifications
 -  VI implementation support methods ( i.e. cookbooks, installation manuals, how to guides etc.)
 -  RC1 or RC2 Test Suite
 -  TC Traceability
