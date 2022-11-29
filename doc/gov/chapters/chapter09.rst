@@ -305,7 +305,7 @@ The object is to quantitively and qualitatively assess and evaluate the followin
 methods, and support processes:
 
 -  RA1 or RA2 Specifications
--  VI implementation support methods ( i.e. cookbooks, installation manuals, how to guides etc.)
+-  Cloud Infrastructure implementation support methods ( i.e. cookbooks, installation manuals, how to guides etc.)
 -  RC1 or RC2 Test Suite
 -  TC Traceability
 -  Test Pass Criteria
