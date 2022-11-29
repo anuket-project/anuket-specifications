@@ -1375,9 +1375,11 @@ cyborg-db are hosted on control nodes. cyborg-agent, which runs on
 compute nodes, interacts with generic device type drivers on those
 nodes. These generic device type drivers are an abstraction of the
 vendor specific drivers; there is a generic device type driver for each
-device type (see above for list of some of the device types). The
-current list of the supported vendor drivers is listed under "Driver
-Support :cite:p:`ostk_latest_cyborg_support`".
+device type (see above for list of some of the device types).
+For Wallaby release, the list of the supported vendor drivers is
+provided under "Driver Support :cite:p:`ostk_wallaby_cyborg_support`"
+and into the "setup.cfg file
+:cite:p:`ostk_wallaby_cyborg_driver`".
 
 Containerisation
 ~~~~~~~~~~~~~~~~
