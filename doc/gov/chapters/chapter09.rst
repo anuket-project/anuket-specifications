@@ -428,7 +428,7 @@ Required Assessments
 ^^^^^^^^^^^^^^^^^^^^
 
 
--  VI Implementation methods and procedures (cookbook, etc)
+-  Cloud Infrastructure Implementation methods and procedures (cookbook, etc)
 -  RI1 or RI2 Specifications
 -  RC1 or RC2 Test Suite
 -  TC Traceability
