@@ -429,7 +429,7 @@ Required Assessments
 
 
 -  Cloud Infrastructure Implementation methods and procedures (cookbook, etc)
--  RI1 or RI2 Specifications
+-  RA1 or RA2 Specifications
 -  RC1 or RC2 Test Suite
 -  TC Traceability
 -  Test Pass Criteria
