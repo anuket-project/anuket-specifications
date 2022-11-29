@@ -129,8 +129,8 @@ Control Plane Efficiency
    **Gap description:** For example, in situations where multiple sites / availability zones exist, an operator may
    choose to run multiple Kubernetes clusters, not only for security/multitenancy reasons but also fault, resilience,
    latency, etc.
-   This produces an overhead of Kubernetes Masters - is there a way of making this more efficient whilst still able to
-   meet the non-functional requirements of the operator (fault, resilience, latency, etc.)
+   This produces an overhead of Kubernetes Control plane nodes - is there a way of making this more efficient whilst
+   still able to meet the non-functional requirements of the operator (fault, resilience, latency, etc.)
 
 Interoperability with VNF-based networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

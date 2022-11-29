@@ -175,7 +175,7 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
      - Reference Implementation Trace
    * - ra2.os.001
      - Linux Distribution
-     - A deb/rpm compatible distribution of Linux (this must be used for the master nodes, and can be used for worker
+     - A deb/rpm compatible distribution of Linux (this must be used for the control plane nodes, and can be used for worker
        nodes).
      - tbd
      - tbd
@@ -243,28 +243,28 @@ the following specifications:
      - The Kubernetes distribution, product, or installer used in the implementation must be listed in the
        `Kubernetes Distributions and Platforms document <https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMh
        uythuq_GL3N1mlUUK2h0/edit>`__ and marked (X) as conformantfor the Kubernetes version defined in
-       :ref:`index:required versions of most important components`.
+       :ref:`index:required component versions`.
      - :ref:`gen.cnt.03 <chapters/chapter02:Kubernetes Architecture Requirements>`
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.k8s.002
      - Highly available etcd
-     - An implementation must consist of either three, five or seven nodes running the etcd service (can be colocated on
-       the master nodes, or can run on separate nodes, but not on worker nodes).
+     - An implementation must consist of either three, five or seven nodes running the etcd service (can be colocated
+       on the control plane nodes, or can run on separate nodes, but not on worker nodes).
      - :ref:`gen.rsl.02 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`gen.avl.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
      - :ref:`RI2 Installation on Bare Metal Infratructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.k8s.003
      - Highly available control plane
-     - An implementation must consist of at least one master node per availability zone or fault domain to ensure the
-       high availability and resilience of the Kubernetes control plane services.
+     - An implementation must consist of at least one control plane node per availability zone or fault domain to 
+       ensure the high availability and resilience of the Kubernetes control plane services.
      -
      -
    * - ra2.k8s.012
      - Control plane services
-     - A master node must run at least the following Kubernetes control plane services: kube-apiserver, kube-scheduler
-       and kube-controller-manager.
+     - A control plane node must run at least the following Kubernetes control plane services: kube-apiserver,
+       kube-scheduler and kube-controller-manager.
      - :ref:`gen.rsl.02 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`gen.avl.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
      - :ref:`RI2 Installation on Bare Metal Infratructure
@@ -281,8 +281,8 @@ the following specifications:
    * - ra2.k8s.005
      - Kubernetes API Version
      - In alignment with the `Kubernetes version support policy
-       <https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions>`__, an implementation must use
-       a Kubernetes version as per the subcomponent versions table in
+       <https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions>`__, an implementation must
+       use a Kubernetes version as per the subcomponent versions table in
        :ref:`index:required versions of most important components`.
      -
      -
@@ -381,7 +381,8 @@ the following specifications:
      -
    * - ra2.k8s.019
      - Kubernetes APIs
-     - Kubernetes Beta APIs must be supported only when a stable GA of the same version doesn't exist.
+     - Kubernetes Beta APIs must be disabled, except for existing APIs as of Kubernetes 1.24 and only when a stable GA
+       of the same version doesn't exist.
      - :ref:`int.api.04 <chapters/chapter02:Kubernetes Architecture Requirements>`
      -
 
@@ -721,9 +722,9 @@ Architecture they must be implemented as per the following specifications:
      - N/A
    * - ra2.app.008
      - Infrastructure dependency
-     - Workloads must not rely on the availability of the master nodes for the successful execution of their
-       functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling,
-       but components that are already running will continue to do so without issue).
+     - Workloads must not rely on the availability of the control plane nodes for the successful execution of their
+       functionality (i.e. loss of the control plane nodes may affect non-functional behaviours such as healing and
+       scaling, but components that are already running will continue to do so without issue).
      - TBD
      - N/A
    * - ra2.app.009
