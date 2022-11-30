@@ -634,6 +634,131 @@ Cloud Infrastructure Management Requirements
 
 :ref:`ref_model:chapters/chapter04:cloud infrastructure management capabilities`.
 
+Cloud Infrastructure Monitoring Capabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Reference Model Requirements: Cloud Infrastructure Internal Performance Measurement Requirements
+   :widths: 10 10 50 10 10
+   :header-rows: 1
+
+   * - Reference Model Section
+     - Reference
+     - Description
+     - Requirement (common to all Profiles)
+     - Specification Reference
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.001
+     - Capability to monitor Host CPU Usage (in ns)
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.002
+     - Capability to monitor per Pod CPU (Virtual compute resource) usage (in ns)
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.003
+     - Capability to monitor Host CPU Usage (in percentage)
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.004
+     - Capability to monitor per Pod CPU (Virtual compute resource) usage (in percentage)
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.005
+     - Capability to monitor Packet count per physical or virtual node network interface
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.006
+     - Capability to monitor Octet (bytes) count per physical or virtual node network interface
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.007
+     - Capability to monitor Dropped Packet count per physical or virtual node network interface
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.008
+     - Capability to monitor Errored Packet count per physical or virtual node network interface
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.009
+     - Capability to monitor amount of buffered memory (in KiB) on the node.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.010
+     - Capability to monitor amount of cached memory (in KiB) on the node.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.011
+     - Capability to monitor amount of free memory (in KiB) on the node.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.012
+     - Capability to monitor amount of slab memory (in KiB) on the node.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.013
+     - Capability to monitor amount of total memory (in KiB) on the node.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.014
+     - Capability to monitor amount of free storage space (in B) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.015
+     - Capability to monitor amount of used storage space (in B) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.016
+     - Capability to monitor amount of reserved storage space (in B) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.017
+     - Capability to monitor the storage read latency (in ms) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.018
+     - Capability to monitor the read operations rate (in IOPS) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.019
+     - Capability to monitor the storage read throughput (in B/s) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.020
+     - Capability to monitor the storage write latency (in ms) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.021
+     - Capability to monitor the write operations rate (in IOPS) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.022
+     - Capability to monitor the storage write throughput (in B/s) on the node and on volumes.
+     - Must support
+     - N/A
+
+:ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`.
+
 
 
 Cloud Infrastructure Security Requirements
@@ -1409,7 +1534,7 @@ machines or containers.
    * - inf.ntw.02
      - Infrastructure
      - Network
-     - The Architecture must support redundant network connectivity to the Kubernetes 
+     - The Architecture must support redundant network connectivity to the Kubernetes
        nodes. At least two physical network connections are required for each physical Kubernetes node.
        For virtualized Kubernetes nodes, redundant network interfaces backed by redundant physical
        connections, are required on each virtualised Kubernetes node.

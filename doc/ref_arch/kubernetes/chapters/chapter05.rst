@@ -61,8 +61,8 @@ secured within their perimeters. The various layers that come into picture are:
 -  **Kubernetes Node**: A Kubernetes node in an unsecured boundary can lead to a
    potential threat to the running workloads. Such a node should be hardened by
    disabling unused ports, prohibiting root access etc.
--  **Kubernetes Master**: A master node in an unsecured boundary can lead to a
-   potential threat to the running workloads. A master may be hardened in terms
+-  **Kubernetes Control Plane Node**: A control plane node in an unsecured boundary can lead to a
+   potential threat to the running workloads. A control plane may be hardened in terms
    of security by disabling unused ports, prohibiting root access etc.
 -  **Kubernetes Control Plane**: The container orchestration layer that exposes
    the API and interfaces to define, deploy, and manage the lifecycle of
@@ -150,7 +150,7 @@ etc.
 
 They following are security recommendations for orchestration manager:
 
--  Cluster management Network isolation can help protect the master node and
+-  Cluster management Network isolation can help protect the control plane node and
    control where administrative commands can run. Use network isolation
    techniques, configure RBAC on the Cluster manager and configure node service
    accounts following the principle of least privilege.
@@ -203,7 +203,7 @@ ports used in Kubernetes. Make sure that your
 network blocks access to unnecessary ports and consider limiting access to the Kubernetes
 API server except from trusted networks.
 
-**Master node(s):**
+**Control plane node(s):**
 
 ======== ========== =======================
 Protocol Port Range Purpose

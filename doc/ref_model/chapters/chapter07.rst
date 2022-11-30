@@ -147,24 +147,27 @@ important standards in current use.
 
 - The National Institute of Standards and Technology (NIST) with the special publications:
 
-  - NIST SP 800-123 `Guide to General Server Security <https://nvlpubs.nist.gov/nistpubs/Legacy 
+  - NIST SP 800-123 `Guide to General Server Security <https://nvlpubs.nist.gov/nistpubs/Legacy
     /SP/nistspecialpublication800-123.pdf>`__
-    
+
   - NIST SP 800-204A `Building Secure Microservices-based Applications Using Service-Mesh Architecture
     <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf>`__
-     
-  - NIST SP 800-204B `Attribute-based Access Control for Microservices-based Applications Using a Service Mesh 
+
+  - NIST SP 800-204B `Attribute-based Access Control for Microservices-based Applications Using a Service Mesh
     <https://csrc.nist.gov/publications/detail/sp/800-204b/final>`__
-     
-  - NIST SP 800-207 `Zero Trust Architecture 
+
+  - NIST SP 800-207 `Zero Trust Architecture
     <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf>`__
+
+  - NIST SP 800-218 `Secure Software Development Framework (SSDF)
+    <https://doi.org/10.6028/NIST.SP.800-218>`__
 
 - FedRAMP Certification `https://www.fedramp.gov/ <https://www.fedramp.gov/>`__
 
 - ETSI Cyber Security Technical Committee (TC CYBER) - `https://www.etsi.org/committee/cyber <https://www.etsi.org/commi
   ttee/cyber>`__
-  
-- `ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) 
+
+- `ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV)
   <https://www.etsi.org/technologies/nfv>`__ and its Security Working Group NFV-SEC
 
 - ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) -
@@ -180,20 +183,24 @@ In mobile network field, the GSM Association (`GSMA <https://www.gsma.com/>`__) 
 of experts have developed a set of documents specifying how to secure the global mobile ecosystem.
 
 - The document “Baseline Security controls”, `FS.31 v2.0 <https://www.gsma.com/security/resources/fs-31-gsma-baseline-se
-  curity-controls/>`__\ [20], published in February 2020, is a practical guide intended for operators and stakeholders
+  curity-controls/>`__ :cite:p:`gsmafs31`, published in February 2020, is a practical guide intended for operators and stakeholders
   to check mobile network’s internal security. It lists a set of security controls from business controls (including
   security roles, organizational policies, business continuity management…) to technological controls (for user
   equipment, networks, operations…) covering all areas of mobile network, including Cloud Infrastructure. A checklist of
   questions allows to improve the security of a deployed network.
+- The document "Network Equipment Security Assurance Scheme – Development and Lifecycle Security Requirements" :cite:p:`gsmafs16`,
+  is part of a set of documents aiming to build a security assurance scheme
+  for network equipment. Focusing on critical controls, it defines a set of requirements
+  to be met by vendors development and product lifecycle processes.
 
 The GSMA security activities are currently focussed around 5G services and the new challenges posed by network functions
 virtualisation and open source software. The 2 following documents are in the scope of Cloud Infrastructure security:
 
 - The white paper `“Open Networking & the Security of Open Source Software deployment” <https://www.gsma.com/futurenetwo
-  rks/resources/open-networking-the-security-of-open-source-software-deployment/>`__, published in January 2021 [21],
+  rks/resources/open-networking-the-security-of-open-source-software-deployment/>`__ :cite:p:`gsmaopensourcesecurity`,
   deals with open source software security, it highlights the importance of layered security defences and lists
   recommendations and security concepts able to secure deployments.
-- The “5G Security Guide”, FS.40 version 2.0, Oct. 2021 [36](non-binding Permanent Reference Document), covers 5G security,
+- The “5G Security Guide” :cite:p:`gsmafs40` (non-binding Permanent Reference Document), covers 5G security,
   in a holistic way, from user equipment to networks. The document describes the new security features in 5G.
   It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualisation, cloud
   native applications and containerisation security.
@@ -348,11 +355,11 @@ and integrated with the native DevOps and DevSecOps tools and procedures.
 The DevSecOps Automation best practice advocates implementing a framework for security automation and programmatic
 execution and monitoring of security controls to identify, protect, detect, respond, and recover from cyber threats. The
 framework used for the IaaC security is based on, the joint publication of Cloud Security Alliance (CSA) and SAFECode,
-"`The Six Pillars of DevSecOps: Automation (2020) <https://cloudsecurityalliance.org/blog/2021/09/09/six-pillars-of-devs
-ecops-series/>`__" [22]. The document utilises the base definitions and constructs from
-`ISO 27000 <https://www.iso.org/standard/73906.html>`__ [23], and CSA's
+"`The Six Pillars of DevSecOps: Automation (2020) <https://safecode.org/resource-secure-development-practices/the-six-pillars-of-devsecops-automation>`__"
+:cite:p:`safecodesixpillarsdevsecops`. The document utilises the base definitions and constructs from
+`ISO 27000 <https://www.iso.org/standard/73906.html>`__ :cite:p:`isoiec270002018`, and CSA's
 `Information Security Management through Reflexive Security <https://cloudsecurityalliance.org/artifacts/information-sec
-urity-management-through-reflexive-security/>`__ [24].
+urity-management-through-reflexive-security/>`__ :cite:p:`csaeflexivesec`.
 
 The framework identifies the following five distinct stages:
 
@@ -394,7 +401,7 @@ when dealing with such dilemma, the focus has been placed on those non-productio
 the same level as in the production environment (typically of **must** type), leaving relaxed requirements (typically of
 **should** or **may**) in cases there is no such necessity.
 
-In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered 
+In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered
 Infrastructure as a Code (IaaC). This fact implies that many aspects of code related security automatically apply to
 IaaC. Security aspects of IaaC in the telco context is discussed in the previous section
 ":ref:`chapters/chapter07:infrastructure as a code security`",
@@ -616,7 +623,7 @@ the threats and attacks within an enterprise, a network or an infrastructure, en
 between each component of the system.
 
 Zero Trust Architecture (ZTA), described in `NIST SP 800-207 publication <https://nvlpubs.nist.gov/nistpubs/SpecialPubli
-cations/NIST.SP.800-207.pdf>`__ [25], assumes there is no implicit trust granted to assets or user accounts whatever
+cations/NIST.SP.800-207.pdf>`__ :cite:p:`nistsp800207`, assumes there is no implicit trust granted to assets or user accounts whatever
 their location or ownership. Zero trust approach focuses on protecting all types of resources: data, services, devices,
 infrastructure components, virtual and cloud components. Trust is never granted implicitly, and must be evaluated
 continuously.
@@ -667,7 +674,7 @@ the supply chain. The US government requested actions to enhance the software su
 The security of the software supply chain is a challenge also pointed out by the European Network and
 Information Security Agency, ENISA, in the report `NFV Security in 5G - Challenges and Best Practices
 <https://www.enisa.europa.eu/publications/nfv-security-in-5g-challenges-and-best-practices>`__.
- 
+
 
 Software security
 ~~~~~~~~~~~~~~~~~
@@ -805,7 +812,7 @@ and use common data syntax representations.
   the standard.
 
 - `SWID Tags <https://nvd.nist.gov/products/swid>`__ is an international XML-based standard used by commercial software
-  publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID 
+  publishers and has been published as the standard ISO/IEC 19770-2. The specification defines four types of SWID
   tags: primary, patch, corpus, and supplemental to describe a software component.
 
 The SBOM should be integrated into the operations of the secure development life cycle, especially for vulnerabilities
@@ -846,7 +853,7 @@ is a small sample of some of the testing methodologies and frameworks available.
 
 - OWASP testing guide
 - Penetration Testing Execution Standard, PTES
-- Technical Guide to Information Security Testing and Assessment, `NIST 800-115 
+- Technical Guide to Information Security Testing and Assessment, `NIST 800-115
   <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf>`__
 - VULCAN, Vulnerability Assessment Framework for Cloud Computing, IEEE 2013
 - Penetration Testing Framework, VulnerabilityAssessment.co.uk
@@ -1723,9 +1730,9 @@ Compliance with Standards
 **Table 7-16:** Compliance with standards requirements
 
 Additional Security References
------------------------------- 
+------------------------------
 
-In addition to the security standards used throughout this specification, 
+In addition to the security standards used throughout this specification,
 the following lists gather additional standards of interest for Cloud Infrastructure security.
 
 **ETSI Documents**
@@ -1738,7 +1745,7 @@ the following lists gather additional standards of interest for Cloud Infrastruc
 - Network Functions Virtualisation (NFV) Release 3; Security; Security Management and Monitoring specification,
   ETSI GS NFV-SEC 013 V3.1.1 (2017-02)
 
-- Network Functions Virtualisation (NFV) Release 3; NFV Security; Security Specification for MANO Components and 
+- Network Functions Virtualisation (NFV) Release 3; NFV Security; Security Specification for MANO Components and
   Reference points, ETSI GS NFV-SEC 014 V3.1.1 (2018-04)
 
 - Network Functions Virtualisation (NFV) Release 2; Security; VNF Package Security Specification,
@@ -1768,7 +1775,7 @@ the following lists gather additional standards of interest for Cloud Infrastruc
 - `NIST SP 800-125b Secure Virtual Network Configuration for Virtual Machine (VM) Protection
   <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf>`__
 
-- `NIST SP 800-137 Information Security Continuous Monitoring for Federal Information 
+- `NIST SP 800-137 Information Security Continuous Monitoring for Federal Information
   Systems and Organizations
   <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf>`__
 

@@ -1696,7 +1696,7 @@ Infrastructure Recommendations
      - OpenStack Future - Specs defined :cite:p:`openstackneutovs`
    * - inf.acc.03
      - Acceleration
-     - The Architecture **MAY** rely on on SR-IOV PCI-Pass through to provide
+     - The Architecture **MAY** rely on SR-IOV PCI-Pass through to provide
        acceleration to VNFs
      -
    * - inf.img.01
@@ -1753,11 +1753,7 @@ Interfaces and APIs Recommendations
      - The Architecture **SHOULD** provide an open and standard acceleration
        interface to VNFs
      -
-   * - int.acc.02
-     - Acceleration
-     - The Architecture **SHOULD NOT** rely on SR-IOV PCI-Pass through for
-       acceleration interface exposed to VNFs
-     - duplicate of inf.acc.03 under "Infrastructure Recommendation"
+
 
 Tenant Recommendations
 ~~~~~~~~~~~~~~~~~~~~~~

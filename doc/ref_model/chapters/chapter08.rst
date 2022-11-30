@@ -57,7 +57,7 @@ A generic Telco cloud is a hybrid multi-cloud. A better designation would be a f
   - the component clouds are autonomous in terms of, for example, execution autonomy; please note that in a centralised
     control plane scenario (please see the section "Centralised Control Plane" in the
     "`Edge Computing: Next Steps in Architecture, Design and Testing <https://www.openstack.org/use-cases/edge-computing
-    /edge-computing-next-steps-in-architecture-design-and-testing/>`__" whitepaper [26]) the edge clouds do not have
+    /edge-computing-next-steps-in-architecture-design-and-testing/>`__" whitepaper :cite:p:`openinfraedgearch`) the edge clouds do not have
     total autonomy and are subject to constraints (e.g., workload LCM)
   - execution autonomy is the ability of a component cloud to decide the order in which internal and external requests
     are performed
@@ -189,7 +189,7 @@ Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Br
 these interface points need to provide are defined by the :numref:`Multi-Cloud Interactions Model` below. This provides
 a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-03.png
+.. figure:: ../figures/rm-chap-8-multicloud-interactions-03.png
    :name: Multi-Cloud Interactions Model
    :alt: Multi-Cloud Interactions Model
 
@@ -206,7 +206,8 @@ The model defines the following core roles:
 
 The set of high level interactions cover:
 
-- Manage Account & Catalog - covering Account, Users, Subscription, Billing & Catalog of Available Services
+- Manage Account & Catalog - covering Account, Users, Subscription, Billing & Catalog of Available Services (where
+  Service Provider (not necessarily CSP only) is responsible for creation and publication of catalog contents)
 - Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge/Cloud Connection Configuration,
   Connection Security Profile
 - Manage Resource - Resource Pool Management, VM/VNF Management (CPU, Memory, Storage, Network), Image Repository
@@ -389,7 +390,7 @@ capabilities to consistently:
 through a common set of governance and operational practices.
 
 GSMA's Operator Platform Group (OPG) specify a federated model and specify requirements for the Edge Platforms
-(Operator Platform Telco Edge Requirements v2.0 [34])
+(Operator Platform Telco Edge Requirements v2.0 :cite:p:`gsmaopg02`)
 applicable to other cloud deployments. Anuket RM is implementation agnostic, viz., whether the implementation uses
 agents, federations or some other mechanisms.
 
@@ -535,7 +536,7 @@ for RAN and core functions to secure the networks.
 In hybrid multi-cloud environment, there are additional security principles to be considered.
 These principles, see the table below, are
 drawn from the collaboration with the GSMA Fraud and Security Group (FASG) and the "5G security Guide",
-FS.40 v2.0 document [36].
+FS.40 v2.0 document :cite:p:`gsmafs40`.
 
 +--------------------------------+-------------------------------------------------------------------------------------+
 | Multi-cloud Security Principle | Description                                                                         |
@@ -589,7 +590,7 @@ Transferring cryptography functionality:
 - Secure storage
 - Search capabilities
 
-As described in Sec. 1 (Scope) of the TS 103 457 document [37], it specifies "… a high-level service-oriented interface, as
+As described in Sec. 1 (Scope) of the TS 103 457 document :cite:p:`etsits103sp457`, it specifies "… a high-level service-oriented interface, as
 an application layer with a set of mandatory functions, to access secured services provided by, and executed in a More
 Trusted Domain. The transport layer is out of scope and left to the architecture implementation". The standard provides
 extra security features for sensitive functions down to individual Virtual Machines or Containers. As such, it is
