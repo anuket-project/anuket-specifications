@@ -9,3 +9,9 @@ The installation of the CNCF test suite is described in the `CNCF CNF Testsuite 
 
 Some of the necessary tests are found in `Kubernetes documentation <https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/>`__.
 
+Functest
+========
+RC2 platform testing is executed via Functest. Funbctest can be configured to execute the CNCF
+Testsuite as part of Functest. At this time, the ability to select specifc CNCF CNF tests is 
+not available. Thus all of the CNCF Test will execute when called by Functest. the results of 
+tests that are not **Must** or **Must Not** should be ignored.  
