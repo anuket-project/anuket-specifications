@@ -187,7 +187,7 @@ other. In case of CaaS some cloud infrastructure features (e.g.: HW
 management or multitenancy) are implemented by using an underlying
 **IaaS** layer.
 
-**Cloud Infrastructure Hardware Profile:** defines the behaviour,
+**Cloud Infrastructure Hardware Profile:** Defines the behaviour,
 capabilities, configuration, and metrics provided by a cloud
 infrastructure hardware layer resources available for the workloads.
 
@@ -196,7 +196,7 @@ Infrastructure Software Profile and the Cloud Infrastructure Hardware
 Profile that defines the capabilities and configuration of the Cloud
 Infrastructure resources available for the workloads.
 
-**Cloud Infrastructure Software Profile:** defines the behaviour,
+**Cloud Infrastructure Software Profile:** Defines the behaviour,
 capabilities and metrics provided by a Cloud Infrastructure Software
 Layer on resources available for the workloads.
 
@@ -261,7 +261,7 @@ virtual infrastructure test suites, including automatic VNF testing.
 which the cloud infrastructure platform software, virtual machines and
 containers run on.
 
-**Host Profile:** is another term for a Cloud Infrastructure Hardware
+**Host Profile:** Is another term for a Cloud Infrastructure Hardware
 Profile.
 
 **Huge pages:** Physical memory is partitioned and accessed using the
@@ -278,7 +278,7 @@ performance.
 their own operating systems from the underlying physical resources. Also
 known as a virtual machine monitor (VMM).
 
-**Instance:** is a virtual compute resource, in a known state such as
+**Instance:** Is a virtual compute resource, in a known state such as
 running or suspended, that can be used like a physical server.
 It can be used to specify VM Instance or Container Instance.
 
