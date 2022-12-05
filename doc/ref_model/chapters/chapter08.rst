@@ -189,7 +189,7 @@ Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Br
 these interface points need to provide are defined by the :numref:`Multi-Cloud Interactions Model` below. This provides
 a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
 
-.. figure:: ../figures/rm-chap8-multicloud-interactions-03.png
+.. figure:: ../figures/rm-chap-8-multicloud-interactions-03.png
    :name: Multi-Cloud Interactions Model
    :alt: Multi-Cloud Interactions Model
 
