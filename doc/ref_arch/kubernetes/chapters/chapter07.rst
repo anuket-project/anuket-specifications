@@ -98,10 +98,14 @@ Multiple network interfaces on Pods
    **Baseline project:** *Kubernetes*
 
    **Gap description:** Kubernetes does not have native support for multiple Pod interfaces, therefore a CNI
-   multiplexer, like `DANM <https://github.com/nokia/danm>`__ or
-   `Multus <https://github.com/intel/multus-cni>`__ is needed to provision multiple interfaces. Implementation of
-   different network services for the interfaces, like Network Policies, Ingress, Egress or Load Balancers depends on
-   the feature set of the CNI multiplexer and the CNI plugins it uses, therefore it is inconsistent.
+   multiplexer, like `Multus <https://github.com/intel/multus-cni>`__ is needed to provision multiple interfaces.
+   Implementation of different network services for the interfaces, like Network Policies, Ingress, Egress or Load
+   Balancers depends on the feature set of the CNI multiplexer and the CNI plugins it uses, therefore it is
+   inconsistent.
+
+   **Status:** There is a `draft Kubernetes Enhancement Proposal (KEP)
+   <https://docs.google.com/document/d/1ztx9TOQ9Hiyj9PG9aPv6jyDLhe_FB7haV_yjJIcb-0Y/>`__
+   created to support multiple Pod interfaces natively.
 
 Dynamic network management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,8 +133,8 @@ Control Plane Efficiency
    **Gap description:** For example, in situations where multiple sites / availability zones exist, an operator may
    choose to run multiple Kubernetes clusters, not only for security/multitenancy reasons but also fault, resilience,
    latency, etc.
-   This produces an overhead of Kubernetes Masters - is there a way of making this more efficient whilst still able to
-   meet the non-functional requirements of the operator (fault, resilience, latency, etc.)
+   This produces an overhead of Kubernetes Control plane nodes - is there a way of making this more efficient whilst
+   still able to meet the non-functional requirements of the operator (fault, resilience, latency, etc.)
 
 Interoperability with VNF-based networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -23,13 +23,14 @@ run with different Feature Gate settings.
 A feature can be in Alpha, Beta or GA stage:
 
 - Alpha features are disabled by default, may be buggy, and support may be dropped
-- Beta features are enabled by default, are well tested, and support will not be dropped (although breaking API
-  changes may happen)
+- Beta features are disabled by default, are well tested, and support will not be dropped (although breaking API
+  changes may happen). Any existing Beta feature as of 1.24 will continue to be enabled by default, but new beta APIs
+  and features will not be enabled by default. More in [KEP-3136](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/3136-beta-apis-off-by-default/README.md).
 - GA features are stable, always enabled and cannot be disabled.
 
 The policy for RA2 to include Kubernetes features as mandatory is:
 
-   Only features that are either in Beta or GA stage can be made mandatory, subject to RA2 requirements.
+   Only features that are in GA stage (or Beta before 1.24) can be made mandatory, subject to RA2 requirements.
 
 A list of feature gates is available
 `here <https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/#feature-gates>`__.
@@ -46,7 +47,7 @@ or GA/Stable).
 
 The policy for RA2 to include Kubernetes APIs as mandatory is:
 
-   Only APIs that are either in Beta or Stable stage can be made mandatory, subject to RA2 requirements.
+   Only APIs that are Stable stage (or Beta before 1.24) can be made mandatory, subject to RA2 requirements.
 
 The Kubernetes API reference is available `here <https://kubernetes.io/docs/reference/kubernetes-api/>`__.
 
@@ -72,9 +73,9 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - authorization.k8s.io
      - v1
    * - autoscaling
-     - v1, v2, v2beta2, v2beta1
+     - v1, v2
    * - batch
-     - v1, v1beta1
+     - v1
    * - certificates.k8s.io
      - v1
    * - coordination.k8s.io
@@ -82,23 +83,23 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - core
      - v1
    * - discovery.k8s.io
-     - v1, v1beta1
+     - v1
    * - events.k8s.io
-     - v1, v1beta1
+     - v1
    * - flowcontrol.apiserver.k8s.io
      - v1beta2, v1beta1
    * - networking.k8s.io
      - v1
    * - node.k8s.io
-     - v1, v1beta1
+     - v1
    * - policy
-     - v1, v1beta1
+     - v1
    * - rbac.authorization.k8s.io
      - v1
    * - scheduling.k8s.io
      - v1
    * - storage.k8s.io
-     - v1, v1beta1
+     - v1
 
 `API Machinery Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-api-machinery>`__
 ----------------------------------------------------------------------------------------------------------------
@@ -123,7 +124,7 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
        space-selector>`__
      -
      - Should verify ResourceQuota with cross namespace pod affinity scope using scope-selectors
-   * - Feature:Feature:`PodPriority <https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/>`__
+   * - Feature:`PodPriority <https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/>`__
      - X
      - Verify ResourceQuota's priority class scope against a pod with different priority class
    * - Feature:ScopeSelectors
@@ -194,7 +195,7 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - Feature:`BoundServiceAccountTokenVolume <https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/120
        5-bound-service-account-tokens/README.md>`__
      -
-     - ServiceAccount admission controller migration master upgrade should maintain a functioning cluster
+     - ServiceAccount admission controller migration upgrade should maintain a functioning cluster
    * - Feature:NodeAuthenticator
      - X
      - The kubelet's main port 10250 should reject requests with no credentials
@@ -353,7 +354,7 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
      - Resource tracking for 100 pods per node
    * - Feature:GPUUpgrade
      -
-     - Master upgrade should NOT disrupt GPU Pod
+     - Control Plane node upgrade should NOT disrupt GPU Pod
    * - Feature:PodGarbageCollector
      -
      - Should handle the creation of 1000 pods
