@@ -1677,7 +1677,7 @@ hardware accelerator implementations.
    AAL Interface in RM Realization Diagram
 
 The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” :cite:p:`oranwg6aalganp`,
-and in the latest O-RAN WG6 Cloudification and Orchestration Workgroup specfications :cite:p:`oranwg6cloudorchwg``:
+and in the latest O-RAN WG6 Cloudification and Orchestration Workgroup specfications :cite:p:`oranwg6cloudorchwg`:
 
 - Describes the functions conveyed over the AAL interface, including configuration and management functions.
 - Identifies the requirements as well as general procedures and operations.
@@ -1913,7 +1913,7 @@ a common work with ITU-T which published as `ITU-T L.1361 <https://www.itu.int/r
 
 Whatever the method and the service, it requires the cloud infrastructure to provide some **energy consumption metrics**
 for different parts of the infrastructure hardware (server, CPU etc.) as included in
-:ref:`chapters/chapter04:internal performance measurement capabilities:`.
+:ref:`chapters/chapter04:internal performance measurement capabilities`.
 These metrics can be an amount of consumed energy (measured in Joule or Watt.hour) or a real-time power utilisation
 (measured in Watt or Joule/second) as proposed by `DMTF Redfish DSP0268 2022.2
 <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ :cite:p:`dmtfredfish` which specifies metrics
