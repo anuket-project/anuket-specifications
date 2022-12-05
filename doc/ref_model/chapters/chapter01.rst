@@ -7,7 +7,7 @@ Overview
 The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud
 infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and
 interfaces required by the workloads. This document has been developed by the Linux Foundation Networking project
-:doc:`common/chapter00`.
+:doc:`cntt:common/chapter00`.
 
 **Problem Statement:** Based on community consultations, including telco operators, technology suppliers, and software
 developers, there is a realisation that there are significant technical, operational, and business challenges to the
