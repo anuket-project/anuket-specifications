@@ -152,7 +152,7 @@ Document Organisation
 Chapter 2 defines the Reference Architecture requirements and, when
 appropriate, provides references to where these requirements are
 addressed in this document. The intent of this document is to address
-all of the mandatory ("must") requirements and the most useful of the
+all of the mandatory ("MUST") requirements and the most useful of the
 other optional ("should") requirements. Chapter 3 and 4 cover the Cloud
 Infrastructure resources and the core OpenStack services, while the APIs
 are covered in Chapter 5. Chapter 6 covers the implementation and
@@ -190,9 +190,6 @@ management or multitenancy) are implemented by using an underlying
 **Cloud Infrastructure Hardware Profile:** defines the behaviour,
 capabilities, configuration, and metrics provided by a cloud
 infrastructure hardware layer resources available for the workloads.
-
-**Host Profile:** is another term for a Cloud Infrastructure Hardware
-Profile.
 
 **Cloud Infrastructure Profile:** The combination of the Cloud
 Infrastructure Software Profile and the Cloud Infrastructure Hardware
@@ -264,6 +261,9 @@ virtual infrastructure test suites, including automatic VNF testing.
 which the cloud infrastructure platform software, virtual machines and
 containers run on.
 
+**Host Profile:** is another term for a Cloud Infrastructure Hardware
+Profile.
+
 **Huge pages:** Physical memory is partitioned and accessed using the
 basic page unit (in Linux default size of 4 KB). Hugepages, typically 2
 MB and 1GB size, allows large amounts of memory to be utilised with
@@ -274,7 +274,7 @@ reduces the virtual to physical pages’ address translations. Without
 huge pages enabled high TLB miss rates would occur thereby degrading
 performance.
 
-**Hypervisor:** a software that abstracts and isolates workloads with
+**Hypervisor:** A software that abstracts and isolates workloads with
 their own operating systems from the underlying physical resources. Also
 known as a virtual machine monitor (VMM).
 
@@ -293,11 +293,11 @@ Infrastructure. Note, as with all capabilities, Monitoring may be
 unavailable or intentionally disabled for security reasons in a given
 cloud infrastructure instance.
 
-**Multi-tenancy:** feature where physical, virtual or service resources
+**Multi-tenancy:** Feature where physical, virtual or service resources
 are allocated in such a way that multiple tenants and their computations
 and data are isolated from and inaccessible by each other.
 
-**Network Function (NF):** functional block or application that has
+**Network Function (NF):** Functional block or application that has
 well-defined external interfaces and well-defined functional behaviour.
 Within **NFV**, a **Network Function** is implemented in a form of
 **Virtualised NF** (VNF) or a **Cloud Native NF** (CNF).
@@ -321,7 +321,7 @@ infrastructure. **NFVI** and **VNF** are the top-level conceptual
 entities in the scope of Network Function Virtualisation. All other
 components are sub-entities of these two main entities.
 
-**Network Service (NS):** composition of **Network Function**\ (s)
+**Network Service (NS):** Composition of **Network Function**\ (s)
 and/or **Network Service**\ (s), defined by its functional and
 behavioural specification, including the service lifecycle.
 
@@ -377,13 +377,14 @@ hardware. The storage access software provides data request interfaces
 (APIs) and the SDS controller software provides storage access services
 and networking.
 
-**Tenant:** cloud service users sharing access to a set of physical and
+**Tenant:** Cloud service users sharing access to a set of physical and
 virtual resources, ITU-T Y.3500.
 Tenants represent an independently manageable logical pool of
 compute, storage and network resources abstracted from physical
 hardware.
 
-**Tenant Instance:** refers to an Instance owned by or dedicated for use by a single **Tenant**.
+**Tenant Instance:** Refers to an Instance owned by or dedicated for
+use by a single **Tenant**.
 
 **Tenant (Internal) Networks:** Virtual networks that are internal to
 **Tenant Instances**.
@@ -401,7 +402,7 @@ virtualised resource.
 controlling and managing the Network Function Virtualisation
 Infrastructure (NFVI) compute, storage and network resources.
 
-**Virtual Machine (VM):** virtualised computation environment that
+**Virtual Machine (VM):** Virtualised computation environment that
 behaves like a physical computer/server.
 A **VM** consists of all of the components (processor (CPU),
 memory, storage, interfaces/ports, etc.) of a physical computer/server.
@@ -413,20 +414,20 @@ Network Function, capable of running on the Cloud Infrastructure.
 cases, the VNFC is hosted on a single VM or Container.
 
 **Virtual Compute resource (a.k.a. virtualisation container):**
-partition of a compute node that provides an isolated virtualised
+Partition of a compute node that provides an isolated virtualised
 computation environment.
 
-**Virtual Storage resource:** virtualised non-volatile storage allocated
+**Virtual Storage resource:** Virtualised non-volatile storage allocated
 to a virtualised computation environment hosting a **VNFC**.
 
-**Virtual Networking resource:** routes information among the network
+**Virtual Networking resource:** Routes information among the network
 interfaces of a virtual compute resource and physical network
 interfaces, providing the necessary connectivity.
 
 **VMTP:** A data path performance measurement tool built specifically
 for OpenStack clouds.
 
-**Workload:** an application (for example **VNF**, or **CNF**) that
+**Workload:** An application (for example **VNF**, or **CNF**) that
 performs certain task(s) for the users. In the Cloud Infrastructure,
 these applications run on top of compute resources such as **VMs** or
 **Containers**.
