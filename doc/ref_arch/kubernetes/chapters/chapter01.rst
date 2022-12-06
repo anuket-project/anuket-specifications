@@ -4,13 +4,13 @@ Overview
 Introduction
 ------------
 
-The intention of this Reference Architecture is to develop a usable Kubernetes based platform for the Telecom operator
-community. The RA will be based on the standard Kubernetes platform wherever possible. This Reference Architecture
+The objective of this Reference Architecture (RA) is to develop a usable Kubernetes-based platform for the Telco
+industry. The RA will be based on the standard Kubernetes platform wherever possible. This Reference Architecture
 for Kubernetes will describe the high level system components and their interactions, taking the goals and requirements
-at :doc:`cntt:common/chapter00` and mapping them to real-world Kubernetes (and related)
-components. This document needs to be sufficiently detailed and robust such that it can be used to guide the production
-deployment of Kubernetes within an operator, whilst being flexible enough to evolve with and remain aligned with the
-wider Kubernetes ecosystem outside of Telco.
+from the :doc:`Reference Model <ref_model>` (RM) and mapping them to Kubernetes (and related) components. This document
+needs to be sufficiently detailed and robust such that it can be used to guide the production deployment of Kubernetes
+within an operator, whilst being flexible enough to evolve with and remain aligned with the wider Kubernetes ecosystem
+outside of Telco.
 
 To set this in context, it makes sense to start with the high level definition and understanding of Kubernetes.
 `Kubernetes <https://kubernetes.io/>`__ is a "portable, extensible, open-source platform for managing containerised
@@ -27,37 +27,56 @@ workloads". For example, start the Reference Architecture from a vanilla Kuberne
 provide clear evidence that a functional requirement cannot be met by that system (say, multi-NIC support), only then
 the RA would add the least invasive, Kubernetes-community aligned extension (say, Multus) to fill the gap. If there are
 still gaps that cannot be filled by standard Kubernetes community technologies or extensions then the RA will concisely
-document the requirement and approach the relevant project maintainers with a request to add this functionality into
-the feature set.
+document the requirement in the :doc:`"Gaps, Innovation, and Development"<chapters/chapter07>` chapter of this document
+and approach the relevant project maintainers with a request to add this functionality into the feature set.
 
 The Kubernetes Reference Architecture will be used to determine a Kubernetes Reference Implementation. The Kubernetes
 Reference Implementation would then also be used to test and validate the supportability and compatibility with
 Kubernetes-based Network Function workloads, and lifecycle management of Kubernetes clusters, of interest to the Anuket
-community. It is expected that the Kubernetes Reference Architecture, Reference Implementation, and Reference
-Conformance will be developed building on the work already in place for OpenStack in the Anuket project. The intention
-is to expand as much of the existing test frameworks to be used for the verification and conformance testing of
-Kubernetes-based workloads, and Kubernetes cluster lifecycle management.
+community. The intention is to expand as much of the existing test frameworks to be used for the verification and
+conformance testing of Kubernetes-based workloads, and Kubernetes cluster lifecycle management.
 
 Terminology
 ~~~~~~~~~~~
 
 For terminology used in this document refer to the :ref:`cntt:common/glossary:glossary`.
 
-Principles
-----------
+.. replace with glossary table
 
-This Reference Architecture conforms with the principles defined here: :ref:`cntt:common/chapter00:overview`.
+Architectural Principles
+------------------------
+
+This Reference Architecture conforms with the Anuket principles:
+
+1. **Open-source preference:** for building Cloud Infrastructure
+   solutions, components and tools, using open-source technology.
+2. **Open APIs:** to enable interoperability, component
+   substitution, and minimise integration efforts.
+3. **Separation of concerns:** to promote lifecycle independence of
+   different architectural layers and modules (e.g., disaggregation of
+   software from hardware).
+4. **Automated lifecycle management:** to minimise the
+   end-to-end lifecycle costs, maintenance downtime (target zero
+   downtime), and errors resulting from manual processes.
+5. **Automated scalability:** of workloads to minimise costs and
+   operational impacts.
+6. **Automated closed loop assurance:** for fault resolution,
+   simplification, and cost reduction of cloud operations.
+7. **Cloud nativeness:** to optimise the utilisation of resources
+   and enable operational efficiencies.
+8. **Security compliance:** to ensure the architecture follows
+   the industry best security practices and is at all levels compliant
+   to relevant security regulations.
+9. **Resilience and Availability:** to withstand
+   Single Point of Failure.
 
 Cloud Native Principles
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The definition for Cloud Native is somewhat controversial. For the purposes of this document, the CNCF TOC's (Technical
-Oversight Committee) definition of Cloud Native will be used:
+For the purposes of this document, the CNCF TOC's (Technical Oversight Committee) definition of Cloud Native applies:
 
    CNCF Cloud Native Definition v1.0
    Approved by TOC: 2018-06-11
-
-..
 
    “Cloud native technologies empower organizations to build and run **scalable** applications in modern,
    **dynamic environments** such as public, private, and hybrid clouds. Containers, **service meshes**,
@@ -67,17 +86,14 @@ Oversight Committee) definition of Cloud Native will be used:
    Combined with **robust automation**, they allow engineers to make **high-impact changes frequently and predictably**
    with minimal toil.
 
-..
-
    The Cloud Native Computing Foundation seeks to drive adoption of this paradigm by fostering and sustaining an
    ecosystem of open source, vendor-neutral projects. We democratize state-of-the-art patterns to make these innovations
    accessible for everyone.”
 
-Individual contributors who are also active in the CNCF TUG (Telecom User Group), formed in June 2019, are also working
-on a set of Cloud Native Principles that are more suited to the requirements of the Telecom community and with more
-detail than the existing CNCF definition:
-`Expanded Cloud Native Principles <https://networking.cloud-native-principles.org/cloud-native-principles>`__. There
-are many similarities, but the key principles from both, which are applicable to this document, are:
+The CNCF TUG (Telecom User Group), formed in June 2019, published a set of Cloud Native Principles suited to the
+requirements of the Telecom community:
+`Expanded Cloud Native Principles <https://networking.cloud-native-principles.org/cloud-native-principles>`__. 
+There are many similarities with the CNCF principles, briefly that infrastructure needs to be:
 
 -  **scalable**
 -  **dynamic environments**
@@ -136,29 +152,29 @@ of Anuket specifications, develop and mature.
        have no need to "live migrate" as a VNF VM might.
      -
 
-Requirements Exceptions
-^^^^^^^^^^^^^^^^^^^^^^^
+.. Requirements Exceptions
+.. ^^^^^^^^^^^^^^^^^^^^^^^
 
-The Requirements Exceptions lists the Reference Model (RM) requirements and/or Reference Architecture (RA) requirements
-that will be either waived or be only partially implemented in this version of the RA. The exception list will be
-updated to allow for a period of transitioning as and when requirements change.
+.. The Requirements Exceptions lists the Reference Model (RM) requirements and/or Reference Architecture (RA) requirements
+.. that will be either waived or be only partially implemented in this version of the RA. The exception list will be
+.. updated to allow for a period of transitioning as and when requirements change.
 
-.. list-table:: Requirements Exceptions
-   :widths: 10 10 20 5 50 5
-   :header-rows: 1
+.. .. list-table:: Requirements Exceptions
+..    :widths: 10 10 20 5 50 5
+..    :header-rows: 1
 
-   * - Ref
-     - Name
-     - Description
-     - Valid Until
-     - Rationale
-     - Implication
-   * - ra1.exc.req.001
-     - Req.
-     - xxxx
-     - xxxxxxx
-     -
-     -
+..    * - Ref
+..      - Name
+..      - Description
+..      - Valid Until
+..      - Rationale
+..      - Implication
+..    * - ra1.exc.req.001
+..      - Req.
+..      - xxxx
+..      - xxxxxxx
+..      -
+..      -
 
 Scope
 -----
@@ -166,20 +182,17 @@ Scope
 The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be
 listed and described in subsequent chapters), also shown in :numref:`Kubernetes Reference Architecture scope`
 
--  Kubernetes capabilities required to conform to the Reference Model requirements
+-  Kubernetes platform capabilities required to conform to the Reference Model requirements
 -  Support for CNFs that consist wholly of containers
 -  Support for CNFs that consist partly of containers and partly of VMs, both of which will be orchestrated by
    Kubernetes
 -  **Kubernetes Cluster lifecycle management**: including Cluster creation/upgrade/scaling/deletion, and node
-   customisation due to workload requirements. **Note**: *detailed requirements and component specification of cluster
-   LCM are out of scope for this release.*
+   customisation due to workload requirements.
 
 The following items are considered **out of scope**:
 
--  **Kubernetes-based Application / VNF Management**: similar to VNFM, this is an application layer capability that is
-   out of scope of Anuket. This includes Kubernetes-based Application Package Management, such as Helm, as this is a
-   client application and set of libraries that would be part of a modern/cloud native VNFM, not part of the
-   infrastructure itself.
+-  **Kubernetes-based Application / VNF Management**: this is an application layer capability that is
+   out of scope of Anuket.
 
 .. figure:: ../figures/ch01_scope_k8s.png
    :alt: Kubernetes Reference Architecture scope
@@ -190,15 +203,10 @@ The following items are considered **out of scope**:
 Approach
 --------
 
-The approach taken in this Reference Architecture is to start as simply as possible (i.e. with a basic Kubernetes
-architecture), and then add detail and additional features/extensions as is required to meet the requirements of the
-Reference Model and the functional and non-functional requirements of common cloud native network functions.
+The approach taken in this Reference Architecture is to start with a basic Kubernetes architecture, based on the
+community distribution, and then add detail and additional features/extensions as is required to meet the requirements
+of the Reference Model and the functional and non-functional requirements of common cloud native network functions.
 
-For example, while the management of VMs through Kubernetes is included, the intention is to start with the "native"
-control of containers and add support for VMs at a later date. The final decision will be determined and documented in
-the Roadmap section.
-
-This document will start with a description of interfaces and capabilities (the "what") before at a later date
-providing guidance on "how" those elements are deployed. The details of how the elements will be used together will be
-documented in full detail in the Reference Implementation.
-
+This document starts with a description of interfaces and capabilities requirements (the "what") before providing
+guidance on "how" those elements are deployed, through specifications. The details of how the elements will be used
+together are documented in full detail in the Reference Implementation.
