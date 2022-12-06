@@ -4,9 +4,9 @@ Architecture Requirements
 Introduction
 ------------
 
-This chapter will use the requirements defined in the overall Reference Model and only make additional entries in
-section `Kubernetes Architecture Requirements <#kubernetes-architecture-requirements>`__ if there are additional
-requirements needed for this Reference Architecture.
+This chapter will translate the requirements defined in the overall Reference Model into Kubernetes-specific
+requirements. Additional entries are included in section
+`Kubernetes Architecture Requirements <#kubernetes-architecture-requirements>`__.
 
 Definitions
 -----------
@@ -17,9 +17,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 Reference Model Requirements
 ----------------------------
 
-The tables below contain the requirements from the Reference Model to cover the Basic and High-Performance profiles.
-The table also includes a reference to the specification from
-:ref:`chapters/chapter04:component level architecture` and from
+The tables below contain the requirements from the Reference Model to cover all infrastructure profiles.
+The table also includes a reference to any linked specification at
+:ref:`chapters/chapter04:component level architecture` and at
 :ref:`chapters/chapter05:security guidance` to ensure traceability. If the related Specification
 does not exist, the reference will read "N/A" (and in bold "**N/A**" for mandatory requirements).
 
@@ -235,8 +235,8 @@ Cloud Infrastructure Software Profile Capabilities
 Virtual Network Interface Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The required number of connection points to a Pod is described in ``e.cap.004`` above. This section describes the
-required bandwidth of those connection points.
+  Note: The required number of connection points to a Pod is described in ``e.cap.004`` above. This section describes the
+  required bandwidth of those connection points.
 
 .. list-table:: Reference Model Requirements: Network Interface Specifications
    :widths: 10 30 30 10 10 10
@@ -414,8 +414,7 @@ Cloud Infrastructure Software Profile Requirements
 :ref:`ref_model:chapters/chapter05:virtual networking`
 
 **(1)** Might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers
-on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency
-to support telecom workloads (for example regarding CPU and energy consumption).
+on Kubernetes nodes.
 
 **(2)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)
 
@@ -1109,7 +1108,7 @@ Cloud Infrastructure Security Requirements
      -
    * - :ref:`ref_model:chapters/chapter07:monitoring and security audit`
      - sec.mon.001
-     - Platform **must** provide logs and these logs must be regularly monitored for events of interest.
+     - The Platform **must** provide logs and these logs must be regularly monitored for events of interest.
        The logs **must** contain the following fields: event type, date/time, protocol, service or program
        used for access, success/failure, login ID or process ID, IP address and ports (source and destination)
        involved.
@@ -1435,7 +1434,7 @@ Kubernetes Architecture Requirements
 
 The requirements in this section are to be delivered in addition to those in section `Reference Model
 Requirements <#reference-model-requirements>`_, and have been
-created to support the Principles defined in the :ref:`chapters/chapter01:Overview` of this
+created to support the Principles defined in the :ref:`first chapter <chapters/chapter01:Overview>` of this
 Reference Architecture.
 
 The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised
