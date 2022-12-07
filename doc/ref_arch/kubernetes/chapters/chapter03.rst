@@ -10,15 +10,15 @@ required to achieve conformance with the Anuket specifications.
 Conformance to these specifications can be achieved by using upstream components or features that are developed by the
 open source community and is ensured by successfully running RC2 conformance testing suite.
 
-By using the RA2 Kubernetes-based architecture specifications, operators can deploy infrastructure that will run any 
+By using the RA2 Kubernetes-based architecture specifications, operators can deploy infrastructure that will run any
 VNF or CNF that has successfully run on an RA2-conformant infrastructure. The purpose of this chapter is to outline all
 the components required to provide Telco-grade Kubernetes in a consistent and reliable way. The specification of how to
 setup these components is detailed in :ref:`Chapter 04<chapters/chapter04:component level architecture>`.
 
-Kubernetes is already well-documented and widely deployed as an open-source project managed by the Cloud Native
+Kubernetes is already well-documented and widely deployed as an open source project hosted by the Cloud Native
 Computing Foundation (CNCF). For information related to standard Kubernetes features and capabilities, refer to
 the standard Kubernetes documentation. Full documentation of the Kubernetes code and project can be found on the
-`Kubernetes docs page<https://kubernetes.io/docs/home/>`__.
+`Kubernetes docs page <https://kubernetes.io/docs/home/>`__.
 The following chapters describe the specific features required by the Anuket Reference Architecture, and how they are
 expected to be implemented.
 
@@ -29,7 +29,7 @@ execution.
 :doc:`Chapter 4<ref_model:chapters/chapter04>` of the Reference Model (RM) describes the hardware and software profiles
 that reflect the capabilities and features that the types of Cloud Infrastructure provide to the workloads.
 The figure below depicts a high-level view of the software features that apply to each instance profile (basic and
-high-performance). 
+high-performance).
 
 For more information on the instance profiles, refer to :ref:`ref_model:chapters/chapter04:profiles`.
 
@@ -74,7 +74,7 @@ The Kubernetes Node OS (as with any OS) consists of two main components:
 -  Kernel space
 -  User space
 
-The Kernel is the core of the Operating System, controlling all hardware resources and managing the interaction with
+The kernel is the core of the Operating System, controlling all hardware resources and managing the interaction with
 software components. Kernel features include key containerisation capabilities, such as control groups (cgroups) and
 namespaces, used and managed by the container runtime to provide isolation between the user space processes. The Kernel
 provides an API to applications running in the user space (which usually has its own southbound interface provided
@@ -411,7 +411,7 @@ Standard <https://github.com/k8snetworkplumbingwg/multi-net-spec/tree/master/v1.
      - Supported via IPAM CNI plugin
      - Supported
 
-For hardware resources that are needed by Kubernetes applications, `Device Plugins 
+For hardware resources that are needed by Kubernetes applications, `Device Plugins
 <https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/>`__ can be used to manage
 those resources and advertise them to the kubelet for use by the Kubernetes applications. This allows resources such as
 "GPUs, high-performance NICs, FPGAs, InfiniBand adapters, and other similar computing resources that may require vendor
