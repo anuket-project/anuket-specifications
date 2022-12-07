@@ -4,16 +4,17 @@ High Level Architecture
 Introduction
 ------------
 
-The Anuket Kubernetes Reference Architecture (RA) is intended to be an industry standard-independent Kubernetes
-reference architecture that is not tied to any specific offering or distribution. No vendor-specific enhancements are
-required to achieve conformance with the Anuket specifications.
+The Anuket Reference Architecture (RA2) for Kubernetes based cloud infrastructure is intended to be an industry
+standard-independent Kubernetes reference architecture that is not tied to any specific offering or distribution. 
+No vendor-specific enhancements are required to achieve conformance with the Anuket specifications.
 Conformance to these specifications can be achieved by using upstream components or features that are developed by the
 open source community and is ensured by successfully running RC2 conformance testing suite.
 
-By using the RA2 Kubernetes-based architecture specifications, operators can deploy infrastructure that will run any
-VNF or CNF that has successfully run on an RA2-conformant infrastructure. The purpose of this chapter is to outline all
-the components required to provide Telco-grade Kubernetes in a consistent and reliable way. The specification of how to
-setup these components is detailed in :ref:`Chapter 04<chapters/chapter04:component level architecture>`.
+By using the Reference Architecture (RA2) for Kubernetes based cloud infrastructure specifications, operators can
+deploy infrastructure that will run any VNF or CNF that has successfully run on an RA2-conformant infrastructure. The
+purpose of this chapter is to outline all the components required to provide Telco-grade Kubernetes in a consistent and
+reliable way. The specification of how to setup these components is detailed in 
+:ref:`Chapter 04<chapters/chapter04:component level architecture>`.
 
 Kubernetes is already well-documented and widely deployed as an open source project hosted by the Cloud Native
 Computing Foundation (CNCF). For information related to standard Kubernetes features and capabilities, refer to
