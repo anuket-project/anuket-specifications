@@ -4,7 +4,7 @@ Component Level Architecture
 Introduction
 ------------
 
-This chapter describes in detail the Reference Architecture (RA2) for Kubernetes based cloud infrastructure in terms
+This chapter describes in detail the Reference Architecture (RA2) for Kubernetes-based cloud infrastructure in terms
 of the functional capabilities and how they relate to the Reference Model (RM)
 requirements, i.e., how the infrastructure profiles are determined, documented
 and delivered.
@@ -104,7 +104,7 @@ the following specifications:
 
        .. note::
 
-        Note, extra should be provisioned to cater for any overhead required by the Operating
+        Note, extra filesystem storage should be provisioned to cater for any overhead required by the Operating
         System and any required OS processes such as the container runtime, Kubernetes agents, etc.
 
      - :ref:`e.cap.003 <ref_model:chapters/chapter04:Exposed Resource Capabilities>`
@@ -115,7 +115,7 @@ the following specifications:
 
        .. note::
 
-        Note, extra should be provisioned to
+        Note, extra CPU capacity should be provisioned to
         cater for any overhead required by the Operating System and any required OS processes such as the container
         runtime, Kubernetes agents, etc.
 
@@ -127,7 +127,7 @@ the following specifications:
      
        .. note::
 
-        Note, extra should be provisioned to cater for
+        Note, extra RAM capacity should be provisioned to cater for
         any overhead required by the Operating System and any required OS processes such as the container runtime,
         Kubernetes agents, etc.
 
@@ -311,7 +311,7 @@ the following specifications:
        .. note::
 
           Note, TopologyManager is enabled by default in Kubernetes v1.18 and later, with CPUManager enabled by default
-          in Kubernetes v1.10 and later
+          in Kubernetes v1.10 and later.
 
      - :ref:`e.cap.007 <chapters/chapter02:Cloud Infrastructure Software Profile Capabilities>`,
        :ref:`infra.com.cfg.002 <ref_model:chapters/chapter05:Virtual Compute Profiles>`,
@@ -324,7 +324,7 @@ the following specifications:
 
        .. note::
 
-        Note, this is enabled by default in Kubernetes v1.10 or later
+        Note, this is enabled by default in Kubernetes v1.10 or later.
 
      - Various, e.g. :ref:`e.cap.013 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`
      - :ref:`RI2 Installation on Bare Metal Infratructure
