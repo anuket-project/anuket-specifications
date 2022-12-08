@@ -7,7 +7,7 @@ Introduction
 The objective of this Reference Architecture (RA) is to develop a usable Kubernetes-based platform for the Telco
 industry. The RA will be based on the standard Kubernetes platform wherever possible. This Reference Architecture
 for Kubernetes will describe the high level system components and their interactions, taking the goals and requirements
-from the :doc:`Reference Model <ref_model>` (RM) and mapping them to Kubernetes (and related) components. This document
+from the :doc:`Reference Model <ref_model:index>` (RM) and mapping them to Kubernetes (and related) components. This document
 needs to be sufficiently detailed and robust such that it can be used to guide the production deployment of Kubernetes
 within an operator, whilst being flexible enough to evolve with and remain aligned with the wider Kubernetes ecosystem
 outside of Telco.
