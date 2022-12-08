@@ -153,7 +153,7 @@ Chapter 2 defines the Reference Architecture requirements and, when
 appropriate, provides references to where these requirements are
 addressed in this document. The intent of this document is to address
 all of the mandatory ("MUST") requirements and the most useful of the
-other optional ("should") requirements. Chapter 3 and 4 cover the Cloud
+other optional ("SHOULD") requirements. Chapter 3 and 4 cover the Cloud
 Infrastructure resources and the core OpenStack services, while the APIs
 are covered in Chapter 5. Chapter 6 covers the implementation and
 enforcement of security capabilities and controls. Life Cycle Management
