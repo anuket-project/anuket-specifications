@@ -16,7 +16,7 @@ purpose of this chapter is to outline all the components required to provide Tel
 reliable way. The specification of how to setup these components is detailed in 
 :ref:`Chapter 04<chapters/chapter04:component level architecture>`.
 
-Kubernetes is already well-documented and widely deployed as an open source project hosted by the Cloud Native
+Kubernetes is already a well-documented and widely deployed open source project of the Cloud Native
 Computing Foundation (CNCF). For information related to standard Kubernetes features and capabilities, refer to
 the standard Kubernetes documentation. Full documentation of the Kubernetes code and project can be found on the
 `Kubernetes docs page <https://kubernetes.io/docs/home/>`__.
