@@ -46,9 +46,9 @@ secured within their perimeters. The various layers that come into picture are:
    vulnerability analysis, scans etc. These images should also be signed from
    trusted sources.
 -  **Containers**: A lightweight and portable executable image that contains
-   software and all of its dependencies. The containers need to be prevented from
-   accessing the underlying OS like loading of kernel modules, mounting of
-   directories of underlying OS etc and it must be ensured that containers don't run in
+   software and all of the dependencies. The containers need to be prevented from
+   accessing the underlying OS capabilities like loading of kernel modules, mounting of
+   directories of the underlying OS, etc., and running in
    privileged mode.
 -  **Pods**: A Pod represents a set of running containers on a Kubernetes Cluster.
    Kubernetes inherently offers pod security policies that define a set of
