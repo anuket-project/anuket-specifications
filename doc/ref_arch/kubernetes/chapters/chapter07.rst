@@ -105,7 +105,7 @@ Dynamic network management
 
    **Gap description:** Kubernetes does not have an API for network service (e.g., VPNs) management, therefore a
    CNI plugin, like `DANM <https://github.com/nokia/danm>`__, needs to be used to expose APIs for Network
-   services on an API.
+   services.
    Alternatively this is done today with Netconf etc., integration with SDN controllers, for example connecting
    individual VPNs - e.g., L3VPN - onto the CNF, on demand.
 
