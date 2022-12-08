@@ -4,7 +4,7 @@ Architecture Requirements
 Introduction
 ------------
 
-This chapter will translate the requirements defined in the overall Reference Model into Kubernetes-specific
+This chapter will specialise the requirements defined in the overall Reference Model into Kubernetes-specific
 requirements. Additional entries are included in section
 `Kubernetes Architecture Requirements <#kubernetes-architecture-requirements>`__.
 
