@@ -18,7 +18,7 @@ reliable way. The specification of how to setup these components is detailed in
 
 Kubernetes is already a well-documented and widely deployed open source project of the Cloud Native
 Computing Foundation (CNCF). For information related to standard Kubernetes features and capabilities, refer to
-the standard Kubernetes documentation. Full documentation of the Kubernetes code and project can be found on the
+the standard Kubernetes documentation that can be found on the
 `Kubernetes docs page <https://kubernetes.io/docs/home/>`__.
 The following chapters describe the specific features required by the Anuket Reference Architecture, and how they are
 expected to be implemented.
