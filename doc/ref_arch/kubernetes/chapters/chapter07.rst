@@ -25,7 +25,7 @@ Gap template
 .. Container run-time Interfaces towards NFVI resources
 .. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ..
-..   (unclear) This is the southbound infrastructure resources from the container platform as presented by the IaaS provider.
+..   (unclear) This is the southbound interface from the container to the infrastructure resources provided by the IaaS provider.
 ..
 ..
 ..
