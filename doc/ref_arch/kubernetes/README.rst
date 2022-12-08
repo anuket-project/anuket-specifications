@@ -35,7 +35,7 @@ Table of Contents
     chapters/appendix-a
 
 Required component versions
-----------------------------------------------
+---------------------------
 
 ========== ===================
 Component  Required version(s)
