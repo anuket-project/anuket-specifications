@@ -92,7 +92,7 @@ For the purposes of this document, the CNCF TOC's (Technical Oversight Committee
 
 The CNCF TUG (Telecom User Group), formed in June 2019, published a set of Cloud Native Principles suited to the
 requirements of the Telecom community:
-`Expanded Cloud Native Principles <https://networking.cloud-native-principles.org/cloud-native-principles>`__. 
+`Expanded Cloud Native Principles <https://networking.cloud-native-principles.org/cloud-native-principles>`__.
 There are many similarities with the CNCF principles, briefly that infrastructure needs to be:
 
 -  **scalable**
