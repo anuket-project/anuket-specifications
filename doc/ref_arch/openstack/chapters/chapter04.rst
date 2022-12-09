@@ -1762,5 +1762,5 @@ number of open-source tools are available for this purpose including:
 -  Triple-O :cite:p:`tripl`: for
    installing, upgrading and operating OpenStack clouds
 
-These installers are described in more details
+These installers are described in more detail
 in :ref:`chapters/chapter07:operations and life cycle management`.
