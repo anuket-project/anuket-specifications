@@ -4,16 +4,9 @@ Gaps, Innovation, and Development
 Introduction
 ------------
 
-While this Reference Architecture is being developed, Gaps will be identified that require addressing. This chapter
+During the development of this Reference Architecture, gaps that require addressing may be identified. This chapter
 will highlight these gaps in detail and may provide proposed solutions. As a result, various “upstream” community
-projects will be identified and will be targeted for development efforts.
-
-Gap analysis
-------------
-
--  Container Run-Time Interfaces towards NFVI resources.
--  Multi-Tenancy
--  K8s as VM based VNF Orchestrator
+projects may be identified and will be targeted for development efforts.
 
 Gap template
 ~~~~~~~~~~~~
@@ -29,19 +22,19 @@ Gap template
    **Gap description:** Describe which functionality described in the related requirements is currently missing in the
    implementations you're aware of. Include references to work ongoing in the target project, which may adress the gap.
 
-Container run-time Interfaces towards NFVI resources
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   This is the southbound infrastructure resources from the container platform as presented by the IaaS provider.
-
+.. Container run-time Interfaces towards NFVI resources
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ..
-
+..   (unclear) This is the southbound interface from the container to the infrastructure resources provided by the IaaS provider.
+..
+..
+..
    e.g., network interface type that is presented to a running container.
 
 Multi-tenancy and workload isolation with Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Related requirements:** ``e.man.004``, ``sec.ci.008``, :literal:`sec.wl.005`, `sec.wl.006`
+**Related requirements:** ``e.man.004``, ``sec.ci.008``, ``sec.wl.005``, ``sec.wl.006``
 
 **Baseline project:** *Kubernetes*
 
@@ -81,19 +74,15 @@ Kubernetes as a VM-based VNF Orchestrator
 
    **Related requirements:** None.
 
-..
-
    **Baseline project:** *Kubernetes*, *Kubevirt*
 
    **Gap description:** Kubernetes and at least one CRI compliant runtime should support the running of VNFs without
    requiring changes to the VNF's architecture and deployment artifacts.
 
-Multiple network interfaces on Pods
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Native Multiple network interfaces on Pods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    **Related requirements:** :ref:`ref_model:chapters/chapter04:virtual network interface specifications`
-
-..
 
    **Baseline project:** *Kubernetes*
 
@@ -112,12 +101,11 @@ Dynamic network management
 
    **Related requirements:** :ref:`inf.ntw.03 <chapters/chapter02:kubernetes architecture requirements>`
 
-..
-
    **Baseline project:** *Kubernetes*
 
-   **Gap description:** Kubernetes does not have an API for network management, therefore a different CNI plugin, like
-   `DANM <https://github.com/nokia/danm>`__ needs to be used to expose Kubernetes network services on an API.
+   **Gap description:** Kubernetes does not have an API for network service (e.g., VPNs) management, therefore a
+   CNI plugin, like `DANM <https://github.com/nokia/danm>`__, needs to be used to expose APIs for Network
+   services.
    Alternatively this is done today with Netconf etc., integration with SDN controllers, for example connecting
    individual VPNs - e.g., L3VPN - onto the CNF, on demand.
 
@@ -126,26 +114,23 @@ Control Plane Efficiency
 
    **Related requirements:** None
 
-..
-
    **Baseline project:** *Kubernetes*
 
    **Gap description:** For example, in situations where multiple sites / availability zones exist, an operator may
    choose to run multiple Kubernetes clusters, not only for security/multitenancy reasons but also fault, resilience,
    latency, etc.
-   This produces an overhead of Kubernetes Control plane nodes - is there a way of making this more efficient whilst
-   still able to meet the non-functional requirements of the operator (fault, resilience, latency, etc.)
+   This produces an overhead of Kubernetes Control plane nodes - there should be a way to operate multiple clusters
+   more efficiently whilst still able to meet the non-functional requirements of the operator (fault, resilience,
+   latency, etc.)
 
-Interoperability with VNF-based networking
+Interoperability with VRF-based networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    **Related requirements:** None
 
-..
-
    **Baseline project:** *Kubernetes*
 
-   **Gap description:** For example, today in existing networks L3 VPNs are commonly used for traffic separation (e.g.,
+   **Gap description:** For example, in existing networks, L3 VRFs/VPNs are commonly used for traffic separation (e.g.,
    separate L3 VPN for signalling, charging, LI, O&M etc.). CNFs will have to interwork with existing network elements
    and therefore a K8s POD will somehow need to be connected to a L3 VPN. Today this is only possible via Multus
    (or DANM), however typically there is a network orchestration responsibility to connect the network interface to a
@@ -168,19 +153,7 @@ HW topology aware huge pages
 User namespaces in Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Related requirements:**
-
-.. list-table:: API Machinery Special Interest Group
-   :widths: 20 60
-   :header-rows: 1
-
-   * - Reference
-     - Requirement
-   * - e.man.004
-     - Capability to isolate resources between tenants
-   * - sec.sys.007
-     - The Platform must implement controls enforcing separation of duties and privileges, least privilege
-       use and least common mechanism (Role-Based Access Control).
+**Related requirements:** ``e.man.004``, ``sec.sys.007``
 
 **Baseline project:** *Kubernetes*
 
