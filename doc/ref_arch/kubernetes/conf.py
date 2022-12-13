@@ -18,10 +18,10 @@ linkcheck_ignore = [
     "https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en"
 ]
 intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
-    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None),
-    'ref_impl2': ('https://cntt.readthedocs.io/projects/ri2/en/latest/', None),
-    'ref_arch1': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None)
+    'cntt': ('https://cntt.readthedocs.io/en/stable-nile/', None),
+    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/stable-nile/', None),
+    'ref_impl2': ('https://cntt.readthedocs.io/projects/ri2/en/stable-nile/', None),
+    'ref_arch1': ('https://cntt.readthedocs.io/projects/ra1/en/stable-nile/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4

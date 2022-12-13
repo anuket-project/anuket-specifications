@@ -12,7 +12,7 @@ extensions = [
 ]
 html_theme = "sphinx_material"
 intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/latest/', None)
+    'cntt': ('https://cntt.readthedocs.io/en/stable-nile/', None)
 }
 linkcheck_ignore = [
     'https://www.iso.org',

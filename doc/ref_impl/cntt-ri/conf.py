@@ -15,9 +15,9 @@ linkcheck_ignore = [
     'https://trex-tgn.cisco.com'
 ]
 intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
-    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None),
-    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None)
+    'cntt': ('https://cntt.readthedocs.io/en/stable-nile/', None),
+    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/stable-nile/', None),
+    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/stable-nile/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
