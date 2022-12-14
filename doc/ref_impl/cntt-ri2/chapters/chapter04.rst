@@ -131,12 +131,12 @@ References for the above features:
 -  `Intel Device Plugins for Kubernetes <https://github.com/intel/intel-device-plugins-for-kubernetes>`__
 -  `Telemetry Aware Scheduling
    <https://github.com/intel/platform-aware-scheduling/tree/master/telemetry-aware-scheduling>`__
+-  `Latest Deployment Requirements/Specification <https://wiki.anuket.io/pages/viewpage.action?pageId=36569490>`__
 
 Additional settings are available in the BMRA templates located in ``playbooks/roles/bmra-config/templates``. Changing
 these might have unexpected results and should generally not be done.
 
-You will also have to modify environmental variables defined in ``deploy.env`` to match your setup. For deploying
-Kuberef on preprovisioned infrastructure, set ``deployment_type=k8s``.
+You will also have to modify environmental variables defined in ``deploy.env`` to match your setup.
 
 Once ready, issue the following command to initiate the deployment
 
@@ -174,6 +174,23 @@ follows:
      "memory": "373489916Ki",
      "pods": "110"
    }
+
+Installation on Provider Infrastructure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The main steps are the same as :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`.
+
+Make sure the infrastructure preprovisioned follows ``docs/release/installation/deployment-guide.rst``.
+
+When modifying the environmental variables defined in ``deploy.env``,
+set deployment type ``DEPLOYMENT:-k8s``.
+If you are not the root user account, you neet set ``USERNAME`` to consistent the username of VM and yours,
+then set ``PROJECT_ROOT`` and ``ROOT_PASSWORD`` correctly.
+Once ready, issue the following command to initiate the deployment
+
+``./deploy.sh``
+
+The deployment might encounter obstacles. You can check and tweak the privilege system to make progress.
 
 [Placeholder for other Deployment Scenarios]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
