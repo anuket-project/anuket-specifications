@@ -15,7 +15,8 @@ linkcheck_ignore = [
     "https://www.cisecurity.org/cis-benchmarks/",
     "https://www.iso.org/obp/ui/",
     'http://127.0.0.1',
-    'https://www.sdxcentral.com'
+    'https://www.sdxcentral.com',
+    'https://ntia.gov'
 ]
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
