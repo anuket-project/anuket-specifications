@@ -197,8 +197,9 @@ the use of a cookbook, automated install, and/or build from RA1/RI1 or RA2/RC2 r
 Expectation 2: Execute the RC1 or RC2 Test suites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Anuket will provide the participants with the community :doc:`ref_cert_RC1:index` or :doc:`ref_cert_RC2:index` test
-suites. The participants will execute test cases per instructions and record the quantitative results.
+Anuket will provide the participants with the community :ref:`ref_arch_openstack:chapters/chapter08:conformance` or
+:doc:`ref_cert_RC2:index` test suites. The participants will execute test cases per instructions and record the
+quantitative results.
 
 Test case suite should be executed successfully at least three (3) times, because this number represents the recommended
 number of test suite runs to eliminate false positives in results. A triage process will be used to determine and manage
