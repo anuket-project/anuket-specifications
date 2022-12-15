@@ -257,7 +257,7 @@ the following specifications:
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.k8s.003
      - Highly available control plane
-     - An implementation must consist of at least one control plane node per availability zone or fault domain to 
+     - An implementation must consist of at least one control plane node per availability zone or fault domain to
        ensure the high availability and resilience of the Kubernetes control plane services.
      -
      -
@@ -995,4 +995,3 @@ Additional required components
 
    This chapter should list any additional components needed to provide the services defined in Chapter
    :ref:`chapters/chapter03:infrastructure services` (e.g., Prometheus).
-
