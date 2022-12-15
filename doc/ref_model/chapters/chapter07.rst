@@ -742,7 +742,7 @@ Software Bill of Materials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to ensure software security, it is crucial to identify the software components and their origins. The
-Software Bill of Materials (SBOM), described by `US NTIA <https://www.ntia.gov/SBOM>`__ (National
+Software Bill of Materials (SBOM), described by `US NTIA <https://ntia.gov/page/software-bill-materials>`__ (National
 Telecommunications and Information Administration), is an efficient and highly recommended tool to identify software
 components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to
 establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the
@@ -753,7 +753,7 @@ and it provides assurance of the source and integrity of components. To achieve 
 a shared model must be supported by industry. This is the goal of the work performed by the US Department of Commerce
 and the National Telecommunications and Information administration (NTIA) and published, in July 2021, in the report
 `"The Minimum Elements for a Software Bill of Materials (SBOM)"
-<https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`__ in July 2021. The document gives
+<https://ntia.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`__ in July 2021. The document gives
 guidance and specifies the minimum elements for the SBOM, as a starting point.
 
 A piece of software can be modelled as a hierarchical tree with components and subcomponents, each
@@ -788,7 +788,7 @@ component should have its SBOM including,  as a baseline, the information descri
 +------------------------------+---------------------------------------------------+
 
 **Table 7-2**: SBOM Data Fields components, source
-`NTIA <https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`__
+`NTIA <https://ntia.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>`__
 
 Refer to the NTIA SBOM document for more details on each data field. Examples of commonly used identifiers are provided.
 
@@ -1489,9 +1489,9 @@ Open Source Software
 |                 | environment **must** be used to store vetted open source content.         |                        |
 +-----------------+---------------------------------------------------------------------------+------------------------+
 | req.sec.oss.005 | A Software Bill of Materials (SBOM) **should** be provided or build, and  | Inventory of software  |
-|                 | maintained to identify the software components and their origins.         | components, `https://w |
-|                 |                                                                           | ww.ntia.gov/SBOM <http |
-|                 |                                                                           | s://www.ntia.gov/SBO   |
+|                 | maintained to identify the software components and their origins.         | components, `https://  |
+|                 |                                                                           | ntia.gov/SBOM <http    |
+|                 |                                                                           | s://ntia.gov/SBO       |
 |                 |                                                                           | M>`__                  |
 +-----------------+---------------------------------------------------------------------------+------------------------+
 
