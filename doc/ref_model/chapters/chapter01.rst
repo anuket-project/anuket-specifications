@@ -7,7 +7,7 @@ Overview
 The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud
 infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and
 interfaces required by the workloads. This document has been developed by the Linux Foundation Networking project
-:doc:`common/chapter00`.
+:doc:`cntt:common/chapter00`.
 
 **Problem Statement:** Based on community consultations, including telco operators, technology suppliers, and software
 developers, there is a realisation that there are significant technical, operational, and business challenges to the
@@ -151,7 +151,7 @@ Definitions/Terminology/Abbreviations
 
 To help guide the reader, the Reference Model :doc:`common/glossary` provides an introduction to the main terms used
 within this document and throughout the project in general. These definitions are, with a few exceptions, based on the
-ETSI GR NFV 003 [1] definitions. In a few cases, they have been modified to avoid deployment technology dependencies
+ETSI GR NFV 003 :cite:p:`etsigrnfv003` definitions. In a few cases, they have been modified to avoid deployment technology dependencies
 only when it seems necessary to avoid confusion.
 
 Please refer to :doc:`common/abbreviations` for a full list of abbreviations used in this document.
@@ -159,10 +159,11 @@ Please refer to :doc:`common/abbreviations` for a full list of abbreviations use
 Conventions
 -----------
 
-“The key words “must”, “must not”, “required”, “shall”, “shall not”, “should”, “should not”, “recommended”, “may”, and
-“optional” in this document are to be interpreted as described in RFC2119 [2].”
+The key words "must", "must not", "required", "shall", "shall not", "should", "should not", "recommended", "may", and
+"optional" in this document are to be interpreted as described in RFC2119 :cite:p:`rfc2119`.
 
 References
 ----------
 
-Please refer to :doc:`common/references` for a full list of references used in this document.
+.. bibliography::
+   :cited:

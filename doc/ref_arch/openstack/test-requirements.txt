@@ -6,3 +6,4 @@ sphinx-rtd-theme  # MIT
 doc8 # Apache-2.0
 sphinx-material
 sphinxcontrib-bibtex
+pybtex

@@ -1,6 +1,6 @@
-project = 'Anuket Kubernetes based Reference Architecture (RA2)'
-copyright = '2022, Anuket'
-author = 'Anuket'
+project = 'Anuket Reference Architecture for Kubernetes based cloud infrastructure (RA2)'
+copyright = '2022, Anuket. Licensed under CC BY 4.0'
+author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
     '.tox',
     'README.rst'

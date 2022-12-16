@@ -6,6 +6,7 @@ Abbreviations
 ============== ==========================================================================
 3GPP           3rd Generation Partnership Project
 AAA            Authentication, Authorisation, and Accounting
+AAL            Acceleration Abstraction Layer
 AAP            Anuket Assured Program
 AArch64        64bit ARM architecture
 Acc            Accelerator
@@ -14,6 +15,7 @@ ADC            Application Delivery Controller
 AES            Advanced Encryption Standard
 AES-NI         AES New Instructions
 AI             Artificial Intelligence
+AICPA          American Institute of Certified Public Accountants
 AMF            Access and Mobility management Function
 API            Application Programming Interface
 AR             Augmented Reality
@@ -77,6 +79,7 @@ CSP            Cloud Service Provider
 CU             Centralised Unit (O-RAN context)
 CVC            (LFN) Compliance Verification Committee
 CVE            Common Vulnerabilities and Exposures
+CVSS           Common Vulnerability Scoring System
 DANM           Damn, Another Network Manager
 DBaaS          Data Base as a Service
 DC             Data Center
@@ -122,6 +125,7 @@ FTTx           Fiber to the x
 FW             Fire Wall
 FWD            (Traffic) ForWarDed
 GB             Giga Byte
+GDPR           General Data Protection Regulation
 GFS            Global (Linux) File System
 GGSN           Gateway GPRS Support Node
 Gi or GiB      Gibibyte (1024^3) bytes
@@ -139,6 +143,8 @@ HCP            Hyperscaler Cloud Provider
 HDD            Hard Disk Drive
 HDFS           Hadoop Distributed File System
 HDV            Hardware Delivery Validation
+HEM-clouds     Hybrid, Edge, and Multi-clouds
+HEMP           Hybrid, Edge, and Multi-Cloud unified management Platform
 HLR            Home Location Register
 HOT            (OpenStack) Heat Orchestration Templates
 HSS            Home Subscriber Server
@@ -181,6 +187,8 @@ LBaaS          Load Balancer as a Service
 LCM            LifeCycle Management
 LDAP           Lightweight Directory Access Protocol
 LF             Linux Foundation
+LMS            Log Management Service
+LTD            Less Trusted Domain
 LFN            Linux Foundation Networking
 LLDP           Link Layer Discovery Protocol
 LMA            Logging, Monitoring, and Analytics
@@ -198,6 +206,7 @@ ML2 or ML-2    Modular Layer 2
 MME            Mobility Management Entity
 mMTCs          Massive Machine-Type Communications
 MPLS           Multi-Protocol Label Switching
+MTD            More Trusted Domain
 MRF            Media Resource Function
 MSAN           MultiService Access Node
 MSC            Mobile Switching Center
@@ -338,6 +347,7 @@ SMSC           SMS Center
 SMT            Simultaneous Multi-Threading
 SNAT           Source Network Address Translation
 SNMP           Simple Network Management Protocol
+SOC            System and Organization Controls
 SONiC          Software for Open Networking in the Cloud
 SR-IOV         Single Root Input Output Virtualisation
 SRTM           Static Root of Trust for Measurements
@@ -347,6 +357,7 @@ SSH            Secure SHell protocol
 SSL            Secure Sockets Layer
 SUT            System Under Test
 SW             Software
+TCDI           Trusted Cross-Domain Interface
 TBC            To Be Confirmed
 TC             Test Case
 TCP            Transmission Control Protocol
@@ -386,6 +397,7 @@ vIPS           Virtualised IPS
 VLAN           Virtual LAN
 VM             Virtual Machine
 VMDK           VMware Virtual Machine Disk File
+vNAS           virtual Network Attached Storage
 VMM            Virtual Machine Monitor (or Manager)
 VNF            Virtualised Network Function
 VNFC           Virtualised Network Function Component

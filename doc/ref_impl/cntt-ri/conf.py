@@ -1,5 +1,5 @@
-project = 'Anuket Reference Implementation for Kubernetes'
-html_title = "Anuket Reference Implementation for Kubernetes"
+project = 'Anuket Reference Implementation based on RA1 specifications (RI1)'
+html_title = "Anuket Reference Implementation based on RA1 specifications (RI1)"
 copyright = '2021, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
@@ -17,8 +17,7 @@ linkcheck_ignore = [
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
     'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None),
-    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None),
-    'ref_cert_RC1': ('https://cntt.readthedocs.io/projects/rc1/en/latest/', None)
+    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4

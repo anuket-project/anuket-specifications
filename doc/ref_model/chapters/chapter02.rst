@@ -17,7 +17,7 @@ from any vendor on a unified consistent cloud infrastructure.
 Additionally, a well-defined cloud infrastructure is also needed for other type of workloads such as IT, Machine
 Learning, and Artificial Intelligence.
 
-This chapter analyses various telco workloads and their requirements, and recommends certain cloud infrastructure
+This chapter analyses various Telco workloads and their requirements, and recommends certain cloud infrastructure
 parameters needed to specify the desired performance expected by these workloads.
 
 Workloads Collateral
@@ -28,7 +28,7 @@ There are different ways that workloads can be classified, for example:
 -  **By function type:**
 
    -  Data Plane (a.k.a., User Plane, Media Plane, Forwarding Plane)
-   -  Control Plane (a.k.a, Signalling Plane)
+   -  Control Plane (a.k.a., Signalling Plane)
    -  Management Plane
 
    ..
@@ -282,10 +282,10 @@ latency requirements.
 
     - There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the
       placement case of having the DU & CU collocated & deployed on Telco Edge, see NGMN Overview on 5GRAN Functional
-      Decomposition ver 1.0 [12]
+      Decomposition ver 1.0 :cite:p:`ngmn5granfnldecomp`.
     - The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
     - Following Split Option 7.2, the average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while
-      the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 [13].
+      the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 :cite:p:`oranwg4iot0`.
 
 .. figure:: ../figures/Fig2-4-uc4.png
    :alt: Edge vRAN Deployments

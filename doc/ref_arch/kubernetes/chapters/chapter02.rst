@@ -4,9 +4,9 @@ Architecture Requirements
 Introduction
 ------------
 
-This chapter will use the requirements defined in the overall Reference Model and only make additional entries in
-section `Kubernetes Architecture Requirements <#kubernetes-architecture-requirements>`__ if there are additional
-requirements needed for this Reference Architecture.
+This chapter will specialise the requirements defined in the overall Reference Model into Kubernetes-specific
+requirements. Additional entries are included in section
+`Kubernetes Architecture Requirements <#kubernetes-architecture-requirements>`__.
 
 Definitions
 -----------
@@ -17,9 +17,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 Reference Model Requirements
 ----------------------------
 
-The tables below contain the requirements from the Reference Model to cover the Basic and High-Performance profiles.
-The table also includes a reference to the specification from
-:ref:`chapters/chapter04:component level architecture` and from
+The tables below contain the requirements from the Reference Model to cover all infrastructure profiles.
+The table also includes a reference to any linked specification at
+:ref:`chapters/chapter04:component level architecture` and at
 :ref:`chapters/chapter05:security guidance` to ensure traceability. If the related Specification
 does not exist, the reference will read "N/A" (and in bold "**N/A**" for mandatory requirements).
 
@@ -235,8 +235,8 @@ Cloud Infrastructure Software Profile Capabilities
 Virtual Network Interface Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The required number of connection points to a Pod is described in ``e.cap.004`` above. This section describes the
-required bandwidth of those connection points.
+  Note: The required number of connection points to a Pod is described in ``e.cap.004`` above. This section describes the
+  required bandwidth of those connection points.
 
 .. list-table:: Reference Model Requirements: Network Interface Specifications
    :widths: 10 30 30 10 10 10
@@ -414,8 +414,7 @@ Cloud Infrastructure Software Profile Requirements
 :ref:`ref_model:chapters/chapter05:virtual networking`
 
 **(1)** Might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers
-on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency
-to support telecom workloads (for example regarding CPU and energy consumption).
+on Kubernetes nodes.
 
 **(2)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)
 
@@ -633,6 +632,131 @@ Cloud Infrastructure Management Requirements
      - N/A
 
 :ref:`ref_model:chapters/chapter04:cloud infrastructure management capabilities`.
+
+Cloud Infrastructure Monitoring Capabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Reference Model Requirements: Cloud Infrastructure Internal Performance Measurement Requirements
+   :widths: 10 10 50 10 10
+   :header-rows: 1
+
+   * - Reference Model Section
+     - Reference
+     - Description
+     - Requirement (common to all Profiles)
+     - Specification Reference
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.001
+     - Capability to monitor Host CPU Usage (in ns)
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.002
+     - Capability to monitor per Pod CPU (Virtual compute resource) usage (in ns)
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.003
+     - Capability to monitor Host CPU Usage (in percentage)
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.004
+     - Capability to monitor per Pod CPU (Virtual compute resource) usage (in percentage)
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.005
+     - Capability to monitor Packet count per physical or virtual node network interface
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.006
+     - Capability to monitor Octet (bytes) count per physical or virtual node network interface
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.007
+     - Capability to monitor Dropped Packet count per physical or virtual node network interface
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.008
+     - Capability to monitor Errored Packet count per physical or virtual node network interface
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.009
+     - Capability to monitor amount of buffered memory (in KiB) on the node.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.010
+     - Capability to monitor amount of cached memory (in KiB) on the node.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.011
+     - Capability to monitor amount of free memory (in KiB) on the node.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.012
+     - Capability to monitor amount of slab memory (in KiB) on the node.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.013
+     - Capability to monitor amount of total memory (in KiB) on the node.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.014
+     - Capability to monitor amount of free storage space (in B) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.015
+     - Capability to monitor amount of used storage space (in B) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.016
+     - Capability to monitor amount of reserved storage space (in B) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.017
+     - Capability to monitor the storage read latency (in ms) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.018
+     - Capability to monitor the read operations rate (in IOPS) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.019
+     - Capability to monitor the storage read throughput (in B/s) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.020
+     - Capability to monitor the storage write latency (in ms) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.021
+     - Capability to monitor the write operations rate (in IOPS) on the node and on volumes.
+     - Must support
+     - N/A
+   * - :ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`
+     - i.pm.022
+     - Capability to monitor the storage write throughput (in B/s) on the node and on volumes.
+     - Must support
+     - N/A
+
+:ref:`ref_model:chapters/chapter04:internal performance measurement capabilities`.
 
 
 
@@ -984,7 +1108,7 @@ Cloud Infrastructure Security Requirements
      -
    * - :ref:`ref_model:chapters/chapter07:monitoring and security audit`
      - sec.mon.001
-     - Platform **must** provide logs and these logs must be regularly monitored for events of interest.
+     - The Platform **must** provide logs and these logs must be regularly monitored for events of interest.
        The logs **must** contain the following fields: event type, date/time, protocol, service or program
        used for access, success/failure, login ID or process ID, IP address and ports (source and destination)
        involved.
@@ -1310,7 +1434,7 @@ Kubernetes Architecture Requirements
 
 The requirements in this section are to be delivered in addition to those in section `Reference Model
 Requirements <#reference-model-requirements>`_, and have been
-created to support the Principles defined in the :ref:`chapters/chapter01:Overview` of this
+created to support the Principles defined in the :ref:`first chapter <chapters/chapter01:Overview>` of this
 Reference Architecture.
 
 The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised
@@ -1348,7 +1472,9 @@ machines or containers.
    * - gen.cnt.04
      - General
      - Cloud nativeness
-     - The Architecture must support clearly defined abstraction layers.
+     - The Architecture must support clearly defined abstraction layers - from the hardware
+       infrastructure (supporting the platform) to the containerisation platform (the main concern of this
+       Architecture) to the applications (workloads running on the platform).
      -
    * - gen.cnt.05
      - General
@@ -1407,8 +1533,10 @@ machines or containers.
    * - inf.ntw.02
      - Infrastructure
      - Network
-     - The Architecture must support fully redundant network connectivity to the Kubernetes
-       nodes, leveraging multiple network connections.
+     - The Architecture must support redundant network connectivity to the Kubernetes
+       nodes. At least two physical network connections are required for each physical Kubernetes node.
+       For virtualized Kubernetes nodes, redundant network interfaces backed by redundant physical
+       connections, are required on each virtualised Kubernetes node.
      -
    * - inf.ntw.03
      - Infrastructure
