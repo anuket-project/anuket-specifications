@@ -175,18 +175,27 @@ follows:
      "pods": "110"
    }
 
-Installation on Provider Infrastructure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Installation on Preprovisioned Infrastructure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The main steps are the same as :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`.
 
 Make sure the infrastructure preprovisioned follows ``docs/release/installation/deployment-guide.rst``.
 
 When modifying the environmental variables defined in ``deploy.env``,
-set deployment type ``DEPLOYMENT:-k8s``.
-If you are not the root user account, you neet set ``USERNAME`` to consistent the username of VM and yours,
-then set ``PROJECT_ROOT`` and ``ROOT_PASSWORD`` correctly.
-Once ready, issue the following command to initiate the deployment
+set deployment type:
+
+``DEPLOYMENT=-k8s``
+
+The user name of jump server, clusters and jump VM should be the same for conformance,
+and you might need to set jump VM details:
+
+``USERNAME=<jumpserver-username>``
+``PROJECT_ROOT=<user-home-direction>``
+
+``<user-home-direction>`` is the home direction of jump VM, which is also the same as jump server.
+
+Once ready, issue the following command to initiate the deployment:
 
 ``./deploy.sh``
 
