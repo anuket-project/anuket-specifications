@@ -111,7 +111,7 @@ the following specifications:
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.011
      - Virtual Node CPU Quantity
-     - If using VMs, the Kubernetes Nodes must be equipped with at least 16 vCPUs. 
+     - If using VMs, the Kubernetes Nodes must be equipped with at least 16 vCPUs.
 
        .. note::
 
@@ -124,7 +124,7 @@ the following specifications:
    * - ra2.ch.012
      - Kubernetes Node RAM Quantity
      - The Kubernetes Nodes must be equipped with at least 32GB of RAM.
-     
+
        .. note::
 
         Note, extra RAM capacity should be provisioned to cater for
@@ -319,7 +319,7 @@ the following specifications:
      -
    * - ra2.k8s.007
      - DevicePlugins Feature Gate
-     - When hosting workloads matching the High Performance profile, the DevicePlugins feature gate must be enabled. 
+     - When hosting workloads matching the High Performance profile, the DevicePlugins feature gate must be enabled.
        --feature-gates="...,DevicePlugins=true,..."
 
        .. note::

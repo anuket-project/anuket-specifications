@@ -5,7 +5,7 @@ Introduction
 ------------
 
 The Anuket Reference Architecture (RA2) for Kubernetes based cloud infrastructure is intended to be an industry
-standard-independent Kubernetes reference architecture that is not tied to any specific offering or distribution. 
+standard-independent Kubernetes reference architecture that is not tied to any specific offering or distribution.
 No vendor-specific enhancements are required to achieve conformance with the Anuket specifications.
 Conformance to these specifications can be achieved by using upstream components or features that are developed by the
 open source community, and conformance is ensured by successfully running the RC2 conformance testing suite.
@@ -13,7 +13,7 @@ open source community, and conformance is ensured by successfully running the RC
 By using the Reference Architecture (RA2) for Kubernetes based cloud infrastructure specifications, operators can
 deploy infrastructure that will run any VNF or CNF that has successfully run on an RA2-conformant infrastructure. The
 purpose of this chapter is to outline all the components required to provide Telco-grade Kubernetes in a consistent and
-reliable way. The specification of how to setup these components is detailed in 
+reliable way. The specification of how to setup these components is detailed in
 :ref:`Chapter 04<chapters/chapter04:component level architecture>`.
 
 Kubernetes is already a well-documented and widely deployed open source project of the Cloud Native

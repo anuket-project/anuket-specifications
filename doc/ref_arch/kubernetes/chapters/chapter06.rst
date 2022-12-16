@@ -25,7 +25,7 @@ A feature can be in Alpha, Beta or GA stage:
 - Alpha features are disabled by default, may be buggy, and support may be dropped
 - Beta features are disabled by default, are well tested, and support will not be dropped (although breaking API
   changes may happen). Any existing Beta feature as of 1.24 will continue to be enabled by default, but new beta APIs
-  and features will not be enabled by default after Kubernetes 1.24. 
+  and features will not be enabled by default after Kubernetes 1.24.
   More in `KEP-3136 <https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/3136-beta-apis-off-by-default/README.md>`__
 - GA features are stable, always enabled and cannot be disabled.
 
