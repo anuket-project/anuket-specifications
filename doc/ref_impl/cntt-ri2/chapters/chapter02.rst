@@ -37,7 +37,7 @@ Reference Architecture Specification
       - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
     * - :ref:`ref_arch_kubernetes:chapters/chapter04:Kubernetes Node`
       - ``ra2.ch.002``
-      - SR-IOV Capable NICs
+      - SR-IOV capable NICs
       - Not required
       - Must support
       - :ref:`chapters/chapter03:Infrastructure Requirements`
@@ -110,6 +110,24 @@ Reference Architecture Specification
     * - :ref:`ref_arch_kubernetes:chapters/chapter04:Kubernetes Node`
       - ``ra2.ch.018``
       - NFD
+      - Must support
+      - Must support
+      - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch_kubernetes:chapters/chapter04:Kubernetes Node`
+      - ``ra2.os.001``
+      - Linux Distribution
+      - Must support
+      - Must support
+      - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch_kubernetes:chapters/chapter04:Kubernetes Node`
+      - ``ra2.os.002``
+      - Linux Kernel Version
+      - Must support
+      - Must support
+      - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch_kubernetes:chapters/chapter04:Kubernetes Node`
+      - ``ra2.os.004``
+      - Disposable OS
       - Must support
       - Must support
       - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
@@ -241,19 +259,19 @@ Reference Architecture Specification
       - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
     * - :ref:`ref_arch_kubernetes:chapters/chapter04:Networking Solutions`
       - ``ra2.ntw.005``
-      - Multiplexer /meta-plugin
+      - Multiplexer / meta-plugin
       - May support
       - May support
       - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
     * - :ref:`ref_arch_kubernetes:chapters/chapter04:Networking Solutions`
       - ``ra2.ntw.006``
-      - Multiplexer/meta-plugin CNI Conformance
+      - Multiplexer / meta-plugin CNI Conformance
       - Must support
       - Must support
       - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
     * - :ref:`ref_arch_kubernetes:chapters/chapter04:Networking Solutions`
       - ``ra2.ntw.007``
-      - Multiplexer/meta-plugin CNI Plugins
+      - Multiplexer / meta-plugin CNI Plugins
       - Must support
       - Must support
       - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
@@ -265,7 +283,7 @@ Reference Architecture Specification
       - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
     * - :ref:`ref_arch_kubernetes:chapters/chapter04:Networking Solutions`
       - ``ra2.ntw.009``
-      - Multiple connection points with multiplexer/meta-plugin
+      - Multiple connection points with multiplexer / meta-plugin
       - Must support
       - Must support
       - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`

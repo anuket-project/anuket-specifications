@@ -11,7 +11,7 @@ This chapter maps the requirements written in the previous chapters as mandatory
 enforces the overall requirements traceability to testing, especially those offered for
 `End-to-End Testing <https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/
 e2e-tests.md>`__.
-The Anuket Reference Conformance (RC2) testing then matches the following Features tabs defined here.
+The Anuket Reference Conformance (RC2) testing then matches the following Features and tests defined here.
 
 Kubernetes feature gate policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,12 +25,13 @@ A feature can be in Alpha, Beta or GA stage:
 - Alpha features are disabled by default, may be buggy, and support may be dropped
 - Beta features are disabled by default, are well tested, and support will not be dropped (although breaking API
   changes may happen). Any existing Beta feature as of 1.24 will continue to be enabled by default, but new beta APIs
-  and features will not be enabled by default. More in [KEP-3136](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/3136-beta-apis-off-by-default/README.md).
+  and features will not be enabled by default after Kubernetes 1.24.
+  More in `KEP-3136 <https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/3136-beta-apis-off-by-default/README.md>`__
 - GA features are stable, always enabled and cannot be disabled.
 
 The policy for RA2 to include Kubernetes features as mandatory is:
 
-   Only features that are in GA stage (or Beta before 1.24) can be made mandatory, subject to RA2 requirements.
+   Only features that are in GA stage, or Beta when introduced before Kubernetes 1.24, can be made mandatory, subject to RA2 requirements.
 
 A list of feature gates is available
 `here <https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/#feature-gates>`__.
@@ -47,7 +48,7 @@ or GA/Stable).
 
 The policy for RA2 to include Kubernetes APIs as mandatory is:
 
-   Only APIs that are Stable stage (or Beta before 1.24) can be made mandatory, subject to RA2 requirements.
+   Only APIs that are Stable stage, or Beta when introduced before Kubernetes 1.24, can be made mandatory, subject to RA2 requirements.
 
 The Kubernetes API reference is available `here <https://kubernetes.io/docs/reference/kubernetes-api/>`__.
 
