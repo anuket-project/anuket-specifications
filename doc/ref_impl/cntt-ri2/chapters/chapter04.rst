@@ -185,7 +185,7 @@ Make sure the infrastructure preprovisioned follows ``docs/release/installation/
 When modifying the environmental variables defined in ``deploy.env``,
 set deployment type:
 
-``DEPLOYMENT=-k8s``
+``DEPLOYMENT=k8s``
 
 The user name of jump server, clusters and jump VM should be the same for conformance,
 and you might need to set jump VM details:
@@ -193,7 +193,7 @@ and you might need to set jump VM details:
 ``USERNAME=<jumpserver-username>``
 ``PROJECT_ROOT=<user-home-direction>``
 
-``<user-home-direction>`` is the home direction of jump VM, which is also the same as jump server.
+``<user-home-direction>`` is the home directory of jump VM, which is also the same as jump server.
 
 Once ready, issue the following command to initiate the deployment:
 
