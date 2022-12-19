@@ -55,4 +55,6 @@ Version history
      - 4th Jan 2022
    * - Moselle
      - 21st Jun 2022
+   * - Nile
+     - 20st Dec 2022
 
