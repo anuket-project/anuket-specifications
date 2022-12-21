@@ -363,17 +363,17 @@ The GSMA's "Cloud Infrastructure Reference Model (NG.126)" specifies Redfish as 
 made available by the infrastructure and Cloud Infrastructure Management components.  For the "Infrastructure Hardware" layer, 
 the document specifies DMTF's Redfish interface.
  
-Redfish is an internationally recognized standard (add ISO reference). The Redfish interface specifies a HTTP RESTful interface 
+Redfish is an internationally recognized standard (ISO/IEC 30115:2018). The Redfish interface specifies a HTTP RESTful interface 
 that a client can use to manage conformant platforms. The Redfish standard consists of a Redfish interface specification 
 [Redfish Specification] and model specification [Redfish Data Model Specification].  The interface specification defines the 
-RESTful behavior of the resources.  The model specification defines the structure of the HTTP resources.  The model is expressed 
+RESTful behavior of the resources.  The data model specification defines the structure of the HTTP resources.  The model is expressed 
 as schema using OpenAPI and json-schema formats.  The schema allows the OpenAPI and json-schema toolchains to be used in 
 implement a Redfish Client.
 
 There are several opensource implementations of Redfish Clients and Redfish Services. 
-The Open Distributed Infrastructure Management (ODIM, odim.io) repository is a Linux Foundation project, which implements an 
-infrastructure manager which exposes Redfish northbound an Orchestrator and supports multiple southbound interfaces to the managed 
-nodes.
+The Open Distributed Infrastructure Management (ODIM, odim.io) repository is a Linux Foundation projectand is the most mature. ODIM implements a scalable   
+infrastructure manager which aggregates and exposes a standards-based Redfish interface and services northbound to an Orchestrator. It also includes a Plugin layer that adapts non-Redfish compliant data models interfaces, allowing for the aggregated management of multiple fully compliant or vendor specific southbound interfaces to their respective managed 
+infrastructure clients.
 
 DMTF specifies the Redfish interface and model, seeking to expand the manageability domains. The prescription of what subset of the 
 Redfish model needs to be implemented for a specific manageability domain is left to other standards bodies.  Redfish had defined a 
@@ -401,6 +401,48 @@ Redfish fulfills the following requirements stated in the above HW Infrastructur
 
 The ODIM implementation supports the account, aggregation, composition, events, fabric, license, managers, session, systems, task, 
 telemetry and update models.
+
+Open Distributed Infrastructure Management (ODIM™) is a Linux Foundation Networking open source project.  The project has developed a modular, open framework for simplified management and orchestration of distributed, multi-vendor, physical infrastructure.  More information about ODIM is available at https://odim.io.
+
+ODIM comprises the following two key components:
+
+1.	The resource aggregation function
+
+The resource aggregation function is the single point of contact between the northbound clients and the southbound infrastructure. Its primary function is to build and maintain a central resource inventory. It exposes Redfish-compliant APIs to allow northbound infrastructure management systems to:
+
+-	Get a unified view of the southbound compute, local storage, and Ethernet switch fabrics available in the resource inventory
+
+-	Gather crucial configuration information about southbound resources
+
+-	Manipulate groups of resources (“aggregates”) in a single action
+
+-	Listen to similar events from multiple southbound resources
+
+2.	PLugin layer
+
+This consists of one or more plugins, which abstract, translate, and expose southbound resource information to the resource aggregator through RESTful APIs.
+	
+The ODIM project currently supports the account, aggregation, composition, events, fabric, license, managers, session, systems, task, telemetry and update models.
+
+The ODIM architecture has four key layers. (See diagram below)
+
+1.	**API layer**
+
+This layer hosts a REST server which is open-source and secure. It learns about the southbound resources from the plugin layer (described below) and exposes the corresponding Redfish® data model payloads to the northbound clients. The northbound clients communicate with this layer through a REST-based protocol that is fully compliant with DMTF's Redfish® specifications. The API layer sends user requests to the plugins through the services.
+
+2.	**Services layer**
+
+All the services are hosted in this layer. The layer implements service logic for all use cases through an extensible domain model (DMTF's Redfish® data model). All resource information is stored in this data model and is used to service the API requests coming from the API layer. Any responses from the plugin layer might update the domain model. It maintains the state for event subscriptions, credentials, and tasks.
+
+3.	**Event message bus layer**
+
+This layer hosts a message broker which acts as a communication channel between the plugin layer and the upper layers. It supports common messaging architecture to forward events received from the plugin layer to the upper layers. During the run-time, HPE Resource Aggregator for ODIM uses either Kafka or the RedisStreams service as the Event Message Bus (EMB). The services and the RedisStreams EMB layers host the Redis data store.
+
+4.	**Plugin layer**
+
+This layer connects the actual managed resources to the aggregator layers and is de-coupled from the upper layers. A plugin abstracts vendor-specific access protocols to a common interface which the aggregator layers use to communicate with the resources. It uses REST-based communication to interact with the other layers. It collects events to be exposed to fault management systems and uses the event message bus to publish events.
+The plugin layer allows developers to create plugins on any tool set of their choice without enforcing any strict language binding. 
+[insert pic]
 
 Left for future use
 -------------------
