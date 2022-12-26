@@ -408,8 +408,8 @@ CNF operators:
    * - Additional network connections provider
      - Multiplexer/meta- plugin
      - Multiplexer/meta- plugin
-     - Federated networking manager
      - Default CNI Plugin
+     - Federated networking manager
    * - The overlay network encapsulation protocol needs to enable ECMP in the underlay (infra.net.cfg.002)
      - Supported via the additional CNI plugin
      - Supported via the additional CNI plugin
