@@ -365,20 +365,20 @@ the document specifies DMTF's Redfish interface.
  
 Redfish is an internationally recognized standard (ISO/IEC 30115:2018). The Redfish interface specifies a HTTP RESTful interface 
 that a client can use to manage conformant platforms. The Redfish standard consists of a Redfish interface specification 
-[Redfish Specification] and model specification [Redfish Data Model Specification].  The interface specification defines the 
+`Redfish Specification <https://www.dmtf.org/sites/default/files/standards/documents/DSP0266_1.8.0.pdf>`__ and model specification `Redfish Data Model Specification <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__.  The interface specification defines the 
 RESTful behavior of the resources.  The data model specification defines the structure of the HTTP resources.  The model is expressed 
 as schema using OpenAPI and json-schema formats.  The schema allows the OpenAPI and json-schema toolchains to be used in 
 implement a Redfish Client.
 
 There are several opensource implementations of Redfish Clients and Redfish Services. 
-The Open Distributed Infrastructure Management (ODIM, odim.io) repository is a Linux Foundation projectand is the most mature. ODIM implements a scalable   
+The Open Distributed Infrastructure Management `ODIM <https://odim.io/>`__ repository is a Linux Foundation projectand is the most mature. ODIM implements a scalable   
 infrastructure manager which aggregates and exposes a standards-based Redfish interface and services northbound to an Orchestrator. It also includes a Plugin layer that adapts non-Redfish compliant data models interfaces, allowing for the aggregated management of multiple fully compliant or vendor specific southbound interfaces to their respective managed 
 infrastructure clients.
 
 DMTF specifies the Redfish interface and model, seeking to expand the manageability domains. The prescription of what subset of the 
 Redfish model needs to be implemented for a specific manageability domain is left to other standards bodies.  Redfish had defined a 
 JSON syntax for the prescription call a Redfish Profile and implemented an application which reads the Redfish Profile and tests for 
-conformance of an implementation [Interop Validator] .  The Redfish Profile mechanism is being utilized by the Open Compute Project 
+conformance of an implementation `Interop Validator <https://github.com/DMTF/Redfish-Interop-Validator>`__ .  The Redfish Profile mechanism is being utilized by the Open Compute Project 
 and Open Process Automation Forum.  The ODIM project has proposed a Redfish Profile.
 
 Redfish fulfills the following requirements stated in the above HW Infrastructure Manager section:
@@ -391,18 +391,18 @@ Redfish fulfills the following requirements stated in the above HW Infrastructur
 
 -	**Equipment**: The Redfish schema contains a physical model and a functional model. The physical model expresses the chassis and containers and interconnects between them and environmental control functions.  The functional model expresses the logical aspects and includes configuration and  firmware status.   Both the physical and functional model have their own health/fault status information
 
--	**Resource Allocation and Composition**: The Redfish schema has a composition model through which a client can compose a logical resource by allocating physical resources. [Redfish Composition Whitepaper]
+-	**Resource Allocation and Composition**: The Redfish schema has a composition model through which a client can compose a logical resource by allocating physical resources. `Redfish Composition Whitepaper <https://www.dmtf.org/sites/default/files/standards/documents/DSP2050_1.2.0_1.pdf>`__
 
 -	**Underlay Network Resources Manager**: The Redfish schema has models for fabrics, switches and SmartNICs.
 
--	**Monitoring**: The Redfish schema contains event model for the client to receive hardware events and telemetry model for collecting information across the entire model (physical and functional) [Redfish Telemetry Whitepaper]
+-	**Monitoring**: The Redfish schema contains event model for the client to receive hardware events and telemetry model for collecting information across the entire model (physical and functional) `Redfish Telemetry Whitepaper <https://www.dmtf.org/sites/default/files/standards/documents/DSP2051_1.0.0.pdf>`__
 
--	**Additional Management Functions**: The Redfish schema has models for access management and identity management. Redfish has published work-in-progress extension for support policy management and OS/VM management [Policy Model Proposal, Redfish for Operating Systems, Applications and Containers]
+-	**Additional Management Functions**: The Redfish schema has models for access management and identity management. Redfish has published work-in-progress extension for support policy management and OS/VM management `Policy Model Proposal, Redfish for Operating Systems, Applications and Containers <https://www.dmtf.org/documents/redfish-spmf/redfish-operating-systems-applications-and-containers-05wip>`__
 
 The ODIM implementation supports the account, aggregation, composition, events, fabric, license, managers, session, systems, task, 
 telemetry and update models.
 
-Open Distributed Infrastructure Management (ODIM™) is a Linux Foundation Networking open source project.  The project has developed a modular, open framework for simplified management and orchestration of distributed, multi-vendor, physical infrastructure.  More information about ODIM is available at https://odim.io.
+Open Distributed Infrastructure Management (ODIM™) is a Linux Foundation Networking open source project.  The project has developed a modular, open framework for simplified management and orchestration of distributed, multi-vendor, physical infrastructure.  More information about ODIM is available at `odim.io <https://odim.io>`__.
 
 ODIM comprises the following two key components:
 
