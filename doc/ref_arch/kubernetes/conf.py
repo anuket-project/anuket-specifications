@@ -15,7 +15,8 @@ linkcheck_ignore = [
     "https://github.com/opencontainers/runtime-spec/blob/master/config.md",
     "https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en",
     "https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en",
-    "https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en"
+    "https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en",
+    "https://ntia.gov/page/software-bill-materials"
 ]
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
