@@ -363,7 +363,7 @@ The GSMA's "Cloud Infrastructure Reference Model (NG.126)" specifies Redfish as 
 made available by the infrastructure and Cloud Infrastructure Management components.  For the "Infrastructure Hardware" layer, 
 the document specifies DMTF's Redfish interface.
  
-Redfish is an internationally recognized standard (ISO/IEC 30115:2018). The Redfish interface specifies a HTTP RESTful interface 
+Redfish is an internationally recognized standard `ISO/IEC 30115:2018  <https://www.iso.org/standard/83853.html>`__. The Redfish interface specifies a HTTP RESTful interface 
 that a client can use to manage conformant platforms. The Redfish standard consists of a Redfish interface specification 
 `Redfish Specification <https://www.dmtf.org/sites/default/files/standards/documents/DSP0266_1.8.0.pdf>`__ and model specification `Redfish Data Model Specification <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__.  The interface specification defines the 
 RESTful behavior of the resources.  The data model specification defines the structure of the HTTP resources.  The model is expressed 
@@ -426,6 +426,10 @@ The ODIM project currently supports the account, aggregation, composition, event
 
 The ODIM architecture has four key layers. (See diagram below)
 
+.. figure:: ../figures/Chapter-3-ODIM-Architecture.png
+   :alt: ODIM architecture
+   :name: ODIM architecture
+   
 1.	**API layer**
 
 This layer hosts a REST server which is open-source and secure. It learns about the southbound resources from the plugin layer (described below) and exposes the corresponding Redfish® data model payloads to the northbound clients. The northbound clients communicate with this layer through a REST-based protocol that is fully compliant with DMTF's Redfish® specifications. The API layer sends user requests to the plugins through the services.
@@ -442,12 +446,6 @@ This layer hosts a message broker which acts as a communication channel between 
 
 This layer connects the actual managed resources to the aggregator layers and is de-coupled from the upper layers. A plugin abstracts vendor-specific access protocols to a common interface which the aggregator layers use to communicate with the resources. It uses REST-based communication to interact with the other layers. It collects events to be exposed to fault management systems and uses the event message bus to publish events.
 The plugin layer allows developers to create plugins on any tool set of their choice without enforcing any strict language binding. 
-[insert pic]
-
-Left for future use
--------------------
-
-This section is left blank for future use
 
 Network
 -------
