@@ -28,9 +28,9 @@ Anuket Specifications
 Version information
 -------------------
 
-**Version: Moselle**
+**Version: Nile**
 
-**Release Date: 21th June 2022**
+**Release Date: 21th Dec 2022**
 
 Version history
 ---------------
@@ -55,4 +55,6 @@ Version history
      - 4th Jan 2022
    * - Moselle
      - 21st Jun 2022
+   * - Nile
+     - 20st Dec 2022
 
