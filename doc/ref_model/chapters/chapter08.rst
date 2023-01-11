@@ -351,14 +351,6 @@ criteria for inclusion of a standard/technology is defined. These standards/tech
 - not  be the sole proprietary property of a vendor/company
 - not be focused on "Transactions/Conversations" or "User/Data Plane" standards (typically IETF, IEEE,
   MEF/Carrier Ethernet etc.)
-  
-The different orchestration solutions that can be found either in different techonlogy domains (e.g. Core, Edge, 
-Radio), or different planes (Management and Control) for Service, Network and Resource layers shall consider 
-the following attributes (not limited to the below ones):
-
-- Interoperability: among the orchestrators to support the lifecycle operations or the delegation of operations to other orchestrators
-- Flexibiliy: There are use cases which can only be executed if the operations can run disaggregated, otherwise, extreme requirements brough by the use cases could be challenging to achieve taking in account technological constrains (e.g. use cases demanding less than 1 ms of latency)
-- Intelligence: AI/ML support either for service lifecycle operation operation or service monitoring, otherwise, the capability of running an unlimited number of services (constrains can be brought by ecosystem/infrastructure variables like processing, memory, storage).
 
 Hybrid, Edge, and Multi-Cloud unified management Platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
