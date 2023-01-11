@@ -18,7 +18,8 @@ jobs:
         echo "---------------------------------- Building GOV ---------------------------------------"
         echo "---------------------------------------------------------------------------------------"
         tox -e docs
-        echo "Building GOV was succesfull! "
+        echo "Building GOV was successful! "
+
         cd -
     - name: Building RM
       run: |
