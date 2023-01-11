@@ -28,7 +28,7 @@ jobs:
         echo "---------------------------------- Building RM ----------------------------------------"
         echo "---------------------------------------------------------------------------------------"
         tox -e docs
-        echo "Building RM was succesfull! "
+        echo "Building RM was successful! "
         cd -
     - name: Buiding RA1 and RC1
       run: |
@@ -37,7 +37,7 @@ jobs:
         echo "---------------------------------- Building RA1 and RC1 -------------------------------"
         echo "---------------------------------------------------------------------------------------"
         tox -e docs
-        echo "Building RA1 and RC1 was succesfull! "
+        echo "Building RA1 and RC1 was successful! "
         cd - 
     - name: Building RA2
       run: |
@@ -46,7 +46,7 @@ jobs:
         echo "---------------------------------- Building RA2 ---------------------------------------"
         echo "---------------------------------------------------------------------------------------"
         tox -e docs
-        echo "Building RA2 was succesfull! "
+        echo "Building RA2 was successful! "
         cd -
     - name: Building RI1
       run: |
@@ -55,7 +55,7 @@ jobs:
         echo "---------------------------------- Building RI1 ---------------------------------------"
         echo "---------------------------------------------------------------------------------------"
         tox -e docs
-        echo "Building RI1 was succesfull! "
+        echo "Building RI1 was successful! "
         cd -
     - name: Building RI2
       run: |
@@ -64,7 +64,7 @@ jobs:
         echo "---------------------------------- Building RI2 ---------------------------------------"
         echo "---------------------------------------------------------------------------------------"
         tox -e docs
-        echo "Building RI2 was succesfull! "
+        echo "Building RI2 was successful! "
         cd -
     - name: Building RC2
       run: |
@@ -73,7 +73,7 @@ jobs:
         echo "---------------------------------- Building RC2 ---------------------------------------"
         echo "---------------------------------------------------------------------------------------"
         tox -e docs
-        echo "Building RC2 was succesfull! "
+        echo "Building RC2 was successful! "
         cd -
 
 
