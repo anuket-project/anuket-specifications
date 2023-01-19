@@ -532,26 +532,27 @@ plane traffic require the capability to use an accelerated user space networking
 Kubernetes Networking Semantics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The support for advanced network configuration management doesn't exist in core Kubernetes. Kubernetes is missing the
-advanced networking configuration component of Infrastructure as a Service (IaaS). For example, there is no network
-configuration API, there is no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then
-connect them all together.
+Support for advanced network configuration management does not exist in core Kubernetes. Kubernetes is missing
+the advanced networking configuration component of Infrastructure as a Service (IaaS). For example, there is no
+network configuration API and there is no way to create L2 networks and instantiate network services such as
+L3aaS and LBaaS, and then connect them all together.
 
-Kubernetes networking can be divided into two parts, built in network functionality available through the pod's
-mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
+Kubernetes networking can be divided into two parts: built-in network functionality, available through the pod’s
+mandatory primary interface, and network functionality, available through the pod’s optional secondary interfaces.
 
 Built-in Kubernetes Network Functionality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Vanilla Kubernetes only allows for one network, the *cluster* network, and one network attachment for each pod.
-All pods and containers have a primary interface, which is created by Kubernetes during pod creation and attached
-to the cluster network. All communication to and from the pod is done through this interface. To only allow for one
-interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing
+Vanilla Kubernetes currently only allows for one network, the cluster network, and one network attachment for each pod.
+All pods and containers have an eth0 interface. This interface is created by Kubernetes at pod creation and is attached
+to the cluster network. All communication to and from the pod is done through this interface. To allow for only one
+interface in a pod removes the need for traditional networking tools, such as VRFs and additional routes and routing
 tables inside the pod network namespace.
 
-The basic semantics of Kubernetes, and the information found in manifests, defines the connectivity rules and behavior
-without any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW
-services and network policies for them that are not location aware and therefore can be executed more or less anywhere.
+The basic semantics of Kubernetes, and the information found in the manifests, defines the connectivity rules and
+behavior without any references to IP addresses. This has many advantages: it makes it easy to create portable,
+scalable software services and network policies for them that are not location-aware and therefore can be executed
+more or less anywhere.
 
 .. list-table:: Kubernetes networking built-in objects
    :widths: 20 80
@@ -560,24 +561,25 @@ services and network policies for them that are not location aware and therefore
    * - Network objects
      - Description
    * - `Ingress <https://kubernetes.io/docs/concepts/services-networking/ingress/>`__
-     - Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An
-       Ingress can be configured to give services externally reachable URLs, load balance traffic, terminate SSL, offer
-       name based virtual hosting etc.
+     - Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend.
+       An Ingress can be configured to give services URLs that are reachable externally, load balance traffic, terminate
+       SSL, offer name-based virtual hosting, and so on.
    * - `Service <https://kubernetes.io/docs/concepts/services-networking/service/>`__
-     - Service is a named abstraction of an application running on a set of pods consisting of a local port
-       (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests
-       sent through the proxy.
+     - A service is a named abstraction of an application that runs on a set of pods. The application consists of a
+       local port (for example, 3306) on which the proxy listens, and a selector that determines which pods answer
+       requests sent through the proxy.
    * - `EndpointSlices <https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/>`__
-     - Endpoints and Endpointslices are a collection of objects that contain the ip address, v4 and v6, of the pods
-       that represents a service.
+     - Endpoints and Endpointslices are a collection of objects that contain the IP addresses, (IPv4 and IPv6) of the
+       pods that represent a service.
    * - `Network Policies <https://kubernetes.io/docs/concepts/services-networking/network-policies/>`__
-     - Network Policy defines which network traffic is allowed to ingress and egress from a set of pods.
+     - A Network Policy defines which network traffic is allowed to ingress and egress from a set of pods.
 
-There is no need to explicitly define internal load balancers, server pools, service monitors, firewalls and so on.
-The Kubernetes semantics and relation between the different objects defined in the object manifests contains all the
-information needed.
+There is no need to explicitly define internal load balancers, server pools, service monitors, firewalls, and so on.
+The Kubernetes semantics and the relationship between the different objects defined in the object manifests contains
+all the necessary information.
 
-Example: The manifests for service *my-service* and the *deployment* with the four load balanced pods of type *my-app*
+Example: The manifests for the my-service service and the deployment with the four load balanced pods of the *my-app*
+type.
 
 Service:
 
@@ -617,30 +619,30 @@ Deployment:
                                              ports:
                                              - containerPort: 123
 
-This is all that is needed to deploy 4 pods that are fronted by a service that performes load balancing.
-The *Deployment* will ensure that there are always four pods of type *my-app* available. the *Deployment* is
-responsible for the full lifecycle management of the pods, this includes in-service update/upgrade.
+This is all that is required to deploy four pods or containers that are fronted by a service that performs load
+balancing. The *Deployment* ensures that there are always four pods of the *my-app* type available. The *Deployment*
+is responsible for the full lifecycle management of the pods. This includes in-service updates and upgrades.
 
-However, when implementing network service functions such as VNFs/CNFs that operate on multiple networks and require
+However, when implementing network service functions, such as VNFs/CNFs, that operate on multiple networks and require
 advanced networking configurations, additional capabilities are required.
 
 Multiple Networks and Advanced Configurations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Kubernetes does currently not in itself support multiple networks, pod multiple network attachments or advanced
-network configurations. This is supported by using a
+Kubernetes currently does not in itself support multiple networks, multiple-pod network attachments, or advanced
+network configurations. These are supported by using a
 `Container Network Interface <https://github.com/containernetworking/cni>`__ multiplexer such as
 `Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__.
-A considerable effort is being invested to add better network support to Kubernetes, all such activities are
+A considerable effort is being invested to add better network support to Kubernetes. All such activities are
 coordinated through the kubernetes
-`Network Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-network>`__ and it's sub
-groups. One such group, the `Network Plumbing Working Group <https://github.com/k8snetworkplumbingwg/community>`__ has
+`Network Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-network>`__ and its sub-groups.
+One such group, the `Network Plumbing Working Group <https://github.com/k8snetworkplumbingwg/community>`__ has
 produced the
 `Kubernetes Network Custom Resource Definition De-facto Standard
 <https://github.com/k8snetworkplumbingwg/multi-net-spec>`__.
 This document describes how secondary networks can be defined and attached to pods.
 
-This de-facto standard defines among other things these concepts:
+This de facto standard defines, among other things, the following:
 
 .. list-table:: Kubernetes multiple network concepts
    :widths: 40 60
@@ -649,17 +651,17 @@ This de-facto standard defines among other things these concepts:
    * - Definition
      - Description
    * - Kubernetes Cluster-Wide default network
-     - A network to which all pods are attached following the current behavior and requirements of Kubernetes, this
-       done by attaching the eth0 interface to the pod namespace.
+     - This is a network to which all pods are attached according to the current behavior and requirements of
+       Kubernetes. This is done by attaching the eth0 interface to the pod namespace.
    * - Network Attachment
-     - A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not
-       necessarily) each attachment takes the form of a kernel network interface placed into the pod's network
-       namespace. Each attachment may result in zero or more IP addresses being assigned to the pod.
+     - Network Attachment is a means of allowing a pod to communicate directly with a given logical or physical network.
+       Typically (but not necessarily), each attachment takes the form of a kernel network interface placed into the
+       pod’s network namespace. Each attachment may result in zero or multiple IP addresses being assigned to the pod.
    * - NetworkAttachmentDefinition object
-     - This defines resource object that describes how to attach a pod to a logical or physical network, the annotation
-       name is "k8s.v1.cni.cncf.io/networks"
+     - The NetworkAttachmentDefinition object defines the resource object that describes how to attach a pod to a
+       logical or physical network. The annotation name is “k8s.v1.cni.cncf.io/networks”.
    * - Network Attachment Selection Annotation
-     - Selects one or more networks that a pod should be attached to.
+     - Network Attachment Selection Annotation selects one or more networks to which a pod must be attached.
 
 Example: Define three network attachments and attach the three networks to a pod.
 
@@ -722,77 +724,77 @@ Pod my-pod
      annotations:
        k8s.v1.cni.cncf.io/networks: blue-network, green-network, red-network
 
-This is enough to support basic network configuration management, it is possible to map up L2 networks from an external
-network infrastructure into a Kubernetes system and attach pods to these networks. The support for IPv4 and IPv6
-address management is however limited. The address must be assigned by the CNI plugin as part of the pod creation
-process.
+This is enough to support basic network configuration management. It is possible to map L2 networks from an external
+network infrastructure into a Kubernetes system and attach pods to these networks. Support for IPv4 and IPv6 address
+management is, however, limited. The address must be assigned by the CNI plugin as part of the pod creation process.
 
 Container Storage Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Kubernetes supports Container Storage Interface (CSI) as the stable solution for storage plugins (in-tree volume
-plugins are moved out from the Kubernetes repository) - a list of CSI drivers is available
-`here <https://kubernetes-csi.github.io/docs/drivers.html>`__.
+Kubernetes supports the Container Storage Interface (CSI) as the stable solution for storage plugins (in-tree volume
+plugins are moved out of the Kubernetes repository). A list of CSI drivers is available
+`here: <https://kubernetes-csi.github.io/docs/drivers.html>`__.
 
-Running containers will require ephemeral storage on which to run the application (i.e. storage on which the unpacked
-container image is stored and executed from). This ephemeral storage lives and dies with the container and is a
-directory on the worker node on which the container is running. Note, this means that the ephemeral storage is mounted
-locally in the worker node filesystem. The filesystem can be physically external to the worker node (e.g., iSCSI, NFS,
-FC) but the container will still reference it as part of the local filesystem.
+Running containers require ephemeral storage on which to run themselves (that is, storage on which the unpacked
+container image is stored and from which it is executed). This ephemeral storage lives and dies with the container and
+is a directory on the worker node on which the container is running.
 
-Additional storage might also be attached to a container through the use of Kubernetes Volumes - this can be storage
-from the worker node filesystem (through hostPaths - not recommended), or it can be external storage that is
-accessed through the use of a Volume Plugin. Volume Plugins allow the use of a storage protocol (e.g., iSCSI, NFS) or
-management API (e.g.m Cinder, EBS) for the attaching and mounting of storage into a Pod. This additional storage, that
-is attached to a container using a Kubernetes Volume, is independent from the container and instead follows the
-lifecycle of the Pod that the container is a part of. This means the Volume persists across container restarts, as long
-as the Pod itself is still running. However it does not necessarily persist when a Pod is destroyed, and therefore
-cannot be considered suitable for any scenario requiring persistent data. The lifecycle of the actual data depends on
-the Volume Plugin used, and sometimes the configuration of the Volume Plugin as well.
+.. note::
+   This means that the ephemeral storage is mounted locally in the worker node filesystem. The filesystem can be
+   physically external to the worker node (for example, iSCSI, NFS, and FC), but the container still references it as part
+   of the local filesystem.
 
-For those scenarios where data persistence is required, Persistent Volumes (PV) are used in Kubernetes. PVs are
+Additional storage could also be attached to a container through the use of Kubernetes Volumes. This can be storage
+from the worker node filesystem (through hostPaths, although this is not recommended), or it can be external storage
+that is accessed through the use of a Volume Plugin. Volume Plugins allow the use of a storage protocol (such as iSCSI
+and NFS) or a management API (such as Cinder and EBS) for attaching and mounting the storage into a pod. This additional
+storage that is attached to a container using a Kubernetes Volume does not live and die with the container, but instead
+follows the lifecycle of the pod of which the container is a part. This means the Volume persists across container
+restarts, as long as the pod itself is still running. However, it does not necessarily persist when a pod is destroyed.
+Therefore, it cannot be considered suitable for any scenario requiring persistent data. The lifecycle of the actual data
+depends on the Volume Plugin used and sometimes also the configuration of the Volume Plugin.
+
+For those scenarios where data persistence is required, Persistent Volumes (PVs) are used in Kubernetes. PVs are
 resources in a Kubernetes Cluster that are consumed by Persistent Volume Claims (PVCs) and have a lifecycle that is
-independent of any Pod that uses the PV. A Pod will use a PVC as the volume in the Pod spec; a PVC is a request for
-persistent storage (a PV) by a Pod. By default, PVs and PVCs are manually created and deleted.
+independent of any pod that uses a PV. A pod uses a PVC as the volume in the pod spec. A PVC is a request for
+persistent storage (a PV) by a pod. By default, PVs and PVCs are manually created and deleted.
 
-Kubernetes also provides an object called Storage Class, which is created by Cluster administrators and maps to Volumes
-attributes such as quality-of-service, encryption, data resilience, etc. Storage Classes also enable the dynamic
-provisioning of Persistent Volumes (as opposed to the default manual creation). This can be beneficial for
-organisations where the administration of storage is performed separately from the administration of Kubernetes-based
-workloads.
+Kubernetes also provides Storage Classes. Storage Classes are created by Cluster administrators and maps to storage
+attributes such as quality-of-service, encryption, data resilience, and so on. Storage Classes also enable the dynamic
+provisioning of Persistent Volumes (as opposed to the default manual creation). This can be beneficial for organizations
+where the administration of storage is performed separately from the administration of Kubernetes-based workloads.
 
-There are no restrictions or constraints that Kubernetes places on the storage that can be consumed by a workload, in
-terms of the requirements that are defined in RM sections :ref:`ref_model:chapters/chapter05:storage configurations`
-(software) and :ref:`ref_model:chapters/chapter05:virtual storage` (hardware). The only point of difference is that
-Kubernetes does not have a native object storage offering, and addressing this capability gap directly is outside of
-the scope of this RA.
+Kubernetes does not place any restrictions on the storage that can be consumed by a workload, in terms of the
+requirements that are defined in the RM sections Storage Configurations (software) and Virtual Storage (hardware). The
+only difference is that Kubernetes does not have a native object storage offering. Addressing this capability gap
+directly is outside of the scope of this RA.
 
 Kubernetes Application package manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To manage the lifecycle (e.g., install and configure, upgrade, uninstall) of complex applications consisting of several
-Pods and other Kubernetes objects, the Reference Architecture mandates the use of a specific Kubernetes Application
-package manager. The Package Manager must be able to manage the lifecycle of an application, and provide a framework to
-customise a set of parameters for its deployment. The requirement for the Clusters is to expose a Kubernetes API for
-the package managers to use in the lifecycle management of the applications they manage. This must comply with the CNCF
-CNF Conformance test. As it is not recommended to use a Kubernetes Application package manager with a server side
-component installed to the Kubernetes Cluster (e.g., Tiller), `Helm v3 <https://helm.sh/docs/>`__ is the chosen
-Kubernetes Application package manager.
+To manage the lifecycle (for example, install and configure, upgrade, and uninstall) of complex applications consisting
+of several pods and other Kubernetes objects, the Reference Architecture mandates the use of a specific Kubernetes
+Application package manager. The package manager must be able to manage the lifecycle of an application and provide a
+framework to customize a set of parameters for its deployment. The requirement for the clusters is to expose a
+Kubernetes API for the package managers to use in the lifecycle management of the applications they manage. This must
+comply with the CNCF CNF conformance test. As it is not recommended to use a Kubernetes Application package manager with
+a server side component installed in the Kubernetes Cluster (for example, Tiller), `Helm v3 <https://helm.sh/docs/>`__
+is the chosen Kubernetes Application package manager.
 
 Custom Resources
 ~~~~~~~~~~~~~~~~
 
 `Custom resources <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/>`__ are
-extensions of the Kubernetes API that represent customizations of Kubernetes installation. Core Kubernetes functions
-are also built using custom resources which makes Kubernetes more modular.
-Two ways to add custom resources are:
+extensions of the Kubernetes API that represent customizations of the Kubernetes installation. Core Kubernetes functions
+are also built using custom resources. This makes Kubernetes more modular. Two ways to add custom resources are the
+following:
 
 -  `Custom Resource Definitions
    <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`__
-   (CRDs): Defining CRD object creates new custom resource with a name and schema that are easy to use.
+   (CRDs): Defining a CRD object creates new custom resource with a name and schema that are easy to use.
 -  `API Server Aggregation
-   <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/>`__: Additional
-   API that in flexible way extends Kubernetes beyond core Kubernetes API.
+   <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/>`__: This is an
+   additional API that, in a flexible way, extends Kubernetes beyond the core Kubernetes API.
 
 Operator Pattern
 ^^^^^^^^^^^^^^^^
@@ -802,51 +804,52 @@ A `custom controller
 is a control loop that watches a custom resource for changes and tries to keep the current state of the resource
 in sync with the desired state.
 
-`Operator pattern <https://kubernetes.io/docs/concepts/extend-kubernetes/operator/>`__ combines custom resources and
+An `operator pattern <https://kubernetes.io/docs/concepts/extend-kubernetes/operator/>`__ combines custom resources and
 custom controllers. Operators are software extensions to Kubernetes that capture operational knowledge and automate
-usage of custom resources to manage applications, their components and cloud infrastructure.
-Operators can have different capability levels. As per repository `OperatorHub.io <https://operatorhub.io/>`__, an
-operator can have different capability levels
+usage of custom resources to manage applications, their components, and cloud infrastructure. Operators can have
+different capability levels. According to the `OperatorHub.io <https://operatorhub.io/>`__ repository, an operator can
+have the following different capability levels
 (`picture <https://operatorhub.io/static/images/capability-level-diagram.svg>`__):
 
 -  Basic install: Automated application provisioning and configuration management.
--  Seamless upgrades: Patch and minor version upgrades supported.
--  Full lifecycle: Application lifecycle, storage lifecycle (backup, failure recovery).
--  Deep insights: Metrics, alerts, log processing and workload analysis.
--  Auto pilot: Horizontal/vertical scaling, automated configuration tuning, abnormality detection, scheduling tuning.
+-  Seamless upgrades: Patch and minor version upgrades are supported.
+-  Full lifecycle: Application lifecycle and storage lifecycle (backup and failure recovery).
+-  Deep insights: Metrics, alerts, log processing, and workload analysis.
+-  Auto pilot: Horizontal/vertical scaling, automated configuration tuning, abnormality detection, and scheduling
+   tuning.
 
 CaaS Manager - Cluster Lifecycle Management
 -------------------------------------------
 
-   Note: *detailed requirements and component specification of cluster LCM are out of scope for this release.*
+   .. note::
+      *detailed requirements and the component specification of cluster LCM are out of scope for this release.*
 
-In order to provision multiple Kubernetes Clusters, which is a common scenario where workloads and network functions
-require dedicated, single-tenant Clusters, the Reference
-Architecture provides support for a **CaaS Manager**, a component responsible for the Lifecycle Management of multiple
-Kubernetes Clusters.
-This component is responsible for delivering an end-to-end life cycle management (creation and installation, scaling,
-updating, deleting, etc., of entire clusters), visibility and control of CaaS clusters, along with verification
-of security and compliance of Kubernetes clusters across multiple data centres and clouds.
-Specifically, the scope of the CaaS Manager includes:
+To provision multiple Kubernetes Clusters, which is a common scenario where workloads and network functions require
+dedicated, single-tenant clusters, the Reference Architecture provides support for a **CaaS Manager**, a component
+responsible for the lifecycle management of multiple Kubernetes clusters. This component is responsible for delivering
+an end-to-end lifecycle management (creation and installation, scaling, updating, deleting, and so on, of entire
+clusters), visibility and control of CaaS clusters, together with verification of security and compliance of Kubernetes
+clusters across multiple data centers and clouds. Specifically, the scope of the CaaS Manager comprises the following:
 
--  Infrastructure (Kubernetes Clusters) provisioning
+-  Infrastructure (Kubernetes Clusters) provisioning. This comprises either of the following:
 
-   -  LCM of control/worker VM nodes - via IaaS API
-   -  or Baremetal provisioning for physical nodes
+   -  LCM of control/worker VM nodes - via IaaS API.
+   -  Bare metal provisioning for physical nodes.
 
--  Control plane installation (i.e., Kubernetes control plane components on the nodes)
+-  Control plane installation (that is, Kubernetes control plane components on the nodes).
 
--  Node node OS customisation (e.g., Kernel customisation)
+-  Node node OS customization (for example, Kernel customization).
 
--  Management of Cluster add-ons (e.g., CNIs, CSIs, Service Meshes)
+-  Management of Cluster add-ons (for example, CNIs, CSIs, and Service Meshes).
 
-The CaaS Manager maintains a catalogue of **clusters templates**, used to create clusters specific to the requirements
-of workloads, the underlying virtualisation provider and/or the specific server hardware to be used for the cluster.
+The CaaS Manager maintains a catalog of **cluster templates**. These templates are used to create clusters specific to
+the requirements of workloads, the underlying virtualization provider, and/or the specific server hardware to be used
+for the cluster.
 
-The CaaS manager works by integrating with an underlying virtualisation provider for VM-based clusters, or with
-Bare Metal management APIs for physical clusters, to create Cluster nodes and provide other capabilities such as node
-scaling (e.g. provisioning a new node and attaching it to a cluster).
+The CaaS manager works by integrating with an underlying virtualization provider for VM-based clusters, or with bare
+metal management APIs for physical clusters, to create cluster nodes and provide other capabilities, such as node
+scaling (for example, provisioning a new node and attaching it to a cluster).
 
 A CaaS Manager leverages the closed-loop desired state configuration management concept that Kubernetes itself enables.
-Meaning, the CaaS Manager takes the desired state of a CaaS Cluster as input and the controller must be able to maintain
-that desired state through a series of closed loops.
+This means that the CaaS Manager takes the desired state of a CaaS cluster as input and the controller must be able to
+maintain that desired state through a series of closed loops.
