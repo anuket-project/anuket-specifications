@@ -16,13 +16,10 @@
 /doc/ref_model/                      @walterkozlowski
 
 # Reference Architectures 1
-/doc/ref_arch/openstack/             @karinesevilla
+/doc/ref_arch/openstack/             @collivier
 
 # Reference Implementation 1
 /doc/ref_impl/cntt-ri/               @jgu17
-
-# Reference Certification 1
-/doc/ref_cert/RC1/                   @collivier
 
 # Reference Architectures 2
 /doc/ref_arch/kubernetes/            @rgstori
