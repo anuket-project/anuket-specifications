@@ -4,6 +4,6 @@
 sphinx!=1.6.6,!=1.6.7,!=2.1.0,!=3.0.0,!=3.4.2 # BSD
 sphinx-rtd-theme  # MIT
 doc8 # Apache-2.0
-sphinx-material
+piccolo-theme
 sphinxcontrib-bibtex
 pybtex
