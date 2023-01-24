@@ -360,8 +360,7 @@ The hardware infrastructure manager needs to support the following functional as
 The Redfish Standard and the ODIM Implementation 
 ------------------------------------------------
 The GSMA's "Cloud Infrastructure Reference Model (NG.126)" specifies Redfish as the standard interface that should be 
-made available by the infrastructure and Cloud Infrastructure Management components.  For the "Infrastructure Hardware" layer, 
-the document specifies DMTF's Redfish interface.
+made available by the infrastructure and Cloud Infrastructure Management components, in the "Infrastructure Hardware" layer.
  
 Redfish is an internationally recognized standard `ISO/IEC 30115:2018  <https://www.iso.org/standard/83853.html>`__. The Redfish interface specifies a HTTP RESTful interface 
 that a client can use to manage conformant platforms. The Redfish standard consists of a Redfish interface specification 
