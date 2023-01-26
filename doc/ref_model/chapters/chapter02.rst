@@ -174,6 +174,13 @@ Breakout / Termination are common mandating that Value Added Services (VASs) & A
 hosted at the Edge. The Telco Edge is a perfect fit for centralized vRAN deployment and vDU/vCU hosting that satisfy the
 latency requirements.
 
+It is expected that with the technology evolution (e.g. 6G) the use cases will be more demanding. For instance, 
+either to meet less than 1 ms latency, or ultra ultra fast data rate, it will be required to evolve the architecture. 
+These use cases, once available, can be used for life saving decisions, for instance for the remote automation in 
+environments not supporting life (e.g., in deep space communication), to ensure that the car autonomous 
+driving can be done in real time, and even for holographic communications. Such use cases can be seen as the 
+evolution of 5G use cases, where such requirements could not be met due to the technology constrains.
+
 - **Use Case #1 - Edge CDN with eMBB Core Network Slicing**
 
   - **Business Objectives**
@@ -292,6 +299,42 @@ latency requirements.
 
    Edge vRAN Deployments
 
+- **Use Case #5 - Telepresence Experience**
+
+  - **Business Objectives**
+
+    This service would allow the communication between one or more persons with the feeling to be present in a location without being phisically in a virtual environment. This service will make use of eMBB, and URLLC network slices and a distributed deployment which would offload processing.
+
+  - **Targeted Segments**
+
+    - B2B Customers & MVNOs
+    - B2C (Mobile Consumers Segment)
+    - Enterpises which make use of Communication platforms
+   
+  - **Architecture**
+
+    - Distibuted deployment model across the ecosystem. It should be possbile to deploy workload at the extreme edge, which would allow realtime processing for video, and offload processing for network load prediction, which would support the Quality of Experience tat is defined for such a use case
+    - The use case covers should allow the placement at the management plane and control plane (e.g. Core, Edge domain) 
+    - There are high-leve requirements requirement for such a use case (e.g. latency of 1ms, available bandwidth 8 Gps 
+      
+- **Use Case #6 - Digital Twins for Manufacturing**
+
+  - **Business Objectives**
+
+    Providing the capability to design and create a product/service as a Digital Twin which can be tested before moving in to Production environment. Therefore, only once acceptance is achieved in the digital world, the service would be available. This leads to extreme reduction of Total Cost of Ownership (TCO), and minimize the risks that are comonly associated to a design and testing of a service for industrial enviroment.
+
+  - **Targeted Segments**
+
+    - Private Networks
+    - Enterprise
+    - Factory (make use of high level of automation).
+    
+   - **Architecture**
+
+    - Demands very low latency (<<1ms) and high reliability. 
+    - Trustworthiness needs to be guaranteed, which are usually associated to performance, security and resource efficiency/cost and subsequently productivity
+    - Processing cabaility of massive volumes of data.
+    
 Analysis
 --------
 

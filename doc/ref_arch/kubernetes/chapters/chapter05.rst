@@ -19,11 +19,8 @@ to end security for cloud native applications. It is recommended that:
 The following functionalities are recommended for securing Kubernetes platforms:
 
 -  Image Certification (Scan for vulnerabilities) and Signing
-
--  Role-base Access Control
-
+-  Role-base Access Control (RBAC)
 -  Secret Management
-
 -  How to overcome the lack of hard Kubernetes Cluster Multi-tenancy
 
    -  Tenants without hard multi-tenancy requirements (multiple development teams
@@ -41,26 +38,26 @@ come into picture that govern the security. Each of these layers needs to be
 secured within their perimeters. The various layers that come into picture are:
 
 -  **Container Registry**: A container registry is a repository to manage
-   container \**images. The access to container registry needs to be secured in
-   order to \**prevent unauthorised access or image tampering.
+   container images. The access to container registry needs to be secured in
+   order to prevent unauthorised access or image tampering.
 -  **Container Images**: Stored instance of a container that holds a set of
-   software needed to run an application. Before loading them to container
+   software needed to run an application. Before loading them to a container
    registry, they need to be secured by performing various checks like
    vulnerability analysis, scans etc. These images should also be signed from
    trusted sources.
 -  **Containers**: A lightweight and portable executable image that contains
-   software and all of its dependencies. The containers need to be prevented from
-   accessing the underlying OS like loading of kernel modules, mounting of
-   directories of underlying OS etc and ensuring that they don't run in
+   software and all of the dependencies. The containers need to be prevented from
+   accessing the underlying OS capabilities like loading of kernel modules, mounting of
+   directories of the underlying OS, etc., and running in
    privileged mode.
--  **Pods**: A Pod represents a set of running containers on your Cluster.
+-  **Pods**: A Pod represents a set of running containers on a Kubernetes Cluster.
    Kubernetes inherently offers pod security policies that define a set of
    conditions that a pod needs to run with in order to be accepted into the
    system. These policies help in ensuring the necessary checks for running the
    pods.
--  **Kubernetes Node**: A Kubernetes node in an unsecured boundary can lead to a
-   potential threat to the running workloads. Such a node should be hardened by
-   disabling unused ports, prohibiting root access etc.
+-  **Kubernetes Node**: A Kuberentes (worker) Node is a physical or virtual server running the workloads in a Kubernetes
+   Cluster. A Kubernetes node in an unsecured boundary can lead to a potential threat to the running workloads. Such a
+   node should be hardened by disabling unused ports, prohibiting root access etc.
 -  **Kubernetes Control Plane Node**: A control plane node in an unsecured boundary can lead to a
    potential threat to the running workloads. A control plane may be hardened in terms
    of security by disabling unused ports, prohibiting root access etc.
@@ -75,13 +72,10 @@ Principles
 The following are core principles to consider when securing cloud native
 applications:
 
--  Deploy only secure applications and trusted codes
-
+-  Deploy only secure and trusted applications and codes
 -  Only deploy applications from validated and verified images
-
 -  Only deploy applications from trusted registries
-
--  Containers orchestration (Kubernetes) secured with administrative boundaries
+-  Kubernetes containers orchestration must be secured with administrative boundaries
    between tenants
 
    -  Use Namespaces to establish security boundaries between tenants
@@ -92,11 +86,8 @@ applications:
    -  Secure tenant metadata Access
 
 -  Segregate container networks using security zoning and network standards
-
 -  Harden the Host OS running the containers
-
 -  Use container-aware runtime defence tools
-
 -  Enable Role-Based Access Control (RBAC)
 
 Node Hardening
@@ -126,8 +117,8 @@ Vulnerability assessment
 
 Vulnerability assessments are a crucial part of IT risk management lifecycles.
 The mitigation of the vulnerabilities helps in protecting systems and data from unauthorised access and breaches.
-Implement necessary vulnerability scanner tools (e.g., OpenVAS and many other
-opensource and commercial tools) to identify threats and flaws within the
+Implement necessary vulnerability scanner tools (e.g., OpenVAS or any other
+open source or commercial tools) to identify threats and flaws within the
 infrastructure that represents potential risks.
 
 Patch management
@@ -154,39 +145,28 @@ They following are security recommendations for orchestration manager:
    control where administrative commands can run. Use network isolation
    techniques, configure RBAC on the Cluster manager and configure node service
    accounts following the principle of least privilege.
-
 -  Ensure that access control is applied to registries requiring unique
    credentials, to limit who can control the build or add images.
-
 -  Network access runs over TLS connections.
-
 -  User roles and access levels are configured to provide segregation of duties.
 
    -  Do not mix container and non-containers services on the same node
    -  Do not run containers as root
 
 -  Multi-factor authentication is used for all administrative access.
-
 -  Harden the configuration by using CIS (Center for Internet Security)
    benchmarks, which are available for container runtime and Kubernetes
-
 -  Deploy security products that provide whitelisting, behaviour monitoring and
    anomaly detection for preventing malicious activity
-
 -  Avoid privileged container application through policy management to reduce the
    effects of potential attacks.
-
 -  Enable integration with other security ecosystem (SIEM)
-
 -  Isolate environments (Dev /test /Production) from other environments within
    the Cluster.
-
 -  Create administrative boundaries between resources using Namespace and avoid
    using default Namespaces.
-
 -  Enable Seccomp to ensure that the workloads have restricted actions available
    within the container application.
-
 -  Limit discovery by restricting services and users that can access Cluster
    management metadata on configuration, containers and nodes
 
@@ -402,7 +382,7 @@ management in Kubernetes:
 
 -  Ensure that the cloud native applications can only read the secrets that these
    applications need
--  Have different set of secrets for different environments(like production,
+-  Have different set of secrets for different environments (like production,
    development, and testing)
 
 Secret values protect sensitive data, it is recommended to protect them from
@@ -463,7 +443,7 @@ VM isolation*". Such 1:1 comparison is not reasonable because VM and container
 based isolation are fundamentally different:
 
 -  VMs: hard isolation, in the layers underlying the application SW
--  Containers: isolation by SW based mechanisms available in OS, Docker and
+-  Containers: isolation by SW based mechanisms available in OS, the container runtime and
    Kubernetes. A container workload is just a set of Linux processes. It is
    *possible* to configure SW based *additional isolation* for container
    workloads, for example by kernel namespaces.

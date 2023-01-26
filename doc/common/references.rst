@@ -148,14 +148,14 @@ Security Related References
    * - [S10]
      -
      - OWASP "Secure Coding Practices - Quick Reference Guide".
-       Available at `https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content
-       <https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content>`__.
+       Available at `https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/
+       <https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/>`__.
    * - [S11]
      -
      - Software Bill of Materials (SBOM) described by US National
        Telecommunications and Information Administration (NTIA).
-       Available at `https://www.ntia.gov/SBOM
-       <https://www.ntia.gov/SBOM>`__.
+       Available at `https://ntia.gov/SBOM
+       <https://ntia.gov/SBOM>`__.
    * - [S12]
      -
      - Twelve-Factor App.

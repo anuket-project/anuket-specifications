@@ -204,7 +204,7 @@ Network Testing
 The regexes load.balancer, LoadBalancer and
 Network.should.set.TCP.CLOSE_WAIT.timeout are currently skipped because
 they haven’t been covered successfully neither by
-`sig-release-1.23-blocking <https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-release/release-branch-jobs/1.23.yaml>`__
+`sig-release-1.25-blocking <https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-release/release-branch-jobs/1.25.yaml>`__
 nor by `Anuket RC2
 verification <https://build.opnfv.org/ci/view/functest-kubernetes/job/functest-kubernetes-v1.25-daily/11/>`__
 
@@ -285,7 +285,7 @@ Storage Testing
 
 It should be noted that all in-tree driver testing, [Driver:+], is
 skipped. Conforming to `the upstream
-gate <https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-release/release-branch-jobs/1.22.yaml>`__,
+gate <https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-release/release-branch-jobs/1.25.yaml>`__,
 all PersistentVolumes NFS testing is also skipped. The following
 exclusions are about `the deprecated in-tree GitRepo volume
 type <https://github.com/kubernetes-sigs/kind/issues/2356>`__:

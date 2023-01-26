@@ -69,20 +69,20 @@ Cloud Infrastructure Software Profile Requirements for Compute
        infra.com.cfg.003
      - CPU pinning support
      - Not required
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter04:consumable infrastructure resources and services`
    * - e.cap.007 /
 
        infra.com.cfg.002
      - NUMA support
      - Not required
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter04:consumable infrastructure resources and services`
    * - e.cap.018 /
 
        infra.com.cfg.005
      - Simultaneous Multithreading (SMT) enabled
-     - Must
+     - **MUST**
      - Optional support
      - :ref:`chapters/chapter04:consumable infrastructure resources and services`
    * - i.cap.018 /
@@ -90,7 +90,7 @@ Cloud Infrastructure Software Profile Requirements for Compute
        infra.com.cfg.004
      - Huge pages configured
      - Not required
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter04:consumable infrastructure resources and services`
 
 [*] Defined in the .bronze configuration in "Storage extensions"
@@ -169,34 +169,34 @@ specified below followed by networking bandwidth requirements.
      - Specification Reference
    * - infra.net.cfg.001
      - IO virtualisation using virtio1.1
-     - Must support
-     - Must support
+     - **MUST** support
+     - **MUST** support
      - :ref:`chapters/chapter04:virtualisation layer`
    * - infra.net.cfg.002
      - The overlay network encapsulation protocol needs to enable ECMP in the
        underlay to take advantage of the scale-out features of the network fabric
-     - Must support VXLAN, MPLSoUDP, GENEVE, other
+     - **MUST** support VXLAN, MPLSoUDP, GENEVE, other
      - No requirement specified
      - :ref:`chapters/chapter04:network fabric`
    * - infra.net.cfg.003
      - Network Address Translation
-     - Must support
-     - Must support
+     - **MUST** support
+     - **MUST** support
      - :ref:`chapters/chapter04:network fabric`
    * - infra.net.cfg.004
      - Security Groups
-     - Must support
-     - Must support
+     - **MUST** support
+     - **MUST** support
      - :ref:`chapters/chapter06:workload security`
    * - infra.net.cfg.005
      - SFC support
      - Not required
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter03:virtual networking - 3rd party sdn solution`
    * - infra.net.cfg.006
      - Traffic patterns symmetry
-     - Must support
-     - Must support
+     - **MUST** support
+     - **MUST** support
      - Not detailed
 
 The required number of connection points to an instance is described in
@@ -214,28 +214,28 @@ bandwidth of those connection points.
      - Specification Reference
    * - n1, n2, n3, n4, n5, n6
      - 1, 2, 3, 4, 5, 6 Gbps
-     - Must support
-     - Must support
+     - **MUST** support
+     - **MUST** support
      - Not detailed
    * - n10, n20, n30, n40, n50, n60
      - 10, 20, 30, 40, 50, 60 Gbps
-     - Must support
-     - Must support
+     - **MUST** support
+     - **MUST** support
      - Not detailed
    * - n25, n50, n75, n100, n125, n150
      - 25, 50, 75, 100, 125, 150 Gbps
      - Optional
-     - Must support
+     - **MUST** support
      - Not detailed
    * - n50, n100, n150, n200, n250, n300
      - 50, 100, 150, 200, 250, 300 Gbps
      - Optional
-     - Must support
+     - **MUST** support
      - Not detailed
    * - n100, n200, n300, n400, n500, n600
      - 100, 200, 300, 400, 500, 600 Gbps
      - Optional
-     - Must support
+     - **MUST** support
      - Not detailed
 
 Cloud Infrastructure Software Profile Extensions Requirements for Networking
@@ -301,25 +301,25 @@ Cloud Infrastructure Software Profile Requirements for Storage
      - Specification Reference
    * - infra.stg.cfg.002
      - Storage Block
-     - Must support
-     - Must support
+     - **MUST** support
+     - **MUST** support
      - :ref:`chapters/chapter03:storage` and
        :ref:`chapters/chapter04:cinder`
    * - infra.stg.cfg.003
      - Storage with replication
      - Not required
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter03:storage` and
        :ref:`chapters/chapter04:transaction volume considerations`
    * - infra.stg.cfg.004
      - Storage with encryption
-     - Must support
-     - Must support
+     - **MUST** support
+     - **MUST** support
      - :ref:`chapters/chapter03:storage`
    * - infra.stg.acc.cfg.001
      - Storage IOPS oriented
      - Not required
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter03:storage`
    * - infra.stg.acc.cfg.002
      - Storage capacity oriented
@@ -382,11 +382,11 @@ Cloud Infrastructure Hardware Profile Requirements
    * - infra.hw.cpu.cfg.003
      - NUMA
      - Not required
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter04:compute`
    * - infra.hw.cpu.cfg.004
      - Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP)
-     - Must support
+     - **MUST** support
      - Optional
      - :ref:`chapters/chapter04:compute`
    * - infra.hw.stg.hdd.cfg.001
@@ -498,42 +498,42 @@ Cloud Infrastructure Management Requirements
      - Specification Reference
    * - e.man.001
      - Capability to allocate virtual compute resources to a workload
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter03:resources and services exposed to vnfs`
    * - e.man.002
      - Capability to allocate virtual storage resources to a workload
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter03:resources and services exposed to vnfs`
    * - e.man.003
      - Capability to allocate virtual networking resources to a workload
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter03:resources and services exposed to vnfs`
    * - e.man.004
      - Capability to isolate resources between tenants
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter03:tenant isolation`
    * - e.man.005
      - Capability to manage workload software images
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter04:glance`
    * - e.man.006
      - Capability to provide information related to allocated virtualised
        resources per tenant
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter07:logging, monitoring and analytics`
    * - e.man.007
      - Capability to notify state changes of allocated resources
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter07:logging, monitoring and analytics`
    * - e.man.008
      - Capability to collect and expose performance information on virtualised
        resources allocated
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter07:logging, monitoring and analytics`
    * - e.man.009
      - Capability to collect and notify fault information on virtualised
        resources
-     - Must support
+     - **MUST** support
      - :ref:`chapters/chapter07:logging, monitoring and analytics`
 
 Cloud Infrastructure Security Requirements
@@ -561,7 +561,6 @@ System Hardening Requirements
      - All systems part of Cloud Infrastructure **MUST** support hardening as
        defined in CIS Password Policy Guide :cite:p:`cispwd`
      - :ref:`chapters/chapter06:password policy`
-
    * - sec.gen.003
      - Hardening
      - All servers part of Cloud Infrastructure **MUST** support a root of
@@ -1156,7 +1155,7 @@ IaaC security Requirements
      - SAST -Static Application Security Testing **MUST** be applied during
        Secure Coding stage triggered by Pull, Clone or Comment trigger.
        Security testing that analyses application source code for software
-       vulnerabilities and gaps against bestpractices. Example: open source
+       vulnerabilities and gaps against best practices. Example: open source
        OWASP range of tools
      - :ref:`chapters/chapter06:workload security`
 
@@ -1966,7 +1965,7 @@ can trigger alerts and notifications for appropriate action.
      - Notes
    * - sec.mon.014
      - Monitoring
-     - The Monitoring systems **SHOULD** not impact IaaS, PaaS, and SaaS SLAs
+     - The Monitoring systems **SHOULD NOT** impact IaaS, PaaS, and SaaS SLAs
        including availability SLAs
      -
    * - sec.mon.016
@@ -2209,7 +2208,7 @@ Compliance with Standards Recommendations
      - The Cloud Operator, and Platform **SHOULD** satisfy the requirements
        for Information Management Systems specified in ISO/IEC 27001
        :cite:p:`isoiec27001`;
-       ISO/IEC 27001 is the international Standard for best-practice
+       ISO/IEC 27001 is the international Standard for best practice
        information security management systems (ISMSs)
      -
    * - sec.std.008

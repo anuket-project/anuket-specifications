@@ -658,7 +658,11 @@ specialised components. The introduction of specialised hardware and custom conf
 operations and management complexity.
 
 At the edge, the infrastructure may further include ruggedised hardware for harsh environments and hardware with
-different form factors.
+different form factors. With the evolution of IoT and ubiquitous connectivity (inclusive of personal devices) to 
+consider extreme-edge devices as part of the ecosystem. This will require need to integrate with and offer programmability  
+and processing capabilities for these devices. 
+
+The end-to-end orchestration will need to support the extreme edge use cases.
 
 Telco Edge Cloud: Infrastructure Profiles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

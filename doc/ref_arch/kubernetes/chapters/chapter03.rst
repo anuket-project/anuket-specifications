@@ -182,7 +182,7 @@ with the Topology Manager. Special care needs to be taken of:
 Management of Memory and Huge Pages Resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Reference Model requires the support of huge pages in i.cap.018, which is supported by upstream Kubernetes
+The Reference Model requires the support of huge pages in ``i.cap.018`` which is supported by the upstream Kubernetes
 (`documentation <https://kubernetes.io/docs/tasks/manage-hugepages/scheduling-hugepages/>`__).
 
 For the correct mapping of huge pages to scheduled pods, both need to have huge pages enabled in the operating
@@ -315,8 +315,8 @@ carefully scheduled on nodes and preferably still decoupled from the infrastruct
 Virtual Machine-based Clusters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Kubernetes clusters using the above enhancements can implement worker nodes with “bare metal” servers (running
-Container Runtime in the Linux host Operating System) or with virtual machines (VMs, on a hypervisor).
+Kubernetes clusters can implement worker nodes with "bare metal" servers (running Container Runtime on Linux host
+Operating Systems) or with virtual machines (VMs, running on a hypervisor).
 
 When running in VMs, the following list of configurations shows what is needed for non-resilient applications:
 
@@ -543,10 +543,10 @@ mandatory primary interface, and network functionality, available through the po
 Built-in Kubernetes Network Functionality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Vanilla Kubernetes currently only allows for one network, the cluster network, and one network attachment for each pod.
-All pods and containers have an eth0 interface. This interface is created by Kubernetes at pod creation and is attached
-to the cluster network. All communication to and from the pod is done through this interface. To allow for only one
-interface in a pod removes the need for traditional networking tools, such as VRFs and additional routes and routing
+Vanilla Kubernetes only allows for one network, the *cluster* network, and one network attachment for each pod.
+All pods and containers have a primary interface, which is created by Kubernetes during pod creation and attached
+to the cluster network. All communication to and from the pod is done through this interface. To only allow for one
+interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing
 tables inside the pod network namespace.
 
 The basic semantics of Kubernetes, and the information found in the manifests, defines the connectivity rules and
@@ -642,7 +642,7 @@ produced the
 <https://github.com/k8snetworkplumbingwg/multi-net-spec>`__.
 This document describes how secondary networks can be defined and attached to pods.
 
-This de facto standard defines, among other things, the following:
+This de-facto standard defines, among other things, the following concepts:
 
 .. list-table:: Kubernetes multiple network concepts
    :widths: 40 60

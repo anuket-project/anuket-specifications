@@ -1410,7 +1410,7 @@ Kubernetes :cite:p:`kubernetes` is currently the *de facto* container
 orchestration platform. The Anuket Kubernetes Reference Architecture
 :cite:p:`refarch2` Section 4, specifies that the Kubernetes Master
 and Worker nodes can be deployed on physical or virtual machines.
-For the latter, OpenStack services can be used for the virtual 
+For the latter, OpenStack services can be used for the virtual
 nfrastructure management (please see the Figure
 "Kubernetes Reference Architecture"). It should be noted that in public
 clouds and also many Telco operator on-premise cloud deployments, it is
@@ -1762,5 +1762,5 @@ number of open-source tools are available for this purpose including:
 -  Triple-O :cite:p:`tripl`: for
    installing, upgrading and operating OpenStack clouds
 
-These installers are described in more details in
-:ref:`chapters/chapter07:operations and life cycle management`.
+These installers are described in more detail
+in :ref:`chapters/chapter07:operations and life cycle management`.
