@@ -373,7 +373,8 @@ the following specifications:
    * - ra2.k8s.012
      - Kubernetes APIs
      - Kubernetes `Alpha API <https://kubernetes.io/docs/reference/using-api/#api-versioning>`__ are recommended only
-       for testing, therefore all Alpha APIs must be disabled.
+       for testing, therefore all Alpha APIs must be disabled, except for those required by RA2 Ch4 Specifications
+       (currently NFD).
      -
      -
    * - ra2.k8s.013
@@ -412,7 +413,7 @@ the following specifications:
    * - ra2.k8s.019
      - Kubernetes APIs
      - Kubernetes Beta APIs must be disabled, except for existing APIs as of Kubernetes 1.24 and only when a stable GA
-       of the same version doesn't exist.
+       of the same version doesn't exist, or for APIs listed in RA2 Ch6 list of Mandatory API Groups.
      - :ref:`int.api.04 <chapters/chapter02:Kubernetes Architecture Requirements>`
      -
 
@@ -802,7 +803,8 @@ Architecture they must be implemented as per the following specifications:
      - N/A
    * - ra2.app.016
      - Kubernetes API stability
-     - The CNF must not use any Kubernetes alpha API-s.
+     - The CNF must not use any Kubernetes alpha APIs, except for those required by RA2 Ch4 Specifications (example of
+       NFD in scheduling CNFs).
      - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#poc-to-check-if-a-cnf-uses-kube
        rnetes-alpha-apis-alpha_k8s_apis-alpha_k8s_apis>`__
      - N/A
