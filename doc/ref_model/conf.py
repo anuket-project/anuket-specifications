@@ -19,7 +19,8 @@ linkcheck_ignore = [
     'https://www.etsi.org',
     'https://infocentre2.gsma.com',
     'https://nplang.org',
-    'https://ntia.gov'
+    'https://ntia.gov', 
+    'https://static1.squarespace.com/static/5ad774cce74940d7115044b0/t/5db36ffa820b8d29022b6d08/1572040705841/ORAN-WG4.IOT.0-v01.00.pdf/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf'
 ]
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4

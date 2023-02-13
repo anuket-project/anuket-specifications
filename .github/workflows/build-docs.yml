@@ -1,0 +1,80 @@
+name: "Pull Request Docs Check"
+on: 
+- pull_request
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+    - name: Install prerequisites
+      run: | 
+        sudo apt-get --allow-releaseinfo-change update -y && sudo apt-get install -y tox
+    - name: Building GOV and common
+      run: |
+        cd doc
+        echo "---------------------------------------------------------------------------------------"
+        echo "---------------------------------- Building GOV ---------------------------------------"
+        echo "---------------------------------------------------------------------------------------"
+        tox -e docs
+        echo "Building GOV was successful! "
+
+        cd -
+    - name: Building RM
+      run: |
+        cd doc/ref_model
+        echo "---------------------------------------------------------------------------------------"
+        echo "---------------------------------- Building RM ----------------------------------------"
+        echo "---------------------------------------------------------------------------------------"
+        tox -e docs
+        echo "Building RM was successful! "
+        cd -
+    - name: Buiding RA1 and RC1
+      run: |
+        cd doc/ref_arch/openstack
+        echo "---------------------------------------------------------------------------------------"
+        echo "---------------------------------- Building RA1 and RC1 -------------------------------"
+        echo "---------------------------------------------------------------------------------------"
+        tox -e docs
+        echo "Building RA1 and RC1 was successful! "
+        cd - 
+    - name: Building RA2
+      run: |
+        cd doc/ref_arch/kubernetes
+        echo "---------------------------------------------------------------------------------------"
+        echo "---------------------------------- Building RA2 ---------------------------------------"
+        echo "---------------------------------------------------------------------------------------"
+        tox -e docs
+        echo "Building RA2 was successful! "
+        cd -
+    - name: Building RI1
+      run: |
+        cd doc/ref_impl/cntt-ri
+        echo "---------------------------------------------------------------------------------------"
+        echo "---------------------------------- Building RI1 ---------------------------------------"
+        echo "---------------------------------------------------------------------------------------"
+        tox -e docs
+        echo "Building RI1 was successful! "
+        cd -
+    - name: Building RI2
+      run: |
+        cd doc/ref_impl/cntt-ri2
+        echo "---------------------------------------------------------------------------------------"
+        echo "---------------------------------- Building RI2 ---------------------------------------"
+        echo "---------------------------------------------------------------------------------------"
+        tox -e docs
+        echo "Building RI2 was successful! "
+        cd -
+    - name: Building RC2
+      run: |
+        cd doc/ref_cert/RC2
+        echo "---------------------------------------------------------------------------------------"
+        echo "---------------------------------- Building RC2 ---------------------------------------"
+        echo "---------------------------------------------------------------------------------------"
+        tox -e docs
+        echo "Building RC2 was successful! "
+        cd -
+
+
+        

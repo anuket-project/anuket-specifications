@@ -1232,8 +1232,8 @@ Cloud Infrastructure Security Requirements
      - :ref:`chapters/chapter05:trusted registry`
    * - :ref:`ref_model:chapters/chapter07:open source software`
      - sec.oss.005
-     - A Software Bill of Materials (`SBOM <https://www.ntia.gov/SBOM>`__) **should** be provided or build,
-       and maintained to identify the software components and their origins.
+     - A Software Bill of Materials (`SBOM <https://ntia.gov/page/software-bill-materials>`__) **should** be provided or
+       build, and maintained to identify the software components and their origins.
      -
    * - :ref:`ref_model:chapters/chapter07:iaac - secure design and architecture stage requirements`
      - sec.arch.001
