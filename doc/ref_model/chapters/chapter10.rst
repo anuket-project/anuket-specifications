@@ -92,3 +92,10 @@ agreement on a set of APIs. The current fragmentation in the industry is caused 
 - A number of Open Source Community projects aiming to provide abstract interfaces to wrap proprietary API
 - Vendors offering to act as brokers and
 - Standards and Industry APIs to address specific subset of the interactions.
+
+AF_XDP
+~~~~~~
+
+Linux-native AF_XDP promises high enough packet processing performance and simplification compared to what SR-IOV and DPDK
+require for initial installation and later lifecycle management. Still, it will take time till AF_XDP-based solutions are
+financially invested and matured enough in both Virtualization Infrastructure and Network Functions.
