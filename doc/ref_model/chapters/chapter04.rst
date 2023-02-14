@@ -130,6 +130,8 @@ Exposed Performance Optimisation Capabilities
 |e.cap.024| CPU allocation      |Yes/No| N:1: Number of virtual cores per physical core; also known as CPU overbooking |
 |         | ratio               |      | ratio                                                                         |
 +---------+---------------------+------+-------------------------------------------------------------------------------+
+|e.cap.025| AF_XDP              |Yes/No| Indicates if Cloud Infrastructure supports AF_XDP                             |
++---------+---------------------+------+-------------------------------------------------------------------------------+
 
 **Table 4-2:** Exposed Performance Optimisation Capabilities of Cloud Infrastructure
 
@@ -682,6 +684,9 @@ Profiles Specifications & Capability Mapping
 +---------+-----------------------------------------+-----------+-------------+----------------------------------------+
 |e.cap.023| Huge page support                       | No        | Yes         | Internal performance capabilities as   |
 |         | per Table 4-7.                          |           |             | per Table 4-7.                         |
++---------+-----------------------------------------+-----------+-------------+----------------------------------------+
+|e.cap.025| AF_XDP                                  | No        | Optional    | These Capabilities require workload    |
+|         |                                         |           |             | support for AF_XDP socket type.        |
 +---------+-----------------------------------------+-----------+-------------+----------------------------------------+
 |i.cap.019| CPU Clock Speed                         | <value>   | <value>     | Specifies the Cloud Infrastructure CPU |
 |         |                                         |           |             | Clock Speed (in GHz).                  |
