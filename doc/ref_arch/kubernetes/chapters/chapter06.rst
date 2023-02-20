@@ -48,7 +48,11 @@ or GA/Stable).
 
 The policy for RA2 to include Kubernetes APIs as mandatory is:
 
-   Only APIs that are Stable stage, or Beta when introduced before Kubernetes 1.24, can be made mandatory, subject to RA2 requirements.
+APIs that are in following stages can be made mandatory:
+
+- Stable
+- Beta when introduced before Kubernetes version 1.24
+- Alpha or Beta when required by RA2 Ch4 Specifications or when included below on list of Mandatory API Groups.
 
 The Kubernetes API reference is available `here <https://kubernetes.io/docs/reference/kubernetes-api/>`__.
 
