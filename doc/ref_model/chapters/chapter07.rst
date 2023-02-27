@@ -301,7 +301,7 @@ Cloud Infrastructure general security requirements
 +----------------------+----------------------+-------------------------+----------------------+-----------------------+
 | HW technology        | Which security       | Where it must be        | How to operationally | How to assure benign  |
 |                      | threat it mitigates  | enabled                 | activate             | workloads are run     |
-+----------------------+----------------------+-------------------------+----------------------+-----------------------+
++======================+======================+=========================+======================++======================+
 | Memory encryption on | Protects data going  | Server HW and BIOS      | Configure BIOS. On   | Performed by          |
 | the level of whole   | between CPU and      |                         | virtualised software | application           |
 | physical server      | memory DIMMs         |                         | infrastructure label | scheduling using      |
