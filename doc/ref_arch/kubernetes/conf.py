@@ -1,5 +1,5 @@
 project = 'Anuket Reference Architecture for Kubernetes based cloud infrastructure (RA2)'
-copyright = '2022, Anuket. Licensed under CC BY 4.0'
+copyright = '2023, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
     '.tox',
@@ -9,7 +9,9 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.autosectionlabel'
 ]
-html_theme = "sphinx_material"
+
+html_theme = "piccolo_theme"
+
 linkcheck_ignore = [
     "https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md",
     "https://github.com/opencontainers/runtime-spec/blob/master/config.md",
@@ -29,3 +31,23 @@ autosectionlabel_maxdepth = 4
 numfig = True
 numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
                  'code-block': 'Listing %s', 'section': 'Section %s'}
+
+html_static_path = ['_static']
+templates_path = ['_templates']
+
+html_css_files = [
+    'custom.css',
+]
+
+html_show_sourcelink = False
+html_theme_options = {
+    # If False, expand all TOC entries
+    'globaltoc_collapse': False,
+    # If True, show hidden TOC entries
+    'globaltoc_includehidden': False,
+}
+
+# Inverse png
+html_logo = '_static/anuket-logo.png'
+html_favicon = '_static/favicon.ico'
+
