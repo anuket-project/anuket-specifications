@@ -148,7 +148,7 @@ HW topology aware huge pages
 **Baseline project:** *Kubernetes*
 
 **Gap description:** Memory Manager was added in v1.21 as alpha feature. More in
-:ref:`chapters/chapter03:memory and huge pages resources management`.
+:ref:`chapters/chapter03:management of memory and huge pages resources`. 
 
 User namespaces in Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
