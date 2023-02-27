@@ -295,7 +295,7 @@ Cloud Infrastructure general security requirements
 
 **Security Hardware Assist for Data in Use**
 
-- Server hardware architectures offer various technologies to assists protecting data in use. The following table
+- Server hardware architectures offer various technologies to assist protecting data in use. The following table
   categorizes such technologies.
 
 +----------------------+----------------------+-------------------------+----------------------+-----------------------+
