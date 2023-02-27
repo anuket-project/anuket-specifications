@@ -283,7 +283,7 @@ carefully scheduled on nodes and preferably still decoupled from the infrastruct
      - Intensive on
      - Not intensive on
      - Using hardware acceleration
-     - Requirements for optimized pod scheduling
+     - Requirements for optimised pod scheduling
    * - 1
      - Compute
      - Networking (dataplane)
@@ -325,7 +325,7 @@ When running in VMs, the following list of configurations shows what is needed f
 -  Hardware Topology Management with NUMA enabled in the hypervisor, mapped into the VM, enabled in the guest OS, if
    needed, and mapped into the pod.
 -  If Node Feature Discovery and Device Plugin Framework are required, the required CPU instructions must be enabled in
-   the VM virtual hardware. The required devices must be virtualized in the hypervisor or passed through to the Node VM,
+   the VM virtual hardware. The required devices must be virtualised in the hypervisor or passed through to the Node VM,
    and mapped into the pods.
 
 Container Networking Services
@@ -335,7 +335,7 @@ Kubernetes considers networking as a key component, with a number of distinct so
 Kubernetes networking is considered to be an “extension” to the core functionality, and is managed through
 the use of `Network Plugins
 <https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/>`__,
-which can be categorized based on the topology of the networks they manage, and the integration with the
+which can be categorised based on the topology of the networks they manage, and the integration with the
 switching (such as vlan vs tunnels) and routing (such as virtual vs physical gateways) infrastructure
 outside the Cluster:
 
@@ -428,7 +428,7 @@ managed and consumed via standard interfaces.
 
 -  **Kubernetes Control Plane**: this is the core of a Kubernetes Cluster: the apiserver, the etcd cluster,
    the kube-scheduler, and the various controller-managers. The control plane (in particular the apiserver)
-   provides a centralized point by which the networking solution is managed using a centralized management API.
+   provides a centralised point by which the networking solution is managed using a centralised management API.
 
 -  **Default CNI Plugin (Cluster Network)**: this is the default Cluster network plugin that has been deployed
    within the Cluster to provide IP addresses to the pods.
