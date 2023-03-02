@@ -4,13 +4,13 @@ Component Level Architecture
 Introduction
 ------------
 
-This chapter describes in detail the Reference Architecture (RA2) for Kubernetes-based cloud infrastructure in terms
+This section describes in detail the Reference Architecture (RA2) for Kubernetes-based cloud infrastructure in terms
 of the functional capabilities and how they relate to the Reference Model (RM)
-requirements, i.e., how the infrastructure profiles are determined, documented
+requirements, that is, how the infrastructure profiles are determined, documented,
 and delivered.
 
-The specifications defined in this chapter will be detailed with unique
-identifiers, which will follow the pattern: ``ra2.<section>.<index>``, e.g.,
+The specifications defined in this section will be detailed with unique
+identifiers, which will follow the pattern: ``ra2.<section>.<index>``, for example,
 ``ra2.ch.001`` for the first requirement in the Kubernetes Node section. These
 specifications will then be used as requirements input for the Reference Implementation based on RA2 specifications
 (RI2) and any vendor or community implementations.
@@ -28,8 +28,8 @@ Kubernetes Node
 ---------------
 
 This section describes the configuration that will be applied to the physical or
-virtual machine and an installed Operating System. In order for a Kubernetes Node
-to be conformant with the Reference Architecture it must be implemented as per
+virtual machine and an installed Operating System. For a Kubernetes Node
+to be conformant with the Reference Architecture, it must be implemented according to
 the following specifications:
 
 .. list-table:: Node Specifications
@@ -43,143 +43,141 @@ the following specifications:
      - Reference Implementation Trace
    * - ra2.ch.001
      - Huge pages
-     - In order for the platform to qualify as a High Performance profile, it must be possible to enable Huge pages
+     - For the platform to qualify as a high-performance profile, it must be possible to enable Huge pages
        (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources hugepages-2Mi and
        hugepages-1Gi.
      - :ref:`infra.com.cfg.004 <ref_model:chapters/chapter05:Virtual Compute Profiles>`
      - :ref:`RI2 Introduction <ref_impl2:chapters/chapter03:Introduction>`
    * - ra2.ch.002
      - SR-IOV capable NICs
-     - In order for the platform to qualify as a High Performance profile, the physical machines on which the Kubernetes
-       Nodes run must be equipped with NICs that are SR-IOV capable.
+     - For the platform to qualify as a high-performance profile, the physical machines on which the Kubernetes
+       Nodes run must be equipped with NICs that are SR-IOV-capable.
      - :ref:`e.cap.013 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.003
      - SR-IOV Virtual Functions
-     - In order for the platform to qualify as a High Performance profile, SR-IOV virtual functions (VFs) must be
+     - For the platform to qualify as a high-performance profile, SR-IOV virtual functions (VFs) must be
        configured within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.
      - :ref:`e.cap.013 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
    * - ra2.ch.004
      - CPU Simultaneous Multi-Threading (SMT)
-     - SMT must be enabled in the BIOS on the physical machine on which the Kubernetes Node runs.
+     - SMT must be enabled in the BIOS, on the physical machine on which the Kubernetes node runs.
      - :ref:`infra.hw.cpu.cfg.004 <ref_model:chapters/chapter05:Compute Resources>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.005
      - CPU Allocation Ratio - VMs
-     - For Kubernetes nodes running as Virtual Machines, the CPU allocation ratio between vCPU and physical CPU core
-       must be 1:1.
+     - For Kubernetes nodes running as Virtual Machines, the CPU allocation ratio between the vCPU and the physical CPU
+       core must be 1:1.
      -
      -
    * - ra2.ch.006
      - CPU Allocation Ratio - Pods
-     - To ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1, the sum of CPU requests and limits
-       by containers in Pod specifications must remain less than the allocatable quantity of CPU resources (i.e.
-       requests.cpu < allocatable.cpu and limits.cpu < allocatable.cpu).
+     - To ensure the CPU allocation ratio between the vCPU and the physical CPU core is 1:1, the sum of the CPU requests
+       and limits by the containers in the Pod specifications must remain less than the allocatable quantity of CPU
+       resources (that is, requests.cpu < allocatable.cpu and limits.cpu < allocatable.cpu).
      - :ref:`infra.com.cfg.001 <ref_model:chapters/chapter05:Virtual Compute Profiles>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.007
      - IPv6DualStack
-     - To support IPv4/IPv6 dual stack networking, the Kubernetes Node OS must support and be allocated routable IPv4
+     - To support IPv4/IPv6 dual-stack networking, the Kubernetes Node OS must support and be allocated routable IPv4
        and IPv6 addresses.
      -
      -
    * - ra2.ch.008
      - Physical CPU Quantity
-     - The physical machines on which the Kubernetes Nodes run must be equipped with at least 2 physical sockets, each
-       with at least 20 CPU cores.
+     - The physical machines on which the Kubernetes nodes run must be equipped with at least two (2) physical sockets,
+       each with at least 20 CPU cores.
      - :ref:`infra.hw.cpu.cfg.001 <ref_model:chapters/chapter08:telco edge cloud: infrastructure profiles>`,
        :ref:`infra.hw.cpu.cfg.002 <ref_model:chapters/chapter08:telco edge cloud: infrastructure profiles>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.009
      - Physical Storage
-     - The physical machines on which the Kubernetes Nodes run should be equipped with Sold State Drives (SSDs).
+     - The physical machines on which the Kubernetes nodes run should be equipped with solid-state drives (SSDs).
      - :ref:`infra.hw.stg.ssd.cfg.002 <ref_model:chapters/chapter05:Storage Configurations>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.010
      - Local Filesystem Storage Quantity
-     - The Kubernetes Nodes must be equipped with local filesystem capacity of at least 320GB for unpacking and
+     - The Kubernetes nodes must be equipped with local filesystem capacity of at least 320 GB for unpacking and
        executing containers.
 
        .. note::
 
-        Note, extra filesystem storage should be provisioned to cater for any overhead required by the Operating
-        System and any required OS processes such as the container runtime, Kubernetes agents, etc.
+        Extra filesystem storage should be provisioned to cater for any overheads required by the Operating
+        System and any required OS processes, such as the container runtime, Kubernetes agents, and so on.
 
      - :ref:`e.cap.003 <ref_model:chapters/chapter04:Exposed Resource Capabilities>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.011
      - Virtual Node CPU Quantity
-     - If using VMs, the Kubernetes Nodes must be equipped with at least 16 vCPUs.
+     - If using VMs, the Kubernetes nodes must be equipped with at least 16 vCPUs.
 
        .. note::
 
-        Note, extra CPU capacity should be provisioned to
-        cater for any overhead required by the Operating System and any required OS processes such as the container
-        runtime, Kubernetes agents, etc.
+        Extra CPU capacity should be provisioned to cater for any overheads required by the Operating System and any
+        required OS processes, such as the container runtime, Kubernetes agents, and so on.
 
      - :ref:`e.cap.001 <ref_model:chapters/chapter04:Exposed Resource Capabilities>`
      -
    * - ra2.ch.012
      - Kubernetes Node RAM Quantity
-     - The Kubernetes Nodes must be equipped with at least 32GB of RAM.
+     - The Kubernetes nodes must be equipped with at least 32 GB of RAM.
 
        .. note::
 
-        Note, extra RAM capacity should be provisioned to cater for
-        any overhead required by the Operating System and any required OS processes such as the container runtime,
-        Kubernetes agents, etc.
+        Extra RAM capacity should be provisioned to cater for any overheads required by the Operating System and any
+        required OS processes, such as the container runtime, Kubernetes agents, and so on.
 
      - :ref:`e.cap.002 <ref_model:chapters/chapter04:Exposed Resource Capabilities>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.013
      - Physical NIC Quantity
-     - The physical machines on which the Kubernetes Nodes run must be equipped with at least four (4) Network Interface
+     - The physical machines on which the Kubernetes nodes run must be equipped with at least four (4) Network Interface
        Card (NIC) ports.
      - :ref:`infra.hw.nic.cfg.001 <ref_model:chapters/chapter05:NIC configurations>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.014
      - Physical NIC Speed - Basic Profile
-     - The speed of NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching
-       the Basic Profile must be at least 10Gbps.
+     - The speed of the NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads
+       matching the Basic Profile must be at least 10 Gbps.
      - :ref:`infra.hw.nic.cfg.002 <ref_model:chapters/chapter05:NIC configurations>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.015
      - Physical NIC Speed - High Performance Profile
-     - The speed of NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching
-       the High Performance profile must be at least 25Gbps.
+     - The speed of the NIC ports housed in the physical machines on which the Kubernetes nodes run for workloads
+       matching the high-performance profile must be at least 25 Gbps.
      - :ref:`infra.hw.nic.cfg.002 <ref_model:chapters/chapter05:NIC configurations>`
      - :ref:`RI2 Infrastructure Requirements <ref_impl2:chapters/chapter03:Infrastructure Requirements>`
    * - ra2.ch.016
      - Physical PCIe slots
-     - The physical machines on which the Kubernetes Nodes run must be equipped with at least eight (8) Gen3.0 PCIe
+     - The physical machines on which the Kubernetes nodes run must be equipped with at least eight (8) Gen3.0 PCIe
        slots, each with at least eight (8) lanes.
      -
      -
    * - ra2.ch.017
      - Immutable infrastructure
-     - Whether physical or virtual machines are used, the Kubernetes Node must not be changed after it is instantiated.
-       New changes to the Kubernetes Node must be implemented as new Node instances. This covers any changes from BIOS
-       through Operating System to running processes and all associated configurations.
+     - Whether physical or virtual machines are used, the Kubernetes node must not be changed after it is instantiated.
+       New changes to the Kubernetes node must be implemented as new node instances. This covers any changes from the
+       BIOS, through the Operating System, to running processes and all associated configurations.
      - :ref:`gen.cnt.02 <ref_arch1:chapters/chapter02:General Recommendations>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
    * - ra2.ch.018
      - NFD
      - `Node Feature Discovery
        <https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html>`__ must be used to
-       advertise the detailed software and hardware capabilities of each node in the Kubernetes Cluster.
+       advertise the detailed software and hardware capabilities of each node in the Kubernetes cluster.
      - tbd
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
 
 Node Operating System
 ---------------------
 
-In order for a Host OS to be compliant with this Reference Architecture it must meet the following requirements:
+For a Host OS to be compliant with this Reference Architecture, it must meet the following requirements:
 
-.. list-table:: Operating System Requirements
+.. list-table:: Operating System requirements
    :widths: 10 10 40 20 20
    :header-rows: 1
 
@@ -190,41 +188,41 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
      - Reference Implementation Trace
    * - ra2.os.001
      - Linux Distribution
-     - A deb/rpm compatible distribution of Linux (this must be used for the control plane nodes, and can be used for
-       worker nodes).
+     - A deb-/rpm-compatible distribution of Linux. It must be used for the control plane nodes. It can also be used for
+       worker nodes.
      - tbd
      - tbd
    * - ra2.os.002
-     - Linux Kernel Version
+     - Linux kernel version
      - A version of the Linux kernel that is compatible with kubeadm - this has been chosen as the baseline because
-       kubeadm is focussed on installing and managing the lifecycle of Kubernetes and nothing else, hence it is easily
+       kubeadm is focused on installing and managing the lifecycle of Kubernetes and nothing else, hence it is easily
        integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure,
-       cluster add-ons, etc.
+       cluster add-ons, and so on.
      - tbd
      - tbd
    * - ra2.os.003
-     - Windows Server
-     - Windows Server (this can be used for worker nodes, but beware of the limitations).
+     - Windows server
+     - The Windows server can be used for worker nodes, but beware of the limitations.
      - tbd
      - tbd
    * - ra2.os.004
      - Disposable OS
-     - In order to support :ref:`gen.cnt.02 <chapters/chapter02:Kubernetes Architecture Requirements>` (immutable
-       infrastructure), the Host OS must be disposable, meaning the configuration of the Host OS (and associated
-       infrastructure such as VM or bare metal server) must be consistent - e.g. the system software and configuration
-       of that software must be identical apart from those areas of configuration that must be different such as IP
-       addresses and hostnames.
+     - To support :ref:`gen.cnt.02 <chapters/chapter02:Kubernetes Architecture Requirements>` (immutable
+       infrastructure), the Host OS must be disposable. This means the configuration of the Host OS (and associated
+       infrastructure such as VM or bare metal server) must be consistent: for example, the system software and the
+       configuration of that software must be identical, apart from those areas of configuration that must be different,
+       such as IP addresses and hostnames.
      - tbd
      - tbd
    * - ra2.os.005
-     - Automated Deployment
-     - This approach to configuration management supports lcm.gen.01 (automated deployments)
+     - Automated deployment
+     - This approach to configuration management supports lcm.gen.01 (automated deployments).
      - tbd
      - tbd
 
-The following lists the kernel versions that comply with this Reference Architecture specification.
+Table 4.3 lists the kernel versions that comply with this Reference Architecture specification.
 
-.. list-table:: Operating System Versions
+.. list-table:: Operating System versions
    :widths: 20 20 20
    :header-rows: 1
 
@@ -236,13 +234,13 @@ The following lists the kernel versions that comply with this Reference Architec
      -
    * - Windows
      - 1809 (10.0.17763)
-     - For worker nodes only
+     - For worker nodes only.
 
 Kubernetes
 ----------
 
-In order for the Kubernetes components to be conformant with the Reference Architecture they must be implemented as per
-the following specifications:
+For the Kubernetes components to be conformant with the Reference Architecture they must be implemented according to the
+following specifications:
 
 .. list-table:: Kubernetes Specifications
    :widths: 10 10 40 20 20
@@ -254,22 +252,22 @@ the following specifications:
      - Requirement Trace
      - Reference Implementation Trace
    * - ra2.k8s.001
-     - Kubernetes Conformance
+     - Kubernetes conformance
      - The Kubernetes distribution, product, or installer used in the implementation must be listed in the
        `Kubernetes Distributions and Platforms document <https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMh
        uythuq_GL3N1mlUUK2h0/edit>`__ and marked (X) as conformant for the Kubernetes version defined in
        :ref:`index:required component versions`.
      - :ref:`gen.cnt.03 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
    * - ra2.k8s.002
      - Highly available etcd
-     - An implementation must consist of either three, five or seven nodes running the etcd service (can be colocated
-       on the control plane nodes, or can run on separate nodes, but not on worker nodes).
+     - An implementation must consist of three, five, or seven nodes running the etcd service (these can be colocated
+       on the control plane nodes, or they can run on separate nodes, but not on worker nodes).
      - :ref:`gen.rsl.02 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`gen.avl.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
    * - ra2.k8s.003
      - Highly available control plane
      - An implementation must consist of at least one control plane node per availability zone or fault domain to
@@ -282,69 +280,69 @@ the following specifications:
        kube-scheduler and kube-controller-manager.
      - :ref:`gen.rsl.02 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`gen.avl.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
    * - ra2.k8s.004
      - Highly available worker nodes
      - An implementation must consist of at least one worker node per availability zone or fault domain to ensure the
-       high availability and resilience of workloads managed by Kubernetes
+       high availability and resilience of workloads managed by Kubernetes.
      - :ref:`en.rsl.01 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`gen.avl.01 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`kcm.gen.02 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`inf.com.02 <chapters/chapter02:Infrastructure Recommendations>`
      -
    * - ra2.k8s.005
-     - Kubernetes API Version
+     - Kubernetes API version
      - In alignment with the `Kubernetes version support policy
        <https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions>`__, an implementation must
-       use a Kubernetes version as per the subcomponent versions table in
+       use a Kubernetes version according to the subcomponent versions table in
        :ref:`index:required component versions`.
      -
      -
    * - ra2.k8s.006
-     - NUMA Support
-     - When hosting workloads matching the High Performance profile, the TopologyManager and CPUManager feature gates
-       must be enabled and configured on the kubelet.
+     - NUMA support
+     - When hosting workloads matching the high-performance profile, the TopologyManager and CPUManager feature gates
+       must be enabled and configured in the kubelet.
        --feature-gates="..., TopologyManager=true,CPUManager=true" --topology-manager-policy=single-numa-node
        --cpu-manager-policy=static
 
        .. note::
 
-          Note, TopologyManager is enabled by default in Kubernetes v1.18 and later, with CPUManager enabled by default
-          in Kubernetes v1.10 and later.
+          The TopologyManager feature is enabled by default in Kubernetes v1.18 and later, and the CPUManager feature
+          is enabled by default in Kubernetes v1.10 and later.
 
      - :ref:`e.cap.007 <chapters/chapter02:Cloud Infrastructure Software Profile Capabilities>`,
        :ref:`infra.com.cfg.002 <ref_model:chapters/chapter05:Virtual Compute Profiles>`,
        :ref:`infra.hw.cpu.cfg.003 <ref_model:chapters/chapter08:telco edge cloud: infrastructure profiles>`
      -
    * - ra2.k8s.007
-     - DevicePlugins Feature Gate
-     - When hosting workloads matching the High Performance profile, the DevicePlugins feature gate must be enabled.
+     - DevicePlugins feature gate
+     - When hosting workloads matching the high-performance profile, the DevicePlugins feature gate must be enabled.
        --feature-gates="...,DevicePlugins=true,..."
 
        .. note::
 
-        Note, this is enabled by default in Kubernetes v1.10 or later.
+        The DevicePlugins feature is enabled by default in Kubernetes v1.10 or later.
 
      - Various, e.g. :ref:`e.cap.013 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
    * - ra2.k8s.008
-     - System Resource Reservations
-     - To avoid resource starvation issues on nodes, the implementation of the architecture must reserve compute
-       resources for system daemons and Kubernetes system daemons such as kubelet, container runtime, etc. Use the
+     - System resource reservations
+     - To avoid resource starvation issues on the nodes, the implementation of the architecture must reserve compute
+       resources for system daemons and Kubernetes system daemons such as kubelet, container runtime, and so on. Use the
        following kubelet flags: --reserved-cpus=[a-z], using two of a-z to reserve 2 SMT threads.
      - :ref:`i.cap.014 <chapters/chapter02:Cloud Infrastructure Software Profile Capabilities>`
      -
    * - ra2.k8s.009
-     - CPU Pinning
-     - When hosting workloads matching the High Performance profile, in order to support CPU Pinning, the kubelet must
+     - CPU pinning
+     - When hosting workloads matching the high-performance profile, in order to support CPU pinning, the kubelet must
        be started with the --cpu-manager-policy=static option.
 
        .. note::
 
-        Note, only containers in Guaranteed pods - where CPU resource requests and limits are identical - and configured
-        with positive-integer CPU requests will take advantage of this. All other Pods will run on CPUs in the remaining
+        Only containers in Guaranteed pods - where CPU resource requests and limits are identical - and configured
+        with positive-integer CPU requests will take advantage of this. All other pods will run on CPUs in the remaining
         shared pool.
 
      - :ref:`infra.com.cfg.003 <ref_model:chapters/chapter05:Virtual Compute Profiles>`
@@ -362,11 +360,11 @@ the following specifications:
      -
    * - ra2.k8s.011
      - Anuket profile labels
-     - To clearly identify which worker nodes are compliant with the different profiles defined by Anuket the worker
-       nodes must be labelled according to the following pattern: an `anuket.io/profile/basic` label must be set to
-       true on the worker node if it can fulfil the requirements of the basic profile and an
-       `anuket.io/profile/network-intensive` label must be set to true on the worker node if it can fulfil the
-       requirements of the High Performance profile. The requirements for both profiles can be found in
+     - To clearly identify which worker nodes are compliant with the different profiles defined by Anuket, the worker
+       nodes must be labeled according to the following pattern: an `anuket.io/profile/basic` label must be set to
+       true on the worker node if it can fulfill the requirements of the basic profile and an
+       `anuket.io/profile/network-intensive` label must be set to true on the worker node if it can fulfill the
+       requirements of the high-performance profile. The requirements for both profiles can be found in
        :ref:`chapters/chapter02:architecture requirements`.
      -
      -
@@ -382,44 +380,44 @@ the following specifications:
      -
      -
    * - ra2.k8s.014
-     - Security Groups
-     - Kubernetes must support NetworkPolicy feature.
+     - Security groups
+     - Kubernetes must support the NetworkPolicy feature.
      -
      -
    * - ra2.k8s.015
-     - Publishing Services (ServiceTypes)
-     - Kubernetes must support LoadBalancer `Service (ServiceTypes)
+     - Publishing services (ServiceTypes)
+     - Kubernetes must support the LoadBalancer `Service (ServiceTypes).
        <https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types>`__.
      -
      -
    * - ra2.k8s.016
-     - Publishing Services (ServiceTypes)
+     - Publishing services (ServiceTypes)
      - Kubernetes must support `Ingress <https://kubernetes.io/docs/concepts/services-networking/ingress/>`__.
      -
      -
    * - ra2.k8s.017
-     - Publishing Services (ServiceTypes)
-     - Kubernetes should support NodePort `Service (ServiceTypes)
+     - Publishing services (ServiceTypes)
+     - Kubernetes should support the NodePort `Service (ServiceTypes).
        <https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types>`__.
      - :ref:`inf.ntw.17 <chapters/chapter02:Kubernetes Architecture Requirements>`
      -
    * - ra2.k8s.018
-     - Publishing Services (ServiceTypes)
-     - Kubernetes should support ExternalName `Service (ServiceTypes)
+     - Publishing services (ServiceTypes)
+     - Kubernetes should support the ExternalName `Service (ServiceTypes).
        <https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types>`__.
      -
      -
    * - ra2.k8s.019
      - Kubernetes APIs
-     - Kubernetes Beta APIs must be disabled, except for existing APIs as of Kubernetes 1.24 and only when a stable GA
-       of the same version doesn't exist.
+     - Kubernetes Beta APIs must be disabled, except for those APIs from Kubernetes 1.24 onwards, and only when a
+       stable GA of the same version does not exist.
      - :ref:`int.api.04 <chapters/chapter02:Kubernetes Architecture Requirements>`
      -
 
 Container runtimes
 ------------------
 
-.. list-table:: Container Runtime Specifications
+.. list-table:: Container runtime specifications
    :widths: 10 10 40 20 20
    :header-rows: 1
 
@@ -429,27 +427,27 @@ Container runtimes
      - Requirement Trace
      - Reference Implementation Trace
    * - ra2.crt.001
-     - Conformance with Open Container Initiative (OCI) 1.0 runtime spec
-     - The container runtime must be implemented as per the
+     - Conformance with the Open Container Initiative (OCI) 1.0 runtime specification
+     - The container runtime must be implemented according to the
        `OCI 1.0 <https://github.com/opencontainers/runtime-spec/blob/master/spec.md>`__ specification.
        specification.
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
    * - ra2.crt.002
      - Kubernetes Container Runtime Interface (CRI)
-     - The Kubernetes container runtime must be implemented as per the
+     - The Kubernetes container runtime must be implemented according to the
        `Kubernetes Container Runtime Interface (CRI)
        <https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/>`
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
        <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
 
 Networking solutions
 --------------------
 
-In order for the networking solution(s) to be conformant with the Reference
-Architecture they must be implemented as per the following specifications:
+For the networking solutions to be conformant with the Reference Architecture, they must be implemented according to
+the following specifications:
 
 .. list-table:: Networking Solution Specifications
    :widths: 10 10 40 20 20
@@ -1025,4 +1023,3 @@ Additional required components
 
    This chapter should list any additional components needed to provide the services defined in Chapter
    :ref:`chapters/chapter03:infrastructure services` (e.g., Prometheus).
-
