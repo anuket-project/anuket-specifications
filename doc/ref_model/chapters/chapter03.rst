@@ -446,6 +446,13 @@ This layer hosts a message broker which acts as a communication channel between 
 This layer connects the actual managed resources to the aggregator layers and is de-coupled from the upper layers. A plugin abstracts vendor-specific access protocols to a common interface which the aggregator layers use to communicate with the resources. It uses REST-based communication to interact with the other layers. It collects events to be exposed to fault management systems and uses the event message bus to publish events.
 The plugin layer allows developers to create plugins on any tool set of their choice without enforcing any strict language binding. 
 
+How ODIM fits into the ETSI NFV Networking Reference Model
+----------------------------------------------------------
+.. figure:: ../figures/Chapter-3-ODIM-CloudInfraMgmt.png
+   :alt: ODIM fitment in the ETSI NFV Networking Reference Model 
+   :name: ODIM fitment in the ETSI NFV Networking Reference Model
+   
+
 Network
 -------
 
