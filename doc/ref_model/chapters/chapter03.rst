@@ -448,10 +448,16 @@ The plugin layer allows developers to create plugins on any tool set of their ch
 
 How ODIM fits into the ETSI NFV Networking Reference Model
 ----------------------------------------------------------
+
 .. figure:: ../figures/Chapter-3-ODIM-CloudInfraMgmt.png
    :alt: ODIM fitment in the ETSI NFV Networking Reference Model 
    :name: ODIM fitment in the ETSI NFV Networking Reference Model
    
+
+Left for future use
+-------------------
+
+This section is left blank for future use
 
 Network
 -------
