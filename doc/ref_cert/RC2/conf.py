@@ -9,7 +9,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.autosectionlabel'
 ]
-html_theme = "sphinx_material"
+html_theme = "piccolo_theme"
 linkcheck_ignore = [
     'http://127.0.0.1',
     'https://github.com/cncf/cnf-testsuite/',

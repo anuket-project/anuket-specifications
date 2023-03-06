@@ -10,7 +10,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.bibtex'
 ]
-html_theme = "sphinx_material"
+html_theme = "piccolo_theme"
 linkcheck_ignore = [
     "https://www.cisecurity.org/cis-benchmarks/",
     "https://www.iso.org/obp/ui/",
