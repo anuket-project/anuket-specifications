@@ -453,6 +453,10 @@ How ODIM fits into the ETSI NFV Networking Reference Model
    :alt: ODIM fitment in the ETSI NFV Networking Reference Model 
    :name: ODIM fitment in the ETSI NFV Networking Reference Model
    
+.. figure:: ../figures/ch03-model-ODIM-as-hardware-manager.png
+   :alt: ODIM as hardware infrastructure model 
+   :name: ODIM as hardware infrastructure model
+   
 
 Left for future use
 -------------------
