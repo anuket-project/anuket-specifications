@@ -465,6 +465,54 @@ The converter is available at `YANG-to-Redfish-Converter <https://github.com/DMT
 
 This will require us to create a new model for physical/logical elements of network and protocols etc. to be added to DMTF. This will need considerable effort and knowledge of the networking domain. Further we will to add these to ODIM RA and need a plugins to implement this schema as well.
 
+Hardware Infrastrucure manager requirements vs. ODIM capability
+---------------------------------------------------------------
+
+The figure below shows the current ODIM capbility vs the requirements of the H/W infrastructure manager.
+
+1. API/UI
+
+ODIM exposes the redfish API to manage the hardware resources.
+
+2. Discovery 
+
+Redfish does not have support for device discovery as such. ODIM had a proposal for the plugins to actively probe for new devices and forward a ResourceAdded event. This could then be handled by a client to get the device added to the inventory. This was however not pursued as there were security issues related to discovery of new devices. 
+
+3. Equipment manages 
+
+ODIM has support for managing the physical hardware resources in terms of configuration, firmware status, health/fault status and autonomous environmental control functions such as fan and power conversion regulations as supported by redfish.
+
+4. Resource Allocation and Composition 
+
+The redfish API exposed by ODIM can be used by clients to create, modify and deletes logical Compute, Network and Storage Resources through Composition of allocated physical hardware resources. Note: Will need to discuss scope of composition.
+
+5. Monitoring  
+
+ODIM allows monitoring and collecting information on events, current state and telemetry data of physical hardware resources, autonomous equipment control functions for computes. The support for Switch and Storage Fabric systems should be added to the plugins for these types of devices.
+
+6. Topology 
+
+The ability to discover and monitor physical interconnection (e.g. cables) in between the physical hardware resources is dependent on the hardware support for these. DMTF provides a connection schema for this and a client can configure this via ODIM.
+
+7. Additional Management Functions 
+
+ODIM includes hardware life cycle management. Support may be added for software life cycle using an operator. The support identity management, access management is limited to basic requierments of redfish. Need discussion on policy management (e.g. to enforce security policies), etc. 
+
+8. Underlay Network Resources Manager 
+
+This needs discussion with Anuket members
+
+9. Physical Compute Resources Manager
+
+ODIM provides support for this as per redfish.
+
+10. Physical Storage Resources Manager
+
+Currently ODIM has support for internal storage(DAS). Support for external/shared storage needs to be added via redfish.
+
+11. Accelerators
+
+Current nodes from vendors do not support Accelarators. However we should be able to provide this via the plugins that expose these via redfish.
 .. figure:: ../figures/ch03-model-ODIM-as-hardware-manager.png
    :alt: ODIM as hardware infrastructure model 
    :name: ODIM as hardware infrastructure model
