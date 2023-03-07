@@ -449,12 +449,16 @@ The plugin layer allows developers to create plugins on any tool set of their ch
 How ODIM fits into the ETSI NFV Networking Reference Model
 ----------------------------------------------------------
 
-As shown in the fugure below ODIM can play the role of Hardwaer Infrastructure Manager in the ETSI NFV Networking REference Model
+As shown in the fugure below ODIM can play the role of Hardware Infrastructure Manager in the ETSI NFV Networking Reference Model. Whereas ODIM exposes a redfish interface to the northbound, the infrastructure pieces can themselves be managed using plugins.
 
 .. figure:: ../figures/Chapter-3-ODIM-CloudInfraMgmt.png
    :alt: ODIM fitment in the ETSI NFV Networking Reference Model 
    :name: ODIM fitment in the ETSI NFV Networking Reference Model
-   
+
+The exisiting plugins for computes can manage the computes and their internal storage. The plugins for managing storage devices via storage fabric controllers using swordfish will have to be developed. There are plugins to manage host side configurations in a fabric setup. The actual underlay and overlay configuration of fabrics may be best done by the vendor controllers. There are two options for managing physical switch and logical configurations thereon - 
+1) Develop a network plugin that uses Yang to redfish converter 
+This is available at `YANG-to-Redfish-Converter <https://github.com/DMTF/YANG-to-Redfish-Converter>`__.
+
 .. figure:: ../figures/ch03-model-ODIM-as-hardware-manager.png
    :alt: ODIM as hardware infrastructure model 
    :name: ODIM as hardware infrastructure model
