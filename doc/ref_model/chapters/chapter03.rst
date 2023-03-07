@@ -450,6 +450,7 @@ How ODIM fits into the ETSI NFV Networking Reference Model
 ----------------------------------------------------------
 
 As shown in the fugure below ODIM can play the role of Hardwaer Infrastructure Manager in the ETSI NFV Networking REference Model
+
 .. figure:: ../figures/Chapter-3-ODIM-CloudInfraMgmt.png
    :alt: ODIM fitment in the ETSI NFV Networking Reference Model 
    :name: ODIM fitment in the ETSI NFV Networking Reference Model
