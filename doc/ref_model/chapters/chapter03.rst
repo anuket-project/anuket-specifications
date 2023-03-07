@@ -512,7 +512,7 @@ Currently ODIM has support for internal storage(DAS). Support for external/share
 
 11. Accelerators
 
-Current nodes from vendors do not support Accelarators. However we should be able to provide this via the plugins that expose these via redfish.
+Current nodes from vendors do not support Accelarators via redfish. However we should be able to provide this via the plugins that expose these via redfish.
 
 .. figure:: ../figures/ch03-model-ODIM-as-hardware-manager.png
    :alt: ODIM as hardware infrastructure model 
