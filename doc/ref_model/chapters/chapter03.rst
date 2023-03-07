@@ -459,7 +459,7 @@ The exisiting plugins for computes can manage the computes and their internal st
 
 1. Develop a network plugin that uses Yang to redfish converter 
 
-This is available at `YANG-to-Redfish-Converter <https://github.com/DMTF/YANG-to-Redfish-Converter>`__. This converter tool is used to converter a YANG schema file into a Redfile CSDL schema file. The conversion is done in accordance with the Yang to Redfish mapping specification from DMTF at  `_DSP0271_0.5.6 <https://www.dmtf.org/sites/default/files/standards/documents/DSP0271_0.5.6.pdf>`_. This approach converts the yang models as specified in openconfig and does not neet any further modelling. The resulting redfish schema is also similar to the yang model in content. The model is hosted under /redfish/v1/NetworkingDevice
+This is available at `YANG-to-Redfish-Converter <https://github.com/DMTF/YANG-to-Redfish-Converter>`__. This converter tool is used to converter a YANG schema file into a Redfile CSDL schema file. The conversion is done in accordance with the Yang to Redfish mapping specification from DMTF at  `DSP0271_0.5.6 <https://www.dmtf.org/sites/default/files/standards/documents/DSP0271_0.5.6.pdf>`_. This approach converts the yang models as specified in openconfig and does not neet any further modelling. The resulting redfish schema is also similar to the yang model in content. The model is hosted under /redfish/v1/NetworkingDevice
 
 2. Add network models to redfish
 
