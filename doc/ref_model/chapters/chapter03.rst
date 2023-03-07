@@ -456,7 +456,9 @@ As shown in the fugure below ODIM can play the role of Hardware Infrastructure M
    :name: ODIM fitment in the ETSI NFV Networking Reference Model
 
 The exisiting plugins for computes can manage the computes and their internal storage. The plugins for managing storage devices via storage fabric controllers using swordfish will have to be developed. There are plugins to manage host side configurations in a fabric setup. The actual underlay and overlay configuration of fabrics may be best done by the vendor controllers. There are two options for managing physical switch and logical configurations thereon - 
-1) Develop a network plugin that uses Yang to redfish converter 
+
+1. Develop a network plugin that uses Yang to redfish converter 
+
 This is available at `YANG-to-Redfish-Converter <https://github.com/DMTF/YANG-to-Redfish-Converter>`__.
 
 .. figure:: ../figures/ch03-model-ODIM-as-hardware-manager.png
