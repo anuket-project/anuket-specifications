@@ -293,6 +293,43 @@ Cloud Infrastructure general security requirements
 - Role-Based Access Control (RBAC) must apply for all platform systems access.
 - All APIs access must use TLS protocol, including back-end APIs.
 
+**Security Hardware Assist for Data in Use**
+
+- Server hardware architectures offer various technologies to assist protecting data in use. The following table
+  categorizes such technologies.
+
++----------------------+----------------------+-------------------------+----------------------+-----------------------+
+| HW technology        | Which security       | Where it must be        | How to operationally | How to assure benign  |
+|                      | threat it mitigates  | enabled                 | activate             | workloads are run     |
++======================+======================+=========================+======================++======================+
+| Memory encryption on | Protects data going  | Server HW and BIOS      | Configure BIOS. On   | Performed by          |
+| the level of whole   | between CPU and      |                         | virtualised software | application           |
+| physical server      | memory DIMMs         |                         | infrastructure label | scheduling using      |
+|                      |                      |                         | nodes to influence   | node labels.          |
+|                      |                      |                         | scheduling.          |                       |
++----------------------+----------------------+-------------------------+----------------------+-----------------------+
+| Memory encryption on | HW-protects data     | Server HW, BIOS, and    | Configure BIOS and   | Remote attestation    |
+| the level of VMs     | between VMs          | hypervisor and guests   | hypervisor. On       | of freshly spun up    |
+|                      |                      | (paravirtualised        | virtualized software | VM, to provide        |
+|                      |                      | generally only in guest | infrastructure label | measurements of the   |
+|                      |                      | BIOS). Attestation if   | nodes to influence   | VM and of platform    |
+|                      |                      | assurance of workload   | scheduling.          | patch level.          |
+|                      |                      | required.               |                      |                       |
++----------------------+----------------------+-------------------------+----------------------+-----------------------+
+| Secure enclaves      | HW-protects specific | Server HW and BIOS,     | Configure BIOS, and  | Remote attestation of |
+| within application   | application code and | hypervisor if used,     | hypervisor if used.  | freshly spun up       |
+|                      | data in memory, from | device plugin if        | If Kubernetes is     | enclave, to provide   |
+|                      | processes running at | Kubernetes is used, and | used, then pod       | measurements of the   |
+|                      | higher privilege     | in application.         | descriptor requests  | enclave and of        |
+|                      | levels like OS or    | Attestation if          | for such resource.   | platform patch level. |
+|                      | hypervisor           | assurance of workload   |                      |                       |
+|                      |                      | required.               |                      |                       |
++----------------------+----------------------+-------------------------+----------------------+-----------------------+
+
+- Using computing accelerators such as FPGA or GPU that are connected via an I/O link such as PCI Express breaks the
+  confidentiality property unless HW-assisted encryption of the I/O transfers, runtime encryption of the accelerated
+  workload, and attestation of the accelerated workload can be guaranteed.
+
 **Workload security**
 
 - Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
