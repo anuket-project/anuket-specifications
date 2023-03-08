@@ -310,7 +310,7 @@ Cloud Infrastructure general security requirements
 +----------------------+----------------------+-------------------------+----------------------+-----------------------+
 | Memory encryption on | HW-protects data     | Server HW, BIOS, and    | Configure BIOS and   | Remote attestation    |
 | the level of VMs     | between VMs          | hypervisor and guests   | hypervisor. On       | of freshly spun up    |
-|                      |                      | guests (paravirtualised | virtualized software | VM, to provide        |
+|                      |                      | (paravirtualised        | virtualized software | VM, to provide        |
 |                      |                      | generally only in guest | infrastructure label | measurements of the   |
 |                      |                      | BIOS). Attestation if   | nodes to influence   | VM and of platform    |
 |                      |                      | assurance of workload   | scheduling.          | patch level.          |
