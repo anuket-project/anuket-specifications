@@ -210,3 +210,10 @@ of the Reference Model and the functional and non-functional requirements of com
 This document starts with a description of interfaces and capabilities requirements (the "what") before providing
 guidance on "how" those elements are deployed, through specifications. The details of how the elements will be used
 together are documented in full detail in the Reference Implementation.
+
+
+References
+----------
+
+.. bibliography::
+   :cited:

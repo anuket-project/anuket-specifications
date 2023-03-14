@@ -164,6 +164,3 @@ to provide random system UIDs. Randomised UIDs result in errors when the applica
 "privileged mode" solution is not secure while "random UID" solution is error prone, and therefore these techniques
 should not be used. Support for proper user namespaces in Kubernetes is
 `under discussion <https://github.com/kubernetes/enhancements/pull/2101>`__.
-
-.. bibliography::
-   :cited:
