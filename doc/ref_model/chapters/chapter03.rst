@@ -473,6 +473,10 @@ Hardware Infrastrucure manager requirements vs. ODIM capability
 
 The figure below shows the current ODIM capbility vs the requirements of the H/W infrastructure manager.
 
+.. figure:: ../figures/ch03-model-ODIM-as-hardware-manager.png
+   :alt: ODIM as hardware infrastructure model 
+   :name: ODIM as hardware infrastructure model
+   
 1. API/UI
 
 ODIM exposes the redfish API to manage the hardware resources.
@@ -517,9 +521,6 @@ Currently ODIM has support for internal storage(DAS). Support for external/share
 
 Current nodes from vendors do not support Accelarators via redfish. However we should be able to provide this via the plugins that expose these via redfish.
 
-.. figure:: ../figures/ch03-model-ODIM-as-hardware-manager.png
-   :alt: ODIM as hardware infrastructure model 
-   :name: ODIM as hardware infrastructure model
    
 Left for future use
 -------------------
