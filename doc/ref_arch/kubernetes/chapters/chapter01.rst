@@ -7,13 +7,13 @@ Introduction
 The objective of this Reference Architecture (RA) is to develop a usable Kubernetes-based platform for the Telco
 industry. The RA will be based on the standard Kubernetes platform wherever possible. This Reference Architecture
 for Kubernetes will describe the high level system components and their interactions, taking the goals and requirements
-from the :doc:`Reference Model <ref_model:index>` (RM) and mapping them to Kubernetes (and related) components. This document
-needs to be sufficiently detailed and robust such that it can be used to guide the production deployment of Kubernetes
-within an operator, whilst being flexible enough to evolve with and remain aligned with the wider Kubernetes ecosystem
-outside of Telco.
+from the Cloud Infrastructure Reference Model :cite:p:`refmodel` (RM) and mapping them to Kubernetes (and related)
+components. This document needs to be sufficiently detailed and robust such that it can be used to guide the production
+deployment of Kubernetes within an operator, whilst being flexible enough to evolve with and remain aligned with the
+wider Kubernetes ecosystem outside of Telco.
 
 To set this in context, it makes sense to start with the high level definition and understanding of Kubernetes.
-`Kubernetes <https://kubernetes.io/>`__ is a "portable, extensible, open-source platform for managing containerised
+Kubernetes :cite:p:`kubernetes` is a "portable, extensible, open-source platform for managing containerised
 workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing
 ecosystem. Kubernetes services, support, and tools are widely available"
 [`kubernetes.io <https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/>`__]. Kubernetes is developed as an
@@ -21,7 +21,7 @@ open source project in the `kubernetes/kubernetes <https://github.com/kubernetes
 
 To assist with the goal of creating a reference architecture that will support Telco workloads, but at the same time
 leverage the work that already has been completed in the Kubernetes community, RA2 will take an
-"RA2 `Razor <https://en.wikipedia.org/wiki/Philosophical_razor>`__" approach to build the foundation. This can be
+"RA2 Razor" approach to build the foundation. This can be
 explained along the lines of "if something is useful for non-Telco workloads, we will not include it only for Telco
 workloads". For example, start the Reference Architecture from a vanilla Kubernetes (say, v1.16) feature set, then
 provide clear evidence that a functional requirement cannot be met by that system (say, multi-NIC support), only then
