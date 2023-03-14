@@ -359,6 +359,9 @@ The hardware infrastructure manager needs to support the following functional as
 
 The Redfish Standard and the ODIM Implementation 
 ------------------------------------------------
+
+This section proposes a redfish based hardware infrastructure manager for the Anuket project. ODIM is an example of an open source implementation. This is not a mandatory component of the Reference Implementation, but is an optional component, providing the functionality described below.
+
 The GSMA's "Cloud Infrastructure Reference Model (NG.126)" specifies Redfish as the standard interface that should be 
 made available by the infrastructure and Cloud Infrastructure Management components, in the "Infrastructure Hardware" layer.
  
@@ -478,7 +481,7 @@ ODIM exposes the redfish API to manage the hardware resources.
 
 Redfish does not have support for device discovery as such. ODIM had a proposal for the plugins to actively probe for new devices and forward a ResourceAdded event. This could then be handled by a client to get the device added to the inventory. This was however not pursued as there were security issues related to discovery of new devices. 
 
-3. Equipment manages 
+3. Equipment  
 
 ODIM has support for managing the physical hardware resources in terms of configuration, firmware status, health/fault status and autonomous environmental control functions such as fan and power conversion regulations as supported by redfish.
 
