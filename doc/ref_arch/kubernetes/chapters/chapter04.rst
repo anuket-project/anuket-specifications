@@ -1027,4 +1027,3 @@ Additional required components
 
    This chapter should list any additional components needed to provide the services defined in Chapter
    :ref:`chapters/chapter03:infrastructure services` (e.g., Prometheus).
-
