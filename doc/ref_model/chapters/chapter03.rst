@@ -420,7 +420,7 @@ The resource aggregation function is the single point of contact between the nor
 
 - Listen to similar events from multiple southbound resources
 
-2. PLugin layer
+2. Plugin layer
 
 This consists of one or more plugins, which abstract, translate, and expose southbound resource information to the resource aggregator through RESTful APIs.
 	
