@@ -408,19 +408,19 @@ Open Distributed Infrastructure Management (ODIM™) is a Linux Foundation Netwo
 
 ODIM comprises the following two key components:
 
-1.	The resource aggregation function
+1. The resource aggregation function
 
 The resource aggregation function is the single point of contact between the northbound clients and the southbound infrastructure. Its primary function is to build and maintain a central resource inventory. It exposes Redfish-compliant APIs to allow northbound infrastructure management systems to:
 
--	Get a unified view of the southbound compute, local storage, and Ethernet switch fabrics available in the resource inventory
+- Get a unified view of the southbound compute, local storage, and Ethernet switch fabrics available in the resource inventory
 
--	Gather crucial configuration information about southbound resources
+- Gather crucial configuration information about southbound resources
 
--	Manipulate groups of resources (“aggregates”) in a single action
+- Manipulate groups of resources (“aggregates”) in a single action
 
--	Listen to similar events from multiple southbound resources
+- Listen to similar events from multiple southbound resources
 
-2.	PLugin layer
+2. PLugin layer
 
 This consists of one or more plugins, which abstract, translate, and expose southbound resource information to the resource aggregator through RESTful APIs.
 	
@@ -432,19 +432,19 @@ The ODIM architecture has four key layers. (See diagram below)
    :alt: ODIM architecture
    :name: ODIM architecture
    
-1.	**API layer**
+1. **API layer**
 
 This layer hosts a REST server which is open-source and secure. It learns about the southbound resources from the plugin layer (described below) and exposes the corresponding Redfish® data model payloads to the northbound clients. The northbound clients communicate with this layer through a REST-based protocol that is fully compliant with DMTF's Redfish® specifications. The API layer sends user requests to the plugins through the services.
 
-2.	**Services layer**
+2. **Services layer**
 
 All the services are hosted in this layer. The layer implements service logic for all use cases through an extensible domain model (DMTF's Redfish® data model). All resource information is stored in this data model and is used to service the API requests coming from the API layer. Any responses from the plugin layer might update the domain model. It maintains the state for event subscriptions, credentials, and tasks.
 
-3.	**Event message bus layer**
+3. **Event message bus layer**
 
 This layer hosts a message broker which acts as a communication channel between the plugin layer and the upper layers. It supports common messaging architecture to forward events received from the plugin layer to the upper layers. During the run-time, HPE Resource Aggregator for ODIM uses either Kafka or the RedisStreams service as the Event Message Bus (EMB). The services and the RedisStreams EMB layers host the Redis data store.
 
-4.	**Plugin layer**
+4. **Plugin layer**
 
 This layer connects the actual managed resources to the aggregator layers and is de-coupled from the upper layers. A plugin abstracts vendor-specific access protocols to a common interface which the aggregator layers use to communicate with the resources. It uses REST-based communication to interact with the other layers. It collects events to be exposed to fault management systems and uses the event message bus to publish events.
 The plugin layer allows developers to create plugins on any tool set of their choice without enforcing any strict language binding. 
