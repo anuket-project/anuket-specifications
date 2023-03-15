@@ -423,7 +423,7 @@ The resource aggregation function is the single point of contact between the nor
 2. Plugin layer
 
 This consists of one or more plugins, which abstract, translate, and expose southbound resource information to the resource aggregator through RESTful APIs.
-	
+
 The ODIM project currently supports the account, aggregation, composition, events, fabric, license, managers, session, systems, task, telemetry and update models.
 
 The ODIM architecture has four key layers. (See diagram below)
@@ -431,7 +431,7 @@ The ODIM architecture has four key layers. (See diagram below)
 .. figure:: ../figures/Chapter-3-ODIM-Architecture.png
    :alt: ODIM architecture
    :name: ODIM architecture
-   
+
 1. **API layer**
 
 This layer hosts a REST server which is open-source and secure. It learns about the southbound resources from the plugin layer (described below) and exposes the corresponding Redfish® data model payloads to the northbound clients. The northbound clients communicate with this layer through a REST-based protocol that is fully compliant with DMTF's Redfish® specifications. The API layer sends user requests to the plugins through the services.
