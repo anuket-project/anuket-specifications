@@ -296,7 +296,7 @@ the following specifications:
    * - ra2.k8s.005
      - Kubernetes API Version
      - In alignment with the `Kubernetes version support policy
-       <https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions>`__, an implementation must
+       <https://kubernetes.io/releases/version-skew-policy/#supported-versions>`__, an implementation must
        use a Kubernetes version as per the subcomponent versions table in
        :ref:`index:required component versions`.
      -
@@ -432,7 +432,7 @@ Container runtimes
    * - ra2.crt.001
      - Conformance with Open Container Initiative (OCI) 1.0 runtime spec
      - The container runtime must be implemented as per the
-       `OCI 1.0 <https://github.com/opencontainers/runtime-spec/blob/master/spec.md>`__ specification.
+       `OCI 1.0 <https://github.com/opencontainers/runtime-spec/blob/main/spec.md>`__ specification.
        specification.
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
      - :ref:`RI2 Installation on Bare Metal Infratructure

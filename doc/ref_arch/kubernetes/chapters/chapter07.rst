@@ -87,7 +87,7 @@ Native Multiple network interfaces on Pods
    **Baseline project:** *Kubernetes*
 
    **Gap description:** Kubernetes does not have native support for multiple Pod interfaces, therefore a CNI
-   multiplexer, like `Multus <https://github.com/intel/multus-cni>`__ is needed to provision multiple interfaces.
+   multiplexer, like `Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__ is needed to provision multiple interfaces.
    Implementation of different network services for the interfaces, like Network Policies, Ingress, Egress or Load
    Balancers depends on the feature set of the CNI multiplexer and the CNI plugins it uses, therefore it is
    inconsistent.
