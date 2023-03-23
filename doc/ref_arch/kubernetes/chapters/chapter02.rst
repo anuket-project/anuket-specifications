@@ -774,7 +774,7 @@ Cloud Infrastructure Security Requirements
      - All systems part of Cloud Infrastructure **must** support password hardening as defined in the
        CIS Password Policy Guide :cite:p:`cispwpolicy`.
        Hardening: CIS Password Policy Guide
-     - `5.3.1 Node Hardening: Securing Kubernetes Hosts`
+     - `Node Hardening: Securing Kubernetes Hosts`
    * - System Hardening
      - sec.gen.003
      - All servers part of Cloud Infrastructure **must** support a root of trust and secure boot.
@@ -964,7 +964,7 @@ Cloud Infrastructure Security Requirements
    * - Confidentiality and Integrity
      - sec.ci.008
      - The Cloud Infrastructure **must** support tenant networks segregation.
-     - `5.7 Create and define Network Policies`
+     - Create and define Network Policies
    * - Confidentiality and Integrity
      - sec.ci.009
      - For sensitive data encryption, the key management service **should** leverage a Hardware Security Module
@@ -1216,7 +1216,7 @@ Cloud Infrastructure Security Requirements
    * - Open Source Software
      - sec.oss.003
      - Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the
-       `CVSS (Common Vulnerability Scoring System <https://www.first.org/cvss/>`__ to know a vulnerability
+       CVSS (Common Vulnerability Scoring System) :cite:p:`cve` to know a vulnerability
        score and its associated rate (low, medium, high, or critical).
      -
    * - Open Source Software
@@ -1226,202 +1226,197 @@ Cloud Infrastructure Security Requirements
      - :ref:`chapters/chapter05:trusted registry`
    * - Open Source Software
      - sec.oss.005
-     - A Software Bill of Materials (`SBOM <https://ntia.gov/page/software-bill-materials>`__) **should** be provided or
+     - A Software Bill of Materials (`SBOM` :cite:p:`sbom`) **should** be provided or
        build, and maintained to identify the software components and their origins.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - secure design and architecture stage requirements`
+   * - IaaC - Secure Design and Architecture Stage Requirements
      - sec.arch.001
      - Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture
        stage triggered by Software Feature Design trigger. It may be done manually or using tools like open source
        OWASP Threat Dragon
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - secure design and architecture stage requirements`
+   * - IaaC - Secure Design and Architecture Stage Requirements
      - sec.arch.002
      - Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture
        stage triggered by Software Feature Design trigger. Typically done manually by internal or independent
        assessors.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - secure code stage requirements`
+   * - IaaC - Secure Code Stage Requirements
      - sec.code.001
      - SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull,
        Clone or Comment trigger. Security testing that analyses application source code for software vulnerabilities
        and gaps against best practices. Example: open source OWASP range of tools.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - secure code stage requirements`
+   * - IaaC - Secure Code Stage Requirements
      - sec.code.002
      - SCA - Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull,
        Clone or Comment trigger. Security testing that analyses application source code or compiled code for
        software components with known vulnerabilities. Example: open source OWASP range of tools.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - secure code stage requirements`
+   * - IaaC - Secure Code Stage Requirements
      - sec.code.003
      - Source Code Review **should** be performed continuously during Secure Coding stage. Typically done manually.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - secure code stage requirements`
+   * - IaaC - Secure Code Stage Requirements
      - sec.code.004
      - Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code
        trigger. On the local machine: through the IDE or integrated test suites; triggered on completion of coding be
        developer.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - secure code stage requirements`
+   * - IaaC - Secure Code Stage Requirements
      - sec.code.005
      - SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger.
        Continuous delivery pre-deployment: scanning prior to deployment.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - continuous build, integration and testing stage requirements`
+   * - IaaC - Continuous Build, Integration and Testing Stage Requirements
      - sec.bld.001
      - SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and
        Testing stage triggered by Build and Integrate trigger. Example: open source OWASP range of tools.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - continuous build, integration and testing stage requirements`
+   * - IaaC - Continuous Build, Integration and Testing Stage Requirements
      - sec.bld.002
      - SCA - Software Composition Analysis **should** be applied during the Continuous Build, Integration and
        Testing stage triggered by Build and Integrate trigger. Example: open source OWASP range of tools.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - continuous build, integration and testing stage requirements`
+   * - IaaC - Continuous Build, Integration and Testing Stage Requirements
      - sec.bld.003
      - Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by
        Package trigger. Example: A push of a container image to a container registry may trigger a vulnerability
        scan before the image becomes available in the registry.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - continuous build, integration and testing stage requirements`
+   * - IaaC - Continuous Build, Integration and Testing Stage Requirements
      - sec.bld.004
      - DAST - Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration
        and Testing stage triggered by Stage & Test trigger. Security testing that analyses a running application by
        exercising application functionality and detecting vulnerabilities based on application behaviour and response.
        Example: OWASP ZAP.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - continuous build, integration and testing stage requirements`
+   * - IaaC - Continuous Build, Integration and Testing Stage Requirements
      - sec.bld.005
      - Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by
        Stage & Test trigger. Fuzzing or fuzz testing is an automated software testing technique that involves
        providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open
        Sources Protocol Fuzzer Community Edition.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - continuous build, integration and testing stage requirements`
+   * - IaaC - Continuous Build, Integration and Testing Stage Requirements
      - sec.bld.006
      - IAST - Interactive Application Security Testing **should** be applied during the Continuous Build, Integration
        and Testing stage triggered by Stage & Test trigger. Software component deployed with an application that
        assesses application behaviour and detects presence of vulnerabilities on an application being exercised in
        realistic testing scenarios. Example: Contrast Community Edition.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - continuous delivery and deployment stage requirements`
+   * - IaaC - Continuous Delivery and Deployment Stage Requirements
      - sec.del.001
      - Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by
        Publish to Artifact and Image Repository trigger. Example: GitLab uses the open-source Clair engine for
        container image scanning.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - continuous delivery and deployment stage requirements`
+   * - IaaC - Continuous Delivery and Deployment Stage Requirements
      - sec.del.002
      - Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by
        Publish to Artifact and Image Repository trigger. Code Signing provides authentication to assure that
        downloaded files are from the publisher named on the certificate.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - continuous delivery and deployment stage requirements`
+   * - IaaC - Continuous Delivery and Deployment Stage Requirements
      - sec.del.003
      - Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery
        and Deployment stage. Example: GitLab uses the open source Clair engine for container scanning.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - continuous delivery and deployment stage requirements`
+   * - IaaC - Continuous Delivery and Deployment Stage Requirements
      - sec.del.004
      - Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage
        triggered by Instantiate Infrastructure trigger. The vulnerability scanning system is deployed on the cloud
        platform to detect security vulnerabilities of specified components through scanning and to provide timely
        security protection. Example: OWASP Zed Attack Proxy (ZAP).
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - runtime defence and monitoring requirements`
+   * - IaaC - Runtime Defence and Monitoring Requirements
      - sec.run.001
      - Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and
        Monitoring stage and remediation actions **must** be applied for high severity rated vulnerabilities.
        Security technology that monitors components like virtual servers and assesses data, applications, and
        infrastructure for security risks.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - runtime defence and monitoring requirements`
+   * - IaaC - Runtime Defence and Monitoring Requirements
      - sec.run.002
      - RASP - Runtime Application Self- Protection **should** be continuously applied during the Runtime Defence
        and Monitoring stage. Security technology deployed within the target application in production for detecting,
        alerting, and blocking attacks.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - runtime defence and monitoring requirements`
+   * - IaaC - Runtime Defence and Monitoring Requirements
      - sec.run.003
      - Application testing and Fuzzing **should** be continuously applied during the Runtime Defence
        and Monitoring stage. Fuzzing or fuzz testing is an automated software testing technique that
        involves providing invalid, unexpected, or random data as inputs to a computer program.
        Example: GitLab Open Sources Protocol Fuzzer Community Edition.
      -
-   * - :ref:`ref_model:chapters/chapter07:iaac - runtime defence and monitoring requirements`
+   * - IaaC - Runtime Defence and Monitoring Requirements
      - sec.run.004
      - Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage.
        Typically done manually.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.001
-     - The Cloud Operator **should** comply with Center for Internet Security CIS Controls
-       (`https://www.cisecurity.org <https://www.cisecurity.org/>`__)
+     - The Cloud Operator **should** comply with Center for Internet Security CIS Controls :cite:p:`ciscontrolslist`.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.002
      - The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security
-       Guidance for Critical Areas of Focus in Cloud Computing (latest version)
-       `https://cloudsecurityalliance. org/ <https://cloudsecurityalliance.org/>`__
+       Guidance for Critical Areas of Focus in Cloud Computing (latest version) :cite:p:`cloudsecurityalliance`.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.003
      - The Platform and Workloads **should** follow the guidance in the
-       `OWASP Cheat Sheet Series (OCSS) <https://github.com/OWASP/CheatSheetSeries>`__
+       OWASP Cheat Sheet Series (OCSS) :cite:p:`ocss`.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.004
      - The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the
-       OWASP Top Ten Security Risks `https://owasp.org/www-project-top-t en/
-       <https://owasp.org/www-project-top-ten/>`__
+       OWASP Top Ten Security Risks :cite:p:`owasptopten`.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.005
      - The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the
-       `OWASP Software Maturity Model (SAMM) <https://owaspsamm.org/blog/2019/12/20/version2-community-release/>`__
+       OWASP Software Maturity Model (SAMM) :cite:p:`owaspsamm`.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.006
      - The Cloud Operator, Platform and Workloads **should** utilize the
-       `OWASP Web Security Testing Guide <https://github.com/OWASP/wstg/tree/master/document>`__
+       OWASP Web Security Testing Guide :cite:p:`owaspwstg`.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.007
      - The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems
-       specified in `ISO/IEC 27001 <https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en>`__. ISO/IEC
+       specified in ISO/IEC 27001 :cite:p:`isoiec27001`. ISO/IEC
        27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management
        systems (ISMSs).
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.008
-     - The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified
-       `ISO/IEC 27002:2013 (or la test) <https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en>`__
+     - The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified in
+       ISO/IEC 27002:2013 (or latest) :cite:p:`isoiec27001`.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.009
-     - The Cloud Operator, and Platform **should** implement the `ISO/IEC 27 032:2012 (or latest)
-       <https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en>`__ Guidelines for Cybersecurity techniques.
+     - The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest)
+       :cite:p:`isoiec27032` Guidelines for Cybersecurity techniques.
        ISO/IEC 27032 - ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.010
      - The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management.
        ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.011
      - The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity. ISO/IEC 27031 -
        ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.
      -
-   * - :ref:`ref_model:chapters/chapter07:compliance with standards`
+   * - Compliance With Standards
      - sec.std.012
      - The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant
        with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). International
        Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16.
      -
-
-:ref:`ref_model:chapters/chapter07:consolidated security requirements`
 
 Kubernetes Architecture Requirements
 ------------------------------------
@@ -1456,13 +1451,13 @@ machines or containers.
      - General
      - Cloud nativeness
      - The Architecture must support immutable infrastructure.
-     - :ref:`ra2.ch.017 <chapters/chapter04:Kubernetes Node>`
+     - ra2.ch.017
    * - gen.cnt.03
      - General
      - Cloud nativeness
      - The Architecture must run conformant Kubernetes as defined by the
-       `CNCF <https://github.com/cncf/k8s-conformance>`__.
-     - :ref:`ra2.k8s.001 <chapters/chapter04:Kubernetes>`
+       CNCF :cite:p:`k8s-conformance`.
+     - ra2.k8s.001
    * - gen.cnt.04
      - General
      - Cloud nativeness
@@ -1486,39 +1481,34 @@ machines or containers.
      - Resiliency
      - The Architecture must support resilient Kubernetes components that are required for the
        continued availability of running workloads.
-     - :ref:`ra2.k8s.004 <chapters/chapter04:Kubernetes>`
+     - ra2.k8s.004
    * - gen.rsl.02
      - General
      - Resiliency
      - The Architecture should support resilient Kubernetes service components that are not
        subject to gen.rsl.01.
-     - :ref:`ra2.k8s.002 <chapters/chapter04:Kubernetes>`, :ref:`ra2.k8s.003 <chapters/chapter04:Kubernetes>`
+     - ra2.k8s.002, ra2.k8s.003
    * - gen.avl.01
      - General
      - Availability
      - The Architecture must provide High Availability for Kubernetes components.
-     - :ref:`ra2.k8s.002 <chapters/chapter04:Kubernetes>`, :ref:`ra2.k8s.003 <chapters/chapter04:Kubernetes>`,
-       :ref:`ra2.k8s.004 <chapters/chapter04:Kubernetes>`
+     - ra2.k8s.002, ra2.k8s.003, ra2.k8s.004
    * - gen.ost.01
      - Openness
      - Availability
      - The Architecture should embrace open-based standards and technologies.
-     - :ref:`ra2.crt.001 <chapters/chapter04:Container runtimes>`,
-       :ref:`ra2.crt.002 <chapters/chapter04:Container runtimes>`,
-       :ref:`ra2.ntw.002 <chapters/chapter04:Networking solutions>`,
-       :ref:`ra2.ntw.006 <chapters/chapter04:Networking solutions>`,
-       :ref:`ra2.ntw.007 <chapters/chapter04:Networking solutions>`
+     - ra2.crt.001, ra2.crt.002, ra2.ntw.002, ra2.ntw.006, ra2.ntw.007
    * - inf.com.01
      - Infrastructure
      - Compute
      - The Architecture must provide compute resources for Pods. technologies.
-     - :ref:`ra2.k8s.004 <chapters/chapter04:Kubernetes>`
+     - ra2.k8s.004
    * - inf.stg.01
      - Infrastructure
      - Storage
      - The Architecture must support the ability for an operator to choose whether or
        not to deploy persistent storage for Pods.
-     - :ref:`ra2.stg.004 <chapters/chapter04:Storage components>`
+     - ra2.stg.004
    * - inf.ntw.01
      - Infrastructure
      - Network
@@ -1536,14 +1526,12 @@ machines or containers.
      - Infrastructure
      - Network
      - The networking solution should be able to be centrally administrated and configured.
-     - :ref:`ra2.ntw.001 <chapters/chapter04:Networking solutions>`,
-       :ref:`ra2.ntw.004 <chapters/chapter04:Networking solutions>`
+     - ra2.ntw.001, ra2.ntw.004
    * - inf.ntw.04
      - Infrastructure
      - Network
      - The Architecture must support dual stack IPv4 and IPv6 for Kubernetes workloads.
-     - :ref:`ra2.ch.007 <chapters/chapter04:Kubernetes Node>`,
-       :ref:`ra2.k8s.010 <chapters/chapter04:Kubernetes>`
+     - ra2.ch.007, ra2.k8s.010
    * - inf.ntw.05
      - Infrastructure
      - Network
@@ -1553,19 +1541,18 @@ machines or containers.
      - Infrastructure
      - Network
      - The Architecture must support more than one networking solution.
-     - :ref:`ra2.ntw.005 <chapters/chapter04:Networking solutions>`,
-       :ref:`ra2.ntw.007 <chapters/chapter04:Networking solutions>`
+     - ra2.ntw.005, ra2.ntw.007
    * - inf.ntw.07
      - Infrastructure
      - Network
      - The Architecture must support the ability for an operator to choose whether or not
        to deploy more than one networking solution.
-     - :ref:`ra2.ntw.005 <chapters/chapter04:Networking solutions>`
+     - ra2.ntw.005
    * - inf.ntw.08
      - Infrastructure
      - Network
      - The Architecture must provide a default network which implements the Kubernetes network model.
-     - :ref:`ra2.ntw.002 <chapters/chapter04:Networking solutions>`
+     - ra2.ntw.002
    * - inf.ntw.09
      - Infrastructure
      - Network
@@ -1591,7 +1578,7 @@ machines or containers.
        outside), allowing source and destination IP addresses to be preserved in the traffic headers
        from workloads to external networks. This is needed e.g. for signaling applications, using SIP
        and Diameter protocols.
-     - :ref:`ra2.ntw.011 <chapters/chapter04:Networking solutions>`
+     - ra2.ntw.011
    * - inf.ntw.15
      - Infrastructure
      - Network
@@ -1617,14 +1604,13 @@ machines or containers.
      - Virtual Infr astructure
      - The Architecture must support the capability for Containers to consume infrastructure resources
        abstracted by Host Operating Systems that are running within a virtual machine.
-     - :ref:`ra2.ch.005 <chapters/chapter04:Kubernetes Node>`,
-       :ref:`ra2.ch.011 <chapters/chapter04:Kubernetes Node>`
+     - ra2.ch.005, ra2.ch.011
    * - inf.phy.01
      - Infrastructure
      - Physical Infrastructu re
      - The Architecture must support the capability for Containers to consume infrastructure resources
        abstracted by Host Operating Systems that are running within a physical server.
-     - :ref:`ra2.ch.008 <chapters/chapter04:Kubernetes Node>`
+     - ra2.ch.008
    * - kcm.gen.01
      - Kubernetes Cluster
      - General
@@ -1634,21 +1620,19 @@ machines or containers.
      - Kubernetes Cluster
      - General
      - The Architecture must enable workload resiliency.
-     - :ref:`ra2.k8s.004 <chapters/chapter04:Kubernetes>`
+     - ra2.k8s.004
    * - int.api.01
      - API
      - General
      - The Architecture must leverage the Kubernetes APIs to discover and declaratively manage compute
        (virtual and bare metal resources), network, and storage.
-     - For Networking: :ref:`ra2.ntw.001 <chapters/chapter04:Networking solutions>`,
-       :ref:`ra2.ntw.008 <chapters/chapter04:Networking solutions>`,
-       :ref:`ra2.app.006 <chapters/chapter04:Kubernetes workloads>`. Compute/storage not yet met.
+     - For Networking: ra2.ntw.001, ra2.ntw.008, ra2.app.006. Compute/storage not yet met.
    * - int.api.02
      - API
      - General
      - The Architecture must support the usage of a Kubernetes Application package manager using the
        Kubernetes API, like Helm v3. network, and storage.
-     - :ref:`ra2.pkg.001 <chapters/chapter04:Kubernetes Application package manager>`
+     - ra2.pkg.001
    * - int.api.03
      - API
      - General
