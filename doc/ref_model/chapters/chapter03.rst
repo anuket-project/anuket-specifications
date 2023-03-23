@@ -1890,6 +1890,33 @@ Platform Services:
      that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
 
 
+Address Family For XDP (AF_XDP)
+-------------------------------
+
+`Address Family For XDP (AF_XDP) <https://www.kernel.org/doc/html/latest/networking/af_xdp.html>`__ is optimized for
+high performance packet processing and introduced in Linux kernel v4.18. This new socket type leverages the `eXpress
+Data Path (XDP) <https://prototype-kernel.readthedocs.io/en/latest/networking/XDP/>`__ in-kernel fast-path to transfer
+traffic frames from the NIC driver directly to userspace without the need for full network stack. XDP is an `Extended
+Berkley Packet Filter <https://ebpf.io/>`__ (eBPF) software program.
+
+By using the XDP_REDIRECT action from that XDP program, ingress frames can be redirected to other XDP-enabled network
+devices. The fastest working mode of operation is Zero-Copy mode in enabled XDP drivers.
+
+.. figure:: ../figures/ch03-afxdp-arch.png
+   :alt: AF_XDP Architecture
+   :name: AF_XDP Architecture
+
+   AF_XDP Architecture
+
+Linux-native applications can open an AF_XDP socket to receive raw packets directly from the NIC, by using `libbpf
+<https://www.kernel.org/doc/html/latest/bpf/libbpf/index.html>`__ library functions to register a packet buffer area
+where packets will be located, and to create and bind the socket to a networking interface. DPDK-based applications
+can use `AF_XDP Poll Mode Driver <https://doc.dpdk.org/guides/nics/af_xdp.html>`__ . VPP-based applications can use
+`AF_XDP Device Driver <https://s3-docs.fd.io/vpp/23.02/developer/devicedrivers/af_xdp.html>`__.
+
+In virtualized environments AF_XDP could be used as interface between guest Kernel and user space application, but still need SR-IOV or virtio to get traffic to the VM.
+
+
 Energy efficiency
 -----------------
 

@@ -39,8 +39,8 @@ virtual and bare-metal hosts. It performs this automated deployment by using Ans
 <https://networkbuilders.intel.com/intel-technologies/container-experience-kits>`__ is being used. This framework uses
 scripts available on `Github <https://github.com/intel/container-experience-kits/tree/v21.08>`__ (version v21.08).
 
-Installation on Bare Metal Infratructure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Installation on Bare Metal Infrastructure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Start by cloning the Kuberef repository. Before you are able to run the installer some prerequisites must be installed.
 Details and installation steps can be found in ``docs/release/installation/deployment-guide.rst``.
@@ -178,7 +178,7 @@ follows:
 Installation on Preprovisioned Infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The main steps are the same as :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`.
+The main steps are the same as :ref:`chapters/chapter04:Installation on Bare Metal Infrastructure`.
 
 Make sure the infrastructure preprovisioned follows ``docs/release/installation/deployment-guide.rst``.
 
