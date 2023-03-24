@@ -178,7 +178,7 @@ ports which makes it easy to identify the clusters and attack them. Hence, it is
 highly recommended to configure authentication and authorisation on the cluster
 and cluster nodes.
 
-The `Kubernetes documentation <https://kubernetes.io/docs/reference/ports-and-protocols/>`__ specifies the default
+The `Kubernetes documentation <https://kubernetes.io/docs/reference/networking/ports-and-protocols/>`__ specifies the default
 ports used in Kubernetes. Make sure that your
 network blocks access to unnecessary ports and consider limiting access to the Kubernetes
 API server except from trusted networks.

@@ -15,9 +15,9 @@ wider Kubernetes ecosystem outside of Telco.
 To set this in context, it makes sense to start with the high level definition and understanding of Kubernetes.
 Kubernetes :cite:p:`kubernetes` is a "portable, extensible, open-source platform for managing containerised
 workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing
-ecosystem. Kubernetes services, support, and tools are widely available"
-[`kubernetes.io <https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/>`__]. Kubernetes is developed as an
-open source project in the `kubernetes/kubernetes <https://github.com/kubernetes/kubernetes>`__ repository of GitHub.
+ecosystem. Kubernetes services, support, and tools are widely available" :cite:p:`whatiskubernetes`.
+Kubernetes is developed as an
+open source project in the `kubernetes` :cite:p:`k8srepo` repository of GitHub.
 
 To assist with the goal of creating a reference architecture that will support Telco workloads, but at the same time
 leverage the work that already has been completed in the Kubernetes community, RA2 will take an
@@ -27,7 +27,7 @@ workloads". For example, start the Reference Architecture from a vanilla Kuberne
 provide clear evidence that a functional requirement cannot be met by that system (say, multi-NIC support), only then
 the RA would add the least invasive, Kubernetes-community aligned extension (say, Multus) to fill the gap. If there are
 still gaps that cannot be filled by standard Kubernetes community technologies or extensions then the RA will concisely
-document the requirement in the :doc:`"Gaps, Innovation, and Development"<chapters/chapter07>` chapter of this document
+document the requirement in the :ref:`"Gaps, Innovation, and Development"<chapters/chapter07:gaps, innovation, and development>` chapter of this document
 and approach the relevant project maintainers with a request to add this functionality into the feature set.
 
 The Kubernetes Reference Architecture will be used to determine a Kubernetes Reference Implementation. The Kubernetes
@@ -38,8 +38,6 @@ conformance testing of Kubernetes-based workloads, and Kubernetes cluster lifecy
 
 Terminology
 ~~~~~~~~~~~
-
-For terminology used in this document refer to the :ref:`cntt:common/glossary:glossary`.
 
 .. replace with glossary table
 
@@ -92,7 +90,7 @@ For the purposes of this document, the CNCF TOC's (Technical Oversight Committee
 
 The CNCF TUG (Telecom User Group), formed in June 2019, published a set of Cloud Native Principles suited to the
 requirements of the Telecom community:
-`Expanded Cloud Native Principles <https://networking.cloud-native-principles.org/cloud-native-principles>`__.
+Expanded Cloud Native Principles :cite:p:`cloudnativeprinciples`.
 There are many similarities with the CNCF principles, briefly that infrastructure needs to be:
 
 -  **scalable**
@@ -111,13 +109,15 @@ There are many similarities with the CNCF principles, briefly that infrastructur
 Exceptions
 ~~~~~~~~~~
 
-Anuket specifications define certain policies and :ref:`cntt:common/chapter00:anuket general principles` and strive to
+Anuket specifications define certain policies and general principles and strive to
+.. add general principles from common
 coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently
 available technology options, incompatibilities, performance and operator constraints (including costs), these
 policies and principles may not always be achievable and, thus, require an exception process. These policies
-describe how to handle :ref:`cntt:common/policies:anuket project policies for managing non-conforming technologies`.
-In general, non-conformance with policies is handled through a set of exceptions (please also see
-:ref:`cntt:gov/chapters/chapter09:exception types`).
+describe how to handle non-conforming technologies.
+.. add policies:anuket project policies for managing non-conforming technologies from common
+In general, non-conformance with policies is handled through a set of exceptions.
+.. add gov/chapters/chapter09:exception types
 
 The following sub-sections list the exceptions to the principles of Anuket specifications and shall be updated whenever
 technology choices, versions and requirements change. The Exceptions have an associated period of validity and this
@@ -180,7 +180,7 @@ Scope
 -----
 
 The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be
-listed and described in subsequent chapters), also shown in :numref:`Kubernetes Reference Architecture scope`
+listed and described in subsequent chapters):
 
 -  Kubernetes platform capabilities required to conform to the Reference Model requirements
 -  Support for CNFs that consist wholly of containers
