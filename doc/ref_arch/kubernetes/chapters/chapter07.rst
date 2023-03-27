@@ -46,13 +46,8 @@ deploy too many CNFs into the same cluster could result in version conflicts, co
 software life cycle management. Finally, without proper isolation there is an increased risk of cascading failures.
 
 **Proposals & Resolution:** Kubernetes is not a single cluster solution. This has been demonstrated across the
-industry from case studies at prominent companies like
-`Twitter <https://www.alibabacloud.com/blog/what-can-we-learn-from-twitters-move-to-kubernetes_595156>`__,
-`USA Today <https://medium.com/usa-today-network/there-and-back-again-scaling-multi-tenant-kubernetes-cluster-s-
-67afb437716c>`__,
-`Zalando <https://www.youtube.com/watch?v=LpFApeaGv7A>`__, and
-`Alibaba <https://www.cncf.io/blog/2019/12/12/demystifying-kubernetes-as-a-service-how-does-alibaba-cloud-manage-10000s
--of-kubernetes-clusters/>`__ to the bi-annual CNCF survey that finds that the number of clusters being deployed within
+industry from case studies at prominent companies like :cite:t:`alibaba-blog-twitter`, :cite:t:`youtube-zalando`, and
+:cite:t:`cncf-blog-alibaba` to the bi-annual CNCF survey that finds that the number of clusters being deployed within
 an organization is growing. While there are many reasons behind the multi cluster paradigm, examining the gap above we
 find that a multi cluster solution can address many of these problems like security and software life cycle management.
 
@@ -82,19 +77,18 @@ Kubernetes as a VM-based VNF Orchestrator
 Native Multiple network interfaces on Pods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Related requirements:** :ref:`ref_model:chapters/chapter04:virtual network interface specifications`
+   **Related requirements:** Virtual Network Interface Specifications section in Chapter 4 of :cite:t:`refmodel`
 
    **Baseline project:** *Kubernetes*
 
    **Gap description:** Kubernetes does not have native support for multiple Pod interfaces, therefore a CNI
-   multiplexer, like `Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__ is needed to provision multiple interfaces.
+   multiplexer, like :cite:t:`github-multus` is needed to provision multiple interfaces.
    Implementation of different network services for the interfaces, like Network Policies, Ingress, Egress or Load
    Balancers depends on the feature set of the CNI multiplexer and the CNI plugins it uses, therefore it is
    inconsistent.
 
-   **Status:** There is a `draft Kubernetes Enhancement Proposal (KEP)
-   <https://docs.google.com/document/d/1ztx9TOQ9Hiyj9PG9aPv6jyDLhe_FB7haV_yjJIcb-0Y/>`__
-   created to support multiple Pod interfaces natively.
+   **Status:** There is a :cite:t:`googledocs-kep-multi-network-pod-object` created to support multiple Pod interfaces
+   natively.
 
 Dynamic network management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +98,7 @@ Dynamic network management
    **Baseline project:** *Kubernetes*
 
    **Gap description:** Kubernetes does not have an API for network service (e.g., VPNs) management, therefore a
-   CNI plugin, like `DANM <https://github.com/nokia/danm>`__, needs to be used to expose APIs for Network
+   CNI plugin, like :cite:t:`github-multus`, needs to be used to expose APIs for Network
    services.
    Alternatively this is done today with Netconf etc., integration with SDN controllers, for example connecting
    individual VPNs - e.g., L3VPN - onto the CNF, on demand.
@@ -143,7 +137,8 @@ orchestration in K8s and infrastructure orchestration in IaaS.
 HW topology aware huge pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Related requirements:** ``infra.com.cfg.004`` and ``infra.com.cfg.002``
+**Related requirements:** ``infra.com.cfg.004`` and ``infra.com.cfg.002`` in the Virtual Compute Profiles section in
+Chapter 5 of :cite:t:`refmodel`.
 
 **Baseline project:** *Kubernetes*
 
@@ -153,7 +148,8 @@ HW topology aware huge pages
 User namespaces in Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Related requirements:** ``e.man.004``, ``sec.sys.007``
+**Related requirements:** ``e.man.004`` in the Cloud Infrastructure Management Capabilities section in Chapter 4 of
+:cite:t:`refmodel`, :ref:`inf.ntw.03 <chapters/chapter02:platform and access requirements>`
 
 **Baseline project:** *Kubernetes*
 
@@ -162,5 +158,5 @@ application requires system privileges the container either needs to run in priv
 to provide random system UIDs. Randomised UIDs result in errors when the application needs to set kernel capabilities
 (e.g., in case of VLAN trunking) or when a Pod shares data with other Pods via persistent storage. The
 "privileged mode" solution is not secure while "random UID" solution is error prone, and therefore these techniques
-should not be used. Support for proper user namespaces in Kubernetes is
-`under discussion <https://github.com/kubernetes/enhancements/pull/2101>`__.
+should not be used. Support for proper user namespaces in Kubernetes is under implementation
+:cite:t:`kubernetes-kep-user-namespaces`.
