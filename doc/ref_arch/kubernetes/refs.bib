@@ -37,7 +37,7 @@
     doi =       {10.17487/RFC2119},
     url =       {https://www.rfc-editor.org/info/rfc2119},
         author =    {Scott O. Bradner},
-    title =     {{Key words for use in RFCs to Indicate Requirement Levels}},
+    title =     {Key words for use in RFCs to Indicate Requirement Levels},
     pagetotal = 3,
     year =      1997,
     month =     mar,
@@ -114,9 +114,278 @@
     url = {https://github.com/cncf/k8s-conformance}
 }
 
+@misc{k8s-alpha-api,
+    title = {Kubernetes Alpha API},
+    url = {https://kubernetes.io/docs/reference/using-api/#api-versioning}
+}
+
+@misc{k8s-services-publishing,
+    title = {Kubernetes Publishing Services (ServiceTypes)},
+    url = {https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types}
+}
+
+@misc{k8s-service-ingress,
+    title = {Kubernetes Ingress},
+    url = {https://kubernetes.io/docs/concepts/services-networking/ingress/}
+}
+
+@misc{github-oci-specification,
+    title = {Open Container Initiative Runtime Specification, version 1.0.0},
+    url = {https://github.com/opencontainers/runtime-spec/blob/v1.0.0/spec.md}
+}
+
+@misc{k8s-blog-cri,
+    title = {Kubernetes: Introducing Container Runtime Interface (CRI) in Kubernetes},
+    url = {https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/}
+}
+
+@misc{multi-net-spec,
+    title = {Kubernetes Network Custom Resource Definition De-facto Standard},
+    url = {https://github.com/k8snetworkplumbingwg/multi-net-spec/tree/master/v1.2}
+}
+
+@misc{k8s-csi-drivers,
+    title = {Kubernetes CSI Drivers},
+    url = {https://kubernetes-csi.github.io/docs/drivers.html}
+}
+
+@misc{onap-asd-spec,
+    title = {Application Service Descriptor (ASD) and packaging Proposals for CNF},
+    url = {https://wiki.onap.org/display/DW/Application+Service+Descriptor+%28ASD%29+and+packaging+Proposals+for+CNF}
+}
+
+
 % Chapter 3 References
 
 % Chapter 4 References
+
+@misc{anuket-ri2,
+    title = {Reference Implementation based on RA2 specifications (RI2)},
+    url = {https://cntt.readthedocs.io/projects/ri2/}
+}
+
+@misc{anuket-ra1,
+    title = {Reference Architecture (RA1) for OpenStack based cloud infrastructure},
+    url = {https://cntt.readthedocs.io/projects/ra1/}
+}
+
+@misc{k8s-nfd-sig,
+    title = {Node Feature Discovery},
+    url = {https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html}
+}
+
+@misc{k8s-distributions,
+    title = {Kubernetes Distributions and Platforms document},
+    url = {https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlUUK2h0/}
+}
+
+@misc{k8s-version-skew-policy,
+    title = {Kubernetes Supported versions},
+    url = {https://kubernetes.io/releases/version-skew-policy/#supported-versions}
+}
+
+@misc{etsi-nfv-sol001,
+    howpublished =  {ETSI GS NFV-SOL 001},
+    publisher = {ETSI},
+    url =       {https://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/001/04.02.01_60/gs_NFV-SOL001v040201p.pdf},
+    title =     {ETSI GS NFV-SOL 001: NFV descriptors based on TOSCA specification},
+    year =      2022
+}
+
+@misc{oci-spec,
+    title = {OCI Runtime specification},
+    url = {https://github.com/opencontainers/runtime-spec/blob/master/config.md}
+}
+
+@misc{oci-spec-mount,
+    title = {OCI Runtime specification, Mounts Parameter Group},
+    url = {https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts}
+}
+
+@misc{oci-spec-process,
+    title = {OCI Runtime specification, Process Parameter Group},
+    url = {https://github.com/opencontainers/runtime-spec/blob/master/config.md#process}
+}
+
+@misc{oci-spec-hostname,
+    title = {OCI Runtime specification, Hostname Parameter Group},
+    url = {https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname}
+}
+
+@misc{oci-spec-user,
+    title = {OCI Runtime specification, User Parameter Group},
+    url = {https://github.com/opencontainers/runtime-spec/blob/master/config.md#user}
+}
+
+@misc{k8s-doc-volumes-hostpath,
+    title = {Kubernetes Types of volumes, hostPath},
+    url = {https://kubernetes.io/docs/concepts/storage/volumes/#hostpath}
+}
+
+@misc{cnf-testsuite-helm_chart_published,
+    title = {CNF Testsuite, Rationale, Test if the Helm chart is published: helm_chart_published},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-helm-chart-is-published-helm_chart_published}
+}
+
+@misc{cnf-testsuite-helm_chart_valid,
+    title = {CNF Testsuite, Rationale, Test if the Helm chart is valid: helm_chart_valid},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-helm-chart-is-valid-helm_chart_valid}
+}
+
+@misc{cnf-testsuite-rolling_update,
+    title = {CNF Testsuite, Rationale, To test if the CNF can perform a rolling update: rolling_update},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-test-if-the-cnf-can-perform-a-rolling-update-rolling_update}
+}
+
+@misc{cnf-testsuite-rolling_downgrade,
+    title = {CNF Testsuite, Rationale, To check if a CNF version can be downgraded through a rolling_downgrade: rolling_downgrade},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-a-cnf-version-can-be-downgraded-through-a-rolling_downgrade-rolling_downgrade}
+}
+
+@misc{cnf-testsuite-cni_compatibility,
+    title = {CNF Testsuite, Rationale, To check if the CNF is compatible with different CNIs: cni_compatibility},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-the-cnf-is-compatible-with-different-cnis-cni_compatibility}
+}
+
+@misc{cnf-testsuite-node_drain,
+    title = {CNF Testsuite, Rationale, Test if the CNF crashes when node drain occurs: node_drain},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-cnf-crashes-when-node-drain-occurs-node_drain}
+}
+
+@misc{cnf-testsuite-pod_network_latency,
+    title = {CNF Testsuite, Rationale, Test if the CNF crashes when network latency occurs: pod_network_latency},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-cnf-crashes-when-network-latency-occurs-pod_network_latency}
+}
+
+@misc{cnf-testsuite-disk_fill,
+    title = {CNF Testsuite, Rationale, Test if the CNF crashes when disk fill occurs: disk_fill},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-cnf-crashes-when-disk-fill-occurs-disk_fill}
+}
+
+@misc{cnf-testsuite-pod_memory_hog,
+    title = {CNF Testsuite, Rationale, Test if the CNF crashes when pod memory hog occurs: pod_memory_hog},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-cnf-crashes-when-pod-memory-hog-occurs-pod_memory_hog}
+}
+
+@misc{cnf-testsuite-pod_io_stress,
+    title = {CNF Testsuite, Rationale, Test if the CNF crashes when pod io stress occurs: pod_io_stress},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-cnf-crashes-when-pod-io-stress-occurs-pod_io_stress}
+}
+
+@misc{cnf-testsuite-pod_network_corruption,
+    title = {CNF Testsuite, Rationale, Test if the CNF crashes when pod network corruption occurs: pod_network_corruption},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-cnf-crashes-when-pod-network-corruption-occurs-pod_network_corruption}
+}
+
+@misc{cnf-testsuite-pod_network_duplication,
+    title = {CNF Testsuite, Rationale, Test if the CNF crashes when pod network duplication occurs: pod_network_duplication},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#test-if-the-cnf-crashes-when-pod-network-duplication-occurs-pod_network_duplication}
+}
+
+@misc{cnf-testsuite-no_local_volume_configuration,
+    title = {CNF Testsuite, Rationale, To test if the CNF uses local storage: no_local_volume_configuration},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-test-if-the-cnf-uses-local-storage-no_local_volume_configuration}
+}
+
+@misc{cnf-testsuite-liveness,
+    title = {CNF Testsuite, Rationale, To test if there is a liveness entry in the Helm chart: liveness},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-test-if-there-is-a-liveness-entry-in-the-helm-chart-liveness}
+}
+
+@misc{cnf-testsuite-readiness,
+    title = {CNF Testsuite, Rationale, To test if there is a readiness entry in the Helm chart: readiness},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-test-if-there-is-a-readiness-entry-in-the-helm-chart-readiness}
+}
+
+@misc{cnf-testsuite-service_account_mapping,
+    title = {CNF Testsuite, Rationale, To check if there is automatic mapping of service accounts: service_account_mapping},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-there-is-automatic-mapping-of-service-accounts-service_account_mapping}
+}
+
+@misc{cnf-testsuite-host_network,
+    title = {CNF Testsuite, Rationale, To check if there is a host network attached to a pod: host_network},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-there-is-a-host-network-attached-to-a-pod-host_network}
+}
+
+@misc{cnf-testsuite-host_pid_ipc_privileges,
+    title = {CNF Testsuite, Rationale, To check if containers are running with hostPID or hostIPC privileges: host_pid_ipc_privileges},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-containers-are-running-with-hostpid-or-hostipc-privileges-host_pid_ipc_privileges}
+}
+
+@misc{cnf-testsuite-resource_policies,
+    title = {CNF Testsuite, Rationale, To check if containers have resource limits defined: resource_policies},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-containers-have-resource-limits-defined-resource_policies}
+}
+
+@misc{cnf-testsuite-immutable_file_systems,
+    title = {CNF Testsuite, Rationale, To check if containers have immutable file systems: immutable_file_systems},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-containers-have-immutable-file-systems-immutable_file_systems}
+}
+
+@misc{cnf-testsuite-hardcoded_ip_addresses_in_k8s_runtime_configuration,
+    title = {CNF Testsuite, Rationale, To test if there are any (non-declarative) hardcoded IP addresses or subnet masks in the K8s runtime configuration: hardcoded_ip_addresses_in_k8s_runtime_configuration},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-test-if-there-are-any-non-declarative-hardcoded-ip-addresses-or-subnet-masks-in-the-k8s-runtime-configuration-hardcoded_ip_addresses_in_k8s_runtime_configuration}
+}
+
+@misc{k8s-service,
+    title = {Kubernetes documentation: Service},
+    url = {https://kubernetes.io/docs/concepts/services-networking/service/}
+}
+
+@misc{k8s-configmap-immutable,
+    title = {Kubernetes documentation: Immutable ConfigMaps},
+    url = {https://kubernetes.io/docs/concepts/configuration/configmap/#configmap-immutable}
+}
+
+@misc{k8s-hpa,
+    title = {Kubernetes documentation: Horizontal Pod Autoscaling},
+    url = {https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/}
+}
+
+@misc{cnf-testsuite-reasonable_image_size,
+    title = {CNF Testsuite, Rationale, To check if the CNF has a reasonable image size: reasonable_image_size},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-the-cnf-has-a-reasonable-image-size-reasonable_image_size}
+}
+
+@misc{cnf-testsuite-reasonable_startup_time,
+    title = {CNF Testsuite, Rationale, To check if the CNF have a reasonable startup time: reasonable_startup_time},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-the-cnf-have-a-reasonable-startup-time-reasonable_startup_time}
+}
+
+@misc{cnf-testsuite-privileged_containers,
+    title = {CNF Testsuite, Rationale, To check if there are any privileged containers: privileged_containers},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-there-are-any-privileged-containers-privileged_containers}
+}
+
+@misc{cnf-testsuite-non_root_user,
+    title = {CNF Testsuite, Rationale, To check if any containers are running as a root user (checks the user outside the container that is running dockerd): non_root_user},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-any-containers-are-running-as-a-root-user-checks-the-user-outside-the-container-that-is-running-dockerd-non_root_user}
+}
+
+@misc{cnf-testsuite-privilege_escalation,
+    title = {CNF Testsuite, Rationale, To check if any containers allow for privilege escalation: privilege_escalation},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-any-containers-allow-for-privilege-escalation-privilege_escalation}
+}
+
+@misc{cnf-testsuite-non_root_containers,
+    title = {CNF Testsuite, Rationale, To check if containers are running with non-root user with non-root membership: non_root_containers},
+    url = {https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-containers-are-running-with-non-root-user-with-non-root-membership-non_root_containers}
+}
+
+@misc{k8s-recommended-labels,
+    title = {Kubernetes documentation: Recommended Labels},
+    url = {https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/}
+}
+
+@misc{12-factor-app-logs,
+    title = {The Twelve Factor App: Logs},
+    url = {https://12factor.net/logs}
+}
+
+@misc{k8s-containers-images,
+    title = {Kubernetes documentation: Images},
+    url = {https://kubernetes.io/docs/concepts/containers/images/}
+}
 
 % Chapter 5 References
 
