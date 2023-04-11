@@ -317,6 +317,12 @@ Reference Architecture Specification
       - Must support
       - Must support
       - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
+    * - :ref:`ref_arch_kubernetes:chapters/chapter04:Networking Solutions`
+      - ``ra2.ntw.016``
+      - Kubernetes Network Custom Resource Definition De-facto Standard compliant multiplexer / meta-plugin
+      - Must support
+      - Must support
+      - :ref:`chapters/chapter04:Installation on Bare Metal Infratructure`
     * - :ref:`ref_arch_kubernetes:chapters/chapter04:Storage Components`
       - ``ra2.stg.004``
       - Persistent Volumes
