@@ -131,7 +131,7 @@ Architectural Principles
 Following are a number of key architectural principles that apply to all Reference Architectures produced by the Anuket project:
 
 1. **Open-source preference:** for building Cloud Infrastructure
-   solutions, components and tools, using open-source technology.
+   solutions, components, and tools.
 2. **Open APIs:** to enable interoperability, component
    substitution, and minimise integration efforts.
 3. **Separation of concerns:** to promote lifecycle independence of
