@@ -435,7 +435,7 @@ Container runtimes
        specification.
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
      - :ref:`RI2 Installation on Bare Metal Infrastructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
    * - ra2.crt.002
      - Kubernetes Container Runtime Interface (CRI)
      - The Kubernetes container runtime must be implemented according to the
@@ -443,7 +443,7 @@ Container runtimes
        <https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/>`
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
      - :ref:`RI2 Installation on Bare Metal Infrastructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
 
 Networking solutions
 --------------------
@@ -465,8 +465,8 @@ the following specifications:
      - The networking solution deployed within the implementation must be administered through the Kubernetes API using
        native Kubernetes API resources and objects, or Custom Resources.
      - :ref:`inf.ntw.03 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
    * - ra2.ntw.002
      - Default Pod Network - CNI
      - The networking solution deployed within the implementation must use a CNI-conformant Network Plugin for the
@@ -523,8 +523,8 @@ the following specifications:
      - When a multiplexer/meta-plugin is used, the additional non-default connection points must be managed by a
        CNI-conformant Network Plugin.
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 Installation on Bare Metal Infrastructure
+       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infrastructure>`
    * - ra2.ntw.010
      - User plane networking
      - When hosting workloads that match the high-performance profile, CNI network plugins that support the use of DPDK,
@@ -898,7 +898,7 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.030
      - No host network access
-     - Host network must not be attached to any of the Pods of the CNF.The hostNetwork attribute of the Pod
+     - Host network must not be attached to any of the Pods of the CNF. The hostNetwork attribute of the Pod
        specifications must be False, or it should not be specified.
      - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-there-is-a-host-net
        work-attached-to-a-pod-host_network>`__
