@@ -59,8 +59,8 @@ the following specifications:
      - In order for the platform to qualify as a High Performance profile, SR-IOV virtual functions (VFs) must be
        configured within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.
      - :ref:`e.cap.013 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ch.004
      - CPU Simultaneous Multi-Threading (SMT)
      - SMT must be enabled in the BIOS on the physical machine on which the Kubernetes Node runs.
@@ -163,16 +163,16 @@ the following specifications:
        New changes to the Kubernetes Node must be implemented as new Node instances. This covers any changes from BIOS
        through Operating System to running processes and all associated configurations.
      - :ref:`gen.cnt.02 <ref_arch1:chapters/chapter02:General Recommendations>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ch.018
      - NFD
      - `Node Feature Discovery
        <https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html>`__ must be used to
        advertise the detailed software and hardware capabilities of each node in the Kubernetes Cluster.
      - tbd
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
 
 Node Operating System
 ---------------------
@@ -260,16 +260,16 @@ the following specifications:
        uythuq_GL3N1mlUUK2h0/edit>`__ and marked (X) as conformant for the Kubernetes version defined in
        :ref:`index:required component versions`.
      - :ref:`gen.cnt.03 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.k8s.002
      - Highly available etcd
      - An implementation must consist of either three, five or seven nodes running the etcd service (can be colocated
        on the control plane nodes, or can run on separate nodes, but not on worker nodes).
      - :ref:`gen.rsl.02 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`gen.avl.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.k8s.003
      - Highly available control plane
      - An implementation must consist of at least one control plane node per availability zone or fault domain to
@@ -282,8 +282,8 @@ the following specifications:
        kube-scheduler and kube-controller-manager.
      - :ref:`gen.rsl.02 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`gen.avl.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.k8s.004
      - Highly available worker nodes
      - An implementation must consist of at least one worker node per availability zone or fault domain to ensure the
@@ -327,8 +327,8 @@ the following specifications:
         Note, this is enabled by default in Kubernetes v1.10 or later.
 
      - Various, e.g. :ref:`e.cap.013 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.k8s.008
      - System Resource Reservations
      - To avoid resource starvation issues on nodes, the implementation of the architecture must reserve compute
@@ -435,16 +435,16 @@ Container runtimes
        `OCI 1.0 <https://github.com/opencontainers/runtime-spec/blob/master/spec.md>`__ specification.
        specification.
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.crt.002
      - Kubernetes Container Runtime Interface (CRI)
      - The Kubernetes container runtime must be implemented as per the
        `Kubernetes Container Runtime Interface (CRI)
        <https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/>`
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
 
 Networking solutions
 --------------------
@@ -466,73 +466,73 @@ Architecture they must be implemented as per the following specifications:
      - The networking solution deployed within the implementation must be administered through the Kubernetes API using
        native Kubernetes API resources and objects, or Custom Resources.
      - :ref:`inf.ntw.03 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.002
      - Default Pod Network - CNI
      - The networking solution deployed within the implementation must use a CNI-conformant Network Plugin for the
        Default Pod Network, as the alternative (kubenet) does not support cross-node networking or Network Policies.
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`inf.ntw.08 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.003
      - Multiple connection points
      - The networking solution deployed within the implementation must support the capability to connect at least 5
        connection points to each Pod, which are additional to the default connection point managed by the default Pod
        network CNI plugin.
      - :ref:`e.cap.004 <chapters/chapter02:Cloud Infrastructure Software Profile Capabilities>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.004
      - Multiple connection points presentation
      - The networking solution deployed within the implementation must ensure that all additional non-default connection
        points are requested by Pods using standard Kubernetes resource scheduling mechanisms such as annotations or
        container resource requests and limits.
      - :ref:`inf.ntw.03 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.005
      - Multiplexer / meta-plugin
      - The networking solution deployed within the implementation may use a multiplexer/meta-plugin.
      - :ref:`inf.ntw.06 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`inf.ntw.07 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.006
      - Multiplexer / meta-plugin CNI Conformance
      - If used, the selected multiplexer/meta-plugin must integrate with the Kubernetes control plane via CNI.
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.007
      - Multiplexer / meta-plugin CNI Plugins
      - If used, the selected multiplexer/meta-plugin must support the use of multiple CNI-conformant Network Plugins.
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`,
        :ref:`inf.ntw.06 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.008
      - SR-IOV Device Plugin for High Performance
      - When hosting workloads that match the High Performance profile and require SR-IOV acceleration, a Device Plugin
        for SR-IOV must be used to configure the SR-IOV devices and advertise them to the kubelet.
      - :ref:`e.cap.013 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.009
      - Multiple connection points with multiplexer / meta-plugin
      - When a multiplexer/meta-plugin is used, the additional non-default connection points must be managed by a
        CNI-conformant Network Plugin.
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.010
      - User plane networking
      - When hosting workloads matching the High Performance profile, CNI network plugins that support the use of DPDK,
        VPP, and/or SR-IOV must be deployed as part of the networking solution.
      - :ref:`infra.net.acc.cfg.001 <ref_model:chapters/chapter05:Virtual Networking Profiles>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.011
      - NATless connectivity
      - When hosting workloads that require source and destination IP addresses to be preserved in the traffic headers,
@@ -546,8 +546,8 @@ Architecture they must be implemented as per the following specifications:
        Acceleration Hardware, a Device Plugin for that FPGA or Acceleration Hardware must be used.
      - :ref:`e.cap.016 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`,
        :ref:`e.cap.013 <ref_model:chapters/chapter04:Exposed Performance Optimisation Capabilities>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
    * - ra2.ntw.013
      - Dual stack CNI
      - The networking solution deployed within the implementation must use a CNI-conformant Network Plugin that is able
@@ -571,8 +571,8 @@ Architecture they must be implemented as per the following specifications:
        `Kubernetes Network Custom Resource Definition De-facto Standard
        <https://github.com/k8snetworkplumbingwg/multi-net-spec/tree/master/v1.2>`__.
      - :ref:`gen.ost.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
-     - :ref:`RI2 Installation on Bare Metal Infratructure
-       <ref_impl2:chapters/chapter04:Installation on Bare Metal Infratructure>`
+     - :ref:`RI2 installation on bare metal infrastructure
+       <ref_impl2:chapters/chapter04:installation on bare metal infrastructure>`
 
 Storage components
 ------------------
