@@ -53,7 +53,7 @@ find that a multi cluster solution can address many of these problems like secur
 
 Without multi tenancy within a cluster, separate clusters must be used to provide adequate separation for CNFs that
 require strong isolation. CNFs may need to be separated for various reasons including different types of
-workloads based on their vendors, rnvironments like production vs. non production, per categorization, or supporting
+workloads based on their vendors, environments like production vs. non production, per categorization, or supporting
 independent lifecycles. Having multiple clusters to deploy CNFs into allows operators to chose similar CNFs together
 while segregating those with different lifecycles from each other. CNFs deployed into the same cluster can be upgraded
 together to reduce the operational load while CNFs that require different versions, configurations, and dependencies
@@ -143,7 +143,7 @@ Chapter 5 of :cite:t:`refmodel`.
 **Baseline project:** *Kubernetes*
 
 **Gap description:** Memory Manager was added in v1.21 as alpha feature. More in
-:ref:`chapters/chapter03:memory and huge pages resources management`.
+:ref:`chapters/chapter03:management of memory and huge pages resources`.
 
 User namespaces in Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
