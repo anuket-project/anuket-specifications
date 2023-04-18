@@ -4,3 +4,5 @@
 sphinx # BSD
 doc8 # Apache-2.0
 piccolo-theme
+sphinxcontrib-bibtex
+pybtex

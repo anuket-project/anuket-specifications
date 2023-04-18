@@ -13,13 +13,13 @@ open source community, and conformance is ensured by successfully running the RC
 By using the Reference Architecture (RA2) for Kubernetes based cloud infrastructure specifications, operators can
 deploy infrastructure that will run any VNF or CNF that has successfully run on an RA2-conformant infrastructure. The
 purpose of this chapter is to outline all the components required to provide Telco-grade Kubernetes in a consistent and
-reliable way. The specification of how to setup these components is detailed in
-:ref:`Chapter 04<chapters/chapter04:component level architecture>`.
+reliable way. The specification of how to setup these components is detailed in the
+:ref:`chapters/chapter04:component level architecture` chapter.
 
 Kubernetes is already a well-documented and widely deployed open source project of the Cloud Native
 Computing Foundation (CNCF). For information related to standard Kubernetes features and capabilities, refer to
 the standard Kubernetes documentation that can be found on the
-`Kubernetes docs page <https://kubernetes.io/docs/home/>`__.
+Kubernetes docs page :cite:p:`kubernetes`.
 The following chapters describe the specific features required by the Anuket Reference Architecture, and how they are
 expected to be implemented.
 
@@ -27,12 +27,10 @@ While this reference architecture provides options for modular components, such 
 Reference Architecture is on the abstracted interfaces and features that are required for Telco workload management and
 execution.
 
-:doc:`Chapter 4<ref_model:chapters/chapter04>` of the Reference Model (RM) describes the hardware and software profiles
+Chapter 4 of the Reference Model (RM) :cite:p:`refmodel` describes the hardware and software profiles
 that reflect the capabilities and features that the types of Cloud Infrastructure provide to the workloads.
 The figure below depicts a high-level view of the software features that apply to each instance profile (basic and
 high-performance).
-
-For more information on the instance profiles, refer to :ref:`ref_model:chapters/chapter04:profiles`.
 
 .. figure:: ../../../ref_model/figures/RM-ch05-sw-profile.png
    :alt: (from RM): NFVI softwareprofiles
@@ -40,7 +38,7 @@ For more information on the instance profiles, refer to :ref:`ref_model:chapters
 
    (from RM): NFVI software profiles
 
-In addition, the RM Figure (:numref:`(from RM): NFVI hardware profiles and host associated capabilities` shown below)
+In addition, the Figure (`NFVI hardware profiles and host associated capabilities` shown below)
 depicts the hardware profile features that apply to each instance profile.
 
 .. figure:: ../../../ref_model/figures/RM_chap5_fig_5_4_HW_profile.png
@@ -51,7 +49,7 @@ depicts the hardware profile features that apply to each instance profile.
 
 The features and capabilities described in the software and hardware profiles are considered throughout this RA, with
 the requirements traceability to the RM requirements formally documented in the
-:ref:`Architecture Requirements<chapters/chapter02:architecture requirements>` of this RA.
+:ref:`chapters/chapter02:architecture requirements` of this RA.
 
 Infrastructure Services
 -----------------------
@@ -62,7 +60,7 @@ Container Compute Services
 The primary interface between the physical/virtual infrastructure and any container-relevant components is the
 Kubernetes Node Operating System. This is the OS within which the container runtime exists, and within which the
 containers run, and therefore, the OS whose kernel is shared by the referenced containers. This is shown in
-:numref:`Kubernetes Node Operating System` below.
+the figure `Kubernetes Node Operating System` below.
 
 .. figure:: ../figures/ch03_hostOS.png
    :alt: Kubernetes Node Operating System
@@ -105,11 +103,11 @@ networking and other I/O devices, abstracted by the Node node OS, based on API i
 There are a number of different container runtimes. The simplest form of runtimes, the low-level container runtimes,
 only manage the operating system capabilities, such as cgroups and namespaces, and then run commands from within those
 cgroups and namespaces. An example of this type of runtime is runc, which underpins many of the higher-level runtimes
-and is considered a reference implementation of the `Open Container Initiative (OCI) runtime spec
-<https://github.com/opencontainers/runtime-spec>`__. This specification includes details on how an implementation (that
+and is considered a reference implementation of the Open Container Initiative (OCI) runtime spec. :cite:p:`ociruntime`
+This specification includes details on how an implementation (that
 is, an actual container runtime such as runc) must, for example, configure resource shares and limits (such as CPU,
 Memory, IOPS) for the containers that Kubernetes (via the kubelet) schedules on that node. This is important to ensure
-that the features and capabilities described in the :doc:`Reference Model<ref_model:chapters/chapter05>` are supported
+that the features and capabilities described in the Reference Model :cite:p:`refmodel` are supported
 by this RA and delivered by any downstream Reference Implementations (RIs) to the instance types defined in the RM.
 
 Where low-level runtimes are used for the execution of a container within an operating system, the more complex and
@@ -119,8 +117,8 @@ container. These high-level runtimes also include a comprehensive API that other
 use to interact and manage the containers. An example of this type of runtime is containerd, which provides the
 features described above, and depends on runc for execution.
 
-For Kubernetes, the important interface to consider for container management is the `Kubernetes Container Runtime
-Interface (CRI) <https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/>`__.
+For Kubernetes, the important interface to consider for container management is the Kubernetes Container Runtime
+Interface (CRI).
 This is an interface specification for any container runtime to integrate with the control plane (kubelet) of a
 Kubernetes Node. The CRI allows to decouple the kubelet from the runtime that is running in the node OS, allowing to
 swap container runtime as long as it is compliant with CRI. Examples CRI-compliant runtimes include containerd
@@ -142,21 +140,21 @@ and their desired state. The main objects built into Kubernetes include:
 
    * - Pod and workloads
      - Description
-   * - `Pod <https://kubernetes.io/docs/concepts/workloads/pods/>`__
+   * - Pod :cite:p:`k8s-docs-pod`
      - A pod is a collection of containers that can run on a node. This resource is created by clients
        and scheduled onto nodes.
-   * - `ReplicaSet <https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/>`__
+   * - ReplicaSet :cite:p:`k8s-docs-replicaset`
      - A ReplicaSet ensures that a specified number of pod replicas are running at any given time.
-   * - `Deployment <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>`__
+   * - Deployment :cite:p:`k8s-docs-deployment`
      - A deployment enables declarative updates for pods and ReplicaSets.
-   * - `DaemonSet <https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/>`__
+   * - DaemonSet :cite:p:`k8s-docs-daemonset`
      - A DaemonSet ensures that the correct nodes run a copy of a pod.
-   * - `Job <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__
+   * - Job :cite:p:`k8s-docs-job`
      - A job represents a task. It creates one or more pods and ensures that the
        specified number of successful completions is completed.
-   * - `CronJob <https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/>`__
+   * - CronJob :cite:p:`k8s-docs-cronjob`
      - A CronJob manages time-based jobs, namely, once or repeatedly at specified times.
-   * - `StatefulSet <https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/>`__
+   * - StatefulSet :cite:p:`k8s-docs-statefulset`
      - A StatefulSet represents a set of pods with consistent identities. Identities are defined as network and storage.
 
 CPU Management Policies
@@ -169,11 +167,10 @@ the physical cores and the SMT, while others (such as DPDK-based workloads) are 
 (such as on Linux with a cpuset-based selection of CPUs and isolcpus kernel parameters specifying cores isolated
 from the general SMP balancing and scheduler algorithms).
 
-The Kubernetes `CPU Manager <https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/>`__ works
+The Kubernetes CPU Manager :cite:p:`k8s-docs-cpumanager` works
 with the Topology Manager. Special care needs to be taken of:
 
--  Supporting isolated CPUs: Using kubelet `Reserved CPUs
-   <https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#explicitly-reserved-cpu-list>`__
+-  Supporting isolated CPUs: Using kubelet Reserved CPUs
    and Linux isolcpus allows configuration where only isolcpus are allocatable to pods. Scheduling pods to such nodes
    can be influenced with taints, tolerations and node affinity.
 -  Differentiating between physical cores and SMT: When requesting even number of CPU cores for pods, scheduling
@@ -183,14 +180,14 @@ Management of Memory and Huge Pages Resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Reference Model requires the support of huge pages in ``i.cap.018`` which is supported by the upstream Kubernetes
-(`documentation <https://kubernetes.io/docs/tasks/manage-hugepages/scheduling-hugepages/>`__).
+:cite:p:`k8s-docs-hugepages`.
 
 For the correct mapping of huge pages to scheduled pods, both need to have huge pages enabled in the operating
 system (configured in kernel and mounted with the correct permissions), as well as kubelet configuration. Multiple
 sizes of huge pages can be enabled, such as 2 MiB and 1 GiB.
 
 For some applications, huge pages should be allocated to account for consideration of the underlying hardware
-topology. `The Memory Manager <https://kubernetes.io/docs/tasks/administer-cluster/memory-manager/>`__ allows
+topology. The Memory Manager :cite:p:`k8s-docs-memorymanager` allows
 the feature guaranteed memory and huge pages allocation for pods in the Guaranteed QoS class. The Memory Manager
 feeds the Topology Manager with hints for the most suitable NUMA affinity.
 
@@ -201,8 +198,7 @@ NUMA nodes are defined as server system architecture divisions of CPU sockets.
 Scheduling pods across NUMA boundaries can result in lower performance and higher latencies. This could be an
 issue for applications that require optimizations of CPU isolation, memory, and device locality.
 
-Kubernetes (`supports Topology policy per node.
-<https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/>`__).
+Kubernetes supports Topology policy per node :cite:p:`k8s-docs-topologymanager`.
 The Topology Manager receives topology information from Hint Providers which identify NUMA nodes and preferred
 scheduling. In the case of the pod with a Guaranteed QoS class having integer CPU requests, the static CPU Manager
 policy returns topology hints relating to the exclusive CPU. The Device Manager provides hints for the requested
@@ -215,7 +211,7 @@ the node, or with a Control Groups (cgroups) cpuset subsystem that can isolate m
 Node Feature Discovery
 ^^^^^^^^^^^^^^^^^^^^^^
 
-`Node Feature Discovery <https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html>`__
+Node Feature Discovery :cite:p:`k8s-nfd`
 (NFD) can run on every node as a daemon or as a job. NFD detects the hardware and software capabilities of each
 node and then advertises those capabilities as node labels. Those node labels can be used in scheduling pods by
 using the Node Selector or Node Affinity for pods that require such capabilities.
@@ -223,11 +219,11 @@ using the Node Selector or Node Affinity for pods that require such capabilities
 Device Plugin Framework
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-`Device Plugin Framework <https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/>`__
+Device Plugin Framework :cite:p:`k8s-docs-deviceplugin`
 advertises device hardware resources to kubelet, with which vendors can implement plugins for devices that may require
 vendor-specific activation and lifecycle management, and securely maps these devices to the containers.
 
-:numref:`Device Plugin Operation` shows in four steps how device plugins operate on a Kubernetes node:
+The figure Device Plugin Operation below shows in four steps how device plugins operate on a Kubernetes node:
 
 -  1: During setup, the cluster administrator (more in :ref:`chapters/chapter03:operator pattern`)
    knows or discovers (as per :ref:`chapters/chapter03:node feature discovery`) what kind of devices are present on
@@ -245,10 +241,10 @@ vendor-specific activation and lifecycle management, and securely maps these dev
    Device Plugin Operation
 
 An example of an often used device plugin is the
-`SR-IOV Network Device Plugin <https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin>`__. The SR-IOV
+SR-IOV Network Device Plugin  :cite:p:`k8s-sriov-network-device-plugin`. The SR-IOV
 Network Device Plugin discovers and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is
 used to map VFs to scheduled pods. To use it, an SR-IOV CNI is required. A CNI multiplexer plugin (such as
-`Multus CNI <https://github.com/k8snetworkplumbingwg/multus-cni>`__) is also required to provision additional secondary
+Multus CNI :cite:p:`k8s-multus`) is also required to provision additional secondary
 network interfaces for VFs (beyond the primary network interface). During pod creation, the SR-IOV CNI allocates an
 SR-IOV VF to a pod’s network namespace using the VF information given by the meta plugin, and on pod deletion releases
 the VF from the pod.
@@ -256,7 +252,7 @@ the VF from the pod.
 Hardware Acceleration
 ^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`Hardware Acceleration Abstraction in RM<ref_model:chapters/chapter03:hardware acceleration abstraction>`
+Hardware Acceleration Abstraction in RM :cite:p:`refmodel`
 describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable
 adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level
 Acceleration.
@@ -333,8 +329,7 @@ Container Networking Services
 
 Kubernetes considers networking as a key component, with a number of distinct solutions. By default,
 Kubernetes networking is considered to be an “extension” to the core functionality, and is managed through
-the use of `Network Plugins
-<https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/>`__,
+the use of Network Plugins :cite:p:`k8s-docs-network-plugins`,
 which can be categorised based on the topology of the networks they manage, and the integration with the
 switching (such as vlan vs tunnels) and routing (such as virtual vs physical gateways) infrastructure
 outside the Cluster:
@@ -360,11 +355,11 @@ differences between the networking solutions that consist of these options. It i
 networking solutions require different descriptors from the Kubernetes workloads (specifically, the deployment
 artefacts, such as YAML files, and so on). Therefore, the networking solution should be agreed between the CNF
 vendors and the CNF operators. To allow easy integration of CNFs and the platforms, it is recommended to use either
-the plain CNI API resources or the API resources defined in the v1.2 of the `Kubernetes Network Custom Resource
-Definition De-facto Standard <https://github.com/k8snetworkplumbingwg/multi-net-spec/tree/master/v1.2>`__.
+the plain CNI API resources or the API resources defined in the v1.2 of the Kubernetes Network Custom Resource
+Definition De-facto Standard :cite:p:`k8s-multi-net-spec`.
 
-- The Default CNI Plugin through the use of a deployment-specific configuration (such as `Tungsten Fabric
-  <https://tungstenfabric.github.io/website/Tungsten-Fabric-Architecture.html#vrouter-deployment-options>`__)
+- The Default CNI Plugin through the use of a deployment-specific configuration (such as Tungsten Fabric
+  :cite:p:`tungstenfabric`
 - A **multiplexer/meta-plugin** that integrates with the Kubernetes control plane via a Container Network Interface
   (CNI) and allows for the use of multiple CNI plugins, in order to provide this specific connectivity that the
   default Network Plugin may not be able to provide (such as Multus).
@@ -417,14 +412,14 @@ Definition De-facto Standard <https://github.com/k8snetworkplumbingwg/multi-net-
      - Supported via IPAM CNI plugin
      - Supported
 
-For hardware resources that are needed by the Kubernetes applications, `Device
-Plugins <https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/>`__
+For hardware resources that are needed by the Kubernetes applications, Device
+Plugins :cite:p:`k8s-docs-deviceplugin`
 can be used to manage those resources and advertise them to the kubelet for use by the Kubernetes
 applications. This allows resources such as “GPUs, high-performance NICs, FPGAs, InfiniBand adapters,
 and other similar computing resources that may require vendor-specific initialization and setup” to be
 managed and consumed via standard interfaces.
 
-:numref:`Kubernetes Networking Architecture` below shows the main building blocks of a Kubernetes networking solution:
+The figure `Kubernetes Networking Architecture` below shows the main building blocks of a Kubernetes networking solution:
 
 -  **Kubernetes Control Plane**: this is the core of a Kubernetes Cluster: the apiserver, the etcd cluster,
    the kube-scheduler, and the various controller-managers. The control plane (in particular the apiserver)
@@ -446,7 +441,7 @@ managed and consumed via standard interfaces.
    require different networking technologies, which would potentially require
    different CNI plugins. Also note that this is only required for the High Performance
    profile. An example CNI implementation that meets these requirements is the
-   `Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__.
+   Multus :cite:p:`multus`.
 
 -  **CNI Plugin (Additional)**: this is a CNI plugin that is used to provide
    additional networking needs to Pods that are not provided by the default CNI plugin.
@@ -456,7 +451,7 @@ managed and consumed via standard interfaces.
    and advertisement of vendor hardware devices. In particular, devices such as
    FPGA, SR-IOV NICs, SmartNICs, etc. can be made available to Pods by using Device Plugins.
    Note that alignment of these devices, CPU topology and huge pages will need the use
-   of the `Topology Manager <https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/>`__.
+   of the Topology Manager :cite:p:`k8s-docs-topologymanager`.
 
 -  **External / Application Load Balancing**: As Kubernetes Ingress, Egress and
    Services have no support for all the protocols needed in telecommunication
@@ -560,18 +555,18 @@ more or less anywhere.
 
    * - Network objects
      - Description
-   * - `Ingress <https://kubernetes.io/docs/concepts/services-networking/ingress/>`__
+   * - Ingress :cite:p:`k8s-docs-ingress`
      - Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend.
        An Ingress can be configured to give services URLs that are reachable externally, load balance traffic, terminate
        SSL, offer name-based virtual hosting, and so on.
-   * - `Service <https://kubernetes.io/docs/concepts/services-networking/service/>`__
+   * - Service :cite:p:`k8s-docs-service`
      - A service is a named abstraction of an application that runs on a set of pods. The application consists of a
        local port (for example, 3306) on which the proxy listens, and a selector that determines which pods answer
        requests sent through the proxy.
-   * - `EndpointSlices <https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/>`__
+   * - EndpointSlices :cite:p:`k8s-docs-endpointslices`
      - Endpoints and Endpointslices are a collection of objects that contain the IP addresses, (IPv4 and IPv6) of the
        pods that represent a service.
-   * - `Network Policies <https://kubernetes.io/docs/concepts/services-networking/network-policies/>`__
+   * - Network Policies :cite:p:`k8s-docs-networkpolicies`
      - A Network Policy defines which network traffic is allowed to ingress and egress from a set of pods.
 
 There is no need to explicitly define internal load balancers, server pools, service monitors, firewalls, and so on.
@@ -631,15 +626,14 @@ Multiple Networks and Advanced Configurations
 
 Kubernetes currently does not in itself support multiple networks, multiple-pod network attachments, or advanced
 network configurations. These are supported by using a
-`Container Network Interface <https://github.com/containernetworking/cni>`__ multiplexer such as
-`Multus <https://github.com/k8snetworkplumbingwg/multus-cni>`__.
+Container Network Interface :cite:p:`cni` multiplexer such as
+Multus :cite:p:`k8s-multus`.
 A considerable effort is being invested to add better network support to Kubernetes. All such activities are
 coordinated through the kubernetes
-`Network Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-network>`__ and its sub-groups.
-One such group, the `Network Plumbing Working Group <https://github.com/k8snetworkplumbingwg/community>`__ has
+Network Special Interest Group :cite:p:`sig-network` and its sub-groups.
+One such group, the Network Plumbing Working Group :cite:p:`k8s-npwg` has
 produced the
-`Kubernetes Network Custom Resource Definition De-facto Standard
-<https://github.com/k8snetworkplumbingwg/multi-net-spec>`__.
+Kubernetes Network Custom Resource Definition De-facto Standard :cite:p:`k8s-multi-net-spec`.
 This document describes how secondary networks can be defined and attached to pods.
 
 This de-facto standard defines, among other things, the following concepts:
@@ -732,8 +726,7 @@ Container Storage Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kubernetes supports the Container Storage Interface (CSI) as the stable solution for storage plugins (in-tree volume
-plugins are moved out of the Kubernetes repository). A list of CSI drivers is available
-`here: <https://kubernetes-csi.github.io/docs/drivers.html>`__.
+plugins are moved out of the Kubernetes repository).
 
 Running containers require ephemeral storage on which to run themselves (that is, storage on which the unpacked
 container image is stored and from which it is executed). This ephemeral storage lives and dies with the container and
@@ -765,7 +758,7 @@ provisioning of Persistent Volumes (as opposed to the default manual creation). 
 where the administration of storage is performed separately from the administration of Kubernetes-based workloads.
 
 Kubernetes does not place any restrictions on the storage that can be consumed by a workload, in terms of the
-requirements that are defined in the RM sections Storage Configurations (software) and Virtual Storage (hardware). The
+requirements that are defined in the RM sections Storage Configurations (hardware) and Virtual Storage (software). The
 only difference is that Kubernetes does not have a native object storage offering. Addressing this capability gap
 directly is outside of the scope of this RA.
 
@@ -778,38 +771,36 @@ Application package manager. The package manager must be able to manage the life
 framework to customize a set of parameters for its deployment. The requirement for the clusters is to expose a
 Kubernetes API for the package managers to use in the lifecycle management of the applications they manage. This must
 comply with the CNCF CNF conformance test. As it is not recommended to use a Kubernetes Application package manager with
-a server side component installed in the Kubernetes Cluster (for example, Tiller), `Helm v3 <https://helm.sh/docs/>`__
+a server side component installed in the Kubernetes Cluster (for example, Tiller), Helm v3 :cite:p:`helm-docs`
 is the chosen Kubernetes Application package manager.
 
 Custom Resources
 ~~~~~~~~~~~~~~~~
 
-`Custom resources <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/>`__ are
+`Custom resources :cite:p:`k8s-docs-cr` are
 extensions of the Kubernetes API that represent customizations of the Kubernetes installation. Core Kubernetes functions
 are also built using custom resources. This makes Kubernetes more modular. Two ways to add custom resources are the
 following:
 
--  `Custom Resource Definitions
-   <https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/>`__
+-  Custom Resource Definitions :cite:p:`k8s-docs-crd`
    (CRDs): Defining a CRD object creates new custom resource with a name and schema that are easy to use.
--  `API Server Aggregation
-   <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/>`__: This is an
+-  API Server Aggregation :cite:p:`k8s-docs-apisa`:
+   This is an
    additional API that, in a flexible way, extends Kubernetes beyond the core Kubernetes API.
 
 Operator Pattern
 ^^^^^^^^^^^^^^^^
 
-A `custom controller
-<https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers>`__
+A custom controller
+:cite:p:`k8s-docs-cc`
 is a control loop that watches a custom resource for changes and tries to keep the current state of the resource
 in sync with the desired state.
 
-An `operator pattern <https://kubernetes.io/docs/concepts/extend-kubernetes/operator/>`__ combines custom resources and
+The Operator pattern :cite:p:`k8s-docs-operator` combines custom resources and
 custom controllers. Operators are software extensions to Kubernetes that capture operational knowledge and automate
 usage of custom resources to manage applications, their components, and cloud infrastructure. Operators can have
-different capability levels. According to the `OperatorHub.io <https://operatorhub.io/>`__ repository, an operator can
-have the following different capability levels
-(`picture <https://operatorhub.io/static/images/capability-level-diagram.svg>`__):
+different capability levels. According to the OperatorHub.io :cite:p:`operatorhub` repository, an operator can
+have the following different capability levels:
 
 -  Basic install: Automated application provisioning and configuration management.
 -  Seamless upgrades: Patch and minor version upgrades are supported.
