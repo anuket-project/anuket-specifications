@@ -272,16 +272,16 @@ or events should be collected and monitored by monitoring tools.
 |         | Capability          |           |                                                                          |
 +=========+=====================+===========+==========================================================================+
 |i.pm.001 | Host CPU usage      |nanoseconds| Per Compute node. It maps to ETSI GS NFV-TST 008 V3.5.1                  |
-|         |                     |           | :cite:p:`etsigsnfvtst008` processor usage metric (Cloud        |
-|         |                     |           | Infrastructure internal).                                                |
+|         |                     |           | :cite:p:`etsigsnfvtst008` processor usage metric (Cloud Infrastructure   |
+|         |                     |           | internal).                                                               |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.002 | Virtual compute     |nanoseconds| Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1                     |
 |         | resource (vCPU)     |           | :cite:p:`etsigsnfvifa027` Mean vCPU usage and Peak vCPU usage (Cloud     |
 |         | usage               |           | Infrastructure external).                                                |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.003 | Host CPU            | %         | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.5.1                  |
-|         | utilisation         |           | :cite:p:`etsigsnfvtst008` processor usage metric (Cloud        |
-|         |                     |           | Infrastructure internal).                                                |
+|         | utilisation         |           | :cite:p:`etsigsnfvtst008` processor usage metric (Cloud Infrastructure   |
+|         |                     |           | internal).                                                               |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.004 | Virtual compute     | %         | Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1                     |
 |         | resource (vCPU)     |           | :cite:p:`etsigsnfvifa027` Mean vCPU usage and Peak vCPU usage (Cloud     |
