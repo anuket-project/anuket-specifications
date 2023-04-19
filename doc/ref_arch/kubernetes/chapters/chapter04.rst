@@ -251,7 +251,7 @@ following specifications:
      - Kubernetes conformance
      - The Kubernetes distribution, product, or installer used in the implementation must be listed in the
        :cite:t:`k8s-distributions` and marked (X) as conformant for the Kubernetes version defined in
-       :ref:`index:required component versions`.
+       :ref:`chapters/chapter01:required component versions`.
      - gen.cnt.03 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.k8s.002
@@ -286,7 +286,7 @@ following specifications:
    * - ra2.k8s.005
      - Kubernetes API Version
      - In alignment with the :cite:t:`k8s-version-skew-policy`, an implementation must use a Kubernetes version as per
-       the subcomponent versions table in :ref:`index:required component versions`.
+       the subcomponent versions table in :ref:`chapters/chapter01:required component versions`.
      -
      -
    * - ra2.k8s.006
