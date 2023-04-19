@@ -33,12 +33,3 @@ Table of Contents
     chapters/chapter06
     chapters/chapter07
     chapters/appendix-a
-
-Required component versions
----------------------------
-
-========== ===================
-Component  Required version(s)
-========== ===================
-Kubernetes 1.24
-========== ===================
