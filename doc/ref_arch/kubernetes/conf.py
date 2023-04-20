@@ -7,7 +7,8 @@ exclude_patterns = [
 ]
 extensions = [
     'sphinx.ext.intersphinx',
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'sphinxcontrib.bibtex'
 ]
 
 html_theme = "piccolo_theme"
@@ -51,3 +52,5 @@ html_theme_options = {
 html_logo = '_static/anuket-logo.png'
 html_favicon = '_static/favicon.ico'
 
+bibtex_bibfiles = ['refs.bib']
+bibtex_default_style = 'unsrt'
