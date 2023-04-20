@@ -1,8 +1,8 @@
 Security Guidance
 =================
 
-Introduction
-------------
+Introduction to Security Guidance
+---------------------------------
 
 Securing Kubernetes requires several layers of security features to provide end
 to end security for cloud native applications. It is recommended that:

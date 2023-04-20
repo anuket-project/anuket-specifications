@@ -1,8 +1,8 @@
 High Level Architecture
 =======================
 
-Introduction
-------------
+Introduction to High Level Architecture
+---------------------------------------
 
 The Anuket Reference Architecture (RA2) for Kubernetes based cloud infrastructure is intended to be an industry
 standard-independent Kubernetes reference architecture that is not tied to any specific offering or distribution.
@@ -32,7 +32,11 @@ that reflect the capabilities and features that the types of Cloud Infrastructur
 The figure below depicts a high-level view of the software features that apply to each instance profile (basic and
 high-performance).
 
-.. figure:: ../../../ref_model/figures/RM-ch05-sw-profile.png
+..
+   The original location of this figure was ../../../ref_model/figures/RM-ch05-sw-profile.png but it had to be copied to
+   the local folder during the GSMA transformation work.
+
+.. figure:: ../figures/RM-ch05-sw-profile.png
    :alt: (from RM): NFVI softwareprofiles
    :name: (from RM): NFVI software profiles
 
@@ -41,7 +45,11 @@ high-performance).
 In addition, the Figure (`NFVI hardware profiles and host associated capabilities` shown below)
 depicts the hardware profile features that apply to each instance profile.
 
-.. figure:: ../../../ref_model/figures/RM_chap5_fig_5_4_HW_profile.png
+..
+   The original location of this figure was ../../../ref_model/figures/RM_chap5_fig_5_4_HW_profile.png but it had to be
+   copied to the local folder during the GSMA transformation work.
+
+.. figure:: ../figures/RM_chap5_fig_5_4_HW_profile.png
    :alt: (from RM): NFVI hardware profiles and host associated capabilities
    :name: (from RM): NFVI hardware profiles and host associated capabilities
 
@@ -244,7 +252,7 @@ An example of an often used device plugin is the
 SR-IOV Network Device Plugin  :cite:p:`k8s-sriov-network-device-plugin`. The SR-IOV
 Network Device Plugin discovers and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is
 used to map VFs to scheduled pods. To use it, an SR-IOV CNI is required. A CNI multiplexer plugin (such as
-Multus CNI :cite:p:`k8s-multus`) is also required to provision additional secondary
+Multus CNI :cite:p:`github-multus`) is also required to provision additional secondary
 network interfaces for VFs (beyond the primary network interface). During pod creation, the SR-IOV CNI allocates an
 SR-IOV VF to a pod’s network namespace using the VF information given by the meta plugin, and on pod deletion releases
 the VF from the pod.
@@ -350,7 +358,7 @@ outside the Cluster:
 
 
 However, for more complex requirements, such as providing connectivity through acceleration hardware, there are three
-approaches that can be taken. :numref:`Comparison of example Kubernetes networking solutions` shows some of the
+approaches that can be taken. The `Comparison of example Kubernetes networking solutions` table below shows some of the
 differences between the networking solutions that consist of these options. It is important to note that different
 networking solutions require different descriptors from the Kubernetes workloads (specifically, the deployment
 artefacts, such as YAML files, and so on). Therefore, the networking solution should be agreed between the CNF
@@ -441,7 +449,7 @@ The figure `Kubernetes Networking Architecture` below shows the main building bl
    require different networking technologies, which would potentially require
    different CNI plugins. Also note that this is only required for the High Performance
    profile. An example CNI implementation that meets these requirements is the
-   Multus :cite:p:`multus`.
+   Multus :cite:p:`github-multus`.
 
 -  **CNI Plugin (Additional)**: this is a CNI plugin that is used to provide
    additional networking needs to Pods that are not provided by the default CNI plugin.
@@ -627,7 +635,7 @@ Multiple Networks and Advanced Configurations
 Kubernetes currently does not in itself support multiple networks, multiple-pod network attachments, or advanced
 network configurations. These are supported by using a
 Container Network Interface :cite:p:`cni` multiplexer such as
-Multus :cite:p:`k8s-multus`.
+Multus :cite:p:`github-multus`.
 A considerable effort is being invested to add better network support to Kubernetes. All such activities are
 coordinated through the kubernetes
 Network Special Interest Group :cite:p:`sig-network` and its sub-groups.

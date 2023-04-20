@@ -1,8 +1,8 @@
 Appendix A - Guidance For workload isolation (Multitenancy) with Kubernetes for application vendors
 ===================================================================================================
 
-Overview
---------
+Overview of Appendix A
+----------------------
 
 Problem statement: A single Kubernetes Cluster does not provide hard multitenancy\* by design. Within a Cluster,
 Kubernetes Namespace is a mechanism to provide Soft isolation multitenancy.

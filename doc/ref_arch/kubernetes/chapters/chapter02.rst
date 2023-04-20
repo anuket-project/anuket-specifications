@@ -1,8 +1,8 @@
 Architecture Requirements
 =========================
 
-Introduction
-------------
+Introduction for Archtecture Requirements
+-----------------------------------------
 
 This chapter will specialise the requirements defined in the overall Reference Model into Kubernetes-specific
 requirements. Additional, RA2-specific, entries are included in section
@@ -163,7 +163,7 @@ Cloud Infrastructure Software Profile Capabilities
      - Number of virtual cores per physical core; also known as CPU overbooking ratio that is required
      - 01:01
      - 01:01
-     - ra2.ch.004, ra2.ch.005 :ref:`chapters/chapter04:Kubernetes Node`
+     - ra2.ch.004, ra2.ch.005 :ref:`chapters/chapter04:kubernetes node`
    * - Internal Infrastructure Capabilities
      - i.cap.017
      - QoS enablement of the connection point (vNIC or interface)
@@ -1423,7 +1423,7 @@ Kubernetes Architecture Requirements
 
 The requirements in this section are to be delivered in addition to those in section `Reference Model
 Requirements <#reference-model-requirements>`_, and have been
-created to support the Principles defined in the :ref:`first chapter <chapters/chapter01:Overview>` of this
+created to support the Principles defined in the first chapter :ref:`chapters/chapter01:overview` of this
 Reference Architecture.
 
 The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised

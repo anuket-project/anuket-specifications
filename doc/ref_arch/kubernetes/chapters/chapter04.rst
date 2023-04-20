@@ -1,8 +1,8 @@
 Component Level Architecture
 ============================
 
-Introduction
-------------
+Introduction to Component Level Architecture
+--------------------------------------------
 
 This chapter describes in detail the Reference Architecture (RA2) for Kubernetes-based cloud infrastructure in terms
 of the functional capabilities and how they relate to the Reference Model (RM)
@@ -15,7 +15,7 @@ identifiers, which will follow the pattern: ``ra2.<section>.<index>``, e.g.,
 specifications will then be used as requirements input for the Reference Implementation based on RA2 specifications
 (RI2) and any vendor or community implementations.
 
-:numref:`Kubernetes Reference Architecture` below shows the architectural components that are described in the
+The `Kubernetes Reference Architecture` figure below shows the architectural components that are described in the
 subsequent sections of this chapter.
 
 .. figure:: ../figures/ch04_k8s_architecture.png
@@ -205,7 +205,7 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
      - tbd
    * - ra2.os.004
      - Disposable OS
-     - In order to support gen.cnt.02 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements` (immutable
+     - In order to support gen.cnt.02 in :ref:`chapters/chapter02:kubernetes architecture requirements` (immutable
        infrastructure), the Host OS must be disposable, meaning the configuration of the Host OS (and associated
        infrastructure such as VM or bare metal server) must be consistent - e.g. the system software and configuration
        of that software must be identical apart from those areas of configuration that must be different such as IP
@@ -253,15 +253,15 @@ the following specifications:
      - Kubernetes Conformance
      - The Kubernetes distribution, product, or installer used in the implementation must be listed in the
        :cite:t:`k8s-distributions` and marked (X) as conformant for the Kubernetes version defined in
-       :ref:`index:required component versions`.
-     - gen.cnt.03 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+       :ref:`chapters/chapter01:required component versions`.
+     - gen.cnt.03 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.k8s.002
      - Highly available etcd
      - An implementation must consist of either three, five or seven nodes running the etcd service (can be colocated
        on the control plane nodes, or can run on separate nodes, but not on worker nodes).
-     - gen.rsl.02 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`,
-       gen.avl.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - gen.rsl.02 in :ref:`chapters/chapter02:kubernetes architecture requirements`,
+       gen.avl.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.k8s.003
      - Highly available control plane
@@ -273,22 +273,22 @@ the following specifications:
      - Control plane services
      - A control plane node must run at least the following Kubernetes control plane services: kube-apiserver,
        kube-scheduler and kube-controller-manager.
-     - gen.rsl.02 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`,
-       gen.avl.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - gen.rsl.02 in :ref:`chapters/chapter02:kubernetes architecture requirements`,
+       gen.avl.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.k8s.004
      - Highly available worker nodes
      - An implementation must consist of at least one worker node per availability zone or fault domain to ensure the
        high availability and resilience of workloads managed by Kubernetes
-     - en.rsl.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`,
-       gen.avl.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`,
-       kcm.gen.02 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`,
+     - en.rsl.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`,
+       gen.avl.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`,
+       kcm.gen.02 in :ref:`chapters/chapter02:kubernetes architecture requirements`,
        inf.com.02 in :ref:`chapters/chapter02:Infrastructure Recommendations`
      -
    * - ra2.k8s.005
      - Kubernetes API Version
      - In alignment with the :cite:t:`k8s-version-skew-policy`, an implementation must use a Kubernetes version as per
-       the subcomponent versions table in :ref:`index:required component versions`.
+       the subcomponent versions table in :ref:`chapters/chapter01:required component versions`.
      -
      -
    * - ra2.k8s.006
@@ -303,7 +303,7 @@ the following specifications:
           Note, TopologyManager is enabled by default in Kubernetes v1.18 and later, with CPUManager enabled by default
           in Kubernetes v1.10 and later.
 
-     - e.cap.007 in :ref:`chapters/chapter02:Cloud Infrastructure Software Profile Capabilities`,
+     - e.cap.007 in :ref:`chapters/chapter02:cloud infrastructure software profile capabilities`,
        infra.com.cfg.002 in :ref:`ref_model:chapters/chapter05:Virtual Compute Profiles`, e.cap.013 :cite:t:`refmodel`
        Chapter 8, section Exposed Performance Optimisation Capabilities
      -
@@ -323,7 +323,7 @@ the following specifications:
      - To avoid resource starvation issues on nodes, the implementation of the architecture must reserve compute
        resources for system daemons and Kubernetes system daemons such as kubelet, container runtime, etc. Use the
        following kubelet flags: --reserved-cpus=[a-z], using two of a-z to reserve 2 SMT threads.
-     - i.cap.014 in :ref:`chapters/chapter02:Cloud Infrastructure Software Profile Capabilities`
+     - i.cap.014 in :ref:`chapters/chapter02:cloud infrastructure software profile capabilities`
      -
    * - ra2.k8s.009
      - CPU Pinning
@@ -347,7 +347,7 @@ the following specifications:
        --node-cidr-mask-size-ipv6 defaults to /24 for IPv4 and /64 for IPv6. kubelet:
        --feature-gates="IPv6DualStack=true". kube-proxy: --cluster-cidr=<IPv4 CIDR>, <IPv6 CIDR>
        --feature-gates="IPv6DualStack=true"
-     - inf.ntw.04 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - inf.ntw.04 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
    * - ra2.k8s.011
      - Anuket profile labels
@@ -388,7 +388,7 @@ the following specifications:
    * - ra2.k8s.017
      - Publishing Services (ServiceTypes)
      - Kubernetes should support NodePort Service (ServiceTypes) :cite:p:`k8s-services-publishing`.
-     - inf.ntw.17 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - inf.ntw.17 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
    * - ra2.k8s.018
      - Publishing Services (ServiceTypes)
@@ -399,7 +399,7 @@ the following specifications:
      - Kubernetes APIs
      - Kubernetes Beta APIs must be disabled, except for existing APIs as of Kubernetes 1.24 and only when a stable GA
        of the same version doesn't exist, or for APIs listed in RA2 Ch6 list of Mandatory API Groups.
-     - int.api.04 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - int.api.04 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
 
 Container runtimes
@@ -417,13 +417,13 @@ Container runtimes
    * - ra2.crt.001
      - Conformance with Open Container Initiative (OCI) 1.0 runtime spec
      - The container runtime must be implemented as per the OCI 1.0 :cite:p:`github-oci-specification` specification.
-     - gen.ost.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - gen.ost.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.crt.002
      - Kubernetes Container Runtime Interface (CRI)
      - The Kubernetes container runtime must be implemented as per the Kubernetes Container Runtime Interface (CRI)
        :cite:p:`k8s-blog-cri`
-     - gen.ost.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - gen.ost.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
 
 Networking solutions
@@ -445,45 +445,45 @@ Architecture they must be implemented as per the following specifications:
      - Centralised network administration
      - The networking solution deployed within the implementation must be administered through the Kubernetes API using
        native Kubernetes API resources and objects, or Custom Resources.
-     - inf.ntw.03 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - inf.ntw.03 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.002
      - Default Pod Network - CNI
      - The networking solution deployed within the implementation must use a CNI-conformant Network Plugin for the
        Default Pod Network, as the alternative (kubenet) does not support cross-node networking or Network Policies.
-     - gen.ost.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`,
-       inf.ntw.08 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - gen.ost.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`,
+       inf.ntw.08 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.003
      - Multiple connection points
      - The networking solution deployed within the implementation must support the capability to connect at least 5
        connection points to each Pod, which are additional to the default connection point managed by the default Pod
        network CNI plugin.
-     - e.cap.004 in :ref:`chapters/chapter02:Cloud Infrastructure Software Profile Capabilities`
+     - e.cap.004 in :ref:`chapters/chapter02:cloud infrastructure software profile capabilities`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.004
      - Multiple connection points presentation
      - The networking solution deployed within the implementation must ensure that all additional non-default connection
        points are requested by Pods using standard Kubernetes resource scheduling mechanisms such as annotations or
        container resource requests and limits.
-     - inf.ntw.03 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - inf.ntw.03 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.005
      - Multiplexer / meta-plugin
      - The networking solution deployed within the implementation may use a multiplexer/meta-plugin.
-     - inf.ntw.06 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`,
-       inf.ntw.07 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - inf.ntw.06 in :ref:`chapters/chapter02:kubernetes architecture requirements`,
+       inf.ntw.07 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.006
      - Multiplexer / meta-plugin CNI Conformance
      - If used, the selected multiplexer/meta-plugin must integrate with the Kubernetes control plane via CNI.
-     - gen.ost.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - gen.ost.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.007
      - Multiplexer / meta-plugin CNI Plugins
      - If used, the selected multiplexer/meta-plugin must support the use of multiple CNI-conformant Network Plugins.
-     - gen.ost.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`,
-       inf.ntw.06 :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - gen.ost.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`,
+       inf.ntw.06 :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.008
      - SR-IOV Device Plugin for High Performance
@@ -495,7 +495,7 @@ Architecture they must be implemented as per the following specifications:
      - Multiple connection points with multiplexer / meta-plugin
      - When a multiplexer/meta-plugin is used, the additional non-default connection points must be managed by a
        CNI-conformant Network Plugin.
-     - gen.ost.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - gen.ost.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.010
      - User plane networking
@@ -508,7 +508,7 @@ Architecture they must be implemented as per the following specifications:
      - When hosting workloads that require source and destination IP addresses to be preserved in the traffic headers,
        a NATless CNI plugin that exposes the pod IP directly to the external networks (e.g. Calico, MACVLAN or IPVLAN
        CNI plugins) must be used.
-     - inf.ntw.14 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - inf.ntw.14 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
    * - ra2.ntw.012
      - Device Plugins
@@ -520,7 +520,7 @@ Architecture they must be implemented as per the following specifications:
      - Dual stack CNI
      - The networking solution deployed within the implementation must use a CNI-conformant Network Plugin that is able
        to support dual-stack IPv4/IPv6 networking.
-     - inf.ntw.04 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - inf.ntw.04 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
    * - ra2.ntw.014
      - Security Groups
@@ -531,13 +531,13 @@ Architecture they must be implemented as per the following specifications:
      - IPAM plugin for multiplexer
      - When a multiplexer/meta-plugin is used, a CNI-conformant IPAM Network Plugin must be installed to allocate IP
        addresses for secondary network interfaces across all nodes of the cluster.
-     - inf.ntw.10 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - inf.ntw.10 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
    * - ra2.ntw.016
      - Kubernetes Network Custom Resource Definition De-facto Standard compliant multiplexer / meta-plugin
      - When a multiplexer/meta-plugin is used, the multiplexed / meta-plugin must implement version 1.2 of the
        :cite:t:`multi-net-spec`.
-     - gen.ost.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - gen.ost.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
 
 Storage components
@@ -578,7 +578,7 @@ Architecture they must be implemented as per the following specifications:
      - Persistent Volumes
      - An implementation may support Kubernetes Persistent Volumes (PV) to provide persistent storage for Pods.
        Persistent Volumes exist independent of the lifecycle of containers and/or pods.
-     - inf.stg.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - inf.stg.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
    * - ra2.stg.005
      - Storage Volume Types
@@ -628,13 +628,13 @@ use of a service mesh extends Kubernetes capabilities regarding observability an
 
 Network service mesh specifications are handled in section `Networking solutions <#networking-solutions>`__.
 
-Kubernetes Application package manager
---------------------------------------
+Kubernetes Application package managers
+---------------------------------------
 
 In order for the application package managers to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
 
-.. list-table:: Kubernetes Application Package Specifications
+.. list-table:: Kubernetes Application Package Managers Specifications
    :widths: 10 10 40 20 20
    :header-rows: 1
 
@@ -647,7 +647,7 @@ Architecture they must be implemented as per the following specifications:
      - API-based package management
      - A package manager must use the Kubernetes APIs to manage application artifacts. Cluster-side components such as
        Tiller must not be required.
-     - int.api.02 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - int.api.02 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
    * - ra2.pkg.002
      - Helm version 3
@@ -704,14 +704,14 @@ Architecture they must be implemented as per the following specifications:
      - Consumption of additional, non-default connection points
      - Any additional non-default connection points must be requested through the use of workload annotations
        or resource requests and limits within the container spec passed to the Kubernetes API Server.
-     - int.api.01 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - int.api.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - N/A
    * - ra2.app.007
      - Host Volumes
      - Workloads should not use hostPath volumes :cite:p:`k8s-doc-volumes-hostpath`, as Pods with identical
        configuration (such as those created from a PodTemplate) may behave differently on different nodes due to
        different files on the nodes.
-     - kcm.gen.02 in :ref:`chapters/chapter02:Kubernetes Architecture Requirements`
+     - kcm.gen.02 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - N/A
    * - ra2.app.008
      - Infrastructure dependency
