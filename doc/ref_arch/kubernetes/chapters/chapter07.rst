@@ -1,8 +1,8 @@
 Gaps, Innovation, and Development
 =================================
 
-Introduction
-------------
+Introduction to Gaps, Innovation, and Development
+-------------------------------------------------
 
 During the development of this Reference Architecture, gaps that require addressing may be identified. This chapter
 will highlight these gaps in detail and may provide proposed solutions. As a result, various “upstream” community
@@ -93,7 +93,7 @@ Native Multiple network interfaces on Pods
 Dynamic network management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Related requirements:** :ref:`inf.ntw.03 <chapters/chapter02:kubernetes architecture requirements>`
+   **Related requirements:** inf.ntw.03 in :ref:`chapters/chapter02:kubernetes architecture requirements`
 
    **Baseline project:** *Kubernetes*
 
