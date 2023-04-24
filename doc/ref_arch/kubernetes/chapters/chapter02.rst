@@ -785,7 +785,7 @@ Cloud Infrastructure Security Requirements
        disabling unnecessary services, applications and network protocols, configuring operating system user
        authentication, configuring resource controls, installing and configuring additional security controls where
        needed, and testing the security of the Operating System. (NIST SP 800-123)
-     - :ref:`chapters/chapter05:principles` and :ref:`chapters/chapter05:node hardening`
+     - :ref:`chapters/chapter05:security principles` and :ref:`chapters/chapter05:node hardening`
    * - System Hardening
      - sec.gen.005
      - The Platform **must** support Operating System level access control
@@ -862,12 +862,12 @@ Cloud Infrastructure Security Requirements
      - sec.sys.006
      - The Cloud Infrastructure must be able to utilise the Cloud Infrastructure Manager identity lifecycle
        management capabilities.
-     - :ref:`chapters/chapter05:principles`
+     - :ref:`chapters/chapter05:security principles`
    * - Platform and Access
      - sec.sys.007
      - The Platform **must** implement controls enforcing separation of duties and privileges, least privilege
        use and least common mechanism (Role-Based Access Control).
-     - :ref:`chapters/chapter05:principles` :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:security principles` :ref:`chapters/chapter05:securing kubernetes orchestrator`
    * - Platform and Access
      - sec.sys.008
      - The Platform **must** be able to assign the Entities that comprise the tenant networks to different

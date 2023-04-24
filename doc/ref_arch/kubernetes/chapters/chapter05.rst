@@ -66,8 +66,8 @@ secured within their perimeters. The various layers that come into picture are:
    containers. The communication over these APIs needs to be secured via
    different mechanisms like TLS encryption, API authentication via LDAP etc.
 
-Principles
-----------
+Security Principles
+-------------------
 
 The following are core principles to consider when securing cloud native
 applications:
