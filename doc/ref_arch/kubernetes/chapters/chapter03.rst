@@ -527,7 +527,7 @@ plane traffic require the capability to use an accelerated user space networking
 AF_XDP Architecture
 ^^^^^^^^^^^^^^^^^^^
 
-AF_XDP is an address family optimized for high-performance packet processing applications, described in Reference Model
+AF_XDP (Address Family for eXpress Data Path) is an address family optimized for high-performance packet processing applications, described in Reference Model
 Chapter 3 section :ref:`ref_model:chapters/chapter03:address family for xdp (af_xdp)`.
 
 .. figure:: ../figures/ch03-afxdp-operation.png
