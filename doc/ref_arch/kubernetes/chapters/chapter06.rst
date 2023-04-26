@@ -1,8 +1,8 @@
 API and Feature Testing requirements
 ====================================
 
-Introduction
-------------
+Introduction to API and Feature Testing requirement
+---------------------------------------------------
 
 The CNCF has defined a :cite:t:`k8s-testing-sig` to make it easier for the community to write and run tests, and to
 contribute, analyse and act upon test results. This chapter maps the requirements written in the previous chapters as

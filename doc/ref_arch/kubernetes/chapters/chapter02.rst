@@ -1,8 +1,8 @@
 Architecture Requirements
 =========================
 
-Introduction
-------------
+Introduction for Archtecture Requirements
+-----------------------------------------
 
 This chapter will specialise the requirements defined in the overall Reference Model into Kubernetes-specific
 requirements. Additional, RA2-specific, entries are included in section
@@ -163,7 +163,7 @@ Cloud Infrastructure Software Profile Capabilities
      - Number of virtual cores per physical core; also known as CPU overbooking ratio that is required
      - 01:01
      - 01:01
-     - ra2.ch.004, ra2.ch.005 :ref:`chapters/chapter04:Kubernetes Node`
+     - ra2.ch.004, ra2.ch.005 :ref:`chapters/chapter04:kubernetes node`
    * - Internal Infrastructure Capabilities
      - i.cap.017
      - QoS enablement of the connection point (vNIC or interface)
@@ -785,7 +785,7 @@ Cloud Infrastructure Security Requirements
        disabling unnecessary services, applications and network protocols, configuring operating system user
        authentication, configuring resource controls, installing and configuring additional security controls where
        needed, and testing the security of the Operating System. (NIST SP 800-123)
-     - :ref:`chapters/chapter05:principles` and :ref:`chapters/chapter05:node hardening`
+     - :ref:`chapters/chapter05:security principles` and :ref:`chapters/chapter05:node hardening`
    * - System Hardening
      - sec.gen.005
      - The Platform **must** support Operating System level access control
@@ -862,12 +862,12 @@ Cloud Infrastructure Security Requirements
      - sec.sys.006
      - The Cloud Infrastructure must be able to utilise the Cloud Infrastructure Manager identity lifecycle
        management capabilities.
-     - :ref:`chapters/chapter05:principles`
+     - :ref:`chapters/chapter05:security principles`
    * - Platform and Access
      - sec.sys.007
      - The Platform **must** implement controls enforcing separation of duties and privileges, least privilege
        use and least common mechanism (Role-Based Access Control).
-     - :ref:`chapters/chapter05:principles` :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:security principles` :ref:`chapters/chapter05:securing kubernetes orchestrator`
    * - Platform and Access
      - sec.sys.008
      - The Platform **must** be able to assign the Entities that comprise the tenant networks to different
@@ -1423,7 +1423,7 @@ Kubernetes Architecture Requirements
 
 The requirements in this section are to be delivered in addition to those in section `Reference Model
 Requirements <#reference-model-requirements>`_, and have been
-created to support the Principles defined in the :ref:`first chapter <chapters/chapter01:Overview>` of this
+created to support the Principles defined in the first chapter :ref:`chapters/chapter01:overview` of this
 Reference Architecture.
 
 The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised
