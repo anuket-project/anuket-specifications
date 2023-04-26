@@ -346,6 +346,11 @@ following specifications:
        --node-cidr-mask-size-ipv6 defaults to /24 for IPv4 and /64 for IPv6. kubelet:
        --feature-gates="IPv6DualStack=true". kube-proxy: --cluster-cidr=<IPv4 CIDR>, <IPv6 CIDR>
        --feature-gates="IPv6DualStack=true"
+       
+       .. note::
+
+        The IPv6DualStack feature is enabled by default in Kubernetes v1.21 or later.
+
      - inf.ntw.04 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
    * - ra2.k8s.011
