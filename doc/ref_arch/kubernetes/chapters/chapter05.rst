@@ -51,7 +51,7 @@ secured within their perimeters. The various layers that come into picture are:
    directories of the underlying OS, etc., and running in
    privileged mode.
 -  **Pods**: A Pod represents a set of running containers on a Kubernetes Cluster.
-   Kubernetes inherently offers pod security policies that define a set of
+   Kubernetes inherently offers a PodSecurity admission controller that define a set of
    conditions that a pod needs to run with in order to be accepted into the
    system. These policies help in ensuring the necessary checks for running the
    pods.
@@ -80,7 +80,7 @@ applications:
 
    -  Use Namespaces to establish security boundaries between tenants
    -  Create and define Cluster network policies
-   -  Run a Cluster-wide pod security policy
+   -  Run a Cluster-wide Pod Security admission controller
    -  Turn on Audit Logging
    -  Separate sensitive workloads using Namespaces
    -  Secure tenant metadata Access

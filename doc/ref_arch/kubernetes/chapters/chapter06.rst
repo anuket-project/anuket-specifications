@@ -195,9 +195,6 @@ Auth Special Interest Group :cite:p:`k8s-api-sig-auth`
    * - Feature:NodeAuthorizer
      - X
      - Setting existing and non-existent attributes should exit with the Forbidden error, not a NotFound error
-   * - Feature:PodSecurityPolicy
-     -
-     - Should enforce the restricted policy.PodSecurityPolicy
    * - NodeFeature:FSGroup
      - X
      - ServiceAccounts should set ownership and permission when RunAsUser or FsGroup is present
