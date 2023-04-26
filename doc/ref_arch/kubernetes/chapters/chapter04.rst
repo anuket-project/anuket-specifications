@@ -346,7 +346,7 @@ following specifications:
        --node-cidr-mask-size-ipv6 defaults to /24 for IPv4 and /64 for IPv6. kubelet:
        --feature-gates="IPv6DualStack=true". kube-proxy: --cluster-cidr=<IPv4 CIDR>, <IPv6 CIDR>
        --feature-gates="IPv6DualStack=true"
-       
+
        .. note::
 
         The IPv6DualStack feature is enabled by default in Kubernetes v1.21 or later.
@@ -602,7 +602,7 @@ Architecture they must be implemented according to the following specifications:
      -
      -
    * - ra2.stg.007
-     -
+     - Storage Classes
      - An implementation should use Kubernetes Storage Classes to support automation and the separation of concerns
        between providers of a service and consumers of the service.
      -
