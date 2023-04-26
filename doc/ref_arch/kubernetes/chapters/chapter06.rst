@@ -50,7 +50,7 @@ APIs that are in following stages can be made mandatory:
 
 The Kubernetes API reference is available here :cite:p:`k8s-api-reference`.
 
-The list of :cite:t:`k8s-v1.23-api-groups` that are mandatory is:
+The list of :cite:t:`k8s-v1.26-api-groups` that are mandatory is:
 
 .. list-table:: Mandatory API Groups
    :widths: 30 30
@@ -85,7 +85,7 @@ The list of :cite:t:`k8s-v1.23-api-groups` that are mandatory is:
    * - events.k8s.io
      - v1
    * - flowcontrol.apiserver.k8s.io
-     - v1beta2, v1beta1
+     - v1beta2
    * - networking.k8s.io
      - v1
    * - node.k8s.io
