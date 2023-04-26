@@ -350,7 +350,7 @@ outside the Cluster:
 
 
 However, for more complex requirements, such as providing connectivity through acceleration hardware, there are three
-approaches that can be taken. :numref:`Comparison of example Kubernetes networking solutions` shows some of the
+approaches that can be taken. The Comparison of example Kubernetes networking solutions table below shows some of the
 differences between the networking solutions that consist of these options. It is important to note that different
 networking solutions require different descriptors from the Kubernetes workloads (specifically, the deployment
 artefacts, such as YAML files, and so on). Therefore, the networking solution should be agreed between the CNF
@@ -527,21 +527,21 @@ plane traffic require the capability to use an accelerated user space networking
 AF_XDP Architecture
 ^^^^^^^^^^^^^^^^^^^
 
-AF_XDP (Address Family for eXpress Data Path) is an address family optimized for high-performance packet processing applications, described in Reference Model
-Chapter 3 section :ref:`ref_model:chapters/chapter03:address family for xdp (af_xdp)`.
+AF_XDP (Address Family for eXpress Data Path) is an address family optimized for high-performance packet processing
+applications, described in Reference Model Chapter 3 section Address Family For XDP (AF_XDP) :cite:p:`refmodel`.
 
 .. figure:: ../figures/ch03-afxdp-operation.png
    :alt: Device Plugin Operation
    :name: AF_XDP Operation
 
-The :cite:p:`afxdp-device-plugin`__ running with higher privileges, is loading the eBPF program. The AF_XDP Device
+The :cite:p:`afxdp-device-plugin` running with higher privileges, is loading the eBPF program. The AF_XDP Device
 Plugin provides the netdev name which the AF_XDP CNI moves into the pod namespace. That way the AF_XDP Socket file
 descriptor is provided (via UNIX domain socket) to the application container after the pod has started.  The CNI
 provides support to set appropriate ethtool filters, and does not rename the netdev which remains in the UP state.
 
 Such applications can have pods with multiple network interfaces of which one is AF_XDP, and on that interface run user
-space libraries for AF_XDP from project :cite:p:`cndp`__, or directly receive and send raw packets over AF_XDP. DPDK
-applications can use the :cite:p:`afxdp-pmd`__.
+space libraries for AF_XDP from project :cite:p:`cndp`, or directly receive and send raw packets over AF_XDP. DPDK
+applications can use the :cite:p:`afxdp-pmd`.
 
 Kubernetes Networking Semantics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
