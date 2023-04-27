@@ -703,7 +703,7 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.010
      - Node Feature Discovery (NFD)
-     - Workload descriptors must use the labels advertised by :cite:t:`k8s-nfd-sig` to indicate which node software of
+     - Workload descriptors should use the labels advertised by :cite:t:`k8s-nfd-sig` to indicate which node software or
        hardware features they need.
      - TBD
      - N/A
