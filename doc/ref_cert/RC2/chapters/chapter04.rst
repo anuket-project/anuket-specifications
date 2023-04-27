@@ -282,16 +282,16 @@ for Kubernetes workloads.
        steams.
      - `Kubernetes documentation <https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/>`__
      - Must
-   * - ra2.app.046
+   * - ra2.app.047
+     - The Pods of the CNF should not use the host ports. Using the host ports ties the CNF to a specific node, thereby
+       making the CNF less portable and scalable.
+     -
+     - Must
+   * - ra2.app.048
      - If SELinux is used in the Pods of the CNF, the options used to escalate privileges should not be allowed. The
        options spec.securityContext.seLinuxOptions.type, spec.containers[*].securityContext.seLinuxOptions.type,
        spec.initContainers[*].securityContext.seLinuxOptions, and
        spec.ephemeralContainers[*].securityContext.seLinuxOptions.type must either be unset altogether or set to one of
        the following allowed values container_t, container_init_t, or container_kvm_t.
-     -
-     - Must
-   * - ra2.app.047
-     - The Pods of the CNF should not use the host ports. Using the host ports ties the CNF to a specific node, thereby
-       making the CNF less portable and scalable.
      -
      - Must
