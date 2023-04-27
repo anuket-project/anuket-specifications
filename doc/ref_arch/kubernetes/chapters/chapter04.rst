@@ -683,7 +683,7 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.007
      - Host Volumes
-     - Workloads should not use hostPath volumes :cite:p:`k8s-doc-volumes-hostpath`, as Pods with identical
+     - Workloads must not use hostPath volumes :cite:p:`k8s-doc-volumes-hostpath`, as Pods with identical
        configuration (such as those created from a PodTemplate) may behave differently on different nodes due to
        different files on the nodes.
      - kcm.gen.02 in :ref:`chapters/chapter02:kubernetes architecture requirements`
