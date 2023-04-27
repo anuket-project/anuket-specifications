@@ -914,7 +914,7 @@ Architecture, they must be implemented according to the following specifications
      - Host ports
      - The Pods of the CNF should not use the host ports. Using the host ports ties the CNF to a specific node, thereby
        making the CNF less portable and scalable.
-     -
+     - :cite:t:`cnf-testsuite-hostport_not_used`
      - N/A
    * - ra2.app.048
      - SELinux options
