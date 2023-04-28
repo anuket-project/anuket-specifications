@@ -42,5 +42,5 @@ jobs:
       with:
         name: ra2-gsma-doc
         path: |
-          doc/ref_arch/kubernetes/gsma/ra2.doc
+          doc/ref_arch/kubernetes/gsma/ra2.docx
 
