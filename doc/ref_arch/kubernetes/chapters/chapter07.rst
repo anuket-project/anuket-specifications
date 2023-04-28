@@ -158,5 +158,5 @@ application requires system privileges the container either needs to run in priv
 to provide random system UIDs. Randomised UIDs result in errors when the application needs to set kernel capabilities
 (e.g., in case of VLAN trunking) or when a Pod shares data with other Pods via persistent storage. The
 "privileged mode" solution is not secure while "random UID" solution is error prone, and therefore these techniques
-should not be used. Support for proper user namespaces in Kubernetes is under implementation
-:cite:t:`kubernetes-kep-user-namespaces`.
+should not be used. Support for proper user namespaces in Kubernetes has been introduced as alpha feature in
+Kubernetes 1.25 :cite:t:`kubernetes-user-namespaces` (relevant KEP :cite:t:`kubernetes-kep-user-namespaces`).

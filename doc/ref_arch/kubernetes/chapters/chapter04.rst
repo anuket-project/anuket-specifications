@@ -190,10 +190,10 @@ For a Host OS to be compliant with this Reference Architecture, it must meet the
      - tbd
    * - ra2.os.002
      - Linux kernel version
-     - A version of the Linux kernel that is compatible with kubeadm - this has been chosen as the baseline because
-       kubeadm is focused on installing and managing the lifecycle of Kubernetes and nothing else, hence it is easily
-       integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure,
-       cluster add-ons, and so on.
+     - A version of the Linux kernel that is compatible with container runtimes and kubeadm - this has been chosen as
+       the baseline because kubeadm is focused on installing and managing the lifecycle of Kubernetes and nothing else,
+       hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of
+       the infrastructure, cluster add-ons, and so on.
      - tbd
      - tbd
    * - ra2.os.003
@@ -226,8 +226,9 @@ Table 4.3 lists the kernel versions that comply with this Reference Architecture
      - Kernel Version(s)
      - Notes
    * - Linux
-     - 3.10+
-     -
+     - 4.x
+     - The overlay filesystem snapshotter, used by default by containerd, uses features that were finalized in the 4.x
+       kernel series.
    * - Windows
      - 1809 (10.0.17763)
      - For worker nodes only.
@@ -345,6 +346,11 @@ following specifications:
        --node-cidr-mask-size-ipv6 defaults to /24 for IPv4 and /64 for IPv6. kubelet:
        --feature-gates="IPv6DualStack=true". kube-proxy: --cluster-cidr=<IPv4 CIDR>, <IPv6 CIDR>
        --feature-gates="IPv6DualStack=true"
+
+       .. note::
+
+        The IPv6DualStack feature is enabled by default in Kubernetes v1.21 or later.
+
      - inf.ntw.04 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
    * - ra2.k8s.011
@@ -596,7 +602,7 @@ Architecture they must be implemented according to the following specifications:
      -
      -
    * - ra2.stg.007
-     -
+     - Storage Classes
      - An implementation should use Kubernetes Storage Classes to support automation and the separation of concerns
        between providers of a service and consumers of the service.
      -

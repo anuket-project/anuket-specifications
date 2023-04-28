@@ -804,7 +804,7 @@ is the chosen Kubernetes Application package manager.
 Custom Resources
 ~~~~~~~~~~~~~~~~
 
-`Custom resources :cite:p:`k8s-docs-cr` are
+Custom resources :cite:p:`k8s-docs-cr` are
 extensions of the Kubernetes API that represent customizations of the Kubernetes installation. Core Kubernetes functions
 are also built using custom resources. This makes Kubernetes more modular. Two ways to add custom resources are the
 following:
