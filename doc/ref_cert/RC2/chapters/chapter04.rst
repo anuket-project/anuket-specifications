@@ -50,33 +50,6 @@ for Kubernetes workloads.
      - High-level test definition
      - Test name and project
      - Priority
-   * - ra2.app.001
-     - Specifies the container's root filesystem.
-     - `Root <https://github.com/opencontainers/runtime-spec/blob/master/config.md>`__
-       Parameter Group (OCI Spec)
-     - Must
-   * - ra2.app.002
-     - Specifies additional mounts beyond root.
-     - `Mounts <https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts>`__
-       Parameter Group (OCI Spec)
-     - Must
-   * - ra2.app.003
-     - Specifies the container process.
-     - `Process <https://github.com/opencontainers/runtime-spec/blob/master/config.md#process>`__
-       Parameter Group (OCI Spec)
-     - Must
-   * - ra2.app.004
-     - Specifies the container's hostname as seen by processes running inside
-       the container.
-     - `Hostname <https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname>`__
-       Parameter Group (OCI Spec)
-     - Must
-   * - ra2.app.005
-     - User for the process is a platform-specific structure that allows
-       specific control over which user the process runs as.
-     - `User <https://github.com/opencontainers/runtime-spec/blob/master/config.md#user>`__
-       Parameter Group (OCI Spec)
-     - Must
    * - ra2.app.006
      - Consumption of additional, non-default connection points.
        Any additional non-default connection points must be requested
@@ -86,11 +59,9 @@ for Kubernetes workloads.
      - :ref:`int.api.01 <chapters/chapter02:Kubernetes Architecture Requirements>`
      - Must
    * - ra2.app.007
-     - Host Volumes:  Workloads should not use hostPath volumes, as
-       `Pods with identical configuration
-       <https://kubernetes.io/docs/concepts/storage/volumes/#hostpath>`__
-       (such as those created from a PodTemplate) may behave differently on
-       different nodes due to different files on the nodes.
+     - Workloads must not use `hostPath volumes <https://kubernetes.io/docs/concepts/storage/volumes/#hostpath>`__, as
+       Pods with identical configuration (such as those created from a PodTemplate) may behave differently on different
+       nodes due to different files on the nodes.
      - :ref:`kcm.gen.02 <chapters/chapter02:Kubernetes Architecture Requirements>`
      - Must
    * - ra2.app.008
@@ -264,15 +235,12 @@ for Kubernetes workloads.
      - `Kubernetes documentation <https://kubernetes.io/docs/concepts/configuration/configmap/#configmap-immutable>`__
      - Must
    * - ra2.app.038
-     - Horizontal scaling:Increasing and decreasing of the CNF capacity should
-       be implemented using horizontal scaling. If horizontal
-       scaling is supported, automatic scaling must be possible using
-       Kubernetes
-       `Horizontal Pod Autoscale (HPA)
-       <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>`__
+     - If the CNF supports scaling, increasing and decreasing its capacity must be implemented using horizontal scaling.
+       If horizontal scaling is supported, automatic scaling must be possible using Kubernetes Horizontal Pod Autoscale
+       `Horizontal Pod Autoscale (HPA) <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>`__
        feature.
      - TBD
-     - Should
+     - Must
    * - ra2.app.039
      - CNF image size: The different container images of the CNF should not be
        bigger than 5GB.
@@ -285,10 +253,9 @@ for Kubernetes workloads.
      - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-the-cnf-have-a-reasonable-startup-time-reasonable_startup_time>`__
      - Should (Not)
    * - ra2.app.041
-     - No privileged mode: None of the Pods of the CNF should run in
-       privileged mode.
+     - Pods of the CNF must not run in privileged mode.
      - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-there-are-any-privileged-containers-kubscape-version-privileged_containers>`__
-     - Should (Not)
+     - Must (Not)
    * - ra2.app.042
      - No root user: None of the Pods of the CNF should run as a root user.
      - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-any-containers-are-running-as-a-root-user-checks-the-user-outside-the-container-that-is-running-dockerd-non_root_user>`__
@@ -300,14 +267,31 @@ for Kubernetes workloads.
        leged-containers-kubscape-version-privileged_containers>`__
      - Should (Not)
    * - ra2.app.044
-     - Non-root user: All Pods of the CNF should be able to execute with a
-       non-root user having a non-root group. Both runAsUser and
-       runAsGroup attributes should be set to a greater value than 999.
+     - All the Pods of the CNF must be able to execute with a non-root user having a non-root group. Both the
+       runAsUser and the runAsGroup attributes must be set to a value greater than 999.
      - `CNCF CNF Testsuite <https://github.com/cncf/cnf-testsuite/blob/main/RATIONALE.md#to-check-if-containers-are-running-with-non-root-user-with-non-root-membership-non_root_containers>`__
-     - Should
+     - Must
    * - ra2.app.045
      - Labels: Pods of the CNF should define at least the following labels:
        app.kubernetes.io/name, app.kubernetes.io/version
        and app.kubernetes.io/part-of
      - `Kubernetes documentation <https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/>`__
      - Should
+   * - ra2.app.046
+     - The Pods of the CNF must direct their logs to sdout or stderr. This enables the treatment of the logs as event
+       steams.
+     - `Kubernetes documentation <https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/>`__
+     - Must
+   * - ra2.app.047
+     - The Pods of the CNF should not use the host ports. Using the host ports ties the CNF to a specific node, thereby
+       making the CNF less portable and scalable.
+     -
+     - Must
+   * - ra2.app.048
+     - If SELinux is used in the Pods of the CNF, the options used to escalate privileges should not be allowed. The
+       options spec.securityContext.seLinuxOptions.type, spec.containers[*].securityContext.seLinuxOptions.type,
+       spec.initContainers[*].securityContext.seLinuxOptions, and
+       spec.ephemeralContainers[*].securityContext.seLinuxOptions.type must either be unset altogether or set to one of
+       the following allowed values container_t, container_init_t, or container_kvm_t.
+     -
+     - Must
