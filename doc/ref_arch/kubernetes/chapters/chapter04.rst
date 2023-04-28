@@ -15,7 +15,7 @@ identifiers, which will follow the pattern: ``ra2.<section>.<index>``, for examp
 specifications will then be used as requirements input for the Reference Implementation based on RA2 specifications
 (RI2) and any vendor or community implementations.
 
-The `Kubernetes Reference Architecture` figure below shows the architectural components that are described in the
+The Kubernetes Reference Architecture figure below shows the architectural components that are described in the
 subsequent sections of this chapter.
 
 .. figure:: ../figures/ch04_k8s_architecture.png
