@@ -15,7 +15,7 @@ identifiers, which will follow the pattern: ``ra2.<section>.<index>``, for examp
 specifications will then be used as requirements input for the Reference Implementation based on RA2 specifications
 (RI2) and any vendor or community implementations.
 
-The `Kubernetes Reference Architecture` figure below shows the architectural components that are described in the
+The Kubernetes Reference Architecture figure below shows the architectural components that are described in the
 subsequent sections of this chapter.
 
 .. figure:: ../figures/ch04_k8s_architecture.png
@@ -190,10 +190,10 @@ For a Host OS to be compliant with this Reference Architecture, it must meet the
      - tbd
    * - ra2.os.002
      - Linux kernel version
-     - A version of the Linux kernel that is compatible with kubeadm - this has been chosen as the baseline because
-       kubeadm is focused on installing and managing the lifecycle of Kubernetes and nothing else, hence it is easily
-       integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure,
-       cluster add-ons, and so on.
+     - A version of the Linux kernel that is compatible with container runtimes and kubeadm - this has been chosen as
+       the baseline because kubeadm is focused on installing and managing the lifecycle of Kubernetes and nothing else,
+       hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of
+       the infrastructure, cluster add-ons, and so on.
      - tbd
      - tbd
    * - ra2.os.003
@@ -226,8 +226,9 @@ Table 4.3 lists the kernel versions that comply with this Reference Architecture
      - Kernel Version(s)
      - Notes
    * - Linux
-     - 3.10+
-     -
+     - 4.x
+     - The overlay filesystem snapshotter, used by default by containerd, uses features that were finalized in the 4.x
+       kernel series.
    * - Windows
      - 1809 (10.0.17763)
      - For worker nodes only.
@@ -345,6 +346,11 @@ following specifications:
        --node-cidr-mask-size-ipv6 defaults to /24 for IPv4 and /64 for IPv6. kubelet:
        --feature-gates="IPv6DualStack=true". kube-proxy: --cluster-cidr=<IPv4 CIDR>, <IPv6 CIDR>
        --feature-gates="IPv6DualStack=true"
+
+       .. note::
+
+        The IPv6DualStack feature is enabled by default in Kubernetes v1.21 or later.
+
      - inf.ntw.04 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      -
    * - ra2.k8s.011
@@ -596,7 +602,7 @@ Architecture they must be implemented according to the following specifications:
      -
      -
    * - ra2.stg.007
-     -
+     - Storage Classes
      - An implementation should use Kubernetes Storage Classes to support automation and the separation of concerns
        between providers of a service and consumers of the service.
      -
@@ -675,32 +681,6 @@ Architecture, they must be implemented according to the following specifications
      - Details
      - Requirement Trace
      - Reference Implementation Trace
-   * - ra2.app.001
-     - Root Parameter Group (OCI Spec) :cite:p:`oci-spec`
-     - Specifies the container's root filesystem.
-     - TBD
-     - N/A
-   * - ra2.app.002
-     - Mounts Parameter Group (OCI Spec) :cite:p:`oci-spec-mount`
-     - Specifies additional mounts beyond root.
-     - TBD
-     - N/A
-   * - ra2.app.003
-     - Process Parameter Group (OCI Spec) :cite:p:`oci-spec-process`
-     - Specifies the container process.
-     - TBD
-     - N/A
-   * - ra2.app.004
-     - Hostname Parameter Group (OCI Spec) :cite:p:`oci-spec-hostname`
-     - Specifies the container's hostname as seen by the processes running inside the container.
-     - TBD
-     - N/A
-   * - ra2.app.005
-     - User Parameter Group (OCI Spec) :cite:p:`oci-spec-user`
-     - The user for the process is a platform-specific structure that allows specific control over which user the
-       process runs as.
-     - TBD
-     - N/A
    * - ra2.app.006
      - Consumption of additional, non-default connection points
      - Any additional non-default connection points must be requested through the use of workload annotations
@@ -709,7 +689,7 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.007
      - Host Volumes
-     - Workloads should not use hostPath volumes :cite:p:`k8s-doc-volumes-hostpath`, as Pods with identical
+     - Workloads must not use hostPath volumes :cite:p:`k8s-doc-volumes-hostpath`, as Pods with identical
        configuration (such as those created from a PodTemplate) may behave differently on different nodes due to
        different files on the nodes.
      - kcm.gen.02 in :ref:`chapters/chapter02:kubernetes architecture requirements`
@@ -729,8 +709,8 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.010
      - Node Feature Discovery (NFD)
-     - Workload descriptors must use the labels advertised by :cite:t:`k8s-nfd-sig` to indicate which node software of
-       hardware features they need.
+     - If the workload requires special hardware or software features from the worker node, these requirements must be
+       described in the workload descriptors using the labels advertised by :cite:t:`k8s-nfd-sig`.
      - TBD
      - N/A
    * - ra2.app.011
@@ -867,7 +847,7 @@ Architecture, they must be implemented according to the following specifications
      - Container image tags
      - All the referred container images in the Pod manifests must be referred by a version tag pointing to a concrete
        version of the image. The latest tag must not be used.
-     -
+     - :cite:t:`k8s-containers-images`
      - N/A
    * - ra2.app.035
      - No hardcoded IP addresses
@@ -886,8 +866,9 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.038
      - Horizontal scaling
-     - Increasing and decreasing of the CNF capacity should be implemented using horizontal scaling. If horizontal
-       scaling is supported, automatic scaling must be possible using Kubernetes Horizontal Pod Autoscale (HPA)
+     - If the CNF supports scaling, increasing and decreasing its capacity must be implemented using horizontal scaling.
+       If horizontal scaling is supported, automatic scaling must be possible using Kubernetes Horizontal Pod Autoscale
+       (HPA)
        :cite:p:`k8s-hpa` feature.
      - TBD
      - N/A
@@ -904,12 +885,12 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.041
      - No privileged mode
-     - None of the Pods of the CNF should run in privileged mode.
+     - Pods of the CNF must not run in privileged mode.
      - :cite:t:`cnf-testsuite-privileged_containers`
      - N/A
    * - ra2.app.042
      - No root user
-     - None of the Pods of the CNF should run as a root user.
+     - Pods of the CNF must not run as a root user.
      - :cite:t:`cnf-testsuite-non_root_user`
      - N/A
    * - ra2.app.043
@@ -919,8 +900,8 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.044
      - Non-root user
-     - All the Pods of the CNF should be able to execute with a non-root user having a non-root group. Both the
-       runAsUser and the runAsGroup attributes should be set to a value greater than 999.
+     - All the Pods of the CNF must be able to execute with a non-root user having a non-root group. Both the
+       runAsUser and the runAsGroup attributes must be set to a value greater than 999.
      - :cite:t:`cnf-testsuite-non_root_containers`
      - N/A
    * - ra2.app.045
@@ -931,7 +912,7 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.046
      - Log output
-     - The Pods of the CNF should direct their logs to sdout or stderr. This enables the treatment of the logs as event
+     - The Pods of the CNF must direct their logs to sdout or stderr. This enables the treatment of the logs as event
        steams.
      - :cite:t:`12-factor-app-logs`
      - N/A
@@ -939,7 +920,7 @@ Architecture, they must be implemented according to the following specifications
      - Host ports
      - The Pods of the CNF should not use the host ports. Using the host ports ties the CNF to a specific node, thereby
        making the CNF less portable and scalable.
-     -
+     - :cite:t:`cnf-testsuite-hostport_not_used`
      - N/A
    * - ra2.app.048
      - SELinux options
@@ -950,13 +931,6 @@ Architecture, they must be implemented according to the following specifications
        the following allowed values container_t, container_init_t, or container_kvm_t.
      -
      - N/A
-   * - ra2.app.049
-     - Image tags
-     - The `latest` tag should not be used in the images of the Pods of the CNF, as it does not specify a concrete
-       version of the container.
-     - :cite:t:`k8s-containers-images`
-     - N/A
-
 
 Additional required components
 ------------------------------
