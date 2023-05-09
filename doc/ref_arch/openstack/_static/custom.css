@@ -1,0 +1,66 @@
+/* Changing the color of top navbar in piccolo */
+div#top_nav nav {
+    background-color: #16326c;
+    padding:0.5rem;
+}
+
+/* Changing the size of the logo in the top navbar in piccolo */
+div#top_nav nav h1 img {
+	height: 2rem;
+}
+
+/* Changing the margin of the main text in piccolo */
+div.document {
+	margin-left: 10rem;
+	margin-right: 20rem;
+}
+
+/* Changing link color in piccolo */
+a {
+	color: #007574ff;
+}
+
+/* Changing link color in the left sidebar in piccolo */
+div.sphinxsidebar ul li a.current {
+	color: #007574ff;
+}
+
+/* Changing the hover color in the left sidebar in piccolo */
+div.sphinxsidebar ul li a:hover {
+	color: #007574ff;
+}
+
+/* Changing the hover color in the right sidebar in piccolo */
+div#right_sidebar ul li a:hover {
+	color: #007574ff;
+}
+
+/* Changing the color of the > icon next to Page contents */
+div#right_sidebar p span.icon {
+	color: #007574ff;
+}
+
+/* Changing the color of the Page contents title */
+div#right_sidebar p span {
+	color: #007574ff;
+}
+
+/* Changing the color of the search button */
+div.document form input[type=submit], div.document form button {
+	background-color: #16326c;
+}
+
+/* Changing the color of the Search text in the Search button */
+div#searchbox form.search input[type="submit"] {
+	color: #16326c;
+}
+
+/* Changing the color of the > icon next to the collapsed Page contents */
+div#show_right_sidebar p span.icon {
+	color: rgba(0, 0, 0, 0.6);
+}
+
+/* Removing option to switch to dark mode */
+div#top_nav nav a#mode_toggle, div#top_nav nav a#source_link {
+	display: none;
+}
