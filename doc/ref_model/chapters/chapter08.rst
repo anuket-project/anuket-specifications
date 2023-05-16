@@ -912,11 +912,12 @@ connectivity in between the Network Functions. The O-Clouds also have the set of
 Acceleration Adaptation Layer (AAL) of how they are used from the Network Functions for their Radio-near functions.
 
 A potential alignment between Anuket and O-RAN that could be investigated is to see if Anuket could serve as an
-under-cloud to the O-Cloud. This would require Anuket to support the O-RAN HW Accelerators (as stated in RM Ch3 section
-Example of O-RAN AAL Interface :ref:`chapters/chapter03:example of o-ran acceleration abstraction layer interface`
-and a Layer2-centric networking infrastructure. It would enable the operators to have an internal Telco Cloud that
-supports both Core and RAN Network Functions, and in the extension possibly also other workloads in a shared Cloud
-that supports required Telco features and characteristics.
+under-cloud to the O-Cloud. This would require an analyzis how an Anuket Reference Architecure based on open source
+technology can support the O-RAN HW Accelerators (as stated in RM Ch3 section Example of O-RAN AAL Interface
+:ref:`chapters/chapter03:example of o-ran acceleration abstraction layer interface` and a Layer2-centric networking
+infrastructure. It would enable the operators to have an internal Telco Cloud that supports both Core and RAN Network
+Functions, and in the extension possibly also other workloads in a shared Cloud that supports required Telco features
+and characteristics.
 
 .. figure:: ../figures/RM-Ch08-Anuket_as_undercloud_O-RAN-Image-1.png
    :name: Anuket as potential under-cloud to O-Clouds in O-RAN
