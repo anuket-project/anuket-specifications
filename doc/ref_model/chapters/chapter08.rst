@@ -918,6 +918,8 @@ and a Layer2-centric networking infrastructure. It would enable the operators to
 supports both Core and RAN Network Functions, and in the extension possibly also other workloads in a shared Cloud
 that supports required Telco features and characteristics.
 
+The O-Cloud infrastructure software could either be running on Anuket infrastructure provided as Bare Metal servers (that currently is not defined as a Reference Architecture) or using one of the existing Reference Architectures for VMs or Containers. It should consequently be investigated if there are any new needs from the Reference Architectures to fulfill the O-RAN required constructs for AAL and Layer2-centric networking and potentially if there should be a Bare Metal hardware Reference Architecture addition.
+
 .. figure:: ../figures/RM-Ch08-Anuket_as_undercloud_O-RAN-Image-1.png
    :name: Anuket as potential under-cloud to O-Clouds in O-RAN
    :alt: Anuket as potential under-cloud to O-Clouds in O-RAN
