@@ -357,51 +357,45 @@ The hardware infrastructure manager needs to support the following functional as
 - **Additional Management Functions**: include software and configuration life cycle management, identity management,
   access management, policy management (e.g. to enforce security policies), etc.
 
-The Redfish Standard and the ODIM Implementation 
+The Redfish® Standard and the ODIM Architecture 
 ------------------------------------------------
 
-This section proposes a redfish based hardware infrastructure manager for the Anuket project. ODIM is an example of an open source implementation. This is not a mandatory component of the Reference Implementation, but is an optional component, providing the functionality described below.
+This section proposes a Redfish® based hardware infrastructure manager for the Anuket project. ODIM software architecture is an example of an open source project  implementing Redfish® standard. This is not a mandatory component of the Reference Implementation, but is an optional component, providing the functionality described below.
 
-The GSMA's "Cloud Infrastructure Reference Model (NG.126)" specifies Redfish as the standard interface that should be 
+Chapter 9 (:ref:`chapters/chapter09:Configuration and Lifecycle Management`) of this reference model specifes redfish standard for managing Infrastructure Hardware. The GSMA's "Cloud Infrastructure Reference Model (NG.126)" also specifies Redfish® as the standard interface that should be 
 made available by the infrastructure and Cloud Infrastructure Management components, in the "Infrastructure Hardware" layer.
  
-Redfish is an internationally recognized standard `ISO/IEC 30115:2018  <https://www.iso.org/standard/83853.html>`__. The Redfish interface specifies a HTTP RESTful interface 
-that a client can use to manage conformant platforms. The Redfish standard consists of a Redfish interface specification 
-`Redfish Specification <https://www.dmtf.org/sites/default/files/standards/documents/DSP0266_1.8.0.pdf>`__ and model specification `Redfish Data Model Specification <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__.  The interface specification defines the 
-RESTful behavior of the resources.  The data model specification defines the structure of the HTTP resources.  The model is expressed 
-as schema using OpenAPI and json-schema formats.  The schema allows the OpenAPI and json-schema toolchains to be used in 
-implement a Redfish Client.
+Redfish® is an internationally recognized standard `ISO/IEC 30115:2018  <https://www.iso.org/standard/83853.html>`__. The Redfish® interface specifies a HTTP RESTful interface that a client can use to manage conformant platforms. The Redfish® standard consists of a Redfish® interface specification `Redfish® Specification <https://www.dmtf.org/sites/default/files/standards/documents/DSP0266_1.8.0.pdf>`__ and model specification `Redfish® Data Model Specification <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__.  The interface specification defines the RESTful behavior of the resources. The data model specification defines the structure of the HTTP resources. The model is expressed as schema using OpenAPI and json-schema formats. The schema allows implementing redfish clients using the OpenAPI and json-schema toolchains.
 
-There are several opensource implementations of Redfish Clients and Redfish Services. 
-The Open Distributed Infrastructure Management `ODIM <https://odim.io/>`__ repository is a Linux Foundation projectand is the most mature. ODIM implements a scalable   
-infrastructure manager which aggregates and exposes a standards-based Redfish interface and services northbound to an Orchestrator. It also includes a Plugin layer that adapts non-Redfish compliant data models interfaces, allowing for the aggregated management of multiple fully compliant or vendor specific southbound interfaces to their respective managed 
+There are several opensource implementations of Redfish® Clients and Redfish® Services. 
+An example is the Open Distributed Infrastructure Management `ODIM <https://odim.io/>`__ repository is a Linux Foundation project. ODIM implements a scalable infrastructure manager which aggregates and exposes a standards-based Redfish® interface and services northbound to an Orchestrator. It also includes a Plugin layer that adapts non-Redfish® compliant data models interfaces, allowing for the aggregated management of multiple fully compliant or vendor specific southbound interfaces to their respective managed 
 infrastructure clients.
 
-DMTF specifies the Redfish interface and model, seeking to expand the manageability domains. The prescription of what subset of the 
-Redfish model needs to be implemented for a specific manageability domain is left to other standards bodies.  Redfish had defined a 
-JSON syntax for the prescription call a Redfish Profile and implemented an application which reads the Redfish Profile and tests for 
-conformance of an implementation `Interop Validator <https://github.com/DMTF/Redfish-Interop-Validator>`__ .  The Redfish Profile mechanism is being utilized by the Open Compute Project 
-and Open Process Automation Forum.  The ODIM project has proposed a Redfish Profile.
+DMTF specifies the Redfish® interface and model, seeking to expand the manageability domains. The prescription of what subset of the 
+Redfish® model needs to be implemented for a specific manageability domain is left to other standards bodies.  Redfish® had defined a 
+JSON syntax for the prescription call a Redfish® Profile and implemented an application which reads the Redfish® Profile and tests for 
+conformance of an implementation `Interop Validator <https://github.com/DMTF/Redfish-Interop-Validator>`__ .  The Redfish® Profile mechanism is being utilized by the Open Compute Project 
+and Open Process Automation Forum.  The ODIM project has proposed a Redfish® Profile.
 
-Redfish fulfills the following requirements stated in the above HW Infrastructure Manager section:
+Redfish® fulfills the following requirements stated in the above HW Infrastructure Manager section:
 
--	**API/UI**: Redfish exactly specifies a programming interface.  The HTTP interface is accessible remotely via IP and locally via the Ethernet loopback mechanism.
+-	**API/UI**: Redfish® exactly specifies a programming interface.  The HTTP interface is accessible remotely via IP and locally via the Ethernet loopback mechanism.
 
--	**Discovery**: The Redfish schema provides a physical hardware resource model including relevant information
+-	**Discovery**: The Redfish® schema provides a physical hardware resource model including relevant information
 
--	**Topology**: The Redfish schema contains a cable model
+-	**Topology**: The Redfish® schema contains a cable model
 
--	**Equipment**: The Redfish schema contains a physical model and a functional model. The physical model expresses the chassis and containers and interconnects between them and environmental control functions.  The functional model expresses the logical aspects and includes configuration and  firmware status.   Both the physical and functional model have their own health/fault status information
+-	**Equipment**: The Redfish® schema contains a physical model and a functional model. The physical model expresses the chassis and containers and interconnects between them and environmental control functions.  The functional model expresses the logical aspects and includes configuration and  firmware status.   Both the physical and functional model have their own health/fault status information
 
--	**Resource Allocation and Composition**: The Redfish schema has a composition model through which a client can compose a logical resource by allocating physical resources. `Redfish Composition Whitepaper <https://www.dmtf.org/sites/default/files/standards/documents/DSP2050_1.2.0_1.pdf>`__
+-	**Resource Allocation and Composition**: The Redfish® schema has a composition model through which a client can compose a logical resource by allocating physical resources. `Redfish® Composition Whitepaper <https://www.dmtf.org/sites/default/files/standards/documents/DSP2050_1.2.0_1.pdf>`__
 
--	**Underlay Network Resources Manager**: The Redfish schema has models for fabrics, switches and SmartNICs.
+-	**Underlay Network Resources Manager**: The Redfish® schema has models for fabrics, switches and SmartNICs.
 
--	**Monitoring**: The Redfish schema contains event model for the client to receive hardware events and telemetry model for collecting information across the entire model (physical and functional) `Redfish Telemetry Whitepaper <https://www.dmtf.org/sites/default/files/standards/documents/DSP2051_1.0.0.pdf>`__
+-	**Monitoring**: The Redfish® schema contains event model for the client to receive hardware events and telemetry model for collecting information across the entire model (physical and functional) `Redfish® Telemetry Whitepaper <https://www.dmtf.org/sites/default/files/standards/documents/DSP2051_1.0.0.pdf>`__
 
--	**Additional Management Functions**: The Redfish schema has models for access management and identity management. Redfish has published work-in-progress extension for support policy management and OS/VM management `Policy Model Proposal, Redfish for Operating Systems, Applications and Containers <https://www.dmtf.org/documents/redfish-spmf/redfish-operating-systems-applications-and-containers-05wip>`__
+-	**Additional Management Functions**: The Redfish® schema has models for access management and identity management. Redfish® has published work-in-progress extension for support policy management and OS/VM management `Policy Model Proposal, Redfish® for Operating Systems, Applications and Containers <https://www.dmtf.org/documents/redfish-spmf/redfish-operating-systems-applications-and-containers-05wip>`__
 
-The ODIM implementation supports the account, aggregation, composition, events, fabric, license, managers, session, systems, task, 
+The ODIM architecure supports the account, aggregation, composition, events, fabric, license, managers, session, systems, task, 
 telemetry and update models.
 
 Open Distributed Infrastructure Management (ODIM™) is a Linux Foundation Networking open source project.  The project has developed a modular, open framework for simplified management and orchestration of distributed, multi-vendor, physical infrastructure.  More information about ODIM is available at `odim.io <https://odim.io>`__.
@@ -424,8 +418,6 @@ The resource aggregation function is the single point of contact between the nor
 
 This consists of one or more plugins, which abstract, translate, and expose southbound resource information to the resource aggregator through RESTful APIs.
 
-The ODIM project currently supports the account, aggregation, composition, events, fabric, license, managers, session, systems, task, telemetry and update models.
-
 The ODIM architecture has four key layers. (See diagram below)
 
 .. figure:: ../figures/Chapter-3-ODIM-Architecture.png
@@ -438,11 +430,11 @@ This layer hosts a REST server which is open-source and secure. It learns about 
 
 2. **Services layer**
 
-All the services are hosted in this layer. The layer implements service logic for all use cases through an extensible domain model (DMTF's Redfish® data model). All resource information is stored in this data model and is used to service the API requests coming from the API layer. Any responses from the plugin layer might update the domain model. It maintains the state for event subscriptions, credentials, and tasks.
+All the services are hosted in this layer. The layer implements service logic for all use cases through an extensible data model (DMTF's Redfish® data model). All resource information is stored in this data model and is used to service the API requests coming from the API layer. Any responses from the plugin layer might update the data model. It maintains the state for event subscriptions, credentials, and tasks.
 
 3. **Event message bus layer**
 
-This layer hosts a message broker which acts as a communication channel between the plugin layer and the upper layers. It supports common messaging architecture to forward events received from the plugin layer to the upper layers. During the run-time, HPE Resource Aggregator for ODIM uses either Kafka or the RedisStreams service as the Event Message Bus (EMB). The services and the RedisStreams EMB layers host the Redis data store.
+This layer hosts a message broker which acts as a communication channel between the plugin layer and the upper layers. It supports common messaging architecture to forward events received from the plugin layer to the upper layers. During the run-time, Resource Aggregator for ODIM uses either Kafka or the RedisStreams service as the Event Message Bus (EMB). The services and the RedisStreams EMB layers host the Redis data store.
 
 4. **Plugin layer**
 
@@ -452,7 +444,7 @@ The plugin layer allows developers to create plugins on any tool set of their ch
 How ODIM fits into the ETSI NFV Networking Reference Model
 ----------------------------------------------------------
 
-As shown in the fugure below ODIM can play the role of Hardware Infrastructure Manager in the ETSI NFV Networking Reference Model. Whereas ODIM exposes a redfish interface to the northbound, the infrastructure pieces can themselves be managed using plugins.
+As shown in the figure below ODIM can play the role of Hardware Infrastructure Manager in the ETSI NFV Networking Reference Model. Whereas ODIM exposes a Redfish® interface to the northbound, the infrastructure pieces can themselves be managed using plugins.
 
 .. figure:: ../figures/Chapter-3-ODIM-CloudInfraMgmt.png
    :alt: ODIM fitment in the ETSI NFV Networking Reference Model 
@@ -460,11 +452,11 @@ As shown in the fugure below ODIM can play the role of Hardware Infrastructure M
 
 The exisiting plugins for computes can manage the computes and their internal storage. The plugins for managing storage devices via storage fabric controllers using swordfish will have to be developed. There are plugins to manage host side configurations in a fabric setup. The actual underlay and overlay configuration of fabrics may be best done by the vendor controllers. There are two options for managing physical switch and logical configurations thereon - 
 
-1. Develop a network plugin that uses Yang to redfish converter 
+1. Develop a network plugin that uses Yang to Redfish® converter 
 
-The converter is available at `YANG-to-Redfish-Converter <https://github.com/DMTF/YANG-to-Redfish-Converter>`__. This converter tool is used to converter a YANG schema file into a Redfile CSDL schema file. The conversion is done in accordance with the Yang to Redfish mapping specification from DMTF at  `DSP0271_0.5.6 <https://www.dmtf.org/sites/default/files/standards/documents/DSP0271_0.5.6.pdf>`_. This approach converts the yang models as specified in openconfig and does not neet any further modelling. The ODIM RA will have to add support for this models and add plugins to interface with the network equipments. The resulting redfish schema is also similar to the yang model in content. The model is hosted under /redfish/v1/NetworkDevice.
+The converter is available at `YANG-to-Redfish-Converter <https://github.com/DMTF/YANG-to-Redfish-Converter>`__. This converter tool is used to converter a YANG schema file into a Redfile CSDL schema file. The conversion is done in accordance with the Yang to Redfish® mapping specification from DMTF at  `DSP0271_0.5.6 <https://www.dmtf.org/sites/default/files/standards/documents/DSP0271_0.5.6.pdf>`_. This approach converts the yang models as specified in openconfig and does not neet any further modelling. The ODIM RA will have to add support for this models and add plugins to interface with the network equipments. The resulting Redfish® schema is also similar to the yang model in content. The model is hosted under /redfish/v1/NetworkDevice.
 
-2. Add network models to redfish
+2. Add network models to Redfish®
 
 This will require us to create a new model for physical/logical elements of network and protocols etc. to be added to DMTF. This will need considerable effort and knowledge of the networking domain. Further we will to add these to ODIM RA and need a plugins to implement this schema as well.
 
@@ -479,31 +471,31 @@ The figure below shows the current ODIM capbility vs the requirements of the H/W
    
 1. API/UI
 
-ODIM exposes the redfish API to manage the hardware resources.
+ODIM exposes the Redfish® API to manage the hardware resources.
 
 2. Discovery 
 
-Redfish does not have support for device discovery as such. ODIM had a proposal for the plugins to actively probe for new devices and forward a ResourceAdded event. This could then be handled by a client to get the device added to the inventory. This was however not pursued as there were security issues related to discovery of new devices. 
+Redfish® does not have support for device discovery as such. ODIM had a proposal for the plugins to actively probe for new devices and forward a ResourceAdded event. This could then be handled by a client to get the device added to the inventory. This was however not pursued as there were security issues related to discovery of new devices. 
 
 3. Equipment  
 
-ODIM has support for managing the physical hardware resources in terms of configuration, firmware status, health/fault status and autonomous environmental control functions such as fan and power conversion regulations as supported by redfish.
+ODIM has support for managing the physical hardware resources in terms of configuration, firmware status, health/fault status and autonomous environmental control functions such as fan and power conversion regulations as supported by Redfish®.
 
 4. Resource Allocation and Composition 
 
-The redfish API exposed by ODIM can be used by clients to create, modify and deletes logical Compute, Network and Storage Resources through Composition of allocated physical hardware resources. Note: Will need to discuss scope of composition.
+The Redfish® API exposed by ODIM can be used by clients to create, modify and deletes logical Compute, Network and Storage Resources through Composition of allocated physical hardware resources. Note: Will need to discuss scope of composition.
 
 5. Monitoring  
 
-ODIM allows monitoring and collecting information on events, current state and telemetry data of physical hardware resources, autonomous equipment control functions for computes. The support for Switch and Storage Fabric systems should be added to the plugins for these types of devices.
+ODIM architecture allows monitoring and collecting information on events, current state and telemetry data of physical hardware resources, autonomous equipment control functions for computes. The support for Switch and Storage Fabric systems should be added to the plugins for these types of devices.
 
 6. Topology 
 
-The ability to discover and monitor physical interconnection (e.g. cables) in between the physical hardware resources is dependent on the hardware support for these. DMTF provides a connection schema for this and a client can configure this via ODIM.
+The ability to discover and monitor physical interconnection (e.g. cables) in between the physical hardware resources is dependent on the hardware support for these. DMTF provides a connection schema for this.
 
 7. Additional Management Functions 
 
-ODIM includes hardware life cycle management. Support may be added for software life cycle using an operator. The support identity management, access management is limited to basic requierments of redfish. Need discussion on policy management (e.g. to enforce security policies), etc. 
+ODIM architecture includes hardware life cycle management. Support may be added for software life cycle using an operator. The support identity management, access management is limited to basic requirements of Redfish®. Need discussion on policy management (e.g. to enforce security policies), etc. 
 
 8. Underlay Network Resources Manager 
 
@@ -511,15 +503,15 @@ This needs discussion with Anuket members
 
 9. Physical Compute Resources Manager
 
-ODIM provides support for this as per redfish.
+ODIM architecture provides support for this as per Redfish®.
 
 10. Physical Storage Resources Manager
 
-Currently ODIM has support for internal storage(DAS). Support for external/shared storage needs to be added via redfish.
+Currently ODIM architecture supports internal storage(DAS) uding Redfish®. Support for external/shared storage needs to be added.
 
 11. Accelerators
 
-Current nodes from vendors do not support Accelarators via redfish. However we should be able to provide this via the plugins that expose these via redfish.
+these are part of  Redfish®. However Current nodes from vendors do not support Accelarators via Redfish®.
 
    
 Left for future use
