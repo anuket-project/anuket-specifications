@@ -1,8 +1,8 @@
 Security Guidance
 =================
 
-Introduction
-------------
+Introduction to Security Guidance
+---------------------------------
 
 Securing Kubernetes requires several layers of security features to provide end
 to end security for cloud native applications. It is recommended that:
@@ -51,7 +51,7 @@ secured within their perimeters. The various layers that come into picture are:
    directories of the underlying OS, etc., and running in
    privileged mode.
 -  **Pods**: A Pod represents a set of running containers on a Kubernetes Cluster.
-   Kubernetes inherently offers pod security policies that define a set of
+   Kubernetes inherently offers a PodSecurity admission controller that define a set of
    conditions that a pod needs to run with in order to be accepted into the
    system. These policies help in ensuring the necessary checks for running the
    pods.
@@ -66,8 +66,8 @@ secured within their perimeters. The various layers that come into picture are:
    containers. The communication over these APIs needs to be secured via
    different mechanisms like TLS encryption, API authentication via LDAP etc.
 
-Principles
-----------
+Security Principles
+-------------------
 
 The following are core principles to consider when securing cloud native
 applications:
@@ -80,7 +80,7 @@ applications:
 
    -  Use Namespaces to establish security boundaries between tenants
    -  Create and define Cluster network policies
-   -  Run a Cluster-wide pod security policy
+   -  Run a Cluster-wide Pod Security admission controller
    -  Turn on Audit Logging
    -  Separate sensitive workloads using Namespaces
    -  Secure tenant metadata Access
@@ -178,10 +178,9 @@ ports which makes it easy to identify the clusters and attack them. Hence, it is
 highly recommended to configure authentication and authorisation on the cluster
 and cluster nodes.
 
-The `Kubernetes documentation <https://kubernetes.io/docs/reference/ports-and-protocols/>`__ specifies the default
-ports used in Kubernetes. Make sure that your
-network blocks access to unnecessary ports and consider limiting access to the Kubernetes
-API server except from trusted networks.
+The Kubernetes documentation :cite:p:`k8s-documentation-ports-and-protocols` specifies the default ports used in
+Kubernetes. Make sure that your network blocks access to unnecessary ports and consider limiting access to the
+Kubernetes API server except from trusted networks.
 
 **Control plane node(s):**
 
@@ -229,11 +228,8 @@ The service mesh is a mesh of layer 7 proxies handling service-to-service commun
 The service mesh architecture consists of data plane components made up of network proxies paired with each
 micro-service,
 and control plane components providing proxies configuration, managing TLS certificates and policies.
-The two documents, `NIST SP 800-204A <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204A.pdf>`__
-(Building Secure Microservices-based Applications Using Service-Mesh Architecture) and
-`NIST SP 800-204B <https://csrc.nist.gov/publications/detail/sp/800-204b/final>`__
-(Attribute-based Access Control for Microservices-based Applications Using a Service Mesh) provide guidance to deploy
-service mesh.
+The two documents, NIST SP 800-204A :cite:t:`nist-800-204a` and NIST SP 800-204B :cite:t:`nist-800-204b` provide
+guidance to deploy service mesh.
 
 API Authentication, API Authorisation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -283,9 +279,8 @@ part of the Kubernetes cluster itself, it has to be installed by the owners of
 the cluster; a number of tutorials show how to do this.
 Unfortunately, most of them create a service account with very high privileges.
 This caused Tesla and some others to be hacked via such a poorly configured Kubernetes
-dashboard (Reference: `Tesla cloud resources are hacked to run
-cryptocurrency-mining malware <https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-
-to-run-cryptocurrency-mining-malware/>`__).
+dashboard (Reference: Tesla cloud resources are hacked to run
+cryptocurrency-mining malware :cite:p:`arstechnica-tesla`).
 
 To prevent attacks via the dashboard, you should follow some best practices:
 

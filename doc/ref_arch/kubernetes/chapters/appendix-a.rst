@@ -1,8 +1,8 @@
 Appendix A - Guidance For workload isolation (Multitenancy) with Kubernetes for application vendors
 ===================================================================================================
 
-Overview
---------
+Overview of Appendix A
+----------------------
 
 Problem statement: A single Kubernetes Cluster does not provide hard multitenancy\* by design. Within a Cluster,
 Kubernetes Namespace is a mechanism to provide Soft isolation multitenancy.
@@ -12,8 +12,7 @@ lead to the Blast Radius across the entire Cluster and all its Kubernetes Namesp
 So there is a need to define various use cases or ways to build Multitenancy Deployment Models and define the Best
 Practices to secure each Model.
 Kubernetes Namespace is a logical representation of namespace(boundary for resources) within the Kubernetes Cluster.
-This is different from the `linux namespaces <https://en.wikipedia.org/wiki/Linux_namespaces>`__ which are defined at
-the operating system kernel level.
+This is different from the :cite:t:`wikipedia-linux-namespaces` which are defined at the operating system kernel level.
 
 .. figure:: ../figures/Model1-ns.png
    :alt: Network Service
