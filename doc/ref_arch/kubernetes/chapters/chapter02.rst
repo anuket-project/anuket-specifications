@@ -794,7 +794,7 @@ Cloud Infrastructure Security Requirements
      - sec.gen.006
      - The Platform **must** support Secure logging. Logging with root account must be prohibited when root
        privileges are not required.
-     - :ref:`chapters/chapter05:restrict direct access to nodes`
+     - :ref:`chapters/chapter05:restricting direct access to nodes`
    * - System Hardening
      - sec.gen.007
      - All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service.
@@ -1012,7 +1012,7 @@ Cloud Infrastructure Security Requirements
      - sec.img.003
      - Images **must not** be configured to run with privileges higher than the privileges of the actor
        authorized to run them.
-     - :ref:`chapters/chapter05:run-time security`
+     - :ref:`chapters/chapter05:runtime security`
    * - Image Security
      - sec.img.004
      - Images **must** only be accessible to authorized actors.
@@ -1066,7 +1066,7 @@ Cloud Infrastructure Security Requirements
    * - Security LCM
      - sec.lcm.005
      - Platform **must** provide logs and these logs must be regularly monitored for anomalous behavior.
-     - :ref:`chapters/chapter05:enable logging and monitoring`
+     - :ref:`chapters/chapter05:enabling logging and monitoring`
    * - Security LCM
      - sec.lcm.006
      - The Platform **must** verify the integrity of all Resource management requests.
