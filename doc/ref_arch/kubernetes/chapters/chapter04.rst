@@ -28,7 +28,7 @@ Kubernetes Node
 ---------------
 
 This section describes the configuration that will be applied to the physical or
-virtual machine and an installed Operating System. For a Kubernetes Node
+virtual machine and its Operating System. For a Kubernetes Node
 to be conformant with the Reference Architecture, it must be implemented according to
 the following specifications:
 
@@ -43,20 +43,20 @@ the following specifications:
      - Reference Implementation Trace
    * - ra2.ch.001
      - Huge pages
-     - For the platform to qualify as a high-performance profile, it must be possible to enable Huge pages
-       (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources hugepages-2Mi and
-       hugepages-1Gi.
+     - For the node's profile to qualify as high-performance, it must be possible to enable Huge pages
+       (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources `hugepages-2Mi` and
+       `hugepages-1Gi`.
      - infra.com.cfg.004 :cite:t:`refmodel` Chapter 5, section Virtual Compute
      - :cite:t:`anuket-ri2` Chapter 3, section Introduction
    * - ra2.ch.002
      - SR-IOV capable NICs
-     - For the platform to qualify as a high-performance profile, the physical machines on which the Kubernetes
+     - For the node's profile to qualify as high-performance, the physical machines on which the Kubernetes
        Nodes run must be equipped with NICs that are SR-IOV-capable.
      - e.cap.013 :cite:t:`refmodel` Chapter 4, section Exposed Performance Optimisation Capabilities
      - :cite:t:`anuket-ri2` Chapter 3, section Infrastructure Requirements
    * - ra2.ch.003
      - SR-IOV Virtual Functions
-     - For the platform to qualify as a high-performance profile, SR-IOV virtual functions (VFs) must be
+     - For the node's profile to qualify as high-performance, SR-IOV virtual functions (VFs) must be
        configured within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.
      - e.cap.013 :cite:t:`refmodel` Chapter 4, section Exposed Performance Optimisation Capabilities
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
