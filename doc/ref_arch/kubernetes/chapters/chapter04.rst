@@ -6,7 +6,7 @@ Introduction to Component Level Architecture
 
 This section describes in detail the Reference Architecture (RA2) for Kubernetes-based cloud infrastructure in terms
 of the functional capabilities and how they relate to the Reference Model (RM)
-requirements, that is, how the infrastructure profiles are determined, documented,
+requirements :cite:p:`refmodel`, that is, how the infrastructure profiles are determined, documented,
 and delivered.
 
 The specifications defined in this section will be detailed with unique
