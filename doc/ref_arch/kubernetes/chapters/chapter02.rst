@@ -1090,7 +1090,7 @@ Cloud Infrastructure Security Requirements
    * - Security LCM
      - sec.lcm.010
      - The Platform **must** log all changes to geolocation along with the mechanisms and sources of
-       location information (i.e. GPS, IP block, and timing).
+       location information (i.e., GPS, IP block, and timing).
      -
    * - Security LCM
      - sec.lcm.011
@@ -1575,7 +1575,7 @@ machines or containers.
    * - inf.ntw.14
      - Infrastructure
      - Network
-     - The platform must allow NAT-less traffic (i.e. exposing the pod IP address directly to the
+     - The platform must allow NAT-less traffic (i.e., exposing the pod IP address directly to the
        outside), allowing source and destination IP addresses to be preserved in the traffic headers
        from workloads to external networks. This is needed e.g. for signalling applications, using SIP
        and Diameter protocols.
