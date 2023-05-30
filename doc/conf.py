@@ -1,7 +1,7 @@
 master_doc = 'index'
 project = "Anuket Specifications"
 html_title = "Anuket Specifications"
-copyright = '2021, Anuket. Licensed under CC BY 4.0'
+copyright = '2023, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 extensions = ['sphinx.ext.intersphinx',
               'sphinx.ext.autosectionlabel'
@@ -36,40 +36,20 @@ numfig = True
 numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
                  'code-block': 'Listing %s', 'section': 'Section %s'}
 
-html_theme = "sphinx_material"
-#html_sidebars = {
-#    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
-#}
+html_theme = "piccolo_theme"
 
 html_static_path = ['_static']
 templates_path = ['_templates']
-#html_css_files = [
-#    'css/custom.css',
-#]
+html_css_files = [
+    'custom.css',
+]
+
 html_show_sourcelink = False
 html_theme_options = {
-    'nav_title': '',
-     # Set the color and the accent color
-    'color_primary': 'blue-grey,',
-    'color_accent': 'white',
-    # Visible levels of the global TOC; -1 means unlimited
-    'globaltoc_depth': 0,
     # If False, expand all TOC entries
     'globaltoc_collapse': False,
     # If True, show hidden TOC entries
     'globaltoc_includehidden': False,
-    'base_url': "https://cntt.readthedocs.io",
-    'repo_url': 'https://github.com/cntt-n/cntt',
-    'repo_name': '',
-    'repo_type': 'github',
-# This is not needed for the root document, but will be needed for the rest of the docs.
-#    'nav_links': [
-#        {
-#            "href": "https://cntt.readthedocs.io",
-#            "title": "Anuket Specifications",
-#            "internal": "False"
-#        },
-#    ]
 }
 
 # Inverse png
