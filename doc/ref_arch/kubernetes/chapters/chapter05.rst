@@ -260,7 +260,7 @@ The Kubernetes scheduler searches etcd for pod definitions that do not have a
 node. It then sends the pods it finds to an available kubelet for scheduling.
 Validation for submitted pods is performed by the API server before it writes
 them to etcd. Therefore, malicious users writing directly to etcd can bypass
-many security mechanisms such as PodSecurityPolicies.
+many security .mechanisms such as PodSecurityPolicies.
 
 Administrators should always use strong credentials from the API servers to
 their etcd server, such as mutual authorization via TLS client certificates.

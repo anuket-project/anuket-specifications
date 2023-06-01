@@ -807,7 +807,7 @@ Cloud Infrastructure Security Requirements
      - sec.gen.009
      - The Platform **must** support Software integrity protection and verification and **must** scan source code
        and manifests.
-     - :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - System Hardening
      - sec.gen.010
      - The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage,
@@ -826,7 +826,7 @@ Cloud Infrastructure Security Requirements
    * - System Hardening
      - sec.gen.013
      - The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure.
-     - :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - System Hardening
      - sec.gen.014
      - All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors
@@ -840,7 +840,7 @@ Cloud Infrastructure Security Requirements
    * - Platform and Access
      - sec.sys.001
      - The Platform **must** support authenticated and secure access to API, GUI and command line interfaces.
-     - :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - Platform and Access
      - sec.sys.002
      - The Platform **must** support Traffic Filtering for workloads (for example, Firewall).
@@ -867,7 +867,7 @@ Cloud Infrastructure Security Requirements
      - sec.sys.007
      - The Platform **must** implement controls enforcing separation of duties and privileges, least privilege
        use and least common mechanism (Role-Based Access Control).
-     - :ref:`chapters/chapter05:principles` :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:principles` :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - Platform and Access
      - sec.sys.008
      - The Platform **must** be able to assign the Entities that comprise the tenant networks to different
@@ -908,7 +908,7 @@ Cloud Infrastructure Security Requirements
      - sec.sys.016
      - Login access to the platform's components **must** be through encrypted protocols such as SSH v2
        or TLS v1.2 or higher. Note: Hardened jump servers isolated from external networks are recommended
-     - :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - Platform and Access
      - sec.sys.017
      - The Platform **must** provide the capability of using digital certificates that comply with X.509 standards
@@ -930,7 +930,7 @@ Cloud Infrastructure Security Requirements
    * - Confidentiality and Integrity
      - sec.ci.001
      - The Platform **must** support Confidentiality and Integrity of data at rest and in-transit. by design environment.
-     - :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - Confidentiality and Integrity
      - sec.ci.002
      - The Platform **should** support self-encrypting storage devices. data at rest and in-transit. by design environment.
@@ -982,7 +982,7 @@ Cloud Infrastructure Security Requirements
    * - Workload Security
      - sec.wl.003
      - The Platform **must** support secure provisioning of workloads.
-     - :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - Workload Security
      - sec.wl.004
      - The Platform **must** support Location assertion (for mandated in-country or location requirements).
@@ -990,12 +990,12 @@ Cloud Infrastructure Security Requirements
    * - Workload Security
      - sec.wl.005
      - The Platform **must** support the separation of production and non-production Workloads.
-     - :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - Workload Security
      - sec.wl.006
      - The Platform **must** support the separation of Workloads based on their categorisation (for example,
        payment card information, healthcare, etc.).
-     - :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - Workload Security
      - sec.wl.007
      - The Operator **must** implement processes and tools to verify VNF authenticity and integrity.
@@ -1052,7 +1052,7 @@ Cloud Infrastructure Security Requirements
      - sec.lcm.002
      - Cloud operations staff and systems **must** use management protocols limiting security risk such as
        SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher.
-     - :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - Security LCM
      - sec.lcm.003
      - The Cloud Operator **must** implement and strictly follow change management processes for Cloud
@@ -1075,7 +1075,7 @@ Cloud Infrastructure Security Requirements
      - sec.lcm.007
      - The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and
        restarted images with current time information.
-     - :ref:`chapters/chapter05:securing kubernetes orchestrator`
+     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
    * - Security LCM
      - sec.lcm.008
      - The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and
