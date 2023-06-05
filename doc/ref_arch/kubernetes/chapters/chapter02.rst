@@ -1,8 +1,8 @@
 Architecture Requirements
 =========================
 
-Introduction for Archtecture Requirements
------------------------------------------
+Introduction for Architecture Requirements
+------------------------------------------
 
 This chapter will specialise the requirements defined in the overall Reference Model into Kubernetes-specific
 requirements. Additional, RA2-specific, entries are included in section
@@ -45,31 +45,31 @@ Cloud Infrastructure Software Profile Capabilities
      - Specification Reference
    * - Exposed Infrastructure Capabilities
      - e.cap.001
-     - Max number of vCPU that can be assigned to a single Pod by the Cloud Infrastructure
+     - Max number of vCPU that can be assigned to a single pod by the Cloud Infrastructure
      - At least 16
      - At least 16
      - ra2.ch.011
    * - Exposed Infrastructure Capabilities
      - e.cap.002
-     - Max memory in MB that can be assigned to a single Pod by the Cloud Infrastructure
+     - Max memory in MB that can be assigned to a single pod by the Cloud Infrastructure
      - at least 32 GB
      - at least 32 GB
      - ra2.ch.012
    * - Exposed Infrastructure Capabilities
      - e.cap.003
-     - Max storage in GB that can be assigned to a single Pod by the Cloud Infrastructure
+     - Max storage in GB that can be assigned to a single pod by the Cloud Infrastructure
      - at least 320 GB
      - at least 320 GB
      - ra2.ch.010
    * - Exposed Infrastructure Capabilities
      - e.cap.004
-     - Max number of connection points that can be assigned to a single Pod by the Cloud Infrastructure
+     - Max number of connection points that can be assigned to a single pod by the Cloud Infrastructure
      - 6
      - 6
      - ra2.ntw.003
    * - Exposed Infrastructure Capabilities
      - e.cap.005
-     - Max storage in GB that can be attached / mounted to Pod by the Cloud Infrastructure
+     - Max storage in GB that can be attached / mounted to pod by the Cloud Infrastructure
      - Up to 16TB (1)
      - Up to 16TB (1)
      - N/A
@@ -87,7 +87,7 @@ Cloud Infrastructure Software Profile Capabilities
      - ra2.k8s.006
    * - Exposed Infrastructure Capabilities
      - e.cap.008
-     - IPSec Acceleration using the virtio-ipsec interface
+     - IPsec Acceleration using the virtio-ipsec interface
      - Not required
      - Optional
      - N/A
@@ -232,7 +232,7 @@ Cloud Infrastructure Software Profile Capabilities
 Virtual Network Interface Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Note: The required number of connection points to a Pod is described in ``e.cap.004`` above. This section describes the
+  Note: The required number of connection points to a pod is described in ``e.cap.004`` above. This section describes the
   required bandwidth of those connection points.
 
 .. list-table:: Reference Model Requirements: Network Interface Specifications
@@ -264,7 +264,7 @@ Virtual Network Interface Specifications
      - Must support
      - N/A
    * - Virtual Network Interface Specifications
-     - n50, n100 , n150, n200, n250 , n300
+     - n50, n100, n150, n200, n250 , n300
      - 50, 100, 150, 200, 250, 300 Gbps
      - Must support
      - Must support
@@ -342,7 +342,7 @@ Cloud Infrastructure Software Profile Requirements
      - N/A
    * - Virtual Storage
      - infra.stg. acc.cfg.002
-     - Storage capacity oriented encryption
+     - Storage capacity-oriented encryption
      - Not required
      - Not required
      - N/A
@@ -393,7 +393,7 @@ Cloud Infrastructure Software Profile Requirements
      - infra.net.acc.cfg.002
      - Support of HW offload
      - Not required
-     - Optional, SmartNic
+     - Optional, SmartNIC
      - N/A
    * - Virtual Networking
      - infra.net.acc.cfg.003
@@ -410,7 +410,7 @@ Cloud Infrastructure Software Profile Requirements
 
 Virtual Networking
 
-**(1)** Might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers
+**(1)** Might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a pod) or NIC-specific drivers
 on Kubernetes nodes.
 
 **(2)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)
@@ -439,19 +439,19 @@ Cloud Infrastructure Hardware Profile Requirements
      - ra2.ch.008
    * - Compute Resources
      - infra.hw.cpu.cfg.002
-     - Minimum number of Cores per CPU
+     - Minimum number of cores per CPU
      - 20
      - 20
      - ra2.ch.008
    * - Compute Resources
      - infra.hw.cpu.cfg.003
-     - NUMA Alignment
+     - NUMA alignment
      - N
      - Y
      - ra2.ch.008
    * - Compute Resources
      - infra.hw.cpu.cfg.004
-     - Simultaneous Multithreading/ Symmetric Multiprocessing (SMT/SMP)
+     - Simultaneous multithreading/ Symmetric multiprocessing (SMT/SMP)
      - Must support
      - Optional
      - ra2.ch.004
@@ -463,19 +463,19 @@ Cloud Infrastructure Hardware Profile Requirements
      - N/A
    * - Storage Configurations`
      - infra.hw.stg.hdd.cfg.001
-     - Local Storage HDD
+     - Local storage HDD
      - No requirement specified
      - No requirement specified
      - N/A
    * - Storage Configurations`
      - infra.hw.stg.ssd.cfg.002
-     - Local Storage SSD
+     - Local storage SSD
      - Should support
      - Should support
      - ra2.ch.009
    * - Network Resources
      - infra.hw.nic.cfg.001
-     - Total Number of NIC Ports available in the host
+     - Total number of NIC ports available in the host
      - 4
      - 4
      - ra2.ch.013
@@ -499,13 +499,13 @@ Cloud Infrastructure Hardware Profile Requirements
      - ra2.ch.016
    * - Network Resources
      - infra.hw.pci.cfg.003
-     - PCIe Lanes
+     - PCIe lanes
      - 8
      - 8
      - ra2.ch.016
    * - Network Resources
      - infra.hw.nac.cfg.001
-     - Cryptographic Acceleration
+     - Cryptographic acceleration
      - Not required
      - Optional
      - N/A
@@ -558,7 +558,7 @@ of requirements of the above table are relaxed as follows:
      - ra2.ch.008
    * - Telco Edge Cloud: Infrastructure Profiles
      - infra.hw.cpu.cfg.003
-     - NUMA Alignment
+     - NUMA alignment
      - N
      - Y (1)
      - ra2.ch.008
@@ -641,42 +641,42 @@ Cloud Infrastructure Monitoring Capabilities
      - Specification Reference
    * - Internal Performance Measurement Capabilities
      - i.pm.001
-     - Capability to monitor Host CPU Usage (in ns)
+     - Capability to monitor host CPU Usage (in ns)
      - Must support
      - N/A
    * - Internal Performance Measurement Capabilities
      - i.pm.002
-     - Capability to monitor per Pod CPU (Virtual compute resource) usage (in ns)
+     - Capability to monitor per pod CPU (Virtual compute resource) usage (in ns)
      - Must support
      - N/A
    * - Internal Performance Measurement Capabilities
      - i.pm.003
-     - Capability to monitor Host CPU Usage (in percentage)
+     - Capability to monitor host CPU Usage (in percentage)
      - Must support
      - N/A
    * - Internal Performance Measurement Capabilities
      - i.pm.004
-     - Capability to monitor per Pod CPU (Virtual compute resource) usage (in percentage)
+     - Capability to monitor per pod CPU (Virtual compute resource) usage (in percentage)
      - Must support
      - N/A
    * - Internal Performance Measurement Capabilities
      - i.pm.005
-     - Capability to monitor Packet count per physical or virtual node network interface
+     - Capability to monitor packet count per physical or virtual node network interface
      - Must support
      - N/A
    * - Internal Performance Measurement Capabilities
      - i.pm.006
-     - Capability to monitor Octet (bytes) count per physical or virtual node network interface
+     - Capability to monitor octet (bytes) count per physical or virtual node network interface
      - Must support
      - N/A
    * - Internal Performance Measurement Capabilities
      - i.pm.007
-     - Capability to monitor Dropped Packet count per physical or virtual node network interface
+     - Capability to monitor dropped packet count per physical or virtual node network interface
      - Must support
      - N/A
    * - Internal Performance Measurement Capabilities
      - i.pm.008
-     - Capability to monitor Errored Packet count per physical or virtual node network interface
+     - Capability to monitor errored packet count per physical or virtual node network interface
      - Must support
      - N/A
    * - Internal Performance Measurement Capabilities
@@ -782,7 +782,7 @@ Cloud Infrastructure Security Requirements
    * - System Hardening
      - sec.gen.004
      - The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened by removing or
-       disabling unnecessary services, applications and network protocols, configuring operating system user
+       disabling unnecessary services, applications, and network protocols, configuring operating system user
        authentication, configuring resource controls, installing and configuring additional security controls where
        needed, and testing the security of the Operating System. (NIST SP 800-123)
      - :ref:`chapters/chapter05:security principles` and :ref:`chapters/chapter05:node hardening`
@@ -792,7 +792,7 @@ Cloud Infrastructure Security Requirements
      - :ref:`chapters/chapter05:node hardening`
    * - System Hardening
      - sec.gen.006
-     - The Platform **must** support Secure logging. Logging with root account must be prohibited when root
+     - The Platform **must** support secure logging. Logging with root account must be prohibited when root
        privileges are not required.
      - :ref:`chapters/chapter05:restrict direct access to nodes`
    * - System Hardening
@@ -847,12 +847,13 @@ Cloud Infrastructure Security Requirements
      -
    * - Platform and Access
      - sec.sys.003
-     - The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of
+     - The Platform **must** support secure and encrypted communications, and confidentiality and integrity of
        network traffic.
      - `Network Resources Use Transport Layer Security and Service Mesh`
    * - Platform and Access
      - sec.sys.004
-     - The Cloud Infrastructure **must** support authentication, integrity and confidentiality on all network channels.
+     - The Cloud Infrastructure **must** support authentication, integrity, and confidentiality on all network
+       channels.
      - `Network Resources Use Transport Layer Security and Service Mesh`
    * - Platform and Access
      - sec.sys.005
@@ -912,7 +913,7 @@ Cloud Infrastructure Security Requirements
    * - Platform and Access
      - sec.sys.017
      - The Platform **must** provide the capability of using digital certificates that comply with X.509 standards
-       issued by a trusted
+       issued by a trusted certificate authority.
      -
    * - Platform and Access
      - sec.sys.018
@@ -921,7 +922,7 @@ Cloud Infrastructure Security Requirements
    * - Platform and Access
      - sec.sys.019
      - The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature,
-       validity period, non revocation, identity).
+       validity period, non-revocation, identity).
      -
    * - Platform and Access
      - sec.sys.020
@@ -929,36 +930,36 @@ Cloud Infrastructure Security Requirements
      -
    * - Confidentiality and Integrity
      - sec.ci.001
-     - The Platform **must** support Confidentiality and Integrity of data at rest and in-transit. by design environment.
+     - The Platform **must** support confidentiality and integrity of data at rest and in-transit.
      - :ref:`chapters/chapter05:securing kubernetes orchestrator`
    * - Confidentiality and Integrity
      - sec.ci.002
-     - The Platform **should** support self-encrypting storage devices. data at rest and in-transit. by design environment.
+     - The Platform **should** support self-encrypting storage devices.
      -
    * - Confidentiality and Integrity
      - sec.ci.003
-     - The Platform **must** support Confidentiality and Integrity of data related metadata.
+     - The Platform **must** support confidentiality and integrity of data related metadata.
      -
    * - Confidentiality and Integrity
      - sec.ci.004
-     - The Platform **must** support Confidentiality of processes and restrict information sharing with only the process
+     - The Platform **must** support confidentiality of processes and restrict information sharing with only the process
        owner (e.g., tenant).
      -
    * - Confidentiality and Integrity
      - sec.ci.005
-     - The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information
+     - The Platform **must** support confidentiality and integrity of process-related metadata and restrict information
        sharing with only the process owner (e.g., tenant).
      -
    * - Confidentiality and Integrity
      - sec.ci.006
-     - The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU,
-        Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload
-        owner (e.g., tenant).
+     - The Platform **must** support confidentiality and integrity of workload resource utilization (RAM, CPU,
+       storage, network I/O, cache, hardware offload) and restrict information sharing with only the workload
+       owner (e.g., tenant).
      -
    * - Confidentiality and Integrity
      - sec.ci.007
-     - The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the
-       Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by
+     - The Platform **must not** allow memory inspection by any actor other than the authorized actors for the
+       entity to which memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by
        secure monitoring services.
      -
    * - Confidentiality and Integrity
@@ -972,7 +973,7 @@ Cloud Infrastructure Security Requirements
      -
    * - Workload Security
      - sec.wl.001
-     - The Platform **must** support Workload placement policy.
+     - The Platform **must** support workload placement policy.
      -
    * - Workload Security
      - sec.wl.002
@@ -985,11 +986,11 @@ Cloud Infrastructure Security Requirements
      - :ref:`chapters/chapter05:securing kubernetes orchestrator`
    * - Workload Security
      - sec.wl.004
-     - The Platform **must** support Location assertion (for mandated in-country or location requirements).
+     - The Platform **must** support location assertion (for mandated in-country or location requirements).
      -
    * - Workload Security
      - sec.wl.005
-     - The Platform **must** support the separation of production and non-production Workloads.
+     - The Platform **must** support the separation of production and non-production workloads.
      - :ref:`chapters/chapter05:securing kubernetes orchestrator`
    * - Workload Security
      - sec.wl.006
@@ -1011,15 +1012,15 @@ Cloud Infrastructure Security Requirements
    * - Image Security
      - sec.img.003
      - Images **must not** be configured to run with privileges higher than the privileges of the actor
-       authorized to run them.
+       authorised to run them.
      - :ref:`chapters/chapter05:run-time security`
    * - Image Security
      - sec.img.004
-     - Images **must** only be accessible to authorized actors.
+     - Images **must** only be accessible to authorised actors.
      -
    * - Image Security
      - sec.img.005
-     - Image Registries **must** only be accessible to authorized actors.
+     - Image Registries **must** only be accessible to authorised actors.
      -
    * - Image Security
      - sec.img.006
@@ -1045,8 +1046,8 @@ Cloud Infrastructure Security Requirements
      -
    * - Security LCM
      - sec.lcm.001
-     - The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up)
-       of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks.
+     - The Platform **must** support secure provisioning, availability, and deprovisioning (secure clean-Up)
+       of workload resources where secure clean-Up includes tear-down, defense against virus or other attacks.
      -
    * - Security LCM
      - sec.lcm.002
@@ -1056,7 +1057,7 @@ Cloud Infrastructure Security Requirements
    * - Security LCM
      - sec.lcm.003
      - The Cloud Operator **must** implement and strictly follow change management processes for Cloud
-       Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change
+       Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and platform change
        control on hardware.
      -
    * - Security LCM
@@ -1089,11 +1090,11 @@ Cloud Infrastructure Security Requirements
    * - Security LCM
      - sec.lcm.010
      - The Platform **must** log all changes to geolocation along with the mechanisms and sources of
-       location information (i.e. GPS, IP block, and timing).
+       location information (i.e., GPS, IP block, and timing).
      -
    * - Security LCM
      - sec.lcm.011
-     - The Platform **must** implement Security life cycle management processes including the proactive
+     - The Platform **must** implement security life cycle management processes including the proactive
        update and patching of all deployed Cloud Infrastructure software.
      -
    * - Security LCM
@@ -1117,47 +1118,47 @@ Cloud Infrastructure Security Requirements
      -
    * - Monitoring and Security Audit
      - sec.mon.004
-     - The Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit
+     - The Platform **must** secure and protect audit logs (containing sensitive information) both in-transit
        and at rest.
      -
    * - Monitoring and Security Audit
      - sec.mon.005
-     - The Platform **must** Monitor and Audit various behaviours of connection and login attempts to
+     - The Platform **must** monitor and audit various behaviours of connection and login attempts to
        detect access attacks and potential access attempts and take corrective actions accordingly.
      -
    * - Monitoring and Security Audit
      - sec.mon.006
-     - The Platform **must** Monitor and Audit operations by authorized account access after login to
+     - The Platform **must** monitor and audit operations by authorized account access after login to
        detect malicious operational activity and take corrective actions accordingly.
      -
    * - Monitoring and Security Audit
      - sec.mon.007
-     - The Platform **must** Monitor and Audit security parameter configurations for compliance with
+     - The Platform **must** monitor and audit security parameter configurations for compliance with
        defined security policies.
      -
    * - Monitoring and Security Audit
      - sec.mon.008
-     - The Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks)
+     - The Platform **must** monitor and audit externally exposed interfaces for illegal access (attacks)
        and take corrective security hardening measures.
      -
    * - Monitoring and Security Audit
      - sec.mon.009
-     - The Platform **must** Monitor and Audit service handling for various attacks (malformed messages,
+     - The Platform **must** monitor and audit service handling for various attacks (malformed messages,
        signalling flooding and replaying, etc.) and take corrective actions accordingly.
      -
    * - Monitoring and Security Audit
      - sec.mon.010
-     - The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized
+     - The Platform **must** monitor and audit running processes to detect unexpected or unauthorized
        processes and take corrective actions accordingly.
      -
    * - Monitoring and Security Audit
      - sec.mon.011
-     - The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to
+     - The Platform **must** monitor and audit logs from infrastructure elements and workloads to
        detected anomalies in the system components and take corrective actions accordingly.
      -
    * - Monitoring and Security Audit
      - sec.mon.012
-     - The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware
+     - The Platform **must** monitor and audit traffic patterns and volumes to prevent malware
        download attempts.
      -
    * - Monitoring and Security Audit
@@ -1171,7 +1172,7 @@ Cloud Infrastructure Security Requirements
      -
    * - Monitoring and Security Audit
      - sec.mon.015
-     - The Platform **must** ensure that the Monitoring systems are never starved of resources and **must**
+     - The Platform **must** ensure that the monitoring systems are never starved of resources and **must**
        activate alarms when resource utilisation exceeds a configurable threshold.
      -
    * - Monitoring and Security Audit
@@ -1233,7 +1234,7 @@ Cloud Infrastructure Security Requirements
      - sec.arch.001
      - Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture
        stage triggered by Software Feature Design trigger. It may be done manually or using tools like open source
-       OWASP Threat Dragon
+       OWASP Threat Dragon.
      -
    * - IaaC - Secure Design and Architecture Stage Requirements
      - sec.arch.002
@@ -1429,7 +1430,7 @@ Reference Architecture.
 The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised
 resources and a software management system.
 
-In virtualisation platforms, the Cloud Infrastructure consists of the Guest Operating System, Hypervisor and, if
+In virtualisation platforms, the Cloud Infrastructure consists of the guest operating system, hypervisor and, if
 needed, other software such as libvirt. The Cloud Infrastructure Management component is responsible for, among others,
 tenant management, resources management, inventory, scheduling, and access management.
 
@@ -1501,13 +1502,13 @@ machines or containers.
    * - inf.com.01
      - Infrastructure
      - Compute
-     - The Architecture must provide compute resources for Pods. technologies.
+     - The Architecture must provide compute resources for pods.
      - ra2.k8s.004
    * - inf.stg.01
      - Infrastructure
      - Storage
      - The Architecture must support the ability for an operator to choose whether or
-       not to deploy persistent storage for Pods.
+       not to deploy persistent storage for pods.
      - ra2.stg.004
    * - inf.ntw.01
      - Infrastructure
@@ -1574,9 +1575,9 @@ machines or containers.
    * - inf.ntw.14
      - Infrastructure
      - Network
-     - The platform must allow NATless traffic (i.e. exposing the pod IP address directly to the
+     - The platform must allow NAT-less traffic (i.e., exposing the pod IP address directly to the
        outside), allowing source and destination IP addresses to be preserved in the traffic headers
-       from workloads to external networks. This is needed e.g. for signaling applications, using SIP
+       from workloads to external networks. This is needed e.g. for signalling applications, using SIP
        and Diameter protocols.
      - ra2.ntw.011
    * - inf.ntw.15
@@ -1601,20 +1602,20 @@ machines or containers.
      -
    * - inf.vir.01
      - Infrastructure
-     - Virtual Infr astructure
-     - The Architecture must support the capability for Containers to consume infrastructure resources
-       abstracted by Host Operating Systems that are running within a virtual machine.
+     - Virtual Infrastructure
+     - The Architecture must support the capability for containers to consume infrastructure resources
+       abstracted by host operating systems that are running within a virtual machine.
      - ra2.ch.005, ra2.ch.011
    * - inf.phy.01
      - Infrastructure
-     - Physical Infrastructu re
-     - The Architecture must support the capability for Containers to consume infrastructure resources
-       abstracted by Host Operating Systems that are running within a physical server.
+     - Physical Infrastructure
+     - The Architecture must support the capability for containers to consume infrastructure resources
+       abstracted by host operating systems that are running within a physical server.
      - ra2.ch.008
    * - kcm.gen.01
      - Kubernetes Cluster
      - General
-     - The Architecture must support policy driven horizontal auto- scaling of Kubernetes Cluster.
+     - The Architecture must support policy driven horizontal auto- scaling of Kubernetes cluster.
      - N/A
    * - kcm.gen.02
      - Kubernetes Cluster
@@ -1630,8 +1631,8 @@ machines or containers.
    * - int.api.02
      - API
      - General
-     - The Architecture must support the usage of a Kubernetes Application package manager using the
-       Kubernetes API, like Helm v3. network, and storage.
+     - The Architecture must support the usage of a Kubernetes application package manager using the
+       Kubernetes API, like Helm v3.
      - ra2.pkg.001
    * - int.api.03
      - API
