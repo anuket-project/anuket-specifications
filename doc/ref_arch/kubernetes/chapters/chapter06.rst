@@ -1,14 +1,14 @@
 API and Feature Testing requirements
 ====================================
 
-Introduction
-------------
+Introduction to API and Feature Testing requirement
+---------------------------------------------------
 
-The CNCF has defined a :cite:t:`k8s-testing-sig` to make it easier for the community to write and run tests, and to
-contribute, analyse and act upon test results. This chapter maps the requirements written in the previous chapters as
-mandatory Special Interest Group Features. It enforces the overall requirements traceability to testing, especially
-those offered for :cite:t:`k8s-testing-sig-e2e-tests`.
-The Anuket Reference Conformance (RC2) testing then matches the following Features and tests defined here.
+The CNCF has defined a :cite:t:`k8s-testing-sig` to help the community to write and run tests, and to contribute,
+analyse and act upon test results. This chapter maps the requirements written in the previous chapters as mandatory
+Special Interest Group Features. It enforces the overall requirements traceability to testing, especially those offered
+for :cite:t:`k8s-testing-sig-e2e-tests`.
+The Anuket Reference Conformance (RC2) testing matches the Features and tests defined here.
 
 Kubernetes feature gate policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -16,18 +16,17 @@ Kubernetes feature gate policy
 :cite:t:`k8s-feature-gates` are a set of key-value pairs that describe Kubernetes features. The components of the
 control plane of Kubernetes Clusters can be run with different Feature Gate settings.
 
-A feature can be in Alpha, Beta or GA stage:
+A feature can be in Alpha, Beta or General Availability (GA) stage:
 
-- Alpha features are disabled by default, may be buggy, and support may be dropped
+- Alpha features are disabled by default, breaking API changes may be expected, may be buggy, and support may be dropped
 - Beta features are disabled by default, are well tested, and support will not be dropped (although breaking API
   changes may happen). Any existing Beta feature as of 1.24 will continue to be enabled by default, but new beta APIs
   and features will not be enabled by default after Kubernetes 1.24.
   More in :cite:t:`k8s-kep-3136`
 - GA features are stable, always enabled and cannot be disabled.
 
-The policy for RA2 to include Kubernetes features as mandatory is:
-
-   Only features that are in GA stage, or Beta when introduced before Kubernetes 1.24, can be made mandatory, subject to RA2 requirements.
+Only those Kubernetes features can be made mandatory in this Reference Architecture which are GA or were Beta before
+Kubernetes 1.24.
 
 A list of feature gates is available here :cite:p:`k8s-feature-gates`.
 
@@ -35,14 +34,13 @@ Kubernetes API policy
 ~~~~~~~~~~~~~~~~~~~~~
 
 The :cite:t:`k8s-api` supports all operations and communications between components, and external user commands.
-Everything in the Kubernetes platform is treated as an API object.
-Different API versions indicate different levels of stability and support. An API can have Alpha, Beta or Stable
-versions. The version of APIs that are backed by a feature will match the stage of the feature itself (i.e. Alpha, Beta
-or GA/Stable).
+Everything in the Kubernetes platform is treated as an API object. Different API versions indicate different levels of
+stability and support. An API can have Alpha, Beta or Stable versions. The version of APIs that are backed by a feature
+will match the stage of the feature itself (i.e. Alpha, Beta or GA or Stable).
 
 The policy for RA2 to include Kubernetes APIs as mandatory is:
 
-APIs that are in following stages can be made mandatory:
+In this Reference Architecture APIsonly those API can be mandatory which are in any of the following stages:
 
 - Stable
 - Beta when introduced before Kubernetes version 1.24
@@ -50,7 +48,7 @@ APIs that are in following stages can be made mandatory:
 
 The Kubernetes API reference is available here :cite:p:`k8s-api-reference`.
 
-The list of :cite:t:`k8s-v1.23-api-groups` that are mandatory is:
+The list of :cite:t:`k8s-v1.26-api-groups` that are mandatory is:
 
 .. list-table:: Mandatory API Groups
    :widths: 30 30
@@ -85,7 +83,7 @@ The list of :cite:t:`k8s-v1.23-api-groups` that are mandatory is:
    * - events.k8s.io
      - v1
    * - flowcontrol.apiserver.k8s.io
-     - v1beta2, v1beta1
+     - v1beta2
    * - networking.k8s.io
      - v1
    * - node.k8s.io
@@ -195,9 +193,6 @@ Auth Special Interest Group :cite:p:`k8s-api-sig-auth`
    * - Feature:NodeAuthorizer
      - X
      - Setting existing and non-existent attributes should exit with the Forbidden error, not a NotFound error
-   * - Feature:PodSecurityPolicy
-     -
-     - Should enforce the restricted policy.PodSecurityPolicy
    * - NodeFeature:FSGroup
      - X
      - ServiceAccounts should set ownership and permission when RunAsUser or FsGroup is present

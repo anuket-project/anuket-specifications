@@ -1,8 +1,8 @@
 Security Guidance
 =================
 
-Introduction
-------------
+Introduction to Security Guidance
+---------------------------------
 
 Securing Kubernetes requires several layers of security features to provide
 end-to-end security for cloud-native applications. The following is recommended:
@@ -67,8 +67,8 @@ The layers are as follows:
    lifecycle of the containers. The communication over these APIs needs to be secured via
    different mechanisms, such as TLS encryption, API authentication via LDAP, and so on.
 
-Principles
-----------
+Security Principles
+-------------------
 
 The core principles to consider when securing cloud-native applications are as follows:
 
