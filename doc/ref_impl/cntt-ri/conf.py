@@ -18,7 +18,8 @@ linkcheck_ignore = [
 # Related issue: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/IT-25549
     'https://build.opnfv.org/ci/view/cntt/',
     'http://artifacts.opnfv.org/',
-    'https://build.opnfv.org/'
+    'https://build.opnfv.org/', 
+    'https://wiki.lfnetworking.org/'
 
 ]
 intersphinx_mapping = {
