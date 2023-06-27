@@ -13,7 +13,8 @@ html_theme = "piccolo_theme"
 linkcheck_ignore = [
     'http://127.0.0.1',
     'https://github.com/cncf/cnf-testsuite/',
-    'https://github.com/opencontainers/'
+    'https://github.com/opencontainers/',
+    'https://build.opnfv.org/'
 ]
 intersphinx_mapping = {
     'ref_arch_kubernetes': ('https://cntt.readthedocs.io/projects/ra2/en/latest/', None)
