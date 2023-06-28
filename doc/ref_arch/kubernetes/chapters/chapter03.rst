@@ -81,9 +81,9 @@ The Kubernetes Node OS (as with any OS) consists of two main components:
 -  Kernel space
 -  User space
 
-The kernel is the core of the Operating System, controlling all hardware resources and managing the interaction with
+The kernel is the core of the operating system, controlling all hardware resources and managing the interaction with
 software components. Kernel features include key containerisation capabilities, such as control groups (cgroups) and
-namespaces, used and managed by the container runtime to provide isolation between the user space processes. The Kernel
+namespaces, used and managed by the container runtime to provide isolation between the user space processes. The kernel
 provides an API to applications running in the user space (which usually has its own southbound interface provided
 by an interpreter or libraries). This isolation also includes the container itself, as well as any processes running
 within it.
@@ -104,9 +104,9 @@ Container Runtime Services
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Container Runtime is a component that runs within a Kubernetes Node Operating System (OS). It manages the
-underlying OS functionality, (such as cgroups and namespaces in Linux), in order to provide a isolated context within
+underlying OS functionality, (such as cgroups and namespaces in Linux), in order to provide an isolated context within
 which container images can be executed. It also makes use of the infrastructure resources, such as compute, storage,
-networking and other I/O devices, abstracted by the Node node OS, based on API instructions from the kubelet.
+networking and other I/O devices, abstracted by the Node OS, based on API instructions from the kubelet.
 
 There are a number of different container runtimes. The simplest form of runtimes, the low-level container runtimes,
 only manage the operating system capabilities, such as cgroups and namespaces, and then run commands from within those
@@ -114,22 +114,22 @@ cgroups and namespaces. An example of this type of runtime is runc, which underp
 and is considered a reference implementation of the Open Container Initiative (OCI) runtime spec. :cite:p:`ociruntime`
 This specification includes details on how an implementation (that
 is, an actual container runtime such as runc) must, for example, configure resource shares and limits (such as CPU,
-Memory, IOPS) for the containers that Kubernetes (via the kubelet) schedules on that node. This is important to ensure
+memory, IOPS) for the containers that Kubernetes (via the kubelet) schedules on that node. This is important to ensure
 that the features and capabilities described in the Reference Model :cite:p:`refmodel` are supported
 by this RA and delivered by any downstream Reference Implementations (RIs) to the instance types defined in the RM.
 
 Where low-level runtimes are used for the execution of a container within an operating system, the more complex and
 complete high-level container runtimes are used for the general management of container images - moving them to where
 they need to be executed, unpacking them, and then passing them to the low-level runtime, which then executes the
-container. These high-level runtimes also include a comprehensive API that other applications, such as Kubernetes, can
+container. These high-level runtimes also include a comprehensive API that other components, such as Kubernetes, can
 use to interact and manage the containers. An example of this type of runtime is containerd, which provides the
 features described above, and depends on runc for execution.
 
 For Kubernetes, the important interface to consider for container management is the Kubernetes Container Runtime
 Interface (CRI).
 This is an interface specification for any container runtime to integrate with the control plane (kubelet) of a
-Kubernetes Node. The CRI allows to decouple the kubelet from the runtime that is running in the node OS, allowing to
-swap container runtime as long as it is compliant with CRI. Examples CRI-compliant runtimes include containerd
+Kubernetes node. The CRI allows to decouple the kubelet from the runtime that is running in the node OS, allowing to
+swap container runtime if it is compliant with CRI. Examples CRI-compliant runtimes include containerd
 and cri-o, which are built specifically to work with Kubernetes.
 
 To fulfill ``inf.vir.01``, the architecture should support a container runtime which provides the isolation of the
@@ -180,7 +180,7 @@ with the Topology Manager. Special care needs to be taken of:
 
 -  Supporting isolated CPUs: Using kubelet Reserved CPUs
    and Linux isolcpus allows configuration where only isolcpus are allocatable to pods. Scheduling pods to such nodes
-   can be influenced with taints, tolerations and node affinity.
+   can be influenced with taints, tolerations, and node affinity.
 -  Differentiating between physical cores and SMT: When requesting even number of CPU cores for pods, scheduling
    can be influenced with taints, tolerations, and node affinity.
 
@@ -213,7 +213,7 @@ policy returns topology hints relating to the exclusive CPU. The Device Manager 
 device.
 
 If memory or huge pages are not considered by the Topology Manager, it can be done by the operating system
-providing best-effort local page allocation for containers, as long as there is sufficient free local memory on
+providing best-effort local page allocation for containers, if there is sufficient free local memory on
 the node, or with a Control Groups (cgroups) cpuset subsystem that can isolate memory to a single NUMA node.
 
 Node Feature Discovery
@@ -248,7 +248,7 @@ The figure Device Plugin Operation below shows in four steps how device plugins 
 
    Device Plugin Operation
 
-An example of an often used device plugin is the
+An example of an often-used device plugin is the
 SR-IOV Network Device Plugin  :cite:p:`k8s-sriov-network-device-plugin`. The SR-IOV
 Network Device Plugin discovers and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is
 used to map VFs to scheduled pods. To use it, an SR-IOV CNI is required. A CNI multiplexer plugin (such as
@@ -335,11 +335,11 @@ When running in VMs, the following list of configurations shows what is needed f
 Container Networking Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Kubernetes considers networking as a key component, with a number of distinct solutions. By default,
+Kubernetes considers networking as a key component, with several distinct solutions. By default,
 Kubernetes networking is considered to be an “extension” to the core functionality, and is managed through
 the use of Network Plugins :cite:p:`k8s-docs-network-plugins`,
 which can be categorised based on the topology of the networks they manage, and the integration with the
-switching (such as vlan vs tunnels) and routing (such as virtual vs physical gateways) infrastructure
+switching (such as VLAN vs tunnels) and routing (such as virtual vs physical gateways) infrastructure
 outside the Cluster:
 
 -  **Layer 2 underlay** plugins provide east/west ethernet connectivity between the
@@ -444,7 +444,7 @@ The figure `Kubernetes Networking Architecture` below shows the main building bl
 -  **CNI multiplexer/meta-plugin**: as described above, this is an optional component
    that integrates with the Kubernetes control plane via CNI, but allows for the
    use of multiple CNI plugins and the provision of multiple network connections for
-   each Pod, as shown by the use of additional CNI Plugin and ``net0`` connection in
+   each Pod, as shown using additional CNI Plugin and ``net0`` connection in
    the Pod. Note that the different network characteristics of the interfaces might
    require different networking technologies, which would potentially require
    different CNI plugins. Also note that this is only required for the High Performance
@@ -480,7 +480,7 @@ The figure `Kubernetes Networking Architecture` below shows the main building bl
       IP addresses within a Cluster, and if multiple IPAM solutions are used that
       they are coordinated (as required by ``inf.ntw.10``).
 
--  **Service Mesh**: The well known service meshes are "application service meshes"
+-  **Service Mesh**: The well-known service meshes are "application service meshes"
    that address and interact with the application layer 7 protocols (eg.: HTTP)
    only. Therefore, their support is not required, as these service meshes are outside
    the scope of the infrastructure layer of this architecture.
@@ -495,7 +495,7 @@ The figure `Kubernetes Networking Architecture` below shows the main building bl
    <!--The above diagram is maintained here:
    https://wiki.lfnetworking.org/display/LN/CNTT+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
 
-There are a number of different methods involved in managing, configuring and consuming networking resources in
+There are several different methods involved in managing, configuring and consuming networking resources in
 Kubernetes, including:
 
 -  The Default Cluster Network can be installed and managed by config files,
@@ -503,7 +503,7 @@ Kubernetes, including:
    two.
 -  Additional networking management plane (e.g., CNI multiplexer/meta-plugin or
    federated networking manager) can be installed and managed by config files,
-   Kubernetes API Server (e.g. Custom Resource Definitions) or a combination of the
+   Kubernetes API Server (e.g., Custom Resource Definitions) or a combination of the
    two.
 -  The connecting of Pods to the Default Cluster Network is handled by the Default
    CNI Plugin (Cluster Network).
@@ -521,13 +521,13 @@ Networks used for signalling traffic are more demanding than what a standard ove
 not need the use of user space networking. Due to the nature of the signalling protocols used, these type of
 networks require NAT-less communication documented in ``infra.net.cfg.003`` and will need to be served by a CNI plugin
 with IPVLAN or MACVLAN support. On the other hand, the low latency, high throughput networks used for handling the user
-plane traffic require the capability to use an accelerated user space networking technology.
+plane traffic, require the capability to use an accelerated user space networking technology.
 
    Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as
    an additional feature and still be conformant with Anuket.
 
 ..
-   Editors note: The possibility to SR-IOV for DPDK is under discussion.
+   Editor's note: The possibility to SR-IOV for DPDK is under discussion.
 
    Refer to software and hardware profile features at
    :ref:`ref_model:chapters/chapter05:cloud infrastructure software profiles features and requirements`.
@@ -572,7 +572,7 @@ interface in a pod removes the need for traditional networking tools such as *VR
 tables inside the pod network namespace.
 
 The basic semantics of Kubernetes, and the information found in the manifests, defines the connectivity rules and
-behavior without any references to IP addresses. This has many advantages: it makes it easy to create portable,
+behaviour without any references to IP addresses. This has many advantages: it makes it easy to create portable,
 scalable software services and network policies for them that are not location-aware and therefore can be executed
 more or less anywhere.
 
@@ -591,7 +591,7 @@ more or less anywhere.
        local port (for example, 3306) on which the proxy listens, and a selector that determines which pods answer
        requests sent through the proxy.
    * - EndpointSlices :cite:p:`k8s-docs-endpointslices`
-     - Endpoints and Endpointslices are a collection of objects that contain the IP addresses, (IPv4 and IPv6) of the
+     - Endpoints and EndpointSlices are a collection of objects that contain the IP addresses, (IPv4 and IPv6) of the
        pods that represent a service.
    * - Network Policies :cite:p:`k8s-docs-networkpolicies`
      - A Network Policy defines which network traffic is allowed to ingress and egress from a set of pods.
@@ -656,10 +656,8 @@ network configurations. These are supported by using a
 Container Network Interface :cite:p:`cni` multiplexer such as
 Multus :cite:p:`github-multus`.
 A considerable effort is being invested to add better network support to Kubernetes. All such activities are
-coordinated through the kubernetes
-Network Special Interest Group :cite:p:`sig-network` and its sub-groups.
-One such group, the Network Plumbing Working Group :cite:p:`k8s-npwg` has
-produced the
+coordinated through the Kubernetes Network Special Interest Group :cite:p:`sig-network` and its sub-groups.
+One such group, the Network Plumbing Working Group :cite:p:`k8s-npwg` has produced the
 Kubernetes Network Custom Resource Definition De-facto Standard :cite:p:`k8s-multi-net-spec`.
 This document describes how secondary networks can be defined and attached to pods.
 
@@ -764,13 +762,13 @@ is a directory on the worker node on which the container is running.
    physically external to the worker node (for example, iSCSI, NFS, and FC), but the container still references it as part
    of the local filesystem.
 
-Additional storage could also be attached to a container through the use of Kubernetes Volumes. This can be storage
+Additional storage could also be attached to a container using Kubernetes Volumes. This can be storage
 from the worker node filesystem (through hostPaths, although this is not recommended), or it can be external storage
-that is accessed through the use of a Volume Plugin. Volume Plugins allow the use of a storage protocol (such as iSCSI
+that is accessed using a Volume Plugin. Volume Plugins allow the use of a storage protocol (such as iSCSI
 and NFS) or a management API (such as Cinder and EBS) for attaching and mounting the storage into a pod. This additional
 storage that is attached to a container using a Kubernetes Volume does not live and die with the container, but instead
 follows the lifecycle of the pod of which the container is a part. This means the Volume persists across container
-restarts, as long as the pod itself is still running. However, it does not necessarily persist when a pod is destroyed.
+restarts, if the pod itself is still running. However, it does not necessarily persist when a pod is destroyed.
 Therefore, it cannot be considered suitable for any scenario requiring persistent data. The lifecycle of the actual data
 depends on the Volume Plugin used and sometimes also the configuration of the Volume Plugin.
 
@@ -779,7 +777,7 @@ resources in a Kubernetes Cluster that are consumed by Persistent Volume Claims 
 independent of any pod that uses a PV. A pod uses a PVC as the volume in the pod spec. A PVC is a request for
 persistent storage (a PV) by a pod. By default, PVs and PVCs are manually created and deleted.
 
-Kubernetes also provides Storage Classes. Storage Classes are created by Cluster administrators and maps to storage
+Kubernetes also provides Storage Classes. Storage Classes are created by cluster administrators and maps to storage
 attributes such as quality-of-service, encryption, data resilience, and so on. Storage Classes also enable the dynamic
 provisioning of Persistent Volumes (as opposed to the default manual creation). This can be beneficial for organizations
 where the administration of storage is performed separately from the administration of Kubernetes-based workloads.
@@ -797,8 +795,8 @@ of several pods and other Kubernetes objects, the Reference Architecture mandate
 Application package manager. The package manager must be able to manage the lifecycle of an application and provide a
 framework to customize a set of parameters for its deployment. The requirement for the clusters is to expose a
 Kubernetes API for the package managers to use in the lifecycle management of the applications they manage. This must
-comply with the CNCF CNF conformance test. As it is not recommended to use a Kubernetes Application package manager with
-a server side component installed in the Kubernetes Cluster (for example, Tiller), Helm v3 :cite:p:`helm-docs`
+comply with the CNCF CNF Conformance Test. As it is not recommended to use a Kubernetes Application package manager with
+a server side component installed in the Kubernetes cluster (for example, Tiller), Helm v3 :cite:p:`helm-docs`
 is the chosen Kubernetes Application package manager.
 
 Custom Resources
@@ -847,7 +845,7 @@ dedicated, single-tenant clusters, the Reference Architecture provides support f
 responsible for the lifecycle management of multiple Kubernetes clusters. This component is responsible for delivering
 an end-to-end lifecycle management (creation and installation, scaling, updating, deleting, and so on, of entire
 clusters), visibility and control of CaaS clusters, together with verification of security and compliance of Kubernetes
-clusters across multiple data centers and clouds. Specifically, the scope of the CaaS Manager comprises the following:
+clusters across multiple data centres and clouds. Specifically, the scope of the CaaS Manager comprises the following:
 
 -  Infrastructure (Kubernetes Clusters) provisioning. This comprises either of the following:
 
@@ -856,11 +854,11 @@ clusters across multiple data centers and clouds. Specifically, the scope of the
 
 -  Control plane installation (that is, Kubernetes control plane components on the nodes).
 
--  Node node OS customization (for example, Kernel customization).
+-  Node OS customization (for example, Kernel customization).
 
 -  Management of Cluster add-ons (for example, CNIs, CSIs, and Service Meshes).
 
-The CaaS Manager maintains a catalog of **cluster templates**. These templates are used to create clusters specific to
+The CaaS Manager maintains a catalogue of **cluster templates**. These templates are used to create clusters specific to
 the requirements of workloads, the underlying virtualization provider, and/or the specific server hardware to be used
 for the cluster.
 

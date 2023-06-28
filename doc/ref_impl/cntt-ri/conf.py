@@ -16,9 +16,16 @@ html_theme = "piccolo_theme"
 
 linkcheck_ignore = [
     'http://127.0.0.1',
-    'https://trex-tgn.cisco.com', 
-    'https://build.opnfv.org/'
+    'https://trex-tgn.cisco.com',
+# The following items are added due to the flackyness of the OPNFV build servers
+# they can be removed as soon as the build server issues are fixed.
+# Related issue: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/IT-25549
+    'https://build.opnfv.org/ci/view/cntt/',
+    'http://artifacts.opnfv.org/',
+    'https://build.opnfv.org/', 
+    'https://wiki.lfnetworking.org/'
 ]
+
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
     'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None),

@@ -6,7 +6,7 @@ Introduction to Component Level Architecture
 
 This section describes in detail the Reference Architecture (RA2) for Kubernetes-based cloud infrastructure in terms
 of the functional capabilities and how they relate to the Reference Model (RM)
-requirements, that is, how the infrastructure profiles are determined, documented,
+requirements :cite:p:`refmodel`, that is, how the infrastructure profiles are determined, documented,
 and delivered.
 
 The specifications defined in this section will be detailed with unique
@@ -28,7 +28,7 @@ Kubernetes Node
 ---------------
 
 This section describes the configuration that will be applied to the physical or
-virtual machine and an installed Operating System. For a Kubernetes Node
+virtual machine and its Operating System. For a Kubernetes Node
 to be conformant with the Reference Architecture, it must be implemented according to
 the following specifications:
 
@@ -43,20 +43,20 @@ the following specifications:
      - Reference Implementation Trace
    * - ra2.ch.001
      - Huge pages
-     - For the platform to qualify as a high-performance profile, it must be possible to enable Huge pages
-       (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources hugepages-2Mi and
-       hugepages-1Gi.
+     - For the node's profile to qualify as high-performance, it must be possible to enable Huge pages
+       (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources `hugepages-2Mi` and
+       `hugepages-1Gi`.
      - infra.com.cfg.004 :cite:t:`refmodel` Chapter 5, section Virtual Compute
      - :cite:t:`anuket-ri2` Chapter 3, section Introduction
    * - ra2.ch.002
      - SR-IOV capable NICs
-     - For the platform to qualify as a high-performance profile, the physical machines on which the Kubernetes
+     - For the node's profile to qualify as high-performance, the physical machines on which the Kubernetes
        Nodes run must be equipped with NICs that are SR-IOV-capable.
      - e.cap.013 :cite:t:`refmodel` Chapter 4, section Exposed Performance Optimisation Capabilities
      - :cite:t:`anuket-ri2` Chapter 3, section Infrastructure Requirements
    * - ra2.ch.003
      - SR-IOV Virtual Functions
-     - For the platform to qualify as a high-performance profile, SR-IOV virtual functions (VFs) must be
+     - For the node's profile to qualify as high-performance, SR-IOV virtual functions (VFs) must be
        configured within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.
      - e.cap.013 :cite:t:`refmodel` Chapter 4, section Exposed Performance Optimisation Capabilities
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
@@ -73,9 +73,9 @@ the following specifications:
      -
    * - ra2.ch.006
      - CPU Allocation Ratio - Pods
-     - To ensure the CPU allocation ratio between the vCPU and the physical CPU core is 1:1, the sum of the CPU requests
-       and limits by the containers in the Pod specifications must remain less than the allocatable quantity of CPU
-       resources (that is, requests.cpu < allocatable.cpu and limits.cpu < allocatable.cpu).
+     - To ensure the CPU allocation ratio between the vCPU and the physical CPU core is 1:1, the sum of the CPU
+       requests and limits by the containers in the Pod specifications must remain less than the allocatable quantity
+       of CPU resources (that is, requests.cpu < allocatable.cpu and limits.cpu < allocatable.cpu).
      - infra.com.cfg.001 :cite:t:`refmodel` Chapter 5, section Virtual Compute Profiles
      - :cite:t:`anuket-ri2` Chapter 3, section Infrastructure Requirements
    * - ra2.ch.007
@@ -132,8 +132,8 @@ the following specifications:
      - :cite:t:`anuket-ri2` Chapter 3, section Infrastructure Requirements
    * - ra2.ch.013
      - Physical NIC Quantity
-     - The physical machines on which the Kubernetes nodes run must be equipped with at least four (4) Network Interface
-       Card (NIC) ports.
+     - The physical machines on which the Kubernetes nodes run must be equipped with at least four (4) Network
+       Interface Card (NIC) ports.
      - infra.hw.nic.cfg.001 from :cite:t:`refmodel` Chapter 5, section NIC configurations
      - :cite:t:`anuket-ri2` Chapter 3, section Infrastructure Requirements
    * - ra2.ch.014
@@ -184,8 +184,8 @@ For a Host OS to be compliant with this Reference Architecture, it must meet the
      - Reference Implementation Trace
    * - ra2.os.001
      - Linux Distribution
-     - A deb-/rpm-compatible distribution of Linux. It must be used for the control plane nodes. It can also be used for
-       worker nodes.
+     - A deb-/rpm-compatible distribution of Linux. It must be used for the control plane nodes. It can also be used
+       for worker nodes.
      - tbd
      - tbd
    * - ra2.os.002
@@ -236,8 +236,8 @@ Table 4.3 lists the kernel versions that comply with this Reference Architecture
 Kubernetes
 ----------
 
-For the Kubernetes components to be conformant with the Reference Architecture they must be implemented according to the
-following specifications:
+For the Kubernetes components to be conformant with the Reference Architecture they must be implemented according to
+the following specifications:
 
 .. list-table:: Kubernetes Specifications
    :widths: 10 10 40 20 20
@@ -320,8 +320,8 @@ following specifications:
    * - ra2.k8s.008
      - System resource reservations
      - To avoid resource starvation issues on the nodes, the implementation of the architecture must reserve compute
-       resources for system daemons and Kubernetes system daemons such as kubelet, container runtime, and so on. Use the
-       following kubelet flags: --reserved-cpus=[a-z], using two of a-z to reserve 2 SMT threads.
+       resources for system daemons and Kubernetes system daemons such as kubelet, container runtime, and so on. Use
+       the following kubelet flags: --reserved-cpus=[a-z], using two of a-z to reserve 2 SMT threads.
      - i.cap.014 in :ref:`chapters/chapter02:cloud infrastructure software profile capabilities`
      -
    * - ra2.k8s.009
@@ -332,8 +332,8 @@ following specifications:
        .. note::
 
         Only containers in Guaranteed pods - where CPU resource requests and limits are identical - and configured
-        with positive-integer CPU requests will take advantage of this. All other pods will run on CPUs in the remaining
-        shared pool.
+        with positive-integer CPU requests will take advantage of this. All other pods will run on CPUs in the
+        remaining shared pool.
 
      - infra.com.cfg.003 in :cite:t:`refmodel` Chapter 5, section
      -
@@ -467,9 +467,9 @@ the following specifications:
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.004
      - Multiple connection points presentation
-     - The networking solution deployed within the implementation must ensure that all additional non-default connection
-       points are requested by Pods using standard Kubernetes resource scheduling mechanisms, such as annotations, or
-       container resource requests and limits.
+     - The networking solution deployed within the implementation must ensure that all additional non-default
+       connection points are requested by Pods using standard Kubernetes resource scheduling mechanisms, such as
+       annotations, or container resource requests and limits.
      - inf.ntw.03 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.005
@@ -503,8 +503,8 @@ the following specifications:
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.010
      - User plane networking
-     - When hosting workloads that match the high-performance profile, CNI network plugins that support the use of DPDK,
-       VPP, and/or SR-IOV must be deployed as part of the networking solution.
+     - When hosting workloads that match the high-performance profile, CNI network plugins that support the use of
+       DPDK, VPP, and/or SR-IOV must be deployed as part of the networking solution.
      - infra.net.acc.cfg.001 in :cite:t:`refmodel`, Chapter 5, section Virtual Networking Profiles
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.011
@@ -563,8 +563,8 @@ Architecture they must be implemented according to the following specifications:
      - Ephemeral storage
      - An implementation must support ephemeral storage, for the unpacked container images to be stored and executed
        from, as a directory in the filesystem on the worker node on which the container is running. See the
-       `Container runtimes <#container-runtimes>`__ section above for more information on how this meets the requirement
-       for ephemeral storage for containers.
+       `Container runtimes <#container-runtimes>`__ section above for more information on how this meets the
+       requirement for ephemeral storage for containers.
      -
      -
    * - ra2.stg.002
@@ -697,8 +697,8 @@ Architecture, they must be implemented according to the following specifications
    * - ra2.app.008
      - Infrastructure dependency
      - Workloads must not rely on the availability of the control plane nodes for the successful execution of their
-       functionality (that is, loss of the control plane nodes may affect non-functional behaviours, such as healing and
-       scaling. However, components that are already running will continue to do so without issue).
+       functionality (that is, loss of the control plane nodes may affect non-functional behaviours, such as healing
+       and scaling. However, components that are already running will continue to do so without issue).
      - TBD
      - N/A
    * - ra2.app.009
@@ -809,8 +809,8 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.028
      - No access to container daemon sockets
-     - The CNF must not have any of the container daemon sockets (for example, /var/run/docker.sock, /var/run/containerd.sock
-       or /var/run/crio.sock) mounted.
+     - The CNF must not have any of the container daemon sockets (for example, /var/run/docker.sock,
+       /var/run/containerd.sock or /var/run/crio.sock) mounted.
      -
      - N/A
    * - ra2.app.029
@@ -866,9 +866,9 @@ Architecture, they must be implemented according to the following specifications
      - N/A
    * - ra2.app.038
      - Horizontal scaling
-     - If the CNF supports scaling, increasing and decreasing its capacity must be implemented using horizontal scaling.
-       If horizontal scaling is supported, automatic scaling must be possible using Kubernetes Horizontal Pod Autoscale
-       (HPA)
+     - If the CNF supports scaling, increasing and decreasing its capacity must be implemented using horizontal
+       scaling. If horizontal scaling is supported, automatic scaling must be possible using Kubernetes Horizontal Pod
+       Autoscaler (HPA)
        :cite:p:`k8s-hpa` feature.
      - TBD
      - N/A
