@@ -3,4 +3,4 @@
 # process, which may cause wedges in the gate later.
 sphinx==4.5.0 # BSD
 doc8==0.11.2 # Apache-2.0
-piccolo-theme==0.16.0
+piccolo-theme==0.16.0 # MIT
