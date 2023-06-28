@@ -16,7 +16,8 @@ html_theme = "piccolo_theme"
 
 linkcheck_ignore = [
     'http://127.0.0.1',
-    'https://trex-tgn.cisco.com'
+    'https://trex-tgn.cisco.com', 
+    'https://build.opnfv.org/'
 ]
 intersphinx_mapping = {
     'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
