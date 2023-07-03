@@ -99,14 +99,14 @@ The main communities involved in driving requirements and development of this RI
    -  The CNF Testbed is an initiative providing a framework for building and deploying technology show cases with a
       strong focus on telco platform requirements.
 
-Figure :ref:`ri2_figure_relationship-of-communities` provides an overview of the relationships among the involved communities.
+Figure :ref:`ri2_figure_relationship-of-communities` provides an overview of the relationships among the involved
+communities.
 
 .. _ri2_figure_relationship-of-communities:
 
 .. figure:: ../figures/ri2-ch01-relationship_of_communities.png
 
    Relationship of communities
-
 
 Reference Implementation Approach
 ---------------------------------
