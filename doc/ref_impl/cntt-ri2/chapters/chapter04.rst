@@ -21,8 +21,8 @@ used for the Kubernetes provisioning stage and any tools used in the host provis
 Prerequisites
 -------------
 
-You will need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will
-be deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on
+You will need one physical server acting as a jump server along with minimum of two additional servers on which RI-2
+will be deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on
 the server and network specifications.
 
 Installation of the Reference Implementation
