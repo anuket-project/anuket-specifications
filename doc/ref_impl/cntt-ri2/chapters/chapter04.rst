@@ -21,8 +21,8 @@ used for the Kubernetes provisioning stage and any tools used in the host provis
 Prerequisites
 -------------
 
-You will need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be
-deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on
+You will need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will
+be deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on
 the server and network specifications.
 
 Installation of the Reference Implementation
@@ -60,7 +60,7 @@ IDF includes information about network information required by the installer. Al
 VLAN, DNS, and gateway information should be defined here. The IDF file also contains configuration options for the
 Kubernetes deployment using BMRA. These options are described in greater detail below.
 
-More details regarding these descriptor files and their schema are documented in 
+More details regarding these descriptor files and their schema are documented in
 :doc:`ref_impl_cntt-ri:chapters/chapter08`.
 
 For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single
