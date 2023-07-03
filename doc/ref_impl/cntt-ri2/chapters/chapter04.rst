@@ -114,7 +114,8 @@ CPU configuration.
          num_exclusive_cores: 3      # Number of CPU cores to assign to the "exclusive pool" on each node
        topology_manager:
          enable: true                # Enable Kubernetes built-in Topology Manager
-         policy: "best-effort"       # Policy to use with Topology Manager ["none", "best-effort", "restricted", "single-numa-node"]
+         policy: "best-effort"       # Policy to use with Topology Manager:
+                                     # ["none", "best-effort", "restricted", "single-numa-node"]
        tas:
          enable: true                # Enable Telemetry Aware Scheduling
          demo_policy: false          # Enable demo policy for Telemetry Aware Scheduling (default: false)
