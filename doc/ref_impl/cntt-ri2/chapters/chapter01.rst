@@ -29,7 +29,7 @@ The document first consolidates the requirements that need to be addressed by th
 :ref:`chapters/chapter02:Reference Implementation Requirements`.
 :ref:`chapters/chapter03:Requirements for Labs` then details the requirements that need to be met in
 order for anyone to be able to install the RI, whether that be into a community lab, their own corporate or personal
-lab or some other environment such as CNF Testbed or a public cloud provider. The 
+lab or some other environment such as CNF Testbed or a public cloud provider. The
 :ref:`chapters/chapter04:Operational Runbook` is provided to assist in the deployment of the RI into a chosen
 environment and includes step-by-step instructions for a selection of installers as well as steps on how to validate
 the deployment. Finally, :ref:`chapters/chapter05:Gap Analysis and Development` is a placeholder to
