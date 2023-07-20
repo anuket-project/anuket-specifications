@@ -6,8 +6,7 @@
 # @global-owner1 and @global-owner2 will be requested for
 # review when someone opens a pull request.
 
-*       @walterkozlowski @jgu17 @collivier @rgstori @xudan16 @steelescotr
-
+*       @walterkozlowski @jgu17 @collivier @rgstori @xudan16
 
 # Governance
 /doc/gov/                            @walterkozlowski
@@ -28,7 +27,7 @@
 /doc/ref_impl/cntt-ri2/              @xudan16
 
 # Reference Conformance 2
-/doc/ref_cert/RC2/                   @steelescotr
+# /doc/ref_cert/RC2/                 
 
 # Edge workstream
 /doc/tech/usecases.md              @walterkozlowski
