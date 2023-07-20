@@ -35,7 +35,7 @@ GSMA, the joint Terms of Reference of LFN and GSMA, the LFN Code of Conduct, as 
 * `CNTT Terms of Reference (ToR) LFN \| GSMA <https://wiki.lfnetworking.org/display/LN/Terms+of+Reference?src=contextnavpagetreemode>`__
    -  Note: If you are not self-employed, then you must ensure that your employer also agrees to the ToR before
       participating.
-* `Code of Conduct LFN <https://lfprojects.org/policies/code-of-conduct/>`__
+* `Code of Conduct LF <https://lfprojects.org/policies/code-of-conduct/>`__
 * `Trademark Policy <https://lfprojects.org/policies/trademark-policy/>`__
 
 Recommended checklist for participating in the Anuket community:
