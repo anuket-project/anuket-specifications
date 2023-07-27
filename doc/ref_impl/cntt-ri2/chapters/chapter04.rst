@@ -5,7 +5,7 @@ Introduction
 ------------
 
 This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The
-entire deployment has been tested in Anuket Labs as a part of the `Anuket Kuberef project
+deployment has been thoroughly tested in Anuket Labs as part of the `Anuket Kuberef project
 <https://wiki.anuket.io/display/HOME/Kuberef>`__, that aims to deliver RI-2 based on RA-2 specifications. The Kuberef
 project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop
 and test against. Currently, Kuberef supports deployments on both baremetal, as well as pre-provisioned infrastructure
@@ -21,8 +21,8 @@ used for the Kubernetes provisioning stage and any tools used in the host provis
 Prerequisites
 -------------
 
-You need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be
-deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on
+You will need one physical server acting as a jump server along with minimum of two additional servers on which RI-2
+will be deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on
 the server and network specifications.
 
 Installation of the Reference Implementation
@@ -60,7 +60,7 @@ IDF includes information about network information required by the installer. Al
 VLAN, DNS, and gateway information should be defined here. The IDF file also contains configuration options for the
 Kubernetes deployment using BMRA. These options are described in greater detail below.
 
-More details regarding these descriptor files as well as their schema are very well documented in
+More details regarding these descriptor files and their schema are documented in
 :doc:`ref_impl_cntt-ri:chapters/chapter08`.
 
 For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single
@@ -114,7 +114,8 @@ CPU configuration.
          num_exclusive_cores: 3      # Number of CPU cores to assign to the "exclusive pool" on each node
        topology_manager:
          enable: true                # Enable Kubernetes built-in Topology Manager
-         policy: "best-effort"       # Policy to use with Topology Manager ["none", "best-effort", "restricted", "single-numa-node"]
+         policy: "best-effort"       # Policy to use with Topology Manager:
+                                     # ["none", "best-effort", "restricted", "single-numa-node"]
        tas:
          enable: true                # Enable Telemetry Aware Scheduling
          demo_policy: false          # Enable demo policy for Telemetry Aware Scheduling (default: false)
