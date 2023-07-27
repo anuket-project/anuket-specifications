@@ -6,7 +6,7 @@ Introduction to API and Feature Testing requirement
 
 The CNCF has defined a :cite:t:`k8s-testing-sig` to help the community to write and run tests, and to contribute,
 analyze, and act upon test results. This chapter maps the requirements written in the previous chapters as mandatory
-special interest group features. It enforces the overall requirements traceability to testing, especially those offered
+Special Interest Group features. It enforces the overall requirements traceability to testing, especially those offered
 for :cite:t:`k8s-testing-sig-e2e-tests`.
 The Anuket Reference Conformance (RC2) testing matches the features and tests defined here.
 
@@ -98,10 +98,10 @@ The list of :cite:t:`k8s-v1.26-api-groups` that are mandatory is as follows:
    * - storage.k8s.io
      - v1
 
-API Machinery special interest group :cite:p:`k8s-api-sig-api-machinery`
+API Machinery Special Interest Group :cite:p:`k8s-api-sig-api-machinery`
 ------------------------------------------------------------------------
 
-.. list-table:: API Machinery special interest group
+.. list-table:: API Machinery Special Interest Group
    :widths: 30 10 60
    :header-rows: 1
 
@@ -132,10 +132,10 @@ API Machinery special interest group :cite:p:`k8s-api-sig-api-machinery`
      -
      -
 
-Apps special interest group :cite:p:`k8s-api-sig-apps`
+Apps  :cite:p:`k8s-api-sig-apps`
 ------------------------------------------------------
 
-.. list-table:: Apps special interest group
+.. list-table:: Apps Special Interest Group
    :widths: 30 10 60
    :header-rows: 1
 
@@ -172,10 +172,10 @@ Apps special interest group :cite:p:`k8s-api-sig-apps`
      - X
      - The job should be deleted once it has finished, after the TTL has elapsed.
 
-Auth special interest group :cite:p:`k8s-api-sig-auth`
+Auth Special Interest Group :cite:p:`k8s-api-sig-auth`
 ------------------------------------------------------
 
-.. list-table:: Auth special interest group
+.. list-table:: Auth Special Interest Group
    :widths: 30 10 60
    :header-rows: 1
 
@@ -201,10 +201,10 @@ Auth special interest group :cite:p:`k8s-api-sig-auth`
      - X
      - ServiceAccounts should set ownership and permission when RunAsUser or FsGroup is present.
 
-Cluster Lifecycle special interest group :cite:p:`k8s-api-sig-cluster-lifecycle`
+Cluster Lifecycle Special Interest Group :cite:p:`k8s-api-sig-cluster-lifecycle`
 --------------------------------------------------------------------------------
 
-.. list-table:: Cluster Lifecycle special interest group
+.. list-table:: Cluster Lifecycle Special Interest Group
    :widths: 30 10 60
    :header-rows: 1
 
@@ -222,10 +222,10 @@ Cluster Lifecycle special interest group :cite:p:`k8s-api-sig-cluster-lifecycle`
      - The BootstrapTokens feature should delete the token secret when the secret has expired.
 
 
-Instrumentation special interest group :cite:p:`k8s-api-sig-instrumentation`
+Instrumentation Special Interest Group :cite:p:`k8s-api-sig-instrumentation`
 ----------------------------------------------------------------------------
 
-.. list-table:: Instrumentation special interest group
+.. list-table:: Instrumentation Special Interest Group
    :widths: 30 10 60
    :header-rows: 1
 
@@ -257,10 +257,10 @@ Instrumentation special interest group :cite:p:`k8s-api-sig-instrumentation`
      -
      -
 
-Network special interest group :cite:p:`k8s-api-sig-network`
+Network Special Interest Group :cite:p:`k8s-api-sig-network`
 ------------------------------------------------------------
 
-.. list-table:: Network special interest group
+.. list-table:: Network Special Interest Group
    :widths: 30 10 60
    :header-rows: 1
 
@@ -322,10 +322,10 @@ Network special interest group :cite:p:`k8s-api-sig-network`
      -
      - The Pods should function for intra-pod communication: sctp.
 
-Node special interest group :cite:p:`k8s-api-sig-node`
+Node Special Interest Group :cite:p:`k8s-api-sig-node`
 ------------------------------------------------------
 
-.. list-table:: Node special interest group
+.. list-table:: Node Special Interest Group
    :widths: 30 10 60
    :header-rows: 1
 
@@ -370,10 +370,10 @@ Node special interest group :cite:p:`k8s-api-sig-node`
      - X
      - The Sysctls feature should not launch unsafe, but not explicitly enabled sysctls on the node.
 
-Scheduling special interest group :cite:p:`k8s-api-sig-scheduling`
+Scheduling Special Interest Group :cite:p:`k8s-api-sig-scheduling`
 ------------------------------------------------------------------
 
-.. list-table:: Scheduling special interest group
+.. list-table:: Scheduling Special Interest Group
    :widths: 30 10 60
    :header-rows: 1
 
@@ -397,10 +397,10 @@ Scheduling special interest group :cite:p:`k8s-api-sig-scheduling`
      -
      - The Recreate feature runs Nvidia GPU Device Plugin tests with a recreation.
 
-Storage special interest group :cite:p:`k8s-api-sig-storage`
+Storage Special Interest Group :cite:p:`k8s-api-sig-storage`
 ------------------------------------------------------------
 
-.. list-table:: Storage special interest group
+.. list-table:: Storage Special Interest Group
    :widths: 30 10 60
    :header-rows: 1
 
