@@ -57,7 +57,7 @@ A generic Telco cloud is a hybrid multi-cloud. A better designation would be a f
   - the component clouds are autonomous in terms of, for example, execution autonomy; please note that in a centralised
     control plane scenario (please see the section "Centralised Control Plane" in the
     "`Edge Computing: Next Steps in Architecture, Design and Testing <https://www.openstack.org/use-cases/edge-computing
-    /edge-computing-next-steps-in-architecture-design-and-testing/>`__" whitepaper [26]) the edge clouds do not have
+    /edge-computing-next-steps-in-architecture-design-and-testing/>`__" whitepaper :cite:p:`openinfraedgearch`) the edge clouds do not have
     total autonomy and are subject to constraints (e.g., workload LCM)
   - execution autonomy is the ability of a component cloud to decide the order in which internal and external requests
     are performed
@@ -189,7 +189,7 @@ Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Br
 these interface points need to provide are defined by the :numref:`Multi-Cloud Interactions Model` below. This provides
 a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-02.png
+.. figure:: ../figures/rm-chap-8-multicloud-interactions-03.png
    :name: Multi-Cloud Interactions Model
    :alt: Multi-Cloud Interactions Model
 
@@ -206,13 +206,19 @@ The model defines the following core roles:
 
 The set of high level interactions cover:
 
-- Manage Account - covering Account, Users, Subscription, Billing
+- Manage Account & Catalog - covering Account, Users, Subscription, Billing & Catalog of Available Services (where
+  Service Provider (not necessarily CSP only) is responsible for creation and publication of catalog contents)
 - Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge/Cloud Connection Configuration,
   Connection Security Profile
 - Manage Resource - Resource Pool Management, VM/VNF Management (CPU, Memory, Storage, Network), Image Repository
   Management, Storage Management, VNF/CNF LCM, Monitor Resources
 - Manage App/VNF - Image/Container/Registry Management, Deploy/Configure/Scale/Start/Stop App/VNF, Monitor App/VNFs
 - Transactions / Conversations - Use Communications Services, Use Edge Applications Services, Use Cloud Services
+
+This model, its actors (roles), and the interactions discussed below, are focused on the provision and 
+consumption of cloud services in different stereo-typical deployment scenarios: IaaS, SaaS, CaaS, and Edge. The model 
+presented in Chapter 9 deals with the cloud build and maintenance processes in different scenarios. It also defines
+the boundaries of the automation domains. These two views complement each other.
 
 Stereo-Typical Scenarios
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -223,7 +229,7 @@ scenarios help highlight needs for the Cloud Service Broker and Cloud Resources 
 :numref:`Conceptual Architecture of a Telco Operator Platform`) and hence extent of orchestration required to manage the
 interactions.
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-03.png
    :name: Simple Stereo-Typical Interactions
    :alt: Simple Stereo-Typical Interactions
 
@@ -258,7 +264,7 @@ The following patterns are visible:
 
 A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in the following diagram:
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-02.png
    :name: Disaggregated SaaS Stereo-Typical Interaction
    :alt: Disaggregated SaaS Stereo-Typical Interaction
 
@@ -282,13 +288,13 @@ The different means of integrating with and managing Cloud Providers is broadly 
 
 The API and Cloud Brokerage models are illustrated in the following diagrams:
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-02.png
    :name: API Brokerage Multi-Cloud Stereo-Typical Interaction
    :alt: API Brokerage Multi-Cloud Stereo-Typical Interaction
 
    API Brokerage Multi-Cloud Stereo-Typical Interaction
 
-.. figure:: ../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-01.png
+.. figure:: ../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-02.png
    :name: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
    :alt: Cloud Brokerage Multi-Cloud Stereo-Typical Interaction
 
@@ -384,7 +390,7 @@ capabilities to consistently:
 through a common set of governance and operational practices.
 
 GSMA's Operator Platform Group (OPG) specify a federated model and specify requirements for the Edge Platforms
-(Operator Platform Telco Edge Requirements v2.0 [34])
+(Operator Platform Telco Edge Requirements v2.0 :cite:p:`gsmaopg02`)
 applicable to other cloud deployments. Anuket RM is implementation agnostic, viz., whether the implementation uses
 agents, federations or some other mechanisms.
 
@@ -509,14 +515,28 @@ Aspects of Multi-Cloud Security
 Cloud infrastructures, emerging as a key element in the telco operator ecosystem, are part of the attack surface
 landscape. This is particularly worrying with the 5G rollout becoming a critical business necessity. It is important to
 be vigilant of Cloud-focused threats and associated adversarial behaviours, methods, tools, and strategies that cyber
-threat actors use.
+threat actors use. In the multi-cloud ecosystem comprised of different security postures and policies,
+network domains, products, and business partnerships, the responsibility for managing these different
+cloud environments necessary to support 5G use cases falls to different enterprises, creating
+new levels of complexities and a new range of security risks.
 
-In the multi-cloud ecosystem comprised of different security postures and policies, network domains, products, and
-business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use
-cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an
-environment, there are additional security principles to be considered. These principles, see the table below, are
+For services deployed on hybrid multi-cloud environments, the security responsibility can be
+delegated to cloud service providers, but the Telco operator is always accountable for its
+customers data protection (at rest, in transit, and in use) and for the security posture of
+the deployments. It implies that a consistent security posture is ensured across multiple
+cloud service providers. The white paper "Evolving 5G security for the cloud", 5G Americas,
+September 2022, addresses this issue. A Mobile Network Operator (MNO) deploying 5G networks
+in hybrid multi-cloud environment is a cloud consumer and is accountable for the security
+of all layers of the cloud stack. The white paper details the cloud shared security model
+in the three cloud service models: IaaS, PaaS, and SaaS. The MNO must ensure the cloud
+service agreement articulation of the security responsibilities. The white paper also
+highlights on the importance of applying a zero trust mindset for cloud based deployment
+for RAN and core functions to secure the networks.
+
+In hybrid multi-cloud environment, there are additional security principles to be considered.
+These principles, see the table below, are
 drawn from the collaboration with the GSMA Fraud and Security Group (FASG) and the "5G security Guide",
-FS.40 v2.0 document [36].
+FS.40 v2.0 document :cite:p:`gsmafs40`.
 
 +--------------------------------+-------------------------------------------------------------------------------------+
 | Multi-cloud Security Principle | Description                                                                         |
@@ -570,7 +590,7 @@ Transferring cryptography functionality:
 - Secure storage
 - Search capabilities
 
-As described in Sec. 1 (Scope) of the TS 103 457 document [37], it specifies "… a high-level service-oriented interface, as
+As described in Sec. 1 (Scope) of the TS 103 457 document :cite:p:`etsits103sp457`, it specifies "… a high-level service-oriented interface, as
 an application layer with a set of mandatory functions, to access secured services provided by, and executed in a More
 Trusted Domain. The transport layer is out of scope and left to the architecture implementation". The standard provides
 extra security features for sensitive functions down to individual Virtual Machines or Containers. As such, it is
@@ -638,7 +658,11 @@ specialised components. The introduction of specialised hardware and custom conf
 operations and management complexity.
 
 At the edge, the infrastructure may further include ruggedised hardware for harsh environments and hardware with
-different form factors.
+different form factors. With the evolution of IoT and ubiquitous connectivity (inclusive of personal devices) to 
+consider extreme-edge devices as part of the ecosystem. This will require need to integrate with and offer programmability  
+and processing capabilities for these devices. 
+
+The end-to-end orchestration will need to support the extreme edge use cases.
 
 Telco Edge Cloud: Infrastructure Profiles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -737,7 +761,7 @@ Comparison of Deployment Topologies and Edge terms
 +--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+------+
 | This   | Comp-  | Stor-  | Netwo- | RTT    | Secur- | Scala- | Elast- | Resi- | Pref- | Upgr- | Open- | OPNFV | Edge |
 | Speci- | ute    | age    | rking  |        | ity    | bility | icity  | lie-  | erred | ades  | Stack | Edge  | Glo- |
-| ficat- |        |        |        |        |        |        |        | ncy   | Work- |       |       |       | ssa- | 
+| ficat- |        |        |        |        |        |        |        | ncy   | Work- |       |       |       | ssa- |
 | ion    |        |        |        |        |        |        |        |       | load  |       |       |       | ry   |
 |        |        |        |        |        |        |        |        |       | Arch- |       |       |       |      |
 |        |        |        |        |        |        |        |        |       | itec- |       |       |       |      |
@@ -787,13 +811,13 @@ Comparison of Deployment Topologies and Edge terms
 |        |        |        |        |        |        |        |        | HA    |       |       |       |       |      |
 +--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+------+
 | Edge,  | 10's,  | 100    | 50 Gb- | ~5 ms  | Low    | Horiz- | Rapid  | Appl- | Micr- | Firm- | Far   | Medi- | Acc- |
-| Fixed  | Some   | TB,    | ps,    |        | Level  | ontal  | spin   | icat- | oser- | ware: | Edge  | um    | ess  |  
-| /      | Varia- | Stand- | Stand- |        | of     | but    | up     | ions  | vices | When  | Site  | Edge  | Edge | 
-| Mobile | bili-  | ardis- | ardi-  |        | Trust  | highly | (when  | desi- | bas-  | requ- |       |       | /    | 
-|        | ty,    | ed,    | sed    |        |        | const- | possi- | gned  | ed,   | ired, |       |       | Agg- | 
-|        | >=1    | NVMe   |        |        |        | rained | ble)   | for   | Stat- | Plat- |       |       | rega-| 
-|        | CPU,   | on     |        |        |        | scal-  | and    | resi- | ele-  | form  |       |       | tion | 
-|        | >10    | PCIe,  |        |        |        | ing,   | down   | lien- | ss,   | SW:   |       |       | Edge | 
+| Fixed  | Some   | TB,    | ps,    |        | Level  | ontal  | spin   | icat- | oser- | ware: | Edge  | um    | ess  |
+| /      | Varia- | Stand- | Stand- |        | of     | but    | up     | ions  | vices | When  | Site  | Edge  | Edge |
+| Mobile | bili-  | ardis- | ardi-  |        | Trust  | highly | (when  | desi- | bas-  | requ- |       |       | /    |
+|        | ty,    | ed,    | sed    |        |        | const- | possi- | gned  | ed,   | ired, |       |       | Agg- |
+|        | >=1    | NVMe   |        |        |        | rained | ble)   | for   | Stat- | Plat- |       |       | rega-|
+|        | CPU,   | on     |        |        |        | scal-  | and    | resi- | ele-  | form  |       |       | tion |
+|        | >10    | PCIe,  |        |        |        | ing,   | down   | lien- | ss,   | SW:   |       |       | Edge |
 |        | cores  | Perma- |        |        |        | if any |        | cy    | Host- | CD    |       |       |      |
 |        | / CPU  | nence  |        |        |        |        |        | agai- | ed on |       |       |       |      |
 |        |        | /      |        |        |        |        |        | nst   | Cont- |       |       |       |      |
@@ -855,3 +879,28 @@ Comparison of Deployment Topologies and Edge terms
 +--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+------+
 
 **Table 8-6:** Comparison of Deployment Topologies
+
+O-RAN alignment and interaction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O-RAN is an operator led alliance group with members from the major Telco Operators, Vendors, and other interested ecosystem participants around the specification of Open Radio Access Networks. Its task is to cloudify the 3GPP specified RAN Network Functionalities with multi-vendor open interfaces in between the Network Functions, the Cloud Infrastructure, and the management. The Service Management and Orchestration (SMO) of multiple O-Clouds is also specified including a framework for 3rd party applications (rApps). There are also a few other open interfaces that are aimed to be specified e.g., for Radio Layer 1 HW Accelerators and some low-level Radio functions.
+
+The O-RAN architecture is built up by a set of individual O-Clouds that provide the execution platforms for the Cloudified RAN Network Functions in a similar way as the Anuket NFVI infrastructure, although with O-RAN specified management interfaces. Each O-Cloud can be distributed on a set of Cloud Sites where they can provision VM and Container Node Clusters. The provisioning of O-Clouds and their resources are managed and orchestrated from a centralized RAN Service Management and Orchestration framework (SMO) over the O-RAN specified O2 interface like any other Telco Operations Support Systems (OSS).
+
+On a high-level O-RAN covers similar specification grounds as what Anuket do, but there are some noteworthy differences both on specification level and on the aim for how O-Clouds are realized. O-RAN specifies how management and orchestration of the Network Functions and Cloud Infrastructure shall be done with a set of internal Services that also have a set of interface specifications for how the rApps could enhance the management functionality. O-RAN have also articulated that O-Clouds can be distributed over multiple Cloud Sites that are stitched over an externally specified WAN interconnect transport that is not part of the O-RAN.
+
+.. figure:: ../figures/RM-Ch08-O-RAN_mappedon_Anuket-Image-1.png
+   :name: O-RAN architecture mapped onto Anuket Reference Model
+   :alt: O-RAN architecture mapped onto Anuket Reference Model
+
+   O-RAN architecture mapped onto Anuket Reference Model
+
+O-Clouds are in some ways similar to the Anuket Cloud Infrastructure with the notable differences that they have an O-RAN specified interface of how the O-Cloud infrastructure is managed (O2ims) and how workloads (e.g., whole or parts of Network Functions) are deployed on the O-Cloud clusters (O2dms). On a more detailed level the O-Clouds are internally very Layer2 (Ethernet) centric, today with strict requirements of determinism and low latency for Cloud Site internal connectivity in between the Network Functions. The O-Clouds also have the set of O-RAN specified HW Accelerators and an Acceleration Adaptation Layer (AAL) of how they are used from the Network Functions for their Radio-near functions.
+
+A potential alignment between Anuket and O-RAN's O-Cloud specifications can be investigated. This would require an analysis how an Anuket Reference Architecture based on open source technology can support the O-RAN HW Accelerators (as stated in RM Ch3 section Example of O-RAN AAL Interface :ref:`chapters/chapter03:example of o-ran acceleration abstraction layer interface` and a Layer2-centric networking infrastructure. It would enable the operators to have an internal Telco Cloud that supports both Core and RAN Network Functions, and in the extension possibly also other workloads in a shared Cloud that supports required Telco features and characteristics.
+
+.. figure:: ../figures/RM-Ch08-Anuket_as_undercloud_O-RAN-Image-1.png
+   :name: Anuket as potential under-cloud to O-Clouds in O-RAN
+   :alt: Anuket as potential under-cloud to O-Clouds in O-RAN
+
+   Anuket as potential under-cloud to O-Clouds in O-RAN

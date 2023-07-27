@@ -152,8 +152,8 @@ Document Organisation
 Chapter 2 defines the Reference Architecture requirements and, when
 appropriate, provides references to where these requirements are
 addressed in this document. The intent of this document is to address
-all of the mandatory ("must") requirements and the most useful of the
-other optional ("should") requirements. Chapter 3 and 4 cover the Cloud
+all of the mandatory ("MUST") requirements and the most useful of the
+other optional ("SHOULD") requirements. Chapter 3 and 4 cover the Cloud
 Infrastructure resources and the core OpenStack services, while the APIs
 are covered in Chapter 5. Chapter 6 covers the implementation and
 enforcement of security capabilities and controls. Life Cycle Management
@@ -171,15 +171,15 @@ resources autoscaling).
 Terminology
 -----------
 
-**Abstraction:** Process of removing concrete, fine-grained or
+**Abstraction:** process of removing concrete, fine-grained or
 lower-level details or attributes or common properties in the study of
 systems to focus attention on topics of greater importance or general
 concepts. It can be the result of decoupling.
 
-**Anuket:** A LFN open-source project developing open reference
+**Anuket:** a LFN open-source project developing open reference
 infrastructure models, architectures, tools, and programs.
 
-**Cloud Infrastructure:** A generic term covering **NFVI**, **IaaS** and
+**Cloud Infrastructure:** a generic term covering **NFVI**, **IaaS** and
 **CaaS** capabilities - essentially the infrastructure on which a
 **Workload** can be executed.
 **NFVI**, **IaaS** and **CaaS** layers can be built on top of each
@@ -191,10 +191,7 @@ management or multitenancy) are implemented by using an underlying
 capabilities, configuration, and metrics provided by a cloud
 infrastructure hardware layer resources available for the workloads.
 
-**Host Profile:** is another term for a Cloud Infrastructure Hardware
-Profile.
-
-**Cloud Infrastructure Profile:** The combination of the Cloud
+**Cloud Infrastructure Profile:** the combination of the Cloud
 Infrastructure Software Profile and the Cloud Infrastructure Hardware
 Profile that defines the capabilities and configuration of the Cloud
 Infrastructure resources available for the workloads.
@@ -203,7 +200,7 @@ Infrastructure resources available for the workloads.
 capabilities and metrics provided by a Cloud Infrastructure Software
 Layer on resources available for the workloads.
 
-**Cloud Native Network Function (CNF):** A cloud native network function
+**Cloud Native Network Function (CNF):** a cloud native network function
 (CNF) is a cloud native application that implements network
 functionality. A CNF consists of one or more microservices. All layers
 of a CNF are developed using Cloud Native Principles including immutable
@@ -212,11 +209,11 @@ This definition is derived from the Cloud Native Thinking for
 Telecommunications Whitepaper, which also includes further detail
 and examples.
 
-**Compute Node:** An abstract definition of a server.
+**Compute Node:** an abstract definition of a server.
 A compute node can refer to a set of hardware and software that
 support the VMs or Containers running on it.
 
-**Container:** A lightweight and portable executable image that contains
+**Container:** a lightweight and portable executable image that contains
 software and all of its dependencies.
 OCI defines **Container** as "An environment for executing
 processes with configurable isolation and resource limitations. For
@@ -228,43 +225,46 @@ is self-contained with all the operating systems components are within
 the **VM** package, containers "share" the host system’s kernel with
 other containers.
 
-**Container Image:** Stored instance of a container that holds a set of
+**Container Image:** stored instance of a container that holds a set of
 software needed to run an application.
 
-**Core (physical):** An independent computer processing unit that can
+**Core (physical):** an independent computer processing unit that can
 independently execute CPU instructions and is integrated with other
 cores on a multiprocessor (chip, integrated circuit die). Please note
 that the multiprocessor chip is also referred to as a CPU that is placed
 in a socket of a computer motherboard.
 
-**CPU Type:** A classification of CPUs by features needed for the
+**CPU Type:** a classification of CPUs by features needed for the
 execution of computer programs; for example, instruction sets, cache
 size, number of cores.
 
-**Decoupling, Loose Coupling:** Loosely coupled system is one in which
+**Decoupling, Loose Coupling:** loosely coupled system is one in which
 each of its components has, or makes use of, little or no knowledge of
 the implementation details of other separate components. Loose coupling
 is the opposite of tight coupling
 
-**Encapsulation:** Restricting of direct access to some of an object's
+**Encapsulation:** restricting of direct access to some of an object's
 components.
 
-**External Network:** External networks provide network connectivity for
+**External Network:** external networks provide network connectivity for
 a cloud infrastructure tenant to resources outside of the tenant space.
 
-**Fluentd:** An open-source data collector for unified
+**Fluentd:** an open-source data collector for unified
 logging layer, which allows data collection and consumption for better
 use and understanding of data. **Fluentd** is a CNCF graduated project.
 
-**Functest:** An open-source project part of Anuket LFN project.
+**Functest:** an open-source project part of Anuket LFN project.
 It addresses functional testing with a collection of state-of-the-art
 virtual infrastructure test suites, including automatic VNF testing.
 
-**Hardware resources:** Compute/Storage/Network hardware resources on
+**Hardware resources:** compute/Storage/Network hardware resources on
 which the cloud infrastructure platform software, virtual machines and
 containers run on.
 
-**Huge pages:** Physical memory is partitioned and accessed using the
+**Host Profile:** is another term for a Cloud Infrastructure Hardware
+Profile.
+
+**Huge pages:** physical memory is partitioned and accessed using the
 basic page unit (in Linux default size of 4 KB). Hugepages, typically 2
 MB and 1GB size, allows large amounts of memory to be utilised with
 reduced overhead. In an NFV environment, huge pages are critical to
@@ -282,12 +282,12 @@ known as a virtual machine monitor (VMM).
 running or suspended, that can be used like a physical server.
 It can be used to specify VM Instance or Container Instance.
 
-**Kibana:** An open-source data visualisation system.
+**Kibana:** an open-source data visualisation system.
 
-**Kubernetes:** An open-source system for automating deployment, scaling,
+**Kubernetes:** an open-source system for automating deployment, scaling,
 and management of containerised applications.
 
-**Monitoring (Capability):** Monitoring capabilities are used for the
+**Monitoring (Capability):** monitoring capabilities are used for the
 passive observation of workload-specific traffic traversing the Cloud
 Infrastructure. Note, as with all capabilities, Monitoring may be
 unavailable or intentionally disabled for security reasons in a given
@@ -302,15 +302,15 @@ well-defined external interfaces and well-defined functional behaviour.
 Within **NFV**, a **Network Function** is implemented in a form of
 **Virtualised NF** (VNF) or a **Cloud Native NF** (CNF).
 
-**NFV Orchestrator (NFVO):** Manages the VNF lifecycle and **Cloud
+**NFV Orchestrator (NFVO):** manages the VNF lifecycle and **Cloud
 Infrastructure** resources (supported by the **VIM**) to ensure an
 optimised allocation of the necessary resources and connectivity.
 
-**Network Function Virtualisation (NFV):** The concept of separating
+**Network Function Virtualisation (NFV):** the concept of separating
 network functions from the hardware they run on by using a virtual
 hardware abstraction layer.
 
-**Network Function Virtualisation Infrastructure (NFVI):** The totality
+**Network Function Virtualisation Infrastructure (NFVI):** the totality
 of all hardware and software components used to build the environment in
 which a set of virtual applications (VAs) are deployed; also referred to
 as cloud infrastructure.
@@ -325,24 +325,24 @@ components are sub-entities of these two main entities.
 and/or **Network Service**\ (s), defined by its functional and
 behavioural specification, including the service lifecycle.
 
-**Open Network Automation Platform (ONAP):** A LFN project developing a
+**Open Network Automation Platform (ONAP):** a LFN project developing a
 comprehensive platform for orchestration, management, and automation
 of network and edge computing services for network operators,
 cloud providers, and enterprises.
 
 **ONAP OpenLab:** ONAP community lab.
 
-**Open Platform for NFV (OPNFV):** A collaborative project under
+**Open Platform for NFV (OPNFV):** a collaborative project under
 the Linux Foundation. OPNFV is now part of the LFN Anuket project.
 It aims to implement, test, and deploy tools for conformance and
 performance of NFV infrastructure.
 
-**OPNFV Verification Program (OVP):** An open-source,
+**OPNFV Verification Program (OVP):** an open-source,
 community-led compliance and verification program aiming to demonstrate
 the readiness and availability of commercial NFV products and services
 using OPNFV and ONAP components.
 
-**Platform:** A cloud capabilities type in which the cloud service user
+**Platform:** a cloud capabilities type in which the cloud service user
 can deploy, manage and run customer-created or customer-acquired
 applications using one or more programming languages and one or more
 execution environments supported by the cloud service provider. Adapted
@@ -351,27 +351,27 @@ This includes the physical infrastructure, Operating Systems,
 virtualisation/containerisation software and other orchestration,
 security, monitoring/logging and life-cycle management software.
 
-**Prometheus:** An open-source monitoring and alerting system.
+**Prometheus:** an open-source monitoring and alerting system.
 
-**Quota:** An imposed upper limit on specific types of resources,
+**Quota:** an imposed upper limit on specific types of resources,
 usually used to prevent excessive resource consumption by a given
 consumer (tenant, VM, container).
 
-**Resource pool:** A logical grouping of cloud infrastructure hardware
+**Resource pool:** a logical grouping of cloud infrastructure hardware
 and software resources. A resource pool can be based on a certain
 resource type (for example, compute, storage and network) or a
 combination of resource types. A **Cloud Infrastructure** resource can
 be part of none, one or more resource pools.
 
-**Simultaneous Multithreading (SMT):** Simultaneous multithreading (SMT)
+**Simultaneous Multithreading (SMT):** simultaneous multithreading (SMT)
 is a technique for improving the overall efficiency of superscalar CPUs
 with hardware multithreading. SMT permits multiple independent threads
 of execution on a single core to better utilise the resources provided
 by modern processor architectures.
 
-**Shaker:** A distributed data-plane testing tool built for OpenStack.
+**Shaker:** a distributed data-plane testing tool built for OpenStack.
 
-**Software Defined Storage (SDS):** An architecture which consists of
+**Software Defined Storage (SDS):** an architecture which consists of
 the storage software that is independent from the underlying storage
 hardware. The storage access software provides data request interfaces
 (APIs) and the SDS controller software provides storage access services
@@ -383,21 +383,22 @@ Tenants represent an independently manageable logical pool of
 compute, storage and network resources abstracted from physical
 hardware.
 
-**Tenant Instance:** refers to an Instance owned by or dedicated for use by a single **Tenant**.
+**Tenant Instance:** refers to an Instance owned by or dedicated for
+use by a single **Tenant**.
 
-**Tenant (Internal) Networks:** Virtual networks that are internal to
+**Tenant (Internal) Networks:** virtual networks that are internal to
 **Tenant Instances**.
 
-**User**: Natural person, or entity acting on their behalf, associated
+**User**: natural person, or entity acting on their behalf, associated
 with a cloud service customer that uses cloud services.
 Examples of such entities include devices and applications.
 
-**Virtual CPU (vCPU):** Represents a portion of the host's computing
+**Virtual CPU (vCPU):** represents a portion of the host's computing
 resources allocated to a virtualised resource, for example, to a virtual
 machine or a container. One or more vCPUs can be assigned to a
 virtualised resource.
 
-**Virtualised Infrastructure Manager (VIM):** Responsible for
+**Virtualised Infrastructure Manager (VIM):** responsible for
 controlling and managing the Network Function Virtualisation
 Infrastructure (NFVI) compute, storage and network resources.
 
@@ -407,7 +408,7 @@ A **VM** consists of all of the components (processor (CPU),
 memory, storage, interfaces/ports, etc.) of a physical computer/server.
 It is created using sizing information or Compute Flavour.
 
-**Virtualised Network Function (VNF):** A software implementation of a
+**Virtualised Network Function (VNF):** a software implementation of a
 Network Function, capable of running on the Cloud Infrastructure.
 **VNFs** are built from one or more VNF Components (VNFC) and, in most
 cases, the VNFC is hosted on a single VM or Container.
@@ -423,7 +424,7 @@ to a virtualised computation environment hosting a **VNFC**.
 interfaces of a virtual compute resource and physical network
 interfaces, providing the necessary connectivity.
 
-**VMTP:** A data path performance measurement tool built specifically
+**VMTP:** a data path performance measurement tool built specifically
 for OpenStack clouds.
 
 **Workload:** an application (for example **VNF**, or **CNF**) that
@@ -622,7 +623,7 @@ Abbreviations
 Conventions
 -----------
 
-The key words "must", "must not", "required", "shall", "shall not",
-"should", "should not", "recommended", "may", and "optional"
-in this document are to be interpreted as described in
+The key words "**MUST**", "**MUST NOT**", "required", "**SHALL**",
+**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "recommended", "**MAY**", and
+"**OPTIONAL**" in this document are to be interpreted as described in
 RFC 2119 :cite:p:`rfc2119`.

@@ -266,7 +266,7 @@ into a monitoring system that is responsible for storage, aggregation,
 visualisation, and initiating automated responses when the values meet
 specific threshold.
 
-Monitoring systems fulfill many related functions. Their first
+Monitoring systems fulfil many related functions. Their first
 responsibility is to accept and store incoming and historical data.
 While values representing the current point in time are useful, it is
 almost always more helpful to view those numbers in relation to past

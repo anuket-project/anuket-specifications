@@ -1,57 +1,54 @@
 API and Feature Testing requirements
 ====================================
 
-Introduction
-------------
+Introduction to API and Feature Testing requirement
+---------------------------------------------------
 
-The CNCF has defined a
-`Testing Special Interest Group <https://github.com/kubernetes/community/blob/master/sig-testing/charter.md>`__ to make
-it easier for the community to write and run tests, and to contribute, analyse and act upon test results.
-This chapter maps the requirements written in the previous chapters as mandatory Special Interest Group Features. It
-enforces the overall requirements traceability to testing, especially those offered for
-`End-to-End Testing <https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/
-e2e-tests.md>`__.
-The Anuket Reference Conformance (RC2) testing then matches the following Features tabs defined here.
+The CNCF has defined a :cite:t:`k8s-testing-sig` to help the community to write and run tests, and to contribute,
+analyse and act upon test results. This chapter maps the requirements written in the previous chapters as mandatory
+Special Interest Group Features. It enforces the overall requirements traceability to testing, especially those offered
+for :cite:t:`k8s-testing-sig-e2e-tests`.
+The Anuket Reference Conformance (RC2) testing matches the Features and tests defined here.
 
 Kubernetes feature gate policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Feature gates <https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/>`__ are a set of
-key-value pairs that describe Kubernetes features. The components of the control plane of Kubernetes Clusters can be
-run with different Feature Gate settings.
+:cite:t:`k8s-feature-gates` are a set of key-value pairs that describe Kubernetes features. The components of the
+control plane of Kubernetes Clusters can be run with different Feature Gate settings.
 
-A feature can be in Alpha, Beta or GA stage:
+A feature can be in Alpha, Beta or General Availability (GA) stage:
 
-- Alpha features are disabled by default, may be buggy, and support may be dropped
-- Beta features are enabled by default, are well tested, and support will not be dropped (although breaking API
-  changes may happen)
+- Alpha features are disabled by default, breaking API changes may be expected, may be buggy, and support may be dropped
+- Beta features are disabled by default, are well tested, and support will not be dropped (although breaking API
+  changes may happen). Any existing Beta feature as of 1.24 will continue to be enabled by default, but new beta APIs
+  and features will not be enabled by default after Kubernetes 1.24.
+  More in :cite:t:`k8s-kep-3136`
 - GA features are stable, always enabled and cannot be disabled.
 
-The policy for RA2 to include Kubernetes features as mandatory is:
+Only those Kubernetes features can be made mandatory in this Reference Architecture which are GA or were Beta before
+Kubernetes 1.24.
 
-   Only features that are either in Beta or GA stage can be made mandatory, subject to RA2 requirements.
-
-A list of feature gates is available
-`here <https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/#feature-gates>`__.
+A list of feature gates is available here :cite:p:`k8s-feature-gates`.
 
 Kubernetes API policy
 ~~~~~~~~~~~~~~~~~~~~~
 
-The `Kubernetes API <https://kubernetes.io/docs/reference/using-api/>`__ supports all operations and communications
-between components, and external user commands.
-Everything in the Kubernetes platform is treated as an API object.
-Different API versions indicate different levels of stability and support. An API can have Alpha, Beta or Stable
-versions. The version of APIs that are backed by a feature will match the stage of the feature itself (i.e. Alpha, Beta
-or GA/Stable).
+The :cite:t:`k8s-api` supports all operations and communications between components, and external user commands.
+Everything in the Kubernetes platform is treated as an API object. Different API versions indicate different levels of
+stability and support. An API can have Alpha, Beta or Stable versions. The version of APIs that are backed by a feature
+will match the stage of the feature itself (i.e. Alpha, Beta or GA or Stable).
 
 The policy for RA2 to include Kubernetes APIs as mandatory is:
 
-   Only APIs that are either in Beta or Stable stage can be made mandatory, subject to RA2 requirements.
+In this Reference Architecture APIsonly those API can be mandatory which are in any of the following stages:
 
-The Kubernetes API reference is available `here <https://kubernetes.io/docs/reference/kubernetes-api/>`__.
+- Stable
+- Beta when introduced before Kubernetes version 1.24
+- Alpha or Beta when required by RA2 Ch4 Specifications or when included below on list of Mandatory API Groups.
 
-The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/
-#-strong-api-groups-strong->`__ that are mandatory is:
+The Kubernetes API reference is available here :cite:p:`k8s-api-reference`.
+
+The list of :cite:t:`k8s-v1.26-api-groups` that are mandatory is:
 
 .. list-table:: Mandatory API Groups
    :widths: 30 30
@@ -72,9 +69,9 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - authorization.k8s.io
      - v1
    * - autoscaling
-     - v1, v2, v2beta2, v2beta1
+     - v1, v2
    * - batch
-     - v1, v1beta1
+     - v1
    * - certificates.k8s.io
      - v1
    * - coordination.k8s.io
@@ -82,26 +79,26 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - core
      - v1
    * - discovery.k8s.io
-     - v1, v1beta1
+     - v1
    * - events.k8s.io
-     - v1, v1beta1
+     - v1
    * - flowcontrol.apiserver.k8s.io
-     - v1beta2, v1beta1
+     - v1beta2
    * - networking.k8s.io
      - v1
    * - node.k8s.io
-     - v1, v1beta1
+     - v1
    * - policy
-     - v1, v1beta1
+     - v1
    * - rbac.authorization.k8s.io
      - v1
    * - scheduling.k8s.io
      - v1
    * - storage.k8s.io
-     - v1, v1beta1
+     - v1
 
-`API Machinery Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-api-machinery>`__
-----------------------------------------------------------------------------------------------------------------
+API Machinery Special Interest Group :cite:p:`k8s-api-sig-api-machinery`
+------------------------------------------------------------------------
 
 .. list-table:: API Machinery Special Interest Group
    :widths: 30 10 60
@@ -119,23 +116,21 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - Feature:ComprehensiveNamespaceDraining
      - X
      - Namespaces should always delete fast (ALL of 100 namespaces in 150 seconds)
-   * - Feature:`CrossNamespacePodAffinity <https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#name
-       space-selector>`__
+   * - Feature: CrossNamespacePodAffinity :cite:p:`k8s-feature-crossnamespacepodaffinity`
      -
      - Should verify ResourceQuota with cross namespace pod affinity scope using scope-selectors
-   * - Feature:Feature:`PodPriority <https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/>`__
+   * - Feature: PodPriority :cite:p:`k8s-feature-crossnamespacepodaffinity`
      - X
      - Verify ResourceQuota's priority class scope against a pod with different priority class
    * - Feature:ScopeSelectors
      - X
      - Verify ResourceQuota with terminating scopes through scope selectors
-   * - Feature:`StorageVersionAPI <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#storageversion-v
-       1alpha1-internal-apiserver-k8s-io>`__
+   * - Feature: StorageVersionAPI :cite:p:`k8s-feature-storageversionapi`
      -
      -
 
-`Apps Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-apps>`__
-----------------------------------------------------------------------------------------------
+Apps Special Interest Group :cite:p:`k8s-api-sig-apps`
+------------------------------------------------------
 
 .. list-table:: Apps Special Interest Group
    :widths: 30 10 60
@@ -150,33 +145,31 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - None
      - X
      - Kubernetes mainstream features
-   * - Feature:`DaemonSetUpdateSurge <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#rollingupdate
-       daemonset-v1-apps>`__
+   * - Feature: DaemonSetUpdateSurge :cite:p:`k8s-feature-daemonsetupdatesurge`
      -
      - Daemon set should surge pods onto nodes when spec was updated and update strategy is RollingUpdate
-   * - Feature:`IndexedJob <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__
+   * - Feature: IndexedJob :cite:p:`k8s-feature-indexedjob`
      -
      - Should create pods for an Indexed job with completion indexes
-   * - Feature:`StatefulSet <https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/>`__
+   * - Feature: StatefulSet :cite:p:`k8s-feature-statefulset`
      -
      - Should creating a working zookeeper cluster
    * - Feature:StatefulUpgrade
      -
      - Stateful upgrade should maintain a functioning cluster
-   * - Feature:`SuspendJob <https://kubernetes.io/docs/concepts/workloads/controllers/job/>`__
+   * - Feature: SuspendJob :cite:p:`k8s-feature-suspendjob`
      -
      - Should not create pods when created in suspend state
-   * - Feature:`TaintEviction <https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#taint-based
-       -evictions>`__
+   * - Feature: TaintEviction :cite:p:`k8s-feature-tainteviction`
      -
      - All pods on the unreachable node should be marked as NotReady upon the node turn NotReady AND all pods should be
        evicted after eviction timeout passes
-   * - Feature:`TTLAfterFinished <https://kubernetes.io/docs/concepts/workloads/controllers/ttlafterfinished/>`__
+   * - Feature: TTLAfterFinished :cite:p:`k8s-feature-ttlafterfinished`
      - X
      - Job should be deleted once it finishes after TTL seconds
 
-`Auth Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-auth>`__
-----------------------------------------------------------------------------------------------
+Auth Special Interest Group :cite:p:`k8s-api-sig-auth`
+------------------------------------------------------
 
 .. list-table:: Auth Special Interest Group
    :widths: 30 10 60
@@ -191,25 +184,21 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - None
      - X
      - Kubernetes mainstream features
-   * - Feature:`BoundServiceAccountTokenVolume <https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/120
-       5-bound-service-account-tokens/README.md>`__
+   * - Feature: BoundServiceAccountTokenVolume :cite:p:`k8s-feature-boundserviceaccounttokenvolume`
      -
-     - ServiceAccount admission controller migration master upgrade should maintain a functioning cluster
+     - ServiceAccount admission controller migration upgrade should maintain a functioning cluster
    * - Feature:NodeAuthenticator
      - X
      - The kubelet's main port 10250 should reject requests with no credentials
    * - Feature:NodeAuthorizer
      - X
      - Setting existing and non-existent attributes should exit with the Forbidden error, not a NotFound error
-   * - Feature:PodSecurityPolicy
-     -
-     - Should enforce the restricted policy.PodSecurityPolicy
    * - NodeFeature:FSGroup
      - X
      - ServiceAccounts should set ownership and permission when RunAsUser or FsGroup is present
 
-`Cluster Lifecycle Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle>`__
-------------------------------------------------------------------------------------------------------------------------
+Cluster Lifecycle Special Interest Group :cite:p:`k8s-api-sig-cluster-lifecycle`
+--------------------------------------------------------------------------------
 
 .. list-table:: Cluster Lifecycle Special Interest Group
    :widths: 30 10 60
@@ -229,8 +218,8 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
      - Should delete the token secret when the secret expired
 
 
-`Instrumentation Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-instrumentation>`__
---------------------------------------------------------------------------------------------------------------------
+Instrumentation Special Interest Group :cite:p:`k8s-api-sig-instrumentation`
+----------------------------------------------------------------------------
 
 .. list-table:: Instrumentation Special Interest Group
    :widths: 30 10 60
@@ -264,8 +253,8 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
      -
      -
 
-`Network Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-network>`__
-----------------------------------------------------------------------------------------------------
+Network Special Interest Group :cite:p:`k8s-api-sig-network`
+------------------------------------------------------------
 
 .. list-table:: Network Special Interest Group
    :widths: 30 10 60
@@ -286,7 +275,7 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - Feature:Ingress
      -
      - Should prevent Ingress creation if more than 1 IngressClass marked as default
-   * - Feature:`IPv6DualStack <https://kubernetes.io/docs/concepts/services-networking/dual-stack/>`__
+   * - Feature: IPv6DualStack :cite:p:`k8s-feature-ipv6dualstack`
      -
      - IPv4/IPv6 dual-stack networking enables the allocation of both IPv4 and IPv6 addresses to Pods and Services.
        IPv4/IPv6 dual-stack networking is enabled by default for your Kubernetes cluster starting in 1.21, allowing the
@@ -329,8 +318,8 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
      -
      - Pods should function for intra-pod communication: sctp
 
-`Node Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-node>`__
-----------------------------------------------------------------------------------------------
+Node Special Interest Group :cite:p:`k8s-api-sig-node`
+------------------------------------------------------
 
 .. list-table:: Node Special Interest Group
    :widths: 30 10 60
@@ -353,35 +342,32 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
      - Resource tracking for 100 pods per node
    * - Feature:GPUUpgrade
      -
-     - Master upgrade should NOT disrupt GPU Pod
+     - Control Plane node upgrade should NOT disrupt GPU Pod
    * - Feature:PodGarbageCollector
      -
      - Should handle the creation of 1000 pods
    * - Feature:RegularResourceUsageTracking
      -
      - Resource tracking for 0 pods per node
-   * - Feature:`ProbeTerminationGracePeriod <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness
-       -readiness-startup-probes/#probe-level-terminationgraceperiodseconds>`__
+   * - Feature: ProbeTerminationGracePeriod :cite:p:`k8s-feature-probeterminationgraceperiod`
      - X
      - Probing container should override timeoutGracePeriodSeconds when LivenessProbe field is set
-   * - NodeFeature:`DownwardAPIHugePages <https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-e
-       xpose-pod-information>`__
+   * - NodeFeature: DownwardAPIHugePages :cite:p:`k8s-feature-downwardapihugepages`
      -
      - Downward API tests for huge pages should provide container's limits.hugepages-pagesize; and requests.hugepages-pa
        gesize& as env vars
-   * - NodeFeature:`PodReadinessGate <https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-readiness-ga
-       te>`__
+   * - NodeFeature: PodReadinessGate :cite:p:`k8s-feature-podreadinessgate`
      - X
      - Pods should support pod readiness gates
    * - NodeFeature:RuntimeHandler
      -
      - RuntimeClass should run a Pod requesting a RuntimeClass with a configured handler
-   * - NodeFeature:`Sysctls <https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/>`__
+   * - NodeFeature: Sysctls :cite:p:`k8s-feature-sysctls`
      - X
      - Should not launch unsafe, but not explicitly enabled sysctls on the node
 
-`Scheduling Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-scheduling>`__
-----------------------------------------------------------------------------------------------------------
+Scheduling Special Interest Group :cite:p:`k8s-api-sig-scheduling`
+------------------------------------------------------------------
 
 .. list-table:: Scheduling Special Interest Group
    :widths: 30 10 60
@@ -399,18 +385,17 @@ The list of `API groups <https://kubernetes.io/docs/reference/generated/kubernet
    * - Feature:GPUDevicePlugin
      -
      - Run Nvidia GPU Device Plugin tests
-   * - Feature:`LocalStorageCapacityIsolation <https://kubernetes.io/docs/concepts/configuration/manage-resources-contai
-       ners/>`__
+   * - Feature: LocalStorageCapacityIsolation :cite:p:`k8s-feature-localstoragecapacityisolation`
      - X
      - Validates local ephemeral storage resource limits of pods that are allowed to run
    * - Feature:Recreate
      -
      - Run Nvidia GPU Device Plugin tests with a recreation
 
-`Storage Special Interest Group <https://github.com/kubernetes/community/tree/master/sig-storage>`__
-----------------------------------------------------------------------------------------------------
+Storage Special Interest Group :cite:p:`k8s-api-sig-storage`
+------------------------------------------------------------
 
-.. list-table:: API Machinery Special Interest Group
+.. list-table:: Storage Special Interest Group
    :widths: 30 10 60
    :header-rows: 1
 

@@ -5,7 +5,7 @@ Introduction
 ------------
 
 This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The
-entire deployment has been tested in Anuket Labs as a part of the `Anuket Kuberef project
+deployment has been thoroughly tested in Anuket Labs as part of the `Anuket Kuberef project
 <https://wiki.anuket.io/display/HOME/Kuberef>`__, that aims to deliver RI-2 based on RA-2 specifications. The Kuberef
 project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop
 and test against. Currently, Kuberef supports deployments on both baremetal, as well as pre-provisioned infrastructure
@@ -21,8 +21,8 @@ used for the Kubernetes provisioning stage and any tools used in the host provis
 Prerequisites
 -------------
 
-You need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be
-deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on
+You will need one physical server acting as a jump server along with minimum of two additional servers on which RI-2
+will be deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on
 the server and network specifications.
 
 Installation of the Reference Implementation
@@ -39,8 +39,8 @@ virtual and bare-metal hosts. It performs this automated deployment by using Ans
 <https://networkbuilders.intel.com/intel-technologies/container-experience-kits>`__ is being used. This framework uses
 scripts available on `Github <https://github.com/intel/container-experience-kits/tree/v21.08>`__ (version v21.08).
 
-Installation on Bare Metal Infratructure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Installation on Bare Metal Infrastructure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Start by cloning the Kuberef repository. Before you are able to run the installer some prerequisites must be installed.
 Details and installation steps can be found in ``docs/release/installation/deployment-guide.rst``.
@@ -60,7 +60,7 @@ IDF includes information about network information required by the installer. Al
 VLAN, DNS, and gateway information should be defined here. The IDF file also contains configuration options for the
 Kubernetes deployment using BMRA. These options are described in greater detail below.
 
-More details regarding these descriptor files as well as their schema are very well documented in
+More details regarding these descriptor files and their schema are documented in
 :doc:`ref_impl_cntt-ri:chapters/chapter08`.
 
 For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single
@@ -114,7 +114,8 @@ CPU configuration.
          num_exclusive_cores: 3      # Number of CPU cores to assign to the "exclusive pool" on each node
        topology_manager:
          enable: true                # Enable Kubernetes built-in Topology Manager
-         policy: "best-effort"       # Policy to use with Topology Manager ["none", "best-effort", "restricted", "single-numa-node"]
+         policy: "best-effort"       # Policy to use with Topology Manager:
+                                     # ["none", "best-effort", "restricted", "single-numa-node"]
        tas:
          enable: true                # Enable Telemetry Aware Scheduling
          demo_policy: false          # Enable demo policy for Telemetry Aware Scheduling (default: false)
@@ -131,12 +132,12 @@ References for the above features:
 -  `Intel Device Plugins for Kubernetes <https://github.com/intel/intel-device-plugins-for-kubernetes>`__
 -  `Telemetry Aware Scheduling
    <https://github.com/intel/platform-aware-scheduling/tree/master/telemetry-aware-scheduling>`__
+-  `Latest Deployment Requirements/Specification <https://wiki.anuket.io/pages/viewpage.action?pageId=36569490>`__
 
 Additional settings are available in the BMRA templates located in ``playbooks/roles/bmra-config/templates``. Changing
 these might have unexpected results and should generally not be done.
 
-You will also have to modify environmental variables defined in ``deploy.env`` to match your setup. For deploying
-Kuberef on preprovisioned infrastructure, set ``deployment_type=k8s``.
+You will also have to modify environmental variables defined in ``deploy.env`` to match your setup.
 
 Once ready, issue the following command to initiate the deployment
 
@@ -174,6 +175,32 @@ follows:
      "memory": "373489916Ki",
      "pods": "110"
    }
+
+Installation on Preprovisioned Infrastructure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The main steps are the same as :ref:`chapters/chapter04:Installation on Bare Metal Infrastructure`.
+
+Make sure the infrastructure preprovisioned follows ``docs/release/installation/deployment-guide.rst``.
+
+When modifying the environmental variables defined in ``deploy.env``,
+set deployment type:
+
+``DEPLOYMENT=k8s``
+
+The user name of jump server, clusters and jump VM should be the same for conformance,
+and you might need to set jump VM details:
+
+``USERNAME=<jumpserver-username>``
+``PROJECT_ROOT=<user-home-direction>``
+
+``<user-home-direction>`` is the home directory of jump VM, which is also the same as jump server.
+
+Once ready, issue the following command to initiate the deployment:
+
+``./deploy.sh``
+
+The deployment might encounter obstacles and you can check and tweak the privilege system to make progress.
 
 [Placeholder for other Deployment Scenarios]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

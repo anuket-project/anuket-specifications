@@ -169,13 +169,13 @@ Hardware Acceleration Interfaces
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Acceleration Interface Specifications**
-ETSI GS NFV-IFA 002 [7] defines a technology and implementation independent virtual accelerator, the accelerator
+ETSI GS NFV-IFA 002 :cite:p:`etsigsnfvifa002` defines a technology and implementation independent virtual accelerator, the accelerator
 interface requirements and specifications that would allow a workload to leverage a Virtual Accelerator. The virtual
-accelerator is modelled on extensible para-virtualised devices (EDP). ETSI GS NFV-IFA 002 [7] specifies the
+accelerator is modelled on extensible para-virtualised devices (EDP). ETSI GS NFV-IFA 002 :cite:p:`etsigsnfvifa002` specifies the
 architectural model in Chapter 4 and the abstract interfaces for management, configuration, monitoring, and Data
 exchange in Chapter 7.
 
-ETSI NFV-IFA 019 3.1.1 [8] has defined a set of technology independent interfaces for acceleration resource life cycle
+ETSI NFV-IFA 019 3.1.1 :cite:p:`etsinfvifa019` has defined a set of technology independent interfaces for acceleration resource life cycle
 management. These operations allow: allocation, release, and querying of acceleration resource, get and reset
 statistics, subscribe/unsubscribe (terminate) to fault notifications, notify (only used by NFVI), and get alarm
 information.
@@ -362,7 +362,7 @@ requests and responses using the NF-VI interface; requests and responses include
 policies, updates, alerts, and response to infrastructure results. The hypervisor also provides information about the
 health of the physical infrastructure resources to the VM. All these activities, on behalf of the VIM, are performed by
 the hypervisor using the VI-Ha interface. While no abstract APIs have yet been defined for this internal VI-Ha
-interface, ETSI GS NFV-INF 004 [9] defines a set of requirements and details of the information that is required by the
+interface, ETSI GS NFV-INF 004 :cite:p:`etsigsnfvinf004` defines a set of requirements and details of the information that is required by the
 VIM from the physical infrastructure resources. Hypervisors utilize various programs to get this data including BIOS,
 IPMI, PCI, I/O Adapters/Drivers, etc.
 

@@ -1,0 +1,46 @@
+name: "RA2 pull Request Docs Check"
+on: 
+  pull_request:
+    paths:
+      - 'doc/ref_arch/kubernetes/**'
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+    - name: Install prerequisites
+      run: | 
+        sudo apt-get --allow-releaseinfo-change update -y && sudo apt-get install -y tox pandoc
+    - name: Building RA2 in html
+      run: |
+        cd doc/ref_arch/kubernetes/
+        echo "---------------------------------------------------------------------------------------"
+        echo "---------------------------------- Building html --------------------------------------"
+        echo "---------------------------------------------------------------------------------------"
+        tox -e docs
+        echo "Building html was successful! "
+    - name: Store html build result
+      uses: actions/upload-artifact@v3
+      with:
+        name: ra2-html
+        path: |
+          doc/ref_arch/kubernetes/build
+    - name: Building RA2 in GSMA doc
+      run: |
+        cd doc/ref_arch/kubernetes/
+        echo "---------------------------------------------------------------------------------------"
+        echo "---------------------------------- Building GSMA doc ----------------------------------"
+        echo "---------------------------------------------------------------------------------------"
+        pwd
+        cat ./tox.ini
+        tox -e gsma
+        echo "Building GSMA doc was successful! "
+    - name: Store GSMA doc build result
+      uses: actions/upload-artifact@v3
+      with:
+        name: ra2-gsma-doc
+        path: |
+          doc/ref_arch/kubernetes/gsma/ra2.docx
+

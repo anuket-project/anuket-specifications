@@ -36,7 +36,7 @@ To deploy your own CI toolchain running Anuket Compliance:
    ansible-galaxy install collivier.xtesting
    ansible-galaxy collection install ansible.posix community.general community.grafana kubernetes.core community.docker community.postgresql
    git clone https://gerrit.opnfv.org/gerrit/functest-kubernetes functest-kubernetes-src
-   (cd functest-kubernetes-src && git checkout -b stable/v1.23 origin/stable/v1.23)
+   (cd functest-kubernetes-src && git checkout -b stable/v1.25 origin/stable/v1.25)
    ansible-playbook functest-kubernetes-src/ansible/site.cntt.yml
 
 Configure Kubernetes API testing
@@ -51,13 +51,13 @@ cookbook:
 Run Kubernetes conformance suite
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open http://127.0.0.1:8080/job/functest-kubernetes-v1.23-daily/ in a web
+Open http://127.0.0.1:8080/job/functest-kubernetes-v1.25-daily/ in a web
 browser, login as admin/admin and click on “Build with Parameters” (keep
 the default values).
 
 If the System under test (SUT) is Anuket compliant, a link to the full
 archive containing all test results and artifacts will be printed in
-functest-kubernetes-v1.23-zip’s console. Be free to download it and then
+functest-kubernetes-v1.25-zip’s console. Be free to download it and then
 to send it to any reviewer committee.
 
 To clean your working dir:

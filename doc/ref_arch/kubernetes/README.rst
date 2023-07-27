@@ -1,7 +1,6 @@
-Kubernetes based Reference Architecture
-=======================================
-
-This is Kubernetes based Reference Architecture (RA-2)
+======================================================================
+Reference Architecture for Kubernetes based cloud infrastructure (RA2)
+======================================================================
 
 Overall Status
 --------------
@@ -34,12 +33,3 @@ Table of Contents
     chapters/chapter06
     chapters/chapter07
     chapters/appendix-a
-
-Required versions of most important components
-----------------------------------------------
-
-========== ===================
-Component  Required version(s)
-========== ===================
-Kubernetes 1.23
-========== ===================

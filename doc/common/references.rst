@@ -40,7 +40,12 @@ Ref  Doc Number                                              Title
 [31] IEEE 1588-2019                                          "Precision Clock Synchronization Protocol for Networked Measurement and Control Systems", Available at `https://standards.ieee.org/standard/1588-2019.html <https://standards.ieee.org/standard/1588-2019.html>`__
 [32] ITU-T G.8262                                            "Timing characteristics of a synchronous equipment slave clock", Available at `https://www.itu.int/rec/T-REC-G.8262 <https://www.itu.int/rec/T-REC-G.8262>`__
 [33] ITU-T G.8275.2                                          "Precision time protocol telecom profile for time/phase synchronization with partial timing support from the network", Available at `https://www.itu.int/rec/T-REC-G.8275.2 <https://www.itu.int/rec/T-REC-G.8275.2>`__
-[34] GSMA OPG.02                                             "Operator Platform Telco Edge Requirements", Available at `https://www.gsma.com/operatorplatform <https://www.gsma.com/operatorplatform>`__
+[34] GSMA OPG.02                                             "Operator Platform Telco Edge Requirements", Available at `https://www.gsma.com/futurenetworks/operator-platform-hp/ <https://www.gsma.com/futurenetworks/operator-platform-hp/>`__
+[35] O-RAN.WG6.AAL-GAnP-v01.00                               "O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0”, November 2020", Available at `https://www.o-ran.org <https://www.o-ran.org>`__
+[36] GSMA FS.40-v02.00                                       "5G Security Guide, version 2.0, 20 October 2021”, November 2020", Available at `https://www.gsma.com/security/publications/ <https://www.gsma.com/security/publications/>`__
+[37] ETSI TS 103 457                                         "Interface to offload sensitive functions to a trusted domain”, TS 103 457 - V1.1.1 - CYBER, Available at `https://www.etsi.org/deliver/etsi_ts/103400_103499/103457/01.01.01_60/ts_103457v010101p.pdf <https://www.etsi.org/deliver/etsi_ts/103400_103499/103457/01.01.01_60/ts_103457v010101p.pdf>`__
+[38] RFC 2544                                                "Benchmarking Methodology for Network Interconnect Devices", Available at `https://www.ietf.org/rfc/rfc2544.txt  <https://www.ietf.org/rfc/rfc2544.txt>`__
+[39] O-RAN.WG6                                               "WG6: Cloudification and Orchestration Workgroup specfications", Available at `https://www.o-ran.org <https://www.o-ran.org>`__
 ==== ======================================================= =================================================================================================================================================================================================================================================================================================================================================================================================================================
 
 Cloud Native and Kubernetes References
@@ -143,14 +148,14 @@ Security Related References
    * - [S10]
      -
      - OWASP "Secure Coding Practices - Quick Reference Guide".
-       Available at `https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content
-       <https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content>`__.
+       Available at `https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/
+       <https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/>`__.
    * - [S11]
      -
      - Software Bill of Materials (SBOM) described by US National
        Telecommunications and Information Administration (NTIA).
-       Available at `https://www.ntia.gov/SBOM
-       <https://www.ntia.gov/SBOM>`__.
+       Available at `https://ntia.gov/SBOM
+       <https://ntia.gov/SBOM>`__.
    * - [S12]
      -
      - Twelve-Factor App.

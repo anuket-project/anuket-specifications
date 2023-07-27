@@ -9,9 +9,12 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.autosectionlabel'
 ]
-html_theme = "sphinx_material"
+html_theme = "piccolo_theme"
 linkcheck_ignore = [
-    'http://127.0.0.1'
+    'http://127.0.0.1',
+    'https://github.com/cncf/cnf-testsuite/',
+    'https://github.com/opencontainers/',
+    'https://build.opnfv.org/'
 ]
 intersphinx_mapping = {
     'ref_arch_kubernetes': ('https://cntt.readthedocs.io/projects/ra2/en/latest/', None)
@@ -22,3 +25,22 @@ numfig = True
 numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
                  'code-block': 'Listing %s', 'section': 'Section %s'}
 latex_theme = 'howto'
+
+html_css_files = [
+    'custom.css',
+]
+
+html_show_sourcelink = False
+html_theme_options = {
+    # If False, expand all TOC entries
+    'globaltoc_collapse': False,
+    # If True, show hidden TOC entries
+    'globaltoc_includehidden': False,
+}
+
+# Inverse png
+html_logo = '_static/anuket-logo.png'
+html_favicon = '_static/favicon.ico'
+
+bibtex_bibfiles = ['refs.bib']
+bibtex_default_style = 'unsrt'

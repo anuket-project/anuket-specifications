@@ -40,7 +40,7 @@ Adherence to these principles will provide the following:
 
 Testing Principles:
 
-- There must be traceability between test cases and requirement being
+- There **MUST** be traceability between test cases and requirement being
   validated
 - Failures should provide additional content to inform the user where
   or how the requirement was violated (e.g. which file or resource
@@ -48,28 +48,28 @@ Testing Principles:
   read the test to understand what went wrong
 - Testing tools should support selection of tests based on category or
   profile.
-- Tests must be available to run locally by both VNF and cloud
+- Tests **MUST** be available to run locally by both VNF and cloud
   infrastructure providers
-- Testing tools must produce machine-readable result formats that can
+- Testing tools **MUST** produce machine-readable result formats that can
   be used as input into any badging program
 
 Conformance Specifications:
 
--  Conformance specifications must refer to or define the *versioned*
+-  Conformance specifications **MUST** refer to or define the *versioned*
    requirements that must be satisfied
--  Conformance specifications must refer to the *versioned* test
+-  Conformance specifications **MUST** refer to the *versioned* test
    implementations that must be used to validate the requirements
--  Conformance specifications must define the expected preconditions and
+-  Conformance specifications **MUST** define the expected preconditions and
    environment requirements for any test tooling
--  Conformance specifications must define which tests must be executed
+-  Conformance specifications **MUST** define which tests must be executed
    in the given testing tools to achieve conformance
--  The conformance specifications must provide the mapping between tests
+-  The conformance specifications **MUST** provide the mapping between tests
    and requirements to demonstrate traceability and coverage.
 
 Test Case Integration and Tooling
 ---------------------------------
 
-The OpenStack based cloud infrastructure suite must utilise the Anuket test
+The OpenStack based cloud infrastructure suite **MUST** utilise the Anuket test
 case integration toolchain to deliver overall integration, the same end user
 actions, and a unique test result format (e.g. Anuket test result
 database) needed by the end users and any test case result verification
@@ -109,7 +109,7 @@ Test Case Integration
 ~~~~~~~~~~~~~~~~~~~~~
 
 To reach all goals in terms of verification, validation, compliance, and
-conformance, all test cases must be delivered as Docker containers
+conformance, all test cases **MUST** be delivered as Docker containers
 :cite:p:`docker` to simplify the CI toolchain
 setup including:
 
@@ -133,7 +133,7 @@ without diving into CI/CD integration. Even more, it brings the
 capability to run heterogeneous test cases in the same CI toolchains
 thanks to a few, quickly achievable constraints :cite:p:`opnfvfraser`.
 
-The Docker containers proposed by the test projects must also embed the
+The Docker containers proposed by the test projects **MUST** also embed the
 Xtesting Python package :cite:p:`xtestingpythonpackage` and the
 related test case execution description files
 :cite:p:`testcasedescription` as required by Xtesting.
@@ -317,16 +317,16 @@ the capabilities are well described in
 configurations and the test lists to avoid
 skipping any test. It results that all tests covering optional
 capabilities and all upstream skipped tests due to known bugs are not
-executed. All remaining tests must be executed and must pass
+executed. All remaining tests **MUST** be executed and **MUST** pass
 successfully.
 
 New Functest containers :cite:p:`newfunctestcnttcontainers` have
 been proposed for Anuket Compliance which simply override the default
 test configurations and the default test lists. Any optional capability
-or services (e.g., Barbican) can be still verified by the classical
+or services (e.g., Barbican) can be still verified by the classical
 Functest containers.
 
-The next subsections detail the Tempest tests which must not be
+The next subsections detail the Tempest tests which **MUST NOT** be
 executed from a compliance state point. The remaining tests have to pass
 successfully. They cover all together the API testing requirements as
 asked by :ref:`chapters/chapter05:interfaces and apis`
@@ -364,7 +364,7 @@ keystone-tempest-plugin :cite:p:`keystonetempestplugin`
 as integrated in Functest Smoke CNTT :cite:p:`functestsmokecntt`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
-the following test names must not be executed:
+the following test names **MUST NOT** be executed:
 
 .. list-table:: Keystone API testing
    :widths: 60 40
@@ -416,7 +416,7 @@ Glance API is covered in the OpenStack Gates via
 Functest Smoke CNTT :cite:p:`functestsmokecntt`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
-the following test names must not be executed:
+the following test names **MUST NOT** be executed:
 
 .. list-table:: Glance API testing
    :widths: 60 40
@@ -467,7 +467,7 @@ as integrated in Functest Smoke
 CNTT :cite:p:`functestsmokecntt`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
-the following test names must not be executed:
+the following test names **MUST NOT** be executed:
 
 .. list-table:: Cinder API testing
    :widths: 60 40
@@ -536,7 +536,7 @@ Tempest :cite:p:`tempest` as integrated in
 Functest Smoke CNTT :cite:p:`functestsmokecntt`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
-the following test names must not be executed:
+the following test names **MUST NOT** be executed:
 
 .. list-table:: Swift API testing
    :widths: 60 40
@@ -579,7 +579,7 @@ as integrated in Functest Smoke
 CNTT :cite:p:`functestsmokecntt`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
-the following test names must not be executed:
+the following test names **MUST NOT** be executed:
 
 .. list-table:: Neutron API testing
    :widths: 60 40
@@ -778,7 +778,7 @@ Tempest :cite:p:`tempest` as integrated in
 Functest Smoke CNTT :cite:p:`functestsmokecntt`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
-the following test names must not be executed:
+the following test names **MUST NOT** be executed:
 
 .. list-table:: Nova API testing
    :widths: 60 40
@@ -1046,7 +1046,7 @@ as integrated in Functest Smoke
 CNTT :cite:p:`functestsmokecntt`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
-the following test names must not be executed:
+the following test names **MUST NOT** be executed:
 
 .. list-table:: Heat API testing
    :widths: 60 40
@@ -1495,7 +1495,7 @@ Test Cases Traceability to Requirements
 RM/RA-1 Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
-The following test cases must pass as they are for OpenStack based cloud
+The following test cases **MUST** pass as they are for OpenStack based cloud
 infrastructure Conformance:
 
 .. table:: OpenStack based cloud infrastructure Conformance

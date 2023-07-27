@@ -19,7 +19,7 @@ The RI will be used as follows:
 -  By software vendors to be able to install Kubernetes platforms in their own environments in order to develop against
    the RI
 
-In order to promote the quick deployment of the RI and avoid duplicating effort across communities, the RI community
+To facilitate the rapid deployment of the RI and avoid redundant effort across communities, the RI community
 works closely with CNCF TUG, the Anuket Assured program, ONAP and TIP communities.
 
 Structure of the document
@@ -29,8 +29,8 @@ The document first consolidates the requirements that need to be addressed by th
 :ref:`chapters/chapter02:Reference Implementation Requirements`.
 :ref:`chapters/chapter03:Requirements for Labs` then details the requirements that need to be met in
 order for anyone to be able to install the RI, whether that be into a community lab, their own corporate or personal
-lab or some other environment such as CNF Testbed or a public cloud provider. An operational runbook is documented in
-:ref:`chapters/chapter04:Operational Runbook` to aid the deployment of the RI into a chosen
+lab or some other environment such as CNF Testbed or a public cloud provider. The
+:ref:`chapters/chapter04:Operational Runbook` is provided to assist in the deployment of the RI into a chosen
 environment and includes step-by-step instructions for a selection of installers as well as steps on how to validate
 the deployment. Finally, :ref:`chapters/chapter05:Gap Analysis and Development` is a placeholder to
 allow the documentation of any gaps found during the development of this document and the associated artifacts.
@@ -47,7 +47,7 @@ The scope of this document is as follows:
 
 1. To generate ecosystem requirements for the establishment of the RI, including labs, tooling, installers, releases
    and automation requirements
-2. Provide a detailed description file for use by installers.
+2. Provide a detailed installation description file for use by installers.
 3. Provide detailed lab criteria and operations that are generic enough to allow any environment to be used as the
    "lab".
 4. Provide an operational runbook for the RI, which includes detailed steps for the deployment and configuration of the
@@ -99,14 +99,14 @@ The main communities involved in driving requirements and development of this RI
    -  The CNF Testbed is an initiative providing a framework for building and deploying technology show cases with a
       strong focus on telco platform requirements.
 
-Figure :ref:`ri2_figure_relationship-of-communities` gives an overview of the relationship of the communities involved.
+Figure :ref:`ri2_figure_relationship-of-communities` provides an overview of the relationships among the involved
+communities.
 
 .. _ri2_figure_relationship-of-communities:
 
 .. figure:: ../figures/ri2-ch01-relationship_of_communities.png
 
    Relationship of communities
-
 
 Reference Implementation Approach
 ---------------------------------
@@ -120,7 +120,7 @@ Meaning, initially, the RI is not looking to have a single installer that can bo
 machines **and** build out the Kubernetes and other components. The primary reason for this was to ensure the loose
 coupling between the two layers, to drive the concept that RI2 is a standalone platform that can (in theory at least)
 be deployable to any infrastructure, whether that be some physical machines in a lab, or virtual machines in a private
-or public cloud environment, for example. From am implementation perspective, this means that the first step -
+or public cloud environment, for example. From an implementation perspective, this means that the first step -
 infrastructure provisioning - needs to potentially support many different infrastructures and could even be an optional
 step in the overall end-to-end deployment process if an infrastructure is provided by other means. To tightly
 intertwine the deployment of machines and the Kubernetes platform with a single installer would potentially limit the

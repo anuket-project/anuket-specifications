@@ -1333,7 +1333,7 @@ OpenStack services, e.g., symmetric encryption keys used for Block
 Storage encryption or Object Storage encryption, and asymmetric keys and
 certificates used for Glance image signing and verification.
 
-Barbican usage provides a means to fulfill security requirements such as
+Barbican usage provides a means to fulfil security requirements such as
 sec.sys.012 "The Platform **must** protect all secrets by using strong
 encryption techniques and storing the protected secrets externally from
 the component" and sec.ci.001 "The Platform **must** support
@@ -1375,13 +1375,17 @@ cyborg-db are hosted on control nodes. cyborg-agent, which runs on
 compute nodes, interacts with generic device type drivers on those
 nodes. These generic device type drivers are an abstraction of the
 vendor specific drivers; there is a generic device type driver for each
-device type (see above for list of some of the device types). The
-current list of the supported vendor drivers is listed under "Driver
-Support :cite:p:`ostk_latest_cyborg_support`".
+device type (see above for list of some of the device types).
+For Wallaby release, the list of the supported vendor drivers is
+provided under "Driver Support :cite:p:`ostk_wallaby_cyborg_support`"
+and into the "setup.cfg file
+:cite:p:`ostk_wallaby_cyborg_driver`".
+
+Containerisation
+~~~~~~~~~~~~~~~~
 
 Containerised OpenStack Services
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Containers are lightweight compared to Virtual Machines, and lead to
 efficient resource utilisation. Kubernetes auto manages scaling,
 recovery from failures, etc. Thus, it is recommended that the OpenStack
@@ -1398,6 +1402,21 @@ the figure below.
    :name: Containerised OpenStack Services Topology
 
    Containerised OpenStack Services Topology
+
+Containerisation Support for Workloads
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Kubernetes :cite:p:`kubernetes` is currently the *de facto* container
+orchestration platform. The Anuket Kubernetes Reference Architecture
+:cite:p:`refarch2` Section 4, specifies that the Kubernetes Master
+and Worker nodes can be deployed on physical or virtual machines.
+For the latter, OpenStack services can be used for the virtual
+nfrastructure management (please see the Figure
+"Kubernetes Reference Architecture"). It should be noted that in public
+clouds and also many Telco operator on-premise cloud deployments, it is
+common to use virtual machines to deploy Kubernetes services (containers,
+workloads, etc.). Containers and containerised workloads running on top of
+virtual machines need to follow the specifications :cite:p:`refarch2`.
 
 Consumable Infrastructure Resources and Services
 ------------------------------------------------
@@ -1743,5 +1762,5 @@ number of open-source tools are available for this purpose including:
 -  Triple-O :cite:p:`tripl`: for
    installing, upgrading and operating OpenStack clouds
 
-These installers are described in more details in
-:ref:`chapters/chapter07:operations and life cycle management`.
+These installers are described in more detail
+in :ref:`chapters/chapter07:operations and life cycle management`.
