@@ -170,7 +170,8 @@ Pull Requests Approval Process
    PR Approval Process
 
 - If a PR is making minor changes that do not change the original meaning of the text or if the PR changes
-  only the files used to compile the documentation and automate the compilation, then:
+  only the files used to compile the documentation and automate the compilation or if the PTL of the sub-project decides
+  so, then:
 
   - only one approval is needed to get the PR merged
 
