@@ -99,7 +99,7 @@ DSP            Digital Signal Processor
 DU             Distributed Unit (O-RAN context)
 DVR            Distributed Virtual Routing
 E2E            End to End
-EBPF           Extended Berkley Packet Filter
+eBPF           Extended Berkley Packet Filter
 EBS            Elastic Block Storage
 EFI            (BIOS) Extensible Firmware Interface
 eMBB           Enhanced Mobile BroadBand
