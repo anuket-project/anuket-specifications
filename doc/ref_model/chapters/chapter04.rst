@@ -391,7 +391,7 @@ or events should be collected and monitored by monitoring tools.
 
 **Table 4-8:** Internal Measurement Capabilities of Cloud Infrastructure
 
-(1) for example, relying on PowerWatts metrics as defined by DMTF Redfish specification DSP0268 2022.2, provided by a sensor metering "the arithmetic mean of
+(1) for example, relying on PowerWatts metrics as defined by DMTF Redfish specification DSP0268 2022.2 [11], provided by a sensor metering "the arithmetic mean of
 product terms of instantaneous voltage and current values measured over integer number of line cycles for a circuit, in watt units"
 
 (2) for example, relying on EnergykWh metrics as defined by DMTF Redfish specification DSP0268 2022.2, provided by a sensor metering "the energy, integral of
@@ -810,7 +810,7 @@ Workload Flavours and Other Capabilities Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The workload requests a set of resource capabilities needed by it, including its components, to run successfully.
-The GSMA document OPG.02 "Operator Platform Technical Requirements" :cite:p:`gsmaopg02` defines "Resource Flavour" as this set of
+The GSMA document OPG.02 "Operator Platform: Requirements and Architecture" :cite:p:`gsmaopg02` defines "Resource Flavour" as this set of
 capabilities. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources
 needed (workload flavour), and extra specifications for workload placement; as defined in
 `Section 4.2 Profiles and Workload Flavours <#profiles-and-workload-flavours>`__ above.
