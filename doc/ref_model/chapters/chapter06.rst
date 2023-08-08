@@ -188,7 +188,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 | Request               | Response               | From, | Type   | Parameter     | Description                        |
 |                       |                        | To    |        |               |                                    |
 +=======================+========================+=======+========+===============+====================================+
-| InitAccRequest        | InitAccResponse        | VNF → | Input  | accFilter     | the accelarator sub-system(s) to   |
+| InitAccRequest        | InitAccResponse        | VNF → | Input  | accFilter     | the accelerator sub-system(s) to   |
 |                       |                        | NFVI  |        |               | initialize and retrieve their      |
 |                       |                        |       |        |               | capabilities.                      |
 |                       |                        |       +--------+---------------+------------------------------------+
@@ -244,7 +244,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                       |                        | NFVI  +--------+---------------+------------------------------------+
 |                       |                        |       | Output | accData       | Data from accelerator              |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
-| AccSendDataRequest    | AccSendDataResponse    | VNF → | Input  | accData       | Data (metadata) sent too           |
+| AccSendDataRequest    | AccSendDataResponse    | VNF → | Input  | accData       | Data (metadata) sent to            |
 |                       |                        | NFVI  |        |               | accelerator                        |
 |                       |                        |       +--------+---------------+------------------------------------+
 |                       |                        |       | Input  | accChannel    | Channel data is to be sent to      |
