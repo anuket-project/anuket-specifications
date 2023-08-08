@@ -693,7 +693,7 @@ Profiles Specifications & Capability Mapping
 |         |                                         |           |             | depending on technology.               |
 +---------+-----------------------------------------+-----------+-------------+----------------------------------------+
 |e.cap.023| Huge page support                       | No        | Yes         | Internal performance capabilities as   |
-|         | per Table 4-7.                          |           |             | per Table 4-7.                         |
+|         | per Table 4-8.                          |           |             | per Table 4-8.                         |
 +---------+-----------------------------------------+-----------+-------------+----------------------------------------+
 |e.cap.025| AF_XDP                                  | No        | Optional    | These Capabilities require workload    |
 |         |                                         |           |             | support for AF_XDP socket type.        |
