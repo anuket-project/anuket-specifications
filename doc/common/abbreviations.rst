@@ -14,6 +14,7 @@ AD             Active Directory
 ADC            Application Delivery Controller
 AES            Advanced Encryption Standard
 AES-NI         AES New Instructions
+AF_XDP         Address Family For XDP
 AI             Artificial Intelligence
 AICPA          American Institute of Certified Public Accountants
 AMF            Access and Mobility management Function
@@ -98,6 +99,7 @@ DSP            Digital Signal Processor
 DU             Distributed Unit (O-RAN context)
 DVR            Distributed Virtual Routing
 E2E            End to End
+eBPF           Extended Berkley Packet Filter
 EBS            Elastic Block Storage
 EFI            (BIOS) Extensible Firmware Interface
 eMBB           Enhanced Mobile BroadBand
@@ -353,6 +355,7 @@ SR-IOV         Single Root Input Output Virtualisation
 SRTM           Static Root of Trust for Measurements
 SRV            (Traffic) client-SeRVer traffic
 SSD            Solid State Drive
+SSDF           Secure Software Development Framework
 SSH            Secure SHell protocol
 SSL            Secure Sockets Layer
 SUT            System Under Test
@@ -420,6 +423,9 @@ Wi-Fi          Wireless Fidelity
 WLAN           Wireless Local Area Network
 WLC            Wireless LAN Controller
 WS             WorkStream
+XDP            eXpress Data Path
 XML            eXtensible Markup Language
+ZAP            Zed Attack Proxy
+ZTA            Zero Trust Architecture
 ============== ==========================================================================
 
