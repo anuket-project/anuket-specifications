@@ -175,7 +175,7 @@ hosted at the Edge. The Telco Edge is a perfect fit for centralized vRAN deploym
 latency requirements.
 
 It is expected that with the technology evolution (e.g. 6G) the use cases will be more demanding. For instance, 
-either to meet less than 1 ms latency, or ultra ultra fast data rate, it will be required to evolve the architecture. 
+either to meet less than 1 ms latency, or ultrafast data rate, it will be required to evolve the architecture. 
 These use cases, once available, can be used for life saving decisions, for instance for the remote automation in 
 environments not supporting life (e.g., in deep space communication), to ensure that the car autonomous 
 driving can be done in real time, and even for holographic communications. Such use cases can be seen as the 
@@ -303,7 +303,7 @@ evolution of 5G use cases, where such requirements could not be met due to the t
 
   - **Business Objectives**
 
-    This service would allow the communication between one or more persons with the feeling to be present in a location without being phisically in a virtual environment. This service will make use of eMBB, and URLLC network slices and a distributed deployment which would offload processing.
+    This service would allow the communication between one or more persons with the feeling to be present in a location without being physically in a virtual environment. This service will make use of eMBB, and URLLC network slices and a distributed deployment which would offload processing.
 
   - **Targeted Segments**
 
@@ -313,15 +313,15 @@ evolution of 5G use cases, where such requirements could not be met due to the t
    
   - **Architecture**
 
-    - Distibuted deployment model across the ecosystem. It should be possbile to deploy workload at the extreme edge, which would allow realtime processing for video, and offload processing for network load prediction, which would support the Quality of Experience tat is defined for such a use case
+    - Distributed deployment model across the ecosystem. It should be possible to deploy workload at the extreme edge, which would allow real-time processing for video, and offload processing for network load prediction, which would support the Quality of Experience that is defined for such a use case
     - The use case covers should allow the placement at the management plane and control plane (e.g. Core, Edge domain) 
-    - There are high-leve requirements requirement for such a use case (e.g. latency of 1ms, available bandwidth 8 Gps 
+    - There are high-level requirements requirement for such a use case (e.g. latency of 1ms, available bandwidth 8 Gbps) 
       
 - **Use Case #6 - Digital Twins for Manufacturing**
 
   - **Business Objectives**
 
-    Providing the capability to design and create a product/service as a Digital Twin which can be tested before moving in to Production environment. Therefore, only once acceptance is achieved in the digital world, the service would be available. This leads to extreme reduction of Total Cost of Ownership (TCO), and minimize the risks that are comonly associated to a design and testing of a service for industrial enviroment.
+    Providing the capability to design and create a product/service as a Digital Twin which can be tested before moving into Production environment. Therefore, only once acceptance is achieved in the digital world, the service would be available. This leads to extreme reduction of Total Cost of Ownership (TCO), and minimize the risks that are commonly associated to a design and testing of a service for industrial environment.
 
   - **Targeted Segments**
 
@@ -333,7 +333,7 @@ evolution of 5G use cases, where such requirements could not be met due to the t
 
     - Demands very low latency (<<1ms) and high reliability. 
     - Trustworthiness needs to be guaranteed, which are usually associated to performance, security and resource efficiency/cost and subsequently productivity
-    - Processing cabaility of massive volumes of data.
+    - Processing capability of massive volumes of data.
     
 Analysis
 --------
