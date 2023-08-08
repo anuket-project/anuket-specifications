@@ -414,7 +414,7 @@ requirements are in addition to the requirements in other chapters of this RM.
 +-------------+-------------------------------------------------+------------------------------------------------------+
 | hem.gen.004 | HEMP should generalise and define a common set  | Example resources: hosts (including BareMetal),      |
 |             | of resources available to be managed in         | Virtual Machines (VM), vCPU, Memory, Storage,        |
-|             | constituent clouds                             | Network, kubernetes clusters, kubernetes nodes,      |
+|             | constituent clouds                              | Network, kubernetes clusters, kubernetes nodes,      |
 |             |                                                 | Images (OS, and others), credentials. For private    |
 |             |                                                 | cloud additional example resources: Racks, ToR/CE    |
 |             |                                                 | switches, Platform images                            |
