@@ -244,7 +244,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 |                       |                        | NFVI  +--------+---------------+------------------------------------+
 |                       |                        |       | Output | accData       | Data from accelerator              |
 +-----------------------+------------------------+-------+--------+---------------+------------------------------------+
-| AccSendDataRequest    | AccSendDataResponse    | VNF → | Input  | accData       | Data (metadata) sent to           |
+| AccSendDataRequest    | AccSendDataResponse    | VNF → | Input  | accData       | Data (metadata) sent to            |
 |                       |                        | NFVI  |        |               | accelerator                        |
 |                       |                        |       +--------+---------------+------------------------------------+
 |                       |                        |       | Input  | accChannel    | Channel data is to be sent to      |
