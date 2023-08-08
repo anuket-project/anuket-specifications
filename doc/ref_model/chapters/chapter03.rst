@@ -1677,7 +1677,7 @@ hardware accelerator implementations.
    AAL Interface in RM Realization Diagram
 
 The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” :cite:p:`oranwg6aalganp`,
-and the latest O-RAN WG6 Cloudification and Orchestration Workgroup specfications :cite:p:`oranwg6cloudorchwg`:
+and the latest O-RAN WG6 Cloudification and Orchestration Workgroup specifications :cite:p:`oranwg6cloudorchwg`:
 
 - Describe the functions conveyed over the AAL interface, including configuration and management functions.
 - Identify the requirements as well as general procedures and operations.
