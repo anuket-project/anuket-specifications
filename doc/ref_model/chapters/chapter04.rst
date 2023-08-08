@@ -394,7 +394,7 @@ or events should be collected and monitored by monitoring tools.
 (1) for example, relying on PowerWatts metrics as defined by DMTF Redfish specification DSP0268 2022.2 [11], provided by a sensor metering "the arithmetic mean of
 product terms of instantaneous voltage and current values measured over integer number of line cycles for a circuit, in watt units"
 
-(2) for example, relying on EnergykWh metrics as defined by DMTF Redfish specification DSP0268 2022.2, provided by a sensor metering "the energy, integral of
+(2) for example, relying on EnergykWh metrics as defined by DMTF Redfish specification DSP0268 2022.2 [11], provided by a sensor metering "the energy, integral of
 real power over time" reflecting "the power consumption since the sensor metrics were last reset"
 
 Cloud Infrastructure Management Capabilities
