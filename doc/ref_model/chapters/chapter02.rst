@@ -175,7 +175,7 @@ hosted at the Edge. The Telco Edge is a perfect fit for centralized vRAN deploym
 latency requirements.
 
 It is expected that with the technology evolution (e.g. 6G) the use cases will be more demanding. For instance, 
-either to meet less than 1 ms latency, or ultra fast data rate, it will be required to evolve the architecture. 
+either to meet less than 1 ms latency, or ultrafast data rate, it will be required to evolve the architecture. 
 These use cases, once available, can be used for life saving decisions, for instance for the remote automation in 
 environments not supporting life (e.g., in deep space communication), to ensure that the car autonomous 
 driving can be done in real time, and even for holographic communications. Such use cases can be seen as the 
@@ -303,7 +303,7 @@ evolution of 5G use cases, where such requirements could not be met due to the t
 
   - **Business Objectives**
 
-    This service would allow the communication between one or more persons with the feeling to be present in a location without being phisically in a virtual environment. This service will make use of eMBB, and URLLC network slices and a distributed deployment which would offload processing.
+    This service would allow the communication between one or more persons with the feeling to be present in a location without being physically in a virtual environment. This service will make use of eMBB, and URLLC network slices and a distributed deployment which would offload processing.
 
   - **Targeted Segments**
 
@@ -333,7 +333,7 @@ evolution of 5G use cases, where such requirements could not be met due to the t
 
     - Demands very low latency (<<1ms) and high reliability. 
     - Trustworthiness needs to be guaranteed, which are usually associated to performance, security and resource efficiency/cost and subsequently productivity
-    - Processing cabaility of massive volumes of data.
+    - Processing capability of massive volumes of data.
     
 Analysis
 --------
