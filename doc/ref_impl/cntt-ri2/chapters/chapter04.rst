@@ -205,18 +205,6 @@ The deployment might encounter obstacles and you can check and tweak the privile
 [Placeholder for other Deployment Scenarios]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Validation of the Reference Implementation
-------------------------------------------
-
-In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of test cases specified in
-RC-2 should be executed. A selection of these test cases is documented in :doc:`ref_cert_RC2:chapters/chapter02`.
-
-Currently, Kuberef is validated by running the RC-2 testsuite in GitLab. This RC-2 testsuite version is determined
-based on the Kuberenetes version deployed by Kuberef. The list of testcases can be found in the Kuberef
-``.gitlab-ci.yml`` file.
-
-For deploying your own RC-2 toolchain, please refer to the steps mentioned in :doc:`ref_cert_RC2:chapters/chapter03`.
-
 Automation Tooling
 ------------------
 
