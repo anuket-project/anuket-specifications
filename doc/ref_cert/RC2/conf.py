@@ -17,7 +17,7 @@ linkcheck_ignore = [
     'https://build.opnfv.org/'
 ]
 intersphinx_mapping = {
-    'ref_arch_kubernetes': ('https://cntt.readthedocs.io/projects/ra2/en/latest/', None)
+    'ref_arch_kubernetes': ('https://cntt.readthedocs.io/projects/ra2/en/stable-orinoco/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4

@@ -12,7 +12,7 @@ extensions = [
 ]
 html_theme = "piccolo_theme"
 intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/latest/', None)
+    'cntt': ('https://cntt.readthedocs.io/en/stable-orinoco/', None)
 }
 linkcheck_ignore = [
     'https://www.iso.org',

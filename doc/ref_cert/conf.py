@@ -17,9 +17,9 @@ linkcheck_ignore = [
     'https://www.sdxcentral.com'
 ]
 intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
-    'ref_cert_RC2': ('https://cntt.readthedocs.io/projects/rc2/en/latest/', None),
-    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None)
+    'cntt': ('https://cntt.readthedocs.io/en/stable-orinoco/', None),
+    'ref_cert_RC2': ('https://cntt.readthedocs.io/projects/rc2/en/stable-orinoco/', None),
+    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/stable-orinoco/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4

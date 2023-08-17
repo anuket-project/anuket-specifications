@@ -22,10 +22,10 @@ linkcheck_ignore = [
     "https://ntia.gov/page/software-bill-materials"
 ]
 intersphinx_mapping = {
-    'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
-    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None),
-    'ref_impl2': ('https://cntt.readthedocs.io/projects/ri2/en/latest/', None),
-    'ref_arch1': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None)
+    'cntt': ('https://cntt.readthedocs.io/en/stable-orinoco/', None),
+    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/stable-orinoco/', None),
+    'ref_impl2': ('https://cntt.readthedocs.io/projects/ri2/en/stable-orinoco/', None),
+    'ref_arch1': ('https://cntt.readthedocs.io/projects/ra1/en/stable-orinoco/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
