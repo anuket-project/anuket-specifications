@@ -9,28 +9,32 @@
 *       @walterkozlowski @collivier @rgstori @xudan16
 
 # Governance
-/doc/gov/                            @walterkozlowski
+/doc/gov/                             @lei-cloud @walterkozlowski @bfcohen @gkunz @rgstori @lylavoie @CsatariGergely
+/CODEOWNERS                           @lei-cloud @walterkozlowski @bfcohen @gkunz @rgstori @lylavoie @CsatariGergely
+/CONTRIBUTING.rst                     @lei-cloud @walterkozlowski @bfcohen @gkunz @rgstori @lylavoie @CsatariGergely
+/doc/CODE_OF_CONDUCT.rst              @lei-cloud @walterkozlowski @bfcohen @gkunz @rgstori @lylavoie @CsatariGergely
+/doc/GSMA_CNTT_Terms_of_Reference.pdf @lei-cloud @walterkozlowski @bfcohen @gkunz @rgstori @lylavoie @CsatariGergely
 
 # Reference Model
-/doc/ref_model/                      @walterkozlowski
+/doc/ref_model/                       @walterkozlowski
 
 # Reference Architectures 1
-/doc/ref_arch/openstack/             @collivier
+/doc/ref_arch/openstack/              @collivier
 
 # Reference Implementation 1
-/doc/ref_impl/cntt-ri/               @collivier
+/doc/ref_impl/cntt-ri/                @collivier
 
 # Reference Architectures 2
-/doc/ref_arch/kubernetes/            @rgstori
+/doc/ref_arch/kubernetes/             @rgstori
 
 # Reference Implementation 2
-/doc/ref_impl/cntt-ri2/              @xudan16
+/doc/ref_impl/cntt-ri2/               @xudan16
 
 # Reference Conformance 2
 # /doc/ref_cert/RC2/                 
 
 # Edge workstream
-/doc/tech/usecases.md                @walterkozlowski
+/doc/tech/usecases.md                 @walterkozlowski
 
 # NFG
-/doc/tech/                           @walterkozlowski
+/doc/tech/                            @walterkozlowski
