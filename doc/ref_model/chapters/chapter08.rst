@@ -206,7 +206,7 @@ The model defines the following core roles:
 
 The set of high level interactions cover:
 
-- Manage Account & Catalog - covering Account, Users, Subscription, Billing & Catalog of Available Services (where
+- Manage Account and Catalog - covering Account, Users, Subscription, Billing & Catalog of Available Services (where
   Service Provider (not necessarily CSP only) is responsible for creation and publication of catalog contents)
 - Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge/Cloud Connection Configuration,
   Connection Security Profile
@@ -343,7 +343,7 @@ criteria for inclusion of a standard/technology is defined. These standards/tech
 
 - provide capabilities that are necessary to achieve hybrid multi-cloud vision and the multi-cloud interactions
 - be already mature Open Standards that have either been adopted or nurtured by recognised bodies with the
-  telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organiasations, (ANSI, NIST, etc)
+  telecommunications industry (e.g. ITU, ETSI, TMForum, GSMA, 3GPP, ISO and national Standards Organisations, (ANSI, NIST, etc)
 - have reference implementations or an active open source project/s or consortia providing implementations (e.g.,
   CNCF (Cloud Native Computing Foundation). Open Infrastructure Foundation)
 - allow the CSP to source delivery and support services based on these from multiple vendors
@@ -414,7 +414,7 @@ requirements are in addition to the requirements in other chapters of this RM.
 +-------------+-------------------------------------------------+------------------------------------------------------+
 | hem.gen.004 | HEMP should generalise and define a common set  | Example resources: hosts (including BareMetal),      |
 |             | of resources available to be managed in         | Virtual Machines (VM), vCPU, Memory, Storage,        |
-|             | inconstituent clouds                            | Network, kubernetes clusters, kubernetes nodes,      |
+|             | constituent clouds                              | Network, kubernetes clusters, kubernetes nodes,      |
 |             |                                                 | Images (OS, and others), credentials. For private    |
 |             |                                                 | cloud additional example resources: Racks, ToR/CE    |
 |             |                                                 | switches, Platform images                            |
@@ -530,10 +530,10 @@ in hybrid multi-cloud environment is a cloud consumer and is accountable for the
 of all layers of the cloud stack. The white paper details the cloud shared security model
 in the three cloud service models: IaaS, PaaS, and SaaS. The MNO must ensure the cloud
 service agreement articulation of the security responsibilities. The white paper also
-highlights on the importance of applying a zero trust mindset for cloud based deployment
+highlights on the importance of applying a zero-trust mindset for cloud based deployment
 for RAN and core functions to secure the networks.
 
-In hybrid multi-cloud environment, there are additional security principles to be considered.
+In a hybrid multi-cloud environment, there are additional security principles to be considered.
 These principles, see the table below, are
 drawn from the collaboration with the GSMA Fraud and Security Group (FASG) and the "5G security Guide",
 FS.40 v2.0 document :cite:p:`gsmafs40`.
@@ -659,7 +659,7 @@ operations and management complexity.
 
 At the edge, the infrastructure may further include ruggedised hardware for harsh environments and hardware with
 different form factors. With the evolution of IoT and ubiquitous connectivity (inclusive of personal devices) to 
-consider extreme-edge devices as part of the ecosystem. This will require need to integrate with and offer programmability  
+consider extreme-edge devices as part of the ecosystem, this will require need to integrate with and offer programmability  
 and processing capabilities for these devices. 
 
 The end-to-end orchestration will need to support the extreme edge use cases.
@@ -879,3 +879,28 @@ Comparison of Deployment Topologies and Edge terms
 +--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+------+
 
 **Table 8-6:** Comparison of Deployment Topologies
+
+O-RAN alignment and interaction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O-RAN is an operator led alliance group with members from the major Telco Operators, Vendors, and other interested ecosystem participants around the specification of Open Radio Access Networks. Its task is to cloudify the 3GPP specified RAN Network Functionalities with multi-vendor open interfaces in between the Network Functions, the Cloud Infrastructure, and the management. The Service Management and Orchestration (SMO) of multiple O-Clouds is also specified including a framework for 3rd party applications (rApps). There are also a few other open interfaces that are aimed to be specified e.g., for Radio Layer 1 HW Accelerators and some low-level Radio functions.
+
+The O-RAN architecture is built up by a set of individual O-Clouds that provide the execution platforms for the Cloudified RAN Network Functions in a similar way as the Anuket NFVI infrastructure, although with O-RAN specified management interfaces. Each O-Cloud can be distributed on a set of Cloud Sites where they can provision VM and Container Node Clusters. The provisioning of O-Clouds and their resources are managed and orchestrated from a centralized RAN Service Management and Orchestration framework (SMO) over the O-RAN specified O2 interface like any other Telco Operations Support Systems (OSS).
+
+On a high-level O-RAN covers similar specification grounds as what Anuket do, but there are some noteworthy differences both on specification level and on the aim for how O-Clouds are realized. O-RAN specifies how management and orchestration of the Network Functions and Cloud Infrastructure shall be done with a set of internal Services that also have a set of interface specifications for how the rApps could enhance the management functionality. O-RAN have also articulated that O-Clouds can be distributed over multiple Cloud Sites that are stitched over an externally specified WAN interconnect transport that is not part of the O-RAN.
+
+.. figure:: ../figures/RM-Ch08-O-RAN_mappedon_Anuket-Image-1.png
+   :name: O-RAN architecture mapped onto Anuket Reference Model
+   :alt: O-RAN architecture mapped onto Anuket Reference Model
+
+   O-RAN architecture mapped onto Anuket Reference Model
+
+O-Clouds are in some ways similar to the Anuket Cloud Infrastructure with the notable differences that they have an O-RAN specified interface of how the O-Cloud infrastructure is managed (O2ims) and how workloads (e.g., whole or parts of Network Functions) are deployed on the O-Cloud clusters (O2dms). On a more detailed level the O-Clouds are internally very Layer2 (Ethernet) centric, today with strict requirements of determinism and low latency for Cloud Site internal connectivity in between the Network Functions. The O-Clouds also have the set of O-RAN specified HW Accelerators and an Acceleration Adaptation Layer (AAL) of how they are used from the Network Functions for their Radio-near functions.
+
+A potential alignment between Anuket and O-RAN's O-Cloud specifications can be investigated. This would require an analysis how an Anuket Reference Architecture based on open-source technology can support the O-RAN HW Accelerators (as stated in RM Ch3 section Example of O-RAN AAL Interface :ref:`chapters/chapter03:example of o-ran acceleration abstraction layer interface`) and a Layer2-centric networking infrastructure. It would enable the operators to have an internal Telco Cloud that supports both Core and RAN Network Functions, and in the extension possibly also other workloads in a shared Cloud that supports required Telco features and characteristics.
+
+.. figure:: ../figures/RM-Ch08-Anuket_as_undercloud_O-RAN-Image-1.png
+   :name: Anuket as potential under-cloud to O-Clouds in O-RAN
+   :alt: Anuket as potential under-cloud to O-Clouds in O-RAN
+
+   Anuket as potential under-cloud to O-Clouds in O-RAN

@@ -29,9 +29,9 @@ Anuket Specifications
 Version information
 -------------------
 
-**Version: Nile**
+**Version: Orinoco**
 
-**Release Date: 21th Dec 2022**
+**Release Date: 25th July 2023**
 
 Version history
 ---------------
@@ -58,4 +58,6 @@ Version history
      - 21st Jun 2022
    * - Nile
      - 20st Dec 2022
+   * - Orinoco
+     - 25th July 2023
 

@@ -418,7 +418,7 @@ Kubernetes-related performance test related tools especially
 which benchmarks Kubernetes networking performance.
 
 As listed in `netperf’s
-README <https://github.com/kubernetes/perf-tests/tree/master/network/benchmarks/netperf#readme>`__,
+README <https://github.com/kubernetes/perf-tests/tree/master/network/benchmarks/netperf>`__,
 the 5 major network traffic paths are combination of pod IP vs virtual
 IP and whether the pods are co-located on the same node versus a
 remotely located pod:

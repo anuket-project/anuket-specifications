@@ -1158,7 +1158,7 @@ Architectures.
 Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity
 and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in
 chassis, software defined, appliance). The objective of the model and set of stereotypes and perspectives is to provide
-guidance to architects and immplementers in establishing storage solutions for Cloud Infrastructure.
+guidance to architects and implementers in establishing storage solutions for Cloud Infrastructure.
 
 The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference
 Implementations and Reference Conformance test suites:
@@ -1674,7 +1674,7 @@ deployment itself. This is due to difficulty in resulting operational management
 For cloud-based storage, "Ephemeral" storage (hypervisor attached or container images which are disposed when VNF/CNF is
 stopped) is often distinguished from other persistent storage, however this is a behaviour variation that is managed
 via the VNF descriptor rather than a specific Storage Type.
-,
+
 Storage also follows the alignment of separated virtual and physical resources of Virtual Infrastructure Layer and HW
 Infrastructure Layer. Reasons for such alignment are described more in Section `Network`_.
 
@@ -1834,11 +1834,11 @@ hardware accelerator implementations.
    AAL Interface in RM Realization Diagram
 
 The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” :cite:p:`oranwg6aalganp`,
-and in the latest O-RAN WG6 Cloudification and Orchestration Workgroup specfications :cite:p:`oranwg6cloudorchwg`:
+and the latest O-RAN WG6 Cloudification and Orchestration Workgroup specifications :cite:p:`oranwg6cloudorchwg`:
 
-- Describes the functions conveyed over the AAL interface, including configuration and management functions.
-- Identifies the requirements as well as general procedures and operations.
-- Introduces the initial set of the O-DU/O-CU AAL profiles.
+- Describe the functions conveyed over the AAL interface, including configuration and management functions.
+- Identify the requirements as well as general procedures and operations.
+- Introduce the initial set of the O-DU/O-CU AAL profiles.
 
 Workload Placement
 ~~~~~~~~~~~~~~~~~~
@@ -1962,7 +1962,7 @@ for their respective control functions. These APIs must have an ability to handl
 forwarding and control planes life cycle management will not be atomic. The offload functions that should be offered as
 services must have published and preferably standardized open APIs, but the application specific forwarding functions do
 not have to be open APIs since they will only communicate with the application tenant provided control functions.
-`P4 <https://p4.org/>`__ and `OpenConfig <https://github.com/openconfig/>`__ are examples of suitable languages and models,
+`P4 <https://p4.org/>`__ and `OpenConfig <https://openconfig.net/>`__ are examples of suitable languages and models,
 with different levels of flexibility, usable for these forwarding and control functions.
 
 The separated management channel could either come in through the BMC, a direct management port on the DPU or through a
@@ -2018,32 +2018,32 @@ levels of decoupling between application and infrastructure or platform undernea
 Infrastructure:
 ^^^^^^^^^^^^^^^
 
-- a) Application functionality or application control requires infrastructure components beyond RM profiles or
+- Application functionality or application control requires infrastructure components beyond RM profiles or
      infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled
      with the infrastructure which results in an Appliance deployment model (see
      :ref:`common/glossary:cloud platform abstraction related terminology:`).
-- b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
+- Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
      the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure
      components that make application work. Example is an application that to achieve latency requirements needs
      certain hardware acceleration available in RM profile and is exposed through APIs specified by RA.
-- c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
+- Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with
      optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure
      component(s) that make application work better (like more performant) than without that infrastructure component.
      Example is an application that would have better cost/performance with certain acceleration adapter but can also
      work without it.
-- d) Application control using APIs specified by RA finds general profile nodes without any specific infrastructure
+- Application control using APIs specified by RA finds general profile nodes without any specific infrastructure
      components.
 
 Platform Services:
 ^^^^^^^^^^^^^^^^^^
 
-- a) Application functionality or application control can work only with its own components instead of using defined
+- Application functionality or application control can work only with its own components instead of using defined
      Platform Services. Example is an application that brings its own Load Balancer.
-- b) With custom integration effort, application can be made to use defined Platform Services. Example is application
+- With custom integration effort, application can be made to use defined Platform Services. Example is application
      that with custom integration effort can use defined Load Balancer which can be accelerated with hardware
      acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load
      Balancer being hardware-accelerated).
-- c) Application is designed and can be configured for running with defined Platform Services. Example is application
+- Application is designed and can be configured for running with defined Platform Services. Example is application
      that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
 
 
