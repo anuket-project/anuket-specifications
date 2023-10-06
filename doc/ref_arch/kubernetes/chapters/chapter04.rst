@@ -543,6 +543,21 @@ the following specifications:
        :cite:t:`multi-net-spec`.
      - gen.ost.01 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
+   * - ra2.ntw.017
+     - Kubernetes Load Balancer - API
+     - The networking solution deployed within the implementation must include a L4 (TCP/UDP) Load Balancer to steer inbound traffic across the primary interfaces of multiple CNF pods. The solution must support Service type Loadbalancer API and may support the Gateway API additionally.
+     - inf.ntw.15 in :ref:`chapters/chapter02:kubernetes architecture requirements`
+     - 
+   * - ra2.ntw.018
+     - Kubernetes Load Balancer - Advertisements & Active/active Multipath
+     - The networking solution deployed within the implementation must include a L4 (TCP/UDP) Load Balancer capable of advertising the IPs of Services to external networks. To achieve an active/active design, the advertisements must support multi-path, allowing the same service IP to be advertised by multiple cluster nodes (where pods serving traffic reside) as next-hops.
+     - inf.ntw.15 in :ref:`chapters/chapter02:kubernetes architecture requirements`
+     - 
+   * - ra2.ntw.019
+     - Kubernetes Load Balancer - High Availability
+     - The networking solution deployed within the implementation must include a L4 (TCP/UDP) Load Balancer capable of fast failover. Upon node or pod failure, traffic should be redirected (i.e. advertisements/routes must be updated) in less than 5 seconds to prevent application failure.
+     - inf.ntw.15 in :ref:`chapters/chapter02:kubernetes architecture requirements`
+     - 
 
 Storage components
 ------------------
