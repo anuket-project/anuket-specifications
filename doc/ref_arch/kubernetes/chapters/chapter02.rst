@@ -12,7 +12,7 @@ Definitions
 -----------
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
-"OPTIONAL" in this document are to be interpreted as described in RFC 2119 :cite:p:`rfc2119`.
+"OPTIONAL" in this document are to be interpreted as described in RFC 2119 :cite:p:`rfc2119_ra2`.
 
 Reference Model Requirements
 ----------------------------
@@ -37,7 +37,7 @@ Cloud Infrastructure Software Profile Capabilities
    :widths: 10 10 50 10 10 10
    :header-rows: 1
 
-   * - Reference Model Section :cite:p:`refmodel`
+   * - Reference Model Section :cite:p:`refmodel_ra2`
      - Reference
      - Description
      - Requirement for Basic Profile
@@ -225,7 +225,7 @@ Cloud Infrastructure Software Profile Capabilities
      - Must support
      - ra2.ch.004
 
-**(1)** Defined in the ``.bronze`` configuration in RM section `Storage extensions` :cite:p:`refmodel`.
+**(1)** Defined in the ``.bronze`` configuration in RM section `Storage extensions` :cite:p:`refmodel_ra2`.
 
 **(2)** In Kubernetes based infrastructures packet monitoring is out of the scope for the infrastructure.
 
@@ -239,7 +239,7 @@ Virtual Network Interface Specifications
    :widths: 10 30 30 10 10 10
    :header-rows: 1
 
-   * - Reference Model Section :cite:p:`refmodel`
+   * - Reference Model Section :cite:p:`refmodel_ra2`
      - Reference
      - Description
      - Requirement for Basic Profile
@@ -286,7 +286,7 @@ Cloud Infrastructure Software Profile Requirements
    :widths: 10 10 50 10 10 10
    :header-rows: 1
 
-   * - Reference Model Section :cite:p:`refmodel`
+   * - Reference Model Section :cite:p:`refmodel_ra2`
      - Reference
      - Description
      - Requirement for Basic Profile
@@ -425,7 +425,7 @@ Cloud Infrastructure Hardware Profile Requirements
    :widths: 10 10 50 10 10 10
    :header-rows: 1
 
-   * - Reference Model Section :cite:p:`refmodel`
+   * - Reference Model Section :cite:p:`refmodel_ra2`
      - Reference
      - Description
      - Requirement for Basic Profile
@@ -529,7 +529,7 @@ Edge Cloud Infrastructure Hardware Profile Requirements
 
 In the case of Telco Edge Cloud Deployments, hardware requirements can differ from the above to account for
 environmental and other constraints.
-The Reference Model :cite:p:`refmodel`
+The Reference Model :cite:p:`refmodel_ra2`
 includes considerations specific to deployments at the edge of the network. The infrastructure profiles "Basic" and
 "High Performance" as per the RM chapter on `Profiles and Workload Flavours` still apply, but a number
 of requirements of the above table are relaxed as follows:
@@ -538,7 +538,7 @@ of requirements of the above table are relaxed as follows:
    :widths: 10 10 50 10 10 10
    :header-rows: 1
 
-   * - Reference Model Section :cite:p:`refmodel`
+   * - Reference Model Section :cite:p:`refmodel_ra2`
      - Reference
      - Description
      - Requirement for Basic Profile
@@ -574,7 +574,7 @@ Cloud Infrastructure Management Requirements
    :widths: 10 10 50 10 10
    :header-rows: 1
 
-   * - Reference Model Section :cite:p:`refmodel`
+   * - Reference Model Section :cite:p:`refmodel_ra2`
      - Reference
      - Description
      - Requirement (common to all Profiles)
@@ -634,7 +634,7 @@ Cloud Infrastructure Monitoring Capabilities
    :widths: 10 10 50 10 10
    :header-rows: 1
 
-   * - Reference Model Section :cite:p:`refmodel`
+   * - Reference Model Section :cite:p:`refmodel_ra2`
      - Reference
      - Description
      - Requirement (common to all Profiles)
@@ -761,7 +761,7 @@ Cloud Infrastructure Security Requirements
    :widths: 10 10 70 10
    :header-rows: 1
 
-   * - Reference Model Section :cite:p:`refmodel`
+   * - Reference Model Section :cite:p:`refmodel_ra2`
      - Reference
      - Description
      - Specification Reference
@@ -772,7 +772,7 @@ Cloud Infrastructure Security Requirements
    * - System Hardening
      - sec.gen.002
      - All systems part of Cloud Infrastructure **must** support password hardening as defined in the
-       CIS Password Policy Guide :cite:p:`cispwpolicy`.
+       CIS Password Policy Guide :cite:p:`cispwpolicy_ra2`.
        Hardening: CIS Password Policy Guide
      - `Node Hardening: Securing Kubernetes Hosts`
    * - System Hardening
@@ -812,7 +812,7 @@ Cloud Infrastructure Security Requirements
      - sec.gen.010
      - The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage,
        with access to encryption keys restricted based on a need to know. Controlled Access Based on the Need
-       to Know :cite:p:`ciscontrolslist`.
+       to Know :cite:p:`ciscontrolslist_ra2`.
      -
    * - System Hardening
      - sec.gen.011
@@ -1210,14 +1210,14 @@ Cloud Infrastructure Security Requirements
      - :ref:`chapters/chapter05:vulnerability assessment`
    * - Open Source Software
      - sec.oss.002
-     - The CVE (Common Vulnerabilities and Exposures) :cite:p:`cve` **must** be used to identify
+     - The CVE (Common Vulnerabilities and Exposures) :cite:p:`cve_ra2` **must** be used to identify
        vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads
        software.
      -
    * - Open Source Software
      - sec.oss.003
      - Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the
-       CVSS (Common Vulnerability Scoring System) :cite:p:`cve` to know a vulnerability
+       CVSS (Common Vulnerability Scoring System) :cite:p:`cve_ra2` to know a vulnerability
        score and its associated rate (low, medium, high, or critical).
      -
    * - Open Source Software
@@ -1227,7 +1227,7 @@ Cloud Infrastructure Security Requirements
      - :ref:`chapters/chapter05:trusted registry`
    * - Open Source Software
      - sec.oss.005
-     - A Software Bill of Materials (`SBOM` :cite:p:`sbom`) **should** be provided or
+     - A Software Bill of Materials (`SBOM` :cite:p:`sbom_ra2`) **should** be provided or
        build, and maintained to identify the software components and their origins.
      -
    * - IaaC - Secure Design and Architecture Stage Requirements
@@ -1357,49 +1357,49 @@ Cloud Infrastructure Security Requirements
      -
    * - Compliance With Standards
      - sec.std.001
-     - The Cloud Operator **should** comply with Center for Internet Security CIS Controls :cite:p:`ciscontrolslist`.
+     - The Cloud Operator **should** comply with Center for Internet Security CIS Controls :cite:p:`ciscontrolslist_ra2`.
      -
    * - Compliance With Standards
      - sec.std.002
      - The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security
-       Guidance for Critical Areas of Focus in Cloud Computing (latest version) :cite:p:`cloudsecurityalliance`.
+       Guidance for Critical Areas of Focus in Cloud Computing (latest version) :cite:p:`cloudsecurityalliance_ra2`.
      -
    * - Compliance With Standards
      - sec.std.003
      - The Platform and Workloads **should** follow the guidance in the
-       OWASP Cheat Sheet Series (OCSS) :cite:p:`ocss`.
+       OWASP Cheat Sheet Series (OCSS) :cite:p:`ocss_ra2`.
      -
    * - Compliance With Standards
      - sec.std.004
      - The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the
-       OWASP Top Ten Security Risks :cite:p:`owasptopten`.
+       OWASP Top Ten Security Risks :cite:p:`owasptopten_ra2`.
      -
    * - Compliance With Standards
      - sec.std.005
      - The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the
-       OWASP Software Maturity Model (SAMM) :cite:p:`owaspsamm`.
+       OWASP Software Maturity Model (SAMM) :cite:p:`owaspsamm_ra2`.
      -
    * - Compliance With Standards
      - sec.std.006
      - The Cloud Operator, Platform and Workloads **should** utilize the
-       OWASP Web Security Testing Guide :cite:p:`owaspwstg`.
+       OWASP Web Security Testing Guide :cite:p:`owaspwstg_ra2`.
      -
    * - Compliance With Standards
      - sec.std.007
      - The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems
-       specified in ISO/IEC 27001 :cite:p:`isoiec27001`. ISO/IEC
+       specified in ISO/IEC 27001 :cite:p:`isoiec27001_ra2`. ISO/IEC
        27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management
        systems (ISMSs).
      -
    * - Compliance With Standards
      - sec.std.008
      - The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified in
-       ISO/IEC 27002:2013 (or latest) :cite:p:`isoiec27001`.
+       ISO/IEC 27002:2013 (or latest) :cite:p:`isoiec27001_ra2`.
      -
    * - Compliance With Standards
      - sec.std.009
      - The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest)
-       :cite:p:`isoiec27032` Guidelines for Cybersecurity techniques.
+       :cite:p:`isoiec27032_ra2` Guidelines for Cybersecurity techniques.
        ISO/IEC 27032 - ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity.
      -
    * - Compliance With Standards
@@ -1457,7 +1457,7 @@ machines or containers.
      - General
      - Cloud nativeness
      - The Architecture must run conformant Kubernetes as defined by the
-       CNCF :cite:p:`k8s-conformance`.
+       CNCF :cite:p:`k8s-conformance_ra2`.
      - ra2.k8s.001
    * - gen.cnt.04
      - General

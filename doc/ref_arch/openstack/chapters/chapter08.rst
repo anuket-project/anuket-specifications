@@ -73,7 +73,7 @@ The OpenStack based cloud infrastructure suite **MUST** utilise the Anuket test
 case integration toolchain to deliver overall integration, the same end user
 actions, and a unique test result format (e.g. Anuket test result
 database) needed by the end users and any test case result verification
-program (e.g. OVP :cite:p:`ovp`).
+program (e.g. OVP :cite:p:`ovp_ra1`).
 
 Anuket Toolchains
 ~~~~~~~~~~~~~~~~~
@@ -82,12 +82,12 @@ Anuket, previously named OPNFV, has built a complete CI/CD toolchain for
 continuously deploying and testing cloud infrastructure.
 
 As for all installer projects,
-Jenkins :cite:p:`jenkins` triggers scenario
+Jenkins :cite:p:`jenkins_ra1` triggers scenario
 deployments, runs the Anuket gating test cases and then publishes all
 test results in the centralised test
-database :cite:p:`testdb`
+database :cite:p:`testdb_ra1`
 and all artifacts (reports, logs, etc.) to an S3 compatible storage
-service :cite:p:`s3storageservice`.
+service :cite:p:`s3storageservice_ra1`.
 
 The verification, validation, and conformance processes leverage
 existing Anuket testing knowledge (projects) and experience (history) by
@@ -98,9 +98,9 @@ interfaces remain unchanged for leveraging test jobs, the common test
 case execution, the test result database and the S3 protocol to publish
 the artifacts. It’s worth mentioning that dumping all results and logs
 required for conformance is already in place in Functest daily jobs (see
-functest-wallaby-zip :cite:p:`functestwallabyzip`.
+functest-wallaby-zip :cite:p:`functestwallabyzip_ra1`.
 
-It should be noted that Xtesting CI :cite:p:`xtestingci` supports both
+It should be noted that Xtesting CI :cite:p:`xtestingci_ra1` supports both
 centralised and distributed deployment models as described before. It
 has deployed the full toolchain in one small virtual machine to verify
 ONAP Openlab via Functest.
@@ -110,7 +110,7 @@ Test Case Integration
 
 To reach all goals in terms of verification, validation, compliance, and
 conformance, all test cases **MUST** be delivered as Docker containers
-:cite:p:`docker` to simplify the CI toolchain
+:cite:p:`docker_ra1` to simplify the CI toolchain
 setup including:
 
 -  the common test case execution
@@ -124,49 +124,49 @@ manual operations when configuring the servers running the test cases
 and prevents conflicts between the test cases due to any dependencies.
 
 It’s worth mentioning that all the conformance test cases
-already leverage Xtesting :cite:p:`xtesting`
+already leverage Xtesting :cite:p:`xtesting_ra1`
 which is a simple framework to assemble sparse test cases and to accelerate the
 adoption of CI/CD best practices. By managing all the interactions with
 the CI/CD components (test scheduler, test results database, artifact
 repository), it allows the developer to work only on the test suites
 without diving into CI/CD integration. Even more, it brings the
 capability to run heterogeneous test cases in the same CI toolchains
-thanks to a few, quickly achievable constraints :cite:p:`opnfvfraser`.
+thanks to a few, quickly achievable constraints :cite:p:`opnfvfraser_ra1`.
 
 The Docker containers proposed by the test projects **MUST** also embed the
-Xtesting Python package :cite:p:`xtestingpythonpackage` and the
+Xtesting Python package :cite:p:`xtestingpythonpackage_ra1` and the
 related test case execution description files
-:cite:p:`testcasedescription` as required by Xtesting.
+:cite:p:`testcasedescription_ra1` as required by Xtesting.
 
 Testing Cookbooks
 ~~~~~~~~~~~~~~~~~
 
-Xtesting CI :cite:p:`xtestingci`
+Xtesting CI :cite:p:`xtestingci_ra1`
 leverages the common test case execution proposed by Xtesting. Thanks to
 a simple test case list, this tool deploys plug-and-play CI/CD
-toolchains in a few commands :cite:p:`cicdtoolchainsinafewcommands`.
+toolchains in a few commands :cite:p:`cicdtoolchainsinafewcommands_ra1`.
 In addition, it supports multiple components such as Jenkins and Gitlab
 CI (test schedulers) and multiple deployment models
-:cite:p:`cicddeploymentmodels` such as all-in-one or centralised services.
+:cite:p:`cicddeploymentmodels_ra1` such as all-in-one or centralised services.
 
-Xtesting :cite:p:`xtesting` and Xtesting CI :cite:p:`xtestingci` combined meet
+Xtesting :cite:p:`xtesting_ra1` and Xtesting CI :cite:p:`xtestingci_ra1` combined meet
 the requirements about verification, validation, compliance, and
 conformance:
 
 -  smoothly assemble multiple heterogeneous test cases
--  generate the Jenkins jobs in Anuket Releng :cite:p:`anuketreleng`
+-  generate the Jenkins jobs in Anuket Releng :cite:p:`anuketreleng_ra1`
    to verify conformance with Anuket specifications
 -  deploy local CI/CD toolchains everywhere to check conformance with
    Anuket specifications
--  dump all test case results and logs :cite:p:`testcaseresultdump` for
+-  dump all test case results and logs :cite:p:`testcaseresultdump_ra1` for
    third-party conformance review
 
 Here are a couple of publicly available playbooks :
 
--  Xtesting samples :cite:p:`xtestingsamples`
--  OpenStack verification :cite:p:`openstackverification`
--  Anuket RC1 :cite:p:`anuketrc1`
--  Kubernetes verification :cite:p:`kubernetesverification`
+-  Xtesting samples :cite:p:`xtestingsamples_ra1`
+-  OpenStack verification :cite:p:`openstackverification_ra1`
+-  Anuket RC1 :cite:p:`anuketrc1_ra1`
+-  Kubernetes verification :cite:p:`kubernetesverification_ra1`
    (it can be used prior to the deployment of OpenStack services when
    OpenStack services are containerised)
 
@@ -176,7 +176,7 @@ Conformance Test Suite
 Functest in a nutshell
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Functest :cite:p:`functest` was
+Functest :cite:p:`functest_ra1` was
 initially created to verify OPNFV Installers and Scenarios and then to
 publish fair, trustable, and public results regarding the status of the
 different open-source technologies, especially for Neutron backends
@@ -188,21 +188,21 @@ requirements by running and testing VNFs amongst all tests available.
 
 Functest is driven by a true verification of the platform under test as
 opposed to the interoperability programs such as
-RefStack :cite:p:`refstack` or OPNFV Verification
-Program :cite:p:`ovp` which select a small
+RefStack :cite:p:`refstack_ra1` or OPNFV Verification
+Program :cite:p:`ovp_ra1` which select a small
 subset of Functional tests passing in many different open-source software
 combinations:
 
 -  tests are skipped if an optional support is missing (e.g.
-   Barbican :cite:p:`ostk_wallaby-barbican` or
+   Barbican :cite:p:`ostk_wallaby-barbican_ra1` or
    networking features such as such as BGPVPN interconnection
-   :cite:p:`networkingbgpvpn` or
-   Service Function Chaining :cite:p:`networkingsfc`)
+   :cite:p:`networkingbgpvpn_ra1` or
+   Service Function Chaining :cite:p:`networkingsfc_ra1`)
 -  tests are parameterised (e.g., shared vs non-shared live migration)
 -  blacklist mechanisms are available if needed
 
 It should be noted that the RefStack
-lists :cite:p:`refstack` are included as
+lists :cite:p:`refstack_ra1` are included as
 they are in Functest in the next 3 dedicated testcases:
 
 -  refstack_compute (OpenStack Powered Compute)
@@ -210,22 +210,22 @@ they are in Functest in the next 3 dedicated testcases:
 -  refstack_platform (OpenStack Powered Platform)
 
 Then Functest conforms with the upstream rules (versions, code quality,
-etc.) and especially their gates :cite:p:`devstackgates`
+etc.) and especially their gates :cite:p:`devstackgates_ra1`
 (a.k.a. the automatic verification prior to any code review) to preserve
 the quality between code and deployment. In that case, Functest can be
 considered as a smooth and lightweight integration of tests developed
 upstream (and the Functest team directly contributes in these projects:
-Rally :cite:p:`rally`, Tempest :cite:p:`tempest`, etc.). It is worth
+Rally :cite:p:`rally_ra1`, Tempest :cite:p:`tempest_ra1`, etc.). It is worth
 mentioning that, as opposed to the OpenStack Gates leveraging on
-DevStack :cite:p:`devstack`, it can check
+DevStack :cite:p:`devstack_ra1`, it can check
 the same already deployed SUT over and over even from a Raspberry
-PI :cite:p:`raspberrypi`. Here the testcases can be executed
+PI :cite:p:`raspberrypi_ra1`. Here the testcases can be executed
 in parallel vs the same deployment instead of being executed vs
 different pools of virtual machines.
 
 Here are the functional tests (>2000) running in OpenStack gates
 integrated in Functest Smoke (see Functest daily jobs
-:cite:p:`functestdailyjobs` for more details):
+:cite:p:`functestdailyjobs_ra1` for more details):
 
 .. table:: Functional tests
    :widths: auto
@@ -248,7 +248,7 @@ integrated in Functest Smoke (see Functest daily jobs
    ================= ==================
 
 To complete functional testing, Functest also integrates a few
-performance tools :cite:p:`osperformancetools`
+performance tools :cite:p:`osperformancetools_ra1`
 (2-3 hours) as proposed by OpenStack:
 
 .. table:: Performance tools
@@ -289,11 +289,11 @@ about the reference implementation:
 
 Additional links:
 
--  Homepage :cite:p:`functest`
+-  Homepage :cite:p:`functest_ra1`
 -  Run Alpine Functest containers (Wallaby)
-   :cite:p:`runalpinefunctestcontainers`
--  Deploy your own Functest CI/CD toolchains :cite:p:`cicdtoolchainsinafewcommands`
--  Functest gates :cite:p:`functestgates`
+   :cite:p:`runalpinefunctestcontainers_ra1`
+-  Deploy your own Functest CI/CD toolchains :cite:p:`cicdtoolchainsinafewcommands_ra1`
+-  Functest gates :cite:p:`functestgates_ra1`
 
 Test Case traceability
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -301,13 +301,13 @@ Test Case traceability
 Interfaces & APIs
 ^^^^^^^^^^^^^^^^^
 
-The OpenStack Gates :cite:p:`devstackgates`
+The OpenStack Gates :cite:p:`devstackgates_ra1`
 verify all changes proposed mostly by running thousands of Tempest tests
 completed by Rally scenarios in a few cases. Skipping tests is allowed
 in all OpenStack Gates and only failures rate the review -1 because of
 the multiple capabilities and backends selected in the different Gate
 jobs. The classical Functest
-containers :cite:p:`runalpinefunctestcontainers`
+containers :cite:p:`runalpinefunctestcontainers_ra1`
 conform to this model which also fits the heterogeneous user
 deployments.
 
@@ -320,7 +320,7 @@ capabilities and all upstream skipped tests due to known bugs are not
 executed. All remaining tests **MUST** be executed and **MUST** pass
 successfully.
 
-New Functest containers :cite:p:`newfunctestcnttcontainers` have
+New Functest containers :cite:p:`newfunctestcnttcontainers_ra1` have
 been proposed for Anuket Compliance which simply override the default
 test configurations and the default test lists. Any optional capability
 or services (e.g., Barbican) can be still verified by the classical
@@ -359,9 +359,9 @@ Identity - Keystone API testing
 '''''''''''''''''''''''''''''''
 
 Keystone API is covered in the OpenStack Gates via
-Tempest :cite:p:`tempest` and
-keystone-tempest-plugin :cite:p:`keystonetempestplugin`
-as integrated in Functest Smoke CNTT :cite:p:`functestsmokecntt`.
+Tempest :cite:p:`tempest_ra1` and
+keystone-tempest-plugin :cite:p:`keystonetempestplugin_ra1`
+as integrated in Functest Smoke CNTT :cite:p:`functestsmokecntt_ra1`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
@@ -390,10 +390,10 @@ the following test names **MUST NOT** be executed:
      - access_rules
 
 Keystone API is also covered by
-Rally :cite:p:`rally`.
+Rally :cite:p:`rally_ra1`.
 
 Here are the mainline tasks integrated in Functest Smoke
-CNTT :cite:p:`functestsmokecntt`:
+CNTT :cite:p:`functestsmokecntt_ra1`:
 
 -  Authenticate.keystone
 -  KeystoneBasic.add_and_remove_user_role
@@ -412,8 +412,8 @@ Image - Glance API testing
 ''''''''''''''''''''''''''
 
 Glance API is covered in the OpenStack Gates via
-:cite:p:`tempest` as integrated in
-Functest Smoke CNTT :cite:p:`functestsmokecntt`.
+:cite:p:`tempest_ra1` as integrated in
+Functest Smoke CNTT :cite:p:`functestsmokecntt_ra1`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
@@ -446,10 +446,10 @@ the following test names **MUST NOT** be executed:
      - import_image
 
 Glance API is also covered by
-Rally :cite:p:`rally`.
+Rally :cite:p:`rally_ra1`.
 
 Here are the mainline tasks integrated in Functest Smoke
-CNTT :cite:p:`functestsmokecntt`:
+CNTT :cite:p:`functestsmokecntt_ra1`:
 
 -  Authenticate.validate_glance
 -  GlanceImages.create_and_delete_image
@@ -461,10 +461,10 @@ Block Storage - Cinder API testing
 ''''''''''''''''''''''''''''''''''
 
 Cinder API is covered in the OpenStack Gates via
-Tempest :cite:p:`tempest` and
-cinder-tempest-plugin :cite:p:`cindertempestplugin`
+Tempest :cite:p:`tempest_ra1` and
+cinder-tempest-plugin :cite:p:`cindertempestplugin_ra1`
 as integrated in Functest Smoke
-CNTT :cite:p:`functestsmokecntt`.
+CNTT :cite:p:`functestsmokecntt_ra1`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
@@ -476,13 +476,13 @@ the following test names **MUST NOT** be executed:
    * - Test rejection regular expressions
      - Reasons
    * - .*test_incremental_backup
-     - Functest review 68881 :cite:p:`review68881`
+     - Functest review 68881 :cite:p:`review68881_ra1`
    * - .*test_consistencygroups
      - consistency_group
    * - .*test_backup_crossproject_admin_negative
-     - Functest review 71011 :cite:p:`review71011`
+     - Functest review 71011 :cite:p:`review71011_ra1`
    * - .*test_backup_crossproject_user_negative
-     - Functest review 71011 :cite:p:`review71011`
+     - Functest review 71011 :cite:p:`review71011_ra1`
    * - .*test_volume_encrypted.TestEncryptedCinderVolumes
      - attach_encrypted_volume
    * - .*test_encrypted_volumes_extend
@@ -490,7 +490,7 @@ the following test names **MUST NOT** be executed:
    * - .*test_group_snapshots.GroupSnapshotsV319Test.\\
 
        test_reset_group_snapshot_status
-     - OpenStack bug 1770179 :cite:p:`bug1770179`
+     - OpenStack bug 1770179 :cite:p:`bug1770179_ra1`
    * - .*test_multi_backend
      - multi-backend
    * - .*test_volume_retype.VolumeRetypeWithMigrationTest
@@ -498,7 +498,7 @@ the following test names **MUST NOT** be executed:
    * - .*test_volume_delete_cascade.VolumesDeleteCascade.\\
 
        test_volume_from_snapshot_cascade_delete
-     - OpenStack bug 1677525 :cite:p:`bug1677525`
+     - OpenStack bug 1677525 :cite:p:`bug1677525_ra1`
    * - .*test_volumes_backup.VolumesBackupsTest.\\
 
        test_volume_backup_create_get_detailed_list_restore_delete
@@ -511,10 +511,10 @@ the following test names **MUST NOT** be executed:
      - multi-backend
 
 Cinder API is also covered by
-Rally :cite:p:`rally`.
+Rally :cite:p:`rally_ra1`.
 
 Here are the mainline tasks integrated in Functest Smoke
-CNTT :cite:p:`functestsmokecntt`:
+CNTT :cite:p:`functestsmokecntt_ra1`:
 
 -  Authenticate.validate_cinder
 -  CinderVolumes.create_and_delete_snapshot
@@ -532,8 +532,8 @@ Object Storage - Swift API testing
 ''''''''''''''''''''''''''''''''''
 
 Swift API is covered in the OpenStack Gates via
-Tempest :cite:p:`tempest` as integrated in
-Functest Smoke CNTT :cite:p:`functestsmokecntt`.
+Tempest :cite:p:`tempest_ra1` as integrated in
+Functest Smoke CNTT :cite:p:`functestsmokecntt_ra1`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
@@ -547,7 +547,7 @@ the following test names **MUST NOT** be executed:
    * - .*test_container_sync.ContainerSyncTest.\\
 
        test_container_synchronization
-     - OpenStack bug 1317133 :cite:p:`bug1317133`
+     - OpenStack bug 1317133 :cite:p:`bug1317133_ra1`
    * - .*test_container_sync_middleware.ContainerSyncMiddlewareTest.\\
 
        test_container_synchronization
@@ -555,13 +555,13 @@ the following test names **MUST NOT** be executed:
    * - .*test_object_services.ObjectTest.\\
 
        test_create_object_with_transfer_encoding
-     - OpenStack bug 1905432 :cite:p:`bug1905432`
+     - OpenStack bug 1905432 :cite:p:`bug1905432_ra1`
 
 Swift API is also covered by
-Rally :cite:p:`rally`.
+Rally :cite:p:`rally_ra1`.
 
 Here are the mainline tasks integrated in Functest Smoke
-CNTT :cite:p:`functestsmokecntt`:
+CNTT :cite:p:`functestsmokecntt_ra1`:
 
 -  SwiftObjects.create_container_and_object_then_list_objects
 -  SwiftObjects.list_objects_in_containers
@@ -573,10 +573,10 @@ Networking - Neutron API testing
 ''''''''''''''''''''''''''''''''
 
 Neutron API is covered in the OpenStack Gates via
-Tempest :cite:p:`tempest` and
-neutron-tempest-plugin :cite:p:`neutrontempestplugin`
+Tempest :cite:p:`tempest_ra1` and
+neutron-tempest-plugin :cite:p:`neutrontempestplugin_ra1`
 as integrated in Functest Smoke
-CNTT :cite:p:`functestsmokecntt`.
+CNTT :cite:p:`functestsmokecntt_ra1`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
@@ -716,7 +716,7 @@ the following test names **MUST NOT** be executed:
    * - .*test_trunk.TrunkTestInheritJSONBase.\\
 
        test_add_subport
-     - OpenStack bug 1863707 :cite:p:`bug1863707`
+     - OpenStack bug 1863707 :cite:p:`bug1863707_ra1`
    * - .*test_trunk.TrunkTestMtusJSON
      - vxlan
    * - .*test_trunk_negative.TrunkTestJSON.\\
@@ -728,17 +728,17 @@ the following test names **MUST NOT** be executed:
    * - .*test_trunk_negative.TrunkTestMtusJSON
      - vxlan
    * - .*test_qos.QosMinimumBandwidthRuleTestJSON
-     - Functest review 69105 :cite:p:`review69105`
+     - Functest review 69105 :cite:p:`review69105_ra1`
    * - .*network.test_tags
      - tag-ext
    * - .*test_routers.RoutersIpV6Test.\\
 
        test_create_router_set_gateway_with_fixed_ip
-     - OpenStack bug 1863707 :cite:p:`bug1676207`
+     - OpenStack bug 1863707 :cite:p:`bug1676207_ra1`
    * - .*test_routers.RoutersTest.\\
 
        test_create_router_set_gateway_with_fixed_ip
-     - OpenStack bug 1863707 :cite:p:`bug1676207`
+     - OpenStack bug 1863707 :cite:p:`bug1676207_ra1`
    * - .*test_network_basic_ops.\\
 
        TestNetworkBasicOps.test_router_rescheduling
@@ -748,13 +748,13 @@ the following test names **MUST NOT** be executed:
        TestNetworkAdvancedServerOps.\\
 
        test_server_connectivity_cold_migration_revert
-     - OpenStack bug 1836595 :cite:p:`bug1836595`
+     - OpenStack bug 1836595 :cite:p:`bug1836595_ra1`
 
 Neutron API is also covered by
-Rally :cite:p:`rally`.
+Rally :cite:p:`rally_ra1`.
 
 Here are the mainline tasks integrated in Functest Smoke
-CNTT :cite:p:`functestsmokecntt`:
+CNTT :cite:p:`functestsmokecntt_ra1`:
 
 -  Authenticate.validate_neutron
 -  NeutronNetworks.create_and_delete_networks
@@ -774,8 +774,8 @@ Compute - Nova API testing
 ''''''''''''''''''''''''''
 
 Nova API is covered in the OpenStack Gates via
-Tempest :cite:p:`tempest` as integrated in
-Functest Smoke CNTT :cite:p:`functestsmokecntt`.
+Tempest :cite:p:`tempest_ra1` as integrated in
+Functest Smoke CNTT :cite:p:`functestsmokecntt_ra1`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
@@ -853,7 +853,7 @@ the following test names **MUST NOT** be executed:
    * - .*test_quotas_negative.\\
 
        QuotasSecurityGroupAdminNegativeTest
-     - OpenStack bug 1186354 :cite:p:`bug1186354`
+     - OpenStack bug 1186354 :cite:p:`bug1186354_ra1`
    * - .*test_novnc
      - vnc_console
    * - .*test_server_personality
@@ -881,7 +881,7 @@ the following test names **MUST NOT** be executed:
    * - .*test_server_actions.ServerActionsTestJSON.\\
 
        test_reboot_server_soft
-     - OpenStack bug 1014647 :cite:p:`bug1014647`
+     - OpenStack bug 1014647 :cite:p:`bug1014647_ra1`
    * - .*test_server_rescue.\\
 
        ServerBootFromVolumeStableRescueTest
@@ -889,7 +889,7 @@ the following test names **MUST NOT** be executed:
    * - .*test_server_rescue.ServerStableDeviceRescueTest
      - stable_rescue
    * - .*test_security_group_default_rules
-     - OpenStack bug 1311500 :cite:p:`bug1311500`
+     - OpenStack bug 1311500 :cite:p:`bug1311500_ra1`
    * - .*test_security_groups_negative.\\
 
         SecurityGroupsNegativeTestJSON.\\
@@ -903,13 +903,13 @@ the following test names **MUST NOT** be executed:
        test_security_group_create_with\_\\
 
        invalid_group_description
-     - OpenStack bug 1161411 :cite:p:`bug1161411`
+     - OpenStack bug 1161411 :cite:p:`bug1161411_ra1`
    * - .*test_security_groups_negative.\\
 
        SecurityGroupsNegativeTestJSON.\\
 
        test_security_group_create_with_invalid_group_name
-     - OpenStack bug 1161411 :cite:p:`bug1161411`
+     - OpenStack bug 1161411 :cite:p:`bug1161411_ra1`
    * - .*test_security_groups_negative.\\
 
        SecurityGroupsNegativeTestJSON.\\
@@ -986,7 +986,7 @@ the following test names **MUST NOT** be executed:
        ListServerFiltersTestJSON.\\
 
        test_list_servers_filtered_by_ip_regex
-     - OpenStack bug 1540645 :cite:p:`bug1540645`
+     - OpenStack bug 1540645 :cite:p:`bug1540645_ra1`
    * - .*servers.test_virtual_interfaces
      - nova-network
    * - .*compute.test_virtual_interfaces_negative
@@ -1019,10 +1019,10 @@ the following test names **MUST NOT** be executed:
      - shelve_migrate
 
 Nova API is also covered by
-Rally :cite:p:`rally`.
+Rally :cite:p:`rally_ra1`.
 
 Here are the mainline tasks integrated in Functest Smoke
-CNTT :cite:p:`functestsmokecntt`:
+CNTT :cite:p:`functestsmokecntt_ra1`:
 
 -  Authenticate.validate_nova
 -  NovaServers.boot_and_live_migrate_server
@@ -1041,9 +1041,9 @@ Orchestration - Heat API testing
 ''''''''''''''''''''''''''''''''
 
 Heat API is covered in the OpenStack Gates via
-heat-tempest-plugin :cite:p:`heattempestplugin`
+heat-tempest-plugin :cite:p:`heattempestplugin_ra1`
 as integrated in Functest Smoke
-CNTT :cite:p:`functestsmokecntt`.
+CNTT :cite:p:`functestsmokecntt_ra1`.
 
 According to :ref:`chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
@@ -1057,11 +1057,11 @@ the following test names **MUST NOT** be executed:
    * - .*functional.test_lbaasv2
      - lbaasv2
    * - .*functional.test_encryption_vol_type
-     - OpenStack story 2007804 :cite:p:`story2007804`
+     - OpenStack story 2007804 :cite:p:`story2007804_ra1`
    * - .*RemoteStackTest.\\
 
        test_stack_create_with_cloud_credential
-     - Functest review 69926 :cite:p:`review69926`
+     - Functest review 69926 :cite:p:`review69926_ra1`
    * - .*scenario.test_aodh_alarm
      - aodh
    * - .*tests.scenario.test_autoscaling_lb
@@ -1069,21 +1069,21 @@ the following test names **MUST NOT** be executed:
    * - .*scenario.test_autoscaling_lbv2
      - lbaasv2
    * - .*scenario.test_server_software_config
-     - Functest review 69926 :cite:p:`review69926`
+     - Functest review 69926 :cite:p:`review69926_ra1`
    * - .*test_volumes.\\
 
        VolumeBackupRestoreIntegrationTest
-     - Functest review 69931 :cite:p:`review69931`
+     - Functest review 69931 :cite:p:`review69931_ra1`
    * - .*scenario.test_octavia_lbaas
      - octavia
    * - .*scenario.test_server_cfn_init
-     - Functest review 70004 :cite:p:`review70004`
+     - Functest review 70004 :cite:p:`review70004_ra1`
 
 Heat API is also covered by
-Rally :cite:p:`rally`.
+Rally :cite:p:`rally_ra1`.
 
 Here are the mainline tasks integrated in Functest Smoke
-CNTT :cite:p:`functestsmokecntt`:
+CNTT :cite:p:`functestsmokecntt_ra1`:
 
 -  Authenticate.validate_heat
 -  HeatStacks.create_update_delete_stack
@@ -1095,32 +1095,32 @@ Dashboard
 ^^^^^^^^^
 
 Horizon is covered in the OpenStack Gates via
-tempest-horizon :cite:p:`tempesthorizon` as
+tempest-horizon :cite:p:`tempesthorizon_ra1` as
 integrated in Functest
-Healthcheck :cite:p:`functesthealthcheck`.
+Healthcheck :cite:p:`functesthealthcheck_ra1`.
 
 OpenStack API benchmarking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Rally :cite:p:`rally` is tool and framework
+Rally :cite:p:`rally_ra1` is tool and framework
 that allows to perform OpenStack API benchmarking.
 
 Here are the Rally-based test cases proposed by Functest Benchmarking
-CNTT :cite:p:`functestbenchmarkingcntt`:
+CNTT :cite:p:`functestbenchmarkingcntt_ra1`:
 
--  rally_full :cite:p:`rallyfullcntt`:
+-  rally_full :cite:p:`rallyfullcntt_ra1`:
    Functest scenarios iterating 10 times the mainline Rally scenarios
--  rally_jobs :cite:p:`rallyjobscntt`:
+-  rally_jobs :cite:p:`rallyjobscntt_ra1`:
    Neutron scenarios executed in the OpenStack gates
 
 The default SLA proposed in Functest Benchmarking
-CNTT :cite:p:`functestbenchmarkingcntt`
+CNTT :cite:p:`functestbenchmarkingcntt_ra1`
 is a maximum failure rate of 0%.
 
 Identity - Keystone API benchmarking
 ''''''''''''''''''''''''''''''''''''
 
-Functest rally_full_cntt :cite:p:`rallyfullcntt`:
+Functest rally_full_cntt :cite:p:`rallyfullcntt_ra1`:
 
 .. table:: Keystone API benchmarking
    :widths: auto
@@ -1145,7 +1145,7 @@ Functest rally_full_cntt :cite:p:`rallyfullcntt`:
 Image - Glance API benchmarking
 '''''''''''''''''''''''''''''''
 
-Functest rally_full_cntt :cite:p:`rallyfullcntt`:
+Functest rally_full_cntt :cite:p:`rallyfullcntt_ra1`:
 
 .. table:: Glance API benchmarking
    :widths: auto
@@ -1167,7 +1167,7 @@ Functest rally_full_cntt :cite:p:`rallyfullcntt`:
 Block Storage - Cinder API benchmarking
 '''''''''''''''''''''''''''''''''''''''
 
-Functest rally_full_cntt :cite:p:`rallyfullcntt`:
+Functest rally_full_cntt :cite:p:`rallyfullcntt_ra1`:
 
 .. table:: Cinder API benchmarking
    :widths: auto
@@ -1203,7 +1203,7 @@ Functest rally_full_cntt :cite:p:`rallyfullcntt`:
 Object Storage - Swift API benchmarking
 '''''''''''''''''''''''''''''''''''''''
 
-Functest rally_full_cntt :cite:p:`rallyfullcntt`:
+Functest rally_full_cntt :cite:p:`rallyfullcntt_ra1`:
 
 .. table:: Swift API benchmarking
    :widths: auto
@@ -1221,7 +1221,7 @@ Functest rally_full_cntt :cite:p:`rallyfullcntt`:
 Networking - Neutron API benchmarking
 '''''''''''''''''''''''''''''''''''''
 
-Functest rally_full_cntt :cite:p:`rallyfullcntt`:
+Functest rally_full_cntt :cite:p:`rallyfullcntt_ra1`:
 
 .. table:: Neutron API benchmarking
    :widths: auto
@@ -1253,7 +1253,7 @@ Functest rally_full_cntt :cite:p:`rallyfullcntt`:
    Quotas.neutron_update                                      10
    ========================================================== ==========
 
-Functest rally_jobs_cntt :cite:p:`rallyjobscntt`:
+Functest rally_jobs_cntt :cite:p:`rallyjobscntt_ra1`:
 
 .. table:: Neutron API benchmarking
    :widths: auto
@@ -1280,7 +1280,7 @@ Functest rally_jobs_cntt :cite:p:`rallyjobscntt`:
 Compute - Nova API benchmarking
 '''''''''''''''''''''''''''''''
 
-Functest rally_full_cntt :cite:p:`rallyfullcntt`:
+Functest rally_full_cntt :cite:p:`rallyfullcntt_ra1`:
 
 .. list-table:: Nova API benchmarking
    :widths: 70 30
@@ -1350,7 +1350,7 @@ Functest rally_full_cntt :cite:p:`rallyfullcntt`:
 Orchestration - Heat API benchmarking
 '''''''''''''''''''''''''''''''''''''
 
-Functest rally_full_cntt :cite:p:`rallyfullcntt`:
+Functest rally_full_cntt :cite:p:`rallyfullcntt_ra1`:
 
 .. table:: Heat API benchmarking
    :widths: auto
@@ -1370,33 +1370,33 @@ Functest rally_full_cntt :cite:p:`rallyfullcntt`:
 Dataplane benchmarking
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Functest Benchmarking CNTT :cite:p:`functestbenchmarkingcntt`
+Functest Benchmarking CNTT :cite:p:`functestbenchmarkingcntt_ra1`
 offers two benchmarking dataplane test cases leveraging on:
 
--  VMTP :cite:p:`vmtp`
--  Shaker :cite:p:`shaker`
+-  VMTP :cite:p:`vmtp_ra1`
+-  Shaker :cite:p:`shaker_ra1`
 
-VMTP :cite:p:`vmtp` is a small python
+VMTP :cite:p:`vmtp_ra1` is a small python
 application that will automatically perform ping connectivity, round
 trip time measurement (latency) and TCP/UDP throughput measurement on
 any OpenStack deployment.
 
-:cite:p:`shaker` wraps around
+:cite:p:`shaker_ra1` wraps around
 popular system network testing tools like iperf, iperf3 and netperf
 (with help of flent).
-:cite:p:`shaker` is able to deploy
+:cite:p:`shaker_ra1` is able to deploy
 OpenStack instances and networks in different topologies.
-:cite:p:`shaker` scenario
+:cite:p:`shaker_ra1` scenario
 specifies the deployment and list of tests to execute.
 
 The SLA is the default SLA proposed in
-Functest Benchmarking CNTT :cite:p:`functestbenchmarkingcntt`.
+Functest Benchmarking CNTT :cite:p:`functestbenchmarkingcntt_ra1`.
 
 VMTP
 ''''
 
-Here are the scenarios :cite:p:`vmtpscenarios`
-executed by Functest :cite:p:`functestvmtp`:
+Here are the scenarios :cite:p:`vmtpscenarios_ra1`
+executed by Functest :cite:p:`functestvmtp_ra1`:
 - VM to VM same network fixed IP (intra-node) - VM to VM different
 network fixed IP (intra-node) - VM to VM different network floating IP
 (intra-node) - VM to VM same network fixed IP (inter-node) - VM to VM
@@ -1436,7 +1436,7 @@ Here are all results per scenario:
 Shaker
 ''''''
 
-Here are the scenarios :cite:p:`shakerscenarios`
+Here are the scenarios :cite:p:`shakerscenarios_ra1`
 executed by Shaker:
 
 -  OpenStack L2
@@ -1471,22 +1471,22 @@ Open-source VNF onboarding and testing
 
 Running open-source VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualisation requirements. Functest
-VNF :cite:p:`functestvnf`
+VNF :cite:p:`functestvnf_ra1`
 offers 5 test cases which automatically onboard and test the following 3
 open-source VNFs:
 
--  Clearwater IMS :cite:p:`clearwaterims`
--  VyOS vRouter :cite:p:`vyosvrouter`
--  OpenAirInterface vEPC :cite:p:`oaivepc`
+-  Clearwater IMS :cite:p:`clearwaterims_ra1`
+-  VyOS vRouter :cite:p:`vyosvrouter_ra1`
+-  OpenAirInterface vEPC :cite:p:`oaivepc_ra1`
 
 Here is the full list of orchestrators used for all these deployments:
 
--  Cloudify :cite:p:`cloudify`
--  Heat :cite:p:`ostk_wallaby_heat`
--  Juju :cite:p:`juju`
+-  Cloudify :cite:p:`cloudify_ra1`
+-  Heat :cite:p:`ostk_wallaby_heat_ra1`
+-  Juju :cite:p:`juju_ra1`
 
 The VNF are covered by upstream tests when possible (see
-clearwater-live-test :cite:p:`clearwaterlivetest`)
+clearwater-live-test :cite:p:`clearwaterlivetest_ra1`)
 and by Functest VNF tests in the other cases.
 
 Test Cases Traceability to Requirements
@@ -1591,7 +1591,7 @@ and the network settings:
    virtualenv (“Aborting, target uses selinux but python bindings
    (libselinux-python) aren’t installed!”)
 -  Proxy: you may set your proxy in env for Ansible and in systemd for
-   Docker :cite:p:`dockerproxy`
+   Docker :cite:p:`dockerproxy_ra1`
 
 To deploy your own CI toolchain running OpenStack based cloud infrastructure
 Conformance:
@@ -1611,18 +1611,18 @@ OpenStack API testing configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here is the default Functest tree as proposed in Functest
-Wallaby :cite:p:`runalpinefunctestcontainers`:
+Wallaby :cite:p:`runalpinefunctestcontainers_ra1`:
 
 -  /home/opnfv/functest/openstack.creds
 -  /home/opnfv/functest/images
 
 Download the images and fill /home/opnfv/functest/openstack.creds as
 proposed in Functest
-Wallaby :cite:p:`runalpinefunctestcontainers`.
+Wallaby :cite:p:`runalpinefunctestcontainers_ra1`.
 
 You may have to modify a few Functest env vars according to the SUT (see
 env in Functest
-Wallaby :cite:p:`runalpinefunctestcontainers`). Be
+Wallaby :cite:p:`runalpinefunctestcontainers_ra1`). Be
 free to modify functest-src/ansible/host_vars/127.0.0.1 at your
 convenience and then to reconfigure the toolchain:
 

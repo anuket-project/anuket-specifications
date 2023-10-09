@@ -178,7 +178,7 @@ ports. This makes it easy to identify the clusters and attack them. It is theref
 recommended to configure authentication and authorisation on the cluster and the
 cluster nodes.
 
-The Kubernetes documentation :cite:p:`k8s-documentation-ports-and-protocols`
+The Kubernetes documentation :cite:p:`k8s-documentation-ports-and-protocols_ra2`
 specifies the default ports used in Kubernetes. Make sure that your network blocks
 access to unnecessary ports. Consider limiting access to the Kubernetes API server,
 except from trusted networks.
@@ -231,8 +231,8 @@ information on transactions between services. The service mesh is a mesh of laye
 handling service-to-service communications. The service mesh architecture consists of data
 plane components made up of network proxies paired with each microservice, and control plane
 components providing proxies configuration, managing TLS certificates and policies.
-The documents, NIST SP 800-204A :cite:t:`nist-800-204a` and
-NIST SP 800-204B :cite:t:`nist-800-204b` provide guidance on deploying service mesh.
+The documents, NIST SP 800-204A :cite:t:`nist-800-204a_ra2` and
+NIST SP 800-204B :cite:t:`nist-800-204b_ra2` provide guidance on deploying service mesh.
 
 API authentication and authorization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -283,7 +283,7 @@ the cluster. There are a number of tutorials that show you how to do this.
 Unfortunately, most of them create a service account with high privileges.
 Consequently, Tesla and some others were hacked via a poorly configured
 Kubernetes dashboard (Reference: Tesla cloud resources are hacked to run
-cryptocurrency-mining malware :cite:p:`arstechnica-tesla`).
+cryptocurrency-mining malware :cite:p:`arstechnica-tesla_ra2`).
 
 To prevent attacks via the dashboard, follow the best practices detailed here:
 

@@ -289,10 +289,10 @@ evolution of 5G use cases, where such requirements could not be met due to the t
 
     - There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the
       placement case of having the DU & CU collocated & deployed on Telco Edge, see NGMN Overview on 5GRAN Functional
-      Decomposition ver 1.0 :cite:p:`ngmn5granfnldecomp`.
+      Decomposition ver 1.0 :cite:p:`ngmn5granfnldecomp_rm`.
     - The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
     - Following Split Option 7.2, the average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while
-      the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 :cite:p:`oranwg4iot0`.
+      the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 :cite:p:`oranwg4iot0_rm`.
 
 .. figure:: ../figures/Fig2-4-uc4.png
    :alt: Edge vRAN Deployments

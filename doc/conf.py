@@ -4,17 +4,13 @@ html_title = "Anuket Specifications"
 copyright = '2023, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 extensions = ['sphinx.ext.intersphinx',
-              'sphinx.ext.autosectionlabel'
+              'sphinx.ext.autosectionlabel',
+              'sphinxcontrib.bibtex'
              ]
 
 exclude_patterns = [
     '**/.tox',
-    'ref_arch',
-    'ref_cert',
-    'ref_impl',
-    'ref_model',
-    'tech',
-    'gov/README.rst'
+    '**/README.rst'
 ]
 linkcheck_ignore = [
     'https://github.com/cncf/telecom-user-group/blob/master/whitepaper/cloud_native_thinking_for_telecommunications.md#1.4',
@@ -23,16 +19,30 @@ linkcheck_ignore = [
     'https://www.ngmn.org/wp-content/uploads/Publications/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf',
     'https://wiki.lfnetworking.org/'
 ]
+
+# temporarly I just add all intersphinx mappings needed. later these should be replaced with a single intersphinx to the
+# whole document itself.
 intersphinx_mapping = {
+    'cntt': ('https://cntt.readthedocs.io/en/latest/', None),
     'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None),
-    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None),
     'ref_arch_kubernetes': ('https://cntt.readthedocs.io/projects/ra2/en/latest/', None),
+    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None),
     'ref_cert_RC2': ('https://cntt.readthedocs.io/projects/rc2/en/latest/', None),
     'ref_impl_cntt-ri': ('https://cntt.readthedocs.io/projects/ri1/en/latest/', None),
     'ref_impl_cntt-ri2': ('https://cntt.readthedocs.io/projects/ri2/en/latest/', None)
+
 }
+
+
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
+
+bibtex_bibfiles = [
+    'ref_model/refs.bib',
+    'ref_arch/openstack/refs.bib', 
+    'ref_arch/kubernetes/refs.bib'
+    ]
+bibtex_default_style = 'unsrt'
 
 numfig = True
 numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',

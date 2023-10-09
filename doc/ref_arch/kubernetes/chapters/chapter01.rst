@@ -7,17 +7,17 @@ Introduction
 The objective of this Reference Architecture (RA) is to develop a usable Kubernetes-based platform for the Telco
 industry. The RA will be based on the standard Kubernetes platform wherever possible. This Reference Architecture
 for Kubernetes will describe the high-level system components and their interactions, taking the goals and requirements
-from the Cloud Infrastructure Reference Model :cite:p:`refmodel` (RM) and mapping them to Kubernetes (and related)
+from the Cloud Infrastructure Reference Model :cite:p:`refmodel_ra2` (RM) and mapping them to Kubernetes (and related)
 components. This document needs to be sufficiently detailed and robust such that it can be used to guide the production
 deployment of Kubernetes within an operator, whilst being flexible enough to evolve with and remain aligned with the
 wider Kubernetes ecosystem outside of Telco.
 
 To set this in context, it makes sense to start with the high-level definition and understanding of Kubernetes.
-Kubernetes :cite:p:`kubernetes` is a "portable, extensible, open-source platform for managing containerised
+Kubernetes :cite:p:`kubernetes_ra2` is a "portable, extensible, open-source platform for managing containerised
 workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing
-ecosystem. Kubernetes services, support, and tools are widely available" :cite:p:`whatiskubernetes`.
+ecosystem. Kubernetes services, support, and tools are widely available" :cite:p:`whatiskubernetes_ra2`.
 Kubernetes is developed as an
-open source project in the `kubernetes` :cite:p:`k8srepo` repository of GitHub.
+open source project in the `kubernetes` `k8srepo` repository of GitHub.
 
 To assist with the goal of creating a reference architecture that will support Telco workloads, but at the same time
 leverage the work that already has been completed in the Kubernetes community, RA2 will take an
@@ -97,7 +97,7 @@ For the purposes of this document, the CNCF TOC's (Technical Oversight Committee
    accessible for everyone.”
 
 The CNCF TUG (Telecom User Group), formed in June 2019, published a set of Cloud Native Principles suited to the
-requirements of the Telecom community :cite:p:`cloudnativeprinciples`.
+requirements of the Telecom community `cloudnativeprinciples`.
 There are many similarities with the CNCF principles, briefly that infrastructure needs to be:
 
 -  **scalable**
@@ -617,7 +617,7 @@ Conventions
 The key words "**MUST**", "**MUST NOT**", "required", "**SHALL**",
 **SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "recommended", "**MAY**", and
 "**OPTIONAL**" in this document are to be interpreted as described in
-RFC 2119 :cite:p:`rfc2119`.
+RFC 2119 :cite:p:`rfc2119_ra2`.
 
 
 References

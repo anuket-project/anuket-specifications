@@ -9,7 +9,7 @@ Reference Model Requirements
 ----------------------------
 
 The tables below contain the requirements from the Reference Model
-:cite:p:`refmodel` to
+:cite:p:`refmodel_ra1` to
 cover the Basic and High-Performance profiles.
 
 To ensure alignment with the infrastructure profile catalogue, the
@@ -94,7 +94,7 @@ Cloud Infrastructure Software Profile Requirements for Compute
      - :ref:`chapters/chapter04:consumable infrastructure resources and services`
 
 [*] Defined in the .bronze configuration in "Storage extensions"
-in :cite:p:`refmodel`.
+in :cite:p:`refmodel_ra1`.
 
 
 Cloud Infrastructure Software Profile Extensions Requirements for Compute
@@ -559,7 +559,7 @@ System Hardening Requirements
    * - sec.gen.002
      - Hardening
      - All systems part of Cloud Infrastructure **MUST** support hardening as
-       defined in CIS Password Policy Guide :cite:p:`cispwd`
+       defined in CIS Password Policy Guide :cite:p:`cispwd_ra1`
      - :ref:`chapters/chapter06:password policy`
    * - sec.gen.003
      - Hardening
@@ -604,7 +604,7 @@ System Hardening Requirements
      - The Cloud Infrastructure **MUST** support encrypted storage, for
        example, block, object and file storage, with access to encryption
        keys restricted based on a need to know
-       (Controlled Access Based on the Need to Know :cite:p:`ciscontrols`)
+       (Controlled Access Based on the Need to Know :cite:p:`ciscontrols_ra1`)
      - :ref:`chapters/chapter06:confidentiality and integrity`
    * - sec.gen.012
      - Hardening
@@ -1333,9 +1333,9 @@ Infrastructure Requirements
        cores for all non-tenant workloads such as for OpenStack services.
        SMT threads can be allocated to individual OpenStack services or their
        components. Dedicating host cores to certain
-       workloads (e.g., OpenStack services) :cite:p:`openstackcpu`.
+       workloads (e.g., OpenStack services) :cite:p:`openstackcpu_ra1`.
        Please see example, Configuring libvirt compute nodes for CPU pinning
-       :cite:p:`openstackcputopo`
+       :cite:p:`openstackcputopo_ra1`
      - :ref:`chapters/chapter03:cloud partitioning: host aggregates, availability zones`
    * - inf.com.09
      - Compute
@@ -1393,7 +1393,7 @@ Infrastructure Requirements
        Infrastructure to support various infrastructure profiles (Basic and
        High Performance)
      - :ref:`chapters/chapter04:neutron extensions`
-       and OpenStack Neutron Plugins :cite:p:`openstackneut`
+       and OpenStack Neutron Plugins :cite:p:`openstackneut_ra1`
    * - inf.nw.16
      - Network
      - The Architecture **MUST** support dual stack IPv4 and IPv6 for tenant
@@ -1431,7 +1431,7 @@ VIM Requirements
    * - vim.08
      - General
      - The Architecture **MUST** support resource tagging
-     - OpenStack Resource Tags :cite:p:`openstacktags`
+     - OpenStack Resource Tags :cite:p:`openstacktags_ra1`
 
 Interfaces & APIs Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1596,7 +1596,7 @@ General Recommendations
        component
      - OpenStack consists of both stateless and stateful services where the
        stateful services utilise a database. For latter see Configuring the
-       stateful services :cite:p:`openstackha`
+       stateful services :cite:p:`openstackha_ra1`
    * - gen.cnt.02
      - Cloud nativeness
      - The Architecture **SHOULD** consist of service components implemented
@@ -1607,7 +1607,7 @@ General Recommendations
      - The Architecture **SHOULD** support policy driven auto-scaling.
      - This requirement is currently not addressed but will likely be
        supported through
-       Senlin :cite:p:`openstacksen`, cluste management service
+       Senlin :cite:p:`openstacksen_ra1`, cluste management service
    * - gen.rsl.02
      - Resiliency
      - The Architecture **SHOULD** support resilient OpenStack service
@@ -1692,7 +1692,7 @@ Infrastructure Recommendations
      - Acceleration
      - The Architecture **SHOULD** support Cloud Infrastructure Acceleration
        (such as SmartNICs)
-     - OpenStack Future - Specs defined :cite:p:`openstackneutovs`
+     - OpenStack Future - Specs defined :cite:p:`openstackneutovs_ra1`
    * - inf.acc.03
      - Acceleration
      - The Architecture **MAY** rely on SR-IOV PCI-Pass through to provide
@@ -1990,7 +1990,7 @@ Open-Source Software Security Recommendations
      - A Software Bill of Materials (SBOM) **SHOULD** be provided or build,
        and maintained to identify the software components and their origins.
        Inventory of software components
-     - NTIA SBOM :cite:p:`ntiasbom`
+     - NTIA SBOM :cite:p:`ntiasbom_ra1`
 
 IaaC security Recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2171,43 +2171,43 @@ Compliance with Standards Recommendations
    * - sec.std.001
      - Standards
      - The Cloud Operator **SHOULD** comply with Center for Internet Security
-       CIS Controls :cite:p:`cis`
+       CIS Controls :cite:p:`cis_ra1`
      -
    * - sec.std.002
      - Standards
      - The Cloud Operator, Platform and Workloads **SHOULD** follow the
        guidance in the CSA Security Guidance for Critical Areas of Focus in
        Cloud Computing (latest version)- CSA,
-       Cloud Security Alliance :cite:p:`csa`
+       Cloud Security Alliance :cite:p:`csa_ra1`
      -
    * - sec.std.003
      - Standards
      - The Platform and Workloads **SHOULD** follow the guidance in the
-       OWASP Cheat Sheet Series (OCSS) :cite:p:`ocss` - OWASP,
-       Open Web Application Security Project :cite:p:`owasp`
+       OWASP Cheat Sheet Series (OCSS) :cite:p:`ocss_ra1` - OWASP,
+       Open Web Application Security Project :cite:p:`owasp_ra1`
      -
    * - sec.std.004
      - Standards
      - The Cloud Operator, Platform and Workloads **SHOULD** ensure that their
        code is not vulnerable to the OWASP Top Ten Security Risks
-       :cite:p:`owaspten`
+       :cite:p:`owaspten_ra1`
      -
    * - sec.std.005
      - Standards
      - The Cloud Operator, Platform and Workloads **SHOULD** strive to improve
        their maturity on the OWASP Software Maturity Model (SAMM)
-       :cite:p:`samm`
+       :cite:p:`samm_ra1`
      -
    * - sec.std.006
      - Standards
      - The Cloud Operator, Platform and Workloads **SHOULD** utilise the
-       OWASP Web Security Testing Guide :cite:p:`wstg`
+       OWASP Web Security Testing Guide :cite:p:`wstg_ra1`
      -
    * - sec.std.007
      - Standards
      - The Cloud Operator, and Platform **SHOULD** satisfy the requirements
        for Information Management Systems specified in ISO/IEC 27001
-       :cite:p:`isoiec27001`;
+       :cite:p:`isoiec27001_ra1`;
        ISO/IEC 27001 is the international Standard for best practice
        information security management systems (ISMSs)
      -
@@ -2215,13 +2215,13 @@ Compliance with Standards Recommendations
      - Standards
      - The Cloud Operator, and Platform **SHOULD** implement the Code of
        practice for Security Controls specified
-       ISO/IEC 27002:2013 (or latest) :cite:p:`isoiec27002`
+       ISO/IEC 27002:2013 (or latest) :cite:p:`isoiec27002_ra1`
      -
    * - sec.std.009
      - Standards
      - The Cloud Operator, and Platform **SHOULD** implement the
        ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques
-       :cite:p:`isoiec27032`;
+       :cite:p:`isoiec27032_ra1`;
        ISO/IEC 27032 is the international Standard focusing explicitly on
        cybersecurity
      -

@@ -17,7 +17,7 @@ structure of control and user planes, operating systems, hypervisors, and
 BIOS configurations, and architectural details of underlay and overlay
 networking, and storage, and the distribution of OpenStack service
 components among nodes. The chapter also covers implementation support
-for the "Profiles, Profile Extensions & Flavours" :cite:p:`refmodel`;
+for the "Profiles, Profile Extensions & Flavours" :cite:p:`refmodel_ra1`;
 the OpenStack flavor types capture both the sizing and the profile
 configuration (of the host).
 
@@ -31,7 +31,7 @@ In OpenStack, KVM is configured as the default hypervisor for compute
 nodes.
 
 -  Configuration:
-   OpenStack :cite:p:`ostk_wallaby_hypervisor_config`
+   OpenStack :cite:p:`ostk_wallaby_hypervisor_config_ra1`
    specifies the steps/instructions to configure KVM:
 
    -  Enable KVM based hardware virtualisation in BIOS. OpenStack
@@ -49,7 +49,7 @@ nodes.
    -  KVM Performance Tweaks
 
 -  Hardening the virtualisation
-   layers :cite:p:`ostk_sec_guide_hardening_virt_lyrs`
+   layers :cite:p:`ostk_sec_guide_hardening_virt_lyrs_ra1`
 
    -  OpenStack recommends minimizing the code base by removing unused
       components
@@ -71,7 +71,7 @@ OpenStack Control Plane Servers (Control Nodes)
 
 For OpenStack control nodes we use the BIOS parameters for the basic
 profile defined in "Cloud Infrastructure Hardware Profiles Features and
-Requirements" :cite:p:`refmodel`.
+Requirements" :cite:p:`refmodel_ra1`.
 Additionally, for OpenStack we need to set the following boot parameters:
 
 .. table:: Boot parameters
@@ -106,7 +106,7 @@ Additionally, for OpenStack we need to set the following boot parameters:
       very large cloud footprint (rule of thumb: number of control nodes
       = 3 + quotient (number of compute nodes/1000)).
    -  The Services Placement Summary
-      table :cite:p:`fuel_ref_arch_100`
+      table :cite:p:`fuel_ref_arch_100_ra1`
       specifies the number of instances that are required based upon the
       cloud size (number of nodes).
 
@@ -159,7 +159,7 @@ Storage nodes
    Boot disks          RAID 1
    =================== ======
 
--  HW specifications: please see "Storage" in :cite:p:`refmodel`
+-  HW specifications: please see "Storage" in :cite:p:`refmodel_ra1`
 -  How many nodes to meet SLA: Active-Passive is the default and
    recently OpenStack started to support Active-Active
 -  Sizing rules: minimum 2 x 1 TB; recommended 2 x 10 TB
@@ -171,19 +171,19 @@ This section specifies the compute node configurations to support the
 Basic and High-Performance profiles; in OpenStack this would be
 accomplished by specifying the configurations when creating "flavors".
 The cloud operator may choose to implement certain profile-extensions
-(Profile Extensions (Specialisations) :cite:p:`refmodel`)
+(Profile Extensions (Specialisations) :cite:p:`refmodel_ra1`)
 as a set of standard configurations, of a given profile, capturing some
 of the variability through different values or extra specifications.
 
 -  The software and hardware configurations are as specified in the
    Cloud Infrastructure Hardware Profiles Features and Requirements
-   in :cite:p:`refmodel`.
+   in :cite:p:`refmodel_ra1`.
 
 -  BIOS requirement
 
    -  The general BIOS requirements are described in the
       Cloud Infrastructure Hardware Profiles Features and Requirements
-      :cite:p:`refmodel`.
+      :cite:p:`refmodel_ra1`.
 
 **Example Profiles and their Extensions**
 
@@ -278,8 +278,8 @@ the following boot parameters:
        the I/O, memory, and storage across both sockets), and configuration of
        NIC features. Server BIOS and Host OS kernel command line settings are
        described in
-       DPDK release notes :cite:p:`dpdk_rel_notes` and
-       DPDK performance reports :cite:p:`dpdk_perf`.
+       DPDK release notes :cite:p:`dpdk_rel_notes_ra1` and
+       DPDK performance reports :cite:p:`dpdk_perf_ra1`.
        Disabling power settings (like Intel Turbo Boost Technology) brings
        stable performance results, although understanding if and when they
        benefit workloads and enabling them can achieve better performance
@@ -783,7 +783,7 @@ High Level Logical Network Layout
          - Externally Routable: No
          - Connected to: All nodes except foundation
    * - Tenant
-     - VXLAN / Geneve project overlay networks (OVS kernel mode) - i.e., RFC1918 :cite:p:`rfc1918`
+     - VXLAN / Geneve project overlay networks (OVS kernel mode) - i.e., RFC1918 :cite:p:`rfc1918_ra1`
        re-usable private networks as controlled by cloud administrator
      -   - Security Domain: Underlay
          - Externally Routable: No
@@ -795,7 +795,7 @@ High Level Logical Network Layout
          - Connected to: controllers
    * - External Provider (FIP)
      - Network with a pool of externally routable IP addresses used by neutron routers
-       to NAT to/from the tenant RFC1918 :cite:p:`rfc1918` private networks
+       to NAT to/from the tenant RFC1918 :cite:p:`rfc1918_ra1` private networks
      -   - Security Domain: Data Centre
          - Externally routable: Yes
          - Connected to: controllers, OVS computes
@@ -824,7 +824,7 @@ Octavia v2 API conformant Load Balancing
 
 Load balancing is needed for automatic scaling, managing availability
 and changes.
-Octavia :cite:p:`ostk_latest_octavia`
+Octavia :cite:p:`ostk_latest_octavia_ra1`
 is an open-source load balancer for OpenStack, based on HAProxy, and
 replaces the deprecated (as of OpenStack Queens release) Neutron LBaaS.
 The Octavia v2 API is a superset of the deprecated Neutron LBaaS v2 API
@@ -864,15 +864,15 @@ actions.
 
 This Reference Architecture supports the ML2 plugin (see below) as well
 as the service plugins including for LBaaS (Load Balancer as a
-Service) :cite:p:`ostk_octavia_gov`,
+Service) :cite:p:`ostk_octavia_gov_ra1`,
 and VPNaaS (VPN as a
-Service) :cite:p:`ostk_neutron_vpnaas`. The
+Service) :cite:p:`ostk_neutron_vpnaas_ra1`. The
 OpenStack wiki provides a list of Neutron
-plugins :cite:p:`ostk_neutron_plugins`.
+plugins :cite:p:`ostk_neutron_plugins_ra1`.
 
 Every Neutron plugin needs to implement a minimum set of common methods
 (actions for Wallaby
-release) :cite:p:`ostk_neutron_api_ext`.
+release) :cite:p:`ostk_neutron_api_ext_ra1`.
 Resources can inherit Standard Attributes and thereby have the
 extensions for these standard attributes automatically incorporated.
 Additions to resources, such as additional attributes, must be
@@ -882,9 +882,9 @@ The section :ref:`chapters/chapter05:interfaces and apis` of this Reference
 Architecture provides a list of :ref:`chapters/chapter04:neutron extensions`.
 The current available
 extensions can be obtained using the List Extensions
-API :cite:p:`ostk_nw_ext`
+API :cite:p:`ostk_nw_ext_ra1`
 and details about an extension using the Show extension details
-API :cite:p:`ostk_nw_ext_details`.
+API :cite:p:`ostk_nw_ext_details_ra1`.
 
 **Neutron ML2 integration** The OpenStack Modular Layer 2 (ML2) plugin
 simplifies adding networking technologies by utilising drivers that
@@ -892,7 +892,7 @@ implement these network types and methods for accessing them. Each
 network type is managed by an ML2 type driver and the mechanism driver
 exposes interfaces to support the actions that can be performed on the
 network type resources. The OpenStack ML2
-documentation :cite:p:`ostk_neutron_ml2` lists
+documentation :cite:p:`ostk_neutron_ml2_ra1` lists
 example mechanism drivers.
 
 Network quality of service
@@ -942,7 +942,7 @@ commodity hardware from any number of open-source based storage packages
 (such as LVM, Ceph, NFS, etc.). The proprietary and open-source storage
 systems are supported in Cinder through specific plugin drivers. The
 OpenStack Cinder
-documentation :cite:p:`ostk_latest_cinder_support`
+documentation :cite:p:`ostk_latest_cinder_support_ra1`
 specifies the minimum functionality that all storage drivers must
 support. The functions include:
 
@@ -960,21 +960,21 @@ deployed by the cloud operator. The common storage backend attachment
 methods include iSCSI, NFS, local disk, etc. and the matrix lists the
 supported methods for each of the vendor drivers. The OpenStack Cinder
 Available
-Drivers :cite:p:`ostk_latest_cinder_drivers`
+Drivers :cite:p:`ostk_latest_cinder_drivers_ra1`
 documentation provides a list of all OpenStack compatible drivers and
 their configuration options.
 
 The Cinder
-Configuration :cite:p:`ostk_latest_cinder_config`
+Configuration :cite:p:`ostk_latest_cinder_config_ra1`
 document provides information on how to configure Cinder including
 Anuket required capabilities for volume encryption, Policy
 configuration, quotas, etc. The Cinder
-Administration :cite:p:`ostk_latest_cinder`
+Administration :cite:p:`ostk_latest_cinder_ra1`
 document provides information on the capabilities required by Anuket
 including managing volumes, snapshots, multi-storage backends, migrate
 volumes, etc.
 
-Ceph :cite:p:`ceph` is the default Anuket Reference Architecture
+Ceph :cite:p:`ceph_ra1` is the default Anuket Reference Architecture
 storage backend and is discussed below.
 
 Ceph Storage Cluster
@@ -1055,7 +1055,7 @@ more detail.
 Keystone
 ^^^^^^^^
 
-Keystone :cite:p:`ostk_wallaby_keystone` is the
+Keystone :cite:p:`ostk_wallaby_keystone_ra1` is the
 authentication service, the foundation of identity management in
 OpenStack. Keystone needs to be the first deployed service. Keystone has
 services running on the control nodes and no services running on the
@@ -1068,7 +1068,7 @@ compute nodes:
 Glance
 ^^^^^^
 
-Glance :cite:p:`ostk_wallaby_glance` is the image
+Glance :cite:p:`ostk_wallaby_glance_ra1` is the image
 management service. Glance has only a dependency on the Keystone service
 therefore it is the second one deployed. Glance has services running on
 the control nodes and no services running on the compute nodes:
@@ -1081,7 +1081,7 @@ the control nodes and no services running on the compute nodes:
 Cinder
 ^^^^^^
 
-Cinder :cite:p:`ostk_wallaby_cinder` is the block
+Cinder :cite:p:`ostk_wallaby_cinder_ra1` is the block
 device management service, depends on Keystone and possibly Glance to be
 able to create volumes from images. Cinder has services running on the
 control nodes and no services running on the compute nodes: - Cinder API
@@ -1094,7 +1094,7 @@ and NFS.*
 Swift
 ^^^^^
 
-Swift :cite:p:`ostk_wallaby_swift` is the object
+Swift :cite:p:`ostk_wallaby_swift_ra1` is the object
 storage management service, Swift depends on Keystone and possibly
 Glance to be able to create volumes from images. Swift has services
 running on the control nodes and the compute nodes:
@@ -1109,7 +1109,7 @@ running on the control nodes and the compute nodes:
 Neutron
 ^^^^^^^
 
-Neutron :cite:p:`ostk_wallaby_neutron` is the
+Neutron :cite:p:`ostk_wallaby_neutron_ra1` is the
 networking service, depends on Keystone and has services running on the
 control nodes and the compute nodes. Depending upon the workloads to be
 hosted by the infrastructure, and the expected load on the controller
@@ -1197,7 +1197,7 @@ distributed router capability), and this then allows direct instance to
 instance (East-West) communications.
 
 The OpenStack "High Availability Using Distributed Virtual Routing
-(DVR) :cite:p:`ostk_nw_liberty_dvr_ovs`"
+(DVR) :cite:p:`ostk_nw_liberty_dvr_ovs_ra1`"
 provides an in-depth view into how DVR works and the traffic flow
 between the various nodes and interfaces for three different use cases.
 Please note that DVR was introduced in the OpenStack Juno release and,
@@ -1207,7 +1207,7 @@ out of character for OpenStack documentation.
 DVR addresses both scalability and high availability for some L3
 functions but is not fully fault tolerant. For example, North/South SNAT
 traffic is vulnerable to single node (network node) failures. DVR with
-VRRP :cite:p:`ostk_wallaby_nw_svr_snat_config`
+VRRP :cite:p:`ostk_wallaby_nw_svr_snat_config_ra1`
 addresses this vulnerability.
 
 Software Defined Networking (SDN)
@@ -1227,7 +1227,7 @@ through neutron plugins by the corresponding SDN agents.
 Nova
 ^^^^
 
-Nova :cite:p:`ostk_wallaby_nova` is the compute
+Nova :cite:p:`ostk_wallaby_nova_ra1` is the compute
 management service, depends on all above components and is deployed
 after their deployment. Nova has services running on the control nodes
 and the compute nodes:
@@ -1246,7 +1246,7 @@ configured prior to nova compute starts.
 Ironic
 ^^^^^^
 
-Ironic :cite:p:`ostk_wallaby_ironic` is the bare
+Ironic :cite:p:`ostk_wallaby_ironic_ra1` is the bare
 metal provisioning service. Ironic depends on all above components and
 is deployed after them. Ironic has services running on the control nodes
 and the compute nodes:
@@ -1255,13 +1255,13 @@ and the compute nodes:
 -  ironic-conductor which executes operation on bare metal nodes
 
 Note: This is an optional service. The Ironic
-APIs :cite:p:`ostk_bm` are still under
+APIs :cite:p:`ostk_bm_ra1` are still under
 development.
 
 Heat
 ^^^^
 
-Heat :cite:p:`ostk_wallaby_heat` is the orchestration
+Heat :cite:p:`ostk_wallaby_heat_ra1` is the orchestration
 service using templates to provision cloud resources, Heat integrates
 with all OpenStack services. Heat has services running on the control
 nodes and no services running on the compute nodes:
@@ -1273,7 +1273,7 @@ nodes and no services running on the compute nodes:
 Horizon
 ^^^^^^^
 
-Horizon :cite:p:`ostk_wallaby_horizon` is the Web
+Horizon :cite:p:`ostk_wallaby_horizon_ra1` is the Web
 User Interface to all OpenStack services. Horizon has services running
 on the control nodes and no services running on the compute nodes.
 
@@ -1281,7 +1281,7 @@ Placement
 ^^^^^^^^^
 
 The OpenStack Placement
-service :cite:p:`ostk_wallaby_placement`
+service :cite:p:`ostk_wallaby_placement_ra1`
 enables tracking (or accounting) and scheduling of resources. It
 provides a RESTful API and a data model for the managing of resource
 provider inventories and usage for different classes of resources. In
@@ -1292,9 +1292,9 @@ as a shared storage pool provided by, say, Ceph. The placement service
 is primarily utilised by nova-compute and nova-scheduler. Other
 OpenStack services such as Neutron or Cyborg can also utilise placement
 and do so by creating Provider
-Trees :cite:p:`ostk_latest_placement_provider_tree`.
+Trees :cite:p:`ostk_latest_placement_provider_tree_ra1`.
 The following data objects are utilised in the placement
-service :cite:p:`ostk_latest_placement`:
+service :cite:p:`ostk_latest_placement_ra1`:
 
 -  Resource Providers provide consumable inventory of one or more
    classes of resources (CPU, memory or disk). A resource provider can
@@ -1324,7 +1324,7 @@ Placement has services running on the control node: - nova-placement-api
 Barbican
 ^^^^^^^^
 
-Barbican :cite:p:`ostk_wallaby-barbican` is the
+Barbican :cite:p:`ostk_wallaby-barbican_ra1` is the
 OpenStack Key Manager service. It is an optional service hosted on
 controller nodes. It provides secure storage, provisioning, and
 management of secrets as passwords, encryption keys and X.509
@@ -1342,19 +1342,19 @@ Confidentiality and Integrity of data at rest and in transit.".
 Cyborg
 ^^^^^^
 
-Cyborg :cite:p:`ostk_wallaby_cyborg` is the OpenStack
+Cyborg :cite:p:`ostk_wallaby_cyborg_ra1` is the OpenStack
 project for the general purpose management framework for accelerators
 (including GPUs, FPGAs, ASIC-based devices, etc.), and their lifecycle
 management.
 
 Cyborg will support only a subset of the Nova
-operations :cite:p:`ostk_svr`;
+operations :cite:p:`ostk_svr_ra1`;
 the set of Nova operations supported in Cyborg depends upon the merge of
 a set of Nova patches in Cyborg. In Wallaby, not all the required Nova
 patches have been merged. The list of Cyborg operations with Nova
-dependencies supported in Wallaby are listed in :cite:p:`ostk_wallaby_cyborg_support`;
+dependencies supported in Wallaby are listed in :cite:p:`ostk_wallaby_cyborg_support_ra1`;
 the Nova operations supported in Cyborg at any given time are also
-available in :cite:p:`ostk_latest_cyborg_support`.
+available in :cite:p:`ostk_latest_cyborg_support_ra1`.
 
 Cyborg supports:
 
@@ -1368,7 +1368,7 @@ Accelerators can be of type:
    Caches, …
 
 The Cyborg
-architecture :cite:p:`ostk_latest_cyborg_arch`
+architecture :cite:p:`ostk_latest_cyborg_arch_ra1`
 consists of the cyborg-api, cyborg-conductor, cyborg-db, cyborg-agent,
 and generic device type drivers. cyborg-api, cyborg-conductor and
 cyborg-db are hosted on control nodes. cyborg-agent, which runs on
@@ -1377,9 +1377,9 @@ nodes. These generic device type drivers are an abstraction of the
 vendor specific drivers; there is a generic device type driver for each
 device type (see above for list of some of the device types).
 For Wallaby release, the list of the supported vendor drivers is
-provided under "Driver Support :cite:p:`ostk_wallaby_cyborg_support`"
+provided under "Driver Support :cite:p:`ostk_wallaby_cyborg_support_ra1`"
 and into the "setup.cfg file
-:cite:p:`ostk_wallaby_cyborg_driver`".
+:cite:p:`ostk_wallaby_cyborg_driver_ra1`".
 
 Containerisation
 ~~~~~~~~~~~~~~~~
@@ -1406,9 +1406,9 @@ the figure below.
 Containerisation Support for Workloads
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Kubernetes :cite:p:`kubernetes` is currently the *de facto* container
+Kubernetes :cite:p:`kubernetes_ra1` is currently the *de facto* container
 orchestration platform. The Anuket Kubernetes Reference Architecture
-:cite:p:`refarch2` Section 4, specifies that the Kubernetes Master
+:cite:p:`refarch2_ra1` Section 4, specifies that the Kubernetes Master
 and Worker nodes can be deployed on physical or virtual machines.
 For the latter, OpenStack services can be used for the virtual
 nfrastructure management (please see the Figure
@@ -1416,7 +1416,7 @@ nfrastructure management (please see the Figure
 clouds and also many Telco operator on-premise cloud deployments, it is
 common to use virtual machines to deploy Kubernetes services (containers,
 workloads, etc.). Containers and containerised workloads running on top of
-virtual machines need to follow the specifications :cite:p:`refarch2`.
+virtual machines need to follow the specifications :cite:p:`refarch2_ra1`.
 
 Consumable Infrastructure Resources and Services
 ------------------------------------------------
@@ -1424,7 +1424,7 @@ Consumable Infrastructure Resources and Services
 Support for Cloud Infrastructure Profiles and flavors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Chapters 4 and 5 in :cite:p:`refmodel` provide information about the Cloud
+Chapters 4 and 5 in :cite:p:`refmodel_ra1` provide information about the Cloud
 Infrastructure Profiles and their size information. OpenStack flavors
 with their set of properties describe the server capabilities and size
 required to determine the compute host which will run this server. The
@@ -1518,7 +1518,7 @@ set up the flavors as specified in the tables below.
 
    -  To configure profile-extensions, for example, the "Storage
       Intensive High Performance" profile, as defined in
-      Profile Extensions (Specialisations) :cite:p:`refmodel`,
+      Profile Extensions (Specialisations) :cite:p:`refmodel_ra1`,
       in addition to the above, need to configure the storage IOPS: the
       following two parameters need to be specified in the flavor
       create: -property quota:disk_write_iops_sec=<IOPS#> and -property
@@ -1526,7 +1526,7 @@ set up the flavors as specified in the tables below.
 
 The flavor create command and the mandatory and optional configuration
 parameters is documented in
-OpenStack Flavors :cite:p:`ostk_latest_nova_flavors`.
+OpenStack Flavors :cite:p:`ostk_latest_nova_flavors_ra1`.
 
 Logical segregation and high availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1586,7 +1586,7 @@ with capacity somewhere in between the large data centres and edge
 locations, respectively. The mapping of various terms, including the
 Reference Model terminology specified in the chapter
 "Comparison of Deployment Topologies and Edge Terms"
-and Open Glossary of Edge Computing :cite:p:`edge_glossary`,
+and Open Glossary of Edge Computing :cite:p:`edge_glossary_ra1`,
 is as follows:
 
 -  Central Cloud Centre: Large Centralised Data Centre, Regional Data
@@ -1601,7 +1601,7 @@ the resource capacity, as in the number of servers, and the capacity of
 these servers in terms of # of cores, RAM, etc. restricting the set of
 services that can be deployed and, thus, creating a dependency between
 other data centres.
-"Telco Edge Cloud" chapter in :cite:p:`refmodel`
+"Telco Edge Cloud" chapter in :cite:p:`refmodel_ra1`
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.
 
@@ -1691,29 +1691,29 @@ such deployment choices.
 Edge Cloud Topology
 ~~~~~~~~~~~~~~~~~~~
 
-The Reference Model "Telco Edge Cloud" chapter :cite:p:`refmodel`
+The Reference Model "Telco Edge Cloud" chapter :cite:p:`refmodel_ra1`
 presents the deployment environment characteristics, infrastructure
 characteristics and new values for the Infrastructure Profiles at the Edge.
 
 The Edge computing whitepaper
-:cite:p:`ostk_uses_edge_arch_design`
+:cite:p:`ostk_uses_edge_arch_design_ra1`
 includes information such as the services that run on various nodes. The
 information from the whitepaper coupled with that from the OpenStack
 Reference Architecture
-:cite:p:`fuel_ref_arch_100_svcs_placement`
+:cite:p:`fuel_ref_arch_100_svcs_placement_ra1`
 for 100, 300 and 500 nodes will help in deciding which OpenStack and
 other services (such as database, messaging) run on which nodes in what
 Cloud Centre and the number of copies that should be deployed. These
 references also present the pros and cons of DCP and CCP and designs to
 address some of the challenges of each of the models.
 
-"Telco Edge Cloud: Platform Services Deployment" :cite:p:`refmodel`
+"Telco Edge Cloud: Platform Services Deployment" :cite:p:`refmodel_ra1`
 lists the Platform Services that may be placed in the different node types
 (control, compute, and storage). Depending upon the capacity and
 resources available only the compute nodes may exist at the Edge thereby
 impacting operations.
 
-"Telco Edge Cloud: Infrastructure Profiles" :cite:p:`refmodel`
+"Telco Edge Cloud: Infrastructure Profiles" :cite:p:`refmodel_ra1`
 lists a number of Infrastructure Profile characteristics and the changes that
 may need to be made for certain Edge clouds depending upon their
 resource capabilities. It should be noted that none of these changes
@@ -1745,7 +1745,7 @@ cached from the central site. Two options exist:
   in Nova since the OpenStack Ussuri release.
 
 Image caching and considerations for its use are discussed in the OpenStack document
-Image Caching :cite:p:`ostk_latest_nova_pre_caching`.
+Image Caching :cite:p:`ostk_latest_nova_pre_caching_ra1`.
 
 
 Edge Cloud Deployment Tools
@@ -1754,12 +1754,12 @@ Edge Cloud Deployment Tools
 Deployment at the Edge requires support for large scale deployment. A
 number of open-source tools are available for this purpose including:
 
--  Airship :cite:p:`airsh`: declaratively configure,
+-  Airship :cite:p:`airsh_ra1`: declaratively configure,
    deploy and maintain an integrated virtualisation and containerisation
    platform
--  Starling-X :cite:p:`starl`: cloud infrastructure
+-  Starling-X :cite:p:`starl_ra1`: cloud infrastructure
    software stack for the edge
--  Triple-O :cite:p:`tripl`: for
+-  Triple-O :cite:p:`tripl_ra1`: for
    installing, upgrading and operating OpenStack clouds
 
 These installers are described in more detail

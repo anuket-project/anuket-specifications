@@ -62,7 +62,7 @@ version and then the old servers are undeployed.
 Cloud Infrastructure provisioning and configuration management
 --------------------------------------------------------------
 
-In the Reference Model :cite:p:`refmodel`, the "Configuration and
+In the Reference Model :cite:p:`refmodel_ra1`, the "Configuration and
 Lifecycle Management" chapter defines the functions of Configuration
 and Life Cycle Management (LCM).
 To operate and manage a scalable cloud, that minimises operational
@@ -96,14 +96,14 @@ To ensure operational efficiency and save cost and time, the lifecycle
 management for physical and virtual servers must be automated using
 tools which will handle the repetitive tasks like provisioning,
 configuration, and monitoring.
-Foreman :cite:p:`forem` is commonly used
+Foreman :cite:p:`forem_ra1` is commonly used
 to automate the provisioning and management of bare metal infrastructure.
 Foreman is an open-source project, base of several commercial products.
 Foreman provides the full management of PXE configuration and the
 installation for many Operating Systems (CentOS, Fedora, Ubuntu, Debian,
 Red Hat Enterprise Linux, OpenSUSE, etc.).
 Foreman service can be installed by Ansible playbooks
-:cite:p:`ansib`.
+:cite:p:`ansib_ra1`.
 Ansible playbooks are basic tools for the automation of the
 infrastructure virtualisation layer deployments.
 
@@ -116,7 +116,7 @@ for the same reasons of efficiency. Open-source installers are
 available to perform the deployments of the OpenStack services.
 A subset of these tools is described below.
 
-- OpenStack TripleO :cite:p:`tripl`, "OpenStack on OpenStack"
+- OpenStack TripleO :cite:p:`tripl_ra1`, "OpenStack on OpenStack"
 
   TripleO is an official OpenStack project which allows to deploy and
   manage a production cloud onto bare metal hardware using a subset
@@ -124,12 +124,12 @@ A subset of these tools is described below.
   the creation of an "undercloud" or deployment cloud. The
   undercloud contains the necessary OpenStack components to deploy
   and manage an "overcloud", representing the deployed cloud.
-  The architecture document :cite:p:`trarch`
+  The architecture document :cite:p:`trarch_ra1`
   describes the solution. Nova and Ironic are used in the undercloud to manage
   the servers in bare metal environment. TripleO leverages
   on Heat tempates.
 
-- Airship v2 :cite:p:`airsh`
+- Airship v2 :cite:p:`airsh_ra1`
 
   Airship is supported by the OpenStack Foundation.
   It is a collection of interopable open-source components
@@ -144,7 +144,7 @@ A subset of these tools is described below.
   a provisioning tool, but also a also a configuration management
   system.
 
-- StarlingX :cite:p:`starl`
+- StarlingX :cite:p:`starl_ra1`
 
   StarlingX is dedicated to cloud infrastructure deployment at
   the edge, taking into account the specific edge use cases requirements
@@ -240,7 +240,7 @@ workloads so that appropriate actions can be taken. For example,
    resources.
 
 Some of the data is to support the metrics collection specified in the
-Reference Model :cite:p:`refmodel`.
+Reference Model :cite:p:`refmodel_ra1`.
 
 Logs have multiple operational uses including for:
 

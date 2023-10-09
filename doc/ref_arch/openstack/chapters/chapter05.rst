@@ -37,7 +37,7 @@ Wallaby release. Please note that in Reference Conformance (RC-1)
 testing, the System Under Test (SUT) can utilise newer microversions
 because of the OpenStack microversion policies. As per multiple
 OpenStack services documentation, for example the Compute Service
-:cite:p:`oscomputemicroversions`,
+:cite:p:`oscomputemicroversions_ra1`,
 "A cloud that is upgraded to support newer microversions will still
 support all older microversions to maintain the backward compatibility
 for those users who depend on older microversions."
@@ -79,11 +79,11 @@ Keystone API
    * - trust
      - X
 
-Identity API v3: :cite:p:`osidentityapiv3`
+Identity API v3: :cite:p:`osidentityapiv3_ra1`
 
-Identity API v3 extensions: :cite:p:`osidentityapiv3ext`
+Identity API v3 extensions: :cite:p:`osidentityapiv3ext_ra1`
 
-Security compliance and PCI-DSS: :cite:p:`ossecuritycomplianceandpcidss`
+Security compliance and PCI-DSS: :cite:p:`ossecuritycomplianceandpcidss_ra1`
 
 Glance API
 ~~~~~~~~~~
@@ -112,9 +112,9 @@ Glance API
    * - web-download import
      -
 
-Image Service API: :cite:p:`osimageserviceapi`
+Image Service API: :cite:p:`osimageserviceapi_ra1`
 
-Image Service Versions: :cite:p:`osimageserviceversions`
+Image Service Versions: :cite:p:`osimageserviceversions_ra1`
 
 Cinder API
 ~~~~~~~~~~
@@ -157,9 +157,9 @@ Cinder API
    * - volume_revert
      - X
 
-Block Storage API: :cite:p:`osblockstorageapi`
+Block Storage API: :cite:p:`osblockstorageapi_ra1`
 
-Cinder REST API Version History: :cite:p:`oscinderrestapiversionhistory`
+Cinder REST API Version History: :cite:p:`oscinderrestapiversionhistory_ra1`
 
 Swift API
 ~~~~~~~~~
@@ -212,9 +212,9 @@ Swift API
    * - versioned_writes
      - X
 
-Object Storage API: :cite:p:`osobjectstorageapi`
+Object Storage API: :cite:p:`osobjectstorageapi_ra1`
 
-Discoverability: :cite:p:`osdiscoverability`
+Discoverability: :cite:p:`osdiscoverability_ra1`
 
 Neutron API
 ~~~~~~~~~~~
@@ -402,10 +402,10 @@ Neutron API
    * - vxlan
      -
 
-Networking Service APIs: :cite:p:`osnetworkingserviceapis`
+Networking Service APIs: :cite:p:`osnetworkingserviceapis_ra1`
 
 The exhaustive list of extensions is available at
-:cite:p:`osnetworkingapiv20`
+:cite:p:`osnetworkingapiv20_ra1`
 
 Nova API
 ~~~~~~~~
@@ -480,9 +480,9 @@ Nova API
    * - xenapi_apis
      -
 
-Compute API: :cite:p:`oscomputeapi`
+Compute API: :cite:p:`oscomputeapi_ra1`
 
-Compute REST API Version History: :cite:p:`oscomputerestapiversionhistory`
+Compute REST API Version History: :cite:p:`oscomputerestapiversionhistory_ra1`
 
 Placement API
 ~~~~~~~~~~~~~
@@ -498,9 +498,9 @@ Placement API
      - v1
      - 1.36
 
-Placement API: :cite:p:`osplacementapi`
+Placement API: :cite:p:`osplacementapi_ra1`
 
-Placement REST API Version History: :cite:p:`osplacementrestapiversionhistory`
+Placement REST API Version History: :cite:p:`osplacementrestapiversionhistory_ra1`
 
 Heat API
 ~~~~~~~~
@@ -516,11 +516,11 @@ Heat API
      - v1
      - 2021-04-16
 
-Orchestration Service API: :cite:p:`osorchestrationserviceapi`
+Orchestration Service API: :cite:p:`osorchestrationserviceapi_ra1`
 
-Template version history: :cite:p:`ostemplateversionhistory`
+Template version history: :cite:p:`ostemplateversionhistory_ra1`
 
-Heat Orchestration Template (HOT) specification: :cite:p:`oshotspecification`
+Heat Orchestration Template (HOT) specification: :cite:p:`oshotspecification_ra1`
 
 
 Consolidated Set of APIs
@@ -531,7 +531,7 @@ OpenStack Interfaces
 
 This section illustrates some of the Interfaces provided by OpenStack;
 the exhaustive list of APIs is available at
-:cite:p:`osapis`.
+:cite:p:`osapis_ra1`.
 
 OpenStack REST APIs are simple to interact with using either of two
 options. Clients can either call the APIs directly using the HTTP or
@@ -549,31 +549,31 @@ language libraries.
      - API Version
      - Maximal API Microversion
    * - Identity: Keystone
-     - :cite:p:`osidentityapiv3`
+     - :cite:p:`osidentityapiv3_ra1`
      - v3
      - 3.14
    * - Compute: Nova
-     - :cite:p:`oscomputeapi`
+     - :cite:p:`oscomputeapi_ra1`
      - v2.1
      - 2.88
    * - Networking: Neutron
-     - :cite:p:`osnetworkingapiv20`
+     - :cite:p:`osnetworkingapiv20_ra1`
      - v2.0
      -
    * - Image: Glance
-     - :cite:p:`osimageserviceapi`
+     - :cite:p:`osimageserviceapi_ra1`
      - v2
      - 2.9
    * - Block Storage: Cinder
-     - :cite:p:`osblockstorageapi`
+     - :cite:p:`osblockstorageapi_ra1`
      - v3
      - 3.64
    * - Placement
-     - :cite:p:`osplacementapi`
+     - :cite:p:`osplacementapi_ra1`
      - v1
      - 1.36
    * - Orchestration: Heat
-     - :cite:p:`osorchestrationserviceapi`
+     - :cite:p:`osorchestrationserviceapi_ra1`
      - v1
      - 2021-04-06 (template)
 
@@ -581,18 +581,18 @@ Kubernetes Interfaces
 ~~~~~~~~~~~~~~~~~~~~~
 
 The Kubernetes APIs are available at
-:cite:p:`kubernetesapis`.
+:cite:p:`kubernetesapis_ra1`.
 
 KVM Interfaces
 ~~~~~~~~~~~~~~
 
 The KVM APIs are documented in Section 4 of the document
-:cite:p:`kvmapis`.
+:cite:p:`kvmapis_ra1`.
 
 Libvirt Interfaces
 ~~~~~~~~~~~~~~~~~~
 
-The Libvirt APIs are documented in :cite:p:`libvirtapis`.
+The Libvirt APIs are documented in :cite:p:`libvirtapis_ra1`.
 
 Barbican API
 ~~~~~~~~~~~~
@@ -606,4 +606,4 @@ Barbican API
    * - Key Manager: Barbican
      - v1
 
-Barbican API: :cite:p:`osbarbicanapi`
+Barbican API: :cite:p:`osbarbicanapi_ra1`

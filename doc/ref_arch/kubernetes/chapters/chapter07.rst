@@ -47,8 +47,8 @@ many CNFs in the same cluster could result in version conflicts, configuration c
 lifecycle management. Finally, without proper isolation, there is an increased risk of cascading failures.
 
 **Proposals & Resolution:** Kubernetes is not a single-cluster solution. This has been demonstrated across the
-industry from case studies at prominent companies such as :cite:t:`alibaba-blog-twitter`, :cite:t:`youtube-zalando`, and
-:cite:t:`cncf-blog-alibaba` to the biannual CNCF survey that finds that the number of clusters being deployed within
+industry from case studies at prominent companies such as :cite:t:`alibaba-blog-twitter_ra2`, :cite:t:`youtube-zalando_ra2`, and
+:cite:t:`cncf-blog-alibaba_ra2` to the biannual CNCF survey that finds that the number of clusters being deployed within
 an organization is growing. While there are many reasons behind the multicluster paradigm, examining the gap above we
 find that a multicluster solution can address many of these problems such as security and software lifecycle management.
 
@@ -78,16 +78,16 @@ Kubernetes as a VM-based VNF orchestrator
 Native multiple network interfaces on Pods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Related requirements:** Virtual Network Interface Specifications section in Chapter 4 of :cite:t:`refmodel`
+   **Related requirements:** Virtual Network Interface Specifications section in Chapter 4 of :cite:t:`refmodel_ra2`
 
    **Baseline project:** *Kubernetes*
 
    **Gap description:** Kubernetes does not have native support for multiple Pod interfaces. Therefore, a CNI
-   multiplexer, such as :cite:t:`github-multus`, is needed to provision multiple interfaces. Implementation of different
+   multiplexer, such as :cite:t:`github-multus_ra2`, is needed to provision multiple interfaces. Implementation of different
    network services for the interfaces, such as Network Policies, Ingress, Egress, or Load Balancers, depends on the feature
    set of the CNI multiplexer and the CNI plugins it uses. It is therefore inconsistent.
 
-   **Status:** There is a :cite:t:`googledocs-kep-multi-network-pod-object` created to support multiple Pod interfaces
+   **Status:** There is a :cite:t:`googledocs-kep-multi-network-pod-object_ra2` created to support multiple Pod interfaces
    natively.
 
 Dynamic network management
@@ -98,7 +98,7 @@ Dynamic network management
    **Baseline project:** *Kubernetes*
 
    **Gap description:** Kubernetes does not have an API for network service management (for example, VPNs). Therefore,
-   a CNI plugin, such as :cite:t:`github-multus`, needs to be used to expose APIs for Network services. Alternatively,
+   a CNI plugin, such as :cite:t:`github-multus_ra2`, needs to be used to expose APIs for Network services. Alternatively,
    this is done nowadays with Netconf and so on, and integration with SDN controllers, for example, connecting
    individual VPNs, such as L3VPN, to the CNF, on demand.
 
@@ -137,7 +137,7 @@ Hardware topology-aware huge pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Related requirements:** ``infra.com.cfg.004`` and ``infra.com.cfg.002`` in the Virtual Compute Profiles section in
-Chapter 5 of :cite:t:`refmodel`.
+Chapter 5 of :cite:t:`refmodel_ra2`.
 
 **Baseline project:** *Kubernetes*
 
@@ -148,7 +148,7 @@ User namespaces in Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Related requirements:** ``e.man.004`` in the Cloud Infrastructure Management Capabilities section in Chapter 4 of
-:cite:t:`refmodel`, :ref:`inf.ntw.03 <chapters/chapter02:platform and access requirements>`
+:cite:t:`refmodel_ra2`, :ref:`inf.ntw.03 <chapters/chapter02:platform and access requirements>`
 
 **Baseline project:** *Kubernetes*
 
@@ -157,5 +157,5 @@ privileges, the container either needs to run in privileged mode, or the infrast
 UIDs. Randomised UIDs result in errors when the application needs to set kernel capabilities (for example, in the case of
 VLAN trunking), or when a Pod shares data with other Pods via persistent storage. The "privileged mode" solution is not secure
 while "random UID" solution is error-prone. These techniques should therefore not be used. Support for proper user
-namespaces in Kubernetes has been introduced as an alpha feature in Kubernetes 1.25 :cite:t:`kubernetes-user-namespaces`
-(relevant KEP :cite:t:`kubernetes-kep-user-namespaces`).
+namespaces in Kubernetes has been introduced as an alpha feature in Kubernetes 1.25 :cite:t:`kubernetes-user-namespaces_ra2`
+(relevant KEP :cite:t:`kubernetes-kep-user-namespaces_ra2`).

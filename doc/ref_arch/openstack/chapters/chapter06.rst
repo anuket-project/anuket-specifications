@@ -4,7 +4,7 @@ Security
 
 This guide is intended to provide basic security requirements to
 architects who are implementing Cloud Infrastructure using
-OpenStack :cite:p:`openstack` technology. This is a minimal
+OpenStack :cite:p:`openstack_ra1` technology. This is a minimal
 set of high-level general security practices, not intended to cover all
 implementation scenarios. Please ensure to also reference your
 enterprise security and compliance requirements in addition to this
@@ -21,8 +21,8 @@ in this chapter.
 Cloud Infrastructure and VIM Security
 -------------------------------------
 
-In the "Security boundaries and threats" section :cite:p:`openstacksecb`
-of the OpenStack security guide :cite:p:`openstacksecg`,
+In the "Security boundaries and threats" section :cite:p:`openstacksecb_ra1`
+of the OpenStack security guide :cite:p:`openstacksecg_ra1`,
 there is extensive description on security domains, threat
 classifications, and attack vectors. The following only touches on some
 of the topics and at a high level.
@@ -89,7 +89,7 @@ be stored separately from application system data.
 
 Password's composition, complexity and policy should follow the
 recommendations consolidated within the CIS Password Policy
-guide :cite:p:`cispwd` such as:
+guide :cite:p:`cispwd_ra1` such as:
 
 -  Check the password for known bad passwords (repetitive or sequential
    characters, dictionary words, context-specific words, previously used
@@ -139,8 +139,8 @@ security vulnerabilities in the following timescale from discovery
    | Low      | 180 days                |
    +----------+-------------------------+
 
-**See** Common Vulnerability Scoring System :cite:p:`cve`
-and NIST Vulnerability Metrics :cite:p:`nistvm`.
+**See** Common Vulnerability Scoring System :cite:p:`cve_ra1`
+and NIST Vulnerability Metrics :cite:p:`nistvm_ra1`.
 
 Network Protocols
 ^^^^^^^^^^^^^^^^^
@@ -174,7 +174,7 @@ Platform Access
 Identity Security
 ^^^^^^^^^^^^^^^^^
 
-The OpenStack Identity service (Keystone) :cite:p:`openstackseci`
+The OpenStack Identity service (Keystone) :cite:p:`openstackseci_ra1`
 provides identity, token, catalog, and policy services for use
 specifically by services in the OpenStack family. Identity service is
 organised as a group of internal services exposed on one or many
@@ -194,7 +194,7 @@ implementation of OpenStack. At its core, authentication is the process
 of confirming the user logging in is who they claim to be. OpenStack
 Keystone supports multiple methods of authentication, such as
 username/password, LDAP, and others. For more details, please refer to
-OpenStack Authentication Methods :cite:p:`openstackaut`.
+OpenStack Authentication Methods :cite:p:`openstackaut_ra1`.
 
 Limiting the number of repeated failed login attempts (configurable)
 reduces the risk of unauthorised access via password guessing (Bruce
@@ -234,7 +234,7 @@ enforcer middleware takes into consideration the policy rules associated
 with each resource and the user's group/roles and association to
 determine if access will be permitted for the requested resource. For
 more details on policies, please refer to the OpenStack
-Policies :cite:p:`openstackpol`.
+Policies :cite:p:`openstackpol_ra1`.
 
 RBAC
 ^^^^
@@ -247,7 +247,7 @@ set of access roles that accommodate most use cases. Operations staff
 can create users and assign them to roles using standard OpenStack
 commands for users, groups, and roles.
 
-Keystone provides three default roles :cite:p:`openstackdr`
+Keystone provides three default roles :cite:p:`openstackdr_ra1`
 admin, member, and reader. As of Train release, Keystone applies the
 following personas consistently across its API.
 
@@ -365,7 +365,7 @@ this reason, it is security best practice to ensure integrity and
 confidentiality of all network communications (internal and external) by
 using Transport Layer Security (TLS) protocol (sec.sys.003,
 sec.sys.004). When using TLS, according to the OpenStack security
-guide :cite:p:`openstackseccom`
+guide :cite:p:`openstackseccom_ra1`
 recommendation, the minimum version to be used is TLS 1.2.
 
 3 categories of traffic will be protected using TLS:
@@ -406,9 +406,9 @@ corrupted data (sec.gen.009):
 -  it is recommended to run scripts (such as checksec.sh) to verify the
    properties of the QEMU/KVM
 -  it is recommended to use tools such as CIS-CAT (Center for Internet
-   security- Configuration Assessment Tool :cite:p:`ciscat`)
+   security- Configuration Assessment Tool :cite:p:`ciscat_ra1`)
    to check the compliance of systems configuration against respective
-   CIS benchmarks :cite:p:`cisben`.
+   CIS benchmarks :cite:p:`cisben_ra1`.
 
 It is strongly recommended to protect all repositories, such as Linux
 repositories and Docker registries, against the corruption of their data
@@ -439,7 +439,7 @@ scanner(sec.img.002). The scan is mandatory for images from unknown or
 untrusted sources.
 
 To mitigate tampering attacks, it is recommended to use the Glance
-image signing feature :cite:p:`openstackisv`
+image signing feature :cite:p:`openstackisv_ra1`
 to validate an image when uploading. In this case, Barbican service must
 be installed.
 
@@ -496,7 +496,7 @@ SR-IOV and DPDK Considerations
 The SR-IOV agent only works with NoopFirewallDriver when Security Groups
 are enabled, but can still use other firewall_driver for other Agents by
 updating their conf with the requested firewall driver. Please see
-SR-IOV Passthrough for Networking :cite:p:`openstacksr`.
+SR-IOV Passthrough for Networking :cite:p:`openstacksr_ra1`.
 
 Operators typically do not implement Security Groups when using SR-IOV
 or DPDK networking technologies.
@@ -507,9 +507,9 @@ Image Security
 Images from untrusted sources must not be used (sec.img.001). Valuable
 guidance on trusted image creation process and image signature
 verification is provided in the "Trusted Images" section of the
-OpenStack Security Guide :cite:p:`openstackti`.
+OpenStack Security Guide :cite:p:`openstackti_ra1`.
 The OpenStack Security Guide includes reference to the "OpenStack
-Virtual Machine Image Guide :cite:p:`openstackim`" that describes how
+Virtual Machine Image Guide :cite:p:`openstackim_ra1`" that describes how
 to obtain, create, and modify OpenStack compatible virtual machine
 images.
 
@@ -518,17 +518,17 @@ need to be verified prior to ingestion into the Image Service (Glance)
 (sec.gen.009). The operator will need toolsets for scanning images,
 including for virus and malware detection (sec.img.002). Adding Signed
 Images to the Image Service (Glance) is specified in OpenStack
-Operations Guide :cite:p:`openstackasi`.
+Operations Guide :cite:p:`openstackasi_ra1`.
 Image signing and verification protects image integrity and authenticity
 by enabling deployers to sign images and save the signatures and public
 key certificates as image properties. The creation of signature per
 individual artifact in the VNF package is required by ETSI NFV
-SOL004 :cite:p:`etsisol4`.
+SOL004 :cite:p:`etsisol4_ra1`.
 
 The chain of trust requires that all images are verified again in the
 Compute service (Nova) prior to use. Integrity verification at the time
 of instantiation is required by ETSI NFV
-SEC021 :cite:p:`etsisec21`.
+SEC021 :cite:p:`etsisec21_ra1`.
 
 Images must be also updated to benefit from the latest security patches
 (sec.gen.008, sec.img.007).

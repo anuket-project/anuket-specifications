@@ -6,16 +6,16 @@ Overview
 
 This Reference Architecture is focussed on OpenStack as the Virtualised
 Infrastructure Manager (VIM) chosen based on the criteria laid out in
-the Cloud Infrastructure Reference Model :cite:p:`refmodel`
+the Cloud Infrastructure Reference Model :cite:p:`refmodel_ra1`
 (referred to as "Reference Model" or "RM" in the document).
-OpenStack :cite:p:`openstack` has the advantage of being a
+OpenStack :cite:p:`openstack_ra1` has the advantage of being a
 mature and widely accepted open-source technology; a strong ecosystem of
 vendors that support it, the OpenInfra Foundation for managing the
 community, and, most importantly, it is widely deployed by the global
 operator community for both internal infrastructure and external facing
 products and services. This means that resources with the right skill
 sets to support a Cloud Infrastructure (or Network Function Virtualisation
-Infrastructure, NFVI :cite:p:`etsinfvinf`) are available.
+Infrastructure, NFVI :cite:p:`etsinfvinf_ra1`) are available.
 Another reason to choose OpenStack is that it has a large active
 community of vendors and operators, which means that any code or
 component changes needed to
@@ -38,12 +38,12 @@ Use Cases
 ---------
 
 Several NFV use cases are documented in OpenStack. For more examples and
-details refer to the OpenStack Use cases :cite:p:`openstackuc`.
+details refer to the OpenStack Use cases :cite:p:`openstackuc_ra1`.
 
 Examples include:
 
 -  **Overlay networks**: The overlay functionality design includes
-   OpenStack Networking in Open vSwitch :cite:p:`ovs`
+   OpenStack Networking in Open vSwitch :cite:p:`ovs_ra1`
    GRE tunnel mode. In this
    case, the layer-3 external routers pair with VRRP, and switches pair
    with an implementation of MLAG to ensure that you do not lose
@@ -92,7 +92,7 @@ OpenStack Reference Release
 ---------------------------
 
 This Reference Architecture document conforms to the OpenStack
-Wallaby :cite:p:`wallaby` release.
+Wallaby :cite:p:`wallaby_ra1` release.
 While many features and capabilities are conformant with many OpenStack
 releases, this document will refer to features, capabilities and APIs
 that are part of the OpenStack Wallaby release. For ease, this
@@ -626,4 +626,4 @@ Conventions
 The key words "**MUST**", "**MUST NOT**", "required", "**SHALL**",
 **SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "recommended", "**MAY**", and
 "**OPTIONAL**" in this document are to be interpreted as described in
-RFC 2119 :cite:p:`rfc2119`.
+RFC 2119 :cite:p:`rfc2119_ra1`.

@@ -26,7 +26,6 @@ Table of Contents
 -----------------
 
 .. toctree::
-  :numbered:
   :maxdepth: 1
 
   chapters/chapter01

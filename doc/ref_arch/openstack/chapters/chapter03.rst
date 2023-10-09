@@ -12,7 +12,7 @@ deployed and operated as expected. The purpose of this chapter is to
 outline all the components required to provide the Cloud Infrastructure
 (NFVI and the VIM) in a consistent and reliable way.
 
-OpenStack :cite:p:`openstack` is already very well
+OpenStack :cite:p:`openstack_ra1` is already very well
 documented and, hence, this document will describe the specific
 OpenStack services and features, Cloud Infrastructure features and how
 we expect them to be implemented.
@@ -112,12 +112,12 @@ NUMA alignment, and SMT.
 The configuration of the virtual resources will depend on the software
 and hardware profiles and the flavour (resource sizing) needed to host
 VNF components. Profiles are defined in "Profiles, Profile Extensions
-& Flavours" in :cite:p:`refmodel`.
+& Flavours" in :cite:p:`refmodel_ra1`.
 
 Virtual Storage
 ~~~~~~~~~~~~~~~
 
-In the Reference Model :cite:p:`refmodel`, the
+In the Reference Model :cite:p:`refmodel_ra1`, the
 "Storage for tenant consumption" section
 details consumption models for tenants: Platform native,
 object storage, shared file storage and archival.
@@ -146,14 +146,14 @@ Three types of persistent data storage are supported in OpenStack:
 - Object storage
 - Shared file systems storage
 
-The OpenStack Storage Table :cite:p:`openstackstor`
+The OpenStack Storage Table :cite:p:`openstackstor_ra1`
 explains the differences between the storage types and typical use
 cases.
 
 Block storage is dedicated to persistent data. Data is stored
 in the form of volumes. Block storage is managed by OpenStack
 Cinder service and storage Backends. OpenStack compatible
-storage backend drivers table :cite:p:`openstackcind`
+storage backend drivers table :cite:p:`openstackcind_ra1`
 lists the storage backends compatible with Cinder and their capabilities.
 
 The Object storage is a persistent data storage, not attached to an instance.
@@ -223,7 +223,7 @@ that can be consumed by VNF/CNF.
 Tungsten Fabric (SDN Controller)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Tungsten Fabric :cite:p:`tungsten`, an open source SDN in Linux
+Tungsten Fabric :cite:p:`tungsten_ra1`, an open source SDN in Linux
 Foundation Networking, offers neutron networking through ML2 based
 plugin, additionally it supports advanced networking features beyond
 basic neutron networking via monolithic plugin. It also supports the
@@ -261,7 +261,7 @@ over the native networking implementations of orchestrators, including:
    privately managed customer networks and service provider networks
 
 Based on the network layering concepts introduced in the
-"Network" section in :cite:p:`refmodel`, the
+"Network" section in :cite:p:`refmodel_ra1`, the
 Tungsten Fabric Controller performs functions of both the SDN underlay
 (SDNu) and overlay (SDNo) controllers.
 
@@ -394,7 +394,7 @@ The following OpenStack components are deployed on the Infrastructure.
 Some of them will be only deployed on control hosts and some of them
 will be deployed within both control and compute hosts. The table below
 also maps the OpenStack core services to the Virtual Infrastructure
-Manager in the Reference Model (RM) :cite:p:`refmodel`.
+Manager in the Reference Model (RM) :cite:p:`refmodel_ra1`.
 
 .. list-table:: OpenStack components deployment
    :widths: 20 10 20 10 10 10
@@ -518,7 +518,7 @@ Tenant Isolation
 In Keystone v1 and v2 (both deprecated), the term "tenant" was used in
 OpenStack. With Keystone v3, the term "project" got adopted and both the
 terms became interchangeable. According to OpenStack
-glossary :cite:p:`openstackglos`,
+glossary :cite:p:`openstackglos_ra1`,
 Projects represent the base unit of resources (compute, storage and
 network) in OpenStack, in that all assigned resources in OpenStack are
 owned by a specific project. OpenStack offers multi-tenancy by means of
@@ -577,7 +577,7 @@ of nova instances. When instances are spawned, they are mapped to
 flavors which define the available hardware configuration for them. For
 simplicity, operators may create named flavors specifying both the
 sizing and the "Software and Hardware Profile Configurations"
-:cite:p:`refmodel`.
+:cite:p:`refmodel_ra1`.
 
 Underlying Resources
 --------------------
@@ -602,7 +602,7 @@ available as open-source (KVM, Xen, etc.) as well as commercial
 (Hyper-V, Citrix XenServer, etc.). Selecting a hypervisor depends on the
 workload needs and the features provided by various hypervisors as
 illustrated in Hypervisor Feature Support
-Matrix :cite:p:`openstackfeat`.
+Matrix :cite:p:`openstackfeat_ra1`.
 OpenStack (Nova) allows the use of various hypervisors within a single
 installation by means of scheduler filters like ComputeFilter,
 ImagePropertiesFilter etc.
@@ -640,7 +640,7 @@ up (in a shipping container), and what resources are required of the DC
 -  Storage
 
    - Storage technologies are multiple, they are extensively
-     described in "Storage Implementation Stereotypes" :cite:p:`refmodel`.
+     described in "Storage Implementation Stereotypes" :cite:p:`refmodel_ra1`.
      Storage backends are discussed in
      :ref:`chapters/chapter04:storage backend`.
 
@@ -659,7 +659,7 @@ The physical resources required for the Cloud Infrastructure are mainly
 based on COTS x86 hardware for control and data plane nodes. HW profiles
 are defined in the chapters "Cloud Infrastructure Hardware Profile
 Description" and "Cloud Infrastructure Hardware Profiles Features and
-Requirements" in :cite:p:`refmodel`.
+Requirements" in :cite:p:`refmodel_ra1`.
 
 Network
 ^^^^^^^
@@ -682,7 +682,7 @@ Storage
 ^^^^^^^
 
 OpenStack supports many different storage architectures and
-backends :cite:p:`openstackstar`. The choice
+backends :cite:p:`openstackstar_ra1`. The choice
 of a particular backend storage is driven by a number of factors
 including: scalability, resiliency, availability, data durability,
 capacity and performance.
@@ -759,7 +759,7 @@ Assumptions and conventions:
 -  Shared storage is optional, but it is important to ensure shared
    assets are distributed across serving clouds such as boot images.
    Storage needs, per deployment and use cases, can be found in
-   "Storage Scenarios and Architecture Fit" :cite:p:`refmodel`.
+   "Storage Scenarios and Architecture Fit" :cite:p:`refmodel_ra1`.
 
 .. list-table:: Cloud Topology: Redundancy Models
    :widths: 8 15 8 8 8 8 8 17

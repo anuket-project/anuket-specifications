@@ -11,7 +11,7 @@ Network Policy. However, they are still within the same trust domain and a poten
 could have serious ramifications across the entire Cluster and all its Kubernetes Namespaces.
 Therefore, it is necessary to define various use cases or ways to build Multitenancy Deployment Models and define the
 Best Practices to secure each Model. The Kubernetes Namespace is a logical representation of namespace (boundary for
-resources) within the Kubernetes Cluster. This is different from the :cite:t:`wikipedia-linux-namespaces`, which are
+resources) within the Kubernetes Cluster. This is different from the :cite:t:`wikipedia-linux-namespaces_ra2`, which are
 defined at the operating system kernel level.
 
 .. figure:: ../figures/Model1-ns.png
