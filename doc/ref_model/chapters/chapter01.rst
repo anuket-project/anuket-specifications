@@ -165,5 +165,6 @@ The key words "must", "must not", "required", "shall", "shall not", "should", "s
 References
 ----------
 
-.. bibliography::
+.. bibliography:: ../refs.bib
    :cited:
+   :labelprefix: RM

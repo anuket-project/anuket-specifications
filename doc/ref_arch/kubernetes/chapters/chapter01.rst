@@ -623,5 +623,6 @@ RFC 2119 :cite:p:`rfc2119_ra2`.
 References
 ----------
 
-.. bibliography::
+.. bibliography:: ../refs.bib
    :cited:
+   :labelprefix: RA2

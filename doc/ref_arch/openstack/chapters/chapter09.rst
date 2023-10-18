@@ -34,5 +34,6 @@ with major architectural changes made in the OpenStack Ussuri release.
 
 Please note: physical compute node autoscaling is out of scope.
 
-.. bibliography::
+.. bibliography:: ../refs.bib
    :cited:
+   :labelprefix: RA1
