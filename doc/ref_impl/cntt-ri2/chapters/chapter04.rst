@@ -22,7 +22,7 @@ Prerequisites
 -------------
 
 You will need one physical server acting as a jump server along with minimum of two additional servers on which RI-2
-will be deployed. Please refer to :ref:`chapters/chapter03:Requirements for Labs` for detailed information on
+will be deployed. Please refer to :ref:`ref_impl/cntt-ri2/chapters/chapter03:Requirements for Labs` for detailed information on
 the server and network specifications.
 
 Installation of the Reference Implementation
@@ -61,7 +61,7 @@ VLAN, DNS, and gateway information should be defined here. The IDF file also con
 Kubernetes deployment using BMRA. These options are described in greater detail below.
 
 More details regarding these descriptor files and their schema are documented in
-:doc:`ref_impl_cntt-ri:chapters/chapter08`.
+:doc:`/ref_impl/cntt-ri/chapters/chapter08`.
 
 For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single
 master (and worker) is required to deploy the cluster. Node roles are configured through the vendor specific IDF file.
@@ -179,7 +179,7 @@ follows:
 Installation on Preprovisioned Infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The main steps are the same as :ref:`chapters/chapter04:Installation on Bare Metal Infrastructure`.
+The main steps are the same as :ref:`ref_impl/cntt-ri2/chapters/chapter04:Installation on Bare Metal Infrastructure`.
 
 Make sure the infrastructure preprovisioned follows ``docs/release/installation/deployment-guide.rst``.
 
@@ -209,13 +209,13 @@ Validation of the Reference Implementation
 ------------------------------------------
 
 In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of test cases specified in
-RC-2 should be executed. A selection of these test cases is documented in :doc:`ref_cert_RC2:chapters/chapter02`.
+RC-2 should be executed. A selection of these test cases is documented in :doc:`/ref_cert/RC2/chapters/chapter02`.
 
 Currently, Kuberef is validated by running the RC-2 testsuite in GitLab. This RC-2 testsuite version is determined
 based on the Kuberenetes version deployed by Kuberef. The list of testcases can be found in the Kuberef
 ``.gitlab-ci.yml`` file.
 
-For deploying your own RC-2 toolchain, please refer to the steps mentioned in :doc:`ref_cert_RC2:chapters/chapter03`.
+For deploying your own RC-2 toolchain, please refer to the steps mentioned in :doc:`/ref_cert/RC2/chapters/chapter03`.
 
 Automation Tooling
 ------------------
