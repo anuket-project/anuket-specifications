@@ -1,8 +1,8 @@
 Feature set and Requirements from Infrastructure
 ================================================
 
-A profile :ref:`chapters/chapter02:profiles, profile extensions & flavours` specifies the configuration of a
-Cloud Infrastructure node (host or server); :ref:`chapters/chapter02:profile extensions (specialisations)`
+A profile :ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours` specifies the configuration of a
+Cloud Infrastructure node (host or server); :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`
 may specify additional configuration. Workloads utilise profiles to describe the configuration of nodes on which they
 can be hosted to execute on. Workload Flavours provide a mechanism to specify the VM or Pod sizing information to host
 the workload. Depending on the requirements of the workloads, a VM or a Pod will be deployed as per the specified
@@ -42,7 +42,7 @@ Cloud Infrastructure Software layer is composed of 2 layers, :numref:`Cloud Infr
 ..
 
    (1) Reference to the capabilities defined in
-   :ref:`chapters/chapter04:infrastructure capabilities, measurements and catalogue`.
+   :ref:`ref_model/chapters/chapter04:infrastructure capabilities, measurements and catalogue`.
 
 For a host (compute node or physical server), the virtualisation layer is an abstraction layer between hardware
 components (compute, storage, and network resources) and virtual resources allocated to a VM or a Pod.
@@ -456,7 +456,7 @@ infra.com.cfg.005 Simultaneous Multithreading (SMT) Yes/No/Optional Y     Option
 
 
 **Table 5-9** lists the features related to compute acceleration for the High Performance profile. The table also 
-lists the applicable :ref:`chapters/chapter04:profile extensions` and Extra Specs that may need to be 
+lists the applicable :ref:`ref_model/chapters/chapter04:profile extensions` and Extra Specs that may need to be 
 specified.
 
 
@@ -562,7 +562,7 @@ RAM, local disks and their capacity, etc.), and capabilities enabled in hardware
 accelerators), the underlay networking, and storage.
 
 This chapter defines a simplified host, profile and related capabilities model associated with each of the different 
-Cloud Infrastructure Hardware Profile and related capabilities; the two :ref:`chapters/chapter02:profiles, profile 
+Cloud Infrastructure Hardware Profile and related capabilities; the two :ref:`ref_model/chapters/chapter02:profiles, profile 
 extensions & flavours` (aka host profiles, node profiles, hardware profiles) and some of their associated capabilities 
 are shown in :numref:`Cloud Infrastructure Hardware Profiles and host associated capabilities`.
 
@@ -580,7 +580,7 @@ Infrastructure resources.
 
 
 A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. In addition
-to the host profile, :ref:`chapters/chapter04:profiles and workload flavours` and additional capability
+to the host profile, :ref:`ref_model/chapters/chapter04:profiles and workload flavours` and additional capability
 specifications for the configuration of the host can be specified. Different Cloud Service Providers (CSP) may use
 different naming standards for their host profiles. For the profiles to be configured, the architecture of the
 underlying resource needs to be known.
@@ -605,8 +605,8 @@ abstraction of a physical server (host).
 
 .. _cloud-infrastructure-hardware-profiles-features-and-requirements:
 
-Cloud Infrastructure Hardware Profiles features and requirements.
------------------------------------------------------------------
+Cloud Infrastructure Hardware Profiles features and requirements
+----------------------------------------------------------------
 
 
 The configurations specified in here will be used in specifying the actual hardware profile configurations for each of

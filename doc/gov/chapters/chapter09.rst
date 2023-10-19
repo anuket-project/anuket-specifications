@@ -191,14 +191,14 @@ private or community hardware infrastructure.
 
 Second, the participant will build/setup/configure the environment space using their preferred method. This can include
 the use of a cookbook, automated install, and/or build from RA1/RI1 or RA2/RC2 requirements and specifications. CNTT
-:doc:`RI1 Chapter 3 <ref_impl_cntt-ri:chapters/chapter03>` and :doc:`RI2 Chapter 3
-<ref_impl_cntt-ri2:chapters/chapter03>` documentations provide the matching RI requirements for the build.
+:doc:`RI1 Chapter 3 </ref_impl/cntt-ri/chapters/chapter03>` and :doc:`RI2 Chapter 3
+</ref_impl/cntt-ri2/chapters/chapter03>` documentations provide the matching RI requirements for the build.
 
 Expectation 2: Execute the RC1 or RC2 Test suites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Anuket will provide the participants with the community :ref:`ref_arch_openstack:chapters/chapter08:conformance` or
-:doc:`ref_cert_RC2:index` test suites. The participants will execute test cases per instructions and record the
+Anuket will provide the participants with the community :ref:`ref_arch/openstack/chapters/chapter08:conformance` or
+:doc:`/ref_cert/RC2/index` test suites. The participants will execute test cases per instructions and record the
 quantitative results.
 
 Test case suite should be executed successfully at least three (3) times, because this number represents the recommended

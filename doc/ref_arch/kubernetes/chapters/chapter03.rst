@@ -14,7 +14,7 @@ By using the Reference Architecture (RA2) for Kubernetes based cloud infrastruct
 deploy infrastructure that will run any VNF or CNF that has successfully run on an RA2-conformant infrastructure. The
 purpose of this chapter is to outline all the components required to provide Telco-grade Kubernetes in a consistent and
 reliable way. The specification of how to setup these components is detailed in the
-:ref:`chapters/chapter04:component level architecture` chapter.
+:ref:`ref_arch/kubernetes/chapters/chapter04:component level architecture` chapter.
 
 Kubernetes is already a well-documented and widely deployed open source project of the Cloud Native
 Computing Foundation (CNCF). For information related to standard Kubernetes features and capabilities, refer to
@@ -57,7 +57,7 @@ depicts the hardware profile features that apply to each instance profile.
 
 The features and capabilities described in the software and hardware profiles are considered throughout this RA, with
 the requirements traceability to the RM requirements formally documented in the
-:ref:`chapters/chapter02:architecture requirements` of this RA.
+:ref:`ref_arch/kubernetes/chapters/chapter02:architecture requirements` of this RA.
 
 Infrastructure Services
 -----------------------
@@ -91,7 +91,7 @@ The security of the Kubernetes Node OS and its relationship to the containers an
 containers, is essential to the overall security posture of the entire system. The platform must be appropriately
 secured to ensure that the processes running in one container cannot escalate their privileges on the node or otherwise
 affect processes running in an adjacent container. An example of this concept, together with further details, can be
-found in :ref:`chapters/chapter06:api and feature testing requirements`.
+found in :ref:`ref_arch/kubernetes/chapters/chapter06:api and feature testing requirements`.
 
 It is important to note that the container runtime itself is also a set of processes that run in user space, and
 therefore also interact with the kernel via system calls. Many diagrams show containers as running on top of the
@@ -233,8 +233,8 @@ vendor-specific activation and lifecycle management, and securely maps these dev
 
 The figure Device Plugin Operation below shows in four steps how device plugins operate on a Kubernetes node:
 
--  1: During setup, the cluster administrator (more in :ref:`chapters/chapter03:operator pattern`)
-   knows or discovers (as per :ref:`chapters/chapter03:node feature discovery`) what kind of devices are present on
+-  1: During setup, the cluster administrator (more in :ref:`ref_arch/kubernetes/chapters/chapter03:operator pattern`)
+   knows or discovers (as per :ref:`ref_arch/kubernetes/chapters/chapter03:node feature discovery`) what kind of devices are present on
    the different nodes, selects which devices to enable, and deploys the associated device plugins.
 -  2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server
    to monitor the devices.

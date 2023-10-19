@@ -160,7 +160,7 @@ and behaviours. The set of selectable attributes includes:
 - Enhanced features - set of selectable features such as: auto-replicate, encryption, snapshot support.
 
 Note that approximate numeric ranges for the qualitative values used above are given in the
-:ref:`chapters/chapter04:storage extensions` section.
+:ref:`ref_model/chapters/chapter04:storage extensions` section.
 
 Storage resources have the following attributes, with metric definitions that support verification through passive
 measurements (telemetry) where appropriate:
@@ -1061,7 +1061,7 @@ The first of these are for Data Centre Storage cases, with stereotypes of:
 
 Both of these stereotypes can be used to support very broad storage needs from: machine boot (via iSCSI), providing
 storage to the Cloud Platform Control and Management Planes, Platform Native (viz., Hypervisor Attached and Container
-Persistence storage, as defined in section :ref:`chapters/chapter03:storage for tenant consumption`") and
+Persistence storage, as defined in section :ref:`ref_model/chapters/chapter03:storage for tenant consumption`") and
 Application/VNF/CNF managed network storage. To provide this requires connectivity within the Cloud Infrastructure
 Underlay and Tenant Overlay networks.
 
@@ -1623,7 +1623,7 @@ Infrastructure and Application Level Acceleration
 
 :numref:`Hardware Acceleration in RM Realization Diagram` gives examples for the Hardware Accelerators shown in
 :numref:`Reference model realization example`
-(the :ref:`chapters/chapter03:sample reference model realization` diagram).
+(the :ref:`ref_model/chapters/chapter03:sample reference model realization` diagram).
 
 .. figure:: ../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png
    :alt: Hardware Acceleration in RM Realization Diagram
@@ -1940,7 +1940,7 @@ a common work with ITU-T which published as `ITU-T L.1361 <https://www.itu.int/r
 
 Whatever the method and the service, it requires the cloud infrastructure to provide some **energy consumption metrics**
 for different parts of the infrastructure hardware (server, CPU etc.) as included in
-:ref:`chapters/chapter04:internal performance measurement capabilities`.
+:ref:`ref_model/chapters/chapter04:internal performance measurement capabilities`.
 These metrics can be an amount of consumed energy (measured in Joule or Watt.hour) or a real-time power utilisation
 (measured in Watt or Joule/second) as proposed by `DMTF Redfish DSP0268 2022.2
 <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ :cite:p:`dmtfredfish_rm` which specifies metrics

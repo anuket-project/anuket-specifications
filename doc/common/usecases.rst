@@ -53,7 +53,7 @@ Principles
 
 This section introduces some principles that should be followed during the definition and development of Edge scope to be covered in CNTT Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
 
-A main principle is that CNTT Edge will not re-define a new branch of CNTT and target to avoid re-inventing what other organizations already have . CNTT Edge following the same principles that defined in existing :ref:`Reference Model Principles <ref_model:chapters/chapter01:principles>`, the :ref:`Reference Architecture Principles <ref_arch_openstack:chapters/chapter01:principles>` and the Network Principles.
+A main principle is that CNTT Edge will not re-define a new branch of CNTT and target to avoid re-inventing what other organizations already have . CNTT Edge following the same principles that defined in existing :ref:`Reference Model Principles <ref_model/chapters/chapter01:principles>`, the :ref:`Reference Architecture Principles <ref_arch/openstack/chapters/chapter01:principles>` and the Network Principles.
 
 CNTT believes that Edge computing is unique in terms of infrastructure requirements, implementation and deployment, and that's why there some additional principles specific to the edge need to be defined.
 

@@ -22,7 +22,7 @@ Anuket Specifications
     CODE_OF_CONDUCT
 
 
--  :ref:`Introduction <common/README:anuket project>`
+-  :ref:`Introduction <common/index:anuket project>`
 -  :doc:`Reference Model (RM) <ref_model/index>`
 -  :doc:`Reference Architecture (RA1) for OpenStack based cloud infrastructure <ref_arch/openstack/index>`
 -  :doc:`Reference Conformance (RC1) for RA1 based Implementations <ref_arch/openstack/chapters/chapter08>`

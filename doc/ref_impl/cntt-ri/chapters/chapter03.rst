@@ -11,11 +11,11 @@ The CNTT Reference Model will be referenced as **RM** to avoid long and duplicat
 VNF profile
 -----------
 
-Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in Cloud Infrastructure Infrastructure Profiles Catalogue. As states in :ref:`ref_model:chapters/chapter04:profiles and workload flavours` BMC_PRE_CONFIGURED, the entry uses the following naming convention.
+Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in Cloud Infrastructure Infrastructure Profiles Catalogue. As states in :doc:`/ref_arch/openstack/chapters/chapter04` BMC_PRE_CONFIGURED, the entry uses the following naming convention.
 
 ``B/N <I opt> . <Flavour> . <S ext> . <A ext>``
 
-B/N is used to specify the instance type (Basic, Network Intensive), different instance types are associated with different acceleration extensions, network characteristics (`RM: Profiles Specifications & Capability Mapping :ref:`ref_model:chapters/chapter04:profiles-specifications-capability-mapping`).
+B/N is used to specify the instance type (Basic, Network Intensive), different instance types are associated with different acceleration extensions, network characteristics (:ref:`RM: Profiles Specifications & Capability Mapping <ref_model/chapters/chapter04:Profiles Specifications and Capability Mapping>`).
 
 Whereas:
 
@@ -68,7 +68,7 @@ External storage capacity                   N                      N
 Cloud Infrastructure SW profile
 -------------------------------
 
-:ref:`ref_model:chapters/chapter05:cloud infrastructure software profiles features and requirements` defines the Cloud Infrastructure software layer. The profile depicts the feature status of the
+:ref:`ref_model/chapters/chapter05:Cloud Infrastructure Software Profiles features and requirements` defines the Cloud Infrastructure software layer. The profile depicts the feature status of the
 
 -  virtual Compute (**nfvi.com.cfg.xxx** in RM Table 5-7: Virtual Compute features and configuration for the 3 types of SW profiles and **nfvi.com.acc.cfg.xxx** in Table 5-8: Virtual Compute Acceleration features),
 -  storage (**nfvi.stg.cfg.xxx** in RM1: Table 5-9: Virtual Storage features and configuration for the 3 types of SW profiles and **nfvi.stg.acc.cfg.xxx** in Table 5-10: Virtual Storage Acceleration features)
@@ -105,7 +105,7 @@ Crypto Acceleration Interface N                              Y
 Cloud Infrastructure Hardware Profile
 -------------------------------------
 
-:ref:`ref_model:chapters/chapter05:cloud infrastructure hardware profiles features and requirements.` defines the Cloud Infrastructure hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple Cloud Infrastructure profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
+:ref:`ref_model/chapters/chapter05:cloud infrastructure hardware profiles features and requirements` defines the Cloud Infrastructure hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple Cloud Infrastructure profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
 
 ========================= ================================= ======================================================================== =========== =================
 Reference                 Feature                           Description                                                              Basic Type  Network Intensive
@@ -134,7 +134,7 @@ Cloud Infrastructure Required State
 This sections describes the readiness of Cloud Infrastructure before the certification process can begin. Once the Cloud Infrastructure is configured with either of the profiles - B, N, a set of tests (for example functests) should be run in order to determine the readiness of the Cloud Infrastructure for certification.
 #TODO : Identify the tests for this section
 
-:ref:`ref_arch_openstack:chapters/chapter02:architecture and openstack requirements` describes the requirements related to the following 8 domains: general(gen), infrastructure(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
+:ref:`ref_arch/openstack/chapters/chapter02:architecture and openstack requirements` describes the requirements related to the following 8 domains: general(gen), infrastructure(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
 
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Ref #              | Description                                                                                                                                                                    |
@@ -312,7 +312,7 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 | ``req.sec.ntw.04`` | **must** configure all of the underlay network components to ensure the complete separation from the overlay customer deployments.                                             |
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-:doc:`RA1: Chapter 5 Interfaces and APIs <ref_arch_openstack:chapters/chapter05>` describes the baseline version regarding to OpenStack Service APIs.
+:doc:`RA1: Chapter 5 Interfaces and APIs </ref_arch/openstack/chapters/chapter05>` describes the baseline version regarding to OpenStack Service APIs.
 
 ===================== =========================================================================================== ================ ========================
 OpenStack Service     Link for API list                                                                           Baseline Version Minimal API Microversion
@@ -330,7 +330,7 @@ Acceleration: Cyborg  https://docs.openstack.org/cyborg/pike/userdoc/api.html   
 Cloud Infrastructure and VIM Architecture
 -----------------------------------------
 
-This sections concludes the expectation for Cloud Infrastructure and VIM architecture according to :doc:`RA1: Chapter 3 Cloud Infrastructure + VIM Architecture <ref_arch_openstack:chapters/chapter03>`
+This sections concludes the expectation for Cloud Infrastructure and VIM architecture according to :doc:`RA1: Chapter 3 Cloud Infrastructure + VIM Architecture </ref_arch/openstack/chapters/chapter03>`
 
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Requirement Area                            | Description                                                                                                                                           |
@@ -370,7 +370,7 @@ This sections concludes the expectation for Cloud Infrastructure and VIM archite
 Cloud Infrastructure and VIM Component Level Architecture
 ---------------------------------------------------------
 
-This sections concludes the expectation for Cloud Infrastructure and VIM component level architecture according to :doc:`RA1: Chapter 4 Cloud Infrastructure + VIM Component Level Architecture <ref_arch_openstack:chapters/chapter04>`
+This sections concludes the expectation for Cloud Infrastructure and VIM component level architecture according to :doc:`RA1: Chapter 4 Cloud Infrastructure + VIM Component Level Architecture </ref_arch/openstack/chapters/chapter04>`
 
 Requirement for control node:
 
@@ -386,9 +386,9 @@ Requirement for compute node:
 ================ =============================================================================================================================================
 Requirement Area Description
 ================ =============================================================================================================================================
-BIOS requirement boot parameters should follow the table defined in :ref:`ref_arch_openstack:chapters/chapter04:compute nodes`
+BIOS requirement boot parameters should follow the table defined in :ref:`ref_arch/openstack/chapters/chapter04:compute nodes`
 SLA              minimum: two nodes per profile
-sizing rules     should follow the table defined in :ref:`ref_arch_openstack:chapters/chapter04:compute nodes`
+sizing rules     should follow the table defined in :ref:`ref_arch/openstack/chapters/chapter04:compute nodes`
 ================ =============================================================================================================================================
 
 Requirement for network fabric:
@@ -396,7 +396,7 @@ Requirement for network fabric:
 ================ =========================================================================================================================================
 Requirement Area Description
 ================ =========================================================================================================================================
-Network Layout   should follow the table in :ref:`ref_arch_openstack:chapters/chapter04:high level logical network layout`
+Network Layout   should follow the table in :ref:`ref_arch/openstack/chapters/chapter04:high level logical network layout`
 ================ =========================================================================================================================================
 
 Consumable Infrastructure Resources and Services
@@ -409,7 +409,7 @@ Consumable Infrastructure Resources and Services
      - Description
    * - Support for Profiles and T-shirt instance types
      - should follow tabels specified in
-       :ref:`ref_arch_openstack:chapters/chapter04:support for cloud infrastructure profiles and flavors`
+       :ref:`ref_arch/openstack/chapters/chapter04:support for cloud infrastructure profiles and flavors`
    * - Availability
      - The NFVI doesn’t provide any resiliency mechanisms at the service
        level. Any VM restart shall be triggered by the VNF Manager instead of

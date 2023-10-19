@@ -565,8 +565,8 @@ Profiles and Workload Flavours
 
 Section 4.1 enumerates the different capabilities exposed by the infrastructure resources. Not every workload is
 sensitive to all listed capabilities of the cloud infrastructure. In Chapter 2, the analysis of the use cases led to the
-definition of two :ref:`chapters/chapter02:profiles (top-level partitions)` and the need for specialisation
-through :ref:`chapters/chapter02:profile extensions (specialisations)`. Profiles and Profile Extensions are
+definition of two :ref:`ref_model/chapters/chapter02:profiles (top-level partitions)` and the need for specialisation
+through :ref:`ref_model/chapters/chapter02:profile extensions (specialisations)`. Profiles and Profile Extensions are
 used to configure the cloud infrastructure nodes. They are also used by workloads to specify the infrastructure
 capabilities needed by them to run on. Workloads would specify the
 `flavours and additional capabilities <#workload-flavours-and-other-capabilities-specifications>`__ information.
@@ -583,7 +583,7 @@ Extensions to build its overall functionality as discussed below.
 
    Cloud infrastructure Profiles
 
-The two :ref:`chapters/chapter02:profiles, profile extensions & flavours` are:
+The two :ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours` are:
 
 ::
 
@@ -599,7 +599,7 @@ capabilities. The Cloud Infrastructure will have nodes configured as with option
 storage extensions, and acceleration extensions.
 
 The justification for defining these two profiles and a set of extensible profile-extensions was provided in Section
-:ref:`chapters/chapter02:profiles, profile extensions & flavours` and includes:
+:ref:`ref_model/chapters/chapter02:profiles, profile extensions & flavours` and includes:
 
 - Workloads can be deployed by requesting compute hosts configured as per a specific profile (Basic or High
   Performance)
@@ -661,10 +661,10 @@ throughput requirements and/or low network latency. To satisfy predictable perfo
 pinning, and huge pages are enabled. For obvious reasons, the high-performance profile doesn’t support
 over-subscription.
 
-.. _profiles-specifications--capability-mapping:
+.. _profiles-specifications-capability-mapping:
 
-Profiles Specifications & Capability Mapping
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Profiles Specifications and Capability Mapping
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------+-----------------------------------------+-----------+-------------+----------------------------------------+
 | Ref     | Capability                              | Basic     | High        | Notes                                  |
@@ -708,7 +708,7 @@ Profiles Specifications & Capability Mapping
 
 ..
 
-   1 See Figure 5-1 :ref:`chapters/chapter05:cloud infrastructure software profile description`.
+   1 See Figure 5-1 :ref:`ref_model/chapters/chapter05:cloud infrastructure software profile description`.
 
 Profile Extensions
 ~~~~~~~~~~~~~~~~~~

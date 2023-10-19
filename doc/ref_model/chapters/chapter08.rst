@@ -4,7 +4,7 @@ Hybrid Multi-Cloud: Data Centre to Edge
 Introduction
 ------------
 
-The :ref:`chapters/chapter03:modelling` focuses on cloud infrastructure abstractions. While these are generic
+The :ref:`ref_model/chapters/chapter03:modelling` focuses on cloud infrastructure abstractions. While these are generic
 abstractions they and the associated capabilities of the cloud infrastructure are specified for data centres, central
 office and colocation centres. The environmental conditions, facility and other constraints, and the variability of
 deployments on the edge are significantly different and, thus, require separate consideration.
@@ -16,7 +16,7 @@ interconnected. In a multi-cloud, the distinct cloud infrastructures of the hybr
 more technologies. The hybrid multi-cloud infrastructure has differences requiring different abstractions. These hybrid
 multi-clouds can be considered to be federated.
 
-In the :ref:`chapters/chapter03:modelling`, the cloud infrastructure is defined. The tenants are required to provide
+In the :ref:`ref_model/chapters/chapter03:modelling`, the cloud infrastructure is defined. The tenants are required to provide
 certain needed services (such as Load Balancer (LB), messaging). Thus, the VNF/CNFs incorporate different versions of
 the same services with the resultant issues related to an explosion of services, their integration and management
 complexities. To mitigate these issues, the Reference Model must specify the common services that every Telco cloud must
@@ -499,7 +499,7 @@ Table : Hybrid, Edge, and Multi cloud operator Platform (HEMP) Life Cycle Manage
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 | hem.sec.002 | HEMP should provide capabilities for the centralised   |                                               |
 |             | tracking of compliance of all security requirements    |                                               |
-|             | (:ref:`chapters/chapter07:consolidated                 |                                               |
+|             | (:ref:`ref_model/chapters/chapter07:consolidated       |                                               |
 |             | security requirements`)                                |                                               |
 +-------------+--------------------------------------------------------+-----------------------------------------------+
 | hem.sec.003 | HEMP should provide capabilities for insights into     |                                               |
@@ -667,7 +667,7 @@ The end-to-end orchestration will need to support the extreme edge use cases.
 Telco Edge Cloud: Infrastructure Profiles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :ref:`chapters/chapter04:profiles and workload flavours` section specifies two infrastructure profiles:
+The :ref:`ref_model/chapters/chapter04:profiles and workload flavours` section specifies two infrastructure profiles:
 
 The **Basic** cloud infrastructure profile is intended for use by both IT and Network Function workloads that have low
 to medium network throughput requirements.
@@ -676,11 +676,11 @@ The **High Performance** cloud infrastructure profile is intended for use by app
 throughput requirements (up to 50Gbps).
 
 The High Performance profile can specify extensions for hardware offloading; please see
-:ref:`chapters/chapter03:hardware acceleration abstraction`. The Reference Model High Performance profile
-includes an initial set of :ref:`chapters/chapter04:profile extensions`.
+:ref:`ref_model/chapters/chapter03:hardware acceleration abstraction`. The Reference Model High Performance profile
+includes an initial set of :ref:`ref_model/chapters/chapter04:profile extensions`.
 
 Based on the infrastructure deployed at the edge, Table 8-3 specifies the
-:ref:`chapters/chapter05:feature set and requirements from infrastructure` that would
+:ref:`ref_model/chapters/chapter05:feature set and requirements from infrastructure` that would
 need to be relaxed.
 
 +----------------------+--------------+----------------------+-----------------------------+---------------------------+
@@ -897,7 +897,7 @@ On a high-level O-RAN covers similar specification grounds as what Anuket do, bu
 
 O-Clouds are in some ways similar to the Anuket Cloud Infrastructure with the notable differences that they have an O-RAN specified interface of how the O-Cloud infrastructure is managed (O2ims) and how workloads (e.g., whole or parts of Network Functions) are deployed on the O-Cloud clusters (O2dms). On a more detailed level the O-Clouds are internally very Layer2 (Ethernet) centric, today with strict requirements of determinism and low latency for Cloud Site internal connectivity in between the Network Functions. The O-Clouds also have the set of O-RAN specified HW Accelerators and an Acceleration Adaptation Layer (AAL) of how they are used from the Network Functions for their Radio-near functions.
 
-A potential alignment between Anuket and O-RAN's O-Cloud specifications can be investigated. This would require an analysis how an Anuket Reference Architecture based on open-source technology can support the O-RAN HW Accelerators (as stated in RM Ch3 section Example of O-RAN AAL Interface :ref:`chapters/chapter03:example of o-ran acceleration abstraction layer interface`) and a Layer2-centric networking infrastructure. It would enable the operators to have an internal Telco Cloud that supports both Core and RAN Network Functions, and in the extension possibly also other workloads in a shared Cloud that supports required Telco features and characteristics.
+A potential alignment between Anuket and O-RAN's O-Cloud specifications can be investigated. This would require an analysis how an Anuket Reference Architecture based on open-source technology can support the O-RAN HW Accelerators (as stated in RM Ch3 section Example of O-RAN AAL Interface :ref:`ref_model/chapters/chapter03:example of o-ran acceleration abstraction layer interface`) and a Layer2-centric networking infrastructure. It would enable the operators to have an internal Telco Cloud that supports both Core and RAN Network Functions, and in the extension possibly also other workloads in a shared Cloud that supports required Telco features and characteristics.
 
 .. figure:: ../figures/RM-Ch08-Anuket_as_undercloud_O-RAN-Image-1.png
    :name: Anuket as potential under-cloud to O-Clouds in O-RAN

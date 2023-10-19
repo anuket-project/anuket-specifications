@@ -91,7 +91,7 @@ confusingly "Projects" in OpenStack are isolated environments that
 enable workloads to be logically separated from each other with:
 
 -  differentiated set of associated users
--  role-based access of two levels - admin or member (see :ref:`chapters/chapter06:rbac`).
+-  role-based access of two levels - admin or member (see :ref:`ref_arch/openstack/chapters/chapter06:rbac`).
 -  quota system to provide maximum resources that can be consumed.
 
 This RA does not intend to restrict how workloads are distributed across
@@ -162,7 +162,7 @@ Data is accessed via API. Object storage is managed by OpenStack Swift.
 Images are persistent data, stored using the OpenStack Glance service.
 
 Cinder, Swift, and Glance services are discussed in the section
-:ref:`chapters/chapter04:vim openstack services`.
+:ref:`ref_arch/openstack/chapters/chapter04:vim openstack services`.
 
 
 Virtual Networking Neutron standalone
@@ -488,7 +488,7 @@ The services can be containerised or VM hosted as long as they provide
 the high availability principles described above.
 
 The APIs for these OpenStack services are listed in
-:ref:`chapters/chapter05:interfaces and apis`.
+:ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`.
 
 Cloud Workload Services
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -642,7 +642,7 @@ up (in a shipping container), and what resources are required of the DC
    - Storage technologies are multiple, they are extensively
      described in "Storage Implementation Stereotypes" :cite:p:`refmodel_ra1`.
      Storage backends are discussed in
-     :ref:`chapters/chapter04:storage backend`.
+     :ref:`ref_arch/openstack/chapters/chapter04:storage backend`.
 
 -  Acceleration
 

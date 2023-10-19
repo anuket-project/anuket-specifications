@@ -93,7 +93,7 @@ Native multiple network interfaces on Pods
 Dynamic network management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Related requirements:** inf.ntw.03 in :ref:`chapters/chapter02:kubernetes architecture requirements`
+   **Related requirements:** inf.ntw.03 in :ref:`ref_arch/kubernetes/chapters/chapter02:kubernetes architecture requirements`
 
    **Baseline project:** *Kubernetes*
 
@@ -142,13 +142,13 @@ Chapter 5 of :cite:t:`refmodel_ra2`.
 **Baseline project:** *Kubernetes*
 
 **Gap description:** The Memory Manager was added in v1.21 as alpha feature. For details, see
-:ref:`chapters/chapter03:management of memory and huge pages resources`.
+:ref:`ref_arch/kubernetes/chapters/chapter03:management of memory and huge pages resources`.
 
 User namespaces in Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Related requirements:** ``e.man.004`` in the Cloud Infrastructure Management Capabilities section in Chapter 4 of
-:cite:t:`refmodel_ra2`, :ref:`inf.ntw.03 <chapters/chapter02:platform and access requirements>`
+:cite:t:`refmodel_ra2`, :ref:`inf.ntw.03 <ref_arch/kubernetes/chapters/chapter02:Kubernetes Architecture Requirements>`
 
 **Baseline project:** *Kubernetes*
 

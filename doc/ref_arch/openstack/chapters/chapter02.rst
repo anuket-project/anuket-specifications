@@ -38,20 +38,20 @@ Cloud Infrastructure Software Profile Requirements for Compute
        Cloud Infrastructure
      - At least 16
      - At least 16
-     - :ref:`chapters/chapter04:compute nodes`
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute nodes`
    * - e.cap.002
      - Max memory that can be assigned to a single instance by the Cloud
        Infrastructure
      - at least 32 GB
      - at least 32 GB
-     - :ref:`chapters/chapter03:virtual storage`
+     - :ref:`ref_arch/openstack/chapters/chapter03:virtual storage`
    * - e.cap.003
      - Max storage that can be assigned to a single instance by the Cloud
        Infrastructure
      - at least 320 GB
      - at least 320 GB
-     - :ref:`chapters/chapter03:virtual storage` and
-       :ref:`chapters/chapter04:storage backend`
+     - :ref:`ref_arch/openstack/chapters/chapter03:virtual storage` and
+       :ref:`ref_arch/openstack/chapters/chapter04:storage backend`
    * - e.cap.004
      - Max number of connection points that can be assigned to a single
        instance by the Cloud Infrastructure
@@ -63,35 +63,35 @@ Cloud Infrastructure Software Profile Requirements for Compute
        Infrastructure
      - Up to 16TB [*]
      - Up to 16TB [*]
-     - :ref:`chapters/chapter04:storage backend`
+     - :ref:`ref_arch/openstack/chapters/chapter04:storage backend`
    * - e.cap.006 /
 
        infra.com.cfg.003
      - CPU pinning support
      - Not required
      - **MUST** support
-     - :ref:`chapters/chapter04:consumable infrastructure resources and services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
    * - e.cap.007 /
 
        infra.com.cfg.002
      - NUMA support
      - Not required
      - **MUST** support
-     - :ref:`chapters/chapter04:consumable infrastructure resources and services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
    * - e.cap.018 /
 
        infra.com.cfg.005
      - Simultaneous Multithreading (SMT) enabled
      - **MUST**
      - Optional support
-     - :ref:`chapters/chapter04:consumable infrastructure resources and services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
    * - i.cap.018 /
 
        infra.com.cfg.004
      - Huge pages configured
      - Not required
      - **MUST** support
-     - :ref:`chapters/chapter04:consumable infrastructure resources and services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
 
 [*] Defined in the .bronze configuration in "Storage extensions"
 in :cite:p:`refmodel_ra1`.
@@ -116,21 +116,21 @@ Cloud Infrastructure Software Profile Extensions Requirements for Compute
      - IPSec Acceleration using the virtio-ipsec interface
      - Compute Intensive GPU
      -
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.010 /
 
        infra.com.acc.cfg.002
      - Transcoding Acceleration
      - Compute Intensive GPU
      - Video Transcoding
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.011 /
 
        infra.com.acc.cfg.003
      - Programmable Acceleration
      - Firmware-programmable adapter
      - Accelerator
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.012
      - Enhanced Cache Management: L=Lean; E=Equal; X=eXpanded
      - E
@@ -142,14 +142,14 @@ Cloud Infrastructure Software Profile Extensions Requirements for Compute
      - Hardware coprocessor support (GPU/NPU)
      - Compute Intensive GPU
      -
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.016 /
 
        infra.com.acc.cfg.005
      - FPGA/other Acceleration H/W
      - Firmware-programmable adapter
      -
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
 
 Cloud Infrastructure Software Profile Requirements for Networking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -171,28 +171,28 @@ specified below followed by networking bandwidth requirements.
      - IO virtualisation using virtio1.1
      - **MUST** support
      - **MUST** support
-     - :ref:`chapters/chapter04:virtualisation layer`
+     - :ref:`ref_arch/openstack/chapters/chapter04:virtualisation layer`
    * - infra.net.cfg.002
      - The overlay network encapsulation protocol needs to enable ECMP in the
        underlay to take advantage of the scale-out features of the network fabric
      - **MUST** support VXLAN, MPLSoUDP, GENEVE, other
      - No requirement specified
-     - :ref:`chapters/chapter04:network fabric`
+     - :ref:`ref_arch/openstack/chapters/chapter04:network fabric`
    * - infra.net.cfg.003
      - Network Address Translation
      - **MUST** support
      - **MUST** support
-     - :ref:`chapters/chapter04:network fabric`
+     - :ref:`ref_arch/openstack/chapters/chapter04:network fabric`
    * - infra.net.cfg.004
      - Security Groups
      - **MUST** support
      - **MUST** support
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
    * - infra.net.cfg.005
      - SFC support
      - Not required
      - **MUST** support
-     - :ref:`chapters/chapter03:virtual networking - 3rd party sdn solution`
+     - :ref:`ref_arch/openstack/chapters/chapter03:virtual networking - 3rd party sdn solution`
    * - infra.net.cfg.006
      - Traffic patterns symmetry
      - **MUST** support
@@ -257,22 +257,22 @@ Cloud Infrastructure Software Profile Extensions Requirements for Networking
      - SR-IOV over PCI-PT
      - N
      - Y
-     - :ref:`chapters/chapter04:compute nodes`
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute nodes`
    * - e.cap.019 /
 
        infra.net.acc.cfg.001
      - vSwitch optimisation (DPDK)
      - N
      - Y
-     - :ref:`chapters/chapter04:compute nodes` and
-       :ref:`chapters/chapter04:network quality of service`
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute nodes` and
+       :ref:`ref_arch/openstack/chapters/chapter04:network quality of service`
    * - e.cap.015 /
 
        infra.net.acc.cfg.002
      - SmartNIC (for HW Offload)
      - N
      - Optional
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.009 /
 
        infra.net.acc.cfg.003
@@ -303,29 +303,29 @@ Cloud Infrastructure Software Profile Requirements for Storage
      - Storage Block
      - **MUST** support
      - **MUST** support
-     - :ref:`chapters/chapter03:storage` and
-       :ref:`chapters/chapter04:cinder`
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage` and
+       :ref:`ref_arch/openstack/chapters/chapter04:cinder`
    * - infra.stg.cfg.003
      - Storage with replication
      - Not required
      - **MUST** support
-     - :ref:`chapters/chapter03:storage` and
-       :ref:`chapters/chapter04:transaction volume considerations`
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage` and
+       :ref:`ref_arch/openstack/chapters/chapter04:transaction volume considerations`
    * - infra.stg.cfg.004
      - Storage with encryption
      - **MUST** support
      - **MUST** support
-     - :ref:`chapters/chapter03:storage`
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage`
    * - infra.stg.acc.cfg.001
      - Storage IOPS oriented
      - Not required
      - **MUST** support
-     - :ref:`chapters/chapter03:storage`
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage`
    * - infra.stg.acc.cfg.002
      - Storage capacity oriented
      - Not required
      - Not required
-     - :ref:`chapters/chapter03:storage`
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage`
 
 Cloud Infrastructure Software Profile Extensions Requirements for Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -373,42 +373,42 @@ Cloud Infrastructure Hardware Profile Requirements
      - Minimum number of CPU (Sockets)
      - 2
      - 2
-     - :ref:`chapters/chapter04:compute`
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute`
    * - infra.hw.cpu.cfg.002
      - Minimum number of Cores per CPU
      - 20
      - 20
-     - :ref:`chapters/chapter04:compute`
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute`
    * - infra.hw.cpu.cfg.003
      - NUMA
      - Not required
      - **MUST** support
-     - :ref:`chapters/chapter04:compute`
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute`
    * - infra.hw.cpu.cfg.004
      - Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP)
      - **MUST** support
      - Optional
-     - :ref:`chapters/chapter04:compute`
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute`
    * - infra.hw.stg.hdd.cfg.001
      - Local Storage HDD
      - No requirement specified
      - No requirement specified
-     - :ref:`chapters/chapter04:consumable infrastructure resources and services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
    * - infra.hw.stg.ssd.cfg.002
      - Local Storage SSD
      - Should support
      - Should support
-     - :ref:`chapters/chapter04:consumable infrastructure resources and services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
    * - infra.hw.nic.cfg.001
      - Total Number of NIC Ports available in the host
      - 4
      - 4
-     - :ref:`chapters/chapter04:compute`
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute`
    * - infra.hw.nic.cfg.002
      - Port speed specified in Gbps (minimum values)
      - 10
      - 25
-     - :ref:`chapters/chapter04:consumable infrastructure resources and services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:consumable infrastructure resources and services`
    * - infra.hw.pci.cfg.001
      - Number of PCIe slots available in the host
      - 8
@@ -449,40 +449,40 @@ Cloud Infrastructure Hardware Profile Extensions Requirements
      - GPU
      - N
      - Optional
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.016 /
 
        infra.hw.cac.cfg.002
      - FPGA/other Acceleration H/W
      - N
      - Optional
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.009 /
 
        infra.hw.nac.cfg.001
      - Crypto Acceleration
      - N
      - Optional
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.015 /
 
        infra.hw.nac.cfg.002
      - SmartNIC
      - N
      - Optional
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - infra.hw.nac.cfg.003
      - Compression
      - Optional
      - Optional
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - e.cap.013 /
 
        infra.hw.nac.cfg.004
      - SR-IOV over PCI-PT
      - N
      - Yes
-     - :ref:`chapters/chapter04:compute node configurations for profiles and openstack flavors`
+     - :ref:`ref_arch/openstack/chapters/chapter04:compute node configurations for profiles and openstack flavors`
 
 Cloud Infrastructure Management Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -499,42 +499,42 @@ Cloud Infrastructure Management Requirements
    * - e.man.001
      - Capability to allocate virtual compute resources to a workload
      - **MUST** support
-     - :ref:`chapters/chapter03:resources and services exposed to vnfs`
+     - :ref:`ref_arch/openstack/chapters/chapter03:resources and services exposed to vnfs`
    * - e.man.002
      - Capability to allocate virtual storage resources to a workload
      - **MUST** support
-     - :ref:`chapters/chapter03:resources and services exposed to vnfs`
+     - :ref:`ref_arch/openstack/chapters/chapter03:resources and services exposed to vnfs`
    * - e.man.003
      - Capability to allocate virtual networking resources to a workload
      - **MUST** support
-     - :ref:`chapters/chapter03:resources and services exposed to vnfs`
+     - :ref:`ref_arch/openstack/chapters/chapter03:resources and services exposed to vnfs`
    * - e.man.004
      - Capability to isolate resources between tenants
      - **MUST** support
-     - :ref:`chapters/chapter03:tenant isolation`
+     - :ref:`ref_arch/openstack/chapters/chapter03:tenant isolation`
    * - e.man.005
      - Capability to manage workload software images
      - **MUST** support
-     - :ref:`chapters/chapter04:glance`
+     - :ref:`ref_arch/openstack/chapters/chapter04:glance`
    * - e.man.006
      - Capability to provide information related to allocated virtualised
        resources per tenant
      - **MUST** support
-     - :ref:`chapters/chapter07:logging, monitoring and analytics`
+     - :ref:`ref_arch/openstack/chapters/chapter07:logging, monitoring and analytics`
    * - e.man.007
      - Capability to notify state changes of allocated resources
      - **MUST** support
-     - :ref:`chapters/chapter07:logging, monitoring and analytics`
+     - :ref:`ref_arch/openstack/chapters/chapter07:logging, monitoring and analytics`
    * - e.man.008
      - Capability to collect and expose performance information on virtualised
        resources allocated
      - **MUST** support
-     - :ref:`chapters/chapter07:logging, monitoring and analytics`
+     - :ref:`ref_arch/openstack/chapters/chapter07:logging, monitoring and analytics`
    * - e.man.009
      - Capability to collect and notify fault information on virtualised
        resources
      - **MUST** support
-     - :ref:`chapters/chapter07:logging, monitoring and analytics`
+     - :ref:`ref_arch/openstack/chapters/chapter07:logging, monitoring and analytics`
 
 Cloud Infrastructure Security Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -554,18 +554,18 @@ System Hardening Requirements
    * - sec.gen.001
      - Hardening
      - The Platform **MUST** maintain the specified configuration
-     - :ref:`chapters/chapter06:security lcm` and
-       :ref:`chapters/chapter07:cloud infrastructure provisioning and configuration management`
+     - :ref:`ref_arch/openstack/chapters/chapter06:security lcm` and
+       :ref:`ref_arch/openstack/chapters/chapter07:cloud infrastructure provisioning and configuration management`
    * - sec.gen.002
      - Hardening
      - All systems part of Cloud Infrastructure **MUST** support hardening as
        defined in CIS Password Policy Guide :cite:p:`cispwd_ra1`
-     - :ref:`chapters/chapter06:password policy`
+     - :ref:`ref_arch/openstack/chapters/chapter06:password policy`
    * - sec.gen.003
      - Hardening
      - All servers part of Cloud Infrastructure **MUST** support a root of
        trust and secure boot
-     - :ref:`chapters/chapter06:server boot hardening`
+     - :ref:`ref_arch/openstack/chapters/chapter06:server boot hardening`
    * - sec.gen.004
      - Hardening
      - The Operating Systems of all the servers part of Cloud Infrastructure
@@ -574,38 +574,38 @@ System Hardening Requirements
        authentication, configuring resource controls, installing and
        configuring additional security controls where needed, and testing the
        security of the Operating System (NIST SP 800-123)
-     - :ref:`chapters/chapter06:function and software`
+     - :ref:`ref_arch/openstack/chapters/chapter06:function and software`
    * - sec.gen.005
      - Hardening
      - The Platform **MUST** support Operating System level access control
-     - :ref:`chapters/chapter06:system access`
+     - :ref:`ref_arch/openstack/chapters/chapter06:system access`
    * - sec.gen.006
      - Hardening
      - The Platform **MUST** support Secure logging. Logging with root account
        **MUST** be prohibited when root privileges are not required
-     - :ref:`chapters/chapter06:system access`
+     - :ref:`ref_arch/openstack/chapters/chapter06:system access`
    * - sec.gen.007
      - Hardening
      - All servers part of Cloud Infrastructure **MUST** be Time synchronised
        with authenticated Time service
-     - :ref:`chapters/chapter06:security logs time synchronisation`
+     - :ref:`ref_arch/openstack/chapters/chapter06:security logs time synchronisation`
    * - sec.gen.008
      - Hardening
      - All servers part of Cloud Infrastructure **MUST** be regularly updated
        to address security vulnerabilities
-     - :ref:`chapters/chapter06:security lcm`
+     - :ref:`ref_arch/openstack/chapters/chapter06:security lcm`
    * - sec.gen.009
      - Hardening
      - The Platform **MUST** support software integrity protection and
        verification
-     - :ref:`chapters/chapter06:integrity of openstack components configuration`
+     - :ref:`ref_arch/openstack/chapters/chapter06:integrity of openstack components configuration`
    * - sec.gen.010
      - Hardening
      - The Cloud Infrastructure **MUST** support encrypted storage, for
        example, block, object and file storage, with access to encryption
        keys restricted based on a need to know
        (Controlled Access Based on the Need to Know :cite:p:`ciscontrols_ra1`)
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.gen.012
      - Hardening
      - The Operator **MUST** ensure that only authorised actors have physical
@@ -615,13 +615,13 @@ System Hardening Requirements
      - Hardening
      - The Platform **MUST** ensure that only authorised actors have logical
        access to the underlying infrastructure
-     - :ref:`chapters/chapter06:system access`
+     - :ref:`ref_arch/openstack/chapters/chapter06:system access`
    * - sec.gen.015
      - Hardening
      - Any change to the Platform **MUST** be logged as a security event, and
        the logged event **MUST** include the identity of the entity making the
        change, the change, the date and the time of the change
-     - :ref:`chapters/chapter06:security lcm`
+     - :ref:`ref_arch/openstack/chapters/chapter06:security lcm`
 
 Platform and Access Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -640,44 +640,44 @@ Platform and Access Requirements
      - Access
      - The Platform **MUST** support authenticated and secure access to API, GUI
        and command line interfaces
-     - :ref:`chapters/chapter06:rbac`
+     - :ref:`ref_arch/openstack/chapters/chapter06:rbac`
    * - sec.sys.002
      - Access
      - The Platform **MUST** support Traffic Filtering for workloads
        (for example, Firewall)
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
    * - sec.sys.003
      - Access
      - The Platform **MUST** support Secure and encrypted communications, and
        confidentiality and integrity of network
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.sys.004
      - Access
      - The Cloud Infrastructure **MUST** support authentication, integrity and
        confidentiality on all network channels
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.sys.005
      - Access
      - The Cloud Infrastructure **MUST** segregate the underlay and overlay
        networks
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.sys.006
      - Access
      - The Cloud Infrastructure **MUST** be able to utilise the Cloud
        Infrastructure Manager identity lifecycle management capabilities
-     - :ref:`chapters/chapter06:identity security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:identity security`
    * - sec.sys.007
      - Access
      - The Platform **MUST** implement controls enforcing separation of duties
        and privileges, least privilege use and least common mechanism
        (Role-Based Access Control)
-     - :ref:`chapters/chapter06:rbac`
+     - :ref:`ref_arch/openstack/chapters/chapter06:rbac`
    * - sec.sys.008
      - Access
      - The Platform **MUST** be able to assign the Entities that comprise the
        tenant networks to different trust domains. Communication between
        different trust domains is not allowed, by default
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
    * - sec.sys.009
      - Access
      - The Platform **MUST** support creation of Trust Relationships between
@@ -686,29 +686,29 @@ Platform and Access Requirements
        authenticate users for them them or to allow access to its resources
        from the trusted domain. In a bidirectional relationship both domain
        are "trusting" and "trusted"
-     - :ref:`chapters/chapter04:logical segregation and high availability`
+     - :ref:`ref_arch/openstack/chapters/chapter04:logical segregation and high availability`
    * - sec.sys.010
      - Access
      - For two or more domains without existing trust relationships, the Platform
        **MUST NOT** allow the effect of an attack on one domain to impact the other
        domains either directly or indirectly
-     - :ref:`chapters/chapter04:logical segregation and high availability`
+     - :ref:`ref_arch/openstack/chapters/chapter04:logical segregation and high availability`
    * - sec.sys.011
      - Access
      - The Platform **MUST NOT** reuse the same authentication credentials
        (e.g., key pairs) on different Platform components (e.g., different
        hosts, or different services)
-     - :ref:`chapters/chapter06:system access`
+     - :ref:`ref_arch/openstack/chapters/chapter06:system access`
    * - sec.sys.012
      - Access
      - The Platform **MUST** protect all secrets by using strong encryption
        techniques and storing the protected secrets externally from the
        component (e.g., in OpenStack Barbican)
-     - :ref:`chapters/chapter04:barbican`
+     - :ref:`ref_arch/openstack/chapters/chapter04:barbican`
    * - sec.sys.013
      - Access
      - The Platform **MUST** generate secrets dynamically as and when needed
-     - :ref:`chapters/chapter04:barbican`
+     - :ref:`ref_arch/openstack/chapters/chapter04:barbican`
    * - sec.sys.015
      - Access
      - The Platform **MUST NOT** contain back door entries (unpublished access
@@ -719,23 +719,23 @@ Platform and Access Requirements
      - Login access to the Platform's components **MUST** be through encrypted
        protocols such as SSH v2 or TLS v1.2 or higher. Note: Hardened jump
        servers isolated from external networks are recommended
-     - :ref:`chapters/chapter06:security lcm`
+     - :ref:`ref_arch/openstack/chapters/chapter06:security lcm`
    * - sec.sys.017
      - Access
      - The Platform **MUST** provide the capability of using digital certificates
        that comply with X.509 standards issued by a trusted Certification Authority
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.sys.018
      - Access
      - The Platform **MUST** provide the capability of allowing certificate renewal
        and revocation
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.sys.019
      - Access
      - The Platform **MUST** provide the capability of testing the validity
        of a digital certificate (CA signature, validity period, non revocation
        identity)
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
 
 Confidentiality and Integrity Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -755,20 +755,20 @@ Confidentiality and Integrity Requirements
        Integrity
      - The Platform **MUST** support Confidentiality and Integrity of data
        at rest and in transit
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.ci.003
      - Confidentiality /
 
        Integrity
      - The Platform **MUST** support Confidentiality and Integrity of data
        related metadata
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.ci.004
      - Confidentiality
      - The Platform **MUST** support Confidentiality of processes and
        restrict information sharing with only the process owner (e.g.,
        tenant)
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.ci.005
      - Confidentiality /
 
@@ -776,7 +776,7 @@ Confidentiality and Integrity Requirements
      - The Platform **MUST** support Confidentiality and Integrity of process-
        related metadata and restrict information sharing with only the
        process owner (e.g., tenant)
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.ci.006
      - Confidentiality /
 
@@ -785,7 +785,7 @@ Confidentiality and Integrity Requirements
        workload resource utilisation (RAM, CPU, Storage, Network I/O, cache,
        hardware offload) and restrict information sharing with only the
        workload owner (e.g., tenant)
-     - :ref:`chapters/chapter06:platform access`
+     - :ref:`ref_arch/openstack/chapters/chapter06:platform access`
    * - sec.ci.007
      - Confidentiality /
 
@@ -796,11 +796,11 @@ Confidentiality and Integrity Requirements
        Inspection, and for secure monitoring services. Administrative
        access **MUST** be managed using Platform Identity Lifecycle
        Management
-     - :ref:`chapters/chapter06:platform access`
+     - :ref:`ref_arch/openstack/chapters/chapter06:platform access`
    * - sec.ci.008
      - Confidentiality
      - The Cloud Infrastructure **MUST** support tenant networks segregation
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
 
 
 Workload Security Requirements
@@ -818,38 +818,38 @@ Workload Security Requirements
    * - sec.wl.001
      - Workload
      - The Platform **MUST** support Workload placement policy
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
    * - sec.wl.002
      - Workload
      - The Cloud Infrastructure **MUST** provide methods to ensure the
        platform's trust status and integrity (e.g., remote attestation,
        Trusted Platform Module)
-     - :ref:`chapters/chapter06:cloud infrastructure and vim security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:cloud infrastructure and vim security`
    * - sec.wl.003
      - Workload
      - The Platform **MUST** support secure provisioning of Workloads
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
    * - sec.wl.004
      - Workload
      - The Platform **MUST** support Location assertion (for mandated in-
        country or location requirements)
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
    * - sec.wl.005
      - Workload
      - The Platform **MUST** support the separation of production and non-
        production Workloads
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
    * - sec.wl.006
      - Workload
      - The Platform **MUST** support the separation of Workloads based on
        their categorisation (for example, payment card information,
        healthcare, etc.)
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
    * - sec.wl.007
      - Workload
      - The Operator **MUST** implement processes and tools to verify
        NF authenticity and integrity
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
 
 Image Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -866,39 +866,39 @@ Image Security Requirements
    * - sec.img.001
      - Image
      - Images from untrusted sources **MUST NOT** be used
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
    * - sec.img.002
      - Image
      - Images **MUST** be scanned to be maintained free from known
        vulnerabilities
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
    * - sec.img.003
      - Image
      - Images **MUST NOT** be configured to run with privileges higher
        than the privileges of the actor authorised to run them
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
    * - sec.img.004
      - Image
      - Images **MUST** only be accessible to authorised actors
-     - :ref:`chapters/chapter06:integrity of openstack components configuration`
+     - :ref:`ref_arch/openstack/chapters/chapter06:integrity of openstack components configuration`
    * - sec.img.005
      - Image
      - Image Registries **MUST** only be accessible to authorised actors
-     - :ref:`chapters/chapter06:integrity of openstack components configuration`
+     - :ref:`ref_arch/openstack/chapters/chapter06:integrity of openstack components configuration`
    * - sec.img.006
      - Image
      - Image Registries **MUST** only be accessible over networks that
        enforce authentication, integrity and confidentiality
-     - :ref:`chapters/chapter06:integrity of openstack components configuration`
+     - :ref:`ref_arch/openstack/chapters/chapter06:integrity of openstack components configuration`
    * - sec.img.007
      - Image
      - Image registries **MUST** be clear of vulnerable and out of date versions
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
    * - sec.img.008
      - Image
      - Images **MUST NOT** include any secrets. Secrets include passwords,
        cloud provider credentials, SSH keys, TLS certificate keys, etc.
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
 
 Security LCM Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -917,29 +917,29 @@ Security LCM Requirements
      - The Platform **MUST** support Secure Provisioning, Availability, and
        Deprovisioning (Secure Clean-Up) of workload resources where Secure
        Clean-Up includes tear-down, defense against virus or other attacks
-     - :ref:`chapters/chapter06:monitoring and security audit`
+     - :ref:`ref_arch/openstack/chapters/chapter06:monitoring and security audit`
    * - sec.lcm.002
      - LCM
      - The Cloud Operator **MUST** use management protocols limiting security
        risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher
-     - :ref:`chapters/chapter06:security lcm`
+     - :ref:`ref_arch/openstack/chapters/chapter06:security lcm`
    * - sec.lcm.003
      - LCM
      - The Cloud Operator **MUST** implement and strictly follow change
        management processes for Cloud Infrastructure, Infrastructure
        Manager and other components of the cloud, and Platform change control
        on hardware
-     - :ref:`chapters/chapter06:monitoring and security audit`
+     - :ref:`ref_arch/openstack/chapters/chapter06:monitoring and security audit`
    * - sec.lcm.005
      - LCM
      - Platform **MUST** provide logs and these logs **MUST** be monitored for
        anomalous behaviour
-     - :ref:`chapters/chapter06:monitoring and security audit`
+     - :ref:`ref_arch/openstack/chapters/chapter06:monitoring and security audit`
    * - sec.lcm.006
      - LCM
      - The Platform **MUST** verify the integrity of all Resource management
        requests
-     - :ref:`chapters/chapter06:confidentiality and integrity of tenant data (sec.ci.001)`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity of tenant data (sec.ci.001)`
    * - sec.lcm.007
      - LCM
      - The Platform **MUST** be able to update newly instantiated, suspended,
@@ -967,11 +967,11 @@ Security LCM Requirements
      - The Platform **MUST** implement Security life cycle management
        processes including the proactive update and patching of all
        deployed Cloud Infrastructure software
-     - :ref:`chapters/chapter06:patches`
+     - :ref:`ref_arch/openstack/chapters/chapter06:patches`
    * - sec.lcm.012
      - LCM
      - The Platform **MUST** log any access privilege escalation
-     - :ref:`chapters/chapter06:what to log / what not to log`
+     - :ref:`ref_arch/openstack/chapters/chapter06:what to log / what not to log`
 
 Monitoring and Security Audit Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -999,67 +999,67 @@ can trigger alerts and notifications for appropriate action.
        fields: event type, date/time, protocol, service or program used for
        access, success/failure, login ID or process ID, IP address and ports
        (source and destination) involved
-     - :ref:`chapters/chapter06:required fields`
+     - :ref:`ref_arch/openstack/chapters/chapter06:required fields`
    * - sec.mon.002
      - Monitoring
      - Security logs **MUST** be time synchronised
-     - :ref:`chapters/chapter06:security logs time synchronisation`
+     - :ref:`ref_arch/openstack/chapters/chapter06:security logs time synchronisation`
    * - sec.mon.003
      - Monitoring
      - The Platform **MUST** log all changes to time server source, time,
        date and time zones
-     - :ref:`chapters/chapter06:security logs time synchronisation`
+     - :ref:`ref_arch/openstack/chapters/chapter06:security logs time synchronisation`
    * - sec.mon.004
      - Audit
      - The Platform **MUST** secure and protect Audit logs (containing
        sensitive information) both in-transit and at rest
-     - :ref:`chapters/chapter06:security lcm`
+     - :ref:`ref_arch/openstack/chapters/chapter06:security lcm`
    * - sec.mon.005
      - Monitoring / Audit
      - The Platform **MUST** Monitor and Audit various behaviours of
        connection and login attempts to detect access attacks and potential
        access attempts and take corrective accordingly actions
-     - :ref:`chapters/chapter06:what to log / what not to log`
+     - :ref:`ref_arch/openstack/chapters/chapter06:what to log / what not to log`
    * - sec.mon.006
      - Monitoring / Audit
      - The Platform **MUST** Monitor and Audit operations by authorised
        account access after login to detect malicious operational activity
        and take corrective actions
-     - :ref:`chapters/chapter06:monitoring and security audit`
+     - :ref:`ref_arch/openstack/chapters/chapter06:monitoring and security audit`
    * - sec.mon.007
      - Monitoring / Audit
      - The Platform **MUST** Monitor and Audit security parameter
        configurations for compliance with defined security policies
-     - :ref:`chapters/chapter06:integrity of openstack components configuration`
+     - :ref:`ref_arch/openstack/chapters/chapter06:integrity of openstack components configuration`
    * - sec.mon.008
      - Monitoring / Audit
      - The Platform **MUST** Monitor and Audit externally exposed interfaces
        for illegal access (attacks) and take corrective security hardening
        measures
-     - :ref:`chapters/chapter06:confidentiality and integrity of communications (sec.ci.001)`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity of communications (sec.ci.001)`
    * - sec.mon.009
      - Monitoring / Audit
      - The Platform **MUST** Monitor and Audit service for various attacks
        (malformed messages, signalling flooding and replaying, etc.) and take
        corrective actions accordingly
-     - :ref:`chapters/chapter06:monitoring and security audit`
+     - :ref:`ref_arch/openstack/chapters/chapter06:monitoring and security audit`
    * - sec.mon.010
      - Monitoring / Audit
      - The Platform **MUST** Monitor and Audit running processes to detect
        unexpected or unauthorised processes and take corrective actions
        accordingly
-     - :ref:`chapters/chapter06:monitoring and security audit`
+     - :ref:`ref_arch/openstack/chapters/chapter06:monitoring and security audit`
    * - sec.mon.011
      - Monitoring / Audit
      - The Platform **MUST** Monitor and Audit logs from infrastructure elements
        and workloads to detected anomalies in the system components and take
        corrective actions accordingly
-     - :ref:`chapters/chapter06:creating logs`
+     - :ref:`ref_arch/openstack/chapters/chapter06:creating logs`
    * - sec.mon.012
      - Monitoring / Audit
      - The Platform **MUST** Monitor and Audit Traffic patterns and volumes to
        prevent malware download attempts
-     - :ref:`chapters/chapter06:confidentiality and integrity`
+     - :ref:`ref_arch/openstack/chapters/chapter06:confidentiality and integrity`
    * - sec.mon.013
      - Monitoring
      - The monitoring system **MUST NOT** affect the security (integrity and
@@ -1071,34 +1071,34 @@ can trigger alerts and notifications for appropriate action.
      - The Platform **MUST** ensure that the Monitoring systems are never
        starved of resources and **MUST** activate alarms when resource utilisation
        exceeds a configurable threshold
-     - :ref:`chapters/chapter06:monitoring and security audit`
+     - :ref:`ref_arch/openstack/chapters/chapter06:monitoring and security audit`
    * - sec.mon.017
      - Audit
      - The Platform **MUST** audit systems for any missing security patches
        and take appropriate actions
-     - :ref:`chapters/chapter06:patches`
+     - :ref:`ref_arch/openstack/chapters/chapter06:patches`
    * - sec.mon.018
      - Monitoring
      - The Platform, starting from initialisation, **MUST** collect and
        analyse logs to identify security events, and store these events
        in an external system
-     - :ref:`chapters/chapter06:where to log`
+     - :ref:`ref_arch/openstack/chapters/chapter06:where to log`
    * - sec.mon.019
      - Monitoring
      - The Platform's components **MUST NOT** include an authentication
        credential, e.g., password, in any logs, even if encrypted
-     - :ref:`chapters/chapter06:what to log / what not to log`
+     - :ref:`ref_arch/openstack/chapters/chapter06:what to log / what not to log`
    * - sec.mon.020
      - Monitoring / Audit
      - The Platform's logging system **MUST** support the storage of security
        audit logs for a configurable period of time
-     - :ref:`chapters/chapter06:data retention`
+     - :ref:`ref_arch/openstack/chapters/chapter06:data retention`
    * - sec.mon.021
      - Monitoring
      - The Platform **MUST** store security events locally if the external
        logging system is unavailable and **SHALL** periodically attempt to send
        these to the external logging system until successful
-     - :ref:`chapters/chapter06:where to log`
+     - :ref:`ref_arch/openstack/chapters/chapter06:where to log`
 
 Open-Source Software Security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1116,25 +1116,25 @@ Open-Source Software Security Requirements
      - Software
      - Open-source code **MUST** be inspected by tools with various capabilities
        for static and dynamic code analysis
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
    * - sec.oss.002
      - Software
      - The CVE (Common Vulnerabilities and Exposures) **MUST** be used to
        identify vulnerabilities and their severity rating for open-source
        code part of Cloud Infrastructure and workloads software
-     - :ref:`chapters/chapter06:patches`
+     - :ref:`ref_arch/openstack/chapters/chapter06:patches`
    * - sec.oss.003
      - Software
      - Critical and high severity rated vulnerabilities **MUST** be
        fixed in a timely manner. Refer to the CVSS (Common Vulnerability
        Scoring System) to know a vulnerability score and its associated rate
        (low, medium, high, or critical)
-     - :ref:`chapters/chapter06:patches`
+     - :ref:`ref_arch/openstack/chapters/chapter06:patches`
    * - sec.oss.004
      - Software
      - A dedicated internal isolated repository separated from the production
        environment **MUST** be used to store vetted open-source content
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
 
 IaaC security Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1157,7 +1157,7 @@ IaaC security Requirements
        Security testing that analyses application source code for software
        vulnerabilities and gaps against best practices. Example: open source
        OWASP range of tools
-     - :ref:`chapters/chapter06:workload security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:workload security`
 
 **Continuous Build, Integration and Testing Stage Requirements**
 
@@ -1177,7 +1177,7 @@ IaaC security Requirements
        example: A push of a container image to a containerregistry **MAY**
        trigger a vulnerability scan before the image becomes available in
        the registry
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
 
 **Continuous Delivery and Deployment Stage Requirements**
 
@@ -1196,14 +1196,14 @@ IaaC security Requirements
        Deployment stage triggered by Publish to Artifact and Image
        Repository trigger. Example: GitLab uses the open source Clair
        engine for container image scanning
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
    * - sec.del.002
      - IaaC
      - Code Signing **MUST** be applied during the Continuous Deliveryand
        Deployment stage and Image Repository trigger. Code Signing provides
        authentication to assure that downloaded files are form the publisher
        named on the certificate
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
    * - sec.del.004
      - IaaC
      - Component Vulnerability Scan **MUST** be applied during the Continuous
@@ -1212,7 +1212,7 @@ IaaC security Requirements
        platform to detect security vulnerabilities of specified components
        through scanning and to provide timely security protection. Example:
        OWASP Zed Attack Proxy (ZAP)
-     - :ref:`chapters/chapter06:image security`
+     - :ref:`ref_arch/openstack/chapters/chapter06:image security`
 
 **Runtime Defence and Monitoring Requirements**
 
@@ -1272,22 +1272,22 @@ General Requirements
    * - gen.ost.01
      - Open source
      - The Architecture **MUST** use OpenStack APIs
-     - :ref:`chapters/chapter05:consolidated set of apis`
+     - :ref:`ref_arch/openstack/chapters/chapter05:consolidated set of apis`
    * - gen.ost.02
      - Open source
      - The Architecture **MUST** support dynamic request and configuration of
        virtual resources (compute, network, storage) through OpenStack APIs
-     - :ref:`chapters/chapter05:consolidated set of apis`
+     - :ref:`ref_arch/openstack/chapters/chapter05:consolidated set of apis`
    * - gen.rsl.01
      - Resiliency
      - The Architecture **MUST** support resilient OpenStack components that are
        required for the continued availability of running workloads
-     - :ref:`chapters/chapter04:containerised openstack services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:containerised openstack services`
    * - gen.avl.01
      - Availability
      - The Architecture **MUST** provide High Availability for OpenStack
        components
-     - :ref:`chapters/chapter04:underlying resources configuration and dimensioning`
+     - :ref:`ref_arch/openstack/chapters/chapter04:underlying resources configuration and dimensioning`
 
 Infrastructure Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1304,29 +1304,29 @@ Infrastructure Requirements
    * - inf.com.01
      - Compute
      - The Architecture **MUST** provide compute resources for instances
-     - :ref:`chapters/chapter03:cloud workload services`
+     - :ref:`ref_arch/openstack/chapters/chapter03:cloud workload services`
    * - inf.com.04
      - Compute
      - The Architecture **MUST** be able to support multiple CPU type options
        to support various infrastructure profiles (Basic and High
        Performance)
-     - :ref:`chapters/chapter04:support for cloud infrastructure profiles and flavors`
+     - :ref:`ref_arch/openstack/chapters/chapter04:support for cloud infrastructure profiles and flavors`
    * - inf.com.05
      - Compute
      - The Architecture **MUST** support Hardware Platforms with NUMA
        capabilities
-     - :ref:`chapters/chapter04:support for cloud infrastructure profiles and flavors`
+     - :ref:`ref_arch/openstack/chapters/chapter04:support for cloud infrastructure profiles and flavors`
    * - inf.com.06
      - Compute
      - The Architecture **MUST** support CPU Pinning of the vCPUs of an
        instance
-     - :ref:`chapters/chapter04:support for cloud infrastructure profiles and flavors`
+     - :ref:`ref_arch/openstack/chapters/chapter04:support for cloud infrastructure profiles and flavors`
    * - inf.com.07
      - Compute
      - The Architecture **MUST** support different hardware configurations
        to support various infrastructure profiles (Basic and High
        Performance)
-     - :ref:`chapters/chapter03:cloud partitioning: host aggregates, availability zones`
+     - :ref:`ref_arch/openstack/chapters/chapter03:cloud partitioning: host aggregates, availability zones`
    * - inf.com.08
      - Compute
      - The Architecture **MUST** support allocating certain number of host
@@ -1336,63 +1336,63 @@ Infrastructure Requirements
        workloads (e.g., OpenStack services) :cite:p:`openstackcpu_ra1`.
        Please see example, Configuring libvirt compute nodes for CPU pinning
        :cite:p:`openstackcputopo_ra1`
-     - :ref:`chapters/chapter03:cloud partitioning: host aggregates, availability zones`
+     - :ref:`ref_arch/openstack/chapters/chapter03:cloud partitioning: host aggregates, availability zones`
    * - inf.com.09
      - Compute
      - The Architecture **MUST** ensure that the host cores assigned to
        non-tenant and tenant workloads are SMT aware: that is, a host core and
        its associated SMT threads are either all assigned to non-tenant
        workloads or all assigned to tenant workloads
-     - :ref:`chapters/chapter04:pinned and unpinned cpus`
+     - :ref:`ref_arch/openstack/chapters/chapter04:pinned and unpinned cpus`
    * - inf.stg.01
      - Storage
      - The Architecture **MUST** provide remote (not directly attached to the
        host) Block storage for Instances
-     - :ref:`chapters/chapter03:storage`
+     - :ref:`ref_arch/openstack/chapters/chapter03:storage`
    * - inf.stg.02
      - Storage
      - The Architecture **MUST** provide Object storage for Instances.
        Operators **MAY** choose not to implement Object Storage but **MUST** be
        cognizant of the the risk of "Compliant VNFs" failing in their
        environment
-     - :ref:`chapters/chapter04:swift`
+     - :ref:`ref_arch/openstack/chapters/chapter04:swift`
    * - inf.nw.01
      - Network
      - The Architecture **MUST** provide virtual network interfaces to
        instances
-     - :ref:`chapters/chapter05:neutron api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:neutron api`
    * - inf.nw.02
      - Network
      - The Architecture **MUST** include capabilities for integrating SDN
        controllers to support provisioning of network services, from the SDN
        OpenStack Neutron service, such as networking of VTEPs to the Border
        Edge based VRFs
-     - :ref:`chapters/chapter03:virtual networking - 3rd party sdn solution`
+     - :ref:`ref_arch/openstack/chapters/chapter03:virtual networking - 3rd party sdn solution`
    * - inf.nw.03
      - Network
      - The Architecture **MUST** support low latency and high throughput
        traffic needs
-     - :ref:`chapters/chapter04:network fabric`
+     - :ref:`ref_arch/openstack/chapters/chapter04:network fabric`
    * - inf.nw.05
      - Network
      - The Architecture **MUST** allow for East/West tenant traffic within the
        cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve)
-     - :ref:`chapters/chapter04:network fabric`
+     - :ref:`ref_arch/openstack/chapters/chapter04:network fabric`
    * - inf.nw.07
      - Network
      - The Architecture **MUST** support network resiliency
-     - :ref:`chapters/chapter03:network`
+     - :ref:`ref_arch/openstack/chapters/chapter03:network`
    * - inf.nw.10
      - Network
      - The Cloud Infrastructure Network Fabric **MUST** be capable of enabling
        highly available (Five 9's or better) Cloud Infrastructure
-     - :ref:`chapters/chapter03:network`
+     - :ref:`ref_arch/openstack/chapters/chapter03:network`
    * - inf.nw.15
      - Network
      - The Architecture **MUST** support multiple networking options for Cloud
        Infrastructure to support various infrastructure profiles (Basic and
        High Performance)
-     - :ref:`chapters/chapter04:neutron extensions`
+     - :ref:`ref_arch/openstack/chapters/chapter04:neutron extensions`
        and OpenStack Neutron Plugins :cite:p:`openstackneut_ra1`
    * - inf.nw.16
      - Network
@@ -1414,20 +1414,20 @@ VIM Requirements
    * - vim.01
      - General
      - The Architecture **MUST** allow infrastructure resource sharing
-     - :ref:`chapters/chapter03:resources and services exposed to vnfs`
+     - :ref:`ref_arch/openstack/chapters/chapter03:resources and services exposed to vnfs`
    * - vim.03
      - General
      - The Architecture **MUST** allow VIM to discover and manage Cloud
        Infrastructure resources
-     - :ref:`chapters/chapter05:placement api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:placement api`
    * - vim.05
      - General
      - The Architecture **MUST** include image repository management
-     - :ref:`chapters/chapter05:glance api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:glance api`
    * - vim.07
      - General
      - The Architecture **MUST** support multi-tenancy
-     - :ref:`chapters/chapter03:multi-tenancy (execution environment)`
+     - :ref:`ref_arch/openstack/chapters/chapter03:multi-tenancy (execution environment)`
    * - vim.08
      - General
      - The Architecture **MUST** support resource tagging
@@ -1449,52 +1449,52 @@ Interfaces & APIs Requirements
      - API
      - The Architecture **MUST** provide APIs to access the authentication service
        and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:keystone api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:keystone api`
    * - int.api.02
      - API
      - The Architecture **MUST** provide APIs to access the image management
        service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:glance api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:glance api`
    * - int.api.03
      - API
      - The Architecture **MUST** provide APIs to access the block storage
        management service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:cinder api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:cinder api`
    * - int.api.04
      - API
      - The Architecture **MUST** provide APIs to access the object storage
        management service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:swift api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:swift api`
    * - int.api.05
      - API
      - The Architecture **MUST** provide APIs to access the network management
        service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:neutron api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:neutron api`
    * - int.api.06
      - API
      - The Architecture **MUST** provide APIs to access the compute resources
        management service and the associated mandatory features detailed in chapter 5
-     - :ref:`chapters/chapter05:nova api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:nova api`
    * - int.api.07
      - API
      - The Architecture **MUST** provide GUI access to tenant facing cloud
        platform core services except at Edge/Far Edge clouds
-     - :ref:`chapters/chapter04:horizon`
+     - :ref:`ref_arch/openstack/chapters/chapter04:horizon`
    * - int.api.08
      - API
      - The Architecture **MUST** provide APIs needed to discover and manage
        Cloud Infrastructure resources
-     - :ref:`chapters/chapter05:placement api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:placement api`
    * - int.api.09
      - API
      - The Architecture **MUST** provide APIs to access the orchestration service
-     - :ref:`chapters/chapter05:heat api`
+     - :ref:`ref_arch/openstack/chapters/chapter05:heat api`
    * - int.api.10
      - API
      - The Architecture **MUST** expose the latest version and microversion of the
        APIs for the given Anuket OpenStack release for each of the OpenStack core
        services
-     - :ref:`chapters/chapter05:core openstack services apis`
+     - :ref:`ref_arch/openstack/chapters/chapter05:core openstack services apis`
 
 
 Tenant Requirements
@@ -1513,8 +1513,8 @@ Tenant Requirements
      - General
      - The Architecture **MUST** support self-service dashboard (GUI) and
        APIs for users to deploy, configure and manage their workloads
-     - :ref:`chapters/chapter04:horizon` and
-       :ref:`chapters/chapter03:cloud workload services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:horizon` and
+       :ref:`ref_arch/openstack/chapters/chapter03:cloud workload services`
 
 Operations and LCM
 ~~~~~~~~~~~~~~~~~~
@@ -1539,7 +1539,7 @@ Operations and LCM
        cloud provider, so that the running workloads are not impacted
        (viz., hitless upgrades). Please note that this means that the existing
        data plane services **SHOULD** not fail (go down)
-     - :ref:`chapters/chapter04:containerised openstack services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:containerised openstack services`
 
 Assurance Requirements
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1557,19 +1557,19 @@ Assurance Requirements
      - The Architecture **MUST** include integration with various infrastructure
        components to support collection of telemetry for assurance monitoring
        and network intelligence
-     - :ref:`chapters/chapter07:logging, monitoring and analytics`
+     - :ref:`ref_arch/openstack/chapters/chapter07:logging, monitoring and analytics`
    * - asr.mon.03
      - Monitoring
      - The Architecture **MUST** allow for the collection and dissemination of
        performance and fault information
-     - :ref:`chapters/chapter07:logging, monitoring and analytics`
+     - :ref:`ref_arch/openstack/chapters/chapter07:logging, monitoring and analytics`
    * - asr.mon.04
      - Network
      - The Cloud Infrastructure Network Fabric and Network Operating System
        **MUST** provide network operational visibility through alarming and
        streaming telemetry services for operational management, engineering
        planning, troubleshooting, and network performance optimisation
-     - :ref:`chapters/chapter07:logging, monitoring and analytics`
+     - :ref:`ref_arch/openstack/chapters/chapter07:logging, monitoring and analytics`
 
 
 Architecture and OpenStack Recommendations
@@ -1651,7 +1651,7 @@ Infrastructure Recommendations
    * - inf.stg.10
      - Storage
      - The Architecture **SHOULD** provide local Block storage for Instances
-     - :ref:`chapters/chapter03:virtual storage`
+     - :ref:`ref_arch/openstack/chapters/chapter03:virtual storage`
    * - inf.nw.04
      - Network
      - The Architecture **SHOULD** support service function chaining
@@ -1687,7 +1687,7 @@ Infrastructure Recommendations
      - Acceleration
      - The Architecture **SHOULD** support Application Specific Acceleration
        (exposed to VNFs)
-     - :ref:`chapters/chapter03:acceleration`
+     - :ref:`ref_arch/openstack/chapters/chapter03:acceleration`
    * - inf.acc.02
      - Acceleration
      - The Architecture **SHOULD** support Cloud Infrastructure Acceleration
@@ -1702,7 +1702,7 @@ Infrastructure Recommendations
      - Image
      - The Architecture **SHOULD** make the immutable images available via
        location independent means
-     - :ref:`chapters/chapter04:glance`
+     - :ref:`ref_arch/openstack/chapters/chapter04:glance`
 
 VIM Recommendations
 ~~~~~~~~~~~~~~~~~~~
@@ -1719,7 +1719,7 @@ VIM Recommendations
      - General
      - The Architecture **SHOULD** support deployment of OpenStack components
        in containers
-     - :ref:`chapters/chapter04:containerised openstack services`
+     - :ref:`ref_arch/openstack/chapters/chapter04:containerised openstack services`
    * - vim.04
      - General
      - The Architecture **SHOULD** support Enhanced Platform Awareness (EPA)

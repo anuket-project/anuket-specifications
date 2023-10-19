@@ -4,11 +4,11 @@ Anuket Project
 Available Specifications
 ------------------------
 
--  :doc:`ref_model:index`
--  :doc:`ref_arch_openstack:index`
--  :doc:`ref_arch_kubernetes:index`
--  :doc:`ref_impl_cntt-ri:index`
--  :doc:`ref_impl_cntt-ri2:index`
+-  :doc:`/ref_model/index`
+-  :doc:`/ref_arch/openstack/index`
+-  :doc:`/ref_arch/kubernetes/index`
+-  :doc:`/ref_impl/cntt-ri/index`
+-  :doc:`/ref_impl/cntt-ri2/index`
 
 Introduction
 ------------
@@ -24,7 +24,7 @@ Use Cases
 The Anuket Project addresses a wide range of use cases from the Core to the
 Edge of the network. Different use cases supported by the Anuket Project
 specifications are described in
-:ref:`ref_model:chapters/chapter02:use cases`.
+:ref:`ref_model/chapters/chapter02:use cases`.
 
 Roadmap and Releases
 --------------------

@@ -649,7 +649,7 @@ refers to Continuous Deployment.
 |               | code and configuration files.                     |                                                  |
 +---------------+---------------------------------------------------+--------------------------------------------------+
 | auto.cicd.007 | The CI pipeline must scan images and manifests to | See section 7.10 (                               |
-|               | validate for compliance with security             | :ref:`chapters/chapter07:consolidated            |
+|               | validate for compliance with security             | :ref:`ref_model/chapters/chapter07:consolidated  |
 |               | requirements.                                     | security requirements`). Examples of such        |
 |               |                                                   | security requirements include only ingesting     |
 |               |                                                   | images, source code, configuration files, etc.   |
@@ -764,7 +764,7 @@ Topics include:
    - Validate that the Cloud Infrastructure can meet Tenant's performance requirements (e.g. I/O, latency, jitter, etc.)
    - Validate that the Cloud Infrastructure can meet Tenant's resilience requirements
 
-2. For environments that support :ref:`chapters/chapter04:profiles and workload flavours`:
+2. For environments that support :ref:`ref_model/chapters/chapter04:profiles and workload flavours`:
 
    - Verify that any requested private flavours have been created
    - Verify that the metadata for these private flavours have been created

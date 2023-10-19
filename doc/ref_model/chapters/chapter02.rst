@@ -419,7 +419,7 @@ A resource request by a workload can be met by any infrastructure node that has 
 and the necessary capacity to support the requested flavour or resource size.
 
 Profiles, Profile Extensions and Flavours will be considered in greater detail in
-:ref:`chapters/chapter04:profile extensions`.
+:ref:`ref_model/chapters/chapter04:profile extensions`.
 
 Profiles (top-level partitions)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -437,7 +437,7 @@ Based on the above analysis, the following cloud infrastructure profiles are pro
 
    Infrastructure profiles proposed based on VNFs categorisation
 
-In :ref:`chapters/chapter04:infrastructure capabilities, measurements and catalogue`
+In :ref:`ref_model/chapters/chapter04:infrastructure capabilities, measurements and catalogue`
 these **B (Basic)** and **H (High) Performance** infrastructure profiles will be
 defined in greater detail for use by workloads.
 

@@ -6,7 +6,7 @@ Introduction for Architecture Requirements
 
 This chapter will specialise the requirements defined in the overall Reference Model into Kubernetes-specific
 requirements. Additional, RA2-specific, entries are included in section
-:ref:`chapters/chapter02:kubernetes architecture requirements`.
+:ref:`ref_arch/kubernetes/chapters/chapter02:kubernetes architecture requirements`.
 
 Definitions
 -----------
@@ -19,8 +19,8 @@ Reference Model Requirements
 
 The tables below contain the requirements from the Reference Model to cover all infrastructure profiles.
 The table also includes a reference to any linked specification at
-:ref:`chapters/chapter04:component level architecture` and at
-:ref:`chapters/chapter05:security guidance` to ensure traceability. If the related Specification
+:ref:`ref_arch/kubernetes/chapters/chapter04:component level architecture` and at
+:ref:`ref_arch/kubernetes/chapters/chapter05:security guidance` to ensure traceability. If the related Specification
 does not exist, the reference will read "N/A" (and in bold "**N/A**" for mandatory requirements).
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
@@ -163,7 +163,7 @@ Cloud Infrastructure Software Profile Capabilities
      - Number of virtual cores per physical core; also known as CPU overbooking ratio that is required
      - 01:01
      - 01:01
-     - ra2.ch.004, ra2.ch.005 :ref:`chapters/chapter04:kubernetes node`
+     - ra2.ch.004, ra2.ch.005 :ref:`ref_arch/kubernetes/chapters/chapter04:kubernetes node`
    * - Internal Infrastructure Capabilities
      - i.cap.017
      - QoS enablement of the connection point (vNIC or interface)
@@ -785,16 +785,16 @@ Cloud Infrastructure Security Requirements
        disabling unnecessary services, applications, and network protocols, configuring operating system user
        authentication, configuring resource controls, installing and configuring additional security controls where
        needed, and testing the security of the Operating System. (NIST SP 800-123)
-     - :ref:`chapters/chapter05:security principles` and :ref:`chapters/chapter05:node hardening`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:security principles` and :ref:`ref_arch/kubernetes/chapters/chapter05:node hardening`
    * - System Hardening
      - sec.gen.005
      - The Platform **must** support Operating System level access control
-     - :ref:`chapters/chapter05:node hardening`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:node hardening`
    * - System Hardening
      - sec.gen.006
      - The Platform **must** support secure logging. Logging with root account must be prohibited when root
        privileges are not required.
-     - :ref:`chapters/chapter05:restricting direct access to nodes`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:restricting direct access to nodes`
    * - System Hardening
      - sec.gen.007
      - All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service.
@@ -802,12 +802,12 @@ Cloud Infrastructure Security Requirements
    * - System Hardening
      - sec.gen.008
      - All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities.
-     - :ref:`chapters/chapter05:vulnerability assessment`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:vulnerability assessment`
    * - System Hardening
      - sec.gen.009
      - The Platform **must** support Software integrity protection and verification and **must** scan source code
        and manifests.
-     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - System Hardening
      - sec.gen.010
      - The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage,
@@ -826,7 +826,7 @@ Cloud Infrastructure Security Requirements
    * - System Hardening
      - sec.gen.013
      - The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure.
-     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - System Hardening
      - sec.gen.014
      - All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors
@@ -840,7 +840,7 @@ Cloud Infrastructure Security Requirements
    * - Platform and Access
      - sec.sys.001
      - The Platform **must** support authenticated and secure access to API, GUI and command line interfaces.
-     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - Platform and Access
      - sec.sys.002
      - The Platform **must** support Traffic Filtering for workloads (for example, Firewall).
@@ -863,12 +863,12 @@ Cloud Infrastructure Security Requirements
      - sec.sys.006
      - The Cloud Infrastructure must be able to utilise the Cloud Infrastructure Manager identity lifecycle
        management capabilities.
-     - :ref:`chapters/chapter05:security principles`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:security principles`
    * - Platform and Access
      - sec.sys.007
      - The Platform **must** implement controls enforcing separation of duties and privileges, least privilege
        use and least common mechanism (Role-Based Access Control).
-     - :ref:`chapters/chapter05:security principles` :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:security principles` :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - Platform and Access
      - sec.sys.008
      - The Platform **must** be able to assign the Entities that comprise the tenant networks to different
@@ -909,7 +909,7 @@ Cloud Infrastructure Security Requirements
      - sec.sys.016
      - Login access to the platform's components **must** be through encrypted protocols such as SSH v2
        or TLS v1.2 or higher. Note: Hardened jump servers isolated from external networks are recommended
-     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - Platform and Access
      - sec.sys.017
      - The Platform **must** provide the capability of using digital certificates that comply with X.509 standards
@@ -931,7 +931,7 @@ Cloud Infrastructure Security Requirements
    * - Confidentiality and Integrity
      - sec.ci.001
      - The Platform **must** support Confidentiality and Integrity of data at rest and in-transit. by design environment.
-     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - Confidentiality and Integrity
      - sec.ci.002
      - The Platform **should** support self-encrypting storage devices.
@@ -983,7 +983,7 @@ Cloud Infrastructure Security Requirements
    * - Workload Security
      - sec.wl.003
      - The Platform **must** support secure provisioning of workloads.
-     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - Workload Security
      - sec.wl.004
      - The Platform **must** support location assertion (for mandated in-country or location requirements).
@@ -991,29 +991,29 @@ Cloud Infrastructure Security Requirements
    * - Workload Security
      - sec.wl.005
      - The Platform **must** support the separation of production and non-production Workloads.
-     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - Workload Security
      - sec.wl.006
      - The Platform **must** support the separation of Workloads based on their categorisation (for example,
        payment card information, healthcare, etc.).
-     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - Workload Security
      - sec.wl.007
      - The Operator **must** implement processes and tools to verify VNF authenticity and integrity.
-     - :ref:`chapters/chapter05:trusted registry`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:trusted registry`
    * - Image Security
      - sec.img.001
      - Images from untrusted sources **must not** be used.
-     - :ref:`chapters/chapter05:trusted registry`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:trusted registry`
    * - Image Security
      - sec.img.002
      - Images **must** be scanned to be maintained free from known vulnerabilities.
-     - :ref:`chapters/chapter05:trusted registry`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:trusted registry`
    * - Image Security
      - sec.img.003
      - Images **must not** be configured to run with privileges higher than the privileges of the actor
        authorized to run them.
-     - :ref:`chapters/chapter05:runtime security`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:runtime security`
    * - Image Security
      - sec.img.004
      - Images **must** only be accessible to authorised actors.
@@ -1026,16 +1026,16 @@ Cloud Infrastructure Security Requirements
      - sec.img.006
      - Image Registries **must** only be accessible over secure networks that enforce authentication,
        integrity and confidentiality.
-     - :ref:`chapters/chapter05:trusted registry`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:trusted registry`
    * - Image Security
      - sec.img.007
      - Image registries **must** be clear of vulnerable and out of date versions.
-     - :ref:`chapters/chapter05:trusted registry`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:trusted registry`
    * - Image Security
      - sec.img.008
      - Images **must not** include any secrets. Secrets include passwords, cloud provider credentials,
        SSH keys, TLS certificate keys, etc.
-     - :ref:`chapters/chapter05:secrets management`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:secrets management`
    * - Image Security
      - sec.img.009
      - CIS Hardened Images **should** be used whenever possible.
@@ -1053,7 +1053,7 @@ Cloud Infrastructure Security Requirements
      - sec.lcm.002
      - Cloud operations staff and systems **must** use management protocols limiting security risk such as
        SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher.
-     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - Security LCM
      - sec.lcm.003
      - The Cloud Operator **must** implement and strictly follow change management processes for Cloud
@@ -1067,7 +1067,7 @@ Cloud Infrastructure Security Requirements
    * - Security LCM
      - sec.lcm.005
      - Platform **must** provide logs and these logs must be regularly monitored for anomalous behavior.
-     - :ref:`chapters/chapter05:enabling logging and monitoring`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:enabling logging and monitoring`
    * - Security LCM
      - sec.lcm.006
      - The Platform **must** verify the integrity of all Resource management requests.
@@ -1076,7 +1076,7 @@ Cloud Infrastructure Security Requirements
      - sec.lcm.007
      - The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and
        restarted images with current time information.
-     - :ref:`chapters/chapter05:securing the kubernetes orchestrator`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:securing the kubernetes orchestrator`
    * - Security LCM
      - sec.lcm.008
      - The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and
@@ -1183,12 +1183,12 @@ Cloud Infrastructure Security Requirements
    * - Monitoring and Security Audit
      - sec.mon.017
      - The Platform **must** audit systems for any missing security patches and take appropriate actions.
-     - :ref:`chapters/chapter05:vulnerability assessment`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:vulnerability assessment`
    * - Monitoring and Security Audit
      - sec.mon.018
      - The Platform, starting from initialization, **must** collect and analyze logs to identify security
        events, and store these events in an external system.
-     - :ref:`chapters/chapter05:patch management`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:patch management`
    * - Monitoring and Security Audit
      - sec.mon.019
      - The Platform's components **must not** include an authentication credential, e.g., password, in any
@@ -1207,7 +1207,7 @@ Cloud Infrastructure Security Requirements
    * - Open Source Software
      - sec.oss.001
      - Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis.
-     - :ref:`chapters/chapter05:vulnerability assessment`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:vulnerability assessment`
    * - Open Source Software
      - sec.oss.002
      - The CVE (Common Vulnerabilities and Exposures) :cite:p:`cve_ra2` **must** be used to identify
@@ -1224,7 +1224,7 @@ Cloud Infrastructure Security Requirements
      - sec.oss.004
      - A dedicated internal isolated repository separated from the production environment **must** be used to
        store vetted open source content.
-     - :ref:`chapters/chapter05:trusted registry`
+     - :ref:`ref_arch/kubernetes/chapters/chapter05:trusted registry`
    * - Open Source Software
      - sec.oss.005
      - A Software Bill of Materials (`SBOM` :cite:p:`sbom_ra2`) **should** be provided or
@@ -1424,7 +1424,7 @@ Kubernetes Architecture Requirements
 
 The requirements in this section are to be delivered in addition to those in section `Reference Model
 Requirements <#reference-model-requirements>`_, and have been
-created to support the Principles defined in the first chapter :ref:`chapters/chapter01:overview` of this
+created to support the Principles defined in the first chapter :ref:`ref_arch/kubernetes/chapters/chapter01:overview` of this
 Reference Architecture.
 
 The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised

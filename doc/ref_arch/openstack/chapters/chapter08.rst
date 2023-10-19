@@ -4,7 +4,7 @@ Conformance
 The objective of this chapter is to provide an automated mechanism
 to validate OpenStack based cloud infrastructure
 against the standard set of requirements defined in
-:ref:`chapters/chapter02:architecture requirements`. Through this validation
+:ref:`ref_arch/openstack/chapters/chapter02:architecture requirements`. Through this validation
 mechanism, a provider of cloud infrastructure will be able to test their
 cloud infrastructure's conformance to this reference architecture. This will
 ease the integration of network functions into operator environments that host
@@ -313,7 +313,7 @@ deployments.
 
 From an OpenStack based cloud infrastructure conformance state point,
 the capabilities are well described in
-:ref:`chapters/chapter05:interfaces and apis` which allows tuning the test
+:ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis` which allows tuning the test
 configurations and the test lists to avoid
 skipping any test. It results that all tests covering optional
 capabilities and all upstream skipped tests due to known bugs are not
@@ -329,7 +329,7 @@ Functest containers.
 The next subsections detail the Tempest tests which **MUST NOT** be
 executed from a compliance state point. The remaining tests have to pass
 successfully. They cover all together the API testing requirements as
-asked by :ref:`chapters/chapter05:interfaces and apis`
+asked by :ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`
 
 The following software versions are considered here to verify OpenStack
 Wallaby:
@@ -363,7 +363,7 @@ Tempest :cite:p:`tempest_ra1` and
 keystone-tempest-plugin :cite:p:`keystonetempestplugin_ra1`
 as integrated in Functest Smoke CNTT :cite:p:`functestsmokecntt_ra1`.
 
-According to :ref:`chapters/chapter05:interfaces and apis`
+According to :ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
 
 .. list-table:: Keystone API testing
@@ -415,7 +415,7 @@ Glance API is covered in the OpenStack Gates via
 :cite:p:`tempest_ra1` as integrated in
 Functest Smoke CNTT :cite:p:`functestsmokecntt_ra1`.
 
-According to :ref:`chapters/chapter05:interfaces and apis`
+According to :ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
 
 .. list-table:: Glance API testing
@@ -466,7 +466,7 @@ cinder-tempest-plugin :cite:p:`cindertempestplugin_ra1`
 as integrated in Functest Smoke
 CNTT :cite:p:`functestsmokecntt_ra1`.
 
-According to :ref:`chapters/chapter05:interfaces and apis`
+According to :ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
 
 .. list-table:: Cinder API testing
@@ -535,7 +535,7 @@ Swift API is covered in the OpenStack Gates via
 Tempest :cite:p:`tempest_ra1` as integrated in
 Functest Smoke CNTT :cite:p:`functestsmokecntt_ra1`.
 
-According to :ref:`chapters/chapter05:interfaces and apis`
+According to :ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
 
 .. list-table:: Swift API testing
@@ -578,7 +578,7 @@ neutron-tempest-plugin :cite:p:`neutrontempestplugin_ra1`
 as integrated in Functest Smoke
 CNTT :cite:p:`functestsmokecntt_ra1`.
 
-According to :ref:`chapters/chapter05:interfaces and apis`
+According to :ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
 
 .. list-table:: Neutron API testing
@@ -777,7 +777,7 @@ Nova API is covered in the OpenStack Gates via
 Tempest :cite:p:`tempest_ra1` as integrated in
 Functest Smoke CNTT :cite:p:`functestsmokecntt_ra1`.
 
-According to :ref:`chapters/chapter05:interfaces and apis`
+According to :ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
 
 .. list-table:: Nova API testing
@@ -1045,7 +1045,7 @@ heat-tempest-plugin :cite:p:`heattempestplugin_ra1`
 as integrated in Functest Smoke
 CNTT :cite:p:`functestsmokecntt_ra1`.
 
-According to :ref:`chapters/chapter05:interfaces and apis`
+According to :ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis`
 the following test names **MUST NOT** be executed:
 
 .. list-table:: Heat API testing
@@ -1534,36 +1534,36 @@ TC Mapping to Requirements
      - requirements
    * - tempest_horizon
      - Horizon testing (int.api.07 in
-       :ref:`chapters/chapter02:interfaces & apis requirements`)
+       :ref:`ref_arch/openstack/chapters/chapter02:interfaces & apis requirements`)
    * - tempest_neutron_cntt
      - Neutron API testing (int.api.05 in
-       :ref:`chapters/chapter02:interfaces & apis requirements`)
+       :ref:`ref_arch/openstack/chapters/chapter02:interfaces & apis requirements`)
    * - tempest_cinder_cntt
      - Cinder API testing (int.api.03 in
-       :ref:`chapters/chapter02:interfaces & apis requirements`)
+       :ref:`ref_arch/openstack/chapters/chapter02:interfaces & apis requirements`)
    * - tempest_keystone_cntt
      - Keystone API testing (int.api.01 in
-       :ref:`chapters/chapter02:interfaces & apis requirements`)
+       :ref:`ref_arch/openstack/chapters/chapter02:interfaces & apis requirements`)
    * - rally_sanity_cntt
      - Keystone, Glance, Cinder, Swift, Neutron, Nova and
        Heat API testing (int.api.* in
-       :ref:`chapters/chapter02:interfaces & apis requirements`)
+       :ref:`ref_arch/openstack/chapters/chapter02:interfaces & apis requirements`)
    * - tempest_full_cntt
      - Keystone, Glance, Cinder, Swift, Neutron and Nova
        API testing (int.api.* in
-       :ref:`chapters/chapter02:interfaces & apis requirements`)
+       :ref:`ref_arch/openstack/chapters/chapter02:interfaces & apis requirements`)
    * - tempest_scenario_cntt
      - Keystone, Glance, Cinder, Swift, Neutron and Nova
        API testing (int.api.* in
-       :ref:`chapters/chapter02:interfaces & apis requirements`)
+       :ref:`ref_arch/openstack/chapters/chapter02:interfaces & apis requirements`)
    * - tempest_slow_cntt
      - Keystone, Glance, Cinder, Swift, Neutron and Nova
        API testing (int.api.* in
-       :ref:`chapters/chapter02:interfaces & apis requirements`)
+       :ref:`ref_arch/openstack/chapters/chapter02:interfaces & apis requirements`)
    * - rally_full_cntt
      - Keystone, Glance, Cinder, Swift, Neutron, Nova and
        Heat API benchmarking (int.api.* in
-       :ref:`chapters/chapter02:interfaces & apis requirements`)
+       :ref:`ref_arch/openstack/chapters/chapter02:interfaces & apis requirements`)
    * - rally_jobs_cntt
      - Neutron API benchmarking
    * - vmtp

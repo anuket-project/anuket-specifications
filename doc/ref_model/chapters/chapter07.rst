@@ -413,7 +413,7 @@ of the security activities meets the requirements, the next set of security acti
 transitions to the next checkpoint, or, alternatively, to the next stage if the checkpoint is the last one in the
 current stage. If, on the other hand, the outcome of the security activities does not meet the requirements, then the
 process should not be allowed to advance to the next checkpoint. In the section
-":ref:`chapters/chapter07:consolidated security requirements`", the IaaC
+":ref:`ref_model/chapters/chapter07:consolidated security requirements`", the IaaC
 security activities are presented as security requirements mapped to particular stages and trigger points.
 
 Security of Production and Non-production Environments
@@ -441,7 +441,7 @@ the same level as in the production environment (typically of **must** type), le
 In the context of the contemporary telecommunication technology, the cloud infrastructure typically is considered
 Infrastructure as a Code (IaaC). This fact implies that many aspects of code related security automatically apply to
 IaaC. Security aspects of IaaC in the telco context is discussed in the previous section
-":ref:`chapters/chapter07:infrastructure as a code security`",
+":ref:`ref_model/chapters/chapter07:infrastructure as a code security`",
 which introduces the relevant framework for security automation and programmatic execution and monitoring of
 security controls. Organisations need to identify which of the stages or activities within these stages should be
 performed within the non-production versus production environments. This mapping will then dictate which security
@@ -594,7 +594,7 @@ The sections that follow define mechanisms to ensure the integrity of the infras
 - Root of Trust for Measurement (RTM) is a computing engine capable of making integrity measurements.
 - Core Root of Trust for Measurements (CRTM) is a set of instructions executed when performing RTM.
 - Platform Attestation provides proof of validity of the platform’s integrity measurements. Please see Section
-  ":ref:`chapters/chapter07:remote attestation/opencit`".
+  ":ref:`ref_model/chapters/chapter07:remote attestation/opencit`".
 
 Values stored in a PCR cannot be reset (or forged) as they can only be extended. Whenever a measurement is sent to a
 TPM, the hash of the concatenation of the current value of the PCR and the new measurement is stored in the PCR. The PCR
@@ -652,8 +652,8 @@ platform.
 Zero Trust Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The sections ":ref:`chapters/chapter07:remote attestation/opencit`" and
-":ref:`chapters/chapter07:root of trust for measurements`" provide
+The sections ":ref:`ref_model/chapters/chapter07:remote attestation/opencit`" and
+":ref:`ref_model/chapters/chapter07:root of trust for measurements`" provide
 methods to ensure the integrity of the infrastructure. The Zero Trust concept moves a step forward enabling to build
 secure by design cloud infrastructure, from hardware to applications. The adoption of Zero Trust principles mitigates
 the threats and attacks within an enterprise, a network or an infrastructure, ensuring a fine grained segmentation
@@ -1418,7 +1418,7 @@ and logging capabilities can trigger alerts and notifications for appropriate ac
 to have the same security monitoring and auditing capabilities in both production and non-production environments.
 However, we distinguish between requirements for Production Platform (Prod-Platform) and Non-production Platform
 (NonProd-Platform) as some of the requirements may in practice need to differ, see section
-:ref:`chapters/chapter07:security of production and non-production environments` for the general discussion
+:ref:`ref_model/chapters/chapter07:security of production and non-production environments` for the general discussion
 of this topic. In the table below, when a requirement mentions only Prod-Platform, it is assumed that this requirement
 is optional for NonProd-Platform. If a requirement does not mention any environment, it is assumed that it is valid for
 both Prod-Platform and NonProd-Platform.

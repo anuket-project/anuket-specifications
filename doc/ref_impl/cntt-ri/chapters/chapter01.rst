@@ -7,14 +7,14 @@ Introduction
 About Reference Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This document includes the requirement and deployment details of the the first reference implementation for CNTT. This first reference implementation follows the requirement and architecture design of the :doc:`OpenStack Based Reference Architecture <ref_arch_openstack:chapters/chapter01>`. This document will includes the detailed requirement of RI for CNTT, NFVi configurations according to the requirement of RA and each different flavor of VNF, Lab requirements for RI deployment and validation and installer requirement. This reference implementation will fully reveal the capabilities and features defined in CNTT RM and RA, and thus will be utilized as 'golden NFVi' in the Reference Compliance of CNTT.
+This document includes the requirement and deployment details of the the first reference implementation for CNTT. This first reference implementation follows the requirement and architecture design of the :doc:`OpenStack Based Reference Architecture </ref_arch/openstack/chapters/chapter01>`. This document will includes the detailed requirement of RI for CNTT, NFVi configurations according to the requirement of RA and each different flavor of VNF, Lab requirements for RI deployment and validation and installer requirement. This reference implementation will fully reveal the capabilities and features defined in CNTT RM and RA, and thus will be utilized as 'golden NFVi' in the Reference Compliance of CNTT.
 
 In order to promote quick deployment of RI and not re-invent wheels, the CNTT community works closely with OPNFV, utilizing and evolving OPNFV CI pipeline and installer automation and testing automation capabilities. Detailed collaboration and contribution to OPNFV will be concluded in the following sessions.
 
 Terminology
 ~~~~~~~~~~~
 
-Terminology in this document will follow :doc:`cntt:common/glossary`.
+Terminology in this document will follow :doc:`/common/glossary`.
 
 Scope
 -----
@@ -61,7 +61,7 @@ https://wiki.anuket.io/display/HOME/CIRV
 
 b) OPNFV Infra WG.
 
-The CNTT RI WSs work closely with the OPNFV Infra WG for the requirement of Labs and Installers. The detailed requirements explained in :ref:`chapters/chapter04:Lab Requirements` and :ref:`chapters/chapter05:Hardware Delivery and Configuration Requirements` of this document are discussed and reviewed with the Infra WG, and will be used as guideline for detailed development work in Infra WG.
+The CNTT RI WSs work closely with the OPNFV Infra WG for the requirement of Labs and Installers. The detailed requirements explained in :ref:`ref_impl/cntt-ri/chapters/chapter04:Lab Requirements` and :ref:`ref_impl/cntt-ri/chapters/chapter05:Hardware Delivery and Configuration Requirements` of this document are discussed and reviewed with the Infra WG, and will be used as guideline for detailed development work in Infra WG.
 
 c) OPNFV Testing WG.
 

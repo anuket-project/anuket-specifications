@@ -352,7 +352,7 @@ Compute Resource Pooling Considerations
 Reservation of Compute Node Cores
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The :ref:`chapters/chapter02:infrastructure requirements`
+The :ref:`ref_arch/openstack/chapters/chapter02:infrastructure requirements`
 ``inf.com.08`` requires the allocation of "certain number of host
 cores/threads to non-tenant workloads such as for OpenStack services." A
 number ("n") of random cores can be reserved for host services
@@ -448,7 +448,7 @@ CPU Allocation Ratio and CPU Pinning
 
 A given host (compute node) can only support a single CPU Allocation
 Ratio. Thus, to support the B1 and B4 Basic profile extensions (Section
-:ref:`chapters/chapter04:compute nodes`)
+:ref:`ref_arch/openstack/chapters/chapter04:compute nodes`)
 with CPU Allocation Ratios of 1.0 and 4.0 we will need to
 create 2 different host profiles and separate host aggregates for each
 of the host profiles. The CPU Allocation Ratio is set in the hypervisor
@@ -463,7 +463,7 @@ Server Configurations
 The different networking choices - OVS-Kernel, OVS-DPDK, SR-IOV - result
 in different NIC port, LAG (Link Aggregation Group), and other
 configurations. Some of these are shown diagrammatically in section
-:ref:`chapters/chapter04:compute nodes`.
+:ref:`ref_arch/openstack/chapters/chapter04:compute nodes`.
 
 Leaf and Compute Ports for Server Flavors must align
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -878,8 +878,8 @@ extensions for these standard attributes automatically incorporated.
 Additions to resources, such as additional attributes, must be
 accompanied by an extension.
 
-The section :ref:`chapters/chapter05:interfaces and apis` of this Reference
-Architecture provides a list of :ref:`chapters/chapter04:neutron extensions`.
+The section :ref:`ref_arch/openstack/chapters/chapter05:interfaces and apis` of this Reference
+Architecture provides a list of :ref:`ref_arch/openstack/chapters/chapter04:neutron extensions`.
 The current available
 extensions can be obtained using the List Extensions
 API :cite:p:`ostk_nw_ext_ra1`
@@ -1048,7 +1048,7 @@ VIM Services
 ~~~~~~~~~~~~
 
 A high-level overview of the core OpenStack Services was provided in
-:ref:`chapters/chapter03:virtualised infrastructure manager (vim)`.
+:ref:`ref_arch/openstack/chapters/chapter03:virtualised infrastructure manager (vim)`.
 In this section we describe the core and other needed services in
 more detail.
 
@@ -1219,7 +1219,7 @@ Telco workload requirements requires SDN to offload Neutron calls.
 SDN provides a truly scalable and preferred solution to support dynamic,
 very large-scale, high-density, telco cloud environments. OpenStack
 Neutron, with its plugin architecture, provides the ability to integrate
-SDN controllers (:ref:`chapters/chapter03:virtual networking - 3rd party sdn solution`).
+SDN controllers (:ref:`ref_arch/openstack/chapters/chapter03:virtual networking - 3rd party sdn solution`).
 With SDN incorporated in OpenStack, changes to the network are triggered
 by workloads (and users), translated into Neutron APIs and then handled
 through neutron plugins by the corresponding SDN agents.
@@ -1575,7 +1575,7 @@ colocation centres, and now edge centres at the physical edge of their
 networks because of the demand for low latency and high throughput for
 5G, IoT and connected devices (including autonomous driverless vehicles
 and connected vehicles).
-:ref:`chapters/chapter03:cloud topology` discusses
+:ref:`ref_arch/openstack/chapters/chapter03:cloud topology` discusses
 and lists 3 types of data centres: Large, Intermediate and Edge.
 
 For ease of convenience, unless specifically required, in this section
@@ -1605,7 +1605,7 @@ other data centres.
 specifies the physical and environmental characteristics, infrastructure
 capabilities and deployment scenarios of different locations.
 
-:ref:`chapters/chapter03:openstack services topology`
+:ref:`ref_arch/openstack/chapters/chapter03:openstack services topology`
 of this document, specifies the differences between the Control Plane and Data
 Plane, and specifies which of the control nodes, compute nodes, storage
 nodes (optional) and network nodes (optional) are components of these
@@ -1763,4 +1763,4 @@ number of open-source tools are available for this purpose including:
    installing, upgrading and operating OpenStack clouds
 
 These installers are described in more detail
-in :ref:`chapters/chapter07:operations and life cycle management`.
+in :ref:`ref_arch/openstack/chapters/chapter07:operations and life cycle management`.
