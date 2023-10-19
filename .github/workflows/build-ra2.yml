@@ -1,4 +1,4 @@
-name: "RA2 pull Request Docs Check"
+name: "RA2 pull request build GSMA"
 on: 
   pull_request:
     paths:
@@ -13,20 +13,6 @@ jobs:
     - name: Install prerequisites
       run: | 
         sudo apt-get --allow-releaseinfo-change update -y && sudo apt-get install -y tox pandoc
-    - name: Building RA2 in html
-      run: |
-        cd doc/ref_arch/kubernetes/
-        echo "---------------------------------------------------------------------------------------"
-        echo "---------------------------------- Building html --------------------------------------"
-        echo "---------------------------------------------------------------------------------------"
-        tox -e docs
-        echo "Building html was successful! "
-    - name: Store html build result
-      uses: actions/upload-artifact@v3
-      with:
-        name: ra2-html
-        path: |
-          doc/ref_arch/kubernetes/build
     - name: Building RA2 in GSMA doc
       run: |
         cd doc/ref_arch/kubernetes/
