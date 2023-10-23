@@ -3,7 +3,8 @@ copyright = '2023, Anuket. Licensed under CC BY 4.0'
 author = 'Anuket Project of Linux Foundation Networking'
 exclude_patterns = [
     '.tox',
-    'README.rst'
+    'README.rst',
+    'chapters-orig'
 ]
 extensions = [
     'sphinx.ext.intersphinx',
@@ -27,6 +28,7 @@ intersphinx_mapping = {
     'ref_impl2': ('https://cntt.readthedocs.io/projects/ri2/en/latest/', None),
     'ref_arch1': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None)
 }
+
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
 numfig = True

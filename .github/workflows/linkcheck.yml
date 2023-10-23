@@ -1,9 +1,9 @@
-name: "Pull Request Docs Build"
+name: "Pull Request linkcheck"
 on: 
 - pull_request
 
 jobs:
-  docs:
+  linkcheck:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
@@ -14,16 +14,10 @@ jobs:
     - name: Building docs
       run: |
         echo "---------------------------------------------------------------------------------------"
-        echo "---------------------------------- Building docs - ------------------------------------"
+        echo "---------------------------------- Checking links -------------------------------------"
         echo "---------------------------------------------------------------------------------------"
-        tox -e justdocs
-        echo "Building documents was successful! "
-    - name: Store html build result
-      uses: actions/upload-artifact@v3
-      with:
-        name: anuket-specifications-html
-        path: |
-          _build/html
+        tox -e justlinks
+        echo "Linkcheck was successfull! "
 
 
         

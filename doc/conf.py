@@ -10,7 +10,8 @@ extensions = ['sphinx.ext.autosectionlabel',
 
 exclude_patterns = [
     '**/.tox',
-    '**/README.rst'
+    '**/README.rst',
+    '**/gsma/*'
 ]
 
 linkcheck_ignore = [
@@ -18,7 +19,8 @@ linkcheck_ignore = [
     'https://static1.squarespace.com/static/5ad774cce74940d7115044b0/t/5db36ffa820b8d29022b6d08/1572040705841/ORAN-WG4.IOT.0-v01.00.pdf/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf',
     'https://ntia.gov',
     'https://www.ngmn.org/wp-content/uploads/Publications/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf',
-    'https://wiki.lfnetworking.org/'
+    'https://wiki.lfnetworking.org/',
+    'https://build.opnfv.org'
 ]
 
 autosectionlabel_prefix_document = "Hacienda"

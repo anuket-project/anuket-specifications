@@ -1,5 +1,5 @@
-Gaps, Innovation, and Development
-=================================
+Gaps and Development
+====================
 
 Introduction to Gaps, Innovation, and Development
 -------------------------------------------------
@@ -148,7 +148,8 @@ User namespaces in Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Related requirements:** ``e.man.004`` in the Cloud Infrastructure Management Capabilities section in Chapter 4 of
-:cite:t:`refmodel_ra2`, :ref:`inf.ntw.03 <ref_arch/kubernetes/chapters/chapter02:Kubernetes Architecture Requirements>`
+:cite:t:`refmodel_ra2`, inf.ntw.03 in
+:ref:`ref_arch/kubernetes/chapters/chapter02:kubernetes architecture requirements`
 
 **Baseline project:** *Kubernetes*
 

@@ -27,8 +27,9 @@ workloads". For example, start the Reference Architecture from a vanilla Kuberne
 provide clear evidence that a functional requirement cannot be met by that system (say, multi-NIC support), only then
 the RA would add the least invasive, Kubernetes-community aligned extension (say, Multus) to fill the gap. If there are
 still gaps that cannot be filled by standard Kubernetes community technologies or extensions then the RA will concisely
-document the requirement in the :doc:`chapter07` chapter of this document and approach the relevant project maintainers
-with a request to add this functionality into the feature set.
+document the requirement in the :ref:`ref_arch/kubernetes/chapters/chapter07:gaps and development` chapter of
+this document and approach the relevant project maintainers with a request to add this functionality into the feature
+set.
 
 The Kubernetes Reference Architecture will be used to determine a Kubernetes Reference Implementation. The Kubernetes
 Reference Implementation would then also be used to test and validate the supportability and compatibility with
@@ -217,8 +218,8 @@ This document starts with a description of interfaces and capabilities requireme
 guidance on "how" those elements are deployed, through specifications. The details of how the elements will be used
 together are documented in full detail in the Reference Implementation.
 
-Definitions
------------
+Terms and definitions
+---------------------
 
 .. list-table:: Definitions
    :widths: 20 60
