@@ -395,7 +395,7 @@ Redfish fulfills the following requirements stated in the above HW Infrastructur
 -	**Additional Management Functions**: The Redfish schema has models for access management and identity management. Redfish has published work-in-progress extension for support policy management and OS/VM management `Policy Model Proposal, Redfish for Operating Systems, Applications and Containers <https://www.dmtf.org/documents/redfish-spmf/redfish-operating-systems-applications-and-containers-05wip>`__
 
 How Redfish fits into the ETSI NFV Networking Reference Model
-----------------------------------------------------------
+-------------------------------------------------------------
 
 As shown in the figure below a redfish resource aggregator can play the role of Hardware Infrastructure Manager in the ETSI NFV Networking Reference Model. Whereas this resource manager would expose a Redfish interface to the northbound, the infrastructure pieces can themselves be managed using plugins.
 
