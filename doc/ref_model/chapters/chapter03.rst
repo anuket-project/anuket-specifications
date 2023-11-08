@@ -360,7 +360,7 @@ The hardware infrastructure manager needs to support the following functional as
 The Redfish® Standard based Hardware Infrastructure Manager 
 -----------------------------------------------------------
 
-This section proposes a Redfish based hardware infrastructure manager for the Anuket project. ODIM software architecture is an example of an open source project implementing Redfish standard. 
+This section proposes a Redfish based hardware infrastructure manager for the Anuket project. Open Distributed Infrastructure Management (ODIM) is an open source software platform that delivers means of distributed physical infrastructure lifecycle management based on the industry standard DMTF Redfish API and Model specification.
 
 Chapter 9 (:ref:`chapters/chapter09:Configuration and Lifecycle Management`) of this reference model specifies Redfish standard for managing Infrastructure Hardware. The GSMA's "Cloud Infrastructure Reference Model (NG.126)" also specifies Redfish as the standard interface that should be 
 made available by the infrastructure and Cloud Infrastructure Management components, in the "Infrastructure Hardware" layer.
