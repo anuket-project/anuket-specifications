@@ -545,7 +545,7 @@ the following specifications:
      - :cite:t:`anuket-ri2` Chapter 4, section Installation on Bare Metal Infratructure
    * - ra2.ntw.017
      - Kubernetes Load Balancer
-     - The networking solution deployed within the implementation must include a L4 (TCP/UDP) Load Balancer to steer inbound traffic across the primary interfaces of multiple CNF pods.
+     - The networking solution deployed within the implementation must include a L4 (TCP/UDP - except QUIC) Load Balancer to steer inbound traffic across the primary interfaces of multiple CNF pods.
      - inf.ntw.15 in :ref:`chapters/chapter02:kubernetes architecture requirements`
      - 
    * - ra2.ntw.018
