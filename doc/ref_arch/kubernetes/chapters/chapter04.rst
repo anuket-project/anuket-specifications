@@ -547,32 +547,32 @@ the following specifications:
      - Kubernetes Load Balancer
      - The networking solution deployed within the implementation must include a L4 (TCP/UDP - except QUIC) Load Balancer to steer inbound traffic across the primary interfaces of multiple CNF pods.
      - inf.ntw.15 in :ref:`chapters/chapter02:kubernetes architecture requirements`
-     - 
+     -
    * - ra2.ntw.018
      - Kubernetes Load Balancer - API
      - The Load Balancer solution deployed per `ra2.ntw.017` must support the Service type Loadbalancer API.
      - inf.ntw.15 in :ref:`chapters/chapter02:kubernetes architecture requirements`
-     - 
+     -
    * - ra2.ntw.019
      - Kubernetes Load Balancer - API
      - The Load Balancer solution deployed per `ra2.ntw.017` may support the Gateway API additionally.
      - inf.ntw.15 in :ref:`chapters/chapter02:kubernetes architecture requirements`
-     - 
+     -
    * - ra2.ntw.020
      - Kubernetes Load Balancer - Advertisements
      - The Load Balancer solution deployed per `ra2.ntw.017` must be capable of advertising the IPs of Services to external networks.
      - inf.ntw.15 in :ref:`chapters/chapter02:kubernetes architecture requirements`
-     - 
+     -
    * - ra2.ntw.021
      - Kubernetes Load Balancer - Active/active Multipath
      - The Load Balancer solution deployed per `ra2.ntw.017` must support multi-path advertisements in an active/active design, allowing the same service IP to be advertised by multiple cluster nodes.
      - inf.ntw.15 in :ref:`chapters/chapter02:kubernetes architecture requirements`
-     - 
+     -
    * - ra2.ntw.022
      - Kubernetes Load Balancer - High Availability
      - The networking solution deployed per `ra2.ntw.017` must be capable of fast failover. Upon node or pod failure, it must redirect traffic (i.e., advertisements/routes must be updated) in less than 5 seconds.
      - inf.ntw.15 in :ref:`chapters/chapter02:kubernetes architecture requirements`
-     - 
+     -
 
 Storage components
 ------------------
