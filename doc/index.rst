@@ -31,7 +31,7 @@ Version information
 
 **Version: Orinoco**
 
-**Release Date: 25th July 2023**
+**Release Date: 24th October 2023**
 
 Version history
 ---------------
