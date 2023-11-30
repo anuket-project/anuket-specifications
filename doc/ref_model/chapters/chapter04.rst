@@ -15,7 +15,7 @@ The capability and PM identifiers conform to the following schema:
 | c = Serial Number
 
 Exposed versus internal
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The following definitions specify the context of the Cloud Infrastructure resources, capabilities and performance
 measurements (PMs).
@@ -68,7 +68,7 @@ Exposed resource capabilities
 |         | Infrastructure      |      |                                                                               |
 |         | capability          |      |                                                                               |
 +=========+=====================+======+===============================================================================+
-|e.cap.001| # vCPU              |number| The maximum number of vCPUs that can be assigned to a single VM or Pod (1).    |
+|e.cap.001| # vCPU              |number| The maximum number of vCPUs that can be assigned to a single VM or Pod (1).   |
 +---------+---------------------+------+-------------------------------------------------------------------------------+
 |e.cap.002| RAM Size            | MB   | The maximum memory, in MB, that can be assigned to a single VM or Pod by the  |
 |         |                     |      | Cloud Infrastructure (2).                                                     |
@@ -76,8 +76,8 @@ Exposed resource capabilities
 |e.cap.003| Total per-instance  | GB   | The maximum storage, in GB, that can be assigned to a single VM or Pod by the |
 |         | (ephemeral) storage |      | Cloud Infrastructure.                                                         |
 +---------+---------------------+------+-------------------------------------------------------------------------------+
-|e.cap.004| # Connection points |number| The maximum number of connection points that can be assigned to a single VM or|
-|         |                     |      | Pod by the Cloud Infrastructure.                                              |
+|e.cap.004| # Connection points |number| The maximum number of connection points that can be assigned to a single VM   |
+|         |                     |      | or Pod by the Cloud Infrastructure.                                           |
 +---------+---------------------+------+-------------------------------------------------------------------------------+
 |e.cap.005| Total external      | GB   | The maximum storage, in GB, that can be attached or mounted to a VM or Pod by |
 |         | (persistent)        |      | the Cloud Infrastructure.                                                     |
@@ -722,94 +722,105 @@ the partitioning of the infrastructure into separate pools, but which have speci
 of the profile. Profile Extensions provide workloads with a more granular control over what kind of infrastructure
 they can run on.
 
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Profile Extension | Mnemonic                | Applicable| Applicable  | Description              | Notes             |
-|  Name             |                         | to basic  | to the high-|                          |                   |
-|                   |                         | profile   | performance |                          |                   |
-|                   |                         |           | profile     |                          |                   |
-+===================+=========================+===========+=============+==========================+===================+
-| Compute-intensive | compute-high-perf-cpu   | ❌       | ✅          | Nodes that have          | May use vanilla   |
-| high-performance  |                         |           |             | predictable computing    | VIM/K8S           |
-| CPU               |                         |           |             | performance and higher   | scheduling        |
-|                   |                         |           |             | clock speeds.            | instead.          |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Storage-intensive | storage-high-perf       | ❌       | ✅          | Nodes that have low      |                   |
-| high-performance  |                         |           |             | storage latency and/or   |                   |
-| storage           |                         |           |             | high-storage IOPS.       |                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Compute-intensive | compute-high-memory     | ❌       | ✅          | Nodes that have high     | May use vanilla   |
-| high memory       |                         |           |             | amounts of RAM.          | VIM/K8S           |
-|                   |                         |           |             |                          | scheduling        |
-|                   |                         |           |             |                          | instead.          |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Compute-intensive | compute-gpu             | ❌       | ✅          | For compute-intensive    | May use node      |
-| GPU               |                         |           |             | workloads that require   | feature           |
-|                   |                         |           |             | GPU compute resources on | discovery.        |
-|                   |                         |           |             | the node.                |                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Network-intensive | high-speed-network      | ❌       | ✅          | Nodes configured to      |                   |
-|                   |                         |           |             | support SR-IOV.          |                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Network-intensive | high-speed-network      | ❌       | ✅          | Denotes the presence of  |                   |
-| high-speed        |                         |           |             | network links (to the DC |                   |
-| network (25G)     |                         |           |             | network) of speeds of 25 |                   |
-|                   |                         |           |             | Gbps or more on the node.|                   |
-|                   |                         |           |             |                          |                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Network Intensive | very-high-speed-network | ❌       | ✅          | Denotes the presence of  |                   |
-| Very High speed   |                         |           |             | network links (to the DC |                   |
-| network (100G)    |                         |           |             | network) of speeds of 100|                   |
-|                   |                         |           |             | Gbps or more on the node.|                   |
-|                   |                         |           |             |                          |                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Low latency -     | low-latency-edge        | ✅       | ✅          | Labels a host or node as |                   |
-| Edge sites        |                         |           |             | located in an Edge site, |                   |
-|                   |                         |           |             | for workloads requiring  |                   |
-|                   |                         |           |             | low latency (specify     |                   |
-|                   |                         |           |             | value) to final users or |                   |
-|                   |                         |           |             | geographical             |                   |
-|                   |                         |           |             | distribution.            |                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Very low latency  | very-low-latency-edge   | ✅       | ✅          | Labels a host or node as |                   |
-| - Edge sites      |                         |           |             | located in an Edge site, |                   |
-|                   |                         |           |             | for workloads requiring  |                   |
-|                   |                         |           |             | low latency (specify     |                   |
-|                   |                         |           |             | value) to final users or |                   |
-|                   |                         |           |             | geographical             |                   |
-|                   |                         |           |             | distribution.            |                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Ultra-low latency | ultra-low-latency-edge  | ✅       | ✅          | Labels a host or node as |                   |
-| - Edge sites      |                         |           |             | located in an Edge site, |                   |
-|                   |                         |           |             | for workloads requiring  |                   |
-|                   |                         |           |             | low latency (specify     |                   |
-|                   |                         |           |             | value) to final users or |                   |
-|                   |                         |           |             | geographical             |                   |
-|                   |                         |           |             | distribution.            |                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Fixed-function    | compute-ffa             | ❌       | ✅          | Labels a host or node    |                   |
-| accelerator       |                         |           |             | that includes a          |                   |
-|                   |                         |           |             | consumable fixed-function|                   |
-|                   |                         |           |             | accelerator              |                   |
-|                   |                         |           |             | (non-programmable, for   |                   |
-|                   |                         |           |             | example, Crypto,         |                   |
-|                   |                         |           |             | vRAN-specific adapter).  |                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| Firmware-programm | compute-firmware progra | ❌       | ✅          | Labels a host or node    |                   |
-| able adapter      | mmable                  |           |             | that includes a          |                   |
-|                   |                         |           |             | consumable               |                   |
-|                   |                         |           |             | firmware-programmable    |                   |
-|                   |                         |           |             | adapter (for example,    |                   |
-|                   |                         |           |             | Network/storage adapter).|                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| SmartNIC-enabled  | network-smartnic        | ❌       | ✅          | Labels a host or node    |                   |
-|                   |                         |           |             | that includes a          |                   |
-|                   |                         |           |             | programmable accelerator.|                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
-| SmartSwitch-      | network-smartswitch     | ❌       | ✅          | Labels a host or node    |                   |
-| enabled           |                         |           |             | that is connected to a   |                   |
-|                   |                         |           |             | programmable switch      |                   |
-|                   |                         |           |             | fabric or a TOR switch.  |                   |
-+-------------------+-------------------------+-----------+-------------+--------------------------+-------------------+
+.. list-table:: Node Specifications
+   :widths: 20 20 10 10 20 20
+   :header-rows: 1
+
+   * - Profile Extension Name
+     - Mnemonic
+     - Applicable to the basic profile
+     - Applicable to the high performance profile
+     - Description
+     - Notes
+   * - Compute-intensive high-performance CPU
+     - compute-high-perf-cpu
+     - ❌
+     - ✅
+     - Nodes that have predictable computing performance and higher clock speeds.
+     - May use vanilla VIM/K8S scheduling instead.
+   * - Storage-intensive high-performance storage
+     - storage-high-perf
+     - ❌
+     - ✅
+     - Nodes that have low storage latency and/or high-storage IOPS.
+     -
+   * - Compute-intensive high memory
+     - compute-high-memory
+     - ❌
+     - ✅
+     - Nodes that have high amounts of RAM.
+     - May use vanilla VIM/K8S scheduling instead.
+   * - Compute-intensive GPU 
+     - compute-gpu
+     - ❌
+     - ✅
+     - For compute-intensive workloads that require GPU compute resources on the node.
+     - May use node feature discovery.
+   * - Network-intensive
+     - high-speed-network
+     - ❌
+     - ✅
+     - Nodes configured to support SR-IOV.
+     -
+   * - Network-intensive high-speed network (25G)
+     - high-speed-network
+     - ❌
+     - ✅
+     - Denotes the presence of network links (to the DC network) of speeds of 25 Gbps or more on the node.
+     -
+   * - Network-intensive high-speed speed network (100G)
+     - very-high-speed-network
+     - ❌
+     - ✅
+     - Denotes the presence of network links (to the DC network) of speeds of 100 Gbps or more on the node.
+     -
+   * - Low latency - Edge sites
+     - low-latency-edge
+     - ✅
+     - ✅
+     - Labels a host or node as located in an Edge site, for workloads requiring low latency (specify value) to final
+       users or geographical distribution.
+     -
+   * - Very low latency - Edge sites
+     - very-low-latency-edge
+     - ✅
+     - ✅
+     - Labels a host or node as located in an Edge site, for workloads requiring low latency (specify value) to final
+       users or geographical distribution.
+     -
+   * - Ultra-low low latency - Edge sites
+     - ultra-low-latency-edge
+     - ✅
+     - ✅
+     - Labels a host or node as located in an Edge site, for workloads requiring low latency (specify value) to final
+       users or geographical distribution.
+     -
+   * - Fixed-function accelerator
+     - compute-ffa
+     - ❌
+     - ✅
+     - Labels a host or node that includes a consumable fixed-function accelerator (non-programmable, for example,
+       Crypto, vRAN-specific adapter).
+     -
+   * - Firmware-programmable adapter
+     - compute-firmware programmable
+     - ❌
+     - ✅
+     - Labels a host or node that includes a consumable firmware-programmable adapter (for example, Network/storage
+       adapter).
+     -
+   * - SmartNIC-enabled
+     - network-smartnic
+     - ❌
+     - ✅
+     - Labels a host or node that includes a programmable accelerator.
+     -
+   * - SmartSwitch-enabled
+     - network-smartswitch
+     - ❌
+     - ✅
+     - Labels a host or node that is connected to a programmable switch fabric or a TOR switch.
+     -
 
 Workload flavours and specifications of other capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -850,7 +861,7 @@ Workload flavour sizing consists of the following:
 +-------------+----------+---------------------------------------------------------------------------------------------+
 | storage     | e        | Specifies the size of an ephemeral/local data disk that exists only for the life of the     |
 | - ephemeral |          | instance. The default value is 0. The ephemeral disk may be partitioned into boot (base     |
-|             |          | image) and swap space disks.                                                                       |
+|             |          | image) and swap space disks.                                                                |
 +-------------+----------+---------------------------------------------------------------------------------------------+
 | storage -   | d        | Specifies the disk size of persistent storage.                                              |
 | persistent  |          |                                                                                             |
@@ -900,84 +911,120 @@ Format of the workload flavours and other capability specifications
 
 The following table shows a complete list of the specifications that need to be specified by the workloads.
 
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Profile extension | Mnemonic | Applicable| Applicable  | Description                       | Notes                   |
-| name              |          | to the    | to the high-|                                   |                         |
-|                   |          | basic     | performance |                                   |                         |
-|                   |          | profile   | profile     |                                   |                         |
-+===================+==========+===========+=============+===================================+=========================+
-| CPU               | c        | ✅        | ✅         | The number of virtual compute     | Required                |
-|                   |          |           |             | resources (vCPUs).                |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| memory            | r        | ✅        | ✅         | The virtual resource instance     | Required                |
-|                   |          |           |             | memory, in megabytes.             |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| storage -         | e        | ✅        | ✅         | This profile extension specifies  | Optional                |
-| ephemeral         |          |           |             | the size of an ephemeral/local    |                         |
-|                   |          |           |             | data disk that exists only for    |                         |
-|                   |          |           |             | the life of the instance. The     |                         |
-|                   |          |           |             | default value is 0. The ephemeral |                         |
-|                   |          |           |             | disk may be partitioned into boot |                         |
-|                   |          |           |             | (base image) and swap space disks.|                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| storage -         | d        | ✅        | ✅         | This profile extension specifies  | Required                |
-| persistent        |          |           |             | the disk size of persistent storage.|  
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| storage - root    | b        | ✅        | ✅         | This profile extension specifies  | Optional                |
-| disk              |          |           |             | the size of the root disk.        |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| CPU Allocation    |o         | ✅        | ❌         | This profile extension specifies  | Required for Basic      |
-| Ratio             |          |           |             | the CPU allocation (or            | profile                 |
-|                   |          |           |             | oversubscription) ratio. It can   |                         |
-|                   |          |           |             | only be specified for the basic   |                         |
-|                   |          |           |             | profile. For workloads that       |                         |
-|                   |          |           |             | utilise nodes configured according|                         |
-|                   |          |           |             | to the high-performance profile, the CPU allocation ratio is 1:1.|                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Compute-intensive | ci       | ❌        | ✅         | This profile applies to demanding | Optional                |
-|                   |          |           |             | workloads with stringent memory   |                         |
-|                   |          |           |             | access requirements, where the    |                         |
-|                   |          |           |             | single NUMA bandwidth maybe a     |                         |
-|                   |          |           |             | bandwidth. The compute-intensive  |                         |
-|                   |          |           |             | workload profile is used to enable|                         |
-|                   |          |           |             | the workload to be spread across  |                         |
-|                   |          |           |             | all NUMA nodes.                   |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Latency           | l        | ✅        | ✅         | This profile specifies the latency| Optional                |
-|                   |          |           |             | requirements used for locating workloads.      |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Affinity          | af       | ✅        | ✅         | This profile specifies the        | Optional                |
-|                   |          |           |             | workloads that should be hosted on|                         |
-|                   |          |           |             | the same computer node.           |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Non-affinity      | naf      | ✅        | ✅         | This profile specifies the        | Optional                |
-|                   |          |           |             | workloads that should not be      |                         |
-|                   |          |           |             | hosted on the same computer node. |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Dedicate cores    | dc       | ❌        | ✅         | This profile specifies whether or | Optional                |
-|                   |          |           |             | not the workload can share sibling|                         |
-|                   |          |           |             | threads with other workloads.     |                         |
-|                   |          |           |             | The default value is No, thereby  |                         |
-|                   |          |           |             | allowing different workloads on   |                         |
-|                   |          |           |             | differnt threads.                 |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Network interface | n        | ✅        | ✅         | See `below <#virtual-network-inte | Optional                |
-| option            |          |           |             | rface-specifications>`__.         |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Storage extension | s        | ✅        | ✅         | See `below <#storage-extension    | Optional                |
-|                   |          |           |             | s>`__.                            |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Profile name      | pn       | ✅        | ✅         | This profile specifies profile "B" or "H". | Required                |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Profile extension | pe       | ❌        | ✅         | This profile specifies the        | Optional                |
-|                   |          |           |             | `profile extensions               |                         |   
-|                   |          |           |             | <#profile-extensions>`__.         |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
-| Profile extra     | pes      | ❌        | ✅         | This profile specifies the special| Optional                |
-| specs             |          |           |             | node configurations not accounted |                         |
-|                   |          |           |             | for by the profile and the profile|                         |
-|                   |          |           |             | extensions.                       |                         |
-+-------------------+----------+-----------+-------------+-----------------------------------+-------------------------+
+.. list-table:: Node Specifications
+   :widths: 20 10 10 10 25 25
+   :header-rows: 1
+
+   * - Profile extension name
+     - Mnemonic
+     - Applicable to the basic profile
+     - Applicable to the high performance profile
+     - Description
+     - Notes
+   * - CPU
+     - c
+     - ✅
+     - ✅
+     - The number of virtual compute resources (vCPUs).
+     - Required
+   * - memory
+     - r
+     - ✅
+     - ✅
+     - The virtual resource instance memory, in megabytes.
+     - Required
+   * - storage - ephemeral
+     - e
+     - ✅
+     - ✅
+     - This profile extension specifies the size of an ephemeral/local data disk that exists only for the life of the
+       instance. The default value is 0. The ephemeral disk may be partitioned into boot (base image) and swap space
+       disks.
+     - Optional
+   * - storage - persistent
+     - d
+     - ✅
+     - ✅
+     - This profile extension specifies the disk size of persistent storage.
+     - Required
+   * - storage - root disk
+     - b
+     - ✅
+     - ✅
+     - This profile extension specifies the size of the root disk.
+     - Optional
+   * - CPU Allocation Ratio
+     - o
+     - ✅
+     - ❌
+     - This profile extension specifies the CPU allocation (or oversubscription) ratio. It can only be specified for the
+       basic profile. For workloads that utilise nodes configured according to the high-performance profile, the CPU
+       allocation ratio is 1:1.
+     - Required for Basic profile
+   * - Compute-intensive
+     - ci
+     - ✅
+     - ❌
+     - This profile applies to demanding workloads with stringent memory access requirements, where the single NUMA
+       bandwidth maybe a bandwidth. The compute-intensive workload profile is used to enable the workload to be spread
+       across all NUMA nodes.
+     - Optional
+   * - Latency
+     - l
+     - ✅
+     - ✅
+     - This profile specifies the latency requirements used for locating workloads.
+     - Optional
+   * - Affinity
+     - af
+     - ✅
+     - ✅
+     - This profile specifies the workloads that should be hosted on the same computer node.
+     - Optional
+   * - Non-affinity
+     - naf
+     - ✅
+     - ✅
+     - This profile specifies the workloads that should not be hosted on the same computer node.
+     - Optional
+   * - Dedicate cores
+     - dc
+     - ✅
+     - ❌
+     - This profile specifies whether or not the workload can share sibling threads with other workloads. The default
+       value is No, thereby allowing different workloads on differnt threads.
+     - Optional
+   * - Network interface option
+     - dc
+     - ✅
+     - ✅
+     - See `below <#virtual-network-interface-specifications>`__.
+     - Optional
+   * - Storage extension
+     - s
+     - ✅
+     - ✅
+     - See `below <#storage-extensions>`__.
+     - Optional
+   * - Profile name
+     - pn
+     - ✅
+     - ✅
+     - This profile specifies profile "B" or "H".
+     - Required
+   * - Profile extension
+     - pe
+     - ❌
+     - ✅
+     - This profile specifies the `profile extensions <#profile-extensions>`__.
+     - Optional
+   * - Profile extra specs
+     - pes
+     - ❌
+     - ✅
+     - This profile specifies the special node configurations not accounted for by the profile and the profile
+       extensions.
+     - Optional
 
 **Table 4-13:** Specifications of resource flavours (complete list of workload capabilities)
 
