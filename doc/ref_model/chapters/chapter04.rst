@@ -722,7 +722,7 @@ the partitioning of the infrastructure into separate pools, but which have speci
 of the profile. Profile Extensions provide workloads with a more granular control over what kind of infrastructure
 they can run on.
 
-.. list-table:: Node Specifications
+.. list-table:: Profile extensions
    :widths: 20 20 10 10 20 20
    :header-rows: 1
 
@@ -911,7 +911,7 @@ Format of the workload flavours and other capability specifications
 
 The following table shows a complete list of the specifications that need to be specified by the workloads.
 
-.. list-table:: Node Specifications
+.. list-table:: Specifications of resource flavours
    :widths: 20 10 10 10 25 25
    :header-rows: 1
 
