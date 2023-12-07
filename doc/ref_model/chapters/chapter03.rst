@@ -392,7 +392,7 @@ Redfish fulfills the following requirements stated in the above HW Infrastructur
 
 -	**Monitoring**: The Redfish schema contains event model for the client to receive hardware events and telemetry model for collecting information across the entire model (physical and functional) `Redfish Telemetry Whitepaper <https://www.dmtf.org/sites/default/files/standards/documents/DSP2051_1.0.0.pdf>`__
 
--	**Additional Management Functions**: The Redfish schema has models for access management and identity management `Redfish Data Model Specification <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2023.2.pdf`__
+-	**Additional Management Functions**: The Redfish schema has models for access management and identity management `Redfish Data Model Specification <https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2023.2.pdf>`__
 
 How Redfish fits into the ETSI NFV Networking Reference Model
 -------------------------------------------------------------
