@@ -78,6 +78,7 @@ Issues
 Pull Requests
 -------------
 
+-  Every sub-project should hadle their own PR-s in their respective repository.
 -  Minor editorial change PRs can be raised without a corresponding
    Issue, but must be labelled as “Minor”. Otherwise, PRs must only be
    created when there is an issue present and a decision to create a PR

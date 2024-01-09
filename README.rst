@@ -1,9 +1,26 @@
-Anuket
-======
+Anuket Specifications
+=====================
 
-This repository contains specification and documentation of the
-Reference Model, Reference Architectures, Reference Implementations and
-Reference Conformance projects of `Anuket <https://anuket.io/>`__.
+This repository contains the governance and generic description of `Anuket Specifications
+<https://cntt.readthedocs.io/en/stable-orinoco//>`__.
+The actual technical specification is done in the following repositories:
+
+* Reference Model (RM): `anuket-project/RM <https://github.com/anuket-project/RM>`__
+* Reference Architecture (RA1) for OpenStack based cloud infrastructure:
+  `anuket-project/RA1 <https://github.com/anuket-project/RA1>`__
+* Reference Conformance (RC1) for RA1 based Implementations:
+  `anuket-project/RC <https://github.com/anuket-project/RC>`__
+* Reference Architecture (RA2) for Kubernetes based cloud infrastructure:
+  `anuket-project/RA2 <https://github.com/anuket-project/RA2>`__
+* Reference Conformance (RC2) for RA2 based Implementations:
+  `anuket-project/RC2 <https://github.com/anuket-project/RC2>`__
+* Reference Implementation based on RA1 specifications (RI1):
+  `anuket-project/RI1 <https://github.com/anuket-project/RI1>`__
+* Reference Implementation based on RA2 specifications (RI2):
+  `anuket-project/RI2 <https://github.com/anuket-project/RI2>`__
+
+The development of the specifications happen in the respective repository of the sub-projects. Pull requests related to
+the sub-projects should be created to the sub-project repos and not to this repo.
 
 Available Specifications
 ------------------------
