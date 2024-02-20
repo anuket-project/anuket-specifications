@@ -1,8 +1,0 @@
-Lab Operations
-==============
-
-Introduction
-------------
-
-Heading
--------

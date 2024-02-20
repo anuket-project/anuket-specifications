@@ -89,7 +89,11 @@ The various workstreams in the Anuket Project are:
 -  Reference Implementation (RI)
 -  Reference Conformance (RC)
 
-The workstream dependency relationship in simple terms, `Reference Conformance <../ref_cert>`__ verifies and tests the `Reference Implementation <../ref_impl>`__ which follows the requirements and architecture defined in the `Reference Architectures <../ref_arch>`__ and Reference Architecture describes the high level system components and its interactions by adhering to the requirements and expectations set by the `Reference Model <../ref_model>`__ which sets the standards for infrastructure abstraction, compliance and verification.
+The workstream dependency relationship in simple terms, Reference Conformance verifies and tests the Reference
+Implementation which follows the requirements and architecture defined in the Reference Architectures and Reference
+Architecture describes the high level system components and its interactions by adhering to the requirements and
+expectations set by the Reference Model which sets the standards for infrastructure abstraction, compliance and
+verification.
 
 For the standard release stabilisation, On each release, All documents that are related to each other will have the same **main** version number as shown in the Figure 3.
 
