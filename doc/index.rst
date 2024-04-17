@@ -29,9 +29,9 @@ Anuket Specifications
 Version information
 -------------------
 
-**Version: Orinoco**
+**Version: Pieman**
 
-**Release Date: 24th October 2023**
+**Release Date: 14th May 2024**
 
 Version history
 ---------------
@@ -59,5 +59,7 @@ Version history
    * - Nile
      - 20st Dec 2022
    * - Orinoco
-     - 25th July 2023
+     - 24th Oct 2023
+   * - Pieman
+     - 14th May 2024
 
