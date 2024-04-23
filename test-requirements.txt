@@ -4,3 +4,8 @@
 sphinx==4.5.0 # BSD
 doc8==0.11.2 # Apache-2.0
 piccolo-theme==0.16.0 # MIT
+sphinxcontrib-devhelp===1.0.2
+sphinxcontrib-applehelp===1.0.2
+sphinxcontrib-htmlhelp===2.0.0
+sphinxcontrib-qthelp===1.0.3
+sphinxcontrib-serializinghtml===1.1.5
