@@ -4,7 +4,7 @@ build:
   tools:
     python: "3.10"
 sphinx:
-  configuration: conf.py
+  configuration: doc/conf.py
 python:
   install:
     - requirements: test-requirements.txt
