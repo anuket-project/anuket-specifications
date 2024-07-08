@@ -43,6 +43,10 @@ Navigation tips
    and `the test case descriptions and
    selection <https://cntt.readthedocs.io/projects/ra1/en/latest/chapters/chapter08.html#conformance-test-suite>`__
    for more details.
+-  **design your Kubernetes product?** You would be primarily interested
+   in `the Kubernetes requirement
+   list <https://cntt.readthedocs.io/projects/ra2/en/latest/chapters/chapter02.html>`__
+   and `Kubernetes specifications <https://cntt.readthedocs.io/projects/ra1/en/latest/chapters/chapter04.html>`__.
 -  **check the Anuket conformance of your Kubernetes-based
    deployments?** You would be primarily interested in `Kubernetes
    Testing
