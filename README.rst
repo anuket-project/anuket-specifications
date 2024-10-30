@@ -69,3 +69,9 @@ Read the Docs
 
 -  `Wiki <https://wiki.anuket.io/>`__
 -  `Doc <https://cntt.readthedocs.io/en/latest/>`__
+
+Badges
+------
+
+.. image:: https://img.shields.io/ossf-scorecard/github.com/anuket-project/RM?label=openssf%20scorecard&style=flat
+   :target: https://scorecard.dev/viewer/?uri=github.com/anuket-project/RM
