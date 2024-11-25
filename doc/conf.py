@@ -24,12 +24,12 @@ linkcheck_ignore = [
     'https://wiki.lfnetworking.org/'
 ]
 intersphinx_mapping = {
-    'ref_model': ('https://cntt.readthedocs.io/projects/rm/en/latest/', None),
-    'ref_arch_openstack': ('https://cntt.readthedocs.io/projects/ra1/en/latest/', None),
-    'ref_arch_kubernetes': ('https://cntt.readthedocs.io/projects/ra2/en/latest/', None),
-    'ref_cert_RC2': ('https://cntt.readthedocs.io/projects/rc2/en/latest/', None),
-    'ref_impl_cntt-ri': ('https://cntt.readthedocs.io/projects/ri1/en/latest/', None),
-    'ref_impl_cntt-ri2': ('https://cntt.readthedocs.io/projects/ri2/en/latest/', None)
+    'ref_model': ('https://docs.anuket.io/projects/RM/en/latest/', None),
+    'ref_arch_openstack': ('https://docs.anuket.io/projects/RA1/en/latest/', None),
+    'ref_arch_kubernetes': ('https://docs.anuket.io/projects/RA2/en/latest/', None),
+    'ref_cert_RC2': ('https://docs.anuket.io/projects/RC2/en/latest/', None),
+    'ref_impl_cntt-ri': ('https://docs.anuket.io/projects/RI1/en/latest/', None),
+    'ref_impl_cntt-ri2': ('https://docs.anuket.io/projects/RI2/en/latest/', None)
 }
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
