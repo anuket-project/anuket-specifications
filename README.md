@@ -35,6 +35,9 @@ the sub-projects should be created to the sub-project repos and not to this repo
    [Kubernetes Testing Cookbook](https://cntt.readthedocs.io/projects/rc2/en/latest/chapters/chapter03.html)
    and [the test case descriptions and selection](https://cntt.readthedocs.io/projects/rc2/en/latest/chapters/chapter02.html)
    for more details.
+-  **design your Kubernetes product?** You would be primarily interested in the
+   [Kubernetes requirement list](https://cntt.readthedocs.io/projects/ra2/en/latest/chapters/chapter02.html)
+   and [Kubernetes specifications](https://cntt.readthedocs.io/projects/ra2/en/latest/chapters/chapter04.html).
 -  **deploy OpenStack to onboard your VNFs?** You would be primarily interested in
    [the Anuket reference implementation](https://cntt.readthedocs.io/projects/ri1/en/latest/chapters/chapter01.html)
 
