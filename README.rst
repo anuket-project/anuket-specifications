@@ -2,7 +2,7 @@ Anuket Specifications
 =====================
 
 This repository contains the governance and generic description of `Anuket Specifications
-<https://cntt.readthedocs.io/en/stable-orinoco//>`__.
+<https://cntt.readthedocs.io/en/stable-orinoco/>`__.
 The actual technical specification is done in the following repositories:
 
 * Reference Model (RM): `anuket-project/RM <https://github.com/anuket-project/RM>`__
@@ -69,3 +69,9 @@ Read the Docs
 
 -  `Wiki <https://wiki.anuket.io/>`__
 -  `Doc <https://cntt.readthedocs.io/en/latest/>`__
+
+Badges
+------
+
+.. image:: https://img.shields.io/ossf-scorecard/github.com/anuket-project/anuket-specifications?label=openssf%20scorecard&style=flat
+   :target: https://scorecard.dev/viewer/?uri=github.com/anuket-project/anuket-specifications
