@@ -62,7 +62,7 @@ Terms of Reference & License
 -  `Code of
    Conduct <https://github.com/cntt-n/CNTT/blob/master/CODE_OF_CONDUCT>`__
 -  `The License (Creative Commons Attribution 4.0
-   International) <https://creativecommons.org/licenses/by/4.0/legalcode>`__
+   International) <LICENSE>`__
 
 Read the Docs
 -------------

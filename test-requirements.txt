@@ -1,6 +1,13 @@
 # The order of packages is significant, because pip processes them in the order
 # of appearance. Changing the order has an impact on the overall integration
 # process, which may cause wedges in the gate later.
-sphinx==4.5.0 # BSD
-doc8==0.11.2 # Apache-2.0
-piccolo-theme==0.16.0 # MIT
+sphinx==7.2.6 # BSD
+doc8==1.1.1 # Apache-2.0
+piccolo-theme==0.22.0 # MIT
+sphinxcontrib-bibtex==2.5.0
+pybtex==0.24.0
+sphinxcontrib-devhelp===1.0.6
+sphinxcontrib-applehelp===1.0.8
+sphinxcontrib-htmlhelp===2.0.5
+sphinxcontrib-qthelp===1.0.7
+sphinxcontrib-serializinghtml===1.1.10
