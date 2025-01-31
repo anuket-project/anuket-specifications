@@ -29,9 +29,9 @@ Anuket Specifications
 Version information
 -------------------
 
-**Version: Pieman**
+**Version: Quinnipiac**
 
-**Release Date: 14th May 2024**
+**Release Date: 6th February 2025**
 
 Version history
 ---------------
@@ -62,4 +62,6 @@ Version history
      - 24th Oct 2023
    * - Pieman
      - 14th May 2024
+  * - Quinnipiac
+    - 6th February 2025
 
