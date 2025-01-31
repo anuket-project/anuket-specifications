@@ -62,4 +62,6 @@ Version history
      - 24th Oct 2023
    * - Pieman
      - 14th May 2024
+  * - Quinnipiac
+    - 6th February 2025
 
