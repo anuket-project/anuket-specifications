@@ -7,8 +7,6 @@ Anuket Specifications
 -  :doc:`Reference Conformance (RC1) for RA1 based Implementations <ref_arch_openstack:chapters/chapter08>`
 -  :doc:`Reference Architecture (RA2) for Kubernetes based cloud infrastructure <ref_arch_kubernetes:index>`
 -  :doc:`Reference Conformance (RC2) for RA2 based Implementations <ref_cert_RC2:index>`
--  :doc:`Reference Implementation based on RA1 specifications (RI1) <ref_impl_cntt-ri:index>`
--  :doc:`Reference Implementation based on RA2 specifications (RI2) <ref_impl_cntt-ri2:index>`
 -  :ref:`Community Guidelines <gov/index:anuket project - community guidelines>`
 -  :doc:`Code of Conduct <CODE_OF_CONDUCT>`
 - `The License (Creative Commons Attribution 4.0 International) <https://creativecommons.org/licenses/by/4.0/

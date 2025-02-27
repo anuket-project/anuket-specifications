@@ -34,8 +34,8 @@ provide intended value across a sufficient spectrum of participating entities to
 these field trials is as follows:
 
 #. Demostrate the partnership approach to validate Anuket community is adopting a consistent approach
-#. Validate the RI1 specifications and RC1 test suite, not VNFs or NFVIs
-#. Validate the RI2 specifications and RC2 test suite, not CNFs or CaaSs
+#. Validate the RC1 test suite, not VNFs or NFVIs
+#. Validate the RC2 test suite, not CNFs or CaaSs
 
 Purpose of this Document Section
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -152,26 +152,25 @@ field trials as a method of ensuring consistency between releases.
 Summary/Field Trials Participants Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reference Implementation (RI1) and Reference Conformance (RC1) requirements are defined by the Reference Architecture
-(RA1). To ensure that Telecom industry operators, suppliers, and end user customers will derive benefit for the effort,
-Anbuket is running field tests to validate the feasibility, utility, and effectiveness of its requirements and methods
-(RI1/RC1).
+Reference Conformance (RC1) requirements are defined by the Reference Architecture (RA1). To ensure that Telecom
+industry operators, suppliers, and end user customers will derive benefit for the effort, Anuket is running field tests
+to validate the feasibility, utility, and effectiveness of its requirements and methods (RC1).
 
 Field Trials Intentions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The field trials are viewed as a partnership of Anuket with participants to validate that the community is adopting a
-consistent approach. This is not a VI badging exercise. The trials will validate the RI1 and the RC1 test suite
-requirements and methods themselves, not VNFs or VI systems under test.
+consistent approach. This is not a VI badging exercise. The trials will the RC1 test suite requirements and methods
+themselves, not VNFs or VI systems under test.
 
 Expectations and Assumptions of Field Trials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Anuket expects to exit the trials with either validation of RI1 and RC1 or a set of actions to review and possibly
-modify the RI1 or RC1 to address any gaps identified. By taking advantage of the community continuous improvement
-process, the lessons learned in the field trials will be applied to the badging processes to refine/define the criteria
-with the intention of making the badges meaningful and mutually beneficial to operators and suppliers. Performance
-testing is not included in the field trials.
+Anuket expects to exit the trials with either validation of RC1 or a set of actions to review and possibly modify the
+RC1 to address any gaps identified. By taking advantage of the community continuous improvement process, the lessons
+learned in the field trials will be applied to the badging processes to refine/define the criteria with the intention of
+making the badges meaningful and mutually beneficial to operators and suppliers. Performance testing is not included in
+the field trials.
 
 Pre-trials activities
 ^^^^^^^^^^^^^^^^^^^^^
@@ -190,9 +189,7 @@ from pre-existing space, newly built space or securing LaaS. The environment can
 private or community hardware infrastructure.
 
 Second, the participant will build/setup/configure the environment space using their preferred method. This can include
-the use of a cookbook, automated install, and/or build from RA1/RI1 or RA2/RC2 requirements and specifications. CNTT
-:doc:`RI1 Chapter 3 <ref_impl_cntt-ri:chapters/chapter03>` and :doc:`RI2 Chapter 3
-<ref_impl_cntt-ri2:chapters/chapter03>` documentations provide the matching RI requirements for the build.
+the use of a cookbook, automated install, and/or build from RA1 or RA2/RC2 requirements and specifications.
 
 Expectation 2: Execute the RC1 or RC2 Test suites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -216,7 +213,7 @@ Expectation #3: The Qualitative Survey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 At the conclusion of the Test Case iterations, the participant will be asked to complete a qualitative survey of their
-experience. This survey will be used to measure the feasibility, utility, and effectiveness of the RI1 specifications,
+experience. This survey will be used to measure the feasibility, utility, and effectiveness of the RA1 specifications,
 installation/configuration methods and RC-1 Test case efficacy. The survey will be in an Agile User Story format. The
 Table below provides an example of the survey questions:
 
@@ -256,8 +253,8 @@ Anuket Field Trials Approach
 Key Expectations and Assumptions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Expectation: Through healthy feedback from suppliers, Anuket will exit the trial with either validation of RI1, RI2,
-   RC1 and RC2 or a set of actions to close gaps.
+#. Expectation: Through healthy feedback from suppliers, Anuket will exit the trial with either validation of RC1 and
+   RC2 or a set of actions to close gaps.
 #. Expectation: Post trial and gap closure, the community will define a badging process that is mutually beneficial to
    operators and suppliers.
 #. Assumption: Performance testing is not in field trial.
@@ -299,8 +296,8 @@ Success Indicators
 Initiation
 ~~~~~~~~~~
 
-Objectives of RI1/RC1 Trials
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Objectives of RC1 Trials
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 The object is to quantitively and qualitatively assess and evaluate the following Anuket requirements,
 methods, and support processes:
@@ -340,9 +337,9 @@ Anuket GitHub
 Test Case Identification
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Specific test cases for the field trials will be documented and provided to the participants based upon the CNTT RI1 and
-RC1 work streams requirements. The technical testing methods, procedures and documentation shall be provided by these
-work streams.
+Specific test cases for the field trials will be documented and provided to the participants based upon the RC1 work
+streams requirements. The technical testing methods, procedures and documentation shall be provided by these work
+streams.
 
 Vendor Solicitation/Commitment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -351,8 +348,8 @@ Vendor members will be solicited for participation in the trials. The vendors wi
 assessment and evaluation processes. As previously mentioned, additional discussion is needed to define what results
 data and at what level of detail is acceptable to be shared.
 
-RI1/RC1 Trial Deliverable
-^^^^^^^^^^^^^^^^^^^^^^^^^
+RC1 Trial Deliverable
+^^^^^^^^^^^^^^^^^^^^^
 
 The Initiate Field Trial Stage will deliver execution and assessment plans including:
 
@@ -373,7 +370,7 @@ Activities include the deployment and configuration of VI and execution of the R
 that commit to the trials will build/setup/prep labs for the trials per the instructions:
 
 1. Secure appropriate environment space (pre-existing, new build, LaaS)
-2. VI per published RI1 Specifications
+2. VI per published RA1 Specifications
 3. RC1 or RC2 Test suite will be provided to the participants
 4. Trial Participants ensure a complete understanding of the test suite actions and expected outcomes.
 
@@ -402,8 +399,7 @@ be staffed:
 -  Technical Field Trial Steering Lead
 -  Vendor lead from each supplier
 -  SME(s) for RC1 or RC2 supporting suppliers
--  SME(s) for RI1 or RI2 supporting suppliers
--  SME(s) for RI1/RC1 or RI2/RC2
+-  SME(s) for RC1 or RC2
 -  Other support roles such as Governance, technical writers, etc.
 
 The participants that volunteer for the roles will be expected to provide the appropriate amount of time to support the
@@ -476,8 +472,8 @@ trail. Questionnaire responses will be used in the Evaluate phase.
 Quantitative Outcomes
 ^^^^^^^^^^^^^^^^^^^^^
 
-Technical outcomes i.e. technical test results will be collected and managed by RI1/RC1 work streams based upon
-participants privacy preferences.
+Technical outcomes i.e. technical test results will be collected and managed by RC1 work streams based upon participants
+privacy preferences.
 
 Deliverables:
 * Feedback is provided from the participants on their outcomes to Anuket.
