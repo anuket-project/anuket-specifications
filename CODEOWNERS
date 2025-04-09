@@ -6,14 +6,4 @@
 # @global-owner1 and @global-owner2 will be requested for
 # review when someone opens a pull request.
 
-*       @bfcohen @collivier @rgstori @CsatariGergely
-
-# Governance
-/doc/gov/                             @lei-cloud @bfcohen @rgstori @lylavoie @CsatariGergely
-/CODEOWNERS                           @lei-cloud @bfcohen @rgstori @lylavoie @CsatariGergely
-/CONTRIBUTING.rst                     @lei-cloud @bfcohen @rgstori @lylavoie @CsatariGergely
-/doc/CODE_OF_CONDUCT.rst              @lei-cloud @bfcohen @rgstori @lylavoie @CsatariGergely
-/doc/GSMA_CNTT_Terms_of_Reference.pdf @lei-cloud @bfcohen @rgstori @lylavoie @CsatariGergely
-
-# NFG
-/doc/tech/                            @bfcohen
+* @bfcohen @sknrao
