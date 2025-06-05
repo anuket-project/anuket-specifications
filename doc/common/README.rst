@@ -7,8 +7,6 @@ Available Specifications
 -  :doc:`ref_model:index`
 -  :doc:`ref_arch_openstack:index`
 -  :doc:`ref_arch_kubernetes:index`
--  :doc:`ref_impl_cntt-ri:index`
--  :doc:`ref_impl_cntt-ri2:index`
 
 Introduction
 ------------
