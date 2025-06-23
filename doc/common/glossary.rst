@@ -142,7 +142,7 @@ Container Related Terminology
 -  **Container Engine:** Software components used to create, destroy, and manage containers on top of an operating system.
 -  **Container Image:** Stored instance of a container that holds a set of software needed to run an application.
 -  **Container Runtime:** The software that is responsible for running containers.
-      *Note:* as explained in OCI Glossary (`https://github.com/opencontainers/runtime-spec/blob/master/glossary.md <https://github.com/opencontainers/runtime-spec/blob/master/glossary.md>`__) it reads the configuration files for a
+      *Note:* as explained in OCI Glossary (`https://github.com/opencontainers/runtime-spec/blob/main/glossary.md <https://github.com/opencontainers/runtime-spec/blob/main/glossary.md>`__) it reads the configuration files for a
       **Container** from a directory structure, uses that information to create a container, launches a process inside the container, and performs other lifecycle actions.
 
 -  **Container-as-a-Service (CaaS)**: A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
